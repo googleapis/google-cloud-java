@@ -68,14 +68,14 @@ public class ITProxyBigQueryTest {
       Statement statement = connection.createStatement();
       boolean result =
           statement.execute(
-              "Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180");
+              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }
 
     @Test
     public void testAuthenticatedProxyWithOutAuthDetailsThrows() throws SQLException {
-      String query = "Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180";
+      String query = "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="
@@ -95,7 +95,7 @@ public class ITProxyBigQueryTest {
 
     @Test
     public void testNonExistingProxyTimesOut() throws SQLException {
-      String query = "Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180";
+      String query = "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="
@@ -132,7 +132,7 @@ public class ITProxyBigQueryTest {
       Statement statement = connection.createStatement();
       boolean result =
           statement.execute(
-              "Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180");
+              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }
@@ -151,7 +151,7 @@ public class ITProxyBigQueryTest {
       Statement statement = connection.createStatement();
       boolean result =
           statement.execute(
-              "Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180");
+              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }

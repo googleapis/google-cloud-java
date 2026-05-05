@@ -16,12 +16,7 @@
 
 package com.google.cloud.bigquery.exception;
 
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
-
 public class BigQueryJdbcRuntimeException extends RuntimeException {
-
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJdbcRuntimeException.class.getName());
 
   /**
    * Constructs a new BigQueryJdbcRuntimeException with the given message.
@@ -30,7 +25,6 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(String message) {
     super(message);
-    LOG.severe(message, this);
   }
 
   /**
@@ -40,7 +34,6 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(Throwable ex) {
     super(ex);
-    LOG.severe(ex.getMessage(), this);
   }
 
   /**
@@ -51,11 +44,9 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
     super(message, ex);
-    LOG.severe(message, this);
   }
 
   public BigQueryJdbcRuntimeException(String message, Throwable ex) {
     super(message, ex);
-    LOG.severe(message, this);
   }
 }

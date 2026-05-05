@@ -150,7 +150,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testFastQueryPathSmall() throws SQLException {
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
             + " 850";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -160,7 +160,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
             + " 0";
     Connection connection =
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
@@ -173,8 +173,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testSmallSelectAndVerifyResults() throws SQLException {
     String query =
-        "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` WHERE"
-            + " repository_name LIKE 'X%' LIMIT 10";
+        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
+            + " word LIKE 'X%' LIMIT 10";
 
     ResultSet resultSet = bigQueryStatement.executeQuery(query);
     int rowCount = 0;
@@ -288,13 +288,13 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connectionUseStateless.createStatement();
 
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
             + " 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
     Assert.assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
             + " 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     Assert.assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
@@ -327,7 +327,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertNotNull(connection);
     Statement st = connection.createStatement();
     boolean rs =
-        st.execute("Select * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180");
+        st.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
     assertTrue(rs);
     connection.close();
   }
@@ -345,7 +345,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
     assertNotNull(connection);
     assertEquals(
-        DatasetId.of("testDataset"), ((BigQueryConnection) connection).getDefaultDataset());
+        DatasetId.of("testDataset"), connection.unwrap(BigQueryConnection.class).getDefaultDataset());
 
     String connection_uri_null_default_dataset =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
@@ -356,7 +356,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     Connection connection2 = driver.connect(connection_uri_null_default_dataset, new Properties());
     assertNotNull(connection2);
-    assertNull(((BigQueryConnection) connection2).getDefaultDataset());
+    assertNull(connection2.unwrap(BigQueryConnection.class).getDefaultDataset());
     connection.close();
     connection2.close();
   }
@@ -377,7 +377,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertNotNull(connection);
     assertEquals(
         DatasetId.of(PROJECT_ID, "testDataset"),
-        ((BigQueryConnection) connection).getDefaultDataset());
+        connection.unwrap(BigQueryConnection.class).getDefaultDataset());
     connection.close();
   }
 
@@ -392,7 +392,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertTrue(driver.acceptsURL(connection_uri));
 
     Connection connection = driver.connect(connection_uri, new Properties());
-    assertEquals(((BigQueryConnection) connection).getLocation(), "EU");
+    assertEquals(connection.unwrap(BigQueryConnection.class).getLocation(), "EU");
 
     Statement statement = connection.createStatement();
 
@@ -411,7 +411,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     Connection connection2 = driver.connect(connection_uri_null_location, new Properties());
     assertNotNull(connection2);
-    assertNull(((BigQueryConnection) connection2).getLocation());
+    assertNull(connection2.unwrap(BigQueryConnection.class).getLocation());
     connection.close();
     connection2.close();
   }
@@ -426,11 +426,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     Driver driver = BigQueryDriver.getRegisteredDriver();
 
     Connection connection = driver.connect(connection_uri, new Properties());
-    assertEquals(((BigQueryConnection) connection).getLocation(), "europe-west3");
+    assertEquals(connection.unwrap(BigQueryConnection.class).getLocation(), "europe-west3");
 
     // Query a dataset in the US
     Statement statement = connection.createStatement();
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
     BigQueryJdbcException ex =
         assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery(query));
     BigQueryError error = ex.getBigQueryException().getError();
@@ -524,7 +524,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testSetAutoCommitWithClosedConnectionThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     connection.close();
     assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(true));
   }
@@ -532,7 +532,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testSetCommitToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(connection_uri);
+        DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
     assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(false));
     connection.close();
   }
@@ -540,7 +540,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testCommitWithConnectionClosedThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     connection.close();
     assertThrows(IllegalStateException.class, connection::commit);
   }
@@ -548,7 +548,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testCommitToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(connection_uri);
+        DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
     assertThrows(IllegalStateException.class, connection::commit);
     connection.close();
   }
@@ -556,7 +556,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testCommitWithNoTransactionStartedThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     assertThrows(IllegalStateException.class, connection::commit);
     connection.close();
   }
@@ -606,7 +606,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testRollbackWithConnectionClosedThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     connection.close();
     assertThrows(IllegalStateException.class, connection::rollback);
   }
@@ -614,7 +614,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testRollbackToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(connection_uri);
+        DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
     assertThrows(IllegalStateException.class, connection::rollback);
     connection.close();
   }
@@ -622,7 +622,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testRollbackWithoutTransactionStartedThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     assertThrows(IllegalStateException.class, connection::rollback);
     connection.close();
   }
@@ -743,7 +743,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     connection.close();
     assertThrows(
-        IllegalStateException.class, () -> ((BigQueryConnection) connection).getLocation());
+        IllegalStateException.class, () -> connection.unwrap(BigQueryConnection.class).getLocation());
     connection.close();
   }
 
@@ -754,7 +754,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     connection.close();
     assertThrows(
-        IllegalStateException.class, () -> ((BigQueryConnection) connection).getDefaultDataset());
+        IllegalStateException.class, () -> connection.unwrap(BigQueryConnection.class).getDefaultDataset());
   }
 
   @Test
@@ -960,7 +960,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testExecuteQueryWithMultipleReturns() throws SQLException {
     String query =
-        String.format("SELECT * FROM bigquery-public-data.samples.github_timeline LIMIT 1;");
+        String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeQuery(query + query));
   }
@@ -968,7 +968,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testExecuteUpdateWithSelect() throws SQLException {
     String selectQuery =
-        String.format("SELECT * FROM bigquery-public-data.samples.github_timeline LIMIT 1;");
+        String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeUpdate(selectQuery));
   }
@@ -1120,8 +1120,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     String query =
-        "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` WHERE"
-            + " repository_name LIKE 'X%' LIMIT 10";
+        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
+            + " word LIKE 'X%' LIMIT 10";
     Statement statement = connection.createStatement();
 
     assertThrows(IllegalArgumentException.class, () -> statement.addBatch(query));
@@ -1467,7 +1467,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseStatement() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 10";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
     Statement statement = bigQueryConnection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertEquals(10, resultSetRowCount(jsonResultSet));
@@ -1477,7 +1477,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementSingleResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 10";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1489,7 +1489,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 10;";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1507,7 +1507,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResultExplicitClose() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 10;";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1554,7 +1554,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementSmallSelect() throws SQLException {
     String query =
-        "SELECT * FROM `bigquery-public-data.samples.github_timeline` where repository_language=?"
+        "SELECT * FROM `bigquery-public-data.samples.shakespeare` where corpus=?"
             + " LIMIT 1000";
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "Java");
@@ -2121,7 +2121,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "ProjectId="
             + PROJECT_ID
             + ";QueryProperties=time_zone=America/New_York;";
-    String query = "SELECT * FROM `bigquery-public-data.samples.github_timeline` LIMIT 180";
+    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -2265,7 +2265,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testMultipleTransactionsThrowsUnsupported() throws SQLException {
     BigQueryConnection connection =
-        (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
+        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertThrows(BigQueryJdbcException.class, () -> statement.execute("BEGIN TRANSACTION;"));

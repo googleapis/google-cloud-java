@@ -67,6 +67,21 @@ public class BigQueryJdbcCustomLogger extends Logger {
     }
   }
 
+  @Override
+  public void finest(String msg) {
+    logWithCaller(Level.FINEST, () -> msg);
+  }
+
+  @Override
+  public void finer(String msg) {
+    logWithCaller(Level.FINER, () -> msg);
+  }
+
+  @Override
+  public void fine(String msg) {
+    logWithCaller(Level.FINE, () -> msg);
+  }
+
   void finest(String format, Object... args) {
     logWithCaller(Level.FINEST, () -> String.format(format, args));
   }

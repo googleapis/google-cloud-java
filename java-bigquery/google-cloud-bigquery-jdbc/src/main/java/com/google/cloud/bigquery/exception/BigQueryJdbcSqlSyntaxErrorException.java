@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.exception;
 
 import com.google.cloud.bigquery.BigQueryException;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import java.sql.SQLSyntaxErrorException;
 
 /**
@@ -26,8 +25,6 @@ import java.sql.SQLSyntaxErrorException;
  * rules.
  */
 public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJdbcSqlSyntaxErrorException.class.getName());
 
   /**
    * Constructs a new BigQueryJdbcSqlSyntaxErrorException from BigQueryException
@@ -36,11 +33,9 @@ public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException
    */
   public BigQueryJdbcSqlSyntaxErrorException(BigQueryException ex) {
     super(ex.getMessage(), "Incorrect SQL syntax.");
-    LOG.severe(ex.getMessage(), this);
   }
 
   public BigQueryJdbcSqlSyntaxErrorException(String message, BigQueryException ex) {
     super(message, ex);
-    LOG.severe(message, this);
   }
 }

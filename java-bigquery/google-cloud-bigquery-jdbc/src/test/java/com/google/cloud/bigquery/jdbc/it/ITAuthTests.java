@@ -72,7 +72,7 @@ public class ITAuthTests extends ITBase {
     assertNotNull(connection);
     assertFalse(connection.isClosed());
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
             + " 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
@@ -205,7 +205,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertEquals(50, resultSetRowCount(resultSet));
     connection.close();
@@ -229,7 +229,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertEquals(50, resultSetRowCount(resultSet));
     connection.close();
@@ -251,7 +251,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertEquals(50, resultSetRowCount(resultSet));
     connection.close();
@@ -283,7 +283,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertEquals(50, resultSetRowCount(resultSet));
     connection.close();
@@ -333,7 +333,7 @@ public class ITAuthTests extends ITBase {
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertEquals(50, resultSetRowCount(resultSet));
     connection.close();

@@ -68,10 +68,10 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "APPLICATION_DEFAULT_CREDENTIALS",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     assertThrows(BigQueryException.class, () -> statement.executeQuery(query));
   }
@@ -90,10 +90,10 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "APPLICATION_DEFAULT_CREDENTIALS",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -115,10 +115,10 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "PRE_GENERATED_TOKEN",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -143,7 +143,7 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     connection.close();
   }
 
@@ -167,9 +167,9 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -287,12 +287,12 @@ public class ITPSCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "EXTERNAL_ACCOUNT_AUTH",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
     ResultSet resultSet =
         statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
+            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
 
     assertNotNull(resultSet);
     connection.close();
