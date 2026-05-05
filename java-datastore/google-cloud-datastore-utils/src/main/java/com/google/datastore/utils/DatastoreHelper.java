@@ -221,6 +221,14 @@ public final class DatastoreHelper {
    *   <li>Google Application Default as described <a
    *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
+   *
+   * <p><b>Warning:</b> The <code>__DATASTORE_URL_OVERRIDE</code> environment variable is not
+   * well-supported or documented. To maintain legacy behavior, the URL must include a scheme (e.g.
+   * <code>http://localhost:8080</code>). Omitting the scheme will result in an invalid endpoint
+   * URL.
+   *
+   * <p>Users should instead use the standard and supported <code>DATASTORE_EMULATOR_HOST</code>
+   * environment variable (e.g., <code>localhost:8080</code>) to connect to local emulators.
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {
@@ -324,9 +332,41 @@ public final class DatastoreHelper {
               LOCAL_HOST_ENV_VAR));
     }
     String projectId = getProjectIdFromEnv();
-    if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
-      options.projectEndpoint(
-          String.format("%s/projects/%s", System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
+    String urlOverride = System.getenv(URL_OVERRIDE_ENV_VAR);
+    if (urlOverride != null) {
+      if (!urlOverride.startsWith("http://") && !urlOverride.startsWith("https://")) {
+        throw new IllegalArgumentException(
+            String.format("Project endpoint \"%s\" must include scheme.", urlOverride));
+      }
+      logger.warning(
+          String.format(
+              "The environment variable %s is not well-supported or documented. "
+                  + "Consider using the standard %s environment variable instead. "
+                  + "See https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+              URL_OVERRIDE_ENV_VAR, LOCAL_HOST_ENV_VAR));
+      options.projectId(projectId);
+      // To maintain legacy behavior for undocumented overrides, the URL override must include a
+      // scheme (e.g., http://).
+      // Since host and localHost methods don't accept a scheme, we strip it if present.
+      // We then check if it's an HTTP or HTTPS URL to use options.localHost(...) or
+      // options.host(...) accordingly. We use options.localHost(...) for all HTTP URLs
+      // (not just localhost or 127.0.0.1) because the emulator might be running on a
+      // different host in containerized or CI environments.
+      String host = urlOverride;
+      boolean isHttp = host.startsWith("http://");
+      if (isHttp) {
+        host = host.substring("http://".length());
+      } else if (host.startsWith("https://")) {
+        host = host.substring("https://".length());
+      }
+      if (host.endsWith("/")) {
+        host = host.substring(0, host.length() - 1);
+      }
+      if (isHttp) {
+        options.localHost(host);
+      } else {
+        options.host(host);
+      }
       return;
     }
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {
@@ -335,7 +375,6 @@ public final class DatastoreHelper {
       return;
     }
     options.projectId(projectId);
-    return;
   }
 
   /**

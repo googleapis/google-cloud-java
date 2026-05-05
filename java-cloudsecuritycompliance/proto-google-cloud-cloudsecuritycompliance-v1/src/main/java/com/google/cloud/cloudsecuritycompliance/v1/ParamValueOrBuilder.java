@@ -30,10 +30,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A string value.
+   * Optional. A string value.
    * </pre>
    *
-   * <code>string string_value = 3;</code>
+   * <code>string string_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the stringValue field is set.
    */
@@ -43,10 +43,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A string value.
+   * Optional. A string value.
    * </pre>
    *
-   * <code>string string_value = 3;</code>
+   * <code>string string_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The stringValue.
    */
@@ -56,10 +56,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A string value.
+   * Optional. A string value.
    * </pre>
    *
-   * <code>string string_value = 3;</code>
+   * <code>string string_value = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for stringValue.
    */
@@ -69,10 +69,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A boolean value.
+   * Optional. A boolean value.
    * </pre>
    *
-   * <code>bool bool_value = 4;</code>
+   * <code>bool bool_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the boolValue field is set.
    */
@@ -82,10 +82,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A boolean value.
+   * Optional. A boolean value.
    * </pre>
    *
-   * <code>bool bool_value = 4;</code>
+   * <code>bool bool_value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The boolValue.
    */
@@ -95,10 +95,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A repeated string.
+   * Optional. A repeated string.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the stringListValue field is set.
    */
@@ -108,10 +110,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A repeated string.
+   * Optional. A repeated string.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The stringListValue.
    */
@@ -121,10 +125,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A repeated string.
+   * Optional. A repeated string.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.StringList string_list_value = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.cloudsecuritycompliance.v1.StringListOrBuilder getStringListValueOrBuilder();
 
@@ -132,10 +138,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A double value.
+   * Optional. A double value.
    * </pre>
    *
-   * <code>double number_value = 6;</code>
+   * <code>double number_value = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the numberValue field is set.
    */
@@ -145,10 +151,10 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * A double value.
+   * Optional. A double value.
    * </pre>
    *
-   * <code>double number_value = 6;</code>
+   * <code>double number_value = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The numberValue.
    */
@@ -158,10 +164,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * Sub-parameter values.
+   * Optional. Sub-parameter values.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oneofValue field is set.
    */
@@ -171,10 +179,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * Sub-parameter values.
+   * Optional. Sub-parameter values.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oneofValue.
    */
@@ -184,10 +194,12 @@ public interface ParamValueOrBuilder
    *
    *
    * <pre>
-   * Sub-parameter values.
+   * Optional. Sub-parameter values.
    * </pre>
    *
-   * <code>.google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7;</code>
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Parameter oneof_value = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.cloudsecuritycompliance.v1.ParameterOrBuilder getOneofValueOrBuilder();
 

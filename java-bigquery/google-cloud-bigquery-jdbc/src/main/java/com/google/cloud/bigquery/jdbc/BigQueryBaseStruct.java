@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryErrorMessage.CUSTOMER_TYPE_
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -42,7 +43,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   @Override
   public final String getSQLTypeName() throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
+    return StandardSQLTypeName.STRUCT.name();
   }
 
   @Override
@@ -91,6 +92,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
       sb.append("}");
       return sb.toString();
     } catch (SQLException e) {
+      LOG.severe("Error converting struct to string", e);
       return "{ \"error\": \"Error converting struct to string: " + e.getMessage() + "\" }";
     }
   }

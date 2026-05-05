@@ -68,6 +68,69 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  public static final int ACCESS_LOCATION_FIELD_NUMBER = 18410544;
+  private com.google.cloud.compute.v1.SnapshotSettingsAccessLocation accessLocation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   *
+   * @return Whether the accessLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessLocation() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   *
+   * @return The accessLocation.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SnapshotSettingsAccessLocation getAccessLocation() {
+    return accessLocation_ == null
+        ? com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.getDefaultInstance()
+        : accessLocation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder
+      getAccessLocationOrBuilder() {
+    return accessLocation_ == null
+        ? com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.getDefaultInstance()
+        : accessLocation_;
+  }
+
   public static final int STORAGE_LOCATION_FIELD_NUMBER = 460859641;
   private com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings storageLocation_;
 
@@ -87,7 +150,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStorageLocation() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -146,6 +209,9 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(18410544, getAccessLocation());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(460859641, getStorageLocation());
     }
     getUnknownFields().writeTo(output);
@@ -158,6 +224,10 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18410544, getAccessLocation());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(460859641, getStorageLocation());
     }
@@ -177,6 +247,10 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.SnapshotSettings other =
         (com.google.cloud.compute.v1.SnapshotSettings) obj;
 
+    if (hasAccessLocation() != other.hasAccessLocation()) return false;
+    if (hasAccessLocation()) {
+      if (!getAccessLocation().equals(other.getAccessLocation())) return false;
+    }
     if (hasStorageLocation() != other.hasStorageLocation()) return false;
     if (hasStorageLocation()) {
       if (!getStorageLocation().equals(other.getStorageLocation())) return false;
@@ -192,6 +266,10 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAccessLocation()) {
+      hash = (37 * hash) + ACCESS_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessLocation().hashCode();
+    }
     if (hasStorageLocation()) {
       hash = (37 * hash) + STORAGE_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getStorageLocation().hashCode();
@@ -336,6 +414,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAccessLocationFieldBuilder();
         internalGetStorageLocationFieldBuilder();
       }
     }
@@ -344,6 +423,11 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      accessLocation_ = null;
+      if (accessLocationBuilder_ != null) {
+        accessLocationBuilder_.dispose();
+        accessLocationBuilder_ = null;
+      }
       storageLocation_ = null;
       if (storageLocationBuilder_ != null) {
         storageLocationBuilder_.dispose();
@@ -387,9 +471,14 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessLocation_ =
+            accessLocationBuilder_ == null ? accessLocation_ : accessLocationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.storageLocation_ =
             storageLocationBuilder_ == null ? storageLocation_ : storageLocationBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -406,6 +495,9 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SnapshotSettings other) {
       if (other == com.google.cloud.compute.v1.SnapshotSettings.getDefaultInstance()) return this;
+      if (other.hasAccessLocation()) {
+        mergeAccessLocation(other.getAccessLocation());
+      }
       if (other.hasStorageLocation()) {
         mergeStorageLocation(other.getStorageLocation());
       }
@@ -435,11 +527,18 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 147284354:
+              {
+                input.readMessage(
+                    internalGetAccessLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 147284354
             case -608090166:
               {
                 input.readMessage(
                     internalGetStorageLocationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -608090166
             default:
@@ -460,6 +559,234 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.cloud.compute.v1.SnapshotSettingsAccessLocation accessLocation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocation,
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.Builder,
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder>
+        accessLocationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     *
+     * @return Whether the accessLocation field is set.
+     */
+    public boolean hasAccessLocation() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     *
+     * @return The accessLocation.
+     */
+    public com.google.cloud.compute.v1.SnapshotSettingsAccessLocation getAccessLocation() {
+      if (accessLocationBuilder_ == null) {
+        return accessLocation_ == null
+            ? com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.getDefaultInstance()
+            : accessLocation_;
+      } else {
+        return accessLocationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public Builder setAccessLocation(
+        com.google.cloud.compute.v1.SnapshotSettingsAccessLocation value) {
+      if (accessLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessLocation_ = value;
+      } else {
+        accessLocationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public Builder setAccessLocation(
+        com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.Builder builderForValue) {
+      if (accessLocationBuilder_ == null) {
+        accessLocation_ = builderForValue.build();
+      } else {
+        accessLocationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public Builder mergeAccessLocation(
+        com.google.cloud.compute.v1.SnapshotSettingsAccessLocation value) {
+      if (accessLocationBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && accessLocation_ != null
+            && accessLocation_
+                != com.google.cloud.compute.v1.SnapshotSettingsAccessLocation
+                    .getDefaultInstance()) {
+          getAccessLocationBuilder().mergeFrom(value);
+        } else {
+          accessLocation_ = value;
+        }
+      } else {
+        accessLocationBuilder_.mergeFrom(value);
+      }
+      if (accessLocation_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public Builder clearAccessLocation() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      accessLocation_ = null;
+      if (accessLocationBuilder_ != null) {
+        accessLocationBuilder_.dispose();
+        accessLocationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.Builder
+        getAccessLocationBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetAccessLocationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder
+        getAccessLocationOrBuilder() {
+      if (accessLocationBuilder_ != null) {
+        return accessLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return accessLocation_ == null
+            ? com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.getDefaultInstance()
+            : accessLocation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * (Regional snapshots use only)Policy of which location is allowed to access
+     * snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocation,
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.Builder,
+            com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder>
+        internalGetAccessLocationFieldBuilder() {
+      if (accessLocationBuilder_ == null) {
+        accessLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.SnapshotSettingsAccessLocation,
+                com.google.cloud.compute.v1.SnapshotSettingsAccessLocation.Builder,
+                com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder>(
+                getAccessLocation(), getParentForChildren(), isClean());
+        accessLocation_ = null;
+      }
+      return accessLocationBuilder_;
+    }
 
     private com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings storageLocation_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -483,7 +810,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the storageLocation field is set.
      */
     public boolean hasStorageLocation() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -534,7 +861,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
       } else {
         storageLocationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -559,7 +886,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
       } else {
         storageLocationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -579,7 +906,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeStorageLocation(
         com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings value) {
       if (storageLocationBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && storageLocation_ != null
             && storageLocation_
                 != com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings
@@ -592,7 +919,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
         storageLocationBuilder_.mergeFrom(value);
       }
       if (storageLocation_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -611,7 +938,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStorageLocation() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       storageLocation_ = null;
       if (storageLocationBuilder_ != null) {
         storageLocationBuilder_.dispose();
@@ -635,7 +962,7 @@ public final class SnapshotSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings.Builder
         getStorageLocationBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetStorageLocationFieldBuilder().getBuilder();
     }

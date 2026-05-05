@@ -14,7 +14,7 @@
 
 timeout: 7200s # 2 hours
 substitutions:
-  _GAPIC_GENERATOR_JAVA_VERSION: '2.71.0' # {x-version-update:gapic-generator-java:current}
+  _GAPIC_GENERATOR_JAVA_VERSION: '2.72.0-SNAPSHOT' # {x-version-update:gapic-generator-java:current}
   _PRIVATE_IMAGE_NAME: "us-docker.pkg.dev/java-hermetic-build-prod/private-resources/java-library-generation"
   _PRIVATE_SHA_IMAGE_ID: "${_PRIVATE_IMAGE_NAME}:${COMMIT_SHA}"
   _PRIVATE_LATEST_IMAGE_ID: "${_PRIVATE_IMAGE_NAME}:latest"

@@ -54,6 +54,8 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
 
   private ImportEvaluationsResponse() {
     evaluations_ = java.util.Collections.emptyList();
+    evaluationResults_ = java.util.Collections.emptyList();
+    evaluationRuns_ = java.util.Collections.emptyList();
     errorMessages_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -148,6 +150,159 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
     return evaluations_.get(index);
   }
 
+  public static final int EVALUATION_RESULTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.ces.v1beta.EvaluationResult> evaluationResults_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.ces.v1beta.EvaluationResult> getEvaluationResultsList() {
+    return evaluationResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>
+      getEvaluationResultsOrBuilderList() {
+    return evaluationResults_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  @java.lang.Override
+  public int getEvaluationResultsCount() {
+    return evaluationResults_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationResult getEvaluationResults(int index) {
+    return evaluationResults_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationResultOrBuilder getEvaluationResultsOrBuilder(
+      int index) {
+    return evaluationResults_.get(index);
+  }
+
+  public static final int EVALUATION_RUNS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.ces.v1beta.EvaluationRun> evaluationRuns_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.ces.v1beta.EvaluationRun> getEvaluationRunsList() {
+    return evaluationRuns_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>
+      getEvaluationRunsOrBuilderList() {
+    return evaluationRuns_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  @java.lang.Override
+  public int getEvaluationRunsCount() {
+    return evaluationRuns_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationRun getEvaluationRuns(int index) {
+    return evaluationRuns_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationRunOrBuilder getEvaluationRunsOrBuilder(int index) {
+    return evaluationRuns_.get(index);
+  }
+
   public static final int ERROR_MESSAGES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -227,7 +382,8 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The number of evaluations that were not imported due to errors.
+   * The number of evaluations that either failed to import entirely or
+   * completed import with one or more errors.
    * </pre>
    *
    * <code>int32 import_failure_count = 3;</code>
@@ -237,6 +393,46 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
   @java.lang.Override
   public int getImportFailureCount() {
     return importFailureCount_;
+  }
+
+  public static final int EVALUATION_RESULT_IMPORT_FAILURE_COUNT_FIELD_NUMBER = 6;
+  private int evaluationResultImportFailureCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of evaluation results that either failed to import entirely or
+   * completed import with one or more errors.
+   * </pre>
+   *
+   * <code>int32 evaluation_result_import_failure_count = 6;</code>
+   *
+   * @return The evaluationResultImportFailureCount.
+   */
+  @java.lang.Override
+  public int getEvaluationResultImportFailureCount() {
+    return evaluationResultImportFailureCount_;
+  }
+
+  public static final int EVALUATION_RUN_IMPORT_FAILURE_COUNT_FIELD_NUMBER = 7;
+  private int evaluationRunImportFailureCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of evaluation runs that either failed to import entirely or
+   * completed import with one or more errors.
+   * </pre>
+   *
+   * <code>int32 evaluation_run_import_failure_count = 7;</code>
+   *
+   * @return The evaluationRunImportFailureCount.
+   */
+  @java.lang.Override
+  public int getEvaluationRunImportFailureCount() {
+    return evaluationRunImportFailureCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -262,6 +458,18 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
     if (importFailureCount_ != 0) {
       output.writeInt32(3, importFailureCount_);
     }
+    for (int i = 0; i < evaluationResults_.size(); i++) {
+      output.writeMessage(4, evaluationResults_.get(i));
+    }
+    for (int i = 0; i < evaluationRuns_.size(); i++) {
+      output.writeMessage(5, evaluationRuns_.get(i));
+    }
+    if (evaluationResultImportFailureCount_ != 0) {
+      output.writeInt32(6, evaluationResultImportFailureCount_);
+    }
+    if (evaluationRunImportFailureCount_ != 0) {
+      output.writeInt32(7, evaluationRunImportFailureCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -285,6 +493,23 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
     if (importFailureCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, importFailureCount_);
     }
+    for (int i = 0; i < evaluationResults_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, evaluationResults_.get(i));
+    }
+    for (int i = 0; i < evaluationRuns_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, evaluationRuns_.get(i));
+    }
+    if (evaluationResultImportFailureCount_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              6, evaluationResultImportFailureCount_);
+    }
+    if (evaluationRunImportFailureCount_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              7, evaluationRunImportFailureCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -302,8 +527,14 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
         (com.google.cloud.ces.v1beta.ImportEvaluationsResponse) obj;
 
     if (!getEvaluationsList().equals(other.getEvaluationsList())) return false;
+    if (!getEvaluationResultsList().equals(other.getEvaluationResultsList())) return false;
+    if (!getEvaluationRunsList().equals(other.getEvaluationRunsList())) return false;
     if (!getErrorMessagesList().equals(other.getErrorMessagesList())) return false;
     if (getImportFailureCount() != other.getImportFailureCount()) return false;
+    if (getEvaluationResultImportFailureCount() != other.getEvaluationResultImportFailureCount())
+      return false;
+    if (getEvaluationRunImportFailureCount() != other.getEvaluationRunImportFailureCount())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -319,12 +550,24 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       hash = (37 * hash) + EVALUATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getEvaluationsList().hashCode();
     }
+    if (getEvaluationResultsCount() > 0) {
+      hash = (37 * hash) + EVALUATION_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationResultsList().hashCode();
+    }
+    if (getEvaluationRunsCount() > 0) {
+      hash = (37 * hash) + EVALUATION_RUNS_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationRunsList().hashCode();
+    }
     if (getErrorMessagesCount() > 0) {
       hash = (37 * hash) + ERROR_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getErrorMessagesList().hashCode();
     }
     hash = (37 * hash) + IMPORT_FAILURE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getImportFailureCount();
+    hash = (37 * hash) + EVALUATION_RESULT_IMPORT_FAILURE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationResultImportFailureCount();
+    hash = (37 * hash) + EVALUATION_RUN_IMPORT_FAILURE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getEvaluationRunImportFailureCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -474,8 +717,24 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
         evaluationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (evaluationResultsBuilder_ == null) {
+        evaluationResults_ = java.util.Collections.emptyList();
+      } else {
+        evaluationResults_ = null;
+        evaluationResultsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      if (evaluationRunsBuilder_ == null) {
+        evaluationRuns_ = java.util.Collections.emptyList();
+      } else {
+        evaluationRuns_ = null;
+        evaluationRunsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       errorMessages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       importFailureCount_ = 0;
+      evaluationResultImportFailureCount_ = 0;
+      evaluationRunImportFailureCount_ = 0;
       return this;
     }
 
@@ -522,16 +781,40 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       } else {
         result.evaluations_ = evaluationsBuilder_.build();
       }
+      if (evaluationResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          evaluationResults_ = java.util.Collections.unmodifiableList(evaluationResults_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.evaluationResults_ = evaluationResults_;
+      } else {
+        result.evaluationResults_ = evaluationResultsBuilder_.build();
+      }
+      if (evaluationRunsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          evaluationRuns_ = java.util.Collections.unmodifiableList(evaluationRuns_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.evaluationRuns_ = evaluationRuns_;
+      } else {
+        result.evaluationRuns_ = evaluationRunsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.ces.v1beta.ImportEvaluationsResponse result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         errorMessages_.makeImmutable();
         result.errorMessages_ = errorMessages_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.importFailureCount_ = importFailureCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.evaluationResultImportFailureCount_ = evaluationResultImportFailureCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.evaluationRunImportFailureCount_ = evaluationRunImportFailureCount_;
       }
     }
 
@@ -575,10 +858,64 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
           }
         }
       }
+      if (evaluationResultsBuilder_ == null) {
+        if (!other.evaluationResults_.isEmpty()) {
+          if (evaluationResults_.isEmpty()) {
+            evaluationResults_ = other.evaluationResults_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureEvaluationResultsIsMutable();
+            evaluationResults_.addAll(other.evaluationResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.evaluationResults_.isEmpty()) {
+          if (evaluationResultsBuilder_.isEmpty()) {
+            evaluationResultsBuilder_.dispose();
+            evaluationResultsBuilder_ = null;
+            evaluationResults_ = other.evaluationResults_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            evaluationResultsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetEvaluationResultsFieldBuilder()
+                    : null;
+          } else {
+            evaluationResultsBuilder_.addAllMessages(other.evaluationResults_);
+          }
+        }
+      }
+      if (evaluationRunsBuilder_ == null) {
+        if (!other.evaluationRuns_.isEmpty()) {
+          if (evaluationRuns_.isEmpty()) {
+            evaluationRuns_ = other.evaluationRuns_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureEvaluationRunsIsMutable();
+            evaluationRuns_.addAll(other.evaluationRuns_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.evaluationRuns_.isEmpty()) {
+          if (evaluationRunsBuilder_.isEmpty()) {
+            evaluationRunsBuilder_.dispose();
+            evaluationRunsBuilder_ = null;
+            evaluationRuns_ = other.evaluationRuns_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            evaluationRunsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetEvaluationRunsFieldBuilder()
+                    : null;
+          } else {
+            evaluationRunsBuilder_.addAllMessages(other.evaluationRuns_);
+          }
+        }
+      }
       if (!other.errorMessages_.isEmpty()) {
         if (errorMessages_.isEmpty()) {
           errorMessages_ = other.errorMessages_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         } else {
           ensureErrorMessagesIsMutable();
           errorMessages_.addAll(other.errorMessages_);
@@ -587,6 +924,12 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       }
       if (other.getImportFailureCount() != 0) {
         setImportFailureCount(other.getImportFailureCount());
+      }
+      if (other.getEvaluationResultImportFailureCount() != 0) {
+        setEvaluationResultImportFailureCount(other.getEvaluationResultImportFailureCount());
+      }
+      if (other.getEvaluationRunImportFailureCount() != 0) {
+        setEvaluationRunImportFailureCount(other.getEvaluationRunImportFailureCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -637,9 +980,47 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
             case 24:
               {
                 importFailureCount_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
+            case 34:
+              {
+                com.google.cloud.ces.v1beta.EvaluationResult m =
+                    input.readMessage(
+                        com.google.cloud.ces.v1beta.EvaluationResult.parser(), extensionRegistry);
+                if (evaluationResultsBuilder_ == null) {
+                  ensureEvaluationResultsIsMutable();
+                  evaluationResults_.add(m);
+                } else {
+                  evaluationResultsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.cloud.ces.v1beta.EvaluationRun m =
+                    input.readMessage(
+                        com.google.cloud.ces.v1beta.EvaluationRun.parser(), extensionRegistry);
+                if (evaluationRunsBuilder_ == null) {
+                  ensureEvaluationRunsIsMutable();
+                  evaluationRuns_.add(m);
+                } else {
+                  evaluationRunsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            case 48:
+              {
+                evaluationResultImportFailureCount_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                evaluationRunImportFailureCount_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1026,6 +1407,755 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       return evaluationsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.ces.v1beta.EvaluationResult> evaluationResults_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEvaluationResultsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        evaluationResults_ =
+            new java.util.ArrayList<com.google.cloud.ces.v1beta.EvaluationResult>(
+                evaluationResults_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationResult,
+            com.google.cloud.ces.v1beta.EvaluationResult.Builder,
+            com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>
+        evaluationResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.EvaluationResult> getEvaluationResultsList() {
+      if (evaluationResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(evaluationResults_);
+      } else {
+        return evaluationResultsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public int getEvaluationResultsCount() {
+      if (evaluationResultsBuilder_ == null) {
+        return evaluationResults_.size();
+      } else {
+        return evaluationResultsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationResult getEvaluationResults(int index) {
+      if (evaluationResultsBuilder_ == null) {
+        return evaluationResults_.get(index);
+      } else {
+        return evaluationResultsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder setEvaluationResults(
+        int index, com.google.cloud.ces.v1beta.EvaluationResult value) {
+      if (evaluationResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.set(index, value);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder setEvaluationResults(
+        int index, com.google.cloud.ces.v1beta.EvaluationResult.Builder builderForValue) {
+      if (evaluationResultsBuilder_ == null) {
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder addEvaluationResults(com.google.cloud.ces.v1beta.EvaluationResult value) {
+      if (evaluationResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.add(value);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder addEvaluationResults(
+        int index, com.google.cloud.ces.v1beta.EvaluationResult value) {
+      if (evaluationResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.add(index, value);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder addEvaluationResults(
+        com.google.cloud.ces.v1beta.EvaluationResult.Builder builderForValue) {
+      if (evaluationResultsBuilder_ == null) {
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder addEvaluationResults(
+        int index, com.google.cloud.ces.v1beta.EvaluationResult.Builder builderForValue) {
+      if (evaluationResultsBuilder_ == null) {
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder addAllEvaluationResults(
+        java.lang.Iterable<? extends com.google.cloud.ces.v1beta.EvaluationResult> values) {
+      if (evaluationResultsBuilder_ == null) {
+        ensureEvaluationResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, evaluationResults_);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder clearEvaluationResults() {
+      if (evaluationResultsBuilder_ == null) {
+        evaluationResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public Builder removeEvaluationResults(int index) {
+      if (evaluationResultsBuilder_ == null) {
+        ensureEvaluationResultsIsMutable();
+        evaluationResults_.remove(index);
+        onChanged();
+      } else {
+        evaluationResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationResult.Builder getEvaluationResultsBuilder(
+        int index) {
+      return internalGetEvaluationResultsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationResultOrBuilder getEvaluationResultsOrBuilder(
+        int index) {
+      if (evaluationResultsBuilder_ == null) {
+        return evaluationResults_.get(index);
+      } else {
+        return evaluationResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>
+        getEvaluationResultsOrBuilderList() {
+      if (evaluationResultsBuilder_ != null) {
+        return evaluationResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(evaluationResults_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationResult.Builder addEvaluationResultsBuilder() {
+      return internalGetEvaluationResultsFieldBuilder()
+          .addBuilder(com.google.cloud.ces.v1beta.EvaluationResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationResult.Builder addEvaluationResultsBuilder(
+        int index) {
+      return internalGetEvaluationResultsFieldBuilder()
+          .addBuilder(index, com.google.cloud.ces.v1beta.EvaluationResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation results that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.EvaluationResult.Builder>
+        getEvaluationResultsBuilderList() {
+      return internalGetEvaluationResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationResult,
+            com.google.cloud.ces.v1beta.EvaluationResult.Builder,
+            com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>
+        internalGetEvaluationResultsFieldBuilder() {
+      if (evaluationResultsBuilder_ == null) {
+        evaluationResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationResult,
+                com.google.cloud.ces.v1beta.EvaluationResult.Builder,
+                com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>(
+                evaluationResults_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        evaluationResults_ = null;
+      }
+      return evaluationResultsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.ces.v1beta.EvaluationRun> evaluationRuns_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEvaluationRunsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        evaluationRuns_ =
+            new java.util.ArrayList<com.google.cloud.ces.v1beta.EvaluationRun>(evaluationRuns_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationRun,
+            com.google.cloud.ces.v1beta.EvaluationRun.Builder,
+            com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>
+        evaluationRunsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.EvaluationRun> getEvaluationRunsList() {
+      if (evaluationRunsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(evaluationRuns_);
+      } else {
+        return evaluationRunsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public int getEvaluationRunsCount() {
+      if (evaluationRunsBuilder_ == null) {
+        return evaluationRuns_.size();
+      } else {
+        return evaluationRunsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRun getEvaluationRuns(int index) {
+      if (evaluationRunsBuilder_ == null) {
+        return evaluationRuns_.get(index);
+      } else {
+        return evaluationRunsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder setEvaluationRuns(int index, com.google.cloud.ces.v1beta.EvaluationRun value) {
+      if (evaluationRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.set(index, value);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder setEvaluationRuns(
+        int index, com.google.cloud.ces.v1beta.EvaluationRun.Builder builderForValue) {
+      if (evaluationRunsBuilder_ == null) {
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder addEvaluationRuns(com.google.cloud.ces.v1beta.EvaluationRun value) {
+      if (evaluationRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.add(value);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder addEvaluationRuns(int index, com.google.cloud.ces.v1beta.EvaluationRun value) {
+      if (evaluationRunsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.add(index, value);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder addEvaluationRuns(
+        com.google.cloud.ces.v1beta.EvaluationRun.Builder builderForValue) {
+      if (evaluationRunsBuilder_ == null) {
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.add(builderForValue.build());
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder addEvaluationRuns(
+        int index, com.google.cloud.ces.v1beta.EvaluationRun.Builder builderForValue) {
+      if (evaluationRunsBuilder_ == null) {
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder addAllEvaluationRuns(
+        java.lang.Iterable<? extends com.google.cloud.ces.v1beta.EvaluationRun> values) {
+      if (evaluationRunsBuilder_ == null) {
+        ensureEvaluationRunsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, evaluationRuns_);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder clearEvaluationRuns() {
+      if (evaluationRunsBuilder_ == null) {
+        evaluationRuns_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public Builder removeEvaluationRuns(int index) {
+      if (evaluationRunsBuilder_ == null) {
+        ensureEvaluationRunsIsMutable();
+        evaluationRuns_.remove(index);
+        onChanged();
+      } else {
+        evaluationRunsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRun.Builder getEvaluationRunsBuilder(int index) {
+      return internalGetEvaluationRunsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRunOrBuilder getEvaluationRunsOrBuilder(
+        int index) {
+      if (evaluationRunsBuilder_ == null) {
+        return evaluationRuns_.get(index);
+      } else {
+        return evaluationRunsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>
+        getEvaluationRunsOrBuilderList() {
+      if (evaluationRunsBuilder_ != null) {
+        return evaluationRunsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(evaluationRuns_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRun.Builder addEvaluationRunsBuilder() {
+      return internalGetEvaluationRunsFieldBuilder()
+          .addBuilder(com.google.cloud.ces.v1beta.EvaluationRun.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationRun.Builder addEvaluationRunsBuilder(int index) {
+      return internalGetEvaluationRunsFieldBuilder()
+          .addBuilder(index, com.google.cloud.ces.v1beta.EvaluationRun.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of evaluation runs that were imported into the app.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.EvaluationRun.Builder>
+        getEvaluationRunsBuilderList() {
+      return internalGetEvaluationRunsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationRun,
+            com.google.cloud.ces.v1beta.EvaluationRun.Builder,
+            com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>
+        internalGetEvaluationRunsFieldBuilder() {
+      if (evaluationRunsBuilder_ == null) {
+        evaluationRunsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationRun,
+                com.google.cloud.ces.v1beta.EvaluationRun.Builder,
+                com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>(
+                evaluationRuns_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        evaluationRuns_ = null;
+      }
+      return evaluationRunsBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList errorMessages_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1033,7 +2163,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       if (!errorMessages_.isModifiable()) {
         errorMessages_ = new com.google.protobuf.LazyStringArrayList(errorMessages_);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
     }
 
     /**
@@ -1123,7 +2253,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       }
       ensureErrorMessagesIsMutable();
       errorMessages_.set(index, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1147,7 +2277,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       }
       ensureErrorMessagesIsMutable();
       errorMessages_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1168,7 +2298,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
     public Builder addAllErrorMessages(java.lang.Iterable<java.lang.String> values) {
       ensureErrorMessagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorMessages_);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1187,7 +2317,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
      */
     public Builder clearErrorMessages() {
       errorMessages_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1213,7 +2343,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureErrorMessagesIsMutable();
       errorMessages_.add(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1224,7 +2354,8 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of evaluations that were not imported due to errors.
+     * The number of evaluations that either failed to import entirely or
+     * completed import with one or more errors.
      * </pre>
      *
      * <code>int32 import_failure_count = 3;</code>
@@ -1240,7 +2371,8 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of evaluations that were not imported due to errors.
+     * The number of evaluations that either failed to import entirely or
+     * completed import with one or more errors.
      * </pre>
      *
      * <code>int32 import_failure_count = 3;</code>
@@ -1251,7 +2383,7 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
     public Builder setImportFailureCount(int value) {
 
       importFailureCount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1260,7 +2392,8 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of evaluations that were not imported due to errors.
+     * The number of evaluations that either failed to import entirely or
+     * completed import with one or more errors.
      * </pre>
      *
      * <code>int32 import_failure_count = 3;</code>
@@ -1268,8 +2401,126 @@ public final class ImportEvaluationsResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearImportFailureCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       importFailureCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int evaluationResultImportFailureCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation results that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_result_import_failure_count = 6;</code>
+     *
+     * @return The evaluationResultImportFailureCount.
+     */
+    @java.lang.Override
+    public int getEvaluationResultImportFailureCount() {
+      return evaluationResultImportFailureCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation results that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_result_import_failure_count = 6;</code>
+     *
+     * @param value The evaluationResultImportFailureCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationResultImportFailureCount(int value) {
+
+      evaluationResultImportFailureCount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation results that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_result_import_failure_count = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationResultImportFailureCount() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      evaluationResultImportFailureCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int evaluationRunImportFailureCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation runs that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_run_import_failure_count = 7;</code>
+     *
+     * @return The evaluationRunImportFailureCount.
+     */
+    @java.lang.Override
+    public int getEvaluationRunImportFailureCount() {
+      return evaluationRunImportFailureCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation runs that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_run_import_failure_count = 7;</code>
+     *
+     * @param value The evaluationRunImportFailureCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationRunImportFailureCount(int value) {
+
+      evaluationRunImportFailureCount_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of evaluation runs that either failed to import entirely or
+     * completed import with one or more errors.
+     * </pre>
+     *
+     * <code>int32 evaluation_run_import_failure_count = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationRunImportFailureCount() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      evaluationRunImportFailureCount_ = 0;
       onChanged();
       return this;
     }

@@ -352,10 +352,10 @@ public class EntityServiceStubSettings extends StubSettings<EntityServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_2_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -374,7 +374,7 @@ public class EntityServiceStubSettings extends StubSettings<EntityServiceStubSet
               .setMaxRpcTimeoutDuration(Duration.ofMillis(90000L))
               .setTotalTimeoutDuration(Duration.ofMillis(90000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
+      definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(90000L))
@@ -382,7 +382,7 @@ public class EntityServiceStubSettings extends StubSettings<EntityServiceStubSet
               .setMaxRpcTimeoutDuration(Duration.ofMillis(90000L))
               .setTotalTimeoutDuration(Duration.ofMillis(90000L))
               .build();
-      definitions.put("no_retry_5_params", settings);
+      definitions.put("no_retry_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -454,28 +454,28 @@ public class EntityServiceStubSettings extends StubSettings<EntityServiceStubSet
     private static Builder initDefaults(Builder builder) {
       builder
           .getWatchlistSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .listWatchlistsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .createWatchlistSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .updateWatchlistSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       builder
           .deleteWatchlistSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
 
       return builder;
     }

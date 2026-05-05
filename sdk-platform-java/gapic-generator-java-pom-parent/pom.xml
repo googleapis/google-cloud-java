@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java-pom-parent</artifactId>
-  <version>2.71.0</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
   <packaging>pom</packaging>
   <name>GAPIC Generator Java POM Parent</name>
   <url>https://github.com/googleapis/sdk-platform-java</url>
@@ -31,7 +31,7 @@
     <gson.version>2.12.1</gson.version>
     <guava.version>33.5.0-jre</guava.version>
     <protobuf.version>4.33.2</protobuf.version>
-    <opentelemetry.version>1.51.0</opentelemetry.version>
+    <opentelemetry.version>1.57.0</opentelemetry.version>
     <errorprone.version>2.45.0</errorprone.version>
     <j2objc-annotations.version>3.1</j2objc-annotations.version>
     <threetenbp.version>1.7.0</threetenbp.version>
@@ -40,6 +40,7 @@
     <slf4j.version>2.0.16</slf4j.version>
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>
+    <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
   <developers>
@@ -228,11 +229,6 @@
     </profile>
   </profiles>
   <repositories>
-    <repository>
-      <id>google-maven-central-copy</id>
-      <name>Google Maven Central copy</name>
-      <url>https://maven-central.storage-download.googleapis.com/maven2</url>
-    </repository>
     <repository>
       <id>maven-central</id>
       <name>Maven Central</name>

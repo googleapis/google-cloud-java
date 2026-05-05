@@ -30,8 +30,10 @@ public interface ListCloudControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, in the format
-   * `organizations/{organization}/locations/{location}`.
+   * Required. The parent resource name, in one of the following formats:
+   * - `organizations/{organization}/locations/{location}`
+   * - `projects/{project}/locations/{location}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -47,8 +49,10 @@ public interface ListCloudControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent resource name, in the format
-   * `organizations/{organization}/locations/{location}`.
+   * Required. The parent resource name, in one of the following formats:
+   * - `organizations/{organization}/locations/{location}`
+   * - `projects/{project}/locations/{location}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *

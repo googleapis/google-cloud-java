@@ -66,6 +66,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     networkIP_ = "";
     nicType_ = "";
     parentNicName_ = "";
+    serviceClassId_ = "";
     stackType_ = "";
     subnetwork_ = "";
   }
@@ -2132,6 +2133,84 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     return queueCount_;
   }
 
+  public static final int SERVICE_CLASS_ID_FIELD_NUMBER = 422763404;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceClassId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceClassId() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceClassId() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceClassId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceClassIdBytes() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceClassId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
 
   @SuppressWarnings("serial")
@@ -2155,7 +2234,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -2244,7 +2323,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2332,7 +2411,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVlan() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -2372,7 +2451,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeInt32(3622243, vlan_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -2405,7 +2484,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(283425868, enableVpcScopedDns_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -2415,6 +2494,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 418764375, parentNicName_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 422763404, serviceClassId_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
@@ -2441,7 +2523,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3622243, vlan_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -2480,7 +2562,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(283425868, enableVpcScopedDns_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -2490,6 +2572,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(418764375, parentNicName_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(422763404, serviceClassId_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
@@ -2577,6 +2662,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasQueueCount() != other.hasQueueCount()) return false;
     if (hasQueueCount()) {
       if (getQueueCount() != other.getQueueCount()) return false;
+    }
+    if (hasServiceClassId() != other.hasServiceClassId()) return false;
+    if (hasServiceClassId()) {
+      if (!getServiceClassId().equals(other.getServiceClassId())) return false;
     }
     if (hasStackType() != other.hasStackType()) return false;
     if (hasStackType()) {
@@ -2668,6 +2757,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (hasQueueCount()) {
       hash = (37 * hash) + QUEUE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getQueueCount();
+    }
+    if (hasServiceClassId()) {
+      hash = (37 * hash) + SERVICE_CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceClassId().hashCode();
     }
     if (hasStackType()) {
       hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
@@ -2856,6 +2949,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       nicType_ = "";
       parentNicName_ = "";
       queueCount_ = 0;
+      serviceClassId_ = "";
       stackType_ = "";
       subnetwork_ = "";
       vlan_ = 0;
@@ -2984,16 +3078,20 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.stackType_ = stackType_;
+        result.serviceClassId_ = serviceClassId_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.vlan_ = vlan_;
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.vlan_ = vlan_;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3155,14 +3253,19 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (other.hasQueueCount()) {
         setQueueCount(other.getQueueCount());
       }
+      if (other.hasServiceClassId()) {
+        serviceClassId_ = other.serviceClassId_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasVlan()) {
@@ -3209,7 +3312,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 28977944:
               {
                 vlan_ = input.readInt32();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 28977944
             case 241996370:
@@ -3289,7 +3392,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -1832345742
             case -1562456862:
@@ -3304,10 +3407,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case -944852294
+            case -912860062:
+              {
+                serviceClassId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case -912860062
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -887696246
             case -427190414:
@@ -6394,6 +6503,150 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object serviceClassId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return Whether the serviceClassId field is set.
+     */
+    public boolean hasServiceClassId() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The serviceClassId.
+     */
+    public java.lang.String getServiceClassId() {
+      java.lang.Object ref = serviceClassId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceClassId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The bytes for serviceClassId.
+     */
+    public com.google.protobuf.ByteString getServiceClassIdBytes() {
+      java.lang.Object ref = serviceClassId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceClassId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceClassId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceClassId() {
+      serviceClassId_ = getDefaultInstance().getServiceClassId();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Producer Service's Service class Id for the region of this network
+     * interface. Can only be used with network_attachment. It is not possible to
+     * use on its own however, network_attachment can be used without
+     * service_class_id.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The bytes for serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceClassId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object stackType_ = "";
 
     /**
@@ -6413,7 +6666,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6494,7 +6747,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6517,7 +6770,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6545,7 +6798,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6574,7 +6827,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6670,7 +6923,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6698,7 +6951,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6731,7 +6984,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6752,7 +7005,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVlan() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6788,7 +7041,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setVlan(int value) {
 
       vlan_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6806,7 +7059,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVlan() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       vlan_ = 0;
       onChanged();
       return this;

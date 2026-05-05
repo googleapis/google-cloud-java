@@ -18,25 +18,32 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import java.util.function.LongSupplier;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
  * Implementation of {@link LatencyTracker} using Exponentially Weighted Moving Average (EWMA).
  *
- * <p>Formula: $S_{i+1} = \alpha * new\_latency + (1 - \alpha) * S_i$
+ * <p>By default, this tracker uses a time-decayed EWMA: $S_{i+1} = \alpha(\Delta t) * new\_latency
+ * + (1 - \alpha(\Delta t)) * S_i$, where $\alpha(\Delta t) = 1 - e^{-\Delta t / \tau}$.
  *
- * <p>This class is thread-safe.
+ * <p>A fixed-alpha constructor is retained for focused tests.
  */
 @InternalApi
 @BetaApi
 public class EwmaLatencyTracker implements LatencyTracker {
 
   public static final double DEFAULT_ALPHA = 0.05;
+  public static final Duration DEFAULT_DECAY_TIME = Duration.ofSeconds(10);
 
-  private final double alpha;
+  @Nullable private final Double fixedAlpha;
+  private final long tauNanos;
+  private final LongSupplier nanoTimeSupplier;
   private final Object lock = new Object();
 
   @GuardedBy("lock")
@@ -45,9 +52,12 @@ public class EwmaLatencyTracker implements LatencyTracker {
   @GuardedBy("lock")
   private boolean initialized = false;
 
-  /** Creates a new tracker with the default alpha value of 0.05. */
+  @GuardedBy("lock")
+  private long lastUpdatedAtNanos;
+
+  /** Creates a new tracker with Envoy-style time-based decay and a 10-second decay window. */
   public EwmaLatencyTracker() {
-    this(DEFAULT_ALPHA);
+    this(DEFAULT_DECAY_TIME, System::nanoTime);
   }
 
   /**
@@ -56,8 +66,25 @@ public class EwmaLatencyTracker implements LatencyTracker {
    * @param alpha the smoothing factor, must be in the range (0, 1]
    */
   public EwmaLatencyTracker(double alpha) {
+    this(alpha, System::nanoTime);
+  }
+
+  @VisibleForTesting
+  EwmaLatencyTracker(Duration decayTime, LongSupplier nanoTimeSupplier) {
+    Preconditions.checkArgument(
+        decayTime != null && !decayTime.isZero() && !decayTime.isNegative(),
+        "decayTime must be > 0");
+    this.fixedAlpha = null;
+    this.tauNanos = decayTime.toNanos();
+    this.nanoTimeSupplier = nanoTimeSupplier;
+  }
+
+  @VisibleForTesting
+  EwmaLatencyTracker(double alpha, LongSupplier nanoTimeSupplier) {
     Preconditions.checkArgument(alpha > 0.0 && alpha <= 1.0, "alpha must be in (0, 1]");
-    this.alpha = alpha;
+    this.fixedAlpha = alpha;
+    this.tauNanos = 0L;
+    this.nanoTimeSupplier = nanoTimeSupplier;
   }
 
   @Override
@@ -77,12 +104,16 @@ public class EwmaLatencyTracker implements LatencyTracker {
       // Use Long.MAX_VALUE to give it the lowest possible priority.
       latencyMicros = Long.MAX_VALUE;
     }
+    long nowNanos = nanoTimeSupplier.getAsLong();
     synchronized (lock) {
       if (!initialized) {
         score = latencyMicros;
         initialized = true;
+        lastUpdatedAtNanos = nowNanos;
       } else {
+        double alpha = fixedAlpha != null ? fixedAlpha : calculateTimeBasedAlpha(nowNanos);
         score = alpha * latencyMicros + (1 - alpha) * score;
+        lastUpdatedAtNanos = nowNanos;
       }
     }
   }
@@ -91,5 +122,15 @@ public class EwmaLatencyTracker implements LatencyTracker {
   public void recordError(Duration penalty) {
     // Treat the error as a sample with high latency (penalty)
     update(penalty);
+  }
+
+  private double calculateTimeBasedAlpha(long nowNanos) {
+    long deltaNanos = nowNanos - lastUpdatedAtNanos;
+    if (deltaNanos <= 0L) {
+      // Concurrent or future samples get full weight
+      return 1.0;
+    }
+    double alpha = 1.0 - Math.exp(-(double) deltaNanos / (double) tauNanos);
+    return Math.min(1.0, Math.max(0.0, alpha));
   }
 }

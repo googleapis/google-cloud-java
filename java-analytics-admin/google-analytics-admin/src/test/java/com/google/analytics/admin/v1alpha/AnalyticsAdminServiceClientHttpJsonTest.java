@@ -13605,4 +13605,96 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getUserProvidedDataSettingsTest() throws Exception {
+    UserProvidedDataSettings expectedResponse =
+        UserProvidedDataSettings.newBuilder()
+            .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+            .setUserProvidedDataCollectionEnabled(true)
+            .setAutomaticallyDetectedDataCollectionEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+
+    UserProvidedDataSettings actualResponse = client.getUserProvidedDataSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+      client.getUserProvidedDataSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsTest2() throws Exception {
+    UserProvidedDataSettings expectedResponse =
+        UserProvidedDataSettings.newBuilder()
+            .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+            .setUserProvidedDataCollectionEnabled(true)
+            .setAutomaticallyDetectedDataCollectionEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-4671/userProvidedDataSettings";
+
+    UserProvidedDataSettings actualResponse = client.getUserProvidedDataSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-4671/userProvidedDataSettings";
+      client.getUserProvidedDataSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

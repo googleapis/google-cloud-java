@@ -121,6 +121,16 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * <code>FAIL = 2;</code>
      */
     FAIL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation/Expectation was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 3;</code>
+     */
+    SKIPPED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -169,6 +179,17 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      */
     public static final int FAIL_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation/Expectation was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 3;</code>
+     */
+    public static final int SKIPPED_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -199,6 +220,8 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           return PASS;
         case 2:
           return FAIL;
+        case 3:
+          return SKIPPED;
         default:
           return null;
       }
@@ -34568,7 +34591,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=988
+   *     google/cloud/ces/v1beta/evaluation.proto;l=991
    * @return Whether the error field is set.
    */
   @java.lang.Override
@@ -34590,7 +34613,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=988
+   *     google/cloud/ces/v1beta/evaluation.proto;l=991
    * @return The error.
    */
   @java.lang.Override
@@ -37643,7 +37666,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=988
+     *     google/cloud/ces/v1beta/evaluation.proto;l=991
      * @return Whether the error field is set.
      */
     @java.lang.Deprecated
@@ -37664,7 +37687,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=988
+     *     google/cloud/ces/v1beta/evaluation.proto;l=991
      * @return The error.
      */
     @java.lang.Deprecated

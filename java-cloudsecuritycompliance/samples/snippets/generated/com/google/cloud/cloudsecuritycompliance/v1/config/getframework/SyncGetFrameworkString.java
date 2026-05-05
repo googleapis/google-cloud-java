@@ -34,7 +34,10 @@ public class SyncGetFrameworkString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ConfigClient configClient = ConfigClient.create()) {
-      String name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString();
+      String name =
+          FrameworkName.ofOrganizationLocationFrameworkName(
+                  "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+              .toString();
       Framework response = configClient.getFramework(name);
     }
   }

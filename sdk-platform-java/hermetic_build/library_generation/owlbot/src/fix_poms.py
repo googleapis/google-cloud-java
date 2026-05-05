@@ -449,6 +449,9 @@ def main(versions_file, monorepo):
                     version=main_module.version,
                     release_version=main_module.release_version,
                 )
+        if path not in required_dependencies:
+            required_dependencies[path] = existing_modules[path]
+
         if not os.path.isfile(f"{path}/pom.xml"):
             print(f"creating missing proto pom: {path}")
             templates.render(
@@ -488,6 +491,9 @@ def main(versions_file, monorepo):
                     version=main_module.version,
                     release_version=main_module.release_version,
                 )
+
+        if path not in required_dependencies:
+            required_dependencies[path] = existing_modules[path]
 
         if not os.path.isfile(f"{path}/pom.xml"):
             proto_artifact_id = path.replace("grpc-", "proto-")

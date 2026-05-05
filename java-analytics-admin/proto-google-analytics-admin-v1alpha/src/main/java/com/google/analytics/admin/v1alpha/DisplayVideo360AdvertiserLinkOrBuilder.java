@@ -30,14 +30,14 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLink
+   * Identifier. The resource name for this DisplayVideo360AdvertiserLink
    * resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
    *
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -47,14 +47,14 @@ public interface DisplayVideo360AdvertiserLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this DisplayVideo360AdvertiserLink
+   * Identifier. The resource name for this DisplayVideo360AdvertiserLink
    * resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinks/{linkId}
    *
    * Note: linkId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

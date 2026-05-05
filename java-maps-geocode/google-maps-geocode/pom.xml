@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-geocode</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:google-maps-geocode:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-maps-geocode:current} -->
   <packaging>jar</packaging>
   <name>Google Geocoding API</name>
   <description>Geocoding API The Geocoding API is a service that accepts a place as an address, latitude and longitude coordinates, or Place ID.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-geocode-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-maps-geocode:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-maps-geocode:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-geocode</site.installationModule>

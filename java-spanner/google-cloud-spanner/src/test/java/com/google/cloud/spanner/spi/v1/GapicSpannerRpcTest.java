@@ -34,6 +34,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
@@ -1054,6 +1055,100 @@ public class GapicSpannerRpcTest {
       GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
       rpc.shutdown();
       assertFalse(factoryCalled.get());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testReadRetryableCodesIncludeResourceExhaustedWhenLocationApiEnabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return true;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getReadRetryableCodes()).contains(Code.RESOURCE_EXHAUSTED);
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testExecuteQueryRetryableCodesIncludeResourceExhaustedWhenLocationApiEnabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return true;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getExecuteQueryRetryableCodes()).contains(Code.RESOURCE_EXHAUSTED);
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testReadRetryableCodesDoNotAddResourceExhaustedWhenLocationApiDisabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return false;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getReadRetryableCodes())
+            .isEqualTo(
+                createSpannerOptions()
+                    .getSpannerStubSettings()
+                    .streamingReadSettings()
+                    .getRetryableCodes());
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testExecuteQueryRetryableCodesDoNotAddResourceExhaustedWhenLocationApiDisabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return false;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getExecuteQueryRetryableCodes())
+            .isEqualTo(
+                createSpannerOptions()
+                    .getSpannerStubSettings()
+                    .executeStreamingSqlSettings()
+                    .getRetryableCodes());
+      } finally {
+        rpc.shutdown();
+      }
     } finally {
       SpannerOptions.useDefaultEnvironment();
     }

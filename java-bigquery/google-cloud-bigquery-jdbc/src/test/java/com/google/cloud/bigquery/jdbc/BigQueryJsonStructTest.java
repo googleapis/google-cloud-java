@@ -246,11 +246,8 @@ public class BigQueryJsonStructTest {
   }
 
   @Test
-  public void getSQLTypeNameIsNotSupported() {
-    Exception exception =
-        assertThrows(
-            SQLFeatureNotSupportedException.class, structWithPrimitiveValues::getSQLTypeName);
-    assertThat(exception.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
+  public void getSQLTypeName() throws SQLException {
+    assertThat(structWithPrimitiveValues.getSQLTypeName()).isEqualTo("STRUCT");
   }
 
   @Test
