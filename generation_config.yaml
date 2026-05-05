@@ -391,7 +391,7 @@ libraries:
 - api_shortname: bigquerydatapolicy
   name_pretty: BigQuery DataPolicy API
   product_documentation: https://cloud.google.com/bigquery/docs/reference/datapolicy/
-  api_description: ''
+  api_description: Allows users to manage BigQuery data policies.
   GAPICs:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
