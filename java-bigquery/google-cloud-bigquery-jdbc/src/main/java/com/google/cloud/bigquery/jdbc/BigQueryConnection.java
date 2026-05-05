@@ -58,10 +58,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -74,7 +74,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   String connectionClassName = this.toString();
   private final String connectionId;
-  private static final AtomicLong connectionIdCounter = new AtomicLong(1);
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
   private HeaderProvider headerProvider;
@@ -150,7 +149,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
-    this.connectionId = "JdbcConnection-" + connectionIdCounter.getAndIncrement();
+    this.connectionId = UUID.randomUUID().toString();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       LOG.finest("++enter++");
@@ -352,15 +351,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public Statement createStatement() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      BigQueryStatement currentStatement = new BigQueryStatement(this);
-      LOG.fine("Statement %s created.", currentStatement);
-      addOpenStatements(currentStatement);
-      return currentStatement;
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    BigQueryStatement currentStatement = new BigQueryStatement(this);
+    LOG.fine("Statement %s created.", currentStatement);
+    addOpenStatements(currentStatement);
+    return currentStatement;
   }
 
   /**
@@ -379,17 +375,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public Statement createStatement(int resultSetType, int resultSetConcurrency)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
-          || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "Unsupported createStatement feature.");
-      }
-      return createStatement();
+    LOG.finest("++enter++");
+    checkClosed();
+    if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
+        || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "Unsupported createStatement feature.");
     }
+    return createStatement();
   }
 
   /**
@@ -408,43 +401,34 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public Statement createStatement(
       int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
-          || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
-          || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "Unsupported createStatement feature");
-      }
-      return createStatement();
+    LOG.finest("++enter++");
+    checkClosed();
+    if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
+        || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
+        || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "Unsupported createStatement feature");
     }
+    return createStatement();
   }
 
   @Override
   public PreparedStatement prepareStatement(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
-      LOG.fine("Prepared Statement %s created.", currentStatement);
-      addOpenStatements(currentStatement);
-      return currentStatement;
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
+    LOG.fine("Prepared Statement %s created.", currentStatement);
+    addOpenStatements(currentStatement);
+    return currentStatement;
   }
 
   @Override
   public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (autoGeneratedKeys != Statement.NO_GENERATED_KEYS) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException("autoGeneratedKeys is not supported");
-      }
-      return prepareStatement(sql);
+    LOG.finest("++enter++");
+    if (autoGeneratedKeys != Statement.NO_GENERATED_KEYS) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException("autoGeneratedKeys is not supported");
     }
+    return prepareStatement(sql);
   }
 
   @Override
@@ -456,32 +440,26 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public PreparedStatement prepareStatement(
       String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
-          || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
-          || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "Unsupported prepareStatement feature");
-      }
-      return prepareStatement(sql);
+    LOG.finest("++enter++");
+    if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
+        || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
+        || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "Unsupported prepareStatement feature");
     }
+    return prepareStatement(sql);
   }
 
   @Override
   public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
-          || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "Unsupported prepareStatement feature");
-      }
-      return prepareStatement(sql);
+    LOG.finest("++enter++");
+    if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
+        || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "Unsupported prepareStatement feature");
     }
+    return prepareStatement(sql);
   }
 
   public DatasetId getDefaultDataset() {
@@ -695,36 +673,30 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean isValid(int timeout) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (timeout < 0) {
-        throw new BigQueryJdbcException("timeout must be >= 0");
-      }
-      if (!isClosed()) {
-        try (Statement statement = createStatement();
-            ResultSet rs = statement.executeQuery("SELECT 1")) {
-          LOG.finest("Running validation query");
-          if (rs.next()) {
-            if (rs.getInt(1) == 1) {
-              return true;
-            }
-          }
-        } catch (SQLException ex) {
-          // Ignore
-        }
-      }
-      return false;
+    LOG.finest("++enter++");
+    if (timeout < 0) {
+      throw new BigQueryJdbcException("timeout must be >= 0");
     }
+    if (!isClosed()) {
+      try (Statement statement = createStatement();
+          ResultSet rs = statement.executeQuery("SELECT 1")) {
+        LOG.finest("Running validation query");
+        if (rs.next()) {
+          if (rs.getInt(1) == 1) {
+            return true;
+          }
+        }
+      } catch (SQLException ex) {
+        // Ignore
+      }
+    }
+    return false;
   }
 
   @Override
   public void abort(Executor executor) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      close();
-    }
+    LOG.finest("++enter++");
+    close();
   }
 
   @Override
@@ -764,75 +736,63 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean getAutoCommit() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      return this.autoCommit;
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    return this.autoCommit;
   }
 
   @Override
   public void setAutoCommit(boolean autoCommit) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      checkIfEnabledSession("setAutoCommit");
-      if (this.autoCommit == autoCommit) {
-        return;
-      }
+    LOG.finest("++enter++");
+    checkClosed();
+    checkIfEnabledSession("setAutoCommit");
+    if (this.autoCommit == autoCommit) {
+      return;
+    }
 
-      if (isTransactionStarted()) {
-        commitTransaction();
-      }
+    if (isTransactionStarted()) {
+      commitTransaction();
+    }
 
-      this.autoCommit = autoCommit;
-      if (!this.autoCommit) {
-        beginTransaction();
-      }
+    this.autoCommit = autoCommit;
+    if (!this.autoCommit) {
+      beginTransaction();
     }
   }
 
   @Override
   public void commit() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      checkIfEnabledSession("commit");
-      if (!isTransactionStarted()) {
-        IllegalStateException ex =
-            new IllegalStateException(
-                "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
-                    + " a transaction.");
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      commitTransaction();
-      if (!getAutoCommit()) {
-        beginTransaction();
-      }
+    LOG.finest("++enter++");
+    checkClosed();
+    checkIfEnabledSession("commit");
+    if (!isTransactionStarted()) {
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
+                  + " a transaction.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
+    }
+    commitTransaction();
+    if (!getAutoCommit()) {
+      beginTransaction();
     }
   }
 
   @Override
   public void rollback() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      checkIfEnabledSession("rollback");
-      if (!isTransactionStarted()) {
-        IllegalStateException ex =
-            new IllegalStateException(
-                "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
-                    + " start a transaction.");
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
-      }
-      rollbackImpl();
+    LOG.finest("++enter++");
+    checkClosed();
+    checkIfEnabledSession("rollback");
+    if (!isTransactionStarted()) {
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
+                  + " start a transaction.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
+    rollbackImpl();
   }
 
   private void rollbackImpl() throws SQLException {
@@ -854,14 +814,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (databaseMetaData == null) {
-        databaseMetaData = new BigQueryDatabaseMetaData(this);
-      }
-      return databaseMetaData;
+    LOG.finest("++enter++");
+    if (databaseMetaData == null) {
+      databaseMetaData = new BigQueryDatabaseMetaData(this);
     }
+    return databaseMetaData;
   }
 
   @Override
@@ -871,15 +828,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setTransactionIsolation(int level) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      if (level != Connection.TRANSACTION_SERIALIZABLE) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "Unsupported transaction isolation level");
-      }
-      this.transactionIsolation = level;
+    LOG.finest("++enter++");
+    if (level != Connection.TRANSACTION_SERIALIZABLE) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "Unsupported transaction isolation level");
     }
+    this.transactionIsolation = level;
   }
 
   @Override
@@ -889,14 +843,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setHoldability(int holdability) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      if (holdability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            "CLOSE_CURSORS_AT_COMMIT not supported");
-      }
-      this.holdability = holdability;
+    if (holdability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          "CLOSE_CURSORS_AT_COMMIT not supported");
     }
+    this.holdability = holdability;
   }
 
   /**
@@ -912,12 +863,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       return;
     }
 
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-      LOG.fine("Closing Connection " + this);
-      closeImpl();
-    }
+    LOG.finest("++enter++");
+    LOG.fine("Closing Connection " + this);
+    closeImpl();
   }
 
   private void closeImpl() throws SQLException {
@@ -1158,14 +1106,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public CallableStatement prepareCall(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      checkClosed();
-      CallableStatement currentStatement = new BigQueryCallableStatement(this, sql);
-      LOG.fine("Callable Statement %s created.", currentStatement);
-      addOpenStatements(currentStatement);
-      return currentStatement;
-    }
+    checkClosed();
+    CallableStatement currentStatement = new BigQueryCallableStatement(this, sql);
+    LOG.fine("Callable Statement %s created.", currentStatement);
+    addOpenStatements(currentStatement);
+    return currentStatement;
   }
 
   @Override

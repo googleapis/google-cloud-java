@@ -43,7 +43,6 @@ public class BigQueryJdbcMdcTest {
   public void testClearContext() {
     BigQueryJdbcMdc.registerInstance("JdbcConnection-456");
     assertEquals("JdbcConnection-456", BigQueryJdbcMdc.getConnectionId());
-
     BigQueryJdbcMdc.clear();
     assertNull(BigQueryJdbcMdc.getConnectionId());
   }
@@ -65,7 +64,7 @@ public class BigQueryJdbcMdcTest {
     childThread.start();
     assertTrue(latch.await(5, TimeUnit.SECONDS));
 
-    assertEquals("JdbcConnection-parent", childConnectionId.get());
+    assertEquals("parent", childConnectionId.get());
   }
 
   @Test
@@ -118,10 +117,10 @@ public class BigQueryJdbcMdcTest {
 
     assertTrue(testFinished.await(5, TimeUnit.SECONDS));
 
-    assertEquals("JdbcConnection-A", threadAIdBeforeB.get());
+    assertEquals("A", threadAIdBeforeB.get());
     assertNull(threadBIdBeforeRegister.get());
-    assertEquals("JdbcConnection-B", threadBIdAfterRegister.get());
-    assertEquals("JdbcConnection-A", threadAIdAfterB.get());
+    assertEquals("B", threadBIdAfterRegister.get());
+    assertEquals("A", threadAIdAfterB.get());
   }
 
   @Test
