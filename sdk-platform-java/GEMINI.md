@@ -155,3 +155,15 @@ Showcase integration tests are run against a local server that implements the Sh
 - **Pull Requests:** All code changes must be submitted via a pull request and require review. Before creating a PR, always pull latest from main, merge main to local branch and resolve any conflicts.  
 - **Testing:** All new logic should be accompanied by tests.
 - For more details, see `CONTRIBUTING.md`.
+
+## 8. File Exclusions & Loading Constraints
+
+To maintain a highly focused context window and prevent memory overload:
+
+*   **Permanent Exclusions (Always Ignore):**
+    *   Do **NOT** load, read, or search through files under the directories `java-showcase-3.21.0/` and `java-showcase-3.25.8/`. Treat these folders as completely out of scope.
+*   **Conditional Exclusions (Ignore by Default):**
+    *   By default, do **NOT** load, read, or search through files in the `test/` folder (which contains massive auto-generated integration golden files).
+    *   **Exceptions:** You are only authorized to load or modify files under `test/` when:
+        1. The user explicitly asks you to *"update the golden files"* or *"inspect test files"*.
+        2. You are actively executing the Golden Integration Update commands (e.g. `bazelisk run //test/integration:update_...`).
