@@ -50,12 +50,12 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    * @param ex Throwable to be thrown.
    */
   public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
-    super(message, ex);
-    LOG.severe(message, this);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    LOG.severe(this.getMessage(), this);
   }
 
   public BigQueryJdbcRuntimeException(String message, Throwable ex) {
-    super(message, ex);
-    LOG.severe(message, this);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    LOG.severe(this.getMessage(), this);
   }
 }
