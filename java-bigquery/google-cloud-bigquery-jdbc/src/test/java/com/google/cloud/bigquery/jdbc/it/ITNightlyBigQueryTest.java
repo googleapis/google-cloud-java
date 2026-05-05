@@ -1563,14 +1563,13 @@ public class ITNightlyBigQueryTest {
 
     Statement statement = bigQueryConnectionUseStateless.createStatement();
 
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     assertTrue(jsonResultSetEmpty.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
@@ -1634,8 +1633,7 @@ public class ITNightlyBigQueryTest {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSet));

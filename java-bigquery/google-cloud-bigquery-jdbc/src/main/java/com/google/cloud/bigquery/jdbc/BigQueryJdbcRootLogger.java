@@ -136,10 +136,6 @@ class BigQueryJdbcRootLogger {
     return logger;
   }
 
-  public static boolean isFileLoggingEnabled() {
-    return fileHandler != null;
-  }
-
   public static void setLevel(Level level, String logPath) throws IOException {
     if (level != Level.OFF) {
       setPath(logPath, level);

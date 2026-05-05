@@ -109,7 +109,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   protected SQLException logAndCreateException(SQLException ex) {
-    if (BigQueryJdbcRootLogger.isFileLoggingEnabled() && this.statement != null) {
+    if (this.statement != null) {
       try (BigQueryJdbcMdc.MdcCloseable mdc =
           BigQueryJdbcMdc.registerInstance(this.statement.connectionId)) {
         LOG.severe(ex.getMessage(), ex);
@@ -209,10 +209,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
       }
     }
-    if (connectionId != null) {
-      return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
-    }
-    return metaData;
+    return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class);
   }
 
   @Override

@@ -149,8 +149,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathSmall() throws SQLException {
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
@@ -158,8 +157,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     Connection connection =
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     Statement bigQueryStatement = connection.createStatement();
@@ -285,13 +283,12 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     Statement statement = connectionUseStateless.createStatement();
 
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
     Assert.assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     Assert.assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
     connectionUseStateless.close();
@@ -1556,7 +1553,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementSmallSelect() throws SQLException {
     String query =
-        "SELECT * FROM `bigquery-public-data.samples.shakespeare` where corpus=?" + " LIMIT 1000";
+        "SELECT * FROM `bigquery-public-data.samples.shakespeare` where corpus=? LIMIT 1000";
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 

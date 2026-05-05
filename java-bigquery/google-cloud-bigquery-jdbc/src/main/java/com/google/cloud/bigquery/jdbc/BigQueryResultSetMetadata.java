@@ -46,6 +46,10 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     return new BigQueryResultSetMetadata(schemaFieldList, statement);
   }
 
+  Statement getStatement() {
+    return this.statement;
+  }
+
   private Field getField(int sqlColumn) {
     return this.schemaFieldList.get(sqlColumn - 1);
   }

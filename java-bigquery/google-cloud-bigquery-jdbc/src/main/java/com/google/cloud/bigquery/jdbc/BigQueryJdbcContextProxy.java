@@ -43,15 +43,51 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
   /** Wraps a target JDBC object with a dynamic proxy carrying the connection context. */
   @SuppressWarnings("unchecked")
-  static <T> T wrap(Object target, Class<T> interfaceType, String connectionId) {
+  static <T> T wrap(Object target, Class<T> interfaceType) {
     if (target == null) {
       return null;
     }
+    String connectionId = extractConnectionId(target);
     return (T)
         Proxy.newProxyInstance(
             interfaceType.getClassLoader(),
             new Class<?>[] {interfaceType},
             new BigQueryJdbcContextProxy(target, connectionId, interfaceType));
+  }
+
+  private static String extractConnectionId(Object target) {
+    if (target == null) {
+      return null;
+    }
+    if (target instanceof BigQueryConnection) {
+      return ((BigQueryConnection) target).getConnectionId();
+    }
+    if (target instanceof BigQueryStatement) {
+      return ((BigQueryStatement) target).connectionId;
+    }
+    if (target instanceof BigQueryDatabaseMetaData) {
+      return ((BigQueryDatabaseMetaData) target).connection.getConnectionId();
+    }
+    if (target instanceof BigQueryResultSetMetadata) {
+      java.sql.Statement stmt = ((BigQueryResultSetMetadata) target).getStatement();
+      if (stmt != null) {
+        if (Proxy.isProxyClass(stmt.getClass())) {
+          InvocationHandler handler = Proxy.getInvocationHandler(stmt);
+          if (handler instanceof BigQueryJdbcContextProxy) {
+            return ((BigQueryJdbcContextProxy) handler).connectionId;
+          }
+        }
+        if (stmt instanceof BigQueryStatement) {
+          return ((BigQueryStatement) stmt).connectionId;
+        }
+      }
+    }
+    // Fallback to thread active context
+    String activeId = BigQueryJdbcMdc.getConnectionId();
+    if (activeId != null) {
+      return activeId;
+    }
+    return null;
   }
 
   @Override
@@ -110,17 +146,17 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
       // Automatically cascade proxy wrappers to child JDBC objects returned from calls
       if (result instanceof java.sql.CallableStatement) {
-        return wrap(result, java.sql.CallableStatement.class, connectionId);
+        return wrap(result, java.sql.CallableStatement.class);
       } else if (result instanceof java.sql.PreparedStatement) {
-        return wrap(result, java.sql.PreparedStatement.class, connectionId);
+        return wrap(result, java.sql.PreparedStatement.class);
       } else if (result instanceof java.sql.Statement) {
-        return wrap(result, java.sql.Statement.class, connectionId);
+        return wrap(result, java.sql.Statement.class);
       } else if (result instanceof java.sql.DatabaseMetaData) {
-        return wrap(result, java.sql.DatabaseMetaData.class, connectionId);
+        return wrap(result, java.sql.DatabaseMetaData.class);
       } else if (result instanceof java.sql.ParameterMetaData) {
-        return wrap(result, java.sql.ParameterMetaData.class, connectionId);
+        return wrap(result, java.sql.ParameterMetaData.class);
       } else if (result instanceof java.sql.ResultSetMetaData) {
-        return wrap(result, java.sql.ResultSetMetaData.class, connectionId);
+        return wrap(result, java.sql.ResultSetMetaData.class);
       }
 
       return result;
@@ -129,11 +165,9 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
       // Unified Context Logger: Captures and logs every exception exactly once with the Connection
       // context
-      if (BigQueryJdbcRootLogger.isFileLoggingEnabled()) {
-        try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
-          String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
-          LOG.severe("Exception occurred during " + method.getName() + ": " + errMsg, cause);
-        }
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+        String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
+        LOG.severe("Exception occurred during " + method.getName() + ": " + errMsg, cause);
       }
 
       throw cause;
