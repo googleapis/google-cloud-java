@@ -7489,8 +7489,7 @@ class ITBigQueryTest {
     // Stateful query returns Job
     // Test scenario 2 to ensure job is created if Query is long running.
     // Explicitly disable cache to ensure it is long-running query;
-    config =
-        QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
+    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
     long millis = System.currentTimeMillis();
     result = bigQuery.queryWithTimeout(config, null, 1000L);
     millis = System.currentTimeMillis() - millis;
