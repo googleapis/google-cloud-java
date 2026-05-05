@@ -45,11 +45,11 @@ public class PipelineProtoTest {
             .collection("foo")
             .search(
                 Search.withQuery("foo")
-                    //                    .withLimit(1)
+                    .withLimit(1)
                     .withRetrievalDepth(2)
-                    //                    .withOffset(3)
+                    .withOffset(3)
                     //                    .withQueryEnhancement(Search.QueryEnhancement.REQUIRED)
-                    //                    .withLanguageCode("en-US")
+                    .withLanguageCode("en-US")
                     .withSort(field("foo").ascending())
                     .withAddFields(constant(true).as("bar")));
     //                    .withSelect(field("id")));
@@ -73,19 +73,19 @@ public class PipelineProtoTest {
     assertThat(query.getFunctionValue().getArgs(0).getStringValue()).isEqualTo("foo");
 
     // limit
-    //    assertThat(optionsMap.get("limit").getIntegerValue()).isEqualTo(1L);
+    assertThat(optionsMap.get("limit").getIntegerValue()).isEqualTo(1L);
 
     // retrieval_depth
     assertThat(optionsMap.get("retrieval_depth").getIntegerValue()).isEqualTo(2L);
 
     // offset
-    //    assertThat(optionsMap.get("offset").getIntegerValue()).isEqualTo(3L);
+    assertThat(optionsMap.get("offset").getIntegerValue()).isEqualTo(3L);
 
     // query_enhancement
     //    assertThat(optionsMap.get("query_enhancement").getStringValue()).isEqualTo("required");
 
     // language_code
-    //    assertThat(optionsMap.get("language_code").getStringValue()).isEqualTo("en-US");
+    assertThat(optionsMap.get("language_code").getStringValue()).isEqualTo("en-US");
 
     // select
     //    Value select = optionsMap.get("select");

@@ -35,8 +35,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -238,21 +240,28 @@ public class ITPipelineSearchTest extends ITBaseTest {
   // --- DISABLE query expansion ---
 
   // query
-  //  TODO(search) enable with backend support
-  //  @Test
-  //  public void searchWithLanguageCode() throws Exception {
-  //    Pipeline pipeline =
-  //        firestore
-  //            .pipeline()
-  //            .collection(COLLECTION_NAME)
-  //            .search(
-  //                Search.withQuery("waffles")
-  //                    .withLanguageCode("en")
-  //                    .withQueryEnhancement(Search.QueryEnhancement.DISABLED));
-  //
-  //    Pipeline.Snapshot snapshot = pipeline.execute().get();
-  //    assertResultIds(snapshot, "goldenWaffle");
-  //  }
+  @Test
+  public void searchWithLanguageCode() throws Exception {
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(Search.withQuery("waffles").withLanguageCode("en"));
+
+    Pipeline.Snapshot snapshot = pipeline.execute().get();
+    assertResultIds(snapshot, "goldenWaffle");
+  }
+
+  @Test
+  public void searchWithInvalidLanguageCode() throws Exception {
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(Search.withQuery("waffles").withLanguageCode("unknown"));
+
+    Assert.assertThrows(ExecutionException.class, () -> pipeline.execute().get());
+  }
 
   @Test
   public void searchFullDocument() throws Exception {
@@ -584,69 +593,64 @@ public class ITPipelineSearchTest extends ITBaseTest {
   // }
 
   // limit
-  // TODO(search) enable with backend support
-  //  @Test
-  //  public void limit_limitsTheNumberOfDocumentsReturned() throws Exception {
-  //    Pipeline pipeline =
-  //        firestore
-  //            .pipeline()
-  //            .collection(COLLECTION_NAME)
-  //            .search(
-  //                Search.withQuery(constant(true))
-  //                    .withSort(
-  //                        field("location").geoDistance(new GeoPoint(39.6985,
-  // -105.024)).ascending())
-  //                    .withLimit(5)
-  //                    .withQueryEnhancement(Search.QueryEnhancement.DISABLED));
-  //
-  //    Pipeline.Snapshot snapshot = pipeline.execute().get();
-  //    assertResultIds(snapshot, "solTacos", "lotusBlossomThai", "goldenWaffle");
-  //  }
+  @Test
+  public void limit_limitsTheNumberOfDocumentsReturned() throws Exception {
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(
+                Search.withQuery(
+                        field("location")
+                            .geoDistance(new GeoPoint(39.6985, -105.024))
+                            .lessThanOrEqual(100000000))
+                    .withSort(geoDistance("location", new GeoPoint(39.6985, -105.024)).ascending())
+                    .withLimit(3));
 
-  //    @Test
-  //    public void limit_limitsTheNumberOfDocumentsRetrieved() throws Exception {
-  //        Pipeline pipeline =
-  //                firestore
-  //                        .pipeline()
-  //                        .collection(COLLECTION_NAME)
-  //                        .search(
-  //                                Search.withQuery(documentMatches("chicken"))
-  //                                        .withRetrievalDepth(3));
-  ////                    .withQueryEnhancement(Search.QueryEnhancement.DISABLED));
-  //
-  //        Pipeline.Snapshot snapshot = pipeline.execute().get();
-  //        assertResultIds(snapshot, "eastsideChicken", "lotusBlossomThai", "goldenWaffle");
-  //
-  //        pipeline =
-  //                firestore
-  //                        .pipeline()
-  //                        .collection(COLLECTION_NAME)
-  //                        .search(
-  //                                Search.withQuery(documentMatches("chicken")));
-  ////                    .withQueryEnhancement(Search.QueryEnhancement.DISABLED));
-  //
-  //        snapshot = pipeline.execute().get();
-  //        assertResultIds(snapshot, "eastsideChicken", "lotusBlossomThai", "goldenWaffle",
-  // "eastsideCantina");
-  //    }
+    Pipeline.Snapshot snapshot = pipeline.execute().get();
+    assertResultIds(snapshot, "solTacos", "lotusBlossomThai", "mileHighCatch");
+  }
 
-  // offset
-  // TODO(search) enable with backend support
-  //  @Test
-  //  public void offset_skipsNDocuments() throws Exception {
-  //    Pipeline pipeline =
-  //        firestore
-  //            .pipeline()
-  //            .collection(COLLECTION_NAME)
-  //            .search(
-  //                Search.withQuery(constant(true))
-  //                    .withLimit(2)
-  //                    .withOffset(2)
-  //                    .withQueryEnhancement(Search.QueryEnhancement.DISABLED));
-  //
-  //    Pipeline.Snapshot snapshot = pipeline.execute().get();
-  //    assertResultIds(snapshot, "eastsideChicken", "eastsideTacos");
-  //  }
+  @Test
+  public void limit_limitsTheNumberOfDocumentsScoredViaRetrievalDepth() throws Exception {
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(
+                Search.withQuery(documentMatches("taco"))
+                    .withAddFields(score().as("score"))
+                    .withSort(score().descending())
+                    .withRetrievalDepth(2));
+
+    Pipeline.Snapshot snapshot = pipeline.execute().get();
+    assertResultIds(snapshot, "solTacos", "eastsideTacos");
+
+    pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(
+                Search.withQuery(documentMatches("taco"))
+                    .withAddFields(score().as("score"))
+                    .withSort(score().descending())
+                    .withRetrievalDepth(1));
+
+    snapshot = pipeline.execute().get();
+    assertResultIds(snapshot, "eastsideTacos");
+  }
+
+  @Test
+  public void offset_skipsNDocuments() throws Exception {
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .collection(COLLECTION_NAME)
+            .search(Search.withQuery("chicken").withLimit(2).withOffset(2));
+
+    Pipeline.Snapshot snapshot = pipeline.execute().get();
+    assertResultIds(snapshot, "goldenWaffle");
+  }
 
   // =========================================================================
   // Snippet

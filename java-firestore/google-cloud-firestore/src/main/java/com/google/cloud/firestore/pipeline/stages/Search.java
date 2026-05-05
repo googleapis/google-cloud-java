@@ -148,32 +148,33 @@ public final class Search extends Stage {
         options.with("sort", Lists.transform(Arrays.asList(allOrderings), Ordering::toProto)));
   }
 
-  // TODO(search) enable with backend support
-  //  /** Specify the maximum number of documents to return from the Search stage. */
-  //  public Search withLimit(long limit) {
-  //    return new Search(options.with("limit", encodeValue(limit)));
-  //  }
+  /**
+   * Specify the maximum number of documents to return from the `search` stage. The `limit` is
+   * applied after documents are scored and sorted.
+   */
+  public Search withLimit(long limit) {
+    return new Search(options.with("limit", encodeValue(limit)));
+  }
 
   /**
-   * Specify the maximum number of documents to retrieve. Documents will be retrieved in the
-   * pre-sort order specified by the search index.
+   * Specify the maximum number of documents to retrieve from the search index. Documents will be
+   * retrieved in the pre-sort order specified by the search index. The `retrievalDepth` is a limit
+   * applied before documents are scored and sorted, which can reduce costs of expensive scoring and
+   * sorting operations.
    */
   public Search withRetrievalDepth(long retrievalDepth) {
     return new Search(options.with("retrieval_depth", encodeValue(retrievalDepth)));
   }
 
-  // TODO(search) enable with backend support
-  //  /** Specify the number of documents to skip. */
-  //  public Search withOffset(long offset) {
-  //    return new Search(options.with("offset", encodeValue(offset)));
-  //  }
+  /** Specify the number of documents to skip from the beginning of the search result set. */
+  public Search withOffset(long offset) {
+    return new Search(options.with("offset", encodeValue(offset)));
+  }
 
-  //  TODO(search) enable with backend support
-  //  /** Specify the BCP-47 language code of text in the search query, such as, “en-US” or
-  // “sr-Latn” */
-  //  public Search withLanguageCode(String value) {
-  //    return new Search(options.with("language_code", encodeValue(value)));
-  //  }
+  /** Specify the BCP-47 language code of text in the search query, such as “en” or “sr”. */
+  public Search withLanguageCode(String value) {
+    return new Search(options.with("language_code", encodeValue(value)));
+  }
 
   // TODO(search) enable with backend support
   //  /**
