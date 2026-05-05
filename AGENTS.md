@@ -32,25 +32,30 @@ Directories starting with `java-` are client libraries for specific Google Cloud
     - **Logging**: [java-logging](java-logging)
     - **Logging Logback**: [java-logging-logback](java-logging-logback)
 
-## 3. Style Guide
+## 3. Getting Started
+This is a standard Maven project.
+- **Build all**: `mvn install -T 1C -P quick-build` from root (recommended).
+- **Scoped build**: Run `mvn` commands within specific module directories.
+- **Prerequisites**: Java 11+, Maven 3.0+, Bazelisk (for core integration tests).
+
+## 4. Style Guide
 1. Minimize visibility scopes. Default to most restrictive access level.
 2. Use short names over fully qualified names.
 3. Avoid calling `@ObsoleteApi` or `@Deprecated` methods and classes.
 4. Avoid unnecessary formatting changes to keep diffs clean.
 5. Use `mvn` for everything other than the `test/integration` folder.
 
-## 4. Dependency Management
+## 5. Dependency Management
 - Do not bump external dependency versions unless for CVE or critical bug fix.
 - Avoid introducing new external dependencies if possible. Prefer Java standard library, then opt for existing dependencies.
 
-## 5. Contribution Guidelines
+## 6. Contribution Guidelines
 - **Commits**: Conventional Commits `<type>(<scope>): <description>`.
 - **Pull Requests**: Submitted via PR, require review. Pull latest from main and resolve conflicts.
 - **Testing**: All new logic should be accompanied by tests.
 
-## 6. Specialized Development Guides
+## 7. Specialized Development Guides
 For development on core components, refer to the following guides in `sdk-platform-java`:
 - **GAPIC Generator**: [sdk-platform-java/gapic-generator-java/DEVELOPMENT.md](sdk-platform-java/gapic-generator-java/DEVELOPMENT.md)
 - **GAX**: [sdk-platform-java/gax-java/DEVELOPMENT.md](sdk-platform-java/gax-java/DEVELOPMENT.md)
 - **Hermetic Build**: [sdk-platform-java/hermetic_build/DEVELOPMENT.md](sdk-platform-java/hermetic_build/DEVELOPMENT.md)
-- **Core Specific Instructions**: [sdk-platform-java/AGENTS.md](sdk-platform-java/AGENTS.md)
