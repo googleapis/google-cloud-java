@@ -64,6 +64,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -1056,6 +1057,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
             this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+
+    if (this.enableGcpLogExporter || this.customOpenTelemetry != null) {
+      OpenTelemetryJulHandler otelHandler =
+          new OpenTelemetryJulHandler(
+              null, openTelemetry, this.enableGcpLogExporter, this.connectionId);
+      Logger.getLogger("com.google.cloud.bigquery").addHandler(otelHandler);
+    }
+
     if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);

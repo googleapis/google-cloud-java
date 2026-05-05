@@ -183,6 +183,11 @@
       <version>3.28.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-logging</artifactId>
+      <version>3.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+    </dependency>
+    <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-apache-v5</artifactId>
       <exclusions> <!-- Exclusions are here for removing EOL vulnerability -->

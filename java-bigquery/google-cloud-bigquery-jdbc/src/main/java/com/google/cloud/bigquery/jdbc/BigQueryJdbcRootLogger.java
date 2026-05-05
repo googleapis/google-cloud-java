@@ -138,7 +138,9 @@ class BigQueryJdbcRootLogger {
 
   public static void setLevel(Level level, String logPath) throws IOException {
     if (level != Level.OFF) {
-      setPath(logPath, level);
+      if (logPath != null) {
+        setPath(logPath, level);
+      }
       logger.setLevel(level);
     } else {
       for (Handler h : logger.getHandlers()) {
@@ -146,6 +148,7 @@ class BigQueryJdbcRootLogger {
         logger.removeHandler(h);
       }
       fileHandler = null;
+      logger.setLevel(Level.OFF);
     }
   }
 
