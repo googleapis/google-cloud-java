@@ -21,7 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
+import com.google.cloud.logging.Payload;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.logs.Severity;
@@ -33,6 +35,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.mockito.ArgumentCaptor;
 
 public class OpenTelemetryJulHandlerTest {
 
@@ -105,6 +108,13 @@ public class OpenTelemetryJulHandlerTest {
 
     handler.publish(record);
 
-    verify(loggingClient).write(org.mockito.ArgumentMatchers.any(Iterable.class));
+    ArgumentCaptor<Iterable<LogEntry>> captor = ArgumentCaptor.forClass(Iterable.class);
+    verify(loggingClient).write(captor.capture());
+
+    Iterable<LogEntry> entries = captor.getValue();
+    LogEntry entry = entries.iterator().next();
+
+    assertEquals("Test message", ((Payload.StringPayload) entry.getPayload()).getData());
+    assertEquals(com.google.cloud.logging.Severity.INFO, entry.getSeverity());
   }
 }

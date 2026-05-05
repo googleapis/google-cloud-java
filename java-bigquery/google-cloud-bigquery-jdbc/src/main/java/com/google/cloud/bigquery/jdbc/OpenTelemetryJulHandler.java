@@ -87,6 +87,7 @@ public class OpenTelemetryJulHandler extends Handler {
   }
 
   private void publishToGcp(LogRecord record, String traceId, String spanId, String connectionId) {
+    // TODO(b/491238299): May require refinement for structured logging or error handling
     if (loggingClient == null) {
       return;
     }
@@ -153,11 +154,13 @@ public class OpenTelemetryJulHandler extends Handler {
 
   @Override
   public void flush() {
-    // TODO(b/491238299) - needed for publishToGcp
+    if (isGcpFallback && loggingClient != null) {
+      loggingClient.flush();
+    }
   }
 
   @Override
   public void close() throws SecurityException {
-    // TODO(b/491238299) - needed for publishToGcp
+    // TODO(b/491238299): Implement with gcp exporter logic
   }
 }
