@@ -78,7 +78,7 @@ public class BigQueryTypeCoercerTest {
         assertThrows(
             BigQueryJdbcCoercionException.class,
             () -> bigQueryTypeCoercer.coerceTo(Integer.class, 2147483648L));
-    assertThat(exception.getMessage()).isEqualTo("Coercion error");
+    assertThat(exception.getMessage()).isEqualTo("Coercion error\ninteger overflow");
     assertThat(exception.getCause()).isInstanceOf(ArithmeticException.class);
   }
 

@@ -36,6 +36,6 @@ public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException
   }
 
   public BigQueryJdbcSqlSyntaxErrorException(String message, BigQueryException ex) {
-    super(message, ex);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
   }
 }

@@ -47,6 +47,6 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
   }
 
   public BigQueryJdbcRuntimeException(String message, Throwable ex) {
-    super(message, ex);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
   }
 }

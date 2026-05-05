@@ -47,7 +47,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcException(String message, BigQueryException ex) {
-    super(message, ex);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
     this.bigQueryException = ex;
   }
 
@@ -58,7 +58,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(String message, Throwable cause) {
-    super(message, cause);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
   }
 
   /**
