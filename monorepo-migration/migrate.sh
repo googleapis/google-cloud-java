@@ -256,7 +256,7 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     cp "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     
     echo "Adapting conformance script paths and build scopes for monorepo root..."
-    PL_MODULES="${SOURCE_REPO_NAME},sdk-platform-java/java-shared-dependencies"
+    PL_MODULES="${SOURCE_REPO_NAME}"
     # Also include any child BOM modules to ensure snapshots install to local .m2 cache for test utilities
     for bom_dir in "${SOURCE_REPO_NAME}"/*-bom; do
         if [ -d "$bom_dir" ]; then
@@ -267,7 +267,11 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     if [ -n "${PRE_INSTALL_DEPS}" ]; then
         PL_MODULES="${PL_MODULES},${PRE_INSTALL_DEPS}"
     fi
-    sed -i.bak "s|mvn install|mvn install -pl ${PL_MODULES} -am|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    
+    echo "Injecting SDK Platform pre-installation block into conformance script..."
+    sed -i.bak 's|# attempt to install 3 times|echo "Pre-installing SDK Platform toolchain and submodules..."\npushd sdk-platform-java\nretry_with_backoff 3 10 mvn install -B -ntp -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true -T 1C\npopd\n\n# attempt to install 3 times|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    
+    sed -i.bak "s|mvn install -B -V -ntp|mvn install -pl ${PL_MODULES} -am -B -V -ntp|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|cd test-proxy|cd ${SOURCE_REPO_NAME}/test-proxy|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|-jar test-proxy/target/|-jar ${SOURCE_REPO_NAME}/test-proxy/target/|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|kill \${proxyPID}|kill \${proxyPID} \&\& sleep 5|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
