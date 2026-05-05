@@ -23,6 +23,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.Timestamp;
 import com.google.spanner.v1.CommitResponse.CommitStats;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -118,5 +120,51 @@ public class CommitResponseTest {
     assertEquals(
         Timestamp.ofTimeSecondsAndNanos(123L, 456),
         responseWithSnapshotTimestamp.getSnapshotTimestamp());
+  }
+
+  @Test
+  public void testGetIsolationLevel() {
+    com.google.spanner.v1.CommitResponse protoWithoutIsolationLevel =
+        com.google.spanner.v1.CommitResponse.getDefaultInstance();
+    CommitResponse responseWithoutIsolationLevel = new CommitResponse(protoWithoutIsolationLevel);
+    assertEquals(null, responseWithoutIsolationLevel.getIsolationLevel());
+
+    com.google.spanner.v1.CommitResponse protoWithUnspecifiedIsolationLevel =
+        com.google.spanner.v1.CommitResponse.newBuilder()
+            .setIsolationLevel(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED)
+            .build();
+    CommitResponse responseWithUnspecifiedIsolationLevel =
+        new CommitResponse(protoWithUnspecifiedIsolationLevel);
+    assertEquals(null, responseWithUnspecifiedIsolationLevel.getIsolationLevel());
+
+    com.google.spanner.v1.CommitResponse protoWithIsolationLevel =
+        com.google.spanner.v1.CommitResponse.newBuilder()
+            .setIsolationLevel(IsolationLevel.REPEATABLE_READ)
+            .build();
+    CommitResponse responseWithIsolationLevel = new CommitResponse(protoWithIsolationLevel);
+    assertEquals(IsolationLevel.REPEATABLE_READ, responseWithIsolationLevel.getIsolationLevel());
+  }
+
+  @Test
+  public void testGetReadLockMode() {
+    com.google.spanner.v1.CommitResponse protoWithoutReadLockMode =
+        com.google.spanner.v1.CommitResponse.getDefaultInstance();
+    CommitResponse responseWithoutReadLockMode = new CommitResponse(protoWithoutReadLockMode);
+    assertEquals(null, responseWithoutReadLockMode.getReadLockMode());
+
+    com.google.spanner.v1.CommitResponse protoWithUnspecifiedReadLockMode =
+        com.google.spanner.v1.CommitResponse.newBuilder()
+            .setReadLockMode(ReadLockMode.READ_LOCK_MODE_UNSPECIFIED)
+            .build();
+    CommitResponse responseWithUnspecifiedReadLockMode =
+        new CommitResponse(protoWithUnspecifiedReadLockMode);
+    assertEquals(null, responseWithUnspecifiedReadLockMode.getReadLockMode());
+
+    com.google.spanner.v1.CommitResponse protoWithReadLockMode =
+        com.google.spanner.v1.CommitResponse.newBuilder()
+            .setReadLockMode(ReadLockMode.PESSIMISTIC)
+            .build();
+    CommitResponse responseWithReadLockMode = new CommitResponse(protoWithReadLockMode);
+    assertEquals(ReadLockMode.PESSIMISTIC, responseWithReadLockMode.getReadLockMode());
   }
 }
