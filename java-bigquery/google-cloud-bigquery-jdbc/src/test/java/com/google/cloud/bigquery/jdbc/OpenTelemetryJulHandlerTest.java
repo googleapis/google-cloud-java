@@ -56,8 +56,11 @@ public class OpenTelemetryJulHandlerTest {
     BigQueryJdbcOpenTelemetry.registerConnection(
         "test-uuid", otelTesting.getOpenTelemetry(), null, false);
 
+    BigQueryConnection mockConnection = mock(BigQueryConnection.class);
     Baggage baggage = Baggage.builder().put("jdbc.connection_id", "test-uuid").build();
-    try (Scope scope = baggage.makeCurrent()) {
+    try (Scope scope = baggage.makeCurrent();
+        BigQueryJdbcMdc.MdcCloseable mdcScope =
+            BigQueryJdbcMdc.registerInstance(mockConnection, "test-uuid")) {
       logger.info("Test message");
     }
 
@@ -92,8 +95,11 @@ public class OpenTelemetryJulHandlerTest {
     BigQueryJdbcOpenTelemetry.registerConnection(
         "gcp-uuid", otelTesting.getOpenTelemetry(), loggingClient, true);
 
+    BigQueryConnection mockConnection = mock(BigQueryConnection.class);
     Baggage baggage = Baggage.builder().put("jdbc.connection_id", "gcp-uuid").build();
-    try (Scope scope = baggage.makeCurrent()) {
+    try (Scope scope = baggage.makeCurrent();
+        BigQueryJdbcMdc.MdcCloseable mdcScope =
+            BigQueryJdbcMdc.registerInstance(mockConnection, "gcp-uuid")) {
       logger.info("Test message");
     }
 
