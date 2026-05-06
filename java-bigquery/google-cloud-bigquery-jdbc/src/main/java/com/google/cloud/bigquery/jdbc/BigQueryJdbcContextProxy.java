@@ -41,7 +41,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     this.interfaceType = interfaceType;
   }
 
-  /** Wraps a target JDBC object with a dynamic proxy carrying the connection context. */
+  /** Wraps a target Connection JDBC object, auto-extracting its connection ID. */
   @SuppressWarnings("unchecked")
   static <T> T wrap(Object target, Class<T> interfaceType) {
     if (target == null) {
@@ -55,37 +55,25 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
             new BigQueryJdbcContextProxy(target, connectionId, interfaceType));
   }
 
+  /** Wraps a target child JDBC object, propagating the connection ID parameter directly. */
+  @SuppressWarnings("unchecked")
+  static <T> T wrap(Object target, Class<T> interfaceType, String connectionId) {
+    if (target == null) {
+      return null;
+    }
+    return (T)
+        Proxy.newProxyInstance(
+            interfaceType.getClassLoader(),
+            new Class<?>[] {interfaceType},
+            new BigQueryJdbcContextProxy(target, connectionId, interfaceType));
+  }
+
   private static String extractConnectionId(Object target) {
     if (target == null) {
       return null;
     }
     if (target instanceof BigQueryConnection) {
       return ((BigQueryConnection) target).getConnectionId();
-    }
-    if (target instanceof BigQueryStatement) {
-      return ((BigQueryStatement) target).connectionId;
-    }
-    if (target instanceof BigQueryDatabaseMetaData) {
-      return ((BigQueryDatabaseMetaData) target).connection.getConnectionId();
-    }
-    if (target instanceof BigQueryResultSetMetadata) {
-      java.sql.Statement stmt = ((BigQueryResultSetMetadata) target).getStatement();
-      if (stmt != null) {
-        if (Proxy.isProxyClass(stmt.getClass())) {
-          InvocationHandler handler = Proxy.getInvocationHandler(stmt);
-          if (handler instanceof BigQueryJdbcContextProxy) {
-            return ((BigQueryJdbcContextProxy) handler).connectionId;
-          }
-        }
-        if (stmt instanceof BigQueryStatement) {
-          return ((BigQueryStatement) stmt).connectionId;
-        }
-      }
-    }
-    // Fallback to thread active context
-    String activeId = BigQueryJdbcMdc.getConnectionId();
-    if (activeId != null) {
-      return activeId;
     }
     return null;
   }
@@ -146,17 +134,17 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
       // Automatically cascade proxy wrappers to child JDBC objects returned from calls
       if (result instanceof java.sql.CallableStatement) {
-        return wrap(result, java.sql.CallableStatement.class);
+        return wrap(result, java.sql.CallableStatement.class, connectionId);
       } else if (result instanceof java.sql.PreparedStatement) {
-        return wrap(result, java.sql.PreparedStatement.class);
+        return wrap(result, java.sql.PreparedStatement.class, connectionId);
       } else if (result instanceof java.sql.Statement) {
-        return wrap(result, java.sql.Statement.class);
+        return wrap(result, java.sql.Statement.class, connectionId);
       } else if (result instanceof java.sql.DatabaseMetaData) {
-        return wrap(result, java.sql.DatabaseMetaData.class);
+        return wrap(result, java.sql.DatabaseMetaData.class, connectionId);
       } else if (result instanceof java.sql.ParameterMetaData) {
-        return wrap(result, java.sql.ParameterMetaData.class);
+        return wrap(result, java.sql.ParameterMetaData.class, connectionId);
       } else if (result instanceof java.sql.ResultSetMetaData) {
-        return wrap(result, java.sql.ResultSetMetaData.class);
+        return wrap(result, java.sql.ResultSetMetaData.class, connectionId);
       }
 
       return result;

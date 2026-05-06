@@ -65,7 +65,7 @@ public class BigQueryJdbcContextProxyTest {
     BigQueryStatement stmt = new BigQueryStatement(mockConn);
     stmt.connectionId = "conn-uuid-456";
 
-    Statement proxy = BigQueryJdbcContextProxy.wrap(stmt, Statement.class);
+    Statement proxy = BigQueryJdbcContextProxy.wrap(stmt, Statement.class, "conn-uuid-456");
     assertNotNull(proxy);
 
     // We can call any statement method (like getUpdateCount) and verify context routing
@@ -83,7 +83,8 @@ public class BigQueryJdbcContextProxyTest {
 
     BigQueryDatabaseMetaData meta = new BigQueryDatabaseMetaData(mockConn);
 
-    DatabaseMetaData proxy = BigQueryJdbcContextProxy.wrap(meta, DatabaseMetaData.class);
+    DatabaseMetaData proxy =
+        BigQueryJdbcContextProxy.wrap(meta, DatabaseMetaData.class, "conn-uuid-789");
     assertNotNull(proxy);
 
     // Assert read-only capability does not leak thread context
@@ -100,7 +101,8 @@ public class BigQueryJdbcContextProxyTest {
     FieldList fields = FieldList.of(Field.of("col", StandardSQLTypeName.STRING));
     BigQueryResultSetMetadata meta = BigQueryResultSetMetadata.of(fields, stmt);
 
-    ResultSetMetaData proxy = BigQueryJdbcContextProxy.wrap(meta, ResultSetMetaData.class);
+    ResultSetMetaData proxy =
+        BigQueryJdbcContextProxy.wrap(meta, ResultSetMetaData.class, "conn-uuid-999");
     assertNotNull(proxy);
 
     assertEquals(1, proxy.getColumnCount());
@@ -113,7 +115,7 @@ public class BigQueryJdbcContextProxyTest {
     mockStmt.connectionId = null;
     when(mockStmt.executeQuery("SELECT *")).thenThrow(new SQLException("Database error"));
 
-    Statement proxy = BigQueryJdbcContextProxy.wrap(mockStmt, Statement.class);
+    Statement proxy = BigQueryJdbcContextProxy.wrap(mockStmt, Statement.class, null);
     assertNotNull(proxy);
 
     SQLException ex = assertThrows(SQLException.class, () -> proxy.executeQuery("SELECT *"));

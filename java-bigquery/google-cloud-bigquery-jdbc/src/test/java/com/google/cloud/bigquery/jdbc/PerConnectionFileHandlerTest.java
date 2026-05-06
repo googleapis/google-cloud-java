@@ -143,7 +143,7 @@ public class PerConnectionFileHandlerTest {
           .thenThrow(new SQLException("Database error"));
 
       // Wrap it using our proxy (which dynamically extracts "c456" as its connection ID!)
-      Statement proxy = BigQueryJdbcContextProxy.wrap(mockStmt, Statement.class);
+      Statement proxy = BigQueryJdbcContextProxy.wrap(mockStmt, Statement.class, "c456");
       assertNotNull(proxy);
 
       // Call the proxy method. It will throw SQLException
