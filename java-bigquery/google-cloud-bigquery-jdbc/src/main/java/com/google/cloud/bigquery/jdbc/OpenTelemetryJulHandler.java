@@ -86,7 +86,7 @@ public class OpenTelemetryJulHandler extends Handler {
     }
 
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(record.getMessage()))
+        LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
             .setSeverity(mapGcpSeverity(record.getLevel()))
             .setTimestamp(record.getMillis());
 
@@ -129,7 +129,7 @@ public class OpenTelemetryJulHandler extends Handler {
     LogRecordBuilder builder =
         logger
             .logRecordBuilder()
-            .setBody(record.getMessage())
+            .setBody(formatMessage(record))
             .setSeverity(mapSeverity(record.getLevel()))
             .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
             .setContext(Context.current());
@@ -150,6 +150,19 @@ public class OpenTelemetryJulHandler extends Handler {
     if (level == Level.FINER) return Severity.TRACE;
     if (level == Level.FINEST) return Severity.TRACE;
     return Severity.TRACE;
+  }
+
+  private String formatMessage(LogRecord record) {
+    String message = record.getMessage();
+    Object[] params = record.getParameters();
+    if (params != null && params.length > 0) {
+      try {
+        return java.text.MessageFormat.format(message, params);
+      } catch (IllegalArgumentException e) {
+        return message;
+      }
+    }
+    return message;
   }
 
   @Override
