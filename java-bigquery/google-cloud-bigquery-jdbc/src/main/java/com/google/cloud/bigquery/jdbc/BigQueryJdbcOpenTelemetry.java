@@ -48,6 +48,10 @@ public class BigQueryJdbcOpenTelemetry {
   private BigQueryJdbcOpenTelemetry() {}
 
   static {
+    ensureGlobalHandlerAttached();
+  }
+
+  public static void ensureGlobalHandlerAttached() {
     Logger logger = Logger.getLogger(BIGQUERY_NAMESPACE);
     boolean present = false;
     for (Handler h : logger.getHandlers()) {

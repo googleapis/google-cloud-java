@@ -48,6 +48,7 @@ public class OpenTelemetryJulHandlerTest {
   @BeforeEach
   public void setUp() {
     logger.setLevel(java.util.logging.Level.ALL);
+    BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
   }
 
   @AfterEach
