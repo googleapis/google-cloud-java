@@ -21,6 +21,7 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Handler;
 import java.util.logging.Logger;
 
 public class BigQueryJdbcOpenTelemetry {
@@ -31,12 +32,13 @@ public class BigQueryJdbcOpenTelemetry {
   static class TelemetryConfig {
     final OpenTelemetry openTelemetry;
     final Logging loggingClient;
-    final boolean isGcpFallback;
+    final boolean useDirectGcpLogging;
 
-    TelemetryConfig(OpenTelemetry openTelemetry, Logging loggingClient, boolean isGcpFallback) {
+    TelemetryConfig(
+        OpenTelemetry openTelemetry, Logging loggingClient, boolean useDirectGcpLogging) {
       this.openTelemetry = openTelemetry;
       this.loggingClient = loggingClient;
-      this.isGcpFallback = isGcpFallback;
+      this.useDirectGcpLogging = useDirectGcpLogging;
     }
   }
 
@@ -46,16 +48,26 @@ public class BigQueryJdbcOpenTelemetry {
   private BigQueryJdbcOpenTelemetry() {}
 
   static {
-    Logger.getLogger(BIGQUERY_NAMESPACE).addHandler(new OpenTelemetryJulHandler());
+    Logger logger = Logger.getLogger(BIGQUERY_NAMESPACE);
+    boolean present = false;
+    for (Handler h : logger.getHandlers()) {
+      if (h instanceof OpenTelemetryJulHandler) {
+        present = true;
+        break;
+      }
+    }
+    if (!present) {
+      logger.addHandler(new OpenTelemetryJulHandler());
+    }
   }
 
   public static void registerConnection(
       String connectionId,
       OpenTelemetry openTelemetry,
       Logging loggingClient,
-      boolean isGcpFallback) {
+      boolean useDirectGcpLogging) {
     connectionConfigs.put(
-        connectionId, new TelemetryConfig(openTelemetry, loggingClient, isGcpFallback));
+        connectionId, new TelemetryConfig(openTelemetry, loggingClient, useDirectGcpLogging));
   }
 
   public static void unregisterConnection(String connectionId) {

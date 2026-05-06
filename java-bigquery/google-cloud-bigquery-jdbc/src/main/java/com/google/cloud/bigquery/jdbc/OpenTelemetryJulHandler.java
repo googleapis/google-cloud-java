@@ -67,7 +67,7 @@ public class OpenTelemetryJulHandler extends Handler {
       return;
     }
 
-    if (config.isGcpFallback && config.loggingClient != null) {
+    if (config.useDirectGcpLogging && config.loggingClient != null) {
       publishToGcp(record, connectionId, config.loggingClient);
     } else if (config.openTelemetry != null) {
       publishToOTel(record, connectionId, config.openTelemetry);
@@ -169,8 +169,12 @@ public class OpenTelemetryJulHandler extends Handler {
   public void flush() {
     for (BigQueryJdbcOpenTelemetry.TelemetryConfig config :
         BigQueryJdbcOpenTelemetry.getRegisteredConfigs()) {
-      if (config.isGcpFallback && config.loggingClient != null) {
-        config.loggingClient.flush();
+      if (config.useDirectGcpLogging && config.loggingClient != null) {
+        try {
+          config.loggingClient.flush();
+        } catch (Exception e) {
+          // Ignore failures during flush to protect other connections
+        }
       }
     }
   }
