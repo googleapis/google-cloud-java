@@ -2798,10 +2798,14 @@ public class ITBigQueryJDBCTest extends ITBase {
       }
 
       // Verify physical connection-specific log file creation
-      final String targetId = connectionId;
+      // Verify physical connection-specific log file creation (uses first 4 chars of connectionId)
+      final String shortId =
+          connectionId != null
+              ? connectionId.substring(0, Math.min(connectionId.length(), 4))
+              : null;
       File[] files =
           tempDir.listFiles(
-              (dir, name) -> targetId != null && name.endsWith("-" + targetId + ".log"));
+              (dir, name) -> shortId != null && name.endsWith("-" + shortId + ".log"));
       assertNotNull(files);
       assertEquals(1, files.length);
 
@@ -2818,14 +2822,14 @@ public class ITBigQueryJDBCTest extends ITBase {
           content.contains("Exception occurred during executeQuery"),
           "Log content did not contain expected exception! Content: \n" + content);
 
-      // Clean up
+      // Clean up log files inside temp directory but keep directory alive to avoid afterClass
+      // NoSuchFileException
       File[] remaining = tempDir.listFiles();
       if (remaining != null) {
         for (File f : remaining) {
           f.delete();
         }
       }
-      tempDir.delete();
     }
   }
 }
