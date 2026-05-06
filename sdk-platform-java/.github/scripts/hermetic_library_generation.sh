@@ -121,6 +121,14 @@ python hermetic_build/common/cli/get_changed_libraries.py create \
   --current-generation-config-path="${generation_config}"\
   --force-regenerate-all="${force_regenerate_all}" | tee "${changed_libraries_file}"
 changed_libraries="$(cat "${changed_libraries_file}")"
+# Force run for iam-policy
+if [[ -z "${changed_libraries}" ]]; then
+  changed_libraries="iam-policy"
+else
+  if [[ ! "${changed_libraries}" =~ "iam-policy" ]]; then
+    changed_libraries="iam-policy,${changed_libraries}"
+  fi
+fi
 echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 
 # run hermetic code generation docker image.
