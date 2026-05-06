@@ -132,7 +132,9 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
       Object result = method.invoke(target, args);
 
-      // Automatically cascade proxy wrappers to child JDBC objects returned from calls
+      // Symmetrical Cascade: Dynamic ResultSet concrete classes are deliberately unproxied here.
+      // Bypassing proxies on high-frequency ResultSet iterations avoids dynamic invocation
+      // and argument array allocations, allowing the JIT compiler to natively inline getters.
       if (result instanceof java.sql.CallableStatement) {
         return wrap(result, java.sql.CallableStatement.class, connectionId);
       } else if (result instanceof java.sql.PreparedStatement) {
