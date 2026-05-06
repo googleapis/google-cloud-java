@@ -64,7 +64,6 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -955,6 +954,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } finally {
       BigQueryJdbcMdc.removeInstance(this);
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+      BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
     }
     this.isClosed = true;
   }
@@ -1059,10 +1059,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
 
     if (this.enableGcpLogExporter || this.customOpenTelemetry != null) {
-      OpenTelemetryJulHandler otelHandler =
-          new OpenTelemetryJulHandler(
-              null, openTelemetry, this.enableGcpLogExporter, this.connectionId);
-      Logger.getLogger("com.google.cloud.bigquery").addHandler(otelHandler);
+      BigQueryJdbcOpenTelemetry.registerConnection(
+          this.connectionId, openTelemetry, null, this.enableGcpLogExporter);
     }
 
     if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {

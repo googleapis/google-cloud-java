@@ -22,6 +22,7 @@ import com.google.cloud.logging.Payload;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.logs.LogRecordBuilder;
 import io.opentelemetry.api.logs.Logger;
 import io.opentelemetry.api.logs.Severity;
 import io.opentelemetry.api.trace.Span;
@@ -39,21 +40,7 @@ import java.util.logging.LogRecord;
  */
 public class OpenTelemetryJulHandler extends Handler {
 
-  private final Logging loggingClient;
-  private final OpenTelemetry openTelemetry;
-  private final boolean isGcpFallback;
-  private final String expectedConnectionId;
-
-  public OpenTelemetryJulHandler(
-      Logging loggingClient,
-      OpenTelemetry openTelemetry,
-      boolean isGcpFallback,
-      String expectedConnectionId) {
-    this.loggingClient = loggingClient;
-    this.openTelemetry = openTelemetry;
-    this.isGcpFallback = isGcpFallback;
-    this.expectedConnectionId = expectedConnectionId;
-  }
+  public OpenTelemetryJulHandler() {}
 
   @Override
   public void publish(LogRecord record) {
@@ -61,32 +48,38 @@ public class OpenTelemetryJulHandler extends Handler {
       return;
     }
 
-    Context context = Context.current();
-    SpanContext spanContext = Span.fromContext(context).getSpanContext();
-
-    String traceId = spanContext.isValid() ? spanContext.getTraceId() : null;
-    String spanId = spanContext.isValid() ? spanContext.getSpanId() : null;
-
     // Extract connection ID from baggage
-    String connectionId = Baggage.fromContext(context).getEntryValue("jdbc.connection_id");
+    String connectionId =
+        Baggage.fromContext(Context.current()).getEntryValue("jdbc.connection_id");
 
     // Fallback to MDC if not in baggage (if MDC is available and used)
     if (connectionId == null) {
       connectionId = BigQueryJdbcMdc.getConnectionId();
     }
 
-    if (expectedConnectionId != null && !expectedConnectionId.equals(connectionId)) {
+    if (connectionId == null) {
       return;
     }
 
-    if (isGcpFallback && loggingClient != null) {
-      publishToGcp(record, traceId, spanId, connectionId);
-    } else if (openTelemetry != null) {
-      publishToOTel(record, traceId, spanId, connectionId);
+    BigQueryJdbcOpenTelemetry.TelemetryConfig config =
+        BigQueryJdbcOpenTelemetry.getConnectionConfig(connectionId);
+    if (config == null) {
+      return;
+    }
+
+    if (config.isGcpFallback && config.loggingClient != null) {
+      publishToGcp(record, connectionId, config.loggingClient);
+    } else if (config.openTelemetry != null) {
+      publishToOTel(record, connectionId, config.openTelemetry);
     }
   }
 
-  private void publishToGcp(LogRecord record, String traceId, String spanId, String connectionId) {
+  private void publishToGcp(LogRecord record, String connectionId, Logging loggingClient) {
+    Context context = Context.current();
+    SpanContext spanContext = Span.fromContext(context).getSpanContext();
+    String traceId = spanContext.isValid() ? spanContext.getTraceId() : null;
+    String spanId = spanContext.isValid() ? spanContext.getSpanId() : null;
+
     // TODO(b/491238299): May require refinement for structured logging or error handling
     if (loggingClient == null) {
       return;
@@ -119,7 +112,7 @@ public class OpenTelemetryJulHandler extends Handler {
     return com.google.cloud.logging.Severity.DEBUG;
   }
 
-  private void publishToOTel(LogRecord record, String traceId, String spanId, String connectionId) {
+  private void publishToOTel(LogRecord record, String connectionId, OpenTelemetry openTelemetry) {
     if (openTelemetry == null) {
       return;
     }
@@ -128,17 +121,24 @@ public class OpenTelemetryJulHandler extends Handler {
     Logger logger =
         openTelemetry
             .getLogsBridge()
-            .get(loggerName != null ? loggerName : "com.google.cloud.bigquery.jdbc");
+            .get(
+                loggerName != null
+                    ? loggerName
+                    : BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
 
-    logger
-        .logRecordBuilder()
-        .setBody(record.getMessage())
-        .setSeverity(mapSeverity(record.getLevel()))
-        .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
-        .setContext(Context.current())
-        .setAttribute(
-            AttributeKey.stringKey("jdbc.connection_id"), connectionId != null ? connectionId : "")
-        .emit();
+    LogRecordBuilder builder =
+        logger
+            .logRecordBuilder()
+            .setBody(record.getMessage())
+            .setSeverity(mapSeverity(record.getLevel()))
+            .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
+            .setContext(Context.current());
+
+    if (connectionId != null) {
+      builder.setAttribute(AttributeKey.stringKey("jdbc.connection_id"), connectionId);
+    }
+
+    builder.emit();
   }
 
   private Severity mapSeverity(Level level) {
@@ -154,8 +154,11 @@ public class OpenTelemetryJulHandler extends Handler {
 
   @Override
   public void flush() {
-    if (isGcpFallback && loggingClient != null) {
-      loggingClient.flush();
+    for (BigQueryJdbcOpenTelemetry.TelemetryConfig config :
+        BigQueryJdbcOpenTelemetry.getRegisteredConfigs()) {
+      if (config.isGcpFallback && config.loggingClient != null) {
+        config.loggingClient.flush();
+      }
     }
   }
 

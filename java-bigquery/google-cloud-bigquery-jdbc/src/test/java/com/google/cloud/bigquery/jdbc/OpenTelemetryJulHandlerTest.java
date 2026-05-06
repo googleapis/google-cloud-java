@@ -31,8 +31,8 @@ import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.logs.data.LogRecordData;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.mockito.ArgumentCaptor;
@@ -42,71 +42,60 @@ public class OpenTelemetryJulHandlerTest {
   @RegisterExtension
   static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
+  private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
+
+  @AfterEach
+  public void tearDown() {
+    BigQueryJdbcOpenTelemetry.unregisterConnection("test-uuid");
+    BigQueryJdbcOpenTelemetry.unregisterConnection("wrong-uuid");
+    BigQueryJdbcOpenTelemetry.unregisterConnection("gcp-uuid");
+  }
+
   @Test
   public void testPublishToOTel() {
-    OpenTelemetryJulHandler handler =
-        new OpenTelemetryJulHandler(null, otelTesting.getOpenTelemetry(), false, null);
+    BigQueryJdbcOpenTelemetry.registerConnection(
+        "test-uuid", otelTesting.getOpenTelemetry(), null, false);
 
-    LogRecord record = new LogRecord(Level.INFO, "Test message");
-    record.setLoggerName("test.logger");
-    record.setMillis(System.currentTimeMillis());
-
-    handler.publish(record);
+    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "test-uuid").build();
+    try (Scope scope = baggage.makeCurrent()) {
+      logger.info("Test message");
+    }
 
     List<LogRecordData> logs = otelTesting.getLogRecords();
     assertEquals(1, logs.size());
     LogRecordData log = logs.get(0);
     assertEquals("Test message", log.getBody().asString());
-    assertEquals("test.logger", log.getInstrumentationScopeInfo().getName());
     assertEquals(Severity.INFO, log.getSeverity());
+    assertEquals(
+        "test-uuid", log.getAttributes().get(AttributeKey.stringKey("jdbc.connection_id")));
   }
 
   @Test
-  public void testPublishToOTelWithFiltering() {
-    // Handler expects "correct-uuid"
-    OpenTelemetryJulHandler handler =
-        new OpenTelemetryJulHandler(null, otelTesting.getOpenTelemetry(), false, "correct-uuid");
+  public void testPublishWithFiltering() {
+    // Register for "test-uuid"
+    BigQueryJdbcOpenTelemetry.registerConnection(
+        "test-uuid", otelTesting.getOpenTelemetry(), null, false);
 
-    // Simulate log with NO connection ID
-    LogRecord record = new LogRecord(Level.INFO, "Test message");
-    record.setLoggerName("test.logger");
-
-    handler.publish(record);
+    // Log with WRONG connection ID
+    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "wrong-uuid").build();
+    try (Scope scope = baggage.makeCurrent()) {
+      logger.info("Test message");
+    }
 
     List<LogRecordData> logs = otelTesting.getLogRecords();
-    assertTrue(logs.isEmpty()); // Should be filtered out
-  }
-
-  @Test
-  public void testPublishToOTelWithBaggage() {
-    OpenTelemetryJulHandler handler =
-        new OpenTelemetryJulHandler(null, otelTesting.getOpenTelemetry(), false, null);
-
-    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "test-uuid").build();
-    try (Scope scope = baggage.makeCurrent()) {
-      LogRecord record = new LogRecord(Level.INFO, "Test message");
-      record.setLoggerName("test.logger");
-      handler.publish(record);
-
-      List<LogRecordData> logs = otelTesting.getLogRecords();
-      assertEquals(1, logs.size());
-      LogRecordData log = logs.get(0);
-      assertEquals(
-          "test-uuid", log.getAttributes().get(AttributeKey.stringKey("jdbc.connection_id")));
-    }
+    assertTrue(logs.isEmpty()); // Should be filtered out because "wrong-uuid" has no config
   }
 
   @Test
   public void testPublishToGcp() {
     Logging loggingClient = mock(Logging.class);
-    OpenTelemetryJulHandler handler =
-        new OpenTelemetryJulHandler(loggingClient, otelTesting.getOpenTelemetry(), true, null);
+    BigQueryJdbcOpenTelemetry.registerConnection(
+        "gcp-uuid", otelTesting.getOpenTelemetry(), loggingClient, true);
 
-    LogRecord record = new LogRecord(Level.INFO, "Test message");
-    record.setLoggerName("test.logger");
-    record.setMillis(System.currentTimeMillis());
-
-    handler.publish(record);
+    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "gcp-uuid").build();
+    try (Scope scope = baggage.makeCurrent()) {
+      logger.info("Test message");
+    }
 
     ArgumentCaptor<Iterable<LogEntry>> captor = ArgumentCaptor.forClass(Iterable.class);
     verify(loggingClient).write(captor.capture());

@@ -16,14 +16,59 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import java.util.Collection;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 public class BigQueryJdbcOpenTelemetry {
 
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
+  static final String BIGQUERY_NAMESPACE = "com.google.cloud.bigquery";
+
+  static class TelemetryConfig {
+    final OpenTelemetry openTelemetry;
+    final Logging loggingClient;
+    final boolean isGcpFallback;
+
+    TelemetryConfig(OpenTelemetry openTelemetry, Logging loggingClient, boolean isGcpFallback) {
+      this.openTelemetry = openTelemetry;
+      this.loggingClient = loggingClient;
+      this.isGcpFallback = isGcpFallback;
+    }
+  }
+
+  private static final ConcurrentHashMap<String, TelemetryConfig> connectionConfigs =
+      new ConcurrentHashMap<>();
 
   private BigQueryJdbcOpenTelemetry() {}
+
+  static {
+    Logger.getLogger(BIGQUERY_NAMESPACE).addHandler(new OpenTelemetryJulHandler());
+  }
+
+  public static void registerConnection(
+      String connectionId,
+      OpenTelemetry openTelemetry,
+      Logging loggingClient,
+      boolean isGcpFallback) {
+    connectionConfigs.put(
+        connectionId, new TelemetryConfig(openTelemetry, loggingClient, isGcpFallback));
+  }
+
+  public static void unregisterConnection(String connectionId) {
+    connectionConfigs.remove(connectionId);
+  }
+
+  public static TelemetryConfig getConnectionConfig(String connectionId) {
+    return connectionConfigs.get(connectionId);
+  }
+
+  public static Collection<TelemetryConfig> getRegisteredConfigs() {
+    return connectionConfigs.values();
+  }
 
   /**
    * Initializes or returns the OpenTelemetry instance based on hybrid logic. Prefer
