@@ -88,7 +88,7 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
     String testCluster = generateId();
     InstanceAdminExample testInstanceAdmin =
         new InstanceAdminExample(projectId, testInstance, testCluster);
-    testInstanceAdmin.createProdInstance();
+    testInstanceAdmin.createProdInstance(false);
     assertTrue(adminClient.exists(testInstance));
 
     // Deletes an instance.
@@ -121,7 +121,7 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
 
   @Test
   public void testRunDoesNotFail() {
-    instanceAdmin.run();
+    instanceAdmin.run(false);
   }
 
   private static String generateId() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google Inc.
+ * Copyright 2026 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ import java.util.Map;
  * delete Cloud Bigtable Instances and Clusters.
  *
  * <ul>
- *   <li>creates production instance
+ *   <li>creates production instance (optionally with tags)
  *   <li>lists instances
  *   <li>gets instance
  *   <li>lists clusters
@@ -60,15 +60,22 @@ public class InstanceAdminExample {
 
   public static void main(String[] args) throws IOException {
 
-    if (args.length != 1) {
-      System.out.println("Missing required project id");
+    if (args.length < 1 || args.length > 2) {
+      System.out.println("Usage: java InstanceAdminExample <project-id> [createWithTags]");
+      System.out.println("  <project-id>: The Google Cloud project ID");
+      System.out.println(
+          "  [createWithTags]: Optional boolean (true/false) to enable resource tags on creation");
       return;
     }
     String projectId = args[0];
+    boolean createWithTags = false;
+    if (args.length == 2) {
+      createWithTags = Boolean.parseBoolean(args[1]);
+    }
 
     InstanceAdminExample instanceAdmin =
         new InstanceAdminExample(projectId, "ssd-instance", "ssd-cluster");
-    instanceAdmin.run();
+    instanceAdmin.run(createWithTags);
   }
 
   public InstanceAdminExample(String projectId, String instanceId, String clusterId)
@@ -85,8 +92,8 @@ public class InstanceAdminExample {
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
   }
 
-  public void run() {
-    createProdInstance();
+  public void run(boolean createWithTags) {
+    createProdInstance(createWithTags);
     listInstances();
     getInstance();
     listClusters();
@@ -101,8 +108,18 @@ public class InstanceAdminExample {
     adminClient.close();
   }
 
-  /** Demonstrates how to create a Production instance within a provided project. */
-  public void createProdInstance() {
+  /**
+   * Demonstrates how to create an instance within a provided project.
+   *
+   * @param createWithTags If true, adds placeholder tags to the instance.
+   *     <p>Tags are a way to organize and govern resources across Google Cloud, see [Creating and
+   *     managing tags](https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview)
+   *     <p>NOTE: Unlike labels, a tag (key and value) must be created before it can be attached to
+   *     a resource. See [Creating and managing
+   *     tags](https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview) and [Tags
+   *     overview](https://docs.cloud.google.com/bigtable/docs/tags) for more information.
+   */
+  public void createProdInstance(boolean createWithTags) {
     // Checks if instance exists, creates instance if does not exists.
     if (!adminClient.exists(instanceId)) {
       System.out.println("Instance does not exist, creating a PRODUCTION instance");
@@ -110,12 +127,21 @@ public class InstanceAdminExample {
       // Creates a Production Instance with the ID "ssd-instance",
       // cluster id "ssd-cluster", 3 nodes and location "us-central1-f".
       String parent = "projects/" + projectId;
-      Instance instanceObj =
+      Instance.Builder instanceObjBuilder =
           Instance.newBuilder()
               .setDisplayName(instanceId)
               .setType(Instance.Type.PRODUCTION)
-              .putLabels("department", "accounting")
-              .build();
+              .putLabels("department", "accounting");
+
+      if (createWithTags) {
+        System.out.println("Enabling tags for instance creation.");
+        // These are placeholders. You must create these in your GCP Organization/Project first.
+        String tagKey = "tagKeys/12345";
+        String tagValue = "tagValues/6789";
+        instanceObjBuilder.putTags(tagKey, tagValue);
+      }
+      Instance instanceObj = instanceObjBuilder.build();
+
       Cluster clusterObj =
           Cluster.newBuilder()
               .setLocation("projects/" + projectId + "/locations/us-central1-f")
