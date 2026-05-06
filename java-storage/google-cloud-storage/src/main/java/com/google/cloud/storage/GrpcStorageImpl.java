@@ -1488,6 +1488,31 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   }
 
   @Override
+  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id, ReadProjectionConfig<Projection> config, BlobSourceOption... options) {
+    Opts<ObjectSourceOpt> opts = Opts.unwrap(options);
+    Object object = codecs.blobId().encode(id);
+
+    BidiReadObjectSpec.Builder spec =
+        BidiReadObjectSpec.newBuilder().setBucket(object.getBucket()).setObject(object.getName());
+
+    long generation = object.getGeneration();
+    if (generation > 0) {
+      spec.setGeneration(generation);
+    }
+    BidiReadObjectRequest.Builder b = BidiReadObjectRequest.newBuilder();
+    b.setReadObjectSpec(spec);
+    opts.bidiReadObjectRequest().apply(b);
+    BidiReadObjectRequest req = b.build();
+
+    GrpcCallContext context = opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
+    ApiFuture<StorageDataClient.FastOpenObjectReadSession<Projection>> session =
+        storageDataClient.fastOpenReadSession(req, context, config);
+
+    return BlobReadSessionAdapter.wrap(session, config);
+  }
+
+  @Override
   public GrpcStorageOptions getOptions() {
     return (GrpcStorageOptions) super.getOptions();
   }
