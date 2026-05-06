@@ -29,6 +29,7 @@ export SOURCE_REPO_URL="https://github.com/googleapis/java-pubsub"
 export MIGRATION_HEAD_BRANCH="main"
 export SQUASH_COMMITS="false"
 export CODEOWNER="@googleapis/pubsub-team" 
+export SUREFIRE_JVM_OPT="-DskipTests"
 
 # 2. Execute the central migration script
 # This performs git read-tree, POM modernization, workflow transformation, and generation config updates.
