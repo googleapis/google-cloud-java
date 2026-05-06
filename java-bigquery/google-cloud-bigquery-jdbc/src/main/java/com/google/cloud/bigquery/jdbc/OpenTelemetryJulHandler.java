@@ -48,29 +48,33 @@ public class OpenTelemetryJulHandler extends Handler {
       return;
     }
 
-    // Extract connection ID from baggage
-    String connectionId =
-        Baggage.fromContext(Context.current()).getEntryValue("jdbc.connection_id");
+    try {
+      // Extract connection ID from baggage
+      String connectionId =
+          Baggage.fromContext(Context.current()).getEntryValue("jdbc.connection_id");
 
-    // Fallback to MDC if not in baggage (if MDC is available and used)
-    if (connectionId == null) {
-      connectionId = BigQueryJdbcMdc.getConnectionId();
-    }
+      // Fallback to MDC if not in baggage (if MDC is available and used)
+      if (connectionId == null) {
+        connectionId = BigQueryJdbcMdc.getConnectionId();
+      }
 
-    if (connectionId == null) {
-      return;
-    }
+      if (connectionId == null) {
+        return;
+      }
 
-    BigQueryJdbcOpenTelemetry.TelemetryConfig config =
-        BigQueryJdbcOpenTelemetry.getConnectionConfig(connectionId);
-    if (config == null) {
-      return;
-    }
+      BigQueryJdbcOpenTelemetry.TelemetryConfig config =
+          BigQueryJdbcOpenTelemetry.getConnectionConfig(connectionId);
+      if (config == null) {
+        return;
+      }
 
-    if (config.useDirectGcpLogging && config.loggingClient != null) {
-      publishToGcp(record, connectionId, config.loggingClient);
-    } else if (config.openTelemetry != null) {
-      publishToOTel(record, connectionId, config.openTelemetry);
+      if (config.useDirectGcpLogging && config.loggingClient != null) {
+        publishToGcp(record, connectionId, config.loggingClient);
+      } else if (config.openTelemetry != null) {
+        publishToOTel(record, connectionId, config.openTelemetry);
+      }
+    } catch (Throwable t) {
+      // Ignore exceptions to prevent breaking application logging or other handlers
     }
   }
 
