@@ -20,6 +20,7 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchem
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
@@ -68,7 +69,6 @@ import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -551,7 +551,7 @@ public class BigQueryStatementTest {
     // Assert that the exception is propagated
     try {
       statementSpy.processQueryResponse("SELECT 1", tableResultMock);
-      Assertions.fail("Expected SQLException to be thrown");
+      fail("Expected SQLException to be thrown");
     } catch (SQLException e) {
       assertEquals(exceptionToThrow, e);
     }

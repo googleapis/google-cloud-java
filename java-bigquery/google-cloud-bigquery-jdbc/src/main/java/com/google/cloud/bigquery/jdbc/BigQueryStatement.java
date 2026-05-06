@@ -961,13 +961,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean isPermissionDeniedException(Throwable t) {
-    if (t == null) {
-      return false;
+    while (t != null) {
+      if (t instanceof StatusRuntimeException) {
+        return ((StatusRuntimeException) t).getStatus().getCode() == Status.Code.PERMISSION_DENIED;
+      }
+      if (t instanceof ApiException) {
+        return ((ApiException) t).getStatusCode().getCode() == StatusCode.Code.PERMISSION_DENIED;
+      }
+      t = t.getCause();
     }
-    if (t instanceof StatusRuntimeException) {
-      return ((StatusRuntimeException) t).getStatus().getCode() == Status.Code.PERMISSION_DENIED;
-    }
-    return isPermissionDeniedException(t.getCause());
+    return false;
   }
 
   // The read Ratio should be met
