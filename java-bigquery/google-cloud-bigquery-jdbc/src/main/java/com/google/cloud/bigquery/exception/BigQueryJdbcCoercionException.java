@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.exception;
 
 import com.google.api.core.InternalApi;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 
 /**
  * Thrown to indicate that the coercion was attempted but couldn't be performed successfully because
@@ -25,8 +24,6 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
  */
 @InternalApi
 public class BigQueryJdbcCoercionException extends RuntimeException {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJdbcCoercionException.class.getName());
 
   /**
    * Construct a new exception with the specified cause.
@@ -35,6 +32,5 @@ public class BigQueryJdbcCoercionException extends RuntimeException {
    */
   public BigQueryJdbcCoercionException(Exception cause) {
     super(BigQueryJdbcExceptionUtils.formatMessage("Coercion error", cause), cause);
-    LOG.severe(this.getMessage(), this);
   }
 }

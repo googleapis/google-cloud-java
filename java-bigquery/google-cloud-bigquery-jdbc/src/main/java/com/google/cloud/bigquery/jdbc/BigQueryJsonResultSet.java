@@ -137,11 +137,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // We are working with the nested record, the cursor would have been
       // populated.
       if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
-        IllegalStateException ex =
-            new IllegalStateException(
-                "Cursor/ArrayFieldValueList can not be null working with the nested record");
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
+        throw new IllegalStateException(
+            "Cursor/ArrayFieldValueList can not be null working with the nested record");
       }
       // Check if there's a next record in the array which can be read
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {

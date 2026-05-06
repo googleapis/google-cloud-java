@@ -74,7 +74,7 @@ public class ITTPCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     String query = "SELECT 1";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
@@ -103,7 +103,7 @@ public class ITTPCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "APPLICATION_DEFAULT_CREDENTIALS",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     String query = "SELECT * FROM test.test;";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
@@ -163,7 +163,7 @@ public class ITTPCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     String query = "SELECT * FROM test.test;";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
@@ -192,7 +192,7 @@ public class ITTPCBigQueryTest {
     assertFalse(connection.isClosed());
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
-        ((BigQueryConnection) connection).getAuthProperties().get("OAuthType"));
+        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
     String query = "SELECT * FROM test.test;";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);

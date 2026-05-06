@@ -215,11 +215,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     checkClosed();
     if (this.isNested) {
       if (this.currentNestedBatch == null || this.currentNestedBatch.getNestedRecords() == null) {
-        IllegalStateException ex =
-            new IllegalStateException(
-                "currentNestedBatch/JsonStringArrayList can not be null working with the nested record");
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
+        throw new IllegalStateException(
+            "currentNestedBatch/JsonStringArrayList can not be null working with the nested record");
       }
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
         /* Check if there's a next record in the array which can be read */

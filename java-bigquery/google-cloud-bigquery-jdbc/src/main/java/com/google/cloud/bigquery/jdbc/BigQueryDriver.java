@@ -173,7 +173,7 @@ public class BigQueryDriver implements Driver {
             logLevel,
             logPath,
             this.toString());
-        return connection;
+        return BigQueryJdbcContextProxy.wrap(connection, Connection.class);
       } else {
         return null;
       }
