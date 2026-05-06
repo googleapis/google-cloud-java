@@ -489,6 +489,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
         HttpJsonCallSettings.<ListTagKeysRequest, ListTagKeysResponse>newBuilder()
             .setMethodDescriptor(listTagKeysMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTagKeyRequest, TagKey> getTagKeyTransportSettings =
         HttpJsonCallSettings.<GetTagKeyRequest, TagKey>newBuilder()
@@ -500,11 +501,13 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyTransportSettings =
         HttpJsonCallSettings.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
             .setMethodDescriptor(getNamespacedTagKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTagKeyRequest, Operation> createTagKeyTransportSettings =
         HttpJsonCallSettings.<CreateTagKeyRequest, Operation>newBuilder()
@@ -532,6 +535,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -543,6 +547,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -554,6 +559,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -566,6 +572,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listTagKeysCallable =

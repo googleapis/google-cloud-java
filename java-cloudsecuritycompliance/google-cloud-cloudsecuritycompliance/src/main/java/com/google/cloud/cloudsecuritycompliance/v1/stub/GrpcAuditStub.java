@@ -209,6 +209,7 @@ public class GrpcAuditStub extends AuditStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse>
         listFrameworkAuditsTransportSettings =
@@ -220,6 +221,7 @@ public class GrpcAuditStub extends AuditStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetFrameworkAuditRequest, FrameworkAudit> getFrameworkAuditTransportSettings =
         GrpcCallSettings.<GetFrameworkAuditRequest, FrameworkAudit>newBuilder()
@@ -230,6 +232,7 @@ public class GrpcAuditStub extends AuditStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

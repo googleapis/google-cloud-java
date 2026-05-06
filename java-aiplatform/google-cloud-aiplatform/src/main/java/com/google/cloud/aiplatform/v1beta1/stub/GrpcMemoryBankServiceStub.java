@@ -277,6 +277,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetMemoryRequest, Memory> getMemoryTransportSettings =
         GrpcCallSettings.<GetMemoryRequest, Memory>newBuilder()
@@ -287,6 +288,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateMemoryRequest, Operation> updateMemoryTransportSettings =
         GrpcCallSettings.<UpdateMemoryRequest, Operation>newBuilder()
@@ -307,6 +309,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteMemoryRequest, Operation> deleteMemoryTransportSettings =
         GrpcCallSettings.<DeleteMemoryRequest, Operation>newBuilder()
@@ -317,6 +320,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GenerateMemoriesRequest, Operation> generateMemoriesTransportSettings =
         GrpcCallSettings.<GenerateMemoriesRequest, Operation>newBuilder()
@@ -327,6 +331,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RetrieveMemoriesRequest, RetrieveMemoriesResponse>
         retrieveMemoriesTransportSettings =
@@ -338,6 +343,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -368,6 +374,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -378,6 +385,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -389,6 +397,7 @@ public class GrpcMemoryBankServiceStub extends MemoryBankServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createMemoryCallable =

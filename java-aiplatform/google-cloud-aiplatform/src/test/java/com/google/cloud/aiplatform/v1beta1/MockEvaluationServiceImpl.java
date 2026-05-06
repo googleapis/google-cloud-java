@@ -101,4 +101,27 @@ public class MockEvaluationServiceImpl extends EvaluationServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void generateInstanceRubrics(
+      GenerateInstanceRubricsRequest request,
+      StreamObserver<GenerateInstanceRubricsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateInstanceRubricsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateInstanceRubricsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateInstanceRubrics, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateInstanceRubricsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

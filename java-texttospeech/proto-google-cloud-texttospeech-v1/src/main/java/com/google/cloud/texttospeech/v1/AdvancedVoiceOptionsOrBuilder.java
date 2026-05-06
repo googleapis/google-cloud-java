@@ -58,17 +58,99 @@ public interface AdvancedVoiceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
-   * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
-   * Otherwise, will return result
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   * Optional. Input only. Deprecated, use safety_settings instead.
+   * If true, relaxes safety filters for Gemini TTS.
    * </pre>
    *
    * <code>
-   * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * bool relax_safety_filters = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.texttospeech.v1.AdvancedVoiceOptions.relax_safety_filters is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts.proto;l=224
    * @return The relaxSafetyFilters.
    */
+  @java.lang.Deprecated
   boolean getRelaxSafetyFilters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the safetySettings field is set.
+   */
+  boolean hasSafetySettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The safetySettings.
+   */
+  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings getSafetySettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder
+      getSafetySettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, textnorm will be applied to text input. This feature is
+   * enabled by default. Only applies for Gemini TTS.
+   * </pre>
+   *
+   * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enableTextnorm field is set.
+   */
+  boolean hasEnableTextnorm();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, textnorm will be applied to text input. This feature is
+   * enabled by default. Only applies for Gemini TTS.
+   * </pre>
+   *
+   * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableTextnorm.
+   */
+  boolean getEnableTextnorm();
 }

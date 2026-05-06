@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -551,6 +552,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTemplateRequest, Template> getTemplateTransportSettings =
         HttpJsonCallSettings.<GetTemplateRequest, Template>newBuilder()
@@ -562,6 +564,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTemplateRequest, Template> createTemplateTransportSettings =
         HttpJsonCallSettings.<CreateTemplateRequest, Template>newBuilder()
@@ -573,6 +576,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTemplateRequest, Template> updateTemplateTransportSettings =
         HttpJsonCallSettings.<UpdateTemplateRequest, Template>newBuilder()
@@ -595,6 +599,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetFloorSettingRequest, FloorSetting> getFloorSettingTransportSettings =
         HttpJsonCallSettings.<GetFloorSettingRequest, FloorSetting>newBuilder()
@@ -606,6 +611,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateFloorSettingRequest, FloorSetting>
         updateFloorSettingTransportSettings =
@@ -632,6 +638,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseTransportSettings =
@@ -645,6 +652,7 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -804,6 +812,22 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamSanitizeUserPromptCallable(). REST transport is not implemented for"
+            + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamSanitizeModelResponseCallable(). REST transport is not implemented"
+            + " for this method yet.");
   }
 
   @Override

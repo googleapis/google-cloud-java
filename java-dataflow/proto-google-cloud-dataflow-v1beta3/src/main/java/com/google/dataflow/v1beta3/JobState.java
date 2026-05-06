@@ -194,6 +194,26 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_RESOURCE_CLEANING_UP = 12;</code>
    */
   JOB_STATE_RESOURCE_CLEANING_UP(12),
+  /**
+   *
+   *
+   * <pre>
+   * `JOB_STATE_PAUSING` is not implemented yet.
+   * </pre>
+   *
+   * <code>JOB_STATE_PAUSING = 13;</code>
+   */
+  JOB_STATE_PAUSING(13),
+  /**
+   *
+   *
+   * <pre>
+   * `JOB_STATE_PAUSED` is not implemented yet.
+   * </pre>
+   *
+   * <code>JOB_STATE_PAUSED = 14;</code>
+   */
+  JOB_STATE_PAUSED(14),
   UNRECOGNIZED(-1),
   ;
 
@@ -382,6 +402,28 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int JOB_STATE_RESOURCE_CLEANING_UP_VALUE = 12;
 
+  /**
+   *
+   *
+   * <pre>
+   * `JOB_STATE_PAUSING` is not implemented yet.
+   * </pre>
+   *
+   * <code>JOB_STATE_PAUSING = 13;</code>
+   */
+  public static final int JOB_STATE_PAUSING_VALUE = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * `JOB_STATE_PAUSED` is not implemented yet.
+   * </pre>
+   *
+   * <code>JOB_STATE_PAUSED = 14;</code>
+   */
+  public static final int JOB_STATE_PAUSED_VALUE = 14;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -432,6 +474,10 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
         return JOB_STATE_QUEUED;
       case 12:
         return JOB_STATE_RESOURCE_CLEANING_UP;
+      case 13:
+        return JOB_STATE_PAUSING;
+      case 14:
+        return JOB_STATE_PAUSED;
       default:
         return null;
     }

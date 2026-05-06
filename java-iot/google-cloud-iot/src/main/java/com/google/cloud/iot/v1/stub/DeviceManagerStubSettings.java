@@ -540,6 +540,7 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-iot")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

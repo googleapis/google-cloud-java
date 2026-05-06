@@ -367,6 +367,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDeviceRegistryRequest, DeviceRegistry> getDeviceRegistryTransportSettings =
         GrpcCallSettings.<GetDeviceRegistryRequest, DeviceRegistry>newBuilder()
@@ -377,6 +378,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeviceRegistryRequest, DeviceRegistry>
         updateDeviceRegistryTransportSettings =
@@ -400,6 +402,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
         listDeviceRegistriesTransportSettings =
@@ -411,6 +414,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateDeviceRequest, Device> createDeviceTransportSettings =
         GrpcCallSettings.<CreateDeviceRequest, Device>newBuilder()
@@ -421,6 +425,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDeviceRequest, Device> getDeviceTransportSettings =
         GrpcCallSettings.<GetDeviceRequest, Device>newBuilder()
@@ -431,6 +436,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDeviceRequest, Device> updateDeviceTransportSettings =
         GrpcCallSettings.<UpdateDeviceRequest, Device>newBuilder()
@@ -451,6 +457,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         GrpcCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
@@ -461,6 +468,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ModifyCloudToDeviceConfigRequest, DeviceConfig>
         modifyCloudToDeviceConfigTransportSettings =
@@ -472,6 +480,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
         listDeviceConfigVersionsTransportSettings =
@@ -484,6 +493,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeviceStatesRequest, ListDeviceStatesResponse>
         listDeviceStatesTransportSettings =
@@ -495,6 +505,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -505,6 +516,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -515,6 +527,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -526,6 +539,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
         sendCommandToDeviceTransportSettings =
@@ -537,6 +551,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
         bindDeviceToGatewayTransportSettings =
@@ -548,6 +563,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
         unbindDeviceFromGatewayTransportSettings =
@@ -560,6 +576,7 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createDeviceRegistryCallable =

@@ -31,6 +31,6 @@ public class BigQueryJdbcCoercionException extends RuntimeException {
    * @param cause the actual cause which was thrown while performing the coercion.
    */
   public BigQueryJdbcCoercionException(Exception cause) {
-    super("Coercion error", cause);
+    super(BigQueryJdbcExceptionUtils.formatMessage("Coercion error", cause), cause);
   }
 }

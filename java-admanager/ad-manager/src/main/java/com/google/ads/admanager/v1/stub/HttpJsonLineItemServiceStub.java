@@ -183,6 +183,7 @@ public class HttpJsonLineItemServiceStub extends LineItemServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLineItemsRequest, ListLineItemsResponse>
         listLineItemsTransportSettings =
@@ -195,6 +196,7 @@ public class HttpJsonLineItemServiceStub extends LineItemServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getLineItemCallable =

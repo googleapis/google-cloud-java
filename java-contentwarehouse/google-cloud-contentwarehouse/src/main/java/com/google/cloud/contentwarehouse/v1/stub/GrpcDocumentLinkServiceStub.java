@@ -161,6 +161,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
         listLinkedSourcesTransportSettings =
@@ -172,6 +173,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateDocumentLinkRequest, DocumentLink> createDocumentLinkTransportSettings =
         GrpcCallSettings.<CreateDocumentLinkRequest, DocumentLink>newBuilder()
@@ -182,6 +184,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDocumentLinkRequest, Empty> deleteDocumentLinkTransportSettings =
         GrpcCallSettings.<DeleteDocumentLinkRequest, Empty>newBuilder()
@@ -192,6 +195,7 @@ public class GrpcDocumentLinkServiceStub extends DocumentLinkServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listLinkedTargetsCallable =

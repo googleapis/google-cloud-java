@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
@@ -70,6 +71,44 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
                   ProtoMessageRequestFormatter.<RunSessionRequest>newBuilder()
                       .setPath(
                           "/v1beta/{config.session=projects/*/locations/*/apps/*/sessions/*}:runSession",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "config.session", request.getConfig().getSession());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RunSessionResponse>newBuilder()
+                      .setDefaultInstance(RunSessionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RunSessionRequest, RunSessionResponse>
+      streamRunSessionMethodDescriptor =
+          ApiMethodDescriptor.<RunSessionRequest, RunSessionResponse>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.SessionService/StreamRunSession")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.SERVER_STREAMING)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{config.session=projects/*/locations/*/apps/*/sessions/*}:streamRunSession",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<RunSessionRequest> serializer =
@@ -167,6 +206,8 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
               .build();
 
   private final UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable;
+  private final ServerStreamingCallable<RunSessionRequest, RunSessionResponse>
+      streamRunSessionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -225,6 +266,17 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RunSessionRequest, RunSessionResponse> streamRunSessionTransportSettings =
+        HttpJsonCallSettings.<RunSessionRequest, RunSessionResponse>newBuilder()
+            .setMethodDescriptor(streamRunSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("config.session", String.valueOf(request.getConfig().getSession()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -252,6 +304,9 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
     this.runSessionCallable =
         callableFactory.createUnaryCallable(
             runSessionTransportSettings, settings.runSessionSettings(), clientContext);
+    this.streamRunSessionCallable =
+        callableFactory.createServerStreamingCallable(
+            streamRunSessionTransportSettings, settings.streamRunSessionSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -270,6 +325,7 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(runSessionMethodDescriptor);
+    methodDescriptors.add(streamRunSessionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -278,6 +334,11 @@ public class HttpJsonSessionServiceStub extends SessionServiceStub {
   @Override
   public UnaryCallable<RunSessionRequest, RunSessionResponse> runSessionCallable() {
     return runSessionCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<RunSessionRequest, RunSessionResponse> streamRunSessionCallable() {
+    return streamRunSessionCallable;
   }
 
   @Override

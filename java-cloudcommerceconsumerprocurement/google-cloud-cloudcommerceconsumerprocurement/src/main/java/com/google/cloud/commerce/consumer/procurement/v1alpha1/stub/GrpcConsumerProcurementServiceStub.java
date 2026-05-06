@@ -144,6 +144,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
         GrpcCallSettings.<GetOrderRequest, Order>newBuilder()

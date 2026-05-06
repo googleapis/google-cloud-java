@@ -274,6 +274,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", GET_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRevisionsRequest, ListRevisionsResponse>
         listRevisionsTransportSettings =
@@ -286,6 +287,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                       builder.add(request.getParent(), "location", LIST_REVISIONS_0_PATH_TEMPLATE);
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRevisionRequest, Operation> deleteRevisionTransportSettings =
         HttpJsonCallSettings.<DeleteRevisionRequest, Operation>newBuilder()
@@ -297,6 +299,7 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
                   builder.add(request.getName(), "location", DELETE_REVISION_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getRevisionCallable =

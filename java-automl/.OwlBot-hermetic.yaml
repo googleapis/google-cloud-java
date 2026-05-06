@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-automl/proto-google-.*/src"
 - "/java-automl/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/automl/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-automl/$1/proto-google-cloud-automl-$1/src"

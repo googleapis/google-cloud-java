@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.geocode.v4",
+  "libraryPackage": "com.google.maps.geocode.v4",
+  "services": {
+    "DestinationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DestinationServiceClient",
+          "rpcs": {
+            "SearchDestinations": {
+              "methods": ["searchDestinations", "searchDestinationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GeocodeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeocodeServiceClient",
+          "rpcs": {
+            "GeocodeAddress": {
+              "methods": ["geocodeAddress", "geocodeAddressCallable"]
+            },
+            "GeocodeLocation": {
+              "methods": ["geocodeLocation", "geocodeLocationCallable"]
+            },
+            "GeocodePlace": {
+              "methods": ["geocodePlace", "geocodePlaceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -361,6 +361,7 @@ public class CrossSiteNetworksStubSettings extends StubSettings<CrossSiteNetwork
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-compute")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

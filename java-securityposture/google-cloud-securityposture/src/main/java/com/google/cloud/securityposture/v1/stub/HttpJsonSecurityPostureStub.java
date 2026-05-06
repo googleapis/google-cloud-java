@@ -842,6 +842,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListPostureRevisionsRequest, ListPostureRevisionsResponse>
         listPostureRevisionsTransportSettings =
@@ -855,6 +856,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetPostureRequest, Posture> getPostureTransportSettings =
         HttpJsonCallSettings.<GetPostureRequest, Posture>newBuilder()
@@ -866,6 +868,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePostureRequest, Operation> createPostureTransportSettings =
         HttpJsonCallSettings.<CreatePostureRequest, Operation>newBuilder()
@@ -877,6 +880,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePostureRequest, Operation> updatePostureTransportSettings =
         HttpJsonCallSettings.<UpdatePostureRequest, Operation>newBuilder()
@@ -899,6 +903,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExtractPostureRequest, Operation> extractPostureTransportSettings =
         HttpJsonCallSettings.<ExtractPostureRequest, Operation>newBuilder()
@@ -910,6 +915,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListPostureDeploymentsRequest, ListPostureDeploymentsResponse>
         listPostureDeploymentsTransportSettings =
@@ -923,6 +929,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPostureDeploymentRequest, PostureDeployment>
         getPostureDeploymentTransportSettings =
@@ -935,6 +942,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreatePostureDeploymentRequest, Operation>
         createPostureDeploymentTransportSettings =
@@ -947,6 +955,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePostureDeploymentRequest, Operation>
         updatePostureDeploymentTransportSettings =
@@ -973,6 +982,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPostureTemplatesRequest, ListPostureTemplatesResponse>
         listPostureTemplatesTransportSettings =
@@ -986,6 +996,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPostureTemplateRequest, PostureTemplate>
         getPostureTemplateTransportSettings =
@@ -998,6 +1009,7 @@ public class HttpJsonSecurityPostureStub extends SecurityPostureStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

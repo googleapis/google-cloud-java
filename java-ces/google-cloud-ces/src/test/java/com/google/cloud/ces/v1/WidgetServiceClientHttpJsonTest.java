@@ -97,6 +97,7 @@ public class WidgetServiceClientHttpJsonTest {
             .setDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
             .setRecaptchaToken("recaptchaToken1978277202")
+            .setLiveHandoffEnabled(true)
             .build();
 
     GenerateChatTokenResponse actualResponse = client.generateChatToken(request);
@@ -131,6 +132,7 @@ public class WidgetServiceClientHttpJsonTest {
               .setDeployment(
                   DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
               .setRecaptchaToken("recaptchaToken1978277202")
+              .setLiveHandoffEnabled(true)
               .build();
       client.generateChatToken(request);
       Assert.fail("No exception raised");

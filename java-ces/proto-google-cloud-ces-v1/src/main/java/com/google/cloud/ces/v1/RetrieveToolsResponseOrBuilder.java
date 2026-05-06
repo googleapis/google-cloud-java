@@ -30,11 +30,10 @@ public interface RetrieveToolsResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The list of tools that are included in the specified toolset.
+   * The list of tools that are included in the specified toolset.
    * </pre>
    *
-   * <code>repeated .google.cloud.ces.v1.Tool tools = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.ces.v1.Tool tools = 1;</code>
    */
   java.util.List<com.google.cloud.ces.v1.Tool> getToolsList();
 
@@ -42,11 +41,10 @@ public interface RetrieveToolsResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The list of tools that are included in the specified toolset.
+   * The list of tools that are included in the specified toolset.
    * </pre>
    *
-   * <code>repeated .google.cloud.ces.v1.Tool tools = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.ces.v1.Tool tools = 1;</code>
    */
   com.google.cloud.ces.v1.Tool getTools(int index);
 
@@ -54,11 +52,10 @@ public interface RetrieveToolsResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The list of tools that are included in the specified toolset.
+   * The list of tools that are included in the specified toolset.
    * </pre>
    *
-   * <code>repeated .google.cloud.ces.v1.Tool tools = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.ces.v1.Tool tools = 1;</code>
    */
   int getToolsCount();
 
@@ -66,11 +63,10 @@ public interface RetrieveToolsResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The list of tools that are included in the specified toolset.
+   * The list of tools that are included in the specified toolset.
    * </pre>
    *
-   * <code>repeated .google.cloud.ces.v1.Tool tools = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.ces.v1.Tool tools = 1;</code>
    */
   java.util.List<? extends com.google.cloud.ces.v1.ToolOrBuilder> getToolsOrBuilderList();
 
@@ -78,11 +74,10 @@ public interface RetrieveToolsResponseOrBuilder
    *
    *
    * <pre>
-   * Required. The list of tools that are included in the specified toolset.
+   * The list of tools that are included in the specified toolset.
    * </pre>
    *
-   * <code>repeated .google.cloud.ces.v1.Tool tools = 1 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>repeated .google.cloud.ces.v1.Tool tools = 1;</code>
    */
   com.google.cloud.ces.v1.ToolOrBuilder getToolsOrBuilder(int index);
 }

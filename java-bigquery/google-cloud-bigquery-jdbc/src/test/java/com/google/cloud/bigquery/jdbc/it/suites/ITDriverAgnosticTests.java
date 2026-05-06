@@ -17,9 +17,19 @@
 package com.google.cloud.bigquery.jdbc.it.suites;
 
 import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
+import com.google.cloud.bigquery.jdbc.it.ITConnectionTest;
+import com.google.cloud.bigquery.jdbc.it.ITDatabaseMetadataTest;
+import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
+import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectClasses({ITAuthTests.class})
+@SelectClasses({
+  ITAuthTests.class,
+  ITConnectionTest.class,
+  ITDatabaseMetadataTest.class,
+  ITDriverTest.class,
+  ITResultSetMetadataTest.class
+})
 public class ITDriverAgnosticTests {}

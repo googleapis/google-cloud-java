@@ -268,6 +268,7 @@ public class HttpJsonAnswerRecordsStub extends AnswerRecordsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAnswerRecordRequest, AnswerRecord>
         updateAnswerRecordTransportSettings =

@@ -17,7 +17,7 @@ on:
   pull_request:
 name: generation diff
 env:
-  library_generation_image_tag: 2.68.0
+  library_generation_image_tag: 2.73.0-SNAPSHOT  # {x-version-update:gapic-generator-java:current}
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one
@@ -27,13 +27,12 @@ jobs:
     - name: Generate root pom.xml file
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/generate_monorepo_root_pom.py \
           generate \
           --repository-path=/workspace
@@ -48,13 +47,12 @@ jobs:
     - name: Generate gapic-libraries-bom/pom.xml
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/generate_monorepo_gapic_bom.py \
           generate \
           --repository-path=/workspace \
@@ -171,9 +169,13 @@ jobs:
         # the rest        : the same as above
         invalid_files=$(find . -name '*.java' \
             |grep --invert-match 'java/com/google' \
+            |grep --invert-match '/test/' \
+            |grep --invert-match '/tests/' \
+            |grep --invert-match '/javatests/' \
             |grep --invert-match samples \
             |grep --invert-match benchmark \
             |grep --invert-match grafeas \
+            |grep --invert-match '/tools/' \
             |grep --invert-match 'cloud-build.*v2' \
             |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
             |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')

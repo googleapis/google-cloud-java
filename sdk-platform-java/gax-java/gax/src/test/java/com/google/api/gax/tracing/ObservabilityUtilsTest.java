@@ -1,0 +1,260 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above
+ * copyright notice, this list of conditions and the following disclaimer
+ * in the documentation and/or other materials provided with the
+ * distribution.
+ *     * Neither the name of Google LLC nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+package com.google.api.gax.tracing;
+
+import static com.google.common.truth.Truth.assertThat;
+
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.truth.Truth;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
+import java.util.Map;
+import org.junit.jupiter.api.Test;
+
+class ObservabilityUtilsTest {
+  @Test
+  void testExtractStatus_errorConversion_apiExceptions() {
+    ApiException error =
+        new ApiException(
+            "fake_error", null, new FakeStatusCode(StatusCode.Code.INVALID_ARGUMENT), false);
+    StatusCode.Code errorCode = ObservabilityUtils.extractStatus(error);
+    assertThat(errorCode).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+  }
+
+  @Test
+  void testExtractStatus_errorConversion_noError() {
+    // test "OK", which corresponds to a "null" error.
+    StatusCode.Code successCode = ObservabilityUtils.extractStatus(null);
+    assertThat(successCode).isEqualTo(StatusCode.Code.OK);
+  }
+
+  @Test
+  void testExtractStatus_errorConversion_unknownException() {
+    // test "UNKNOWN"
+    Throwable unknownException = new RuntimeException();
+    StatusCode.Code errorCode2 = ObservabilityUtils.extractStatus(unknownException);
+    assertThat(errorCode2).isEqualTo(StatusCode.Code.UNKNOWN);
+  }
+
+  @Test
+  void testToOtelAttributes_shouldMapStringAttributes() {
+    String attribute1 = "attribute_1";
+    String attribute2 = "attribute_2";
+    String attribute1Value = "Today is a good day";
+    String attribute2Value = "Does not matter";
+    Map<String, Object> attributes =
+        ImmutableMap.of(attribute1, attribute1Value, attribute2, attribute2Value);
+
+    Attributes otelAttributes = ObservabilityUtils.toOtelAttributes(attributes);
+
+    Truth.assertThat(otelAttributes.get(AttributeKey.stringKey(attribute1)))
+        .isEqualTo(attribute1Value);
+    Truth.assertThat(otelAttributes.get(AttributeKey.stringKey(attribute2)))
+        .isEqualTo(attribute2Value);
+  }
+
+  @Test
+  void testToOtelAttributes_urlTemplateAttribute() {
+    String urlTemplateValue = "/blogs/{blog}/posts/{post}";
+    Map<String, Object> attributes =
+        ImmutableMap.of(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE, urlTemplateValue);
+
+    Attributes otelAttributes = ObservabilityUtils.toOtelAttributes(attributes);
+
+    Truth.assertThat(
+            otelAttributes.get(
+                AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
+        .isEqualTo(urlTemplateValue);
+  }
+
+  @Test
+  void testToOtelAttributes_shouldMapIntAttributes() {
+    String attribute1 = "attribute_1";
+    String attribute2 = "attribute_2";
+    int attribute1Value = 23;
+    int attribute2Value = 81;
+    Map<String, Object> attributes =
+        ImmutableMap.of(attribute1, attribute1Value, attribute2, attribute2Value);
+
+    Attributes otelAttributes = ObservabilityUtils.toOtelAttributes(attributes);
+
+    Truth.assertThat(otelAttributes.get(AttributeKey.longKey(attribute1)))
+        .isEqualTo((long) attribute1Value);
+    Truth.assertThat(otelAttributes.get(AttributeKey.longKey(attribute2)))
+        .isEqualTo((long) attribute2Value);
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "OK");
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_apiException() {
+    ApiException error =
+        new ApiException("fake_error", null, new FakeStatusCode(StatusCode.Code.NOT_FOUND), false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "NOT_FOUND");
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_cancellationException() {
+    Throwable error = new java.util.concurrent.CancellationException();
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "CANCELLED");
+  }
+
+  @Test
+  void testGetResponseAttributes_http_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.OK.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_apiExceptionWithIntegerTransportCode() {
+    ApiException error =
+        new ApiException(
+            "fake_error",
+            null,
+            new com.google.api.gax.rpc.StatusCode() {
+              @Override
+              public Code getCode() {
+                return Code.NOT_FOUND;
+              }
+
+              @Override
+              public Object getTransportCode() {
+                return StatusCode.Code.NOT_FOUND.getHttpStatusCode();
+              }
+            },
+            false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.NOT_FOUND.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_apiExceptionWithNonIntegerTransportCode() {
+    ApiException error =
+        new ApiException(
+            "fake_error",
+            null,
+            new com.google.api.gax.rpc.StatusCode() {
+              @Override
+              public Code getCode() {
+                return Code.NOT_FOUND;
+              }
+
+              @Override
+              public Object getTransportCode() {
+                return "Not Found";
+              }
+            },
+            false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.NOT_FOUND.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_cancellationException() {
+    Throwable error = new java.util.concurrent.CancellationException();
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.CANCELLED.getHttpStatusCode());
+  }
+
+  @Test
+  void testToOtelAttributes_shouldReturnEmptyAttributes_nullInput() {
+    assertThat(ObservabilityUtils.toOtelAttributes(null)).isEqualTo(Attributes.empty());
+  }
+
+  @Test
+  void testSanitizeUrlFull_redactsUserInfo() {
+    String url = "https://user:password@example.com/some/path?foo=bar";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo("https://REDACTED:REDACTED@example.com/some/path?foo=bar");
+  }
+
+  @Test
+  void testSanitizeUrlFull_redactsSensitiveQueryParameters_caseInsensitive() {
+    String url =
+        "https://example.com/some/path?upload_Id=secret&AWSAccessKeyId=123&foo=bar&API_KEY=my_key";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized)
+        .isEqualTo(
+            "https://example.com/some/path?upload_Id=REDACTED&AWSAccessKeyId=REDACTED&foo=bar&API_KEY=REDACTED");
+  }
+
+  @Test
+  void testSanitizeUrlFull_handlesKeyOnlyParameters() {
+    String url = "https://example.com/some/path?api_key&foo=bar";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo("https://example.com/some/path?api_key&foo=bar");
+  }
+
+  @Test
+  void testSanitizeUrlFull_handlesMalformedUrl() {
+    String url = "invalid::url:";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    // Unparsable URLs should be returned as empty string
+    assertThat(sanitized).isEmpty();
+  }
+
+  @Test
+  void testSanitizeUrlFull_noQueryOrUserInfo() {
+    String url = "https://example.com/some/path";
+    String sanitized = ObservabilityUtils.sanitizeUrlFull(url);
+    assertThat(sanitized).isEqualTo(url);
+  }
+}

@@ -1096,7 +1096,9 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Optional. Flag indicating if the volume will be a large capacity volume or
-   * a regular volume.
+   * a regular volume. This field is used for legacy FILE pools. For Unified
+   * pools, use the `large_capacity_config` field instead. This field and
+   * `large_capacity_config` are mutually exclusive.
    * </pre>
    *
    * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1407,4 +1409,105 @@ public interface VolumeOrBuilder
    * </code>
    */
   com.google.cloud.netapp.v1.BlockDeviceOrBuilder getBlockDevicesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the largeCapacityConfig field is set.
+   */
+  boolean hasLargeCapacityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The largeCapacityConfig.
+   */
+  com.google.cloud.netapp.v1.LargeCapacityConfig getLargeCapacityConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder getLargeCapacityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloneDetails field is set.
+   */
+  boolean hasCloneDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloneDetails.
+   */
+  com.google.cloud.netapp.v1.Volume.CloneDetails getCloneDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If this volume is a clone, this field contains details about
+   * the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.Volume.CloneDetails clone_details = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.Volume.CloneDetailsOrBuilder getCloneDetailsOrBuilder();
 }

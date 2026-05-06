@@ -154,6 +154,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
         GrpcCallSettings.<GetTenantRequest, Tenant>newBuilder()
@@ -164,6 +165,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
         GrpcCallSettings.<UpdateTenantRequest, Tenant>newBuilder()
@@ -184,6 +186,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
         GrpcCallSettings.<ListTenantsRequest, ListTenantsResponse>newBuilder()
@@ -194,6 +197,7 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createTenantCallable =

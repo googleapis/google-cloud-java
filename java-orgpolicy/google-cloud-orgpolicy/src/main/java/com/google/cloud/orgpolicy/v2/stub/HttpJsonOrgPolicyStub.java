@@ -598,6 +598,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListPoliciesRequest, ListPoliciesResponse> listPoliciesTransportSettings =
         HttpJsonCallSettings.<ListPoliciesRequest, ListPoliciesResponse>newBuilder()
@@ -609,6 +610,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPolicyRequest, Policy> getPolicyTransportSettings =
         HttpJsonCallSettings.<GetPolicyRequest, Policy>newBuilder()
@@ -620,6 +622,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEffectivePolicyRequest, Policy> getEffectivePolicyTransportSettings =
         HttpJsonCallSettings.<GetEffectivePolicyRequest, Policy>newBuilder()
@@ -631,6 +634,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePolicyRequest, Policy> createPolicyTransportSettings =
         HttpJsonCallSettings.<CreatePolicyRequest, Policy>newBuilder()
@@ -642,6 +646,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         HttpJsonCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
@@ -664,6 +669,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCustomConstraintRequest, CustomConstraint>
         createCustomConstraintTransportSettings =
@@ -676,6 +682,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
         updateCustomConstraintTransportSettings =
@@ -702,6 +709,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCustomConstraintsRequest, ListCustomConstraintsResponse>
         listCustomConstraintsTransportSettings =
@@ -715,6 +723,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteCustomConstraintRequest, Empty>
         deleteCustomConstraintTransportSettings =
@@ -727,6 +736,7 @@ public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listConstraintsCallable =

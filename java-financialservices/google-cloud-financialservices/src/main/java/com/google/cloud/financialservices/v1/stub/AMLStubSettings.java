@@ -1365,6 +1365,7 @@ public class AMLStubSettings extends StubSettings<AMLStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-financialservices")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

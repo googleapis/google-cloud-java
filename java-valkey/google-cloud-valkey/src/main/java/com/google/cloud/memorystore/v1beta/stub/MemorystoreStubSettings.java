@@ -26,10 +26,13 @@ import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
-import com.google.api.gax.httpjson.ProtoOperationTransformers;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
@@ -56,10 +59,12 @@ import com.google.cloud.memorystore.v1beta.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1beta.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1beta.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.GetInstanceRequest;
+import com.google.cloud.memorystore.v1beta.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.Instance;
 import com.google.cloud.memorystore.v1beta.ListInstancesRequest;
 import com.google.cloud.memorystore.v1beta.ListInstancesResponse;
 import com.google.cloud.memorystore.v1beta.OperationMetadata;
+import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -171,6 +176,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceOperationSettings;
   private final UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings;
+  private final UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -328,6 +336,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return getCertificateAuthoritySettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return getSharedRegionalCertificateAuthoritySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -340,6 +357,11 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   }
 
   public MemorystoreStub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcMemorystoreStub.create(this);
+    }
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
@@ -384,17 +406,32 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
   public static InstantiatingHttpJsonChannelProvider.Builder
       defaultHttpJsonTransportProviderBuilder() {
     return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultHttpJsonTransportProviderBuilder().build();
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(MemorystoreStubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(MemorystoreStubSettings.class))
@@ -403,9 +440,18 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             GaxHttpJsonProperties.getHttpJsonVersion());
   }
 
-  /** Returns a new builder for this class. */
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return MemorystoreStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -430,6 +476,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
+    getSharedRegionalCertificateAuthoritySettings =
+        settingsBuilder.getSharedRegionalCertificateAuthoritySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -439,6 +487,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-valkey")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -463,6 +512,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         deleteInstanceOperationSettings;
     private final UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -527,6 +579,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -538,6 +592,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -555,6 +610,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          settings.getSharedRegionalCertificateAuthoritySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -566,6 +623,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -576,6 +634,18 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder createHttpJsonDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -612,6 +682,11 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .getCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSharedRegionalCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -762,6 +837,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getCertificateAuthoritySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getSharedRegionalCertificateAuthoritySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

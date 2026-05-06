@@ -12,6 +12,17 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-datastore.* ]] || \
       [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
       [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
+      [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-common-protos.* ]] || \
+      [[ "${pomFile}" =~ .*java-showcase.* ]] || \
+      [[ "${pomFile}" =~ .*java-iam.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner.* ]] || \
+      [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
+      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage.* ]] || \
+      [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
+      [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
+      [[ "${pomFile}" =~ .*java-compute.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi

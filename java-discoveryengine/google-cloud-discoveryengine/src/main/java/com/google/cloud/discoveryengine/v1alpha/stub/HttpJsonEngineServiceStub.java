@@ -626,6 +626,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEngineRequest, Operation> deleteEngineTransportSettings =
         HttpJsonCallSettings.<DeleteEngineRequest, Operation>newBuilder()
@@ -637,6 +638,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEngineRequest, Engine> updateEngineTransportSettings =
         HttpJsonCallSettings.<UpdateEngineRequest, Engine>newBuilder()
@@ -659,6 +661,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEnginesRequest, ListEnginesResponse> listEnginesTransportSettings =
         HttpJsonCallSettings.<ListEnginesRequest, ListEnginesResponse>newBuilder()
@@ -670,6 +673,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
         HttpJsonCallSettings.<PauseEngineRequest, Engine>newBuilder()
@@ -681,6 +685,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
         HttpJsonCallSettings.<ResumeEngineRequest, Engine>newBuilder()
@@ -692,6 +697,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
         HttpJsonCallSettings.<TuneEngineRequest, Operation>newBuilder()
@@ -703,6 +709,7 @@ public class HttpJsonEngineServiceStub extends EngineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createEngineCallable =

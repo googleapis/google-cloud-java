@@ -30,8 +30,8 @@ public interface DeleteAuthorizationPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-   * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+   * Required. A name of the AuthorizationPolicy to delete. Must be in the
+   * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -46,8 +46,8 @@ public interface DeleteAuthorizationPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A name of the AuthorizationPolicy to delete. Must be in the format
-   * `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
+   * Required. A name of the AuthorizationPolicy to delete. Must be in the
+   * format `projects/{project}/locations/{location}/authorizationPolicies/&#42;`.
    * </pre>
    *
    * <code>

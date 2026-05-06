@@ -1,0 +1,99 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.spanner.admin.database.v1",
+  "libraryPackage": "com.google.cloud.spanner.admin.database.v1",
+  "services": {
+    "DatabaseAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DatabaseAdminClient",
+          "rpcs": {
+            "AddSplitPoints": {
+              "methods": ["addSplitPoints", "addSplitPoints", "addSplitPoints", "addSplitPointsCallable"]
+            },
+            "CopyBackup": {
+              "methods": ["copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupOperationCallable", "copyBackupCallable"]
+            },
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateBackupSchedule": {
+              "methods": ["createBackupSchedule", "createBackupSchedule", "createBackupSchedule", "createBackupScheduleCallable"]
+            },
+            "CreateDatabase": {
+              "methods": ["createDatabaseAsync", "createDatabaseAsync", "createDatabaseAsync", "createDatabaseOperationCallable", "createDatabaseCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
+            },
+            "DeleteBackupSchedule": {
+              "methods": ["deleteBackupSchedule", "deleteBackupSchedule", "deleteBackupSchedule", "deleteBackupScheduleCallable"]
+            },
+            "DropDatabase": {
+              "methods": ["dropDatabase", "dropDatabase", "dropDatabase", "dropDatabaseCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupSchedule": {
+              "methods": ["getBackupSchedule", "getBackupSchedule", "getBackupSchedule", "getBackupScheduleCallable"]
+            },
+            "GetDatabase": {
+              "methods": ["getDatabase", "getDatabase", "getDatabase", "getDatabaseCallable"]
+            },
+            "GetDatabaseDdl": {
+              "methods": ["getDatabaseDdl", "getDatabaseDdl", "getDatabaseDdl", "getDatabaseDdlCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "InternalUpdateGraphOperation": {
+              "methods": ["internalUpdateGraphOperation", "internalUpdateGraphOperation", "internalUpdateGraphOperation", "internalUpdateGraphOperationCallable"]
+            },
+            "ListBackupOperations": {
+              "methods": ["listBackupOperations", "listBackupOperations", "listBackupOperations", "listBackupOperationsPagedCallable", "listBackupOperationsCallable"]
+            },
+            "ListBackupSchedules": {
+              "methods": ["listBackupSchedules", "listBackupSchedules", "listBackupSchedules", "listBackupSchedulesPagedCallable", "listBackupSchedulesCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListDatabaseOperations": {
+              "methods": ["listDatabaseOperations", "listDatabaseOperations", "listDatabaseOperations", "listDatabaseOperationsPagedCallable", "listDatabaseOperationsCallable"]
+            },
+            "ListDatabaseRoles": {
+              "methods": ["listDatabaseRoles", "listDatabaseRoles", "listDatabaseRoles", "listDatabaseRolesPagedCallable", "listDatabaseRolesCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
+            "RestoreDatabase": {
+              "methods": ["restoreDatabaseAsync", "restoreDatabaseAsync", "restoreDatabaseAsync", "restoreDatabaseAsync", "restoreDatabaseAsync", "restoreDatabaseOperationCallable", "restoreDatabaseCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
+            },
+            "UpdateBackupSchedule": {
+              "methods": ["updateBackupSchedule", "updateBackupSchedule", "updateBackupScheduleCallable"]
+            },
+            "UpdateDatabase": {
+              "methods": ["updateDatabaseAsync", "updateDatabaseAsync", "updateDatabaseOperationCallable", "updateDatabaseCallable"]
+            },
+            "UpdateDatabaseDdl": {
+              "methods": ["updateDatabaseDdlAsync", "updateDatabaseDdlAsync", "updateDatabaseDdlAsync", "updateDatabaseDdlOperationCallable", "updateDatabaseDdlCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

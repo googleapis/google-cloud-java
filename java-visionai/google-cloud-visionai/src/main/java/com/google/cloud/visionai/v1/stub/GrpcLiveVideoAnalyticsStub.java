@@ -404,6 +404,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ResolveOperatorInfoRequest, ResolveOperatorInfoResponse>
         resolveOperatorInfoTransportSettings =
@@ -415,6 +416,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListOperatorsRequest, ListOperatorsResponse> listOperatorsTransportSettings =
         GrpcCallSettings.<ListOperatorsRequest, ListOperatorsResponse>newBuilder()
@@ -425,6 +427,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetOperatorRequest, Operator> getOperatorTransportSettings =
         GrpcCallSettings.<GetOperatorRequest, Operator>newBuilder()
@@ -435,6 +438,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOperatorRequest, Operation> createOperatorTransportSettings =
         GrpcCallSettings.<CreateOperatorRequest, Operation>newBuilder()
@@ -445,6 +449,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateOperatorRequest, Operation> updateOperatorTransportSettings =
         GrpcCallSettings.<UpdateOperatorRequest, Operation>newBuilder()
@@ -465,6 +470,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnalysesRequest, ListAnalysesResponse> listAnalysesTransportSettings =
         GrpcCallSettings.<ListAnalysesRequest, ListAnalysesResponse>newBuilder()
@@ -475,6 +481,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAnalysisRequest, Analysis> getAnalysisTransportSettings =
         GrpcCallSettings.<GetAnalysisRequest, Analysis>newBuilder()
@@ -485,6 +492,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAnalysisRequest, Operation> createAnalysisTransportSettings =
         GrpcCallSettings.<CreateAnalysisRequest, Operation>newBuilder()
@@ -495,6 +503,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAnalysisRequest, Operation> updateAnalysisTransportSettings =
         GrpcCallSettings.<UpdateAnalysisRequest, Operation>newBuilder()
@@ -515,6 +524,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessesRequest, ListProcessesResponse> listProcessesTransportSettings =
         GrpcCallSettings.<ListProcessesRequest, ListProcessesResponse>newBuilder()
@@ -525,6 +535,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProcessRequest, Process> getProcessTransportSettings =
         GrpcCallSettings.<GetProcessRequest, Process>newBuilder()
@@ -535,6 +546,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateProcessRequest, Operation> createProcessTransportSettings =
         GrpcCallSettings.<CreateProcessRequest, Operation>newBuilder()
@@ -545,6 +557,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProcessRequest, Operation> updateProcessTransportSettings =
         GrpcCallSettings.<UpdateProcessRequest, Operation>newBuilder()
@@ -565,6 +578,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchRunProcessRequest, Operation> batchRunProcessTransportSettings =
         GrpcCallSettings.<BatchRunProcessRequest, Operation>newBuilder()
@@ -575,6 +589,7 @@ public class GrpcLiveVideoAnalyticsStub extends LiveVideoAnalyticsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

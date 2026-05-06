@@ -96,6 +96,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*}/frameworkDeployments")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -144,6 +146,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/frameworkDeployments/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -183,6 +187,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/frameworkDeployments/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -220,6 +226,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*}/frameworkDeployments")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -259,6 +267,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/cloudControlDeployments/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -296,6 +306,8 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*}/cloudControlDeployments")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -334,6 +346,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -368,6 +381,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -466,21 +480,37 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                     "google.longrunning.Operations.CancelOperation",
                     HttpRule.newBuilder()
                         .setPost("/v1/{name=organizations/*/locations/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
                         .setDelete("/v1/{name=organizations/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                                .build())
                         .build())
                 .put(
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=organizations/*/locations/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*}/operations")
+                                .build())
                         .build())
                 .build());
 
@@ -495,6 +525,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteFrameworkDeploymentRequest, Operation>
         deleteFrameworkDeploymentTransportSettings =
@@ -507,6 +538,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetFrameworkDeploymentRequest, FrameworkDeployment>
         getFrameworkDeploymentTransportSettings =
@@ -519,6 +551,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListFrameworkDeploymentsRequest, ListFrameworkDeploymentsResponse>
         listFrameworkDeploymentsTransportSettings =
@@ -532,6 +565,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCloudControlDeploymentRequest, CloudControlDeployment>
         getCloudControlDeploymentTransportSettings =
@@ -545,6 +579,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCloudControlDeploymentsRequest, ListCloudControlDeploymentsResponse>
         listCloudControlDeploymentsTransportSettings =
@@ -559,6 +594,7 @@ public class HttpJsonDeploymentStub extends DeploymentStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

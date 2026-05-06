@@ -210,6 +210,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
     GrpcCallSettings<ListTagKeysRequest, ListTagKeysResponse> listTagKeysTransportSettings =
         GrpcCallSettings.<ListTagKeysRequest, ListTagKeysResponse>newBuilder()
             .setMethodDescriptor(listTagKeysMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTagKeyRequest, TagKey> getTagKeyTransportSettings =
         GrpcCallSettings.<GetTagKeyRequest, TagKey>newBuilder()
@@ -220,10 +221,12 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyTransportSettings =
         GrpcCallSettings.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
             .setMethodDescriptor(getNamespacedTagKeyMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTagKeyRequest, Operation> createTagKeyTransportSettings =
         GrpcCallSettings.<CreateTagKeyRequest, Operation>newBuilder()
@@ -248,6 +251,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -258,6 +262,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -268,6 +273,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -279,6 +285,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listTagKeysCallable =

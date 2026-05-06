@@ -24,19 +24,15 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannel;
-import com.google.api.gax.tracing.MetricsTracerFactory;
-import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.datastore.v1.stub.DatastoreStubSettings;
 import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
@@ -61,12 +57,8 @@ import com.google.datastore.v1.RunQueryResponse;
 import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 @InternalApi
 public class GrpcDatastoreRpc implements DatastoreRpc {
@@ -82,55 +74,22 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
               ? getClientContextForEmulator(datastoreOptions)
               : getClientContext(datastoreOptions);
 
-      /* For grpc transport options, configure default gRPC Connection pool with minChannelCount = 1 */
-      DatastoreStubSettings.Builder builder =
+      /* For non-emulator, configure default gRPC Connection pool with minChannelCount = 1 */
+      DatastoreStubSettings.Builder datastoreStubSettingsBuilder =
           DatastoreStubSettings.newBuilder(clientContext)
-              .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions))
-              .setTransportChannelProvider(
-                  DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                      .setChannelPoolSettings(
-                          ChannelPoolSettings.builder()
-                              .setInitialChannelCount(DatastoreOptions.INIT_CHANNEL_COUNT)
-                              .setMinChannelCount(DatastoreOptions.MIN_CHANNEL_COUNT)
-                              .build())
-                      .build());
-
-      // Hook into Gax's Metrics collection framework
-      MetricsTracerFactory metricsTracerFactory = buildMetricsTracerFactory(datastoreOptions);
-      if (metricsTracerFactory != null) {
-        builder.setTracerFactory(metricsTracerFactory);
+              .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions));
+      if (!isEmulator(datastoreOptions)) {
+        // Use the TransportChannelProvider configured in DatastoreOptions. For gRPC transport, this
+        // will
+        // be configured with a default ChannelPool configuration
+        datastoreStubSettingsBuilder.setTransportChannelProvider(
+            datastoreOptions.getTransportChannelProvider());
       }
 
-      datastoreStub = GrpcDatastoreStub.create(builder.build());
+      datastoreStub = GrpcDatastoreStub.create(datastoreStubSettingsBuilder.build());
     } catch (IOException e) {
       throw new IOException(e);
     }
-  }
-
-  /**
-   * Build the MetricsTracerFactory to hook into Gax's Otel Framework. Only hooks into Gax on two
-   * conditions: 1. OpenTelemetry instance is passed in by the user 2. Metrics are enabled
-   *
-   * <p>Sets default attributes to be recorded as part of the metrics.
-   */
-  static MetricsTracerFactory buildMetricsTracerFactory(DatastoreOptions datastoreOptions) {
-    if (!datastoreOptions.getOpenTelemetryOptions().isMetricsEnabled()) {
-      return null;
-    }
-    OpenTelemetry openTelemetry = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
-    if (openTelemetry == null) {
-      openTelemetry = GlobalOpenTelemetry.get();
-    }
-    OpenTelemetryMetricsRecorder gaxMetricsRecorder =
-        new OpenTelemetryMetricsRecorder(openTelemetry, TelemetryConstants.SERVICE_NAME);
-    Map<String, String> attributes = new HashMap<>();
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_PROJECT_ID, datastoreOptions.getProjectId());
-    if (!Strings.isNullOrEmpty(datastoreOptions.getDatabaseId())) {
-      attributes.put(
-          TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, datastoreOptions.getDatabaseId());
-    }
-    attributes.put(TelemetryConstants.ATTRIBUTES_KEY_TRANSPORT, "grpc");
-    return new MetricsTracerFactory(gaxMetricsRecorder, attributes);
   }
 
   @Override

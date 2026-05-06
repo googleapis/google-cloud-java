@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.BigQueryException;
 import java.sql.SQLFeatureNotSupportedException;
 
 public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSupportedException {
+
   /**
    * Constructs a new BigQueryJdbcSqlFeatureNotSupportedException with the given message.
    *

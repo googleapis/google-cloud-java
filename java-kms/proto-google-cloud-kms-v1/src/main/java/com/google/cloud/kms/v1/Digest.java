@@ -78,6 +78,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
     SHA256(1),
     SHA384(2),
     SHA512(3),
+    EXTERNAL_MU(4),
     DIGEST_NOT_SET(0);
     private final int value;
 
@@ -103,6 +104,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
           return SHA384;
         case 3:
           return SHA512;
+        case 4:
+          return EXTERNAL_MU;
         case 0:
           return DIGEST_NOT_SET;
         default:
@@ -230,6 +233,49 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int EXTERNAL_MU_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with SHAKE-256, to be used with ML-DSA
+   * external-μ algorithms only. See "message representative" note in
+   * section 6.2, algorithm 7 of the FIPS-204 standard:
+   * https://doi.org/10.6028/nist.fips.204
+   * </pre>
+   *
+   * <code>bytes external_mu = 4;</code>
+   *
+   * @return Whether the externalMu field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalMu() {
+    return digestCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with SHAKE-256, to be used with ML-DSA
+   * external-μ algorithms only. See "message representative" note in
+   * section 6.2, algorithm 7 of the FIPS-204 standard:
+   * https://doi.org/10.6028/nist.fips.204
+   * </pre>
+   *
+   * <code>bytes external_mu = 4;</code>
+   *
+   * @return The externalMu.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalMu() {
+    if (digestCase_ == 4) {
+      return (com.google.protobuf.ByteString) digest_;
+    }
+    return com.google.protobuf.ByteString.EMPTY;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -252,6 +298,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
     }
     if (digestCase_ == 3) {
       output.writeBytes(3, (com.google.protobuf.ByteString) digest_);
+    }
+    if (digestCase_ == 4) {
+      output.writeBytes(4, (com.google.protobuf.ByteString) digest_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -276,6 +325,11 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               3, (com.google.protobuf.ByteString) digest_);
+    }
+    if (digestCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              4, (com.google.protobuf.ByteString) digest_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -303,6 +357,9 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
       case 3:
         if (!getSha512().equals(other.getSha512())) return false;
         break;
+      case 4:
+        if (!getExternalMu().equals(other.getExternalMu())) return false;
+        break;
       case 0:
       default:
     }
@@ -329,6 +386,10 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + SHA512_FIELD_NUMBER;
         hash = (53 * hash) + getSha512().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + EXTERNAL_MU_FIELD_NUMBER;
+        hash = (53 * hash) + getExternalMu().hashCode();
         break;
       case 0:
       default:
@@ -542,6 +603,11 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
             setSha512(other.getSha512());
             break;
           }
+        case EXTERNAL_MU:
+          {
+            setExternalMu(other.getExternalMu());
+            break;
+          }
         case DIGEST_NOT_SET:
           {
             break;
@@ -591,6 +657,12 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
                 digestCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                digest_ = input.readBytes();
+                digestCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -842,6 +914,93 @@ public final class Digest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSha512() {
       if (digestCase_ == 3) {
+        digestCase_ = 0;
+        digest_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with SHAKE-256, to be used with ML-DSA
+     * external-μ algorithms only. See "message representative" note in
+     * section 6.2, algorithm 7 of the FIPS-204 standard:
+     * https://doi.org/10.6028/nist.fips.204
+     * </pre>
+     *
+     * <code>bytes external_mu = 4;</code>
+     *
+     * @return Whether the externalMu field is set.
+     */
+    public boolean hasExternalMu() {
+      return digestCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with SHAKE-256, to be used with ML-DSA
+     * external-μ algorithms only. See "message representative" note in
+     * section 6.2, algorithm 7 of the FIPS-204 standard:
+     * https://doi.org/10.6028/nist.fips.204
+     * </pre>
+     *
+     * <code>bytes external_mu = 4;</code>
+     *
+     * @return The externalMu.
+     */
+    public com.google.protobuf.ByteString getExternalMu() {
+      if (digestCase_ == 4) {
+        return (com.google.protobuf.ByteString) digest_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with SHAKE-256, to be used with ML-DSA
+     * external-μ algorithms only. See "message representative" note in
+     * section 6.2, algorithm 7 of the FIPS-204 standard:
+     * https://doi.org/10.6028/nist.fips.204
+     * </pre>
+     *
+     * <code>bytes external_mu = 4;</code>
+     *
+     * @param value The externalMu to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalMu(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      digestCase_ = 4;
+      digest_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A message digest produced with SHAKE-256, to be used with ML-DSA
+     * external-μ algorithms only. See "message representative" note in
+     * section 6.2, algorithm 7 of the FIPS-204 standard:
+     * https://doi.org/10.6028/nist.fips.204
+     * </pre>
+     *
+     * <code>bytes external_mu = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalMu() {
+      if (digestCase_ == 4) {
         digestCase_ = 0;
         digest_ = null;
         onChanged();

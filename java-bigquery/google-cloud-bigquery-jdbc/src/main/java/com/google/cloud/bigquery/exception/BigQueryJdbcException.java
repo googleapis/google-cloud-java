@@ -43,10 +43,11 @@ public class BigQueryJdbcException extends SQLException {
   /**
    * Constructs a new BigQueryJdbcException from BigQueryException
    *
+   * @param message Specific message that is being added to the Exception.
    * @param ex The BigQueryException to be thrown.
    */
-  public BigQueryJdbcException(BigQueryException ex) {
-    super(ex);
+  public BigQueryJdbcException(String message, BigQueryException ex) {
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
     this.bigQueryException = ex;
   }
 
@@ -57,7 +58,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(String message, Throwable cause) {
-    super(message, cause);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
   }
 
   /**

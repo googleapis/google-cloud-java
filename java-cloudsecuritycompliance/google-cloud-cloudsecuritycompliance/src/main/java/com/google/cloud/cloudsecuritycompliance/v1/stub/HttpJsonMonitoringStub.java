@@ -98,6 +98,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -184,6 +185,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             ProtoRestSerializer<FetchFrameworkComplianceReportRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "endTime", request.getEndTime());
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -306,6 +308,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -340,6 +343,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -439,6 +443,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListFindingSummariesRequest, ListFindingSummariesResponse>
         listFindingSummariesTransportSettings =
@@ -452,6 +457,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FetchFrameworkComplianceReportRequest, FrameworkComplianceReport>
         fetchFrameworkComplianceReportTransportSettings =
@@ -465,6 +471,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListControlComplianceSummariesRequest, ListControlComplianceSummariesResponse>
@@ -480,6 +487,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             AggregateFrameworkComplianceReportRequest, AggregateFrameworkComplianceReportResponse>
@@ -496,6 +504,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

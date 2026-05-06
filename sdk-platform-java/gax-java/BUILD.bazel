@@ -1,0 +1,28 @@
+load("//:gax_java.bzl", "google_java_format", "google_java_format_verification")
+
+exports_files(["dependencies.properties"])
+
+JAVA_COPTS = [
+    "-source",
+    "1.7",
+    "-target",
+    "1.7",
+]
+
+java_plugin(
+    name = "auto_value_plugin",
+    processor_class = "com.google.auto.value.processor.AutoValueProcessor",
+    deps = ["@com_google_auto_value_auto_value//jar"],
+    visibility = ["//visibility:public"],
+)
+
+# google-java-format
+java_binary(
+    name = "google_java_format_binary",
+    # Not letting the formatter consume too much memory (essential for CI builds)
+    jvm_flags = ["-Xmx512m"],
+    main_class = "com.google.googlejavaformat.java.Main",
+    visibility = ["//visibility:public"],
+    runtime_deps = ["@google_java_format_all_deps//jar"],
+)
+

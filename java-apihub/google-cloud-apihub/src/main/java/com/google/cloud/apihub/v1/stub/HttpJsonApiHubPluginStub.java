@@ -817,6 +817,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<EnablePluginRequest, Plugin> enablePluginTransportSettings =
         HttpJsonCallSettings.<EnablePluginRequest, Plugin>newBuilder()
@@ -828,6 +829,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DisablePluginRequest, Plugin> disablePluginTransportSettings =
         HttpJsonCallSettings.<DisablePluginRequest, Plugin>newBuilder()
@@ -839,6 +841,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePluginRequest, Plugin> createPluginTransportSettings =
         HttpJsonCallSettings.<CreatePluginRequest, Plugin>newBuilder()
@@ -850,6 +853,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListPluginsRequest, ListPluginsResponse> listPluginsTransportSettings =
         HttpJsonCallSettings.<ListPluginsRequest, ListPluginsResponse>newBuilder()
@@ -861,6 +865,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePluginRequest, Operation> deletePluginTransportSettings =
         HttpJsonCallSettings.<DeletePluginRequest, Operation>newBuilder()
@@ -872,6 +877,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePluginInstanceRequest, Operation>
         createPluginInstanceTransportSettings =
@@ -884,6 +890,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExecutePluginInstanceActionRequest, Operation>
         executePluginInstanceActionTransportSettings =
@@ -896,6 +903,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetPluginInstanceRequest, PluginInstance>
         getPluginInstanceTransportSettings =
@@ -908,6 +916,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPluginInstancesRequest, ListPluginInstancesResponse>
         listPluginInstancesTransportSettings =
@@ -921,6 +930,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<EnablePluginInstanceActionRequest, Operation>
         enablePluginInstanceActionTransportSettings =
@@ -933,6 +943,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DisablePluginInstanceActionRequest, Operation>
         disablePluginInstanceActionTransportSettings =
@@ -945,6 +956,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdatePluginInstanceRequest, PluginInstance>
         updatePluginInstanceTransportSettings =
@@ -971,6 +983,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

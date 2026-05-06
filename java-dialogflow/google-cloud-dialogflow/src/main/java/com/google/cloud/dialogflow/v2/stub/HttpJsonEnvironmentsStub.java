@@ -433,6 +433,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         HttpJsonCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
@@ -444,6 +445,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentTransportSettings =
         HttpJsonCallSettings.<CreateEnvironmentRequest, Environment>newBuilder()
@@ -455,6 +457,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentTransportSettings =
         HttpJsonCallSettings.<UpdateEnvironmentRequest, Environment>newBuilder()
@@ -478,6 +481,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEnvironmentHistoryRequest, EnvironmentHistory>
         getEnvironmentHistoryTransportSettings =
@@ -490,6 +494,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

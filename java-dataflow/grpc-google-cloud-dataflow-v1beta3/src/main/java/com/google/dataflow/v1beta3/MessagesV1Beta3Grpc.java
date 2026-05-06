@@ -21,8 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The Dataflow Messages API is used for monitoring the progress of
- * Dataflow jobs.
+ * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -138,8 +137,7 @@ public final class MessagesV1Beta3Grpc {
    *
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public interface AsyncService {
@@ -169,8 +167,7 @@ public final class MessagesV1Beta3Grpc {
    * Base class for the server implementation of the service MessagesV1Beta3.
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public abstract static class MessagesV1Beta3ImplBase
@@ -186,8 +183,7 @@ public final class MessagesV1Beta3Grpc {
    * A stub to allow clients to do asynchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MessagesV1Beta3Stub
@@ -228,8 +224,7 @@ public final class MessagesV1Beta3Grpc {
    * A stub to allow clients to do synchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MessagesV1Beta3BlockingV2Stub
@@ -268,8 +263,7 @@ public final class MessagesV1Beta3Grpc {
    * A stub to allow clients to do limited synchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MessagesV1Beta3BlockingStub
@@ -307,8 +301,7 @@ public final class MessagesV1Beta3Grpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service MessagesV1Beta3.
    *
    * <pre>
-   * The Dataflow Messages API is used for monitoring the progress of
-   * Dataflow jobs.
+   * The Dataflow Messages API is used to monitor the progress of Dataflow jobs.
    * </pre>
    */
   public static final class MessagesV1Beta3FutureStub

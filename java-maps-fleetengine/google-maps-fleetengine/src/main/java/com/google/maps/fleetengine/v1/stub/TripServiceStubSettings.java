@@ -300,6 +300,7 @@ public class TripServiceStubSettings extends StubSettings<TripServiceStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-fleetengine")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

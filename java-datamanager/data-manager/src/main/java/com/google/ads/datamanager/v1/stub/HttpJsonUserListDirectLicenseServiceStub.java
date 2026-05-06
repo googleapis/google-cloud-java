@@ -289,6 +289,7 @@ public class HttpJsonUserListDirectLicenseServiceStub extends UserListDirectLice
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetUserListDirectLicenseRequest, UserListDirectLicense>
         getUserListDirectLicenseTransportSettings =
@@ -302,6 +303,7 @@ public class HttpJsonUserListDirectLicenseServiceStub extends UserListDirectLice
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateUserListDirectLicenseRequest, UserListDirectLicense>
         updateUserListDirectLicenseTransportSettings =
@@ -330,6 +332,7 @@ public class HttpJsonUserListDirectLicenseServiceStub extends UserListDirectLice
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createUserListDirectLicenseCallable =

@@ -81,6 +81,159 @@ public interface ToolCallResultOrBuilder
    *
    *
    * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesTool field is set.
+   */
+  boolean hasCesTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesTool.
+   */
+  java.lang.String getCesTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES tool name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/tools/&lt;ToolID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_tool = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesTool.
+   */
+  com.google.protobuf.ByteString getCesToolBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesToolset field is set.
+   */
+  boolean hasCesToolset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesToolset.
+   */
+  java.lang.String getCesToolset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES toolset name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;/toolsets/ToolsetID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_toolset = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesToolset.
+   */
+  com.google.protobuf.ByteString getCesToolsetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the cesApp field is set.
+   */
+  boolean hasCesApp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cesApp.
+   */
+  java.lang.String getCesApp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CES app name for this call.
+   * Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/apps/&lt;AppID&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string ces_app = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cesApp.
+   */
+  com.google.protobuf.ByteString getCesAppBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The name of the tool's action associated with this call.
    * </pre>
    *

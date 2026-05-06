@@ -184,6 +184,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataTransportSettings =
         GrpcCallSettings.<UpdateDatasetMetadataRequest, Dataset>newBuilder()
@@ -204,6 +205,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
         fetchDatasetErrorsTransportSettings =
@@ -215,6 +217,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                       builder.add("dataset", String.valueOf(request.getDataset()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataset())
                 .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -225,6 +228,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Empty> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Empty>newBuilder()
@@ -235,6 +239,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createDatasetCallable =

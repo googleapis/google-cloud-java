@@ -62,6 +62,7 @@ public class DataSource implements javax.sql.DataSource {
   private String oAuthPvtKeyPath;
   private String oAuthPvtKey;
   private String oAuthAccessToken;
+  private Boolean oAuthAccessTokenReadonly;
   private String oAuthRefreshToken;
   private Boolean useQueryCache;
   private String queryDialect;
@@ -176,6 +177,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME,
               DataSource::setOAuthAccessToken)
+          .put(
+              BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setOAuthAccessTokenReadonly(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME,
               DataSource::setOAuthRefreshToken)
@@ -454,6 +461,11 @@ public class DataSource implements javax.sql.DataSource {
     if (this.oAuthAccessToken != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME, this.oAuthAccessToken);
+    }
+    if (this.oAuthAccessTokenReadonly != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+          String.valueOf(this.oAuthAccessTokenReadonly));
     }
     if (this.oAuthRefreshToken != null) {
       connectionProperties.setProperty(
@@ -888,6 +900,14 @@ public class DataSource implements javax.sql.DataSource {
     this.oAuthAccessToken = oAuthAccessToken;
   }
 
+  public Boolean getOAuthAccessTokenReadonly() {
+    return oAuthAccessTokenReadonly != null ? oAuthAccessTokenReadonly : false;
+  }
+
+  public void setOAuthAccessTokenReadonly(Boolean oAuthAccessTokenReadonly) {
+    this.oAuthAccessTokenReadonly = oAuthAccessTokenReadonly;
+  }
+
   public String getOAuthRefreshToken() {
     return oAuthRefreshToken;
   }
@@ -949,7 +969,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientId() {
-    return oAuthClientId;
+    return oAuthClientId != null && !oAuthClientId.trim().isEmpty()
+        ? oAuthClientId
+        : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_ID;
   }
 
   public void setOAuthClientId(String oAuthClientId) {
@@ -957,7 +979,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientSecret() {
-    return oAuthClientSecret;
+    return oAuthClientSecret != null && !oAuthClientSecret.trim().isEmpty()
+        ? oAuthClientSecret
+        : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_SECRET;
   }
 
   public void setOAuthClientSecret(String oAuthClientSecret) {
@@ -976,11 +1000,14 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setJobCreationMode(Integer jobCreationMode) {
     if (jobCreationMode != null && !VALID_JOB_CREATION_MODES.contains(jobCreationMode)) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
-                  + " JOB_CREATION_OPTIONAL.",
-              BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
+                      + " JOB_CREATION_OPTIONAL.",
+                  BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     this.jobCreationMode = jobCreationMode;
   }

@@ -114,8 +114,8 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListIcebergCatalogsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "page-size", request.getPageSize());
+                            serializer.putQueryParam(fields, "page-token", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -195,7 +195,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                             ProtoRestSerializer<CreateIcebergCatalogRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
-                                fields, "icebergCatalogId", request.getIcebergCatalogId());
+                                fields, "iceberg-catalog-id", request.getIcebergCatalogId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -318,6 +318,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListIcebergCatalogsRequest, ListIcebergCatalogsResponse>
         listIcebergCatalogsTransportSettings =
@@ -331,6 +332,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateIcebergCatalogRequest, IcebergCatalog>
         updateIcebergCatalogTransportSettings =
@@ -357,6 +359,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<FailoverIcebergCatalogRequest, FailoverIcebergCatalogResponse>
         failoverIcebergCatalogTransportSettings =

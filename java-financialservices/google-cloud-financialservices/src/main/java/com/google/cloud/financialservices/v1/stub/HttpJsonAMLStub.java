@@ -1914,6 +1914,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -1925,6 +1926,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -1936,6 +1938,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -1958,6 +1961,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportRegisteredPartiesRequest, Operation>
         importRegisteredPartiesTransportSettings =
@@ -1970,6 +1974,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ExportRegisteredPartiesRequest, Operation>
         exportRegisteredPartiesTransportSettings =
@@ -1982,6 +1987,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -1993,6 +1999,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         HttpJsonCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -2004,6 +2011,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDatasetRequest, Operation> createDatasetTransportSettings =
         HttpJsonCallSettings.<CreateDatasetRequest, Operation>newBuilder()
@@ -2015,6 +2023,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDatasetRequest, Operation> updateDatasetTransportSettings =
         HttpJsonCallSettings.<UpdateDatasetRequest, Operation>newBuilder()
@@ -2037,6 +2046,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -2048,6 +2058,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
@@ -2059,6 +2070,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         HttpJsonCallSettings.<CreateModelRequest, Operation>newBuilder()
@@ -2070,6 +2082,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateModelRequest, Operation> updateModelTransportSettings =
         HttpJsonCallSettings.<UpdateModelRequest, Operation>newBuilder()
@@ -2093,6 +2106,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("model", String.valueOf(request.getModel()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getModel())
                 .build();
     HttpJsonCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         HttpJsonCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -2104,6 +2118,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEngineConfigsRequest, ListEngineConfigsResponse>
         listEngineConfigsTransportSettings =
@@ -2116,6 +2131,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEngineConfigRequest, EngineConfig> getEngineConfigTransportSettings =
         HttpJsonCallSettings.<GetEngineConfigRequest, EngineConfig>newBuilder()
@@ -2127,6 +2143,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEngineConfigRequest, Operation> createEngineConfigTransportSettings =
         HttpJsonCallSettings.<CreateEngineConfigRequest, Operation>newBuilder()
@@ -2138,6 +2155,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEngineConfigRequest, Operation> updateEngineConfigTransportSettings =
         HttpJsonCallSettings.<UpdateEngineConfigRequest, Operation>newBuilder()
@@ -2162,6 +2180,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("engine_config", String.valueOf(request.getEngineConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEngineConfig())
                 .build();
     HttpJsonCallSettings<DeleteEngineConfigRequest, Operation> deleteEngineConfigTransportSettings =
         HttpJsonCallSettings.<DeleteEngineConfigRequest, Operation>newBuilder()
@@ -2173,6 +2192,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEngineVersionRequest, EngineVersion> getEngineVersionTransportSettings =
         HttpJsonCallSettings.<GetEngineVersionRequest, EngineVersion>newBuilder()
@@ -2184,6 +2204,7 @@ public class HttpJsonAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEngineVersionsRequest, ListEngineVersionsResponse>
         listEngineVersionsTransportSettings =
@@ -2196,6 +2217,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListPredictionResultsRequest, ListPredictionResultsResponse>
         listPredictionResultsTransportSettings =
@@ -2209,6 +2231,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPredictionResultRequest, PredictionResult>
         getPredictionResultTransportSettings =
@@ -2221,6 +2244,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreatePredictionResultRequest, Operation>
         createPredictionResultTransportSettings =
@@ -2233,6 +2257,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePredictionResultRequest, Operation>
         updatePredictionResultTransportSettings =
@@ -2260,6 +2285,7 @@ public class HttpJsonAMLStub extends AMLStub {
                           "prediction_result", String.valueOf(request.getPredictionResult()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPredictionResult())
                 .build();
     HttpJsonCallSettings<DeletePredictionResultRequest, Operation>
         deletePredictionResultTransportSettings =
@@ -2272,6 +2298,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBacktestResultsRequest, ListBacktestResultsResponse>
         listBacktestResultsTransportSettings =
@@ -2285,6 +2312,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBacktestResultRequest, BacktestResult>
         getBacktestResultTransportSettings =
@@ -2297,6 +2325,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateBacktestResultRequest, Operation>
         createBacktestResultTransportSettings =
@@ -2309,6 +2338,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBacktestResultRequest, Operation>
         updateBacktestResultTransportSettings =
@@ -2335,6 +2365,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("backtest_result", String.valueOf(request.getBacktestResult()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBacktestResult())
                 .build();
     HttpJsonCallSettings<DeleteBacktestResultRequest, Operation>
         deleteBacktestResultTransportSettings =
@@ -2347,6 +2378,7 @@ public class HttpJsonAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

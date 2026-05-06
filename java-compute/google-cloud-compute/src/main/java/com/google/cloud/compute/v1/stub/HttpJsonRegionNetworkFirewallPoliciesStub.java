@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddAssociationRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.CloneRulesRegionNetworkFirewallPolicyRequest;
@@ -1040,6 +1041,41 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate ADD_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate CLONE_RULES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_EFFECTIVE_FIREWALLS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{resource}");
+  private static final PathTemplate GET_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate PATCH_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate REMOVE_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{resource}");
+
   public static final HttpJsonRegionNetworkFirewallPoliciesStub create(
       RegionNetworkFirewallPoliciesStubSettings settings) throws IOException {
     return new HttpJsonRegionNetworkFirewallPoliciesStub(settings, ClientContext.create(settings));
@@ -1098,6 +1134,16 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AddRuleRegionNetworkFirewallPolicyRequest, Operation>
         addRuleTransportSettings =
@@ -1111,6 +1157,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return ADD_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<CloneRulesRegionNetworkFirewallPolicyRequest, Operation>
@@ -1127,6 +1182,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return CLONE_RULES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionNetworkFirewallPolicyRequest, Operation>
         deleteTransportSettings =
@@ -1141,6 +1205,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionNetworkFirewallPolicyRequest, FirewallPolicy>
         getTransportSettings =
@@ -1154,6 +1227,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -1171,6 +1253,16 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -1190,6 +1282,14 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_EFFECTIVE_FIREWALLS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>
         getIamPolicyTransportSettings =
@@ -1204,6 +1304,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetRuleRegionNetworkFirewallPolicyRequest, FirewallPolicyRule>
@@ -1220,6 +1329,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionNetworkFirewallPolicyRequest, Operation>
         insertTransportSettings =
@@ -1232,6 +1350,13 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListRegionNetworkFirewallPoliciesRequest, FirewallPolicyList>
@@ -1247,6 +1372,13 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionNetworkFirewallPolicyRequest, Operation>
         patchTransportSettings =
@@ -1260,6 +1392,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
@@ -1276,6 +1417,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return PATCH_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveAssociationRegionNetworkFirewallPolicyRequest, Operation>
         removeAssociationTransportSettings =
@@ -1290,6 +1440,16 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<RemoveRuleRegionNetworkFirewallPolicyRequest, Operation>
@@ -1306,6 +1466,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return REMOVE_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>
         setIamPolicyTransportSettings =
@@ -1320,6 +1489,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -1337,6 +1515,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

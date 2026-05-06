@@ -257,13 +257,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    *
    * @return Whether the response field is set.
    */
@@ -276,13 +276,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    *
    * @return The response.
    */
@@ -295,17 +295,66 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The tool execution result in JSON object format.
+   * The tool execution result in JSON object format.
    * Use "output" key to specify tool response and "error" key to specify
    * error details (if any). If "output" and "error" keys are not specified,
    * then whole "response" is treated as tool execution result.
    * </pre>
    *
-   * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.protobuf.Struct response = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getResponseOrBuilder() {
     return response_ == null ? com.google.protobuf.Struct.getDefaultInstance() : response_;
+  }
+
+  public static final int VARIABLES_FIELD_NUMBER = 4;
+  private com.google.protobuf.Struct variables_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  @java.lang.Override
+  public boolean hasVariables() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   *
+   * @return The variables.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getVariables() {
+    return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The variable values at the end of the tool execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+    return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,6 +380,9 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (toolIdentifierCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.ces.v1.ToolsetTool) toolIdentifier_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getVariables());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -351,6 +403,9 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.ces.v1.ToolsetTool) toolIdentifier_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getVariables());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -370,6 +425,10 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (hasResponse() != other.hasResponse()) return false;
     if (hasResponse()) {
       if (!getResponse().equals(other.getResponse())) return false;
+    }
+    if (hasVariables() != other.hasVariables()) return false;
+    if (hasVariables()) {
+      if (!getVariables().equals(other.getVariables())) return false;
     }
     if (!getToolIdentifierCase().equals(other.getToolIdentifierCase())) return false;
     switch (toolIdentifierCase_) {
@@ -396,6 +455,10 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (hasResponse()) {
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
+    }
+    if (hasVariables()) {
+      hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getVariables().hashCode();
     }
     switch (toolIdentifierCase_) {
       case 1:
@@ -552,6 +615,7 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetResponseFieldBuilder();
+        internalGetVariablesFieldBuilder();
       }
     }
 
@@ -566,6 +630,11 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
       if (responseBuilder_ != null) {
         responseBuilder_.dispose();
         responseBuilder_ = null;
+      }
+      variables_ = null;
+      if (variablesBuilder_ != null) {
+        variablesBuilder_.dispose();
+        variablesBuilder_ = null;
       }
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
@@ -611,6 +680,10 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
         result.response_ = responseBuilder_ == null ? response_ : responseBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.variables_ = variablesBuilder_ == null ? variables_ : variablesBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -636,6 +709,9 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.ces.v1.ExecuteToolResponse.getDefaultInstance()) return this;
       if (other.hasResponse()) {
         mergeResponse(other.getResponse());
+      }
+      if (other.hasVariables()) {
+        mergeVariables(other.getVariables());
       }
       switch (other.getToolIdentifierCase()) {
         case TOOL:
@@ -702,6 +778,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
                 toolIdentifierCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetVariablesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1108,13 +1191,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      *
      * @return Whether the response field is set.
      */
@@ -1126,13 +1209,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      *
      * @return The response.
      */
@@ -1148,13 +1231,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public Builder setResponse(com.google.protobuf.Struct value) {
       if (responseBuilder_ == null) {
@@ -1174,13 +1257,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public Builder setResponse(com.google.protobuf.Struct.Builder builderForValue) {
       if (responseBuilder_ == null) {
@@ -1197,13 +1280,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public Builder mergeResponse(com.google.protobuf.Struct value) {
       if (responseBuilder_ == null) {
@@ -1228,13 +1311,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public Builder clearResponse() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1251,13 +1334,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getResponseBuilder() {
       bitField0_ |= 0x00000004;
@@ -1269,13 +1352,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     public com.google.protobuf.StructOrBuilder getResponseOrBuilder() {
       if (responseBuilder_ != null) {
@@ -1289,13 +1372,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The tool execution result in JSON object format.
+     * The tool execution result in JSON object format.
      * Use "output" key to specify tool response and "error" key to specify
      * error details (if any). If "output" and "error" keys are not specified,
      * then whole "response" is treated as tool execution result.
      * </pre>
      *
-     * <code>.google.protobuf.Struct response = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.protobuf.Struct response = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Struct,
@@ -1312,6 +1395,196 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
         response_ = null;
       }
       return responseBuilder_;
+    }
+
+    private com.google.protobuf.Struct variables_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        variablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     *
+     * @return Whether the variables field is set.
+     */
+    public boolean hasVariables() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     *
+     * @return The variables.
+     */
+    public com.google.protobuf.Struct getVariables() {
+      if (variablesBuilder_ == null) {
+        return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+      } else {
+        return variablesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        variables_ = value;
+      } else {
+        variablesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct.Builder builderForValue) {
+      if (variablesBuilder_ == null) {
+        variables_ = builderForValue.build();
+      } else {
+        variablesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public Builder mergeVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && variables_ != null
+            && variables_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getVariablesBuilder().mergeFrom(value);
+        } else {
+          variables_ = value;
+        }
+      } else {
+        variablesBuilder_.mergeFrom(value);
+      }
+      if (variables_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public Builder clearVariables() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      variables_ = null;
+      if (variablesBuilder_ != null) {
+        variablesBuilder_.dispose();
+        variablesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public com.google.protobuf.Struct.Builder getVariablesBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetVariablesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+      if (variablesBuilder_ != null) {
+        return variablesBuilder_.getMessageOrBuilder();
+      } else {
+        return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The variable values at the end of the tool execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetVariablesFieldBuilder() {
+      if (variablesBuilder_ == null) {
+        variablesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getVariables(), getParentForChildren(), isClean());
+        variables_ = null;
+      }
+      return variablesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.ExecuteToolResponse)

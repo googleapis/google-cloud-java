@@ -45,6 +45,10 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_DeletePhoneNumberRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_DeletePhoneNumberRequest_fieldAccessorTable;
@@ -78,69 +82,77 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
           + "beta1\032\034google/api/annotations.proto\032\027goo"
           + "gle/api/client.proto\032\037google/api/field_b"
           + "ehavior.proto\032\031google/api/resource.proto"
-          + "\032 google/protobuf/field_mask.proto\"\261\003\n\013P"
-          + "honeNumber\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\031\n\014phone_n"
-          + "umber\030\002 \001(\tB\003\340A\003\022!\n\024conversation_profile"
-          + "\030\003 \001(\tB\003\340A\001\022Y\n\017lifecycle_state\030\004 \001(\0162;.g"
-          + "oogle.cloud.dialogflow.v2beta1.PhoneNumb"
-          + "er.LifecycleStateB\003\340A\003\"S\n\016LifecycleState"
-          + "\022\037\n\033LIFECYCLE_STATE_UNSPECIFIED\020\000\022\n\n\006ACT"
-          + "IVE\020\001\022\024\n\020DELETE_REQUESTED\020\002:\240\001\352A\234\001\n%dial"
-          + "ogflow.googleapis.com/PhoneNumber\022.proje"
-          + "cts/{project}/phoneNumbers/{phone_number"
-          + "}\022Cprojects/{project}/locations/{locatio"
-          + "n}/phoneNumbers/{phone_number}\"W\n\030Delete"
-          + "PhoneNumberRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'"
-          + "\n%dialogflow.googleapis.com/PhoneNumber\""
-          + "Y\n\032UndeletePhoneNumberRequest\022;\n\004name\030\001 "
-          + "\001(\tB-\340A\002\372A\'\n%dialogflow.googleapis.com/P"
-          + "honeNumber\"\244\001\n\027ListPhoneNumbersRequest\022="
-          + "\n\006parent\030\001 \001(\tB-\340A\002\372A\'\022%dialogflow.googl"
-          + "eapis.com/PhoneNumber\022\026\n\tpage_size\030\002 \001(\005"
-          + "B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\031\n\014show_d"
-          + "eleted\030\004 \001(\010B\003\340A\001\"x\n\030ListPhoneNumbersRes"
-          + "ponse\022C\n\rphone_numbers\030\001 \003(\0132,.google.cl"
-          + "oud.dialogflow.v2beta1.PhoneNumber\022\027\n\017ne"
-          + "xt_page_token\030\002 \001(\t\"\231\001\n\030UpdatePhoneNumbe"
-          + "rRequest\022G\n\014phone_number\030\001 \001(\0132,.google."
-          + "cloud.dialogflow.v2beta1.PhoneNumberB\003\340A"
-          + "\002\0224\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
-          + ".FieldMaskB\003\340A\0012\306\t\n\014PhoneNumbers\022\374\001\n\020Lis"
-          + "tPhoneNumbers\0228.google.cloud.dialogflow."
-          + "v2beta1.ListPhoneNumbersRequest\0329.google"
-          + ".cloud.dialogflow.v2beta1.ListPhoneNumbe"
-          + "rsResponse\"s\332A\006parent\202\323\344\223\002d\022)/v2beta1/{p"
-          + "arent=projects/*}/phoneNumbersZ7\0225/v2bet"
-          + "a1/{parent=projects/*/locations/*}/phone"
-          + "Numbers\022\273\002\n\021UpdatePhoneNumber\0229.google.c"
-          + "loud.dialogflow.v2beta1.UpdatePhoneNumbe"
-          + "rRequest\032,.google.cloud.dialogflow.v2bet"
-          + "a1.PhoneNumber\"\274\001\332A\030phone_number,update_"
-          + "mask\202\323\344\223\002\232\00126/v2beta1/{phone_number.name"
-          + "=projects/*/phoneNumbers/*}:\014phone_numbe"
-          + "rZR2B/v2beta1/{phone_number.name=project"
-          + "s/*/locations/*/phoneNumbers/*}:\014phone_n"
-          + "umber\022\357\001\n\021DeletePhoneNumber\0229.google.clo"
-          + "ud.dialogflow.v2beta1.DeletePhoneNumberR"
+          + "\032 google/protobuf/field_mask.proto\032\037goog"
+          + "le/protobuf/timestamp.proto\"\312\005\n\013PhoneNum"
+          + "ber\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\031\n\014phone_number\030\002"
+          + " \001(\tB\003\340A\003\022!\n\024conversation_profile\030\003 \001(\tB"
+          + "\003\340A\001\022Y\n\017lifecycle_state\030\004 \001(\0162;.google.c"
+          + "loud.dialogflow.v2beta1.PhoneNumber.Life"
+          + "cycleStateB\003\340A\003\022`\n\022allowed_sip_trunks\030\007 "
+          + "\001(\0132=.google.cloud.dialogflow.v2beta1.Ph"
+          + "oneNumber.AllowedSipTrunksB\003\340A\001H\000\0223\n\npur"
+          + "ge_time\030\010 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\032i\n\020AllowedSipTrunks\022;\n\nsip_trunks"
+          + "\030\001 \003(\tB\'\372A$\n\"dialogflow.googleapis.com/S"
+          + "ipTrunk\022\030\n\013carrier_ids\030\002 \003(\tB\003\340A\001\"S\n\016Lif"
+          + "ecycleState\022\037\n\033LIFECYCLE_STATE_UNSPECIFI"
+          + "ED\020\000\022\n\n\006ACTIVE\020\001\022\024\n\020DELETE_REQUESTED\020\002:\240"
+          + "\001\352A\234\001\n%dialogflow.googleapis.com/PhoneNu"
+          + "mber\022.projects/{project}/phoneNumbers/{p"
+          + "hone_number}\022Cprojects/{project}/locatio"
+          + "ns/{location}/phoneNumbers/{phone_number"
+          + "}B\025\n\023inbound_restriction\"W\n\030DeletePhoneN"
+          + "umberRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%dial"
+          + "ogflow.googleapis.com/PhoneNumber\"Y\n\032Und"
+          + "eletePhoneNumberRequest\022;\n\004name\030\001 \001(\tB-\340"
+          + "A\002\372A\'\n%dialogflow.googleapis.com/PhoneNu"
+          + "mber\"\244\001\n\027ListPhoneNumbersRequest\022=\n\006pare"
+          + "nt\030\001 \001(\tB-\340A\002\372A\'\022%dialogflow.googleapis."
+          + "com/PhoneNumber\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022"
+          + "\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\031\n\014show_deleted"
+          + "\030\004 \001(\010B\003\340A\001\"x\n\030ListPhoneNumbersResponse\022"
+          + "C\n\rphone_numbers\030\001 \003(\0132,.google.cloud.di"
+          + "alogflow.v2beta1.PhoneNumber\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"\231\001\n\030UpdatePhoneNumberReque"
+          + "st\022G\n\014phone_number\030\001 \001(\0132,.google.cloud."
+          + "dialogflow.v2beta1.PhoneNumberB\003\340A\002\0224\n\013u"
+          + "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\0012\306\t\n\014PhoneNumbers\022\374\001\n\020ListPhone"
+          + "Numbers\0228.google.cloud.dialogflow.v2beta"
+          + "1.ListPhoneNumbersRequest\0329.google.cloud"
+          + ".dialogflow.v2beta1.ListPhoneNumbersResp"
+          + "onse\"s\332A\006parent\202\323\344\223\002d\022)/v2beta1/{parent="
+          + "projects/*}/phoneNumbersZ7\0225/v2beta1/{pa"
+          + "rent=projects/*/locations/*}/phoneNumber"
+          + "s\022\273\002\n\021UpdatePhoneNumber\0229.google.cloud.d"
+          + "ialogflow.v2beta1.UpdatePhoneNumberReque"
+          + "st\032,.google.cloud.dialogflow.v2beta1.Pho"
+          + "neNumber\"\274\001\332A\030phone_number,update_mask\202\323"
+          + "\344\223\002\232\00126/v2beta1/{phone_number.name=proje"
+          + "cts/*/phoneNumbers/*}:\014phone_numberZR2B/"
+          + "v2beta1/{phone_number.name=projects/*/lo"
+          + "cations/*/phoneNumbers/*}:\014phone_number\022"
+          + "\357\001\n\021DeletePhoneNumber\0229.google.cloud.dia"
+          + "logflow.v2beta1.DeletePhoneNumberRequest"
+          + "\032,.google.cloud.dialogflow.v2beta1.Phone"
+          + "Number\"q\332A\004name\202\323\344\223\002d*)/v2beta1/{name=pr"
+          + "ojects/*/phoneNumbers/*}Z7*5/v2beta1/{na"
+          + "me=projects/*/locations/*/phoneNumbers/*"
+          + "}\022\214\002\n\023UndeletePhoneNumber\022;.google.cloud"
+          + ".dialogflow.v2beta1.UndeletePhoneNumberR"
           + "equest\032,.google.cloud.dialogflow.v2beta1"
-          + ".PhoneNumber\"q\332A\004name\202\323\344\223\002d*)/v2beta1/{n"
-          + "ame=projects/*/phoneNumbers/*}Z7*5/v2bet"
-          + "a1/{name=projects/*/locations/*/phoneNum"
-          + "bers/*}\022\214\002\n\023UndeletePhoneNumber\022;.google"
-          + ".cloud.dialogflow.v2beta1.UndeletePhoneN"
-          + "umberRequest\032,.google.cloud.dialogflow.v"
-          + "2beta1.PhoneNumber\"\211\001\332A\004name\202\323\344\223\002|\"2/v2b"
-          + "eta1/{name=projects/*/phoneNumbers/*}:un"
-          + "delete:\001*ZC\">/v2beta1/{name=projects/*/l"
-          + "ocations/*/phoneNumbers/*}:undelete:\001*\032x"
-          + "\312A\031dialogflow.googleapis.com\322AYhttps://w"
-          + "ww.googleapis.com/auth/cloud-platform,ht"
-          + "tps://www.googleapis.com/auth/dialogflow"
-          + "B\245\001\n#com.google.cloud.dialogflow.v2beta1"
-          + "B\020PhoneNumberProtoP\001ZCcloud.google.com/g"
-          + "o/dialogflow/apiv2beta1/dialogflowpb;dia"
-          + "logflowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow"
-          + ".V2Beta1b\006proto3"
+          + ".PhoneNumber\"\211\001\332A\004name\202\323\344\223\002|\"2/v2beta1/{"
+          + "name=projects/*/phoneNumbers/*}:undelete"
+          + ":\001*ZC\">/v2beta1/{name=projects/*/locatio"
+          + "ns/*/phoneNumbers/*}:undelete:\001*\032x\312A\031dia"
+          + "logflow.googleapis.com\322AYhttps://www.goo"
+          + "gleapis.com/auth/cloud-platform,https://"
+          + "www.googleapis.com/auth/dialogflowB\245\001\n#c"
+          + "om.google.cloud.dialogflow.v2beta1B\020Phon"
+          + "eNumberProtoP\001ZCcloud.google.com/go/dial"
+          + "ogflow/apiv2beta1/dialogflowpb;dialogflo"
+          + "wpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,6 +163,7 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_descriptor =
         getDescriptor().getMessageType(0);
@@ -158,7 +171,21 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_descriptor,
             new java.lang.String[] {
-              "Name", "PhoneNumber", "ConversationProfile", "LifecycleState",
+              "Name",
+              "PhoneNumber",
+              "ConversationProfile",
+              "LifecycleState",
+              "AllowedSipTrunks",
+              "PurgeTime",
+              "InboundRestriction",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_descriptor.getNestedType(0);
+    internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_PhoneNumber_AllowedSipTrunks_descriptor,
+            new java.lang.String[] {
+              "SipTrunks", "CarrierIds",
             });
     internal_static_google_cloud_dialogflow_v2beta1_DeletePhoneNumberRequest_descriptor =
         getDescriptor().getMessageType(1);
@@ -206,6 +233,7 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

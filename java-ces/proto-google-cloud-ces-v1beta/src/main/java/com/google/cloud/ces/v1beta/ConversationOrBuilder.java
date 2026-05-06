@@ -227,7 +227,7 @@ public interface ConversationOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=126
+   *     google/cloud/ces/v1beta/conversation.proto;l=130
    * @return The enum numeric value on the wire for channelType.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface ConversationOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=126
+   *     google/cloud/ces/v1beta/conversation.proto;l=130
    * @return The channelType.
    */
   @java.lang.Deprecated

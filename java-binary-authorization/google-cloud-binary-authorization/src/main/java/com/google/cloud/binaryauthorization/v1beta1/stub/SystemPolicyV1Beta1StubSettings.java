@@ -232,6 +232,7 @@ public class SystemPolicyV1Beta1StubSettings extends StubSettings<SystemPolicyV1
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-binary-authorization")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

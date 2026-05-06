@@ -1401,6 +1401,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPrivateCloudRequest, PrivateCloud> getPrivateCloudTransportSettings =
         GrpcCallSettings.<GetPrivateCloudRequest, PrivateCloud>newBuilder()
@@ -1411,6 +1412,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePrivateCloudRequest, Operation> createPrivateCloudTransportSettings =
         GrpcCallSettings.<CreatePrivateCloudRequest, Operation>newBuilder()
@@ -1421,6 +1423,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePrivateCloudRequest, Operation> updatePrivateCloudTransportSettings =
         GrpcCallSettings.<UpdatePrivateCloudRequest, Operation>newBuilder()
@@ -1442,6 +1445,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeletePrivateCloudRequest, Operation> undeletePrivateCloudTransportSettings =
         GrpcCallSettings.<UndeletePrivateCloudRequest, Operation>newBuilder()
@@ -1452,6 +1456,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
@@ -1462,6 +1467,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1472,6 +1478,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1482,6 +1489,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1502,6 +1510,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNodesRequest, ListNodesResponse> listNodesTransportSettings =
         GrpcCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
@@ -1512,6 +1521,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         GrpcCallSettings.<GetNodeRequest, Node>newBuilder()
@@ -1522,6 +1532,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListExternalAddressesRequest, ListExternalAddressesResponse>
         listExternalAddressesTransportSettings =
@@ -1534,6 +1545,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
@@ -1549,6 +1561,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("network_policy", String.valueOf(request.getNetworkPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getNetworkPolicy())
                 .build();
     GrpcCallSettings<GetExternalAddressRequest, ExternalAddress>
         getExternalAddressTransportSettings =
@@ -1560,6 +1573,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateExternalAddressRequest, Operation>
         createExternalAddressTransportSettings =
@@ -1571,6 +1585,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateExternalAddressRequest, Operation>
         updateExternalAddressTransportSettings =
@@ -1595,6 +1610,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         GrpcCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
@@ -1605,6 +1621,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
         GrpcCallSettings.<GetSubnetRequest, Subnet>newBuilder()
@@ -1615,6 +1632,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
         GrpcCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
@@ -1637,6 +1655,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetExternalAccessRuleRequest, ExternalAccessRule>
         getExternalAccessRuleTransportSettings =
@@ -1648,6 +1667,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateExternalAccessRuleRequest, Operation>
         createExternalAccessRuleTransportSettings =
@@ -1659,6 +1679,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateExternalAccessRuleRequest, Operation>
         updateExternalAccessRuleTransportSettings =
@@ -1683,6 +1704,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLoggingServersRequest, ListLoggingServersResponse>
         listLoggingServersTransportSettings =
@@ -1694,6 +1716,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLoggingServerRequest, LoggingServer> getLoggingServerTransportSettings =
         GrpcCallSettings.<GetLoggingServerRequest, LoggingServer>newBuilder()
@@ -1704,6 +1727,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateLoggingServerRequest, Operation> createLoggingServerTransportSettings =
         GrpcCallSettings.<CreateLoggingServerRequest, Operation>newBuilder()
@@ -1714,6 +1738,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateLoggingServerRequest, Operation> updateLoggingServerTransportSettings =
         GrpcCallSettings.<UpdateLoggingServerRequest, Operation>newBuilder()
@@ -1735,6 +1760,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesTransportSettings =
         GrpcCallSettings.<ListNodeTypesRequest, ListNodeTypesResponse>newBuilder()
@@ -1745,6 +1771,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetNodeTypeRequest, NodeType> getNodeTypeTransportSettings =
         GrpcCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
@@ -1755,6 +1782,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ShowNsxCredentialsRequest, Credentials> showNsxCredentialsTransportSettings =
         GrpcCallSettings.<ShowNsxCredentialsRequest, Credentials>newBuilder()
@@ -1765,6 +1793,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getPrivateCloud())
             .build();
     GrpcCallSettings<ShowVcenterCredentialsRequest, Credentials>
         showVcenterCredentialsTransportSettings =
@@ -1776,6 +1805,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     GrpcCallSettings<ResetNsxCredentialsRequest, Operation> resetNsxCredentialsTransportSettings =
         GrpcCallSettings.<ResetNsxCredentialsRequest, Operation>newBuilder()
@@ -1786,6 +1816,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getPrivateCloud())
             .build();
     GrpcCallSettings<ResetVcenterCredentialsRequest, Operation>
         resetVcenterCredentialsTransportSettings =
@@ -1797,6 +1828,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     GrpcCallSettings<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingTransportSettings =
         GrpcCallSettings.<GetDnsForwardingRequest, DnsForwarding>newBuilder()
@@ -1807,6 +1839,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDnsForwardingRequest, Operation> updateDnsForwardingTransportSettings =
         GrpcCallSettings.<UpdateDnsForwardingRequest, Operation>newBuilder()
@@ -1828,6 +1861,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
         listNetworkPeeringsTransportSettings =
@@ -1839,6 +1873,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateNetworkPeeringRequest, Operation> createNetworkPeeringTransportSettings =
         GrpcCallSettings.<CreateNetworkPeeringRequest, Operation>newBuilder()
@@ -1849,6 +1884,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNetworkPeeringRequest, Operation> deleteNetworkPeeringTransportSettings =
         GrpcCallSettings.<DeleteNetworkPeeringRequest, Operation>newBuilder()
@@ -1859,6 +1895,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateNetworkPeeringRequest, Operation> updateNetworkPeeringTransportSettings =
         GrpcCallSettings.<UpdateNetworkPeeringRequest, Operation>newBuilder()
@@ -1882,6 +1919,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateHcxActivationKeyRequest, Operation>
         createHcxActivationKeyTransportSettings =
@@ -1893,6 +1931,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
         listHcxActivationKeysTransportSettings =
@@ -1905,6 +1944,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetHcxActivationKeyRequest, HcxActivationKey>
         getHcxActivationKeyTransportSettings =
@@ -1916,6 +1956,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetNetworkPolicyRequest, NetworkPolicy> getNetworkPolicyTransportSettings =
         GrpcCallSettings.<GetNetworkPolicyRequest, NetworkPolicy>newBuilder()
@@ -1926,6 +1967,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
         listNetworkPoliciesTransportSettings =
@@ -1937,6 +1979,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateNetworkPolicyRequest, Operation> createNetworkPolicyTransportSettings =
         GrpcCallSettings.<CreateNetworkPolicyRequest, Operation>newBuilder()
@@ -1947,6 +1990,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateNetworkPolicyRequest, Operation> updateNetworkPolicyTransportSettings =
         GrpcCallSettings.<UpdateNetworkPolicyRequest, Operation>newBuilder()
@@ -1968,6 +2012,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
         listManagementDnsZoneBindingsTransportSettings =
@@ -1981,6 +2026,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
         getManagementDnsZoneBindingTransportSettings =
@@ -1993,6 +2039,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateManagementDnsZoneBindingRequest, Operation>
         createManagementDnsZoneBindingTransportSettings =
@@ -2004,6 +2051,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateManagementDnsZoneBindingRequest, Operation>
         updateManagementDnsZoneBindingTransportSettings =
@@ -2028,6 +2076,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RepairManagementDnsZoneBindingRequest, Operation>
         repairManagementDnsZoneBindingTransportSettings =
@@ -2039,6 +2088,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateVmwareEngineNetworkRequest, Operation>
         createVmwareEngineNetworkTransportSettings =
@@ -2050,6 +2100,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateVmwareEngineNetworkRequest, Operation>
         updateVmwareEngineNetworkTransportSettings =
@@ -2074,6 +2125,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
         getVmwareEngineNetworkTransportSettings =
@@ -2085,6 +2137,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
         listVmwareEngineNetworksTransportSettings =
@@ -2097,6 +2150,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -2108,6 +2162,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -2119,6 +2174,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -2131,6 +2187,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdatePrivateConnectionRequest, Operation>
         updatePrivateConnectionTransportSettings =
@@ -2155,6 +2212,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
@@ -2170,6 +2228,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GrantDnsBindPermissionRequest, Operation>
         grantDnsBindPermissionTransportSettings =
@@ -2181,6 +2240,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetDnsBindPermissionRequest, DnsBindPermission>
         getDnsBindPermissionTransportSettings =
@@ -2192,6 +2252,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RevokeDnsBindPermissionRequest, Operation>
         revokeDnsBindPermissionTransportSettings =
@@ -2203,6 +2264,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2233,6 +2295,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2243,6 +2306,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2254,6 +2318,7 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listPrivateCloudsCallable =

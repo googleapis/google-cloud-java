@@ -284,6 +284,33 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
+   * Optional. IOPS provisioned for the root disk for VMs.
+   * </pre>
+   *
+   * <code>int64 disk_provisioned_iops = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskProvisionedIops.
+   */
+  long getDiskProvisionedIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Throughput provisioned for the root disk for VMs.
+   * </pre>
+   *
+   * <code>int64 disk_provisioned_throughput_mibps = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The diskProvisionedThroughputMibps.
+   */
+  long getDiskProvisionedThroughputMibps();
+
+  /**
+   *
+   *
+   * <pre>
    * Fully qualified source image for disks.
    * </pre>
    *

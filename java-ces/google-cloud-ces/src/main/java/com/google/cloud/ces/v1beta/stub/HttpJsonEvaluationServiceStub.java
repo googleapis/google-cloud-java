@@ -57,6 +57,8 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.GenerateEvaluationRequest;
 import com.google.cloud.ces.v1beta.GetEvaluationDatasetRequest;
@@ -80,6 +82,7 @@ import com.google.cloud.ces.v1beta.ListEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ListEvaluationsResponse;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsRequest;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsResponse;
+import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
@@ -124,6 +127,8 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
           .add(RunEvaluationOperationMetadata.getDescriptor())
           .add(ImportEvaluationsOperationMetadata.getDescriptor())
           .add(DeleteEvaluationRunOperationMetadata.getDescriptor())
+          .add(ExportEvaluationsResponse.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
           .add(Evaluation.getDescriptor())
           .add(ImportEvaluationsResponse.getDescriptor())
           .add(RunEvaluationResponse.getDescriptor())
@@ -1342,6 +1347,46 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ExportEvaluationsRequest, Operation>
+      exportEvaluationsMethodDescriptor =
+          ApiMethodDescriptor.<ExportEvaluationsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.EvaluationService/ExportEvaluations")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportEvaluationsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/apps/*}/evaluations:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportEvaluationsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1489,6 +1534,10 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
       deleteScheduledEvaluationRunCallable;
   private final UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable;
+  private final UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable;
+  private final OperationCallable<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1574,6 +1623,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("app", String.valueOf(request.getApp()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getApp())
             .build();
     HttpJsonCallSettings<UploadEvaluationAudioRequest, UploadEvaluationAudioResponse>
         uploadEvaluationAudioTransportSettings =
@@ -1587,6 +1637,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateEvaluationRequest, Evaluation> createEvaluationTransportSettings =
         HttpJsonCallSettings.<CreateEvaluationRequest, Evaluation>newBuilder()
@@ -1598,6 +1649,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GenerateEvaluationRequest, Operation> generateEvaluationTransportSettings =
         HttpJsonCallSettings.<GenerateEvaluationRequest, Operation>newBuilder()
@@ -1609,6 +1661,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("conversation", String.valueOf(request.getConversation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getConversation())
             .build();
     HttpJsonCallSettings<ImportEvaluationsRequest, Operation> importEvaluationsTransportSettings =
         HttpJsonCallSettings.<ImportEvaluationsRequest, Operation>newBuilder()
@@ -1620,6 +1673,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateEvaluationDatasetRequest, EvaluationDataset>
         createEvaluationDatasetTransportSettings =
@@ -1632,6 +1686,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateEvaluationRequest, Evaluation> updateEvaluationTransportSettings =
         HttpJsonCallSettings.<UpdateEvaluationRequest, Evaluation>newBuilder()
@@ -1668,6 +1723,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteEvaluationResultRequest, Empty>
         deleteEvaluationResultTransportSettings =
@@ -1680,6 +1736,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteEvaluationDatasetRequest, Empty>
         deleteEvaluationDatasetTransportSettings =
@@ -1692,6 +1749,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteEvaluationRunRequest, Operation>
         deleteEvaluationRunTransportSettings =
@@ -1704,6 +1762,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         HttpJsonCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -1715,6 +1774,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEvaluationResultRequest, EvaluationResult>
         getEvaluationResultTransportSettings =
@@ -1727,6 +1787,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetEvaluationDatasetRequest, EvaluationDataset>
         getEvaluationDatasetTransportSettings =
@@ -1739,6 +1800,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetEvaluationRunRequest, EvaluationRun> getEvaluationRunTransportSettings =
         HttpJsonCallSettings.<GetEvaluationRunRequest, EvaluationRun>newBuilder()
@@ -1750,6 +1812,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -1762,6 +1825,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListEvaluationResultsRequest, ListEvaluationResultsResponse>
         listEvaluationResultsTransportSettings =
@@ -1775,6 +1839,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse>
         listEvaluationDatasetsTransportSettings =
@@ -1788,6 +1853,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListEvaluationRunsRequest, ListEvaluationRunsResponse>
         listEvaluationRunsTransportSettings =
@@ -1800,6 +1866,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListEvaluationExpectationsRequest, ListEvaluationExpectationsResponse>
         listEvaluationExpectationsTransportSettings =
@@ -1813,6 +1880,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEvaluationExpectationRequest, EvaluationExpectation>
         getEvaluationExpectationTransportSettings =
@@ -1826,6 +1894,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateEvaluationExpectationRequest, EvaluationExpectation>
         createEvaluationExpectationTransportSettings =
@@ -1839,6 +1908,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateEvaluationExpectationRequest, EvaluationExpectation>
         updateEvaluationExpectationTransportSettings =
@@ -1866,6 +1936,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         createScheduledEvaluationRunTransportSettings =
@@ -1879,6 +1950,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         getScheduledEvaluationRunTransportSettings =
@@ -1892,6 +1964,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListScheduledEvaluationRunsRequest, ListScheduledEvaluationRunsResponse>
         listScheduledEvaluationRunsTransportSettings =
@@ -1906,6 +1979,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         updateScheduledEvaluationRunTransportSettings =
@@ -1933,6 +2007,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
         testPersonaVoiceTransportSettings =
@@ -1945,7 +2020,20 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("app", String.valueOf(request.getApp()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getApp())
                 .build();
+    HttpJsonCallSettings<ExportEvaluationsRequest, Operation> exportEvaluationsTransportSettings =
+        HttpJsonCallSettings.<ExportEvaluationsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportEvaluationsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2161,6 +2249,17 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
     this.testPersonaVoiceCallable =
         callableFactory.createUnaryCallable(
             testPersonaVoiceTransportSettings, settings.testPersonaVoiceSettings(), clientContext);
+    this.exportEvaluationsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationsTransportSettings,
+            settings.exportEvaluationsSettings(),
+            clientContext);
+    this.exportEvaluationsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationsTransportSettings,
+            settings.exportEvaluationsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2209,6 +2308,7 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
     methodDescriptors.add(updateScheduledEvaluationRunMethodDescriptor);
     methodDescriptors.add(deleteScheduledEvaluationRunMethodDescriptor);
     methodDescriptors.add(testPersonaVoiceMethodDescriptor);
+    methodDescriptors.add(exportEvaluationsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2452,6 +2552,17 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
   public UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable() {
     return testPersonaVoiceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
+    return exportEvaluationsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable() {
+    return exportEvaluationsOperationCallable;
   }
 
   @Override

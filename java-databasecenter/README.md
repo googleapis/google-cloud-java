@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.78.0</version>
+      <version>26.80.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-databasecenter</artifactId>
-  <version>0.8.0</version>
+  <version>0.12.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-databasecenter:0.8.0'
+implementation 'com.google.cloud:google-cloud-databasecenter:0.12.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-databasecenter" % "0.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-databasecenter" % "0.12.0"
 ```
 
 ## Authentication
@@ -87,7 +87,7 @@ to add `google-cloud-databasecenter` as a dependency in your code.
 ## About Database Center API
 
 
-[Database Center API][product-docs] Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center’s fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.
+[Database Center API][product-docs] Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center's fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.
 
 See the [Database Center API client library docs][javadocs] to learn how to
 use this Database Center API Client Library.
@@ -181,7 +181,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-databasecenter.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-databasecenter/0.8.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-databasecenter/0.12.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

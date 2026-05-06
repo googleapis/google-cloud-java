@@ -419,6 +419,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMulticloudDataTransferConfigRequest, MulticloudDataTransferConfig>
         getMulticloudDataTransferConfigTransportSettings =
@@ -431,6 +432,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateMulticloudDataTransferConfigRequest, Operation>
         createMulticloudDataTransferConfigTransportSettings =
@@ -442,6 +444,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateMulticloudDataTransferConfigRequest, Operation>
         updateMulticloudDataTransferConfigTransportSettings =
@@ -466,6 +469,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDestinationsRequest, ListDestinationsResponse>
         listDestinationsTransportSettings =
@@ -477,6 +481,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDestinationRequest, Destination> getDestinationTransportSettings =
         GrpcCallSettings.<GetDestinationRequest, Destination>newBuilder()
@@ -487,6 +492,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDestinationRequest, Operation> createDestinationTransportSettings =
         GrpcCallSettings.<CreateDestinationRequest, Operation>newBuilder()
@@ -497,6 +503,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDestinationRequest, Operation> updateDestinationTransportSettings =
         GrpcCallSettings.<UpdateDestinationRequest, Operation>newBuilder()
@@ -518,6 +525,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<
             GetMulticloudDataTransferSupportedServiceRequest,
@@ -534,6 +542,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListMulticloudDataTransferSupportedServicesRequest,
@@ -550,6 +559,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -580,6 +590,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -590,6 +601,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -601,6 +613,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listMulticloudDataTransferConfigsCallable =

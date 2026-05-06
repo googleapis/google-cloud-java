@@ -97,6 +97,7 @@
  *       ExecuteToolRequest.newBuilder()
  *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
  *           .setArgs(Struct.newBuilder().build())
+ *           .setMockConfig(MockConfig.newBuilder().build())
  *           .build();
  *   ExecuteToolResponse response = toolServiceClient.executeTool(request);
  * }
@@ -121,6 +122,7 @@
  *           .setDeployment(
  *               DeploymentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[DEPLOYMENT]").toString())
  *           .setRecaptchaToken("recaptchaToken1978277202")
+ *           .setLiveHandoffEnabled(true)
  *           .build();
  *   GenerateChatTokenResponse response = widgetServiceClient.generateChatToken(request);
  * }

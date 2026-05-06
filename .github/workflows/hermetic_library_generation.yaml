@@ -20,6 +20,9 @@ on:
 env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
+  # {x-version-update-start:gapic-generator-java:current}
+  GENERATOR_VERSION: 2.73.0-SNAPSHOT
+  # {x-version-update-end}
 jobs:
   library_generation:
     runs-on: ubuntu-latest
@@ -37,9 +40,12 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
-    - uses: googleapis/sdk-platform-java/.github/scripts@v2.68.0
+    - uses: ./sdk-platform-java/.github/scripts
       if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        force_regenerate_all: ${{ github.event.pull_request.head.ref == 'generate-libraries-main' }}
+        showcase_mode: true
+        image_tag: ${{ env.GENERATOR_VERSION }}

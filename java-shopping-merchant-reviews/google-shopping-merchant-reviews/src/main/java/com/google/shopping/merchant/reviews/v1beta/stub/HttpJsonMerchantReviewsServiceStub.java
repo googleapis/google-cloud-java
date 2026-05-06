@@ -268,6 +268,7 @@ public class HttpJsonMerchantReviewsServiceStub extends MerchantReviewsServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListMerchantReviewsRequest, ListMerchantReviewsResponse>
         listMerchantReviewsTransportSettings =
@@ -281,6 +282,7 @@ public class HttpJsonMerchantReviewsServiceStub extends MerchantReviewsServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<InsertMerchantReviewRequest, MerchantReview>
         insertMerchantReviewTransportSettings =
@@ -304,6 +306,7 @@ public class HttpJsonMerchantReviewsServiceStub extends MerchantReviewsServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getMerchantReviewCallable =

@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetNetworkProfileRequest;
 import com.google.cloud.compute.v1.ListNetworkProfilesRequest;
 import com.google.cloud.compute.v1.NetworkProfile;
@@ -147,6 +148,11 @@ public class HttpJsonNetworkProfilesStub extends NetworkProfilesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networkProfiles/{network_profile}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
   public static final HttpJsonNetworkProfilesStub create(NetworkProfilesStubSettings settings)
       throws IOException {
     return new HttpJsonNetworkProfilesStub(settings, ClientContext.create(settings));
@@ -197,6 +203,14 @@ public class HttpJsonNetworkProfilesStub extends NetworkProfilesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "network_profile", String.valueOf(request.getNetworkProfile()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListNetworkProfilesRequest, NetworkProfilesListResponse>
         listTransportSettings =
@@ -209,6 +223,12 @@ public class HttpJsonNetworkProfilesStub extends NetworkProfilesStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

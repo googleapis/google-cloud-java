@@ -64,6 +64,15 @@ import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
 import com.google.cloud.netapp.v1.EstablishPeeringRequest;
+import com.google.cloud.netapp.v1.EstablishVolumePeeringRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapDeleteResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapGetRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapGetResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPatchResponse;
+import com.google.cloud.netapp.v1.ExecuteOntapPostRequest;
+import com.google.cloud.netapp.v1.ExecuteOntapPostResponse;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
 import com.google.cloud.netapp.v1.GetBackupRequest;
@@ -261,6 +270,16 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable() {
     throw new UnsupportedOperationException("Not implemented: revertVolumeCallable()");
+  }
+
+  public OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
+      establishVolumePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: establishVolumePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<EstablishVolumePeeringRequest, Operation> establishVolumePeeringCallable() {
+    throw new UnsupportedOperationException("Not implemented: establishVolumePeeringCallable()");
   }
 
   public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
@@ -709,6 +728,25 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<DeleteHostGroupRequest, Operation> deleteHostGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteHostGroupCallable()");
+  }
+
+  public UnaryCallable<ExecuteOntapPostRequest, ExecuteOntapPostResponse>
+      executeOntapPostCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeOntapPostCallable()");
+  }
+
+  public UnaryCallable<ExecuteOntapGetRequest, ExecuteOntapGetResponse> executeOntapGetCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeOntapGetCallable()");
+  }
+
+  public UnaryCallable<ExecuteOntapDeleteRequest, ExecuteOntapDeleteResponse>
+      executeOntapDeleteCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeOntapDeleteCallable()");
+  }
+
+  public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
+      executeOntapPatchCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeOntapPatchCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

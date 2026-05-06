@@ -646,6 +646,7 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-service-management")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

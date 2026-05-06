@@ -80,6 +80,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     shippingTransitBusinessDays_ = java.util.Collections.emptyList();
     handlingCutoffTimes_ = java.util.Collections.emptyList();
     shippingLabel_ = "";
+    returnPolicyLabel_ = "";
     transitTimeLabel_ = "";
     size_ = "";
     sizeSystem_ = 0;
@@ -116,6 +117,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     virtualModelLink_ = "";
     certifications_ = java.util.Collections.emptyList();
     sustainabilityIncentives_ = java.util.Collections.emptyList();
+    videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8218,7 +8220,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8236,7 +8238,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8254,7 +8256,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8273,7 +8275,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8438,7 +8440,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -8456,7 +8458,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -8482,7 +8484,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -10228,8 +10230,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -10245,8 +10248,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -10270,8 +10274,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -10285,6 +10290,81 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       shippingLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RETURN_POLICY_LABEL_FIELD_NUMBER = 170;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object returnPolicyLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return Whether the returnPolicyLabel field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnPolicyLabel() {
+    return ((bitField1_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return The returnPolicyLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getReturnPolicyLabel() {
+    java.lang.Object ref = returnPolicyLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      returnPolicyLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return The bytes for returnPolicyLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReturnPolicyLabelBytes() {
+    java.lang.Object ref = returnPolicyLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      returnPolicyLabel_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -10310,7 +10390,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTransitTimeLabel() {
-    return ((bitField1_ & 0x00000400) != 0);
+    return ((bitField1_ & 0x00000800) != 0);
   }
 
   /**
@@ -10384,7 +10464,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSize() {
-    return ((bitField1_ & 0x00000800) != 0);
+    return ((bitField1_ & 0x00001000) != 0);
   }
 
   /**
@@ -10459,7 +10539,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSizeSystem() {
-    return ((bitField1_ & 0x00001000) != 0);
+    return ((bitField1_ & 0x00002000) != 0);
   }
 
   /**
@@ -10636,7 +10716,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasEnergyEfficiencyClass() {
-    return ((bitField1_ & 0x00002000) != 0);
+    return ((bitField1_ & 0x00004000) != 0);
   }
 
   /**
@@ -10704,7 +10784,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMinEnergyEfficiencyClass() {
-    return ((bitField1_ & 0x00004000) != 0);
+    return ((bitField1_ & 0x00008000) != 0);
   }
 
   /**
@@ -10773,7 +10853,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMaxEnergyEfficiencyClass() {
-    return ((bitField1_ & 0x00008000) != 0);
+    return ((bitField1_ & 0x00010000) != 0);
   }
 
   /**
@@ -10839,7 +10919,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasUnitPricingMeasure() {
-    return ((bitField1_ & 0x00010000) != 0);
+    return ((bitField1_ & 0x00020000) != 0);
   }
 
   /**
@@ -10897,7 +10977,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasUnitPricingBaseMeasure() {
-    return ((bitField1_ & 0x00020000) != 0);
+    return ((bitField1_ & 0x00040000) != 0);
   }
 
   /**
@@ -10956,7 +11036,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMultipack() {
-    return ((bitField1_ & 0x00040000) != 0);
+    return ((bitField1_ & 0x00080000) != 0);
   }
 
   /**
@@ -10996,7 +11076,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasAdsGrouping() {
-    return ((bitField1_ & 0x00080000) != 0);
+    return ((bitField1_ & 0x00100000) != 0);
   }
 
   /**
@@ -11140,7 +11220,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasAdsRedirect() {
-    return ((bitField1_ & 0x00100000) != 0);
+    return ((bitField1_ & 0x00200000) != 0);
   }
 
   /**
@@ -11209,7 +11289,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCostOfGoodsSold() {
-    return ((bitField1_ & 0x00200000) != 0);
+    return ((bitField1_ & 0x00400000) != 0);
   }
 
   /**
@@ -11414,7 +11494,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasDisplayAdsId() {
-    return ((bitField1_ & 0x00400000) != 0);
+    return ((bitField1_ & 0x00800000) != 0);
   }
 
   /**
@@ -11559,7 +11639,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasDisplayAdsTitle() {
-    return ((bitField1_ & 0x00800000) != 0);
+    return ((bitField1_ & 0x01000000) != 0);
   }
 
   /**
@@ -11629,7 +11709,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasDisplayAdsLink() {
-    return ((bitField1_ & 0x01000000) != 0);
+    return ((bitField1_ & 0x02000000) != 0);
   }
 
   /**
@@ -11700,7 +11780,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasDisplayAdsValue() {
-    return ((bitField1_ & 0x02000000) != 0);
+    return ((bitField1_ & 0x04000000) != 0);
   }
 
   /**
@@ -11806,7 +11886,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPickupMethod() {
-    return ((bitField1_ & 0x04000000) != 0);
+    return ((bitField1_ & 0x08000000) != 0);
   }
 
   /**
@@ -11864,7 +11944,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPickupSla() {
-    return ((bitField1_ & 0x08000000) != 0);
+    return ((bitField1_ & 0x10000000) != 0);
   }
 
   /**
@@ -11924,7 +12004,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasLinkTemplate() {
-    return ((bitField1_ & 0x10000000) != 0);
+    return ((bitField1_ & 0x20000000) != 0);
   }
 
   /**
@@ -11997,7 +12077,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMobileLinkTemplate() {
-    return ((bitField1_ & 0x20000000) != 0);
+    return ((bitField1_ & 0x40000000) != 0);
   }
 
   /**
@@ -12071,7 +12151,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel0() {
-    return ((bitField1_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x80000000) != 0);
   }
 
   /**
@@ -12143,7 +12223,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel1() {
-    return ((bitField1_ & 0x80000000) != 0);
+    return ((bitField2_ & 0x00000001) != 0);
   }
 
   /**
@@ -12215,7 +12295,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel2() {
-    return ((bitField2_ & 0x00000001) != 0);
+    return ((bitField2_ & 0x00000002) != 0);
   }
 
   /**
@@ -12287,7 +12367,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel3() {
-    return ((bitField2_ & 0x00000002) != 0);
+    return ((bitField2_ & 0x00000004) != 0);
   }
 
   /**
@@ -12359,7 +12439,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel4() {
-    return ((bitField2_ & 0x00000004) != 0);
+    return ((bitField2_ & 0x00000008) != 0);
   }
 
   /**
@@ -12819,7 +12899,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasExternalSellerId() {
-    return ((bitField2_ & 0x00000008) != 0);
+    return ((bitField2_ & 0x00000010) != 0);
   }
 
   /**
@@ -12891,7 +12971,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPause() {
-    return ((bitField2_ & 0x00000010) != 0);
+    return ((bitField2_ & 0x00000020) != 0);
   }
 
   /**
@@ -13122,7 +13202,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasVirtualModelLink() {
-    return ((bitField2_ & 0x00000020) != 0);
+    return ((bitField2_ & 0x00000040) != 0);
   }
 
   /**
@@ -13300,7 +13380,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasStructuredTitle() {
-    return ((bitField2_ & 0x00000040) != 0);
+    return ((bitField2_ & 0x00000080) != 0);
   }
 
   /**
@@ -13358,7 +13438,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasStructuredDescription() {
-    return ((bitField2_ & 0x00000080) != 0);
+    return ((bitField2_ & 0x00000100) != 0);
   }
 
   /**
@@ -13421,7 +13501,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasAutoPricingMinPrice() {
-    return ((bitField2_ & 0x00000100) != 0);
+    return ((bitField2_ & 0x00000200) != 0);
   }
 
   /**
@@ -13560,6 +13640,86 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     return sustainabilityIncentives_.get(index);
   }
 
+  public static final int VIDEO_LINKS_FIELD_NUMBER = 169;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList videoLinks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the videoLinks.
+   */
+  public com.google.protobuf.ProtocolStringList getVideoLinksList() {
+    return videoLinks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of videoLinks.
+   */
+  public int getVideoLinksCount() {
+    return videoLinks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The videoLinks at the given index.
+   */
+  public java.lang.String getVideoLinks(int index) {
+    return videoLinks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the videoLinks at the given index.
+   */
+  public com.google.protobuf.ByteString getVideoLinksBytes(int index) {
+    return videoLinks_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13575,7 +13735,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (((bitField2_ & 0x00000008) != 0)) {
+    if (((bitField2_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, externalSellerId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -13605,7 +13765,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < additionalImageLinks_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, additionalImageLinks_.getRaw(i));
     }
-    if (((bitField2_ & 0x00000010) != 0)) {
+    if (((bitField2_ & 0x00000020) != 0)) {
       output.writeEnum(13, pause_);
     }
     for (int i = 0; i < lifestyleImageLinks_.size(); i++) {
@@ -13701,13 +13861,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField1_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 46, shippingLabel_);
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 47, transitTimeLabel_);
     }
-    if (((bitField1_ & 0x00000800) != 0)) {
+    if (((bitField1_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 48, size_);
     }
-    if (((bitField1_ & 0x00001000) != 0)) {
+    if (((bitField1_ & 0x00002000) != 0)) {
       output.writeEnum(49, sizeSystem_);
     }
     if (getSizeTypesList().size() > 0) {
@@ -13717,34 +13877,34 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < sizeTypes_.size(); i++) {
       output.writeEnumNoTag(sizeTypes_.getInt(i));
     }
-    if (((bitField1_ & 0x00002000) != 0)) {
+    if (((bitField1_ & 0x00004000) != 0)) {
       output.writeEnum(53, energyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00004000) != 0)) {
+    if (((bitField1_ & 0x00008000) != 0)) {
       output.writeEnum(54, minEnergyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00008000) != 0)) {
+    if (((bitField1_ & 0x00010000) != 0)) {
       output.writeEnum(55, maxEnergyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00010000) != 0)) {
+    if (((bitField1_ & 0x00020000) != 0)) {
       output.writeMessage(56, getUnitPricingMeasure());
     }
-    if (((bitField1_ & 0x00020000) != 0)) {
+    if (((bitField1_ & 0x00040000) != 0)) {
       output.writeMessage(57, getUnitPricingBaseMeasure());
     }
-    if (((bitField1_ & 0x00040000) != 0)) {
+    if (((bitField1_ & 0x00080000) != 0)) {
       output.writeInt64(58, multipack_);
     }
-    if (((bitField1_ & 0x00080000) != 0)) {
+    if (((bitField1_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 59, adsGrouping_);
     }
     for (int i = 0; i < adsLabels_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 60, adsLabels_.getRaw(i));
     }
-    if (((bitField1_ & 0x00100000) != 0)) {
+    if (((bitField1_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 61, adsRedirect_);
     }
-    if (((bitField1_ & 0x00200000) != 0)) {
+    if (((bitField1_ & 0x00400000) != 0)) {
       output.writeMessage(62, getCostOfGoodsSold());
     }
     for (int i = 0; i < productDetails_.size(); i++) {
@@ -13753,37 +13913,37 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < productHighlights_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 64, productHighlights_.getRaw(i));
     }
-    if (((bitField1_ & 0x00400000) != 0)) {
+    if (((bitField1_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 65, displayAdsId_);
     }
     for (int i = 0; i < displayAdsSimilarIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 66, displayAdsSimilarIds_.getRaw(i));
     }
-    if (((bitField1_ & 0x00800000) != 0)) {
+    if (((bitField1_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 67, displayAdsTitle_);
     }
-    if (((bitField1_ & 0x01000000) != 0)) {
+    if (((bitField1_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 68, displayAdsLink_);
     }
-    if (((bitField1_ & 0x02000000) != 0)) {
+    if (((bitField1_ & 0x04000000) != 0)) {
       output.writeDouble(69, displayAdsValue_);
     }
     for (int i = 0; i < promotionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 70, promotionIds_.getRaw(i));
     }
-    if (((bitField1_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 71, customLabel0_);
     }
-    if (((bitField1_ & 0x80000000) != 0)) {
+    if (((bitField2_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 72, customLabel1_);
     }
-    if (((bitField2_ & 0x00000001) != 0)) {
+    if (((bitField2_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 73, customLabel2_);
     }
-    if (((bitField2_ & 0x00000002) != 0)) {
+    if (((bitField2_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 74, customLabel3_);
     }
-    if (((bitField2_ & 0x00000004) != 0)) {
+    if (((bitField2_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 75, customLabel4_);
     }
     if (getIncludedDestinationsList().size() > 0) {
@@ -13807,16 +13967,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(79, getDisclosureDate());
     }
-    if (((bitField1_ & 0x04000000) != 0)) {
+    if (((bitField1_ & 0x08000000) != 0)) {
       output.writeEnum(80, pickupMethod_);
     }
-    if (((bitField1_ & 0x08000000) != 0)) {
+    if (((bitField1_ & 0x10000000) != 0)) {
       output.writeEnum(81, pickupSla_);
     }
-    if (((bitField1_ & 0x10000000) != 0)) {
+    if (((bitField1_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 82, linkTemplate_);
     }
-    if (((bitField1_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 83, mobileLinkTemplate_);
     }
     for (int i = 0; i < cloudExportAdditionalProperties_.size(); i++) {
@@ -13837,16 +13997,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < certifications_.size(); i++) {
       output.writeMessage(123, certifications_.get(i));
     }
-    if (((bitField2_ & 0x00000100) != 0)) {
+    if (((bitField2_ & 0x00000200) != 0)) {
       output.writeMessage(124, getAutoPricingMinPrice());
     }
-    if (((bitField2_ & 0x00000020) != 0)) {
+    if (((bitField2_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 130, virtualModelLink_);
     }
-    if (((bitField2_ & 0x00000040) != 0)) {
+    if (((bitField2_ & 0x00000080) != 0)) {
       output.writeMessage(132, getStructuredTitle());
     }
-    if (((bitField2_ & 0x00000080) != 0)) {
+    if (((bitField2_ & 0x00000100) != 0)) {
       output.writeMessage(133, getStructuredDescription());
     }
     for (int i = 0; i < freeShippingThreshold_.size(); i++) {
@@ -13876,6 +14036,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < shippingTransitBusinessDays_.size(); i++) {
       output.writeMessage(144, shippingTransitBusinessDays_.get(i));
     }
+    for (int i = 0; i < videoLinks_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 169, videoLinks_.getRaw(i));
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 170, returnPolicyLabel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -13885,7 +14051,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField2_ & 0x00000008) != 0)) {
+    if (((bitField2_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, externalSellerId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -13920,7 +14086,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getAdditionalImageLinksList().size();
     }
-    if (((bitField2_ & 0x00000010) != 0)) {
+    if (((bitField2_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, pause_);
     }
     {
@@ -14027,13 +14193,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField1_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(46, shippingLabel_);
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(47, transitTimeLabel_);
     }
-    if (((bitField1_ & 0x00000800) != 0)) {
+    if (((bitField1_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(48, size_);
     }
-    if (((bitField1_ & 0x00001000) != 0)) {
+    if (((bitField1_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(49, sizeSystem_);
     }
     {
@@ -14049,26 +14215,26 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       sizeTypesMemoizedSerializedSize = dataSize;
     }
-    if (((bitField1_ & 0x00002000) != 0)) {
+    if (((bitField1_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(53, energyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00004000) != 0)) {
+    if (((bitField1_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(54, minEnergyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00008000) != 0)) {
+    if (((bitField1_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(55, maxEnergyEfficiencyClass_);
     }
-    if (((bitField1_ & 0x00010000) != 0)) {
+    if (((bitField1_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, getUnitPricingMeasure());
     }
-    if (((bitField1_ & 0x00020000) != 0)) {
+    if (((bitField1_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(57, getUnitPricingBaseMeasure());
     }
-    if (((bitField1_ & 0x00040000) != 0)) {
+    if (((bitField1_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(58, multipack_);
     }
-    if (((bitField1_ & 0x00080000) != 0)) {
+    if (((bitField1_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(59, adsGrouping_);
     }
     {
@@ -14079,10 +14245,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getAdsLabelsList().size();
     }
-    if (((bitField1_ & 0x00100000) != 0)) {
+    if (((bitField1_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(61, adsRedirect_);
     }
-    if (((bitField1_ & 0x00200000) != 0)) {
+    if (((bitField1_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(62, getCostOfGoodsSold());
     }
     for (int i = 0; i < productDetails_.size(); i++) {
@@ -14096,7 +14262,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getProductHighlightsList().size();
     }
-    if (((bitField1_ & 0x00400000) != 0)) {
+    if (((bitField1_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(65, displayAdsId_);
     }
     {
@@ -14107,13 +14273,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getDisplayAdsSimilarIdsList().size();
     }
-    if (((bitField1_ & 0x00800000) != 0)) {
+    if (((bitField1_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(67, displayAdsTitle_);
     }
-    if (((bitField1_ & 0x01000000) != 0)) {
+    if (((bitField1_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(68, displayAdsLink_);
     }
-    if (((bitField1_ & 0x02000000) != 0)) {
+    if (((bitField1_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(69, displayAdsValue_);
     }
     {
@@ -14124,19 +14290,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getPromotionIdsList().size();
     }
-    if (((bitField1_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(71, customLabel0_);
     }
-    if (((bitField1_ & 0x80000000) != 0)) {
+    if (((bitField2_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(72, customLabel1_);
     }
-    if (((bitField2_ & 0x00000001) != 0)) {
+    if (((bitField2_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(73, customLabel2_);
     }
-    if (((bitField2_ & 0x00000002) != 0)) {
+    if (((bitField2_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(74, customLabel3_);
     }
-    if (((bitField2_ & 0x00000004) != 0)) {
+    if (((bitField2_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(75, customLabel4_);
     }
     {
@@ -14178,16 +14344,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(79, getDisclosureDate());
     }
-    if (((bitField1_ & 0x04000000) != 0)) {
+    if (((bitField1_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(80, pickupMethod_);
     }
-    if (((bitField1_ & 0x08000000) != 0)) {
+    if (((bitField1_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(81, pickupSla_);
     }
-    if (((bitField1_ & 0x10000000) != 0)) {
+    if (((bitField1_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(82, linkTemplate_);
     }
-    if (((bitField1_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(83, mobileLinkTemplate_);
     }
     for (int i = 0; i < cloudExportAdditionalProperties_.size(); i++) {
@@ -14210,17 +14376,17 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < certifications_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(123, certifications_.get(i));
     }
-    if (((bitField2_ & 0x00000100) != 0)) {
+    if (((bitField2_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(124, getAutoPricingMinPrice());
     }
-    if (((bitField2_ & 0x00000020) != 0)) {
+    if (((bitField2_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(130, virtualModelLink_);
     }
-    if (((bitField2_ & 0x00000040) != 0)) {
+    if (((bitField2_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(132, getStructuredTitle());
     }
-    if (((bitField2_ & 0x00000080) != 0)) {
+    if (((bitField2_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(133, getStructuredDescription());
     }
@@ -14268,6 +14434,17 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               144, shippingTransitBusinessDays_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < videoLinks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(videoLinks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getVideoLinksList().size();
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(170, returnPolicyLabel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -14465,6 +14642,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (hasShippingLabel()) {
       if (!getShippingLabel().equals(other.getShippingLabel())) return false;
     }
+    if (hasReturnPolicyLabel() != other.hasReturnPolicyLabel()) return false;
+    if (hasReturnPolicyLabel()) {
+      if (!getReturnPolicyLabel().equals(other.getReturnPolicyLabel())) return false;
+    }
     if (hasTransitTimeLabel() != other.hasTransitTimeLabel()) return false;
     if (hasTransitTimeLabel()) {
       if (!getTransitTimeLabel().equals(other.getTransitTimeLabel())) return false;
@@ -14606,6 +14787,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
     if (!getSustainabilityIncentivesList().equals(other.getSustainabilityIncentivesList()))
       return false;
+    if (!getVideoLinksList().equals(other.getVideoLinksList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -14825,6 +15007,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + SHIPPING_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getShippingLabel().hashCode();
     }
+    if (hasReturnPolicyLabel()) {
+      hash = (37 * hash) + RETURN_POLICY_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getReturnPolicyLabel().hashCode();
+    }
     if (hasTransitTimeLabel()) {
       hash = (37 * hash) + TRANSIT_TIME_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getTransitTimeLabel().hashCode();
@@ -15003,6 +15189,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (getSustainabilityIncentivesCount() > 0) {
       hash = (37 * hash) + SUSTAINABILITY_INCENTIVES_FIELD_NUMBER;
       hash = (53 * hash) + getSustainabilityIncentivesList().hashCode();
+    }
+    if (getVideoLinksCount() > 0) {
+      hash = (37 * hash) + VIDEO_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoLinksList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -15190,6 +15380,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       bitField0_ = 0;
       bitField1_ = 0;
       bitField2_ = 0;
+      bitField3_ = 0;
       identifierExists_ = false;
       isBundle_ = false;
       title_ = "";
@@ -15356,6 +15547,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       bitField1_ = (bitField1_ & ~0x00040000);
       shippingLabel_ = "";
+      returnPolicyLabel_ = "";
       transitTimeLabel_ = "";
       size_ = "";
       sizeSystem_ = 0;
@@ -15388,7 +15580,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         productDetails_ = null;
         productDetailsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField2_ = (bitField2_ & ~0x00000008);
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayAdsId_ = "";
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -15417,7 +15609,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = null;
         cloudExportAdditionalPropertiesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x02000000);
+      bitField2_ = (bitField2_ & ~0x04000000);
       virtualModelLink_ = "";
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
@@ -15425,7 +15617,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = null;
         certificationsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x08000000);
+      bitField2_ = (bitField2_ & ~0x10000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -15447,7 +15639,8 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = null;
         sustainabilityIncentivesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x80000000);
+      bitField3_ = (bitField3_ & ~0x00000001);
+      videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -15484,6 +15677,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (bitField2_ != 0) {
         buildPartial2(result);
+      }
+      if (bitField3_ != 0) {
+        buildPartial3(result);
       }
       onBuilt();
       return result;
@@ -15557,38 +15753,38 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         result.handlingCutoffTimes_ = handlingCutoffTimesBuilder_.build();
       }
       if (productDetailsBuilder_ == null) {
-        if (((bitField2_ & 0x00000004) != 0)) {
+        if (((bitField2_ & 0x00000008) != 0)) {
           productDetails_ = java.util.Collections.unmodifiableList(productDetails_);
-          bitField2_ = (bitField2_ & ~0x00000004);
+          bitField2_ = (bitField2_ & ~0x00000008);
         }
         result.productDetails_ = productDetails_;
       } else {
         result.productDetails_ = productDetailsBuilder_.build();
       }
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
-        if (((bitField2_ & 0x02000000) != 0)) {
+        if (((bitField2_ & 0x04000000) != 0)) {
           cloudExportAdditionalProperties_ =
               java.util.Collections.unmodifiableList(cloudExportAdditionalProperties_);
-          bitField2_ = (bitField2_ & ~0x02000000);
+          bitField2_ = (bitField2_ & ~0x04000000);
         }
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalProperties_;
       } else {
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalPropertiesBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField2_ & 0x08000000) != 0)) {
+        if (((bitField2_ & 0x10000000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField2_ = (bitField2_ & ~0x08000000);
+          bitField2_ = (bitField2_ & ~0x10000000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
       if (sustainabilityIncentivesBuilder_ == null) {
-        if (((bitField2_ & 0x80000000) != 0)) {
+        if (((bitField3_ & 0x00000001) != 0)) {
           sustainabilityIncentives_ =
               java.util.Collections.unmodifiableList(sustainabilityIncentives_);
-          bitField2_ = (bitField2_ & ~0x80000000);
+          bitField3_ = (bitField3_ & ~0x00000001);
         }
         result.sustainabilityIncentives_ = sustainabilityIncentives_;
       } else {
@@ -15807,58 +16003,58 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         to_bitField1_ |= 0x00000200;
       }
       if (((from_bitField1_ & 0x00100000) != 0)) {
-        result.transitTimeLabel_ = transitTimeLabel_;
+        result.returnPolicyLabel_ = returnPolicyLabel_;
         to_bitField1_ |= 0x00000400;
       }
       if (((from_bitField1_ & 0x00200000) != 0)) {
-        result.size_ = size_;
+        result.transitTimeLabel_ = transitTimeLabel_;
         to_bitField1_ |= 0x00000800;
       }
       if (((from_bitField1_ & 0x00400000) != 0)) {
-        result.sizeSystem_ = sizeSystem_;
+        result.size_ = size_;
         to_bitField1_ |= 0x00001000;
       }
       if (((from_bitField1_ & 0x00800000) != 0)) {
+        result.sizeSystem_ = sizeSystem_;
+        to_bitField1_ |= 0x00002000;
+      }
+      if (((from_bitField1_ & 0x01000000) != 0)) {
         sizeTypes_.makeImmutable();
         result.sizeTypes_ = sizeTypes_;
       }
-      if (((from_bitField1_ & 0x01000000) != 0)) {
-        result.energyEfficiencyClass_ = energyEfficiencyClass_;
-        to_bitField1_ |= 0x00002000;
-      }
       if (((from_bitField1_ & 0x02000000) != 0)) {
-        result.minEnergyEfficiencyClass_ = minEnergyEfficiencyClass_;
+        result.energyEfficiencyClass_ = energyEfficiencyClass_;
         to_bitField1_ |= 0x00004000;
       }
       if (((from_bitField1_ & 0x04000000) != 0)) {
-        result.maxEnergyEfficiencyClass_ = maxEnergyEfficiencyClass_;
+        result.minEnergyEfficiencyClass_ = minEnergyEfficiencyClass_;
         to_bitField1_ |= 0x00008000;
       }
       if (((from_bitField1_ & 0x08000000) != 0)) {
+        result.maxEnergyEfficiencyClass_ = maxEnergyEfficiencyClass_;
+        to_bitField1_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x10000000) != 0)) {
         result.unitPricingMeasure_ =
             unitPricingMeasureBuilder_ == null
                 ? unitPricingMeasure_
                 : unitPricingMeasureBuilder_.build();
-        to_bitField1_ |= 0x00010000;
+        to_bitField1_ |= 0x00020000;
       }
-      if (((from_bitField1_ & 0x10000000) != 0)) {
+      if (((from_bitField1_ & 0x20000000) != 0)) {
         result.unitPricingBaseMeasure_ =
             unitPricingBaseMeasureBuilder_ == null
                 ? unitPricingBaseMeasure_
                 : unitPricingBaseMeasureBuilder_.build();
-        to_bitField1_ |= 0x00020000;
-      }
-      if (((from_bitField1_ & 0x20000000) != 0)) {
-        result.multipack_ = multipack_;
         to_bitField1_ |= 0x00040000;
       }
       if (((from_bitField1_ & 0x40000000) != 0)) {
-        result.adsGrouping_ = adsGrouping_;
+        result.multipack_ = multipack_;
         to_bitField1_ |= 0x00080000;
       }
       if (((from_bitField1_ & 0x80000000) != 0)) {
-        adsLabels_.makeImmutable();
-        result.adsLabels_ = adsLabels_;
+        result.adsGrouping_ = adsGrouping_;
+        to_bitField1_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -15866,130 +16062,142 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial2(com.google.shopping.merchant.products.v1.ProductAttributes result) {
       int from_bitField2_ = bitField2_;
-      int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000001) != 0)) {
-        result.adsRedirect_ = adsRedirect_;
-        to_bitField1_ |= 0x00100000;
+        adsLabels_.makeImmutable();
+        result.adsLabels_ = adsLabels_;
       }
+      int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000002) != 0)) {
-        result.costOfGoodsSold_ =
-            costOfGoodsSoldBuilder_ == null ? costOfGoodsSold_ : costOfGoodsSoldBuilder_.build();
+        result.adsRedirect_ = adsRedirect_;
         to_bitField1_ |= 0x00200000;
       }
-      if (((from_bitField2_ & 0x00000008) != 0)) {
+      if (((from_bitField2_ & 0x00000004) != 0)) {
+        result.costOfGoodsSold_ =
+            costOfGoodsSoldBuilder_ == null ? costOfGoodsSold_ : costOfGoodsSoldBuilder_.build();
+        to_bitField1_ |= 0x00400000;
+      }
+      if (((from_bitField2_ & 0x00000010) != 0)) {
         productHighlights_.makeImmutable();
         result.productHighlights_ = productHighlights_;
       }
-      if (((from_bitField2_ & 0x00000010) != 0)) {
-        result.displayAdsId_ = displayAdsId_;
-        to_bitField1_ |= 0x00400000;
-      }
       if (((from_bitField2_ & 0x00000020) != 0)) {
+        result.displayAdsId_ = displayAdsId_;
+        to_bitField1_ |= 0x00800000;
+      }
+      if (((from_bitField2_ & 0x00000040) != 0)) {
         displayAdsSimilarIds_.makeImmutable();
         result.displayAdsSimilarIds_ = displayAdsSimilarIds_;
       }
-      if (((from_bitField2_ & 0x00000040) != 0)) {
-        result.displayAdsTitle_ = displayAdsTitle_;
-        to_bitField1_ |= 0x00800000;
-      }
       if (((from_bitField2_ & 0x00000080) != 0)) {
-        result.displayAdsLink_ = displayAdsLink_;
+        result.displayAdsTitle_ = displayAdsTitle_;
         to_bitField1_ |= 0x01000000;
       }
       if (((from_bitField2_ & 0x00000100) != 0)) {
-        result.displayAdsValue_ = displayAdsValue_;
+        result.displayAdsLink_ = displayAdsLink_;
         to_bitField1_ |= 0x02000000;
       }
       if (((from_bitField2_ & 0x00000200) != 0)) {
+        result.displayAdsValue_ = displayAdsValue_;
+        to_bitField1_ |= 0x04000000;
+      }
+      if (((from_bitField2_ & 0x00000400) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
       }
-      if (((from_bitField2_ & 0x00000400) != 0)) {
-        result.pickupMethod_ = pickupMethod_;
-        to_bitField1_ |= 0x04000000;
-      }
       if (((from_bitField2_ & 0x00000800) != 0)) {
-        result.pickupSla_ = pickupSla_;
+        result.pickupMethod_ = pickupMethod_;
         to_bitField1_ |= 0x08000000;
       }
       if (((from_bitField2_ & 0x00001000) != 0)) {
-        result.linkTemplate_ = linkTemplate_;
+        result.pickupSla_ = pickupSla_;
         to_bitField1_ |= 0x10000000;
       }
       if (((from_bitField2_ & 0x00002000) != 0)) {
-        result.mobileLinkTemplate_ = mobileLinkTemplate_;
+        result.linkTemplate_ = linkTemplate_;
         to_bitField1_ |= 0x20000000;
       }
       if (((from_bitField2_ & 0x00004000) != 0)) {
-        result.customLabel0_ = customLabel0_;
+        result.mobileLinkTemplate_ = mobileLinkTemplate_;
         to_bitField1_ |= 0x40000000;
       }
       if (((from_bitField2_ & 0x00008000) != 0)) {
-        result.customLabel1_ = customLabel1_;
+        result.customLabel0_ = customLabel0_;
         to_bitField1_ |= 0x80000000;
       }
       int to_bitField2_ = 0;
       if (((from_bitField2_ & 0x00010000) != 0)) {
-        result.customLabel2_ = customLabel2_;
+        result.customLabel1_ = customLabel1_;
         to_bitField2_ |= 0x00000001;
       }
       if (((from_bitField2_ & 0x00020000) != 0)) {
-        result.customLabel3_ = customLabel3_;
+        result.customLabel2_ = customLabel2_;
         to_bitField2_ |= 0x00000002;
       }
       if (((from_bitField2_ & 0x00040000) != 0)) {
-        result.customLabel4_ = customLabel4_;
+        result.customLabel3_ = customLabel3_;
         to_bitField2_ |= 0x00000004;
       }
       if (((from_bitField2_ & 0x00080000) != 0)) {
+        result.customLabel4_ = customLabel4_;
+        to_bitField2_ |= 0x00000008;
+      }
+      if (((from_bitField2_ & 0x00100000) != 0)) {
         includedDestinations_.makeImmutable();
         result.includedDestinations_ = includedDestinations_;
       }
-      if (((from_bitField2_ & 0x00100000) != 0)) {
+      if (((from_bitField2_ & 0x00200000) != 0)) {
         excludedDestinations_.makeImmutable();
         result.excludedDestinations_ = excludedDestinations_;
       }
-      if (((from_bitField2_ & 0x00200000) != 0)) {
+      if (((from_bitField2_ & 0x00400000) != 0)) {
         shoppingAdsExcludedCountries_.makeImmutable();
         result.shoppingAdsExcludedCountries_ = shoppingAdsExcludedCountries_;
       }
-      if (((from_bitField2_ & 0x00400000) != 0)) {
-        result.externalSellerId_ = externalSellerId_;
-        to_bitField2_ |= 0x00000008;
-      }
       if (((from_bitField2_ & 0x00800000) != 0)) {
-        result.pause_ = pause_;
+        result.externalSellerId_ = externalSellerId_;
         to_bitField2_ |= 0x00000010;
       }
       if (((from_bitField2_ & 0x01000000) != 0)) {
+        result.pause_ = pause_;
+        to_bitField2_ |= 0x00000020;
+      }
+      if (((from_bitField2_ & 0x02000000) != 0)) {
         lifestyleImageLinks_.makeImmutable();
         result.lifestyleImageLinks_ = lifestyleImageLinks_;
       }
-      if (((from_bitField2_ & 0x04000000) != 0)) {
+      if (((from_bitField2_ & 0x08000000) != 0)) {
         result.virtualModelLink_ = virtualModelLink_;
-        to_bitField2_ |= 0x00000020;
-      }
-      if (((from_bitField2_ & 0x10000000) != 0)) {
-        result.structuredTitle_ =
-            structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
         to_bitField2_ |= 0x00000040;
       }
       if (((from_bitField2_ & 0x20000000) != 0)) {
+        result.structuredTitle_ =
+            structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
+        to_bitField2_ |= 0x00000080;
+      }
+      if (((from_bitField2_ & 0x40000000) != 0)) {
         result.structuredDescription_ =
             structuredDescriptionBuilder_ == null
                 ? structuredDescription_
                 : structuredDescriptionBuilder_.build();
-        to_bitField2_ |= 0x00000080;
+        to_bitField2_ |= 0x00000100;
       }
-      if (((from_bitField2_ & 0x40000000) != 0)) {
+      if (((from_bitField2_ & 0x80000000) != 0)) {
         result.autoPricingMinPrice_ =
             autoPricingMinPriceBuilder_ == null
                 ? autoPricingMinPrice_
                 : autoPricingMinPriceBuilder_.build();
-        to_bitField2_ |= 0x00000100;
+        to_bitField2_ |= 0x00000200;
       }
       result.bitField1_ |= to_bitField1_;
       result.bitField2_ |= to_bitField2_;
+    }
+
+    private void buildPartial3(com.google.shopping.merchant.products.v1.ProductAttributes result) {
+      int from_bitField3_ = bitField3_;
+      if (((from_bitField3_ & 0x00000002) != 0)) {
+        videoLinks_.makeImmutable();
+        result.videoLinks_ = videoLinks_;
+      }
     }
 
     @java.lang.Override
@@ -16379,14 +16587,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         bitField1_ |= 0x00080000;
         onChanged();
       }
+      if (other.hasReturnPolicyLabel()) {
+        returnPolicyLabel_ = other.returnPolicyLabel_;
+        bitField1_ |= 0x00100000;
+        onChanged();
+      }
       if (other.hasTransitTimeLabel()) {
         transitTimeLabel_ = other.transitTimeLabel_;
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00200000;
         onChanged();
       }
       if (other.hasSize()) {
         size_ = other.size_;
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00400000;
         onChanged();
       }
       if (other.hasSizeSystem()) {
@@ -16396,7 +16609,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (sizeTypes_.isEmpty()) {
           sizeTypes_ = other.sizeTypes_;
           sizeTypes_.makeImmutable();
-          bitField1_ |= 0x00800000;
+          bitField1_ |= 0x01000000;
         } else {
           ensureSizeTypesIsMutable();
           sizeTypes_.addAll(other.sizeTypes_);
@@ -16423,13 +16636,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsGrouping()) {
         adsGrouping_ = other.adsGrouping_;
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x80000000;
         onChanged();
       }
       if (!other.adsLabels_.isEmpty()) {
         if (adsLabels_.isEmpty()) {
           adsLabels_ = other.adsLabels_;
-          bitField1_ |= 0x80000000;
+          bitField2_ |= 0x00000001;
         } else {
           ensureAdsLabelsIsMutable();
           adsLabels_.addAll(other.adsLabels_);
@@ -16438,7 +16651,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsRedirect()) {
         adsRedirect_ = other.adsRedirect_;
-        bitField2_ |= 0x00000001;
+        bitField2_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCostOfGoodsSold()) {
@@ -16448,7 +16661,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.productDetails_.isEmpty()) {
           if (productDetails_.isEmpty()) {
             productDetails_ = other.productDetails_;
-            bitField2_ = (bitField2_ & ~0x00000004);
+            bitField2_ = (bitField2_ & ~0x00000008);
           } else {
             ensureProductDetailsIsMutable();
             productDetails_.addAll(other.productDetails_);
@@ -16461,7 +16674,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             productDetailsBuilder_.dispose();
             productDetailsBuilder_ = null;
             productDetails_ = other.productDetails_;
-            bitField2_ = (bitField2_ & ~0x00000004);
+            bitField2_ = (bitField2_ & ~0x00000008);
             productDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetProductDetailsFieldBuilder()
@@ -16474,7 +16687,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.productHighlights_.isEmpty()) {
         if (productHighlights_.isEmpty()) {
           productHighlights_ = other.productHighlights_;
-          bitField2_ |= 0x00000008;
+          bitField2_ |= 0x00000010;
         } else {
           ensureProductHighlightsIsMutable();
           productHighlights_.addAll(other.productHighlights_);
@@ -16483,13 +16696,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsId()) {
         displayAdsId_ = other.displayAdsId_;
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000020;
         onChanged();
       }
       if (!other.displayAdsSimilarIds_.isEmpty()) {
         if (displayAdsSimilarIds_.isEmpty()) {
           displayAdsSimilarIds_ = other.displayAdsSimilarIds_;
-          bitField2_ |= 0x00000020;
+          bitField2_ |= 0x00000040;
         } else {
           ensureDisplayAdsSimilarIdsIsMutable();
           displayAdsSimilarIds_.addAll(other.displayAdsSimilarIds_);
@@ -16498,12 +16711,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsTitle()) {
         displayAdsTitle_ = other.displayAdsTitle_;
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000080;
         onChanged();
       }
       if (other.hasDisplayAdsLink()) {
         displayAdsLink_ = other.displayAdsLink_;
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000100;
         onChanged();
       }
       if (other.hasDisplayAdsValue()) {
@@ -16512,7 +16725,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField2_ |= 0x00000200;
+          bitField2_ |= 0x00000400;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -16527,44 +16740,44 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasLinkTemplate()) {
         linkTemplate_ = other.linkTemplate_;
-        bitField2_ |= 0x00001000;
+        bitField2_ |= 0x00002000;
         onChanged();
       }
       if (other.hasMobileLinkTemplate()) {
         mobileLinkTemplate_ = other.mobileLinkTemplate_;
-        bitField2_ |= 0x00002000;
+        bitField2_ |= 0x00004000;
         onChanged();
       }
       if (other.hasCustomLabel0()) {
         customLabel0_ = other.customLabel0_;
-        bitField2_ |= 0x00004000;
+        bitField2_ |= 0x00008000;
         onChanged();
       }
       if (other.hasCustomLabel1()) {
         customLabel1_ = other.customLabel1_;
-        bitField2_ |= 0x00008000;
+        bitField2_ |= 0x00010000;
         onChanged();
       }
       if (other.hasCustomLabel2()) {
         customLabel2_ = other.customLabel2_;
-        bitField2_ |= 0x00010000;
+        bitField2_ |= 0x00020000;
         onChanged();
       }
       if (other.hasCustomLabel3()) {
         customLabel3_ = other.customLabel3_;
-        bitField2_ |= 0x00020000;
+        bitField2_ |= 0x00040000;
         onChanged();
       }
       if (other.hasCustomLabel4()) {
         customLabel4_ = other.customLabel4_;
-        bitField2_ |= 0x00040000;
+        bitField2_ |= 0x00080000;
         onChanged();
       }
       if (!other.includedDestinations_.isEmpty()) {
         if (includedDestinations_.isEmpty()) {
           includedDestinations_ = other.includedDestinations_;
           includedDestinations_.makeImmutable();
-          bitField2_ |= 0x00080000;
+          bitField2_ |= 0x00100000;
         } else {
           ensureIncludedDestinationsIsMutable();
           includedDestinations_.addAll(other.includedDestinations_);
@@ -16575,7 +16788,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (excludedDestinations_.isEmpty()) {
           excludedDestinations_ = other.excludedDestinations_;
           excludedDestinations_.makeImmutable();
-          bitField2_ |= 0x00100000;
+          bitField2_ |= 0x00200000;
         } else {
           ensureExcludedDestinationsIsMutable();
           excludedDestinations_.addAll(other.excludedDestinations_);
@@ -16585,7 +16798,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.shoppingAdsExcludedCountries_.isEmpty()) {
         if (shoppingAdsExcludedCountries_.isEmpty()) {
           shoppingAdsExcludedCountries_ = other.shoppingAdsExcludedCountries_;
-          bitField2_ |= 0x00200000;
+          bitField2_ |= 0x00400000;
         } else {
           ensureShoppingAdsExcludedCountriesIsMutable();
           shoppingAdsExcludedCountries_.addAll(other.shoppingAdsExcludedCountries_);
@@ -16594,7 +16807,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasExternalSellerId()) {
         externalSellerId_ = other.externalSellerId_;
-        bitField2_ |= 0x00400000;
+        bitField2_ |= 0x00800000;
         onChanged();
       }
       if (other.hasPause()) {
@@ -16603,7 +16816,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.lifestyleImageLinks_.isEmpty()) {
         if (lifestyleImageLinks_.isEmpty()) {
           lifestyleImageLinks_ = other.lifestyleImageLinks_;
-          bitField2_ |= 0x01000000;
+          bitField2_ |= 0x02000000;
         } else {
           ensureLifestyleImageLinksIsMutable();
           lifestyleImageLinks_.addAll(other.lifestyleImageLinks_);
@@ -16614,7 +16827,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.cloudExportAdditionalProperties_.isEmpty()) {
           if (cloudExportAdditionalProperties_.isEmpty()) {
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x02000000);
+            bitField2_ = (bitField2_ & ~0x04000000);
           } else {
             ensureCloudExportAdditionalPropertiesIsMutable();
             cloudExportAdditionalProperties_.addAll(other.cloudExportAdditionalProperties_);
@@ -16627,7 +16840,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             cloudExportAdditionalPropertiesBuilder_.dispose();
             cloudExportAdditionalPropertiesBuilder_ = null;
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x02000000);
+            bitField2_ = (bitField2_ & ~0x04000000);
             cloudExportAdditionalPropertiesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCloudExportAdditionalPropertiesFieldBuilder()
@@ -16640,14 +16853,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasVirtualModelLink()) {
         virtualModelLink_ = other.virtualModelLink_;
-        bitField2_ |= 0x04000000;
+        bitField2_ |= 0x08000000;
         onChanged();
       }
       if (certificationsBuilder_ == null) {
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -16660,7 +16873,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
             certificationsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCertificationsFieldBuilder()
@@ -16683,7 +16896,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.sustainabilityIncentives_.isEmpty()) {
           if (sustainabilityIncentives_.isEmpty()) {
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x80000000);
+            bitField3_ = (bitField3_ & ~0x00000001);
           } else {
             ensureSustainabilityIncentivesIsMutable();
             sustainabilityIncentives_.addAll(other.sustainabilityIncentives_);
@@ -16696,7 +16909,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.dispose();
             sustainabilityIncentivesBuilder_ = null;
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x80000000);
+            bitField3_ = (bitField3_ & ~0x00000001);
             sustainabilityIncentivesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSustainabilityIncentivesFieldBuilder()
@@ -16705,6 +16918,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.addAllMessages(other.sustainabilityIncentives_);
           }
         }
+      }
+      if (!other.videoLinks_.isEmpty()) {
+        if (videoLinks_.isEmpty()) {
+          videoLinks_ = other.videoLinks_;
+          bitField3_ |= 0x00000002;
+        } else {
+          ensureVideoLinksIsMutable();
+          videoLinks_.addAll(other.videoLinks_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -16735,7 +16958,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 externalSellerId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00400000;
+                bitField2_ |= 0x00800000;
                 break;
               } // case 10
             case 32:
@@ -16796,7 +17019,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 104:
               {
                 pause_ = input.readEnum();
-                bitField2_ |= 0x00800000;
+                bitField2_ |= 0x01000000;
                 break;
               } // case 104
             case 114:
@@ -17010,19 +17233,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 378:
               {
                 transitTimeLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 378
             case 386:
               {
                 size_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00200000;
+                bitField1_ |= 0x00400000;
                 break;
               } // case 386
             case 392:
               {
                 sizeSystem_ = input.readEnum();
-                bitField1_ |= 0x00400000;
+                bitField1_ |= 0x00800000;
                 break;
               } // case 392
             case 400:
@@ -17046,26 +17269,26 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 424:
               {
                 energyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x02000000;
                 break;
               } // case 424
             case 432:
               {
                 minEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x02000000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 432
             case 440:
               {
                 maxEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x04000000;
+                bitField1_ |= 0x08000000;
                 break;
               } // case 440
             case 450:
               {
                 input.readMessage(
                     internalGetUnitPricingMeasureFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x08000000;
+                bitField1_ |= 0x10000000;
                 break;
               } // case 450
             case 458:
@@ -17073,19 +17296,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 input.readMessage(
                     internalGetUnitPricingBaseMeasureFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x10000000;
+                bitField1_ |= 0x20000000;
                 break;
               } // case 458
             case 464:
               {
                 multipack_ = input.readInt64();
-                bitField1_ |= 0x20000000;
+                bitField1_ |= 0x40000000;
                 break;
               } // case 464
             case 474:
               {
                 adsGrouping_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x40000000;
+                bitField1_ |= 0x80000000;
                 break;
               } // case 474
             case 482:
@@ -17098,14 +17321,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 490:
               {
                 adsRedirect_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000001;
+                bitField2_ |= 0x00000002;
                 break;
               } // case 490
             case 498:
               {
                 input.readMessage(
                     internalGetCostOfGoodsSoldFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000002;
+                bitField2_ |= 0x00000004;
                 break;
               } // case 498
             case 506:
@@ -17132,7 +17355,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 522:
               {
                 displayAdsId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000010;
+                bitField2_ |= 0x00000020;
                 break;
               } // case 522
             case 530:
@@ -17145,19 +17368,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 538:
               {
                 displayAdsTitle_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000040;
+                bitField2_ |= 0x00000080;
                 break;
               } // case 538
             case 546:
               {
                 displayAdsLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000080;
+                bitField2_ |= 0x00000100;
                 break;
               } // case 546
             case 553:
               {
                 displayAdsValue_ = input.readDouble();
-                bitField2_ |= 0x00000100;
+                bitField2_ |= 0x00000200;
                 break;
               } // case 553
             case 562:
@@ -17170,31 +17393,31 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 570:
               {
                 customLabel0_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00004000;
+                bitField2_ |= 0x00008000;
                 break;
               } // case 570
             case 578:
               {
                 customLabel1_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00008000;
+                bitField2_ |= 0x00010000;
                 break;
               } // case 578
             case 586:
               {
                 customLabel2_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00010000;
+                bitField2_ |= 0x00020000;
                 break;
               } // case 586
             case 594:
               {
                 customLabel3_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00020000;
+                bitField2_ |= 0x00040000;
                 break;
               } // case 594
             case 602:
               {
                 customLabel4_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00040000;
+                bitField2_ |= 0x00080000;
                 break;
               } // case 602
             case 608:
@@ -17250,25 +17473,25 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 640:
               {
                 pickupMethod_ = input.readEnum();
-                bitField2_ |= 0x00000400;
+                bitField2_ |= 0x00000800;
                 break;
               } // case 640
             case 648:
               {
                 pickupSla_ = input.readEnum();
-                bitField2_ |= 0x00000800;
+                bitField2_ |= 0x00001000;
                 break;
               } // case 648
             case 658:
               {
                 linkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00001000;
+                bitField2_ |= 0x00002000;
                 break;
               } // case 658
             case 666:
               {
                 mobileLinkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00002000;
+                bitField2_ |= 0x00004000;
                 break;
               } // case 666
             case 674:
@@ -17332,27 +17555,27 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetAutoPricingMinPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x40000000;
+                bitField2_ |= 0x80000000;
                 break;
               } // case 994
             case 1042:
               {
                 virtualModelLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x04000000;
+                bitField2_ |= 0x08000000;
                 break;
               } // case 1042
             case 1058:
               {
                 input.readMessage(
                     internalGetStructuredTitleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x10000000;
+                bitField2_ |= 0x20000000;
                 break;
               } // case 1058
             case 1066:
               {
                 input.readMessage(
                     internalGetStructuredDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x20000000;
+                bitField2_ |= 0x40000000;
                 break;
               } // case 1066
             case 1082:
@@ -17475,6 +17698,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 1154
+            case 1354:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureVideoLinksIsMutable();
+                videoLinks_.add(s);
+                break;
+              } // case 1354
+            case 1362:
+              {
+                returnPolicyLabel_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00100000;
+                break;
+              } // case 1362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17495,6 +17731,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     private int bitField1_;
     private int bitField2_;
+    private int bitField3_;
 
     private boolean identifierExists_;
 
@@ -20242,7 +20479,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20261,7 +20498,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20279,7 +20516,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20298,7 +20535,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20317,7 +20554,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20344,7 +20581,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20370,7 +20607,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20393,7 +20630,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20415,7 +20652,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20702,7 +20939,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20719,7 +20956,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20744,7 +20981,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20769,7 +21006,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20793,7 +21030,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20813,7 +21050,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -27470,8 +27707,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27486,8 +27724,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27510,8 +27749,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27534,8 +27774,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27557,8 +27798,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27576,8 +27818,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The shipping label of the product, used to group product in account-level
-     * shipping rules.
+     * The shipping label of the product, used to group products in account-level
+     * shipping rules. Max. 100 characters. For more information, see
+     * [Shipping label](https://support.google.com/merchants/answer/6324504).
      * </pre>
      *
      * <code>optional string shipping_label = 46;</code>
@@ -27592,6 +27835,144 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       shippingLabel_ = value;
       bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object returnPolicyLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @return Whether the returnPolicyLabel field is set.
+     */
+    public boolean hasReturnPolicyLabel() {
+      return ((bitField1_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @return The returnPolicyLabel.
+     */
+    public java.lang.String getReturnPolicyLabel() {
+      java.lang.Object ref = returnPolicyLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        returnPolicyLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @return The bytes for returnPolicyLabel.
+     */
+    public com.google.protobuf.ByteString getReturnPolicyLabelBytes() {
+      java.lang.Object ref = returnPolicyLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        returnPolicyLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @param value The returnPolicyLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPolicyLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      returnPolicyLabel_ = value;
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnPolicyLabel() {
+      returnPolicyLabel_ = getDefaultInstance().getReturnPolicyLabel();
+      bitField1_ = (bitField1_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The return label of the product, used to group products in account-level
+     * return policies. Max. 100 characters. For more information, see
+     * [Return policy label](https://support.google.com/merchants/answer/9445425).
+     * </pre>
+     *
+     * <code>optional string return_policy_label = 170;</code>
+     *
+     * @param value The bytes for returnPolicyLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnPolicyLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      returnPolicyLabel_ = value;
+      bitField1_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -27611,7 +27992,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the transitTimeLabel field is set.
      */
     public boolean hasTransitTimeLabel() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
 
     /**
@@ -27680,7 +28061,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -27699,7 +28080,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTransitTimeLabel() {
       transitTimeLabel_ = getDefaultInstance().getTransitTimeLabel();
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -27723,7 +28104,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -27745,7 +28126,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the size field is set.
      */
     public boolean hasSize() {
-      return ((bitField1_ & 0x00200000) != 0);
+      return ((bitField1_ & 0x00400000) != 0);
     }
 
     /**
@@ -27820,7 +28201,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       size_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -27841,7 +28222,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSize() {
       size_ = getDefaultInstance().getSize();
-      bitField1_ = (bitField1_ & ~0x00200000);
+      bitField1_ = (bitField1_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -27867,7 +28248,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       size_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -27889,7 +28270,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasSizeSystem() {
-      return ((bitField1_ & 0x00400000) != 0);
+      return ((bitField1_ & 0x00800000) != 0);
     }
 
     /**
@@ -27926,7 +28307,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setSizeSystemValue(int value) {
       sizeSystem_ = value;
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -27971,7 +28352,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00800000;
       sizeSystem_ = value.getNumber();
       onChanged();
       return this;
@@ -27991,7 +28372,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSizeSystem() {
-      bitField1_ = (bitField1_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x00800000);
       sizeSystem_ = 0;
       onChanged();
       return this;
@@ -28003,7 +28384,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!sizeTypes_.isModifiable()) {
         sizeTypes_ = makeMutableCopy(sizeTypes_);
       }
-      bitField1_ |= 0x00800000;
+      bitField1_ |= 0x01000000;
     }
 
     /**
@@ -28148,7 +28529,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSizeTypes() {
       sizeTypes_ = emptyIntList();
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -28274,7 +28655,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x02000000) != 0);
     }
 
     /**
@@ -28315,7 +28696,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setEnergyEfficiencyClassValue(int value) {
       energyEfficiencyClass_ = value;
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -28367,7 +28748,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x02000000;
       energyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28389,7 +28770,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       energyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28414,7 +28795,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMinEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x02000000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
 
     /**
@@ -28455,7 +28836,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMinEnergyEfficiencyClassValue(int value) {
       minEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -28507,7 +28888,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x04000000;
       minEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28529,7 +28910,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x02000000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       minEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28554,7 +28935,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMaxEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x04000000) != 0);
+      return ((bitField1_ & 0x08000000) != 0);
     }
 
     /**
@@ -28595,7 +28976,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMaxEnergyEfficiencyClassValue(int value) {
       maxEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -28647,7 +29028,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x08000000;
       maxEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28669,7 +29050,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x04000000);
+      bitField1_ = (bitField1_ & ~0x08000000);
       maxEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28695,7 +29076,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingMeasure field is set.
      */
     public boolean hasUnitPricingMeasure() {
-      return ((bitField1_ & 0x08000000) != 0);
+      return ((bitField1_ & 0x10000000) != 0);
     }
 
     /**
@@ -28740,7 +29121,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -28762,7 +29143,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -28780,7 +29161,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingMeasure value) {
       if (unitPricingMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x08000000) != 0)
+        if (((bitField1_ & 0x10000000) != 0)
             && unitPricingMeasure_ != null
             && unitPricingMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingMeasure
@@ -28793,7 +29174,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingMeasure_ != null) {
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -28810,7 +29191,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingMeasure() {
-      bitField1_ = (bitField1_ & ~0x08000000);
+      bitField1_ = (bitField1_ & ~0x10000000);
       unitPricingMeasure_ = null;
       if (unitPricingMeasureBuilder_ != null) {
         unitPricingMeasureBuilder_.dispose();
@@ -28832,7 +29213,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingMeasure.Builder
         getUnitPricingMeasureBuilder() {
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return internalGetUnitPricingMeasureFieldBuilder().getBuilder();
     }
@@ -28906,7 +29287,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingBaseMeasure field is set.
      */
     public boolean hasUnitPricingBaseMeasure() {
-      return ((bitField1_ & 0x10000000) != 0);
+      return ((bitField1_ & 0x20000000) != 0);
     }
 
     /**
@@ -28954,7 +29335,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -28977,7 +29358,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -28996,7 +29377,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingBaseMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure value) {
       if (unitPricingBaseMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x10000000) != 0)
+        if (((bitField1_ & 0x20000000) != 0)
             && unitPricingBaseMeasure_ != null
             && unitPricingBaseMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure
@@ -29009,7 +29390,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingBaseMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingBaseMeasure_ != null) {
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -29027,7 +29408,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingBaseMeasure() {
-      bitField1_ = (bitField1_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x20000000);
       unitPricingBaseMeasure_ = null;
       if (unitPricingBaseMeasureBuilder_ != null) {
         unitPricingBaseMeasureBuilder_.dispose();
@@ -29050,7 +29431,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure.Builder
         getUnitPricingBaseMeasureBuilder() {
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x20000000;
       onChanged();
       return internalGetUnitPricingBaseMeasureFieldBuilder().getBuilder();
     }
@@ -29120,7 +29501,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMultipack() {
-      return ((bitField1_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x40000000) != 0);
     }
 
     /**
@@ -29154,7 +29535,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setMultipack(long value) {
 
       multipack_ = value;
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -29171,7 +29552,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMultipack() {
-      bitField1_ = (bitField1_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x40000000);
       multipack_ = 0L;
       onChanged();
       return this;
@@ -29194,7 +29575,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsGrouping field is set.
      */
     public boolean hasAdsGrouping() {
-      return ((bitField1_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x80000000) != 0);
     }
 
     /**
@@ -29269,7 +29650,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsGrouping_ = value;
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -29290,7 +29671,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsGrouping() {
       adsGrouping_ = getDefaultInstance().getAdsGrouping();
-      bitField1_ = (bitField1_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -29316,7 +29697,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsGrouping_ = value;
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -29328,7 +29709,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!adsLabels_.isModifiable()) {
         adsLabels_ = new com.google.protobuf.LazyStringArrayList(adsLabels_);
       }
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
     }
 
     /**
@@ -29413,7 +29794,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.set(index, value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -29436,7 +29817,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -29456,7 +29837,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllAdsLabels(java.lang.Iterable<java.lang.String> values) {
       ensureAdsLabelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adsLabels_);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -29474,7 +29855,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsLabels() {
       adsLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x80000000);
+      bitField2_ = (bitField2_ & ~0x00000001);
       ;
       onChanged();
       return this;
@@ -29499,7 +29880,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -29519,7 +29900,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsRedirect field is set.
      */
     public boolean hasAdsRedirect() {
-      return ((bitField2_ & 0x00000001) != 0);
+      return ((bitField2_ & 0x00000002) != 0);
     }
 
     /**
@@ -29588,7 +29969,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsRedirect_ = value;
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -29607,7 +29988,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsRedirect() {
       adsRedirect_ = getDefaultInstance().getAdsRedirect();
-      bitField2_ = (bitField2_ & ~0x00000001);
+      bitField2_ = (bitField2_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -29631,7 +30012,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsRedirect_ = value;
-      bitField2_ |= 0x00000001;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -29655,7 +30036,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the costOfGoodsSold field is set.
      */
     public boolean hasCostOfGoodsSold() {
-      return ((bitField2_ & 0x00000002) != 0);
+      return ((bitField2_ & 0x00000004) != 0);
     }
 
     /**
@@ -29697,7 +30078,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -29717,7 +30098,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -29733,7 +30114,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCostOfGoodsSold(com.google.shopping.type.Price value) {
       if (costOfGoodsSoldBuilder_ == null) {
-        if (((bitField2_ & 0x00000002) != 0)
+        if (((bitField2_ & 0x00000004) != 0)
             && costOfGoodsSold_ != null
             && costOfGoodsSold_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getCostOfGoodsSoldBuilder().mergeFrom(value);
@@ -29744,7 +30125,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         costOfGoodsSoldBuilder_.mergeFrom(value);
       }
       if (costOfGoodsSold_ != null) {
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -29760,7 +30141,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public Builder clearCostOfGoodsSold() {
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField2_ = (bitField2_ & ~0x00000004);
       costOfGoodsSold_ = null;
       if (costOfGoodsSoldBuilder_ != null) {
         costOfGoodsSoldBuilder_.dispose();
@@ -29780,7 +30161,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public com.google.shopping.type.Price.Builder getCostOfGoodsSoldBuilder() {
-      bitField2_ |= 0x00000002;
+      bitField2_ |= 0x00000004;
       onChanged();
       return internalGetCostOfGoodsSoldFieldBuilder().getBuilder();
     }
@@ -29834,11 +30215,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureProductDetailsIsMutable() {
-      if (!((bitField2_ & 0x00000004) != 0)) {
+      if (!((bitField2_ & 0x00000008) != 0)) {
         productDetails_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductDetail>(
                 productDetails_);
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000008;
       }
     }
 
@@ -30079,7 +30460,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearProductDetails() {
       if (productDetailsBuilder_ == null) {
         productDetails_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00000004);
+        bitField2_ = (bitField2_ & ~0x00000008);
         onChanged();
       } else {
         productDetailsBuilder_.clear();
@@ -30221,7 +30602,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductDetail.Builder,
                 com.google.shopping.merchant.products.v1.ProductDetailOrBuilder>(
                 productDetails_,
-                ((bitField2_ & 0x00000004) != 0),
+                ((bitField2_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         productDetails_ = null;
@@ -30236,7 +30617,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!productHighlights_.isModifiable()) {
         productHighlights_ = new com.google.protobuf.LazyStringArrayList(productHighlights_);
       }
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
     }
 
     /**
@@ -30326,7 +30707,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.set(index, value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -30350,7 +30731,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -30371,7 +30752,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllProductHighlights(java.lang.Iterable<java.lang.String> values) {
       ensureProductHighlightsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productHighlights_);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -30390,7 +30771,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearProductHighlights() {
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000008);
+      bitField2_ = (bitField2_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -30416,7 +30797,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -30435,7 +30816,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsId field is set.
      */
     public boolean hasDisplayAdsId() {
-      return ((bitField2_ & 0x00000010) != 0);
+      return ((bitField2_ & 0x00000020) != 0);
     }
 
     /**
@@ -30501,7 +30882,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsId_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -30519,7 +30900,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsId() {
       displayAdsId_ = getDefaultInstance().getDisplayAdsId();
-      bitField2_ = (bitField2_ & ~0x00000010);
+      bitField2_ = (bitField2_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -30542,7 +30923,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsId_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -30554,7 +30935,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!displayAdsSimilarIds_.isModifiable()) {
         displayAdsSimilarIds_ = new com.google.protobuf.LazyStringArrayList(displayAdsSimilarIds_);
       }
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
     }
 
     /**
@@ -30649,7 +31030,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.set(index, value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -30674,7 +31055,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -30696,7 +31077,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllDisplayAdsSimilarIds(java.lang.Iterable<java.lang.String> values) {
       ensureDisplayAdsSimilarIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayAdsSimilarIds_);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -30716,7 +31097,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsSimilarIds() {
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000020);
+      bitField2_ = (bitField2_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -30743,7 +31124,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -30762,7 +31143,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsTitle field is set.
      */
     public boolean hasDisplayAdsTitle() {
-      return ((bitField2_ & 0x00000040) != 0);
+      return ((bitField2_ & 0x00000080) != 0);
     }
 
     /**
@@ -30828,7 +31209,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -30846,7 +31227,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsTitle() {
       displayAdsTitle_ = getDefaultInstance().getDisplayAdsTitle();
-      bitField2_ = (bitField2_ & ~0x00000040);
+      bitField2_ = (bitField2_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -30869,7 +31250,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -30889,7 +31270,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsLink field is set.
      */
     public boolean hasDisplayAdsLink() {
-      return ((bitField2_ & 0x00000080) != 0);
+      return ((bitField2_ & 0x00000100) != 0);
     }
 
     /**
@@ -30958,7 +31339,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -30977,7 +31358,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsLink() {
       displayAdsLink_ = getDefaultInstance().getDisplayAdsLink();
-      bitField2_ = (bitField2_ & ~0x00000080);
+      bitField2_ = (bitField2_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -31001,7 +31382,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -31023,7 +31404,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasDisplayAdsValue() {
-      return ((bitField2_ & 0x00000100) != 0);
+      return ((bitField2_ & 0x00000200) != 0);
     }
 
     /**
@@ -31061,7 +31442,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setDisplayAdsValue(double value) {
 
       displayAdsValue_ = value;
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -31080,7 +31461,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayAdsValue() {
-      bitField2_ = (bitField2_ & ~0x00000100);
+      bitField2_ = (bitField2_ & ~0x00000200);
       displayAdsValue_ = 0D;
       onChanged();
       return this;
@@ -31093,7 +31474,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
     }
 
     /**
@@ -31178,7 +31559,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31201,7 +31582,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31221,7 +31602,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31239,7 +31620,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000200);
+      bitField2_ = (bitField2_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -31264,7 +31645,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31285,7 +31666,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupMethod() {
-      return ((bitField2_ & 0x00000400) != 0);
+      return ((bitField2_ & 0x00000800) != 0);
     }
 
     /**
@@ -31320,7 +31701,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupMethodValue(int value) {
       pickupMethod_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -31363,7 +31744,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000800;
       pickupMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -31382,7 +31763,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupMethod() {
-      bitField2_ = (bitField2_ & ~0x00000400);
+      bitField2_ = (bitField2_ & ~0x00000800);
       pickupMethod_ = 0;
       onChanged();
       return this;
@@ -31404,7 +31785,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupSla() {
-      return ((bitField2_ & 0x00000800) != 0);
+      return ((bitField2_ & 0x00001000) != 0);
     }
 
     /**
@@ -31439,7 +31820,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupSlaValue(int value) {
       pickupSla_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -31482,7 +31863,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00001000;
       pickupSla_ = value.getNumber();
       onChanged();
       return this;
@@ -31501,7 +31882,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupSla() {
-      bitField2_ = (bitField2_ & ~0x00000800);
+      bitField2_ = (bitField2_ & ~0x00001000);
       pickupSla_ = 0;
       onChanged();
       return this;
@@ -31522,7 +31903,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the linkTemplate field is set.
      */
     public boolean hasLinkTemplate() {
-      return ((bitField2_ & 0x00001000) != 0);
+      return ((bitField2_ & 0x00002000) != 0);
     }
 
     /**
@@ -31591,7 +31972,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       linkTemplate_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -31610,7 +31991,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLinkTemplate() {
       linkTemplate_ = getDefaultInstance().getLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00001000);
+      bitField2_ = (bitField2_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -31634,7 +32015,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       linkTemplate_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -31655,7 +32036,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the mobileLinkTemplate field is set.
      */
     public boolean hasMobileLinkTemplate() {
-      return ((bitField2_ & 0x00002000) != 0);
+      return ((bitField2_ & 0x00004000) != 0);
     }
 
     /**
@@ -31727,7 +32108,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -31747,7 +32128,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMobileLinkTemplate() {
       mobileLinkTemplate_ = getDefaultInstance().getMobileLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00002000);
+      bitField2_ = (bitField2_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -31772,7 +32153,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -31792,7 +32173,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel0 field is set.
      */
     public boolean hasCustomLabel0() {
-      return ((bitField2_ & 0x00004000) != 0);
+      return ((bitField2_ & 0x00008000) != 0);
     }
 
     /**
@@ -31861,7 +32242,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel0_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -31880,7 +32261,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel0() {
       customLabel0_ = getDefaultInstance().getCustomLabel0();
-      bitField2_ = (bitField2_ & ~0x00004000);
+      bitField2_ = (bitField2_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -31904,7 +32285,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel0_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -31924,7 +32305,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel1 field is set.
      */
     public boolean hasCustomLabel1() {
-      return ((bitField2_ & 0x00008000) != 0);
+      return ((bitField2_ & 0x00010000) != 0);
     }
 
     /**
@@ -31993,7 +32374,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel1_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -32012,7 +32393,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel1() {
       customLabel1_ = getDefaultInstance().getCustomLabel1();
-      bitField2_ = (bitField2_ & ~0x00008000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -32036,7 +32417,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel1_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -32056,7 +32437,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel2 field is set.
      */
     public boolean hasCustomLabel2() {
-      return ((bitField2_ & 0x00010000) != 0);
+      return ((bitField2_ & 0x00020000) != 0);
     }
 
     /**
@@ -32125,7 +32506,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel2_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -32144,7 +32525,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel2() {
       customLabel2_ = getDefaultInstance().getCustomLabel2();
-      bitField2_ = (bitField2_ & ~0x00010000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -32168,7 +32549,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel2_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -32188,7 +32569,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel3 field is set.
      */
     public boolean hasCustomLabel3() {
-      return ((bitField2_ & 0x00020000) != 0);
+      return ((bitField2_ & 0x00040000) != 0);
     }
 
     /**
@@ -32257,7 +32638,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel3_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -32276,7 +32657,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel3() {
       customLabel3_ = getDefaultInstance().getCustomLabel3();
-      bitField2_ = (bitField2_ & ~0x00020000);
+      bitField2_ = (bitField2_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -32300,7 +32681,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel3_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -32320,7 +32701,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel4 field is set.
      */
     public boolean hasCustomLabel4() {
-      return ((bitField2_ & 0x00040000) != 0);
+      return ((bitField2_ & 0x00080000) != 0);
     }
 
     /**
@@ -32389,7 +32770,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel4_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -32408,7 +32789,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel4() {
       customLabel4_ = getDefaultInstance().getCustomLabel4();
-      bitField2_ = (bitField2_ & ~0x00040000);
+      bitField2_ = (bitField2_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -32432,7 +32813,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel4_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -32443,7 +32824,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!includedDestinations_.isModifiable()) {
         includedDestinations_ = makeMutableCopy(includedDestinations_);
       }
-      bitField2_ |= 0x00080000;
+      bitField2_ |= 0x00100000;
     }
 
     /**
@@ -32647,7 +33028,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIncludedDestinations() {
       includedDestinations_ = emptyIntList();
-      bitField2_ = (bitField2_ & ~0x00080000);
+      bitField2_ = (bitField2_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -32800,7 +33181,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!excludedDestinations_.isModifiable()) {
         excludedDestinations_ = makeMutableCopy(excludedDestinations_);
       }
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
     }
 
     /**
@@ -32997,7 +33378,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExcludedDestinations() {
       excludedDestinations_ = emptyIntList();
-      bitField2_ = (bitField2_ & ~0x00100000);
+      bitField2_ = (bitField2_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -33147,7 +33528,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shoppingAdsExcludedCountries_ =
             new com.google.protobuf.LazyStringArrayList(shoppingAdsExcludedCountries_);
       }
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
     }
 
     /**
@@ -33247,7 +33628,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.set(index, value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -33273,7 +33654,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -33296,7 +33677,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllShoppingAdsExcludedCountries(java.lang.Iterable<java.lang.String> values) {
       ensureShoppingAdsExcludedCountriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shoppingAdsExcludedCountries_);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -33317,7 +33698,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShoppingAdsExcludedCountries() {
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00200000);
+      bitField2_ = (bitField2_ & ~0x00400000);
       ;
       onChanged();
       return this;
@@ -33345,7 +33726,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -33366,7 +33747,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the externalSellerId field is set.
      */
     public boolean hasExternalSellerId() {
-      return ((bitField2_ & 0x00400000) != 0);
+      return ((bitField2_ & 0x00800000) != 0);
     }
 
     /**
@@ -33438,7 +33819,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       externalSellerId_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33458,7 +33839,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExternalSellerId() {
       externalSellerId_ = getDefaultInstance().getExternalSellerId();
-      bitField2_ = (bitField2_ & ~0x00400000);
+      bitField2_ = (bitField2_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -33483,7 +33864,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       externalSellerId_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33504,7 +33885,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPause() {
-      return ((bitField2_ & 0x00800000) != 0);
+      return ((bitField2_ & 0x01000000) != 0);
     }
 
     /**
@@ -33539,7 +33920,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPauseValue(int value) {
       pause_ = value;
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -33580,7 +33961,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x01000000;
       pause_ = value.getNumber();
       onChanged();
       return this;
@@ -33599,7 +33980,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPause() {
-      bitField2_ = (bitField2_ & ~0x00800000);
+      bitField2_ = (bitField2_ & ~0x01000000);
       pause_ = 0;
       onChanged();
       return this;
@@ -33612,7 +33993,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!lifestyleImageLinks_.isModifiable()) {
         lifestyleImageLinks_ = new com.google.protobuf.LazyStringArrayList(lifestyleImageLinks_);
       }
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
     }
 
     /**
@@ -33712,7 +34093,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.set(index, value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -33738,7 +34119,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -33761,7 +34142,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllLifestyleImageLinks(java.lang.Iterable<java.lang.String> values) {
       ensureLifestyleImageLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lifestyleImageLinks_);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -33782,7 +34163,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLifestyleImageLinks() {
       lifestyleImageLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x01000000);
+      bitField2_ = (bitField2_ & ~0x02000000);
       ;
       onChanged();
       return this;
@@ -33810,7 +34191,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -33819,12 +34200,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
 
     private void ensureCloudExportAdditionalPropertiesIsMutable() {
-      if (!((bitField2_ & 0x02000000) != 0)) {
+      if (!((bitField2_ & 0x04000000) != 0)) {
         cloudExportAdditionalProperties_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties>(
                 cloudExportAdditionalProperties_);
-        bitField2_ |= 0x02000000;
+        bitField2_ |= 0x04000000;
       }
     }
 
@@ -34085,7 +34466,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCloudExportAdditionalProperties() {
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x02000000);
+        bitField2_ = (bitField2_ & ~0x04000000);
         onChanged();
       } else {
         cloudExportAdditionalPropertiesBuilder_.clear();
@@ -34241,7 +34622,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties.Builder,
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalPropertiesOrBuilder>(
                 cloudExportAdditionalProperties_,
-                ((bitField2_ & 0x02000000) != 0),
+                ((bitField2_ & 0x04000000) != 0),
                 getParentForChildren(),
                 isClean());
         cloudExportAdditionalProperties_ = null;
@@ -34265,7 +34646,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the virtualModelLink field is set.
      */
     public boolean hasVirtualModelLink() {
-      return ((bitField2_ & 0x04000000) != 0);
+      return ((bitField2_ & 0x08000000) != 0);
     }
 
     /**
@@ -34337,7 +34718,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       virtualModelLink_ = value;
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -34357,7 +34738,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVirtualModelLink() {
       virtualModelLink_ = getDefaultInstance().getVirtualModelLink();
-      bitField2_ = (bitField2_ & ~0x04000000);
+      bitField2_ = (bitField2_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -34382,7 +34763,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       virtualModelLink_ = value;
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -34391,11 +34772,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = java.util.Collections.emptyList();
 
     private void ensureCertificationsIsMutable() {
-      if (!((bitField2_ & 0x08000000) != 0)) {
+      if (!((bitField2_ & 0x10000000) != 0)) {
         certifications_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductCertification>(
                 certifications_);
-        bitField2_ |= 0x08000000;
+        bitField2_ |= 0x10000000;
       }
     }
 
@@ -34695,7 +35076,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x08000000);
+        bitField2_ = (bitField2_ & ~0x10000000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -34875,7 +35256,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductCertification.Builder,
                 com.google.shopping.merchant.products.v1.ProductCertificationOrBuilder>(
                 certifications_,
-                ((bitField2_ & 0x08000000) != 0),
+                ((bitField2_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -34903,7 +35284,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredTitle field is set.
      */
     public boolean hasStructuredTitle() {
-      return ((bitField2_ & 0x10000000) != 0);
+      return ((bitField2_ & 0x20000000) != 0);
     }
 
     /**
@@ -34948,7 +35329,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -34970,7 +35351,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -34988,7 +35369,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredTitle(
         com.google.shopping.merchant.products.v1.StructuredTitle value) {
       if (structuredTitleBuilder_ == null) {
-        if (((bitField2_ & 0x10000000) != 0)
+        if (((bitField2_ & 0x20000000) != 0)
             && structuredTitle_ != null
             && structuredTitle_
                 != com.google.shopping.merchant.products.v1.StructuredTitle.getDefaultInstance()) {
@@ -35000,7 +35381,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredTitleBuilder_.mergeFrom(value);
       }
       if (structuredTitle_ != null) {
-        bitField2_ |= 0x10000000;
+        bitField2_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -35017,7 +35398,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredTitle() {
-      bitField2_ = (bitField2_ & ~0x10000000);
+      bitField2_ = (bitField2_ & ~0x20000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -35039,7 +35420,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredTitle.Builder
         getStructuredTitleBuilder() {
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x20000000;
       onChanged();
       return internalGetStructuredTitleFieldBuilder().getBuilder();
     }
@@ -35113,7 +35494,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredDescription field is set.
      */
     public boolean hasStructuredDescription() {
-      return ((bitField2_ & 0x20000000) != 0);
+      return ((bitField2_ & 0x40000000) != 0);
     }
 
     /**
@@ -35161,7 +35542,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -35184,7 +35565,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -35203,7 +35584,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredDescription(
         com.google.shopping.merchant.products.v1.StructuredDescription value) {
       if (structuredDescriptionBuilder_ == null) {
-        if (((bitField2_ & 0x20000000) != 0)
+        if (((bitField2_ & 0x40000000) != 0)
             && structuredDescription_ != null
             && structuredDescription_
                 != com.google.shopping.merchant.products.v1.StructuredDescription
@@ -35216,7 +35597,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredDescriptionBuilder_.mergeFrom(value);
       }
       if (structuredDescription_ != null) {
-        bitField2_ |= 0x20000000;
+        bitField2_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -35234,7 +35615,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredDescription() {
-      bitField2_ = (bitField2_ & ~0x20000000);
+      bitField2_ = (bitField2_ & ~0x40000000);
       structuredDescription_ = null;
       if (structuredDescriptionBuilder_ != null) {
         structuredDescriptionBuilder_.dispose();
@@ -35257,7 +35638,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredDescription.Builder
         getStructuredDescriptionBuilder() {
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return internalGetStructuredDescriptionFieldBuilder().getBuilder();
     }
@@ -35336,7 +35717,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the autoPricingMinPrice field is set.
      */
     public boolean hasAutoPricingMinPrice() {
-      return ((bitField2_ & 0x40000000) != 0);
+      return ((bitField2_ & 0x80000000) != 0);
     }
 
     /**
@@ -35388,7 +35769,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -35413,7 +35794,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -35434,7 +35815,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAutoPricingMinPrice(com.google.shopping.type.Price value) {
       if (autoPricingMinPriceBuilder_ == null) {
-        if (((bitField2_ & 0x40000000) != 0)
+        if (((bitField2_ & 0x80000000) != 0)
             && autoPricingMinPrice_ != null
             && autoPricingMinPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getAutoPricingMinPriceBuilder().mergeFrom(value);
@@ -35445,7 +35826,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         autoPricingMinPriceBuilder_.mergeFrom(value);
       }
       if (autoPricingMinPrice_ != null) {
-        bitField2_ |= 0x40000000;
+        bitField2_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -35466,7 +35847,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public Builder clearAutoPricingMinPrice() {
-      bitField2_ = (bitField2_ & ~0x40000000);
+      bitField2_ = (bitField2_ & ~0x80000000);
       autoPricingMinPrice_ = null;
       if (autoPricingMinPriceBuilder_ != null) {
         autoPricingMinPriceBuilder_.dispose();
@@ -35491,7 +35872,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public com.google.shopping.type.Price.Builder getAutoPricingMinPriceBuilder() {
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return internalGetAutoPricingMinPriceFieldBuilder().getBuilder();
     }
@@ -35555,12 +35936,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = java.util.Collections.emptyList();
 
     private void ensureSustainabilityIncentivesIsMutable() {
-      if (!((bitField2_ & 0x80000000) != 0)) {
+      if (!((bitField3_ & 0x00000001) != 0)) {
         sustainabilityIncentives_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive>(
                 sustainabilityIncentives_);
-        bitField2_ |= 0x80000000;
+        bitField3_ |= 0x00000001;
       }
     }
 
@@ -35820,7 +36201,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearSustainabilityIncentives() {
       if (sustainabilityIncentivesBuilder_ == null) {
         sustainabilityIncentives_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x80000000);
+        bitField3_ = (bitField3_ & ~0x00000001);
         onChanged();
       } else {
         sustainabilityIncentivesBuilder_.clear();
@@ -35976,12 +36357,222 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive.Builder,
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentiveOrBuilder>(
                 sustainabilityIncentives_,
-                ((bitField2_ & 0x80000000) != 0),
+                ((bitField3_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         sustainabilityIncentives_ = null;
       }
       return sustainabilityIncentivesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList videoLinks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureVideoLinksIsMutable() {
+      if (!videoLinks_.isModifiable()) {
+        videoLinks_ = new com.google.protobuf.LazyStringArrayList(videoLinks_);
+      }
+      bitField3_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the videoLinks.
+     */
+    public com.google.protobuf.ProtocolStringList getVideoLinksList() {
+      videoLinks_.makeImmutable();
+      return videoLinks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of videoLinks.
+     */
+    public int getVideoLinksCount() {
+      return videoLinks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The videoLinks at the given index.
+     */
+    public java.lang.String getVideoLinks(int index) {
+      return videoLinks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the videoLinks at the given index.
+     */
+    public com.google.protobuf.ByteString getVideoLinksBytes(int index) {
+      return videoLinks_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The videoLinks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoLinks(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVideoLinksIsMutable();
+      videoLinks_.set(index, value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVideoLinks(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVideoLinksIsMutable();
+      videoLinks_.add(value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllVideoLinks(java.lang.Iterable<java.lang.String> values) {
+      ensureVideoLinksIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, videoLinks_);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoLinks() {
+      videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField3_ = (bitField3_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVideoLinksBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureVideoLinksIsMutable();
+      videoLinks_.add(value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes)

@@ -391,6 +391,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHiveCatalogRequest, HiveCatalog> getHiveCatalogTransportSettings =
         GrpcCallSettings.<GetHiveCatalogRequest, HiveCatalog>newBuilder()
@@ -401,6 +402,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHiveCatalogsRequest, ListHiveCatalogsResponse>
         listHiveCatalogsTransportSettings =
@@ -412,6 +414,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateHiveCatalogRequest, HiveCatalog> updateHiveCatalogTransportSettings =
         GrpcCallSettings.<UpdateHiveCatalogRequest, HiveCatalog>newBuilder()
@@ -433,6 +436,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHiveDatabaseRequest, HiveDatabase> createHiveDatabaseTransportSettings =
         GrpcCallSettings.<CreateHiveDatabaseRequest, HiveDatabase>newBuilder()
@@ -443,6 +447,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHiveDatabaseRequest, HiveDatabase> getHiveDatabaseTransportSettings =
         GrpcCallSettings.<GetHiveDatabaseRequest, HiveDatabase>newBuilder()
@@ -453,6 +458,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHiveDatabasesRequest, ListHiveDatabasesResponse>
         listHiveDatabasesTransportSettings =
@@ -464,6 +470,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateHiveDatabaseRequest, HiveDatabase> updateHiveDatabaseTransportSettings =
         GrpcCallSettings.<UpdateHiveDatabaseRequest, HiveDatabase>newBuilder()
@@ -485,6 +492,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHiveTableRequest, HiveTable> createHiveTableTransportSettings =
         GrpcCallSettings.<CreateHiveTableRequest, HiveTable>newBuilder()
@@ -495,6 +503,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHiveTableRequest, HiveTable> getHiveTableTransportSettings =
         GrpcCallSettings.<GetHiveTableRequest, HiveTable>newBuilder()
@@ -505,6 +514,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHiveTablesRequest, ListHiveTablesResponse>
         listHiveTablesTransportSettings =
@@ -516,6 +526,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateHiveTableRequest, HiveTable> updateHiveTableTransportSettings =
         GrpcCallSettings.<UpdateHiveTableRequest, HiveTable>newBuilder()
@@ -536,6 +547,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchCreatePartitionsRequest, BatchCreatePartitionsResponse>
         batchCreatePartitionsTransportSettings =
@@ -548,6 +560,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchDeletePartitionsRequest, Empty> batchDeletePartitionsTransportSettings =
         GrpcCallSettings.<BatchDeletePartitionsRequest, Empty>newBuilder()
@@ -558,6 +571,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchUpdatePartitionsRequest, BatchUpdatePartitionsResponse>
         batchUpdatePartitionsTransportSettings =
@@ -570,6 +584,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsTransportSettings =
@@ -581,6 +596,7 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createHiveCatalogCallable =

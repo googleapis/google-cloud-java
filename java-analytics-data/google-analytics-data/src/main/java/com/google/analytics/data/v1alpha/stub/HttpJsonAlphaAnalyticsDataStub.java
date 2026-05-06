@@ -26,6 +26,7 @@ import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
 import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetReportTaskRequest;
@@ -35,6 +36,7 @@ import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListReportTasksRequest;
 import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
@@ -45,8 +47,8 @@ import com.google.analytics.data.v1alpha.ReportTask;
 import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.RunReportRequest;
+import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -202,46 +204,6 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<QueryAudienceListResponse>newBuilder()
                       .setDefaultInstance(QueryAudienceListResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<
-          SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListMethodDescriptor =
-          ApiMethodDescriptor
-              .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.data.v1alpha.AlphaAnalyticsData/SheetExportAudienceList")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<SheetExportAudienceListRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{name=properties/*/audienceLists/*}:exportSheet",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<SheetExportAudienceListRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<SheetExportAudienceListRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<SheetExportAudienceListResponse>newBuilder()
-                      .setDefaultInstance(SheetExportAudienceListResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -617,6 +579,77 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RunReportRequest, RunReportResponse>
+      runReportMethodDescriptor =
+          ApiMethodDescriptor.<RunReportRequest, RunReportResponse>newBuilder()
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/RunReport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunReportRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{property=properties/*}:runReport",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "property", request.getProperty());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearProperty().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RunReportResponse>newBuilder()
+                      .setDefaultInstance(RunReportResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetMetadataRequest, Metadata>
+      getMetadataMethodDescriptor =
+          ApiMethodDescriptor.<GetMetadataRequest, Metadata>newBuilder()
+              .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/GetMetadata")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetMetadataRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/metadata}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetMetadataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Metadata>newBuilder()
+                      .setDefaultInstance(Metadata.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportCallable;
   private final UnaryCallable<CreateAudienceListRequest, Operation> createAudienceListCallable;
@@ -624,8 +657,6 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       createAudienceListOperationCallable;
   private final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable;
-  private final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable;
   private final UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable;
   private final UnaryCallable<ListAudienceListsRequest, ListAudienceListsResponse>
       listAudienceListsCallable;
@@ -652,6 +683,8 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       listReportTasksCallable;
   private final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable;
+  private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
+  private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -722,24 +755,12 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListTransportSettings =
             HttpJsonCallSettings.<QueryAudienceListRequest, QueryAudienceListResponse>newBuilder()
                 .setMethodDescriptor(queryAudienceListMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListTransportSettings =
-            HttpJsonCallSettings
-                .<SheetExportAudienceListRequest, SheetExportAudienceListResponse>newBuilder()
-                .setMethodDescriptor(sheetExportAudienceListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -758,6 +779,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAudienceListsRequest, ListAudienceListsResponse>
         listAudienceListsTransportSettings =
@@ -770,6 +792,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateRecurringAudienceListRequest, RecurringAudienceList>
         createRecurringAudienceListTransportSettings =
@@ -783,6 +806,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRecurringAudienceListRequest, RecurringAudienceList>
         getRecurringAudienceListTransportSettings =
@@ -796,6 +820,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRecurringAudienceListsRequest, ListRecurringAudienceListsResponse>
         listRecurringAudienceListsTransportSettings =
@@ -809,6 +834,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPropertyQuotasSnapshotRequest, PropertyQuotasSnapshot>
         getPropertyQuotasSnapshotTransportSettings =
@@ -822,6 +848,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateReportTaskRequest, Operation> createReportTaskTransportSettings =
         HttpJsonCallSettings.<CreateReportTaskRequest, Operation>newBuilder()
@@ -833,6 +860,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<QueryReportTaskRequest, QueryReportTaskResponse>
         queryReportTaskTransportSettings =
@@ -856,6 +884,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportTasksRequest, ListReportTasksResponse>
         listReportTasksTransportSettings =
@@ -868,7 +897,31 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
+        HttpJsonCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
+            .setMethodDescriptor(runReportMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property", String.valueOf(request.getProperty()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
+        HttpJsonCallSettings.<GetMetadataRequest, Metadata>newBuilder()
+            .setMethodDescriptor(getMetadataMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.runFunnelReportCallable =
         callableFactory.createUnaryCallable(
@@ -888,11 +941,6 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
         callableFactory.createUnaryCallable(
             queryAudienceListTransportSettings,
             settings.queryAudienceListSettings(),
-            clientContext);
-    this.sheetExportAudienceListCallable =
-        callableFactory.createUnaryCallable(
-            sheetExportAudienceListTransportSettings,
-            settings.sheetExportAudienceListSettings(),
             clientContext);
     this.getAudienceListCallable =
         callableFactory.createUnaryCallable(
@@ -953,6 +1001,12 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     this.listReportTasksPagedCallable =
         callableFactory.createPagedCallable(
             listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.runReportCallable =
+        callableFactory.createUnaryCallable(
+            runReportTransportSettings, settings.runReportSettings(), clientContext);
+    this.getMetadataCallable =
+        callableFactory.createUnaryCallable(
+            getMetadataTransportSettings, settings.getMetadataSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -964,7 +1018,6 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(runFunnelReportMethodDescriptor);
     methodDescriptors.add(createAudienceListMethodDescriptor);
     methodDescriptors.add(queryAudienceListMethodDescriptor);
-    methodDescriptors.add(sheetExportAudienceListMethodDescriptor);
     methodDescriptors.add(getAudienceListMethodDescriptor);
     methodDescriptors.add(listAudienceListsMethodDescriptor);
     methodDescriptors.add(createRecurringAudienceListMethodDescriptor);
@@ -975,6 +1028,8 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(queryReportTaskMethodDescriptor);
     methodDescriptors.add(getReportTaskMethodDescriptor);
     methodDescriptors.add(listReportTasksMethodDescriptor);
+    methodDescriptors.add(runReportMethodDescriptor);
+    methodDescriptors.add(getMetadataMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1002,12 +1057,6 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return queryAudienceListCallable;
-  }
-
-  @Override
-  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable() {
-    return sheetExportAudienceListCallable;
   }
 
   @Override
@@ -1087,6 +1136,16 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable() {
     return listReportTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
+    return runReportCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return getMetadataCallable;
   }
 
   @Override

@@ -690,6 +690,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetOrderRequest, Order> getOrderTransportSettings =
         GrpcCallSettings.<GetOrderRequest, Order>newBuilder()
@@ -700,6 +701,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOrderRequest, Operation> createOrderTransportSettings =
         GrpcCallSettings.<CreateOrderRequest, Operation>newBuilder()
@@ -710,6 +712,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateOrderRequest, Operation> updateOrderTransportSettings =
         GrpcCallSettings.<UpdateOrderRequest, Operation>newBuilder()
@@ -730,6 +733,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SubmitOrderRequest, Operation> submitOrderTransportSettings =
         GrpcCallSettings.<SubmitOrderRequest, Operation>newBuilder()
@@ -740,6 +744,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
         GrpcCallSettings.<CancelOrderRequest, Operation>newBuilder()
@@ -750,6 +755,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSitesRequest, ListSitesResponse> listSitesTransportSettings =
         GrpcCallSettings.<ListSitesRequest, ListSitesResponse>newBuilder()
@@ -760,6 +766,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSiteRequest, Site> getSiteTransportSettings =
         GrpcCallSettings.<GetSiteRequest, Site>newBuilder()
@@ -770,6 +777,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSiteRequest, Operation> createSiteTransportSettings =
         GrpcCallSettings.<CreateSiteRequest, Operation>newBuilder()
@@ -780,6 +788,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSiteRequest, Operation> updateSiteTransportSettings =
         GrpcCallSettings.<UpdateSiteRequest, Operation>newBuilder()
@@ -800,6 +809,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHardwareGroupsRequest, ListHardwareGroupsResponse>
         listHardwareGroupsTransportSettings =
@@ -811,6 +821,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetHardwareGroupRequest, HardwareGroup> getHardwareGroupTransportSettings =
         GrpcCallSettings.<GetHardwareGroupRequest, HardwareGroup>newBuilder()
@@ -821,6 +832,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHardwareGroupRequest, Operation> createHardwareGroupTransportSettings =
         GrpcCallSettings.<CreateHardwareGroupRequest, Operation>newBuilder()
@@ -831,6 +843,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHardwareGroupRequest, Operation> updateHardwareGroupTransportSettings =
         GrpcCallSettings.<UpdateHardwareGroupRequest, Operation>newBuilder()
@@ -852,6 +865,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListHardwareRequest, ListHardwareResponse> listHardwareTransportSettings =
         GrpcCallSettings.<ListHardwareRequest, ListHardwareResponse>newBuilder()
@@ -862,6 +876,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHardwareRequest, Hardware> getHardwareTransportSettings =
         GrpcCallSettings.<GetHardwareRequest, Hardware>newBuilder()
@@ -872,6 +887,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHardwareRequest, Operation> createHardwareTransportSettings =
         GrpcCallSettings.<CreateHardwareRequest, Operation>newBuilder()
@@ -882,6 +898,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHardwareRequest, Operation> updateHardwareTransportSettings =
         GrpcCallSettings.<UpdateHardwareRequest, Operation>newBuilder()
@@ -902,6 +919,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCommentsRequest, ListCommentsResponse> listCommentsTransportSettings =
         GrpcCallSettings.<ListCommentsRequest, ListCommentsResponse>newBuilder()
@@ -912,6 +930,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCommentRequest, Comment> getCommentTransportSettings =
         GrpcCallSettings.<GetCommentRequest, Comment>newBuilder()
@@ -922,6 +941,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCommentRequest, Operation> createCommentTransportSettings =
         GrpcCallSettings.<CreateCommentRequest, Operation>newBuilder()
@@ -932,6 +952,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RecordActionOnCommentRequest, Comment> recordActionOnCommentTransportSettings =
         GrpcCallSettings.<RecordActionOnCommentRequest, Comment>newBuilder()
@@ -942,6 +963,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
         listChangeLogEntriesTransportSettings =
@@ -953,6 +975,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetChangeLogEntryRequest, ChangeLogEntry> getChangeLogEntryTransportSettings =
         GrpcCallSettings.<GetChangeLogEntryRequest, ChangeLogEntry>newBuilder()
@@ -963,6 +986,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSkusRequest, ListSkusResponse> listSkusTransportSettings =
         GrpcCallSettings.<ListSkusRequest, ListSkusResponse>newBuilder()
@@ -973,6 +997,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSkuRequest, Sku> getSkuTransportSettings =
         GrpcCallSettings.<GetSkuRequest, Sku>newBuilder()
@@ -983,6 +1008,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         GrpcCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -993,6 +1019,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         GrpcCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -1003,6 +1030,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
         GrpcCallSettings.<CreateZoneRequest, Operation>newBuilder()
@@ -1013,6 +1041,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
         GrpcCallSettings.<UpdateZoneRequest, Operation>newBuilder()
@@ -1033,6 +1062,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SignalZoneStateRequest, Operation> signalZoneStateTransportSettings =
         GrpcCallSettings.<SignalZoneStateRequest, Operation>newBuilder()
@@ -1043,6 +1073,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RequestOrderDateChangeRequest, Operation>
         requestOrderDateChangeTransportSettings =
@@ -1054,6 +1085,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

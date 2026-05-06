@@ -49,6 +49,8 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.GenerateEvaluationRequest;
 import com.google.cloud.ces.v1beta.GetEvaluationDatasetRequest;
@@ -72,6 +74,7 @@ import com.google.cloud.ces.v1beta.ListEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ListEvaluationsResponse;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsRequest;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsResponse;
+import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
@@ -480,6 +483,17 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExportEvaluationsRequest, Operation>
+      exportEvaluationsMethodDescriptor =
+          MethodDescriptor.<ExportEvaluationsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.EvaluationService/ExportEvaluations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportEvaluationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -580,6 +594,10 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
       deleteScheduledEvaluationRunCallable;
   private final UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable;
+  private final UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable;
+  private final OperationCallable<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -638,6 +656,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("app", String.valueOf(request.getApp()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getApp())
             .build();
     GrpcCallSettings<UploadEvaluationAudioRequest, UploadEvaluationAudioResponse>
         uploadEvaluationAudioTransportSettings =
@@ -650,6 +669,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateEvaluationRequest, Evaluation> createEvaluationTransportSettings =
         GrpcCallSettings.<CreateEvaluationRequest, Evaluation>newBuilder()
@@ -660,6 +680,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GenerateEvaluationRequest, Operation> generateEvaluationTransportSettings =
         GrpcCallSettings.<GenerateEvaluationRequest, Operation>newBuilder()
@@ -670,6 +691,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("conversation", String.valueOf(request.getConversation()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getConversation())
             .build();
     GrpcCallSettings<ImportEvaluationsRequest, Operation> importEvaluationsTransportSettings =
         GrpcCallSettings.<ImportEvaluationsRequest, Operation>newBuilder()
@@ -680,6 +702,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateEvaluationDatasetRequest, EvaluationDataset>
         createEvaluationDatasetTransportSettings =
@@ -691,6 +714,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEvaluationRequest, Evaluation> updateEvaluationTransportSettings =
         GrpcCallSettings.<UpdateEvaluationRequest, Evaluation>newBuilder()
@@ -724,6 +748,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEvaluationResultRequest, Empty> deleteEvaluationResultTransportSettings =
         GrpcCallSettings.<DeleteEvaluationResultRequest, Empty>newBuilder()
@@ -734,6 +759,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteEvaluationDatasetRequest, Empty>
         deleteEvaluationDatasetTransportSettings =
@@ -745,6 +771,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteEvaluationRunRequest, Operation> deleteEvaluationRunTransportSettings =
         GrpcCallSettings.<DeleteEvaluationRunRequest, Operation>newBuilder()
@@ -755,6 +782,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -765,6 +793,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEvaluationResultRequest, EvaluationResult>
         getEvaluationResultTransportSettings =
@@ -776,6 +805,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetEvaluationDatasetRequest, EvaluationDataset>
         getEvaluationDatasetTransportSettings =
@@ -787,6 +817,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetEvaluationRunRequest, EvaluationRun> getEvaluationRunTransportSettings =
         GrpcCallSettings.<GetEvaluationRunRequest, EvaluationRun>newBuilder()
@@ -797,6 +828,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -808,6 +840,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListEvaluationResultsRequest, ListEvaluationResultsResponse>
         listEvaluationResultsTransportSettings =
@@ -820,6 +853,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse>
         listEvaluationDatasetsTransportSettings =
@@ -832,6 +866,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListEvaluationRunsRequest, ListEvaluationRunsResponse>
         listEvaluationRunsTransportSettings =
@@ -843,6 +878,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListEvaluationExpectationsRequest, ListEvaluationExpectationsResponse>
         listEvaluationExpectationsTransportSettings =
@@ -855,6 +891,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEvaluationExpectationRequest, EvaluationExpectation>
         getEvaluationExpectationTransportSettings =
@@ -866,6 +903,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateEvaluationExpectationRequest, EvaluationExpectation>
         createEvaluationExpectationTransportSettings =
@@ -877,6 +915,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateEvaluationExpectationRequest, EvaluationExpectation>
         updateEvaluationExpectationTransportSettings =
@@ -901,6 +940,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         createScheduledEvaluationRunTransportSettings =
@@ -913,6 +953,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         getScheduledEvaluationRunTransportSettings =
@@ -924,6 +965,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListScheduledEvaluationRunsRequest, ListScheduledEvaluationRunsResponse>
         listScheduledEvaluationRunsTransportSettings =
@@ -937,6 +979,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateScheduledEvaluationRunRequest, ScheduledEvaluationRun>
         updateScheduledEvaluationRunTransportSettings =
@@ -962,6 +1005,7 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
         testPersonaVoiceTransportSettings =
@@ -973,7 +1017,19 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                       builder.add("app", String.valueOf(request.getApp()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getApp())
                 .build();
+    GrpcCallSettings<ExportEvaluationsRequest, Operation> exportEvaluationsTransportSettings =
+        GrpcCallSettings.<ExportEvaluationsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportEvaluationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1186,6 +1242,17 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
     this.testPersonaVoiceCallable =
         callableFactory.createUnaryCallable(
             testPersonaVoiceTransportSettings, settings.testPersonaVoiceSettings(), clientContext);
+    this.exportEvaluationsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationsTransportSettings,
+            settings.exportEvaluationsSettings(),
+            clientContext);
+    this.exportEvaluationsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationsTransportSettings,
+            settings.exportEvaluationsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1438,6 +1505,17 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
   public UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable() {
     return testPersonaVoiceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
+    return exportEvaluationsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable() {
+    return exportEvaluationsOperationCallable;
   }
 
   @Override

@@ -1216,6 +1216,56 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testLosslessMaxTimestampIntegration() throws InterruptedException {
+    String query = "SELECT TIMESTAMP '9999-12-31 23:59:59.999999 UTC' as max_ts";
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+
+    // 1. Test lossless 64-bit integer parsing (useInt64Timestamps = true)
+    DataFormatOptions losslessOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
+    BigQuery losslessBigQuery =
+        bigquery.getOptions().toBuilder()
+            .setDataFormatOptions(losslessOptions)
+            .build()
+            .getService();
+
+    TableResult losslessResult = losslessBigQuery.query(config);
+    assertEquals(1L, losslessResult.getTotalRows());
+    for (FieldValueList row : losslessResult.iterateAll()) {
+      long exactMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300799999999L, exactMicros);
+    }
+
+    // 2. Test lossy FLOAT64 rounding behavior (useInt64Timestamps = false)
+    DataFormatOptions floatOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(false).build();
+    BigQuery floatBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(floatOptions).build().getService();
+
+    TableResult floatResult = floatBigQuery.query(config);
+    assertEquals(1L, floatResult.getTotalRows());
+    for (FieldValueList row : floatResult.iterateAll()) {
+      long roundedMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300800000000L, roundedMicros);
+    }
+
+    // 3. Test ISO8601 timestamp formatting
+    DataFormatOptions isoOptions =
+        DataFormatOptions.newBuilder()
+            .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+            .build();
+    BigQuery isoBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(isoOptions).build().getService();
+
+    TableResult isoResult = isoBigQuery.query(config);
+    assertEquals(1L, isoResult.getTotalRows());
+    for (FieldValueList row : isoResult.iterateAll()) {
+      String isoValue = row.get("max_ts").getStringValue();
+      assertEquals("9999-12-31T23:59:59.999999Z", isoValue);
+    }
+  }
+
+  @Test
   void testListDatasets() {
     Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();
@@ -4698,13 +4748,10 @@ class ITBigQueryTest {
     JobId jobIdWithProjectId = JobId.newBuilder().setProject(invalidProjectId).build();
     QueryJobConfiguration configSelect =
         QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
-    try {
-      bigquery.query(configSelect, jobIdWithProjectId);
-    } catch (Exception exception) {
-      // error message for non-existent project
-      assertEquals("Cannot parse  as CloudRegion.", exception.getMessage());
-      assertEquals(BigQueryException.class, exception.getClass());
-    }
+    BigQueryException bqException =
+        assertThrows(
+            BigQueryException.class, () -> bigquery.query(configSelect, jobIdWithProjectId));
+    assertEquals(400, bqException.getCode());
   }
 
   @Test
@@ -4735,7 +4782,13 @@ class ITBigQueryTest {
     // Use `getNumDmlAffectedRows()` for DML operations
     Job queryJob = bigquery.getJob(result.getJobId());
     queryJob = queryJob.waitFor();
+    assertNull(
+        queryJob.getStatus().getError(),
+        "Job failed with error: " + queryJob.getStatus().getError());
+
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    assertNotNull(
+        statistics.getNumDmlAffectedRows(), "DML affected rows statistics should not be null");
     assertEquals(1L, statistics.getNumDmlAffectedRows().longValue());
 
     // Verify correctness of table content
@@ -7434,22 +7487,36 @@ class ITBigQueryTest {
     }
 
     // Stateful query returns Job
-    // Test scenario 2 to ensure job is created if JobCreationMode is set, but for a small query
-    // it still returns results.
+    // Test scenario 2 to ensure job is created if Query is long running.
+    // Explicitly disable cache to ensure it is long-running query;
+    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
+    long millis = System.currentTimeMillis();
+    result = bigQuery.queryWithTimeout(config, null, 1000L);
+    millis = System.currentTimeMillis() - millis;
+    assertTrue(result instanceof Job);
+    // Cancel the job as we don't need results.
+    ((Job) result).cancel();
+    // Allow 2 seconds of timeout value to account for random delays
+    assertTrue(millis < 1_000_000 * 2);
+
+    // Stateful query returns Job
+    // Test scenario 3 to ensure job is created if JobCreationMode is set.
     config =
         QueryJobConfiguration.newBuilder(query)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .build();
     result = bigQuery.queryWithTimeout(config, null, null);
-    assertTrue(result instanceof TableResult);
-    assertNotNull(((TableResult) result).getJobId());
-    assertNull(((TableResult) result).getQueryId());
+    assertTrue(result instanceof Job);
 
     // Stateful query returns Job
-    // Test scenario 3 to ensure job is created if Query is long running.
+    // Test scenario 4 to ensure job is created if Query is long running.
     // Explicitly disable cache to ensure it is long-running query;
-    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
-    long millis = System.currentTimeMillis();
+    config =
+        QueryJobConfiguration.newBuilder(largeQuery)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+            .setUseQueryCache(false)
+            .build();
+    millis = System.currentTimeMillis();
     result = bigQuery.queryWithTimeout(config, null, 1000L);
     millis = System.currentTimeMillis() - millis;
     assertTrue(result instanceof Job);
@@ -7748,6 +7815,7 @@ class ITBigQueryTest {
         BigQueryOptions.newBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
+            .setLocation("US")
             .build();
     BigQuery bigquery = otelOptions.getService();
 
@@ -7765,6 +7833,7 @@ class ITBigQueryTest {
               .setDescription(DESCRIPTION)
               .setMaxTimeTravelHours(72L)
               .setLabels(LABELS)
+              .setLocation("US")
               .build();
 
       Dataset dataset = bigquery.create(info);
@@ -7786,7 +7855,7 @@ class ITBigQueryTest {
       parentSpan.end();
       Map<AttributeKey<?>, Object> createMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createDataset");
-      assertEquals("null", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
+      assertEquals("US", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
       assertEquals(
           "DatasetService",
           OTEL_ATTRIBUTES
@@ -7892,7 +7961,17 @@ class ITBigQueryTest {
     bigquery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
     TableResult tableResult = executeSimpleQuery(bigquery);
     assertNotNull(tableResult.getQueryId());
-    assertNull(tableResult.getJobId());
+
+    // Safely handle the fallback where BigQuery determines a job must be created
+    // even if the mode is optional. Most requests will be stateless, but it is still
+    // possible that the BQ engine will create a job even for tiny requests.
+    if (tableResult.getJobCreationReason() != null) {
+      assertNotNull(tableResult.getJobId());
+      assertEquals(tableResult.getQueryId(), tableResult.getJobId().getJob());
+      assertEquals(JobCreationReason.Code.OTHER, tableResult.getJobCreationReason().getCode());
+    } else {
+      assertNull(tableResult.getJobId());
+    }
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.queryRpc"));
     assertNotNull(

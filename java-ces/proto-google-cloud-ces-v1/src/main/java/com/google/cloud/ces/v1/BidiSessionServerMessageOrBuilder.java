@@ -116,7 +116,7 @@ public interface BidiSessionServerMessageOrBuilder
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>
@@ -131,7 +131,7 @@ public interface BidiSessionServerMessageOrBuilder
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public interface BidiSessionServerMessageOrBuilder
    *
    *
    * <pre>
-   * Optional. Interruption signal detected from the audio input.
+   * Optional. Indicates the agent's audio response has been interrupted.
    * </pre>
    *
    * <code>

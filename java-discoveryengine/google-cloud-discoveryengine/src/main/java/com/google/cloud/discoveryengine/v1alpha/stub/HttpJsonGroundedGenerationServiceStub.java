@@ -151,6 +151,7 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
                       builder.add("grounding_config", String.valueOf(request.getGroundingConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroundingConfig())
                 .build();
 
     this.checkGroundingCallable =

@@ -176,7 +176,9 @@ public interface RouteInfoOrBuilder
    * <pre>
    * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
    * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to.
+   * attachments for Cloud Interconnect the route applies to. If set to "all"
+   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+   * Interconnect in all regions.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -191,7 +193,9 @@ public interface RouteInfoOrBuilder
    * <pre>
    * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
    * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to.
+   * attachments for Cloud Interconnect the route applies to. If set to "all"
+   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+   * Interconnect in all regions.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -238,7 +242,7 @@ public interface RouteInfoOrBuilder
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=697
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=699
    * @return The nextHop.
    */
   @java.lang.Deprecated
@@ -256,7 +260,7 @@ public interface RouteInfoOrBuilder
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=697
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=699
    * @return The bytes for nextHop.
    */
   @java.lang.Deprecated
@@ -683,7 +687,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=737
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=739
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Deprecated
@@ -703,7 +707,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=737
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=739
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Deprecated
@@ -723,7 +727,7 @@ public interface RouteInfoOrBuilder
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=737
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=739
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Deprecated

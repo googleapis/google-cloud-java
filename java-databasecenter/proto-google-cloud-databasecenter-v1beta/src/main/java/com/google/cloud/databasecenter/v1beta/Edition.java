@@ -24,8 +24,7 @@ package com.google.cloud.databasecenter.v1beta;
  *
  *
  * <pre>
- * Proto representing the edition of the instance.
- * NextId: 4.
+ * Represents the edition of a database resource.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.databasecenter.v1beta.Edition}
@@ -192,7 +191,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.databasecenter.v1beta.ServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(0);
   }
 
   private static final Edition[] VALUES = values();

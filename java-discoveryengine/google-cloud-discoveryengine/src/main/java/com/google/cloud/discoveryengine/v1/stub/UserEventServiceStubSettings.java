@@ -313,6 +313,7 @@ public class UserEventServiceStubSettings extends StubSettings<UserEventServiceS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

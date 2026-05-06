@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.GetRegionDiskTypeRequest;
 import com.google.cloud.compute.v1.ListRegionDiskTypesRequest;
@@ -147,6 +148,11 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/diskTypes/{disk_type}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+
   public static final HttpJsonRegionDiskTypesStub create(RegionDiskTypesStubSettings settings)
       throws IOException {
     return new HttpJsonRegionDiskTypesStub(settings, ClientContext.create(settings));
@@ -198,6 +204,14 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk_type", String.valueOf(request.getDiskType()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListRegionDiskTypesRequest, RegionDiskTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionDiskTypesRequest, RegionDiskTypeList>newBuilder()
@@ -209,6 +223,13 @@ public class HttpJsonRegionDiskTypesStub extends RegionDiskTypesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

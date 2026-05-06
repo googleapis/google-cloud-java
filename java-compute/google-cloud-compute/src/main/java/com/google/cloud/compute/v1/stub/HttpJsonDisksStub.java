@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddResourcePoliciesDiskRequest;
 import com.google.cloud.compute.v1.AggregatedListDisksRequest;
 import com.google.cloud.compute.v1.BulkInsertDiskRequest;
@@ -59,6 +60,7 @@ import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
+import com.google.cloud.compute.v1.UpdateKmsKeyDiskRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1075,6 +1077,63 @@ public class HttpJsonDisksStub extends DisksStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<UpdateKmsKeyDiskRequest, Operation>
+      updateKmsKeyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateKmsKeyDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Disks/UpdateKmsKey")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateKmsKeyDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/updateKmsKey",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "diskUpdateKmsKeyRequestResource",
+                                      request.getDiskUpdateKmsKeyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateKmsKeyDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AddResourcePoliciesDiskRequest, Operation>
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesDiskRequest, Operation, Operation>
@@ -1126,10 +1185,54 @@ public class HttpJsonDisksStub extends DisksStub {
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateDiskRequest, Operation> updateCallable;
   private final OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable;
+  private final UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable;
+  private final OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate ADD_RESOURCE_POLICIES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate BULK_INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate BULK_SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate CREATE_SNAPSHOT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate REMOVE_RESOURCE_POLICIES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate RESIZE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{resource}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{resource}");
+  private static final PathTemplate START_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate STOP_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate STOP_GROUP_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{resource}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
 
   public static final HttpJsonDisksStub create(DisksStubSettings settings) throws IOException {
     return new HttpJsonDisksStub(settings, ClientContext.create(settings));
@@ -1181,6 +1284,15 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return ADD_RESOURCE_POLICIES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListDisksRequest, DiskAggregatedList>
         aggregatedListTransportSettings =
@@ -1192,6 +1304,13 @@ public class HttpJsonDisksStub extends DisksStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<BulkInsertDiskRequest, Operation> bulkInsertTransportSettings =
@@ -1205,6 +1324,13 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return BULK_INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<BulkSetLabelsDiskRequest, Operation> bulkSetLabelsTransportSettings =
         HttpJsonCallSettings.<BulkSetLabelsDiskRequest, Operation>newBuilder()
@@ -1216,6 +1342,13 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return BULK_SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<CreateSnapshotDiskRequest, Operation> createSnapshotTransportSettings =
@@ -1230,6 +1363,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return CREATE_SNAPSHOT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<DeleteDiskRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteDiskRequest, Operation>newBuilder()
@@ -1242,6 +1383,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetDiskRequest, Disk> getTransportSettings =
@@ -1256,6 +1405,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyDiskRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyDiskRequest, Policy>newBuilder()
@@ -1269,6 +1426,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertDiskRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertDiskRequest, Operation>newBuilder()
@@ -1281,6 +1446,13 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListDisksRequest, DiskList> listTransportSettings =
         HttpJsonCallSettings.<ListDisksRequest, DiskList>newBuilder()
@@ -1292,6 +1464,13 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<RemoveResourcePoliciesDiskRequest, Operation>
@@ -1307,6 +1486,15 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return REMOVE_RESOURCE_POLICIES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<ResizeDiskRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeDiskRequest, Operation>newBuilder()
@@ -1319,6 +1507,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return RESIZE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetIamPolicyDiskRequest, Policy> setIamPolicyTransportSettings =
@@ -1333,6 +1529,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsDiskRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsDiskRequest, Operation>newBuilder()
@@ -1345,6 +1549,14 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<StartAsyncReplicationDiskRequest, Operation>
@@ -1360,6 +1572,15 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return START_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<StopAsyncReplicationDiskRequest, Operation>
         stopAsyncReplicationTransportSettings =
@@ -1374,6 +1595,15 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return STOP_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<StopGroupAsyncReplicationDiskRequest, Operation>
         stopGroupAsyncReplicationTransportSettings =
@@ -1386,6 +1616,14 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return STOP_GROUP_ASYNC_REPLICATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsDiskRequest, TestPermissionsResponse>
@@ -1402,6 +1640,15 @@ public class HttpJsonDisksStub extends DisksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateDiskRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateDiskRequest, Operation>newBuilder()
@@ -1414,6 +1661,35 @@ public class HttpJsonDisksStub extends DisksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyTransportSettings =
+        HttpJsonCallSettings.<UpdateKmsKeyDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateKmsKeyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
@@ -1570,6 +1846,15 @@ public class HttpJsonDisksStub extends DisksStub {
             settings.updateOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateKmsKeyCallable =
+        callableFactory.createUnaryCallable(
+            updateKmsKeyTransportSettings, settings.updateKmsKeySettings(), clientContext);
+    this.updateKmsKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateKmsKeyTransportSettings,
+            settings.updateKmsKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1597,6 +1882,7 @@ public class HttpJsonDisksStub extends DisksStub {
     methodDescriptors.add(stopGroupAsyncReplicationMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(updateKmsKeyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1782,6 +2068,17 @@ public class HttpJsonDisksStub extends DisksStub {
   @Override
   public OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable() {
     return updateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable() {
+    return updateKmsKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return updateKmsKeyOperationCallable;
   }
 
   @Override

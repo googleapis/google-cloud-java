@@ -247,6 +247,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOrganizationsRequest, ListOrganizationsResponse>
         listOrganizationsTransportSettings =
@@ -265,6 +266,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       builder.add("organization", String.valueOf(request.getOrganization()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getOrganization())
                 .build();
     GrpcCallSettings<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
         listAnalyticsAccountLinksTransportSettings =
@@ -277,6 +279,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateAnalyticsAccountLinkRequest, AnalyticsAccountLink>
         createAnalyticsAccountLinkTransportSettings =
@@ -288,6 +291,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteAnalyticsAccountLinkRequest, Empty>
         deleteAnalyticsAccountLinkTransportSettings =
@@ -299,6 +303,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
         setPropertyServiceLevelTransportSettings =
@@ -313,6 +318,7 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                           String.valueOf(request.getAnalyticsAccountLink()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAnalyticsProperty())
                 .build();
     GrpcCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
         reportPropertyUsageTransportSettings =

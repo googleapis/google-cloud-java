@@ -573,6 +573,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dialogflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -629,7 +630,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "retry_policy_8_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "retry_policy_7_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -678,7 +679,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               .setMaxRpcTimeoutDuration(Duration.ofMillis(1800000L))
               .setTotalTimeoutDuration(Duration.ofMillis(1800000L))
               .build();
-      definitions.put("retry_policy_8_params", settings);
+      definitions.put("retry_policy_7_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 

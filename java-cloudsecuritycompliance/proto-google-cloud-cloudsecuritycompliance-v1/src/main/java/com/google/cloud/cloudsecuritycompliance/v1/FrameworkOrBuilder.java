@@ -30,8 +30,12 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework, in the format
-   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * Required. Identifier. The name of the framework, in one of the following
+   * formats:
+   * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+   * or
+   * `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -47,8 +51,12 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework, in the format
-   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * Required. Identifier. The name of the framework, in one of the following
+   * formats:
+   * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+   * or
+   * `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *

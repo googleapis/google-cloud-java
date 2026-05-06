@@ -1085,6 +1085,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConnectionProfileRequest, ConnectionProfile>
         getConnectionProfileTransportSettings =
@@ -1097,6 +1098,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateConnectionProfileRequest, Operation>
         createConnectionProfileTransportSettings =
@@ -1109,6 +1111,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConnectionProfileRequest, Operation>
         updateConnectionProfileTransportSettings =
@@ -1135,6 +1138,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>
         discoverConnectionProfileTransportSettings =
@@ -1148,6 +1152,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         HttpJsonCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -1159,6 +1164,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         HttpJsonCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -1170,6 +1176,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         HttpJsonCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -1181,6 +1188,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         HttpJsonCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -1203,6 +1211,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchErrorsRequest, Operation> fetchErrorsTransportSettings =
         HttpJsonCallSettings.<FetchErrorsRequest, Operation>newBuilder()
@@ -1214,6 +1223,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("stream", String.valueOf(request.getStream()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getStream())
             .build();
     HttpJsonCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
         fetchStaticIpsTransportSettings =
@@ -1226,6 +1236,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -1238,6 +1249,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -1250,6 +1262,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -1263,6 +1276,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePrivateConnectionRequest, Operation>
         deletePrivateConnectionTransportSettings =
@@ -1275,6 +1289,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateRouteRequest, Operation> createRouteTransportSettings =
         HttpJsonCallSettings.<CreateRouteRequest, Operation>newBuilder()
@@ -1286,6 +1301,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRouteRequest, Route> getRouteTransportSettings =
         HttpJsonCallSettings.<GetRouteRequest, Route>newBuilder()
@@ -1297,6 +1313,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRoutesRequest, ListRoutesResponse> listRoutesTransportSettings =
         HttpJsonCallSettings.<ListRoutesRequest, ListRoutesResponse>newBuilder()
@@ -1308,6 +1325,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteRouteRequest, Operation> deleteRouteTransportSettings =
         HttpJsonCallSettings.<DeleteRouteRequest, Operation>newBuilder()
@@ -1319,6 +1337,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listConnectionProfilesCallable =

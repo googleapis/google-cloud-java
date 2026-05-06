@@ -2203,6 +2203,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataform")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

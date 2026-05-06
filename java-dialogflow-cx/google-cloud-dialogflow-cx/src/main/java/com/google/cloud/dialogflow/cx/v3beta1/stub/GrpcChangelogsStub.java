@@ -155,6 +155,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetChangelogRequest, Changelog> getChangelogTransportSettings =
         GrpcCallSettings.<GetChangelogRequest, Changelog>newBuilder()
@@ -165,6 +166,7 @@ public class GrpcChangelogsStub extends ChangelogsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

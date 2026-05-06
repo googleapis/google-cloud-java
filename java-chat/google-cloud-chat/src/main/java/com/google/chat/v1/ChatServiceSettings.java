@@ -16,10 +16,13 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
@@ -191,6 +194,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).findDirectMessageSettings();
   }
 
+  /** Returns the object with the settings used for calls to findGroupChats. */
+  public PagedCallSettings<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      findGroupChatsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).findGroupChatsSettings();
+  }
+
   /** Returns the object with the settings used for calls to createMembership. */
   public UnaryCallSettings<CreateMembershipRequest, Membership> createMembershipSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).createMembershipSettings();
@@ -283,6 +293,46 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   public UnaryCallSettings<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
       updateSpaceNotificationSettingSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).updateSpaceNotificationSettingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSection. */
+  public UnaryCallSettings<CreateSectionRequest, Section> createSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).createSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSection. */
+  public UnaryCallSettings<DeleteSectionRequest, Empty> deleteSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).deleteSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSection. */
+  public UnaryCallSettings<UpdateSectionRequest, Section> updateSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSections. */
+  public PagedCallSettings<ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+      listSectionsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to positionSection. */
+  public UnaryCallSettings<PositionSectionRequest, PositionSectionResponse>
+      positionSectionSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).positionSectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSectionItems. */
+  public PagedCallSettings<
+          ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+      listSectionItemsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listSectionItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to moveSectionItem. */
+  public UnaryCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).moveSectionItemSettings();
   }
 
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
@@ -495,6 +545,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
       return getStubSettingsBuilder().findDirectMessageSettings();
     }
 
+    /** Returns the builder for the settings used for calls to findGroupChats. */
+    public PagedCallSettings.Builder<
+            FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+        findGroupChatsSettings() {
+      return getStubSettingsBuilder().findGroupChatsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createMembership. */
     public UnaryCallSettings.Builder<CreateMembershipRequest, Membership>
         createMembershipSettings() {
@@ -594,6 +651,47 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
             UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
         updateSpaceNotificationSettingSettings() {
       return getStubSettingsBuilder().updateSpaceNotificationSettingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSection. */
+    public UnaryCallSettings.Builder<CreateSectionRequest, Section> createSectionSettings() {
+      return getStubSettingsBuilder().createSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSection. */
+    public UnaryCallSettings.Builder<DeleteSectionRequest, Empty> deleteSectionSettings() {
+      return getStubSettingsBuilder().deleteSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSection. */
+    public UnaryCallSettings.Builder<UpdateSectionRequest, Section> updateSectionSettings() {
+      return getStubSettingsBuilder().updateSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSections. */
+    public PagedCallSettings.Builder<
+            ListSectionsRequest, ListSectionsResponse, ListSectionsPagedResponse>
+        listSectionsSettings() {
+      return getStubSettingsBuilder().listSectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to positionSection. */
+    public UnaryCallSettings.Builder<PositionSectionRequest, PositionSectionResponse>
+        positionSectionSettings() {
+      return getStubSettingsBuilder().positionSectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSectionItems. */
+    public PagedCallSettings.Builder<
+            ListSectionItemsRequest, ListSectionItemsResponse, ListSectionItemsPagedResponse>
+        listSectionItemsSettings() {
+      return getStubSettingsBuilder().listSectionItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to moveSectionItem. */
+    public UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemSettings() {
+      return getStubSettingsBuilder().moveSectionItemSettings();
     }
 
     @Override

@@ -64,7 +64,10 @@ public class BigQueryDriver implements Driver {
     try {
       register();
     } catch (SQLException e) {
-      throw new ExceptionInInitializerError("Registering driver failed: " + e.getMessage());
+      ExceptionInInitializerError ex =
+          new ExceptionInInitializerError("Registering driver failed: " + e.getMessage());
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     LoadBalancerRegistry.getDefaultRegistry().register(new PickFirstLoadBalancerProvider());
   }
@@ -95,8 +98,11 @@ public class BigQueryDriver implements Driver {
     if (isRegistered()) {
       return registeredBigqueryJdbcDriver;
     }
-    throw new IllegalStateException(
-        "Driver is not registered (or it has not been registered using Driver.register() method)");
+    IllegalStateException ex =
+        new IllegalStateException(
+            "Driver is not registered (or it has not been registered using Driver.register() method)");
+    LOG.severe(ex.getMessage(), ex);
+    throw ex;
   }
 
   /**
@@ -127,7 +133,7 @@ public class BigQueryDriver implements Driver {
         try {
           BigQueryJdbcUrlUtility.parseUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
-          throw new BigQueryJdbcException(e.getMessage(), e);
+          throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
 
         DataSource ds = DataSource.fromUrl(connectionUri);
@@ -167,7 +173,7 @@ public class BigQueryDriver implements Driver {
             logLevel,
             logPath,
             this.toString());
-        return connection;
+        return BigQueryJdbcContextProxy.wrap(connection, Connection.class);
       } else {
         return null;
       }

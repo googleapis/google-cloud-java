@@ -318,6 +318,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
         getPatchJobTransportSettings =
@@ -329,6 +330,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
         cancelPatchJobTransportSettings =
@@ -340,6 +342,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
         listPatchJobsTransportSettings =
@@ -352,6 +355,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -368,6 +372,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -382,6 +387,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
         getPatchDeploymentTransportSettings =
@@ -395,6 +401,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.ListPatchDeploymentsRequest,
@@ -411,6 +418,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
         deletePatchDeploymentTransportSettings =
@@ -422,6 +430,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.UpdatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -451,6 +460,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -465,6 +475,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.executePatchJobCallable =

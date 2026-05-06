@@ -356,6 +356,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SubmitUriRequest, Operation> submitUriTransportSettings =
         HttpJsonCallSettings.<SubmitUriRequest, Operation>newBuilder()
@@ -367,6 +368,7 @@ public class HttpJsonWebRiskServiceStub extends WebRiskServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.computeThreatListDiffCallable =

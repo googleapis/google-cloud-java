@@ -60,6 +60,7 @@ import com.google.cloud.vectorsearch.v1.ListIndexesRequest;
 import com.google.cloud.vectorsearch.v1.ListIndexesResponse;
 import com.google.cloud.vectorsearch.v1.OperationMetadata;
 import com.google.cloud.vectorsearch.v1.UpdateCollectionRequest;
+import com.google.cloud.vectorsearch.v1.UpdateIndexRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -404,6 +405,49 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateIndexRequest, Operation>
+      updateIndexMethodDescriptor =
+          ApiMethodDescriptor.<UpdateIndexRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vectorsearch.v1.VectorSearchService/UpdateIndex")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateIndexRequest>newBuilder()
+                      .setPath(
+                          "/v1/{index.name=projects/*/locations/*/collections/*/indexes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateIndexRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "index.name", request.getIndex().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateIndexRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("index", request.getIndex(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateIndexRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteIndexRequest, Operation>
       deleteIndexMethodDescriptor =
           ApiMethodDescriptor.<DeleteIndexRequest, Operation>newBuilder()
@@ -613,6 +657,9 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
   private final OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable;
+  private final UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable;
+  private final OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable;
   private final UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable;
   private final OperationCallable<DeleteIndexRequest, Empty, OperationMetadata>
       deleteIndexOperationCallable;
@@ -712,6 +759,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         HttpJsonCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -723,6 +771,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         HttpJsonCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -734,6 +783,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCollectionRequest, Operation> updateCollectionTransportSettings =
         HttpJsonCallSettings.<UpdateCollectionRequest, Operation>newBuilder()
@@ -756,6 +806,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         HttpJsonCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -767,6 +818,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         HttpJsonCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -778,6 +830,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         HttpJsonCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -787,6 +840,18 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
+        HttpJsonCallSettings.<UpdateIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateIndexMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index.name", String.valueOf(request.getIndex().getName()));
                   return builder.build();
                 })
             .build();
@@ -800,6 +865,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDataObjectsRequest, Operation> importDataObjectsTransportSettings =
         HttpJsonCallSettings.<ImportDataObjectsRequest, Operation>newBuilder()
@@ -811,6 +877,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
         HttpJsonCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
@@ -822,6 +889,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -901,6 +969,15 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
             settings.createIndexOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateIndexCallable =
+        callableFactory.createUnaryCallable(
+            updateIndexTransportSettings, settings.updateIndexSettings(), clientContext);
+    this.updateIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            updateIndexTransportSettings,
+            settings.updateIndexOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteIndexCallable =
         callableFactory.createUnaryCallable(
             deleteIndexTransportSettings, settings.deleteIndexSettings(), clientContext);
@@ -957,6 +1034,7 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
     methodDescriptors.add(listIndexesMethodDescriptor);
     methodDescriptors.add(getIndexMethodDescriptor);
     methodDescriptors.add(createIndexMethodDescriptor);
+    methodDescriptors.add(updateIndexMethodDescriptor);
     methodDescriptors.add(deleteIndexMethodDescriptor);
     methodDescriptors.add(importDataObjectsMethodDescriptor);
     methodDescriptors.add(exportDataObjectsMethodDescriptor);
@@ -1042,6 +1120,17 @@ public class HttpJsonVectorSearchServiceStub extends VectorSearchServiceStub {
   public OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable() {
     return createIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable() {
+    return updateIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable() {
+    return updateIndexOperationCallable;
   }
 
   @Override

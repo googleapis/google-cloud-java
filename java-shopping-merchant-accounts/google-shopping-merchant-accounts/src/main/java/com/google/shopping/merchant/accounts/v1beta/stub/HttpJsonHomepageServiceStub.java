@@ -262,6 +262,7 @@ public class HttpJsonHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateHomepageRequest, Homepage> updateHomepageTransportSettings =
         HttpJsonCallSettings.<UpdateHomepageRequest, Homepage>newBuilder()
@@ -284,6 +285,7 @@ public class HttpJsonHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UnclaimHomepageRequest, Homepage> unclaimHomepageTransportSettings =
         HttpJsonCallSettings.<UnclaimHomepageRequest, Homepage>newBuilder()
@@ -295,6 +297,7 @@ public class HttpJsonHomepageServiceStub extends HomepageServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getHomepageCallable =

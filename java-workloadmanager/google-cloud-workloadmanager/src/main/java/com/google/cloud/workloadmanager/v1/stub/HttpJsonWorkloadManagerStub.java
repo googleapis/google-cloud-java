@@ -747,6 +747,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         HttpJsonCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -758,6 +759,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEvaluationRequest, Operation> createEvaluationTransportSettings =
         HttpJsonCallSettings.<CreateEvaluationRequest, Operation>newBuilder()
@@ -769,6 +771,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEvaluationRequest, Operation> updateEvaluationTransportSettings =
         HttpJsonCallSettings.<UpdateEvaluationRequest, Operation>newBuilder()
@@ -791,6 +794,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExecutionsRequest, ListExecutionsResponse>
         listExecutionsTransportSettings =
@@ -803,6 +807,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetExecutionRequest, Execution> getExecutionTransportSettings =
         HttpJsonCallSettings.<GetExecutionRequest, Execution>newBuilder()
@@ -814,6 +819,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunEvaluationRequest, Operation> runEvaluationTransportSettings =
         HttpJsonCallSettings.<RunEvaluationRequest, Operation>newBuilder()
@@ -825,6 +831,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
         HttpJsonCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
@@ -836,6 +843,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExecutionResultsRequest, ListExecutionResultsResponse>
         listExecutionResultsTransportSettings =
@@ -860,6 +868,7 @@ public class HttpJsonWorkloadManagerStub extends WorkloadManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListScannedResourcesRequest, ListScannedResourcesResponse>
         listScannedResourcesTransportSettings =

@@ -70,8 +70,7 @@ final class BigQueryJdbcUrlUtility {
   static final String HTAPI_ACTIVATION_RATIO_PROPERTY_NAME = "HighThroughputActivationRatio";
   static final String KMS_KEY_NAME_PROPERTY_NAME = "KMSKeyName";
   static final String QUERY_PROPERTIES_NAME = "QueryProperties";
-  static final int DEFAULT_HTAPI_ACTIVATION_RATIO_VALUE =
-      2; // TODO: to adjust this value before private preview based on performance testing.
+  static final int DEFAULT_HTAPI_ACTIVATION_RATIO_VALUE = 2;
   static final String HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME = "HighThroughputMinTableSize";
   static final int DEFAULT_HTAPI_MIN_TABLE_SIZE_VALUE = 100;
   static final int DEFAULT_OAUTH_TYPE_VALUE = -1;
@@ -86,8 +85,6 @@ final class BigQueryJdbcUrlUtility {
   static final String DEFAULT_OAUTH_SA_IMPERSONATION_CHAIN_VALUE = null;
   static final String OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME =
       "ServiceAccountImpersonationScopes";
-  static final String DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE =
-      "https://www.googleapis.com/auth/bigquery";
   static final String OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME =
       "ServiceAccountImpersonationTokenLifetime";
   static final String DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE = "3600";
@@ -101,9 +98,12 @@ final class BigQueryJdbcUrlUtility {
   static final String BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME = "BIGQUERY";
   static final String STS_ENDPOINT_OVERRIDE_PROPERTY_NAME = "STS";
   static final String OAUTH_ACCESS_TOKEN_PROPERTY_NAME = "OAuthAccessToken";
+  static final String OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME = "OAuthAccessTokenReadonly";
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
   static final String OAUTH_CLIENT_SECRET_PROPERTY_NAME = "OAuthClientSecret";
+  static final String DEFAULT_OAUTH_CLIENT_ID = "977385342095.apps.googleusercontent.com";
+  static final String DEFAULT_OAUTH_CLIENT_SECRET = "wbER7576mc_1YOII0dGk7jEE";
   static final String ENABLE_HTAPI_PROPERTY_NAME = "EnableHighThroughputAPI";
   static final String PROXY_HOST_PROPERTY_NAME = "ProxyHost";
   static final String PROXY_PORT_PROPERTY_NAME = "ProxyPort";
@@ -252,6 +252,11 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "The pre-generated access token to be used with BigQuery for"
                               + " authentication.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)
+                      .setDescription(
+                          "Set to true if the pre-generated access token has a read-only scope.")
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(OAUTH_CLIENT_ID_PROPERTY_NAME)
@@ -714,10 +719,16 @@ final class BigQueryJdbcUrlUtility {
       if (kv.length != 2 || !PROPERTY_NAME_MAP.containsKey(key)) {
         String ref = (kv.length == 2) ? key : part;
         String safeRef = ref.length() > 32 ? ref.substring(0, 32) + "..." : ref;
-        throw new BigQueryJdbcRuntimeException(
-            String.format("Wrong value or unknown setting: %s", safeRef));
+        // Some tools can pass unknown keys. In order not to break compatibility, throw
+        // an exception only with incorrect format, otherwise log an error.
+        if (kv.length != 2) {
+          throw new BigQueryJdbcRuntimeException(
+              String.format("Wrong value or unknown setting: %s", safeRef));
+        } else {
+          LOG.warning("Wrong value or unknown setting: %s", safeRef);
+          continue;
+        }
       }
-
       map.put(PROPERTY_NAME_MAP.get(key), CharEscapers.decodeUriPath(kv[1].replace("+", "%2B")));
     }
     return Collections.unmodifiableMap(map);
@@ -759,23 +770,29 @@ final class BigQueryJdbcUrlUtility {
       }
 
     } catch (NumberFormatException ex) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName),
-          ex);
+      IllegalArgumentException e =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName),
+              ex);
+      LOG.severe(e.getMessage(), e);
+      throw e;
     }
     if (integerValue == 1) {
       return true;
     } else if (integerValue == 0) {
       return false;
     } else {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 

@@ -301,6 +301,7 @@ public class HttpJsonEntityServiceStub extends EntityServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListWatchlistsRequest, ListWatchlistsResponse>
         listWatchlistsTransportSettings =
@@ -313,6 +314,7 @@ public class HttpJsonEntityServiceStub extends EntityServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateWatchlistRequest, Watchlist> createWatchlistTransportSettings =
         HttpJsonCallSettings.<CreateWatchlistRequest, Watchlist>newBuilder()
@@ -324,6 +326,7 @@ public class HttpJsonEntityServiceStub extends EntityServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateWatchlistRequest, Watchlist> updateWatchlistTransportSettings =
         HttpJsonCallSettings.<UpdateWatchlistRequest, Watchlist>newBuilder()
@@ -346,6 +349,7 @@ public class HttpJsonEntityServiceStub extends EntityServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getWatchlistCallable =

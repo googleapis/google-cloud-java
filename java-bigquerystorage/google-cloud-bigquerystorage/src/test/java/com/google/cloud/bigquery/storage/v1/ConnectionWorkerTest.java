@@ -118,8 +118,8 @@ class ConnectionWorkerTest {
     testMultiplexedIngestion(
         /* sw1TraceId= */ "header_1:trailer_1",
         /* sw2TraceId= */ "header_2:trailer_2",
-        /* expectedSW1TraceId= */ "java-streamwriter header_1:trailer_1",
-        /* expectedSW2TraceId= */ "java-streamwriter header_2:trailer_2");
+        /* expectedSW1TraceId= */ "java-streamwriter(:.+)? header_1:trailer_1",
+        /* expectedSW2TraceId= */ "java-streamwriter(:.+)? header_2:trailer_2");
   }
 
   @Test
@@ -127,8 +127,8 @@ class ConnectionWorkerTest {
     testMultiplexedIngestion(
         /* sw1TraceId= */ "header_1:trailer_1",
         /* sw2TraceId= */ "",
-        /* expectedSW1TraceId= */ "java-streamwriter header_1:trailer_1",
-        /* expectedSW2TraceId= */ "java-streamwriter");
+        /* expectedSW1TraceId= */ "java-streamwriter(:.+)? header_1:trailer_1",
+        /* expectedSW2TraceId= */ "java-streamwriter(:.+)?");
   }
 
   private void testMultiplexedIngestion(
@@ -216,7 +216,7 @@ class ConnectionWorkerTest {
             assertThat(
                     serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
                 .isEqualTo("foo");
-            assertThat(serverRequest.getTraceId()).isEqualTo(expectedSW1TraceId);
+            assertThat(serverRequest.getTraceId()).matches(expectedSW1TraceId);
             break;
           case 1:
             // The write stream is empty until we enter multiplexing.
@@ -232,7 +232,7 @@ class ConnectionWorkerTest {
             assertThat(
                     serverRequest.getProtoRows().getWriterSchema().getProtoDescriptor().getName())
                 .isEqualTo("complicate");
-            assertThat(serverRequest.getTraceId()).isEqualTo(expectedSW2TraceId);
+            assertThat(serverRequest.getTraceId()).matches(expectedSW2TraceId);
             break;
           case 3:
             // Schema is empty if not at the first request after table switch.

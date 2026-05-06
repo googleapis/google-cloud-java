@@ -80,12 +80,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. Resource name.
+   * Identifier. Resource name.
    * Format: accounts/{account}/dataSharingSettings
    * Example: "accounts/1000/dataSharingSettings"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -106,12 +106,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. Resource name.
+   * Identifier. Resource name.
    * Format: accounts/{account}/dataSharingSettings
    * Example: "accounts/1000/dataSharingSettings"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -193,7 +193,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
    *
    * @deprecated
    *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled is
-   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
+   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=724
    * @return The sharingWithGoogleAnySalesEnabled.
    */
   @java.lang.Override
@@ -698,12 +698,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Resource name.
+     * Identifier. Resource name.
      * Format: accounts/{account}/dataSharingSettings
      * Example: "accounts/1000/dataSharingSettings"
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -723,12 +723,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Resource name.
+     * Identifier. Resource name.
      * Format: accounts/{account}/dataSharingSettings
      * Example: "accounts/1000/dataSharingSettings"
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -748,12 +748,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Resource name.
+     * Identifier. Resource name.
      * Format: accounts/{account}/dataSharingSettings
      * Example: "accounts/1000/dataSharingSettings"
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -772,12 +772,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Resource name.
+     * Identifier. Resource name.
      * Format: accounts/{account}/dataSharingSettings
      * Example: "accounts/1000/dataSharingSettings"
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -792,12 +792,12 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Resource name.
+     * Identifier. Resource name.
      * Format: accounts/{account}/dataSharingSettings
      * Example: "accounts/1000/dataSharingSettings"
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -977,7 +977,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      * @deprecated
      *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
+     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=724
      * @return The sharingWithGoogleAnySalesEnabled.
      */
     @java.lang.Override
@@ -997,7 +997,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      * @deprecated
      *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
+     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=724
      * @param value The sharingWithGoogleAnySalesEnabled to set.
      * @return This builder for chaining.
      */
@@ -1021,7 +1021,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
      *
      * @deprecated
      *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled
-     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
+     *     is deprecated. See google/analytics/admin/v1alpha/resources.proto;l=724
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

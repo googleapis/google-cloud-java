@@ -53,6 +53,7 @@ import com.google.cloud.vectorsearch.v1beta.ListIndexesRequest;
 import com.google.cloud.vectorsearch.v1beta.ListIndexesResponse;
 import com.google.cloud.vectorsearch.v1beta.OperationMetadata;
 import com.google.cloud.vectorsearch.v1beta.UpdateCollectionRequest;
+import com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -161,6 +162,15 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<UpdateIndexRequest, Operation> updateIndexMethodDescriptor =
+      MethodDescriptor.<UpdateIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.vectorsearch.v1beta.VectorSearchService/UpdateIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
       MethodDescriptor.<DeleteIndexRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -236,6 +246,9 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
   private final OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable;
+  private final UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable;
+  private final OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable;
   private final UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable;
   private final OperationCallable<DeleteIndexRequest, Empty, OperationMetadata>
       deleteIndexOperationCallable;
@@ -306,6 +319,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetCollectionRequest, Collection> getCollectionTransportSettings =
         GrpcCallSettings.<GetCollectionRequest, Collection>newBuilder()
@@ -316,6 +330,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCollectionRequest, Operation> createCollectionTransportSettings =
         GrpcCallSettings.<CreateCollectionRequest, Operation>newBuilder()
@@ -326,6 +341,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCollectionRequest, Operation> updateCollectionTransportSettings =
         GrpcCallSettings.<UpdateCollectionRequest, Operation>newBuilder()
@@ -346,6 +362,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -356,6 +373,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -366,6 +384,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
@@ -374,6 +393,17 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
+        GrpcCallSettings.<UpdateIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateIndexMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index.name", String.valueOf(request.getIndex().getName()));
                   return builder.build();
                 })
             .build();
@@ -386,6 +416,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataObjectsRequest, Operation> importDataObjectsTransportSettings =
         GrpcCallSettings.<ImportDataObjectsRequest, Operation>newBuilder()
@@ -396,6 +427,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataObjectsRequest, Operation> exportDataObjectsTransportSettings =
         GrpcCallSettings.<ExportDataObjectsRequest, Operation>newBuilder()
@@ -406,6 +438,7 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -480,6 +513,15 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
         callableFactory.createOperationCallable(
             createIndexTransportSettings,
             settings.createIndexOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateIndexCallable =
+        callableFactory.createUnaryCallable(
+            updateIndexTransportSettings, settings.updateIndexSettings(), clientContext);
+    this.updateIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            updateIndexTransportSettings,
+            settings.updateIndexOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteIndexCallable =
@@ -604,6 +646,17 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
   public OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable() {
     return createIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable() {
+    return updateIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable() {
+    return updateIndexOperationCallable;
   }
 
   @Override

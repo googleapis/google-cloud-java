@@ -751,6 +751,48 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindGroupChats",
+      requestType = com.google.chat.v1.FindGroupChatsRequest.class,
+      responseType = com.google.chat.v1.FindGroupChatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+        getFindGroupChatsMethod;
+    if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+          ChatServiceGrpc.getFindGroupChatsMethod =
+              getFindGroupChatsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.FindGroupChatsRequest,
+                          com.google.chat.v1.FindGroupChatsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindGroupChats"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("FindGroupChats"))
+                      .build();
+        }
+      }
+    }
+    return getFindGroupChatsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.CreateMembershipRequest, com.google.chat.v1.Membership>
       getCreateMembershipMethod;
 
@@ -1469,6 +1511,290 @@ public final class ChatServiceGrpc {
     return getUpdateSpaceNotificationSettingMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateSectionRequest, com.google.chat.v1.Section>
+      getCreateSectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSection",
+      requestType = com.google.chat.v1.CreateSectionRequest.class,
+      responseType = com.google.chat.v1.Section.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateSectionRequest, com.google.chat.v1.Section>
+      getCreateSectionMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.CreateSectionRequest, com.google.chat.v1.Section>
+        getCreateSectionMethod;
+    if ((getCreateSectionMethod = ChatServiceGrpc.getCreateSectionMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getCreateSectionMethod = ChatServiceGrpc.getCreateSectionMethod) == null) {
+          ChatServiceGrpc.getCreateSectionMethod =
+              getCreateSectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.CreateSectionRequest, com.google.chat.v1.Section>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.CreateSectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Section.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("CreateSection"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteSectionRequest, com.google.protobuf.Empty>
+      getDeleteSectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSection",
+      requestType = com.google.chat.v1.DeleteSectionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteSectionRequest, com.google.protobuf.Empty>
+      getDeleteSectionMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.DeleteSectionRequest, com.google.protobuf.Empty>
+        getDeleteSectionMethod;
+    if ((getDeleteSectionMethod = ChatServiceGrpc.getDeleteSectionMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getDeleteSectionMethod = ChatServiceGrpc.getDeleteSectionMethod) == null) {
+          ChatServiceGrpc.getDeleteSectionMethod =
+              getDeleteSectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.DeleteSectionRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.DeleteSectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("DeleteSection"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateSectionRequest, com.google.chat.v1.Section>
+      getUpdateSectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSection",
+      requestType = com.google.chat.v1.UpdateSectionRequest.class,
+      responseType = com.google.chat.v1.Section.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateSectionRequest, com.google.chat.v1.Section>
+      getUpdateSectionMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.UpdateSectionRequest, com.google.chat.v1.Section>
+        getUpdateSectionMethod;
+    if ((getUpdateSectionMethod = ChatServiceGrpc.getUpdateSectionMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateSectionMethod = ChatServiceGrpc.getUpdateSectionMethod) == null) {
+          ChatServiceGrpc.getUpdateSectionMethod =
+              getUpdateSectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateSectionRequest, com.google.chat.v1.Section>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateSectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Section.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("UpdateSection"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSectionsRequest, com.google.chat.v1.ListSectionsResponse>
+      getListSectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSections",
+      requestType = com.google.chat.v1.ListSectionsRequest.class,
+      responseType = com.google.chat.v1.ListSectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSectionsRequest, com.google.chat.v1.ListSectionsResponse>
+      getListSectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ListSectionsRequest, com.google.chat.v1.ListSectionsResponse>
+        getListSectionsMethod;
+    if ((getListSectionsMethod = ChatServiceGrpc.getListSectionsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getListSectionsMethod = ChatServiceGrpc.getListSectionsMethod) == null) {
+          ChatServiceGrpc.getListSectionsMethod =
+              getListSectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ListSectionsRequest,
+                          com.google.chat.v1.ListSectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSectionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSectionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("ListSections"))
+                      .build();
+        }
+      }
+    }
+    return getListSectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.PositionSectionRequest, com.google.chat.v1.PositionSectionResponse>
+      getPositionSectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PositionSection",
+      requestType = com.google.chat.v1.PositionSectionRequest.class,
+      responseType = com.google.chat.v1.PositionSectionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.PositionSectionRequest, com.google.chat.v1.PositionSectionResponse>
+      getPositionSectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.PositionSectionRequest, com.google.chat.v1.PositionSectionResponse>
+        getPositionSectionMethod;
+    if ((getPositionSectionMethod = ChatServiceGrpc.getPositionSectionMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getPositionSectionMethod = ChatServiceGrpc.getPositionSectionMethod) == null) {
+          ChatServiceGrpc.getPositionSectionMethod =
+              getPositionSectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.PositionSectionRequest,
+                          com.google.chat.v1.PositionSectionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PositionSection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.PositionSectionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.PositionSectionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("PositionSection"))
+                      .build();
+        }
+      }
+    }
+    return getPositionSectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSectionItemsRequest, com.google.chat.v1.ListSectionItemsResponse>
+      getListSectionItemsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSectionItems",
+      requestType = com.google.chat.v1.ListSectionItemsRequest.class,
+      responseType = com.google.chat.v1.ListSectionItemsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListSectionItemsRequest, com.google.chat.v1.ListSectionItemsResponse>
+      getListSectionItemsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ListSectionItemsRequest, com.google.chat.v1.ListSectionItemsResponse>
+        getListSectionItemsMethod;
+    if ((getListSectionItemsMethod = ChatServiceGrpc.getListSectionItemsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getListSectionItemsMethod = ChatServiceGrpc.getListSectionItemsMethod) == null) {
+          ChatServiceGrpc.getListSectionItemsMethod =
+              getListSectionItemsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ListSectionItemsRequest,
+                          com.google.chat.v1.ListSectionItemsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSectionItems"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSectionItemsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListSectionItemsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("ListSectionItems"))
+                      .build();
+        }
+      }
+    }
+    return getListSectionItemsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.MoveSectionItemRequest, com.google.chat.v1.MoveSectionItemResponse>
+      getMoveSectionItemMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveSectionItem",
+      requestType = com.google.chat.v1.MoveSectionItemRequest.class,
+      responseType = com.google.chat.v1.MoveSectionItemResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.MoveSectionItemRequest, com.google.chat.v1.MoveSectionItemResponse>
+      getMoveSectionItemMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.MoveSectionItemRequest, com.google.chat.v1.MoveSectionItemResponse>
+        getMoveSectionItemMethod;
+    if ((getMoveSectionItemMethod = ChatServiceGrpc.getMoveSectionItemMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getMoveSectionItemMethod = ChatServiceGrpc.getMoveSectionItemMethod) == null) {
+          ChatServiceGrpc.getMoveSectionItemMethod =
+              getMoveSectionItemMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.MoveSectionItemRequest,
+                          com.google.chat.v1.MoveSectionItemResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveSectionItem"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MoveSectionItemRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MoveSectionItemResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("MoveSectionItem"))
+                      .build();
+        }
+      }
+    }
+    return getMoveSectionItemMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ChatServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ChatServiceStub> factory =
@@ -1597,9 +1923,8 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with the authorization scope:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the authorization scope:
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
      *     using this authentication scope, this method only returns public
      *     messages in a space. It doesn't include private messages.
@@ -1716,8 +2041,7 @@ public final class ChatServiceGrpc {
      *     that invoke the Chat app.
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     with [administrator
-     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
-     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     approval](https://support.google.com/a?p=chat-app-auth).
      *     When using this authentication scope,
      *     this method returns details about a public message in a space.
      * - [User
@@ -2190,6 +2514,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    default void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFindGroupChatsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -2577,12 +2930,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -2627,12 +2981,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -2696,6 +3051,160 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSpaceNotificationSettingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a section in Google Chat. Sections help users group conversations
+     * and customize the list of spaces displayed in Chat navigation panel. Only
+     * sections of type `CUSTOM_SECTION` can be created. For details, see [Create
+     * and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    default void createSection(
+        com.google.chat.v1.CreateSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Section> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a section of type `CUSTOM_SECTION`.
+     * If the section contains items, such as spaces, the items are moved to
+     * Google Chat's default sections and are not deleted.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    default void deleteSection(
+        com.google.chat.v1.DeleteSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    default void updateSection(
+        com.google.chat.v1.UpdateSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Section> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sections available to the Chat user. Sections help users group their
+     * conversations and customize the list of spaces displayed in Chat
+     * navigation panel. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    default void listSections(
+        com.google.chat.v1.ListSectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the sort order of a section. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    default void positionSection(
+        com.google.chat.v1.PositionSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.PositionSectionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPositionSectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists items in a section.
+     * Only spaces can be section items. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    default void listSectionItems(
+        com.google.chat.v1.ListSectionItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionItemsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSectionItemsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an item from one section to another. For example, if a section
+     * contains spaces, this method can be used to move a space to a different
+     * section. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    default void moveSectionItem(
+        com.google.chat.v1.MoveSectionItemRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.MoveSectionItemResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMoveSectionItemMethod(), responseObserver);
     }
   }
 
@@ -2802,9 +3311,8 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with the authorization scope:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the authorization scope:
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
      *     using this authentication scope, this method only returns public
      *     messages in a space. It doesn't include private messages.
@@ -2927,8 +3435,7 @@ public final class ChatServiceGrpc {
      *     that invoke the Chat app.
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     with [administrator
-     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
-     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     approval](https://support.google.com/a?p=chat-app-auth).
      *     When using this authentication scope,
      *     this method returns details about a public message in a space.
      * - [User
@@ -3425,6 +3932,37 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -3838,12 +4376,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -3890,12 +4429,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -3963,6 +4503,174 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateSpaceNotificationSettingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a section in Google Chat. Sections help users group conversations
+     * and customize the list of spaces displayed in Chat navigation panel. Only
+     * sections of type `CUSTOM_SECTION` can be created. For details, see [Create
+     * and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public void createSection(
+        com.google.chat.v1.CreateSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Section> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a section of type `CUSTOM_SECTION`.
+     * If the section contains items, such as spaces, the items are moved to
+     * Google Chat's default sections and are not deleted.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public void deleteSection(
+        com.google.chat.v1.DeleteSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public void updateSection(
+        com.google.chat.v1.UpdateSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Section> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sections available to the Chat user. Sections help users group their
+     * conversations and customize the list of spaces displayed in Chat
+     * navigation panel. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public void listSections(
+        com.google.chat.v1.ListSectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the sort order of a section. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public void positionSection(
+        com.google.chat.v1.PositionSectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.PositionSectionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPositionSectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists items in a section.
+     * Only spaces can be section items. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public void listSectionItems(
+        com.google.chat.v1.ListSectionItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionItemsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSectionItemsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an item from one section to another. For example, if a section
+     * contains spaces, this method can be used to move a space to a different
+     * section. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public void moveSectionItem(
+        com.google.chat.v1.MoveSectionItemRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.MoveSectionItemResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveSectionItemMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4052,9 +4760,8 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with the authorization scope:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the authorization scope:
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
      *     using this authentication scope, this method only returns public
      *     messages in a space. It doesn't include private messages.
@@ -4168,8 +4875,7 @@ public final class ChatServiceGrpc {
      *     that invoke the Chat app.
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     with [administrator
-     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
-     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     approval](https://support.google.com/a?p=chat-app-auth).
      *     When using this authentication scope,
      *     this method returns details about a public message in a space.
      * - [User
@@ -4631,6 +5337,34 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -5005,12 +5739,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -5054,12 +5789,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -5122,6 +5858,153 @@ public final class ChatServiceGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceNotificationSettingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a section in Google Chat. Sections help users group conversations
+     * and customize the list of spaces displayed in Chat navigation panel. Only
+     * sections of type `CUSTOM_SECTION` can be created. For details, see [Create
+     * and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.Section createSection(com.google.chat.v1.CreateSectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a section of type `CUSTOM_SECTION`.
+     * If the section contains items, such as spaces, the items are moved to
+     * Google Chat's default sections and are not deleted.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSection(com.google.chat.v1.DeleteSectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.Section updateSection(com.google.chat.v1.UpdateSectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sections available to the Chat user. Sections help users group their
+     * conversations and customize the list of spaces displayed in Chat
+     * navigation panel. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.chat.v1.ListSectionsResponse listSections(
+        com.google.chat.v1.ListSectionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the sort order of a section. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.PositionSectionResponse positionSection(
+        com.google.chat.v1.PositionSectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPositionSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists items in a section.
+     * Only spaces can be section items. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.chat.v1.ListSectionItemsResponse listSectionItems(
+        com.google.chat.v1.ListSectionItemsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSectionItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an item from one section to another. For example, if a section
+     * contains spaces, this method can be used to move a space to a different
+     * section. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.MoveSectionItemResponse moveSectionItem(
+        com.google.chat.v1.MoveSectionItemRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMoveSectionItemMethod(), getCallOptions(), request);
     }
   }
 
@@ -5209,9 +6092,8 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with the authorization scope:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the authorization scope:
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
      *     using this authentication scope, this method only returns public
      *     messages in a space. It doesn't include private messages.
@@ -5325,8 +6207,7 @@ public final class ChatServiceGrpc {
      *     that invoke the Chat app.
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     with [administrator
-     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
-     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     approval](https://support.google.com/a?p=chat-app-auth).
      *     When using this authentication scope,
      *     this method returns details about a public message in a space.
      * - [User
@@ -5782,6 +6663,34 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -6156,12 +7065,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -6205,12 +7115,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -6271,6 +7182,153 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.UpdateSpaceNotificationSettingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSpaceNotificationSettingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a section in Google Chat. Sections help users group conversations
+     * and customize the list of spaces displayed in Chat navigation panel. Only
+     * sections of type `CUSTOM_SECTION` can be created. For details, see [Create
+     * and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.Section createSection(
+        com.google.chat.v1.CreateSectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a section of type `CUSTOM_SECTION`.
+     * If the section contains items, such as spaces, the items are moved to
+     * Google Chat's default sections and are not deleted.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSection(
+        com.google.chat.v1.DeleteSectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.Section updateSection(
+        com.google.chat.v1.UpdateSectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sections available to the Chat user. Sections help users group their
+     * conversations and customize the list of spaces displayed in Chat
+     * navigation panel. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.chat.v1.ListSectionsResponse listSections(
+        com.google.chat.v1.ListSectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the sort order of a section. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.PositionSectionResponse positionSection(
+        com.google.chat.v1.PositionSectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPositionSectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists items in a section.
+     * Only spaces can be section items. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.chat.v1.ListSectionItemsResponse listSectionItems(
+        com.google.chat.v1.ListSectionItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSectionItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an item from one section to another. For example, if a section
+     * contains spaces, this method can be used to move a space to a different
+     * section. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.chat.v1.MoveSectionItemResponse moveSectionItem(
+        com.google.chat.v1.MoveSectionItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveSectionItemMethod(), getCallOptions(), request);
     }
   }
 
@@ -6358,9 +7416,8 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with the authorization scope:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with the authorization scope:
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When
      *     using this authentication scope, this method only returns public
      *     messages in a space. It doesn't include private messages.
@@ -6476,8 +7533,7 @@ public final class ChatServiceGrpc {
      *     that invoke the Chat app.
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     with [administrator
-     *     approval](https://support.google.com/a?p=chat-app-auth) (available in
-     *     [Developer Preview](https://developers.google.com/workspace/preview)).
+     *     approval](https://support.google.com/a?p=chat-app-auth).
      *     When using this authentication scope,
      *     this method returns details about a public message in a space.
      * - [User
@@ -6942,6 +7998,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.FindGroupChatsResponse>
+        findGroupChats(com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -7318,12 +8403,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -7367,12 +8453,13 @@ public final class ChatServiceGrpc {
      * - [App
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
-     * approval](https://support.google.com/a?p=chat-app-auth) in
-     * [Developer Preview](https://developers.google.com/workspace/preview)
-     *  with one of the following authorization scopes:
+     * approval](https://support.google.com/a?p=chat-app-auth)
+     * with one of the following authorization scopes:
      *     - `https://www.googleapis.com/auth/chat.app.spaces`
+     *     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.messages.readonly`
      *     - `https://www.googleapis.com/auth/chat.app.memberships`
+     *     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
      * - [User
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * with one of the following authorization scopes:
@@ -7439,6 +8526,157 @@ public final class ChatServiceGrpc {
           getChannel().newCall(getUpdateSpaceNotificationSettingMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a section in Google Chat. Sections help users group conversations
+     * and customize the list of spaces displayed in Chat navigation panel. Only
+     * sections of type `CUSTOM_SECTION` can be created. For details, see [Create
+     * and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Section>
+        createSection(com.google.chat.v1.CreateSectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a section of type `CUSTOM_SECTION`.
+     * If the section contains items, such as spaces, the items are moved to
+     * Google Chat's default sections and are not deleted.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSection(com.google.chat.v1.DeleteSectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated.
+     * For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Section>
+        updateSection(com.google.chat.v1.UpdateSectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sections available to the Chat user. Sections help users group their
+     * conversations and customize the list of spaces displayed in Chat
+     * navigation panel. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ListSectionsResponse>
+        listSections(com.google.chat.v1.ListSectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the sort order of a section. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.PositionSectionResponse>
+        positionSection(com.google.chat.v1.PositionSectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPositionSectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists items in a section.
+     * Only spaces can be section items. For details, see [Create and organize
+     * sections in Google Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     *   - `https://www.googleapis.com/auth/chat.users.sections.readonly`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ListSectionItemsResponse>
+        listSectionItems(com.google.chat.v1.ListSectionItemsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSectionItemsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an item from one section to another. For example, if a section
+     * contains spaces, this method can be used to move a space to a different
+     * section. For details, see [Create and organize sections in Google
+     * Chat](https://support.google.com/chat/answer/16059854).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.sections`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.MoveSectionItemResponse>
+        moveSectionItem(com.google.chat.v1.MoveSectionItemRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveSectionItemMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_MESSAGE = 0;
@@ -7459,23 +8697,31 @@ public final class ChatServiceGrpc {
   private static final int METHODID_DELETE_SPACE = 15;
   private static final int METHODID_COMPLETE_IMPORT_SPACE = 16;
   private static final int METHODID_FIND_DIRECT_MESSAGE = 17;
-  private static final int METHODID_CREATE_MEMBERSHIP = 18;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 19;
-  private static final int METHODID_DELETE_MEMBERSHIP = 20;
-  private static final int METHODID_CREATE_REACTION = 21;
-  private static final int METHODID_LIST_REACTIONS = 22;
-  private static final int METHODID_DELETE_REACTION = 23;
-  private static final int METHODID_CREATE_CUSTOM_EMOJI = 24;
-  private static final int METHODID_GET_CUSTOM_EMOJI = 25;
-  private static final int METHODID_LIST_CUSTOM_EMOJIS = 26;
-  private static final int METHODID_DELETE_CUSTOM_EMOJI = 27;
-  private static final int METHODID_GET_SPACE_READ_STATE = 28;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 29;
-  private static final int METHODID_GET_THREAD_READ_STATE = 30;
-  private static final int METHODID_GET_SPACE_EVENT = 31;
-  private static final int METHODID_LIST_SPACE_EVENTS = 32;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 33;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 34;
+  private static final int METHODID_FIND_GROUP_CHATS = 18;
+  private static final int METHODID_CREATE_MEMBERSHIP = 19;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 20;
+  private static final int METHODID_DELETE_MEMBERSHIP = 21;
+  private static final int METHODID_CREATE_REACTION = 22;
+  private static final int METHODID_LIST_REACTIONS = 23;
+  private static final int METHODID_DELETE_REACTION = 24;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 25;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 26;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 27;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 28;
+  private static final int METHODID_GET_SPACE_READ_STATE = 29;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 30;
+  private static final int METHODID_GET_THREAD_READ_STATE = 31;
+  private static final int METHODID_GET_SPACE_EVENT = 32;
+  private static final int METHODID_LIST_SPACE_EVENTS = 33;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 34;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 35;
+  private static final int METHODID_CREATE_SECTION = 36;
+  private static final int METHODID_DELETE_SECTION = 37;
+  private static final int METHODID_UPDATE_SECTION = 38;
+  private static final int METHODID_LIST_SECTIONS = 39;
+  private static final int METHODID_POSITION_SECTION = 40;
+  private static final int METHODID_LIST_SECTION_ITEMS = 41;
+  private static final int METHODID_MOVE_SECTION_ITEM = 42;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -7590,6 +8836,12 @@ public final class ChatServiceGrpc {
               (com.google.chat.v1.FindDirectMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.Space>) responseObserver);
           break;
+        case METHODID_FIND_GROUP_CHATS:
+          serviceImpl.findGroupChats(
+              (com.google.chat.v1.FindGroupChatsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_MEMBERSHIP:
           serviceImpl.createMembership(
               (com.google.chat.v1.CreateMembershipRequest) request,
@@ -7678,6 +8930,45 @@ public final class ChatServiceGrpc {
           serviceImpl.updateSpaceNotificationSetting(
               (com.google.chat.v1.UpdateSpaceNotificationSettingRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceNotificationSetting>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SECTION:
+          serviceImpl.createSection(
+              (com.google.chat.v1.CreateSectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Section>) responseObserver);
+          break;
+        case METHODID_DELETE_SECTION:
+          serviceImpl.deleteSection(
+              (com.google.chat.v1.DeleteSectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SECTION:
+          serviceImpl.updateSection(
+              (com.google.chat.v1.UpdateSectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Section>) responseObserver);
+          break;
+        case METHODID_LIST_SECTIONS:
+          serviceImpl.listSections(
+              (com.google.chat.v1.ListSectionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_POSITION_SECTION:
+          serviceImpl.positionSection(
+              (com.google.chat.v1.PositionSectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.PositionSectionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SECTION_ITEMS:
+          serviceImpl.listSectionItems(
+              (com.google.chat.v1.ListSectionItemsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ListSectionItemsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_MOVE_SECTION_ITEM:
+          serviceImpl.moveSectionItem(
+              (com.google.chat.v1.MoveSectionItemRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.MoveSectionItemResponse>)
                   responseObserver);
           break;
         default:
@@ -7806,6 +9097,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.FindDirectMessageRequest, com.google.chat.v1.Space>(
                     service, METHODID_FIND_DIRECT_MESSAGE)))
         .addMethod(
+            getFindGroupChatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.FindGroupChatsRequest,
+                    com.google.chat.v1.FindGroupChatsResponse>(service, METHODID_FIND_GROUP_CHATS)))
+        .addMethod(
             getCreateMembershipMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -7911,6 +9208,51 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.UpdateSpaceNotificationSettingRequest,
                     com.google.chat.v1.SpaceNotificationSetting>(
                     service, METHODID_UPDATE_SPACE_NOTIFICATION_SETTING)))
+        .addMethod(
+            getCreateSectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.CreateSectionRequest, com.google.chat.v1.Section>(
+                    service, METHODID_CREATE_SECTION)))
+        .addMethod(
+            getDeleteSectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.DeleteSectionRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_SECTION)))
+        .addMethod(
+            getUpdateSectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateSectionRequest, com.google.chat.v1.Section>(
+                    service, METHODID_UPDATE_SECTION)))
+        .addMethod(
+            getListSectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ListSectionsRequest,
+                    com.google.chat.v1.ListSectionsResponse>(service, METHODID_LIST_SECTIONS)))
+        .addMethod(
+            getPositionSectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.PositionSectionRequest,
+                    com.google.chat.v1.PositionSectionResponse>(
+                    service, METHODID_POSITION_SECTION)))
+        .addMethod(
+            getListSectionItemsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ListSectionItemsRequest,
+                    com.google.chat.v1.ListSectionItemsResponse>(
+                    service, METHODID_LIST_SECTION_ITEMS)))
+        .addMethod(
+            getMoveSectionItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.MoveSectionItemRequest,
+                    com.google.chat.v1.MoveSectionItemResponse>(
+                    service, METHODID_MOVE_SECTION_ITEM)))
         .build();
   }
 
@@ -7980,6 +9322,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getDeleteSpaceMethod())
                       .addMethod(getCompleteImportSpaceMethod())
                       .addMethod(getFindDirectMessageMethod())
+                      .addMethod(getFindGroupChatsMethod())
                       .addMethod(getCreateMembershipMethod())
                       .addMethod(getUpdateMembershipMethod())
                       .addMethod(getDeleteMembershipMethod())
@@ -7997,6 +9340,13 @@ public final class ChatServiceGrpc {
                       .addMethod(getListSpaceEventsMethod())
                       .addMethod(getGetSpaceNotificationSettingMethod())
                       .addMethod(getUpdateSpaceNotificationSettingMethod())
+                      .addMethod(getCreateSectionMethod())
+                      .addMethod(getDeleteSectionMethod())
+                      .addMethod(getUpdateSectionMethod())
+                      .addMethod(getListSectionsMethod())
+                      .addMethod(getPositionSectionMethod())
+                      .addMethod(getListSectionItemsMethod())
+                      .addMethod(getMoveSectionItemMethod())
                       .build();
         }
       }

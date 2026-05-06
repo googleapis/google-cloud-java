@@ -104,6 +104,9 @@ public class GeneratorsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -155,6 +158,9 @@ public class GeneratorsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -206,6 +212,9 @@ public class GeneratorsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -251,6 +260,9 @@ public class GeneratorsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -452,6 +464,9 @@ public class GeneratorsClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .addAllTools(new ArrayList<String>())
             .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
+            .addAllToolsetTools(new ArrayList<ToolsetTool>())
+            .addAllCesToolSpecs(new ArrayList<CesToolSpec>())
+            .addAllCesAppSpecs(new ArrayList<CesAppSpec>())
             .build();
     mockGenerators.addResponse(expectedResponse);
 

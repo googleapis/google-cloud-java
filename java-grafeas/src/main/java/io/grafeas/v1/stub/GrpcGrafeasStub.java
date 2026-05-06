@@ -287,6 +287,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOccurrencesRequest, ListOccurrencesResponse>
         listOccurrencesTransportSettings =
@@ -298,6 +299,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceTransportSettings =
         GrpcCallSettings.<DeleteOccurrenceRequest, Empty>newBuilder()
@@ -308,6 +310,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceTransportSettings =
         GrpcCallSettings.<CreateOccurrenceRequest, Occurrence>newBuilder()
@@ -318,6 +321,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
         batchCreateOccurrencesTransportSettings =
@@ -330,6 +334,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateOccurrenceRequest, Occurrence> updateOccurrenceTransportSettings =
         GrpcCallSettings.<UpdateOccurrenceRequest, Occurrence>newBuilder()
@@ -340,6 +345,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetOccurrenceNoteRequest, Note> getOccurrenceNoteTransportSettings =
         GrpcCallSettings.<GetOccurrenceNoteRequest, Note>newBuilder()
@@ -350,6 +356,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNoteRequest, Note> getNoteTransportSettings =
         GrpcCallSettings.<GetNoteRequest, Note>newBuilder()
@@ -360,6 +367,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNotesRequest, ListNotesResponse> listNotesTransportSettings =
         GrpcCallSettings.<ListNotesRequest, ListNotesResponse>newBuilder()
@@ -370,6 +378,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteNoteRequest, Empty> deleteNoteTransportSettings =
         GrpcCallSettings.<DeleteNoteRequest, Empty>newBuilder()
@@ -380,6 +389,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateNoteRequest, Note> createNoteTransportSettings =
         GrpcCallSettings.<CreateNoteRequest, Note>newBuilder()
@@ -390,6 +400,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
         batchCreateNotesTransportSettings =
@@ -401,6 +412,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateNoteRequest, Note> updateNoteTransportSettings =
         GrpcCallSettings.<UpdateNoteRequest, Note>newBuilder()
@@ -411,6 +423,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
         listNoteOccurrencesTransportSettings =
@@ -422,6 +435,7 @@ public class GrpcGrafeasStub extends GrafeasStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getOccurrenceCallable =

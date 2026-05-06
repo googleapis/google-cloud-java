@@ -26,9 +26,8 @@ import java.util.List;
 /**
  * An immutable object containing settings for the datastore.
  *
- * <p>Example for connecting to a datastore:
- *
  * <pre>
+ * // Example for connecting to a datastore:
  * DatastoreOptions options = new DatastoreOptions.Builder()
  *     .projectId("my-project-id")
  *     .credential(DatastoreHelper.getComputeEngineCredential())
@@ -130,24 +129,6 @@ public class DatastoreOptions {
             String.format("Local host \"%s\" must not include scheme.", localHost));
       }
       this.localHost = localHost;
-      return this;
-    }
-
-    /**
-     * Sets the project endpoint used to access Cloud Datastore. Prefer using {@link #projectId}
-     * and/or {@link #host}/{@link #localHost} when possible.
-     *
-     * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
-     */
-    @Deprecated
-    public Builder projectEndpoint(String projectEndpoint) {
-      checkArgument(projectId == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
-      checkArgument(localHost == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
-      if (!includesScheme(projectEndpoint)) {
-        throw new IllegalArgumentException(
-            String.format("Project endpoint \"%s\" must include scheme.", projectEndpoint));
-      }
-      this.projectEndpoint = projectEndpoint;
       return this;
     }
 

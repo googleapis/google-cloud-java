@@ -44,6 +44,8 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.GenerateEvaluationRequest;
 import com.google.cloud.ces.v1beta.GetEvaluationDatasetRequest;
@@ -67,6 +69,7 @@ import com.google.cloud.ces.v1beta.ListEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ListEvaluationsResponse;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsRequest;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsResponse;
+import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
@@ -314,6 +317,16 @@ public abstract class EvaluationServiceStub implements BackgroundResource {
   public UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable() {
     throw new UnsupportedOperationException("Not implemented: testPersonaVoiceCallable()");
+  }
+
+  public OperationCallable<ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportEvaluationsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluationsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

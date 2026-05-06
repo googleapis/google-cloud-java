@@ -474,6 +474,7 @@ public class DataAccessControlServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-chronicle")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -514,7 +515,7 @@ public class DataAccessControlServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -533,7 +534,7 @@ public class DataAccessControlServiceStubSettings
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -638,8 +639,8 @@ public class DataAccessControlServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .createDataAccessLabelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .getDataAccessLabelSettings()
@@ -653,18 +654,18 @@ public class DataAccessControlServiceStubSettings
 
       builder
           .updateDataAccessLabelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .deleteDataAccessLabelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .createDataAccessScopeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .getDataAccessScopeSettings()
@@ -678,13 +679,13 @@ public class DataAccessControlServiceStubSettings
 
       builder
           .updateDataAccessScopeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .deleteDataAccessScopeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       return builder;
     }

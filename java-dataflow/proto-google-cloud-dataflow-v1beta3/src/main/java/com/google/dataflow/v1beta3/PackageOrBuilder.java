@@ -87,4 +87,36 @@ public interface PackageOrBuilder
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hex-encoded SHA256 checksum of the package.
+   * If the checksum is provided, the worker will verify the checksum of the
+   * package before using it. If the checksum does not match, the worker will
+   * fail to start.
+   * </pre>
+   *
+   * <code>string sha256 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sha256.
+   */
+  java.lang.String getSha256();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The hex-encoded SHA256 checksum of the package.
+   * If the checksum is provided, the worker will verify the checksum of the
+   * package before using it. If the checksum does not match, the worker will
+   * fail to start.
+   * </pre>
+   *
+   * <code>string sha256 = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sha256.
+   */
+  com.google.protobuf.ByteString getSha256Bytes();
 }

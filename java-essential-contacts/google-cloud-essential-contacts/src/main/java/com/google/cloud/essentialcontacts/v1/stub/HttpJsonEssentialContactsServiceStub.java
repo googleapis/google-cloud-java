@@ -412,6 +412,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
         HttpJsonCallSettings.<UpdateContactRequest, Contact>newBuilder()
@@ -434,6 +435,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetContactRequest, Contact> getContactTransportSettings =
         HttpJsonCallSettings.<GetContactRequest, Contact>newBuilder()
@@ -445,6 +447,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteContactRequest, Empty> deleteContactTransportSettings =
         HttpJsonCallSettings.<DeleteContactRequest, Empty>newBuilder()
@@ -456,6 +459,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ComputeContactsRequest, ComputeContactsResponse>
         computeContactsTransportSettings =
@@ -468,6 +472,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SendTestMessageRequest, Empty> sendTestMessageTransportSettings =
         HttpJsonCallSettings.<SendTestMessageRequest, Empty>newBuilder()
@@ -479,6 +484,7 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
 
     this.createContactCallable =

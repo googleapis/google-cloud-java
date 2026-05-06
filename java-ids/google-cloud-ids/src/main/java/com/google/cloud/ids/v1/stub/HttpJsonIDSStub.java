@@ -307,6 +307,7 @@ public class HttpJsonIDSStub extends IDSStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         HttpJsonCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -318,6 +319,7 @@ public class HttpJsonIDSStub extends IDSStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEndpointRequest, Operation> createEndpointTransportSettings =
         HttpJsonCallSettings.<CreateEndpointRequest, Operation>newBuilder()
@@ -329,6 +331,7 @@ public class HttpJsonIDSStub extends IDSStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         HttpJsonCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
@@ -340,6 +343,7 @@ public class HttpJsonIDSStub extends IDSStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listEndpointsCallable =

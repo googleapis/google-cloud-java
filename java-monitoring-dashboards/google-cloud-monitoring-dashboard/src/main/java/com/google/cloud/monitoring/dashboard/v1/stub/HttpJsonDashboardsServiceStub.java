@@ -300,6 +300,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListDashboardsRequest, ListDashboardsResponse>
         listDashboardsTransportSettings =
@@ -312,6 +313,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDashboardRequest, Dashboard> getDashboardTransportSettings =
         HttpJsonCallSettings.<GetDashboardRequest, Dashboard>newBuilder()
@@ -323,6 +325,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteDashboardRequest, Empty> deleteDashboardTransportSettings =
         HttpJsonCallSettings.<DeleteDashboardRequest, Empty>newBuilder()
@@ -334,6 +337,7 @@ public class HttpJsonDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDashboardRequest, Dashboard> updateDashboardTransportSettings =
         HttpJsonCallSettings.<UpdateDashboardRequest, Dashboard>newBuilder()

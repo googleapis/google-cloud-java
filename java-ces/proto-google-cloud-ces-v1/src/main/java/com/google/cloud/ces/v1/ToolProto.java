@@ -56,35 +56,37 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "\036google/cloud/ces/v1/tool.proto\022\023google"
           + ".cloud.ces.v1\032\037google/api/field_behavior"
-          + ".proto\032\031google/api/resource.proto\032)google/cloud/ces/v1/client_function.proto\032"
-          + " google/cloud/ces/v1/common.proto\032(google/c"
-          + "loud/ces/v1/connector_tool.proto\032)google"
-          + "/cloud/ces/v1/data_store_tool.proto\032\037goo"
-          + "gle/cloud/ces/v1/fakes.proto\032*google/cloud/ces/v1/file_search_tool.proto\032,google"
-          + "/cloud/ces/v1/google_search_tool.proto\032\""
-          + "google/cloud/ces/v1/mcp_tool.proto\032\'goog"
-          + "le/cloud/ces/v1/open_api_tool.proto\032)google/cloud/ces/v1/python_function.proto\032%"
-          + "google/cloud/ces/v1/system_tool.proto\032%g"
-          + "oogle/cloud/ces/v1/widget_tool.proto\032\037google/protobuf/timestamp.proto\"\336\010\n"
+          + ".proto\032\031google/api/resource.proto\032$googl"
+          + "e/cloud/ces/v1/agent_tool.proto\032)google/cloud/ces/v1/client_function.proto\032 goog"
+          + "le/cloud/ces/v1/common.proto\032(google/cloud/ces/v1/connector_tool.proto\032)google/c"
+          + "loud/ces/v1/data_store_tool.proto\032\037googl"
+          + "e/cloud/ces/v1/fakes.proto\032*google/cloud/ces/v1/file_search_tool.proto\032,google/c"
+          + "loud/ces/v1/google_search_tool.proto\032\"go"
+          + "ogle/cloud/ces/v1/mcp_tool.proto\032\'google"
+          + "/cloud/ces/v1/open_api_tool.proto\032)google/cloud/ces/v1/python_function.proto\032%go"
+          + "ogle/cloud/ces/v1/system_tool.proto\032%goo"
+          + "gle/cloud/ces/v1/widget_tool.proto\032\037google/protobuf/timestamp.proto\"\231\t\n"
           + "\004Tool\022C\n"
           + "\017client_function\030\002"
           + " \001(\0132#.google.cloud.ces.v1.ClientFunctionB\003\340A\001H\000\022>\n\r"
           + "open_api_tool\030\003 \001(\0132"
           + " .google.cloud.ces.v1.OpenApiToolB\003\340A\001H\000\022H\n"
-          + "\022google_search_tool\030\005 \001(\0132"
-          + "%.google.cloud.ces.v1.GoogleSearchToolB\003\340A\001H\000\022A\n"
+          + "\022google_search_tool\030\005 \001(\0132%."
+          + "google.cloud.ces.v1.GoogleSearchToolB\003\340A\001H\000\022A\n"
           + "\016connector_tool\030\010"
           + " \001(\0132\".google.cloud.ces.v1.ConnectorToolB\003\340A\001H\000\022B\n"
           + "\017data_store_tool\030\n"
           + " \001(\0132\".google.cloud.ces.v1.DataStoreToolB\003\340A\001H\000\022C\n"
-          + "\017python_function\030\013"
-          + " \001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001H\000\0225\n"
+          + "\017python_function\030\013 "
+          + "\001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001H\000\0225\n"
           + "\010mcp_tool\030\020"
           + " \001(\0132\034.google.cloud.ces.v1.McpToolB\003\340A\001H\000\022D\n"
           + "\020file_search_tool\030\021"
           + " \001(\0132#.google.cloud.ces.v1.FileSearchToolB\003\340A\001H\000\022;\n"
           + "\013system_tool\030\022"
-          + " \001(\0132\037.google.cloud.ces.v1.SystemToolB\003\340A\001H\000\022;\n"
+          + " \001(\0132\037.google.cloud.ces.v1.SystemToolB\003\340A\001H\000\0229\n\n"
+          + "agent_tool\030\027"
+          + " \001(\0132\036.google.cloud.ces.v1.AgentToolB\003\340A\001H\000\022;\n"
           + "\013widget_tool\030\030"
           + " \001(\0132\037.google.cloud.ces.v1.WidgetToolB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
@@ -99,11 +101,11 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "\021generated_summary\030\017 \001(\tB\003\340A\003\022B\n"
           + "\020tool_fake_config\030\024"
           + " \001(\0132#.google.cloud.ces.v1.ToolFakeConfigB\003\340A\001:j\352Ag\n"
-          + "\027ces.googleapis.com/Tool\022?projects/{project}/"
-          + "locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
+          + "\027ces.googleapis.com/Tool\022?pr"
+          + "ojects/{project}/locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
           + "\ttool_typeBQ\n"
-          + "\027com.google.cloud.ces.v1B\tToolProtoP\001Z)cloud.go"
-          + "ogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\tToolProtoP\001Z)cloud.google.com/go/ces/apiv1/c"
+          + "espb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,6 +113,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.ces.v1.AgentToolProto.getDescriptor(),
               com.google.cloud.ces.v1.ClientFunctionProto.getDescriptor(),
               com.google.cloud.ces.v1.CommonProto.getDescriptor(),
               com.google.cloud.ces.v1.ConnectorToolProto.getDescriptor(),
@@ -139,6 +142,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
               "McpTool",
               "FileSearchTool",
               "SystemTool",
+              "AgentTool",
               "WidgetTool",
               "Name",
               "DisplayName",
@@ -153,6 +157,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.ces.v1.AgentToolProto.getDescriptor();
     com.google.cloud.ces.v1.ClientFunctionProto.getDescriptor();
     com.google.cloud.ces.v1.CommonProto.getDescriptor();
     com.google.cloud.ces.v1.ConnectorToolProto.getDescriptor();

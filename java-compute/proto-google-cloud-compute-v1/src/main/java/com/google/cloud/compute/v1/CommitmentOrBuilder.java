@@ -558,6 +558,46 @@ public interface CommitmentOrBuilder
    *
    *
    * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.CommitmentParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CommitmentParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.CommitmentParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The minimum time duration that you commit to purchasing resources.
    * The plan that you choose determines the preset term length of the
    * commitment (which is 1 year or 3 years) and affects the discount rate that

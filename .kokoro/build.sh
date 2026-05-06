@@ -43,20 +43,21 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      EXTRA_PROFILE_OPTS=("-PbulkTests")
+      install_modules "sdk-platform-java"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
-      mvn test \
+      mvn install \
         -B -ntp \
+        -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -T 1C ${SUREFIRE_JVM_OPT}
+        --also-make \
+        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -65,6 +66,24 @@ case ${JOB_TYPE} in
       popd
     fi
     echo "Finished running unit tests"
+    ;;
+  install)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+    else
+      install_modules "sdk-platform-java"
+      mvn install \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -DskipTests=true \
+        --also-make \
+        -T 1C
+    fi
     ;;
   integration)
     generate_modified_modules_list
@@ -116,18 +135,13 @@ case ${JOB_TYPE} in
 
       echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn verify -Penable-integration-tests \
+      mvn verify -Penable-integration-tests -Pquick-build \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
         -DskipUnitTests=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         ${SUREFIRE_JVM_OPT}
@@ -174,17 +188,13 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn test -Pnative \
+      mvn test -Pnative -Pquick-build \
+        --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
-        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
 
       RETURN_CODE=$?
       popd
@@ -240,13 +250,19 @@ case ${JOB_TYPE} in
                 if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
                     # Filter out directories not participating in the default formatting reactor:
                     # - samples are handwritten by developers
+                    # - benchmarks are handwritten by developers
                     # - proto-*/grpc-* are generated code and should use the compiler format
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
+                       [[ "${dir}" != *"java-showcase"* ]] && \
+                       [[ "$(basename "${dir}")" != *"benchmark"* ]] && \
                        [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
                        [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
+                       [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
+                       [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
 
                         changed_modules+=("${dir}")
@@ -283,6 +299,29 @@ case ${JOB_TYPE} in
       -Dlint \
       checkstyle:check@checkstyle
 
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
+    ;;
+  clirr)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      install_modules "sdk-platform-java"
+    fi
+    mvn -B -ntp \
+      -Dfmt.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      clirr:check
+    RETURN_CODE=$?
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
       echo "restoring directory"

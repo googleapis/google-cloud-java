@@ -177,6 +177,7 @@ public class HttpJsonTasksStub extends TasksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         HttpJsonCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -188,6 +189,7 @@ public class HttpJsonTasksStub extends TasksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getTaskCallable =

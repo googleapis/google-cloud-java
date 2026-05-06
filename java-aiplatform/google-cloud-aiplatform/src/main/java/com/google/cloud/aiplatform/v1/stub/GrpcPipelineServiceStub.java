@@ -362,6 +362,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTrainingPipelineRequest, TrainingPipeline>
         getTrainingPipelineTransportSettings =
@@ -373,6 +374,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListTrainingPipelinesRequest, ListTrainingPipelinesResponse>
         listTrainingPipelinesTransportSettings =
@@ -385,6 +387,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteTrainingPipelineRequest, Operation>
         deleteTrainingPipelineTransportSettings =
@@ -396,6 +399,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CancelTrainingPipelineRequest, Empty> cancelTrainingPipelineTransportSettings =
         GrpcCallSettings.<CancelTrainingPipelineRequest, Empty>newBuilder()
@@ -406,6 +410,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePipelineJobRequest, PipelineJob> createPipelineJobTransportSettings =
         GrpcCallSettings.<CreatePipelineJobRequest, PipelineJob>newBuilder()
@@ -416,6 +421,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPipelineJobRequest, PipelineJob> getPipelineJobTransportSettings =
         GrpcCallSettings.<GetPipelineJobRequest, PipelineJob>newBuilder()
@@ -426,6 +432,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPipelineJobsRequest, ListPipelineJobsResponse>
         listPipelineJobsTransportSettings =
@@ -437,6 +444,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePipelineJobRequest, Operation> deletePipelineJobTransportSettings =
         GrpcCallSettings.<DeletePipelineJobRequest, Operation>newBuilder()
@@ -447,6 +455,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeletePipelineJobsRequest, Operation>
         batchDeletePipelineJobsTransportSettings =
@@ -458,6 +467,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobTransportSettings =
         GrpcCallSettings.<CancelPipelineJobRequest, Empty>newBuilder()
@@ -468,6 +478,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchCancelPipelineJobsRequest, Operation>
         batchCancelPipelineJobsTransportSettings =
@@ -479,6 +490,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -509,6 +521,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -519,6 +532,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -530,6 +544,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTrainingPipelineCallable =

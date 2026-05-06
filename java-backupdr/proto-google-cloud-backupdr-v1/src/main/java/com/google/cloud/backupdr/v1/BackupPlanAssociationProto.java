@@ -97,8 +97,10 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "4google/cloud/backupdr/v1/backupplanassociation.proto\022\030google.cloud.backupdr.v1"
           + "\032\037google/api/field_behavior.proto\032\033googl"
           + "e/api/field_info.proto\032\031google/api/resou"
-          + "rce.proto\0323google/cloud/backupdr/v1/backupvault_cloudsql.proto\032 google/protobuf/"
-          + "field_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\334\007\n"
+          + "rce.proto\0322google/cloud/backupdr/v1/back"
+          + "upvault_alloydb.proto\0323google/cloud/backupdr/v1/backupvault_cloudsql.proto\032 goog"
+          + "le/protobuf/field_mask.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\032\027google/rpc/status.proto\"\351\010\n"
           + "\025BackupPlanAssociation\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022\035\n\r"
           + "resource_type\030\002 \001(\tB\006\340A\005\340A\002\022\030\n"
@@ -107,14 +109,16 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "\"backupdr.googleapis.com/BackupPlan\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
-          + "\005state\030\007"
-          + " \001(\01625.google.cloud.backupdr.v1.BackupPlanAssociation.StateB\003\340A\003\022H\n"
+          + "\005state\030\007 \001(\01625.google.cloud.backu"
+          + "pdr.v1.BackupPlanAssociation.StateB\003\340A\003\022H\n"
           + "\021rules_config_info\030\010"
           + " \003(\0132(.google.cloud.backupdr.v1.RuleConfigInfoB\003\340A\003\022\030\n"
           + "\013data_source\030\t \001(\tB\003\340A\003\022\217\001\n"
           + "5cloud_sql_instance_backup_plan_association_properties\030\n"
-          + " \001(\0132I.google"
-          + ".cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesB\003\340A\003H\000\022$\n"
+          + " \001(\0132I.google.cloud.backupdr.v1.CloudSqlI"
+          + "nstanceBackupPlanAssociationPropertiesB\003\340A\003H\000\022\212\001\n"
+          + "2alloydb_cluster_backup_plan_association_properties\030\017 \001(\0132G.google.clou"
+          + "d.backupdr.v1.AlloyDBClusterBackupPlanAssociationPropertiesB\003\340A\003H\000\022$\n"
           + "\027backup_plan_revision_id\030\013 \001(\tB\003\340A\003\022&\n"
           + "\031backup_plan_revision_name\030\014 \001(\tB\003\340A\003\"b\n"
           + "\005State\022\025\n"
@@ -124,9 +128,9 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "\010DELETING\020\003\022\014\n"
           + "\010INACTIVE\020\004\022\014\n"
           + "\010UPDATING\020\005:\274\001\352A\270\001\n"
-          + "-backupdr.googleapis.com/BackupPlanAssociation\022Xprojects/{pro"
-          + "ject}/locations/{location}/backupPlanAssociations/{backup_plan_association}*\026bac"
-          + "kupPlanAssociations2\025backupPlanAssociationB\025\n"
+          + "-backupdr.googleapis.com/BackupPlanAssociation\022Xprojects/{project}/l"
+          + "ocations/{location}/backupPlanAssociatio"
+          + "ns/{backup_plan_association}*\026backupPlanAssociations2\025backupPlanAssociationB\025\n"
           + "\023resource_properties\"\211\003\n"
           + "\016RuleConfigInfo\022\024\n"
           + "\007rule_id\030\001 \001(\tB\003\340A\003\022X\n"
@@ -142,15 +146,15 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "\tSUCCEEDED\020\003\022\n\n"
           + "\006FAILED\020\004\"\214\002\n"
           + "\"CreateBackupPlanAssociationRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A"
-          + "\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\'\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-b"
+          + "ackupdr.googleapis.com/BackupPlanAssociation\022\'\n"
           + "\032backup_plan_association_id\030\002 \001(\tB\003\340A\002\022U\n"
-          + "\027backup_plan_association\030\003"
-          + " \001(\0132/.google.cloud.backupdr.v1.BackupPlanAssociationB\003\340A\002\022\037\n\n"
+          + "\027backup_plan_association\030\003 \001(\0132/"
+          + ".google.cloud.backupdr.v1.BackupPlanAssociationB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\260\001\n"
           + "!ListBackupPlanAssociationsRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-back"
-          + "updr.googleapis.com/BackupPlanAssociation\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB5\340A\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\245\001\n"
@@ -160,8 +164,9 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\363\001\n"
           + "1FetchBackupPlanAssociationsForResourceTypeRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-b"
-          + "ackupdr.googleapis.com/BackupPlanAssociation\022\032\n\r"
+          + "\006parent\030\001 \001("
+          + "\tB5\340A\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\032\n"
+          + "\r"
           + "resource_type\030\002 \001(\tB\003\340A\002\022\026\n"
           + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\004 \001(\tB\003\340A\001\022\023\n"
@@ -189,11 +194,11 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
           + "-backupdr.googleapis.com/BackupPlanAssociation\022\024\n"
           + "\007rule_id\030\002 \001(\tB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001B\312\001\n"
-          + "\034com.google.cloud.backupdr.v1B\032BackupPlanAssociatio"
-          + "nProtoP\001Z8cloud.google.com/go/backupdr/a"
-          + "piv1/backupdrpb;backupdrpb\252\002\030Google.Clou"
-          + "d.BackupDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1"
-          + "\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
+          + "\034com.google.cloud.backupdr.v1B\032BackupPlanAssociationProtoP"
+          + "\001Z8cloud.google.com/go/backupdr/apiv1/ba"
+          + "ckupdrpb;backupdrpb\252\002\030Google.Cloud.Backu"
+          + "pDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1\352\002\033Goog"
+          + "le::Cloud::BackupDR::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -202,6 +207,7 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.backupdr.v1.BackupvaultAlloyDBProto.getDescriptor(),
               com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -223,6 +229,7 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
               "RulesConfigInfo",
               "DataSource",
               "CloudSqlInstanceBackupPlanAssociationProperties",
+              "AlloydbClusterBackupPlanAssociationProperties",
               "BackupPlanRevisionId",
               "BackupPlanRevisionName",
               "ResourceProperties",
@@ -311,6 +318,7 @@ public final class BackupPlanAssociationProto extends com.google.protobuf.Genera
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.backupdr.v1.BackupvaultAlloyDBProto.getDescriptor();
     com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

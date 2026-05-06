@@ -164,7 +164,8 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -175,7 +176,8 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -190,7 +192,8 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -201,7 +204,8 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -216,7 +220,8 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -259,10 +264,11 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -275,10 +281,11 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -291,10 +298,11 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -307,10 +315,11 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -324,10 +333,11 @@ public interface AuthorizationPolicyOrBuilder
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>

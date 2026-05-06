@@ -18,6 +18,9 @@ deep-remove-regex:
 - "/java-gke-connect-gateway/proto-google-.*/src"
 - "/java-gke-connect-gateway/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-gke-connect-gateway/$1/proto-google-cloud-gke-connect-gateway-$1/src"
