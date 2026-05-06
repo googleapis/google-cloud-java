@@ -142,6 +142,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  DatabaseMetaData databaseMetaData;
+  Boolean reqGoogleDriveScope;
+  private boolean isReadOnlyTokenUsed = false;
   private int queryTaskThreadCount;
   private ExecutorService queryTaskExecutor;
 
@@ -269,68 +272,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+
+      this.queryTaskThreadCount = ds.getQueryTaskThreadCount();
+      this.queryTaskExecutor =
+          Executors.newFixedThreadPool(
+              this.queryTaskThreadCount, new BigQueryThreadFactory("BigQuery-query-task-"));
     }
-    this.location = ds.getLocation();
-    this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
-    this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();
-    this.highThroughputActivationRatio = ds.getHighThroughputActivationRatio();
-    this.useQueryCache = ds.getUseQueryCache();
-    this.useStatelessQueryMode = ds.getUseStatelessQueryMode();
-
-    this.queryDialect = ds.getQueryDialect();
-    this.allowLargeResults = ds.getAllowLargeResults();
-    this.destinationTable = ds.getDestinationTable();
-    this.destinationDataset = ds.getDestinationDataset();
-    this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
-    this.kmsKeyName = ds.getKmsKeyName();
-    Map<String, String> proxyProperties =
-        BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
-
-    this.sslTrustStorePath = ds.getSSLTrustStorePath();
-    this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
-    this.httpConnectTimeout = ds.getHttpConnectTimeout();
-    this.httpReadTimeout = ds.getHttpReadTimeout();
-
-    this.httpTransportOptions =
-        BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties,
-            this.sslTrustStorePath,
-            this.sslTrustStorePassword,
-            this.httpConnectTimeout,
-            this.httpReadTimeout,
-            this.connectionClassName);
-    this.transportChannelProvider =
-        BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            proxyProperties,
-            this.sslTrustStorePath,
-            this.sslTrustStorePassword,
-            this.connectionClassName);
-    this.enableSession = ds.getEnableSession();
-    this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
-    this.maxResults = ds.getMaxResults();
-    Map<String, String> queryPropertiesMap = ds.getQueryProperties();
-    this.sessionInfoConnectionProperty = getSessionPropertyFromQueryProperties(queryPropertiesMap);
-    this.queryProperties = convertMapToConnectionPropertiesList(queryPropertiesMap);
-    this.enableWriteAPI = ds.getEnableWriteAPI();
-    this.writeAPIActivationRowCount = ds.getSwaActivationRowCount();
-    this.writeAPIAppendRowCount = ds.getSwaAppendRowCount();
-
-    this.additionalProjects = ds.getAdditionalProjects();
-
-    this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
-    this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
-    this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
-    this.queryTaskThreadCount = ds.getQueryTaskThreadCount();
-    this.queryTaskExecutor =
-        Executors.newFixedThreadPool(
-            this.queryTaskThreadCount, new BigQueryThreadFactory("BigQuery-query-task-"));
-    this.requestReason = ds.getRequestReason();
-    this.connectionPoolSize = ds.getConnectionPoolSize();
-    this.listenerPoolSize = ds.getListenerPoolSize();
-    this.partnerToken = ds.getPartnerToken();
-
-    this.headerProvider = createHeaderProvider();
-    this.bigQuery = getBigQueryConnection();
   }
 
   String getLibraryVersion(Class<?> libraryClass) {
