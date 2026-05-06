@@ -254,17 +254,24 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     echo "Migrating conformance.sh to monorepo root .kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh..."
     mkdir -p .kokoro
     cp "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
-    
     echo "Adapting conformance script paths and build scopes for monorepo root..."
     
-    # 1. Append popd and done to the end of the original install block (-T 1C)
-    sed -i.bak 's|-T 1C|-T 1C\n  popd\ndone|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    # 1. Append popd to the end of the original install block (-T 1C)
+    sed -i.bak 's|-T 1C|-T 1C\n  popd|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     
-    # 2. Inject the loop header before "# attempt to install 3 times"
-    LOOP_HEADER="for dir in sdk-platform-java \${PRE_INSTALL_DEPS//,/ } \${SOURCE_REPO_NAME}; do\n  pushd \"\$dir\"\n  # attempt to install 3 times"
-    sed -i.bak "s|# attempt to install 3 times|${LOOP_HEADER}|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    # 2. Construct the external pre-installation block and pushd subdirectory scoping
+    PRE_INSTALL_BLOCK="echo \"Pre-installing SDK Platform toolchain...\"\nretry_with_backoff 3 10 mvn install -pl sdk-platform-java -am -B -ntp -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true -T 1C\n"
     
-    # 3. Adapt other paths to monorepo root
+    if [ -n "${PRE_INSTALL_DEPS}" ]; then
+        PRE_INSTALL_BLOCK="${PRE_INSTALL_BLOCK}\necho \"Pre-installing external dependencies...\"\nretry_with_backoff 3 10 mvn install -pl ${PRE_INSTALL_DEPS//,/ } -am -B -ntp -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true -T 1C\n"
+    fi
+    
+    PRE_INSTALL_BLOCK="${PRE_INSTALL_BLOCK}\npushd ${SOURCE_REPO_NAME}\n# attempt to install 3 times"
+    
+    # 3. Inject the pre-installation and pushd block
+    sed -i.bak "s|# attempt to install 3 times|${PRE_INSTALL_BLOCK}|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    
+    # 4. Adapt other paths to monorepo root
     sed -i.bak "s|cd test-proxy|cd ${SOURCE_REPO_NAME}/test-proxy|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|-jar test-proxy/target/|-jar ${SOURCE_REPO_NAME}/test-proxy/target/|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|kill \${proxyPID}|kill \${proxyPID} \&\& sleep 5|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
