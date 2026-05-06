@@ -24,7 +24,10 @@ java.common_templates(
     monorepo=True,{% if template_excludes %}
     excludes=[
     {%- for exclude in template_excludes %}
-        "{{ exclude }}",
+        "{{ exclude }}"{% if not loop.last %},{% endif %}
     {%- endfor %}
-    ],{% endif %}
-){% endif %}
+])
+{%- else %}
+)
+{%- endif %}
+{%- endif %}
