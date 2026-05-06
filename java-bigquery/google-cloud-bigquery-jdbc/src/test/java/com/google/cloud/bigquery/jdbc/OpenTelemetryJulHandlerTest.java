@@ -33,6 +33,7 @@ import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.util.List;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.mockito.ArgumentCaptor;
@@ -43,6 +44,11 @@ public class OpenTelemetryJulHandlerTest {
   static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
+
+  @BeforeEach
+  public void setUp() {
+    logger.setLevel(java.util.logging.Level.ALL);
+  }
 
   @AfterEach
   public void tearDown() {
