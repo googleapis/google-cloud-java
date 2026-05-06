@@ -1335,8 +1335,6 @@ libraries:
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
   GAPICs:
-  - proto_path: google/iam/v1
-  - proto_path: google/iam/v1beta
   - proto_path: google/iam/v2
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
