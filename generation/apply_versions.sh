@@ -21,25 +21,38 @@ if [[ -z "$versions_file" || -z "$column_name" ]]; then
   echo "Usage: $0 path/to/versions.txt (released|current)"
   exit 1
 fi
-if [[ "$column_name" == "released" ]]; then 
+if [[ "$column_name" == "released" ]]; then
   column_index=2
 elif [[ "$column_name" == "current" ]]; then
   column_index=3
-elif "$column_name" != "current" ]]; then
+else
   echo "Error: column_name must be either 'released' or 'current'"
   exit 1
 fi
 
+SED_SCRIPT=$(mktemp)
+trap "rm -f $SED_SCRIPT" EXIT
 
-SED_OPTIONS=""
-
-# The second column is 
 for KV in $(cut -f1,"${column_index}" -d: $versions_file |grep -v "#"); do
   K=${KV%:*}; V=${KV#*:}
-  echo Key:$K, Value:$V;
-  SED_OPTIONS="$SED_OPTIONS -e /x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}"
+  echo "Key:$K, Value:$V";
+  # Pattern 1: XML <version> tags and property tags (e.g., <google-cloud-shared-dependencies.version>)
+  echo "/x-version-update:$K:\(current\|released\)/{s|>\([^<]*\)<|>$V<|;}" >> "$SED_SCRIPT"
+  # Pattern 2: YAML _VERSION: '...' or "..."
+  echo "/x-version-update:$K:\(current\|released\)/{s|: [\'\"][^\'\"]*[\'\"]|: \'$V\'|;}" >> "$SED_SCRIPT"
+  # Pattern 3: Java static final String VERSION = "..."
+  echo "/x-version-update-start:$K:\(current\|released\)/{n;s|\".*\"|\"$V\"|;}" >> "$SED_SCRIPT"
 done
 
+
 echo "Running sed command. It may take few minutes."
-find . -maxdepth 3 -name pom.xml |sort --dictionary-order |xargs sed -i.bak $SED_OPTIONS
-find . -maxdepth 3 -name pom.xml.bak |xargs rm
+# Including pom.xml, *.yaml, and Version.java files.
+FILES=$(find . \( -name pom.xml -o -name "*.yaml" -o -name "Version.java" \) | sort --dictionary-order)
+TOTAL_FILES=$(echo "$FILES" | grep -c .)
+CURRENT_FILE=0
+while read -r FILE; do
+  CURRENT_FILE=$((CURRENT_FILE + 1))
+  echo -ne "Progress: $CURRENT_FILE/$TOTAL_FILES ($((CURRENT_FILE * 100 / TOTAL_FILES))%)\r"
+  sed -i -f "$SED_SCRIPT" "$FILE"
+done <<< "$FILES"
+echo

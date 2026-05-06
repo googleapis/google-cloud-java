@@ -38,10 +38,18 @@ def main(ctx):
 @main.command()
 @click.option(
     "--artifact-ids",
-    required=True,
+    required=False,
     type=str,
     help="""
     Artifact IDs whose version needs to update, separated by comma.
+    """,
+)
+@click.option(
+    "--sdk-platform-java",
+    is_flag=True,
+    default=False,
+    help="""
+    If set, bump versions for all modules in sdk-platform-java.
     """,
 )
 @click.option(
@@ -53,16 +61,27 @@ def main(ctx):
     The path to the versions.txt.
     """,
 )
-def bump_snapshot_version(artifact_ids: str, versions: str) -> None:
+def bump_snapshot_version(artifact_ids: str, sdk_platform_java: bool, versions: str) -> None:
+    if sdk_platform_java:
+        artifact_ids = _get_sdk_platform_java_artifacts(artifact_ids)
     bump_version(artifact_ids, "snapshot", versions)
+
 
 @main.command()
 @click.option(
     "--artifact-ids",
-    required=True,
+    required=False,
     type=str,
     help="""
     Artifact IDs whose version needs to update, separated by comma.
+    """,
+)
+@click.option(
+    "--sdk-platform-java",
+    is_flag=True,
+    default=False,
+    help="""
+    If set, bump versions for all modules in sdk-platform-java.
     """,
 )
 @click.option(
@@ -83,8 +102,44 @@ def bump_snapshot_version(artifact_ids: str, versions: str) -> None:
     The path to the versions.txt.
     """,
 )
-def bump_released_version(artifact_ids: str, version_type: str, versions: str) -> None:
+def bump_released_version(
+    artifact_ids: str, sdk_platform_java: bool, version_type: str, versions: str
+) -> None:
+    if sdk_platform_java:
+        artifact_ids = _get_sdk_platform_java_artifacts(artifact_ids)
     bump_version(artifact_ids, version_type, versions)
+
+
+def _get_sdk_platform_java_artifacts(artifact_ids: str) -> str:
+    sdk_artifacts = [
+        "gapic-generator-java",
+        "api-common",
+        "gax",
+        "gax-grpc",
+        "gax-httpjson",
+        "proto-google-common-protos",
+        "grpc-google-common-protos",
+        "proto-google-iam-v1",
+        "grpc-google-iam-v1",
+        "proto-google-iam-v2beta",
+        "grpc-google-iam-v2beta",
+        "proto-google-iam-v2",
+        "grpc-google-iam-v2",
+        "proto-google-iam-v3",
+        "grpc-google-iam-v3",
+        "proto-google-iam-v3beta",
+        "grpc-google-iam-v3beta",
+        "google-cloud-core",
+        "google-cloud-shared-dependencies",
+        "google-iam-policy",
+        "gapic-showcase",
+        "proto-gapic-showcase-v1beta1",
+        "grpc-gapic-showcase-v1beta1",
+    ]
+    if artifact_ids:
+        return ",".join(sdk_artifacts + artifact_ids.split(","))
+    return ",".join(sdk_artifacts)
+
 
 def bump_version(artifact_ids: str, version_type: str, versions: str) -> None:
     target_artifact_ids = set(artifact_ids.split(","))
@@ -130,7 +185,8 @@ def bump_version(artifact_ids: str, version_type: str, versions: str) -> None:
                 f"{artifact_id}:{major}.{minor}.{patch}:{major}.{minor}.{patch}"
             )
     with open(versions, "w") as versions_file:
-        versions_file.writelines("\n".join(newlines))
+        for line in newlines:
+            versions_file.write(f"{line}\n")
 
 
 def _parse_type_or_raise(version_type: str) -> VersionType:
