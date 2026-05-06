@@ -28,6 +28,7 @@ public class BigQueryJdbcOpenTelemetry {
 
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
   static final String BIGQUERY_NAMESPACE = "com.google.cloud.bigquery";
+  public static final String CONNECTION_ID_BAGGAGE_KEY = "jdbc.connection_id";
 
   static class TelemetryConfig {
     final OpenTelemetry openTelemetry;

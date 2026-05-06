@@ -64,7 +64,10 @@ public class OpenTelemetryJulHandlerTest {
         "test-uuid", otelTesting.getOpenTelemetry(), null, false);
 
     BigQueryConnection mockConnection = mock(BigQueryConnection.class);
-    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "test-uuid").build();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "test-uuid")
+            .build();
     try (Scope scope = baggage.makeCurrent();
         BigQueryJdbcMdc.MdcCloseable mdcScope =
             BigQueryJdbcMdc.registerInstance(mockConnection, "test-uuid")) {
@@ -77,7 +80,9 @@ public class OpenTelemetryJulHandlerTest {
     assertEquals("Test message", log.getBody().asString());
     assertEquals(Severity.INFO, log.getSeverity());
     assertEquals(
-        "test-uuid", log.getAttributes().get(AttributeKey.stringKey("jdbc.connection_id")));
+        "test-uuid",
+        log.getAttributes()
+            .get(AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY)));
   }
 
   @Test
@@ -87,7 +92,10 @@ public class OpenTelemetryJulHandlerTest {
         "test-uuid", otelTesting.getOpenTelemetry(), null, false);
 
     // Log with WRONG connection ID
-    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "wrong-uuid").build();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "wrong-uuid")
+            .build();
     try (Scope scope = baggage.makeCurrent()) {
       logger.info("Test message");
     }
@@ -103,7 +111,10 @@ public class OpenTelemetryJulHandlerTest {
         "gcp-uuid", otelTesting.getOpenTelemetry(), loggingClient, true);
 
     BigQueryConnection mockConnection = mock(BigQueryConnection.class);
-    Baggage baggage = Baggage.builder().put("jdbc.connection_id", "gcp-uuid").build();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "gcp-uuid")
+            .build();
     try (Scope scope = baggage.makeCurrent();
         BigQueryJdbcMdc.MdcCloseable mdcScope =
             BigQueryJdbcMdc.registerInstance(mockConnection, "gcp-uuid")) {

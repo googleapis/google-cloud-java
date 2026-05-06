@@ -51,7 +51,8 @@ public class OpenTelemetryJulHandler extends Handler {
     try {
       // Extract connection ID from baggage
       String connectionId =
-          Baggage.fromContext(Context.current()).getEntryValue("jdbc.connection_id");
+          Baggage.fromContext(Context.current())
+              .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
 
       // Fallback to MDC if not in baggage (if MDC is available and used)
       if (connectionId == null) {
@@ -85,9 +86,6 @@ public class OpenTelemetryJulHandler extends Handler {
     String spanId = spanContext.isValid() ? spanContext.getSpanId() : null;
 
     // TODO(b/491238299): May require refinement for structured logging or error handling
-    if (loggingClient == null) {
-      return;
-    }
 
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
@@ -101,7 +99,7 @@ public class OpenTelemetryJulHandler extends Handler {
       builder.setSpanId(spanId);
     }
     if (connectionId != null) {
-      builder.addLabel("jdbc.connection_id", connectionId);
+      builder.addLabel(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, connectionId);
     }
 
     loggingClient.write(Collections.singleton(builder.build()));
@@ -117,10 +115,6 @@ public class OpenTelemetryJulHandler extends Handler {
   }
 
   private void publishToOTel(LogRecord record, String connectionId, OpenTelemetry openTelemetry) {
-    if (openTelemetry == null) {
-      return;
-    }
-
     String loggerName = record.getLoggerName();
     Logger logger =
         openTelemetry
@@ -139,7 +133,9 @@ public class OpenTelemetryJulHandler extends Handler {
             .setContext(Context.current());
 
     if (connectionId != null) {
-      builder.setAttribute(AttributeKey.stringKey("jdbc.connection_id"), connectionId);
+      builder.setAttribute(
+          AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY),
+          connectionId);
     }
 
     builder.emit();

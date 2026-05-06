@@ -157,13 +157,10 @@ public class BigQueryDriver implements Driver {
         if (logPath == null) {
           logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
         }
-        if (logPath == null) {
-          // Cloud-Only Mode: Suppress local file creation if GCP log exporter is enabled
-          if (ds.getEnableGcpLogExporter() && logLevel != Level.OFF) {
-            logPath = null;
-          } else {
-            logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
-          }
+
+        // Fallback to default path only if not specified and not in Cloud-Only mode
+        if (logPath == null && !ds.getEnableGcpLogExporter()) {
+          logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
         }
 
         BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
