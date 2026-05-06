@@ -229,6 +229,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(tableResult, queryJobConfiguration, StatementType.SELECT);
 
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(job).when(bigquery).create(any(JobInfo.class));
 
     doReturn(jobIdWrapper)
         .when(bigQueryStatementSpy)
@@ -314,19 +315,16 @@ public class BigQueryStatementTest {
 
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
+    doReturn(job).when(bigquery).create(any(JobInfo.class));
 
     doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
-    ArgumentCaptor<QueryJobConfiguration> captor =
+    ArgumentCaptor<QueryJobConfiguration> queryCaptor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
-    verify(bigquery, Mockito.times(2)).create(captor.capture());
-    QueryJobConfiguration jobConfig =
-        captor.getAllValues().stream()
-            .map(jobInfo -> (QueryJobConfiguration) jobInfo.getConfiguration())
-            .filter(config -> config.dryRun() == null || !config.dryRun())
-            .findFirst()
-            .get();
+    verify(bigquery, Mockito.times(1)).create(any(JobInfo.class));
+    verify(bigquery, Mockito.times(1)).queryWithTimeout(queryCaptor.capture(), any(), any());
+    QueryJobConfiguration jobConfig = queryCaptor.getValue();
     assertEquals(3000L, jobConfig.getJobTimeoutMs().longValue());
   }
 
@@ -418,20 +416,22 @@ public class BigQueryStatementTest {
     doReturn(jobMock)
         .when(bigquery)
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    doReturn(jobMock).when(bigquery).create(any(JobInfo.class));
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
         .processJsonResultSet(tableResultJobfulMock);
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
-    verify(bigquery, Mockito.times(2)).create(any(JobInfo.class));
+    ArgumentCaptor<JobInfo> jobfulCaptor = ArgumentCaptor.forClass(JobInfo.class);
+    verify(bigquery, Mockito.times(1)).create(jobfulCaptor.capture());
     assertTrue(
         jobfulCaptor.getAllValues().stream()
             .anyMatch(
                 jobInfo ->
                     Boolean.TRUE.equals(
                         ((QueryJobConfiguration) jobInfo.getConfiguration()).dryRun())));
-    verify(bigquery, Mockito.never())
+    verify(bigquery, Mockito.times(1))
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
   }
 
