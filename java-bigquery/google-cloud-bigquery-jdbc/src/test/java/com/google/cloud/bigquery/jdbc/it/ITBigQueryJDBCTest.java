@@ -2756,4 +2756,76 @@ public class ITBigQueryJDBCTest extends ITBase {
       }
     }
   }
+
+  @Test
+  public void testPerConnectionLoggingE2E() throws SQLException, IOException {
+    File tempDir = File.createTempFile("bq-jdbc-e2e-logs", "");
+    tempDir.delete();
+    tempDir.mkdirs();
+    tempDir.deleteOnExit();
+
+    String logPath = tempDir.getAbsolutePath();
+    String targetUri = connection_uri + ";LogLevel=6;LogPath=" + logPath;
+
+    String connectionId = null;
+    try (Connection conn = DriverManager.getConnection(targetUri)) {
+      assertNotNull(conn);
+
+      // Extract connection ID using reflection to bypass package-private encapsulation limits in
+      // test
+      java.lang.reflect.Method method =
+          conn.unwrap(BigQueryConnection.class).getClass().getDeclaredMethod("getConnectionId");
+      method.setAccessible(true);
+      connectionId = (String) method.invoke(conn.unwrap(BigQueryConnection.class));
+      assertNotNull(connectionId);
+
+      // 1. Execute a local operational method (like close) which does not create cloud jobs
+      Statement stmt = conn.createStatement();
+      stmt.close();
+
+      // 2. Execute an empty query to trigger a local SQL syntax SQLException
+      assertThrows(SQLException.class, () -> stmt.executeQuery(""));
+    } catch (Exception e) {
+      throw new SQLException("Reflection lookup or E2E execution failed", e);
+    } finally {
+      // Cleanly close and remove all file handlers from com.google.cloud.bigquery logger using
+      // public APIs
+      java.util.logging.Logger bqLogger =
+          java.util.logging.Logger.getLogger("com.google.cloud.bigquery");
+      for (java.util.logging.Handler h : bqLogger.getHandlers()) {
+        h.close();
+        bqLogger.removeHandler(h);
+      }
+
+      // Verify physical connection-specific log file creation
+      final String targetId = connectionId;
+      File[] files =
+          tempDir.listFiles(
+              (dir, name) -> targetId != null && name.endsWith("-" + targetId + ".log"));
+      assertNotNull(files);
+      assertEquals(1, files.length);
+
+      File actualLog = files[0];
+      byte[] encoded = java.nio.file.Files.readAllBytes(actualLog.toPath());
+      String content = new String(encoded, StandardCharsets.UTF_8);
+
+      // Asserts that the connection ID prefix is formatted inside log entries
+      assertTrue(content.contains("[" + connectionId + "]"));
+      // Asserts that operational actions are logged inside the connection log
+      assertTrue(content.contains("close"));
+      // Asserts that the exception is connection-routed and logged
+      assertTrue(
+          content.contains("Exception occurred during executeQuery"),
+          "Log content did not contain expected exception! Content: \n" + content);
+
+      // Clean up
+      File[] remaining = tempDir.listFiles();
+      if (remaining != null) {
+        for (File f : remaining) {
+          f.delete();
+        }
+      }
+      tempDir.delete();
+    }
+  }
 }
