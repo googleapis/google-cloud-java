@@ -26,6 +26,8 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
@@ -44,6 +46,7 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
@@ -65,6 +68,7 @@ import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -493,5 +497,80 @@ public class BigQueryStatementTest {
     assertThat(type).isEqualTo(StatementType.SELECT);
     verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
         .create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testProcessQueryResponseFallbackToJsonOnReadApiFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a permission denied ApiException
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.PERMISSION_DENIED);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    // Mock processJsonResultSet to return our mock JSON result set
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+
+    // Verify that processJsonResultSet was indeed called as a fallback
+    verify(statementSpy).processJsonResultSet(tableResultMock);
+    // Verify that currentResultSet is set to the mocked JSON result set
+    assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
+  }
+
+  @Test
+  public void testProcessQueryResponseNoFallbackOnNonPermissionFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a non-permission ApiException (e.g., INTERNAL)
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.INTERNAL);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the non-permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    // Assert that the exception is propagated
+    try {
+      statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+      Assertions.fail("Expected SQLException to be thrown");
+    } catch (SQLException e) {
+      assertEquals(exceptionToThrow, e);
+    }
+
+    // Verify that processJsonResultSet was NOT called
+    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+  }
+
+  private TableResult mockTableResultWithJob(String jobId) {
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(JobId.of(jobId)).when(tableResult).getJobId();
+    return tableResult;
+  }
+
+  private ApiException mockApiException(StatusCode.Code code) {
+    ApiException apiExceptionMock = mock(ApiException.class);
+    StatusCode statusCodeMock = mock(StatusCode.class);
+    doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
+    doReturn(code).when(statusCodeMock).getCode();
+    return apiExceptionMock;
   }
 }

@@ -18,6 +18,8 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -57,6 +59,8 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -879,9 +883,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                   rowsRead += response.getRowCount();
                 }
                 break;
-              } catch (com.google.api.gax.rpc.ApiException e) {
-                if (e.getStatusCode().getCode()
-                    == com.google.api.gax.rpc.StatusCode.Code.NOT_FOUND) {
+              } catch (ApiException e) {
+                if (e.getStatusCode().getCode() == StatusCode.Code.NOT_FOUND) {
                   LOG.warning("Read session expired or not found: %s", e.getMessage());
                   enqueueError(arrowBatchWrapperBlockingQueue, e);
                   break;
@@ -929,23 +932,42 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
-    LOG.finest(
-        "API call completed{Query=%s, Parent Job ID=%s, Total rows=%s} ",
-        query, results.getJobId(), results.getTotalRows());
-    JobId currentJobId = results.getJobId();
-    if (currentJobId == null) {
-      LOG.fine("Standard API with Stateless query used.");
-      this.currentResultSet = processJsonResultSet(results);
-    } else if (useReadAPI(results)) {
-      LOG.fine("HighThroughputAPI used.");
-      LOG.info("HTAPI job ID: " + currentJobId.getJob());
-      this.currentResultSet = processArrowResultSet(results);
-    } else {
-      // read API cannot be used.
-      LOG.fine("Standard API used.");
-      this.currentResultSet = processJsonResultSet(results);
+    JobId jobId = results.getJobId();
+    String queryId = results.getQueryId();
+    LOG.info(
+        "Processing query response. JobId: %s, QueryId: %s, Total rows: %s",
+        jobId, queryId, results.getTotalRows());
+    LOG.fine("Processing query response. Query: %s} ", query);
+
+    ResultSet resultSet = null;
+    if (jobId != null && useReadAPI(results)) {
+      try {
+        LOG.info("Using ReadAPI to read the data.");
+        resultSet = processArrowResultSet(results);
+      } catch (SQLException e) {
+        if (!isPermissionDeniedException(e)) {
+          throw e;
+        }
+        LOG.log(Level.WARNING, "Permission denied for Read API, falling back to JSON API", e);
+      }
     }
+
+    if (resultSet == null) {
+      LOG.info("Using Standard API to read the data.");
+      resultSet = processJsonResultSet(results);
+    }
+    this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
+  }
+
+  private boolean isPermissionDeniedException(Throwable t) {
+    if (t == null) {
+      return false;
+    }
+    if (t instanceof StatusRuntimeException) {
+      return ((StatusRuntimeException) t).getStatus().getCode() == Status.Code.PERMISSION_DENIED;
+    }
+    return isPermissionDeniedException(t.getCause());
   }
 
   // The read Ratio should be met
@@ -977,9 +999,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   BigQueryJsonResultSet processJsonResultSet(TableResult results) {
-    String jobIdOrQueryId =
-        results.getJobId() == null ? results.getQueryId() : results.getJobId().getJob();
-    LOG.info("BigQuery Job %s completed. Fetching results.", jobIdOrQueryId);
     List<Thread> threadList = new ArrayList<Thread>();
 
     Schema schema = results.getSchema();
