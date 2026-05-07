@@ -50,7 +50,8 @@ import java.util.Calendar;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
-  protected final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  protected final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(this.getClass().getName());
   private BigQuery bigQuery;
   private JobId jobId;
   private String queryId;
@@ -117,6 +118,25 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
   }
 
+  protected SQLException logAndCreateException(SQLException ex) {
+    if (this.statement == null) {
+      return ex;
+    }
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connectionId)) {
+      LOG.severe(ex.getMessage(), ex);
+    }
+    return ex;
+  }
+
+  protected SQLException logAndCreateException(String message) {
+    return logAndCreateException(new SQLException(message));
+  }
+
+  protected SQLException logAndCreateException(String message, Throwable cause) {
+    return logAndCreateException(new SQLException(message, cause));
+  }
+
   protected SQLException createCoercionException(
       int columnIndex, Class<?> targetClass, Exception cause) throws SQLException {
     checkClosed();
@@ -125,29 +145,31 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     if (isNested) {
       if (columnIndex == 1) {
-        return new BigQueryConversionException(
-            String.format("Cannot convert index column to type %s.", targetClass.getSimpleName()),
-            cause);
+        return logAndCreateException(
+            new BigQueryConversionException(
+                String.format(
+                    "Cannot convert index column to type %s.", targetClass.getSimpleName()),
+                cause));
       } else if (columnIndex == 2) {
         Field arrayField = this.schema.getFields().get(0);
         type = arrayField.getType().getStandardType();
         typeName = type.name();
       } else {
-        SQLException ex =
+        throw logAndCreateException(
             new SQLException(
-                "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause);
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
+                "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause));
       }
     } else {
       Field field = this.schemaFieldList.get(columnIndex - 1);
       type = field.getType().getStandardType();
       typeName = type.name();
     }
-    return new BigQueryConversionException(
-        String.format(
-            "Cannot convert value of type %s to type %s.", typeName, targetClass.getSimpleName()),
-        cause);
+    return logAndCreateException(
+        new BigQueryConversionException(
+            String.format(
+                "Cannot convert value of type %s to type %s.",
+                typeName, targetClass.getSimpleName()),
+            cause));
   }
 
   private StandardSQLTypeName getStandardSQLTypeName(int columnIndex) throws SQLException {
@@ -157,25 +179,19 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         return StandardSQLTypeName.INT64;
       } else if (columnIndex == 2) {
         if (this.schema == null || this.schema.getFields().isEmpty()) {
-          SQLException ex = new SQLException("Schema not available for nested result set.");
-          LOG.severe("Schema not available for nested result set.", ex);
-          throw ex;
+          throw logAndCreateException("Schema not available for nested result set.");
         }
         Field arrayField = this.schema.getFields().get(0);
         return arrayField.getType().getStandardType();
       } else {
-        SQLException ex =
-            new SQLException("For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
-        LOG.severe("For a nested ResultSet from an Array, columnIndex must be 1 or 2.", ex);
-        throw ex;
+        throw logAndCreateException(
+            "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
       }
     } else {
       if (this.schemaFieldList == null
           || columnIndex > this.schemaFieldList.size()
           || columnIndex < 1) {
-        SQLException ex = new SQLException("Invalid column index: " + columnIndex);
-        LOG.severe("Invalid column index: " + columnIndex, ex);
-        throw ex;
+        throw logAndCreateException("Invalid column index: " + columnIndex);
       }
       Field field = this.schemaFieldList.get(columnIndex - 1);
       return field.getType().getStandardType();
@@ -195,11 +211,16 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public ResultSetMetaData getMetaData() throws SQLException {
     checkClosed();
-    if (this.isNested) {
-      return BigQueryResultSetMetadata.of(this.schemaFieldList, this.statement);
-    } else {
-      return BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
+    String connectionId = this.statement != null ? this.statement.connectionId : null;
+    ResultSetMetaData metaData;
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+      if (this.isNested) {
+        metaData = BigQueryResultSetMetadata.of(this.schemaFieldList, this.statement);
+      } else {
+        metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
+      }
     }
+    return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
   }
 
   @Override
@@ -237,9 +258,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finest("++enter++");
     checkClosed();
     if (columnLabel == null) {
-      SQLException ex = new SQLException("Column label cannot be null");
-      LOG.severe(ex.getMessage(), ex);
-      throw ex;
+      throw logAndCreateException("Column label cannot be null");
     }
     // use schema to get the column index, add 1 for SQL index
     return this.schemaFieldList.getIndex(columnLabel) + 1;

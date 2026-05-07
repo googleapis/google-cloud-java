@@ -513,8 +513,8 @@ public class ConnectionProperties {
   static final ConnectionProperty<Integer> DCP_MIN_RPC_PER_CHANNEL =
       create(
           DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME,
-          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used when "
-              + "enableDynamicChannelPool is true. The default is "
+          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
               + DEFAULT_DCP_MIN_RPC_PER_CHANNEL
               + ".",
           DEFAULT_DCP_MIN_RPC_PER_CHANNEL,
@@ -523,8 +523,8 @@ public class ConnectionProperties {
   static final ConnectionProperty<Integer> DCP_MAX_RPC_PER_CHANNEL =
       create(
           DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME,
-          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used when "
-              + "enableDynamicChannelPool is true. The default is "
+          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
               + DEFAULT_DCP_MAX_RPC_PER_CHANNEL
               + ".",
           DEFAULT_DCP_MAX_RPC_PER_CHANNEL,

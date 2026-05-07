@@ -55,6 +55,9 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private String getLogFilePath(String id) {
+    if ("Jdbc-default".equals(id)) {
+      return baseLogPath.resolve("BQ-JDBC-GLOBAL.log").toString();
+    }
     String uuid = id;
     if (id.startsWith("BQ-JDBC-")) {
       uuid = id.substring("BQ-JDBC-".length());

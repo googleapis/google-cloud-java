@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-valkey</artifactId>
-  <version>0.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
+  <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
   <packaging>jar</packaging>
   <name>Google Memorystore API</name>
   <description>Memorystore API Memorystore for Valkey is a fully managed Valkey Cluster service for Google Cloud.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-valkey-parent</artifactId>
-    <version>0.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
+    <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-valkey:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-valkey</site.installationModule>
@@ -78,6 +78,16 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-valkey-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-valkey-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

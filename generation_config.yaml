@@ -1,4 +1,4 @@
-googleapis_commitish: 89c3153888201c9e80bc5ec78d6ffca0debe6b52
+googleapis_commitish: 3adc515b8bda328fb894f86765d9c5ec8c944480
 libraries_bom_version: 26.80.0
 is_monorepo: true
 libraries:
@@ -391,7 +391,7 @@ libraries:
 - api_shortname: bigquerydatapolicy
   name_pretty: BigQuery DataPolicy API
   product_documentation: https://cloud.google.com/bigquery/docs/reference/datapolicy/
-  api_description: ''
+  api_description: Allows users to manage BigQuery data policies.
   GAPICs:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
@@ -1282,6 +1282,22 @@ libraries:
   - proto_path: google/apps/script/type/gmail
   - proto_path: google/apps/script/type/sheets
   - proto_path: google/apps/script/type/slides
+- api_shortname: health
+  name_pretty: Google Health API
+  product_documentation: https://developers.google.com/health/api
+  api_description: The Google Health API lets you view and manage health and fitness
+    metrics and measurement data.
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-health/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-health
+  api_id: health.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/devicesandservices/health/v4
+  requires_billing: true
+  rpc_documentation: https://developers.google.com/health/api/reference/rpc
 - api_shortname: hypercomputecluster
   name_pretty: Cluster Director API
   product_documentation: 
@@ -1319,8 +1335,6 @@ libraries:
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
   GAPICs:
-  - proto_path: google/iam/v1
-  - proto_path: google/iam/v1beta
   - proto_path: google/iam/v2
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
@@ -1660,7 +1674,7 @@ libraries:
   api_description: The Map Management API is a RESTful service that accepts HTTP requests
     for map styling data through a variety of methods. It returns formatted configuration
     data about map styling resources so that you can programmatically manage your
-    Cloud-based map styles. 
+    Cloud-based map styles.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
   release_level: preview
@@ -3039,7 +3053,7 @@ libraries:
   release_level: stable
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
   distribution_name: com.google.api.grpc:proto-google-common-protos
-  excluded_dependencies: proto-google-common-protos,grpc-google-common-protos,proto-google-common-protos-parent
+  excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
   excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
   library_type: OTHER
   GAPICs:

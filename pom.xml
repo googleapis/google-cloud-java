@@ -124,6 +124,7 @@
     <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-health</module>
     <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>

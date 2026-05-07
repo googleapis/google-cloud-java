@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devicesandservices.health.v4",
+  "libraryPackage": "com.google.devicesandservices.health.v4",
+  "services": {
+    "DataPointsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataPointsServiceClient",
+          "rpcs": {
+            "BatchDeleteDataPoints": {
+              "methods": ["batchDeleteDataPointsAsync", "batchDeleteDataPointsOperationCallable", "batchDeleteDataPointsCallable"]
+            },
+            "CreateDataPoint": {
+              "methods": ["createDataPointAsync", "createDataPointAsync", "createDataPointAsync", "createDataPointOperationCallable", "createDataPointCallable"]
+            },
+            "DailyRollUpDataPoints": {
+              "methods": ["dailyRollUpDataPoints", "dailyRollUpDataPointsCallable"]
+            },
+            "ExportExerciseTcx": {
+              "methods": ["exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcxCallable"]
+            },
+            "GetDataPoint": {
+              "methods": ["getDataPoint", "getDataPoint", "getDataPoint", "getDataPointCallable"]
+            },
+            "ListDataPoints": {
+              "methods": ["listDataPoints", "listDataPoints", "listDataPoints", "listDataPointsPagedCallable", "listDataPointsCallable"]
+            },
+            "ReconcileDataPoints": {
+              "methods": ["reconcileDataPoints", "reconcileDataPointsPagedCallable", "reconcileDataPointsCallable"]
+            },
+            "RollUpDataPoints": {
+              "methods": ["rollUpDataPoints", "rollUpDataPointsPagedCallable", "rollUpDataPointsCallable"]
+            },
+            "UpdateDataPoint": {
+              "methods": ["updateDataPointAsync", "updateDataPointAsync", "updateDataPointOperationCallable", "updateDataPointCallable"]
+            }
+          }
+        }
+      }
+    },
+    "HealthProfileService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HealthProfileServiceClient",
+          "rpcs": {
+            "GetIdentity": {
+              "methods": ["getIdentity", "getIdentity", "getIdentity", "getIdentityCallable"]
+            },
+            "GetProfile": {
+              "methods": ["getProfile", "getProfile", "getProfile", "getProfileCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "UpdateProfile": {
+              "methods": ["updateProfile", "updateProfile", "updateProfileCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

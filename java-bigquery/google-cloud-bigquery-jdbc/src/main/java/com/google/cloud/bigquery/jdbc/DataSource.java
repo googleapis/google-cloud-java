@@ -1018,7 +1018,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientId() {
-    return oAuthClientId;
+    return oAuthClientId != null && !oAuthClientId.trim().isEmpty()
+        ? oAuthClientId
+        : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_ID;
   }
 
   public void setOAuthClientId(String oAuthClientId) {
@@ -1026,7 +1028,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientSecret() {
-    return oAuthClientSecret;
+    return oAuthClientSecret != null && !oAuthClientSecret.trim().isEmpty()
+        ? oAuthClientSecret
+        : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_SECRET;
   }
 
   public void setOAuthClientSecret(String oAuthClientSecret) {

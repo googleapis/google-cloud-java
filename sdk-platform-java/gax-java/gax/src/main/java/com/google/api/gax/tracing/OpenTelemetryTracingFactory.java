@@ -119,7 +119,10 @@ public class OpenTelemetryTracingFactory implements ApiTracerFactory {
     if (metadata == null || metadata.isEmpty() || Strings.isNullOrEmpty(metadata.artifactName())) {
       return new BaseApiTracerFactory();
     }
-    Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
+    Tracer newTracer =
+        Strings.isNullOrEmpty(metadata.version())
+            ? openTelemetry.getTracer(metadata.artifactName())
+            : openTelemetry.getTracer(metadata.artifactName(), metadata.version());
     ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
     return new OpenTelemetryTracingFactory(openTelemetry, newTracer, mergedContext);
   }

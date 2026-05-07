@@ -32,6 +32,7 @@ import java.util.Random;
 import java.util.UUID;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.threeten.bp.Instant;
 
@@ -80,8 +81,8 @@ public class ITSystemTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/12959")
   public void getTraceTest() throws InterruptedException {
-    Thread.sleep(5000);
     GetTraceRequest request =
         GetTraceRequest.newBuilder().setProjectId(PROJECT_ID).setTraceId(TRACE_ID).build();
     Trace trace = client.getTrace(request);
@@ -93,8 +94,8 @@ public class ITSystemTest {
   }
 
   @Test
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/12959")
   public void listTracesTest() throws InterruptedException {
-    Thread.sleep(5000);
     ListTracesRequest request = ListTracesRequest.newBuilder().setProjectId(PROJECT_ID).build();
     TraceServiceClient.ListTracesPagedResponse trace = client.listTraces(request);
     assertNotNull(trace);

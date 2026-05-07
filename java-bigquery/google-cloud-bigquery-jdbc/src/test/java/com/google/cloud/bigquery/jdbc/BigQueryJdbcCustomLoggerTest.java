@@ -80,6 +80,38 @@ public class BigQueryJdbcCustomLoggerTest {
   }
 
   @Test
+  public void testHotPathLoggerLogToDefaultWhenContextIsNull() {
+    BigQueryJdbcCustomLogger hotpathLogger =
+        new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
+    TestHandler hotpathHandler = new TestHandler();
+    hotpathLogger.addHandler(hotpathHandler);
+    hotpathLogger.setLevel(Level.ALL);
+
+    BigQueryJdbcMdc.clear(); // Ensure context is null
+    hotpathLogger.fine("This should log to default");
+
+    List<LogRecord> records = hotpathHandler.getRecords();
+    assertEquals(1, records.size()); // Logged successfully, not dropped!
+    assertEquals("This should log to default", records.get(0).getMessage());
+  }
+
+  @Test
+  public void testHotPathLoggerNotSilencedWhenContextIsPresent() {
+    BigQueryJdbcCustomLogger hotpathLogger =
+        new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
+    TestHandler hotpathHandler = new TestHandler();
+    hotpathLogger.addHandler(hotpathHandler);
+    hotpathLogger.setLevel(Level.ALL);
+
+    BigQueryJdbcMdc.registerInstance("TestConnection"); // Set active context
+    hotpathLogger.fine("This should not be silenced");
+
+    List<LogRecord> records = hotpathHandler.getRecords();
+    assertEquals(1, records.size()); // Allowed!
+    assertEquals("This should not be silenced", records.get(0).getMessage());
+  }
+
+  @Test
   public void testLogWithException() {
     Exception ex = new Exception("Test exception");
     logger.severe("Error occurred: %s", ex, "detail");

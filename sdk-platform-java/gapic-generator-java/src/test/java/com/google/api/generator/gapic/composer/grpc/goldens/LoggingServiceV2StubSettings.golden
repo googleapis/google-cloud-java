@@ -514,7 +514,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-logging")
-        .setVersion(Version.VERSION)
         .build();
   }
 

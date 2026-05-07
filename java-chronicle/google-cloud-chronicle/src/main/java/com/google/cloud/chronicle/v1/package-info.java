@@ -19,6 +19,66 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= BigQueryExportServiceClient =======================
+ *
+ * <p>Service Description: Service for managing BigQuery export configurations for Chronicle
+ * instances.
+ *
+ * <p>Sample for BigQueryExportServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BigQueryExportServiceClient bigQueryExportServiceClient =
+ *     BigQueryExportServiceClient.create()) {
+ *   BigQueryExportName name = BigQueryExportName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   BigQueryExport response = bigQueryExportServiceClient.getBigQueryExport(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DashboardChartServiceClient =======================
+ *
+ * <p>Service Description: A service providing functionality for managing dashboards' charts.
+ *
+ * <p>Sample for DashboardChartServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DashboardChartServiceClient dashboardChartServiceClient =
+ *     DashboardChartServiceClient.create()) {
+ *   DashboardChartName name =
+ *       DashboardChartName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[CHART]");
+ *   DashboardChart response = dashboardChartServiceClient.getDashboardChart(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DashboardQueryServiceClient =======================
+ *
+ * <p>Service Description: A service providing functionality for managing dashboards' queries.
+ *
+ * <p>Sample for DashboardQueryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DashboardQueryServiceClient dashboardQueryServiceClient =
+ *     DashboardQueryServiceClient.create()) {
+ *   DashboardQueryName name =
+ *       DashboardQueryName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[QUERY]");
+ *   DashboardQuery response = dashboardQueryServiceClient.getDashboardQuery(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DataAccessControlServiceClient =======================
  *
  * <p>Service Description: DataAccessControlService exposes resources and endpoints related to data
@@ -81,6 +141,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= FeaturedContentNativeDashboardServiceClient =======================
+ *
+ * <p>Service Description: This service provides functionality for managing
+ * FeaturedContentNativeDashboard.
+ *
+ * <p>Sample for FeaturedContentNativeDashboardServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeaturedContentNativeDashboardServiceClient featuredContentNativeDashboardServiceClient =
+ *     FeaturedContentNativeDashboardServiceClient.create()) {
+ *   FeaturedContentNativeDashboardName name =
+ *       FeaturedContentNativeDashboardName.of(
+ *           "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEATURED_CONTENT_NATIVE_DASHBOARD]");
+ *   FeaturedContentNativeDashboard response =
+ *       featuredContentNativeDashboardServiceClient.getFeaturedContentNativeDashboard(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= InstanceServiceClient =======================
  *
  * <p>Service Description: InstanceService provides the entry interface for the Chronicle API.
@@ -96,6 +179,27 @@
  * try (InstanceServiceClient instanceServiceClient = InstanceServiceClient.create()) {
  *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
  *   Instance response = instanceServiceClient.getInstance(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= NativeDashboardServiceClient =======================
+ *
+ * <p>Service Description: A service providing functionality for managing native dashboards.
+ *
+ * <p>Sample for NativeDashboardServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NativeDashboardServiceClient nativeDashboardServiceClient =
+ *     NativeDashboardServiceClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   NativeDashboard nativeDashboard = NativeDashboard.newBuilder().build();
+ *   NativeDashboard response =
+ *       nativeDashboardServiceClient.createNativeDashboard(parent, nativeDashboard);
  * }
  * }</pre>
  *
