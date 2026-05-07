@@ -22,8 +22,8 @@ import java.lang.ref.ReferenceQueue;
 
 @InternalApi
 class BigQueryResultSetFinalizers {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryResultSetFinalizers.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryResultSetFinalizers.class);
 
   @InternalApi
   static class ArrowResultSetFinalizer extends PhantomReference<BigQueryArrowResultSet> {

@@ -28,8 +28,8 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseArray} used to represent Array values from Arrow data.
  */
 class BigQueryArrowArray extends BigQueryBaseArray {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryArrowArray.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class);
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
   private JsonStringArrayList<?> values;

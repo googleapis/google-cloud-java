@@ -30,8 +30,8 @@ import java.util.List;
 /** An implementation of {@link BigQueryBaseArray} used to represent Array values from Json data. */
 @InternalApi
 class BigQueryJsonArray extends BigQueryBaseArray {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJsonArray.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class);
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
   private List<FieldValue> values;

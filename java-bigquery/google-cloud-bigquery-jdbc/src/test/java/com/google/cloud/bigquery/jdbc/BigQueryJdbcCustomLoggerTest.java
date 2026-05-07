@@ -125,4 +125,81 @@ public class BigQueryJdbcCustomLoggerTest {
     assertTrue(record.getMessage().contains("Error occurred: detail"));
     assertEquals(ex, record.getThrown());
   }
+
+  @Test
+  public void testResultSetLoggerTrace() {
+    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    rsLogger.finestTrace("customMethod", "Hello finest trace message");
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+
+    assertEquals(Level.FINEST, record.getLevel());
+    assertEquals("customMethod", record.getSourceMethodName());
+    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+    assertEquals("Hello finest trace message", record.getMessage());
+  }
+
+  @Test
+  public void testResultSetLoggerTraceFormat() {
+    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    rsLogger.finestTrace("formattedMethod", "Value: %s, Code: %d", "abc", 123);
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+
+    assertEquals(Level.FINEST, record.getLevel());
+    assertEquals("formattedMethod", record.getSourceMethodName());
+    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+    assertEquals("Value: abc, Code: 123", record.getMessage());
+  }
+
+  @Test
+  public void testResultSetLoggerStandardMethods() {
+    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    rsLogger.finest("Finest msg");
+    rsLogger.finer("Finer msg");
+    rsLogger.fine("Fine msg");
+    rsLogger.finest("Finest format: %s", "val");
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(4, records.size());
+
+    LogRecord r1 = records.get(0);
+    assertEquals(Level.FINEST, r1.getLevel());
+    assertEquals("unknown", r1.getSourceMethodName());
+    assertEquals(BigQueryBaseResultSet.class.getName(), r1.getSourceClassName());
+    assertEquals("Finest msg", r1.getMessage());
+
+    LogRecord r2 = records.get(1);
+    assertEquals(Level.FINER, r2.getLevel());
+    assertEquals("unknown", r2.getSourceMethodName());
+    assertEquals("Finer msg", r2.getMessage());
+
+    LogRecord r3 = records.get(2);
+    assertEquals(Level.FINE, r3.getLevel());
+    assertEquals("unknown", r3.getSourceMethodName());
+    assertEquals("Fine msg", r3.getMessage());
+
+    LogRecord r4 = records.get(3);
+    assertEquals(Level.FINEST, r4.getLevel());
+    assertEquals("unknown", r4.getSourceMethodName());
+    assertEquals("Finest format: val", r4.getMessage());
+  }
 }
+
+

@@ -46,8 +46,7 @@ import java.util.Calendar;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
-  protected final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(this.getClass().getName());
+  protected final BigQueryJdbcResultSetLogger LOG;
   private BigQuery bigQuery;
   private JobId jobId;
   private String queryId;
@@ -67,6 +66,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
+    this.LOG = BigQueryJdbcResultSetLogger.getLogger(this.getClass(), statement != null ? statement.connectionId : null);
   }
 
   public QueryStatistics getQueryStatistics() {

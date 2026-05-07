@@ -28,7 +28,7 @@ import java.sql.Types;
 
 /** This class returns ResultSetMetadata for the JSON and the Arrow ResultSets */
 class BigQueryResultSetMetadata implements ResultSetMetaData {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private final BigQueryJdbcResultSetLogger LOG = BigQueryJdbcResultSetLogger.getLogger(this.getClass());
   private final FieldList schemaFieldList;
   private final Statement statement;
   private final int columnCount;

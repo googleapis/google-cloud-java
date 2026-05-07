@@ -41,8 +41,8 @@ import java.util.stream.Collectors;
  * reference to an SQL ARRAY value.
  */
 abstract class BigQueryBaseArray implements java.sql.Array {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryBaseArray.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseArray.class);
 
   protected final boolean arrayOfStruct;
   private boolean valid;

@@ -88,6 +88,12 @@ class BigQueryJdbcRootLogger {
       public String format(LogRecord record) {
         String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
         String connectionId = BigQueryJdbcMdc.getConnectionId();
+        if (connectionId == null || connectionId.isEmpty()) {
+          Object[] params = record.getParameters();
+          if (params != null && params.length > 0 && params[0] instanceof String) {
+            connectionId = (String) params[0];
+          }
+        }
         String connStr =
             (connectionId != null && !connectionId.isEmpty()) ? connectionId : "NO_CONN";
 
