@@ -210,10 +210,10 @@ public class BulkMutateIT {
         .bulkMutateRowsSettings()
         .setBatchingSettings(
             batchingSettings.toBuilder().setDelayThreshold(Duration.ofHours(1)).build());
-    try (BigtableDataClient client = BigtableDataClient.create(settings);
-        Batcher<RowMutationEntry, Void> batcher =
-            client.newBulkMutationBatcher(
-                AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()))) {
+    try (BigtableDataClient client = BigtableDataClient.create(settings)) {
+      Batcher<RowMutationEntry, Void> batcher =
+          client.newBulkMutationBatcher(
+              AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()));
       String familyId = testEnvRule.env().getFamilyId();
       for (int i = 0; i < 2; i++) {
         String key = rowPrefix + "test-key";
@@ -232,26 +232,21 @@ public class BulkMutateIT {
               .first()
               .call(Query.create(testEnvRule.env().getTableId()).rowKey(rowPrefix + "test-key"));
       assertThat(row.getCells()).hasSize(100002);
-    }
 
-    // We should not be able to mutate rows outside the authorized view
-    try {
-      try (BigtableDataClient client = BigtableDataClient.create(settings);
-          Batcher<RowMutationEntry, Void> batcherOutsideAuthorizedView =
-              client.newBulkMutationBatcher(
-                  AuthorizedViewId.of(
-                      testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId()))) {
-        String keyOutsideAuthorizedView = UUID.randomUUID() + "-outside-authorized-view";
-        RowMutationEntry rowMutationEntry = RowMutationEntry.create(keyOutsideAuthorizedView);
-        rowMutationEntry.setCell(
-            testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "test-value");
-        @SuppressWarnings("UnusedVariable")
-        ApiFuture<Void> ignored = batcherOutsideAuthorizedView.add(rowMutationEntry);
-        batcherOutsideAuthorizedView.flush();
+      // We should not be able to mutate rows outside the authorized view
+      String keyOutsideAuthorizedView = UUID.randomUUID() + "-outside-authorized-view";
+      RowMutationEntry rowMutationEntry = RowMutationEntry.create(keyOutsideAuthorizedView);
+      rowMutationEntry.setCell(
+          testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "test-value");
+      try {
+        ApiFuture<Void> ignored = batcher.add(rowMutationEntry);
+        batcher.flush();
+        // error message  is only thrown when closing the batcher
+        batcher.close();
+        fail("Should not be able to apply bulk mutation on rows outside authorized view");
+      } catch (Exception e) {
+        // ignore
       }
-      fail("Should not be able to apply bulk mutation on rows outside authorized view");
-    } catch (Exception e) {
-      // Ignore.
     }
 
     testEnvRule
