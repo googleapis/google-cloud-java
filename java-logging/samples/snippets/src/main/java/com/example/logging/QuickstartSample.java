@@ -28,13 +28,15 @@ import java.util.Collections;
 /**
  * This sample demonstrates writing logs directly with the Cloud Logging API.
  *
- * <p>Authenticate by running `gcloud auth application-default login`, by setting the
- * GOOGLE_APPLICATION_CREDENTIALS environment variable to a service account key path, or by running
- * this sample on Google Cloud where Application Default Credentials are available automatically.
+ * <p>Authenticate by running {@code gcloud auth application-default login}, by setting the
+ * {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable to a service account key path, or by
+ * running this sample on Google Cloud where Application Default Credentials are available
+ * automatically.
  *
  * <p>For production applications, prefer using a standard logging framework with Cloud Logging
- * integration, such as Logback with https://github.com/googleapis/java-logging-logback. If you need
- * more customizable LogEntry fields, see the WriteLogEntry sample.
+ * integration, such as Logback with <a
+ * href="https://github.com/googleapis/java-logging-logback">https://github.com/googleapis/java-logging-logback</a>.
+ * If you need more customizable {@code LogEntry} fields, see the {@code WriteLogEntry} sample.
  */
 public class QuickstartSample {
 
