@@ -330,4 +330,53 @@ public interface IndexOrBuilder
    * @return The unique.
    */
   boolean getUnique();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchIndexOptions field is set.
+   */
+  boolean hasSearchIndexOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchIndexOptions.
+   */
+  com.google.firestore.admin.v1.Index.SearchIndexOptions getSearchIndexOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder getSearchIndexOptionsOrBuilder();
 }
