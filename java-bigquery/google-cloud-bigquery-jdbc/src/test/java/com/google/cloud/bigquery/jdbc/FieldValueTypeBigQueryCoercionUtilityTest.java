@@ -36,9 +36,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
@@ -299,9 +297,8 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   @Test
   public void fieldValueToTimestamp() {
     Instant instant = Instant.EPOCH.plus(TIMESTAMP_VALUE.getTimestampValue(), ChronoUnit.MICROS);
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC"));
     assertThat(INSTANCE.coerceTo(Timestamp.class, TIMESTAMP_VALUE))
-        .isEqualTo(Timestamp.valueOf(localDateTime));
+        .isEqualTo(Timestamp.from(instant));
   }
 
   @Test
@@ -317,11 +314,12 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   @Test
   public void fieldValueToTime() {
     LocalTime expectedTime = LocalTime.of(23, 59, 59);
-    assertThat(INSTANCE.coerceTo(Time.class, TIME_VALUE))
-        .isEqualTo(new Time(TimeUnit.NANOSECONDS.toMillis(expectedTime.toNanoOfDay())));
+    assertThat(INSTANCE.coerceTo(Time.class, TIME_VALUE)).isEqualTo(Time.valueOf(expectedTime));
     LocalTime expectedTimeWithNanos = LocalTime.parse("23:59:59.99999");
+    long millisOfDay = TimeUnit.NANOSECONDS.toMillis(expectedTimeWithNanos.toNanoOfDay());
+    long localMillis = millisOfDay - java.util.TimeZone.getDefault().getOffset(millisOfDay);
     assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
-        .isEqualTo(new Time(TimeUnit.NANOSECONDS.toMillis(expectedTimeWithNanos.toNanoOfDay())));
+        .isEqualTo(new Time(localMillis));
   }
 
   @Test

@@ -75,7 +75,7 @@ public class BigQueryArrowArrayOfPrimitivesTest {
     timeZoneRule.enforce();
     LocalDateTime aTimeStamp = LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000);
     LocalDate aDate = LocalDate.of(2023, MARCH, 30);
-    LocalTime aTime = LocalTime.of(11, 14, 19, 820227);
+    LocalTime aTime = LocalTime.of(11, 14, 19, 820227000);
     return Arrays.asList(
         new Object[][] {
           {
@@ -176,10 +176,16 @@ public class BigQueryArrowArrayOfPrimitivesTest {
                 Long.valueOf("40461820227"),
                 Long.valueOf("40462820227")),
             new Time[] {
-              Time.valueOf(aTime),
-              Time.valueOf(aTime.plusSeconds(1)),
-              Time.valueOf(aTime.plusSeconds(2)),
-              Time.valueOf(aTime.plusSeconds(3))
+              new Time(java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
+              new Time(
+                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                      aTime.plusSeconds(1).toNanoOfDay())),
+              new Time(
+                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                      aTime.plusSeconds(2).toNanoOfDay())),
+              new Time(
+                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                      aTime.plusSeconds(3).toNanoOfDay()))
             },
             Types.TIME
           },
