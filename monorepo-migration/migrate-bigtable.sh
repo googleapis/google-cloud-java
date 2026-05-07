@@ -30,7 +30,7 @@ export MIGRATION_HEAD_BRANCH="main"
 export SQUASH_COMMITS="false"
 export CODEOWNER="@googleapis/bigtable-team" 
 export BOM_SUBSTITUTIONS="gapic-libraries-bom:google-cloud-monitoring-bom" 
-export PRE_INSTALL_DEPS="java-monitoring/google-cloud-monitoring-bom" 
+export PRE_INSTALL_DEPS="java-monitoring/google-cloud-monitoring-bom,java-monitoring/google-cloud-monitoring" 
 
 # 2. Execute the central migration script
 "${SCRIPT_DIR}/migrate.sh"

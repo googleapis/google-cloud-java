@@ -259,13 +259,12 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     # 1. Append popd to the end of the original install block (-T 1C)
     sed -i.bak 's|-T 1C|-T 1C\n  popd|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     
-    # 2. Construct the external pre-installation block and pushd subdirectory scoping
-    PRE_INSTALL_BLOCK="echo \"Pre-installing SDK Platform toolchain...\"\nretry_with_backoff 3 10 mvn install -pl sdk-platform-java -am -B -ntp -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true -T 1C\n"
-    
+    # 2. Construct the unified pre-installation block and pushd subdirectory scoping
     if [ -n "${PRE_INSTALL_DEPS}" ]; then
-        PRE_INSTALL_BLOCK="${PRE_INSTALL_BLOCK}\necho \"Pre-installing external dependencies...\"\nretry_with_backoff 3 10 mvn install -pl ${PRE_INSTALL_DEPS//,/ } -am -B -ntp -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true -T 1C\n"
+        PRE_INSTALL_BLOCK="echo \"Installing toolchain and external prerequisites recursively using monorepo install_modules...\"\ninstall_modules \"${PRE_INSTALL_DEPS}\"\n"
+    else
+        PRE_INSTALL_BLOCK="echo \"Installing platform toolchain recursively using monorepo install_modules...\"\ninstall_modules\n"
     fi
-    
     PRE_INSTALL_BLOCK="${PRE_INSTALL_BLOCK}\npushd ${SOURCE_REPO_NAME}\n# attempt to install 3 times"
     
     # 3. Inject the pre-installation and pushd block
@@ -276,6 +275,8 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     sed -i.bak "s|-jar test-proxy/target/|-jar ${SOURCE_REPO_NAME}/test-proxy/target/|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|kill \${proxyPID}|kill \${proxyPID} \&\& sleep 5|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|../../test-proxy/known_failures.txt|../../${SOURCE_REPO_NAME}/test-proxy/known_failures.txt|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak 's|mvn install -B -V|mvn install -U -B -V|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak 's|mvn clean install -DskipTests|mvn clean install -U -DskipTests|' ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     rm -f ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh.bak"
     
     if [ -f "${SOURCE_REPO_NAME}/test-proxy/pom.xml" ]; then
