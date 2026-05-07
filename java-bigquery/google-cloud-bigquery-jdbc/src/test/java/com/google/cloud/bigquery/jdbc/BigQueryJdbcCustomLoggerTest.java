@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -175,15 +177,27 @@ public class BigQueryJdbcCustomLoggerTest {
     rsLogger.setLevel(Level.ALL);
 
     rsLogger.finest("Finest msg");
+    rsLogger.finer("Finer msg");
+    rsLogger.fine("Fine msg");
 
     List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
+    assertEquals(3, records.size());
 
     LogRecord r1 = records.get(0);
     assertEquals(Level.FINEST, r1.getLevel());
     assertEquals("unknown", r1.getSourceMethodName());
     assertEquals(BigQueryBaseResultSet.class.getName(), r1.getSourceClassName());
     assertEquals("Finest msg", r1.getMessage());
+
+    LogRecord r2 = records.get(1);
+    assertEquals(Level.FINER, r2.getLevel());
+    assertEquals("unknown", r2.getSourceMethodName());
+    assertEquals("Finer msg", r2.getMessage());
+
+    LogRecord r3 = records.get(2);
+    assertEquals(Level.FINE, r3.getLevel());
+    assertEquals("unknown", r3.getSourceMethodName());
+    assertEquals("Fine msg", r3.getMessage());
   }
 
   @Test
@@ -253,5 +267,44 @@ public class BigQueryJdbcCustomLoggerTest {
     assertEquals("customTraceMethod", record.getSourceMethodName());
     assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
     assertEquals("Lazy finest RS trace message", record.getMessage());
+  }
+
+  @Test
+  public void testResultSetLoggerCachingBehavior() {
+    // Global logger (connectionId is null) should be cached
+    BigQueryJdbcResultSetLogger globalLogger1 =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
+    BigQueryJdbcResultSetLogger globalLogger2 =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
+    assertSame(globalLogger1, globalLogger2);
+
+    // Connection-specific loggers should not be cached globally
+    BigQueryJdbcResultSetLogger connLogger1 =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-123");
+    BigQueryJdbcResultSetLogger connLogger2 =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-123");
+    assertNotSame(connLogger1, connLogger2);
+  }
+
+  @Test
+  public void testResultSetLoggerParameterPreservation() {
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class, "conn-123");
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    LogRecord record = new LogRecord(Level.INFO, "Processing job {0}");
+    record.setParameters(new Object[] {"job-999"});
+    rsLogger.log(record);
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord loggedRecord = records.get(0);
+
+    Object[] params = loggedRecord.getParameters();
+    assertEquals(2, params.length);
+    assertEquals("conn-123", params[0]);
+    assertEquals("job-999", params[1]);
   }
 }

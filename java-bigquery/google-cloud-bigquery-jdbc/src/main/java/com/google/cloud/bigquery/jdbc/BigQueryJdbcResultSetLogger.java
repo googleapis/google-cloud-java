@@ -37,8 +37,11 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   }
 
   public static BigQueryJdbcResultSetLogger getLogger(Class<?> clazz, String connectionId) {
-    String key = clazz.getName() + (connectionId != null ? ":" + connectionId : "");
-    return cache.computeIfAbsent(key, k -> new BigQueryJdbcResultSetLogger(clazz, connectionId));
+    if (connectionId == null) {
+      return cache.computeIfAbsent(
+          clazz.getName(), k -> new BigQueryJdbcResultSetLogger(clazz, null));
+    }
+    return new BigQueryJdbcResultSetLogger(clazz, connectionId);
   }
 
   public BigQueryJdbcResultSetLogger(Class<?> clazz) {
@@ -54,7 +57,15 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   @Override
   public void log(LogRecord record) {
     if (connectionId != null) {
-      record.setParameters(new Object[] {connectionId});
+      Object[] existingParams = record.getParameters();
+      if (existingParams == null || existingParams.length == 0) {
+        record.setParameters(new Object[] {connectionId});
+      } else {
+        Object[] newParams = new Object[existingParams.length + 1];
+        newParams[0] = connectionId;
+        System.arraycopy(existingParams, 0, newParams, 1, existingParams.length);
+        record.setParameters(newParams);
+      }
     }
     super.log(record);
   }
@@ -94,6 +105,34 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   public void finest(Supplier<String> msgSupplier) {
     if (isLoggable(Level.FINEST)) {
       logp(Level.FINEST, targetClassName, "unknown", msgSupplier);
+    }
+  }
+
+  @Override
+  public void finer(String msg) {
+    if (isLoggable(Level.FINER)) {
+      logp(Level.FINER, targetClassName, "unknown", msg);
+    }
+  }
+
+  @Override
+  public void finer(Supplier<String> msgSupplier) {
+    if (isLoggable(Level.FINER)) {
+      logp(Level.FINER, targetClassName, "unknown", msgSupplier);
+    }
+  }
+
+  @Override
+  public void fine(String msg) {
+    if (isLoggable(Level.FINE)) {
+      logp(Level.FINE, targetClassName, "unknown", msg);
+    }
+  }
+
+  @Override
+  public void fine(Supplier<String> msgSupplier) {
+    if (isLoggable(Level.FINE)) {
+      logp(Level.FINE, targetClassName, "unknown", msgSupplier);
     }
   }
 }
