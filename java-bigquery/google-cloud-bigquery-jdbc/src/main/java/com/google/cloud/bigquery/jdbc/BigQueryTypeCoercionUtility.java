@@ -205,7 +205,15 @@ class BigQueryTypeCoercionUtility {
 
       // Note: BQ Time has a precision of up to six fractional digits (microsecond precision)
       // but java.sql.Time do not. So data after seconds is not returned.
-      return new Time(HH, MM, SS);
+      // Using Calendar for timezone-safe date rollover arithmetic instead of the deprecated Time
+      // constructor.
+      java.util.Calendar cal = java.util.Calendar.getInstance();
+      cal.clear();
+      cal.set(1970, 0, 1, 0, 0, 0);
+      cal.add(java.util.Calendar.HOUR, HH);
+      cal.add(java.util.Calendar.MINUTE, MM);
+      cal.add(java.util.Calendar.SECOND, SS);
+      return new Time(cal.getTimeInMillis());
     }
   }
 
