@@ -69,8 +69,7 @@ public class OpenTelemetryJulHandlerTest {
             .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "test-uuid")
             .build();
     try (Scope scope = baggage.makeCurrent();
-        BigQueryJdbcMdc.MdcCloseable mdcScope =
-            BigQueryJdbcMdc.registerInstance(mockConnection, "test-uuid")) {
+        BigQueryJdbcMdc.MdcCloseable mdcScope = BigQueryJdbcMdc.registerInstance("test-uuid")) {
       logger.info("Test message");
     }
 
@@ -116,8 +115,7 @@ public class OpenTelemetryJulHandlerTest {
             .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "gcp-uuid")
             .build();
     try (Scope scope = baggage.makeCurrent();
-        BigQueryJdbcMdc.MdcCloseable mdcScope =
-            BigQueryJdbcMdc.registerInstance(mockConnection, "gcp-uuid")) {
+        BigQueryJdbcMdc.MdcCloseable mdcScope = BigQueryJdbcMdc.registerInstance("gcp-uuid")) {
       logger.info("Test message");
     }
 
