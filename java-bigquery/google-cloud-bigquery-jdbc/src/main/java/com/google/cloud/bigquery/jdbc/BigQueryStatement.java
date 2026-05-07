@@ -282,7 +282,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         });
   }
 
-
   private long executeLargeUpdateImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
@@ -314,7 +313,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return (int) updateCount;
   }
 
-    @Override
+  @Override
   public boolean execute(String sql) throws SQLException {
     LOG.finest("++enter++");
     checkClosed();
@@ -325,7 +324,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           return executeImpl(sql);
         });
   }
-
 
   private boolean executeImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
