@@ -954,6 +954,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } finally {
       BigQueryJdbcMdc.removeInstance(this);
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+      BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
     }
     this.isClosed = true;
   }
@@ -1056,6 +1057,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
             this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+
+    if (this.enableGcpLogExporter || this.customOpenTelemetry != null) {
+      BigQueryJdbcOpenTelemetry.registerConnection(
+          this.connectionId, openTelemetry, null, this.enableGcpLogExporter);
+    }
+
     if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
