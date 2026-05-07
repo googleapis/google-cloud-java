@@ -128,7 +128,8 @@ public class BigQueryJdbcCustomLoggerTest {
 
   @Test
   public void testResultSetLoggerTrace() {
-    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
     rsLogger.addHandler(rsHandler);
     rsLogger.setLevel(Level.ALL);
@@ -147,7 +148,8 @@ public class BigQueryJdbcCustomLoggerTest {
 
   @Test
   public void testResultSetLoggerTraceFormat() {
-    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
     rsLogger.addHandler(rsHandler);
     rsLogger.setLevel(Level.ALL);
@@ -166,40 +168,90 @@ public class BigQueryJdbcCustomLoggerTest {
 
   @Test
   public void testResultSetLoggerStandardMethods() {
-    BigQueryJdbcResultSetLogger rsLogger = new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
     rsLogger.addHandler(rsHandler);
     rsLogger.setLevel(Level.ALL);
 
     rsLogger.finest("Finest msg");
-    rsLogger.finer("Finer msg");
-    rsLogger.fine("Fine msg");
-    rsLogger.finest("Finest format: %s", "val");
 
     List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(4, records.size());
+    assertEquals(1, records.size());
 
     LogRecord r1 = records.get(0);
     assertEquals(Level.FINEST, r1.getLevel());
     assertEquals("unknown", r1.getSourceMethodName());
     assertEquals(BigQueryBaseResultSet.class.getName(), r1.getSourceClassName());
     assertEquals("Finest msg", r1.getMessage());
+  }
 
-    LogRecord r2 = records.get(1);
-    assertEquals(Level.FINER, r2.getLevel());
-    assertEquals("unknown", r2.getSourceMethodName());
-    assertEquals("Finer msg", r2.getMessage());
+  @Test
+  public void testCustomLoggerSupplierMethods() {
+    logger.fine(() -> "Lazy fine message");
 
-    LogRecord r3 = records.get(2);
-    assertEquals(Level.FINE, r3.getLevel());
-    assertEquals("unknown", r3.getSourceMethodName());
-    assertEquals("Fine msg", r3.getMessage());
+    List<LogRecord> records = testHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
 
-    LogRecord r4 = records.get(3);
-    assertEquals(Level.FINEST, r4.getLevel());
-    assertEquals("unknown", r4.getSourceMethodName());
-    assertEquals("Finest format: val", r4.getMessage());
+    assertEquals(Level.FINE, record.getLevel());
+    assertEquals("testCustomLoggerSupplierMethods", record.getSourceMethodName());
+    assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
+    assertEquals("Lazy fine message", record.getMessage());
+  }
+
+  @Test
+  public void testResultSetLoggerSupplierMethods() {
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    rsLogger.finest(() -> "Lazy finest RS message");
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+
+    assertEquals(Level.FINEST, record.getLevel());
+    assertEquals("unknown", record.getSourceMethodName());
+    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+    assertEquals("Lazy finest RS message", record.getMessage());
+  }
+
+  @Test
+  public void testSupplierNotEvaluatedWhenDisabled() {
+    logger.setLevel(Level.INFO); // Disables FINE, FINER, FINEST
+
+    boolean[] evaluated = {false};
+    logger.fine(
+        () -> {
+          evaluated[0] = true;
+          return "This should not be evaluated";
+        });
+
+    assertEquals(0, testHandler.getRecords().size());
+    assertEquals(false, evaluated[0]);
+  }
+
+  @Test
+  public void testResultSetLoggerSupplierTraceMethods() {
+    BigQueryJdbcResultSetLogger rsLogger =
+        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+    TestHandler rsHandler = new TestHandler();
+    rsLogger.addHandler(rsHandler);
+    rsLogger.setLevel(Level.ALL);
+
+    rsLogger.finestTrace("customTraceMethod", () -> "Lazy finest RS trace message");
+
+    List<LogRecord> records = rsHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+
+    assertEquals(Level.FINEST, record.getLevel());
+    assertEquals("customTraceMethod", record.getSourceMethodName());
+    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+    assertEquals("Lazy finest RS trace message", record.getMessage());
   }
 }
-
-

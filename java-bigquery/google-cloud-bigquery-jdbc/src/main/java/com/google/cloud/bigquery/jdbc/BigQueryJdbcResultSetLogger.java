@@ -17,12 +17,13 @@
 package com.google.cloud.bigquery.jdbc;
 
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 /**
- * Specialized high-performance logger for ResultSet and its related classes.
- * Avoids expensive stack trace walking (caller inference) on hot-path logging calls.
+ * Specialized high-performance logger for ResultSet and its related classes. Avoids expensive stack
+ * trace walking (caller inference) on hot-path logging calls.
  */
 public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   private static final ConcurrentHashMap<String, BigQueryJdbcResultSetLogger> cache =
@@ -68,12 +69,17 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     }
   }
 
-  /**
-   * Log a formatted message at Level.FINEST with predefined class name and method name.
-   */
+  /** Log a formatted message at Level.FINEST with predefined class name and method name. */
   public void finestTrace(String methodName, String format, Object... args) {
     if (isLoggable(Level.FINEST)) {
       logp(Level.FINEST, targetClassName, methodName, String.format(format, args));
+    }
+  }
+
+  /** Log a lazy message at Level.FINEST with predefined class name and method name. */
+  public void finestTrace(String methodName, Supplier<String> msgSupplier) {
+    if (isLoggable(Level.FINEST)) {
+      logp(Level.FINEST, targetClassName, methodName, msgSupplier);
     }
   }
 
@@ -85,38 +91,9 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   }
 
   @Override
-  public void finer(String msg) {
-    if (isLoggable(Level.FINER)) {
-      logp(Level.FINER, targetClassName, "unknown", msg);
-    }
-  }
-
-  @Override
-  public void fine(String msg) {
-    if (isLoggable(Level.FINE)) {
-      logp(Level.FINE, targetClassName, "unknown", msg);
-    }
-  }
-
-  @Override
-  public void finest(String format, Object... args) {
+  public void finest(Supplier<String> msgSupplier) {
     if (isLoggable(Level.FINEST)) {
-      logp(Level.FINEST, targetClassName, "unknown", () -> String.format(format, args));
-    }
-  }
-
-  @Override
-  public void finer(String format, Object... args) {
-    if (isLoggable(Level.FINER)) {
-      logp(Level.FINER, targetClassName, "unknown", () -> String.format(format, args));
-    }
-  }
-
-  @Override
-  public void fine(String format, Object... args) {
-    if (isLoggable(Level.FINE)) {
-      logp(Level.FINE, targetClassName, "unknown", () -> String.format(format, args));
+      logp(Level.FINEST, targetClassName, "unknown", msgSupplier);
     }
   }
 }
-
