@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.150.2](https://github.com/googleapis/java-pubsub/compare/v1.150.1...v1.150.2) (2026-05-07)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.72.0 ([a9b68a2](https://github.com/googleapis/java-pubsub/commit/a9b68a20208246b435739a1169d240a55c89695c))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.62.0 ([#2729](https://github.com/googleapis/java-pubsub/issues/2729)) ([77e0c65](https://github.com/googleapis/java-pubsub/commit/77e0c652c73a2fb790f01b76f2f32d95092188cb))
+* Update googleapis/google-cloud-java action to v1.86.0 ([#2727](https://github.com/googleapis/java-pubsub/issues/2727)) ([3da5b3b](https://github.com/googleapis/java-pubsub/commit/3da5b3baa1c4d97e58208b3c1de5533f2b10bf40))
+
 ## [1.150.1](https://github.com/googleapis/java-pubsub/compare/v1.150.0...v1.150.1) (2026-04-14)
 
 
