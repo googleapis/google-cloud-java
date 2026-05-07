@@ -25,6 +25,8 @@ public class ExperimentalHostHelper {
   private static final String USE_MTLS = "spanner.mtls";
   private static final String CLIENT_CERT_PATH = "spanner.client_cert_path";
   private static final String CLIENT_CERT_KEY_PATH = "spanner.client_cert_key_path";
+  private static final String USERNAME = "spanner.username";
+  private static final String PASSWORD_FILE = "spanner.password_file";
 
   /**
    * Checks whether the emulator is being used. This is done by checking if the
@@ -55,6 +57,11 @@ public class ExperimentalHostHelper {
     boolean usePlainText = Boolean.getBoolean(USE_PLAIN_TEXT);
     builder.setExperimentalHost(experimentalHost);
     builder.setBuiltInMetricsEnabled(false);
+    String username = System.getProperty(USERNAME,"");
+    String passwordFile = System.getProperty(PASSWORD_FILE,"");
+    if(!Strings.isNullOrEmpty(username)){
+      builder.login(username,passwordFile,true);
+    }
     if (usePlainText) {
       builder.usePlainText();
     }
