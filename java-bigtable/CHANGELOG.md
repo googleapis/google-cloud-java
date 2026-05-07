@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.78.0](https://github.com/googleapis/java-bigtable/compare/v2.77.1...v2.78.0) (2026-05-07)
+
+
+### Features
+
+* Add custom attempt latency metric ([#2882](https://github.com/googleapis/java-bigtable/issues/2882)) ([820acbe](https://github.com/googleapis/java-bigtable/commit/820acbe7755252ef06e222e6c12f85732cc78cd2))
+* Add Editions field to Instance ([678346d](https://github.com/googleapis/java-bigtable/commit/678346da1eaacd5fe95561985bca045ffc7928b4))
+
+
+### Bug Fixes
+
+* **bigtable:** Record 0 if dp check fails ([#2890](https://github.com/googleapis/java-bigtable/issues/2890)) ([0aecd6a](https://github.com/googleapis/java-bigtable/commit/0aecd6aa7e27a71dcfddb3255c4663000839f05c))
+* Cancel even when vrpc is not started yet and fix newRealCall ([#2897](https://github.com/googleapis/java-bigtable/issues/2897)) ([45905a0](https://github.com/googleapis/java-bigtable/commit/45905a0edf0903469e2934ea15a9c3568788dfda))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.71.0 ([678346d](https://github.com/googleapis/java-bigtable/commit/678346da1eaacd5fe95561985bca045ffc7928b4))
+* Fix handling recycled channels ([#2899](https://github.com/googleapis/java-bigtable/issues/2899)) ([8220283](https://github.com/googleapis/java-bigtable/commit/8220283755fc590bb1f9a735422e1f0058d1ce6b))
+* Fix race identified by tsan ([#2891](https://github.com/googleapis/java-bigtable/issues/2891)) ([0a2bf6c](https://github.com/googleapis/java-bigtable/commit/0a2bf6c6bcaf687410e7c7beccbda79587bcc090))
+* Fix skip logging on exporter closing ([#2892](https://github.com/googleapis/java-bigtable/issues/2892)) ([89f4faf](https://github.com/googleapis/java-bigtable/commit/89f4faf3c13ef9a700fa90662ec86cfd04b489d6))
+* Update local vRPC status to match the last session failure when a Session couldn't be established ([#2888](https://github.com/googleapis/java-bigtable/issues/2888)) ([261ed95](https://github.com/googleapis/java-bigtable/commit/261ed95f4d168108c6b6fda5fe562dbe32db888f))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2910](https://github.com/googleapis/java-bigtable/issues/2910)) ([f406eff](https://github.com/googleapis/java-bigtable/commit/f406effd98259485c940515153e16c6a09ab9a92))
+
 ## [2.77.1](https://github.com/googleapis/java-bigtable/compare/v2.77.0...v2.77.1) (2026-04-13)
 
 
