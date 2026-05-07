@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.42.0](https://github.com/googleapis/java-firestore/compare/v3.41.0...v3.42.0) (2026-05-07)
+
+
+### Features
+
+* **firestore:** Added search stage support for languageCode, offset, limit, and retrievalDepth ([#2373](https://github.com/googleapis/java-firestore/issues/2373)) ([a075c99](https://github.com/googleapis/java-firestore/commit/a075c99755a3a1e1b5509ca74f1558d026385d82))
+* Support search indexing ([1838215](https://github.com/googleapis/java-firestore/commit/18382154787a5d99cfeeed3b56be52a1b0d4c6f0))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.72.0 ([1838215](https://github.com/googleapis/java-firestore/commit/18382154787a5d99cfeeed3b56be52a1b0d4c6f0))
+* Enforce read-before-write in transaction execute() ([#2358](https://github.com/googleapis/java-firestore/issues/2358)) ([71eab7b](https://github.com/googleapis/java-firestore/commit/71eab7b0b720c67926ed0a88163d76668b34ce86))
+* Fix sending of Pipeline options when running a Pipeline in a transaction ([#2348](https://github.com/googleapis/java-firestore/issues/2348)) ([d6c3770](https://github.com/googleapis/java-firestore/commit/d6c3770a530f339a1885cd27a930bef27feeaaf3))
+* Remove client-side assertion for Union with subcollection and delegate to backend ([#2356](https://github.com/googleapis/java-firestore/issues/2356)) ([be110ee](https://github.com/googleapis/java-firestore/commit/be110eedb85ea5e83740057a7771ddb238dfa64d))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.62.0 ([#2379](https://github.com/googleapis/java-firestore/issues/2379)) ([cf77a3c](https://github.com/googleapis/java-firestore/commit/cf77a3cdaa576a65f6bba68d4cb0e251e5caf6e4))
+* Update googleapis/google-cloud-java action to v1.86.0 ([#2377](https://github.com/googleapis/java-firestore/issues/2377)) ([a764800](https://github.com/googleapis/java-firestore/commit/a764800470df6a84e1df780584522b7aab28d9d0))
+
 ## [3.41.0](https://github.com/googleapis/java-firestore/compare/v3.40.0...v3.41.0) (2026-04-14)
 
 
