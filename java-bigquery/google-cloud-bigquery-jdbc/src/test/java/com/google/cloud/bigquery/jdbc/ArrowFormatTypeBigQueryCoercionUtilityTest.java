@@ -165,7 +165,7 @@ public class ArrowFormatTypeBigQueryCoercionUtilityTest {
   @Test
   public void longToTime() {
     assertThat(INSTANCE.coerceTo(Time.class, 1408452095220000L))
-        .isEqualTo(new Time(1408452095000L));
+        .isEqualTo(Time.valueOf(java.time.LocalTime.of(12, 41, 35)));
   }
 
   @Test

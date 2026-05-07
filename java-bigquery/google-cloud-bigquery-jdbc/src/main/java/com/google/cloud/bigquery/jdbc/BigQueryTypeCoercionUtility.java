@@ -198,22 +198,12 @@ class BigQueryTypeCoercionUtility {
 
     @Override
     public Time coerce(Long value) {
-
-      int HH = (int) TimeUnit.MICROSECONDS.toHours(value);
-      int MM = (int) (TimeUnit.MICROSECONDS.toMinutes(value) % 60);
-      int SS = (int) (TimeUnit.MICROSECONDS.toSeconds(value) % 60);
-
-      // Note: BQ Time has a precision of up to six fractional digits (microsecond precision)
-      // but java.sql.Time do not. So data after seconds is not returned.
-      // Using Calendar for timezone-safe date rollover arithmetic instead of the deprecated Time
-      // constructor.
-      java.util.Calendar cal = java.util.Calendar.getInstance();
-      cal.clear();
-      cal.set(1970, 0, 1, 0, 0, 0);
-      cal.add(java.util.Calendar.HOUR, HH);
-      cal.add(java.util.Calendar.MINUTE, MM);
-      cal.add(java.util.Calendar.SECOND, SS);
-      return new Time(cal.getTimeInMillis());
+      // Convert UTC epoch microseconds to Instant
+      Instant instant = Instant.ofEpochMilli(value / 1000);
+      // Convert to LocalTime using the system default timezone to ensure correct wall-clock time
+      LocalTime localTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalTime();
+      // Return java.sql.Time with date component set to 1970-01-01 as mandated by JDBC spec
+      return Time.valueOf(localTime);
     }
   }
 
