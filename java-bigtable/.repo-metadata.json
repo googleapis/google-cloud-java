@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/java-bigtable",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-bigtable",
   "distribution_name": "com.google.cloud:google-cloud-bigtable",
   "api_id": "bigtable.googleapis.com",
