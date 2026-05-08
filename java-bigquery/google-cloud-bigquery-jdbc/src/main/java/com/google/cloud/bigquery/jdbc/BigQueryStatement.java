@@ -951,7 +951,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // below log iterates and counts. This is inefficient and we may eventually want to expose
     // PageSize with TableResults
     // TODO(Obada): Scope for performance optimization.
-    int pageSize;
+    long pageSize;
     Iterable<FieldValueList> values = results.getValues();
     if (values instanceof java.util.Collection) {
       pageSize = ((java.util.Collection<?>) values).size();
@@ -959,7 +959,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // O(1) Fast Page Size Approximation:
       // If the values iterable is not a collection, approximate the page size rather than
       // performing a slow O(N) iteration over the entire page of query results.
-      pageSize = (int) Math.min(totalRows, querySettings.getMaxResultPerPage());
+      pageSize = Math.min(totalRows, querySettings.getMaxResultPerPage());
+    }
+
+    // Prevent division by zero or negative pageSize due to potential overflows/empty sets:
+    if (pageSize <= 0) {
+      pageSize = 1;
     }
 
     // SAFEGUARD: If all data has already been retrieved in the first page,
