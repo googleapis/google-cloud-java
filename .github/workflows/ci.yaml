@@ -338,8 +338,8 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
-        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
