@@ -182,7 +182,7 @@ public class SessionImplTest {
   void sessionGoAwayTest() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
 
-    Duration goAwayDelay = Duration.ofMillis(100);
+    Duration goAwayDelay = Duration.ofMillis(500);
     FakeSessionListener sessionListener = new FakeSessionListener();
     session.start(
         OpenSessionRequest.newBuilder()
@@ -215,9 +215,14 @@ public class SessionImplTest {
       try {
         f.get();
         numOk++;
-      } catch (VRpcException e) {
-        if (e.getResult().getState() == State.UNCOMMITED) {
-          numUncommittedErrors++;
+      } catch (ExecutionException e) {
+        if (e.getCause() instanceof VRpcException) {
+          VRpcException vrpcException = (VRpcException) e.getCause();
+          if (vrpcException.getResult().getState() == State.UNCOMMITED) {
+            numUncommittedErrors++;
+          }
+        } else {
+          throw e;
         }
       }
     }

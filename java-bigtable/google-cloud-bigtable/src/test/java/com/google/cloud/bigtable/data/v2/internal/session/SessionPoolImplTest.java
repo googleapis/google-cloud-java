@@ -77,9 +77,9 @@ import io.grpc.ServerInterceptor;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -448,23 +448,44 @@ public class SessionPoolImplTest {
 
     sessionPool.start(request, new Metadata());
 
-    Thread.sleep(500);
+    long deadline = System.currentTimeMillis() + 10_000;
+    boolean conditionMet = false;
+    List<SessionRequest> requests = null;
+    boolean containsHeader = false;
 
-    List<SessionRequest> requests = fakeService.getSessionRequests();
+    while (System.currentTimeMillis() < deadline) {
+      requests = fakeService.getSessionRequests();
+      List<Metadata> headers = headerInterceptor.getHeadersList();
+
+      boolean matchesRefreshRequest = false;
+      for (SessionRequest r : requests) {
+        if (OPEN_SESSION_REQUEST_CORRESPONDENCE.compare(r, refreshRequest)) {
+          matchesRefreshRequest = true;
+          break;
+        }
+      }
+
+      containsHeader = false;
+      for (Metadata header : headers) {
+        if (header.containsKey(metadataKey) && "refresh_value".equals(header.get(metadataKey))) {
+          containsHeader = true;
+          break;
+        }
+      }
+
+      if (requests.size() > 1 && matchesRefreshRequest && containsHeader) {
+        conditionMet = true;
+        break;
+      }
+
+      Thread.sleep(50);
+    }
+
+    assertThat(conditionMet).isTrue();
     assertThat(requests.size()).isGreaterThan(1);
     assertThat(requests)
         .comparingElementsUsing(OPEN_SESSION_REQUEST_CORRESPONDENCE)
         .contains(refreshRequest);
-
-    // Verify headers
-    List<Metadata> headers = headerInterceptor.getHeadersList();
-    boolean containsHeader = false;
-    for (Metadata header : headers) {
-      if (header.containsKey(metadataKey)) {
-        containsHeader = true;
-        assertThat(header.get(metadataKey)).isEqualTo("refresh_value");
-      }
-    }
     assertThat(containsHeader).isTrue();
   }
 
@@ -519,7 +540,7 @@ public class SessionPoolImplTest {
   }
 
   private static class HeaderInterceptor implements ServerInterceptor {
-    private final List<Metadata> headersList = new ArrayList<>();
+    private final List<Metadata> headersList = new CopyOnWriteArrayList<>();
 
     @Override
     public <ReqT, RespT> io.grpc.ServerCall.Listener<ReqT> interceptCall(

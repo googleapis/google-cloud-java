@@ -20,8 +20,8 @@ import com.google.bigtable.v2.FakeSessionGrpc;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
 import io.grpc.stub.StreamObserver;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -30,7 +30,7 @@ public class FakeSessionService extends FakeSessionGrpc.FakeSessionImplBase {
   private final ScheduledExecutorService executor;
   private final AtomicInteger openRequestCount = new AtomicInteger(0);
 
-  private final List<SessionRequest> sessionRequests = new ArrayList<>();
+  private final List<SessionRequest> sessionRequests = new CopyOnWriteArrayList<>();
 
   public FakeSessionService(ScheduledExecutorService executor) {
     this.executor = executor;
