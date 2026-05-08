@@ -76,6 +76,7 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
+UPDATE_SAMPLES_BUILD_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_samples_build.py"
 UPDATE_LINTER_EXCLUSIONS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_linter_exclusions.py"
 UPDATE_CI_FILTERS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_ci_filters.py"
 UPDATE_CHANGES_FILTERS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_changes_filters.py"
@@ -384,6 +385,18 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
     echo "Committing workflow migration..."
     git add .github/workflows
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate and adapt GitHub Actions workflows"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 7.5b Adapt samples_build.yaml if present
+SAMPLES_BUILD_YAML="$SOURCE_REPO_NAME/.cloudbuild/samples_build.yaml"
+if [ -f "$SAMPLES_BUILD_YAML" ]; then
+    echo "Adapting samples_build.yaml..."
+    python3 "$UPDATE_SAMPLES_BUILD_SCRIPT" "$SAMPLES_BUILD_YAML" "$SOURCE_REPO_NAME"
+    
+    echo "Committing samples_build.yaml update..."
+    git add "$SAMPLES_BUILD_YAML"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): adapt samples_build.yaml for monorepo"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
