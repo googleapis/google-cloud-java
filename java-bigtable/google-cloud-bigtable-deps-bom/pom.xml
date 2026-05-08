@@ -6,9 +6,9 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.62.0</version>
-    <relativePath/>
+    <artifactId>google-cloud-pom-parent</artifactId>
+    <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
   <groupId>com.google.cloud</groupId>
@@ -48,11 +48,10 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/googleapis/java-bigtable.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
-    <url>https://github.com/googleapis/java-bigtable</url>
+    <connection>scm:git:https://github.com/googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
   </scm>
-
 
   <licenses>
     <license>
@@ -64,22 +63,20 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- google cloud boms -->
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>gapic-libraries-bom</artifactId>
-        <version>1.86.0</version>
+        <artifactId>google-cloud-monitoring-bom</artifactId>
+        <version>3.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>${google-cloud-shared-dependencies.version}</version>
+        <version>3.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!-- Other opencensus packages' versions are pulled through com.google.cloud:third-party-dependencies, but has to be manually specified for this one. -->
       <dependency>
         <groupId>io.opencensus</groupId>
         <artifactId>opencensus-contrib-resource-util</artifactId>
