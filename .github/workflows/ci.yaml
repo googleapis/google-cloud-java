@@ -112,6 +112,7 @@ jobs:
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
+    - uses: actions/checkout@v4
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
@@ -338,8 +339,8 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
-        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
