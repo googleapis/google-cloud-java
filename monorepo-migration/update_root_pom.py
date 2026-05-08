@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import re
 import sys
 
 def update_root_pom(pom_path, module_name):
@@ -39,7 +40,7 @@ def update_root_pom(pom_path, module_name):
         java_lines = lines[start_java:end_java]
         if not any(f'<module>{module_name}</module>' in l for l in java_lines):
             java_lines.append(new_module)
-            java_lines.sort()
+            java_lines.sort(key=lambda l: re.search(r'<module>(.*?)</module>', l).group(1) if '<module>' in l else l)
             lines = lines[:start_java] + java_lines + lines[end_java:]
     else:
         if not any(f'<module>{module_name}</module>' in l for l in lines):
