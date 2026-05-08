@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "both",
   "language": "java",
-  "repo": "googleapis/java-pubsub",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-pubsub",
   "distribution_name": "com.google.cloud:google-cloud-pubsub",
   "api_id": "pubsub.googleapis.com",
