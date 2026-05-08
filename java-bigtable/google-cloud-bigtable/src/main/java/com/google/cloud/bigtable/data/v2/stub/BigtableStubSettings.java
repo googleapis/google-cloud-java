@@ -265,7 +265,7 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigtable")
-        .setRepository("googleapis/java-bigtable")
+        .setRepository("googleapis/google-cloud-java")
         .setVersion(Version.VERSION)
         .build();
   }

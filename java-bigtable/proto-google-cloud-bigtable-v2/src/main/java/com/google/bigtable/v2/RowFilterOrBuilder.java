@@ -842,5 +842,51 @@ public interface RowFilterOrBuilder
    */
   com.google.protobuf.ByteString getApplyLabelTransformerBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   *
+   * @return Whether the valueBitmaskFilter field is set.
+   */
+  boolean hasValueBitmaskFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   *
+   * @return The valueBitmaskFilter.
+   */
+  com.google.bigtable.v2.ValueBitmask getValueBitmaskFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   */
+  com.google.bigtable.v2.ValueBitmaskOrBuilder getValueBitmaskFilterOrBuilder();
+
   com.google.bigtable.v2.RowFilter.FilterCase getFilterCase();
 }

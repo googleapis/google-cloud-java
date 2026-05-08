@@ -46,9 +46,9 @@ public enum SessionType implements com.google.protobuf.ProtocolMessageEnum {
    * For internal protocol testing only.
    * </pre>
    *
-   * <code>SESSION_TYPE_TEST = -1;</code>
+   * <code>SESSION_TYPE_TEST = 9999;</code>
    */
-  SESSION_TYPE_TEST(-1),
+  SESSION_TYPE_TEST(9999),
   UNRECOGNIZED(-1),
   ;
 
@@ -81,9 +81,9 @@ public enum SessionType implements com.google.protobuf.ProtocolMessageEnum {
    * For internal protocol testing only.
    * </pre>
    *
-   * <code>SESSION_TYPE_TEST = -1;</code>
+   * <code>SESSION_TYPE_TEST = 9999;</code>
    */
-  public static final int SESSION_TYPE_TEST_VALUE = -1;
+  public static final int SESSION_TYPE_TEST_VALUE = 9999;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -117,7 +117,7 @@ public enum SessionType implements com.google.protobuf.ProtocolMessageEnum {
         return SESSION_TYPE_AUTHORIZED_VIEW;
       case 3:
         return SESSION_TYPE_MATERIALIZED_VIEW;
-      case -1:
+      case 9999:
         return SESSION_TYPE_TEST;
       default:
         return null;

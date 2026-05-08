@@ -4203,6 +4203,7 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
     CELLS_PER_COLUMN_LIMIT_FILTER(12),
     STRIP_VALUE_TRANSFORMER(13),
     APPLY_LABEL_TRANSFORMER(19),
+    VALUE_BITMASK_FILTER(20),
     FILTER_NOT_SET(0);
     private final int value;
 
@@ -4260,6 +4261,8 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
           return STRIP_VALUE_TRANSFORMER;
         case 19:
           return APPLY_LABEL_TRANSFORMER;
+        case 20:
+          return VALUE_BITMASK_FILTER;
         case 0:
           return FILTER_NOT_SET;
         default:
@@ -5383,6 +5386,69 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int VALUE_BITMASK_FILTER_FIELD_NUMBER = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   *
+   * @return Whether the valueBitmaskFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasValueBitmaskFilter() {
+    return filterCase_ == 20;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   *
+   * @return The valueBitmaskFilter.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ValueBitmask getValueBitmaskFilter() {
+    if (filterCase_ == 20) {
+      return (com.google.bigtable.v2.ValueBitmask) filter_;
+    }
+    return com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Matches only cells with values that satisfy the condition `(value &amp; mask)
+   * == mask`.
+   * The mask length must exactly match the value length, otherwise the cell
+   * is not considered a match.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ValueBitmaskOrBuilder getValueBitmaskFilterOrBuilder() {
+    if (filterCase_ == 20) {
+      return (com.google.bigtable.v2.ValueBitmask) filter_;
+    }
+    return com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5453,6 +5519,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
     }
     if (filterCase_ == 19) {
       com.google.protobuf.GeneratedMessage.writeString(output, 19, filter_);
+    }
+    if (filterCase_ == 20) {
+      output.writeMessage(20, (com.google.bigtable.v2.ValueBitmask) filter_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5554,6 +5623,11 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
     if (filterCase_ == 19) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(19, filter_);
     }
+    if (filterCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.bigtable.v2.ValueBitmask) filter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5629,6 +5703,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
         break;
       case 19:
         if (!getApplyLabelTransformer().equals(other.getApplyLabelTransformer())) return false;
+        break;
+      case 20:
+        if (!getValueBitmaskFilter().equals(other.getValueBitmaskFilter())) return false;
         break;
       case 0:
       default:
@@ -5723,6 +5800,10 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
       case 19:
         hash = (37 * hash) + APPLY_LABEL_TRANSFORMER_FIELD_NUMBER;
         hash = (53 * hash) + getApplyLabelTransformer().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + VALUE_BITMASK_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getValueBitmaskFilter().hashCode();
         break;
       case 0:
       default:
@@ -5916,6 +5997,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
       if (valueRangeFilterBuilder_ != null) {
         valueRangeFilterBuilder_.clear();
       }
+      if (valueBitmaskFilterBuilder_ != null) {
+        valueBitmaskFilterBuilder_.clear();
+      }
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -5976,6 +6060,9 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
       }
       if (filterCase_ == 15 && valueRangeFilterBuilder_ != null) {
         result.filter_ = valueRangeFilterBuilder_.build();
+      }
+      if (filterCase_ == 20 && valueBitmaskFilterBuilder_ != null) {
+        result.filter_ = valueBitmaskFilterBuilder_.build();
       }
     }
 
@@ -6089,6 +6176,11 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
             filterCase_ = 19;
             filter_ = other.filter_;
             onChanged();
+            break;
+          }
+        case VALUE_BITMASK_FILTER:
+          {
+            mergeValueBitmaskFilter(other.getValueBitmaskFilter());
             break;
           }
         case FILTER_NOT_SET:
@@ -6243,6 +6335,13 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
                 filter_ = s;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetValueBitmaskFilterFieldBuilder().getBuilder(), extensionRegistry);
+                filterCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9130,6 +9229,249 @@ public final class RowFilter extends com.google.protobuf.GeneratedMessage
       filter_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.ValueBitmask,
+            com.google.bigtable.v2.ValueBitmask.Builder,
+            com.google.bigtable.v2.ValueBitmaskOrBuilder>
+        valueBitmaskFilterBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     *
+     * @return Whether the valueBitmaskFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasValueBitmaskFilter() {
+      return filterCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     *
+     * @return The valueBitmaskFilter.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ValueBitmask getValueBitmaskFilter() {
+      if (valueBitmaskFilterBuilder_ == null) {
+        if (filterCase_ == 20) {
+          return (com.google.bigtable.v2.ValueBitmask) filter_;
+        }
+        return com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+      } else {
+        if (filterCase_ == 20) {
+          return valueBitmaskFilterBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    public Builder setValueBitmaskFilter(com.google.bigtable.v2.ValueBitmask value) {
+      if (valueBitmaskFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filter_ = value;
+        onChanged();
+      } else {
+        valueBitmaskFilterBuilder_.setMessage(value);
+      }
+      filterCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    public Builder setValueBitmaskFilter(
+        com.google.bigtable.v2.ValueBitmask.Builder builderForValue) {
+      if (valueBitmaskFilterBuilder_ == null) {
+        filter_ = builderForValue.build();
+        onChanged();
+      } else {
+        valueBitmaskFilterBuilder_.setMessage(builderForValue.build());
+      }
+      filterCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    public Builder mergeValueBitmaskFilter(com.google.bigtable.v2.ValueBitmask value) {
+      if (valueBitmaskFilterBuilder_ == null) {
+        if (filterCase_ == 20
+            && filter_ != com.google.bigtable.v2.ValueBitmask.getDefaultInstance()) {
+          filter_ =
+              com.google.bigtable.v2.ValueBitmask.newBuilder(
+                      (com.google.bigtable.v2.ValueBitmask) filter_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          filter_ = value;
+        }
+        onChanged();
+      } else {
+        if (filterCase_ == 20) {
+          valueBitmaskFilterBuilder_.mergeFrom(value);
+        } else {
+          valueBitmaskFilterBuilder_.setMessage(value);
+        }
+      }
+      filterCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    public Builder clearValueBitmaskFilter() {
+      if (valueBitmaskFilterBuilder_ == null) {
+        if (filterCase_ == 20) {
+          filterCase_ = 0;
+          filter_ = null;
+          onChanged();
+        }
+      } else {
+        if (filterCase_ == 20) {
+          filterCase_ = 0;
+          filter_ = null;
+        }
+        valueBitmaskFilterBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    public com.google.bigtable.v2.ValueBitmask.Builder getValueBitmaskFilterBuilder() {
+      return internalGetValueBitmaskFilterFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ValueBitmaskOrBuilder getValueBitmaskFilterOrBuilder() {
+      if ((filterCase_ == 20) && (valueBitmaskFilterBuilder_ != null)) {
+        return valueBitmaskFilterBuilder_.getMessageOrBuilder();
+      } else {
+        if (filterCase_ == 20) {
+          return (com.google.bigtable.v2.ValueBitmask) filter_;
+        }
+        return com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Matches only cells with values that satisfy the condition `(value &amp; mask)
+     * == mask`.
+     * The mask length must exactly match the value length, otherwise the cell
+     * is not considered a match.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.ValueBitmask value_bitmask_filter = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.ValueBitmask,
+            com.google.bigtable.v2.ValueBitmask.Builder,
+            com.google.bigtable.v2.ValueBitmaskOrBuilder>
+        internalGetValueBitmaskFilterFieldBuilder() {
+      if (valueBitmaskFilterBuilder_ == null) {
+        if (!(filterCase_ == 20)) {
+          filter_ = com.google.bigtable.v2.ValueBitmask.getDefaultInstance();
+        }
+        valueBitmaskFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.ValueBitmask,
+                com.google.bigtable.v2.ValueBitmask.Builder,
+                com.google.bigtable.v2.ValueBitmaskOrBuilder>(
+                (com.google.bigtable.v2.ValueBitmask) filter_, getParentForChildren(), isClean());
+        filter_ = null;
+      }
+      filterCase_ = 20;
+      onChanged();
+      return valueBitmaskFilterBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.RowFilter)

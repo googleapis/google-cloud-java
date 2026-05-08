@@ -85,6 +85,10 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_ValueRange_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_ValueBitmask_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_ValueBitmask_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_RowFilter_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_RowFilter_fieldAccessorTable;
@@ -247,7 +251,9 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\020end_value_closed\030\003 \001(\014H\001\022\030\n"
           + "\016end_value_open\030\004 \001(\014H\001B\r\n"
           + "\013start_valueB\013\n"
-          + "\tend_value\"\337\010\n"
+          + "\tend_value\"!\n"
+          + "\014ValueBitmask\022\021\n"
+          + "\004mask\030\001 \001(\014B\003\340A\002\"\241\t\n"
           + "\tRowFilter\0224\n"
           + "\005chain\030\001 \001(\0132#.google.bigtable.v2.RowFilter.ChainH\000\022>\n\n"
           + "interleave\030\002 \001(\0132(.google.bigtable.v2.RowFilter.InterleaveH\000\022<\n"
@@ -272,7 +278,9 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\035cells_per_column_limit_filter\030\014 \001(\005H\000\022!\n"
           + "\027strip_value_transformer\030\r"
           + " \001(\010H\000\022!\n"
-          + "\027apply_label_transformer\030\023 \001(\tH\000\0327\n"
+          + "\027apply_label_transformer\030\023 \001(\tH\000\022@\n"
+          + "\024value_bitmask_filter\030\024 \001(\0132"
+          + " .google.bigtable.v2.ValueBitmaskH\000\0327\n"
           + "\005Chain\022.\n"
           + "\007filters\030\001 \003(\0132\035.google.bigtable.v2.RowFilter\032<\n\n"
           + "Interleave\022.\n"
@@ -287,12 +295,12 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\013add_to_cell\030\005"
           + " \001(\0132&.google.bigtable.v2.Mutation.AddToCellH\000\022A\n\r"
           + "merge_to_cell\030\006 \001(\0132(.google.bigtable.v2.Mutation.MergeToCellH\000\022K\n"
-          + "\022delete_from_column\030\002 \001("
-          + "\0132-.google.bigtable.v2.Mutation.DeleteFromColumnH\000\022K\n"
-          + "\022delete_from_family\030\003 \001(\0132-"
-          + ".google.bigtable.v2.Mutation.DeleteFromFamilyH\000\022E\n"
-          + "\017delete_from_row\030\004 \001(\0132*.googl"
-          + "e.bigtable.v2.Mutation.DeleteFromRowH\000\032a\n"
+          + "\022delete_from_column\030\002"
+          + " \001(\0132-.google.bigtable.v2.Mutation.DeleteFromColumnH\000\022K\n"
+          + "\022delete_from_family\030\003"
+          + " \001(\0132-.google.bigtable.v2.Mutation.DeleteFromFamilyH\000\022E\n"
+          + "\017delete_from_row\030\004"
+          + " \001(\0132*.google.bigtable.v2.Mutation.DeleteFromRowH\000\032a\n"
           + "\007SetCell\022\023\n"
           + "\013family_name\030\001 \001(\t\022\030\n"
           + "\020column_qualifier\030\002 \001(\014\022\030\n"
@@ -352,14 +360,13 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\024estimated_batch_size\030\004 \001(\005B\016\n"
           + "\014partial_rowsB\021\n"
           + "\017_batch_checksum\"L\n"
-          + "\013Idempotency\022\r"
-          + "\n"
+          + "\013Idempotency\022\r\n"
           + "\005token\030\001 \001(\014\022.\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\263\001\n"
-          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.com/"
-          + "go/bigtable/apiv2/bigtablepb;bigtablepb\252"
-          + "\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Clou"
-          + "d\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
+          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.com/go/bigtable/apiv2/b"
+          + "igtablepb;bigtablepb\252\002\030Google.Cloud.Bigt"
+          + "able.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Goo"
+          + "gle::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -470,7 +477,14 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "StartValue",
               "EndValue",
             });
-    internal_static_google_bigtable_v2_RowFilter_descriptor = getDescriptor().getMessageType(11);
+    internal_static_google_bigtable_v2_ValueBitmask_descriptor = getDescriptor().getMessageType(11);
+    internal_static_google_bigtable_v2_ValueBitmask_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_ValueBitmask_descriptor,
+            new java.lang.String[] {
+              "Mask",
+            });
+    internal_static_google_bigtable_v2_RowFilter_descriptor = getDescriptor().getMessageType(12);
     internal_static_google_bigtable_v2_RowFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_RowFilter_descriptor,
@@ -494,6 +508,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "CellsPerColumnLimitFilter",
               "StripValueTransformer",
               "ApplyLabelTransformer",
+              "ValueBitmaskFilter",
               "Filter",
             });
     internal_static_google_bigtable_v2_RowFilter_Chain_descriptor =
@@ -520,7 +535,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "PredicateFilter", "TrueFilter", "FalseFilter",
             });
-    internal_static_google_bigtable_v2_Mutation_descriptor = getDescriptor().getMessageType(12);
+    internal_static_google_bigtable_v2_Mutation_descriptor = getDescriptor().getMessageType(13);
     internal_static_google_bigtable_v2_Mutation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_Mutation_descriptor,
@@ -580,7 +595,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_bigtable_v2_Mutation_DeleteFromRow_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_ReadModifyWriteRule_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_bigtable_v2_ReadModifyWriteRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ReadModifyWriteRule_descriptor,
@@ -588,7 +603,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "FamilyName", "ColumnQualifier", "AppendValue", "IncrementAmount", "Rule",
             });
     internal_static_google_bigtable_v2_StreamPartition_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_bigtable_v2_StreamPartition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_StreamPartition_descriptor,
@@ -596,7 +611,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "RowRange",
             });
     internal_static_google_bigtable_v2_StreamContinuationTokens_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_bigtable_v2_StreamContinuationTokens_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_StreamContinuationTokens_descriptor,
@@ -604,26 +619,26 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "Tokens",
             });
     internal_static_google_bigtable_v2_StreamContinuationToken_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_bigtable_v2_StreamContinuationToken_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_StreamContinuationToken_descriptor,
             new java.lang.String[] {
               "Partition", "Token",
             });
-    internal_static_google_bigtable_v2_ProtoFormat_descriptor = getDescriptor().getMessageType(17);
+    internal_static_google_bigtable_v2_ProtoFormat_descriptor = getDescriptor().getMessageType(18);
     internal_static_google_bigtable_v2_ProtoFormat_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ProtoFormat_descriptor, new java.lang.String[] {});
     internal_static_google_bigtable_v2_ColumnMetadata_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(19);
     internal_static_google_bigtable_v2_ColumnMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ColumnMetadata_descriptor,
             new java.lang.String[] {
               "Name", "Type",
             });
-    internal_static_google_bigtable_v2_ProtoSchema_descriptor = getDescriptor().getMessageType(19);
+    internal_static_google_bigtable_v2_ProtoSchema_descriptor = getDescriptor().getMessageType(20);
     internal_static_google_bigtable_v2_ProtoSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ProtoSchema_descriptor,
@@ -631,14 +646,14 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "Columns",
             });
     internal_static_google_bigtable_v2_ResultSetMetadata_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(21);
     internal_static_google_bigtable_v2_ResultSetMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ResultSetMetadata_descriptor,
             new java.lang.String[] {
               "ProtoSchema", "Schema",
             });
-    internal_static_google_bigtable_v2_ProtoRows_descriptor = getDescriptor().getMessageType(21);
+    internal_static_google_bigtable_v2_ProtoRows_descriptor = getDescriptor().getMessageType(22);
     internal_static_google_bigtable_v2_ProtoRows_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ProtoRows_descriptor,
@@ -646,7 +661,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "Values",
             });
     internal_static_google_bigtable_v2_ProtoRowsBatch_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(23);
     internal_static_google_bigtable_v2_ProtoRowsBatch_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ProtoRowsBatch_descriptor,
@@ -654,7 +669,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "BatchData",
             });
     internal_static_google_bigtable_v2_PartialResultSet_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(24);
     internal_static_google_bigtable_v2_PartialResultSet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_PartialResultSet_descriptor,
@@ -666,7 +681,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "EstimatedBatchSize",
               "PartialRows",
             });
-    internal_static_google_bigtable_v2_Idempotency_descriptor = getDescriptor().getMessageType(24);
+    internal_static_google_bigtable_v2_Idempotency_descriptor = getDescriptor().getMessageType(25);
     internal_static_google_bigtable_v2_Idempotency_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_Idempotency_descriptor,
@@ -678,6 +693,11 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
     com.google.bigtable.v2.TypesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
   }
 
   // @@protoc_insertion_point(outer_class_scope)
