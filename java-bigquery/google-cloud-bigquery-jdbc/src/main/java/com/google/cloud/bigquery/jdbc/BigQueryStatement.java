@@ -55,7 +55,6 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
@@ -952,7 +951,23 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // below log iterates and counts. This is inefficient and we may eventually want to expose
     // PageSize with TableResults
     // TODO(Obada): Scope for performance optimization.
-    int pageSize = Iterators.size(results.getValues().iterator());
+    int pageSize;
+    Iterable<FieldValueList> values = results.getValues();
+    if (values instanceof java.util.Collection) {
+      pageSize = ((java.util.Collection<?>) values).size();
+    } else {
+      // O(1) Fast Page Size Approximation:
+      // If the values iterable is not a collection, approximate the page size rather than
+      // performing a slow O(N) iteration over the entire page of query results.
+      pageSize = (int) Math.min(totalRows, querySettings.getMaxResultPerPage());
+    }
+
+    // SAFEGUARD: If all data has already been retrieved in the first page,
+    // NEVER switch to the Read API as it would discard in-memory data and cause a double-fetch.
+    if (totalRows <= pageSize) {
+      return false;
+    }
+
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
