@@ -1,0 +1,22 @@
+# Code owners file.
+# This file controls who is tagged for review for any given pull request.
+
+# For syntax help see:
+# https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
+
+# The @googleapis/bigtable-team is the default owner for changes in this repo
+*                       @googleapis/cloud-sdk-java-team @googleapis/bigtable-team
+
+# for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
+**/*.java               @googleapis/bigtable-team @googleapis/cloud-sdk-java-team
+
+
+# The java-samples-reviewers team is the default owner for samples changes
+samples/**/*.java       @googleapis/java-samples-reviewers
+
+# Generated snippets should not be owned by samples reviewers
+samples/snippets/generated/       @googleapis/cloud-sdk-java-team
+
+# Admin Module (Cloud Java Team ownership)
+**/com/google/cloud/bigtable/admin/** @googleapis/bigtable-team @googleapis/cloud-sdk-java-team
+**/com/google/bigtable/admin/** @googleapis/bigtable-team @googleapis/cloud-sdk-java-team

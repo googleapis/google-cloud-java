@@ -1,0 +1,228 @@
+rebaseMergeAllowed: false
+squashMergeAllowed: true
+mergeCommitAllowed: false
+branchProtectionRules:
+  - pattern: main
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image A'
+      - 'Kokoro - Test: Java GraalVM Native Image B'
+      - 'Kokoro - Test: Java GraalVM Native Image C'
+      - javadoc
+      - conformance
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 1.22.0-sp
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: java7
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.2.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: v2.6.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+  - pattern: 2.16.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+  - pattern: 2.23.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+  - pattern: 2.25.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+  - pattern: 2.30.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - javadoc
+      - conformance
+  - pattern: 2.39.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - javadoc
+      - conformance
+  - pattern: 2.54.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - javadoc
+      - conformance
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 2.61.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image A'
+      - 'Kokoro - Test: Java GraalVM Native Image B'
+      - 'Kokoro - Test: Java GraalVM Native Image C'
+      - javadoc
+      - conformance
+      - library_generation
+      - unmanaged_dependency_check
+  - pattern: 2.60.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (11)
+      - units (17)
+      - units (21)
+      - units (24)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - 'Kokoro - Test: Java GraalVM Native Image A'
+      - 'Kokoro - Test: Java GraalVM Native Image B'
+      - 'Kokoro - Test: Java GraalVM Native Image C'
+      - javadoc
+      - conformance
+      - library_generation
+      - unmanaged_dependency_check
+permissionRules:
+  - team: yoshi-admins
+    permission: admin
+  - team: yoshi-java-admins
+    permission: admin
+  - team: cloud-sdk-java-team
+    permission: push

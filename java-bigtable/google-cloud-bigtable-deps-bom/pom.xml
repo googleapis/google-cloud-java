@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>sdk-platform-java-config</artifactId>
+    <version>3.62.0</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-bigtable-deps-bom</artifactId>
+  <version>2.78.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+
+  <packaging>pom</packaging>
+  <name>Google Cloud Bigtable Dependency BOM</name>
+  <description>
+    A BOM that describes all of the dependencies used by google-cloud-bigtable. It's
+    mainly intended to be used by java-bigtable-hbase to align dependencies
+  </description>
+
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>igorberstein</id>
+      <name>Igor Bernstein</name>
+      <email>igorbernstein@google.com</email>
+      <organization>Google LLC</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>kolea2</id>
+      <name>Kristen O'Leary</name>
+      <email>kaoleary@google.com</email>
+      <organization>Google LLC</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/googleapis/java-bigtable.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
+    <url>https://github.com/googleapis/java-bigtable</url>
+  </scm>
+
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- google cloud boms -->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>gapic-libraries-bom</artifactId>
+        <version>1.86.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-shared-dependencies</artifactId>
+        <version>${google-cloud-shared-dependencies.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- Other opencensus packages' versions are pulled through com.google.cloud:third-party-dependencies, but has to be manually specified for this one. -->
+      <dependency>
+        <groupId>io.opencensus</groupId>
+        <artifactId>opencensus-contrib-resource-util</artifactId>
+        <version>0.31.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Using maven site plugin only as a hook for javadoc:aggregate, don't need the reports -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+
+        <configuration>
+          <generateReports>false</generateReports>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

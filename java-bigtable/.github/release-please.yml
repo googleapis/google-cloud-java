@@ -1,0 +1,98 @@
+bumpMinorPreMajor: true
+handleGHRelease: true
+releaseType: java-yoshi
+extraFiles:
+  - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+branches:
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-lts
+    branch: 1.22.0-sp
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: java7
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.2.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: v2.6.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.16.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.23.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.25.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.30.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.39.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.54.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.61.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-backport
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: 2.60.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: protobuf-4.x-rc
+    manifest: true
