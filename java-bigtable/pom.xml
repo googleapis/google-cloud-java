@@ -6,16 +6,16 @@
     <packaging>pom</packaging>
     <version>2.78.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
     <name>Google Cloud Bigtable Parent</name>
-    <url>https://github.com/googleapis/java-bigtable</url>
+    <url>https://github.com/googleapis/google-cloud-java</url>
     <description>
         Java idiomatic client for Google Cloud Platform services.
     </description>
 
     <parent>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>sdk-platform-java-config</artifactId>
-        <version>3.62.0</version>
-        <relativePath/>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-jar-parent</artifactId>
+      <version>1.87.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+      <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
     </parent>
 
     <developers>
@@ -121,13 +121,13 @@
         <name>Google LLC</name>
     </organization>
     <scm>
-        <connection>scm:git:git@github.com:googleapis/java-bigtable.git</connection>
-        <developerConnection>scm:git:git@github.com:googleapis/java-bigtable.git</developerConnection>
-        <url>https://github.com/googleapis/java-bigtable</url>
+        <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+        <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+        <url>https://github.com/googleapis/google-cloud-java</url>
         <tag>HEAD</tag>
     </scm>
     <issueManagement>
-        <url>https://github.com/googleapis/java-bigtable/issues</url>
+        <url>https://github.com/googleapis/google-cloud-java/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
     
@@ -151,7 +151,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Production Deps have been moved to google-cloud-bigtable-deps-bom -->
 
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
@@ -178,7 +177,6 @@
                 <artifactId>google-cloud-bigtable</artifactId>
                 <version>2.78.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
             </dependency>
-            <!-- Test Deps in alphabetical order -->
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-conformance-tests</artifactId>
@@ -343,6 +341,12 @@
                 </plugins>
             </build>
         </profile>
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
     </profiles>
 
     <modules>
