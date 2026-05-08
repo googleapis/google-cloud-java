@@ -36,6 +36,7 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-pubsub'
 )
 
 function retry_with_backoff {
