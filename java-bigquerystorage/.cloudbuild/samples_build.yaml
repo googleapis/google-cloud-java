@@ -20,6 +20,7 @@ steps:
   ]
   env:
   - 'JOB_TYPE=samples'
+  - 'BUILD_SUBDIR=java-bigquerystorage'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
   - 'BIGTABLE_TESTING_INSTANCE=instance'
 - name: gcr.io/cloud-devrel-public-resources/java8
