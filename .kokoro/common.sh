@@ -36,6 +36,7 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-bigtable'
   'java-pubsub'
 )
 
@@ -407,6 +408,8 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      'java-monitoring/google-cloud-monitoring'
+      'java-monitoring/google-cloud-monitoring-bom'
       'google-auth-library-java/appengine'
       'google-auth-library-java/bom'
       'google-auth-library-java/cab-token-generator'
