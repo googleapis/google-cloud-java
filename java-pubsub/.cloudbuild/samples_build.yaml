@@ -1,0 +1,31 @@
+steps:
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: ls
+  args: [
+    '-alt',
+  ]
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: curl
+  args: [
+    '--header',
+    'Metadata-Flavor: Google',
+    'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email'
+  ]
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: pwd
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: bash
+  args: [
+    '.kokoro/build.sh'
+  ]
+  env:
+  - 'JOB_TYPE=samples'
+  - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: echo
+  args: [
+    'Sample job succeeded',
+  ]
+timeout: 3600s
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
