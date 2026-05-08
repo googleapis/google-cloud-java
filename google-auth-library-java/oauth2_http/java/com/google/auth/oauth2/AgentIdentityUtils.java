@@ -16,6 +16,8 @@ import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.cert.CertificateFactory;
+import java.security.PrivateKey;
+import java.security.Signature;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -36,8 +38,8 @@ class AgentIdentityUtils {
 
   // Environment variables
   static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
-  static final String GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES =
-      "GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES";
+  static final String GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES =
+      "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES";
 
   private static final List<Pattern> AGENT_IDENTITY_SPIFFE_PATTERNS =
       ImmutableList.of(
@@ -46,6 +48,13 @@ class AgentIdentityUtils {
 
   private static final int SAN_URI_TYPE = 6;
   private static final String SPIFFE_SCHEME_PREFIX = "spiffe://";
+
+  private static String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+
+  @VisibleForTesting
+  static void setWellKnownDir(String dir) {
+    wellKnownDir = dir;
+  }
 
   // Polling configuration
   private static final int FAST_POLL_CYCLES = 50;
@@ -94,20 +103,41 @@ class AgentIdentityUtils {
 
   private AgentIdentityUtils() {}
 
-  static X509Certificate getAgentIdentityCertificate() throws IOException {
+  static class CertInfo {
+    final X509Certificate certificate;
+    final String path;
+    CertInfo(X509Certificate certificate, String path) {
+      this.certificate = certificate;
+      this.path = path;
+    }
+  }
+
+  static CertInfo getAgentIdentityCertInfo() throws IOException {
     if (isOptedOut()) {
       return null;
     }
     String certConfigPath = envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG);
-    if (Strings.isNullOrEmpty(certConfigPath)) {
+    
+    boolean configExists = !Strings.isNullOrEmpty(certConfigPath) && Files.exists(Paths.get(certConfigPath));
+    String certPath;
+    if (!Strings.isNullOrEmpty(certConfigPath)) {
+      certPath = getCertificatePathWithRetry(certConfigPath);
+    } else {
+      certPath = getWellKnownCertificatePathWithRetry();
+    }
+
+    boolean certsPresent = !Strings.isNullOrEmpty(certPath);
+    
+    if (!shouldEnableMtls(certsPresent, configExists)) {
       return null;
     }
-    String certPath = getCertificatePathWithRetry(certConfigPath);
-    return parseCertificate(certPath);
+
+    X509Certificate cert = parseCertificate(certPath);
+    return new CertInfo(cert, certPath);
   }
 
   private static boolean isOptedOut() {
-    String optOut = envReader.getEnv(GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES);
+    String optOut = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
     return "false".equalsIgnoreCase(optOut);
   }
 
@@ -145,8 +175,128 @@ class AgentIdentityUtils {
     }
     throw new IOException(
         "Unable to find Agent Identity certificate config or file for bound token request after multiple retries. Token binding protection is failing. You can turn off this protection by setting "
-            + GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES
+            + GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES
             + " to false to fall back to unbound tokens.");
+  }
+
+  private static String getWellKnownCertificatePathWithRetry() throws IOException {
+    String bundlePath = wellKnownDir + "credentialbundle.pem";
+    String certOnlyPath = wellKnownDir + "certificates.pem";
+    
+    boolean warned = false;
+    for (long sleepInterval : POLLING_INTERVALS) {
+      try {
+        if (Files.exists(Paths.get(bundlePath))) {
+          return bundlePath;
+        }
+        if (Files.exists(Paths.get(certOnlyPath))) {
+          return certOnlyPath;
+        }
+      } catch (Exception e) {
+        // Fall through to retry
+      }
+      if (!warned) {
+        Slf4jUtils.log(
+            LOGGER,
+            org.slf4j.event.Level.WARN,
+            Collections.emptyMap(),
+            String.format(
+                "Well-known certificate file not found at %s. Retrying for up to %d seconds.",
+                wellKnownDir, TOTAL_TIMEOUT_MS / 1000));
+        warned = true;
+      }
+      try {
+        timeService.sleep(sleepInterval);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new IOException(
+            "Interrupted while waiting for well-known certificate files.",
+            e);
+      }
+    }
+    throw new IOException(
+        "Unable to find well-known certificate file for bound token request after multiple retries.");
+  }
+
+  static String readCertificateChain(String certPath) throws IOException {
+    System.out.println("AgentIdentityUtils: Reading certificate chain from: " + certPath);
+    return new String(Files.readAllBytes(Paths.get(certPath)), StandardCharsets.UTF_8);
+  }
+
+  static boolean verifyKeyPair(X509Certificate cert, PrivateKey privateKey) {
+    try {
+      byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
+      
+      String keyAlgorithm = cert.getPublicKey().getAlgorithm();
+      String sigAlg;
+      if ("RSA".equals(keyAlgorithm)) {
+        sigAlg = "SHA256withRSA";
+      } else if ("EC".equals(keyAlgorithm)) {
+        sigAlg = "SHA256withECDSA";
+      } else {
+        throw new IllegalArgumentException("Unsupported key algorithm: " + keyAlgorithm);
+      }
+      
+      Signature signer = Signature.getInstance(sigAlg);
+      signer.initSign(privateKey);
+      signer.update(data);
+      byte[] signature = signer.sign();
+      
+      Signature verifier = Signature.getInstance(sigAlg);
+      verifier.initVerify(cert.getPublicKey());
+      verifier.update(data);
+      
+      return verifier.verify(signature);
+    } catch (Exception e) {
+      System.out.println("AgentIdentityUtils: Key pair verification failed: " + e.getMessage());
+      return false;
+    }
+  }
+
+  static PrivateKey readPrivateKey(String keyPath, String algorithm) throws IOException {
+    String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
+    OAuth2Utils.Pkcs8Algorithm pkcs8Alg = "EC".equals(algorithm) ? OAuth2Utils.Pkcs8Algorithm.EC : OAuth2Utils.Pkcs8Algorithm.RSA;
+    return OAuth2Utils.privateKeyFromPkcs8(keyPem, pkcs8Alg);
+  }
+
+  static boolean shouldEnableMtls(boolean certsPresent, boolean configExists) throws IOException {
+    String useClientCert = envReader.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    
+    if ("true".equalsIgnoreCase(useClientCert)) {
+      if (certsPresent) {
+        return true; // Case 1
+      }
+      if (configExists) {
+        throw new IOException("Certificate intent established via config, but cert files are missing."); // Case 2
+      }
+      return false; // Case 3
+    } else if ("false".equalsIgnoreCase(useClientCert)) {
+      if (certsPresent) {
+        Slf4jUtils.log(
+            LOGGER,
+            org.slf4j.event.Level.WARN,
+            Collections.emptyMap(),
+            "Token binding protection is disabled because mTLS was explicitly disabled via GOOGLE_API_USE_CLIENT_CERTIFICATE.");
+        return false; // Case 4
+      }
+      return false; // Case 5
+    } else { // Unset
+      if (certsPresent) {
+        return true; // Case 6 (Infer enabled)
+      }
+      if (configExists) {
+        throw new IOException("Certificate intent inferred via config, but cert files are missing."); // Case 7
+      }
+      return false; // Case 8
+    }
+  }
+
+  static String getBoundTokenPayload() throws IOException {
+    CertInfo info = getAgentIdentityCertInfo();
+    if (info != null && shouldRequestBoundToken(info.certificate)) {
+      return readCertificateChain(info.path);
+    }
+    return null;
   }
 
   @SuppressWarnings("unchecked")

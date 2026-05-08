@@ -16,6 +16,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
@@ -107,14 +110,15 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void getAgentIdentityCertificate_optedOut_returnsNullImmediately() throws IOException {
-    envProvider.setEnv("GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", "/non/existent/path");
-    assertNull(AgentIdentityUtils.getAgentIdentityCertificate());
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
   public void getAgentIdentityCertificate_noConfigEnvVar_returnsNull() throws IOException {
-    assertNull(AgentIdentityUtils.getAgentIdentityCertificate());
+    AgentIdentityUtils.setTimeService(new FakeTimeService());
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
   }
 
   @Test
@@ -137,9 +141,9 @@ class AgentIdentityUtilsTest {
       fos.write(configJson.getBytes(StandardCharsets.UTF_8));
     }
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
-    X509Certificate cert = AgentIdentityUtils.getAgentIdentityCertificate();
-    assertNotNull(cert);
-    assertTrue(cert.getIssuerDN().getName().contains("unit-tests"));
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertTrue(info.certificate.getIssuerDN().getName().contains("unit-tests"));
   }
 
   @Test
@@ -149,11 +153,77 @@ class AgentIdentityUtilsTest {
         tempDir.resolve("missing.json").toAbsolutePath().toString());
     AgentIdentityUtils.setTimeService(new FakeTimeService());
     IOException e =
-        assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertificate);
+        assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(
         e.getMessage()
             .contains(
                 "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
+  }
+
+  @Test
+  public void shouldEnableMtls_true_certsPresent_returnsTrue() throws IOException {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    assertTrue(AgentIdentityUtils.shouldEnableMtls(true, true));
+  }
+
+  @Test
+  public void shouldEnableMtls_true_certsMissing_throwsIOException() {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    assertThrows(IOException.class, () -> AgentIdentityUtils.shouldEnableMtls(false, true));
+  }
+
+  @Test
+  public void shouldEnableMtls_false_certsPresent_returnsFalse() throws IOException {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false");
+    assertFalse(AgentIdentityUtils.shouldEnableMtls(true, true));
+  }
+
+  @Test
+  public void shouldEnableMtls_unset_certsPresent_returnsTrue() throws IOException {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    assertTrue(AgentIdentityUtils.shouldEnableMtls(true, true));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_fallbackPath_loadsCertificate() throws IOException {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    
+    URL certUrl = getClass().getClassLoader().getResource("x509_leaf_certificate.pem");
+    assertNotNull(certUrl, "Test resource x509_leaf_certificate.pem not found");
+    String certPath = new File(certUrl.getFile()).getAbsolutePath();
+    
+    Files.copy(Paths.get(certPath), tempDir.resolve("certificates.pem"));
+    
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertEquals(tempDir.resolve("certificates.pem").toAbsolutePath().toString(), info.path);
+  }
+
+  @Test
+  public void verifyKeyPair_match_returnsTrue() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(2048);
+    KeyPair kp = kpg.generateKeyPair();
+    
+    X509Certificate mockCert = mock(X509Certificate.class);
+    when(mockCert.getPublicKey()).thenReturn(kp.getPublic());
+    
+    assertTrue(AgentIdentityUtils.verifyKeyPair(mockCert, kp.getPrivate()));
+  }
+
+  @Test
+  public void verifyKeyPair_mismatch_returnsFalse() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(2048);
+    KeyPair kp1 = kpg.generateKeyPair();
+    KeyPair kp2 = kpg.generateKeyPair();
+    
+    X509Certificate mockCert = mock(X509Certificate.class);
+    when(mockCert.getPublicKey()).thenReturn(kp1.getPublic());
+    
+    assertFalse(AgentIdentityUtils.verifyKeyPair(mockCert, kp2.getPrivate()));
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {

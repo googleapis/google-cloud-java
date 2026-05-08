@@ -76,8 +76,13 @@ class DefaultCredentialsProviderTest {
 
   @BeforeEach
   void setUp() {
-    // Isolate tests from user's GOOGLE_API_CERTIFICATE_CONFIG environment variable.
-    AgentIdentityUtils.setEnvReader(name -> null);
+    // Isolate tests and opt out of bound tokens by default to avoid polling delays
+    AgentIdentityUtils.setEnvReader(name -> {
+      if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
+        return "false"; // Triggers isOptedOut() = true
+      }
+      return null;
+    });
   }
 
   @AfterEach
