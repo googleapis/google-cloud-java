@@ -3115,3 +3115,21 @@ libraries:
   recommended_package: com.google.cloud.pubsub.v1
   GAPICs:
   - proto_path: google/pubsub/v1
+- api_shortname: bigtable
+  api_description: API for reading and writing the contents of Bigtables associated
+    with a cloud project.
+  name_pretty: Cloud Bigtable
+  product_documentation: https://cloud.google.com/bigtable
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/559777
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-bigtable
+  codeowner_team: '@googleapis/bigtable-team'
+  api_id: bigtable.googleapis.com
+  library_type: GAPIC_COMBO
+  extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
+  excluded_poms: google-cloud-bigtable-bom
+  recommended_package: com.google.cloud.bigtable
+  GAPICs:
+  - proto_path: google/bigtable/v2
+  - proto_path: google/bigtable/admin/v2
