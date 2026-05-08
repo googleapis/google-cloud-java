@@ -37,11 +37,13 @@ public class TimeZoneRule
   public void beforeAll(ExtensionContext context) {
     defaultTimeZone = TimeZone.getDefault();
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
+    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
   }
 
   @Override
   public void afterAll(ExtensionContext context) {
     TimeZone.setDefault(defaultTimeZone);
+    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
   }
 
   @Override
@@ -50,6 +52,7 @@ public class TimeZoneRule
       defaultTimeZone = TimeZone.getDefault();
     }
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
+    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
   }
 
   @Override
@@ -57,10 +60,12 @@ public class TimeZoneRule
     if (defaultTimeZone != null) {
       TimeZone.setDefault(defaultTimeZone);
     }
+    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
   }
 
   /** Public method to enforce the rule manually */
   public void enforce() {
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
+    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
   }
 }

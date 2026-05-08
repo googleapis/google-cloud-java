@@ -29,6 +29,7 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
+import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
 import com.google.common.collect.ImmutableList;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -38,10 +39,12 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class FieldValueTypeBigQueryCoercionUtilityTest {
+  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+
   private static final FieldValue STRING_VALUE = FieldValue.of(PRIMITIVE, "sample-string");
   private static final FieldValue INTEGER_VALUE = FieldValue.of(PRIMITIVE, "345");
   private static final FieldValue FLOAT_VALUE = FieldValue.of(PRIMITIVE, "345.21");
@@ -315,11 +318,27 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   public void fieldValueToTime() {
     LocalTime expectedTime = LocalTime.of(23, 59, 59);
     assertThat(INSTANCE.coerceTo(Time.class, TIME_VALUE)).isEqualTo(Time.valueOf(expectedTime));
-    LocalTime expectedTimeWithNanos = LocalTime.parse("23:59:59.99999");
-    long millisOfDay = TimeUnit.NANOSECONDS.toMillis(expectedTimeWithNanos.toNanoOfDay());
-    long localMillis = millisOfDay - java.util.TimeZone.getDefault().getOffset(millisOfDay);
+    // expectedTimeWithNanos has 999 milliseconds, giving 86399999 ms of day.
+    // Since the test runs under UTC timezone by TimeZoneRule, expected localMillis is 86399999L.
     assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
-        .isEqualTo(new Time(localMillis));
+        .isEqualTo(new Time(86399999L));
+  }
+
+  @Test
+  public void fieldValueToTimeInNonUTCTimeZone() {
+    java.util.TimeZone originalTimeZone = java.util.TimeZone.getDefault();
+    try {
+      java.util.TimeZone.setDefault(java.util.TimeZone.getTimeZone("America/Los_Angeles"));
+      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+      // 23:59:59.99999 yields 86399999 milliseconds.
+      // Under America/Los_Angeles on 1970-01-01 (PST, -8 hours offset),
+      // the subtracted offset results in 86399999 - (-28800000) = 115199999L.
+      assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
+          .isEqualTo(new Time(115199999L));
+    } finally {
+      java.util.TimeZone.setDefault(originalTimeZone);
+      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    }
   }
 
   @Test

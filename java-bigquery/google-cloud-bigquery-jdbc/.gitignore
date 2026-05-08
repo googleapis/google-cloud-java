@@ -2,6 +2,7 @@ drivers/**
 target-it/**
 *logs*/**
 **/ITBigQueryJDBCLocalTest.java
+**/BigQueryStatementE2EBenchmark.java
 
 tools/**/*.class
 tools/**/*.jfr

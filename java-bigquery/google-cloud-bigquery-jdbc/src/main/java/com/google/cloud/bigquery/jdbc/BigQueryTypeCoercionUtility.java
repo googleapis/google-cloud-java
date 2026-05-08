@@ -200,7 +200,9 @@ class BigQueryTypeCoercionUtility {
       // Note: BQ Time has a precision of up to six fractional digits (microsecond precision)
       // but java.sql.Time only supports up to millisecond precision. So data after milliseconds is
       // truncated.
-      return new Time(value / 1000);
+      long millisOfDay = value / 1000;
+      long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
+      return new Time(localMillis);
     }
   }
 
@@ -209,7 +211,7 @@ class BigQueryTypeCoercionUtility {
     @Override
     public Timestamp coerce(Long value) {
       // Long value is in microseconds. All further calculations should account for the unit.
-      Instant instant = Instant.ofEpochMilli(value / 1000).plusNanos((value % 1000) * 1000);
+      Instant instant = Instant.EPOCH.plus(value, ChronoUnit.MICROS);
       // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
       return Timestamp.from(instant);
     }
@@ -252,7 +254,7 @@ class BigQueryTypeCoercionUtility {
         long millisOfDay = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
         // Adjust by local timezone offset to ensure correct wall-clock representation with
         // millisecond precision
-        long localMillis = millisOfDay - java.util.TimeZone.getDefault().getOffset(millisOfDay);
+        long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
         return new Time(localMillis);
       } catch (java.time.format.DateTimeParseException e) {
         IllegalArgumentException ex =
