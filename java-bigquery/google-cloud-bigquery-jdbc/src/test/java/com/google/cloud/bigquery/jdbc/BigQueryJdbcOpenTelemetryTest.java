@@ -80,4 +80,14 @@ public class BigQueryJdbcOpenTelemetryTest {
 
     assertThat(result1).isNotSameInstanceAs(result2);
   }
+
+  @Test
+  public void testGetOpenTelemetry_createsNewInstanceForDifferentFlags() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, true, null, null, "project1");
+
+    assertThat(result1).isNotSameInstanceAs(result2);
+  }
 }

@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.logging.Logging;
+import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -68,6 +69,14 @@ public class BigQueryJdbcOpenTelemetry {
 
   static {
     ensureGlobalHandlerAttached();
+    Runtime.getRuntime()
+        .addShutdownHook(
+            new Thread(
+                () -> {
+                  for (OpenTelemetrySdk sdk : sdkCache.values()) {
+                    sdk.close();
+                  }
+                }));
   }
 
   public static void ensureGlobalHandlerAttached() {
@@ -105,6 +114,17 @@ public class BigQueryJdbcOpenTelemetry {
     return connectionConfigs.values();
   }
 
+  private static String getCredentialsIdentifier(String credentials) {
+    if (credentials == null) {
+      return "";
+    }
+    byte[] credsBytes = credentials.getBytes(StandardCharsets.UTF_8);
+    if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
+      return Hashing.sha256().hashString(credentials, StandardCharsets.UTF_8).toString();
+    }
+    return credentials;
+  }
+
   /**
    * Initializes or returns the OpenTelemetry instance based on hybrid logic. Prefer
    * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
@@ -126,7 +146,11 @@ public class BigQueryJdbcOpenTelemetry {
       String key =
           (gcpTelemetryProjectId != null ? gcpTelemetryProjectId : "")
               + ":"
-              + (gcpTelemetryCredentials != null ? gcpTelemetryCredentials : "");
+              + getCredentialsIdentifier(gcpTelemetryCredentials)
+              + ":"
+              + enableGcpTraceExporter
+              + ":"
+              + enableGcpLogExporter;
       return sdkCache.computeIfAbsent(
           key,
           k -> {
@@ -160,8 +184,6 @@ public class BigQueryJdbcOpenTelemetry {
                 AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
 
             OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
-
-            Runtime.getRuntime().addShutdownHook(new Thread(sdk::close));
 
             return sdk;
           });
