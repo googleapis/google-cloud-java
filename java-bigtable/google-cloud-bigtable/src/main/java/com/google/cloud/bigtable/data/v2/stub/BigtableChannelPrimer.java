@@ -1,0 +1,182 @@
+/*
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2.stub;
+
+import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
+import com.google.auth.Credentials;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
+import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
+import io.grpc.CallCredentials;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.Deadline;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.auth.MoreCallCredentials;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ * A channel warmer that ensures that a Bigtable channel is ready to be used before being added to
+ * the active {@link com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPool}.
+ *
+ * <p>This implementation is subject to change in the future, but currently it will prime the
+ * channel by sending a ReadRow request for a hardcoded, non-existent row key.
+ */
+@InternalApi
+public class BigtableChannelPrimer implements ChannelPrimer {
+  private static Logger LOG = Logger.getLogger(BigtableChannelPrimer.class.toString());
+
+  static final Metadata.Key<String> REQUEST_PARAMS =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+  private final PingAndWarmRequest request;
+  private final CallCredentials callCredentials;
+  private final Map<String, String> headers;
+
+  static BigtableChannelPrimer create(
+      String projectId,
+      String instanceId,
+      String appProfileId,
+      Credentials credentials,
+      Map<String, String> headers) {
+    return new BigtableChannelPrimer(projectId, instanceId, appProfileId, credentials, headers);
+  }
+
+  BigtableChannelPrimer(
+      String projectId,
+      String instanceId,
+      String appProfileId,
+      Credentials credentials,
+      Map<String, String> headers) {
+    if (credentials != null) {
+      callCredentials = MoreCallCredentials.from(credentials);
+    } else {
+      callCredentials = null;
+    }
+
+    request =
+        PingAndWarmRequest.newBuilder()
+            .setName(InstanceName.of(projectId, instanceId).toString())
+            .setAppProfileId(appProfileId)
+            .build();
+
+    this.headers = headers;
+  }
+
+  @Override
+  public void primeChannel(Channel channel) {
+    try {
+      primeChannelUnsafe(channel);
+    } catch (IOException | RuntimeException e) {
+      LOG.log(Level.WARNING, "Unexpected error while trying to prime a channel", e);
+    }
+  }
+
+  private void primeChannelUnsafe(Channel channel) throws IOException {
+    sendPrimeRequestsBlocking(channel);
+  }
+
+  private void sendPrimeRequestsBlocking(Channel channel) {
+    try {
+      sendPrimeRequestsAsync(channel).get(1, TimeUnit.MINUTES);
+    } catch (Throwable e) {
+      // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
+      // channels if the new
+      // channel is bad.
+      LOG.log(Level.WARNING, "Failed to prime channel", e);
+    }
+  }
+
+  @Override
+  public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(Channel managedChannel) {
+    ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
+        managedChannel.newCall(
+            BigtableGrpc.getPingAndWarmMethod(),
+            CallOptions.DEFAULT
+                .withCallCredentials(callCredentials)
+                .withDeadline(Deadline.after(1, TimeUnit.MINUTES)));
+
+    SettableApiFuture<PingAndWarmResponse> future = SettableApiFuture.create();
+    clientCall.start(
+        new ClientCall.Listener<PingAndWarmResponse>() {
+          private PingAndWarmResponse response;
+
+          @Override
+          public void onMessage(PingAndWarmResponse message) {
+            response = message;
+          }
+
+          @Override
+          public void onClose(Status status, Metadata trailers) {
+            if (status.isOk()) {
+              future.set(response);
+            } else {
+              // Propagate the gRPC error to the future.
+              future.setException(status.asException(trailers));
+            }
+          }
+        },
+        createMetadata(headers, request));
+
+    try {
+      // Send the request message.
+      clientCall.sendMessage(request);
+      // Signal that no more messages will be sent.
+      clientCall.halfClose();
+      // Request the response from the server.
+      clientCall.request(Integer.MAX_VALUE);
+    } catch (Throwable t) {
+      // If sending fails, cancel the call and notify the future.
+      clientCall.cancel("Failed to send priming request", t);
+      future.setException(t);
+    }
+
+    return future;
+  }
+
+  // Internal headers (bigtable-features and user-agent) are merged in ClientContext and set on
+  // the transport channel. So when primeChannel is called from gax, the managed channel already has
+  // those headers. This is tested in EnhancedBigtableStubTest.
+  private static Metadata createMetadata(Map<String, String> headers, PingAndWarmRequest request) {
+    Metadata metadata = new Metadata();
+
+    headers.forEach(
+        (k, v) -> metadata.put(Metadata.Key.of(k, Metadata.ASCII_STRING_MARSHALLER), v));
+    try {
+      metadata.put(
+          REQUEST_PARAMS,
+          String.format(
+              "name=%s&app_profile_id=%s",
+              URLEncoder.encode(request.getName(), "UTF-8"),
+              URLEncoder.encode(request.getAppProfileId(), "UTF-8")));
+    } catch (UnsupportedEncodingException e) {
+      LOG.log(Level.WARNING, "Failed to encode request params", e);
+    }
+
+    return metadata;
+  }
+}

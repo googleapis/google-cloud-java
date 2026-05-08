@@ -1,0 +1,509 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.data.v2;
+
+import static com.google.common.truth.Truth.assertThat;
+
+import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.batching.BatcherImpl;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.WatchdogProvider;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.FeatureFlags;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.ReadRowsResponse;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
+import com.google.common.base.Preconditions;
+import com.google.common.io.BaseEncoding;
+import io.grpc.Attributes;
+import io.grpc.Grpc;
+import io.grpc.Metadata;
+import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCall.Listener;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
+import io.grpc.ServerTransportFilter;
+import io.grpc.stub.StreamObserver;
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.net.SocketAddress;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.LinkedBlockingDeque;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+import org.mockito.stubbing.Answer;
+
+@RunWith(JUnit4.class)
+public class BigtableDataClientFactoryTest {
+  @Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
+
+  private static final String DEFAULT_PROJECT_ID = "fake-project";
+  private static final String DEFAULT_INSTANCE_ID = "fake-instance";
+  private static final String DEFAULT_APP_PROFILE_ID = "fake-app-profile";
+
+  private Server server;
+  private FakeBigtableService service;
+
+  private TransportChannelProvider transportChannelProvider;
+  private CredentialsProvider credentialsProvider;
+  private ExecutorProvider executorProvider;
+  private WatchdogProvider watchdogProvider;
+  private BigtableDataSettings defaultSettings;
+
+  private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
+  private final BlockingQueue<Metadata> requestMetadata = new LinkedBlockingDeque<>();
+  private final ConcurrentMap<SocketAddress, Boolean> warmedChannels = new ConcurrentHashMap<>();
+
+  @Before
+  public void setUp() throws IOException {
+    service = new FakeBigtableService();
+    server =
+        FakeServiceBuilder.create(service)
+            .intercept(
+                new ServerInterceptor() {
+                  @Override
+                  public <ReqT, RespT> Listener<ReqT> interceptCall(
+                      ServerCall<ReqT, RespT> call,
+                      Metadata headers,
+                      ServerCallHandler<ReqT, RespT> next) {
+                    requestMetadata.add(headers);
+
+                    // Check if the call is PingAndWarm and mark the channel address as warmed up.
+                    if (BigtableGrpc.getPingAndWarmMethod().equals(call.getMethodDescriptor())) {
+                      SocketAddress remoteAddr =
+                          call.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
+                      if (remoteAddr != null) {
+                        warmedChannels.put(remoteAddr, true);
+                      }
+                    }
+                    return next.startCall(call, headers);
+                  }
+                })
+            .addTransportFilter(
+                new ServerTransportFilter() {
+                  @Override
+                  public void transportTerminated(Attributes transportAttrs) {
+                    terminateAttributes.add(transportAttrs);
+                  }
+                })
+            .start();
+
+    BigtableDataSettings.Builder builder =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId(DEFAULT_PROJECT_ID)
+            .setInstanceId(DEFAULT_INSTANCE_ID)
+            .setAppProfileId(DEFAULT_APP_PROFILE_ID);
+
+    transportChannelProvider =
+        Mockito.mock(
+            TransportChannelProvider.class,
+            new BuilderAnswer<>(
+                TransportChannelProvider.class,
+                builder.stubSettings().getTransportChannelProvider()));
+
+    credentialsProvider =
+        Mockito.mock(
+            CredentialsProvider.class,
+            new BuilderAnswer<>(
+                CredentialsProvider.class, builder.stubSettings().getCredentialsProvider()));
+
+    executorProvider =
+        Mockito.mock(
+            ExecutorProvider.class,
+            new BuilderAnswer<>(
+                ExecutorProvider.class, builder.stubSettings().getBackgroundExecutorProvider()));
+
+    watchdogProvider =
+        Mockito.mock(
+            WatchdogProvider.class,
+            new BuilderAnswer<>(
+                WatchdogProvider.class, builder.stubSettings().getStreamWatchdogProvider()));
+
+    ApiClock apiClock = builder.stubSettings().getClock();
+
+    builder
+        .stubSettings()
+        .setTransportChannelProvider(transportChannelProvider)
+        .setCredentialsProvider(credentialsProvider)
+        .setBackgroundExecutorProvider(executorProvider)
+        .setStreamWatchdogProvider(watchdogProvider)
+        .setClock(apiClock);
+
+    defaultSettings = builder.build();
+  }
+
+  @After
+  public void tearDown() {
+    server.shutdown();
+  }
+
+  @Test
+  public void testNewClientsShareTransportChannel() throws Exception {
+    // Create 3 lightweight clients
+    try (BigtableDataClientFactory factory =
+            BigtableDataClientFactory.create(
+                defaultSettings.toBuilder()
+                    .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+                    .disableInternalMetrics()
+                    .build());
+        BigtableDataClient ignored1 = factory.createForInstance("project1", "instance1");
+        BigtableDataClient ignored2 = factory.createForInstance("project2", "instance2");
+        BigtableDataClient ignored3 = factory.createForInstance("project3", "instance3")) {
+
+      // Make sure that only 1 instance is created by each provider
+      Mockito.verify(transportChannelProvider, Mockito.times(1)).getTransportChannel();
+      // getCredentials was called twice, in patchCredentials and when creating the fixed
+      // credentials in BigtableClientContext
+      Mockito.verify(credentialsProvider, Mockito.times(2)).getCredentials();
+      Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+      Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    }
+  }
+
+  @Test
+  public void testCreateDefaultKeepsSettings() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createDefault()) {
+
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
+    }
+
+    assertThat(service.lastRequest.getTableName())
+        .isEqualTo(NameUtil.formatTableName(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, "some-table"));
+    assertThat(service.lastRequest.getAppProfileId()).isEqualTo(DEFAULT_APP_PROFILE_ID);
+  }
+
+  @Test
+  public void testCreateForAppProfileHasCorrectSettings() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createForAppProfile("other-app-profile")) {
+
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
+    }
+
+    assertThat(service.lastRequest.getTableName())
+        .isEqualTo(NameUtil.formatTableName(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, "some-table"));
+    assertThat(service.lastRequest.getAppProfileId()).isEqualTo("other-app-profile");
+  }
+
+  @Test
+  public void testCreateForInstanceHasCorrectSettings() throws Exception {
+
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createForInstance("other-project", "other-instance")) {
+
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
+    }
+
+    assertThat(service.lastRequest.getTableName())
+        .isEqualTo(NameUtil.formatTableName("other-project", "other-instance", "some-table"));
+    // app profile should be reset to default
+    assertThat(service.lastRequest.getAppProfileId()).isEmpty();
+  }
+
+  @Test
+  public void testCreateForInstanceWithAppProfileHasCorrectSettings() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client =
+            factory.createForInstance("other-project", "other-instance", "other-app-profile")) {
+
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
+    }
+
+    assertThat(service.lastRequest.getTableName())
+        .isEqualTo(NameUtil.formatTableName("other-project", "other-instance", "some-table"));
+    // app profile should be reset to default
+    assertThat(service.lastRequest.getAppProfileId()).isEqualTo("other-app-profile");
+  }
+
+  @Test
+  public void testCreateWithRefreshingChannel() throws Exception {
+    int poolSize = 3;
+    // TODO: remove the suppression when setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
+    BigtableDataSettings.Builder builder =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId(DEFAULT_PROJECT_ID)
+            .setInstanceId(DEFAULT_INSTANCE_ID)
+            .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+            .setRefreshingChannel(true);
+    builder
+        .stubSettings()
+        .setCredentialsProvider(credentialsProvider)
+        .setStreamWatchdogProvider(watchdogProvider)
+        .setBackgroundExecutorProvider(executorProvider);
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
+    channelProviderBuilder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(poolSize));
+    builder.stubSettings().setTransportChannelProvider(channelProviderBuilder.build());
+
+    BigtableDataClientFactory factory = BigtableDataClientFactory.create(builder.build());
+    factory.createDefault();
+    factory.createForAppProfile("other-appprofile");
+    factory.createForInstance("other-project", "other-instance");
+
+    // Make sure that only 1 instance is created by each provider
+    // getCredentials was called twice, in patchCredentials and when creating the fixed credentials
+    // in BigtableClientContext
+    Mockito.verify(credentialsProvider, Mockito.times(2)).getCredentials();
+    Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+    Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    assertThat(warmedChannels).hasSize(poolSize + 1);
+    assertThat(warmedChannels.values()).doesNotContain(false);
+
+    // Wait for all the connections to close asynchronously
+    factory.close();
+    long sleepTimeMs = 1000;
+    Thread.sleep(sleepTimeMs);
+    // Verify that all the channels are closed
+    assertThat(terminateAttributes).hasSize(poolSize + 1);
+  }
+
+  @Test
+  public void testCreateWithRefreshingChannelWithDirectAccessByDefault() throws Exception {
+    int poolSize = 3;
+    // TODO: remove the suppression when setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
+    BigtableDataSettings.Builder builder =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId(DEFAULT_PROJECT_ID)
+            .setInstanceId(DEFAULT_INSTANCE_ID)
+            .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+            .setRefreshingChannel(true);
+    builder
+        .stubSettings()
+        .setCredentialsProvider(credentialsProvider)
+        .setStreamWatchdogProvider(watchdogProvider)
+        .setBackgroundExecutorProvider(executorProvider)
+        .setDirectPathConfig(EnhancedBigtableStubSettings.DirectPathConfig.DEFAULT);
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
+    channelProviderBuilder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(poolSize));
+    builder.stubSettings().setTransportChannelProvider(channelProviderBuilder.build());
+
+    BigtableDataClientFactory factory = BigtableDataClientFactory.create(builder.build());
+    factory.createDefault();
+    factory.createForAppProfile("other-appprofile");
+    factory.createForInstance("other-project", "other-instance");
+
+    // Make sure that only 1 instance is created by each provider
+    // getCredentials was called twice, in patchCredentials and when creating the fixed credentials
+    // in BigtableClientContext
+    Mockito.verify(credentialsProvider, Mockito.times(2)).getCredentials();
+    Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+    Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    assertThat(warmedChannels).hasSize(poolSize + 1);
+    assertThat(warmedChannels.values()).doesNotContain(false);
+
+    // Wait for all the connections to close asynchronously
+    factory.close();
+    long sleepTimeMs = 1000;
+    Thread.sleep(sleepTimeMs);
+    // Verify that all the channels are closed
+    // If we have DEFAULT, it will add one channel temporily
+    assertThat(terminateAttributes).hasSize(poolSize + 1);
+  }
+
+  @Test
+  public void testCreateWithRefreshingChannelDisableDirectAccess() throws Exception {
+    int poolSize = 3;
+    // TODO: remove the suppression when setRefreshingChannel can be removed
+    @SuppressWarnings("deprecation")
+    BigtableDataSettings.Builder builder =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId(DEFAULT_PROJECT_ID)
+            .setInstanceId(DEFAULT_INSTANCE_ID)
+            .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+            .setRefreshingChannel(true);
+
+    builder
+        .stubSettings()
+        .setCredentialsProvider(credentialsProvider)
+        .setStreamWatchdogProvider(watchdogProvider)
+        .setBackgroundExecutorProvider(executorProvider)
+        .setDirectPathConfig(EnhancedBigtableStubSettings.DirectPathConfig.FORCED_OFF);
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) builder.stubSettings().getTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder channelProviderBuilder = channelProvider.toBuilder();
+    channelProviderBuilder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(poolSize));
+    builder.stubSettings().setTransportChannelProvider(channelProviderBuilder.build());
+
+    BigtableDataClientFactory factory = BigtableDataClientFactory.create(builder.build());
+    factory.createDefault();
+    factory.createForAppProfile("other-appprofile");
+    factory.createForInstance("other-project", "other-instance");
+
+    // Make sure that only 1 instance is created by each provider
+    // getCredentials was called twice, in patchCredentials and when creating the fixed credentials
+    // in BigtableClientContext
+    Mockito.verify(credentialsProvider, Mockito.times(2)).getCredentials();
+    Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
+    Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
+    assertThat(warmedChannels).hasSize(poolSize);
+    assertThat(warmedChannels.values()).doesNotContain(false);
+
+    // Wait for all the connections to close asynchronously
+    factory.close();
+    long sleepTimeMs = 1000;
+    Thread.sleep(sleepTimeMs);
+    // Verify that all the channels are closed
+    // If we have DEFAULT, it will add one channel temporily
+    assertThat(terminateAttributes).hasSize(poolSize);
+  }
+
+  @Test
+  public void testFeatureFlags() throws Exception {
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(defaultSettings);
+        BigtableDataClient client = factory.createDefault()) {
+
+      requestMetadata.clear();
+      client.mutateRow(RowMutation.create(TableId.of("some-table"), "some-key").deleteRow());
+    }
+
+    Metadata metadata = requestMetadata.take();
+    String encodedValue =
+        metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    assertThat(encodedValue).isNotNull();
+    FeatureFlags featureFlags =
+        FeatureFlags.parseFrom(BaseEncoding.base64Url().decode(encodedValue));
+
+    assertThat(featureFlags.getReverseScans()).isTrue();
+  }
+
+  @Test
+  public void testBulkMutationFlowControllerConfigured() throws Exception {
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilderForEmulator(server.getPort())
+            .setProjectId("my-project")
+            .setInstanceId("my-instance")
+            .setCredentialsProvider(credentialsProvider)
+            .enableBatchMutationLatencyBasedThrottling(10L)
+            .build();
+    try (BigtableDataClientFactory factory = BigtableDataClientFactory.create(settings)) {
+      BigtableDataClient client1 = factory.createDefault();
+      BigtableDataClient client2 = factory.createForAppProfile("app-profile");
+
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"));
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"))) {
+        assertThat(batcher1.getFlowController()).isSameInstanceAs(batcher2.getFlowController());
+      }
+
+      try (BatcherImpl<?, ?, ?, ?> batcher1 =
+              (BatcherImpl<?, ?, ?, ?>) client1.newBulkMutationBatcher(TableId.of("my-table"));
+          BatcherImpl<?, ?, ?, ?> batcher2 =
+              (BatcherImpl<?, ?, ?, ?>) client2.newBulkMutationBatcher(TableId.of("my-table"))) {
+        assertThat(batcher1.getFlowController()).isNotSameInstanceAs(batcher2.getFlowController());
+      }
+    }
+  }
+
+  private static class FakeBigtableService extends BigtableGrpc.BigtableImplBase {
+
+    volatile MutateRowRequest lastRequest;
+
+    private final ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
+        readRowsRequest -> ReadRowsResponse.getDefaultInstance();
+
+    private final ApiFunction<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallback =
+        pingAndWarmRequest -> PingAndWarmResponse.getDefaultInstance();
+
+    @Override
+    public void readRows(
+        ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
+      try {
+        responseObserver.onNext(readRowsCallback.apply(request));
+        responseObserver.onCompleted();
+      } catch (RuntimeException e) {
+        responseObserver.onError(e);
+      }
+    }
+
+    @Override
+    public void mutateRow(
+        MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
+      lastRequest = request;
+      responseObserver.onNext(MutateRowResponse.getDefaultInstance());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void pingAndWarm(
+        PingAndWarmRequest request, StreamObserver<PingAndWarmResponse> responseObserver) {
+      responseObserver.onNext(pingAndWarmCallback.apply(request));
+      responseObserver.onCompleted();
+    }
+  }
+
+  private static class BuilderAnswer<T> implements Answer<T> {
+
+    private final Class<T> targetClass;
+    private T targetInstance;
+
+    private BuilderAnswer(Class<T> targetClass, T targetInstance) {
+      this.targetClass = targetClass;
+      this.targetInstance = targetInstance;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public T answer(InvocationOnMock invocation) throws Throwable {
+      Method method = invocation.getMethod();
+      Object r = invocation.getMethod().invoke(targetInstance, invocation.getArguments());
+
+      if (method.getName().startsWith("with")
+          && targetClass.isAssignableFrom(method.getReturnType())) {
+        this.targetInstance = castToTarget(r);
+        r = invocation.getMock();
+      }
+      return (T) r;
+    }
+
+    @SuppressWarnings("unchecked")
+    private T castToTarget(Object o) {
+      Preconditions.checkArgument(
+          targetClass.isAssignableFrom(targetClass), "Expected instance of " + targetClass);
+      return (T) o;
+    }
+  }
+}
