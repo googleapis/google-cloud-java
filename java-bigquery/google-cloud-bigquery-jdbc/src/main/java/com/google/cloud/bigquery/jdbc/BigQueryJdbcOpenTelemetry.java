@@ -26,6 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -46,7 +47,38 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
 
-  private static final ConcurrentHashMap<String, OpenTelemetrySdk> sdkCache =
+  private static final class SdkCacheKey {
+    private final String projectId;
+    private final String credentialsHashOrPath;
+    private final boolean enableTrace;
+    private final boolean enableLog;
+
+    SdkCacheKey(
+        String projectId, String credentialsHashOrPath, boolean enableTrace, boolean enableLog) {
+      this.projectId = projectId;
+      this.credentialsHashOrPath = credentialsHashOrPath;
+      this.enableTrace = enableTrace;
+      this.enableLog = enableLog;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      SdkCacheKey that = (SdkCacheKey) o;
+      return enableTrace == that.enableTrace
+          && enableLog == that.enableLog
+          && Objects.equals(projectId, that.projectId)
+          && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(projectId, credentialsHashOrPath, enableTrace, enableLog);
+    }
+  }
+
+  private static final ConcurrentHashMap<SdkCacheKey, OpenTelemetrySdk> sdkCache =
       new ConcurrentHashMap<>();
 
   static class TelemetryConfig {
@@ -143,14 +175,12 @@ public class BigQueryJdbcOpenTelemetry {
     // Once b/503721589 is completed, Service Account (SA) will work as well.
 
     if (enableGcpTraceExporter || enableGcpLogExporter) {
-      String key =
-          (gcpTelemetryProjectId != null ? gcpTelemetryProjectId : "")
-              + ":"
-              + getCredentialsIdentifier(gcpTelemetryCredentials)
-              + ":"
-              + enableGcpTraceExporter
-              + ":"
-              + enableGcpLogExporter;
+      SdkCacheKey key =
+          new SdkCacheKey(
+              gcpTelemetryProjectId,
+              getCredentialsIdentifier(gcpTelemetryCredentials),
+              enableGcpTraceExporter,
+              enableGcpLogExporter);
       return sdkCache.computeIfAbsent(
           key,
           k -> {

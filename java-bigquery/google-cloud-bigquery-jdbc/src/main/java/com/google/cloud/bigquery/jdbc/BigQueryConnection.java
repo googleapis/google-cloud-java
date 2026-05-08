@@ -1004,8 +1004,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter,
-            this.enableGcpLogExporter,
+            Boolean.TRUE.equals(this.enableGcpTraceExporter),
+            Boolean.TRUE.equals(this.enableGcpLogExporter),
             this.customOpenTelemetry,
             this.gcpTelemetryCredentials,
             this.gcpTelemetryProjectId);
@@ -1070,8 +1070,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter,
-            this.enableGcpLogExporter,
+            Boolean.TRUE.equals(this.enableGcpTraceExporter),
+            Boolean.TRUE.equals(this.enableGcpLogExporter),
             this.customOpenTelemetry,
             this.gcpTelemetryCredentials,
             this.gcpTelemetryProjectId);
