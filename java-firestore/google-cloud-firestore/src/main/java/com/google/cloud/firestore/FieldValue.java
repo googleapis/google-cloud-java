@@ -127,6 +127,104 @@ public abstract class FieldValue {
     }
   }
 
+  static class NumericMinimumFieldValue extends FieldValue {
+    final Number operand;
+
+    NumericMinimumFieldValue(Number operand) {
+      this.operand = operand;
+    }
+
+    @Override
+    boolean includeInDocumentMask() {
+      return false;
+    }
+
+    @Override
+    boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    String getMethodName() {
+      return "FieldValue.minimum()";
+    }
+
+    @Override
+    FieldTransform toProto(FieldPath path) {
+      FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
+      fieldTransform.setFieldPath(path.getEncodedPath());
+      fieldTransform.setMinimum(
+          UserDataConverter.encodeValue(path, operand, UserDataConverter.ARGUMENT));
+      return fieldTransform.build();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      NumericMinimumFieldValue that = (NumericMinimumFieldValue) o;
+      return Objects.equals(operand, that.operand);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(operand);
+    }
+  }
+
+  static class NumericMaximumFieldValue extends FieldValue {
+    final Number operand;
+
+    NumericMaximumFieldValue(Number operand) {
+      this.operand = operand;
+    }
+
+    @Override
+    boolean includeInDocumentMask() {
+      return false;
+    }
+
+    @Override
+    boolean includeInDocumentTransform() {
+      return true;
+    }
+
+    @Override
+    String getMethodName() {
+      return "FieldValue.maximum()";
+    }
+
+    @Override
+    FieldTransform toProto(FieldPath path) {
+      FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
+      fieldTransform.setFieldPath(path.getEncodedPath());
+      fieldTransform.setMaximum(
+          UserDataConverter.encodeValue(path, operand, UserDataConverter.ARGUMENT));
+      return fieldTransform.build();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      NumericMaximumFieldValue that = (NumericMaximumFieldValue) o;
+      return Objects.equals(operand, that.operand);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(operand);
+    }
+  }
+
   static class ArrayUnionFieldValue extends FieldValue {
     final List<Object> elements;
 
@@ -287,6 +385,62 @@ public abstract class FieldValue {
   @Nonnull
   public static FieldValue increment(double d) {
     return new NumericIncrementFieldValue(d);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to set the field to the numeric minimum of the field's current and the given value.
+   *
+   * <p>If the current field value is not of type 'number', or if the field does not yet exist, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue minimum(long l) {
+    return new NumericMinimumFieldValue(l);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to set the field to the numeric minimum of the field's current and the given value.
+   *
+   * <p>If the current field value is not of type 'number', or if the field does not yet exist, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue minimum(double d) {
+    return new NumericMinimumFieldValue(d);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to set the field to the numeric maximum of the field's current and the given value.
+   *
+   * <p>If the current field value is not of type 'number', or if the field does not yet exist, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue maximum(long l) {
+    return new NumericMaximumFieldValue(l);
+  }
+
+  /**
+   * Returns a special value that can be used with set(), create() or update() that tells the server
+   * to set the field to the numeric maximum of the field's current and the given value.
+   *
+   * <p>If the current field value is not of type 'number', or if the field does not yet exist, the
+   * transformation will set the field to the given value.
+   *
+   * @return The FieldValue sentinel for use in a call to set(), create() or update().
+   */
+  @Nonnull
+  public static FieldValue maximum(double d) {
+    return new NumericMaximumFieldValue(d);
   }
 
   /**

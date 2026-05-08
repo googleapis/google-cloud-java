@@ -48,6 +48,8 @@ import static com.google.cloud.firestore.LocalFirestoreHelper.get;
 import static com.google.cloud.firestore.LocalFirestoreHelper.getAllResponse;
 import static com.google.cloud.firestore.LocalFirestoreHelper.increment;
 import static com.google.cloud.firestore.LocalFirestoreHelper.map;
+import static com.google.cloud.firestore.LocalFirestoreHelper.maximum;
+import static com.google.cloud.firestore.LocalFirestoreHelper.minimum;
 import static com.google.cloud.firestore.LocalFirestoreHelper.object;
 import static com.google.cloud.firestore.LocalFirestoreHelper.serverTimestamp;
 import static com.google.cloud.firestore.LocalFirestoreHelper.set;
@@ -525,6 +527,56 @@ public class DocumentReferenceTest {
                 increment(Value.newBuilder().setIntegerValue(1).build()),
                 "double",
                 increment(Value.newBuilder().setDoubleValue(1.1).build())));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void setWithMinimum() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("integer", FieldValue.minimum(1), "double", FieldValue.minimum(1.1)))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.emptyMap()),
+            transform(
+                "integer",
+                minimum(Value.newBuilder().setIntegerValue(1).build()),
+                "double",
+                minimum(Value.newBuilder().setDoubleValue(1.1).build())));
+
+    CommitRequest commitRequest = commitCapture.getValue();
+    assertCommitEquals(set, commitRequest);
+  }
+
+  @Test
+  public void setWithMaximum() throws Exception {
+    doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+
+    documentReference
+        .set(map("integer", FieldValue.maximum(1), "double", FieldValue.maximum(1.1)))
+        .get();
+
+    CommitRequest set =
+        commit(
+            set(Collections.emptyMap()),
+            transform(
+                "integer",
+                maximum(Value.newBuilder().setIntegerValue(1).build()),
+                "double",
+                maximum(Value.newBuilder().setDoubleValue(1.1).build())));
 
     CommitRequest commitRequest = commitCapture.getValue();
     assertCommitEquals(set, commitRequest);

@@ -1971,6 +1971,60 @@ public class ITSystemTest extends ITBaseTest {
   }
 
   @Test
+  public void integerMinimum() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("min", 2L)).get();
+    docRef.update("min", FieldValue.minimum(1)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(1L, docSnap.get("min"));
+  }
+
+  @Test
+  public void floatMinimum() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("min", 2.2)).get();
+    docRef.update("min", FieldValue.minimum(1.1)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(1.1, (Double) docSnap.get("min"), DOUBLE_EPSILON);
+  }
+
+  @Test
+  public void minimumAgainstNonNumeric() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("min", "any string")).get();
+    docRef.update("min", FieldValue.minimum(1)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(1L, docSnap.get("min"));
+  }
+
+  @Test
+  public void integerMaximum() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("max", 1L)).get();
+    docRef.update("max", FieldValue.maximum(2)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(2L, docSnap.get("max"));
+  }
+
+  @Test
+  public void floatMaximum() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("max", 1.1)).get();
+    docRef.update("max", FieldValue.maximum(2.2)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(2.2, (Double) docSnap.get("max"), DOUBLE_EPSILON);
+  }
+
+  @Test
+  public void maximumAgainstNonNumeric() throws ExecutionException, InterruptedException {
+    DocumentReference docRef = randomColl.document();
+    docRef.set(Collections.singletonMap("max", "any string")).get();
+    docRef.update("max", FieldValue.maximum(2)).get();
+    DocumentSnapshot docSnap = docRef.get().get();
+    assertEquals(2L, docSnap.get("max"));
+  }
+
+  @Test
   public void getAllWithObserver() throws Exception {
     DocumentReference ref1 = randomColl.document("doc1");
     ref1.set(ALL_SUPPORTED_TYPES_MAP).get();

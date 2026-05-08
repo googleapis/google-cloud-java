@@ -501,6 +501,14 @@ public final class LocalFirestoreHelper {
     return FieldTransform.newBuilder().setIncrement(value).build();
   }
 
+  public static FieldTransform minimum(Value value) {
+    return FieldTransform.newBuilder().setMinimum(value).build();
+  }
+
+  public static FieldTransform maximum(Value value) {
+    return FieldTransform.newBuilder().setMaximum(value).build();
+  }
+
   public static FieldTransform arrayUnion(Value... values) {
     return FieldTransform.newBuilder()
         .setAppendMissingElements(ArrayValue.newBuilder().addAllValues(Arrays.asList(values)))
