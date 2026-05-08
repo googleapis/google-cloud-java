@@ -45,7 +45,7 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
 
-  private static final ConcurrentHashMap<String, io.opentelemetry.sdk.OpenTelemetrySdk> sdkCache =
+  private static final ConcurrentHashMap<String, OpenTelemetrySdk> sdkCache =
       new ConcurrentHashMap<>();
 
   static class TelemetryConfig {
