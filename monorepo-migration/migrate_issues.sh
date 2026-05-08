@@ -62,7 +62,7 @@ fi
 # Ensure label exists in target repo
 if [[ -n "$REQUIRED_LABEL" ]]; then
   echo "Ensuring label '$REQUIRED_LABEL' exists in $TARGET_REPO..."
-  if ! gh label list --repo "$TARGET_REPO" --json name --jq '.[].name' | grep -fxq "$REQUIRED_LABEL"; then
+  if ! gh label list --repo "$TARGET_REPO" --json name --jq '.[].name' | grep -Fxq "$REQUIRED_LABEL"; then
     if [ "$DRY_RUN" = true ]; then
       echo "  [DRY RUN] Would create label '$REQUIRED_LABEL' in $TARGET_REPO"
     else
