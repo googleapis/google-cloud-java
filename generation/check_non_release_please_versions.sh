@@ -23,6 +23,7 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
       [[ "${pomFile}" =~ .*java-pubsub.* ]] || \
       [[ "${pomFile}" =~ .*java-bigtable.* ]] || \
+      [[ "${pomFile}" =~ .*java-firestore.* ]] || \
       [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
       [[ "${pomFile}" =~ .*java-compute.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then

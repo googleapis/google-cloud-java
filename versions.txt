@@ -1044,3 +1044,11 @@ proto-google-cloud-bigtable-admin-v2:2.78.0:2.78.1-SNAPSHOT
 proto-google-cloud-bigtable-v2:2.78.0:2.78.1-SNAPSHOT
 google-cloud-bigtable-emulator:0.215.0:0.215.1-SNAPSHOT
 google-cloud-bigtable-emulator-core:0.215.0:0.215.1-SNAPSHOT
+google-cloud-firestore:3.42.0:3.42.1-SNAPSHOT
+google-cloud-firestore-admin:3.42.0:3.42.1-SNAPSHOT
+google-cloud-firestore-bom:3.42.0:3.42.1-SNAPSHOT
+grpc-google-cloud-firestore-admin-v1:3.42.0:3.42.1-SNAPSHOT
+grpc-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-cloud-firestore-admin-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-cloud-firestore-bundle-v1:3.42.0:3.42.1-SNAPSHOT
