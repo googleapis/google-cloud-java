@@ -19,7 +19,12 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -29,6 +34,19 @@ public class BigQueryJdbcOpenTelemetry {
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
   static final String BIGQUERY_NAMESPACE = "com.google.cloud.bigquery";
   public static final String CONNECTION_ID_BAGGAGE_KEY = "jdbc.connection_id";
+  private static final String OTEL_TRACES_EXPORTER = "otel.traces.exporter";
+  private static final String OTEL_EXPORTER_OTLP_ENDPOINT = "otel.exporter.otlp.endpoint";
+  private static final String OTEL_LOGS_EXPORTER = "otel.logs.exporter";
+  private static final String OTEL_METRICS_EXPORTER = "otel.metrics.exporter";
+  private static final String GOOGLE_CLOUD_PROJECT = "google.cloud.project";
+  private static final String CREDENTIALS_JSON = "google.cloud.credentials.json";
+  private static final String CREDENTIALS_PATH = "google.cloud.credentials.path";
+  private static final String OTLP_ENDPOINT_VALUE = "https://telemetry.googleapis.com:443";
+  private static final String EXPORTER_NONE = "none";
+  private static final String EXPORTER_OTLP = "otlp";
+
+  private static final ConcurrentHashMap<String, io.opentelemetry.sdk.OpenTelemetrySdk> sdkCache =
+      new ConcurrentHashMap<>();
 
   static class TelemetryConfig {
     final OpenTelemetry openTelemetry;
@@ -36,10 +54,10 @@ public class BigQueryJdbcOpenTelemetry {
     final boolean useDirectGcpLogging;
 
     TelemetryConfig(
-        OpenTelemetry openTelemetry, Logging loggingClient, boolean useDirectGcpLogging) {
+        OpenTelemetry openTelemetry, Logging loggingClient, Boolean useDirectGcpLogging) {
       this.openTelemetry = openTelemetry;
       this.loggingClient = loggingClient;
-      this.useDirectGcpLogging = useDirectGcpLogging;
+      this.useDirectGcpLogging = useDirectGcpLogging != null ? useDirectGcpLogging : false;
     }
   }
 
@@ -70,7 +88,7 @@ public class BigQueryJdbcOpenTelemetry {
       String connectionId,
       OpenTelemetry openTelemetry,
       Logging loggingClient,
-      boolean useDirectGcpLogging) {
+      Boolean useDirectGcpLogging) {
     connectionConfigs.put(
         connectionId, new TelemetryConfig(openTelemetry, loggingClient, useDirectGcpLogging));
   }
@@ -94,14 +112,59 @@ public class BigQueryJdbcOpenTelemetry {
   public static OpenTelemetry getOpenTelemetry(
       boolean enableGcpTraceExporter,
       boolean enableGcpLogExporter,
-      OpenTelemetry customOpenTelemetry) {
+      OpenTelemetry customOpenTelemetry,
+      String gcpTelemetryCredentials,
+      String gcpTelemetryProjectId) {
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
     }
 
+    // NOTE: Currently, tracing only fully supports Application Default Credentials (ADC).
+    // Once b/503721589 is completed, Service Account (SA) will work as well.
+
     if (enableGcpTraceExporter || enableGcpLogExporter) {
-      // TODO(b/491238299): Initialize and return GCP-specific auto-configured SDK
-      return OpenTelemetry.noop();
+      String key =
+          (gcpTelemetryProjectId != null ? gcpTelemetryProjectId : "")
+              + ":"
+              + (gcpTelemetryCredentials != null ? gcpTelemetryCredentials : "");
+      return sdkCache.computeIfAbsent(
+          key,
+          k -> {
+            Map<String, String> props = new HashMap<>();
+            if (gcpTelemetryCredentials != null) {
+              byte[] credsBytes = gcpTelemetryCredentials.getBytes(StandardCharsets.UTF_8);
+              if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
+                props.put(CREDENTIALS_JSON, gcpTelemetryCredentials);
+              } else {
+                props.put(CREDENTIALS_PATH, gcpTelemetryCredentials);
+              }
+            }
+
+            if (enableGcpTraceExporter) {
+              props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
+              props.put(OTEL_EXPORTER_OTLP_ENDPOINT, OTLP_ENDPOINT_VALUE);
+            } else {
+              props.put(OTEL_TRACES_EXPORTER, EXPORTER_NONE);
+            }
+
+            // Logs are handled directly via GCP logging
+            props.put(OTEL_LOGS_EXPORTER, EXPORTER_NONE);
+            // Metrics are deferred to a future phase
+            props.put(OTEL_METRICS_EXPORTER, EXPORTER_NONE);
+
+            if (gcpTelemetryProjectId != null) {
+              props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
+            }
+
+            AutoConfiguredOpenTelemetrySdk autoConfigured =
+                AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
+
+            OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
+
+            Runtime.getRuntime().addShutdownHook(new Thread(sdk::close));
+
+            return sdk;
+          });
     }
 
     return OpenTelemetry.noop();

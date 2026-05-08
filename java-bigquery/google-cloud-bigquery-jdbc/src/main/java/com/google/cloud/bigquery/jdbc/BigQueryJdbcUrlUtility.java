@@ -98,6 +98,8 @@ final class BigQueryJdbcUrlUtility {
   static final String BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME = "BIGQUERY";
   static final String STS_ENDPOINT_OVERRIDE_PROPERTY_NAME = "STS";
   static final String OAUTH_ACCESS_TOKEN_PROPERTY_NAME = "OAuthAccessToken";
+  static final String GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME = "gcpTelemetryProjectId";
+  static final String GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME = "gcpTelemetryCredentials";
   static final String OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME = "OAuthAccessTokenReadonly";
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
@@ -628,6 +630,14 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Enables or disables GCP OpenTelemetry Log exporter. Disabled by default.")
                       .setDefaultValue(String.valueOf(DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME)
+                      .setDescription("Path or raw JSON of credentials for OTel exporter.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME)
+                      .setDescription("GCP Project ID for OTel exporter.")
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =

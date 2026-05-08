@@ -58,6 +58,8 @@ public class DataSource implements javax.sql.DataSource {
   private String logLevel;
   private Boolean enableSession;
   private String logPath;
+  private String gcpTelemetryProjectId;
+  private String gcpTelemetryCredentials;
   private Integer oAuthType;
   private String oAuthServiceAcctEmail;
   private String oAuthPvtKeyPath;
@@ -134,6 +136,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME, DataSource::setProjectId)
           .put(BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME, DataSource::setDefaultDataset)
           .put(BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME, DataSource::setLocation)
+          .put(
+              BigQueryJdbcUrlUtility.GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME,
+              DataSource::setGcpTelemetryProjectId)
+          .put(
+              BigQueryJdbcUrlUtility.GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME,
+              DataSource::setGcpTelemetryCredentials)
           .put(
               BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
               (ds, val) ->
@@ -865,6 +873,22 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setLogPath(String logPath) {
     this.logPath = logPath;
+  }
+
+  public String getGcpTelemetryProjectId() {
+    return gcpTelemetryProjectId;
+  }
+
+  public void setGcpTelemetryProjectId(String gcpTelemetryProjectId) {
+    this.gcpTelemetryProjectId = gcpTelemetryProjectId;
+  }
+
+  public String getGcpTelemetryCredentials() {
+    return gcpTelemetryCredentials;
+  }
+
+  public void setGcpTelemetryCredentials(String gcpTelemetryCredentials) {
+    this.gcpTelemetryCredentials = gcpTelemetryCredentials;
   }
 
   public String getUniverseDomain() {

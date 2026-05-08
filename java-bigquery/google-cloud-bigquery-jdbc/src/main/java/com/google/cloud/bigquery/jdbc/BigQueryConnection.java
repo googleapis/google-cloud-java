@@ -88,6 +88,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int transactionIsolation;
   List<SQLWarning> sqlWarnings;
   String catalog;
+  String gcpTelemetryCredentials;
+  String gcpTelemetryProjectId;
   int holdability;
   long retryTimeoutInSeconds;
   Duration retryTimeoutDuration;
@@ -169,6 +171,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
       this.maxBytesBilled = ds.getMaximumBytesBilled();
+      this.gcpTelemetryCredentials = ds.getGcpTelemetryCredentials();
+      this.gcpTelemetryProjectId = ds.getGcpTelemetryProjectId();
       this.retryTimeoutInSeconds = ds.getTimeout();
       this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
       this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
@@ -1000,14 +1004,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
+            this.customOpenTelemetry,
+            this.gcpTelemetryCredentials,
+            this.gcpTelemetryProjectId);
 
-    if (this.enableGcpLogExporter || this.customOpenTelemetry != null) {
+    if (Boolean.TRUE.equals(this.enableGcpLogExporter) || this.customOpenTelemetry != null) {
       BigQueryJdbcOpenTelemetry.registerConnection(
           this.connectionId, openTelemetry, null, this.enableGcpLogExporter);
     }
 
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
       this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
     }
@@ -1062,8 +1070,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
+            this.customOpenTelemetry,
+            this.gcpTelemetryCredentials,
+            this.gcpTelemetryProjectId);
+    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
       bigQueryReadSettings.setOpenTelemetryTracerProvider(openTelemetry.getTracerProvider());
     }
 
