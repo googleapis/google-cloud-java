@@ -69,4 +69,9 @@ class TestUtils {
     }
     assertEquals(expectedMetricsValue, actualMetricsValue);
   }
+
+  static RegionalAccessBoundary createDummyRab(com.google.api.client.util.Clock clock) {
+    return new RegionalAccessBoundary(
+        "dummy-locations", java.util.Arrays.asList("dummy-loc"), clock);
+  }
 }

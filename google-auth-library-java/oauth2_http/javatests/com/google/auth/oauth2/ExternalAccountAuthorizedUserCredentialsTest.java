@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -130,9 +131,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   }
 
   @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
+  void tearDown() {}
 
   @Test
   void builder_allFields() throws IOException {
@@ -708,6 +707,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -719,6 +719,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata_withQuotaProjectId() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -737,6 +738,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
             .setHttpTransportFactory(transportFactory)
             .setAccessToken(new AccessToken(ACCESS_TOKEN, /* expirationTime= */ null))
             .build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -1243,9 +1245,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
 
   @org.junit.jupiter.api.Test
   void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     ExternalAccountAuthorizedUserCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.newBuilder()

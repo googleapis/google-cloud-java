@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import static com.google.auth.oauth2.ComputeEngineCredentials.METADATA_RESPONSE_EMPTY_CONTENT_ERROR_MESSAGE;
 import static com.google.auth.oauth2.ImpersonatedCredentialsTest.SA_CLIENT_EMAIL;
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -79,11 +80,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @org.junit.jupiter.api.BeforeEach
   void setUp() {}
-
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
 
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
 
@@ -398,6 +394,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -414,6 +411,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -421,6 +419,8 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertNotNull(credentials.getAccessToken());
     ComputeEngineCredentials scopedCredentialCopy =
         (ComputeEngineCredentials) credentials.createScoped(SCOPES);
+    scopedCredentialCopy.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(scopedCredentialCopy.clock));
     assertNull(scopedCredentialCopy.getAccessToken());
     Map<String, List<String>> metadataForCopiedCredentials =
         scopedCredentialCopy.getRequestMetadata(CALL_URI);
@@ -435,6 +435,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     IOException exception =
         assertThrows(IOException.class, () -> credentials.getRequestMetadata(CALL_URI));
     String message = exception.getMessage();
@@ -450,6 +451,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     IOException exception =
         assertThrows(IOException.class, () -> credentials.getRequestMetadata(CALL_URI));
     String message = exception.getMessage();
@@ -573,6 +575,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertEquals(defaultAccountEmail, credentials.getAccount());
 
@@ -606,6 +609,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     RuntimeException exception = assertThrows(RuntimeException.class, credentials::getAccount);
     assertEquals("Failed to get service account", exception.getMessage());
@@ -637,6 +641,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     RuntimeException exception = assertThrows(RuntimeException.class, credentials::getAccount);
     assertEquals("Failed to get service account", exception.getMessage());
@@ -654,6 +659,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setSignature(expectedSignature);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertArrayEquals(expectedSignature, credentials.sign(expectedSignature));
   }
@@ -666,6 +672,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     transportFactory.transport.setStatusCode(501);
     assertThrows(IOException.class, credentials::getUniverseDomain);
@@ -684,6 +691,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setSignature(expectedSignature);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     SigningException exception =
         assertThrows(SigningException.class, () -> credentials.sign(expectedSignature));
@@ -719,6 +727,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     byte[] bytes = {0xD, 0xE, 0xA, 0xD};
 
@@ -757,6 +766,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     byte[] bytes = {0xD, 0xE, 0xA, 0xD};
 
@@ -788,6 +798,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     IOException exception = assertThrows(IOException.class, credentials::refreshAccessToken);
     assertTrue(exception.getCause().getMessage().contains("503"));
@@ -851,6 +862,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String universeDomain = credentials.getUniverseDomain();
     assertEquals("some-universe.xyz", universeDomain);
@@ -878,6 +890,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String universeDomain = credentials.getUniverseDomain();
     assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, universeDomain);
@@ -905,6 +918,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String universeDomain = credentials.getUniverseDomain();
     assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, universeDomain);
@@ -951,6 +965,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     for (int status = 400; status < 600; status++) {
       // 404 should not throw and tested separately
@@ -991,6 +1006,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     byte[] bytes = {0xD, 0xE, 0xA, 0xD};
 
@@ -1007,6 +1023,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -1027,6 +1044,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -1046,6 +1064,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -1072,6 +1091,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -1100,6 +1120,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     IOException exception =
         assertThrows(IOException.class, () -> credentials.idTokenWithAudience("Audience", null));
     assertEquals(
@@ -1117,6 +1138,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setEmptyContent(true);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     IOException exception =
         assertThrows(IOException.class, () -> credentials.idTokenWithAudience("Audience", null));
     assertEquals(METADATA_RESPONSE_EMPTY_CONTENT_ERROR_MESSAGE, exception.getMessage());
@@ -1128,6 +1150,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_SERVICE_UNAVAILABLE);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     assertThrows(
         GoogleAuthException.class, () -> credentials.idTokenWithAudience("Audience", null));
   }
@@ -1152,6 +1175,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     String projectId = credentials.getProjectId();
     assertEquals("some-project-id", projectId);
   }
@@ -1162,6 +1186,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_SERVICE_UNAVAILABLE);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     assertNull(credentials.getProjectId());
   }
 
@@ -1171,6 +1196,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     assertNull(credentials.getProjectId());
   }
 
@@ -1180,6 +1206,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         new MockRequestCountingTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     credentials.setProjectId("explicit.project_id");
 
     assertEquals("explicit.project_id", credentials.getProjectId());
@@ -1188,9 +1215,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @org.junit.jupiter.api.Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     String defaultAccountEmail = "default@email.com";
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();

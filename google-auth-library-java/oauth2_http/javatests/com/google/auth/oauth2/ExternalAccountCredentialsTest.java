@@ -35,6 +35,7 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT;
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -90,11 +91,6 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @BeforeEach
   void setup() {
     transportFactory = new MockExternalAccountCredentialsTransportFactory();
-  }
-
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
   @Test
@@ -1113,6 +1109,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                 .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
                 .setQuotaProjectId("quotaProjectId")
                 .build();
+    testCredentials.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(testCredentials.clock));
 
     Map<String, List<String>> requestMetadata =
         testCredentials.getRequestMetadata(URI.create("http://googleapis.com/foo/bar"));
@@ -1302,9 +1300,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_workload_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String audience =
         "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
 
@@ -1339,9 +1335,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_workforce_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String audience =
         "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
 
@@ -1376,9 +1370,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_impersonated_workload_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String projectNumber = "12345";
     String poolId = "my-pool";
     String providerId = "my-provider";
@@ -1440,9 +1432,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_impersonated_workforce_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String poolId = "my-pool";
     String providerId = "my-provider";
     String audience =
