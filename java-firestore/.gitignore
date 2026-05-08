@@ -1,8 +1,0 @@
-target/
-.idea/
-.idx/
-.vscode/
-*.iml
-__pycache__/
-.DS_Store
-.flattened-pom.xml
