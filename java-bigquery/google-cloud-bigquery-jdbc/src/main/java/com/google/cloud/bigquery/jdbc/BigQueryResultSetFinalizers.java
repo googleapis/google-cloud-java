@@ -39,7 +39,7 @@ class BigQueryResultSetFinalizers {
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
-      LOG.finestTrace("finalizeResources", () -> "++enter++");
+      LOG.finestTrace("finalizeResources", "++enter++");
       if (ownedThread != null && !ownedThread.isInterrupted()) {
         ownedThread.interrupt();
       }
@@ -60,7 +60,7 @@ class BigQueryResultSetFinalizers {
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
-      LOG.finestTrace("finalizeResources", () -> "++enter++");
+      LOG.finestTrace("finalizeResources", "++enter++");
       if (ownedThreads != null) {
         for (Thread ownedThread : ownedThreads) {
           if (!ownedThread.isInterrupted()) {

@@ -56,14 +56,14 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   @Override
   public final String getBaseTypeName() {
-    LOG.finestTrace("getBaseTypeName", () -> "++enter++");
+    LOG.finestTrace("getBaseTypeName", "++enter++");
     ensureValid();
     return this.schema.getType().getStandardType().name();
   }
 
   @Override
   public final int getBaseType() {
-    LOG.finestTrace("getBaseType", () -> "++enter++");
+    LOG.finestTrace("getBaseType", "++enter++");
     ensureValid();
     return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
         schema.getType().getStandardType());
@@ -92,7 +92,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected Object getArrayInternal(int fromIndex, int toIndexExclusive) {
-    LOG.finestTrace("getArrayInternal", () -> "++enter++");
+    LOG.finestTrace("getArrayInternal", "++enter++");
     Class<?> targetClass = getTargetClass();
     int size = toIndexExclusive - fromIndex;
     Object javaArray = Array.newInstance(targetClass, size);
@@ -104,7 +104,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected void ensureValid() throws IllegalStateException {
-    LOG.finestTrace("ensureValid", () -> "++enter++");
+    LOG.finestTrace("ensureValid", "++enter++");
     if (!this.valid) {
       IllegalStateException ex = new IllegalStateException(INVALID_ARRAY);
       LOG.severe(INVALID_ARRAY, ex);
@@ -113,19 +113,19 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected void markInvalid() {
-    LOG.finestTrace("markInvalid", () -> "++enter++");
+    LOG.finestTrace("markInvalid", "++enter++");
     this.schema = null;
     this.valid = false;
   }
 
   protected Field singleElementSchema() {
-    LOG.finestTrace("singleElementSchema", () -> "++enter++");
+    LOG.finestTrace("singleElementSchema", "++enter++");
     return this.schema.toBuilder().setMode(Mode.REQUIRED).build();
   }
 
   protected Tuple<Integer, Integer> createRange(long index, int count, int size)
       throws IllegalStateException {
-    LOG.finestTrace("createRange", () -> "++enter++");
+    LOG.finestTrace("createRange", "++enter++");
     // jdbc array follows 1 based array indexing
     long normalisedFromIndex = index - 1;
     if (normalisedFromIndex + count > size) {
@@ -142,7 +142,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected Class<?> getTargetClass() {
-    LOG.finestTrace("getTargetClass", () -> "++enter++");
+    LOG.finestTrace("getTargetClass", "++enter++");
     return this.arrayOfStruct
         ? Struct.class
         : BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
@@ -152,7 +152,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   abstract Object getCoercedValue(int index);
 
   static boolean isArray(Field currentSchema) {
-    LOG.finestTrace("isArray", () -> "++enter++");
+    LOG.finestTrace("isArray", "++enter++");
     return currentSchema.getMode() == REPEATED;
   }
 

@@ -52,7 +52,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
   }
 
   static boolean isStruct(Field currentSchema) {
-    LOG.finestTrace("isStruct", () -> "++enter++");
+    LOG.finestTrace("isStruct", "++enter++");
     return currentSchema.getType().getStandardType() == STRUCT;
   }
 

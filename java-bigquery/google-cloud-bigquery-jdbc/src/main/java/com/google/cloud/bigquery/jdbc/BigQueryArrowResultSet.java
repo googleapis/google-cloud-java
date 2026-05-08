@@ -96,7 +96,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       BigQuery bigQuery)
       throws SQLException {
     super(bigQuery, statement, schema, isNested);
-    LOG.finestTrace("<init>", () -> "++enter++");
+    LOG.finestTrace("<init>", "++enter++");
     this.totalRows = totalRows;
     this.buffer = buffer;
     this.currentNestedBatch = currentNestedBatch;
@@ -181,7 +181,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     private void deserializeArrowBatch(ArrowRecordBatch batch) throws SQLException {
-      LOG.finestTrace("deserializeArrowBatch", () -> "++enter++");
+      LOG.finestTrace("deserializeArrowBatch", "++enter++");
       try {
         if (vectorSchemaRoot != null) {
           // Clear vectorSchemaRoot before populating a new batch
@@ -204,7 +204,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
     @Override
     public void close() {
-      LOG.finestTrace("close", () -> "++enter++");
+      LOG.fineTrace("close", () -> String.format("Closing BigQueryArrowResultSet %s.", this));
       vectorSchemaRoot.close();
       allocator.close();
     }
@@ -276,7 +276,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   }
 
   private Object getObjectInternal(int columnIndex) throws SQLException {
-    LOG.finestTrace("getObjectInternal", () -> "++enter++");
+    LOG.finestTrace("getObjectInternal", "++enter++");
     checkClosed();
     Object value;
     if (this.isNested) {
@@ -318,7 +318,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
 
     // columnIndex is SQL index starting at 1
-    LOG.finestTrace("getObject", () -> "++enter++");
+    LOG.finestTrace("getObject", "++enter++");
     checkClosed();
     Object value = getObjectInternal(columnIndex);
     if (value == null) {
@@ -449,7 +449,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
-    LOG.finestTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
+    LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
     if (ownedThread != null && !ownedThread.isInterrupted()) {
       // interrupt the producer thread when result set is closed
@@ -460,7 +460,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isBeforeFirst() throws SQLException {
-    LOG.finestTrace("isBeforeFirst", () -> "++enter++");
+    LOG.finestTrace("isBeforeFirst", "++enter++");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
@@ -471,14 +471,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isAfterLast() throws SQLException {
-    LOG.finestTrace("isAfterLast", () -> "++enter++");
+    LOG.finestTrace("isAfterLast", "++enter++");
     checkClosed();
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
-    LOG.finestTrace("isFirst", () -> "++enter++");
+    LOG.finestTrace("isFirst", "++enter++");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
@@ -489,7 +489,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isLast() throws SQLException {
-    LOG.finestTrace("isLast", () -> "++enter++");
+    LOG.finestTrace("isLast", "++enter++");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;

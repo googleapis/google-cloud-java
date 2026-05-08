@@ -94,6 +94,48 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     }
   }
 
+  /** Log a message at Level.FINER with predefined class name and method name. */
+  public void finerTrace(String methodName, String msg) {
+    if (isLoggable(Level.FINER)) {
+      logp(Level.FINER, targetClassName, methodName, msg);
+    }
+  }
+
+  /** Log a formatted message at Level.FINER with predefined class name and method name. */
+  public void finerTrace(String methodName, String format, Object... args) {
+    if (isLoggable(Level.FINER)) {
+      logp(Level.FINER, targetClassName, methodName, String.format(format, args));
+    }
+  }
+
+  /** Log a lazy message at Level.FINER with predefined class name and method name. */
+  public void finerTrace(String methodName, Supplier<String> msgSupplier) {
+    if (isLoggable(Level.FINER)) {
+      logp(Level.FINER, targetClassName, methodName, msgSupplier);
+    }
+  }
+
+  /** Log a message at Level.FINE with predefined class name and method name. */
+  public void fineTrace(String methodName, String msg) {
+    if (isLoggable(Level.FINE)) {
+      logp(Level.FINE, targetClassName, methodName, msg);
+    }
+  }
+
+  /** Log a formatted message at Level.FINE with predefined class name and method name. */
+  public void fineTrace(String methodName, String format, Object... args) {
+    if (isLoggable(Level.FINE)) {
+      logp(Level.FINE, targetClassName, methodName, String.format(format, args));
+    }
+  }
+
+  /** Log a lazy message at Level.FINE with predefined class name and method name. */
+  public void fineTrace(String methodName, Supplier<String> msgSupplier) {
+    if (isLoggable(Level.FINE)) {
+      logp(Level.FINE, targetClassName, methodName, msgSupplier);
+    }
+  }
+
   @Override
   public void finest(String msg) {
     if (isLoggable(Level.FINEST)) {
