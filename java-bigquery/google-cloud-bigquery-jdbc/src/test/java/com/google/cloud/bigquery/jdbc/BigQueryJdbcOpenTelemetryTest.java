@@ -82,12 +82,22 @@ public class BigQueryJdbcOpenTelemetryTest {
   }
 
   @Test
-  public void testGetOpenTelemetry_createsNewInstanceForDifferentFlags() {
+  public void testGetOpenTelemetry_createsNewInstanceForDifferentTraceFlag() {
     OpenTelemetry result1 =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, null, null, "project1");
     OpenTelemetry result2 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, true, null, null, "project1");
 
     assertThat(result1).isNotSameInstanceAs(result2);
+  }
+
+  @Test
+  public void testGetOpenTelemetry_ignoresEnableLogFlagInCacheKey() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+
+    assertThat(result1).isSameInstanceAs(result2);
   }
 }

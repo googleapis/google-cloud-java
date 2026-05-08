@@ -46,19 +46,18 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String OTLP_ENDPOINT_VALUE = "https://telemetry.googleapis.com:443";
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger("BigQueryJdbcOpenTelemetry");
 
   private static final class SdkCacheKey {
     private final String projectId;
     private final String credentialsHashOrPath;
     private final boolean enableTrace;
-    private final boolean enableLog;
 
-    SdkCacheKey(
-        String projectId, String credentialsHashOrPath, boolean enableTrace, boolean enableLog) {
+    SdkCacheKey(String projectId, String credentialsHashOrPath, boolean enableTrace) {
       this.projectId = projectId;
       this.credentialsHashOrPath = credentialsHashOrPath;
       this.enableTrace = enableTrace;
-      this.enableLog = enableLog;
     }
 
     @Override
@@ -67,14 +66,13 @@ public class BigQueryJdbcOpenTelemetry {
       if (o == null || getClass() != o.getClass()) return false;
       SdkCacheKey that = (SdkCacheKey) o;
       return enableTrace == that.enableTrace
-          && enableLog == that.enableLog
           && Objects.equals(projectId, that.projectId)
           && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(projectId, credentialsHashOrPath, enableTrace, enableLog);
+      return Objects.hash(projectId, credentialsHashOrPath, enableTrace);
     }
   }
 
@@ -106,7 +104,13 @@ public class BigQueryJdbcOpenTelemetry {
             new Thread(
                 () -> {
                   for (OpenTelemetrySdk sdk : sdkCache.values()) {
-                    sdk.close();
+                    try {
+                      sdk.close();
+                    } catch (Exception e) {
+                      // Ignore failures during shutdown to ensure all SDKs are attempted to be
+                      // closed. Logging is avoided here because the logging system might have
+                      // already been shut down by the JVM.
+                    }
                   }
                 }));
   }
@@ -179,8 +183,7 @@ public class BigQueryJdbcOpenTelemetry {
           new SdkCacheKey(
               gcpTelemetryProjectId,
               getCredentialsIdentifier(gcpTelemetryCredentials),
-              enableGcpTraceExporter,
-              enableGcpLogExporter);
+              enableGcpTraceExporter);
       return sdkCache.computeIfAbsent(
           key,
           k -> {
