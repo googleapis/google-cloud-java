@@ -165,14 +165,6 @@ final class RegionalAccessBoundary implements Serializable {
   }
 
   /**
-   * Checks if the regional access boundary feature is enabled.
-   *
-   * <p>This method is for internal use only and may be changed or removed in future releases.
-   *
-   * @return True if the regional access boundary feature is enabled, false otherwise.
-   */
-
-  /**
    * Refreshes the regional access boundary by making a network call to the lookup endpoint.
    *
    * @param transportFactory The HTTP transport factory to use for the network request.

@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
 import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SERVICE_ACCOUNT_IMPERSONATION_URL;
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -93,16 +94,12 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setClientSecret("clientSecret")
             .setUniverseDomain("universeDomain")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     List<String> newScopes = Arrays.asList("scope1", "scope2");
 
     IdentityPoolCredentials newCredentials = credentials.createScoped(newScopes);
-    newCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), newCredentials.clock));
+    newCredentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(newCredentials.clock));
 
     assertEquals(credentials.getAudience(), newCredentials.getAudience());
     assertEquals(credentials.getSubjectTokenType(), newCredentials.getSubjectTokenType());
@@ -140,9 +137,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
             .setCredentialSource(credentialSource)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String subjectToken = credentials.retrieveSubjectToken();
 
@@ -184,9 +179,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setCredentialSource(credentialSource)
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     String subjectToken = credential.retrieveSubjectToken();
 
@@ -225,9 +218,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
             .setCredentialSource(credentialSource)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     IOException e = assertThrows(IOException.class, credentials::retrieveSubjectToken);
     assertEquals(
@@ -246,9 +237,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     String subjectToken = credential.retrieveSubjectToken();
 
@@ -274,9 +263,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .setCredentialSource(credentialSource)
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     String subjectToken = credential.retrieveSubjectToken();
 
@@ -297,9 +284,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     IOException e = assertThrows(IOException.class, credential::retrieveSubjectToken);
     assertEquals(
@@ -317,9 +302,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(null)
             .setSubjectTokenSupplier(testProvider)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String subjectToken = credentials.retrieveSubjectToken();
 
@@ -339,9 +322,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(null)
             .setSubjectTokenSupplier(errorProvider)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     IOException e = assertThrows(IOException.class, credentials::retrieveSubjectToken);
     assertEquals("test", e.getMessage());
@@ -366,9 +347,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(null)
             .setSubjectTokenSupplier(testSupplier)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     credentials.retrieveSubjectToken();
   }
@@ -390,9 +369,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -419,9 +396,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -459,9 +434,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -495,9 +468,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setServiceAccountImpersonationOptions(
                 ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -534,9 +505,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setTokenUrl(transportFactory.transport.getStsUrl())
             .setHttpTransportFactory(transportFactory)
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -566,9 +535,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setTokenUrl(transportFactory.transport.getStsUrl())
             .setHttpTransportFactory(transportFactory)
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -599,9 +566,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .setWorkforcePoolUserProject("userProject")
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -639,9 +604,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setServiceAccountImpersonationOptions(
                 ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .build();
-    credential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credential.clock));
+    credential.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credential.clock));
 
     AccessToken accessToken = credential.refreshAccessToken();
 
@@ -825,9 +788,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .setUniverseDomain("universeDomain")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertEquals("audience", credentials.getAudience());
     assertEquals("subjectTokenType", credentials.getSubjectTokenType());
@@ -862,9 +823,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setClientSecret("clientSecret")
             .setScopes(scopes)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertEquals(testProvider, credentials.getIdentityPoolSubjectTokenSupplier());
   }
@@ -916,9 +875,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(createFileCredentialSource())
             .setQuotaProjectId("quotaProjectId")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertTrue(credentials.isWorkforcePoolConfiguration());
   }
@@ -973,9 +930,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setClientSecret("clientSecret")
             .setScopes(scopes)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     assertEquals("audience", credentials.getAudience());
     assertEquals("subjectTokenType", credentials.getSubjectTokenType());
@@ -1013,9 +968,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setWorkforcePoolUserProject("workforcePoolUserProject")
             .setUniverseDomain("universeDomain")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     IdentityPoolCredentials newBuilderCreds =
         IdentityPoolCredentials.newBuilder(credentials).build();
@@ -1060,9 +1013,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .setWorkforcePoolUserProject("workforcePoolUserProject")
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     IdentityPoolCredentials newBuilderCreds =
         IdentityPoolCredentials.newBuilder(credentials).build();
@@ -1129,9 +1080,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("test-token-type")
             .setCredentialSource(credentialSource)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     // Verify successful creation and correct internal setup.
     assertNotNull(credentials, "Credentials should be successfully created");
@@ -1174,9 +1123,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("test-token-type")
             .setCredentialSource(credentialSource)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     // Verify successful creation and correct internal setup.
     assertNotNull(credentials, "Credentials should be successfully created");
@@ -1356,9 +1303,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setTokenInfoUrl("tokenInfoUrl")
             .setCredentialSource(identityPoolCredentialSource)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     return credentials;
   }
 

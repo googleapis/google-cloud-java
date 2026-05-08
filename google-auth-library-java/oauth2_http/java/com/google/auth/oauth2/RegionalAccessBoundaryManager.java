@@ -31,6 +31,8 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.LoggingUtils.log;
+
 import com.google.api.client.util.Clock;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
@@ -215,11 +217,13 @@ final class RegionalAccessBoundaryManager {
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.
-        LoggingUtils.log(
+        log(
             LOGGER_PROVIDER,
-            java.util.logging.Level.WARNING,
+            Level.FINE,
             null,
-            "Regional Access Boundary background refresh failed to schedule: " + e.getMessage());
+            "Could not submit background refresh task for Regional Access Boundary. "
+                + "This is non-blocking and the library will attempt to refresh on the next access. Error: "
+                + e.getMessage());
         future.setException(e);
         refreshFuture.set(null);
       }
@@ -247,13 +251,13 @@ final class RegionalAccessBoundaryManager {
     // concurrent failures from logging redundant messages or incorrectly calculating
     // the exponential backoff.
     if (cooldownState.compareAndSet(currentCooldownState, next)) {
-      LoggingUtils.log(
+      log(
           LOGGER_PROVIDER,
           Level.FINE,
           null,
-          "Regional Access Boundary lookup failed; entering cooldown for "
+          "Regional Access Boundary lookup was not successful; will retry after a cooldown of "
               + (next.durationMillis / 60000)
-              + "m. Error: "
+              + "m. This is handled automatically. Details: "
               + e.getMessage());
     }
   }

@@ -35,6 +35,7 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT;
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -1109,8 +1110,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                 .setQuotaProjectId("quotaProjectId")
                 .build();
     testCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), testCredentials.clock));
+        createDummyRab(testCredentials.clock));
 
     Map<String, List<String>> requestMetadata =
         testCredentials.getRequestMetadata(URI.create("http://googleapis.com/foo/bar"));

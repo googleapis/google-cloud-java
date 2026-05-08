@@ -43,6 +43,7 @@ import static com.google.auth.oauth2.ServiceAccountCredentialsTest.CLIENT_EMAIL;
 import static com.google.auth.oauth2.ServiceAccountCredentialsTest.DEFAULT_ID_TOKEN;
 import static com.google.auth.oauth2.ServiceAccountCredentialsTest.SCOPES;
 import static com.google.auth.oauth2.ServiceAccountCredentialsTest.createDefaultBuilder;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static com.google.auth.oauth2.UserCredentialsTest.CLIENT_ID;
 import static com.google.auth.oauth2.UserCredentialsTest.CLIENT_SECRET;
 import static com.google.auth.oauth2.UserCredentialsTest.REFRESH_TOKEN;
@@ -76,7 +77,7 @@ import org.slf4j.event.KeyValuePair;
  * credentials test classes with addition of test logging appender setup and test logic for logging.
  * This duplicates tests setups, but centralizes logging test setup in this class.
  */
-public class LoggingTest {
+class LoggingTest {
 
   private TestAppender setupTestLogger(Class<?> clazz) {
     TestAppender testAppender = new TestAppender();
@@ -167,9 +168,7 @@ public class LoggingTest {
         ServiceAccountCredentialsTest.createDefaultBuilderWithToken(ACCESS_TOKEN)
             .setScopes(SCOPES)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
 
@@ -226,9 +225,7 @@ public class LoggingTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain(nonGDU)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -450,9 +447,7 @@ public class LoggingTest {
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -494,9 +489,7 @@ public class LoggingTest {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -551,9 +544,7 @@ public class LoggingTest {
         ServiceAccountCredentialsTest.createDefaultBuilderWithToken(ACCESS_TOKEN)
             .setScopes(SCOPES)
             .build();
-    credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    credentials.regionalAccessBoundaryManager.setCachedRAB(createDummyRab(credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);

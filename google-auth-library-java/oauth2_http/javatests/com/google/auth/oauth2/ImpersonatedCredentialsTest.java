@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+import static com.google.auth.oauth2.TestUtils.createDummyRab;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -176,8 +177,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
     sourceCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), sourceCredentials.clock));
+        createDummyRab(sourceCredentials.clock));
     transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
     transportFactory.transport.setRegionalAccessBoundary(REGIONAL_ACCESS_BOUNDARY);
 
@@ -596,8 +596,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             mockTransportFactory,
             QUOTA_PROJECT_ID);
     targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock));
+        createDummyRab(targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertTrue(metadata.containsKey("x-goog-user-project"));
@@ -621,8 +620,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             VALID_LIFETIME,
             mockTransportFactory);
     targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary(
-            "dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock));
+        createDummyRab(targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertFalse(metadata.containsKey("x-goog-user-project"));
