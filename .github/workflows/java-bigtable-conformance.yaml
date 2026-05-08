@@ -18,9 +18,25 @@ on:
     branches:
     - main
   pull_request:
-name: conformance
+name: java-bigtable conformance
+env:
+  BUILD_SUBDIR: java-bigtable
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-bigtable/**'
   conformance:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -32,10 +48,10 @@ jobs:
     - uses: actions/setup-java@v4
       with:
         distribution: zulu
-        java-version: 8
+        java-version: 11
     - uses: actions/setup-go@v5
       with:
         go-version: '>=1.20.2'
     - run: java -version
     - run: go version
-    - run: .kokoro/conformance.sh
+    - run: .kokoro/bigtable-conformance.sh
