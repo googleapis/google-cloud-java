@@ -36,8 +36,8 @@ jobs:
       with:
         filters: |
           src:
-            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/*.java'
-            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/pom.xml'
+            - '!(google-auth-library-java|java-bigquery|java-bigquerystorage|java-datastore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|java-bigquery|java-bigquerystorage|java-datastore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -166,6 +166,13 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
           java-storage:
             - 'java-storage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-pubsub:
+            - 'java-pubsub/**'
             - 'google-auth-library-java/**/*.java'
             - 'google-auth-library-java/**/pom.xml'
             - 'sdk-platform-java/**/*.java'
