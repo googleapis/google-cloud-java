@@ -40,12 +40,11 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.json.GenericJson;
-import com.google.api.client.json.JsonParser;
+import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.Clock;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.Key;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
@@ -53,7 +52,6 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nullable;
 
 /**
  * Represents the regional access boundary configuration for a credential. This class holds the
@@ -67,10 +65,6 @@ final class RegionalAccessBoundary implements Serializable {
   static final String X_ALLOWED_LOCATIONS_HEADER_KEY = "x-allowed-locations";
   private static final long serialVersionUID = -2428522338274020302L;
 
-  // Note: this is for internal testing use use only.
-  // TODO: Fix unit test mocks so this can be removed
-  // Refer -> https://github.com/googleapis/google-auth-library-java/issues/1898
-  static final String ENABLE_EXPERIMENT_ENV_VAR = "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT";
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
@@ -78,8 +72,6 @@ final class RegionalAccessBoundary implements Serializable {
   private final List<String> locations;
   private final long refreshTime;
   private transient Clock clock;
-
-  private static EnvironmentProvider environmentProvider = SystemEnvironmentProvider.getInstance();
 
   /**
    * Creates a new RegionalAccessBoundary instance.
@@ -172,30 +164,6 @@ final class RegionalAccessBoundary implements Serializable {
     }
   }
 
-  @VisibleForTesting
-  static void setEnvironmentProviderForTest(@Nullable EnvironmentProvider provider) {
-    environmentProvider = provider == null ? SystemEnvironmentProvider.getInstance() : provider;
-  }
-
-  /**
-   * Checks if the regional access boundary feature is enabled. The feature is enabled if the
-   * environment variable or system property "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT" is set
-   * to "true" or "1" (case-insensitive).
-   *
-   * @return True if the regional access boundary feature is enabled, false otherwise.
-   */
-  static boolean isEnabled() {
-    String enabled = environmentProvider.getEnv(ENABLE_EXPERIMENT_ENV_VAR);
-    if (enabled == null) {
-      enabled = System.getProperty(ENABLE_EXPERIMENT_ENV_VAR);
-    }
-    if (enabled == null) {
-      return false;
-    }
-    String lowercased = enabled.toLowerCase();
-    return "true".equals(lowercased) || "1".equals(enabled);
-  }
-
   /**
    * Refreshes the regional access boundary by making a network call to the lookup endpoint.
    *
@@ -223,6 +191,8 @@ final class RegionalAccessBoundary implements Serializable {
 
     HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
     HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(url));
+    // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
+    request.setLoggingEnabled(false);
     request.getHeaders().setAuthorization("Bearer " + accessToken.getTokenValue());
 
     // Add retry logic
@@ -249,15 +219,20 @@ final class RegionalAccessBoundary implements Serializable {
     HttpIOExceptionHandler ioExceptionHandler = new HttpBackOffIOExceptionHandler(backoff);
     request.setIOExceptionHandler(ioExceptionHandler);
 
+    request.setParser(new JsonObjectParser(OAuth2Utils.JSON_FACTORY));
+
     RegionalAccessBoundaryResponse json;
+    HttpResponse response = null;
     try {
-      HttpResponse response = request.execute();
-      String responseString = response.parseAsString();
-      JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(responseString);
-      json = parser.parseAndClose(RegionalAccessBoundaryResponse.class);
+      response = request.execute();
+      json = response.parseAs(RegionalAccessBoundaryResponse.class);
     } catch (IOException e) {
       throw new IOException(
           "RegionalAccessBoundary: Failure while getting regional access boundaries:", e);
+    } finally {
+      if (response != null) {
+        response.disconnect();
+      }
     }
     String encodedLocations = json.getEncodedLocations();
     // The encodedLocations is the value attached to the x-allowed-locations header, and

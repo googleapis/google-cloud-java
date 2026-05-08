@@ -31,11 +31,18 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.LoggingUtils.log;
+
 import com.google.api.client.util.Clock;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.SettableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import javax.annotation.Nullable;
@@ -59,7 +66,7 @@ final class RegionalAccessBoundaryManager {
    * The default maximum elapsed time in milliseconds for retrying Regional Access Boundary lookup
    * requests.
    */
-  private static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
+  static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
 
   /**
    * cachedRAB uses AtomicReference to provide thread-safe, lock-free access to the cached data for
@@ -78,8 +85,41 @@ final class RegionalAccessBoundaryManager {
   private final AtomicReference<CooldownState> cooldownState =
       new AtomicReference<>(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
 
+  // Unbounded thread creation is discouraged in library code to avoid resource
+  // exhaustion. A shared, bounded executor service ensures a hard limit (5)
+  // on concurrent refresh tasks, while threadCount provides unique names
+  // for easier debugging.
+  private static final AtomicInteger threadCount = new AtomicInteger(0);
+
+  // Bounded executor service ensures hard limits on concurrent refresh tasks and queued tasks
+  // to avoid resource exhaustion.
+  private static final int EXECUTOR_POOL_SIZE = 5;
+  private static final int EXECUTOR_QUEUE_CAPACITY = 100;
+
+  private static final ExecutorService DEFAULT_SHARED_EXECUTOR;
+
+  static {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            EXECUTOR_POOL_SIZE, // corePoolSize: threads to keep alive
+            EXECUTOR_POOL_SIZE, // maximumPoolSize: max threads allowed
+            1, // keepAliveTime: time to wait before terminating idle threads
+            TimeUnit.HOURS, // unit for keepAliveTime
+            new LinkedBlockingQueue<>(EXECUTOR_QUEUE_CAPACITY), // work queue with bound
+            r -> {
+              Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
+              t.setDaemon(true);
+              return t;
+            });
+    // Allow core threads to time out so the executor can shrink to 0 when idle.
+    // Ensures threads are released when idle to avoid unnecessary resource usage.
+    executor.allowCoreThreadTimeOut(true);
+    DEFAULT_SHARED_EXECUTOR = executor;
+  }
+
   private final transient Clock clock;
   private final int maxRetryElapsedTimeMillis;
+  private final ExecutorService executor;
 
   /**
    * Creates a new RegionalAccessBoundaryManager with the default retry timeout of 60 seconds.
@@ -87,13 +127,20 @@ final class RegionalAccessBoundaryManager {
    * @param clock The clock to use for cooldown and expiration checks.
    */
   RegionalAccessBoundaryManager(Clock clock) {
-    this(clock, DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS);
+    this(clock, DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS, DEFAULT_SHARED_EXECUTOR);
   }
 
   @VisibleForTesting
   RegionalAccessBoundaryManager(Clock clock, int maxRetryElapsedTimeMillis) {
+    this(clock, maxRetryElapsedTimeMillis, DEFAULT_SHARED_EXECUTOR);
+  }
+
+  @VisibleForTesting
+  RegionalAccessBoundaryManager(
+      Clock clock, int maxRetryElapsedTimeMillis, ExecutorService executor) {
     this.clock = clock != null ? clock : Clock.SYSTEM;
     this.maxRetryElapsedTimeMillis = maxRetryElapsedTimeMillis;
+    this.executor = executor;
   }
 
   /**
@@ -109,6 +156,11 @@ final class RegionalAccessBoundaryManager {
       return rab;
     }
     return null;
+  }
+
+  @VisibleForTesting
+  void setCachedRAB(RegionalAccessBoundary rab) {
+    this.cachedRAB.set(rab);
   }
 
   /**
@@ -161,19 +213,17 @@ final class RegionalAccessBoundaryManager {
           };
 
       try {
-        // We use new Thread() here instead of
-        // CompletableFuture.runAsync() (which uses ForkJoinPool.commonPool()).
-        // This avoids consuming CPU resources since
-        // The common pool has a small, fixed number of threads designed for
-        // CPU-bound tasks.
-        Thread refreshThread = new Thread(refreshTask, "RAB-refresh-thread");
-        refreshThread.setDaemon(true);
-        refreshThread.start();
+        this.executor.submit(refreshTask);
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.
-        handleRefreshFailure(
-            new Exception("Regional Access Boundary background refresh failed to schedule", e));
+        log(
+            LOGGER_PROVIDER,
+            Level.FINE,
+            null,
+            "Could not submit background refresh task for Regional Access Boundary. "
+                + "This is non-blocking and the library will attempt to refresh on the next access. Error: "
+                + e.getMessage());
         future.setException(e);
         refreshFuture.set(null);
       }
@@ -201,13 +251,13 @@ final class RegionalAccessBoundaryManager {
     // concurrent failures from logging redundant messages or incorrectly calculating
     // the exponential backoff.
     if (cooldownState.compareAndSet(currentCooldownState, next)) {
-      LoggingUtils.log(
+      log(
           LOGGER_PROVIDER,
           Level.FINE,
           null,
-          "Regional Access Boundary lookup failed; entering cooldown for "
+          "Regional Access Boundary lookup was not successful; will retry after a cooldown of "
               + (next.durationMillis / 60000)
-              + "m. Error: "
+              + "m. This is handled automatically. Details: "
               + e.getMessage());
     }
   }
