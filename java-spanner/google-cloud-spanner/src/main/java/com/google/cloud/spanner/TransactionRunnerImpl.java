@@ -527,8 +527,25 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                     return;
                   }
                   if (!proto.hasCommitTimestamp()) {
+                    if (proto.hasPrecommitToken() && retryAttemptDueToCommitProtocolExtension) {
+                      txnLogger.log(
+                          Level.FINE,
+                          "Missing commitTimestamp, response has precommit token "
+                              + "and client has already attempted commit retry");
+                      span.addAnnotation(
+                          "Missing commitTimestamp, response has precommit token "
+                              + "and client has already attempted commit retry");
+                    } else if (!proto.hasPrecommitToken()) {
+                      txnLogger.log(
+                          Level.FINE, "Missing commitTimestamp, response has no precommit token");
+                      span.addAnnotation(
+                          "Missing commitTimestamp, " + "response has no precommit token");
+                    }
                     throw newSpannerException(
-                        ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
+                        ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName() +
+                        "\nHas precommit token: " + proto.hasPrecommitToken() +
+                        "\nAlready attempted commit retry: " +
+                        retryAttemptDueToCommitProtocolExtension);
                   }
                   span.addAnnotation("Commit Done");
                   opSpan.end();
