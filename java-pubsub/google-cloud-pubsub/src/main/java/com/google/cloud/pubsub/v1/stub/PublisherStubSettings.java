@@ -601,7 +601,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-pubsub")
-        .setRepository("googleapis/java-pubsub")
+        .setRepository("googleapis/google-cloud-java")
         .setVersion(Version.VERSION)
         .build();
   }

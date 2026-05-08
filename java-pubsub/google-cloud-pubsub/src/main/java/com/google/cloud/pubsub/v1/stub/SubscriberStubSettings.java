@@ -516,7 +516,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   protected LibraryMetadata getLibraryMetadata() {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-pubsub")
-        .setRepository("googleapis/java-pubsub")
+        .setRepository("googleapis/google-cloud-java")
         .setVersion(Version.VERSION)
         .build();
   }
