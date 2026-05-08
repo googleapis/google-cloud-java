@@ -19,6 +19,7 @@ steps:
     '.kokoro/build.sh'
   ]
   env:
+  - 'BUILD_SUBDIR=java-logging'
   - 'JOB_TYPE=samples'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
 - name: gcr.io/cloud-devrel-public-resources/java8
