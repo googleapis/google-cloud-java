@@ -74,7 +74,13 @@ git clone https://github.com/GoogleCloudPlatform/grpc-gcp-java.git && cd grpc-gc
 Build project with unit tests.
 
 ```sh
-./gradlew build
+mvn verify
+```
+
+Install the jar to your local Maven repository.
+
+```sh
+mvn install
 ```
 
 ## Test
@@ -89,10 +95,24 @@ export GOOGLE_APPLICATION_CREDENTIALS=path/to/key.json
 export GCP_PROJECT_ID=project_id
 ```
 
+Run unit tests.
+
+```sh
+mvn test
+```
+
 Run unit tests and integration tests:
 
 ```sh
-./gradlew allTests
+mvn verify -DskipITs=false
+```
+
+## Publish
+
+Publish a release build using the Maven release profile inherited from shared config.
+
+```sh
+mvn deploy -DperformRelease=true
 ```
 
 ## Code Format
@@ -100,5 +120,5 @@ Run unit tests and integration tests:
 Run google-java-format
 
 ```sh
-./gradlew goJF
+mvn fmt:format
 ```

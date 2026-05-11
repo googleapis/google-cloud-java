@@ -16,7 +16,6 @@
 
 package com.google.cloud.grpc.fallback;
 
-import static com.google.cloud.grpc.GrpcGcpUtil.IMPLEMENTATION_VERSION;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableMap;
@@ -73,13 +72,18 @@ public final class GcpFallbackOpenTelemetry {
     return new Builder();
   }
 
+  private static String getLibraryVersion(Class<?> libraryClass) {
+    String version = libraryClass.getPackage().getImplementationVersion();
+    return version != null ? version : "";
+  }
+
   private GcpFallbackOpenTelemetry(Builder builder) {
     this.openTelemetrySdk = checkNotNull(builder.openTelemetrySdk, "openTelemetrySdk");
     this.meterProvider = checkNotNull(openTelemetrySdk.getMeterProvider(), "meterProvider");
     this.meter =
         this.meterProvider
             .meterBuilder(INSTRUMENTATION_SCOPE)
-            .setInstrumentationVersion(IMPLEMENTATION_VERSION)
+            .setInstrumentationVersion(getLibraryVersion(getClass()))
             .build();
     this.enableMetrics = ImmutableMap.copyOf(builder.enableMetrics);
     this.disableDefault = builder.disableAll;

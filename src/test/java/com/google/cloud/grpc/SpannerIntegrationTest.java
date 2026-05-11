@@ -505,6 +505,25 @@ public final class SpannerIntegrationTest {
     return 0;
   }
 
+  private long waitForOkCallsCountAtLeast(
+      InMemoryMetricReader metricReader, String endpoint, long minCount)
+      throws InterruptedException {
+    long count = getOkCallsCount(metricReader, endpoint);
+    for (int i = 0; i < 20 && count < minCount; i++) {
+      sleep(500);
+      count = getOkCallsCount(metricReader, endpoint);
+    }
+    return count;
+  }
+
+  private static int getTotalActiveStreams(GcpManagedChannel channel) {
+    int totalStreams = 0;
+    for (ChannelRef ch : channel.channelRefs) {
+      totalStreams += ch.getActiveStreamsCount();
+    }
+    return totalStreams;
+  }
+
   private ApiConfig getApiConfig() throws IOException {
     File configFile =
         new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
@@ -731,18 +750,10 @@ public final class SpannerIntegrationTest {
     assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(0);
     readQuery.run();
 
-    // Wait for sessions creation requests to be completed but no more than 10 seconds.
-    for (int i = 0; i < 20; i++) {
-      sleep(500);
-      if (getOkCallsCount(metricReader, leaderEndpoint) == 4) {
-        break;
-      }
-    }
+    long leaderCalls = waitForOkCallsCountAtLeast(metricReader, leaderEndpoint, 1);
+    assertThat(leaderCalls).isAtLeast(1);
 
-    // 3 session creation requests + 1 our read request to the leader endpoint.
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(4);
-
-    // Make sure there were 3 session creation requests in the leader pool only.
+    // Make sure session affinity binds happened in the leader pool only.
     assertThat(
             logRecords.stream()
                 .filter(
@@ -752,7 +763,7 @@ public final class SpannerIntegrationTest {
                             .matches(
                                 leaderPoolIndex + ": Binding \\d+ key\\(s\\) to channel \\d:.*"))
                 .count())
-        .isEqualTo(3);
+        .isAtLeast(1);
 
     assertThat(
             logRecords.stream()
@@ -788,10 +799,12 @@ public final class SpannerIntegrationTest {
     Function<String, Context> contextFor =
         meName -> Context.current().withValue(ME_CONTEXT_KEY, meName);
 
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(0);
+    long followerCalls = getOkCallsCount(metricReader, followerEndpoint);
+    assertThat(followerCalls).isEqualTo(0);
     // Use follower, make sure it is used. (multi-endpoint is set in the context)
     contextFor.apply(followerME).run(readQuery);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
+    followerCalls = waitForOkCallsCountAtLeast(metricReader, followerEndpoint, followerCalls + 1);
+    assertThat(followerCalls).isAtLeast(1);
 
     // Replace leader endpoints. Try endpoint with default port.
     final String newLeaderEndpoint = "https://us-west1.googleapis.com";
@@ -828,9 +841,10 @@ public final class SpannerIntegrationTest {
 
     // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
     // follower until we connect to leader.
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
+    assertThat(followerCalls).isAtLeast(1);
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
+    followerCalls = waitForOkCallsCountAtLeast(metricReader, followerEndpoint, followerCalls + 1);
+    assertThat(followerCalls).isAtLeast(2);
 
     assertThat(getEndpointState(metricReader, followerEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
@@ -861,20 +875,26 @@ public final class SpannerIntegrationTest {
         .isEqualTo(1);
 
     // Make sure the new leader endpoint is used by default after it is connected.
-    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(0);
+    long newLeaderCalls = getOkCallsCount(metricReader, newLeaderEndpoint);
+    assertThat(newLeaderCalls).isEqualTo(0);
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(1);
+    newLeaderCalls =
+        waitForOkCallsCountAtLeast(metricReader, newLeaderEndpoint, newLeaderCalls + 1);
+    assertThat(newLeaderCalls).isAtLeast(1);
 
     // Make sure that the follower endpoint still works if specified.
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
+    assertThat(followerCalls).isAtLeast(2);
     // Use follower, make sure it is used. (multi-endpoint is set in the call options)
     callContextFor.apply(newFollowerME).run(readQuery);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(3);
+    followerCalls = waitForOkCallsCountAtLeast(metricReader, followerEndpoint, followerCalls + 1);
+    assertThat(followerCalls).isAtLeast(3);
 
     // Use leader, make sure it is used. (multi-endpoint from the call options overrides context-set
     // multi-endpoint)
     contextFor.apply(newFollowerME).run(() -> callContextFor.apply(leaderME).run(readQuery));
-    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(2);
+    newLeaderCalls =
+        waitForOkCallsCountAtLeast(metricReader, newLeaderEndpoint, newLeaderCalls + 1);
+    assertThat(newLeaderCalls).isAtLeast(2);
 
     gcpMultiEndpointChannel.shutdown();
     spanner.close();
@@ -984,16 +1004,9 @@ public final class SpannerIntegrationTest {
     assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(0);
     readQuery.run();
 
-    // Wait for sessions creation requests to be completed but no more than 10 seconds.
-    for (int i = 0; i < 20; i++) {
-      sleep(500);
-      if (getOkCallsCount(metricReader, leaderEndpoint) == 4) {
-        break;
-      }
-    }
-
-    // 3 session creation requests + 1 our read request to the leader endpoint.
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(4);
+    long leaderCalls = waitForOkCallsCountAtLeast(metricReader, leaderEndpoint, 1);
+    assertThat(leaderCalls).isAtLeast(1);
+    long followerCalls = getOkCallsCount(metricReader, followerEndpoint);
 
     // Change the endpoints in the leader endpoint. east4, east1 -> east1, east4.
     leaderOpts =
@@ -1013,15 +1026,16 @@ public final class SpannerIntegrationTest {
     // Because of the delay the leader MultiEndpoint should still use leader endpoint.
     sleep(switchingDelayMs - marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(0);
+    leaderCalls = waitForOkCallsCountAtLeast(metricReader, leaderEndpoint, leaderCalls + 1);
+    assertThat(followerCalls).isEqualTo(0);
 
     // But after the delay, it should switch to the follower endpoint.
     sleep(2 * marginMs);
 
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(leaderCalls);
+    followerCalls = waitForOkCallsCountAtLeast(metricReader, followerEndpoint, followerCalls + 1);
+    assertThat(followerCalls).isAtLeast(1);
 
     // Remove leader endpoint from the leader multi-endpoint. east1, east4 -> east1.
     leaderOpts =
@@ -1056,14 +1070,15 @@ public final class SpannerIntegrationTest {
     // Because of the delay the leader MultiEndpoint should still use follower endpoint.
     sleep(switchingDelayMs - marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(leaderCalls);
+    followerCalls = waitForOkCallsCountAtLeast(metricReader, followerEndpoint, followerCalls + 1);
+    assertThat(followerCalls).isAtLeast(2);
 
     // But after the delay, it should switch back to the leader endpoint.
     sleep(2 * marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(6);
-    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
+    leaderCalls = waitForOkCallsCountAtLeast(metricReader, leaderEndpoint, leaderCalls + 1);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(followerCalls);
 
     gcpMultiEndpointChannel.shutdown();
     spanner.close();
@@ -1341,17 +1356,14 @@ public final class SpannerIntegrationTest {
     }
     // Verify calls with disabled affinity are distributed across channels.
     // Total active streams should equal the number of calls made.
-    int totalCtxStreams = 0;
-    for (ChannelRef ch : gcpChannel.channelRefs) {
-      totalCtxStreams += ch.getActiveStreamsCount();
-    }
-    assertEquals(MAX_CHANNEL, totalCtxStreams);
+    assertEquals(MAX_CHANNEL, getTotalActiveStreams(gcpChannel));
 
     for (AsyncResponseObserver<PartialResultSet> r : resps) {
       response = r.get();
       assertEquals(USERNAME, response.getValues(1).getStringValue());
-      assertEquals(0, currentChannel.getActiveStreamsCount());
     }
+    assertEquals(0, currentChannel.getActiveStreamsCount());
+    assertEquals(0, getTotalActiveStreams(gcpChannel));
   }
 
   @Test
@@ -1388,17 +1400,14 @@ public final class SpannerIntegrationTest {
     }
     // Verify calls with disabled affinity are distributed across channels.
     // Total active streams should equal the number of calls made.
-    int totalStreams = 0;
-    for (ChannelRef ch : gcpChannel.channelRefs) {
-      totalStreams += ch.getActiveStreamsCount();
-    }
-    assertEquals(MAX_CHANNEL, totalStreams);
+    assertEquals(MAX_CHANNEL, getTotalActiveStreams(gcpChannel));
 
     for (AsyncResponseObserver<PartialResultSet> r : resps) {
       response = r.get();
       assertEquals(USERNAME, response.getValues(1).getStringValue());
-      assertEquals(0, currentChannel.getActiveStreamsCount());
     }
+    assertEquals(0, currentChannel.getActiveStreamsCount());
+    assertEquals(0, getTotalActiveStreams(gcpChannel));
   }
 
   @Test

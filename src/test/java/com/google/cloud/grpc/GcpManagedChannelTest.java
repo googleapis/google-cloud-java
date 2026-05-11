@@ -18,6 +18,7 @@ package com.google.cloud.grpc;
 
 import static com.google.cloud.grpc.GcpManagedChannel.getKeysFromMessage;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -1366,7 +1367,9 @@ public final class GcpManagedChannelTest {
       assertThat(logRecords.size()).isEqualTo(39);
       logRecords.forEach(
           logRecord ->
-              assertThat(logRecord.getLevel()).named(logRecord.getMessage()).isEqualTo(Level.FINE));
+              assertWithMessage(logRecord.getMessage())
+                  .that(logRecord.getLevel())
+                  .isEqualTo(Level.FINE));
 
       logRecords.clear();
 
@@ -1972,10 +1975,7 @@ public final class GcpManagedChannelTest {
 
     // Find newly created channel.
     ChannelRef newChannel =
-        pool.channelRefs.stream()
-            .dropWhile(chRef -> prevChannels.contains(chRef))
-            .findFirst()
-            .get();
+        pool.channelRefs.stream().filter(chRef -> !prevChannels.contains(chRef)).findFirst().get();
     // Mark ready.
     ((FakeManagedChannel) newChannel.getChannel()).setState(ConnectivityState.READY);
 
@@ -2193,10 +2193,7 @@ public final class GcpManagedChannelTest {
 
     // Find newly created channel.
     ChannelRef newChannel =
-        pool.channelRefs.stream()
-            .dropWhile(chRef -> prevChannels.contains(chRef))
-            .findFirst()
-            .get();
+        pool.channelRefs.stream().filter(chRef -> !prevChannels.contains(chRef)).findFirst().get();
     // Mark ready.
     ((FakeManagedChannel) newChannel.getChannel()).setState(ConnectivityState.READY);
 
