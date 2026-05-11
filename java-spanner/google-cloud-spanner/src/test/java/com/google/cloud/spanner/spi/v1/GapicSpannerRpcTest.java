@@ -1265,6 +1265,27 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testGrpcGcpLazyFallbackChannelPoolOptionsStartWithoutChannels() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(8)
+            .build();
+
+    GcpChannelPoolOptions poolOptions =
+        GapicSpannerRpc.getGrpcGcpLazyFallbackChannelPoolOptions(options);
+
+    assertEquals(8, poolOptions.getMaxSize());
+    assertEquals(0, poolOptions.getMinSize());
+    assertEquals(0, poolOptions.getInitSize());
+    assertEquals(0, poolOptions.getMinRpcPerChannel());
+    assertEquals(0, poolOptions.getMaxRpcPerChannel());
+    assertEquals(Duration.ZERO, poolOptions.getScaleDownInterval());
+  }
+
+  @Test
   public void testGrpcGcpOptionsRetainDynamicChannelPoolSettingsWithDcp() throws Exception {
     Duration affinityKeyLifetime = Duration.ofMinutes(10);
     Duration cleanupInterval = Duration.ofMinutes(5);
@@ -1434,7 +1455,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testDirectPathFallbackCreatesOneGrpcGcpLayerPerPath() {
+  public void testDirectPathFallbackCreatesLazyCloudPathGrpcGcpPool() {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     GapicSpannerRpc rpc = null;
     try {
@@ -1445,8 +1466,8 @@ public class GapicSpannerRpcTest {
       GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
       rpc = new GapicSpannerRpc(options);
       GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
-      assertEquals(counts.debugString(), 6, counts.gcpManagedChannels);
-      assertEquals(counts.debugString(), 48, counts.channelRefs);
+      assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 24, counts.channelRefs);
     } finally {
       if (rpc != null) {
         rpc.shutdown();

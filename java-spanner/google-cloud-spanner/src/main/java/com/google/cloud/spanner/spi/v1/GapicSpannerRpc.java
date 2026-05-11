@@ -708,18 +708,19 @@ public class GapicSpannerRpc implements SpannerRpc {
           ManagedChannelBuilder<?> fallbackBuilder = cloudPathBuilder;
           if (options.isGrpcGcpExtensionEnabled()) {
             String jsonApiConfig = parseGrpcGcpApiConfig();
-            GcpManagedChannelOptions gcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
-            if (gcpOptions == null) {
-              gcpOptions = GcpManagedChannelOptions.newBuilder().build();
-            }
+            GcpManagedChannelOptions primaryGcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
+            GcpManagedChannelOptions fallbackGcpOptions =
+                GcpManagedChannelOptions.newBuilder(primaryGcpOptions)
+                    .withChannelPoolOptions(getGrpcGcpLazyFallbackChannelPoolOptions(options))
+                    .build();
             primaryBuilder =
                 GcpManagedChannelBuilder.forDelegateBuilder(builder)
                     .withApiConfigJsonString(jsonApiConfig)
-                    .withOptions(gcpOptions);
+                    .withOptions(primaryGcpOptions);
             fallbackBuilder =
                 GcpManagedChannelBuilder.forDelegateBuilder(cloudPathBuilder)
                     .withApiConfigJsonString(jsonApiConfig)
-                    .withOptions(gcpOptions);
+                    .withOptions(fallbackGcpOptions);
           }
 
           GcpFallbackOpenTelemetry fallbackTelemetry =
@@ -846,6 +847,14 @@ public class GapicSpannerRpc implements SpannerRpc {
         .disableDynamicScaling()
         .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
         .setCleanupInterval(channelPoolOptions.getCleanupInterval())
+        .build();
+  }
+
+  @VisibleForTesting
+  static GcpChannelPoolOptions getGrpcGcpLazyFallbackChannelPoolOptions(SpannerOptions options) {
+    return GcpChannelPoolOptions.newBuilder(getGrpcGcpChannelPoolOptions(options))
+        .setMinSize(0)
+        .setInitSize(0)
         .build();
   }
 
