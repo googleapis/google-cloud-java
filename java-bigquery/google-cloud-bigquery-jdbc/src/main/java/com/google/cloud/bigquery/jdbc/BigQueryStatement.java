@@ -943,34 +943,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finest("++enter++");
     long totalRows = results.getTotalRows();
 
-    if (totalRows == 0 || totalRows < querySettings.getHighThroughputMinTableSize()) {
-      return false;
-    }
-
-    // TODO(BQ Team): TableResult doesnt expose the number of records in the current page, hence the
-    // below log iterates and counts. This is inefficient and we may eventually want to expose
-    // PageSize with TableResults
-    // TODO(Obada): Scope for performance optimization.
-    long pageSize;
-    Iterable<FieldValueList> values = results.getValues();
-    if (values instanceof java.util.Collection) {
-      pageSize = ((java.util.Collection<?>) values).size();
-    } else {
-      // O(1) Fast Page Size Approximation:
-      // If the values iterable is not a collection, approximate the page size rather than
-      // performing a slow O(N) iteration over the entire page of query results.
-      pageSize = Math.min(totalRows, querySettings.getMaxResultPerPage());
-    }
-
-    // Prevent division by zero or negative pageSize due to potential overflows/empty sets:
-    if (pageSize <= 0) {
-      pageSize = 1;
-    }
-
     // SAFEGUARD: If all data has already been retrieved in the first page,
     // NEVER switch to the Read API as it would discard in-memory data and cause a double-fetch.
-    if (totalRows <= pageSize) {
+    if (totalRows == 0
+        || totalRows < querySettings.getHighThroughputMinTableSize()
+        || !results.hasNextPage()) {
       return false;
+    }
+
+    long pageSize = querySettings.getMaxResultPerPage();
+
+    // Prevent division by zero due to potential overflows/empty sets:
+    if (pageSize <= 0) {
+      pageSize = 1;
     }
 
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
