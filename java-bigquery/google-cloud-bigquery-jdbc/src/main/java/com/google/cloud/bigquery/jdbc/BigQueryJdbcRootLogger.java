@@ -104,7 +104,10 @@ class BigQueryJdbcRootLogger {
           threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
         }
 
-        String sourceClassName = record.getLoggerName();
+        String sourceClassName =
+            record.getSourceClassName() != null
+                ? record.getSourceClassName()
+                : record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
 
         // Expected log format: yyyy-MM-dd HH:mm:ss.SSS [CONNECTION_ID] LEVEL PID --- [THREAD] CLASS

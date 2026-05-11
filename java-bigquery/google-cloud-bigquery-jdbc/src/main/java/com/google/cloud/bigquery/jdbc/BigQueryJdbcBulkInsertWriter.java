@@ -92,7 +92,7 @@ class BigQueryJdbcBulkInsertWriter {
     // Finalize the stream.
     FinalizeWriteStreamResponse finalizeResponse =
         client.finalizeWriteStream(jsonStreamWriter.getStreamName());
-    LOG.finest("Rows written: " + finalizeResponse.getRowCount());
+    LOG.finer("Rows written: " + finalizeResponse.getRowCount());
     return finalizeResponse.getRowCount();
   }
 
