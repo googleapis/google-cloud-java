@@ -55,4 +55,4 @@ jobs:
         BUILD_SUBDIR: java-pubsub
         PUBSUB_EMULATOR_HOST: localhost:8085
         GOOGLE_CLOUD_PROJECT: abc
-        SUREFIRE_JVM_OPT: '-Dtest=UsePubSubEmulatorExampleIT'
+        SUREFIRE_JVM_OPT: '-Dtest=UsePubSubEmulatorExampleIT -Dsurefire.failIfNoSpecifiedTests=false'
