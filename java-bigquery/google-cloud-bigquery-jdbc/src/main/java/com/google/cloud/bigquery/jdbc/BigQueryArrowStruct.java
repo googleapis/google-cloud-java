@@ -30,8 +30,8 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
  */
 class BigQueryArrowStruct extends BigQueryBaseStruct {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryArrowStruct.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class);
 
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
@@ -52,7 +52,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   @Override
   public Object[] getAttributes() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getAttributes", "++enter++");
     int size = this.schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
 
@@ -71,7 +71,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   }
 
   private Object getValue(Field currentSchema, Object currentValue) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getValue", "++enter++");
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(currentSchema, (JsonStringArrayList<?>) currentValue);
     } else if (isStruct(currentSchema)) {
