@@ -17,7 +17,7 @@
 package pubsub;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertNotNull;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -29,11 +29,12 @@ import org.junit.Test;
 public class UsePubSubEmulatorExampleIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalOut;
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(
-        "Environment variable " + varName + " is required to perform these tests.",
-        System.getenv(varName));
+    assertWithMessage("Environment variable " + varName + " is required to perform these tests.")
+        .that(System.getenv(varName))
+        .isNotNull();
   }
 
   @BeforeClass
@@ -43,6 +44,7 @@ public class UsePubSubEmulatorExampleIT {
 
   @Before
   public void setUp() {
+    originalOut = System.out;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
@@ -50,7 +52,7 @@ public class UsePubSubEmulatorExampleIT {
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(originalOut);
   }
 
   @Test

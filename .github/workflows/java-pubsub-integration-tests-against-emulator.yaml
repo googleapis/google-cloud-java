@@ -42,11 +42,11 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
-    - name: gcr.io/google.com/cloudsdktool/cloud-sdk:567.0.0-emulators
-    entrypoint: 'gcloud'
-    args: ['beta', 'emulators', 'pubsub', 'start', '--project=abc', '--host-port=0.0.0.0:8085']
-    env:
-    - 'PUBSUB_EMULATOR_HOST=localhost:8085'
+    - name: Start Pub/Sub Emulator
+      run: |
+        docker run -d -p 8085:8085 --name pubsub-emulator gcr.io/google.com/cloudsdktool/cloud-sdk:567.0.0-emulators gcloud beta emulators pubsub start --project=abc --host-port=0.0.0.0:8085
+        echo "Waiting for emulator to start..."
+        sleep 10
 
     - name: Running tests
       run: .kokoro/build.sh
