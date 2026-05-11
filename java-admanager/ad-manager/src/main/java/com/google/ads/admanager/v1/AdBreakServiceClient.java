@@ -793,7 +793,7 @@ public class AdBreakServiceClient implements BackgroundResource {
    *
    * @param adBreak Required. The `AdBreak` to update.
    *     <p>The `AdBreak`'s `name` is used to identify the `AdBreak` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AdBreak updateAdBreak(AdBreak adBreak, FieldMask updateMask) {

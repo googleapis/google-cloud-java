@@ -73,10 +73,10 @@ public interface UpdateSiteRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -87,10 +87,10 @@ public interface UpdateSiteRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -101,10 +101,10 @@ public interface UpdateSiteRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
