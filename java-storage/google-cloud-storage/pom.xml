@@ -296,7 +296,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-storage-control-v2</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>

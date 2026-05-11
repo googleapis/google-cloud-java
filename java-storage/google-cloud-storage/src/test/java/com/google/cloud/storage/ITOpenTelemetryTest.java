@@ -63,20 +63,32 @@ public final class ITOpenTelemetryTest {
         storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
     try (Storage storage = storageOptions.getService()) {
       storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+      Thread.sleep(800);
+      storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
     }
 
-    SpanData spanData = exporter.getExportedSpans().get(0);
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData span1 = exporter.getExportedSpans().get(0);
+    SpanData span2 = exporter.getExportedSpans().get(1);
+
     assertAll(
-        () -> assertThat(getAttributeValue(spanData, "gcp.client.service")).isEqualTo("Storage"),
+        () -> assertThat(getAttributeValue(span1, "gcp.client.service")).isEqualTo("Storage"),
         () ->
-            assertThat(getAttributeValue(spanData, "gcp.client.repo"))
-                .isEqualTo("googleapis/java-storage"),
+            assertThat(getAttributeValue(span1, "rpc.system"))
+                .isEqualTo(transport.name().toLowerCase()),
         () ->
-            assertThat(getAttributeValue(spanData, "gcp.client.artifact"))
-                .isEqualTo("com.google.cloud:google-cloud-storage"),
+            assertThat(getAttributeValue(span1, "gcp.resource.destination.id"))
+                .isEqualTo("projects/_/buckets/" + bucket.getName()),
         () ->
-            assertThat(getAttributeValue(spanData, "rpc.system"))
-                .isEqualTo(transport.name().toLowerCase()));
+            assertThat(getAttributeValue(span1, "gcp.resource.destination.location"))
+                .isEqualTo("global"),
+        () -> assertThat(getAttributeValue(span2, "gcp.client.service")).isEqualTo("Storage"),
+        () ->
+            assertThat(getAttributeValue(span2, "gcp.resource.destination.id"))
+                .contains("buckets/" + bucket.getName()),
+        () ->
+            assertThat(getAttributeValue(span2, "gcp.resource.destination.location"))
+                .isNotEqualTo("global"));
   }
 
   @Test

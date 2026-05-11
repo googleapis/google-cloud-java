@@ -58,6 +58,8 @@ import java.nio.channels.WritableByteChannel;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.UnaryOperator;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -81,7 +83,54 @@ final class OtelStorageDecorator implements Storage {
     this.otel = otel;
     this.baseAttributes = baseAttributes;
     this.tracer =
-        TracerDecorator.decorate(null, otel, baseAttributes, Storage.class.getName() + "/");
+        TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
+  }
+
+  static String extractBucketName(String uri) {
+    if (uri == null || !uri.startsWith("gs://")) {
+      return null;
+    }
+    String remainder = uri.substring(5);
+    int firstSlash = remainder.indexOf('/');
+    if (firstSlash == -1) {
+      return remainder;
+    }
+    return remainder.substring(0, firstSlash);
+  }
+
+  private final ExecutorService cacheExecutor =
+      Executors.newCachedThreadPool(
+          r -> {
+            Thread t = new Thread(r);
+            t.setDaemon(true);
+            t.setName("gcs-aco-metadata-cache-pool");
+            return t;
+          });
+
+  void checkCacheAndTriggerFetch(String bucketName) {
+    if (!(delegate instanceof StorageInternal)) {
+      return;
+    }
+    StorageInternal internal = (StorageInternal) delegate;
+    BucketMetadataCache cache = internal.getBucketMetadataCache();
+
+    if (cache.containsKey(bucketName)) {
+      return;
+    }
+
+    cache.put(
+        bucketName,
+        new BucketMetadataCache.BucketMetadata("projects/_/buckets/" + bucketName, "global"));
+
+    cacheExecutor.submit(
+        () -> {
+          try {
+            com.google.cloud.Tuple<String, String> layout =
+                internal.internalGetStorageLayout(bucketName);
+            cache.put(bucketName, new BucketMetadataCache.BucketMetadata(layout.x(), layout.y()));
+          } catch (Exception e) {
+          }
+        });
   }
 
   @Override
@@ -1423,7 +1472,14 @@ final class OtelStorageDecorator implements Storage {
 
   @Override
   public void close() throws Exception {
-    delegate.close();
+    try {
+      if (delegate instanceof StorageInternal) {
+        ((StorageInternal) delegate).getBucketMetadataCache().clear();
+      }
+      cacheExecutor.shutdownNow();
+    } finally {
+      delegate.close();
+    }
   }
 
   @Override
@@ -1562,16 +1618,19 @@ final class OtelStorageDecorator implements Storage {
   }
 
   static final class TracerDecorator implements Tracer {
+    @Nullable private final OtelStorageDecorator parentDecorator;
     @Nullable private final Context parentContextOverride;
     private final Tracer delegate;
     private final Attributes baseAttributes;
     private final String spanNamePrefix;
 
     TracerDecorator(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         Tracer delegate,
         Attributes baseAttributes,
         String spanNamePrefix) {
+      this.parentDecorator = parentDecorator;
       this.parentContextOverride = parentContextOverride;
       this.delegate = delegate;
       this.baseAttributes = baseAttributes;
@@ -1579,6 +1638,7 @@ final class OtelStorageDecorator implements Storage {
     }
 
     static TracerDecorator decorate(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         OpenTelemetry otel,
         Attributes baseAttributes,
@@ -1588,7 +1648,8 @@ final class OtelStorageDecorator implements Storage {
       requireNonNull(spanNamePrefix, "spanNamePrefix must be non null");
       Tracer tracer =
           otel.getTracer(OTEL_SCOPE_NAME, StorageOptions.getDefaultInstance().getLibraryVersion());
-      return new TracerDecorator(parentContextOverride, tracer, baseAttributes, spanNamePrefix);
+      return new TracerDecorator(
+          parentDecorator, parentContextOverride, tracer, baseAttributes, spanNamePrefix);
     }
 
     @Override
@@ -1598,7 +1659,8 @@ final class OtelStorageDecorator implements Storage {
       if (parentContextOverride != null) {
         spanBuilder.setParent(parentContextOverride);
       }
-      return spanBuilder;
+
+      return new AcoSpanBuilder(spanBuilder, parentDecorator);
     }
   }
 
@@ -1671,6 +1733,7 @@ final class OtelStorageDecorator implements Storage {
       this.sessionSpan = sessionSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -1794,6 +1857,7 @@ final class OtelStorageDecorator implements Storage {
       this.parentContext = Context.current();
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2127,6 +2191,7 @@ final class OtelStorageDecorator implements Storage {
       this.uploadSpan = uploadSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2163,6 +2228,7 @@ final class OtelStorageDecorator implements Storage {
         this.openSpan = openSpan;
         this.tracer =
             TracerDecorator.decorate(
+                OtelStorageDecorator.this,
                 Context.current(),
                 otel,
                 OtelStorageDecorator.this.baseAttributes,

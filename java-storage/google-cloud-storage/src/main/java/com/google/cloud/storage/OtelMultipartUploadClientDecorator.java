@@ -53,7 +53,7 @@ final class OtelMultipartUploadClientDecorator extends MultipartUploadClient {
     this.delegate = delegate;
     this.tracer =
         OtelStorageDecorator.TracerDecorator.decorate(
-            null, otel, baseAttributes, MultipartUploadClient.class.getName() + "/");
+            null, null, otel, baseAttributes, MultipartUploadClient.class.getName() + "/");
   }
 
   @Override

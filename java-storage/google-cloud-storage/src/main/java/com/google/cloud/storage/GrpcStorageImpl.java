@@ -82,6 +82,9 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.storage.control.v2.GetStorageLayoutRequest;
+import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.StorageLayoutName;
 import com.google.storage.v2.AppendObjectSpec;
 import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectSpec;
@@ -112,6 +115,8 @@ import com.google.storage.v2.UpdateObjectRequest;
 import com.google.storage.v2.WriteObjectRequest;
 import com.google.storage.v2.WriteObjectResponse;
 import com.google.storage.v2.WriteObjectSpec;
+import io.grpc.protobuf.ProtoUtils;
+import io.grpc.stub.ClientCalls;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -180,6 +185,8 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   // workaround for https://github.com/googleapis/java-storage/issues/1736
   private final Opts<UserProject> defaultOpts;
   @Deprecated private final Supplier<ProjectId> defaultProjectId;
+  private volatile BucketMetadataCache bucketMetadataCache;
+  private final java.lang.Object cacheInitLock = new java.lang.Object();
 
   GrpcStorageImpl(
       GrpcStorageOptions options,
@@ -200,6 +207,70 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     this.retryAlgorithmManager = options.getRetryAlgorithmManager();
     this.syntaxDecoders = new SyntaxDecoders();
     this.defaultProjectId = Suppliers.memoize(() -> UnifiedOpts.projectId(options.getProjectId()));
+  }
+
+  @Override
+  public BucketMetadataCache getBucketMetadataCache() {
+    if (bucketMetadataCache == null) {
+      synchronized (cacheInitLock) {
+        if (bucketMetadataCache == null) {
+          bucketMetadataCache = new BucketMetadataCache(10000);
+        }
+      }
+    }
+    return bucketMetadataCache;
+  }
+
+  private static final io.grpc.MethodDescriptor<GetStorageLayoutRequest, StorageLayout>
+      getStorageLayoutMethod =
+          io.grpc.MethodDescriptor.<GetStorageLayoutRequest, StorageLayout>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetStorageLayout")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetStorageLayoutRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StorageLayout.getDefaultInstance()))
+              .build();
+
+  @Override
+  public com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
+    io.grpc.Channel channel = null;
+    try {
+      com.google.storage.v2.stub.StorageStub stub = storageClient.getStub();
+
+      java.lang.reflect.Field bgField =
+          com.google.storage.v2.stub.GrpcStorageStub.class.getDeclaredField("backgroundResources");
+      bgField.setAccessible(true);
+      java.lang.Object bgAggregation = bgField.get(stub);
+
+      java.lang.reflect.Field listField =
+          bgAggregation.getClass().getDeclaredField("backgroundResources");
+      listField.setAccessible(true);
+      java.util.List<?> resourcesList = (java.util.List<?>) listField.get(bgAggregation);
+
+      for (java.lang.Object res : resourcesList) {
+        if (res instanceof com.google.api.gax.grpc.GrpcTransportChannel) {
+          channel = ((com.google.api.gax.grpc.GrpcTransportChannel) res).getChannel();
+          break;
+        }
+      }
+    } catch (Exception ex) {
+      throw new RuntimeException("Failed to extract gRPC channel", ex);
+    }
+
+    if (channel == null) {
+      throw new RuntimeException("gRPC channel not found");
+    }
+
+    GetStorageLayoutRequest request =
+        GetStorageLayoutRequest.newBuilder()
+            .setName(StorageLayoutName.of(getOptions().getProjectId(), bucketName).toString())
+            .build();
+
+    StorageLayout layout =
+        ClientCalls.blockingUnaryCall(
+            channel, getStorageLayoutMethod, io.grpc.CallOptions.DEFAULT, request);
+
+    return com.google.cloud.Tuple.of(layout.getName(), layout.getLocation());
   }
 
   @Override

@@ -48,4 +48,12 @@ interface StorageInternal {
   default BlobInfo internalObjectGet(BlobId blobId, Opts<ObjectSourceOpt> opts) {
     throw new UnsupportedOperationException("not implemented");
   }
+
+  default com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
+    throw new UnsupportedOperationException("not implemented");
+  }
+
+  default BucketMetadataCache getBucketMetadataCache() {
+    throw new UnsupportedOperationException("not implemented");
+  }
 }
