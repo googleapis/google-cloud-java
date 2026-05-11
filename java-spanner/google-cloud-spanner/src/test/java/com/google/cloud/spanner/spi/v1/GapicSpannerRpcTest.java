@@ -1434,7 +1434,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testDirectPathFallbackCreatesOneGrpcGcpLayerPerPath() {
+  public void testDirectPathFallbackUsesCloudPathForAdminClients() {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     GapicSpannerRpc rpc = null;
     try {
@@ -1445,8 +1445,8 @@ public class GapicSpannerRpcTest {
       GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
       rpc = new GapicSpannerRpc(options);
       GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
-      assertEquals(counts.debugString(), 6, counts.gcpManagedChannels);
-      assertEquals(counts.debugString(), 48, counts.channelRefs);
+      assertEquals(counts.debugString(), 4, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 32, counts.channelRefs);
     } finally {
       if (rpc != null) {
         rpc.shutdown();

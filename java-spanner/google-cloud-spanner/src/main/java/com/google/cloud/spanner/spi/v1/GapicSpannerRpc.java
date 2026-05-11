@@ -399,6 +399,12 @@ public class GapicSpannerRpc implements SpannerRpc {
                   options.getChannelEndpointCacheFactory(),
                   endpointChannelConfigurator)
               : baseChannelProvider;
+      TransportChannelProvider adminChannelProvider =
+          useGcpFallback
+              ? createChannelProviderBuilder(
+                      options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false)
+                  .build()
+              : channelProvider;
 
       spannerWatchdog =
           Executors.newSingleThreadScheduledExecutor(
@@ -497,7 +503,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                 pdmlSettings.build(), clientContext);
         this.instanceAdminStubSettings =
             options.getInstanceAdminStubSettings().toBuilder()
-                .setTransportChannelProvider(channelProvider)
+                .setTransportChannelProvider(adminChannelProvider)
                 .setCredentialsProvider(credentialsProvider)
                 .setStreamWatchdogProvider(watchdogProvider)
                 .setTracerFactory(
@@ -508,7 +514,7 @@ public class GapicSpannerRpc implements SpannerRpc {
 
         this.databaseAdminStubSettings =
             options.getDatabaseAdminStubSettings().toBuilder()
-                .setTransportChannelProvider(channelProvider)
+                .setTransportChannelProvider(adminChannelProvider)
                 .setCredentialsProvider(credentialsProvider)
                 .setStreamWatchdogProvider(watchdogProvider)
                 .setTracerFactory(
