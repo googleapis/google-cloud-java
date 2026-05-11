@@ -4,4 +4,6 @@ target-it/**
 **/ITBigQueryJDBCLocalTest.java
 
 tools/**/*.class
+tools/**/drivers/**
+tools/**/logs/**
 tools/**/*.jfr
