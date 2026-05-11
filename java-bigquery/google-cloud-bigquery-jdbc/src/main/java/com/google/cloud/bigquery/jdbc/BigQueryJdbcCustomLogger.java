@@ -125,4 +125,14 @@ public class BigQueryJdbcCustomLogger extends Logger {
   public void severe(String format, Throwable thrown, Object... args) {
     logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
   }
+
+  @Override
+  public void finest(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINEST, msgSupplier);
+  }
+
+  @Override
+  public void fine(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINE, msgSupplier);
+  }
 }

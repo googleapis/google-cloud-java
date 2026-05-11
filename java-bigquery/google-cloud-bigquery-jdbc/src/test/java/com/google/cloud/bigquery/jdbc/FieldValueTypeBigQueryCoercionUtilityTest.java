@@ -29,6 +29,7 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
+import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
 import com.google.common.collect.ImmutableList;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -36,14 +37,15 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
-import java.util.concurrent.TimeUnit;
+import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class FieldValueTypeBigQueryCoercionUtilityTest {
+  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+
   private static final FieldValue STRING_VALUE = FieldValue.of(PRIMITIVE, "sample-string");
   private static final FieldValue INTEGER_VALUE = FieldValue.of(PRIMITIVE, "345");
   private static final FieldValue FLOAT_VALUE = FieldValue.of(PRIMITIVE, "345.21");
@@ -299,9 +301,8 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   @Test
   public void fieldValueToTimestamp() {
     Instant instant = Instant.EPOCH.plus(TIMESTAMP_VALUE.getTimestampValue(), ChronoUnit.MICROS);
-    LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC"));
     assertThat(INSTANCE.coerceTo(Timestamp.class, TIMESTAMP_VALUE))
-        .isEqualTo(Timestamp.valueOf(localDateTime));
+        .isEqualTo(Timestamp.from(instant));
   }
 
   @Test
@@ -317,11 +318,28 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   @Test
   public void fieldValueToTime() {
     LocalTime expectedTime = LocalTime.of(23, 59, 59);
-    assertThat(INSTANCE.coerceTo(Time.class, TIME_VALUE))
-        .isEqualTo(new Time(TimeUnit.NANOSECONDS.toMillis(expectedTime.toNanoOfDay())));
-    LocalTime expectedTimeWithNanos = LocalTime.parse("23:59:59.99999");
+    assertThat(INSTANCE.coerceTo(Time.class, TIME_VALUE)).isEqualTo(Time.valueOf(expectedTime));
+    // expectedTimeWithNanos has 999 milliseconds, giving 86399999 ms of day.
+    // Since the test runs under UTC timezone by TimeZoneRule, expected localMillis is 86399999L.
     assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
-        .isEqualTo(new Time(TimeUnit.NANOSECONDS.toMillis(expectedTimeWithNanos.toNanoOfDay())));
+        .isEqualTo(new Time(86399999L));
+  }
+
+  @Test
+  public void fieldValueToTimeInNonUTCTimeZone() {
+    TimeZone originalTimeZone = TimeZone.getDefault();
+    try {
+      java.util.TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+      TimeZoneCache.reset();
+      // 23:59:59.99999 yields 86399999 milliseconds.
+      // Under America/Los_Angeles on 1970-01-01 (PST, -8 hours offset),
+      // the subtracted offset results in 86399999 - (-28800000) = 115199999L.
+      assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
+          .isEqualTo(new Time(115199999L));
+    } finally {
+      TimeZone.setDefault(originalTimeZone);
+      TimeZoneCache.reset();
+    }
   }
 
   @Test
