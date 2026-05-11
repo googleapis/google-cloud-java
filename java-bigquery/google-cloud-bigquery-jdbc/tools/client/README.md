@@ -20,7 +20,7 @@ Common variables:
 - `URL`: JDBC connection URL (defaults to public BigQuery endpoint)
 - `CREDENTIALS`: Path to service account JSON key (defaults to `$GOOGLE_APPLICATION_CREDENTIALS`)
 - `PARAMS`: Default set of connection string params.
-- `EXTRA_PARAMS`: Additional connection string parameters (e.g., `PARAMS="Timeout=30;LogLevel=6;"`)
+- `EXTRA_PARAMS`: Additional connection string parameters (e.g., `EXTRA_PARAMS="Timeout=30;LogLevel=6;"`)
 - `OUTPUT`: Set to `false` to suppress query result output (defaults to `true`)
 - `EXTRA_ARGS`: Extra arguments to pass to the client (e.g., `EXTRA_ARGS="--table my_table"`)
 

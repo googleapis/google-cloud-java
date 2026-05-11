@@ -48,7 +48,7 @@ else
   JFR_FLAGS =
 endif
 
-COMMON_FLAGS = --url "$(URL);$(DEFAULT_PARAMS);$(PARAMS)" \
+COMMON_FLAGS = --url "$(URL);$(DEFAULT_PARAMS);$(PARAMS);$(EXTRA_PARAMS)" \
                --driver-jar "$(DRIVER_JAR)" \
                --driver-class "$(DRIVER_CLASS)"
 
