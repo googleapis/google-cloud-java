@@ -32,6 +32,7 @@ import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
@@ -55,6 +56,7 @@ import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -508,10 +510,9 @@ public class BigQueryStatementTest {
     doReturn(50L).when(tableResult).getTotalRows();
 
     // Standard java collection in values
-    java.util.List<com.google.cloud.bigquery.FieldValueList> valuesList =
-        new java.util.ArrayList<>();
+    List<FieldValueList> valuesList = new ArrayList<>();
     for (int i = 0; i < 50; i++) {
-      valuesList.add(mock(com.google.cloud.bigquery.FieldValueList.class));
+      valuesList.add(mock(FieldValueList.class));
     }
     doReturn(valuesList).when(tableResult).getValues();
 
