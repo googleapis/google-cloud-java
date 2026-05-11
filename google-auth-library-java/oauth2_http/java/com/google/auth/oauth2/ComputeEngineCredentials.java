@@ -62,7 +62,6 @@ import java.io.ObjectInputStream;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
-import java.security.cert.X509Certificate;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -378,7 +377,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getProjectIdFromMetadata() {
     try {
-      HttpResponse response = getMetadataResponse(getProjectIdUrl(), "GET", null, RequestType.UNTRACKED, false);
+      HttpResponse response =
+          getMetadataResponse(getProjectIdUrl(), "GET", null, RequestType.UNTRACKED, false);
       int statusCode = response.getStatusCode();
       if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
         LoggingUtils.log(
@@ -424,12 +424,14 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
     String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     HttpResponse response;
-    
+
     if (boundTokenPayload != null) {
-      String escapedChain = boundTokenPayload.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r");
-      String jsonString = "{\"certificate_chain\":\"" + escapedChain + "\"}";
-      
-      response = getMetadataResponse(tokenUrl, "POST", jsonString, RequestType.ACCESS_TOKEN_REQUEST, true);
+      java.util.Map<String, String> payload =
+          Collections.singletonMap("certificate_chain", boundTokenPayload);
+      String jsonString = OAuth2Utils.JSON_FACTORY.toString(payload);
+
+      response =
+          getMetadataResponse(tokenUrl, "POST", jsonString, RequestType.ACCESS_TOKEN_REQUEST, true);
     } else {
       response = getMetadataResponse(tokenUrl, "GET", null, RequestType.ACCESS_TOKEN_REQUEST, true);
     }
@@ -502,16 +504,19 @@ public class ComputeEngineCredentials extends GoogleCredentials
     documentUrl.set("audience", targetAudience);
     String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     HttpResponse response;
-    
+
     if (boundTokenPayload != null) {
-      System.out.println("ComputeEngineCredentials: Requesting bound ID token via POST.");
-      String escapedChain = boundTokenPayload.replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r");
-      String jsonString = "{\"certificate_chain\":\"" + escapedChain + "\"}";
-      
-      response = getMetadataResponse(documentUrl.toString(), "POST", jsonString, RequestType.ID_TOKEN_REQUEST, true);
+      java.util.Map<String, String> payload =
+          Collections.singletonMap("certificate_chain", boundTokenPayload);
+      String jsonString = OAuth2Utils.JSON_FACTORY.toString(payload);
+
+      response =
+          getMetadataResponse(
+              documentUrl.toString(), "POST", jsonString, RequestType.ID_TOKEN_REQUEST, true);
     } else {
-      System.out.println("ComputeEngineCredentials: Requesting standard unbound ID token via GET.");
-      response = getMetadataResponse(documentUrl.toString(), "GET", null, RequestType.ID_TOKEN_REQUEST, true);
+      response =
+          getMetadataResponse(
+              documentUrl.toString(), "GET", null, RequestType.ID_TOKEN_REQUEST, true);
     }
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
@@ -541,15 +546,23 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   private HttpResponse getMetadataResponse(
-      String url, String method, String jsonContent, RequestType requestType, boolean shouldSendMetricsHeader) throws IOException {
+      String url,
+      String method,
+      String jsonContent,
+      RequestType requestType,
+      boolean shouldSendMetricsHeader)
+      throws IOException {
     GenericUrl genericUrl = new GenericUrl(url);
     HttpRequest request;
     if ("POST".equals(method)) {
       com.google.api.client.http.HttpContent content = null;
       if (jsonContent != null) {
-        content = new com.google.api.client.http.ByteArrayContent("application/json", jsonContent.getBytes(StandardCharsets.UTF_8));
+        content =
+            new com.google.api.client.http.ByteArrayContent(
+                "application/json", jsonContent.getBytes(StandardCharsets.UTF_8));
       }
-      request = transportFactory.create().createRequestFactory().buildPostRequest(genericUrl, content);
+      request =
+          transportFactory.create().createRequestFactory().buildPostRequest(genericUrl, content);
     } else {
       request = transportFactory.create().createRequestFactory().buildGetRequest(genericUrl);
     }
@@ -859,7 +872,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getDefaultServiceAccount() throws IOException {
     HttpResponse response =
-        getMetadataResponse(getDefaultServiceAccountUrl(), "GET", null, RequestType.UNTRACKED, false);
+        getMetadataResponse(
+            getDefaultServiceAccountUrl(), "GET", null, RequestType.UNTRACKED, false);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(

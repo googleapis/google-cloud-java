@@ -59,7 +59,6 @@ import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -67,17 +66,17 @@ import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.concurrent.atomic.AtomicLong;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link ComputeEngineCredentials}. */
@@ -94,7 +93,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     // Inject our test environment reader into AgentIdentityUtils
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
     tempDir = Files.createTempDirectory("compute_engine_creds_test");
-    
+
     // Speed up polling in tests by using a fake time service that advances time immediately
     final AtomicLong currentTime = new AtomicLong(0);
     AgentIdentityUtils.setTimeService(
@@ -103,6 +102,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
           public long currentTimeMillis() {
             return currentTime.get();
           }
+
           @Override
           public void sleep(long millis) {
             currentTime.addAndGet(millis);
@@ -1219,8 +1219,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertEquals(0, transportFactory.transport.getRequestCount());
   }
 
-
-
   @Test
   void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
     envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
@@ -1234,6 +1232,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
           public long currentTimeMillis() {
             return currentTime.get();
           }
+
           @Override
           public void sleep(long millis) {
             currentTime.addAndGet(millis);
@@ -1250,25 +1249,27 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
                 "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
   }
 
-
-
   private void setupCertAndKeyConfig() throws IOException {
     java.nio.file.Path certSource = java.nio.file.Paths.get("testresources/agent_spiffe_cert.pem");
-    java.nio.file.Path keySource = java.nio.file.Paths.get("testresources/mtls/test_key.pem");
-    
     java.nio.file.Path certTarget = tempDir.resolve("certificates.pem");
-    java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
-    
     Files.copy(certSource, certTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    java.nio.file.Path keySource = java.nio.file.Paths.get("testresources/agent_spiffe_key.pem");
+    java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
     Files.copy(keySource, keyTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-    
+
     Path configPath = tempDir.resolve("config.json");
-    String configContent =
-        "{\"cert_configs\": {\"workload\": {\"cert_path\": \""
-            + certTarget.toAbsolutePath().toString().replace("\\", "\\\\")
-            + "\", \"key_path\": \""
-            + keyTarget.toAbsolutePath().toString().replace("\\", "\\\\")
-            + "\"}}}";
+    Map<String, Object> workload = new HashMap<>();
+    workload.put("cert_path", certTarget.toAbsolutePath().toString());
+    workload.put("key_path", keyTarget.toAbsolutePath().toString());
+
+    Map<String, Object> certConfigs = new HashMap<>();
+    certConfigs.put("workload", workload);
+
+    Map<String, Object> config = new HashMap<>();
+    config.put("cert_configs", certConfigs);
+
+    String configContent = OAuth2Utils.JSON_FACTORY.toString(config);
     Files.write(configPath, configContent.getBytes(StandardCharsets.UTF_8));
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configPath.toAbsolutePath().toString());
   }
@@ -1276,17 +1277,19 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
+    envProvider.setEnv(
+        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
-    
+
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     AccessToken token = credentials.refreshAccessToken();
-    
+
     assertNotNull(token);
-    com.google.api.client.testing.http.MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    com.google.api.client.testing.http.MockLowLevelHttpRequest request =
+        transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     String body = request.getContentAsString();
     assertTrue(body.contains("certificate_chain"));
@@ -1295,17 +1298,19 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   @Test
   void idTokenWithAudience_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
+    envProvider.setEnv(
+        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
-    
+
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     IdToken token = credentials.idTokenWithAudience("https://foo.bar", null);
-    
+
     assertNotNull(token);
-    com.google.api.client.testing.http.MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    com.google.api.client.testing.http.MockLowLevelHttpRequest request =
+        transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     String body = request.getContentAsString();
     assertTrue(body.contains("certificate_chain"));
@@ -1313,9 +1318,11 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   private static class TestEnvironmentProvider {
     private final Map<String, String> env = new HashMap<>();
+
     void setEnv(String key, String value) {
       env.put(key, value);
     }
+
     String getEnv(String key) {
       return env.get(key);
     }
