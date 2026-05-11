@@ -185,7 +185,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
-    LOG.finestTrace("getObject", "++enter++");
+    LOG.finestTrace("getObject");
     FieldValue value = getObjectInternal(columnIndex);
     if (value == null || value.isNull()) {
       return null;
@@ -230,7 +230,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    */
   private FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
-    LOG.finestTrace("getObjectInternal", "++enter++");
+    LOG.finestTrace("getObjectInternal");
     FieldValue value;
     if (this.isNested) {
       boolean validIndexForNestedResultSet = columnIndex == 1 || columnIndex == 2;
@@ -287,7 +287,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isBeforeFirst() throws SQLException {
     checkClosed();
-    LOG.finestTrace("isBeforeFirst", "++enter++");
+    LOG.finestTrace("isBeforeFirst");
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
@@ -298,14 +298,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isAfterLast() throws SQLException {
     checkClosed();
-    LOG.finestTrace("isAfterLast", "++enter++");
+    LOG.finestTrace("isAfterLast");
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
     checkClosed();
-    LOG.finestTrace("isFirst", "++enter++");
+    LOG.finestTrace("isFirst");
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
     } else {
@@ -316,7 +316,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isLast() throws SQLException {
     checkClosed();
-    LOG.finestTrace("isLast", "++enter++");
+    LOG.finestTrace("isLast");
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {

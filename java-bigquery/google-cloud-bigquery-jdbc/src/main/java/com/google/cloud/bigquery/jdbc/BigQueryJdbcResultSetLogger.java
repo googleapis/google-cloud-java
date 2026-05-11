@@ -72,6 +72,19 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   }
 
   /**
+   * Log a message at Level.FINEST with predefined class name, method name and messageto avoid stack
+   * trace parsing on the hot-path.
+   */
+  public void finestTrace(String methodName) {
+    if (isLoggable(Level.FINEST)) {
+      LogRecord record = new LogRecord(Level.FINEST, "++enter++");
+      record.setSourceClassName(targetClassName);
+      record.setSourceMethodName(methodName);
+      this.log(record);
+    }
+  }
+
+  /**
    * Log a message at Level.FINEST with predefined class name and method name to avoid stack trace
    * parsing on the hot-path.
    */
