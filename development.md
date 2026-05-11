@@ -46,6 +46,5 @@ Many services in this repository (e.g., `java-spanner`, `java-bigtable`) are str
 Once your upstream monorepo dependencies are installed in your local ~/.m2/repository cache, you can run standard Maven commands for a specific service from the repository root using the -pl flag:
 
 ```bash
-cd java-spanner
-mvn compile
+mvn compile -pl java-spanner
 ```
