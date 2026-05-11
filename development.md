@@ -43,7 +43,7 @@ mvn install -pl java-monitoring/google-cloud-monitoring-bom,java-bigtable/google
 
 Many services in this repository (e.g., `java-spanner`, `java-bigtable`) are structured as aggregator parents with multiple submodules (e.g., separate directories for client code, gRPC/Protobuf stubs, executors, and BOMs).
 
-Once your external dependencies are installed in your local `~/.m2/repository` cache, you can navigate directly to the service folder and run standard Maven commands:
+Once your upstream monorepo dependencies are installed in your local ~/.m2/repository cache, you can run standard Maven commands for a specific service from the repository root using the -pl flag:
 
 ```bash
 cd java-spanner
