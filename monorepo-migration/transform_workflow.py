@@ -33,11 +33,34 @@ def transform(content, lib_name):
           library:
             - '{lib_name}/**'"""
 
+    clirr_template = f"""  clirr:
+    needs: filter
+    if: ${{{{ needs.filter.outputs.library == 'true' }}}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
+        BUILD_SUBDIR: {lib_name}"""
+
     in_jobs = False
     skip_current_job = False
     current_job_is_windows = False
+    current_job_is_lint = False
+    
+    skip_lines_count = 0
     
     for line in lines:
+        if skip_lines_count > 0:
+            skip_lines_count -= 1
+            continue
+
         if line.startswith('name:') and not in_jobs:
             name_match = re.match(r'^name:\s*(.*)', line)
             if name_match:
@@ -62,11 +85,12 @@ def transform(content, lib_name):
             if job_match:
                 job_name = job_match.group(1)
                 current_job_is_windows = False # Reset for new job
+                current_job_is_lint = (job_name == 'lint')
+                skip_current_job = False
                 if job_name == 'clirr':
                     skip_current_job = True
+                    new_lines.extend(clirr_template.splitlines())
                     continue
-                else:
-                    skip_current_job = False
                 
                 if job_name != 'filter':
                     new_lines.append(line)
@@ -84,10 +108,29 @@ def transform(content, lib_name):
                 new_lines.append("      run: git config --system core.longpaths true")
                 continue
 
+            if 'name: Support longpaths' in line and current_job_is_windows:
+                skip_lines_count = 1
+                continue
+
+            if '- uses: actions/checkout' in line and current_job_is_lint:
+                new_lines.append("    - uses: actions/checkout@v4")
+                new_lines.append("      with:")
+                new_lines.append("        fetch-depth: 0")
+                continue
+
+            if 'JOB_TYPE: lint' in line and current_job_is_lint:
+                new_lines.append(line)
+                new_lines.append("        HEAD_SHA: ${{ github.event.pull_request.head.sha }}")
+                new_lines.append("        BASE_SHA: ${{ github.event.pull_request.base.sha }}")
+                continue
+
             if 'run: echo "SUREFIRE_JVM_OPT=' in line and '!java17' not in line:
                 line = line.replace('" >> $GITHUB_ENV', ' -P !java17" >> $GITHUB_ENV')
             if 'build.bat' in line:
                 line = line.replace('build.bat', 'build.sh')
+            if '.kokoro/conformance.sh' in line:
+                short_name = lib_name.replace('java-', '')
+                line = line.replace('.kokoro/conformance.sh', f'.kokoro/{short_name}-conformance.sh')
 
             new_lines.append(line)
     return "\n".join(new_lines)

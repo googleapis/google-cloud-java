@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2020 Google LLC
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- ReadTimeTransaction - added abstract modifier to Transaction class-->
+  <difference>
+    <differenceType>3005</differenceType>
+    <className>com/google/cloud/firestore/Transaction</className>
+  </difference>
+
+  <!-- Shutdown/Shutdown Now -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>void shutdown()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>void shutdownNow()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>void shutdown()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>void shutdownNow()</method>
+  </difference>
+
+  <!-- v2.1.1 -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.FirestoreBundle$Builder bundleBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.FirestoreBundle$Builder bundleBuilder(java.lang.String)</method>
+  </difference>
+
+  <!-- v2.0.0 -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/DocumentReference</className>
+    <method>java.lang.Iterable getCollections()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>java.lang.Iterable getCollections()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/FirestoreOptions$Builder</className>
+    <method>com.google.cloud.firestore.FirestoreOptions$Builder setTimestampsInSnapshotsEnabled(boolean)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/FirestoreOptions</className>
+    <method>boolean areTimestampsInSnapshotsEnabled()</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/v1beta1/**/*</className>
+    <to>*</to>
+  </difference>
+
+  <!--
+  createIndex -> createIndexAsync
+  -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation createIndex(com.google.firestore.admin.v1.ParentName, com.google.firestore.admin.v1.Index)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation createIndex(java.lang.String, com.google.firestore.admin.v1.Index)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation createIndex(com.google.firestore.admin.v1.CreateIndexRequest)</method>
+  </difference>
+
+  <!--
+  exportDocuments -> exportDocumentsAsync
+  -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation exportDocuments(com.google.firestore.admin.v1.DatabaseName)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation exportDocuments(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation exportDocuments(com.google.firestore.admin.v1.ExportDocumentsRequest)</method>
+  </difference>
+  <!--
+  importDocuments -> importDocumentsAsync
+  -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation importDocuments(com.google.firestore.admin.v1.DatabaseName)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation importDocuments(java.lang.String)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation importDocuments(com.google.firestore.admin.v1.ImportDocumentsRequest)</method>
+  </difference>
+  <!--
+  updatedField -> updateFieldAsync
+  -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation updateField(com.google.firestore.admin.v1.Field)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation updateField(com.google.firestore.admin.v1.UpdateFieldRequest)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient</className>
+    <method>com.google.longrunning.Operation updateField(com.google.firestore.admin.v1.UpdateFieldRequest)</method>
+  </difference>
+
+  <!--
+  deleteDocument(AnyPathName) -> deleteDocument(String)
+  -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreClient</className>
+    <method>void deleteDocument(com.google.firestore.v1.AnyPathName)</method>
+  </difference>
+
+  <!--
+  ParentName -> CollectionGroupName
+  -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/firestore/v1/FirestoreAdminClient*</className>
+    <method>com.google.cloud.firestore.v1.FirestoreAdminClient$List*PagedResponse list*(com.google.firestore.admin.v1.ParentName)</method>
+        <to>com.google.cloud.firestore.v1.FirestoreAdminClient$List*PagedResponse list*(com.google.firestore.admin.v1.CollectionGroupName)</to>
+  </difference>
+
+  <!--
+  Admin client migrated to com.google.cloud:google-cloud-firestore-admin artifact.
+  -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/v1/**/*FirestoreAdmin*</className>
+    <to>*</to>
+  </difference>
+
+  <!--
+  Query Partition API Feature
+  -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>com.google.api.gax.rpc.UnaryCallable partitionQueryPagedCallable()</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.Query collectionGroup(java.lang.String)</method>
+    <to>com.google.cloud.firestore.CollectionGroup</to>
+  </difference>
+
+  <!--
+  BulkWriter
+  -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.BulkWriter bulkWriter(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <method>com.google.cloud.firestore.UpdateBuilder create(*)</method>
+    <to>java.lang.Object</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <method>com.google.cloud.firestore.UpdateBuilder delete(*)</method>
+    <to>java.lang.Object</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <method>com.google.cloud.firestore.UpdateBuilder set(*)</method>
+    <to>java.lang.Object</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <method>com.google.cloud.firestore.UpdateBuilder update(*)</method>
+    <to>java.lang.Object</to>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>com.google.api.gax.rpc.UnaryCallable batchWriteCallable()</method>
+  </difference>
+  <difference>
+    <differenceType>1001</differenceType>
+    <className>com/google/cloud/firestore/BatchWriteResult</className>
+  </difference>
+  <difference>
+    <differenceType>6004</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <field>pendingOperations</field>
+    <from>java.util.Map</from>
+    <to>java.util.List</to>
+  </difference>
+
+  <!--
+  UpdateBuilder
+  -->
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <field>pendingOperations</field>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <field>state</field>
+  </difference>
+  <difference>
+    <differenceType>6010</differenceType>
+    <className>com/google/cloud/firestore/UpdateBuilder</className>
+    <field>writes</field>
+  </difference>
+
+  <!--
+  FakeCredentials Refactor
+  com.google.cloud.firestore.FirestoreOptions$Builder$FakeCredentials -> com.google.cloud.firestore.FirestoreOptions$EmulatorCredentials
+  -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/FirestoreOptions$Builder$FakeCredentials</className>
+    <to>*</to>
+  </difference>
+
+  <!-- Recursive Delete -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.api.core.ApiFuture recursiveDelete(*)</method>
+  </difference>
+
+  <!-- Aggregate Queries  -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>com.google.api.gax.rpc.ServerStreamingCallable runAggregationQueryCallable()</method>
+  </difference>
+
+  <!-- StandardComparator no longer in use -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/collection/StandardComparator</className>
+    <to>*</to>
+  </difference>
+
+  <!-- Reverted a change to make CustomClassMapper public -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/firestore/encoding/CustomClassMapper</className>
+    <to>*</to>
+  </difference>
+
+  <!-- GenericQuerySnapshot -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/QuerySnapshot</className>
+    <method>com.google.cloud.firestore.Query getQuery()</method>
+  </difference>
+
+  <!-- Removed an OpenTelemetry Tracing Beta Api -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/FirestoreOpenTelemetryOptions</className>
+    <method>boolean isTracingEnabled()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/firestore/FirestoreOpenTelemetryOptions$Builder</className>
+    <method>com.google.cloud.firestore.FirestoreOpenTelemetryOptions$Builder setTracingEnabled(boolean)</method>
+  </difference>
+
+  <difference>
+    <className>com/google/cloud/firestore/StreamableQuery</className>
+    <differenceType>7009</differenceType>
+    <method>void internalStream(*)</method>
+  </difference>
+  
+  <!-- Relocate constants in TraceUtil -->
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/firestore/telemetry/TraceUtil</className>
+    <field>SPAN_NAME_*</field>
+  </difference>
+
+  <!-- Change the parameter type of internalStream function -->
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/cloud/firestore/StreamableQuery</className>
+    <method>void internalStream(*)</method>
+    <to>*</to>
+  </difference>
+
+  <!-- Pipeline Queries -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/Firestore</className>
+    <method>com.google.cloud.firestore.PipelineSource pipeline()</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/firestore/Transaction</className>
+    <method>com.google.api.core.ApiFuture execute(com.google.cloud.firestore.Pipeline)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
+    <className>com/google/cloud/firestore/Transaction</className>
+    <method>com.google.api.core.ApiFuture execute(com.google.cloud.firestore.Pipeline, com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/firestore/spi/v1/FirestoreRpc</className>
+    <method>com.google.api.gax.rpc.ServerStreamingCallable executePipelineCallable()</method>
+  </difference>
+</differences>
