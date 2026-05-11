@@ -353,6 +353,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(int columnIndex, int scale) throws SQLException {
     LOG.finestTrace("getBigDecimal", "++enter++");
     try {
@@ -472,6 +474,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public InputStream getUnicodeStream(int columnIndex) throws SQLException {
     LOG.finestTrace("getUnicodeStream", "++enter++");
     return getInputStream(getString(columnIndex), StandardCharsets.UTF_16LE);
@@ -569,6 +573,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(String columnLabel, int scale) throws SQLException {
     return getBigDecimal(getColumnIndex(columnLabel), scale);
   }
@@ -599,6 +605,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public InputStream getUnicodeStream(String columnLabel) throws SQLException {
     return getUnicodeStream(getColumnIndex(columnLabel));
   }

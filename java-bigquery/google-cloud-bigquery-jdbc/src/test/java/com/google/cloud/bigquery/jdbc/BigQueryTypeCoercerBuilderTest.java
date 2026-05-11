@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.bigquery.jdbc.TestType.Text;
 import org.junit.jupiter.api.Test;
 
-public class BigQueryBigQueryTypeCoercerBuilderTest {
+public class BigQueryTypeCoercerBuilderTest {
 
   @Test
   public void shouldBeAbleToConvertCustomTypes() {
