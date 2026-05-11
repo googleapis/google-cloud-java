@@ -5,4 +5,6 @@ target-it/**
 **/BigQueryStatementE2EBenchmark.java
 
 tools/**/*.class
+tools/**/drivers/**
+tools/**/logs/**
 tools/**/*.jfr
