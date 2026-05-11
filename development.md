@@ -1,6 +1,6 @@
 # Monorepo Scoped Development Guide
 
-This document outlines highly efficient development workflows and build strategies when working with specific client libraries or modules in the `google-cloud-java` monorepo.
+This document outlines development workflows and build strategies when working with specific client libraries or modules in the `google-cloud-java` monorepo.
 
 ---
 
@@ -11,7 +11,7 @@ Instead of running a full build of the entire monorepo (which contains over 250+
 Run the following command from the **root directory** of the repository:
 
 ```bash
-mvn compile -pl java-spanner/google-cloud-spanner -am -P quick-build -DskipTests
+mvn install -pl java-spanner/google-cloud-spanner -am -P quick-build -DskipTests
 ```
 
 ### Flag Explanations:
@@ -28,10 +28,10 @@ mvn compile -pl java-spanner/google-cloud-spanner -am -P quick-build -DskipTests
 #### The Problem:
 If a module (or one of its parent dependencies/dependency BOMs) imports another BOM from within the same monorepo via `<scope>import</scope>` in a `<dependencyManagement>` block, Maven **does not** recognize it as a concrete build dependency.
 * *Example:* `google-cloud-bigtable-deps-bom` imports `google-cloud-monitoring-bom` via `<dependencyManagement>`.
-* Running `mvn compile -pl java-bigtable/google-cloud-bigtable -am` (or targeting the deps-bom directly) will **succeed without actually building the local version of `google-cloud-monitoring-bom`**. Any local changes you made to the BOM will be silently ignored because `-am` does not trace imports.
+* Running `mvn install -pl java-bigtable/google-cloud-bigtable -am` (or targeting the deps-bom directly) will **succeed without actually building the local version of `google-cloud-monitoring-bom`**.
 
-#### The Solution (Fast Targeted Build):
-To resolve this without doing a full 30-minute monorepo build, you can explicitly list the imported BOMs in the `-pl` parameter. This registers them as primary targets so that `-am` builds them and their dependencies, taking **only ~1 minute**:
+#### The Solution (Targeted Build):
+To resolve this without doing a full 30-minute monorepo build, you can explicitly list the imported BOMs in the `-pl` parameter:
 
 ```bash
 mvn install -pl java-monitoring/google-cloud-monitoring-bom,java-bigtable/google-cloud-bigtable-deps-bom,java-bigtable/google-cloud-bigtable -am -P quick-build -DskipTests
@@ -46,5 +46,8 @@ Many services in this repository (e.g., `java-spanner`, `java-bigtable`) are str
 Once your upstream monorepo dependencies are installed in your local ~/.m2/repository cache, you can run standard Maven commands for a specific service from the repository root using the -pl flag:
 
 ```bash
-mvn compile -pl java-spanner
+cd java-spanner
+mvn compile
 ```
+
+Your IDE such as Intellij should also be able to import all the upstream dependencies at this moment. You can perform the same operations as you would in a normal project such as running unit tests, debugging and so on. 
