@@ -1,3 +1,33 @@
+/*
+ * Copyright 2026, Google Inc. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ *    * Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above
+ * copyright notice, this list of conditions and the following disclaimer
+ * in the documentation and/or other materials provided with the
+ * distribution.
+ *
+ *    * Neither the name of Google Inc. nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
@@ -15,9 +45,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
-import java.security.cert.CertificateFactory;
 import java.security.PrivateKey;
 import java.security.Signature;
+import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -29,9 +59,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Utility class for Agent Identity token binding in Cloud Run.
- */
+/** Utility class for Agent Identity token binding in Cloud Run. */
 class AgentIdentityUtils {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(AgentIdentityUtils.class);
@@ -85,6 +113,7 @@ class AgentIdentityUtils {
   @VisibleForTesting
   interface TimeService {
     long currentTimeMillis();
+
     void sleep(long millis) throws InterruptedException;
   }
 
@@ -106,6 +135,7 @@ class AgentIdentityUtils {
   static class CertInfo {
     final X509Certificate certificate;
     final String path;
+
     CertInfo(X509Certificate certificate, String path) {
       this.certificate = certificate;
       this.path = path;
@@ -117,22 +147,76 @@ class AgentIdentityUtils {
       return null;
     }
     String certConfigPath = envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG);
-    
-    boolean configExists = !Strings.isNullOrEmpty(certConfigPath) && Files.exists(Paths.get(certConfigPath));
-    String certPath;
+
+    boolean configExists =
+        !Strings.isNullOrEmpty(certConfigPath) && Files.exists(Paths.get(certConfigPath));
+    String certPath = null;
+    String keyPath = null;
+
     if (!Strings.isNullOrEmpty(certConfigPath)) {
       certPath = getCertificatePathWithRetry(certConfigPath);
+      keyPath = extractKeyPathFromConfig(certConfigPath);
     } else {
       certPath = getWellKnownCertificatePathWithRetry();
+      if (certPath != null) {
+        if (certPath.endsWith("credentialbundle.pem")) {
+          keyPath = certPath; // Bundle contains both
+        } else if (certPath.endsWith("certificates.pem")) {
+          keyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
+        }
+      }
     }
 
     boolean certsPresent = !Strings.isNullOrEmpty(certPath);
-    
+
     if (!shouldEnableMtls(certsPresent, configExists)) {
       return null;
     }
 
-    X509Certificate cert = parseCertificate(certPath);
+    X509Certificate cert = null;
+    PrivateKey privateKey = null;
+
+    if (!Strings.isNullOrEmpty(certPath)
+        && !Strings.isNullOrEmpty(keyPath)
+        && !certPath.equals(keyPath)
+        && Files.exists(Paths.get(keyPath))) {
+      // Separate files, verify match with retry
+      int retries = 0;
+      boolean matched = false;
+      while (retries < 3) {
+        try {
+          cert = parseCertificate(certPath);
+          privateKey = readPrivateKey(keyPath, cert.getPublicKey().getAlgorithm());
+
+          if (verifyKeyPair(cert, privateKey)) {
+            matched = true;
+            break;
+          }
+          LOGGER.warn("Cert and key mismatch, retrying...");
+        } catch (Exception e) {
+          LOGGER.warn("Failed to read or verify cert/key, retrying...", e);
+        }
+
+        retries++;
+        if (retries < 3) {
+          try {
+            timeService.sleep(100); // 0.1 seconds backoff
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IOException("Interrupted while waiting for cert/key match.", e);
+          }
+        }
+      }
+
+      if (!matched) {
+        throw new IOException(
+            "Agent Identity certificate and private key mismatch or read failure after 3 retries.");
+      }
+    } else if (!Strings.isNullOrEmpty(certPath)) {
+      // Bundle or only cert available
+      cert = parseCertificate(certPath);
+    }
+
     return new CertInfo(cert, certPath);
   }
 
@@ -180,9 +264,9 @@ class AgentIdentityUtils {
   }
 
   private static String getWellKnownCertificatePathWithRetry() throws IOException {
-    String bundlePath = wellKnownDir + "credentialbundle.pem";
-    String certOnlyPath = wellKnownDir + "certificates.pem";
-    
+    String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
+    String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
+
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
@@ -209,9 +293,7 @@ class AgentIdentityUtils {
         timeService.sleep(sleepInterval);
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        throw new IOException(
-            "Interrupted while waiting for well-known certificate files.",
-            e);
+        throw new IOException("Interrupted while waiting for well-known certificate files.", e);
       }
     }
     throw new IOException(
@@ -219,14 +301,13 @@ class AgentIdentityUtils {
   }
 
   static String readCertificateChain(String certPath) throws IOException {
-    System.out.println("AgentIdentityUtils: Reading certificate chain from: " + certPath);
     return new String(Files.readAllBytes(Paths.get(certPath)), StandardCharsets.UTF_8);
   }
 
   static boolean verifyKeyPair(X509Certificate cert, PrivateKey privateKey) {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
-      
+
       String keyAlgorithm = cert.getPublicKey().getAlgorithm();
       String sigAlg;
       if ("RSA".equals(keyAlgorithm)) {
@@ -236,40 +317,42 @@ class AgentIdentityUtils {
       } else {
         throw new IllegalArgumentException("Unsupported key algorithm: " + keyAlgorithm);
       }
-      
+
       Signature signer = Signature.getInstance(sigAlg);
       signer.initSign(privateKey);
       signer.update(data);
       byte[] signature = signer.sign();
-      
+
       Signature verifier = Signature.getInstance(sigAlg);
       verifier.initVerify(cert.getPublicKey());
       verifier.update(data);
-      
+
       return verifier.verify(signature);
     } catch (Exception e) {
-      System.out.println("AgentIdentityUtils: Key pair verification failed: " + e.getMessage());
+      LOGGER.warn("Key pair verification failed", e);
       return false;
     }
   }
 
   static PrivateKey readPrivateKey(String keyPath, String algorithm) throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
-    OAuth2Utils.Pkcs8Algorithm pkcs8Alg = "EC".equals(algorithm) ? OAuth2Utils.Pkcs8Algorithm.EC : OAuth2Utils.Pkcs8Algorithm.RSA;
+    OAuth2Utils.Pkcs8Algorithm pkcs8Alg =
+        "EC".equals(algorithm) ? OAuth2Utils.Pkcs8Algorithm.EC : OAuth2Utils.Pkcs8Algorithm.RSA;
     return OAuth2Utils.privateKeyFromPkcs8(keyPem, pkcs8Alg);
   }
 
   static boolean shouldEnableMtls(boolean certsPresent, boolean configExists) throws IOException {
     String useClientCert = envReader.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    
+
     if ("true".equalsIgnoreCase(useClientCert)) {
       if (certsPresent) {
-        return true; // Case 1
+        return true;
       }
       if (configExists) {
-        throw new IOException("Certificate intent established via config, but cert files are missing."); // Case 2
+        throw new IOException(
+            "Certificate intent established via config, but cert files are missing.");
       }
-      return false; // Case 3
+      return false;
     } else if ("false".equalsIgnoreCase(useClientCert)) {
       if (certsPresent) {
         Slf4jUtils.log(
@@ -277,15 +360,16 @@ class AgentIdentityUtils {
             org.slf4j.event.Level.WARN,
             Collections.emptyMap(),
             "Token binding protection is disabled because mTLS was explicitly disabled via GOOGLE_API_USE_CLIENT_CERTIFICATE.");
-        return false; // Case 4
+        return false;
       }
-      return false; // Case 5
-    } else { // Unset
+      return false;
+    } else {
       if (certsPresent) {
-        return true; // Case 6 (Infer enabled)
+        return true;
       }
       if (configExists) {
-        throw new IOException("Certificate intent inferred via config, but cert files are missing."); // Case 7
+        throw new IOException(
+            "Certificate intent inferred via config, but cert files are missing."); // Case 7
       }
       return false; // Case 8
     }
@@ -309,6 +393,22 @@ class AgentIdentityUtils {
         Map workload = (Map) certConfigs.get("workload");
         if (workload != null) {
           return (String) workload.get("cert_path");
+        }
+      }
+    }
+    return null;
+  }
+
+  @SuppressWarnings("unchecked")
+  private static String extractKeyPathFromConfig(String certConfigPath) throws IOException {
+    try (InputStream stream = new FileInputStream(certConfigPath)) {
+      JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
+      GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
+      Map certConfigs = (Map) config.get("cert_configs");
+      if (certConfigs != null) {
+        Map workload = (Map) certConfigs.get("workload");
+        if (workload != null) {
+          return (String) workload.get("key_path");
         }
       }
     }
