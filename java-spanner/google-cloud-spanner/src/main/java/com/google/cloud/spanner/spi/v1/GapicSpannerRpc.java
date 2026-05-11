@@ -660,6 +660,9 @@ public class GapicSpannerRpc implements SpannerRpc {
     InstantiatingGrpcChannelProvider.Builder cloudPathProviderBuilder =
         createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false);
+    if (options.isGrpcGcpExtensionEnabled()) {
+      cloudPathProviderBuilder.setPoolSize(1);
+    }
 
     InstantiatingGrpcChannelProvider cloudPathProvider = cloudPathProviderBuilder.build();
     ManagedChannelBuilder cloudPathBuilder;
@@ -727,9 +730,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                   .build();
 
           return new FallbackChannelBuilder(
-              primaryBuilder,
-              fallbackBuilder,
-              createFallbackChannelOptions(fallbackTelemetry, 1));
+              primaryBuilder, fallbackBuilder, createFallbackChannelOptions(fallbackTelemetry, 1));
         });
   }
 
