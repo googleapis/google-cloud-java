@@ -39,6 +39,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -326,18 +327,18 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
 
   @Test
   public void fieldValueToTimeInNonUTCTimeZone() {
-    java.util.TimeZone originalTimeZone = java.util.TimeZone.getDefault();
+    TimeZone originalTimeZone = TimeZone.getDefault();
     try {
-      java.util.TimeZone.setDefault(java.util.TimeZone.getTimeZone("America/Los_Angeles"));
-      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+      java.util.TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+      TimeZoneCache.reset();
       // 23:59:59.99999 yields 86399999 milliseconds.
       // Under America/Los_Angeles on 1970-01-01 (PST, -8 hours offset),
       // the subtracted offset results in 86399999 - (-28800000) = 115199999L.
       assertThat(INSTANCE.coerceTo(Time.class, TIME_WITH_NANOSECOND_VALUE))
           .isEqualTo(new Time(115199999L));
     } finally {
-      java.util.TimeZone.setDefault(originalTimeZone);
-      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+      TimeZone.setDefault(originalTimeZone);
+      TimeZoneCache.reset();
     }
   }
 

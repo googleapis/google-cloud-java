@@ -59,6 +59,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
@@ -176,16 +177,10 @@ public class BigQueryArrowArrayOfPrimitivesTest {
                 Long.valueOf("40461820227"),
                 Long.valueOf("40462820227")),
             new Time[] {
-              new Time(java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
-              new Time(
-                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
-                      aTime.plusSeconds(1).toNanoOfDay())),
-              new Time(
-                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
-                      aTime.plusSeconds(2).toNanoOfDay())),
-              new Time(
-                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
-                      aTime.plusSeconds(3).toNanoOfDay()))
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.plusSeconds(1).toNanoOfDay())),
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.plusSeconds(2).toNanoOfDay())),
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.plusSeconds(3).toNanoOfDay()))
             },
             Types.TIME
           },

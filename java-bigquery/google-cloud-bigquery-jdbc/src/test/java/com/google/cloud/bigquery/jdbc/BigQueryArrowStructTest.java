@@ -58,6 +58,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -107,7 +108,7 @@ public class BigQueryArrowStructTest {
                     Timestamp.valueOf(LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000)),
                     Date.valueOf(LocalDate.of(2023, MARCH, 30)),
                     new Time(
-                        java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                        TimeUnit.NANOSECONDS.toMillis(
                             LocalTime.of(11, 14, 19, 820227000).toNanoOfDay())),
                     Timestamp.valueOf("2023-03-30 11:14:19.820227"),
                     "POINT(-122 47)",
@@ -169,10 +170,8 @@ public class BigQueryArrowStructTest {
     assertThat(((Array) attributes[8]).getArray())
         .isEqualTo(
             new Time[] {
-              new Time(java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
-              new Time(
-                  java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
-                      aTime.plusSeconds(1).toNanoOfDay()))
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.plusSeconds(1).toNanoOfDay()))
             });
     assertThat(((Array) attributes[9]).getArray()) // DATETIME
         .isEqualTo(

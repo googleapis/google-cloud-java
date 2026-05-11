@@ -32,6 +32,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.util.TimeZone;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
@@ -173,18 +174,18 @@ public class ArrowFormatTypeBigQueryCoercionUtilityTest {
 
   @Test
   public void longToTimeInNonUTCTimeZone() {
-    java.util.TimeZone originalTimeZone = java.util.TimeZone.getDefault();
+    TimeZone originalTimeZone = TimeZone.getDefault();
     try {
-      java.util.TimeZone.setDefault(java.util.TimeZone.getTimeZone("America/Los_Angeles"));
-      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+      TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+      TimeZoneCache.reset();
       long value = 1408452095220000L;
       // 1408452095220000 microseconds is 1408452095220 milliseconds.
       // Under America/Los_Angeles (PDT, -7 hours offset in Aug 2014), the subtracted offset
       // results in 1408452095220 - (-25200000) = 1408477295220L.
       assertThat(INSTANCE.coerceTo(Time.class, value)).isEqualTo(new Time(1408477295220L));
     } finally {
-      java.util.TimeZone.setDefault(originalTimeZone);
-      com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+      TimeZone.setDefault(originalTimeZone);
+      TimeZoneCache.reset();
     }
   }
 

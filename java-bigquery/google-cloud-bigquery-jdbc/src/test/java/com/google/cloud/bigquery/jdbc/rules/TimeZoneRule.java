@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.rules;
 
+import com.google.cloud.bigquery.jdbc.TimeZoneCache;
 import java.util.TimeZone;
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.AfterEachCallback;
@@ -37,13 +38,13 @@ public class TimeZoneRule
   public void beforeAll(ExtensionContext context) {
     defaultTimeZone = TimeZone.getDefault();
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
-    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    TimeZoneCache.reset();
   }
 
   @Override
   public void afterAll(ExtensionContext context) {
     TimeZone.setDefault(defaultTimeZone);
-    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    TimeZoneCache.reset();
   }
 
   @Override
@@ -52,7 +53,7 @@ public class TimeZoneRule
       defaultTimeZone = TimeZone.getDefault();
     }
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
-    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    TimeZoneCache.reset();
   }
 
   @Override
@@ -60,12 +61,12 @@ public class TimeZoneRule
     if (defaultTimeZone != null) {
       TimeZone.setDefault(defaultTimeZone);
     }
-    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    TimeZoneCache.reset();
   }
 
   /** Public method to enforce the rule manually */
   public void enforce() {
     TimeZone.setDefault(TimeZone.getTimeZone(timeZoneId));
-    com.google.cloud.bigquery.jdbc.TimeZoneCache.reset();
+    TimeZoneCache.reset();
   }
 }
