@@ -112,7 +112,16 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
         optimizeRestoredTableOperationBaseCallable);
   }
 
-  /** Constructs an instance of BigtableTableAdminClientV2 with the given stub. */
+  /**
+   * Constructs an instance of BigtableTableAdminClientV2 with the given stub.
+   *
+   * <p><b>Warning:</b> Initializing the client using only a stub leaves several V2 administrative
+   * callables (like consistency token polling and LRO optimization tracking) uninitialized. Calling
+   * methods like {@link #waitForConsistency} or {@link #awaitOptimizeRestoredTable} on a
+   * stub-initialized client will result in an {@link IllegalStateException}. Consider initializing
+   * the client using settings via {@link #create(BaseBigtableTableAdminSettings)} if these
+   * methods are required.
+   */
   public static final BigtableTableAdminClientV2 create(GrpcBigtableTableAdminStub stub) {
     return new BigtableTableAdminClientV2(stub, null, false, null, null);
   }
@@ -159,6 +168,12 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
           java.util.concurrent.ScheduledExecutorService backgroundExecutor)
           throws IOException {
 
+    // Using getRestoreTableMethod() as a placeholder descriptor for the LRO optimization tracking
+    // is a technique that leverages type erasure and unsafe casting.
+    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable LRO,
+    // we reuse getRestoreTableMethod() (which is an LRO and returns a google.longrunning.Operation)
+    // and cast its request type argument from RestoreTableRequest to Void. This satisfies the 
+    // OperationCallable constructor requirements and correctly handles LRO operation name polling.
     @SuppressWarnings("unchecked")
     MethodDescriptor<Void, Operation> fakeDescriptor =
         (MethodDescriptor<Void, Operation>)
@@ -251,9 +266,8 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
    * client.awaitOptimizeRestoredTable(result.getOptimizeRestoredTableOperationToken());
    * }</pre>
    */
-  public void awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken token)
-      throws ExecutionException, InterruptedException {
-    awaitOptimizeRestoredTableAsync(token).get();
+  public void awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken token) {
+    ApiExceptions.callAndTranslateApiException(awaitOptimizeRestoredTableAsync(token));
   }
 
   /**
