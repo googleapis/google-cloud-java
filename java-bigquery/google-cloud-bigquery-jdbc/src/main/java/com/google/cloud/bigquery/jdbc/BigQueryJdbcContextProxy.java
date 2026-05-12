@@ -138,8 +138,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
             method.getName(),
             () ->
                 String.format(
-                    "Entering: %s.%s(%s)",
-                    interfaceType.getSimpleName(), method.getName(), safeArgsToString(args)));
+                    "Entering: %s.%s()", interfaceType.getSimpleName(), method.getName()));
       }
 
       Object result = method.invoke(target, args);
@@ -154,9 +153,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
             target.getClass().getName(),
             method.getName(),
             () ->
-                String.format(
-                    "Exiting: %s.%s() -> %s",
-                    interfaceType.getSimpleName(), method.getName(), safeToString(result)));
+                String.format("Exiting: %s.%s()", interfaceType.getSimpleName(), method.getName()));
       }
 
       // Symmetrical Cascade: Dynamic ResultSet concrete classes are deliberately unproxied here.
@@ -193,32 +190,6 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
       }
 
       throw cause;
-    }
-  }
-
-  private static String safeArgsToString(Object[] args) {
-    if (args == null) {
-      return "";
-    }
-    StringBuilder sb = new StringBuilder("[");
-    for (int i = 0; i < args.length; i++) {
-      if (i > 0) {
-        sb.append(", ");
-      }
-      sb.append(safeToString(args[i]));
-    }
-    sb.append("]");
-    return sb.toString();
-  }
-
-  private static String safeToString(Object obj) {
-    if (obj == null) {
-      return "null";
-    }
-    try {
-      return obj.toString();
-    } catch (Throwable t) {
-      return "toString() failed: " + t.getMessage();
     }
   }
 }
