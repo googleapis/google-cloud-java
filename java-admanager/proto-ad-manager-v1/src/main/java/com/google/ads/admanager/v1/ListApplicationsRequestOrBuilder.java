@@ -115,6 +115,19 @@ public interface ListApplicationsRequestOrBuilder
    * Optional. Expression to filter the response.
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
+   *
+   * &lt;b&gt;Filterable fields:&lt;/b&gt;
+   * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;appStoreId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;appStores&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;applicationCode&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;approvalStatus&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;webviewClaimingStatus&lt;/code&gt;&lt;/li&gt;
+   * &lt;/ul&gt;
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -130,6 +143,19 @@ public interface ListApplicationsRequestOrBuilder
    * Optional. Expression to filter the response.
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
+   *
+   * &lt;b&gt;Filterable fields:&lt;/b&gt;
+   * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;appStoreId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;appStores&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;applicationCode&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;approvalStatus&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;webviewClaimingStatus&lt;/code&gt;&lt;/li&gt;
+   * &lt;/ul&gt;
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

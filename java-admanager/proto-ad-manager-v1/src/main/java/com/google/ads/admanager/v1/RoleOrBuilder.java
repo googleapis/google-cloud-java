@@ -58,26 +58,36 @@ public interface RoleOrBuilder
    *
    *
    * <pre>
-   * Output only. `Role` ID.
+   * Output only. Deprecated: `Role` ID.
    * </pre>
    *
-   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+   *     google/ads/admanager/v1/role_messages.proto;l=44
    * @return Whether the roleId field is set.
    */
+  @java.lang.Deprecated
   boolean hasRoleId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `Role` ID.
+   * Output only. Deprecated: `Role` ID.
    * </pre>
    *
-   * <code>optional int64 role_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 role_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Role.role_id is deprecated. See
+   *     google/ads/admanager/v1/role_messages.proto;l=44
    * @return The roleId.
    */
+  @java.lang.Deprecated
   long getRoleId();
 
   /**

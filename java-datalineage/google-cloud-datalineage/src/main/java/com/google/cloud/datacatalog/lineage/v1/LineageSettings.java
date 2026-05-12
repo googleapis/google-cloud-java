@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStubSettings;
@@ -224,6 +225,12 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
           BatchSearchLinkProcessesPagedResponse>
       batchSearchLinkProcessesSettings() {
     return ((LineageStubSettings) getStubSettings()).batchSearchLinkProcessesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchLineageStreaming. */
+  public ServerStreamingCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings() {
+    return ((LineageStubSettings) getStubSettings()).searchLineageStreamingSettings();
   }
 
   public static final LineageSettings create(LineageStubSettings stub) throws IOException {
@@ -448,6 +455,13 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
             BatchSearchLinkProcessesPagedResponse>
         batchSearchLinkProcessesSettings() {
       return getStubSettingsBuilder().batchSearchLinkProcessesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchLineageStreaming. */
+    public ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings() {
+      return getStubSettingsBuilder().searchLineageStreamingSettings();
     }
 
     @Override
