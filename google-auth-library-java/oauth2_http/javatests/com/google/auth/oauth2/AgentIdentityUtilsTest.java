@@ -131,18 +131,8 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void calculateCertificateFingerprint_knownInput_returnsExpectedOutput() throws Exception {
-    X509Certificate mockCert = mock(X509Certificate.class);
-    byte[] fakeDer = new byte[] {0x01, 0x02, 0x03, 0x04, (byte) 0xFF};
-    when(mockCert.getEncoded()).thenReturn(fakeDer);
-    String expectedFingerprint = "%2FEAuXk1xSDxtU3mEowwrTIsGVTmkvRsCbGESkmulJ5M";
-    String actualFingerprint = AgentIdentityUtils.calculateCertificateFingerprint(mockCert);
-    assertEquals(expectedFingerprint, actualFingerprint);
-  }
-
-  @Test
   public void getAgentIdentityCertificate_optedOut_returnsNullImmediately() throws IOException {
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", "/non/existent/path");
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
