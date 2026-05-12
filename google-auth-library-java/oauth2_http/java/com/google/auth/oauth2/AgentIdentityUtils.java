@@ -30,21 +30,19 @@
  */
 package com.google.auth.oauth2;
 
+import com.google.api.core.InternalApi;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
-import com.google.common.io.BaseEncoding;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
-import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.Signature;
 import java.security.cert.CertificateFactory;
@@ -60,7 +58,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** Utility class for Agent Identity token binding in Cloud Run. */
-class AgentIdentityUtils {
+@InternalApi
+public final class AgentIdentityUtils {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(AgentIdentityUtils.class);
 
@@ -104,7 +103,7 @@ class AgentIdentityUtils {
     POLLING_INTERVALS = Collections.unmodifiableList(intervals);
   }
 
-  interface EnvReader {
+  public interface EnvReader {
     String getEnv(String name);
   }
 
@@ -142,21 +141,66 @@ class AgentIdentityUtils {
     }
   }
 
+  static class ResolvedCertAndKeyPaths {
+    final String certPath;
+    final String keyPath;
+
+    ResolvedCertAndKeyPaths(String certPath, String keyPath) {
+      this.certPath = certPath;
+      this.keyPath = keyPath;
+    }
+  }
+
+  /**
+   * Retrieves the certificate and path for the Agent Identity.
+   *
+   * <p>This method attempts to load the certificate and private key for the agent identity. It
+   * first checks the location specified by the {@code GOOGLE_API_CERTIFICATE_CONFIG} environment
+   * variable. If not set, it falls back to well-known default locations.
+   *
+   * <p>To handle transient race conditions during certificate rotation on disk, this method employs
+   * a retry mechanism with backoff when reading the configuration and certificate files.
+   *
+   * @return A {@link CertInfo} object containing the loaded certificate and its path, or {@code
+   *     null} if the agent identity features are disabled, opted out, or if no valid credentials
+   *     could be loaded.
+   * @throws IOException If an I/O error occurs while reading the files, or if the key-pair
+   *     verification fails after retries.
+   */
   static CertInfo getAgentIdentityCertInfo() throws IOException {
     if (isOptedOut()) {
       return null;
     }
     String certConfigPath = envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG);
-
     boolean configExists =
         !Strings.isNullOrEmpty(certConfigPath) && Files.exists(Paths.get(certConfigPath));
+
+    ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath);
+    boolean certsPresent = !Strings.isNullOrEmpty(paths.certPath);
+
+    if (!shouldEnableMtls(certsPresent, configExists)) {
+      return null;
+    }
+
+    return loadAndVerifyCredentials(paths.certPath, paths.keyPath);
+  }
+
+  /**
+   * Resolves the paths for the certificate and private key based on the config path or well-known
+   * locations.
+   */
+  static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(String certConfigPath) throws IOException {
     String certPath = null;
     String keyPath = null;
 
     if (!Strings.isNullOrEmpty(certConfigPath)) {
+      // Read cert path from config file. We use retry with backoff to handle transient race
+      // conditions where the config file might be being updated by a rotation process.
       certPath = getCertificatePathWithRetry(certConfigPath);
       keyPath = extractKeyPathFromConfig(certConfigPath);
     } else {
+      // Fallback to well-known locations. We use retry with backoff here as well to handle
+      // race conditions during file replacement by a rotation process.
       certPath = getWellKnownCertificatePathWithRetry();
       if (certPath != null) {
         if (certPath.endsWith("credentialbundle.pem")) {
@@ -166,13 +210,13 @@ class AgentIdentityUtils {
         }
       }
     }
+    return new ResolvedCertAndKeyPaths(certPath, keyPath);
+  }
 
-    boolean certsPresent = !Strings.isNullOrEmpty(certPath);
-
-    if (!shouldEnableMtls(certsPresent, configExists)) {
-      return null;
-    }
-
+  /**
+   * Loads the certificate and private key, and verifies that they match if they are separate files.
+   */
+  static CertInfo loadAndVerifyCredentials(String certPath, String keyPath) throws IOException {
     X509Certificate cert = null;
     PrivateKey privateKey = null;
 
@@ -220,11 +264,18 @@ class AgentIdentityUtils {
     return new CertInfo(cert, certPath);
   }
 
+  /**
+   * Checks if the user has opted out of token sharing by setting the environment variable to true.
+   */
   private static boolean isOptedOut() {
     String optOut = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
-    return "false".equalsIgnoreCase(optOut);
+    return "true".equalsIgnoreCase(optOut);
   }
 
+  /**
+   * Reads the certificate path from the config file with retry logic to handle rotation race
+   * conditions.
+   */
   private static String getCertificatePathWithRetry(String certConfigPath) throws IOException {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
@@ -263,6 +314,7 @@ class AgentIdentityUtils {
             + " to false to fall back to unbound tokens.");
   }
 
+  /** Searches for certificates at well-known locations with retry logic. */
   private static String getWellKnownCertificatePathWithRetry() throws IOException {
     String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
@@ -300,10 +352,15 @@ class AgentIdentityUtils {
         "Unable to find well-known certificate file for bound token request after multiple retries.");
   }
 
+  /** Reads the full certificate chain from the specified path as a string. */
   static String readCertificateChain(String certPath) throws IOException {
     return new String(Files.readAllBytes(Paths.get(certPath)), StandardCharsets.UTF_8);
   }
 
+  /**
+   * Verifies that the private key corresponds to the public key in the certificate by performing a
+   * test signature and verification.
+   */
   static boolean verifyKeyPair(X509Certificate cert, PrivateKey privateKey) {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
@@ -334,6 +391,7 @@ class AgentIdentityUtils {
     }
   }
 
+  /** Reads the private key from the specified path using PKCS8 format. */
   static PrivateKey readPrivateKey(String keyPath, String algorithm) throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
     OAuth2Utils.Pkcs8Algorithm pkcs8Alg =
@@ -341,20 +399,30 @@ class AgentIdentityUtils {
     return OAuth2Utils.privateKeyFromPkcs8(keyPem, pkcs8Alg);
   }
 
+  /**
+   * Determines if mTLS should be enabled based on environment variables and certificate presence.
+   */
   static boolean shouldEnableMtls(boolean certsPresent, boolean configExists) throws IOException {
     String useClientCert = envReader.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
 
+    // Case 1: Explicitly enabled via environment variable
     if ("true".equalsIgnoreCase(useClientCert)) {
       if (certsPresent) {
+        // Certs are available, enable mTLS
         return true;
       }
       if (configExists) {
+        // Config exists but files are missing - fail fast
         throw new IOException(
             "Certificate intent established via config, but cert files are missing.");
       }
+      // Neither exist, do not enable
       return false;
-    } else if ("false".equalsIgnoreCase(useClientCert)) {
+    }
+    // Case 2: Explicitly disabled via environment variable
+    else if ("false".equalsIgnoreCase(useClientCert)) {
       if (certsPresent) {
+        // Warn that we are ignoring present certs because it was explicitly disabled
         Slf4jUtils.log(
             LOGGER,
             org.slf4j.event.Level.WARN,
@@ -363,18 +431,24 @@ class AgentIdentityUtils {
         return false;
       }
       return false;
-    } else {
+    }
+    // Case 3: Environment variable is unset
+    else {
       if (certsPresent) {
+        // Infer mTLS is enabled because certs are present
         return true;
       }
       if (configExists) {
+        // Config exists but files are missing - fail fast
         throw new IOException(
-            "Certificate intent inferred via config, but cert files are missing."); // Case 7
+            "Certificate intent inferred via config, but cert files are missing.");
       }
-      return false; // Case 8
+      // Neither cert-config nor certsexist, do not enable
+      return false;
     }
   }
 
+  /** Retrieves the bound token payload (certificate chain) if applicable. */
   static String getBoundTokenPayload() throws IOException {
     CertInfo info = getAgentIdentityCertInfo();
     if (info != null && shouldRequestBoundToken(info.certificate)) {
@@ -384,6 +458,7 @@ class AgentIdentityUtils {
   }
 
   @SuppressWarnings("unchecked")
+  /** Extracts the certificate path from the JSON configuration file. */
   private static String extractCertPathFromConfig(String certConfigPath) throws IOException {
     try (InputStream stream = new FileInputStream(certConfigPath)) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
@@ -400,6 +475,7 @@ class AgentIdentityUtils {
   }
 
   @SuppressWarnings("unchecked")
+  /** Extracts the private key path from the JSON configuration file. */
   private static String extractKeyPathFromConfig(String certConfigPath) throws IOException {
     try (InputStream stream = new FileInputStream(certConfigPath)) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
@@ -415,6 +491,7 @@ class AgentIdentityUtils {
     return null;
   }
 
+  /** Parses the X509 certificate from the specified path. */
   private static X509Certificate parseCertificate(String certPath) throws IOException {
     try (InputStream stream = new FileInputStream(certPath)) {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -425,24 +502,33 @@ class AgentIdentityUtils {
     }
   }
 
+  /**
+   * Determines if a bound token should be requested by checking if any of the certificate's Subject
+   * Alternative Names (SANs) match allowed SPIFFE patterns.
+   */
   static boolean shouldRequestBoundToken(X509Certificate cert) {
     try {
       Collection<List<?>> sans = cert.getSubjectAlternativeNames();
       if (sans == null) {
         return false;
       }
+      // Iterate through all Subject Alternative Names
       for (List<?> san : sans) {
+        // Check if the SAN entry is a URI (type 6)
         if (san.size() >= 2
             && san.get(0) instanceof Integer
             && (Integer) san.get(0) == SAN_URI_TYPE) {
           Object value = san.get(1);
           if (value instanceof String) {
             String uri = (String) value;
+            // Check if the URI starts with "spiffe://"
             if (uri.startsWith(SPIFFE_SCHEME_PREFIX)) {
               String withoutScheme = uri.substring(SPIFFE_SCHEME_PREFIX.length());
               int slashIndex = withoutScheme.indexOf('/');
+              // Extract the trust domain (part before the first slash)
               String trustDomain =
                   (slashIndex == -1) ? withoutScheme : withoutScheme.substring(0, slashIndex);
+              // Match the trust domain against allowed agent patterns
               for (Pattern pattern : AGENT_IDENTITY_SPIFFE_PATTERNS) {
                 if (pattern.matcher(trustDomain).matches()) {
                   return true;
@@ -458,21 +544,8 @@ class AgentIdentityUtils {
     return false;
   }
 
-  static String calculateCertificateFingerprint(X509Certificate cert) throws IOException {
-    try {
-      MessageDigest md = MessageDigest.getInstance("SHA-256");
-      byte[] der = cert.getEncoded();
-      md.update(der);
-      byte[] digest = md.digest();
-      String base64Fingerprint = BaseEncoding.base64().omitPadding().encode(digest);
-      return URLEncoder.encode(base64Fingerprint, "UTF-8");
-    } catch (GeneralSecurityException e) {
-      throw new IOException("Failed to calculate fingerprint for Agent Identity certificate.", e);
-    }
-  }
-
   @VisibleForTesting
-  static void setEnvReader(EnvReader reader) {
+  public static void setEnvReader(EnvReader reader) {
     envReader = reader;
   }
 

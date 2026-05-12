@@ -65,7 +65,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,6 +79,23 @@ import org.slf4j.event.KeyValuePair;
  * This duplicates tests setups, but centralizes logging test setup in this class.
  */
 class LoggingTest {
+
+  @BeforeEach
+  void setUp() {
+    // Opt out of bound tokens by default to avoid polling delays
+    AgentIdentityUtils.setEnvReader(
+        name -> {
+          if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
+            return "true";
+          }
+          return null;
+        });
+  }
+
+  @AfterEach
+  void tearDown() {
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   private TestAppender setupTestLogger(Class<?> clazz) {
     TestAppender testAppender = new TestAppender();
