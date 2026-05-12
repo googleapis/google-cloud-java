@@ -85,12 +85,16 @@ public class OpenTelemetryJulHandler extends Handler {
     String traceId = spanContext.isValid() ? spanContext.getTraceId() : null;
     String spanId = spanContext.isValid() ? spanContext.getSpanId() : null;
 
-    // TODO(b/491238299): May require refinement for structured logging or error handling
+    String logId = record.getLoggerName();
+    if (logId == null) {
+      logId = BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME;
+    }
 
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
             .setSeverity(mapGcpSeverity(record.getLevel()))
-            .setTimestamp(record.getMillis());
+            .setTimestamp(record.getMillis())
+            .setLogName(logId);
 
     if (traceId != null) {
       builder.setTrace(traceId);
@@ -181,6 +185,6 @@ public class OpenTelemetryJulHandler extends Handler {
 
   @Override
   public void close() throws SecurityException {
-    // TODO(b/491238299): Implement with gcp exporter logic
+    flush();
   }
 }

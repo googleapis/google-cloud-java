@@ -16,7 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.auth.Credentials;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.logging.Logging;
+import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
@@ -139,7 +142,61 @@ public class BigQueryJdbcOpenTelemetry {
   }
 
   public static void unregisterConnection(String connectionId) {
-    connectionConfigs.remove(connectionId);
+    TelemetryConfig config = connectionConfigs.remove(connectionId);
+    if (config != null && config.loggingClient != null) {
+      try {
+        config.loggingClient.close();
+      } catch (Exception e) {
+        LOG.warning("Failed to close Logging client during unregister: %s", e.getMessage());
+      }
+    }
+  }
+
+  public static Logging createLoggingClient(
+      boolean enableGcpLogExporter,
+      OpenTelemetry customOpenTelemetry,
+      String effectiveCredentials,
+      String effectiveProjectId,
+      Credentials fallbackCredentials) {
+
+    if (enableGcpLogExporter && customOpenTelemetry == null) {
+      try {
+        Credentials credentials;
+        if (effectiveCredentials != null) {
+          credentials = resolveCredentialsFromString(effectiveCredentials);
+        } else {
+          credentials = fallbackCredentials;
+        }
+
+        LoggingOptions.Builder loggingOptionsBuilder =
+            LoggingOptions.newBuilder().setProjectId(effectiveProjectId);
+        if (credentials != null) {
+          loggingOptionsBuilder.setCredentials(credentials);
+        }
+        return loggingOptionsBuilder.build().getService();
+      } catch (Exception e) {
+        throw new BigQueryJdbcRuntimeException("Failed to initialize Logging client", e);
+      }
+    }
+    return null;
+  }
+
+  private static Credentials resolveCredentialsFromString(String credsString) {
+    Map<String, String> authProperties = new java.util.HashMap<>();
+    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, "0"); // Service Account
+
+    byte[] credsBytes = credsString.getBytes(StandardCharsets.UTF_8);
+    if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
+      authProperties.put(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, credsString);
+    } else {
+      authProperties.put(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, credsString);
+    }
+
+    return BigQueryJdbcOAuthUtility.getCredentials(
+        authProperties,
+        new java.util.HashMap<>(),
+        false,
+        BigQueryJdbcOpenTelemetry.class.getName());
   }
 
   public static TelemetryConfig getConnectionConfig(String connectionId) {
@@ -171,58 +228,58 @@ public class BigQueryJdbcOpenTelemetry {
       OpenTelemetry customOpenTelemetry,
       String gcpTelemetryCredentials,
       String gcpTelemetryProjectId) {
+
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
     }
 
     // NOTE: Currently, tracing only fully supports Application Default Credentials (ADC).
     // Once b/503721589 is completed, Service Account (SA) will work as well.
-
-    if (enableGcpTraceExporter || enableGcpLogExporter) {
-      SdkCacheKey key =
-          new SdkCacheKey(
-              gcpTelemetryProjectId,
-              getCredentialsIdentifier(gcpTelemetryCredentials),
-              enableGcpTraceExporter);
-      return sdkCache.computeIfAbsent(
-          key,
-          k -> {
-            Map<String, String> props = new HashMap<>();
-            if (gcpTelemetryCredentials != null) {
-              byte[] credsBytes = gcpTelemetryCredentials.getBytes(StandardCharsets.UTF_8);
-              if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
-                props.put(CREDENTIALS_JSON, gcpTelemetryCredentials);
-              } else {
-                props.put(CREDENTIALS_PATH, gcpTelemetryCredentials);
-              }
-            }
-
-            if (enableGcpTraceExporter) {
-              props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
-              props.put(OTEL_EXPORTER_OTLP_ENDPOINT, OTLP_ENDPOINT_VALUE);
-            } else {
-              props.put(OTEL_TRACES_EXPORTER, EXPORTER_NONE);
-            }
-
-            // Logs are handled directly via GCP logging
-            props.put(OTEL_LOGS_EXPORTER, EXPORTER_NONE);
-            // Metrics are deferred to a future phase
-            props.put(OTEL_METRICS_EXPORTER, EXPORTER_NONE);
-
-            if (gcpTelemetryProjectId != null) {
-              props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
-            }
-
-            AutoConfiguredOpenTelemetrySdk autoConfigured =
-                AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
-
-            OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
-
-            return sdk;
-          });
+    if (!enableGcpTraceExporter && !enableGcpLogExporter) {
+      return OpenTelemetry.noop();
     }
 
-    return OpenTelemetry.noop();
+    SdkCacheKey key =
+        new SdkCacheKey(
+            gcpTelemetryProjectId,
+            getCredentialsIdentifier(gcpTelemetryCredentials),
+            enableGcpTraceExporter);
+    return sdkCache.computeIfAbsent(
+        key,
+        k -> {
+          Map<String, String> props = new HashMap<>();
+          if (gcpTelemetryCredentials != null) {
+            byte[] credsBytes = gcpTelemetryCredentials.getBytes(StandardCharsets.UTF_8);
+            if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
+              props.put(CREDENTIALS_JSON, gcpTelemetryCredentials);
+            } else {
+              props.put(CREDENTIALS_PATH, gcpTelemetryCredentials);
+            }
+          }
+
+          if (enableGcpTraceExporter) {
+            props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
+            props.put(OTEL_EXPORTER_OTLP_ENDPOINT, OTLP_ENDPOINT_VALUE);
+          } else {
+            props.put(OTEL_TRACES_EXPORTER, EXPORTER_NONE);
+          }
+
+          // Logs are handled directly via GCP logging
+          props.put(OTEL_LOGS_EXPORTER, EXPORTER_NONE);
+          // Metrics are deferred to a future phase
+          props.put(OTEL_METRICS_EXPORTER, EXPORTER_NONE);
+
+          if (gcpTelemetryProjectId != null) {
+            props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
+          }
+
+          AutoConfiguredOpenTelemetrySdk autoConfigured =
+              AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
+
+          OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
+
+          return sdk;
+        });
   }
 
   /** Gets a Tracer for the JDBC driver instrumentation scope. */
