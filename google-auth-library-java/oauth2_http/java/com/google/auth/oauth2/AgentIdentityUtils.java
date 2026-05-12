@@ -30,9 +30,9 @@
  */
 package com.google.auth.oauth2;
 
-import com.google.api.core.InternalApi;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
+import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
