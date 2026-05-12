@@ -512,9 +512,7 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
-  /*
-  Temporarily disabled due to https://github.com/googleapis/java-pubsub/issues/1861.
-  TODO(maitrimangal): Enable once resolved.
+
   @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
@@ -527,6 +525,8 @@ public class PublisherImplTest {
             .setEnableMessageOrdering(true)
             .build();
 
+    testPublisherServiceImpl.setExecutor(fakeExecutor);
+
     ApiFuture<String> future1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
     ApiFuture<String> future2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
 
@@ -536,7 +536,6 @@ public class PublisherImplTest {
 
     // This exception should stop future publishing to the same key
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
-
     fakeExecutor.advanceTime(Duration.ZERO);
 
     try {
@@ -576,8 +575,8 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(
         PublishResponse.newBuilder().addMessageIds("5").addMessageIds("6"));
 
-    Assert.assertEquals("5", future5.get());
-    Assert.assertEquals("6", future6.get());
+    assertEquals("5", future5.get());
+    assertEquals("6", future6.get());
 
     // Resume publishing of "orderA", which should now succeed
     publisher.resumePublish("orderA");
@@ -588,8 +587,8 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishResponse(
         PublishResponse.newBuilder().addMessageIds("7").addMessageIds("8"));
 
-    Assert.assertEquals("7", future7.get());
-    Assert.assertEquals("8", future8.get());
+    assertEquals("7", future7.get());
+    assertEquals("8", future8.get());
 
     shutdownTestPublisher(publisher);
   }
@@ -598,7 +597,6 @@ public class PublisherImplTest {
   public void testPublishThrowExceptionForUnsubmittedOrderingKeyMessage() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS
                     .toBuilder()
@@ -644,7 +642,6 @@ public class PublisherImplTest {
       assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
     }
   }
-  */
 
   private ApiFuture<String> sendTestMessageWithOrderingKey(
       Publisher publisher, String data, String orderingKey) {
