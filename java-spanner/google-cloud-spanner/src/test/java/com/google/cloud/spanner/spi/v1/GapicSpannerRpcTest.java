@@ -103,12 +103,17 @@ import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.lang.reflect.Modifier;
 import java.net.InetSocketAddress;
 import java.time.Duration;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -171,6 +176,25 @@ public class GapicSpannerRpcTest {
               VARIABLE_OAUTH_TOKEN,
               new java.util.Date(
                   System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(1L, TimeUnit.DAYS))));
+
+  private static final String GRPC_GCP_CHANNEL_REF_CLASS_NAME =
+      "com.google.cloud.grpc.GcpManagedChannel$ChannelRef";
+
+  private static final class GrpcGcpObjectCounts {
+    int gcpManagedChannels;
+    int channelRefs;
+
+    GrpcGcpObjectCounts minus(GrpcGcpObjectCounts other) {
+      GrpcGcpObjectCounts difference = new GrpcGcpObjectCounts();
+      difference.gcpManagedChannels = gcpManagedChannels - other.gcpManagedChannels;
+      difference.channelRefs = channelRefs - other.channelRefs;
+      return difference;
+    }
+
+    String debugString() {
+      return "GcpManagedChannel=" + gcpManagedChannels + ", ChannelRef=" + channelRefs;
+    }
+  }
 
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
@@ -1241,6 +1265,27 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testGrpcGcpLazyFallbackChannelPoolOptionsStartWithoutChannels() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(8)
+            .build();
+
+    GcpChannelPoolOptions poolOptions =
+        GapicSpannerRpc.getGrpcGcpLazyFallbackChannelPoolOptions(options);
+
+    assertEquals(8, poolOptions.getMaxSize());
+    assertEquals(0, poolOptions.getMinSize());
+    assertEquals(0, poolOptions.getInitSize());
+    assertEquals(0, poolOptions.getMinRpcPerChannel());
+    assertEquals(0, poolOptions.getMaxRpcPerChannel());
+    assertEquals(Duration.ZERO, poolOptions.getScaleDownInterval());
+  }
+
+  @Test
   public void testGrpcGcpOptionsRetainDynamicChannelPoolSettingsWithDcp() throws Exception {
     Duration affinityKeyLifetime = Duration.ofMinutes(10);
     Duration cleanupInterval = Duration.ofMinutes(5);
@@ -1407,6 +1452,134 @@ public class GapicSpannerRpcTest {
         // the static credentials.
         .setCallCredentialsProvider(() -> MoreCallCredentials.from(VARIABLE_CREDENTIALS))
         .build();
+  }
+
+  @Test
+  public void testDirectPathFallbackCreatesLazyCloudPathGrpcGcpPool() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    GapicSpannerRpc rpc = null;
+    try {
+      SpannerOptions options = createDirectPathFallbackObjectCountOptions().build();
+      assumeTrue(
+          "GCP fallback must be enabled for this DirectPath fallback test",
+          options.isEnableGcpFallback());
+      GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+      rpc = new GapicSpannerRpc(options);
+      GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+      assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 24, counts.channelRefs);
+    } finally {
+      if (rpc != null) {
+        rpc.shutdown();
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testDirectPathFallbackWithGaxChannelPoolDoesNotCreateGrpcGcpChannelRefs() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    GapicSpannerRpc rpc = null;
+    try {
+      SpannerOptions options =
+          createDirectPathFallbackObjectCountOptions().disableGrpcGcpExtension().build();
+      assumeTrue(
+          "GCP fallback must be enabled for this DirectPath fallback test",
+          options.isEnableGcpFallback());
+      GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+      rpc = new GapicSpannerRpc(options);
+      GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+      assertEquals(counts.debugString(), 0, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 0, counts.channelRefs);
+    } finally {
+      if (rpc != null) {
+        rpc.shutdown();
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  private SpannerOptions.Builder createDirectPathFallbackObjectCountOptions() {
+    return SpannerOptions.newBuilder()
+        .setProjectId("test-project")
+        .setEnableDirectAccess(true)
+        .setHost("http://localhost:1")
+        .setCredentials(NoCredentials.getInstance());
+  }
+
+  private static GrpcGcpObjectCounts countGrpcGcpObjectsFromChannelz() {
+    GrpcGcpObjectCounts counts = new GrpcGcpObjectCounts();
+    Object channelz = io.grpc.InternalChannelz.instance();
+    Set<Object> visited = Collections.newSetFromMap(new IdentityHashMap<>());
+    countGrpcGcpObjectsFromChannelzField(channelz, "rootChannels", visited, counts);
+    countGrpcGcpObjectsFromChannelzField(channelz, "subchannels", visited, counts);
+    return counts;
+  }
+
+  private static void countGrpcGcpObjectsFromChannelzField(
+      Object channelz, String fieldName, Set<Object> visited, GrpcGcpObjectCounts counts) {
+    try {
+      java.lang.reflect.Field field = channelz.getClass().getDeclaredField(fieldName);
+      field.setAccessible(true);
+      countGrpcGcpObjects(field.get(channelz), visited, counts);
+    } catch (RuntimeException | ReflectiveOperationException ignored) {
+      // Ignore fields that are not reflectively accessible in this runtime.
+    }
+  }
+
+  private static void countGrpcGcpObjects(
+      Object object, Set<Object> visited, GrpcGcpObjectCounts counts) {
+    if (object == null || !visited.add(object)) {
+      return;
+    }
+    if (object instanceof GcpManagedChannel) {
+      counts.gcpManagedChannels++;
+    }
+    Class<?> clazz = object.getClass();
+    if (clazz.getName().equals(GRPC_GCP_CHANNEL_REF_CLASS_NAME)) {
+      counts.channelRefs++;
+    }
+    if (object instanceof Collection<?>) {
+      for (Object value : (Collection<?>) object) {
+        countGrpcGcpObjects(value, visited, counts);
+      }
+      return;
+    }
+    if (object instanceof Map<?, ?>) {
+      for (Map.Entry<?, ?> entry : ((Map<?, ?>) object).entrySet()) {
+        countGrpcGcpObjects(entry.getKey(), visited, counts);
+        countGrpcGcpObjects(entry.getValue(), visited, counts);
+      }
+      return;
+    }
+    if (clazz.isArray()) {
+      int length = Array.getLength(object);
+      for (int i = 0; i < length; i++) {
+        countGrpcGcpObjects(Array.get(object, i), visited, counts);
+      }
+      return;
+    }
+    if (!shouldInspectFields(clazz)) {
+      return;
+    }
+    for (Class<?> current = clazz; current != null; current = current.getSuperclass()) {
+      for (java.lang.reflect.Field field : current.getDeclaredFields()) {
+        if (Modifier.isStatic(field.getModifiers())) {
+          continue;
+        }
+        try {
+          field.setAccessible(true);
+          countGrpcGcpObjects(field.get(object), visited, counts);
+        } catch (RuntimeException | IllegalAccessException ignored) {
+          // Ignore fields that are not reflectively accessible in this runtime.
+        }
+      }
+    }
+  }
+
+  private static boolean shouldInspectFields(Class<?> clazz) {
+    String name = clazz.getName();
+    return name.startsWith("com.google.") || name.startsWith("io.grpc.");
   }
 
   static class TestableGapicSpannerRpc extends GapicSpannerRpc {
