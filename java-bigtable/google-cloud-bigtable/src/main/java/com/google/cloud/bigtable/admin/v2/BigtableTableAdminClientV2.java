@@ -1,0 +1,384 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.cloud.bigtable.admin.v2;
+
+import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.ProtoOperationTransformers.MetadataTransformer;
+import com.google.api.gax.grpc.ProtoOperationTransformers.ResponseTransformer;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
+import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
+import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
+import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
+import com.google.cloud.bigtable.admin.v2.stub.AwaitConsistencyCallableV2;
+import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
+import com.google.cloud.bigtable.admin.v2.stub.GrpcBigtableTableAdminStub;
+import com.google.common.base.Strings;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
+import io.grpc.MethodDescriptor;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.concurrent.ExecutionException;
+import javax.annotation.Nullable;
+
+/**
+ * Modern Cloud Bigtable Table Admin Client.
+ *
+ * <p>This client extends the {@link BaseBigtableTableAdminClient} to provide enhanced convenience
+ * methods for table administration. It improves the user experience by handling chained Long
+ * Running Operations (such as seamlessly restoring and then optimizing a table) and provides
+ * built-in, automated polling for consistency tokens.
+ */
+public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
+  private final AwaitConsistencyCallableV2 awaitConsistencyCallable;
+  private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+      optimizeRestoredTableOperationBaseCallable;
+  private final java.util.concurrent.ScheduledExecutorService backgroundExecutor;
+
+  private static final RetrySettings AWAIT_CONSISTENCY_POLLING_SETTINGS_BASE =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelayDuration(Duration.ofSeconds(10))
+          .setRetryDelayMultiplier(1.0)
+          .setMaxRetryDelayDuration(Duration.ofSeconds(10))
+          .setInitialRpcTimeoutDuration(Duration.ZERO)
+          .setMaxRpcTimeoutDuration(Duration.ZERO)
+          .setRpcTimeoutMultiplier(1.0)
+          .build();
+
+  private static final RetrySettings OPTIMIZE_RESTORED_TABLE_POLLING_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+          .setRetryDelayMultiplier(1.5)
+          .setMaxRetryDelayDuration(Duration.ofMillis(5000L))
+          .setInitialRpcTimeoutDuration(Duration.ZERO)
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeoutDuration(Duration.ZERO)
+          .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+          .build();
+
+  /** Constructs an instance of BigtableTableAdminClientV2 with the given settings. */
+  public static final BigtableTableAdminClientV2 create(BaseBigtableTableAdminSettings settings)
+      throws IOException {
+    GrpcBigtableTableAdminStub stub =
+        (GrpcBigtableTableAdminStub)
+            ((BigtableTableAdminStubSettings) settings.getStubSettings()).createStub();
+    java.util.concurrent.ScheduledExecutorService backgroundExecutor =
+        settings.getStubSettings().getBackgroundExecutorProvider().getExecutor();
+
+    AwaitConsistencyCallableV2 awaitConsistencyCallable =
+        createAwaitConsistencyCallable(
+            stub,
+            (BigtableTableAdminStubSettings) settings.getStubSettings(),
+            settings.getStubSettings().getClock(),
+            backgroundExecutor);
+
+    OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+        optimizeRestoredTableOperationBaseCallable =
+            createOptimizeRestoredTableOperationBaseCallable(stub, settings, backgroundExecutor);
+
+    return new BigtableTableAdminClientV2(
+        stub,
+        backgroundExecutor,
+        awaitConsistencyCallable,
+        optimizeRestoredTableOperationBaseCallable);
+  }
+
+  /** Constructs an instance of BigtableTableAdminClientV2 with the given stub. */
+  public static final BigtableTableAdminClientV2 create(GrpcBigtableTableAdminStub stub) {
+    return new BigtableTableAdminClientV2(stub, null, null, null);
+  }
+
+  protected BigtableTableAdminClientV2(
+      GrpcBigtableTableAdminStub stub,
+      @Nullable java.util.concurrent.ScheduledExecutorService backgroundExecutor,
+      @Nullable AwaitConsistencyCallableV2 awaitConsistencyCallable,
+      @Nullable
+          OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+              optimizeRestoredTableOperationBaseCallable) {
+    super(stub);
+    this.backgroundExecutor = backgroundExecutor;
+    this.awaitConsistencyCallable = awaitConsistencyCallable;
+    this.optimizeRestoredTableOperationBaseCallable = optimizeRestoredTableOperationBaseCallable;
+  }
+
+  private static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
+      GrpcBigtableTableAdminStub stub,
+      BigtableTableAdminStubSettings settings,
+      com.google.api.core.ApiClock clock,
+      java.util.concurrent.ScheduledExecutorService executor) {
+    // TODO(igorbernstein2): expose polling settings
+    RetrySettings pollingSettings =
+        AWAIT_CONSISTENCY_POLLING_SETTINGS_BASE.toBuilder()
+            .setTotalTimeoutDuration(
+                settings.checkConsistencySettings().getRetrySettings().getTotalTimeoutDuration())
+            .build();
+
+    return AwaitConsistencyCallableV2.create(
+        stub.generateConsistencyTokenCallable(),
+        stub.checkConsistencyCallable(),
+        clock,
+        executor,
+        pollingSettings);
+  }
+
+  private static OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+      createOptimizeRestoredTableOperationBaseCallable(
+          GrpcBigtableTableAdminStub stub,
+          BaseBigtableTableAdminSettings settings,
+          java.util.concurrent.ScheduledExecutorService backgroundExecutor)
+          throws IOException {
+
+    @SuppressWarnings("unchecked")
+    MethodDescriptor<Void, Operation> fakeDescriptor =
+        (MethodDescriptor<Void, Operation>)
+            (MethodDescriptor<?, ?>)
+                com.google.bigtable.admin.v2.BigtableTableAdminGrpc.getUpdateTableMethod();
+
+    GrpcCallSettings<Void, Operation> unusedInitialCallSettings =
+        GrpcCallSettings.create(fakeDescriptor);
+
+    final MetadataTransformer<OptimizeRestoredTableMetadata> protoMetadataTransformer =
+        MetadataTransformer.create(OptimizeRestoredTableMetadata.class);
+
+    final ResponseTransformer<com.google.protobuf.Empty> protoResponseTransformer =
+        ResponseTransformer.create(com.google.protobuf.Empty.class);
+
+    OperationCallSettings<Void, Empty, OptimizeRestoredTableMetadata> operationCallSettings =
+        OperationCallSettings.<Void, Empty, OptimizeRestoredTableMetadata>newBuilder()
+            .setInitialCallSettings(
+                UnaryCallSettings.<Void, OperationSnapshot>newUnaryCallSettingsBuilder()
+                    .setSimpleTimeoutNoRetriesDuration(Duration.ZERO)
+                    .build())
+            .setMetadataTransformer(
+                new ApiFunction<OperationSnapshot, OptimizeRestoredTableMetadata>() {
+                  @Override
+                  public OptimizeRestoredTableMetadata apply(OperationSnapshot input) {
+                    return protoMetadataTransformer.apply(input);
+                  }
+                })
+            .setResponseTransformer(
+                new ApiFunction<OperationSnapshot, Empty>() {
+                  @Override
+                  public Empty apply(OperationSnapshot input) {
+                    return protoResponseTransformer.apply(input);
+                  }
+                })
+            .setPollingAlgorithm(
+                OperationTimedPollAlgorithm.create(OPTIMIZE_RESTORED_TABLE_POLLING_SETTINGS))
+            .build();
+
+    com.google.api.gax.rpc.ClientContext clientContext =
+        com.google.api.gax.rpc.ClientContext.newBuilder()
+            .setClock(settings.getStubSettings().getClock())
+            .setExecutor(backgroundExecutor)
+            .setDefaultCallContext(com.google.api.gax.grpc.GrpcCallContext.createDefault())
+            .build();
+
+    return GrpcCallableFactory.createOperationCallable(
+        unusedInitialCallSettings, operationCallSettings, clientContext, stub.getOperationsStub());
+  }
+
+  /**
+   * Awaits the completion of the "Optimize Restored Table" operation.
+   *
+   * <p>This method blocks until the restore operation is complete, extracts the optimization token,
+   * and returns an ApiFuture for the optimization phase.
+   *
+   * @param restoreFuture The future returned by restoreTableAsync().
+   * @return An ApiFuture that tracks the optimization progress.
+   */
+  public ApiFuture<Empty> awaitOptimizeRestoredTable(ApiFuture<RestoredTableResult> restoreFuture) {
+    // 1. Block and wait for the restore operation to complete
+    RestoredTableResult result;
+    try {
+      result = restoreFuture.get();
+    } catch (Exception e) {
+      throw new RuntimeException("Restore operation failed", e);
+    }
+
+    // 2. Extract the operation token from the result
+    // (RestoredTableResult already wraps the OptimizeRestoredTableOperationToken)
+    OptimizeRestoredTableOperationToken token = result.getOptimizeRestoredTableOperationToken();
+
+    if (token == null || Strings.isNullOrEmpty(token.getOperationName())) {
+      // If there is no optimization operation, return immediate success.
+      return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    }
+
+    // 3. Return the future for the optimization operation
+    return getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
+  }
+
+  /**
+   * Awaits a restored table is fully optimized.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * RestoredTableResult result =
+   *     client.restoreTable(RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   * client.awaitOptimizeRestoredTable(result.getOptimizeRestoredTableOperationToken());
+   * }</pre>
+   */
+  public void awaitOptimizeRestoredTable(OptimizeRestoredTableOperationToken token)
+      throws ExecutionException, InterruptedException {
+    awaitOptimizeRestoredTableAsync(token).get();
+  }
+
+  /**
+   * Awaits a restored table is fully optimized asynchronously.
+   *
+   * <p>Sample code
+   *
+   * <pre>{@code
+   * RestoredTableResult result =
+   *     client.restoreTable(RestoreTableRequest.of(clusterId, backupId).setTableId(tableId));
+   * ApiFuture<Void> future = client.awaitOptimizeRestoredTableAsync(
+   *     result.getOptimizeRestoredTableOperationToken());
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<Void>() {
+   *     public void onSuccess(Void unused) {
+   *       System.out.println("The optimization of the restored table is done.");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Void> awaitOptimizeRestoredTableAsync(
+      OptimizeRestoredTableOperationToken token) {
+    ApiFuture<Empty> emptyFuture =
+        getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
+    return ApiFutures.transform(
+        emptyFuture,
+        new com.google.api.core.ApiFunction<Empty, Void>() {
+          @Override
+          public Void apply(Empty input) {
+            return null;
+          }
+        },
+        com.google.common.util.concurrent.MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Polls an existing consistency token until table replication is consistent across all clusters.
+   * Useful for checking consistency of a token generated in a separate process. Blocks until
+   * completion.
+   *
+   * @param tableName The fully qualified table name to check.
+   * @param consistencyToken The token to poll.
+   */
+  public void waitForConsistency(String tableName, String consistencyToken) {
+    ApiExceptions.callAndTranslateApiException(
+        waitForConsistencyAsync(tableName, consistencyToken));
+  }
+
+  /**
+   * Asynchronously polls the consistency token. Returns a future that completes when table
+   * replication is consistent across all clusters.
+   *
+   * @param tableName The fully qualified table name to check.
+   * @param consistencyToken The token to poll.
+   */
+  public ApiFuture<Void> waitForConsistencyAsync(String tableName, String consistencyToken) {
+    return getAwaitConsistencyCallable()
+        .futureCall(ConsistencyRequest.forReplicationFromTableName(tableName, consistencyToken));
+  }
+
+  private UnaryCallable<ConsistencyRequest, Void> getAwaitConsistencyCallable() {
+    if (awaitConsistencyCallable != null) {
+      return awaitConsistencyCallable;
+    }
+    throw new IllegalStateException(
+        "AwaitConsistencyCallable not initialized. BigtableTableAdminClientV2 must be "
+            + "initialized via BigtableTableAdminClientV2.create(BaseBigtableTableAdminSettings) "
+            + "to use this functionality.");
+  }
+
+  private OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+      getOptimizeRestoredTableCallable() {
+    if (optimizeRestoredTableOperationBaseCallable != null) {
+      return optimizeRestoredTableOperationBaseCallable;
+    }
+    throw new IllegalStateException(
+        "OptimizeRestoredTableCallable not initialized. BigtableTableAdminClientV2 must be "
+            + "initialized via BigtableTableAdminClientV2.create(BaseBigtableTableAdminSettings) "
+            + "to use this functionality.");
+  }
+
+  @Override
+  public void close() {
+    if (backgroundExecutor != null) {
+      backgroundExecutor.shutdown();
+    }
+    super.close();
+  }
+
+  @Override
+  public void shutdown() {
+    if (backgroundExecutor != null) {
+      backgroundExecutor.shutdown();
+    }
+    super.shutdown();
+  }
+
+  @Override
+  public void shutdownNow() {
+    if (backgroundExecutor != null) {
+      backgroundExecutor.shutdownNow();
+    }
+    super.shutdownNow();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return (backgroundExecutor == null || backgroundExecutor.isShutdown()) && super.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return (backgroundExecutor == null || backgroundExecutor.isTerminated())
+        && super.isTerminated();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, java.util.concurrent.TimeUnit unit)
+      throws InterruptedException {
+    boolean terminated = true;
+    if (backgroundExecutor != null) {
+      terminated = backgroundExecutor.awaitTermination(duration, unit);
+    }
+    return terminated && super.awaitTermination(duration, unit);
+  }
+}

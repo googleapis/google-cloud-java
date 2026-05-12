@@ -6414,7 +6414,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() {
+  public void close() {
     stub.close();
   }
 
