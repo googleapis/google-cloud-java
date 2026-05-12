@@ -512,14 +512,12 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
-
   @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
                     .setElementCountThreshold(2L)
                     .build())
             .setEnableMessageOrdering(true)
@@ -598,8 +596,7 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setBatchingSettings(
-                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
                     .setElementCountThreshold(2L)
                     .setDelayThresholdDuration(Duration.ofSeconds(500))
                     .build())
