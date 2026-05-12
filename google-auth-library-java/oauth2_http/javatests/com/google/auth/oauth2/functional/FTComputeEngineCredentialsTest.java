@@ -39,17 +39,49 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.AgentIdentityUtils;
 import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.IdToken;
 import com.google.auth.oauth2.IdTokenCredentials;
 import com.google.auth.oauth2.IdTokenProvider;
 import com.google.auth.oauth2.OAuth2Utils;
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 final class FTComputeEngineCredentialsTest {
   private final String computeUrl =
       "https://compute.googleapis.com/compute/v1/projects/gcloud-devel/zones/us-central1-a/instances";
+
+  private static class TestEnvironmentProvider {
+    private final Map<String, String> env = new HashMap<>();
+
+    void setEnv(String key, String value) {
+      env.put(key, value);
+    }
+
+    String getEnv(String key) {
+      return env.get(key);
+    }
+  }
+
+  private TestEnvironmentProvider envProvider;
+
+  @BeforeEach
+  void setUp() {
+    envProvider = new TestEnvironmentProvider();
+    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    // Opt out by default to avoid polling delays or file reads
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
+  }
+
+  @AfterEach
+  void tearDown() {
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   @Test
   void RefreshCredentials() throws Exception {
