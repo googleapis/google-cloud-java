@@ -48,6 +48,7 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -78,6 +79,7 @@ public class LargeRowIT {
   }
 
   @Test
+  @Ignore("Requires server side fix, temporarily disable flaky test until the fix is ready")
   public void testWriteRead() throws Exception {
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();

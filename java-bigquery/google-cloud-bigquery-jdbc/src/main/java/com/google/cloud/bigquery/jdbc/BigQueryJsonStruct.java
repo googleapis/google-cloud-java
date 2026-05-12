@@ -30,8 +30,8 @@ import java.util.List;
  */
 @InternalApi
 class BigQueryJsonStruct extends BigQueryBaseStruct {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJsonStruct.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class);
 
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
@@ -51,7 +51,7 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
 
   @Override
   public Object[] getAttributes() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getAttributes", "++enter++");
     int size = schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
 
@@ -65,7 +65,7 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   }
 
   private Object getValue(Field currentSchema, FieldValue currentValue) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getValue", "++enter++");
     if (isArray(currentSchema)) {
       return new BigQueryJsonArray(currentSchema, currentValue);
     } else if (isStruct(currentSchema)) {
