@@ -43,7 +43,6 @@ import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
 
 /**
@@ -156,9 +155,10 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
     // Using getRestoreTableMethod() as a placeholder descriptor for the LRO optimization tracking
     // is a technique that leverages type erasure and unsafe casting.
-    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable LRO,
+    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable
+    // LRO,
     // we reuse getRestoreTableMethod() (which is an LRO and returns a google.longrunning.Operation)
-    // and cast its request type argument from RestoreTableRequest to Void. This satisfies the 
+    // and cast its request type argument from RestoreTableRequest to Void. This satisfies the
     // OperationCallable constructor requirements and correctly handles LRO operation name polling.
     @SuppressWarnings("unchecked")
     MethodDescriptor<Void, Operation> fakeDescriptor =

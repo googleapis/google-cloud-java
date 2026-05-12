@@ -40,6 +40,4 @@ public class BigtableInstanceAdminClientV2 extends BaseBigtableInstanceAdminClie
       BaseBigtableInstanceAdminSettings settings) throws IOException {
     return new BigtableInstanceAdminClientV2(settings);
   }
-
-
 }
