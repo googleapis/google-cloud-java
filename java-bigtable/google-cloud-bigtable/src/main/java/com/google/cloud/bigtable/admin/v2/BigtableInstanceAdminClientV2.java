@@ -41,8 +41,5 @@ public class BigtableInstanceAdminClientV2 extends BaseBigtableInstanceAdminClie
     return new BigtableInstanceAdminClientV2(settings);
   }
 
-  /** Constructs an instance of BigtableInstanceAdminClientV2 with the given stub. */
-  public static final BigtableInstanceAdminClientV2 create(BigtableInstanceAdminStub stub) {
-    return new BigtableInstanceAdminClientV2(stub);
-  }
+
 }

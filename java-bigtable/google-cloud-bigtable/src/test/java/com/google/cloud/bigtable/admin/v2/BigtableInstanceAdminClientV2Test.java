@@ -29,7 +29,7 @@ public class BigtableInstanceAdminClientV2Test {
   @Test
   public void testCreateWithStub() {
     BigtableInstanceAdminStub mockStub = Mockito.mock(BigtableInstanceAdminStub.class);
-    BigtableInstanceAdminClientV2 client = BigtableInstanceAdminClientV2.create(mockStub);
+    BigtableInstanceAdminClientV2 client = new BigtableInstanceAdminClientV2(mockStub);
 
     assertThat(client).isNotNull();
   }
