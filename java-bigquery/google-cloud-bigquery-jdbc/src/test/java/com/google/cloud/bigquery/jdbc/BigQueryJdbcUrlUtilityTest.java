@@ -229,4 +229,21 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     DataSource ds = new DataSource();
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(-1L));
   }
+
+  @Test
+  public void testNonNumericConnectionProperties() {
+    String url = "jdbc:bigquery://;MaxResults=abc";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url));
+  }
+
+  @Test
+  public void testUnrecognizedConnectionProperties() {
+    // Unrecognized key-value pair should be ignored (log warning, no exception)
+    String url = "jdbc:bigquery://;UnknownProperty=value";
+    assertDoesNotThrow(() -> DataSource.fromUrl(url));
+
+    // Malformed property (not key-value) should throw exception
+    String url2 = "jdbc:bigquery://;MalformedProperty";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
+  }
 }

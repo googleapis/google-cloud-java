@@ -858,15 +858,15 @@ final class BigQueryJdbcUrlUtility {
   }
 
   private static boolean isNonNegativeIntegerProperty(String propertyName) {
-    return propertyName.equals(MAX_RESULTS_PROPERTY_NAME)
-        || propertyName.equals(CONNECTION_POOL_SIZE_PROPERTY_NAME)
-        || propertyName.equals(LISTENER_POOL_SIZE_PROPERTY_NAME)
-        || propertyName.equals(HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME)
-        || propertyName.equals(HTAPI_ACTIVATION_RATIO_PROPERTY_NAME)
-        || propertyName.equals(METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME)
-        || propertyName.equals(HTTP_CONNECT_TIMEOUT_PROPERTY_NAME)
-        || propertyName.equals(HTTP_READ_TIMEOUT_PROPERTY_NAME)
-        || propertyName.equals(SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME)
-        || propertyName.equals(SWA_APPEND_ROW_COUNT_PROPERTY_NAME);
+    return MAX_RESULTS_PROPERTY_NAME.equals(propertyName)
+        || CONNECTION_POOL_SIZE_PROPERTY_NAME.equals(propertyName)
+        || LISTENER_POOL_SIZE_PROPERTY_NAME.equals(propertyName)
+        || HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME.equals(propertyName)
+        || HTAPI_ACTIVATION_RATIO_PROPERTY_NAME.equals(propertyName)
+        || METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME.equals(propertyName)
+        || HTTP_CONNECT_TIMEOUT_PROPERTY_NAME.equals(propertyName)
+        || HTTP_READ_TIMEOUT_PROPERTY_NAME.equals(propertyName)
+        || SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME.equals(propertyName)
+        || SWA_APPEND_ROW_COUNT_PROPERTY_NAME.equals(propertyName);
   }
 }
