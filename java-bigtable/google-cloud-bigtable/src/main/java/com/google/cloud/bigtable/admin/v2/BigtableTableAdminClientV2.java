@@ -163,7 +163,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     MethodDescriptor<Void, Operation> fakeDescriptor =
         (MethodDescriptor<Void, Operation>)
             (MethodDescriptor<?, ?>)
-                com.google.bigtable.admin.v2.BigtableTableAdminGrpc.getUpdateTableMethod();
+                com.google.bigtable.admin.v2.BigtableTableAdminGrpc.getRestoreTableMethod();
 
     GrpcCallSettings<Void, Operation> unusedInitialCallSettings =
         GrpcCallSettings.create(fakeDescriptor);
