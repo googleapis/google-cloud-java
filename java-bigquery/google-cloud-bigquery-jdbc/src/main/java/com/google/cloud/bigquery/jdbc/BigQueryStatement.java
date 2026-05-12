@@ -164,7 +164,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private BigQuerySettings generateBigQuerySettings() {
-
+    LOG.finer("++enter++");
     BigQuerySettings.Builder querySettings = BigQuerySettings.newBuilder();
     DatasetId defaultDataset = this.connection.getDefaultDataset();
     if (defaultDataset != null) {
@@ -282,6 +282,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   int checkUpdateCount(long updateCount) {
+    LOG.finer("++enter++");
     if (updateCount > Integer.MAX_VALUE) {
       LOG.warning("Warning: Table update exceeded maximum limit!");
       // Update count is -2 if update is successful but the update count exceeds Integer.MAX_VALUE
@@ -312,6 +313,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
+    LOG.finer("++enter++");
     // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
     // We're supporting them in a limited capacity, for pure SELECT statements.
     if (this.connection.isReadOnlyTokenUsed()) {

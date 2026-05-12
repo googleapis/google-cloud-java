@@ -45,7 +45,6 @@ class BigQueryThreadFactory implements ThreadFactory {
           new LogRecord(Level.FINER, String.format("New thread %s created.", t.getName()));
       record.setSourceClassName(BigQueryThreadFactory.class.getName());
       record.setSourceMethodName("newThread");
-      record.setThreadID((int) t.getId());
       LOG.log(record);
     }
     return t;

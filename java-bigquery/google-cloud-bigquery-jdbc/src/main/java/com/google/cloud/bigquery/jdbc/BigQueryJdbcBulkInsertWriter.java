@@ -34,6 +34,7 @@ import com.google.gson.JsonArray;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
 import java.util.concurrent.Phaser;
+import java.util.logging.Level;
 import javax.annotation.concurrent.GuardedBy;
 
 class BigQueryJdbcBulkInsertWriter {
@@ -47,6 +48,8 @@ class BigQueryJdbcBulkInsertWriter {
 
   void initialize(TableName parentTable, BigQueryWriteClient client, RetrySettings retrySettings)
       throws IOException, DescriptorValidationException, InterruptedException {
+    LOG.finer("++enter++");
+    LOG.fine("Initializing bulk insert writer for table: %s", parentTable);
     WriteStream stream = WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build();
 
     CreateWriteStreamRequest createWriteStreamRequest =
@@ -67,6 +70,9 @@ class BigQueryJdbcBulkInsertWriter {
   }
 
   void append(JsonArray data, long offset) throws DescriptorValidationException, IOException {
+    if (LOG.isLoggable(Level.FINER)) {
+      LOG.finer("Appending %d rows at offset %d", data.size(), offset);
+    }
     synchronized (this.streamLock) {
       if (this.error != null) {
         throw this.error;
@@ -80,6 +86,8 @@ class BigQueryJdbcBulkInsertWriter {
   }
 
   long cleanup(BigQueryWriteClient client) {
+    LOG.finer("++enter++");
+    LOG.fine("Cleaning up bulk insert writer for stream: %s", jsonStreamWriter.getStreamName());
     openRequestCount.arriveAndAwaitAdvance();
     jsonStreamWriter.close();
 
@@ -113,6 +121,8 @@ class BigQueryJdbcBulkInsertWriter {
     }
 
     public void onFailure(Throwable throwable) {
+      parent.LOG.warning(
+          "Append failed for stream %s: %s", parent.getStreamName(), throwable.getMessage());
       synchronized (this.parent.streamLock) {
         if (this.parent.error == null) {
           StorageException storageException = Exceptions.toStorageException(throwable);

@@ -103,6 +103,10 @@ class BigQueryJdbcRootLogger {
         if (threadName.length() > MAX_THREAD_NAME_LENGTH) {
           threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
         }
+        int totalPad = MAX_THREAD_NAME_LENGTH - threadName.length();
+        int leftPad = totalPad / 2;
+        String centeredThreadName =
+            Strings.repeat(" ", leftPad) + threadName + Strings.repeat(" ", totalPad - leftPad);
 
         String sourceClassName =
             record.getSourceClassName() != null
@@ -117,15 +121,15 @@ class BigQueryJdbcRootLogger {
             .append(" [")
             .append(connStr)
             .append("] ")
-            .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
+            .append(Strings.padEnd(record.getLevel().getName(), 7, ' '))
             .append(" ")
             .append(PROCESS_ID)
             .append(" --- [")
-            .append(Strings.padEnd(threadName, 7, ' '))
+            .append(centeredThreadName)
             .append("] ")
-            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
+            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 65, ' '))
             .append(" ")
-            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
+            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 30, ' '))
             .append(": ")
             .append(record.getMessage())
             .append(System.lineSeparator());
