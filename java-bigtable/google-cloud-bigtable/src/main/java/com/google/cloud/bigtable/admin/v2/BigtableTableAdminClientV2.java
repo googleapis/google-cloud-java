@@ -59,6 +59,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       optimizeRestoredTableOperationBaseCallable;
   private final java.util.concurrent.ScheduledExecutorService backgroundExecutor;
+  private final boolean shouldAutoClose;
 
   private static final RetrySettings AWAIT_CONSISTENCY_POLLING_SETTINGS_BASE =
       RetrySettings.newBuilder()
@@ -89,6 +90,8 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
             ((BigtableTableAdminStubSettings) settings.getStubSettings()).createStub();
     java.util.concurrent.ScheduledExecutorService backgroundExecutor =
         settings.getStubSettings().getBackgroundExecutorProvider().getExecutor();
+    boolean shouldAutoClose =
+        settings.getStubSettings().getBackgroundExecutorProvider().shouldAutoClose();
 
     AwaitConsistencyCallableV2 awaitConsistencyCallable =
         createAwaitConsistencyCallable(
@@ -104,24 +107,27 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     return new BigtableTableAdminClientV2(
         stub,
         backgroundExecutor,
+        shouldAutoClose,
         awaitConsistencyCallable,
         optimizeRestoredTableOperationBaseCallable);
   }
 
   /** Constructs an instance of BigtableTableAdminClientV2 with the given stub. */
   public static final BigtableTableAdminClientV2 create(GrpcBigtableTableAdminStub stub) {
-    return new BigtableTableAdminClientV2(stub, null, null, null);
+    return new BigtableTableAdminClientV2(stub, null, false, null, null);
   }
 
   protected BigtableTableAdminClientV2(
       GrpcBigtableTableAdminStub stub,
       @Nullable java.util.concurrent.ScheduledExecutorService backgroundExecutor,
+      boolean shouldAutoClose,
       @Nullable AwaitConsistencyCallableV2 awaitConsistencyCallable,
       @Nullable
           OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
               optimizeRestoredTableOperationBaseCallable) {
     super(stub);
     this.backgroundExecutor = backgroundExecutor;
+    this.shouldAutoClose = shouldAutoClose;
     this.awaitConsistencyCallable = awaitConsistencyCallable;
     this.optimizeRestoredTableOperationBaseCallable = optimizeRestoredTableOperationBaseCallable;
   }
@@ -339,7 +345,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
   @Override
   public void close() {
-    if (backgroundExecutor != null) {
+    if (backgroundExecutor != null && shouldAutoClose) {
       backgroundExecutor.shutdown();
     }
     super.close();
@@ -347,7 +353,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
   @Override
   public void shutdown() {
-    if (backgroundExecutor != null) {
+    if (backgroundExecutor != null && shouldAutoClose) {
       backgroundExecutor.shutdown();
     }
     super.shutdown();
@@ -355,7 +361,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
   @Override
   public void shutdownNow() {
-    if (backgroundExecutor != null) {
+    if (backgroundExecutor != null && shouldAutoClose) {
       backgroundExecutor.shutdownNow();
     }
     super.shutdownNow();
@@ -363,22 +369,29 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
   @Override
   public boolean isShutdown() {
-    return (backgroundExecutor == null || backgroundExecutor.isShutdown()) && super.isShutdown();
+    return (backgroundExecutor == null || !shouldAutoClose || backgroundExecutor.isShutdown())
+        && super.isShutdown();
   }
 
   @Override
   public boolean isTerminated() {
-    return (backgroundExecutor == null || backgroundExecutor.isTerminated())
+    return (backgroundExecutor == null || !shouldAutoClose || backgroundExecutor.isTerminated())
         && super.isTerminated();
   }
 
   @Override
   public boolean awaitTermination(long duration, java.util.concurrent.TimeUnit unit)
       throws InterruptedException {
+    long startNanos = System.nanoTime();
     boolean terminated = true;
-    if (backgroundExecutor != null) {
+    if (backgroundExecutor != null && shouldAutoClose) {
       terminated = backgroundExecutor.awaitTermination(duration, unit);
     }
-    return terminated && super.awaitTermination(duration, unit);
+    if (!terminated) {
+      return false;
+    }
+    long remainingNanos = unit.toNanos(duration) - (System.nanoTime() - startNanos);
+    return super.awaitTermination(
+        Math.max(0, remainingNanos), java.util.concurrent.TimeUnit.NANOSECONDS);
   }
 }

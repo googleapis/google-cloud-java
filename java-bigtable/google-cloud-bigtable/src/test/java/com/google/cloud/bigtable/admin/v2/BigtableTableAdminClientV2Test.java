@@ -62,7 +62,7 @@ public class BigtableTableAdminClientV2Test {
   public void setUp() {
     client =
         new BigtableTableAdminClientV2(
-            mockStub, null, mockAwaitConsistencyCallable, mockOptimizeRestoredTableCallable);
+            mockStub, null, false, mockAwaitConsistencyCallable, mockOptimizeRestoredTableCallable);
   }
 
   @Test
