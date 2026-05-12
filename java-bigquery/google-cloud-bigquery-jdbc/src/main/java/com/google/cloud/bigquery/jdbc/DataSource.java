@@ -664,6 +664,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setMaxResults(Long maxResults) {
+    if (maxResults != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          maxResults, BigQueryJdbcUrlUtility.MAX_RESULTS_PROPERTY_NAME);
+    }
     this.maxResults = maxResults;
   }
 
@@ -736,6 +740,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setConnectionPoolSize(Long connectionPoolSize) {
+    if (connectionPoolSize != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          connectionPoolSize, BigQueryJdbcUrlUtility.CONNECTION_POOL_SIZE_PROPERTY_NAME);
+    }
     this.connectionPoolSize = connectionPoolSize;
   }
 
@@ -746,14 +754,27 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setListenerPoolSize(Long listenerPoolSize) {
+    if (listenerPoolSize != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          listenerPoolSize, BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME);
+    }
     this.listenerPoolSize = listenerPoolSize;
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {
+    if (highThroughputMinTableSize != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          highThroughputMinTableSize, BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME);
+    }
     this.highThroughputMinTableSize = highThroughputMinTableSize;
   }
 
   public void setHighThroughputActivationRatio(Integer highThroughputActivationRatio) {
+    if (highThroughputActivationRatio != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          highThroughputActivationRatio,
+          BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME);
+    }
     this.highThroughputActivationRatio = highThroughputActivationRatio;
   }
 
@@ -1048,6 +1069,11 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setMetadataFetchThreadCount(Integer metadataFetchThreadCount) {
+    if (metadataFetchThreadCount != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          metadataFetchThreadCount,
+          BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME);
+    }
     this.metadataFetchThreadCount = metadataFetchThreadCount;
   }
 
@@ -1126,6 +1152,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setHttpConnectTimeout(Integer httpConnectTimeout) {
+    if (httpConnectTimeout != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          httpConnectTimeout, BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME);
+    }
     this.httpConnectTimeout = httpConnectTimeout;
   }
 
@@ -1134,6 +1164,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setHttpReadTimeout(Integer httpReadTimeout) {
+    if (httpReadTimeout != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          httpReadTimeout, BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME);
+    }
     this.httpReadTimeout = httpReadTimeout;
   }
 
@@ -1154,6 +1188,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setSwaActivationRowCount(Integer swaActivationRowCount) {
+    if (swaActivationRowCount != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          swaActivationRowCount, BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME);
+    }
     this.swaActivationRowCount = swaActivationRowCount;
   }
 
@@ -1164,6 +1202,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setSwaAppendRowCount(Integer swaAppendRowCount) {
+    if (swaAppendRowCount != null) {
+      BigQueryJdbcUrlUtility.validateNonNegative(
+          swaAppendRowCount, BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME);
+    }
     this.swaAppendRowCount = swaAppendRowCount;
   }
 

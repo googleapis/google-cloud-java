@@ -20,7 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
@@ -205,5 +207,26 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
     assertThat(parsedProperties.get("ProjectId")).isEqualTo(complexValue);
     assertFalse(parsedProperties.containsKey("ExtraProperty"));
+  }
+
+  @Test
+  public void testInvalidConnectionProperties() {
+    String url = "jdbc:bigquery://;MaxResults=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url));
+
+    String url2 = "jdbc:bigquery://;ConnectionPoolSize=-2";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
+  }
+
+  @Test
+  public void testValidZeroConnectionProperties() {
+    String url = "jdbc:bigquery://;MaxResults=0";
+    assertDoesNotThrow(() -> DataSource.fromUrl(url));
+  }
+
+  @Test
+  public void testInvalidSetterValues() {
+    DataSource ds = new DataSource();
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(-1L));
   }
 }
