@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysResponse;
 import com.google.ads.admanager.v1.CmsMetadataKey;
 import com.google.ads.admanager.v1.GetCmsMetadataKeyRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataKeysRequest;
@@ -127,11 +131,100 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CmsMetadataKeyService/BatchActivateCmsMetadataKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateCmsMetadataKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/cmsMetadataKeys:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCmsMetadataKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCmsMetadataKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateCmsMetadataKeysResponse>newBuilder()
+                      .setDefaultInstance(BatchActivateCmsMetadataKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CmsMetadataKeyService/BatchDeactivateCmsMetadataKeys")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeactivateCmsMetadataKeysRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/cmsMetadataKeys:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCmsMetadataKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCmsMetadataKeysRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchDeactivateCmsMetadataKeysResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchDeactivateCmsMetadataKeysResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCmsMetadataKeyRequest, CmsMetadataKey> getCmsMetadataKeyCallable;
   private final UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse>
       listCmsMetadataKeysCallable;
   private final UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysPagedResponse>
       listCmsMetadataKeysPagedCallable;
+  private final UnaryCallable<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysCallable;
+  private final UnaryCallable<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -202,6 +295,37 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+        batchActivateCmsMetadataKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchActivateCmsMetadataKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+        batchDeactivateCmsMetadataKeysTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateCmsMetadataKeysMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getCmsMetadataKeyCallable =
         callableFactory.createUnaryCallable(
@@ -218,6 +342,16 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
             listCmsMetadataKeysTransportSettings,
             settings.listCmsMetadataKeysSettings(),
             clientContext);
+    this.batchActivateCmsMetadataKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateCmsMetadataKeysTransportSettings,
+            settings.batchActivateCmsMetadataKeysSettings(),
+            clientContext);
+    this.batchDeactivateCmsMetadataKeysCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateCmsMetadataKeysTransportSettings,
+            settings.batchDeactivateCmsMetadataKeysSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -228,6 +362,8 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCmsMetadataKeyMethodDescriptor);
     methodDescriptors.add(listCmsMetadataKeysMethodDescriptor);
+    methodDescriptors.add(batchActivateCmsMetadataKeysMethodDescriptor);
+    methodDescriptors.add(batchDeactivateCmsMetadataKeysMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -246,6 +382,19 @@ public class HttpJsonCmsMetadataKeyServiceStub extends CmsMetadataKeyServiceStub
   public UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysPagedResponse>
       listCmsMetadataKeysPagedCallable() {
     return listCmsMetadataKeysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysCallable() {
+    return batchActivateCmsMetadataKeysCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysCallable() {
+    return batchDeactivateCmsMetadataKeysCallable;
   }
 
   @Override

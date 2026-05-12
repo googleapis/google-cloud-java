@@ -159,7 +159,11 @@ import javax.annotation.Generated;
 public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/container")
+          .add("https://www.googleapis.com/auth/container.read-only")
+          .build();
 
   private final UnaryCallSettings<ListClustersRequest, ListClustersResponse> listClustersSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;

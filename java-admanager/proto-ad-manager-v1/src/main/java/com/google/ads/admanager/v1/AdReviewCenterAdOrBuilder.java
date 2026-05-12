@@ -147,6 +147,106 @@ public interface AdReviewCenterAdOrBuilder
    *
    *
    * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the manualReviewStatuses.
+   */
+  java.util.List<
+          com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus>
+      getManualReviewStatusesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of manualReviewStatuses.
+   */
+  int getManualReviewStatusesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The manualReviewStatuses at the given index.
+   */
+  com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+      getManualReviewStatuses(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for manualReviewStatuses.
+   */
+  java.util.List<java.lang.Integer> getManualReviewStatusesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of manualReviewStatuses at the given index.
+   */
+  int getManualReviewStatusesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
    * which will present the rendered contents of the ad. (This URL expires 72
    * hours after being retrieved.).

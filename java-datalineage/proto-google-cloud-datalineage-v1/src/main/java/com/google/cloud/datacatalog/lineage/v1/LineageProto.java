@@ -65,6 +65,10 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_EventLink_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_DependencyInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_DependencyInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_fieldAccessorTable;
@@ -153,6 +157,10 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_MultipleEntityReference_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_MultipleEntityReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_fieldAccessorTable;
@@ -160,6 +168,10 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_Link_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -180,6 +192,38 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_Origin_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_LineageProcess_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_LineageProcess_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_DependencyInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_DependencyInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchFilters_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchFilters_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchLimits_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchLimits_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_RootCriteria_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_RootCriteria_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -193,27 +237,29 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "1google/cloud/datacatalog/lineage/v1/lineage.proto\022#google.cloud.datacatalog.li"
           + "neage.v1\032\034google/api/annotations.proto\032\027"
           + "google/api/client.proto\032\037google/api/fiel"
-          + "d_behavior.proto\032\031google/api/resource.pr"
-          + "oto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\034google/protobuf"
-          + "/struct.proto\032\037google/protobuf/timestamp.proto\"\201\003\n"
+          + "d_behavior.proto\032\033google/api/field_info."
+          + "proto\032\031google/api/resource.proto\032#google"
+          + "/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\034google/protobuf/struct.pro"
+          + "to\032\037google/protobuf/timestamp.proto\032\032google/type/interval.proto\"\225\003\n"
           + "\007Process\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022U\n\n"
-          + "attributes\030\003"
-          + " \003(\0132<.google.cloud.datacatalog.lineage.v1.Process.AttributesEntryB\003\340A\001\022@\n"
+          + "attributes\030\003 \003(\0132<.google.cloud.dat"
+          + "acatalog.lineage.v1.Process.AttributesEntryB\003\340A\001\022@\n"
           + "\006origin\030\004"
           + " \001(\0132+.google.cloud.datacatalog.lineage.v1.OriginB\003\340A\001\032I\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022%\n"
-          + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001:d\352Aa\n"
-          + "\"datalineage.googleapi"
-          + "s.com/Process\022;projects/{project}/locations/{location}/processes/{process}\"\265\004\n"
+          + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001:x\352Au\n"
+          + "\"datalineage.googleapis.com/Process\022;projects"
+          + "/{project}/locations/{location}/processes/{process}*"
+          + "\tprocesses2\007process\"\300\004\n"
           + "\003Run\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\005\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022Q\n\n"
-          + "attributes\030\003 \003(\01328.google.cl"
-          + "oud.datacatalog.lineage.v1.Run.AttributesEntryB\003\340A\001\0223\n\n"
+          + "attributes\030\003 \003(\01328.google.cloud"
+          + ".datacatalog.lineage.v1.Run.AttributesEntryB\003\340A\001\0223\n\n"
           + "start_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0221\n"
           + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022B\n"
           + "\005state\030\006"
@@ -226,31 +272,38 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "\007STARTED\020\001\022\r\n"
           + "\tCOMPLETED\020\002\022\n\n"
           + "\006FAILED\020\003\022\013\n"
-          + "\007ABORTED\020\004:k\352Ah\n"
-          + "\036datalineage.googleapis.com/Run\022Fprojects/{project}/locations"
-          + "/{location}/processes/{process}/runs/{run}\"\343\002\n"
+          + "\007ABORTED\020\004:v\352As\n"
+          + "\036datalineage.googleapis.com/Run\022Fprojects/{project}/locations/{l"
+          + "ocation}/processes/{process}/runs/{run}*\004runs2\003run\"\200\003\n"
           + "\014LineageEvent\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\005\022B\n"
           + "\005links\030\010"
           + " \003(\0132..google.cloud.datacatalog.lineage.v1.EventLinkB\003\340A\001\0223\n\n"
           + "start_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0221\n"
           + "\010end_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001:\223\001\352A\217\001\n"
-          + "\'datalineage.googleapis.com/LineageEvent\022dprojects/{project}/l"
-          + "ocations/{location}/processes/{process}/"
-          + "runs/{run}/lineageEvents/{lineage_event}\"\241\001\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001:\260\001\352A\254\001\n"
+          + "\'datalineage.googleapis.com/LineageEvent\022dprojects/{pr"
+          + "oject}/locations/{location}/processes/{p"
+          + "rocess}/runs/{run}/lineageEvents/{lineage_event}*\r"
+          + "lineageEvents2\014lineageEvent\"\364\001\n"
           + "\tEventLink\022I\n"
-          + "\006source\030\001 \001(\01324.google."
-          + "cloud.datacatalog.lineage.v1.EntityReferenceB\003\340A\002\022I\n"
-          + "\006target\030\002 \001(\01324.google.cloud"
-          + ".datacatalog.lineage.v1.EntityReferenceB\003\340A\002\"4\n"
+          + "\006source\030\001 \001(\01324.google.clo"
+          + "ud.datacatalog.lineage.v1.EntityReferenceB\003\340A\002\022I\n"
+          + "\006target\030\002 \001(\01324.google.cloud.da"
+          + "tacatalog.lineage.v1.EntityReferenceB\003\340A\002\022Q\n"
+          + "\017dependency_info\030\003 \001(\01323.google.clou"
+          + "d.datacatalog.lineage.v1.DependencyInfoB\003\340A\001\"c\n"
+          + "\016DependencyInfo\022Q\n"
+          + "\017dependency_type\030\001"
+          + " \001(\01623.google.cloud.datacatalog.lineage.v1.DependencyTypeB\003\340A\002\"H\n"
           + "\017EntityReference\022!\n"
-          + "\024fully_qualified_name\030\001 \001(\tB\003\340A\002\"\346\003\n"
+          + "\024fully_qualified_name\030\001 \001(\tB\003\340A\002\022\022\n"
+          + "\005field\030\003 \003(\tB\003\340A\001\"\346\003\n"
           + "\021OperationMetadata\022P\n"
-          + "\005state\030\001 \001(\0162<.google.cloud.datacatal"
-          + "og.lineage.v1.OperationMetadata.StateB\003\340A\003\022X\n"
-          + "\016operation_type\030\002 \001(\0162;.google.clou"
-          + "d.datacatalog.lineage.v1.OperationMetadata.TypeB\003\340A\003\022\025\n"
+          + "\005state\030\001 \001(\0162<.google.cloud.datacata"
+          + "log.lineage.v1.OperationMetadata.StateB\003\340A\003\022X\n"
+          + "\016operation_type\030\002 \001(\0162;.google.clo"
+          + "ud.datacatalog.lineage.v1.OperationMetadata.TypeB\003\340A\003\022\025\n"
           + "\010resource\030\003 \001(\tB\003\340A\003\022\032\n\r"
           + "resource_uuid\030\004 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -264,123 +317,138 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001\022\n\n"
-          + "\006CREATE\020\002\"\200\001\n"
+          + "\006CREATE\020\002\"\215\001\n"
           + "!ProcessOpenLineageRunEventRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\0222\n"
           + "\014open_lineage\030\002"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\002\022\022\n\n"
-          + "request_id\030\003 \001(\t\"\326\001\n"
+          + " \001(\0132\027.google.protobuf.StructB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\326\001\n"
           + "\"ProcessOpenLineageRunEventResponse\0228\n"
           + "\007process\030\001 \001(\tB\'\372A$\n"
           + "\"datalineage.googleapis.com/Process\0220\n"
           + "\003run\030\002 \001(\tB#\372A \n"
           + "\036datalineage.googleapis.com/Run\022D\n"
           + "\016lineage_events\030\003 \003(\tB,\372A)\n"
-          + "\'datalineage.googleapis.com/LineageEvent\"\252\001\n"
+          + "\'datalineage.googleapis.com/LineageEvent\"\267\001\n"
           + "\024CreateProcessRequest\022:\n"
           + "\006parent\030\001 \001("
           + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022B\n"
-          + "\007process\030\002 \001(\0132,."
-          + "google.cloud.datacatalog.lineage.v1.ProcessB\003\340A\002\022\022\n\n"
-          + "request_id\030\003 \001(\t\"\242\001\n"
+          + "\007process\030\002"
+          + " \001(\0132,.google.cloud.datacatalog.lineage.v1.ProcessB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\315\001\n"
           + "\024UpdateProcessRequest\022B\n"
-          + "\007process\030\001 \001(\0132,.google."
-          + "cloud.datacatalog.lineage.v1.ProcessB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\r"
-          + "allow_missing\030\003 \001(\010\"M\n"
+          + "\007process\030\001"
+          + " \001(\0132,.google.cloud.datacatalog.lineage.v1.ProcessB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\r"
+          + "allow_missing\030\003 \001(\010B\003\340A\001\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"M\n"
           + "\021GetProcessRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"datalineage.googleapis.com/Process\"y\n"
+          + "\"datalineage.googleapis.com/Process\"\203\001\n"
           + "\024ListProcessesRequest\022:\n"
           + "\006parent\030\001 \001("
-          + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"q\n"
+          + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"q\n"
           + "\025ListProcessesResponse\022?\n"
           + "\tprocesses\030\001 \003(\0132,.google.cloud.datacatalog.lineage.v1.Process\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"g\n"
+          + "\017next_page_token\030\002 \001(\t\"l\n"
           + "\024DeleteProcessRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"datalineage.googleapis.com/Process\022\025\n\r"
-          + "allow_missing\030\002 \001(\010\"\232\001\n"
+          + "\"datalineage.googleapis.com/Process\022\032\n\r"
+          + "allow_missing\030\002 \001(\010B\003\340A\001\"\247\001\n"
           + "\020CreateRunRequest\0226\n"
           + "\006parent\030\001 \001(\tB&\340A\002\372A"
           + " \022\036datalineage.googleapis.com/Run\022:\n"
-          + "\003run\030\002"
-          + " \001(\0132(.google.cloud.datacatalog.lineage.v1.RunB\003\340A\002\022\022\n\n"
-          + "request_id\030\003 \001(\t\"\226\001\n"
+          + "\003run\030\002 \001(\0132(.google"
+          + ".cloud.datacatalog.lineage.v1.RunB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\240\001\n"
           + "\020UpdateRunRequest\022:\n"
           + "\003run\030\001"
-          + " \001(\0132(.google.cloud.datacatalog.lineage.v1.RunB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\r"
-          + "allow_missing\030\003 \001(\010\"E\n\r"
+          + " \001(\0132(.google.cloud.datacatalog.lineage.v1.RunB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\r"
+          + "allow_missing\030\003 \001(\010B\003\340A\001\"E\n\r"
           + "GetRunRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036datalineage.googleapis.com/Run\"p\n"
-          + "\017ListRunsRequest\0226\n"
-          + "\006parent\030\001 \001(\tB&\340A\002\372A"
-          + " \022\036datalineage.googleapis.com/Run\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"c\n"
+          + "\036datalineage.googleapis.com/Run\"~\n"
+          + "\017ListRunsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"datalineage.googleapis.com/Process\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"c\n"
           + "\020ListRunsResponse\0226\n"
           + "\004runs\030\001 \003(\0132(.google.cloud.datacatalog.lineage.v1.Run\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"_\n"
+          + "\017next_page_token\030\002 \001(\t\"d\n"
           + "\020DeleteRunRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036datalineage.googleapis.com/Run\022\025\n\r"
-          + "allow_missing\030\002 \001(\010\"\277\001\n"
+          + "\036datalineage.googleapis.com/Run\022\032\n\r"
+          + "allow_missing\030\002 \001(\010B\003\340A\001\"\314\001\n"
           + "\031CreateLineageEventRequest\022?\n"
-          + "\006parent\030\001 \001(\tB/\340A\002\372"
-          + "A)\022\'datalineage.googleapis.com/LineageEvent\022M\n\r"
-          + "lineage_event\030\002 \001(\01321.google.clou"
-          + "d.datacatalog.lineage.v1.LineageEventB\003\340A\002\022\022\n\n"
-          + "request_id\030\003 \001(\t\"W\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'datalineage.googleapis.com/LineageEvent\022M\n\r"
+          + "lineage_event\030\002 \001(\01321.goo"
+          + "gle.cloud.datacatalog.lineage.v1.LineageEventB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"W\n"
           + "\026GetLineageEventRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'datalineage.googleapis.com/LineageEvent\"\202\001\n"
-          + "\030ListLineageEventsRequest\022?\n"
-          + "\006parent\030\001 \001(\tB/\340A"
-          + "\002\372A)\022\'datalineage.googleapis.com/LineageEvent\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"\177\n"
+          + "\'datalineage.googleapis.com/LineageEvent\"\203\001\n"
+          + "\030ListLineageEventsRequest\0226\n"
+          + "\006parent\030\001 \001(\tB&\340A\002\372A \n"
+          + "\036datalineage.googleapis.com/Run\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\177\n"
           + "\031ListLineageEventsResponse\022I\n"
-          + "\016lineage_events\030\001"
-          + " \003(\01321.google.cloud.datacatalog.lineage.v1.LineageEvent\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"q\n"
+          + "\016lineage_events\030\001 \003(\0132"
+          + "1.google.cloud.datacatalog.lineage.v1.LineageEvent\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"v\n"
           + "\031DeleteLineageEventRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'datalineage.googleapis.com/LineageEvent\022\025\n\r"
-          + "allow_missing\030\002 \001(\010\"\247\002\n"
+          + "\'datalineage.googleapis.com/LineageEvent\022\032\n\r"
+          + "allow_missing\030\002 \001(\010B\003\340A\001\"\323\003\n"
           + "\022SearchLinksRequest\022:\n"
-          + "\006parent\030\001 \001("
-          + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022K\n"
-          + "\006source\030\004 \001(\01324.google.clo"
-          + "ud.datacatalog.lineage.v1.EntityReferenceB\003\340A\001H\000\022K\n"
-          + "\006target\030\005 \001(\01324.google.cloud."
-          + "datacatalog.lineage.v1.EntityReferenceB\003\340A\001H\000\022\026\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372"
+          + "A$\022\"datalineage.googleapis.com/Process\022K\n"
+          + "\006source\030\004"
+          + " \001(\01324.google.cloud.datacatalog.lineage.v1.EntityReferenceB\003\340A\001H\000\022K\n"
+          + "\006target\030\005"
+          + " \001(\01324.google.cloud.datacatalog.lineage.v1.EntityReferenceB\003\340A\001H\000\022T\n"
+          + "\007sources\030\006 \001(\0132<.google.cloud.datacatalog.lin"
+          + "eage.v1.MultipleEntityReferenceB\003\340A\001H\000\022T\n"
+          + "\007targets\030\007 \001(\0132<.google.cloud.datacatal"
+          + "og.lineage.v1.MultipleEntityReferenceB\003\340A\001H\000\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001B\n\n"
-          + "\010criteria\"h\n"
+          + "\010criteria\"f\n"
+          + "\027MultipleEntityReference\022K\n"
+          + "\010entities\030\001 \003(\01324.google."
+          + "cloud.datacatalog.lineage.v1.EntityReferenceB\003\340A\001\"h\n"
           + "\023SearchLinksResponse\0228\n"
           + "\005links\030\001 \003(\0132).google.cloud.datacatalog.lineage.v1.Link\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\206\002\n"
+          + "\017next_page_token\030\002 \001(\t\"\276\003\n"
           + "\004Link\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\005\022D\n"
-          + "\006source\030\002"
-          + " \001(\01324.google.cloud.datacatalog.lineage.v1.EntityReference\022D\n"
-          + "\006target\030\003"
-          + " \001(\01324.google.cloud.datacatalog.lineage.v1.EntityReference\022.\n\n"
+          + "\006source\030\002 \001"
+          + "(\01324.google.cloud.datacatalog.lineage.v1.EntityReference\022D\n"
+          + "\006target\030\003 \001(\01324.googl"
+          + "e.cloud.datacatalog.lineage.v1.EntityReference\022.\n\n"
           + "start_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\005 \001(\0132\032.google.protobuf.Timestamp\"\230\001\n"
+          + "\010end_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022V\n"
+          + "\017dependency_info\030\006"
+          + " \003(\01328.google.cloud.datacatalog.lineage.v1.Link.DependencyInfoB\003\340A\001\032^\n"
+          + "\016DependencyInfo\022L\n"
+          + "\017dependency_type\030\001 \001(\01623.google"
+          + ".cloud.datacatalog.lineage.v1.DependencyType\"\242\001\n"
           + "\037BatchSearchLinkProcessesRequest\022:\n"
           + "\006parent\030\001 \001("
           + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022\022\n"
-          + "\005links\030\002 \003(\tB\003\340A\002\022\021\n"
-          + "\tpage_size\030\003 \001(\005\022\022\n\n"
-          + "page_token\030\004 \001(\t\"\205\001\n"
+          + "\005links\030\002 \003(\tB\003\340A\002\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\"\205\001\n"
           + " BatchSearchLinkProcessesResponse\022H\n\r"
-          + "process_links\030\001"
-          + " \003(\01321.google.cloud.datacatalog.lineage.v1.ProcessLinks\022\027\n"
+          + "process_links\030\001 \003(\01321.google.c"
+          + "loud.datacatalog.lineage.v1.ProcessLinks\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\215\001\n"
           + "\014ProcessLinks\0228\n"
           + "\007process\030\001 \001(\tB\'\372A$\n"
@@ -389,11 +457,11 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "\017ProcessLinkInfo\022\014\n"
           + "\004link\030\001 \001(\t\022.\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\351\001\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\227\002\n"
           + "\006Origin\022K\n"
-          + "\013source_type\030\001 \001(\01626.google"
-          + ".cloud.datacatalog.lineage.v1.Origin.SourceType\022\014\n"
-          + "\004name\030\002 \001(\t\"\203\001\n\n"
+          + "\013source_type\030\001"
+          + " \001(\01626.google.cloud.datacatalog.lineage.v1.Origin.SourceType\022\014\n"
+          + "\004name\030\002 \001(\t\"\261\001\n\n"
           + "SourceType\022\033\n"
           + "\027SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006CUSTOM\020\001\022\014\n"
@@ -401,7 +469,67 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "\013DATA_FUSION\020\003\022\014\n"
           + "\010COMPOSER\020\004\022\021\n\r"
           + "LOOKER_STUDIO\020\005\022\014\n"
-          + "\010DATAPROC\020\0062\274\035\n"
+          + "\010DATAPROC\020\006\022\r\n"
+          + "\tVERTEX_AI\020\007\022\014\n"
+          + "\010DATAFLOW\020\010\022\017\n"
+          + "\013LOOKER_CORE\020\t\"\231\004\n"
+          + "\013LineageLink\022D\n"
+          + "\006source\030\001"
+          + " \001(\01324.google.cloud.datacatalog.lineage.v1.EntityReference\022D\n"
+          + "\006target\030\002 \001(\013"
+          + "24.google.cloud.datacatalog.lineage.v1.EntityReference\022R\n"
+          + "\tprocesses\030\003 \003(\0132?.goog"
+          + "le.cloud.datacatalog.lineage.v1.LineageLink.LineageProcess\022X\n"
+          + "\017dependency_info\030\004 "
+          + "\003(\0132?.google.cloud.datacatalog.lineage.v1.LineageLink.DependencyInfo\022\r\n"
+          + "\005depth\030\005 \001(\005\022\020\n"
+          + "\010location\030\007 \001(\t\032O\n"
+          + "\016LineageProcess\022=\n"
+          + "\007process\030\003 \001(\0132,.google.cloud.datacatalog.lineage.v1.Process\032^\n"
+          + "\016DependencyInfo\022L\n"
+          + "\017dependency_type\030\001 \001(\01623.google.cloud"
+          + ".datacatalog.lineage.v1.DependencyType\"\371\010\n"
+          + "\035SearchLineageStreamingRequest\022:\n"
+          + "\006parent\030\001 \001("
+          + "\tB*\340A\002\372A$\022\"datalineage.googleapis.com/Process\022\026\n"
+          + "\tlocations\030\002 \003(\tB\003\340A\002\022k\n\r"
+          + "root_criteria\030\003 \001(\0132O.google.cloud.datac"
+          + "atalog.lineage.v1.SearchLineageStreamingRequest.RootCriteriaB\003\340A\002\022j\n"
+          + "\tdirection\030\004 \001(\0162R.google.cloud.datacatalog.lineage."
+          + "v1.SearchLineageStreamingRequest.SearchDirectionB\003\340A\002\022f\n"
+          + "\007filters\030\005 \001(\0132P.google."
+          + "cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.SearchFiltersB\003\340A\001\022d\n"
+          + "\006limits\030\006 \001(\0132O.google.cloud.datacatalog"
+          + ".lineage.v1.SearchLineageStreamingRequest.SearchLimitsB\003\340A\001\032\372\001\n\r"
+          + "SearchFilters\022R\n"
+          + "\020dependency_types\030\001 \003(\01623.google.cloud.d"
+          + "atacatalog.lineage.v1.DependencyTypeB\003\340A\001\022e\n\n"
+          + "entity_set\030\002 \001(\0162L.google.cloud.dat"
+          + "acatalog.lineage.v1.SearchLineageStreamingRequest.EntitySetB\003\340A\001\022.\n\n"
+          + "time_range\030\003 \001(\0132\025.google.type.IntervalB\003\340A\001\032c\n"
+          + "\014SearchLimits\022\026\n"
+          + "\tmax_depth\030\001 \001(\005B\003\340A\001\022\030\n"
+          + "\013max_results\030\002 \001(\005B\003\340A\001\022!\n"
+          + "\024max_process_per_link\030\003 \001(\005B\003\340A\001\032q\n"
+          + "\014RootCriteria\022U\n"
+          + "\010entities\030\001"
+          + " \001(\0132<.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceB\003\340A\001H\000B\n\n"
+          + "\010criteria\"Q\n"
+          + "\017SearchDirection\022 \n"
+          + "\034SEARCH_DIRECTION_UNSPECIFIED\020\000\022\016\n\n"
+          + "DOWNSTREAM\020\001\022\014\n"
+          + "\010UPSTREAM\020\002\"5\n"
+          + "\tEntitySet\022\032\n"
+          + "\026ENTITY_SET_UNSPECIFIED\020\000\022\014\n"
+          + "\010ENTITIES\020\001\"\200\001\n"
+          + "\036SearchLineageStreamingResponse\022D\n"
+          + "\005links\030\001 \003(\01320.g"
+          + "oogle.cloud.datacatalog.lineage.v1.LineageLinkB\003\340A\003\022\030\n"
+          + "\013unreachable\030\002 \003(\tB\003\340A\006*L\n"
+          + "\016DependencyType\022\037\n"
+          + "\033DEPENDENCY_TYPE_UNSPECIFIED\020\000\022\016\n\n"
+          + "EXACT_COPY\020\001\022\t\n"
+          + "\005OTHER\020\0032\251\037\n"
           + "\007Lineage\022\231\002\n"
           + "\032ProcessOpenLineageRunEvent\022F.google.cloud.datacatalog.lineage.v1.Pro"
           + "cessOpenLineageRunEventRequest\032G.google.cloud.datacatalog.lineage.v1.ProcessOpen"
@@ -471,13 +599,17 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
           + "\030BatchSearchLinkProcesses\022D.google.cloud.datacatalog.lineage.v1.Batch"
           + "SearchLinkProcessesRequest\032E.google.cloud.datacatalog.lineage.v1.BatchSearchLink"
           + "ProcessesResponse\"G\202\323\344\223\002A\"</v1/{parent=p"
-          + "rojects/*/locations/*}:batchSearchLinkPr"
-          + "ocesses:\001*\032N\312A\032datalineage.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/cloud-platformB\362\001\n"
-          + "\'com.google.cloud.datacatalog.lineage.v1B\014LineageProtoP\001ZAcloud.go"
-          + "ogle.com/go/datacatalog/lineage/apiv1/lineagepb;lineagepb\252\002#Google.Cloud.DataCat"
-          + "alog.Lineage.V1\312\002#Google\\Cloud\\DataCatal"
-          + "og\\Lineage\\V1\352\002\'Google::Cloud::DataCatalog::Lineage::V1b\006proto3"
+          + "rojects/*/locations/*}:batchSearchLinkProcesses:\001*\022\352\001\n"
+          + "\026SearchLineageStreaming\022B.google.cloud.datacatalog.lineage.v1.Sear"
+          + "chLineageStreamingRequest\032C.google.cloud.datacatalog.lineage.v1.SearchLineageStr"
+          + "eamingResponse\"E\202\323\344\223\002?\":/v1/{parent=proj"
+          + "ects/*/locations/*}:searchLineageStreami"
+          + "ng:\001*0\001\032N\312A\032datalineage.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-platformB\362\001\n"
+          + "\'com.google.cloud.datacatalog.lineage.v1B\014LineageProtoP\001ZAcloud.googl"
+          + "e.com/go/datacatalog/lineage/apiv1/lineagepb;lineagepb\252\002#Google.Cloud.DataCatalo"
+          + "g.Lineage.V1\312\002#Google\\Cloud\\DataCatalog\\"
+          + "Lineage\\V1\352\002\'Google::Cloud::DataCatalog::Lineage::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -486,12 +618,14 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.IntervalProto.getDescriptor(),
             });
     internal_static_google_cloud_datacatalog_lineage_v1_Process_descriptor =
         getDescriptor().getMessageType(0);
@@ -539,18 +673,26 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_EventLink_descriptor,
             new java.lang.String[] {
-              "Source", "Target",
+              "Source", "Target", "DependencyInfo",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_DependencyInfo_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_datacatalog_lineage_v1_DependencyInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_DependencyInfo_descriptor,
+            new java.lang.String[] {
+              "DependencyType",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_EntityReference_descriptor,
             new java.lang.String[] {
-              "FullyQualifiedName",
+              "FullyQualifiedName", "Field",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_datacatalog_lineage_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_OperationMetadata_descriptor,
@@ -558,7 +700,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "State", "OperationType", "Resource", "ResourceUuid", "CreateTime", "EndTime",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_descriptor,
@@ -566,7 +708,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "OpenLineage", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_descriptor,
@@ -574,7 +716,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Process", "Run", "LineageEvents",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor,
@@ -582,15 +724,15 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Process", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_descriptor,
             new java.lang.String[] {
-              "Process", "UpdateMask", "AllowMissing",
+              "Process", "UpdateMask", "AllowMissing", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_descriptor,
@@ -598,7 +740,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_descriptor,
@@ -606,7 +748,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_descriptor,
@@ -614,7 +756,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Processes", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_descriptor,
@@ -622,7 +764,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_descriptor,
@@ -630,7 +772,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Run", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_descriptor,
@@ -638,7 +780,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Run", "UpdateMask", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_descriptor,
@@ -646,7 +788,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_descriptor,
@@ -654,7 +796,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_descriptor,
@@ -662,7 +804,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Runs", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_descriptor,
@@ -670,7 +812,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_descriptor,
@@ -678,7 +820,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "LineageEvent", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_descriptor,
@@ -686,7 +828,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_descriptor,
@@ -694,7 +836,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_descriptor,
@@ -702,7 +844,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "LineageEvents", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_descriptor,
@@ -710,15 +852,30 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Source", "Target", "PageSize", "PageToken", "Criteria",
+              "Parent",
+              "Source",
+              "Target",
+              "Sources",
+              "Targets",
+              "PageSize",
+              "PageToken",
+              "Criteria",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_MultipleEntityReference_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_datacatalog_lineage_v1_MultipleEntityReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_MultipleEntityReference_descriptor,
+            new java.lang.String[] {
+              "Entities",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_descriptor,
@@ -726,15 +883,23 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Links", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_datacatalog_lineage_v1_Link_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor,
             new java.lang.String[] {
-              "Name", "Source", "Target", "StartTime", "EndTime",
+              "Name", "Source", "Target", "StartTime", "EndTime", "DependencyInfo",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor.getNestedType(0);
+    internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_Link_DependencyInfo_descriptor,
+            new java.lang.String[] {
+              "DependencyType",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_descriptor,
@@ -742,7 +907,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Links", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_descriptor,
@@ -750,7 +915,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "ProcessLinks", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_descriptor,
@@ -758,7 +923,7 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Process", "Links",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_descriptor,
@@ -766,27 +931,97 @@ public final class LineageProto extends com.google.protobuf.GeneratedFile {
               "Link", "StartTime", "EndTime",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_datacatalog_lineage_v1_Origin_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor,
             new java.lang.String[] {
               "SourceType", "Name",
             });
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_descriptor =
+        getDescriptor().getMessageType(35);
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_descriptor,
+            new java.lang.String[] {
+              "Source", "Target", "Processes", "DependencyInfo", "Depth", "Location",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_LineageProcess_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_descriptor.getNestedType(0);
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_LineageProcess_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_LineageProcess_descriptor,
+            new java.lang.String[] {
+              "Process",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_DependencyInfo_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_descriptor.getNestedType(1);
+    internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_DependencyInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_LineageLink_DependencyInfo_descriptor,
+            new java.lang.String[] {
+              "DependencyType",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor =
+        getDescriptor().getMessageType(36);
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Locations", "RootCriteria", "Direction", "Filters", "Limits",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchFilters_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchFilters_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchFilters_descriptor,
+            new java.lang.String[] {
+              "DependencyTypes", "EntitySet", "TimeRange",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchLimits_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchLimits_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_SearchLimits_descriptor,
+            new java.lang.String[] {
+              "MaxDepth", "MaxResults", "MaxProcessPerLink",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_RootCriteria_descriptor =
+        internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_RootCriteria_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingRequest_RootCriteria_descriptor,
+            new java.lang.String[] {
+              "Entities", "Criteria",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingResponse_descriptor =
+        getDescriptor().getMessageType(37);
+    internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_SearchLineageStreamingResponse_descriptor,
+            new java.lang.String[] {
+              "Links", "Unreachable",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.IntervalProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
