@@ -112,20 +112,6 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
         optimizeRestoredTableOperationBaseCallable);
   }
 
-  /**
-   * Constructs an instance of BigtableTableAdminClientV2 with the given stub.
-   *
-   * <p><b>Warning:</b> Initializing the client using only a stub leaves several V2 administrative
-   * callables (like consistency token polling and LRO optimization tracking) uninitialized. Calling
-   * methods like {@link #waitForConsistency} or {@link #awaitOptimizeRestoredTable} on a
-   * stub-initialized client will result in an {@link IllegalStateException}. Consider initializing
-   * the client using settings via {@link #create(BaseBigtableTableAdminSettings)} if these
-   * methods are required.
-   */
-  public static final BigtableTableAdminClientV2 create(GrpcBigtableTableAdminStub stub) {
-    return new BigtableTableAdminClientV2(stub, null, false, null, null);
-  }
-
   protected BigtableTableAdminClientV2(
       GrpcBigtableTableAdminStub stub,
       @Nullable java.util.concurrent.ScheduledExecutorService backgroundExecutor,
