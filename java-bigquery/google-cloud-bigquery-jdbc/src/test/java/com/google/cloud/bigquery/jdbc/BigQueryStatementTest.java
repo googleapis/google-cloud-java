@@ -32,6 +32,7 @@ import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
@@ -55,6 +56,7 @@ import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +70,8 @@ import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -212,7 +216,7 @@ public class BigQueryStatementTest {
             .build();
     Job job = getJobMock(tableResult, queryJobConfiguration, StatementType.SELECT);
 
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
     doReturn(jobIdWrapper)
         .when(bigQueryStatementSpy)
@@ -297,14 +301,15 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder(query).setJobTimeoutMs(10000L).build();
 
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
     doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
-    ArgumentCaptor<JobInfo> captor = ArgumentCaptor.forClass(JobInfo.class);
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
-    verify(bigquery).create(captor.capture());
-    QueryJobConfiguration jobConfig = captor.getValue().getConfiguration();
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration jobConfig = captor.getValue();
     assertEquals(3000L, jobConfig.getJobTimeoutMs().longValue());
   }
 
@@ -393,23 +398,16 @@ public class BigQueryStatementTest {
     TableResult tableResultJobfulMock = mock(TableResult.class);
     QueryJobConfiguration jobConf = QueryJobConfiguration.newBuilder("SELECT 1").build();
     Job jobMock = getJobMock(tableResultJobfulMock, jobConf, StatementType.SELECT);
-    ArgumentCaptor<JobInfo> jobfulCaptor = ArgumentCaptor.forClass(JobInfo.class);
-    doReturn(jobMock).when(bigquery).create(jobfulCaptor.capture());
+    doReturn(jobMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
         .processJsonResultSet(tableResultJobfulMock);
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
-    verify(bigquery).create(any(JobInfo.class));
-    assertTrue(
-        jobfulCaptor.getAllValues().stream()
-            .noneMatch(
-                jobInfo ->
-                    Boolean.TRUE.equals(
-                        ((QueryJobConfiguration) jobInfo.getConfiguration()).dryRun())));
-    verify(bigquery, Mockito.never())
-        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    verify(bigquery).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
   }
 
   @Test
@@ -422,7 +420,7 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder(query).setPriority(Priority.BATCH).build();
     Job job = getJobMock(tableResult, queryJobConfiguration, StatementType.SELECT);
 
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
     doReturn(false).when(bigQueryStatementSpy).useReadAPI(eq(tableResult));
     doReturn(mock(JobId.class)).when(tableResult).getJobId();
     Mockito.when(job.getQueryResults(any(QueryResultsOption.class)))
@@ -479,5 +477,117 @@ public class BigQueryStatementTest {
 
     // And no backend cancellation was attempted
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
+  }
+
+  @ParameterizedTest
+  @ValueSource(booleans = {true, false})
+  public void testGetStatementType(boolean isReadOnlyTokenUsed) throws Exception {
+    doReturn(isReadOnlyTokenUsed).when(bigQueryConnection).isReadOnlyTokenUsed();
+
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    QueryJobConfiguration queryJobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+
+    StatementType type = statementSpy.getStatementType(queryJobConfiguration);
+
+    assertThat(type).isEqualTo(StatementType.SELECT);
+    verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
+        .create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardSmallDataset() throws SQLException {
+    // Setup: totalRows < MinTableSize, so it should not activate the Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(50L).when(tableResult).getTotalRows();
+
+    // Standard java collection in values
+    List<FieldValueList> valuesList = new ArrayList<>();
+    for (int i = 0; i < 50; i++) {
+      valuesList.add(mock(FieldValueList.class));
+    }
+    doReturn(valuesList).when(tableResult).getValues();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardNoNextPage() throws SQLException {
+    // Setup: totalRows = 500 > MinTableSize (100), but hasNextPage() is false.
+    // Safeguard should prevent double-fetching and not activate the Read API.
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(false).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_MeetsRatio() throws SQLException {
+    // Setup: totalRows = 500, maxResultPerPage = 100, MinTableSize = 100, ActivationRatio = 2
+    // ratio = 5 > 2, should activate Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(100L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue();
+  }
+
+  @Test
+  public void testUseReadAPI_FailsMinTableSize() throws SQLException {
+    // Setup: totalRows = 80 < MinTableSize (100)
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(80L).when(tableResult).getTotalRows();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_ZeroPageSizeDivisionByZeroSafeguard() throws SQLException {
+    // Setup: totalRows = 500, MinTableSize = 100, ActivationRatio = 2, maxResultPerPage = 0
+    // Verify that the division by zero check safely guards and falls back to pageSize = 1
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(0L).when(bigQueryConnection).getMaxResults(); // maxResultPerPage = 0
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    // This should not throw ArithmeticException (/ by zero) and should evaluate safely
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
   }
 }

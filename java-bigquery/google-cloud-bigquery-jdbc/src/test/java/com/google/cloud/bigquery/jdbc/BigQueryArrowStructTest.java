@@ -58,6 +58,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -106,7 +107,9 @@ public class BigQueryArrowStructTest {
                     "one",
                     Timestamp.valueOf(LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000)),
                     Date.valueOf(LocalDate.of(2023, MARCH, 30)),
-                    Time.valueOf(LocalTime.of(11, 14, 19, 820227)),
+                    new Time(
+                        TimeUnit.NANOSECONDS.toMillis(
+                            LocalTime.of(11, 14, 19, 820227000).toNanoOfDay())),
                     Timestamp.valueOf("2023-03-30 11:14:19.820227"),
                     "POINT(-122 47)",
                     "one".getBytes())
@@ -117,7 +120,7 @@ public class BigQueryArrowStructTest {
   public void structOfArrays() throws SQLException {
     LocalDateTime aTimeStamp = LocalDateTime.of(2023, MARCH, 30, 11, 14, 19, 820227000);
     LocalDate aDate = LocalDate.of(2023, MARCH, 30);
-    LocalTime aTime = LocalTime.of(11, 14, 19, 820227);
+    LocalTime aTime = LocalTime.of(11, 14, 19, 820227000);
     List<Tuple<Field, JsonStringArrayList<Object>>> schemaAndValues =
         Arrays.asList(
             arrowArraySchemaAndValue(INT64, 10L, 20L),
@@ -165,7 +168,11 @@ public class BigQueryArrowStructTest {
     assertThat(((Array) attributes[7]).getArray())
         .isEqualTo(new Date[] {Date.valueOf(aDate), Date.valueOf(aDate.plusDays(1))});
     assertThat(((Array) attributes[8]).getArray())
-        .isEqualTo(new Time[] {Time.valueOf(aTime), Time.valueOf(aTime.plusSeconds(1))});
+        .isEqualTo(
+            new Time[] {
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay())),
+              new Time(TimeUnit.NANOSECONDS.toMillis(aTime.plusSeconds(1).toNanoOfDay()))
+            });
     assertThat(((Array) attributes[9]).getArray()) // DATETIME
         .isEqualTo(
             new Timestamp[] {
@@ -227,11 +234,8 @@ public class BigQueryArrowStructTest {
   }
 
   @Test
-  public void getSQLTypeNameIsNotSupported() {
-    Exception exception =
-        assertThrows(
-            SQLFeatureNotSupportedException.class, structWithPrimitiveValues::getSQLTypeName);
-    assertThat(exception.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
+  public void getSQLTypeNameReturnsStruct() throws SQLException {
+    assertThat(structWithPrimitiveValues.getSQLTypeName()).isEqualTo("STRUCT");
   }
 
   @Test

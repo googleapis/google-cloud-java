@@ -30,7 +30,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -58,7 +58,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -111,8 +111,8 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A unique identifier for this resource type. The server
-   * generates this identifier.
+   * Output only. A unique identifier for this resource type. The server generates this
+   * identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -125,8 +125,8 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A unique identifier for this resource type. The server
-   * generates this identifier.
+   * Output only. A unique identifier for this resource type. The server generates this
+   * identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -139,8 +139,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -153,8 +152,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -167,8 +165,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -218,6 +215,51 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
    *
@@ -293,8 +335,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -307,8 +348,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -321,8 +361,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -335,7 +374,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -348,7 +387,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -361,7 +400,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -374,7 +413,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -388,7 +427,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -402,7 +441,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -416,7 +455,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -431,7 +470,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -446,7 +485,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -459,7 +498,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -474,7 +513,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -489,7 +528,7 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>

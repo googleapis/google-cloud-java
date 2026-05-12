@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
@@ -53,7 +55,16 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private String getLogFilePath(String id) {
-    return baseLogPath.resolve("BigQuery-" + id + ".log").toString();
+    if ("Jdbc-default".equals(id)) {
+      return baseLogPath.resolve("BQ-JDBC-GLOBAL.log").toString();
+    }
+    String uuid = id;
+    if (id.startsWith("BQ-JDBC-")) {
+      uuid = id.substring("BQ-JDBC-".length());
+    }
+    String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+    String shortUuid = uuid.length() >= 4 ? uuid.substring(0, 4) : uuid;
+    return baseLogPath.resolve("BQ-JDBC-" + timestamp + "-" + shortUuid + ".log").toString();
   }
 
   private FileHandler createFileHandler(String id) {
@@ -79,6 +90,12 @@ class PerConnectionFileHandler extends Handler {
     }
 
     String connectionId = BigQueryJdbcMdc.getConnectionId();
+    if (connectionId == null || connectionId.isEmpty()) {
+      Object[] params = record.getParameters();
+      if (params != null && params.length > 0 && params[0] instanceof String) {
+        connectionId = (String) params[0];
+      }
+    }
     FileHandler handler = defaultHandler;
 
     if (connectionId != null && !connectionId.isEmpty()) {

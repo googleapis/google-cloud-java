@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryErrorMessage.CUSTOMER_TYPE_
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -35,29 +36,23 @@ import java.util.Map;
  * attribute of the SQL structured type that it represents.
  */
 abstract class BigQueryBaseStruct implements java.sql.Struct {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryBaseStruct.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseStruct.class);
 
   abstract FieldList getSchema();
 
   @Override
   public final String getSQLTypeName() throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    return StandardSQLTypeName.STRUCT.name();
   }
 
   @Override
   public final Object[] getAttributes(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   static boolean isStruct(Field currentSchema) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("isStruct", "++enter++");
     return currentSchema.getType().getStandardType() == STRUCT;
   }
 
@@ -97,7 +92,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
       sb.append("}");
       return sb.toString();
     } catch (SQLException e) {
-      LOG.severe(e, "Error converting struct to string");
+      LOG.severe("Error converting struct to string", e);
       return "{ \"error\": \"Error converting struct to string: " + e.getMessage() + "\" }";
     }
   }

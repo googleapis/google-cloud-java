@@ -159,6 +159,9 @@ public class SpannerPool {
     private final Integer dcpMinChannels;
     private final Integer dcpMaxChannels;
     private final Integer dcpInitialChannels;
+    private final Integer dcpMinRpcPerChannel;
+    private final Integer dcpMaxRpcPerChannel;
+    private final Integer dcpConcurrentStreamsLowWatermark;
     private final boolean usePlainText;
     private final String userAgent;
     private final String databaseRole;
@@ -202,6 +205,9 @@ public class SpannerPool {
       this.dcpMinChannels = options.getDcpMinChannels();
       this.dcpMaxChannels = options.getDcpMaxChannels();
       this.dcpInitialChannels = options.getDcpInitialChannels();
+      this.dcpMinRpcPerChannel = options.getDcpMinRpcPerChannel();
+      this.dcpMaxRpcPerChannel = options.getDcpMaxRpcPerChannel();
+      this.dcpConcurrentStreamsLowWatermark = options.getDcpConcurrentStreamsLowWatermark();
       this.usePlainText = options.isUsePlainText();
       this.userAgent = options.getUserAgent();
       this.routeToLeader = options.isRouteToLeader();
@@ -234,6 +240,10 @@ public class SpannerPool {
           && Objects.equals(this.dcpMinChannels, other.dcpMinChannels)
           && Objects.equals(this.dcpMaxChannels, other.dcpMaxChannels)
           && Objects.equals(this.dcpInitialChannels, other.dcpInitialChannels)
+          && Objects.equals(this.dcpMinRpcPerChannel, other.dcpMinRpcPerChannel)
+          && Objects.equals(this.dcpMaxRpcPerChannel, other.dcpMaxRpcPerChannel)
+          && Objects.equals(
+              this.dcpConcurrentStreamsLowWatermark, other.dcpConcurrentStreamsLowWatermark)
           && Objects.equals(this.databaseRole, other.databaseRole)
           && Objects.equals(this.usePlainText, other.usePlainText)
           && Objects.equals(this.userAgent, other.userAgent)
@@ -265,6 +275,9 @@ public class SpannerPool {
           this.dcpMinChannels,
           this.dcpMaxChannels,
           this.dcpInitialChannels,
+          this.dcpMinRpcPerChannel,
+          this.dcpMaxRpcPerChannel,
+          this.dcpConcurrentStreamsLowWatermark,
           this.usePlainText,
           this.databaseRole,
           this.userAgent,
@@ -442,7 +455,10 @@ public class SpannerPool {
         // Build custom GcpChannelPoolOptions if any DCP-specific options are set.
         if (key.dcpMinChannels != null
             || key.dcpMaxChannels != null
-            || key.dcpInitialChannels != null) {
+            || key.dcpInitialChannels != null
+            || key.dcpMinRpcPerChannel != null
+            || key.dcpMaxRpcPerChannel != null
+            || key.dcpConcurrentStreamsLowWatermark != null) {
           // Build GcpChannelPoolOptions from scratch with custom values or Spanner defaults.
           // Note: GcpChannelPoolOptions does not have a toBuilder() method, so we must
           // construct from scratch using SpannerOptions defaults for unspecified values.
@@ -458,19 +474,32 @@ public class SpannerPool {
               key.dcpInitialChannels != null
                   ? key.dcpInitialChannels
                   : SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE;
-          GcpChannelPoolOptions poolOptions =
+
+          int minRpc =
+              key.dcpMinRpcPerChannel != null
+                  ? key.dcpMinRpcPerChannel
+                  : SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC;
+          int maxRpc =
+              key.dcpMaxRpcPerChannel != null
+                  ? key.dcpMaxRpcPerChannel
+                  : SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC;
+
+          GcpChannelPoolOptions.Builder poolOptionsBuilder =
               GcpChannelPoolOptions.newBuilder()
                   .setMinSize(minChannels)
                   .setMaxSize(maxChannels)
                   .setInitSize(initChannels)
                   .setDynamicScaling(
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC,
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC,
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
+                      minRpc, maxRpc, SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
                   .setAffinityKeyLifetime(SpannerOptions.DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
-                  .setCleanupInterval(SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
-                  .build();
-          builder.setGcpChannelPoolOptions(poolOptions);
+                  .setCleanupInterval(SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL);
+
+          if (key.dcpConcurrentStreamsLowWatermark != null) {
+            poolOptionsBuilder.setConcurrentStreamsLowWatermark(
+                key.dcpConcurrentStreamsLowWatermark);
+          }
+
+          builder.setGcpChannelPoolOptions(poolOptionsBuilder.build());
         }
       } else {
         // Explicitly disable DCP when enableDynamicChannelPool=false.

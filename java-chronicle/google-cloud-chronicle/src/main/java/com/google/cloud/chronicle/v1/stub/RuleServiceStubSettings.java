@@ -655,15 +655,15 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -679,7 +679,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -701,7 +701,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_4_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
@@ -709,7 +709,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("no_retry_4_params", settings);
+      definitions.put("no_retry_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -812,8 +812,8 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     private static Builder initDefaults(Builder builder) {
       builder
           .createRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .getRuleSettings()
@@ -822,28 +822,28 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
 
       builder
           .listRulesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .deleteRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .listRuleRevisionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .createRetrohuntSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .getRetrohuntSettings()
@@ -857,26 +857,26 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
 
       builder
           .getRuleDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .listRuleDeploymentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateRuleDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .createRetrohuntOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateRetrohuntRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Retrohunt.class))

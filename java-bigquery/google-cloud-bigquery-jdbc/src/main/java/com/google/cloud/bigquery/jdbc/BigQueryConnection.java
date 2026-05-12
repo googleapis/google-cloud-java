@@ -58,6 +58,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
@@ -72,6 +73,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   String connectionClassName = this.toString();
+  private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
   private HeaderProvider headerProvider;
@@ -140,119 +142,133 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private boolean isReadOnlyTokenUsed = false;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
   }
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
-    this.connectionUrl = url;
-    this.openStatements = ConcurrentHashMap.newKeySet();
-    this.autoCommit = true;
-    this.sqlWarnings = new ArrayList<>();
-    this.transactionStarted = false;
-    this.isClosed = false;
+    this.connectionId = UUID.randomUUID().toString();
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+      LOG.finest("++enter++");
 
-    this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
-    this.maxBytesBilled = ds.getMaximumBytesBilled();
-    this.retryTimeoutInSeconds = ds.getTimeout();
-    this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
-    this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
-    this.retryInitialDelayDuration = Duration.ofMillis(retryInitialDelayInSeconds * 1000L);
-    this.retryMaxDelayInSeconds = ds.getRetryMaxDelay();
-    this.retryMaxDelayDuration = Duration.ofMillis(retryMaxDelayInSeconds * 1000L);
-    this.jobTimeoutInSeconds = ds.getJobTimeout();
-    this.authProperties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
-    this.catalog = ds.getProjectId();
-    this.universeDomain = ds.getUniverseDomain();
+      this.connectionUrl = url;
+      this.openStatements = ConcurrentHashMap.newKeySet();
+      this.autoCommit = true;
+      this.sqlWarnings = new ArrayList<>();
+      this.transactionStarted = false;
+      this.isClosed = false;
 
-    this.overrideProperties = ds.getOverrideProperties();
-    if (this.universeDomain != null) {
-      this.overrideProperties.put(
-          BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, this.universeDomain);
-    }
+      this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
+      this.maxBytesBilled = ds.getMaximumBytesBilled();
+      this.retryTimeoutInSeconds = ds.getTimeout();
+      this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
+      this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
+      this.retryInitialDelayDuration = Duration.ofMillis(retryInitialDelayInSeconds * 1000L);
+      this.retryMaxDelayInSeconds = ds.getRetryMaxDelay();
+      this.retryMaxDelayDuration = Duration.ofMillis(retryMaxDelayInSeconds * 1000L);
+      this.jobTimeoutInSeconds = ds.getJobTimeout();
+      this.authProperties =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
+      this.isReadOnlyTokenUsed = checkIsReadOnlyTokenUsed(this.authProperties);
+      this.catalog = ds.getProjectId();
+      this.universeDomain = ds.getUniverseDomain();
 
-    this.reqGoogleDriveScope =
-        BigQueryJdbcUrlUtility.convertIntToBoolean(
-            String.valueOf(ds.getRequestGoogleDriveScope()),
-            BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
-
-    this.credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(
-            authProperties, overrideProperties, this.reqGoogleDriveScope, this.connectionClassName);
-    String defaultDatasetString = ds.getDefaultDataset();
-    if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
-      this.defaultDataset = null;
-    } else {
-      String[] parts = defaultDatasetString.split("\\.");
-      if (parts.length == 2) {
-        this.defaultDataset = DatasetId.of(parts[0], parts[1]);
-      } else if (parts.length == 1) {
-        this.defaultDataset = DatasetId.of(parts[0]);
-      } else {
-        throw new IllegalArgumentException(
-            "DefaultDataset format is invalid. Supported options are datasetId or"
-                + " projectId.datasetId");
+      this.overrideProperties = ds.getOverrideProperties();
+      if (this.universeDomain != null) {
+        this.overrideProperties.put(
+            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, this.universeDomain);
       }
+
+      this.reqGoogleDriveScope =
+          BigQueryJdbcUrlUtility.convertIntToBoolean(
+              String.valueOf(ds.getRequestGoogleDriveScope()),
+              BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
+
+      this.credentials =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              authProperties,
+              overrideProperties,
+              this.reqGoogleDriveScope,
+              this.connectionClassName);
+      String defaultDatasetString = ds.getDefaultDataset();
+      if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
+        this.defaultDataset = null;
+      } else {
+        String[] parts = defaultDatasetString.split("\\.");
+        if (parts.length == 2) {
+          this.defaultDataset = DatasetId.of(parts[0], parts[1]);
+        } else if (parts.length == 1) {
+          this.defaultDataset = DatasetId.of(parts[0]);
+        } else {
+          IllegalArgumentException ex =
+              new IllegalArgumentException(
+                  "DefaultDataset format is invalid. Supported options are datasetId or"
+                      + " projectId.datasetId");
+          LOG.severe(ex.getMessage(), ex);
+          throw ex;
+        }
+      }
+      this.location = ds.getLocation();
+      this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
+      this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();
+      this.highThroughputActivationRatio = ds.getHighThroughputActivationRatio();
+      this.useQueryCache = ds.getUseQueryCache();
+      this.useStatelessQueryMode = ds.getUseStatelessQueryMode();
+
+      this.queryDialect = ds.getQueryDialect();
+      this.allowLargeResults = ds.getAllowLargeResults();
+      this.destinationTable = ds.getDestinationTable();
+      this.destinationDataset = ds.getDestinationDataset();
+      this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
+      this.kmsKeyName = ds.getKmsKeyName();
+      Map<String, String> proxyProperties =
+          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
+
+      this.sslTrustStorePath = ds.getSSLTrustStorePath();
+      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
+      this.httpConnectTimeout = ds.getHttpConnectTimeout();
+      this.httpReadTimeout = ds.getHttpReadTimeout();
+
+      this.httpTransportOptions =
+          BigQueryJdbcProxyUtility.getHttpTransportOptions(
+              proxyProperties,
+              this.sslTrustStorePath,
+              this.sslTrustStorePassword,
+              this.httpConnectTimeout,
+              this.httpReadTimeout,
+              this.connectionClassName);
+      this.transportChannelProvider =
+          BigQueryJdbcProxyUtility.getTransportChannelProvider(
+              proxyProperties,
+              this.sslTrustStorePath,
+              this.sslTrustStorePassword,
+              this.connectionClassName);
+      this.enableSession = ds.getEnableSession();
+      this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
+      this.maxResults = ds.getMaxResults();
+      Map<String, String> queryPropertiesMap = ds.getQueryProperties();
+      this.sessionInfoConnectionProperty =
+          getSessionPropertyFromQueryProperties(queryPropertiesMap);
+      this.queryProperties = convertMapToConnectionPropertiesList(queryPropertiesMap);
+      this.enableWriteAPI = ds.getEnableWriteAPI();
+      this.writeAPIActivationRowCount = ds.getSwaActivationRowCount();
+      this.writeAPIAppendRowCount = ds.getSwaAppendRowCount();
+
+      this.additionalProjects = ds.getAdditionalProjects();
+
+      this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
+      this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
+      this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
+      this.requestReason = ds.getRequestReason();
+      this.connectionPoolSize = ds.getConnectionPoolSize();
+      this.listenerPoolSize = ds.getListenerPoolSize();
+      this.partnerToken = ds.getPartnerToken();
+
+      this.headerProvider = createHeaderProvider();
+      this.bigQuery = getBigQueryConnection();
     }
-    this.location = ds.getLocation();
-    this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
-    this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();
-    this.highThroughputActivationRatio = ds.getHighThroughputActivationRatio();
-    this.useQueryCache = ds.getUseQueryCache();
-    this.useStatelessQueryMode = ds.getUseStatelessQueryMode();
-
-    this.queryDialect = ds.getQueryDialect();
-    this.allowLargeResults = ds.getAllowLargeResults();
-    this.destinationTable = ds.getDestinationTable();
-    this.destinationDataset = ds.getDestinationDataset();
-    this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
-    this.kmsKeyName = ds.getKmsKeyName();
-    Map<String, String> proxyProperties =
-        BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
-
-    this.sslTrustStorePath = ds.getSSLTrustStorePath();
-    this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
-    this.httpConnectTimeout = ds.getHttpConnectTimeout();
-    this.httpReadTimeout = ds.getHttpReadTimeout();
-
-    this.httpTransportOptions =
-        BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties,
-            this.sslTrustStorePath,
-            this.sslTrustStorePassword,
-            this.httpConnectTimeout,
-            this.httpReadTimeout,
-            this.connectionClassName);
-    this.transportChannelProvider =
-        BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            proxyProperties,
-            this.sslTrustStorePath,
-            this.sslTrustStorePassword,
-            this.connectionClassName);
-    this.enableSession = ds.getEnableSession();
-    this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
-    this.maxResults = ds.getMaxResults();
-    Map<String, String> queryPropertiesMap = ds.getQueryProperties();
-    this.sessionInfoConnectionProperty = getSessionPropertyFromQueryProperties(queryPropertiesMap);
-    this.queryProperties = convertMapToConnectionPropertiesList(queryPropertiesMap);
-    this.enableWriteAPI = ds.getEnableWriteAPI();
-    this.writeAPIActivationRowCount = ds.getSwaActivationRowCount();
-    this.writeAPIAppendRowCount = ds.getSwaAppendRowCount();
-
-    this.additionalProjects = ds.getAdditionalProjects();
-
-    this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
-    this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
-    this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
-    this.requestReason = ds.getRequestReason();
-    this.connectionPoolSize = ds.getConnectionPoolSize();
-    this.listenerPoolSize = ds.getListenerPoolSize();
-    this.partnerToken = ds.getPartnerToken();
-
-    this.headerProvider = createHeaderProvider();
-    this.bigQuery = getBigQueryConnection();
   }
 
   String getLibraryVersion(Class<?> libraryClass) {
@@ -267,6 +283,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         version = props.getProperty("version.jdbc");
       }
     } catch (IOException e) {
+      LOG.warning("Failed to load dependencies.properties");
       return DEFAULT_VERSION;
     }
 
@@ -297,8 +314,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryReadClient = getBigQueryReadClientConnection();
       }
     } catch (IOException e) {
-      LOG.severe(e, "Failed to initialize BigQueryReadClient");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryReadClient", e);
     }
     return this.bigQueryReadClient;
   }
@@ -309,8 +325,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryWriteClient = getBigQueryWriteClientConnection();
       }
     } catch (IOException e) {
-      LOG.severe(e, "Failed to initialize BigQueryWriteClient");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryWriteClient", e);
     }
     return this.bigQueryWriteClient;
   }
@@ -323,6 +338,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return connectionUrl;
   }
 
+  String getConnectionId() {
+    return this.connectionId;
+  }
+
   /**
    * Creates and returns a new {@code Statement} object for executing BigQuery SQL queries
    *
@@ -331,6 +350,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public Statement createStatement() throws SQLException {
+    LOG.finest("++enter++");
     checkClosed();
     BigQueryStatement currentStatement = new BigQueryStatement(this);
     LOG.fine("Statement %s created.", currentStatement);
@@ -354,6 +374,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public Statement createStatement(int resultSetType, int resultSetConcurrency)
       throws SQLException {
+    LOG.finest("++enter++");
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
@@ -390,6 +411,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql) throws SQLException {
+    LOG.finest("++enter++");
     checkClosed();
     PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
     LOG.fine("Prepared Statement %s created.", currentStatement);
@@ -399,6 +421,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
+    LOG.finest("++enter++");
     if (autoGeneratedKeys != Statement.NO_GENERATED_KEYS) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException("autoGeneratedKeys is not supported");
     }
@@ -414,6 +437,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public PreparedStatement prepareStatement(
       String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
       throws SQLException {
+    LOG.finest("++enter++");
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
         || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
@@ -538,8 +562,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Failed to begin transaction");
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
     }
   }
 
@@ -645,6 +668,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean isValid(int timeout) throws SQLException {
+    LOG.finest("++enter++");
     if (timeout < 0) {
       throw new BigQueryJdbcException("timeout must be >= 0");
     }
@@ -652,8 +676,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       try (Statement statement = createStatement();
           ResultSet rs = statement.executeQuery("SELECT 1")) {
         LOG.finest("Running validation query");
-        // TODO(obada): set query timeout when it's implemented
-        // TODO(obada): use dry run
         if (rs.next()) {
           if (rs.getInt(1) == 1) {
             return true;
@@ -672,9 +694,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     close();
   }
 
-  // TODO: Throw exception translation of BigQueryJdbcSqlClientInfoException when implementing below
   @Override
-  public void setClientInfo(String name, String value) {}
+  public void setClientInfo(String name, String value) {
+    // no-op
+  }
 
   @Override
   public String getClientInfo(String name) {
@@ -692,7 +715,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   @Override
-  public void setClientInfo(Properties properties) {}
+  public void setClientInfo(Properties properties) {
+    // no-op
+  }
 
   @Override
   public SQLWarning getWarnings() {
@@ -706,19 +731,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean getAutoCommit() {
+    LOG.finest("++enter++");
     checkClosed();
     return this.autoCommit;
   }
 
-  /**
-   * Sets this connection's auto-commit mode to the given state. <br>
-   * If this method is called during a transaction and the auto-commit mode is changed, the
-   * transaction is committed. If setAutoCommit is called and the auto-commit mode is not changed,
-   * the call is a no-op.
-   *
-   * @param autoCommit {@code true} to enable auto-commit mode; {@code false} to disable it
-   * @see Connection#setAutoCommit(boolean)
-   */
   @Override
   public void setAutoCommit(boolean autoCommit) throws SQLException {
     LOG.finest("++enter++");
@@ -744,9 +761,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     checkClosed();
     checkIfEnabledSession("commit");
     if (!isTransactionStarted()) {
-      throw new IllegalStateException(
-          "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
-              + " a transaction.");
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
+                  + " a transaction.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     commitTransaction();
     if (!getAutoCommit()) {
@@ -760,10 +780,17 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     checkClosed();
     checkIfEnabledSession("rollback");
     if (!isTransactionStarted()) {
-      throw new IllegalStateException(
-          "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
-              + " start a transaction.");
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
+                  + " start a transaction.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
+    rollbackImpl();
+  }
+
+  private void rollbackImpl() throws SQLException {
     try {
       QueryJobConfiguration transactionRollbackJobConfig =
           QueryJobConfiguration.newBuilder("ROLLBACK TRANSACTION;")
@@ -776,13 +803,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         beginTransaction();
       }
     } catch (InterruptedException | BigQueryException ex) {
-      LOG.severe(ex, "Failed to rollback transaction");
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("Failed to rollback transaction", ex);
     }
   }
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
+    LOG.finest("++enter++");
     if (databaseMetaData == null) {
       databaseMetaData = new BigQueryDatabaseMetaData(this);
     }
@@ -791,15 +818,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public int getTransactionIsolation() {
-    // only supports Connection.TRANSACTION_SERIALIZABLE
     return Connection.TRANSACTION_SERIALIZABLE;
   }
 
   @Override
   public void setTransactionIsolation(int level) throws SQLException {
+    LOG.finest("++enter++");
     if (level != Connection.TRANSACTION_SERIALIZABLE) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Transaction serializable not supported");
+          "Unsupported transaction isolation level");
     }
     this.transactionIsolation = level;
   }
@@ -827,13 +854,16 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public void close() throws SQLException {
-    LOG.fine("Closing Connection " + this);
-    // TODO(neenu-postMVP): Release all connection state objects
-    // check for and close all existing transactions
-
     if (isClosed()) {
       return;
     }
+
+    LOG.finest("++enter++");
+    LOG.fine("Closing Connection " + this);
+    closeImpl();
+  }
+
+  private void closeImpl() throws SQLException {
     try {
       if (this.bigQueryReadClient != null) {
         this.bigQueryReadClient.shutdown();
@@ -852,11 +882,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
     } catch (ConcurrentModificationException ex) {
-      LOG.severe(ex, "Concurrent modification during close");
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
-      LOG.severe(e, "Interrupted during close");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Interrupted during close", e);
+    } finally {
+      BigQueryJdbcMdc.clear();
+      BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
     this.isClosed = true;
   }
@@ -868,14 +899,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private void checkClosed() {
     if (isClosed()) {
-      throw new IllegalStateException("This " + getClass().getName() + " has been closed");
+      IllegalStateException ex =
+          new IllegalStateException("This " + getClass().getName() + " has been closed");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 
   private void checkIfEnabledSession(String methodName) {
     if (!this.enableSession) {
-      throw new IllegalStateException(
-          String.format("Session needs to be enabled to use %s method.", methodName));
+      IllegalStateException ex =
+          new IllegalStateException(
+              String.format("Session needs to be enabled to use %s method.", methodName));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 
@@ -914,8 +951,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private BigQuery getBigQueryConnection() {
-    // 404 Not Found - check if the project exists
-    // 403 Forbidden - execute a dryRun to check if the user has bigquery.jobs.create permissions
     BigQueryOptions.Builder bigQueryOptions = BigQueryOptions.newBuilder();
     if (this.retryTimeoutInSeconds > 0L
         || (this.retryInitialDelayInSeconds > 0L && this.retryMaxDelayInSeconds > 0L)) {
@@ -1060,7 +1095,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       commitJob.waitFor();
       this.transactionStarted = false;
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
     }
   }
 
@@ -1099,5 +1134,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public boolean isReadOnlyTokenUsed() {
+    return this.isReadOnlyTokenUsed;
+  }
+
+  private boolean checkIsReadOnlyTokenUsed(Map<String, String> authProps) {
+    String readonlyValue =
+        authProps.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
+    if (readonlyValue != null) {
+      return BigQueryJdbcUrlUtility.convertIntToBoolean(
+          readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
+    }
+    return false;
   }
 }

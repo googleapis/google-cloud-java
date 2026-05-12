@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -33,7 +34,6 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.client.DatastoreFactory;
 import org.easymock.EasyMock;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -160,6 +160,45 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(true)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+            .build();
+    assertTrue(o1.isMetricsEnabled());
+    assertFalse(o1.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertTrue(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(false)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+            .build();
+    assertFalse(o2.isMetricsEnabled());
+    assertTrue(o2.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertFalse(o2.isEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsDefaultInstance() {
+    DatastoreOpenTelemetryOptions telemetryOptions =
+        DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertThat(telemetryOptions.getOpenTelemetry())
+        .isSameInstanceAs(io.opentelemetry.api.OpenTelemetry.noop());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsSetNullThrowsNPE() {
+    try {
+      DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
+      fail("Expected NullPointerException");
+    } catch (NullPointerException e) {
+      assertThat(e.getMessage()).isEqualTo("OpenTelemetry instance cannot be null");
+    }
+  }
+
+  @Test
   public void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
@@ -177,7 +216,6 @@ public class DatastoreOptionsTest {
             .setServiceRpcFactory(datastoreRpcFactory)
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
             .setCredentials(NoCredentials.getInstance())
             .setHost("http://localhost:" + PORT)
             .build();
@@ -210,7 +248,6 @@ public class DatastoreOptionsTest {
             .setServiceRpcFactory(datastoreRpcFactory)
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance())
             .setHost("http://localhost:" + PORT)
@@ -219,73 +256,57 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testInvalidConfigForHttp() {
-    DatastoreOptions.Builder options =
-        DatastoreOptions.newBuilder()
-            .setServiceRpcFactory(datastoreRpcFactory)
-            .setProjectId(PROJECT_ID)
-            .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(HttpTransportOptions.newBuilder().build())
-            .setChannelProvider(
-                DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelPoolSettings(
-                        ChannelPoolSettings.builder()
-                            .setInitialChannelCount(10)
-                            .setMaxChannelCount(20)
-                            .build())
-                    .build())
-            .setCredentials(NoCredentials.getInstance())
-            .setHost("http://localhost:" + PORT);
-    Assert.assertThrows(IllegalArgumentException.class, options::build);
-  }
-
-  @Test
   public void testTransport() {
-    // default http transport
-    assertThat(options.build().getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
-
-    // custom grpc transport
+    // default grpc transport
+    assertThat(options.build().getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
     DatastoreOptions grpcTransportOptions =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
     assertThat(grpcTransportOptions.getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
     assertThat(grpcTransportOptions.getTransportChannelProvider())
         .isInstanceOf(InstantiatingGrpcChannelProvider.class);
+
+    // custom http transport
+    DatastoreOptions httpTransportOptions =
+        DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertThat(httpTransportOptions.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
   }
 
   @Test
   public void testHostWithGrpcAndHttp() {
     DatastoreOptions grpcTransportOptions =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
     assertThat(grpcTransportOptions.getHost()).isEqualTo(DatastoreSettings.getDefaultEndpoint());
-    assertThat(grpcTransportOptions.getHost()).isEqualTo("datastore.googleapis.com:443");
 
     String customHost = "http://localhost:" + PORT;
     DatastoreOptions grpcTransportOptionsCustomHost =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
             .setHost(customHost)
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
     assertThat(grpcTransportOptionsCustomHost.getHost()).isEqualTo(customHost);
 
-    DatastoreOptions httpTransportOptions =
+    DatastoreOptions httpJsonTransportOptions =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
-    assertThat(httpTransportOptions.getHost()).isEqualTo(DatastoreFactory.DEFAULT_HOST);
+    assertThat(httpJsonTransportOptions.getHost()).isEqualTo(DatastoreFactory.DEFAULT_HOST);
 
     DatastoreOptions httpTransportOptionsCustomHost =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setHost(customHost)
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
@@ -309,5 +330,16 @@ public class DatastoreOptionsTest {
     DatastoreOptions newOptions = options.setDatabaseId("new-database-id").build();
     assertNotEquals(original, newOptions);
     assertNotEquals(original.hashCode(), newOptions.hashCode());
+  }
+
+  @Test
+  public void builtInMetricsExport_isDisabledByDefault() {
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
+    assertThat(
+            defaultOptions
+                .getOpenTelemetryOptions()
+                .isExportBuiltinMetricsToGoogleCloudMonitoring())
+        .isFalse();
   }
 }

@@ -20,6 +20,7 @@ steps:
   ]
   env:
   - 'JOB_TYPE=samples'
+  - 'BUILD_SUBDIR=java-datastore'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
   - 'KOKORO_GITHUB_PULL_REQUEST_NUMBER=$_PR_NUMBER'
 - name: gcr.io/cloud-devrel-public-resources/java11

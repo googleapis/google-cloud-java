@@ -24,7 +24,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Output only. [Output Only] Encountered errors.
+ * Output only. Encountered errors.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Error}
@@ -315,7 +315,7 @@ public final class Error extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] Encountered errors.
+   * Output only. Encountered errors.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Error}

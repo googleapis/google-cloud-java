@@ -45,4 +45,8 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
   public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
     super(message, ex);
   }
+
+  public BigQueryJdbcRuntimeException(String message, Throwable ex) {
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+  }
 }

@@ -41,8 +41,8 @@ import java.util.stream.Collectors;
  * reference to an SQL ARRAY value.
  */
 abstract class BigQueryBaseArray implements java.sql.Array {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryBaseArray.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseArray.class);
 
   protected final boolean arrayOfStruct;
   private boolean valid;
@@ -56,14 +56,14 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   @Override
   public final String getBaseTypeName() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getBaseTypeName", "++enter++");
     ensureValid();
     return this.schema.getType().getStandardType().name();
   }
 
   @Override
   public final int getBaseType() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getBaseType", "++enter++");
     ensureValid();
     return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
         schema.getType().getStandardType());
@@ -71,40 +71,28 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   @Override
   public final Object getArray(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final Object getArray(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   protected Object getArrayInternal(int fromIndex, int toIndexExclusive) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getArrayInternal", "++enter++");
     Class<?> targetClass = getTargetClass();
     int size = toIndexExclusive - fromIndex;
     Object javaArray = Array.newInstance(targetClass, size);
@@ -116,28 +104,28 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected void ensureValid() throws IllegalStateException {
-    LOG.finest("++enter++");
+    LOG.finestTrace("ensureValid", "++enter++");
     if (!this.valid) {
       IllegalStateException ex = new IllegalStateException(INVALID_ARRAY);
-      LOG.severe(ex, INVALID_ARRAY);
+      LOG.severe(INVALID_ARRAY, ex);
       throw ex;
     }
   }
 
   protected void markInvalid() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("markInvalid", "++enter++");
     this.schema = null;
     this.valid = false;
   }
 
   protected Field singleElementSchema() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("singleElementSchema", "++enter++");
     return this.schema.toBuilder().setMode(Mode.REQUIRED).build();
   }
 
   protected Tuple<Integer, Integer> createRange(long index, int count, int size)
       throws IllegalStateException {
-    LOG.finest("++enter++");
+    LOG.finestTrace("createRange", "++enter++");
     // jdbc array follows 1 based array indexing
     long normalisedFromIndex = index - 1;
     if (normalisedFromIndex + count > size) {
@@ -146,7 +134,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
               String.format(
                   "The array index is out of range: %d, number of elements: %d.",
                   index + count, size));
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     long toIndex = normalisedFromIndex + count;
@@ -154,7 +142,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   }
 
   protected Class<?> getTargetClass() {
-    LOG.finest("++enter++");
+    LOG.finestTrace("getTargetClass", "++enter++");
     return this.arrayOfStruct
         ? Struct.class
         : BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
@@ -164,7 +152,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   abstract Object getCoercedValue(int index);
 
   static boolean isArray(Field currentSchema) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("isArray", "++enter++");
     return currentSchema.getMode() == REPEATED;
   }
 

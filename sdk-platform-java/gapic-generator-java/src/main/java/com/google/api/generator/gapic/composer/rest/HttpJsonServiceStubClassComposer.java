@@ -62,6 +62,7 @@ import com.google.api.generator.gapic.model.OperationResponse;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -763,7 +764,16 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       // Handle foo.bar cases by descending into the subfields.
       MethodInvocationExpr.Builder requestFieldMethodExprBuilder =
           MethodInvocationExpr.builder().setExprReferenceExpr(prevExpr);
-      bodyParamName = JavaStyle.toLowerCamelCase(httpBindingFieldName.name());
+      // Use explicit json_name if defined in the proto, prioritizing the actual wire name
+      // over Java-escaped identifiers. Note that trailing underscores (e.g., 'case_') result from:
+      // 1. protoc-gen-java:
+      // https://github.com/protocolbuffers/protobuf/blob/cecbbf41e43634c7c5b940dd336aa81b31fd4e5d/src/google/protobuf/compiler/java/names.cc#L189-L195
+      // 2. gapic-generator-java Keyword implementation:
+      // com/google/api/generator/engine/lexicon/Keyword.java#L92-L94
+      bodyParamName =
+          !Strings.isNullOrEmpty(httpBindingFieldName.jsonName())
+              ? httpBindingFieldName.jsonName()
+              : JavaStyle.toLowerCamelCase(httpBindingFieldName.name());
       String[] descendantFields = httpBindingFieldName.name().split("\\.");
       if (asteriskBody && descendantFields.length > 1) {
         // This is the `body: "*"` case, do not clean nested body fields as it a very rare, not
@@ -926,7 +936,12 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       paramsPutArgs.add(
           ValueExpr.withValue(
               StringObjectValue.withValue(
-                  JavaStyle.toLowerCamelCase(httpBindingFieldName.name()))));
+                  // Use explicit json_name if defined in the proto, prioritizing the actual wire
+                  // name over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent
+                  // keywords conflict).
+                  (httpBindingFieldName.jsonName() != null)
+                      ? httpBindingFieldName.jsonName()
+                      : JavaStyle.toLowerCamelCase(httpBindingFieldName.name()))));
       paramsPutArgs.add(requestBuilderExpr);
 
       Expr paramsPutExpr =

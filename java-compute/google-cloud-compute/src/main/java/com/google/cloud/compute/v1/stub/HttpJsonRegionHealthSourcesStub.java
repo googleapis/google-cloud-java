@@ -36,9 +36,11 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListRegionHealthSourcesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthSourceRequest;
+import com.google.cloud.compute.v1.GetHealthRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.HealthSource;
 import com.google.cloud.compute.v1.HealthSourceAggregatedList;
+import com.google.cloud.compute.v1.HealthSourceHealth;
 import com.google.cloud.compute.v1.HealthSourceList;
 import com.google.cloud.compute.v1.InsertRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthSourcesRequest;
@@ -216,6 +218,42 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<HealthSource>newBuilder()
                       .setDefaultInstance(HealthSource.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthMethodDescriptor =
+          ApiMethodDescriptor.<GetHealthRegionHealthSourceRequest, HealthSourceHealth>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionHealthSources/GetHealth")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHealthRegionHealthSourceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/healthSources/{healthSource}/getHealth",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthRegionHealthSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "healthSource", request.getHealthSource());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthRegionHealthSourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<HealthSourceHealth>newBuilder()
+                      .setDefaultInstance(HealthSourceHealth.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -439,6 +477,8 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
   private final OperationCallable<DeleteRegionHealthSourceRequest, Operation, Operation>
       deleteOperationCallable;
   private final UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable;
+  private final UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthCallable;
   private final UnaryCallable<InsertRegionHealthSourceRequest, Operation> insertCallable;
   private final OperationCallable<InsertRegionHealthSourceRequest, Operation, Operation>
       insertOperationCallable;
@@ -459,6 +499,8 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
   private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}/healthSources/{health_source}");
   private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/healthSources/{health_source}");
+  private static final PathTemplate GET_HEALTH_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}/healthSources/{health_source}");
   private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}");
@@ -574,6 +616,30 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+        getHealthTransportSettings =
+            HttpJsonCallSettings
+                .<GetHealthRegionHealthSourceRequest, HealthSourceHealth>newBuilder()
+                .setMethodDescriptor(getHealthMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("health_source", String.valueOf(request.getHealthSource()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "health_source", String.valueOf(request.getHealthSource()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_HEALTH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<InsertRegionHealthSourceRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionHealthSourceRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -677,6 +743,9 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getHealthCallable =
+        callableFactory.createUnaryCallable(
+            getHealthTransportSettings, settings.getHealthSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -717,6 +786,7 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
@@ -750,6 +820,11 @@ public class HttpJsonRegionHealthSourcesStub extends RegionHealthSourcesStub {
   @Override
   public UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth> getHealthCallable() {
+    return getHealthCallable;
   }
 
   @Override

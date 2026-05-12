@@ -142,6 +142,12 @@ public class RegionCompositeHealthChecksSettings
     return ((RegionCompositeHealthChecksStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthSettings() {
+    return ((RegionCompositeHealthChecksStubSettings) getStubSettings()).getHealthSettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionCompositeHealthCheckRequest, Operation> insertSettings() {
     return ((RegionCompositeHealthChecksStubSettings) getStubSettings()).insertSettings();
@@ -303,6 +309,13 @@ public class RegionCompositeHealthChecksSettings
     public UnaryCallSettings.Builder<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
         getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<
+            GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+        getHealthSettings() {
+      return getStubSettingsBuilder().getHealthSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */

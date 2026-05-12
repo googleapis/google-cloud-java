@@ -56,6 +56,7 @@
     <module>java-bigquerymigration</module>
     <module>java-bigqueryreservation</module>
     <module>java-bigquerystorage</module>
+    <module>java-bigtable</module>
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
@@ -114,6 +115,7 @@
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-financialservices</module>
+    <module>java-firestore</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
     <module>java-geminidataanalytics</module>
@@ -124,6 +126,7 @@
     <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
+    <module>java-health</module>
     <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
@@ -152,6 +155,7 @@
     <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
     <module>java-maps-geocode</module>
+    <module>java-maps-mapmanagement</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -188,6 +192,7 @@
     <module>java-privilegedaccessmanager</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
+    <module>java-pubsub</module>
     <module>java-rapidmigrationassessment</module>
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>

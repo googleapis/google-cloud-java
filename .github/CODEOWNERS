@@ -14,3 +14,6 @@
 /google-auth-library-java/ @googleapis/cloud-sdk-auth-team @googleapis/cloud-sdk-java-team @googleapis/aion-team
 /java-storage/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team
 /java-storage-nio/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team
+/java-pubsub/ @googleapis/pubsub-team @googleapis/cloud-sdk-java-team
+/java-bigtable/ @googleapis/bigtable-team @googleapis/cloud-sdk-java-team
+/java-firestore/ @googleapis/firestore-team @googleapis/cloud-sdk-java-team

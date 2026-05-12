@@ -24,6 +24,8 @@ import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
 public class PooledConnectionDataSource extends DataSource implements ConnectionPoolDataSource {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(PooledConnectionDataSource.class.getName());
   private PooledConnectionListener connectionPoolManager = null;
   Connection bqConnection = null;
 
@@ -40,12 +42,17 @@ public class PooledConnectionDataSource extends DataSource implements Connection
       throw new BigQueryJdbcRuntimeException(
           "Cannot get pooled connection: unable to get underlying physical connection");
     }
-    Long connectionPoolSize = ((BigQueryConnection) bqConnection).getConnectionPoolSize();
+    BigQueryConnection physicalConnection;
+    if (bqConnection.isWrapperFor(BigQueryConnection.class)) {
+      physicalConnection = bqConnection.unwrap(BigQueryConnection.class);
+    } else {
+      physicalConnection = (BigQueryConnection) bqConnection;
+    }
+    Long connectionPoolSize = physicalConnection.getConnectionPoolSize();
     if (connectionPoolManager == null) {
       connectionPoolManager = new PooledConnectionListener(connectionPoolSize);
     }
-    BigQueryPooledConnection bqPooledConnection =
-        new BigQueryPooledConnection((BigQueryConnection) bqConnection);
+    BigQueryPooledConnection bqPooledConnection = new BigQueryPooledConnection(physicalConnection);
     bqPooledConnection.addConnectionEventListener(connectionPoolManager);
     return bqPooledConnection;
   }
@@ -62,6 +69,9 @@ public class PooledConnectionDataSource extends DataSource implements Connection
 
   @Override
   public PooledConnection getPooledConnection(String arg0, String arg1) throws SQLException {
-    throw new UnsupportedOperationException("This operation is not supported by the driver");
+    UnsupportedOperationException ex =
+        new UnsupportedOperationException("This operation is not supported by the driver");
+    LOG.severe(ex.getMessage(), ex);
+    throw ex;
   }
 }

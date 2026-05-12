@@ -21,7 +21,6 @@ import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListLocation
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -41,6 +40,7 @@ import com.google.cloud.memorystore.v1beta.OperationMetadata;
 import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -54,8 +54,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class MemorystoreStub implements BackgroundResource {
 
-  public OperationsStub getHttpJsonOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>

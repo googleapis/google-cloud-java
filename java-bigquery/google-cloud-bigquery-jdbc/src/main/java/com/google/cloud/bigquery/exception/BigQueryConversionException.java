@@ -24,6 +24,6 @@ import java.sql.SQLException;
 public class BigQueryConversionException extends SQLException {
 
   public BigQueryConversionException(String message, Throwable cause) {
-    super(message, cause);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
   }
 }

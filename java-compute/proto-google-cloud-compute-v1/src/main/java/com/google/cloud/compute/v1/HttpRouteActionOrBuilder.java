@@ -30,6 +30,52 @@ public interface HttpRouteActionOrBuilder
    *
    *
    * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   *
+   * @return Whether the cachePolicy field is set.
+   */
+  boolean hasCachePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   *
+   * @return The cachePolicy.
+   */
+  com.google.cloud.compute.v1.CachePolicy getCachePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   */
+  com.google.cloud.compute.v1.CachePolicyOrBuilder getCachePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The specification for allowing client-side cross-origin requests. For more
    * information about the W3C recommendation for cross-origin resource sharing
    * (CORS), see Fetch API Living

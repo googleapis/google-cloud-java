@@ -21,14 +21,14 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-class BigQueryJdbcCustomLogger extends Logger {
+public class BigQueryJdbcCustomLogger extends Logger {
 
   protected BigQueryJdbcCustomLogger(String name, String resourceBundleName) {
     super(name, resourceBundleName);
     this.setParent(BigQueryJdbcRootLogger.getRootLogger());
   }
 
-  BigQueryJdbcCustomLogger(String name) {
+  public BigQueryJdbcCustomLogger(String name) {
     this(name, null);
     this.setParent(BigQueryJdbcRootLogger.getRootLogger());
   }
@@ -48,7 +48,8 @@ class BigQueryJdbcCustomLogger extends Logger {
 
     for (StackTraceElement element : stackTrace) {
       String className = element.getClassName();
-      if (!className.equals(BigQueryJdbcCustomLogger.class.getName())) {
+      if (!className.equals(BigQueryJdbcCustomLogger.class.getName())
+          && !className.startsWith("com.google.cloud.bigquery.exception.")) {
         sourceClass = className;
         sourceMethod = element.getMethodName();
         break;
@@ -64,6 +65,21 @@ class BigQueryJdbcCustomLogger extends Logger {
       record.setThrown(thrown);
       log(record);
     }
+  }
+
+  @Override
+  public void finest(String msg) {
+    logWithCaller(Level.FINEST, () -> msg);
+  }
+
+  @Override
+  public void finer(String msg) {
+    logWithCaller(Level.FINER, () -> msg);
+  }
+
+  @Override
+  public void fine(String msg) {
+    logWithCaller(Level.FINE, () -> msg);
   }
 
   void finest(String format, Object... args) {
@@ -102,11 +118,21 @@ class BigQueryJdbcCustomLogger extends Logger {
     logWithCaller(Level.SEVERE, () -> String.format(format, args));
   }
 
-  void severe(Throwable thrown, String msg) {
+  public void severe(String msg, Throwable thrown) {
     logWithCaller(Level.SEVERE, thrown, () -> msg);
   }
 
-  void severe(Throwable thrown, String format, Object... args) {
+  public void severe(String format, Throwable thrown, Object... args) {
     logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
+  }
+
+  @Override
+  public void finest(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINEST, msgSupplier);
+  }
+
+  @Override
+  public void fine(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINE, msgSupplier);
   }
 }

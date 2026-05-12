@@ -127,6 +127,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetHealth</td>
+ *      <td><p> Gets the most recent health check results for this regional CompositeHealthCheck.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHealth(GetHealthRegionCompositeHealthCheckRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHealth(String project, String region, String compositeHealthCheck)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHealthCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Insert</td>
  *      <td><p> Create a CompositeHealthCheck in the specified project in the given region using the parameters that are included in the request.</td>
  *      <td>
@@ -708,6 +726,108 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
   public final UnaryCallable<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
       getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String compositeHealthCheck = "compositeHealthCheck-1727645947";
+   *   CompositeHealthCheckHealth response =
+   *       regionCompositeHealthChecksClient.getHealth(project, region, compositeHealthCheck);
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @param region Name of the region scoping this request.
+   * @param compositeHealthCheck Name of the CompositeHealthCheck resource to get health for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompositeHealthCheckHealth getHealth(
+      String project, String region, String compositeHealthCheck) {
+    GetHealthRegionCompositeHealthCheckRequest request =
+        GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setCompositeHealthCheck(compositeHealthCheck)
+            .build();
+    return getHealth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   GetHealthRegionCompositeHealthCheckRequest request =
+   *       GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+   *           .setCompositeHealthCheck("compositeHealthCheck-1727645947")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   CompositeHealthCheckHealth response = regionCompositeHealthChecksClient.getHealth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompositeHealthCheckHealth getHealth(
+      GetHealthRegionCompositeHealthCheckRequest request) {
+    return getHealthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   GetHealthRegionCompositeHealthCheckRequest request =
+   *       GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+   *           .setCompositeHealthCheck("compositeHealthCheck-1727645947")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<CompositeHealthCheckHealth> future =
+   *       regionCompositeHealthChecksClient.getHealthCallable().futureCall(request);
+   *   // Do something.
+   *   CompositeHealthCheckHealth response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthCallable() {
+    return stub.getHealthCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

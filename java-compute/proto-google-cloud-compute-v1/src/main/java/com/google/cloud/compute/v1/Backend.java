@@ -57,6 +57,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     description_ = "";
     group_ = "";
     preference_ = "";
+    trafficDuration_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +131,16 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Balance based on the number of in-flight requests.
+     * </pre>
+     *
+     * <code>IN_FLIGHT = 190040266;</code>
+     */
+    IN_FLIGHT(190040266),
+    /**
+     *
+     *
+     * <pre>
      * Balance based on requests per second (RPS).
      * </pre>
      *
@@ -196,6 +207,17 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Balance based on the number of in-flight requests.
+     * </pre>
+     *
+     * <code>IN_FLIGHT = 190040266;</code>
+     */
+    public static final int IN_FLIGHT_VALUE = 190040266;
+
+    /**
+     *
+     *
+     * <pre>
      * Balance based on requests per second (RPS).
      * </pre>
      *
@@ -244,6 +266,8 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
           return CONNECTION;
         case 331575765:
           return CUSTOM_METRICS;
+        case 190040266:
+          return IN_FLIGHT;
         case 2508000:
           return RATE;
         case 157008386:
@@ -500,6 +524,201 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Backend.Preference)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Backend.TrafficDuration}
+   */
+  public enum TrafficDuration implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TRAFFIC_DURATION = 0;</code>
+     */
+    UNDEFINED_TRAFFIC_DURATION(0),
+    /**
+     *
+     *
+     * <pre>
+     * Most of the requests are expected to take more than multiple seconds to
+     * finish.
+     * </pre>
+     *
+     * <code>LONG = 2342524;</code>
+     */
+    LONG(2342524),
+    /**
+     *
+     *
+     * <pre>
+     * Most requests are expected to finish with a sub-second latency.
+     * </pre>
+     *
+     * <code>SHORT = 78875740;</code>
+     */
+    SHORT(78875740),
+    /**
+     *
+     *
+     * <pre>
+     * Traffic duration is unspecified.
+     * </pre>
+     *
+     * <code>TRAFFIC_DURATION_UNSPECIFIED = 265201166;</code>
+     */
+    TRAFFIC_DURATION_UNSPECIFIED(265201166),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TrafficDuration");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TRAFFIC_DURATION = 0;</code>
+     */
+    public static final int UNDEFINED_TRAFFIC_DURATION_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Most of the requests are expected to take more than multiple seconds to
+     * finish.
+     * </pre>
+     *
+     * <code>LONG = 2342524;</code>
+     */
+    public static final int LONG_VALUE = 2342524;
+
+    /**
+     *
+     *
+     * <pre>
+     * Most requests are expected to finish with a sub-second latency.
+     * </pre>
+     *
+     * <code>SHORT = 78875740;</code>
+     */
+    public static final int SHORT_VALUE = 78875740;
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic duration is unspecified.
+     * </pre>
+     *
+     * <code>TRAFFIC_DURATION_UNSPECIFIED = 265201166;</code>
+     */
+    public static final int TRAFFIC_DURATION_UNSPECIFIED_VALUE = 265201166;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TrafficDuration valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TrafficDuration forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TRAFFIC_DURATION;
+        case 2342524:
+          return LONG;
+        case 78875740:
+          return SHORT;
+        case 265201166:
+          return TRAFFIC_DURATION_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TrafficDuration> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TrafficDuration>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TrafficDuration>() {
+              public TrafficDuration findValueByNumber(int number) {
+                return TrafficDuration.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Backend.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TrafficDuration[] VALUES = values();
+
+    public static TrafficDuration valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TrafficDuration(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Backend.TrafficDuration)
   }
 
   private int bitField0_;
@@ -1089,6 +1308,121 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     return maxConnectionsPerInstance_;
   }
 
+  public static final int MAX_IN_FLIGHT_REQUESTS_FIELD_NUMBER = 273269332;
+  private int maxInFlightRequests_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for the whole NEG or
+   * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests = 273269332;</code>
+   *
+   * @return Whether the maxInFlightRequests field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxInFlightRequests() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for the whole NEG or
+   * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests = 273269332;</code>
+   *
+   * @return The maxInFlightRequests.
+   */
+  @java.lang.Override
+  public int getMaxInFlightRequests() {
+    return maxInFlightRequests_;
+  }
+
+  public static final int MAX_IN_FLIGHT_REQUESTS_PER_ENDPOINT_FIELD_NUMBER = 307928706;
+  private int maxInFlightRequestsPerEndpoint_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single endpoint.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+   *
+   * @return Whether the maxInFlightRequestsPerEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxInFlightRequestsPerEndpoint() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single endpoint.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+   *
+   * @return The maxInFlightRequestsPerEndpoint.
+   */
+  @java.lang.Override
+  public int getMaxInFlightRequestsPerEndpoint() {
+    return maxInFlightRequestsPerEndpoint_;
+  }
+
+  public static final int MAX_IN_FLIGHT_REQUESTS_PER_INSTANCE_FIELD_NUMBER = 195696002;
+  private int maxInFlightRequestsPerInstance_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single VM.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+   *
+   * @return Whether the maxInFlightRequestsPerInstance field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxInFlightRequestsPerInstance() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single VM.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+   *
+   * @return The maxInFlightRequestsPerInstance.
+   */
+  @java.lang.Override
+  public int getMaxInFlightRequestsPerInstance() {
+    return maxInFlightRequestsPerInstance_;
+  }
+
   public static final int MAX_RATE_FIELD_NUMBER = 408035035;
   private int maxRate_ = 0;
 
@@ -1110,7 +1444,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxRate() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1155,7 +1489,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxRatePerEndpoint() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1200,7 +1534,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxRatePerInstance() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1243,7 +1577,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxUtilization() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1283,7 +1617,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasOrchestrationInfo() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1353,7 +1687,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPreference() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1424,6 +1758,78 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TRAFFIC_DURATION_FIELD_NUMBER = 11618710;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trafficDuration_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return Whether the trafficDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrafficDuration() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return The trafficDuration.
+   */
+  @java.lang.Override
+  public java.lang.String getTrafficDuration() {
+    java.lang.Object ref = trafficDuration_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trafficDuration_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return The bytes for trafficDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTrafficDurationBytes() {
+    java.lang.Object ref = trafficDuration_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      trafficDuration_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1438,7 +1844,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11618710, trafficDuration_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeFloat(17599579, maxRatePerInstance_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1450,25 +1859,34 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(110652154, maxConnections_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeFloat(129832283, maxRatePerEndpoint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(138892530, failover_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeFloat(148192199, maxUtilization_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 150781147, preference_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeInt32(195696002, maxInFlightRequestsPerInstance_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(216904604, maxConnectionsPerEndpoint_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeInt32(273269332, maxInFlightRequests_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeInt32(307928706, maxInFlightRequestsPerEndpoint_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeFloat(315958157, capacityScaler_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt32(408035035, maxRate_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1480,7 +1898,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 430286217, balancingMode_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(441144300, getOrchestrationInfo());
     }
     getUnknownFields().writeTo(output);
@@ -1492,7 +1910,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11618710, trafficDuration_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(17599579, maxRatePerInstance_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -1506,28 +1927,42 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(110652154, maxConnections_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeFloatSize(129832283, maxRatePerEndpoint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(138892530, failover_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(148192199, maxUtilization_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(150781147, preference_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              195696002, maxInFlightRequestsPerInstance_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               216904604, maxConnectionsPerEndpoint_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(273269332, maxInFlightRequests_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              307928706, maxInFlightRequestsPerEndpoint_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(315958157, capacityScaler_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(408035035, maxRate_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1541,7 +1976,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(430286217, balancingMode_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               441144300, getOrchestrationInfo());
@@ -1595,6 +2030,22 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (hasMaxConnectionsPerInstance()) {
       if (getMaxConnectionsPerInstance() != other.getMaxConnectionsPerInstance()) return false;
     }
+    if (hasMaxInFlightRequests() != other.hasMaxInFlightRequests()) return false;
+    if (hasMaxInFlightRequests()) {
+      if (getMaxInFlightRequests() != other.getMaxInFlightRequests()) return false;
+    }
+    if (hasMaxInFlightRequestsPerEndpoint() != other.hasMaxInFlightRequestsPerEndpoint())
+      return false;
+    if (hasMaxInFlightRequestsPerEndpoint()) {
+      if (getMaxInFlightRequestsPerEndpoint() != other.getMaxInFlightRequestsPerEndpoint())
+        return false;
+    }
+    if (hasMaxInFlightRequestsPerInstance() != other.hasMaxInFlightRequestsPerInstance())
+      return false;
+    if (hasMaxInFlightRequestsPerInstance()) {
+      if (getMaxInFlightRequestsPerInstance() != other.getMaxInFlightRequestsPerInstance())
+        return false;
+    }
     if (hasMaxRate() != other.hasMaxRate()) return false;
     if (hasMaxRate()) {
       if (getMaxRate() != other.getMaxRate()) return false;
@@ -1621,6 +2072,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (hasPreference() != other.hasPreference()) return false;
     if (hasPreference()) {
       if (!getPreference().equals(other.getPreference())) return false;
+    }
+    if (hasTrafficDuration() != other.hasTrafficDuration()) return false;
+    if (hasTrafficDuration()) {
+      if (!getTrafficDuration().equals(other.getTrafficDuration())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1669,6 +2124,18 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MAX_CONNECTIONS_PER_INSTANCE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxConnectionsPerInstance();
     }
+    if (hasMaxInFlightRequests()) {
+      hash = (37 * hash) + MAX_IN_FLIGHT_REQUESTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxInFlightRequests();
+    }
+    if (hasMaxInFlightRequestsPerEndpoint()) {
+      hash = (37 * hash) + MAX_IN_FLIGHT_REQUESTS_PER_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxInFlightRequestsPerEndpoint();
+    }
+    if (hasMaxInFlightRequestsPerInstance()) {
+      hash = (37 * hash) + MAX_IN_FLIGHT_REQUESTS_PER_INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxInFlightRequestsPerInstance();
+    }
     if (hasMaxRate()) {
       hash = (37 * hash) + MAX_RATE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxRate();
@@ -1692,6 +2159,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     if (hasPreference()) {
       hash = (37 * hash) + PREFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getPreference().hashCode();
+    }
+    if (hasTrafficDuration()) {
+      hash = (37 * hash) + TRAFFIC_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTrafficDuration().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1857,6 +2328,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       maxConnections_ = 0;
       maxConnectionsPerEndpoint_ = 0;
       maxConnectionsPerInstance_ = 0;
+      maxInFlightRequests_ = 0;
+      maxInFlightRequestsPerEndpoint_ = 0;
+      maxInFlightRequestsPerInstance_ = 0;
       maxRate_ = 0;
       maxRatePerEndpoint_ = 0F;
       maxRatePerInstance_ = 0F;
@@ -1867,6 +2341,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         orchestrationInfoBuilder_ = null;
       }
       preference_ = "";
+      trafficDuration_ = "";
       return this;
     }
 
@@ -1949,31 +2424,47 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.maxRate_ = maxRate_;
+        result.maxInFlightRequests_ = maxInFlightRequests_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.maxRatePerEndpoint_ = maxRatePerEndpoint_;
+        result.maxInFlightRequestsPerEndpoint_ = maxInFlightRequestsPerEndpoint_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.maxRatePerInstance_ = maxRatePerInstance_;
+        result.maxInFlightRequestsPerInstance_ = maxInFlightRequestsPerInstance_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.maxUtilization_ = maxUtilization_;
+        result.maxRate_ = maxRate_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.maxRatePerEndpoint_ = maxRatePerEndpoint_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.maxRatePerInstance_ = maxRatePerInstance_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.maxUtilization_ = maxUtilization_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.orchestrationInfo_ =
             orchestrationInfoBuilder_ == null
                 ? orchestrationInfo_
                 : orchestrationInfoBuilder_.build();
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.preference_ = preference_;
-        to_bitField0_ |= 0x00002000;
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.trafficDuration_ = trafficDuration_;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2047,6 +2538,15 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       if (other.hasMaxConnectionsPerInstance()) {
         setMaxConnectionsPerInstance(other.getMaxConnectionsPerInstance());
       }
+      if (other.hasMaxInFlightRequests()) {
+        setMaxInFlightRequests(other.getMaxInFlightRequests());
+      }
+      if (other.hasMaxInFlightRequestsPerEndpoint()) {
+        setMaxInFlightRequestsPerEndpoint(other.getMaxInFlightRequestsPerEndpoint());
+      }
+      if (other.hasMaxInFlightRequestsPerInstance()) {
+        setMaxInFlightRequestsPerInstance(other.getMaxInFlightRequestsPerInstance());
+      }
       if (other.hasMaxRate()) {
         setMaxRate(other.getMaxRate());
       }
@@ -2064,7 +2564,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPreference()) {
         preference_ = other.preference_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      if (other.hasTrafficDuration()) {
+        trafficDuration_ = other.trafficDuration_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2093,10 +2598,16 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 92949682:
+              {
+                trafficDuration_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 92949682
             case 140796637:
               {
                 maxRatePerInstance_ = input.readFloat();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 140796637
             case 789033978:
@@ -2120,7 +2631,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
             case 1038658269:
               {
                 maxRatePerEndpoint_ = input.readFloat();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1038658269
             case 1111140240:
@@ -2132,21 +2643,39 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
             case 1185537597:
               {
                 maxUtilization_ = input.readFloat();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1185537597
             case 1206249178:
               {
                 preference_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1206249178
+            case 1565568016:
+              {
+                maxInFlightRequestsPerInstance_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 1565568016
             case 1735236832:
               {
                 maxConnectionsPerEndpoint_ = input.readInt32();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 1735236832
+            case -2108812640:
+              {
+                maxInFlightRequests_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -2108812640
+            case -1831537648:
+              {
+                maxInFlightRequestsPerEndpoint_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -1831537648
             case -1767302035:
               {
                 capacityScaler_ = input.readFloat();
@@ -2156,7 +2685,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
             case -1030687016:
               {
                 maxRate_ = input.readInt32();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -1030687016
             case -911466526:
@@ -2189,7 +2718,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetOrchestrationInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -765812894
             default:
@@ -3606,6 +4135,242 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int maxInFlightRequests_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for the whole NEG or
+     * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests = 273269332;</code>
+     *
+     * @return Whether the maxInFlightRequests field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxInFlightRequests() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for the whole NEG or
+     * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests = 273269332;</code>
+     *
+     * @return The maxInFlightRequests.
+     */
+    @java.lang.Override
+    public int getMaxInFlightRequests() {
+      return maxInFlightRequests_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for the whole NEG or
+     * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests = 273269332;</code>
+     *
+     * @param value The maxInFlightRequests to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInFlightRequests(int value) {
+
+      maxInFlightRequests_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for the whole NEG or
+     * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests = 273269332;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInFlightRequests() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      maxInFlightRequests_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxInFlightRequestsPerEndpoint_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single endpoint.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+     *
+     * @return Whether the maxInFlightRequestsPerEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxInFlightRequestsPerEndpoint() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single endpoint.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+     *
+     * @return The maxInFlightRequestsPerEndpoint.
+     */
+    @java.lang.Override
+    public int getMaxInFlightRequestsPerEndpoint() {
+      return maxInFlightRequestsPerEndpoint_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single endpoint.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+     *
+     * @param value The maxInFlightRequestsPerEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInFlightRequestsPerEndpoint(int value) {
+
+      maxInFlightRequestsPerEndpoint_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single endpoint.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInFlightRequestsPerEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      maxInFlightRequestsPerEndpoint_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxInFlightRequestsPerInstance_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single VM.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+     *
+     * @return Whether the maxInFlightRequestsPerInstance field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxInFlightRequestsPerInstance() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single VM.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+     *
+     * @return The maxInFlightRequestsPerInstance.
+     */
+    @java.lang.Override
+    public int getMaxInFlightRequestsPerInstance() {
+      return maxInFlightRequestsPerInstance_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single VM.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+     *
+     * @param value The maxInFlightRequestsPerInstance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInFlightRequestsPerInstance(int value) {
+
+      maxInFlightRequestsPerInstance_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a maximum number of in-flight requests for a single VM.
+     * Not available if backend's balancingMode is RATE
+     * or CONNECTION.
+     * </pre>
+     *
+     * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInFlightRequestsPerInstance() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      maxInFlightRequestsPerInstance_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int maxRate_;
 
     /**
@@ -3626,7 +4391,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMaxRate() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3670,7 +4435,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     public Builder setMaxRate(int value) {
 
       maxRate_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3692,7 +4457,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxRate() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       maxRate_ = 0;
       onChanged();
       return this;
@@ -3718,7 +4483,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMaxRatePerEndpoint() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3762,7 +4527,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     public Builder setMaxRatePerEndpoint(float value) {
 
       maxRatePerEndpoint_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3784,7 +4549,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerEndpoint() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       maxRatePerEndpoint_ = 0F;
       onChanged();
       return this;
@@ -3810,7 +4575,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMaxRatePerInstance() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3854,7 +4619,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     public Builder setMaxRatePerInstance(float value) {
 
       maxRatePerInstance_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3876,7 +4641,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxRatePerInstance() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       maxRatePerInstance_ = 0F;
       onChanged();
       return this;
@@ -3900,7 +4665,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMaxUtilization() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -3940,7 +4705,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     public Builder setMaxUtilization(float value) {
 
       maxUtilization_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3960,7 +4725,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMaxUtilization() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       maxUtilization_ = 0F;
       onChanged();
       return this;
@@ -3987,7 +4752,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return Whether the orchestrationInfo field is set.
      */
     public boolean hasOrchestrationInfo() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4034,7 +4799,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       } else {
         orchestrationInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4057,7 +4822,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       } else {
         orchestrationInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4076,7 +4841,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
     public Builder mergeOrchestrationInfo(
         com.google.cloud.compute.v1.BackendBackendOrchestrationInfo value) {
       if (orchestrationInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && orchestrationInfo_ != null
             && orchestrationInfo_
                 != com.google.cloud.compute.v1.BackendBackendOrchestrationInfo
@@ -4089,7 +4854,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         orchestrationInfoBuilder_.mergeFrom(value);
       }
       if (orchestrationInfo_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4107,7 +4872,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearOrchestrationInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       orchestrationInfo_ = null;
       if (orchestrationInfoBuilder_ != null) {
         orchestrationInfoBuilder_.dispose();
@@ -4130,7 +4895,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.compute.v1.BackendBackendOrchestrationInfo.Builder
         getOrchestrationInfoBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetOrchestrationInfoFieldBuilder().getBuilder();
     }
@@ -4209,7 +4974,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      * @return Whether the preference field is set.
      */
     public boolean hasPreference() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4305,7 +5070,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       preference_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4333,7 +5098,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPreference() {
       preference_ = getDefaultInstance().getPreference();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4366,7 +5131,139 @@ public final class Backend extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       preference_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object trafficDuration_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @return Whether the trafficDuration field is set.
+     */
+    public boolean hasTrafficDuration() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @return The trafficDuration.
+     */
+    public java.lang.String getTrafficDuration() {
+      java.lang.Object ref = trafficDuration_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trafficDuration_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @return The bytes for trafficDuration.
+     */
+    public com.google.protobuf.ByteString getTrafficDurationBytes() {
+      java.lang.Object ref = trafficDuration_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        trafficDuration_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @param value The trafficDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficDuration(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      trafficDuration_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficDuration() {
+      trafficDuration_ = getDefaultInstance().getTrafficDuration();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the TrafficDuration enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string traffic_duration = 11618710;</code>
+     *
+     * @param value The bytes for trafficDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficDurationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      trafficDuration_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

@@ -76,7 +76,7 @@ final class BigQueryJdbcProxyUtility {
                 String.format(
                     "Illegal port number provided %s. Please provide a valid port number.",
                     proxyPort));
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       proxyProperties.put(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME, proxyPort);
@@ -97,9 +97,7 @@ final class BigQueryJdbcProxyUtility {
           new IllegalArgumentException(
               "Both ProxyHost and ProxyPort parameters need to be specified. No defaulting behavior"
                   + " occurs.");
-      LOG.severe(
-          ex,
-          "Both ProxyHost and ProxyPort parameters need to be specified. No defaulting behavior occurs.");
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     boolean isMissingProxyUidOrPwdWhenAuthSet =
@@ -108,8 +106,7 @@ final class BigQueryJdbcProxyUtility {
       IllegalArgumentException ex =
           new IllegalArgumentException(
               "Both ProxyUid and ProxyPwd parameters need to be specified for authentication.");
-      LOG.severe(
-          ex, "Both ProxyUid and ProxyPwd parameters need to be specified for authentication.");
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     boolean isProxyAuthSetWithoutProxySettings = proxyUid != null && proxyHost == null;
@@ -117,9 +114,7 @@ final class BigQueryJdbcProxyUtility {
       IllegalArgumentException ex =
           new IllegalArgumentException(
               "Proxy authentication provided via connection string with no proxy host or port set.");
-      LOG.severe(
-          ex,
-          "Proxy authentication provided via connection string with no proxy host or port set.");
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     return proxyProperties;
@@ -207,8 +202,8 @@ final class BigQueryJdbcProxyUtility {
                 .setSSLSocketFactory(sslSocketFactory)
                 .build());
       } catch (IOException | GeneralSecurityException e) {
-        LOG.severe(e, "Failed to configure SSL TrustStore for HTTP transport");
-        throw new BigQueryJdbcRuntimeException(e);
+        throw new BigQueryJdbcRuntimeException(
+            "Failed to configure SSL TrustStore for HTTP transport", e);
       }
     }
     addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
@@ -297,8 +292,8 @@ final class BigQueryJdbcProxyUtility {
                           .sslContext(grpcSslContext);
 
                     } catch (IOException | GeneralSecurityException e) {
-                      LOG.severe(e, "Failed to configure SSL TrustStore for GRPC channel");
-                      throw new BigQueryJdbcRuntimeException(e);
+                      throw new BigQueryJdbcRuntimeException(
+                          "Failed to configure SSL TrustStore for GRPC channel", e);
                     }
                   }
                   return managedChannelBuilder;

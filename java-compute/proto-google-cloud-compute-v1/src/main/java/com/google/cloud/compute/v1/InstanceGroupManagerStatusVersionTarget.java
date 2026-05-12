@@ -77,7 +77,7 @@ public final class InstanceGroupManagerStatusVersionTarget
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether version target has been reached
+   * Output only. A bit indicating whether version target has been reached
    * in this managed instance group, i.e. all instances are in their target
    * version. Instances' target version are specified byversion field on Instance Group Manager.
    * </pre>
@@ -95,7 +95,7 @@ public final class InstanceGroupManagerStatusVersionTarget
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether version target has been reached
+   * Output only. A bit indicating whether version target has been reached
    * in this managed instance group, i.e. all instances are in their target
    * version. Instances' target version are specified byversion field on Instance Group Manager.
    * </pre>
@@ -439,7 +439,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether version target has been reached
+     * Output only. A bit indicating whether version target has been reached
      * in this managed instance group, i.e. all instances are in their target
      * version. Instances' target version are specified byversion field on Instance Group Manager.
      * </pre>
@@ -457,7 +457,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether version target has been reached
+     * Output only. A bit indicating whether version target has been reached
      * in this managed instance group, i.e. all instances are in their target
      * version. Instances' target version are specified byversion field on Instance Group Manager.
      * </pre>
@@ -475,7 +475,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether version target has been reached
+     * Output only. A bit indicating whether version target has been reached
      * in this managed instance group, i.e. all instances are in their target
      * version. Instances' target version are specified byversion field on Instance Group Manager.
      * </pre>
@@ -497,7 +497,7 @@ public final class InstanceGroupManagerStatusVersionTarget
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether version target has been reached
+     * Output only. A bit indicating whether version target has been reached
      * in this managed instance group, i.e. all instances are in their target
      * version. Instances' target version are specified byversion field on Instance Group Manager.
      * </pre>

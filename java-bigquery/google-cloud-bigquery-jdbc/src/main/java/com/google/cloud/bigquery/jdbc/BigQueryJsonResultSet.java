@@ -172,10 +172,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Cursor has been advanced
         return true;
 
-      } catch (InterruptedException ex) {
+      } catch (InterruptedException e) {
+
         throw new BigQueryJdbcRuntimeException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
-            ex);
+            e);
       }
     }
   }
@@ -184,7 +185,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObject", "++enter++");
     FieldValue value = getObjectInternal(columnIndex);
     if (value == null || value.isNull()) {
       return null;
@@ -229,19 +230,24 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    */
   private FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObjectInternal", "++enter++");
     FieldValue value;
     if (this.isNested) {
       boolean validIndexForNestedResultSet = columnIndex == 1 || columnIndex == 2;
       // BigQuery doesn't support multidimensional arrays, so just the default row
       // num column (1) and the actual column (2) is supposed to be read
       if (!validIndexForNestedResultSet) {
-        throw new IllegalArgumentException(
-            "Column index is required to be 1 or 2 for the nested arrays");
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                "Column index is required to be 1 or 2 for the nested arrays");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       if (this.cursor.getArrayFieldValueList() == null
           || this.cursor.getArrayFieldValueList().get(this.nestedRowIndex) == null) {
-        throw new IllegalStateException("ArrayFieldValueList cannot be null");
+        IllegalStateException ex = new IllegalStateException("ArrayFieldValueList cannot be null");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
 
       // For Arrays the first column is Index, ref:
@@ -266,7 +272,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
-    LOG.fine("Closing BigqueryJsonResultSet %s.", this);
+    LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
     if (ownedThreads != null) {
       for (Thread ownedThread : ownedThreads) {
@@ -281,7 +287,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isBeforeFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isBeforeFirst", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
@@ -292,14 +298,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isAfterLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isAfterLast", "++enter++");
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isFirst", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
     } else {
@@ -310,7 +316,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isLast", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {

@@ -45,7 +45,7 @@ get_gapic_opts_without_rest_test() {
   local gapic_opts
   gapic_opts="$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "" "" "" "${repo}" "${artifact}")"
   assertEquals \
-  "transport=grpc,,grpc-service-config=${proto_path}/example_grpc_service_config.json,gapic-config=${proto_path}/example_gapic.yaml,api-service-config=${proto_path}/example.yaml,repo=${repo},artifact=${artifact}" \
+  "transport=grpc,grpc-service-config=${proto_path}/example_grpc_service_config.json,gapic-config=${proto_path}/example_gapic.yaml,api-service-config=${proto_path}/example.yaml,repo=${repo},artifact=${artifact}" \
   "$gapic_opts"
 }
 
@@ -58,7 +58,21 @@ get_gapic_opts_with_non_default_test() {
   local gapic_opts
   gapic_opts="$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "${proto_path}/example_gapic.yaml" "${proto_path}/example_grpc_service_config.json" "${proto_path}/example.yaml" "${repo}" "${artifact}")"
   assertEquals \
-  "transport=grpc,,grpc-service-config=${proto_path}/example_grpc_service_config.json,gapic-config=${proto_path}/example_gapic.yaml,api-service-config=${proto_path}/example.yaml,repo=${repo},artifact=${artifact}" \
+  "transport=grpc,grpc-service-config=${proto_path}/example_grpc_service_config.json,gapic-config=${proto_path}/example_gapic.yaml,api-service-config=${proto_path}/example.yaml,repo=${repo},artifact=${artifact}" \
+  "$gapic_opts"
+}
+
+get_gapic_opts_with_generate_version_java_true_test() {
+  local proto_path="${script_dir}/resources/gapic_options"
+  local transport="grpc"
+  local rest_numeric_enums="false"
+  local repo="googleapis/google-cloud-java"
+  local artifact="google-cloud-library"
+  local generate_version_java="true"
+  local gapic_opts
+  gapic_opts="$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "" "" "" "${repo}" "${artifact}" "${generate_version_java}")"
+  assertEquals \
+  "transport=grpc,generate-version-java,grpc-service-config=${proto_path}/example_grpc_service_config.json,gapic-config=${proto_path}/example_gapic.yaml,api-service-config=${proto_path}/example.yaml,repo=${repo},artifact=${artifact}" \
   "$gapic_opts"
 }
 
@@ -270,6 +284,7 @@ test_list=(
   get_gapic_opts_with_rest_test
   get_gapic_opts_without_rest_test
   get_gapic_opts_with_non_default_test
+  get_gapic_opts_with_generate_version_java_true_test
   remove_grpc_version_test
   download_protoc_succeed_with_valid_version_linux_test
   download_protoc_succeed_with_valid_version_macos_test

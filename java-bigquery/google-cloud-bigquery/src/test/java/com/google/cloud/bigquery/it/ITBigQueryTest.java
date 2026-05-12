@@ -7487,22 +7487,36 @@ class ITBigQueryTest {
     }
 
     // Stateful query returns Job
-    // Test scenario 2 to ensure job is created if JobCreationMode is set, but for a small query
-    // it still returns results.
+    // Test scenario 2 to ensure job is created if Query is long running.
+    // Explicitly disable cache to ensure it is long-running query;
+    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
+    long millis = System.currentTimeMillis();
+    result = bigQuery.queryWithTimeout(config, null, 1000L);
+    millis = System.currentTimeMillis() - millis;
+    assertTrue(result instanceof Job);
+    // Cancel the job as we don't need results.
+    ((Job) result).cancel();
+    // Allow 2 seconds of timeout value to account for random delays
+    assertTrue(millis < 1_000_000 * 2);
+
+    // Stateful query returns Job
+    // Test scenario 3 to ensure job is created if JobCreationMode is set.
     config =
         QueryJobConfiguration.newBuilder(query)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .build();
     result = bigQuery.queryWithTimeout(config, null, null);
-    assertTrue(result instanceof TableResult);
-    assertNotNull(((TableResult) result).getJobId());
-    assertNull(((TableResult) result).getQueryId());
+    assertTrue(result instanceof Job);
 
     // Stateful query returns Job
-    // Test scenario 3 to ensure job is created if Query is long running.
+    // Test scenario 4 to ensure job is created if Query is long running.
     // Explicitly disable cache to ensure it is long-running query;
-    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
-    long millis = System.currentTimeMillis();
+    config =
+        QueryJobConfiguration.newBuilder(largeQuery)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+            .setUseQueryCache(false)
+            .build();
+    millis = System.currentTimeMillis();
     result = bigQuery.queryWithTimeout(config, null, 1000L);
     millis = System.currentTimeMillis() - millis;
     assertTrue(result instanceof Job);
@@ -7801,6 +7815,7 @@ class ITBigQueryTest {
         BigQueryOptions.newBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
+            .setLocation("US")
             .build();
     BigQuery bigquery = otelOptions.getService();
 
@@ -7818,6 +7833,7 @@ class ITBigQueryTest {
               .setDescription(DESCRIPTION)
               .setMaxTimeTravelHours(72L)
               .setLabels(LABELS)
+              .setLocation("US")
               .build();
 
       Dataset dataset = bigquery.create(info);
@@ -7839,7 +7855,7 @@ class ITBigQueryTest {
       parentSpan.end();
       Map<AttributeKey<?>, Object> createMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createDataset");
-      assertEquals("null", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
+      assertEquals("US", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
       assertEquals(
           "DatasetService",
           OTEL_ATTRIBUTES

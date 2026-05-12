@@ -1,3 +1,10 @@
 drivers/**
 target-it/**
-*logs*/**
+**/*logs*/**
+**/ITBigQueryJDBCLocalTest.java
+**/BigQueryStatementE2EBenchmark.java
+
+tools/**/*.class
+tools/**/drivers/**
+tools/**/logs/**
+tools/**/*.jfr
