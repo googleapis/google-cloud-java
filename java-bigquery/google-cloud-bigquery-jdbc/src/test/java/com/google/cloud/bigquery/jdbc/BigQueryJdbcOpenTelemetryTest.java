@@ -19,11 +19,31 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 public class BigQueryJdbcOpenTelemetryTest {
+
+  private MockedStatic<GoogleCredentials> mockedCredentials;
+
+  @BeforeEach
+  public void setUp() {
+    mockedCredentials = Mockito.mockStatic(GoogleCredentials.class);
+    mockedCredentials
+        .when(GoogleCredentials::getApplicationDefault)
+        .thenReturn(mock(GoogleCredentials.class));
+  }
+
+  @AfterEach
+  public void tearDown() {
+    mockedCredentials.close();
+  }
 
   @Test
   public void testGetOpenTelemetry_withCustomSdk_returnsCustom() {
