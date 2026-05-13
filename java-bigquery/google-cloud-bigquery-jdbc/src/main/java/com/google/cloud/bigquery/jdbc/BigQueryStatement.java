@@ -55,7 +55,6 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
@@ -944,15 +943,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finest("++enter++");
     long totalRows = results.getTotalRows();
 
-    if (totalRows == 0 || totalRows < querySettings.getHighThroughputMinTableSize()) {
+    // SAFEGUARD: If all data has already been retrieved in the first page,
+    // NEVER switch to the Read API as it would discard in-memory data and cause a double-fetch.
+    if (totalRows == 0
+        || totalRows < querySettings.getHighThroughputMinTableSize()
+        || !results.hasNextPage()) {
       return false;
     }
 
-    // TODO(BQ Team): TableResult doesnt expose the number of records in the current page, hence the
-    // below log iterates and counts. This is inefficient and we may eventually want to expose
-    // PageSize with TableResults
-    // TODO(Obada): Scope for performance optimization.
-    int pageSize = Iterators.size(results.getValues().iterator());
+    long pageSize = querySettings.getMaxResultPerPage();
+
+    // Prevent division by zero due to potential overflows/empty sets:
+    if (pageSize <= 0) {
+      pageSize = 1;
+    }
+
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
