@@ -221,54 +221,22 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     return bucketMetadataCache;
   }
 
-  private static final io.grpc.MethodDescriptor<GetStorageLayoutRequest, StorageLayout>
-      getStorageLayoutMethod =
-          io.grpc.MethodDescriptor.<GetStorageLayoutRequest, StorageLayout>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.storage.control.v2.StorageControl/GetStorageLayout")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetStorageLayoutRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(StorageLayout.getDefaultInstance()))
-              .build();
-
   @Override
   public com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
-    io.grpc.Channel channel = null;
-    try {
-      com.google.storage.v2.stub.StorageStub stub = storageClient.getStub();
-
-      java.lang.reflect.Field bgField =
-          com.google.storage.v2.stub.GrpcStorageStub.class.getDeclaredField("backgroundResources");
-      bgField.setAccessible(true);
-      java.lang.Object bgAggregation = bgField.get(stub);
-
-      java.lang.reflect.Field listField =
-          bgAggregation.getClass().getDeclaredField("backgroundResources");
-      listField.setAccessible(true);
-      java.util.List<?> resourcesList = (java.util.List<?>) listField.get(bgAggregation);
-
-      for (java.lang.Object res : resourcesList) {
-        if (res instanceof com.google.api.gax.grpc.GrpcTransportChannel) {
-          channel = ((com.google.api.gax.grpc.GrpcTransportChannel) res).getChannel();
-          break;
-        }
-      }
-    } catch (Exception ex) {
-      throw new RuntimeException("Failed to extract gRPC channel", ex);
+    com.google.storage.v2.stub.StorageStub rawStub = storageClient.getStub();
+    if (!(rawStub instanceof GrpcStorageOptions.AcoGrpcStorageStub)) {
+      throw new RuntimeException("StorageStub is not an AcoGrpcStorageStub");
     }
-
-    if (channel == null) {
-      throw new RuntimeException("gRPC channel not found");
-    }
+    GrpcStorageOptions.AcoGrpcStorageStub stub = (GrpcStorageOptions.AcoGrpcStorageStub) rawStub;
 
     GetStorageLayoutRequest request =
         GetStorageLayoutRequest.newBuilder()
             .setName(StorageLayoutName.of(getOptions().getProjectId(), bucketName).toString())
             .build();
 
-    StorageLayout layout =
-        ClientCalls.blockingUnaryCall(
-            channel, getStorageLayoutMethod, io.grpc.CallOptions.DEFAULT, request);
+    com.google.api.gax.grpc.GrpcCallContext merge = com.google.cloud.storage.Utils.merge(com.google.api.gax.grpc.GrpcCallContext.createDefault(), Retrying.newCallContext());
+
+    StorageLayout layout = stub.getStorageLayoutCallable().call(request, merge);
 
     return com.google.cloud.Tuple.of(layout.getName(), layout.getLocation());
   }
