@@ -268,7 +268,7 @@
             <exclude>**/*IntegrationTest.java</exclude>
           </excludes>
           <redirectTestOutputToFile>false</redirectTestOutputToFile>
-          <useFile>false</useFile>
+          <useFile>true</useFile>
         </configuration>
       </plugin>
       <plugin>
