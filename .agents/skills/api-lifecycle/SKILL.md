@@ -19,7 +19,7 @@ To reduce maintenance overhead and ensure long-term flexibility, developers shou
 
 *   **Default to Restrictive Visibility**: Always default to the most restrictive access modifier (`private`, `package-private`, or `@InternalApi`) for new classes, methods, and fields. Only expose an API as `public` if there is a clear, justified requirement for external consumers.
 *   **Exposing Public APIs Commits Us**: Every public class, method, or field represents a strict compatibility contract under Semantic Versioning. Once public, modifying or removing it requires a long, multi-phase deprecation cycle.
-*   **Prefer Internal Utilities**: If functionality is only needed within the same package or module, keep it package-private or package-private with helper classes. Do not make it public "just in case".
+*   Prefer Internal Utilities: If functionality is only needed within the same package or module, keep it private or package-private. Do not make it public "just in case".
 
 ---
 
