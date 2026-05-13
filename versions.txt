@@ -1002,6 +1002,7 @@ grpc-google-cloud-spanner-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:6.117.0:6.118.0-SNAPSHOT
 google-cloud-spanner:6.117.0:6.118.0-SNAPSHOT
+grpc-gcp:1.10.0:1.11.0-SNAPSHOT
 google-cloud-spanner-executor:6.117.0:6.118.0-SNAPSHOT
 proto-google-cloud-spanner-executor-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-executor-v1:6.117.0:6.118.0-SNAPSHOT

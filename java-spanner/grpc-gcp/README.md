@@ -68,7 +68,7 @@ SpannerBlockingStub stub =
 Download source.
 
 ```sh
-git clone https://github.com/GoogleCloudPlatform/grpc-gcp-java.git && cd grpc-gcp-java/grpc-gcp
+git clone https://github.com/googleapis/google-cloud-java.git && cd google-cloud-java/java-spanner/grpc-gcp
 ```
 
 Build project with unit tests.
@@ -101,19 +101,11 @@ Run unit tests.
 mvn test
 ```
 
-Run unit tests and integration tests:
-
-```sh
-mvn verify -DskipITs=false
-```
+Integration tests are kept as source references but are not wired into the default monorepo Maven lifecycle.
 
 ## Publish
 
-Publish a release build using the Maven release profile inherited from shared config.
-
-```sh
-mvn deploy -DperformRelease=true
-```
+This artifact is released by the `google-cloud-java` monorepo release pipeline.
 
 ## Code Format
 

@@ -106,6 +106,12 @@
       </dependency>
 
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>grpc-gcp</artifactId>
+        <version>1.11.0-SNAPSHOT</version><!-- {x-version-update:grpc-gcp:current} -->
+      </dependency>
+
+      <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
         <version>1.4.5</version>
@@ -121,6 +127,7 @@
   </dependencyManagement>
 
   <modules>
+    <module>grpc-gcp</module>
     <module>google-cloud-spanner</module>
     <module>grpc-google-cloud-spanner-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>

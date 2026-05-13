@@ -7,7 +7,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.62.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <version>3.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <relativePath>../../sdk-platform-java/sdk-platform-java-config</relativePath>
   </parent>
 
   <groupId>com.google.cloud</groupId>
@@ -17,7 +18,7 @@
 
   <name>gRPC extension library for Google Cloud Platform</name>
   <description>GRPC-GCP-Extension Java</description>
-  <url>https://github.com/GoogleCloudPlatform/grpc-gcp-java/tree/master/grpc-gcp</url>
+  <url>https://github.com/googleapis/google-cloud-java/tree/main/java-spanner/grpc-gcp</url>
 
   <organization>
     <name>Google LLC</name>
@@ -42,15 +43,15 @@
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/GoogleCloudPlatform/grpc-gcp-java.git</connection>
-    <developerConnection>scm:git:https://github.com/GoogleCloudPlatform/grpc-gcp-java.git</developerConnection>
-    <url>https://github.com/GoogleCloudPlatform/grpc-gcp-java</url>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java/tree/main/java-spanner/grpc-gcp</url>
     <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/GoogleCloudPlatform/grpc-gcp-java/issues</url>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
   </issueManagement>
 
   <properties>
@@ -60,8 +61,7 @@
     <protobuf.version>4.33.2</protobuf.version>
     <grpc.version>1.81.0</grpc.version>
     <opencensus.version>0.31.1</opencensus.version>
-    <bigtable.version>2.77.1</bigtable.version>
-    <spanner.version>6.117.0</spanner.version>
+    <spanner.version>6.118.0-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
     <truth.version>1.4.5</truth.version>
     <mockito.version>4.11.0</mockito.version>
     <checkstyle.skip>true</checkstyle.skip>
@@ -75,13 +75,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
         <version>${google-cloud-shared-dependencies.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigtable-bom</artifactId>
-        <version>${bigtable.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -194,43 +187,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-auth</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-alts</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auth</groupId>
-      <artifactId>google-auth-library-credentials</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auth</groupId>
-      <artifactId>google-auth-library-oauth2-http</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-spanner</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigtable</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-bigtable-v2</artifactId>
+      <artifactId>proto-google-cloud-spanner-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -285,6 +248,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
+          <testExcludes>
+            <testExclude>**/*IntegrationTest.java</testExclude>
+          </testExcludes>
           <annotationProcessorPaths>
             <path>
               <groupId>com.google.auto.value</groupId>
@@ -307,25 +273,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <includes>
-            <include>**/*IntegrationTest.java</include>
-          </includes>
-          <redirectTestOutputToFile>false</redirectTestOutputToFile>
-          <useFile>false</useFile>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
           <ignoredDependencies>
@@ -334,14 +281,6 @@
             com.google.code.findbugs:jsr305,
             io.grpc:grpc-core,
             io.grpc:grpc-netty-shaded,
-            io.grpc:grpc-alts,
-            io.grpc:grpc-auth,
-            com.google.auth:google-auth-library-credentials,
-            com.google.auth:google-auth-library-oauth2-http,
-            com.google.cloud:google-cloud-spanner,
-            com.google.cloud:google-cloud-bigtable,
-            com.google.api.grpc:proto-google-cloud-bigtable-v2,
-            com.google.api.grpc:grpc-google-cloud-bigtable-v2
           </ignoredDependencies>
         </configuration>
       </plugin>
