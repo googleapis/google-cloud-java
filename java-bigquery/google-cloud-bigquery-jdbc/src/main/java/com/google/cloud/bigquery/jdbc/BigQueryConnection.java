@@ -145,8 +145,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
-  Boolean enableGcpTraceExporter;
-  Boolean enableGcpLogExporter;
+  boolean enableGcpTraceExporter;
+  boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
   private OpenTelemetry openTelemetry;
   Tracer tracer =
@@ -969,34 +969,32 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private OpenTelemetry getOpenTelemetryInstance() {
-    boolean isTraceEnabled = Boolean.TRUE.equals(this.enableGcpTraceExporter);
-    boolean isLogEnabled = Boolean.TRUE.equals(this.enableGcpLogExporter);
     boolean hasCustomOtel = this.customOpenTelemetry != null;
 
     String effectiveProjectId =
         (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
     String effectiveCredentials = resolveEffectiveCredentials();
 
-    validateTraceConfiguration(isTraceEnabled, effectiveCredentials);
+    validateTraceConfiguration(this.enableGcpTraceExporter, effectiveCredentials);
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            isTraceEnabled,
-            isLogEnabled,
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
             this.customOpenTelemetry,
             effectiveCredentials,
             effectiveProjectId);
 
     Logging localLoggingClient = null;
-    if (isLogEnabled && !hasCustomOtel) {
+    if (this.enableGcpLogExporter && !hasCustomOtel) {
       localLoggingClient =
           BigQueryJdbcOpenTelemetry.createLoggingClient(
               true, null, effectiveCredentials, effectiveProjectId, this.credentials);
     }
 
-    if (isLogEnabled || hasCustomOtel) {
+    if (this.enableGcpLogExporter || hasCustomOtel) {
       BigQueryJdbcOpenTelemetry.registerConnection(
-          this.connectionId, openTelemetry, localLoggingClient, isLogEnabled);
+          this.connectionId, openTelemetry, localLoggingClient, this.enableGcpLogExporter);
     }
 
     return openTelemetry;

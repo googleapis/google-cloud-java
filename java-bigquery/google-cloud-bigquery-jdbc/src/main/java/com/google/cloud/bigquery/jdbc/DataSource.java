@@ -117,8 +117,10 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
-  private Boolean enableGcpTraceExporter;
-  private Boolean enableGcpLogExporter;
+  private boolean enableGcpTraceExporter =
+      BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE;
+  private boolean enableGcpLogExporter =
+      BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
   private OpenTelemetry customOpenTelemetry;
 
   // Make sure the JDBC driver class is loaded.
@@ -656,12 +658,12 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
-    if (this.enableGcpTraceExporter != null) {
+    if (this.enableGcpTraceExporter) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
           String.valueOf(this.enableGcpTraceExporter));
     }
-    if (this.enableGcpLogExporter != null) {
+    if (this.enableGcpLogExporter) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
           String.valueOf(this.enableGcpLogExporter));
@@ -787,23 +789,19 @@ public class DataSource implements javax.sql.DataSource {
     this.listenerPoolSize = listenerPoolSize;
   }
 
-  public Boolean getEnableGcpTraceExporter() {
-    return enableGcpTraceExporter != null
-        ? enableGcpTraceExporter
-        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE;
+  public boolean getEnableGcpTraceExporter() {
+    return enableGcpTraceExporter;
   }
 
-  public void setEnableGcpTraceExporter(Boolean enableGcpTraceExporter) {
+  public void setEnableGcpTraceExporter(boolean enableGcpTraceExporter) {
     this.enableGcpTraceExporter = enableGcpTraceExporter;
   }
 
-  public Boolean getEnableGcpLogExporter() {
-    return enableGcpLogExporter != null
-        ? enableGcpLogExporter
-        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
+  public boolean getEnableGcpLogExporter() {
+    return enableGcpLogExporter;
   }
 
-  public void setEnableGcpLogExporter(Boolean enableGcpLogExporter) {
+  public void setEnableGcpLogExporter(boolean enableGcpLogExporter) {
     this.enableGcpLogExporter = enableGcpLogExporter;
   }
 

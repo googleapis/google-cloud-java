@@ -159,26 +159,27 @@ public class BigQueryJdbcOpenTelemetry {
       String effectiveProjectId,
       Credentials fallbackCredentials) {
 
-    if (enableGcpLogExporter && customOpenTelemetry == null) {
-      try {
-        Credentials credentials;
-        if (effectiveCredentials != null) {
-          credentials = resolveCredentialsFromString(effectiveCredentials);
-        } else {
-          credentials = fallbackCredentials;
-        }
-
-        LoggingOptions.Builder loggingOptionsBuilder =
-            LoggingOptions.newBuilder().setProjectId(effectiveProjectId);
-        if (credentials != null) {
-          loggingOptionsBuilder.setCredentials(credentials);
-        }
-        return loggingOptionsBuilder.build().getService();
-      } catch (Exception e) {
-        throw new BigQueryJdbcRuntimeException("Failed to initialize Logging client", e);
-      }
+    if (!enableGcpLogExporter || customOpenTelemetry != null) {
+      return null;
     }
-    return null;
+
+    try {
+      Credentials credentials;
+      if (effectiveCredentials != null) {
+        credentials = resolveCredentialsFromString(effectiveCredentials);
+      } else {
+        credentials = fallbackCredentials;
+      }
+
+      LoggingOptions.Builder loggingOptionsBuilder =
+          LoggingOptions.newBuilder().setProjectId(effectiveProjectId);
+      if (credentials != null) {
+        loggingOptionsBuilder.setCredentials(credentials);
+      }
+      return loggingOptionsBuilder.build().getService();
+    } catch (Exception e) {
+      throw new BigQueryJdbcRuntimeException("Failed to initialize Logging client", e);
+    }
   }
 
   private static Credentials resolveCredentialsFromString(String credsString) {
