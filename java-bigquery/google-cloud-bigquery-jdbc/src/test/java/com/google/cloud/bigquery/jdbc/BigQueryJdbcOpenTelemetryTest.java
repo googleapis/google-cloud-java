@@ -19,17 +19,38 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 public class BigQueryJdbcOpenTelemetryTest {
+
+  private MockedStatic<GoogleCredentials> mockedCredentials;
+
+  @BeforeEach
+  public void setUp() {
+    mockedCredentials = Mockito.mockStatic(GoogleCredentials.class);
+    mockedCredentials
+        .when(GoogleCredentials::getApplicationDefault)
+        .thenReturn(mock(GoogleCredentials.class));
+  }
+
+  @AfterEach
+  public void tearDown() {
+    mockedCredentials.close();
+  }
 
   @Test
   public void testGetOpenTelemetry_withCustomSdk_returnsCustom() {
     OpenTelemetry mockCustomOtel = mock(OpenTelemetry.class);
 
-    OpenTelemetry result = BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, false, mockCustomOtel);
+    OpenTelemetry result =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, false, mockCustomOtel, null, null);
 
     assertThat(result).isSameInstanceAs(mockCustomOtel);
   }
@@ -39,14 +60,16 @@ public class BigQueryJdbcOpenTelemetryTest {
     OpenTelemetry mockCustomOtel = mock(OpenTelemetry.class);
 
     // Custom SDK always takes precedence over individual flags
-    OpenTelemetry result = BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, mockCustomOtel);
+    OpenTelemetry result =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, mockCustomOtel, null, null);
 
     assertThat(result).isSameInstanceAs(mockCustomOtel);
   }
 
   @Test
   public void testGetOpenTelemetry_noFlags_returnsNoop() {
-    OpenTelemetry result = BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, false, null);
+    OpenTelemetry result =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, false, null, null, null);
 
     assertThat(result).isSameInstanceAs(OpenTelemetry.noop());
   }
@@ -56,5 +79,45 @@ public class BigQueryJdbcOpenTelemetryTest {
     Tracer result = BigQueryJdbcOpenTelemetry.getTracer(OpenTelemetry.noop());
 
     assertThat(result).isNotNull();
+  }
+
+  @Test
+  public void testGetOpenTelemetry_cachesSdkInstances() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+
+    assertThat(result1).isSameInstanceAs(result2);
+  }
+
+  @Test
+  public void testGetOpenTelemetry_createsNewInstanceForDifferentKey() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project2");
+
+    assertThat(result1).isNotSameInstanceAs(result2);
+  }
+
+  @Test
+  public void testGetOpenTelemetry_createsNewInstanceForDifferentTraceFlag() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, true, null, null, "project1");
+
+    assertThat(result1).isNotSameInstanceAs(result2);
+  }
+
+  @Test
+  public void testGetOpenTelemetry_ignoresEnableLogFlagInCacheKey() {
+    OpenTelemetry result1 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, true, null, null, "project1");
+    OpenTelemetry result2 =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, null, null, "project1");
+
+    assertThat(result1).isSameInstanceAs(result2);
   }
 }

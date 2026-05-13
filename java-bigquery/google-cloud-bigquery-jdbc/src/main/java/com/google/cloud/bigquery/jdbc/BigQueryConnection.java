@@ -41,6 +41,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
@@ -88,6 +89,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int transactionIsolation;
   List<SQLWarning> sqlWarnings;
   String catalog;
+  String gcpTelemetryCredentials;
+  String gcpTelemetryProjectId;
   int holdability;
   long retryTimeoutInSeconds;
   Duration retryTimeoutDuration;
@@ -142,9 +145,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
-  Boolean enableGcpTraceExporter;
-  Boolean enableGcpLogExporter;
+  boolean enableGcpTraceExporter;
+  boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
+  private OpenTelemetry openTelemetry;
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   DatabaseMetaData databaseMetaData;
@@ -169,6 +173,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
       this.maxBytesBilled = ds.getMaximumBytesBilled();
+      this.gcpTelemetryCredentials = ds.getGcpTelemetryCredentials();
+      this.gcpTelemetryProjectId = ds.getGcpTelemetryProjectId();
       this.retryTimeoutInSeconds = ds.getTimeout();
       this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
       this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
@@ -277,6 +283,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
       this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
       this.customOpenTelemetry = ds.getCustomOpenTelemetry();
+      this.openTelemetry = getOpenTelemetryInstance();
       this.bigQuery = getBigQueryConnection();
     }
   }
@@ -961,6 +968,61 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.openStatements.remove(statement);
   }
 
+  private OpenTelemetry getOpenTelemetryInstance() {
+    boolean hasCustomOtel = this.customOpenTelemetry != null;
+
+    String effectiveProjectId =
+        (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
+    String effectiveCredentials = resolveEffectiveCredentials();
+
+    validateTraceConfiguration(this.enableGcpTraceExporter, effectiveCredentials);
+
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
+            this.customOpenTelemetry,
+            effectiveCredentials,
+            effectiveProjectId);
+
+    Logging localLoggingClient = null;
+    if (this.enableGcpLogExporter && !hasCustomOtel) {
+      localLoggingClient =
+          BigQueryJdbcOpenTelemetry.createLoggingClient(
+              true, null, effectiveCredentials, effectiveProjectId, this.credentials);
+    }
+
+    if (this.enableGcpLogExporter || hasCustomOtel) {
+      BigQueryJdbcOpenTelemetry.registerConnection(
+          this.connectionId, openTelemetry, localLoggingClient, this.enableGcpLogExporter);
+    }
+
+    return openTelemetry;
+  }
+
+  private String resolveEffectiveCredentials() {
+    String creds = this.gcpTelemetryCredentials;
+    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+    if (creds == null
+        && BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
+      return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
+    }
+    return creds;
+  }
+
+  private void validateTraceConfiguration(boolean isTraceEnabled, String effectiveCredentials) {
+    if (isTraceEnabled && effectiveCredentials == null) {
+      String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+      if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)
+          && !BigQueryJdbcOAuthUtility.AuthType.APPLICATION_DEFAULT_CREDENTIALS
+              .name()
+              .equals(authTypeStr)) {
+        throw new BigQueryJdbcRuntimeException(
+            "Exporting traces to Google Cloud is only supported when using Application Default Credentials (ADC) or Service Account authentication.");
+      }
+    }
+  }
+
   private BigQuery getBigQueryConnection() {
     BigQueryOptions.Builder bigQueryOptions = BigQueryOptions.newBuilder();
     if (this.retryTimeoutInSeconds > 0L
@@ -997,18 +1059,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.httpTransportOptions != null) {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
-
-    OpenTelemetry openTelemetry =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
-
-    if (this.enableGcpLogExporter || this.customOpenTelemetry != null) {
-      BigQueryJdbcOpenTelemetry.registerConnection(
-          this.connectionId, openTelemetry, null, this.enableGcpLogExporter);
-    }
-
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
-      this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
+    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
+      this.tracer = BigQueryJdbcOpenTelemetry.getTracer(this.openTelemetry);
       bigQueryOptions.setOpenTelemetryTracer(this.tracer);
     }
 
@@ -1060,11 +1112,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
 
-    OpenTelemetry openTelemetry =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
-      bigQueryReadSettings.setOpenTelemetryTracerProvider(openTelemetry.getTracerProvider());
+    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
+      bigQueryReadSettings.setOpenTelemetryTracerProvider(this.openTelemetry.getTracerProvider());
     }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());

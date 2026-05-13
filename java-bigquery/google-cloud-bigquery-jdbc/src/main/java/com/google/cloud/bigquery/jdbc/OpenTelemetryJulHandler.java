@@ -33,12 +33,14 @@ import java.util.Collections;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.regex.Pattern;
 
 /**
  * Custom logging handler that bridges java.util.logging records to OpenTelemetry or Google Cloud
  * Logging. Extracts TraceId, SpanId, and Connection UUID from context.
  */
 public class OpenTelemetryJulHandler extends Handler {
+  private static final Pattern UNSAFE_LOG_CHARACTERS = Pattern.compile("[^a-zA-Z0-9./_-]");
 
   public OpenTelemetryJulHandler() {}
 
@@ -85,12 +87,18 @@ public class OpenTelemetryJulHandler extends Handler {
     String traceId = spanContext.isValid() ? spanContext.getTraceId() : null;
     String spanId = spanContext.isValid() ? spanContext.getSpanId() : null;
 
-    // TODO(b/491238299): May require refinement for structured logging or error handling
+    String logId = record.getLoggerName();
+    if (logId == null) {
+      logId = BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME;
+    } else {
+      logId = UNSAFE_LOG_CHARACTERS.matcher(logId).replaceAll("_");
+    }
 
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
             .setSeverity(mapGcpSeverity(record.getLevel()))
-            .setTimestamp(record.getMillis());
+            .setTimestamp(record.getMillis())
+            .setLogName(logId);
 
     if (traceId != null) {
       builder.setTrace(traceId);
@@ -181,6 +189,6 @@ public class OpenTelemetryJulHandler extends Handler {
 
   @Override
   public void close() throws SecurityException {
-    // TODO(b/491238299): Implement with gcp exporter logic
+    flush();
   }
 }

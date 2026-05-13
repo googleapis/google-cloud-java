@@ -307,7 +307,7 @@ final class BigQueryJdbcOAuthUtility {
     }
   }
 
-  private static boolean isJson(byte[] value) {
+  static boolean isJson(byte[] value) {
     try {
       // This is done this way to ensure strict Json parsing
       // https://github.com/google/gson/issues/1208#issuecomment-2120764686
