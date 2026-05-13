@@ -1178,7 +1178,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testLogMetrics() throws InterruptedException {
+  public void testLogMetrics() throws Exception {
     // Watch debug messages.
     testLogger.setLevel(Level.FINE);
 
@@ -1223,6 +1223,7 @@ public final class GcpManagedChannelTest {
 
         // Simulate channel connecting.
         channels.get(i).setState(ConnectivityState.CONNECTING);
+        waitForStateCallbacks(executorService);
         TimeUnit.MILLISECONDS.sleep(10);
 
         // For the last one...
@@ -1234,6 +1235,7 @@ public final class GcpManagedChannelTest {
           for (int j = 0; j < i; j++) {
             channels.get(j).setState(ConnectivityState.CONNECTING);
           }
+          waitForStateCallbacks(executorService);
           TimeUnit.MILLISECONDS.sleep(100);
           // And this will be a failed fallback (no ready channels).
           pool.getChannelRef(null);
@@ -1258,6 +1260,7 @@ public final class GcpManagedChannelTest {
         }
 
         channels.get(i).setState(ConnectivityState.READY);
+        waitForStateCallbacks(executorService);
 
         for (int j = 0; j < streams[i]; j++) {
           ref.activeStreamsCountIncr();
@@ -1425,6 +1428,10 @@ public final class GcpManagedChannelTest {
       pool.shutdownNow();
       executorService.shutdownNow();
     }
+  }
+
+  private static void waitForStateCallbacks(ExecutorService executorService) throws Exception {
+    executorService.submit(() -> {}).get();
   }
 
   @Test
