@@ -216,6 +216,18 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
     String url2 = "jdbc:bigquery://;ConnectionPoolSize=-2";
     assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
+
+    String url3 = "jdbc:bigquery://;Timeout=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url3));
+
+    String url4 = "jdbc:bigquery://;JobTimeout=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url4));
+
+    String url5 = "jdbc:bigquery://;RetryInitialDelay=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url5));
+
+    String url6 = "jdbc:bigquery://;RetryMaxDelay=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url6));
   }
 
   @Test
@@ -228,6 +240,10 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   public void testInvalidSetterValues() {
     DataSource ds = new DataSource();
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(-1L));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setTimeout(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setJobTimeout(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setRetryInitialDelay(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setRetryMaxDelay(-1));
   }
 
   @Test

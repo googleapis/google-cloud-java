@@ -723,7 +723,6 @@ final class BigQueryJdbcUrlUtility {
       }
       String propertyName = PROPERTY_NAME_MAP.get(key);
       String value = CharEscapers.decodeUriPath(kv[1].replace("+", "%2B"));
-      validateNonNegativeIntegerProperty(propertyName, value);
       map.put(propertyName, value);
     }
     return Collections.unmodifiableMap(map);
@@ -835,38 +834,5 @@ final class BigQueryJdbcUrlUtility {
       }
     }
     return propertiesMap;
-  }
-
-  static void validateNonNegative(long val, String propertyName) {
-    if (val < 0) {
-      throw new BigQueryJdbcRuntimeException(
-          String.format(
-              "Invalid value for %s. It must be greater than or equal to 0.", propertyName));
-    }
-  }
-
-  private static void validateNonNegativeIntegerProperty(String propertyName, String value) {
-    if (isNonNegativeIntegerProperty(propertyName)) {
-      try {
-        long val = Long.parseLong(value);
-        validateNonNegative(val, propertyName);
-      } catch (NumberFormatException ex) {
-        throw new BigQueryJdbcRuntimeException(
-            String.format("Invalid value for %s. It must be a valid integer.", propertyName), ex);
-      }
-    }
-  }
-
-  private static boolean isNonNegativeIntegerProperty(String propertyName) {
-    return MAX_RESULTS_PROPERTY_NAME.equals(propertyName)
-        || CONNECTION_POOL_SIZE_PROPERTY_NAME.equals(propertyName)
-        || LISTENER_POOL_SIZE_PROPERTY_NAME.equals(propertyName)
-        || HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME.equals(propertyName)
-        || HTAPI_ACTIVATION_RATIO_PROPERTY_NAME.equals(propertyName)
-        || METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME.equals(propertyName)
-        || HTTP_CONNECT_TIMEOUT_PROPERTY_NAME.equals(propertyName)
-        || HTTP_READ_TIMEOUT_PROPERTY_NAME.equals(propertyName)
-        || SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME.equals(propertyName)
-        || SWA_APPEND_ROW_COUNT_PROPERTY_NAME.equals(propertyName);
   }
 }
