@@ -48,7 +48,7 @@ Below is the transition flow for public APIs:
 
 ### 2. General Availability (GA)
 *   **Purpose**: Stable API surfaces intended for production use.
-*   **Policy**: Deprecation or breaking changes to GA APIs are considered breaking changes and **cannot** be performed under a minor version release using standard `@Deprecated`.
+*   Policy: Deprecation or breaking changes to GA APIs are considered breaking changes and should generally not be performed under a minor version release using standard @Deprecated.
 
 ### 3. `@ObsoleteApi` (Staged Deprecation)
 *   **Purpose**: Signals to users that an API will be deprecated in a future version, allowing them to transition to alternative methods before official deprecation.
