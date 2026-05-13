@@ -1206,7 +1206,7 @@ class ConnectionWorkerTest {
             && healthCheckFields.msecLongestResponseWaitTime < msecResponseDelay);
     assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
     assertEquals(appendCount * sizePerRequest, healthCheckFields.inflightBytes);
-    assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
     assertEquals(connectionWorker.getWriterId(), healthCheckFields.writerId);
 
     // Wait for responses to arrive
@@ -1362,6 +1362,7 @@ class ConnectionWorkerTest {
             /* enableRequestProfiler= */ false,
             /* enableOpenTelemetry= */ false,
             /* isMultiplexing= */ true);
+    connectionWorker.setTestOnlyHealthCheckInterval(Duration.ofSeconds(10));
 
     // Simulate a retriable error
     int msecResponseDelay = 1000;
@@ -1388,6 +1389,8 @@ class ConnectionWorkerTest {
     assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
     assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
     assertFalse(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
+    assertEquals(Duration.ofSeconds(10).toString(), healthCheckFields.windowDuration);
 
     // Allow the retries to complete successfully
     future.get();
@@ -1499,5 +1502,6 @@ class ConnectionWorkerTest {
     assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
     assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
     assertEquals(3, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+    assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
   }
 }
