@@ -20,6 +20,7 @@ steps:
   ]
   env:
   - 'JOB_TYPE=samples'
+  - 'BUILD_SUBDIR=java-storage'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
   - 'GOOGLE_CLOUD_PROJECT_NUMBER=615621127317'
   - 'IT_SERVICE_ACCOUNT_EMAIL=samples@cloud-java-ci-sample.iam.gserviceaccount.com'

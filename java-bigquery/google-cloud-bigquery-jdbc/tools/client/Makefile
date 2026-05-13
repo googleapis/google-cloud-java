@@ -21,6 +21,12 @@ DRIVER_CLASS = com.google.cloud.bigquery.jdbc.BigQueryDriver
 URL ?= jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;
 CREDENTIALS ?= $(GOOGLE_APPLICATION_CREDENTIALS)
 
+# Default connection parameters
+PARAMS = ProjectId=bigquery-devtools-drivers;OAuthType=0;OAuthServiceAcctEmail=;OAuthPvtKeyPath=$(CREDENTIALS);
+
+# Additional connection parameters
+EXTRA_PARAMS ?=
+
 ROWS ?= 10
 COLS ?= 5
 METHOD ?= getTables
@@ -42,18 +48,9 @@ else
   JFR_FLAGS =
 endif
 
-COMMON_FLAGS = --url "$(URL)" \
+COMMON_FLAGS = --url "$(URL);$(DEFAULT_PARAMS);$(PARAMS);$(EXTRA_PARAMS)" \
                --driver-jar "$(DRIVER_JAR)" \
-               --driver-class "$(DRIVER_CLASS)" \
-               --ProjectId "bigquery-devtools-drivers" \
-               --OAuthType=0 \
-               --OAuthServiceAcctEmail="" \
-               --OAuthPvtKeyPath="$(CREDENTIALS)" \
-               --EnableHighThroughputAPI=1 \
-               --HighThroughputActivationRatio=0 \
-               --HighThroughputMinTableSize=0 \
-               --MaxResults=20000 \
-               --EnableSession=1
+               --driver-class "$(DRIVER_CLASS)"
 
 query: classes
 	$(J) $(JFR_FLAGS) -cp .:$(DRIVER_JAR) JDBCClient --action query $(COMMON_FLAGS) --query "$(QUERY)" $(OUTPUT_FLAG) $(EXTRA_ARGS)

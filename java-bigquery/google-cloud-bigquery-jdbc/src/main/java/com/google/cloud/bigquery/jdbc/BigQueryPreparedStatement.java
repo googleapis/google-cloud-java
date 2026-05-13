@@ -233,6 +233,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public void setUnicodeStream(int parameterIndex, InputStream x, int length) {
     // TODO :NOT IMPLEMENTED
   }

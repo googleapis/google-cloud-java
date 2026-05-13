@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
@@ -64,6 +65,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -644,5 +646,99 @@ public class BigQueryStatementTest {
     assertThat(type).isEqualTo(StatementType.SELECT);
     verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
         .create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardSmallDataset() throws SQLException {
+    // Setup: totalRows < MinTableSize, so it should not activate the Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(50L).when(tableResult).getTotalRows();
+
+    // Standard java collection in values
+    List<FieldValueList> valuesList = new ArrayList<>();
+    for (int i = 0; i < 50; i++) {
+      valuesList.add(mock(FieldValueList.class));
+    }
+    doReturn(valuesList).when(tableResult).getValues();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardNoNextPage() throws SQLException {
+    // Setup: totalRows = 500 > MinTableSize (100), but hasNextPage() is false.
+    // Safeguard should prevent double-fetching and not activate the Read API.
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(false).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_MeetsRatio() throws SQLException {
+    // Setup: totalRows = 500, maxResultPerPage = 100, MinTableSize = 100, ActivationRatio = 2
+    // ratio = 5 > 2, should activate Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(100L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue();
+  }
+
+  @Test
+  public void testUseReadAPI_FailsMinTableSize() throws SQLException {
+    // Setup: totalRows = 80 < MinTableSize (100)
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(80L).when(tableResult).getTotalRows();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_ZeroPageSizeDivisionByZeroSafeguard() throws SQLException {
+    // Setup: totalRows = 500, MinTableSize = 100, ActivationRatio = 2, maxResultPerPage = 0
+    // Verify that the division by zero check safely guards and falls back to pageSize = 1
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(0L).when(bigQueryConnection).getMaxResults(); // maxResultPerPage = 0
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    // This should not throw ArithmeticException (/ by zero) and should evaluate safely
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
   }
 }

@@ -1,0 +1,48 @@
+[{
+  "name":"com.google.cloud.firestore.LocalFirestoreHelper$AllSupportedTypes",
+  "allDeclaredFields":true,
+  "allPublicFields":true,
+  "allDeclaredMethods":true,
+  "allPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]}
+,
+{
+"name":"com.google.cloud.firestore.LocalFirestoreHelper$CustomList",
+"allDeclaredFields":true,
+"allPublicFields":true,
+"allDeclaredMethods":true,
+"allPublicMethods":true,
+"methods":[{"name":"<init>","parameterTypes":[] }]}
+,
+{
+"name":"com.google.cloud.firestore.LocalFirestoreHelper$CustomMap",
+"allDeclaredFields":true,
+"allPublicFields":true,
+"allDeclaredMethods":true,
+"allPublicMethods":true,
+"methods":[{"name":"<init>","parameterTypes":[] }]}
+,
+{
+"name": "com.google.cloud.firestore.it.ITTracingTest$Pojo",
+"allDeclaredConstructors": true,
+"allPublicConstructors": true,
+"allDeclaredMethods": true,
+"allPublicMethods": true,
+"allDeclaredFields": true,
+"allPublicFields": true},
+{
+"name":"com.google.cloud.firestore.LocalFirestoreHelper$FooList",
+"methods":[{"name":"<init>","parameterTypes":[] }]}
+,
+{
+"name":"com.google.cloud.firestore.LocalFirestoreHelper$FooMap",
+"methods":[{"name":"<init>","parameterTypes":[] }]}
+,
+{
+"name":"com.google.cloud.firestore.LocalFirestoreHelper$SingleField",
+"allDeclaredFields":true,
+"allPublicFields":true,
+"allDeclaredMethods":true,
+"allPublicMethods":true,
+"methods":[{"name":"<init>","parameterTypes":[] }]}
+]

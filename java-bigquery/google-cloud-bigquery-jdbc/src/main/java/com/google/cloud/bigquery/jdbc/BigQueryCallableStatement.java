@@ -117,6 +117,8 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(int arg0, int arg1) throws SQLException {
     LOG.finest("++enter++");
     return getBigDecimal(arg0);

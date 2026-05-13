@@ -1,0 +1,207 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigtable.data.v2.internal.csm.attributes;
+
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import com.google.bigtable.v2.AuthorizedViewName;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.ClusterInformation;
+import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
+import com.google.bigtable.v2.MaterializedViewName;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.PeerInfo;
+import com.google.bigtable.v2.PeerInfo.TransportType;
+import com.google.bigtable.v2.ReadChangeStreamRequest;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.TableName;
+import com.google.common.annotations.VisibleForTesting;
+import io.grpc.Status;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.concurrent.CancellationException;
+import javax.annotation.Nullable;
+
+public class Util {
+  public enum IpProtocol {
+    IPV4("ipv4"),
+    IPV6("ipv6"),
+    UNKNOWN("unknown");
+
+    private final String value;
+
+    IpProtocol(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+  }
+
+  static final String TRANSPORT_TYPE_PREFIX = "TRANSPORT_TYPE_";
+
+  public static String formatTransportRegion(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendRegion).orElse("");
+  }
+
+  @SuppressWarnings("deprecation")
+  // TODO: server is still sending back zone instead of region. Update this after server is updated
+  public static String formatTransportZone(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendZone).orElse("");
+  }
+
+  public static String formatTransportSubzone(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendSubzone).orElse("");
+  }
+
+  public static String formatTransportType(@Nullable PeerInfo peerInfo) {
+    return transportTypeToString(
+        Optional.ofNullable(peerInfo)
+            .map(PeerInfo::getTransportType)
+            .orElse(TransportType.TRANSPORT_TYPE_UNKNOWN));
+  }
+
+  public static long formatAfeId(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendId).orElse(0L);
+  }
+
+  public static String transportTypeToString(TransportType transportType) {
+    String label = transportTypeToStringWithoutFallback(transportType);
+    if (label != null) {
+      return label;
+    }
+    // In case the client is running with a newer version of protos
+    if (transportType.name().startsWith(TRANSPORT_TYPE_PREFIX)) {
+      return transportType
+          .name()
+          .substring(TRANSPORT_TYPE_PREFIX.length())
+          .toLowerCase(Locale.ENGLISH);
+    } else {
+      return transportType.name();
+    }
+  }
+
+  @VisibleForTesting
+  static String transportTypeToStringWithoutFallback(TransportType transportType) {
+    if (transportType == null) {
+      return "null";
+    }
+    switch (transportType) {
+      case TRANSPORT_TYPE_UNKNOWN:
+        return "unknown";
+      case TRANSPORT_TYPE_EXTERNAL:
+        return "external";
+      case TRANSPORT_TYPE_CLOUD_PATH:
+        return "cloudpath";
+      case TRANSPORT_TYPE_DIRECT_ACCESS:
+        return "directpath";
+      case TRANSPORT_TYPE_SESSION_UNKNOWN:
+        return "session_unknown";
+      case TRANSPORT_TYPE_SESSION_EXTERNAL:
+        return "session_external";
+      case TRANSPORT_TYPE_SESSION_CLOUD_PATH:
+        return "session_cloudpath";
+      case TRANSPORT_TYPE_SESSION_DIRECT_ACCESS:
+        return "session_directpath";
+      case UNRECOGNIZED:
+        return "unrecognized";
+      default:
+        return null;
+    }
+  }
+
+  public static String formatClusterIdMetricLabel(@Nullable ClusterInformation clusterInfo) {
+    return Optional.ofNullable(clusterInfo)
+        .map(ClusterInformation::getClusterId)
+        .filter(s -> !s.isEmpty())
+        .orElse("<unspecified>");
+  }
+
+  public static String formatZoneIdMetricLabel(@Nullable ClusterInformation clusterInfo) {
+    return Optional.ofNullable(clusterInfo)
+        .map(ClusterInformation::getZoneId)
+        .filter(s -> !s.isEmpty())
+        .orElse("global");
+  }
+
+  public static Status.Code extractStatus(@Nullable Throwable error) {
+    if (error == null) {
+      return Status.Code.OK;
+    }
+    // Handle java CancellationException as if it was a gax CancelledException
+    if (error instanceof CancellationException) {
+      return Status.Code.CANCELLED;
+    }
+    if (error instanceof ApiException) {
+      ApiException apiException = (ApiException) error;
+      if (apiException.getStatusCode() instanceof GrpcStatusCode) {
+        return ((GrpcStatusCode) apiException.getStatusCode()).getTransportCode();
+      }
+    }
+
+    Status s = Status.fromThrowable(error);
+    if (s != null) {
+      return s.getCode();
+    }
+    return Status.Code.UNKNOWN;
+  }
+
+  public static String extractTableId(Object request) {
+    String tableName = null;
+    String authorizedViewName = null;
+    String materializedViewName = null;
+    if (request instanceof ReadRowsRequest) {
+      tableName = ((ReadRowsRequest) request).getTableName();
+      authorizedViewName = ((ReadRowsRequest) request).getAuthorizedViewName();
+      materializedViewName = ((ReadRowsRequest) request).getMaterializedViewName();
+    } else if (request instanceof MutateRowsRequest) {
+      tableName = ((MutateRowsRequest) request).getTableName();
+      authorizedViewName = ((MutateRowsRequest) request).getAuthorizedViewName();
+    } else if (request instanceof MutateRowRequest) {
+      tableName = ((MutateRowRequest) request).getTableName();
+      authorizedViewName = ((MutateRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof SampleRowKeysRequest) {
+      tableName = ((SampleRowKeysRequest) request).getTableName();
+      authorizedViewName = ((SampleRowKeysRequest) request).getAuthorizedViewName();
+      materializedViewName = ((SampleRowKeysRequest) request).getMaterializedViewName();
+    } else if (request instanceof CheckAndMutateRowRequest) {
+      tableName = ((CheckAndMutateRowRequest) request).getTableName();
+      authorizedViewName = ((CheckAndMutateRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof ReadModifyWriteRowRequest) {
+      tableName = ((ReadModifyWriteRowRequest) request).getTableName();
+      authorizedViewName = ((ReadModifyWriteRowRequest) request).getAuthorizedViewName();
+    } else if (request instanceof GenerateInitialChangeStreamPartitionsRequest) {
+      tableName = ((GenerateInitialChangeStreamPartitionsRequest) request).getTableName();
+    } else if (request instanceof ReadChangeStreamRequest) {
+      tableName = ((ReadChangeStreamRequest) request).getTableName();
+    }
+    if (tableName != null && !tableName.isEmpty()) {
+      return TableName.parse(tableName).getTable();
+    }
+    if (authorizedViewName != null && !authorizedViewName.isEmpty()) {
+      return AuthorizedViewName.parse(authorizedViewName).getTable();
+    }
+    if (materializedViewName != null && !materializedViewName.isEmpty()) {
+      return MaterializedViewName.parse(materializedViewName).getMaterializedView();
+    }
+    return "<unspecified>";
+  }
+}
