@@ -33,6 +33,7 @@ import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.ChannelPoolConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.TransactionSelector;
@@ -1187,7 +1188,7 @@ public final class GcpManagedChannelTest {
     int[] okCalls = new int[] {2, 2, 8, 2, 3};
     int[] errCalls = new int[] {1, 1, 2, 2, 1};
     List<FakeManagedChannel> channels = new ArrayList<>();
-    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    ExecutorService executorService = MoreExecutors.newDirectExecutorService();
 
     for (int i = 0; i < streams.length; i++) {
       FakeManagedChannel channel = new FakeManagedChannel(executorService);
@@ -2395,9 +2396,10 @@ public final class GcpManagedChannelTest {
         return;
       }
       this.state = state;
-      if (stateCallback != null) {
-        exec.execute(stateCallback);
-        stateCallback = null;
+      Runnable callback = stateCallback;
+      stateCallback = null;
+      if (callback != null) {
+        exec.execute(callback);
       }
     }
 

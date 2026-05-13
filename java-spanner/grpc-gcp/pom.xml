@@ -280,7 +280,7 @@
             com.google.errorprone:error_prone_annotations,
             com.google.code.findbugs:jsr305,
             io.grpc:grpc-core,
-            io.grpc:grpc-netty-shaded,
+            io.grpc:grpc-netty-shaded
           </ignoredDependencies>
         </configuration>
       </plugin>
