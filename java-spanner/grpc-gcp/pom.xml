@@ -203,6 +203,11 @@
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-common</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-metrics</artifactId>
       <scope>test</scope>
     </dependency>
@@ -275,13 +280,15 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <configuration>
-          <ignoredDependencies>
-            com.google.auto.value:auto-value-annotations,
-            com.google.errorprone:error_prone_annotations,
-            com.google.code.findbugs:jsr305,
-            io.grpc:grpc-core,
-            io.grpc:grpc-netty-shaded
-          </ignoredDependencies>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>com.google.auto.value:auto-value-annotations</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>com.google.errorprone:error_prone_annotations</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>com.google.code.findbugs:jsr305</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-core</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-netty-shaded</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-protobuf</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-stub</ignoredUnusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>
