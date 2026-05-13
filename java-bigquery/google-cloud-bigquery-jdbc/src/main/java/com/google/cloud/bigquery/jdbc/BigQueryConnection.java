@@ -1004,17 +1004,21 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private String resolveEffectiveCredentials() {
     String creds = this.gcpTelemetryCredentials;
-    String authTypeStr = this.overrideProperties.get("OAuthType");
-    if (creds == null && "0".equals(authTypeStr)) {
-      return this.overrideProperties.get("OAuthPvtKey");
+    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+    if (creds == null
+        && BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
+      return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
     }
     return creds;
   }
 
   private void validateTraceConfiguration(boolean isTraceEnabled, String effectiveCredentials) {
     if (isTraceEnabled && effectiveCredentials == null) {
-      String authTypeStr = this.overrideProperties.get("OAuthType");
-      if (!"0".equals(authTypeStr) && !"3".equals(authTypeStr)) {
+      String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+      if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)
+          && !BigQueryJdbcOAuthUtility.AuthType.APPLICATION_DEFAULT_CREDENTIALS
+              .name()
+              .equals(authTypeStr)) {
         throw new BigQueryJdbcRuntimeException(
             "Exporting traces to Google Cloud is only supported when using Application Default Credentials (ADC) or Service Account authentication.");
       }

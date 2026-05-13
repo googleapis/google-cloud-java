@@ -314,6 +314,11 @@
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry.contrib</groupId>
+      <artifactId>opentelemetry-gcp-auth-extension</artifactId>
+      <version>1.56.0-alpha</version>
+    </dependency>
 
     <!--  Test Dependencies  -->
     <dependency>

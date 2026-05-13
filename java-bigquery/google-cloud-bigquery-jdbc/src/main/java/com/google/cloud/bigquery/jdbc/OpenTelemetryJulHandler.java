@@ -33,12 +33,14 @@ import java.util.Collections;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.regex.Pattern;
 
 /**
  * Custom logging handler that bridges java.util.logging records to OpenTelemetry or Google Cloud
  * Logging. Extracts TraceId, SpanId, and Connection UUID from context.
  */
 public class OpenTelemetryJulHandler extends Handler {
+  private static final Pattern UNSAFE_LOG_CHARACTERS = Pattern.compile("[^a-zA-Z0-9./_-]");
 
   public OpenTelemetryJulHandler() {}
 
@@ -88,6 +90,8 @@ public class OpenTelemetryJulHandler extends Handler {
     String logId = record.getLoggerName();
     if (logId == null) {
       logId = BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME;
+    } else {
+      logId = UNSAFE_LOG_CHARACTERS.matcher(logId).replaceAll("_");
     }
 
     LogEntry.Builder builder =
