@@ -42,6 +42,8 @@ import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.DefaultMtlsProviderFactory;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.common.annotations.VisibleForTesting;
+import javax.net.ssl.SSLContext;
+import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -185,16 +187,26 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null) {
-      return null;
-    }
-    if (certificateBasedAccess.useMtlsClientCertificate()) {
+    // 1. Get the scope-specific PQC-hardened SSLContext utilizing Bouncy Castle.
+    SSLContext sslContext = com.google.api.client.util.SslUtils.getTlsSslContext();
+    
+    // 2. Initialize the NetHttpTransport builder pre-configured with our PQC SSL context.
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder()
+        .setSslSocketFactory(sslContext.getSocketFactory());
+        
+    // 3. Verify if mTLS is supported and explicitly requested in the current client session.
+    if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+      // 4. Retrieve the mutual TLS client key store from the session-specific mtlsProvider.
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+      // 5. Ensure key store is valid before configuring mutual TLS client certificates.
       if (mtlsKeyStore != null) {
-        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
+        // 6. Configure the mutual TLS certificates while preserving the PQC SSL context.
+        builder.trustCertificates(null, mtlsKeyStore, "");
       }
     }
-    return null;
+    
+    // 7. Return the compiled and PQC-hardened NetHttpTransport instance.
+    return builder.build();
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {

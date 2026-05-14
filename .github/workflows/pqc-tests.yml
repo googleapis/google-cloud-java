@@ -1,0 +1,65 @@
+name: PQC Connectivity Integration Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pqc-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    # 1. Checkout sibling HTTP Client repository (MUST point to your modified fork/branch containing PQC JJSSE fixes)
+    - name: Checkout google-http-java-client
+      uses: actions/checkout@v4
+      with:
+        repository: <your-github-username>/google-http-java-client # UPDATE with your fork
+        ref: <your-pqc-branch> # UPDATE with your branch containing PQC JJSSE fixes
+        path: google-http-java-client
+
+    # 2. Build and install modified google-http-client SNAPSHOT locally
+    - name: Build and Install google-http-java-client
+      run: |
+        cd google-http-java-client
+        mvn clean install -DskipTests=true -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip
+
+    # 3. Checkout this monorepo
+    - name: Checkout google-cloud-java-pqc
+      uses: actions/checkout@v4
+      with:
+        path: google-cloud-java-pqc
+
+    # 4. Build the entire monorepo core components required by the tests
+    - name: Build and Install Core Dependency Reactor
+      run: |
+        cd google-cloud-java-pqc
+        mvn clean install -pl sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+
+    # 5. Run Snapshot PQC Tests (EXPECT PASS)
+    - name: Run Snapshot PQC Connectivity Tests (Expect PASS)
+      run: |
+        cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-snapshot
+        mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
+
+    # 6. Run Release PQC Tests (EXPECT FAIL)
+    - name: Run Release PQC Connectivity Tests (Expect FAIL)
+      # We expect this step to fail. If it passes, it means release libraries are negotiating PQC (which is incorrect).
+      # Thus we run it and assert that the maven command fails (exit code != 0).
+      run: |
+        cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-release
+        if mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest; then
+          echo "Error: Release tests passed but they were expected to fail!"
+          exit 1
+        else
+          echo "Success: Release tests failed-fast as expected."
+          exit 0
+        fi

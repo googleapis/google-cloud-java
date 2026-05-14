@@ -812,11 +812,88 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     if (interceptorProvider != null) {
       builder.intercept(interceptorProvider.getInterceptors());
     }
+    // Apply PQC configuration by default as a standard feature of GAX.
+    builder = applyPqcConfiguration(builder);
+
     if (channelConfigurator != null) {
       builder = channelConfigurator.apply(builder);
     }
 
     return builder;
+  }
+
+  private ManagedChannelBuilder<?> applyPqcConfiguration(ManagedChannelBuilder<?> builder) {
+    // Configure the PQ and classical hybrid named groups:
+    // 1. X25519MLKEM768 (codepoint 4588): Hybrid classical (X25519) + post-quantum (ML-KEM-768) key exchange.
+    //    Provides defense-in-depth: if ML-KEM is compromised, security reverts to classical strength of X25519.
+    // 2. MLKEM768 (codepoint 1896): Pure post-quantum key exchange using ML-KEM-768.
+    // 3. X25519 (codepoint 29): Classical elliptic curve Diffie-Hellman key exchange, used as a fallback.
+    String[] hybridGroups = new String[] {"X25519MLKEM768", "MLKEM768", "X25519"};
+    String builderClassName = builder.getClass().getName();
+    boolean isShaded = "io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder".equals(builderClassName);
+    boolean isUnshaded = "io.grpc.netty.NettyChannelBuilder".equals(builderClassName);
+
+    if (isShaded || isUnshaded) {
+      try {
+        Object sslContext = buildOpenSslContext(isShaded, hybridGroups);
+        if (sslContext != null) {
+          setSslContextOnBuilder(builder, sslContext, isShaded);
+          return builder;
+        }
+      } catch (Exception e) {
+        // Graceful degradation: do not modify any global JVM property
+      }
+    }
+    return builder;
+  }
+
+  /**
+   * Dynamically configures and builds an OpenSsl SslContext targeting post-quantum groups.
+   *
+   * <p><b>Rationale for Reflection:</b>
+   * In the gax-grpc module, we maintain dual compatibility with both shaded Netty
+   * (io.grpc.netty.shaded) and unshaded Netty (io.grpc.netty) channel builders. Shaded Netty is
+   * a runtime dependency of gax-grpc rather than a compile-time dependency to prevent class
+   * path pollution. 
+   *
+   * <p>By utilizing reflection here, we can check the runtime class type of the channel builder
+   * and dynamically resolve and configure the corresponding shaded or unshaded SslContextBuilder
+   * and OpenSslContextOption classes without requiring compile-time dependencies on shaded Netty.
+   *
+   * @param isShaded True if using shaded Netty, false if unshaded.
+   * @param groups Preference list of TLS named groups.
+   * @return Configured SslContext object.
+   */
+  @SuppressWarnings("unchecked")
+  private Object buildOpenSslContext(boolean isShaded, String[] groups) throws Exception {
+    String prefix = isShaded ? "io.grpc.netty.shaded." : "";
+    Class<?> grpcSslContextsClass = Class.forName(prefix + "io.grpc.netty.GrpcSslContexts");
+    Class<?> sslContextBuilderClass = Class.forName(prefix + "io.netty.handler.ssl.SslContextBuilder");
+    Class<?> openSslContextOptionClass = Class.forName(prefix + "io.netty.handler.ssl.OpenSslContextOption");
+    Class<?> sslContextOptionClass = Class.forName(prefix + "io.netty.handler.ssl.SslContextOption");
+
+    // GrpcSslContexts.forClient() -> returns SslContextBuilder
+    java.lang.reflect.Method forClientMethod = grpcSslContextsClass.getMethod("forClient");
+    Object sslContextBuilder = forClientMethod.invoke(null);
+
+    // OpenSslContextOption.GROUPS
+    java.lang.reflect.Field groupsField = openSslContextOptionClass.getDeclaredField("GROUPS");
+    Object groupsOption = groupsField.get(null);
+
+    // SslContextBuilder.option(SslContextOption, Object)
+    java.lang.reflect.Method optionMethod = sslContextBuilderClass.getMethod("option", sslContextOptionClass, Object.class);
+    optionMethod.invoke(sslContextBuilder, groupsOption, groups);
+
+    // SslContextBuilder.build() -> returns SslContext
+    java.lang.reflect.Method buildMethod = sslContextBuilderClass.getMethod("build");
+    return buildMethod.invoke(sslContextBuilder);
+  }
+
+  private void setSslContextOnBuilder(Object builder, Object sslContext, boolean isShaded) throws Exception {
+    String prefix = isShaded ? "io.grpc.netty.shaded." : "";
+    Class<?> sslContextClass = Class.forName(prefix + "io.netty.handler.ssl.SslContext");
+    java.lang.reflect.Method sslContextMethod = builder.getClass().getMethod("sslContext", sslContextClass);
+    sslContextMethod.invoke(builder, sslContext);
   }
 
   private ManagedChannel createSingleChannel() throws IOException {
