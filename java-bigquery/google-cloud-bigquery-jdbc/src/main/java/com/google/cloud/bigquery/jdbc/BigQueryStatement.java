@@ -937,7 +937,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.info(
         "Processing query response. JobId: %s, QueryId: %s, Total rows: %s",
         jobId, queryId, results.getTotalRows());
-    LOG.fine("Processing query response. Query: %s} ", query);
+    LOG.fine("Processing query response. Query: %s", query);
 
     ResultSet resultSet = null;
     if (jobId != null && useReadAPI(results)) {
