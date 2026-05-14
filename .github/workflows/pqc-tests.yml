@@ -18,12 +18,12 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    # 1. Checkout sibling HTTP Client repository (MUST point to your modified fork/branch containing PQC JJSSE fixes)
+    # 1. Checkout sibling HTTP Client repository
     - name: Checkout google-http-java-client
       uses: actions/checkout@v4
       with:
-        repository: <your-github-username>/google-http-java-client # UPDATE with your fork
-        ref: <your-pqc-branch> # UPDATE with your branch containing PQC JJSSE fixes
+        repository: googleapis/google-http-java-client
+        ref: chore/pqc-poc-2
         path: google-http-java-client
 
     # 2. Build and install modified google-http-client SNAPSHOT locally
