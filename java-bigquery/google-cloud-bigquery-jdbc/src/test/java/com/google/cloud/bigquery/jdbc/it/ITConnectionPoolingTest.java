@@ -68,7 +68,7 @@ public class ITConnectionPoolingTest extends ITBase {
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
 
-    assertThrows(NumberFormatException.class, () -> pooledDataSource.getPooledConnection());
+    assertThrows(BigQueryJdbcException.class, () -> pooledDataSource.getPooledConnection());
   }
 
   @Test
