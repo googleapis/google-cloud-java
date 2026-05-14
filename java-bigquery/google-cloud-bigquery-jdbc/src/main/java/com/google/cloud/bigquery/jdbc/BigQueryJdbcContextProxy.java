@@ -132,13 +132,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     // Wrap execution in the context of the active connection for all non-bypassed methods
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
       if (LOG.isLoggable(Level.FINER)) {
-        LOG.logp(
-            Level.FINER,
-            target.getClass().getName(),
-            method.getName(),
-            () ->
-                String.format(
-                    "Entering: %s.%s()", interfaceType.getSimpleName(), method.getName()));
+        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++enter++");
       }
 
       Object result = method.invoke(target, args);
@@ -148,12 +142,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
       if (LOG.isLoggable(Level.FINER)
           && !(java.sql.Connection.class.isAssignableFrom(interfaceType)
               && "close".equals(method.getName()))) {
-        LOG.logp(
-            Level.FINER,
-            target.getClass().getName(),
-            method.getName(),
-            () ->
-                String.format("Exiting: %s.%s()", interfaceType.getSimpleName(), method.getName()));
+        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++exit++");
       }
 
       // Symmetrical Cascade: Dynamic ResultSet concrete classes are deliberately unproxied here.

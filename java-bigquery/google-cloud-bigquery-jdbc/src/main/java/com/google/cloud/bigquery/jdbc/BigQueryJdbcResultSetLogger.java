@@ -56,6 +56,7 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
 
   @Override
   public void log(LogRecord record) {
+    record.setSourceClassName(targetClassName);
     record.setThreadID((int) Thread.currentThread().getId());
     if (connectionId != null) {
       Object[] existingParams = record.getParameters();
@@ -71,17 +72,28 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     super.log(record);
   }
 
+  private void logTrace(Level level, String methodName, String msg) {
+    if (isLoggable(level)) {
+      LogRecord record = new LogRecord(level, msg);
+      record.setSourceMethodName(methodName);
+      this.log(record);
+    }
+  }
+
+  private void logTrace(Level level, String methodName, Supplier<String> msgSupplier) {
+    if (isLoggable(level)) {
+      LogRecord record = new LogRecord(level, msgSupplier.get());
+      record.setSourceMethodName(methodName);
+      this.log(record);
+    }
+  }
+
   /**
    * Log a message at Level.FINEST with predefined class name, method name and messageto avoid stack
    * trace parsing on the hot-path.
    */
   public void finestTrace(String methodName) {
-    if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, "++enter++");
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINEST, methodName, "++enter++");
   }
 
   /**
@@ -89,151 +101,82 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
    * parsing on the hot-path.
    */
   public void finestTrace(String methodName, String msg) {
-    if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINEST, methodName, msg);
   }
 
   /** Log a formatted message at Level.FINEST with predefined class name and method name. */
   public void finestTrace(String methodName, String format, Object... args) {
     if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, String.format(format, args));
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
+      logTrace(Level.FINEST, methodName, String.format(format, args));
     }
   }
 
   /** Log a lazy message at Level.FINEST with predefined class name and method name. */
   public void finestTrace(String methodName, Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINEST, methodName, msgSupplier);
   }
 
   /** Log a message at Level.FINER with predefined class name and method name. */
   public void finerTrace(String methodName, String msg) {
-    if (isLoggable(Level.FINER)) {
-      LogRecord record = new LogRecord(Level.FINER, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINER, methodName, msg);
   }
 
   /** Log a formatted message at Level.FINER with predefined class name and method name. */
   public void finerTrace(String methodName, String format, Object... args) {
     if (isLoggable(Level.FINER)) {
-      LogRecord record = new LogRecord(Level.FINER, String.format(format, args));
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
+      logTrace(Level.FINER, methodName, String.format(format, args));
     }
   }
 
   /** Log a lazy message at Level.FINER with predefined class name and method name. */
   public void finerTrace(String methodName, Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINER)) {
-      LogRecord record = new LogRecord(Level.FINER, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINER, methodName, msgSupplier);
   }
 
   /** Log a message at Level.FINE with predefined class name and method name. */
   public void fineTrace(String methodName, String msg) {
-    if (isLoggable(Level.FINE)) {
-      LogRecord record = new LogRecord(Level.FINE, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINE, methodName, msg);
   }
 
   /** Log a formatted message at Level.FINE with predefined class name and method name. */
   public void fineTrace(String methodName, String format, Object... args) {
     if (isLoggable(Level.FINE)) {
-      LogRecord record = new LogRecord(Level.FINE, String.format(format, args));
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
+      logTrace(Level.FINE, methodName, String.format(format, args));
     }
   }
 
   /** Log a lazy message at Level.FINE with predefined class name and method name. */
   public void fineTrace(String methodName, Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINE)) {
-      LogRecord record = new LogRecord(Level.FINE, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName(methodName);
-      this.log(record);
-    }
+    logTrace(Level.FINE, methodName, msgSupplier);
   }
 
   @Override
   public void finest(String msg) {
-    if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINEST, "unknown", msg);
   }
 
   @Override
   public void finest(Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINEST)) {
-      LogRecord record = new LogRecord(Level.FINEST, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINEST, "unknown", msgSupplier);
   }
 
   @Override
   public void finer(String msg) {
-    if (isLoggable(Level.FINER)) {
-      LogRecord record = new LogRecord(Level.FINER, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINER, "unknown", msg);
   }
 
   @Override
   public void finer(Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINER)) {
-      LogRecord record = new LogRecord(Level.FINER, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINER, "unknown", msgSupplier);
   }
 
   @Override
   public void fine(String msg) {
-    if (isLoggable(Level.FINE)) {
-      LogRecord record = new LogRecord(Level.FINE, msg);
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINE, "unknown", msg);
   }
 
   @Override
   public void fine(Supplier<String> msgSupplier) {
-    if (isLoggable(Level.FINE)) {
-      LogRecord record = new LogRecord(Level.FINE, msgSupplier.get());
-      record.setSourceClassName(targetClassName);
-      record.setSourceMethodName("unknown");
-      this.log(record);
-    }
+    logTrace(Level.FINE, "unknown", msgSupplier);
   }
 }

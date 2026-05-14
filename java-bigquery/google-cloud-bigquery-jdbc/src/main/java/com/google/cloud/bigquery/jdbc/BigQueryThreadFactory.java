@@ -18,8 +18,6 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.core.InternalApi;
 import java.util.concurrent.ThreadFactory;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 @InternalApi
 class BigQueryThreadFactory implements ThreadFactory {
@@ -40,13 +38,7 @@ class BigQueryThreadFactory implements ThreadFactory {
   public Thread newThread(Runnable r) {
     Thread t = new Thread(r, threadPrefix + (++threadSerialNum)); // non thread safe increment
     t.setDaemon(true);
-    if (LOG.isLoggable(Level.FINER)) {
-      LogRecord record =
-          new LogRecord(Level.FINER, String.format("New thread %s created.", t.getName()));
-      record.setSourceClassName(BigQueryThreadFactory.class.getName());
-      record.setSourceMethodName("newThread");
-      LOG.log(record);
-    }
+    LOG.finer("New thread %s created.", t.getName());
     return t;
   }
 }
