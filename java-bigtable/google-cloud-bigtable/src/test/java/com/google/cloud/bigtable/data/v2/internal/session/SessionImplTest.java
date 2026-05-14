@@ -200,6 +200,7 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    Stopwatch stopwatch = Stopwatch.createStarted();
     int numOkBeforeError = 0;
     int numOkAfterError = 0;
     int numUncommittedErrors = 0;
