@@ -175,7 +175,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
    *
    * Excluded AUs take precedence over targeted AUs. In fact an AU can be
    * excluded only if one of its ancestors is targeted. Subsequently child
-   * AUs of an excluded AU can not be targeted (except via a placement).
+   * AUs of an excluded AU can not be targeted (except through a Placement).
    * </pre>
    *
    * <code>
@@ -195,7 +195,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
    *
    * Excluded AUs take precedence over targeted AUs. In fact an AU can be
    * excluded only if one of its ancestors is targeted. Subsequently child
-   * AUs of an excluded AU can not be targeted (except via a placement).
+   * AUs of an excluded AU can not be targeted (except through a Placement).
    * </pre>
    *
    * <code>
@@ -216,7 +216,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
    *
    * Excluded AUs take precedence over targeted AUs. In fact an AU can be
    * excluded only if one of its ancestors is targeted. Subsequently child
-   * AUs of an excluded AU can not be targeted (except via a placement).
+   * AUs of an excluded AU can not be targeted (except through a Placement).
    * </pre>
    *
    * <code>
@@ -236,7 +236,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
    *
    * Excluded AUs take precedence over targeted AUs. In fact an AU can be
    * excluded only if one of its ancestors is targeted. Subsequently child
-   * AUs of an excluded AU can not be targeted (except via a placement).
+   * AUs of an excluded AU can not be targeted (except through a Placement).
    * </pre>
    *
    * <code>
@@ -256,7 +256,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
    *
    * Excluded AUs take precedence over targeted AUs. In fact an AU can be
    * excluded only if one of its ancestors is targeted. Subsequently child
-   * AUs of an excluded AU can not be targeted (except via a placement).
+   * AUs of an excluded AU can not be targeted (except through a Placement).
    * </pre>
    *
    * <code>
@@ -1250,7 +1250,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1273,7 +1273,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1296,7 +1296,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1319,7 +1319,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1349,7 +1349,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1376,7 +1376,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1405,7 +1405,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1435,7 +1435,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1462,7 +1462,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1489,7 +1489,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1516,7 +1516,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1542,7 +1542,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1568,7 +1568,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1588,7 +1588,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1612,7 +1612,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1636,7 +1636,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1656,7 +1656,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>
@@ -1677,7 +1677,7 @@ public final class InventoryTargeting extends com.google.protobuf.GeneratedMessa
      *
      * Excluded AUs take precedence over targeted AUs. In fact an AU can be
      * excluded only if one of its ancestors is targeted. Subsequently child
-     * AUs of an excluded AU can not be targeted (except via a placement).
+     * AUs of an excluded AU can not be targeted (except through a Placement).
      * </pre>
      *
      * <code>

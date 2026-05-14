@@ -60,28 +60,36 @@ public interface CustomTargetingKeyOrBuilder
    *
    *
    * <pre>
-   * Output only. `CustomTargetingKey` ID.
+   * Output only. Deprecated: `CustomTargetingKey` ID.
    * </pre>
    *
-   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+   *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
    * @return Whether the customTargetingKeyId field is set.
    */
+  @java.lang.Deprecated
   boolean hasCustomTargetingKeyId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `CustomTargetingKey` ID.
+   * Output only. Deprecated: `CustomTargetingKey` ID.
    * </pre>
    *
-   * <code>optional int64 custom_targeting_key_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 custom_targeting_key_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.CustomTargetingKey.custom_targeting_key_id is deprecated.
+   *     See google/ads/admanager/v1/custom_targeting_key_messages.proto;l=45
    * @return The customTargetingKeyId.
    */
+  @java.lang.Deprecated
   long getCustomTargetingKeyId();
 
   /**

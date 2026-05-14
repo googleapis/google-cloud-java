@@ -99,6 +99,22 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
     return ((CmsMetadataKeyServiceStubSettings) getStubSettings()).listCmsMetadataKeysSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysSettings() {
+    return ((CmsMetadataKeyServiceStubSettings) getStubSettings())
+        .batchActivateCmsMetadataKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysSettings() {
+    return ((CmsMetadataKeyServiceStubSettings) getStubSettings())
+        .batchDeactivateCmsMetadataKeysSettings();
+  }
+
   public static final CmsMetadataKeyServiceSettings create(CmsMetadataKeyServiceStubSettings stub)
       throws IOException {
     return new CmsMetadataKeyServiceSettings.Builder(stub.toBuilder()).build();
@@ -210,6 +226,20 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
             ListCmsMetadataKeysPagedResponse>
         listCmsMetadataKeysSettings() {
       return getStubSettingsBuilder().listCmsMetadataKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+        batchActivateCmsMetadataKeysSettings() {
+      return getStubSettingsBuilder().batchActivateCmsMetadataKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+        batchDeactivateCmsMetadataKeysSettings() {
+      return getStubSettingsBuilder().batchDeactivateCmsMetadataKeysSettings();
     }
 
     @Override

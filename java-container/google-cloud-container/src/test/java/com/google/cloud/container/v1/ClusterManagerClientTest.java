@@ -47,6 +47,7 @@ import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CompliancePostureConfig;
 import com.google.container.v1.ConfidentialNodes;
 import com.google.container.v1.ContainerdConfig;
+import com.google.container.v1.ControlPlaneEgress;
 import com.google.container.v1.ControlPlaneEndpointsConfig;
 import com.google.container.v1.CostManagementConfig;
 import com.google.container.v1.CreateClusterRequest;
@@ -83,6 +84,7 @@ import com.google.container.v1.ListUsableSubnetworksRequest;
 import com.google.container.v1.ListUsableSubnetworksResponse;
 import com.google.container.v1.LoggingConfig;
 import com.google.container.v1.MaintenancePolicy;
+import com.google.container.v1.ManagedMachineLearningDiagnosticsConfig;
 import com.google.container.v1.ManagedOpenTelemetryConfig;
 import com.google.container.v1.MasterAuth;
 import com.google.container.v1.MasterAuthorizedNetworksConfig;
@@ -93,6 +95,7 @@ import com.google.container.v1.NetworkConfig;
 import com.google.container.v1.NetworkPolicy;
 import com.google.container.v1.NetworkTags;
 import com.google.container.v1.NodeConfig;
+import com.google.container.v1.NodeCreationConfig;
 import com.google.container.v1.NodeKubeletConfig;
 import com.google.container.v1.NodeLabels;
 import com.google.container.v1.NodeManagement;
@@ -115,7 +118,9 @@ import com.google.container.v1.ResourceLabels;
 import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1.ScheduleUpgradeConfig;
 import com.google.container.v1.SecretManagerConfig;
+import com.google.container.v1.SecretSyncConfig;
 import com.google.container.v1.SecurityPostureConfig;
 import com.google.container.v1.ServerConfig;
 import com.google.container.v1.SetAddonsConfigRequest;
@@ -133,6 +138,7 @@ import com.google.container.v1.SetNodePoolSizeRequest;
 import com.google.container.v1.ShieldedNodes;
 import com.google.container.v1.StartIPRotationRequest;
 import com.google.container.v1.StatusCondition;
+import com.google.container.v1.TaintConfig;
 import com.google.container.v1.UpdateClusterRequest;
 import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
@@ -363,7 +369,13 @@ public class ClusterManagerClientTest {
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setScheduleUpgradeConfig(ScheduleUpgradeConfig.newBuilder().build())
+            .setSecretSyncConfig(SecretSyncConfig.newBuilder().build())
             .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
+            .setControlPlaneEgress(ControlPlaneEgress.newBuilder().build())
+            .setManagedMachineLearningDiagnosticsConfig(
+                ManagedMachineLearningDiagnosticsConfig.newBuilder().build())
+            .setNodeCreationConfig(NodeCreationConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -478,7 +490,13 @@ public class ClusterManagerClientTest {
             .setRbacBindingConfig(RBACBindingConfig.newBuilder().build())
             .setGkeAutoUpgradeConfig(GkeAutoUpgradeConfig.newBuilder().build())
             .setAnonymousAuthenticationConfig(AnonymousAuthenticationConfig.newBuilder().build())
+            .setScheduleUpgradeConfig(ScheduleUpgradeConfig.newBuilder().build())
+            .setSecretSyncConfig(SecretSyncConfig.newBuilder().build())
             .setManagedOpentelemetryConfig(ManagedOpenTelemetryConfig.newBuilder().build())
+            .setControlPlaneEgress(ControlPlaneEgress.newBuilder().build())
+            .setManagedMachineLearningDiagnosticsConfig(
+                ManagedMachineLearningDiagnosticsConfig.newBuilder().build())
+            .setNodeCreationConfig(NodeCreationConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -798,6 +816,7 @@ public class ClusterManagerClientTest {
             .setBootDisk(BootDisk.newBuilder().build())
             .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
             .setConsolidationDelay(Duration.newBuilder().build())
+            .setTaintConfig(TaintConfig.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -845,6 +864,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getBootDisk(), actualRequest.getBootDisk());
     Assert.assertEquals(request.getNodeDrainConfig(), actualRequest.getNodeDrainConfig());
     Assert.assertEquals(request.getConsolidationDelay(), actualRequest.getConsolidationDelay());
+    Assert.assertEquals(request.getTaintConfig(), actualRequest.getTaintConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -896,6 +916,7 @@ public class ClusterManagerClientTest {
               .setBootDisk(BootDisk.newBuilder().build())
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
+              .setTaintConfig(TaintConfig.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -2205,6 +2226,7 @@ public class ClusterManagerClientTest {
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+            .setMaintenancePolicy(NodePool.NodePoolMaintenancePolicy.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -2263,6 +2285,7 @@ public class ClusterManagerClientTest {
             .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .setBestEffortProvisioning(BestEffortProvisioning.newBuilder().build())
             .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
+            .setMaintenancePolicy(NodePool.NodePoolMaintenancePolicy.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

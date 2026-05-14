@@ -53,4 +53,191 @@ public interface LabelOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Display name of the Label. This attribute has a maximum length of
+   * 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A description of the label. This attribute has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the label is active.
+   * </pre>
+   *
+   * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the active field is set.
+   */
+  boolean hasActive();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies whether or not the label is active.
+   * </pre>
+   *
+   * <code>optional bool active = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The active.
+   */
+  boolean getActive();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return A list containing the types.
+   */
+  java.util.List<com.google.ads.admanager.v1.LabelTypeEnum.LabelType> getTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return The count of types.
+   */
+  int getTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The types at the given index.
+   */
+  com.google.ads.admanager.v1.LabelTypeEnum.LabelType getTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for types.
+   */
+  java.util.List<java.lang.Integer> getTypesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unordered list. The types of the Label.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LabelTypeEnum.LabelType types = 7 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of types at the given index.
+   */
+  int getTypesValue(int index);
 }

@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [DeleteProcess][google.cloud.datacatalog.lineage.v1.DeleteProcess].
+ * [DeleteProcess][google.cloud.datacatalog.lineage.v1.Lineage.DeleteProcess].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteProcessRequest}
@@ -135,11 +135,11 @@ public final class DeleteProcessRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If set to true and the process is not found, the request
+   * Optional. If set to true and the process is not found, the request
    * succeeds but the server doesn't perform any actions.
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
@@ -323,7 +323,7 @@ public final class DeleteProcessRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Request message for
-   * [DeleteProcess][google.cloud.datacatalog.lineage.v1.DeleteProcess].
+   * [DeleteProcess][google.cloud.datacatalog.lineage.v1.Lineage.DeleteProcess].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.DeleteProcessRequest}
@@ -612,11 +612,11 @@ public final class DeleteProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request
+     * Optional. If set to true and the process is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -629,11 +629,11 @@ public final class DeleteProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request
+     * Optional. If set to true and the process is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -650,11 +650,11 @@ public final class DeleteProcessRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true and the process is not found, the request
+     * Optional. If set to true and the process is not found, the request
      * succeeds but the server doesn't perform any actions.
      * </pre>
      *
-     * <code>bool allow_missing = 2;</code>
+     * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

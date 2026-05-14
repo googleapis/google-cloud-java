@@ -690,7 +690,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
    *
    * @param privateAuction Required. The `PrivateAuction` to update.
    *     <p>The `PrivateAuction`'s `name` is used to identify the `PrivateAuction` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrivateAuction updatePrivateAuction(

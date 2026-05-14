@@ -138,15 +138,19 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `PrivateAuction` ID.
+   * Output only. Deprecated: `PrivateAuction` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+   *     google/ads/admanager/v1/private_auction_messages.proto;l=45
    * @return Whether the privateAuctionId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPrivateAuctionId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -155,15 +159,19 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `PrivateAuction` ID.
+   * Output only. Deprecated: `PrivateAuction` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+   *     google/ads/admanager/v1/private_auction_messages.proto;l=45
    * @return The privateAuctionId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getPrivateAuctionId() {
     return privateAuctionId_;
   }
@@ -1205,15 +1213,19 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `PrivateAuction` ID.
+     * Output only. Deprecated: `PrivateAuction` ID.
      * </pre>
      *
-     * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+     *     google/ads/admanager/v1/private_auction_messages.proto;l=45
      * @return Whether the privateAuctionId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasPrivateAuctionId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1222,15 +1234,19 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `PrivateAuction` ID.
+     * Output only. Deprecated: `PrivateAuction` ID.
      * </pre>
      *
-     * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+     *     google/ads/admanager/v1/private_auction_messages.proto;l=45
      * @return The privateAuctionId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getPrivateAuctionId() {
       return privateAuctionId_;
     }
@@ -1239,15 +1255,19 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `PrivateAuction` ID.
+     * Output only. Deprecated: `PrivateAuction` ID.
      * </pre>
      *
-     * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+     *     google/ads/admanager/v1/private_auction_messages.proto;l=45
      * @param value The privateAuctionId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPrivateAuctionId(long value) {
 
       privateAuctionId_ = value;
@@ -1260,14 +1280,18 @@ public final class PrivateAuction extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `PrivateAuction` ID.
+     * Output only. Deprecated: `PrivateAuction` ID.
      * </pre>
      *
-     * <code>optional int64 private_auction_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 private_auction_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.PrivateAuction.private_auction_id is deprecated. See
+     *     google/ads/admanager/v1/private_auction_messages.proto;l=45
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPrivateAuctionId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       privateAuctionId_ = 0L;
