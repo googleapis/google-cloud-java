@@ -527,6 +527,52 @@ public interface LinuxNodeConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customNodeInit field is set.
+   */
+  boolean hasCustomNodeInit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customNodeInit.
+   */
+  com.google.container.v1.LinuxNodeConfig.CustomNodeInit getCustomNodeInit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.CustomNodeInitOrBuilder getCustomNodeInitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Enables and configures swap space on nodes.
    * If omitted, swap is disabled.
    * </pre>
@@ -618,4 +664,48 @@ public interface LinuxNodeConfigOrBuilder
    */
   com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
       getNodeKernelModuleLoadingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accurateTimeConfig field is set.
+   */
+  boolean hasAccurateTimeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accurateTimeConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig.AccurateTimeConfig getAccurateTimeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.AccurateTimeConfigOrBuilder
+      getAccurateTimeConfigOrBuilder();
 }

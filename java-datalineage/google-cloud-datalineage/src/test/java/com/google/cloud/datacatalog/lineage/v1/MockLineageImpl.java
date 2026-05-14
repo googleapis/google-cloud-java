@@ -415,4 +415,27 @@ public class MockLineageImpl extends LineageImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void searchLineageStreaming(
+      SearchLineageStreamingRequest request,
+      StreamObserver<SearchLineageStreamingResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchLineageStreamingResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchLineageStreamingResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchLineageStreaming, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchLineageStreamingResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

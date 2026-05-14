@@ -116,11 +116,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: Security Posture Enterprise features are no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Applies the Security Posture off cluster Enterprise level features.
      * </pre>
      *
-     * <code>ENTERPRISE = 3;</code>
+     * <code>ENTERPRISE = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ENTERPRISE(3),
     UNRECOGNIZED(-1),
     ;
@@ -172,12 +177,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: Security Posture Enterprise features are no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Applies the Security Posture off cluster Enterprise level features.
      * </pre>
      *
-     * <code>ENTERPRISE = 3;</code>
+     * <code>ENTERPRISE = 3 [deprecated = true];</code>
      */
-    public static final int ENTERPRISE_VALUE = 3;
+    @java.lang.Deprecated public static final int ENTERPRISE_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -300,11 +309,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: Basic vulnerability scanning is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Applies basic vulnerability scanning on the cluster.
      * </pre>
      *
-     * <code>VULNERABILITY_BASIC = 2;</code>
+     * <code>VULNERABILITY_BASIC = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     VULNERABILITY_BASIC(2),
     /**
      *
@@ -356,12 +370,16 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: Basic vulnerability scanning is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Applies basic vulnerability scanning on the cluster.
      * </pre>
      *
-     * <code>VULNERABILITY_BASIC = 2;</code>
+     * <code>VULNERABILITY_BASIC = 2 [deprecated = true];</code>
      */
-    public static final int VULNERABILITY_BASIC_VALUE = 2;
+    @java.lang.Deprecated public static final int VULNERABILITY_BASIC_VALUE = 2;
 
     /**
      *

@@ -252,10 +252,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. A unique ID used to identify the request. If the service
    * receives two
-   * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-   * with the same request_id, the second request is ignored and the
-   * Operation that corresponds to the first Batch created and stored
-   * in the backend is returned.
+   * `CreateBatchRequests` with the same `request_id`, the second request is
+   * ignored and the operation that corresponds to the first Batch created and
+   * stored in the backend is returned.
    *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -287,10 +286,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. A unique ID used to identify the request. If the service
    * receives two
-   * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-   * with the same request_id, the second request is ignored and the
-   * Operation that corresponds to the first Batch created and stored
-   * in the backend is returned.
+   * `CreateBatchRequests` with the same `request_id`, the second request is
+   * ignored and the operation that corresponds to the first Batch created and
+   * stored in the backend is returned.
    *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1171,10 +1169,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A unique ID used to identify the request. If the service
      * receives two
-     * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-     * with the same request_id, the second request is ignored and the
-     * Operation that corresponds to the first Batch created and stored
-     * in the backend is returned.
+     * `CreateBatchRequests` with the same `request_id`, the second request is
+     * ignored and the operation that corresponds to the first Batch created and
+     * stored in the backend is returned.
      *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1205,10 +1202,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A unique ID used to identify the request. If the service
      * receives two
-     * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-     * with the same request_id, the second request is ignored and the
-     * Operation that corresponds to the first Batch created and stored
-     * in the backend is returned.
+     * `CreateBatchRequests` with the same `request_id`, the second request is
+     * ignored and the operation that corresponds to the first Batch created and
+     * stored in the backend is returned.
      *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1239,10 +1235,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A unique ID used to identify the request. If the service
      * receives two
-     * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-     * with the same request_id, the second request is ignored and the
-     * Operation that corresponds to the first Batch created and stored
-     * in the backend is returned.
+     * `CreateBatchRequests` with the same `request_id`, the second request is
+     * ignored and the operation that corresponds to the first Batch created and
+     * stored in the backend is returned.
      *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1272,10 +1267,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A unique ID used to identify the request. If the service
      * receives two
-     * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-     * with the same request_id, the second request is ignored and the
-     * Operation that corresponds to the first Batch created and stored
-     * in the backend is returned.
+     * `CreateBatchRequests` with the same `request_id`, the second request is
+     * ignored and the operation that corresponds to the first Batch created and
+     * stored in the backend is returned.
      *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
@@ -1301,10 +1295,9 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. A unique ID used to identify the request. If the service
      * receives two
-     * [CreateBatchRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.CreateBatchRequest)s
-     * with the same request_id, the second request is ignored and the
-     * Operation that corresponds to the first Batch created and stored
-     * in the backend is returned.
+     * `CreateBatchRequests` with the same `request_id`, the second request is
+     * ignored and the operation that corresponds to the first Batch created and
+     * stored in the backend is returned.
      *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).

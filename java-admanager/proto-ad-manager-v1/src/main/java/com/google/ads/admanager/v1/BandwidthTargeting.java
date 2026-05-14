@@ -26,8 +26,8 @@ package com.google.ads.admanager.v1;
  * <pre>
  * Bandwidth Targeting.
  *
- * Reach users accessing the internet via various means of connection, such as
- * cable, DSL, or dial-up. Can be useful to target campaigns using
+ * Reach users accessing the internet through various means of connection, such
+ * as cable, DSL, or dial-up. Can be useful to target campaigns using
  * low-resolution creatives or text ads for users with low bandwidth.
  * </pre>
  *
@@ -428,8 +428,8 @@ public final class BandwidthTargeting extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Bandwidth Targeting.
    *
-   * Reach users accessing the internet via various means of connection, such as
-   * cable, DSL, or dial-up. Can be useful to target campaigns using
+   * Reach users accessing the internet through various means of connection, such
+   * as cable, DSL, or dial-up. Can be useful to target campaigns using
    * low-resolution creatives or text ads for users with low bandwidth.
    * </pre>
    *

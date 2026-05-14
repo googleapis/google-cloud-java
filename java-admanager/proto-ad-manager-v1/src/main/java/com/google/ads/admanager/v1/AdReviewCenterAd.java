@@ -57,6 +57,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     adReviewCenterAdId_ = "";
     productType_ = 0;
     status_ = 0;
+    manualReviewStatuses_ = emptyIntList();
     previewUrl_ = "";
   }
 
@@ -276,6 +277,151 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int MANUAL_REVIEW_STATUSES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList manualReviewStatuses_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus>
+      manualReviewStatuses_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                  .ManualAdReviewCenterAdStatus>() {
+            public com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                    .ManualAdReviewCenterAdStatus
+                convert(int from) {
+              com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                      .ManualAdReviewCenterAdStatus
+                  result =
+                      com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                          .ManualAdReviewCenterAdStatus.forNumber(from);
+              return result == null
+                  ? com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                      .ManualAdReviewCenterAdStatus.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the manualReviewStatuses.
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus>
+      getManualReviewStatusesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus>(
+        manualReviewStatuses_, manualReviewStatuses_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of manualReviewStatuses.
+   */
+  @java.lang.Override
+  public int getManualReviewStatusesCount() {
+    return manualReviewStatuses_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The manualReviewStatuses at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+      getManualReviewStatuses(int index) {
+    return manualReviewStatuses_converter_.convert(manualReviewStatuses_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for manualReviewStatuses.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getManualReviewStatusesValueList() {
+    return manualReviewStatuses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The manual review status of the AdReviewCenterAd (for web
+   * properties in MCR mode). For MCR mode, a single ad could have multiple
+   * statuses (for example, pending and serving at the same time, if the ad is
+   * affected by a protection in certain inventory only). This field is not set
+   * for the standard mode.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of manualReviewStatuses at the given index.
+   */
+  @java.lang.Override
+  public int getManualReviewStatusesValue(int index) {
+    return manualReviewStatuses_.getInt(index);
+  }
+
+  private int manualReviewStatusesMemoizedSerializedSize;
+
   public static final int PREVIEW_URL_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -365,6 +511,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
@@ -385,6 +532,13 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, previewUrl_);
+    }
+    if (getManualReviewStatusesList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(manualReviewStatusesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < manualReviewStatuses_.size(); i++) {
+      output.writeEnumNoTag(manualReviewStatuses_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -416,6 +570,20 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, previewUrl_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < manualReviewStatuses_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                manualReviewStatuses_.getInt(i));
+      }
+      size += dataSize;
+      if (!getManualReviewStatusesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      manualReviewStatusesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -436,6 +604,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     if (!getAdReviewCenterAdId().equals(other.getAdReviewCenterAdId())) return false;
     if (productType_ != other.productType_) return false;
     if (status_ != other.status_) return false;
+    if (!manualReviewStatuses_.equals(other.manualReviewStatuses_)) return false;
     if (hasPreviewUrl() != other.hasPreviewUrl()) return false;
     if (hasPreviewUrl()) {
       if (!getPreviewUrl().equals(other.getPreviewUrl())) return false;
@@ -459,6 +628,10 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + productType_;
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    if (getManualReviewStatusesCount() > 0) {
+      hash = (37 * hash) + MANUAL_REVIEW_STATUSES_FIELD_NUMBER;
+      hash = (53 * hash) + manualReviewStatuses_.hashCode();
+    }
     if (hasPreviewUrl()) {
       hash = (37 * hash) + PREVIEW_URL_FIELD_NUMBER;
       hash = (53 * hash) + getPreviewUrl().hashCode();
@@ -608,6 +781,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       adReviewCenterAdId_ = "";
       productType_ = 0;
       status_ = 0;
+      manualReviewStatuses_ = emptyIntList();
       previewUrl_ = "";
       return this;
     }
@@ -657,8 +831,12 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.status_ = status_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        manualReviewStatuses_.makeImmutable();
+        result.manualReviewStatuses_ = manualReviewStatuses_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.previewUrl_ = previewUrl_;
         to_bitField0_ |= 0x00000001;
       }
@@ -693,9 +871,20 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
+      if (!other.manualReviewStatuses_.isEmpty()) {
+        if (manualReviewStatuses_.isEmpty()) {
+          manualReviewStatuses_ = other.manualReviewStatuses_;
+          manualReviewStatuses_.makeImmutable();
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureManualReviewStatusesIsMutable();
+          manualReviewStatuses_.addAll(other.manualReviewStatuses_);
+        }
+        onChanged();
+      }
       if (other.hasPreviewUrl()) {
         previewUrl_ = other.previewUrl_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -751,9 +940,27 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 previewUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 48:
+              {
+                int tmpRaw = input.readEnum();
+                ensureManualReviewStatusesIsMutable();
+                manualReviewStatuses_.addInt(tmpRaw);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureManualReviewStatusesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  manualReviewStatuses_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1228,6 +1435,327 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.Internal.IntList manualReviewStatuses_ = emptyIntList();
+
+    private void ensureManualReviewStatusesIsMutable() {
+      if (!manualReviewStatuses_.isModifiable()) {
+        manualReviewStatuses_ = makeMutableCopy(manualReviewStatuses_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the manualReviewStatuses.
+     */
+    public java.util.List<
+            com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                .ManualAdReviewCenterAdStatus>
+        getManualReviewStatusesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+              .ManualAdReviewCenterAdStatus>(
+          manualReviewStatuses_, manualReviewStatuses_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of manualReviewStatuses.
+     */
+    public int getManualReviewStatusesCount() {
+      return manualReviewStatuses_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The manualReviewStatuses at the given index.
+     */
+    public com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+        getManualReviewStatuses(int index) {
+      return manualReviewStatuses_converter_.convert(manualReviewStatuses_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The manualReviewStatuses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManualReviewStatuses(
+        int index,
+        com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureManualReviewStatusesIsMutable();
+      manualReviewStatuses_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The manualReviewStatuses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addManualReviewStatuses(
+        com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureManualReviewStatusesIsMutable();
+      manualReviewStatuses_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The manualReviewStatuses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllManualReviewStatuses(
+        java.lang.Iterable<
+                ? extends
+                    com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum
+                        .ManualAdReviewCenterAdStatus>
+            values) {
+      ensureManualReviewStatusesIsMutable();
+      for (com.google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus
+          value : values) {
+        manualReviewStatuses_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearManualReviewStatuses() {
+      manualReviewStatuses_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for manualReviewStatuses.
+     */
+    public java.util.List<java.lang.Integer> getManualReviewStatusesValueList() {
+      manualReviewStatuses_.makeImmutable();
+      return manualReviewStatuses_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of manualReviewStatuses at the given index.
+     */
+    public int getManualReviewStatusesValue(int index) {
+      return manualReviewStatuses_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for manualReviewStatuses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManualReviewStatusesValue(int index, int value) {
+      ensureManualReviewStatusesIsMutable();
+      manualReviewStatuses_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for manualReviewStatuses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addManualReviewStatusesValue(int value) {
+      ensureManualReviewStatusesIsMutable();
+      manualReviewStatuses_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The manual review status of the AdReviewCenterAd (for web
+     * properties in MCR mode). For MCR mode, a single ad could have multiple
+     * statuses (for example, pending and serving at the same time, if the ad is
+     * affected by a protection in certain inventory only). This field is not set
+     * for the standard mode.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ManualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatus manual_review_statuses = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for manualReviewStatuses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllManualReviewStatusesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureManualReviewStatusesIsMutable();
+      for (int value : values) {
+        manualReviewStatuses_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object previewUrl_ = "";
 
     /**
@@ -1244,7 +1772,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      * @return Whether the previewUrl field is set.
      */
     public boolean hasPreviewUrl() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1316,7 +1844,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       previewUrl_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1336,7 +1864,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPreviewUrl() {
       previewUrl_ = getDefaultInstance().getPreviewUrl();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1361,7 +1889,7 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       previewUrl_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

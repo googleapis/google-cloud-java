@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -259,6 +260,186 @@ public class CmsMetadataKeyServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listCmsMetadataKeys(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCmsMetadataKeysTest() throws Exception {
+    BatchActivateCmsMetadataKeysResponse expectedResponse =
+        BatchActivateCmsMetadataKeysResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchActivateCmsMetadataKeysResponse actualResponse =
+        client.batchActivateCmsMetadataKeys(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCmsMetadataKeysExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchActivateCmsMetadataKeys(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCmsMetadataKeysTest2() throws Exception {
+    BatchActivateCmsMetadataKeysResponse expectedResponse =
+        BatchActivateCmsMetadataKeysResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchActivateCmsMetadataKeysResponse actualResponse =
+        client.batchActivateCmsMetadataKeys(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCmsMetadataKeysExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchActivateCmsMetadataKeys(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCmsMetadataKeysTest() throws Exception {
+    BatchDeactivateCmsMetadataKeysResponse expectedResponse =
+        BatchDeactivateCmsMetadataKeysResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateCmsMetadataKeysResponse actualResponse =
+        client.batchDeactivateCmsMetadataKeys(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCmsMetadataKeysExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateCmsMetadataKeys(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCmsMetadataKeysTest2() throws Exception {
+    BatchDeactivateCmsMetadataKeysResponse expectedResponse =
+        BatchDeactivateCmsMetadataKeysResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateCmsMetadataKeysResponse actualResponse =
+        client.batchDeactivateCmsMetadataKeys(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCmsMetadataKeysExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateCmsMetadataKeys(parent, names);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
