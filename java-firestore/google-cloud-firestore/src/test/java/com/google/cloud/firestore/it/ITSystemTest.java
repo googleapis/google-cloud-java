@@ -46,8 +46,12 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.BsonBinaryData;
+import com.google.cloud.firestore.BsonObjectId;
+import com.google.cloud.firestore.BsonTimestamp;
 import com.google.cloud.firestore.BulkWriter;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.Decimal128Value;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.FieldMask;
@@ -57,16 +61,20 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreBundle;
 import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.FirestoreOptions;
+import com.google.cloud.firestore.Int32Value;
 import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.LocalFirestoreHelper;
 import com.google.cloud.firestore.LocalFirestoreHelper.AllSupportedTypes;
 import com.google.cloud.firestore.LocalFirestoreHelper.SingleField;
+import com.google.cloud.firestore.MaxKey;
+import com.google.cloud.firestore.MinKey;
 import com.google.cloud.firestore.Precondition;
 import com.google.cloud.firestore.Query;
 import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QueryPartition;
 import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.RegexValue;
 import com.google.cloud.firestore.SetOptions;
 import com.google.cloud.firestore.Transaction;
 import com.google.cloud.firestore.Transaction.Function;
@@ -1374,6 +1382,17 @@ public class ITSystemTest extends ITBaseTest {
     return randomDoc.get().get().getData();
   }
 
+  private <T> void checkRoundTrip(T value) throws Exception {
+    randomDoc.set(Collections.singletonMap("key", value)).get();
+    DocumentSnapshot snapshot = randomDoc.get().get();
+    Object fieldValue = snapshot.get("key");
+    if (!value.getClass().isInstance(fieldValue)) {
+      throw new RuntimeException("Error: round trip value has a different type.");
+    }
+    T roundtripValue = (T) fieldValue;
+    assertThat(value).isEqualTo(roundtripValue);
+  }
+
   @Test
   public void writeAndReadVectorEmbeddings() throws ExecutionException, InterruptedException {
     Map<String, VectorValue> expected = new HashMap<>();
@@ -2507,5 +2526,139 @@ public class ITSystemTest extends ITBaseTest {
     assertThrows(
         FirestoreException.class,
         () -> collection.document().listCollections().iterator().hasNext());
+  }
+
+  // Tests for non-native Firestore types.
+
+  @Test
+  public void canWriteAndReadBackMinKey() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(MinKey.instance());
+  }
+
+  @Test
+  public void canWriteAndReadBackMaxKey() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(MaxKey.instance());
+  }
+
+  @Test
+  public void canWriteAndReadBackRegex() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(new RegexValue("^foo", "i"));
+  }
+
+  @Test
+  public void canWriteAndReadBackInt32() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(new Int32Value(-57));
+    checkRoundTrip(new Int32Value(0));
+    checkRoundTrip(new Int32Value(57));
+  }
+
+  @Test
+  public void canWriteAndReadBackDecimal128() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(new Decimal128Value("NaN"));
+    checkRoundTrip(new Decimal128Value("-Infinity"));
+    checkRoundTrip(new Decimal128Value("-1.2e3"));
+    checkRoundTrip(new Decimal128Value("-4.2e+3"));
+    checkRoundTrip(new Decimal128Value("-1.2e-3"));
+    checkRoundTrip(new Decimal128Value("-4.2e-3"));
+    checkRoundTrip(new Decimal128Value("-1"));
+    checkRoundTrip(new Decimal128Value("-0"));
+    checkRoundTrip(new Decimal128Value("0"));
+    checkRoundTrip(new Decimal128Value("1"));
+    checkRoundTrip(new Decimal128Value("1.2e3"));
+    checkRoundTrip(new Decimal128Value("4.2e+3"));
+    checkRoundTrip(new Decimal128Value("1.2e-3"));
+    checkRoundTrip(new Decimal128Value("4.2e-3"));
+    checkRoundTrip(new Decimal128Value("Infinity"));
+  }
+
+  @Test
+  public void canQueryNumericallyEqualNumbersOfDifferentTypes() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    randomColl
+        .document("doc1")
+        .set(Collections.singletonMap("key", new Decimal128Value("1.0")))
+        .get();
+    randomColl.document("doc2").set(Collections.singletonMap("key", 1.0)).get();
+    randomColl.document("doc3").set(Collections.singletonMap("key", 1)).get();
+    randomColl
+        .document("doc4")
+        .set(Collections.singletonMap("key", new Decimal128Value("1.5")))
+        .get();
+    randomColl.document("doc5").set(Collections.singletonMap("key", 1.5)).get();
+
+    Query query1 = randomColl.whereEqualTo("key", 1).orderBy(FieldPath.documentId());
+    assertEquals(asList("doc1", "doc2", "doc3"), querySnapshotToIds(query1.get().get()));
+
+    Query query2 =
+        randomColl.whereEqualTo("key", new Decimal128Value("1.5")).orderBy(FieldPath.documentId());
+    assertEquals(asList("doc4", "doc5"), querySnapshotToIds(query2.get().get()));
+  }
+
+  @Test
+  public void canWriteAndReadBackBsonObjectId() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(new BsonObjectId("507f191e810c19729de860ea"));
+  }
+
+  @Test
+  public void canWriteAndReadBackBsonTimestamp() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(new BsonTimestamp(123, 45));
+  }
+
+  @Test
+  public void canWriteAndReadBackBsonBinaryData() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    checkRoundTrip(BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3}));
+  }
+
+  @Test
+  public void invalidRegexGetsRejected() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Exception error = null;
+    try {
+      randomColl.document().set(Collections.singletonMap("key", new RegexValue("foo", "a"))).get();
+    } catch (Exception e) {
+      error = e;
+    }
+    assertThat(error).isNotNull();
+    assertThat(error.getMessage())
+        .contains("Invalid regex option 'a'. Supported options are 'i', 'm', 's', 'u', and 'x'");
+  }
+
+  @Test
+  public void invalidBsonObjectIdGetsRejected() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Exception error = null;
+    try {
+      randomColl.document().set(Collections.singletonMap("key", new BsonObjectId("foobar"))).get();
+    } catch (Exception e) {
+      error = e;
+    }
+    assertThat(error).isNotNull();
+    assertThat(error.getMessage()).contains("Object ID hex string has incorrect length.");
+  }
+
+  @Test
+  public void invalidBsonBinaryDataGetsRejected() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Exception error = null;
+    try {
+      randomColl
+          .document()
+          .set(
+              Collections.singletonMap("key", BsonBinaryData.fromBytes(1234, new byte[] {1, 2, 3})))
+          .get();
+    } catch (Exception e) {
+      error = e;
+    }
+    assertThat(error).isNotNull();
+    assertThat(error.getMessage())
+        .contains("The subtype for Blob must be a value in the inclusive [0, 255] range.");
   }
 }
