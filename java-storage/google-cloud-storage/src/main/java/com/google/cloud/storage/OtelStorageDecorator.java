@@ -126,9 +126,11 @@ final class OtelStorageDecorator implements Storage {
         () -> {
           try {
             com.google.cloud.Tuple<String, String> layout =
-                internal.internalGetStorageLayout(bucketName);
+                internal.internalGetBucket(bucketName);
             cache.put(bucketName, new BucketMetadataCache.BucketMetadata(layout.x(), layout.y()));
           } catch (Exception e) {
+            System.err.println("Background GetBucket failed: " + e.getMessage());
+            e.printStackTrace();
           }
         });
   }

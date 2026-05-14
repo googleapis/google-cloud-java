@@ -584,30 +584,15 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public com.google.cloud.Tuple<String, String> getStorageLayout(String bucketName) {
+  public com.google.cloud.Tuple<String, String> getBucketMetadata(String bucketName) {
     try {
-      String url = options.getHost() + "/storage/v1/b/" + bucketName + "/storageLayout";
-      com.google.api.client.http.GenericUrl genericUrl =
-          new com.google.api.client.http.GenericUrl(url);
-      com.google.api.client.http.HttpRequest request =
-          storage.getRequestFactory().buildGetRequest(genericUrl);
-      com.google.api.client.http.HttpResponse response = request.execute();
-      String content = response.parseAsString();
-
-      String actualResource = "projects/_/buckets/" + bucketName;
-      String actualLocation = "global";
-
-      com.google.api.client.json.JsonParser parser =
-          storage.getJsonFactory().createJsonParser(content);
-      @SuppressWarnings("unchecked")
-      Map<String, Object> map = parser.parse(Map.class);
-      if (map.containsKey("name")) {
-        actualResource = (String) map.get("name");
+      com.google.api.services.storage.model.Bucket bucket =
+          storage.buckets().get(bucketName).execute();
+      String actualResource = "projects/" + bucket.getProjectNumber() + "/buckets/" + bucketName;
+      String actualLocation = bucket.getLocation();
+      if (actualLocation == null) {
+        actualLocation = "global";
       }
-      if (map.containsKey("location")) {
-        actualLocation = (String) map.get("location");
-      }
-
       return com.google.cloud.Tuple.of(actualResource, actualLocation);
     } catch (IOException e) {
       throw translate(e);

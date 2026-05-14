@@ -96,6 +96,7 @@ import com.google.storage.v2.CreateBucketRequest;
 import com.google.storage.v2.DeleteBucketRequest;
 import com.google.storage.v2.DeleteObjectRequest;
 import com.google.storage.v2.GetBucketRequest;
+import com.google.storage.v2.Bucket;
 import com.google.storage.v2.GetObjectRequest;
 import com.google.storage.v2.ListBucketsRequest;
 import com.google.storage.v2.ListObjectsRequest;
@@ -222,23 +223,23 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   }
 
   @Override
-  public com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
-    com.google.storage.v2.stub.StorageStub rawStub = storageClient.getStub();
-    if (!(rawStub instanceof GrpcStorageOptions.AcoGrpcStorageStub)) {
-      throw new RuntimeException("StorageStub is not an AcoGrpcStorageStub");
-    }
-    GrpcStorageOptions.AcoGrpcStorageStub stub = (GrpcStorageOptions.AcoGrpcStorageStub) rawStub;
-
-    GetStorageLayoutRequest request =
-        GetStorageLayoutRequest.newBuilder()
-            .setName(StorageLayoutName.of(getOptions().getProjectId(), bucketName).toString())
+  public com.google.cloud.Tuple<String, String> internalGetBucket(String bucketName) {
+    GetBucketRequest request =
+        GetBucketRequest.newBuilder()
+            .setName(bucketNameCodec.encode(bucketName))
             .build();
-
-    com.google.api.gax.grpc.GrpcCallContext merge = com.google.cloud.storage.Utils.merge(com.google.api.gax.grpc.GrpcCallContext.createDefault(), Retrying.newCallContext());
-
-    StorageLayout layout = stub.getStorageLayoutCallable().call(request, merge);
-
-    return com.google.cloud.Tuple.of(layout.getName(), layout.getLocation());
+    GrpcCallContext merge = merge(GrpcCallContext.createDefault(), Retrying.newCallContext());
+    Bucket bucket = storageClient.getBucketCallable().call(request, merge);
+    String pNum = bucket.getProject();
+    if (pNum == null || pNum.isEmpty()) {
+      pNum = "projects/_";
+    }
+    String actualResource = pNum + "/buckets/" + bucketName;
+    String actualLocation = bucket.getLocation();
+    if (actualLocation == null || actualLocation.isEmpty()) {
+      actualLocation = "global";
+    }
+    return com.google.cloud.Tuple.of(actualResource, actualLocation);
   }
 
   @Override

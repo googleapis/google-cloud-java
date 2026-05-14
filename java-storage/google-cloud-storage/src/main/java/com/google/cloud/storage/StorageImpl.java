@@ -133,8 +133,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   @Override
-  public com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
-    return storageRpc.getStorageLayout(bucketName);
+  public com.google.cloud.Tuple<String, String> internalGetBucket(String bucketName) {
+    return storageRpc.getBucketMetadata(bucketName);
   }
 
   StorageImpl(HttpStorageOptions options, WriterFactory writerFactory, Retrier retrier) {

@@ -49,7 +49,7 @@ interface StorageInternal {
     throw new UnsupportedOperationException("not implemented");
   }
 
-  default com.google.cloud.Tuple<String, String> internalGetStorageLayout(String bucketName) {
+  default com.google.cloud.Tuple<String, String> internalGetBucket(String bucketName) {
     throw new UnsupportedOperationException("not implemented");
   }
 

@@ -45,10 +45,6 @@ import com.google.api.gax.rpc.OutOfRangeException;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.gax.grpc.GrpcCallSettings;
-import com.google.storage.control.v2.GetStorageLayoutRequest;
-import com.google.storage.control.v2.StorageLayout;
 import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.pathtemplate.PathTemplate;
@@ -955,10 +951,7 @@ public final class GrpcStorageOptions extends StorageOptions
           } else {
             LOGGER.config(
                 "zero-copy protobuf deserialization unavailable, proceeding with default");
-            StorageStubSettings baseSettings = (StorageStubSettings) storageSettings.getStubSettings();
-            AcoStorageStubSettings.Builder acoStubBuilder = new AcoStorageStubSettings.Builder(baseSettings);
-            AcoStorageSettings.Builder acoSettingsBuilder = new AcoStorageSettings.Builder(acoStubBuilder);
-            AcoStorageClient client = new AcoStorageClient(new AcoStorageSettings(acoSettingsBuilder));
+            StorageClient client = StorageClient.create(storageSettings);
             StorageDataClient dataClient =
                 StorageDataClient.create(
                     executor,
@@ -1110,94 +1103,6 @@ public final class GrpcStorageOptions extends StorageOptions
     }
   }
 
-  static class AcoGrpcStorageStub extends GrpcStorageStub {
-    private final UnaryCallable<GetStorageLayoutRequest, StorageLayout> getStorageLayoutCallable;
-
-    AcoGrpcStorageStub(
-        StorageStubSettings settings,
-        ClientContext clientContext,
-        GrpcStubCallableFactory callableFactory)
-        throws IOException {
-      super(settings, clientContext, callableFactory);
-
-      MethodDescriptor<GetStorageLayoutRequest, StorageLayout> getStorageLayoutMethod =
-          MethodDescriptor.<GetStorageLayoutRequest, StorageLayout>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.storage.control.v2.StorageControl/GetStorageLayout")
-              .setRequestMarshaller(ProtoUtils.marshaller(GetStorageLayoutRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(StorageLayout.getDefaultInstance()))
-              .build();
-
-      GrpcCallSettings<GetStorageLayoutRequest, StorageLayout> transportSettings =
-          GrpcCallSettings.<GetStorageLayoutRequest, StorageLayout>newBuilder()
-              .setMethodDescriptor(getStorageLayoutMethod)
-              .setParamsExtractor(request -> ImmutableMap.of())
-              .build();
-
-      this.getStorageLayoutCallable =
-          callableFactory.createUnaryCallable(
-              transportSettings,
-              com.google.api.gax.rpc.UnaryCallSettings.<GetStorageLayoutRequest, StorageLayout>newUnaryCallSettingsBuilder().build(),
-              clientContext);
-    }
-
-    public UnaryCallable<GetStorageLayoutRequest, StorageLayout> getStorageLayoutCallable() {
-      return getStorageLayoutCallable;
-    }
-  }
-
-  private static final class AcoStorageStubSettings extends StorageStubSettings {
-    private AcoStorageStubSettings(Builder settingsBuilder) throws IOException {
-      super(settingsBuilder);
-    }
-    @Override
-    public StorageStub createStub() throws IOException {
-      if (!getTransportChannelProvider()
-          .getTransportName()
-          .equals(GrpcTransportChannel.getGrpcTransportName())) {
-        throw new UnsupportedOperationException(
-            String.format(
-                "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
-      }
-      ClientContext clientContext = ClientContext.create(this);
-      return new AcoGrpcStorageStub(this, clientContext, new GrpcStorageCallableFactory());
-    }
-    private static final class Builder extends StorageStubSettings.Builder {
-      private Builder(StorageStubSettings settings) {
-        super(settings);
-      }
-      @Override
-      public AcoStorageStubSettings build() throws IOException {
-        return new AcoStorageStubSettings(this);
-      }
-    }
-  }
-
-  private static final class AcoStorageSettings extends StorageSettings {
-    private AcoStorageSettings(Builder settingsBuilder) throws IOException {
-      super(settingsBuilder);
-    }
-    private static final class Builder extends StorageSettings.Builder {
-      private Builder(StorageStubSettings.Builder stubSettings) {
-        super(stubSettings);
-      }
-      @Override
-      public AcoStorageSettings build() throws IOException {
-        return new AcoStorageSettings(this);
-      }
-    }
-  }
-
-  private static final class AcoStorageClient extends StorageClient {
-    private AcoStorageClient(StorageSettings settings) throws IOException {
-      super(settings);
-    }
-    @Override
-    public AcoGrpcStorageStub getStub() {
-      return (AcoGrpcStorageStub) super.getStub();
-    }
-  }
-
   private static final class InternalStorageStubSettings extends StorageStubSettings {
 
     private InternalStorageStubSettings(Builder settingsBuilder) throws IOException {
@@ -1236,7 +1141,7 @@ public final class GrpcStorageOptions extends StorageOptions
 
   // DanglingJavadocs are for breadcrumbs to source of copied generated code
   @SuppressWarnings("DanglingJavadoc")
-  private static final class InternalZeroCopyGrpcStorageStub extends AcoGrpcStorageStub
+  private static final class InternalZeroCopyGrpcStorageStub extends GrpcStorageStub
       implements AutoCloseable {
 
     private static final RequestParamsExtractor<BidiReadObjectRequest>
