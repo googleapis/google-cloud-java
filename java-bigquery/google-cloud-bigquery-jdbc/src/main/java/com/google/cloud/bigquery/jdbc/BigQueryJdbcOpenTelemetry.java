@@ -24,6 +24,7 @@ import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
@@ -308,7 +309,7 @@ public class BigQueryJdbcOpenTelemetry {
       throws SQLException {
 
     Tracer tracer = connection.getTracer();
-    Span span = tracer.spanBuilder(spanName).startSpan();
+    Span span = tracer.spanBuilder(spanName).setSpanKind(SpanKind.CLIENT).startSpan();
 
     span.setAttribute(DB_SYSTEM_KEY, DB_SYSTEM_VALUE);
     span.setAttribute(DB_CONNECTION_ID_KEY, connection.getConnectionId());
