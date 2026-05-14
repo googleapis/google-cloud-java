@@ -815,7 +815,7 @@ public class ContactServiceClient implements BackgroundResource {
    *
    * @param contact Required. The `Contact` to update.
    *     <p>The `Contact`'s `name` is used to identify the `Contact` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Contact updateContact(Contact contact, FieldMask updateMask) {

@@ -99,6 +99,41 @@ public class ApplicationServiceSettings extends ClientSettings<ApplicationServic
     return ((ApplicationServiceStubSettings) getStubSettings()).listApplicationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to createApplication. */
+  public UnaryCallSettings<CreateApplicationRequest, Application> createApplicationSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).createApplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateApplications. */
+  public UnaryCallSettings<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).batchCreateApplicationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateApplication. */
+  public UnaryCallSettings<UpdateApplicationRequest, Application> updateApplicationSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).updateApplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateApplications. */
+  public UnaryCallSettings<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).batchUpdateApplicationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveApplications. */
+  public UnaryCallSettings<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings()).batchArchiveApplicationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveApplications. */
+  public UnaryCallSettings<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsSettings() {
+    return ((ApplicationServiceStubSettings) getStubSettings())
+        .batchUnarchiveApplicationsSettings();
+  }
+
   public static final ApplicationServiceSettings create(ApplicationServiceStubSettings stub)
       throws IOException {
     return new ApplicationServiceSettings.Builder(stub.toBuilder()).build();
@@ -206,6 +241,46 @@ public class ApplicationServiceSettings extends ClientSettings<ApplicationServic
             ListApplicationsRequest, ListApplicationsResponse, ListApplicationsPagedResponse>
         listApplicationsSettings() {
       return getStubSettingsBuilder().listApplicationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createApplication. */
+    public UnaryCallSettings.Builder<CreateApplicationRequest, Application>
+        createApplicationSettings() {
+      return getStubSettingsBuilder().createApplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateApplications. */
+    public UnaryCallSettings.Builder<
+            BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+        batchCreateApplicationsSettings() {
+      return getStubSettingsBuilder().batchCreateApplicationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateApplication. */
+    public UnaryCallSettings.Builder<UpdateApplicationRequest, Application>
+        updateApplicationSettings() {
+      return getStubSettingsBuilder().updateApplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateApplications. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+        batchUpdateApplicationsSettings() {
+      return getStubSettingsBuilder().batchUpdateApplicationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveApplications. */
+    public UnaryCallSettings.Builder<
+            BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+        batchArchiveApplicationsSettings() {
+      return getStubSettingsBuilder().batchArchiveApplicationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveApplications. */
+    public UnaryCallSettings.Builder<
+            BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+        batchUnarchiveApplicationsSettings() {
+      return getStubSettingsBuilder().batchUnarchiveApplicationsSettings();
     }
 
     @Override

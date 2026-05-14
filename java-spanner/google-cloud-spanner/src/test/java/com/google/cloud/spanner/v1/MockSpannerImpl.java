@@ -24,6 +24,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -31,6 +32,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -410,6 +412,27 @@ public class MockSpannerImpl extends SpannerImplBase {
                   "Unrecognized response type %s for method BatchWrite, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchWriteResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchCacheUpdate(
+      FetchCacheUpdateRequest request, StreamObserver<CacheUpdate> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CacheUpdate) {
+      requests.add(request);
+      responseObserver.onNext(((CacheUpdate) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchCacheUpdate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CacheUpdate.class.getName(),
                   Exception.class.getName())));
     }
   }

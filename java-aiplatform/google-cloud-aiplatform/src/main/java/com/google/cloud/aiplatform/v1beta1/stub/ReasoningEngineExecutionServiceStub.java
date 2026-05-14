@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
@@ -80,6 +82,13 @@ public abstract class ReasoningEngineExecutionServiceStub implements BackgroundR
   public UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
       asyncQueryReasoningEngineCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncQueryReasoningEngineCallable()");
+  }
+
+  public UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelAsyncQueryReasoningEngineCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -56,6 +56,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -63,6 +64,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -161,6 +163,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   private final UnaryCallSettings<PartitionReadRequest, PartitionResponse> partitionReadSettings;
   private final ServerStreamingCallSettings<BatchWriteRequest, BatchWriteResponse>
       batchWriteSettings;
+  private final ServerStreamingCallSettings<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateSettings;
 
   private static final PagedListDescriptor<ListSessionsRequest, ListSessionsResponse, Session>
       LIST_SESSIONS_PAGE_STR_DESC =
@@ -297,6 +301,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     return batchWriteSettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchCacheUpdate. */
+  public ServerStreamingCallSettings<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateSettings() {
+    return fetchCacheUpdateSettings;
+  }
+
   public SpannerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -422,6 +432,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     partitionQuerySettings = settingsBuilder.partitionQuerySettings().build();
     partitionReadSettings = settingsBuilder.partitionReadSettings().build();
     batchWriteSettings = settingsBuilder.batchWriteSettings().build();
+    fetchCacheUpdateSettings = settingsBuilder.fetchCacheUpdateSettings().build();
   }
 
   @Override
@@ -462,6 +473,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
         partitionReadSettings;
     private final ServerStreamingCallSettings.Builder<BatchWriteRequest, BatchWriteResponse>
         batchWriteSettings;
+    private final ServerStreamingCallSettings.Builder<FetchCacheUpdateRequest, CacheUpdate>
+        fetchCacheUpdateSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -485,6 +498,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.RESOURCE_EXHAUSTED)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -534,6 +548,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               .setTotalTimeoutDuration(Duration.ofMillis(3600000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -560,6 +576,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       partitionQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       partitionReadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchWriteSettings = ServerStreamingCallSettings.newBuilder();
+      fetchCacheUpdateSettings = ServerStreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -598,6 +615,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       partitionQuerySettings = settings.partitionQuerySettings.toBuilder();
       partitionReadSettings = settings.partitionReadSettings.toBuilder();
       batchWriteSettings = settings.batchWriteSettings.toBuilder();
+      fetchCacheUpdateSettings = settings.fetchCacheUpdateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -721,6 +739,11 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
+      builder
+          .fetchCacheUpdateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -827,6 +850,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     public ServerStreamingCallSettings.Builder<BatchWriteRequest, BatchWriteResponse>
         batchWriteSettings() {
       return batchWriteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchCacheUpdate. */
+    public ServerStreamingCallSettings.Builder<FetchCacheUpdateRequest, CacheUpdate>
+        fetchCacheUpdateSettings() {
+      return fetchCacheUpdateSettings;
     }
 
     @Override

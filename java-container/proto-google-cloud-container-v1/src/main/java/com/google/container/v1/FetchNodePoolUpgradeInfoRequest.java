@@ -25,7 +25,7 @@ package com.google.container.v1;
  *
  * <pre>
  * FetchNodePoolUpgradeInfoRequest fetches the upgrade information of a
- * nodepool.
+ * node pool.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.FetchNodePoolUpgradeInfoRequest}
@@ -81,7 +81,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The name (project, location, cluster, nodepool) of the nodepool
+   * Required. The name (project, location, cluster, node pool) of the node pool
    * to get. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
    * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -108,7 +108,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The name (project, location, cluster, nodepool) of the nodepool
+   * Required. The name (project, location, cluster, node pool) of the node pool
    * to get. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
    * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -359,7 +359,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
    *
    * <pre>
    * FetchNodePoolUpgradeInfoRequest fetches the upgrade information of a
-   * nodepool.
+   * node pool.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.FetchNodePoolUpgradeInfoRequest}
@@ -526,7 +526,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The name (project, location, cluster, nodepool) of the nodepool
+     * Required. The name (project, location, cluster, node pool) of the node pool
      * to get. Specified in the format
      * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
      * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -552,7 +552,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The name (project, location, cluster, nodepool) of the nodepool
+     * Required. The name (project, location, cluster, node pool) of the node pool
      * to get. Specified in the format
      * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
      * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -578,7 +578,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The name (project, location, cluster, nodepool) of the nodepool
+     * Required. The name (project, location, cluster, node pool) of the node pool
      * to get. Specified in the format
      * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
      * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -603,7 +603,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The name (project, location, cluster, nodepool) of the nodepool
+     * Required. The name (project, location, cluster, node pool) of the node pool
      * to get. Specified in the format
      * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
      * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
@@ -624,7 +624,7 @@ public final class FetchNodePoolUpgradeInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The name (project, location, cluster, nodepool) of the nodepool
+     * Required. The name (project, location, cluster, node pool) of the node pool
      * to get. Specified in the format
      * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;` or
      * `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.

@@ -224,7 +224,7 @@ public interface NodeNetworkConfigOrBuilder
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -249,7 +249,7 @@ public interface NodeNetworkConfigOrBuilder
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -274,7 +274,7 @@ public interface NodeNetworkConfigOrBuilder
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -463,10 +463,13 @@ public interface NodeNetworkConfigOrBuilder
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
    * If the cluster is associated with multiple subnetworks, the subnetwork can
    * be either:
-   * 1. A user supplied subnetwork name/full path during node pool creation.
-   * Example1: my-subnet
-   * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-   * 2. A subnetwork path picked based on the IP utilization during node pool
+   * - A user supplied subnetwork name during node pool creation (e.g.,
+   * `my-subnet`). The name must be between 1 and 63 characters long, start
+   * with a letter, contain only letters, numbers, and hyphens, and end with a
+   * letter or a number.
+   * - A full subnetwork path during node pool creation, such as
+   * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+   * - A subnetwork path picked based on the IP utilization during node pool
    * creation and is immutable.
    * </pre>
    *
@@ -486,10 +489,13 @@ public interface NodeNetworkConfigOrBuilder
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
    * If the cluster is associated with multiple subnetworks, the subnetwork can
    * be either:
-   * 1. A user supplied subnetwork name/full path during node pool creation.
-   * Example1: my-subnet
-   * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-   * 2. A subnetwork path picked based on the IP utilization during node pool
+   * - A user supplied subnetwork name during node pool creation (e.g.,
+   * `my-subnet`). The name must be between 1 and 63 characters long, start
+   * with a letter, contain only letters, numbers, and hyphens, and end with a
+   * letter or a number.
+   * - A full subnetwork path during node pool creation, such as
+   * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+   * - A subnetwork path picked based on the IP utilization during node pool
    * creation and is immutable.
    * </pre>
    *
@@ -549,4 +555,38 @@ public interface NodeNetworkConfigOrBuilder
    * </code>
    */
   com.google.container.v1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The acceleratorNetworkProfile.
+   */
+  java.lang.String getAcceleratorNetworkProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for acceleratorNetworkProfile.
+   */
+  com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes();
 }
