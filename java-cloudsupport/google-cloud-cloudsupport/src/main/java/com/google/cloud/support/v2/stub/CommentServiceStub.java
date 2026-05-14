@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.Comment;
 import com.google.cloud.support.v2.CreateCommentRequest;
+import com.google.cloud.support.v2.GetCommentRequest;
 import com.google.cloud.support.v2.ListCommentsRequest;
 import com.google.cloud.support.v2.ListCommentsResponse;
 import javax.annotation.Generated;
@@ -45,6 +46,10 @@ public abstract class CommentServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateCommentRequest, Comment> createCommentCallable() {
     throw new UnsupportedOperationException("Not implemented: createCommentCallable()");
+  }
+
+  public UnaryCallable<GetCommentRequest, Comment> getCommentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCommentCallable()");
   }
 
   @Override

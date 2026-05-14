@@ -1050,14 +1050,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -1081,14 +1090,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -1102,14 +1120,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -1130,14 +1157,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -3410,6 +3446,65 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         : consolidationDelay_;
   }
 
+  public static final int TAINT_CONFIG_FIELD_NUMBER = 62;
+  private com.google.container.v1.TaintConfig taintConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the taintConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaintConfig() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The taintConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.TaintConfig getTaintConfig() {
+    return taintConfig_ == null
+        ? com.google.container.v1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+    return taintConfig_ == null
+        ? com.google.container.v1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3563,6 +3658,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x01000000) != 0)) {
       output.writeMessage(60, getConsolidationDelay());
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      output.writeMessage(62, getTaintConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3765,6 +3863,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(60, getConsolidationDelay());
     }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(62, getTaintConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3905,6 +4006,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasConsolidationDelay() != other.hasConsolidationDelay()) return false;
     if (hasConsolidationDelay()) {
       if (!getConsolidationDelay().equals(other.getConsolidationDelay())) return false;
+    }
+    if (hasTaintConfig() != other.hasTaintConfig()) return false;
+    if (hasTaintConfig()) {
+      if (!getTaintConfig().equals(other.getTaintConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -4078,6 +4183,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasConsolidationDelay()) {
       hash = (37 * hash) + CONSOLIDATION_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getConsolidationDelay().hashCode();
+    }
+    if (hasTaintConfig()) {
+      hash = (37 * hash) + TAINT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTaintConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4280,6 +4389,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         internalGetMaxRunDurationFieldBuilder();
         internalGetBootDiskFieldBuilder();
         internalGetConsolidationDelayFieldBuilder();
+        internalGetTaintConfigFieldBuilder();
       }
     }
 
@@ -4444,6 +4554,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (consolidationDelayBuilder_ != null) {
         consolidationDelayBuilder_.dispose();
         consolidationDelayBuilder_ = null;
+      }
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
       }
       return this;
     }
@@ -4725,6 +4840,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 : consolidationDelayBuilder_.build();
         to_bitField0_ |= 0x01000000;
       }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
+        result.taintConfig_ =
+            taintConfigBuilder_ == null ? taintConfig_ : taintConfigBuilder_.build();
+        to_bitField0_ |= 0x02000000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4984,6 +5104,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasConsolidationDelay()) {
         mergeConsolidationDelay(other.getConsolidationDelay());
+      }
+      if (other.hasTaintConfig()) {
+        mergeTaintConfig(other.getTaintConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5363,6 +5486,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00004000;
                 break;
               } // case 482
+            case 498:
+              {
+                input.readMessage(
+                    internalGetTaintConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00008000;
+                break;
+              } // case 498
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6541,14 +6671,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6572,14 +6711,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6593,14 +6741,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6621,14 +6778,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6655,14 +6821,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6686,14 +6861,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -6714,14 +6898,23 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-     * These will added in addition to any default label(s) that
-     * Kubernetes may apply to the node.
-     * In case of conflict in label keys, the applied set may differ depending on
-     * the Kubernetes version -- it's best to assume the behavior is undefined
-     * and conflicts should be avoided.
-     * For more information, including usage and the valid values, see:
-     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+     * The Kubernetes labels (key/value pairs) to apply to each node. The values
+     * in this field are added to the set of default labels Kubernetes applies to
+     * nodes.
+     *
+     * This field has the following restrictions:
+     *
+     * * Labels must use a valid Kubernetes syntax and character set, as defined
+     * in
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+     * * This field supports up to 1,024 total characters in a single request.
+     *
+     * Depending on the Kubernetes version, keys in this field might conflict with
+     * the keys of the default labels, which might change which of your labels
+     * are applied to the nodes. Assume that the behavior is unpredictable and
+     * avoid label key conflicts. For more information about the default labels,
+     * see:
+     * https://kubernetes.io/docs/reference/labels-annotations-taints/
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -14248,6 +14441,218 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         consolidationDelay_ = null;
       }
       return consolidationDelayBuilder_;
+    }
+
+    private com.google.container.v1.TaintConfig taintConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.TaintConfig,
+            com.google.container.v1.TaintConfig.Builder,
+            com.google.container.v1.TaintConfigOrBuilder>
+        taintConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the taintConfig field is set.
+     */
+    public boolean hasTaintConfig() {
+      return ((bitField1_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The taintConfig.
+     */
+    public com.google.container.v1.TaintConfig getTaintConfig() {
+      if (taintConfigBuilder_ == null) {
+        return taintConfig_ == null
+            ? com.google.container.v1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      } else {
+        return taintConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTaintConfig(com.google.container.v1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taintConfig_ = value;
+      } else {
+        taintConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTaintConfig(com.google.container.v1.TaintConfig.Builder builderForValue) {
+      if (taintConfigBuilder_ == null) {
+        taintConfig_ = builderForValue.build();
+      } else {
+        taintConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTaintConfig(com.google.container.v1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00008000) != 0)
+            && taintConfig_ != null
+            && taintConfig_ != com.google.container.v1.TaintConfig.getDefaultInstance()) {
+          getTaintConfigBuilder().mergeFrom(value);
+        } else {
+          taintConfig_ = value;
+        }
+      } else {
+        taintConfigBuilder_.mergeFrom(value);
+      }
+      if (taintConfig_ != null) {
+        bitField1_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTaintConfig() {
+      bitField1_ = (bitField1_ & ~0x00008000);
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.TaintConfig.Builder getTaintConfigBuilder() {
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return internalGetTaintConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+      if (taintConfigBuilder_ != null) {
+        return taintConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return taintConfig_ == null
+            ? com.google.container.v1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.TaintConfig,
+            com.google.container.v1.TaintConfig.Builder,
+            com.google.container.v1.TaintConfigOrBuilder>
+        internalGetTaintConfigFieldBuilder() {
+      if (taintConfigBuilder_ == null) {
+        taintConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.TaintConfig,
+                com.google.container.v1.TaintConfig.Builder,
+                com.google.container.v1.TaintConfigOrBuilder>(
+                getTaintConfig(), getParentForChildren(), isClean());
+        taintConfig_ = null;
+      }
+      return taintConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodeConfig)

@@ -116,4 +116,44 @@ public interface AutopilotOrBuilder
    */
   com.google.container.v1.PrivilegedAdmissionConfigOrBuilder
       getPrivilegedAdmissionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   *
+   * @return Whether the clusterPolicyConfig field is set.
+   */
+  boolean hasClusterPolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   *
+   * @return The clusterPolicyConfig.
+   */
+  com.google.container.v1.ClusterPolicyConfig getClusterPolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   */
+  com.google.container.v1.ClusterPolicyConfigOrBuilder getClusterPolicyConfigOrBuilder();
 }

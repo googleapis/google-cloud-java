@@ -51,7 +51,9 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     super(builder);
   }
 
-  private SearchResponseMetadata() {}
+  private SearchResponseMetadata() {
+    warnings_ = java.util.Collections.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
@@ -873,6 +875,86 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     return false;
   }
 
+  public static final int WARNINGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.rpc.Status> warnings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.rpc.Status> getWarningsList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder> getWarningsOrBuilderList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getWarningsCount() {
+    return warnings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getWarnings(int index) {
+    return warnings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings or non-fatal errors that occurred during execution.
+   * </pre>
+   *
+   * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getWarningsOrBuilder(int index) {
+    return warnings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -894,6 +976,9 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     if (indexTypeCase_ == 2) {
       output.writeBool(2, (boolean) ((java.lang.Boolean) indexType_));
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(3, warnings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -914,6 +999,9 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               2, (boolean) ((java.lang.Boolean) indexType_));
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, warnings_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -930,6 +1018,7 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata other =
         (com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata) obj;
 
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!getIndexTypeCase().equals(other.getIndexTypeCase())) return false;
     switch (indexTypeCase_) {
       case 1:
@@ -952,6 +1041,10 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getWarningsCount() > 0) {
+      hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWarningsList().hashCode();
+    }
     switch (indexTypeCase_) {
       case 1:
         hash = (37 * hash) + USED_INDEX_FIELD_NUMBER;
@@ -1108,6 +1201,13 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
       if (usedIndexBuilder_ != null) {
         usedIndexBuilder_.clear();
       }
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+      } else {
+        warnings_ = null;
+        warningsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       indexTypeCase_ = 0;
       indexType_ = null;
       return this;
@@ -1137,12 +1237,26 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata buildPartial() {
       com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata result =
           new com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata result) {
+      if (warningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          warnings_ = java.util.Collections.unmodifiableList(warnings_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.warnings_ = warnings_;
+      } else {
+        result.warnings_ = warningsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata result) {
@@ -1171,6 +1285,33 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata other) {
       if (other == com.google.cloud.vectorsearch.v1beta.SearchResponseMetadata.getDefaultInstance())
         return this;
+      if (warningsBuilder_ == null) {
+        if (!other.warnings_.isEmpty()) {
+          if (warnings_.isEmpty()) {
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureWarningsIsMutable();
+            warnings_.addAll(other.warnings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.warnings_.isEmpty()) {
+          if (warningsBuilder_.isEmpty()) {
+            warningsBuilder_.dispose();
+            warningsBuilder_ = null;
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            warningsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetWarningsFieldBuilder()
+                    : null;
+          } else {
+            warningsBuilder_.addAllMessages(other.warnings_);
+          }
+        }
+      }
       switch (other.getIndexTypeCase()) {
         case USED_INDEX:
           {
@@ -1226,6 +1367,18 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
                 indexTypeCase_ = 2;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.rpc.Status m =
+                    input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+                if (warningsBuilder_ == null) {
+                  ensureWarningsIsMutable();
+                  warnings_.add(m);
+                } else {
+                  warningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1574,6 +1727,380 @@ public final class SearchResponseMetadata extends com.google.protobuf.GeneratedM
         onChanged();
       }
       return this;
+    }
+
+    private java.util.List<com.google.rpc.Status> warnings_ = java.util.Collections.emptyList();
+
+    private void ensureWarningsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        warnings_ = new java.util.ArrayList<com.google.rpc.Status>(warnings_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        warningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status> getWarningsList() {
+      if (warningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(warnings_);
+      } else {
+        return warningsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getWarningsCount() {
+      if (warningsBuilder_ == null) {
+        return warnings_.size();
+      } else {
+        return warningsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status getWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(int index, com.google.rpc.Status value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.set(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(com.google.rpc.Status value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(int index, com.google.rpc.Status value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(com.google.rpc.Status.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(int index, com.google.rpc.Status.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllWarnings(java.lang.Iterable<? extends com.google.rpc.Status> values) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+        onChanged();
+      } else {
+        warningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearWarnings() {
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        warningsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.remove(index);
+        onChanged();
+      } else {
+        warningsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder getWarningsBuilder(int index) {
+      return internalGetWarningsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.StatusOrBuilder getWarningsOrBuilder(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder> getWarningsOrBuilderList() {
+      if (warningsBuilder_ != null) {
+        return warningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(warnings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addWarningsBuilder() {
+      return internalGetWarningsFieldBuilder()
+          .addBuilder(com.google.rpc.Status.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.rpc.Status.Builder addWarningsBuilder(int index) {
+      return internalGetWarningsFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings or non-fatal errors that occurred during execution.
+     * </pre>
+     *
+     * <code>repeated .google.rpc.Status warnings = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.rpc.Status.Builder> getWarningsBuilderList() {
+      return internalGetWarningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        internalGetWarningsFieldBuilder() {
+      if (warningsBuilder_ == null) {
+        warningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                warnings_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        warnings_ = null;
+      }
+      return warningsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResponseMetadata)
