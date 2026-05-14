@@ -22,6 +22,7 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
@@ -306,9 +307,8 @@ public class BigQueryJdbcOpenTelemetry {
       String spanName, BigQueryConnection connection, String sql, Callable<T> operation)
       throws SQLException {
 
-    Context parentContext = connection.getOtelContext();
     Tracer tracer = connection.getTracer();
-    Span span = tracer.spanBuilder(spanName).setParent(parentContext).startSpan();
+    Span span = tracer.spanBuilder(spanName).startSpan();
 
     span.setAttribute(DB_SYSTEM_KEY, DB_SYSTEM_VALUE);
     span.setAttribute(DB_CONNECTION_ID_KEY, connection.getConnectionId());
@@ -323,14 +323,31 @@ public class BigQueryJdbcOpenTelemetry {
       span.setAttribute(DB_STATEMENT_KEY, sql);
     }
 
-    Context fullContext = parentContext.with(span);
+    String connectionId =
+        Baggage.fromContext(connection.getOtelContext()).getEntryValue(CONNECTION_ID_BAGGAGE_KEY);
+    Baggage updatedBaggage =
+        Baggage.fromContext(Context.current()).toBuilder()
+            .put(CONNECTION_ID_BAGGAGE_KEY, connectionId)
+            .build();
+
+    // Create full context with new span and updated baggage
+    Context fullContext = Context.current().with(span).with(updatedBaggage);
+
     try (Scope scope = fullContext.makeCurrent()) {
       return operation.call();
     } catch (Exception ex) {
       span.recordException(ex);
       span.setStatus(StatusCode.ERROR, ex.getMessage());
+
       if (ex instanceof SQLException) {
         throw (SQLException) ex;
+      }
+      if (ex instanceof RuntimeException) {
+        throw (RuntimeException) ex;
+      }
+      if (ex instanceof InterruptedException) {
+        Thread.currentThread().interrupt();
+        throw new BigQueryJdbcRuntimeException("Operation interrupted", ex);
       }
       throw new BigQueryJdbcRuntimeException(ex);
     } finally {
