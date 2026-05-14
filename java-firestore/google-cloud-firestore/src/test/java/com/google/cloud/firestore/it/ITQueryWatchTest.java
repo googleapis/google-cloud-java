@@ -31,7 +31,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
-import com.google.cloud.firestore.BsonBinaryData;
 import com.google.cloud.firestore.BsonObjectId;
 import com.google.cloud.firestore.BsonTimestamp;
 import com.google.cloud.firestore.CollectionReference;
@@ -949,15 +948,15 @@ public final class ITQueryWatchTest extends ITBaseTest {
     assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     Map<String, Map<String, Object>> data =
         map(
-            "doc1", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3})),
-            "doc2", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 4})),
-            "doc3", map("key", BsonBinaryData.fromBytes(2, new byte[] {1, 2, 3})));
+            "doc1", map("key", Blob.createBsonBinary(1, new byte[] {1, 2, 3})),
+            "doc2", map("key", Blob.createBsonBinary(1, new byte[] {1, 2, 4})),
+            "doc3", map("key", Blob.createBsonBinary(2, new byte[] {1, 2, 3})));
     addDocs(data);
 
     QuerySnapshot snapshot =
         getFirstSnapshot(
             randomColl
-                .whereGreaterThan("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3}))
+                .whereGreaterThan("key", Blob.createBsonBinary(1, new byte[] {1, 2, 3}))
                 .orderBy("key", Direction.DESCENDING));
     List<Map<String, Object>> resultData = toDataArray(snapshot);
     assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
@@ -965,8 +964,8 @@ public final class ITQueryWatchTest extends ITBaseTest {
     snapshot =
         getFirstSnapshot(
             randomColl
-                .whereGreaterThanOrEqualTo("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3}))
-                .whereLessThan("key", BsonBinaryData.fromBytes(2, new byte[] {1, 2, 3}))
+                .whereGreaterThanOrEqualTo("key", Blob.createBsonBinary(1, new byte[] {1, 2, 3}))
+                .whereLessThan("key", Blob.createBsonBinary(2, new byte[] {1, 2, 3}))
                 .orderBy("key", Direction.DESCENDING));
     resultData = toDataArray(snapshot);
     assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc2"), data.get("doc1")));
@@ -1032,7 +1031,6 @@ public final class ITQueryWatchTest extends ITBaseTest {
 
   @Test
   public void crossTypeOrder() throws Exception {
-    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     Map<String, Map<String, Object>> data =
         map(
             "t", map("key", null),
@@ -1047,7 +1045,7 @@ public final class ITQueryWatchTest extends ITBaseTest {
             "j", map("key", new BsonTimestamp(1, 2)),
             "k", map("key", "string"),
             "l", map("key", Blob.fromBytes(new byte[] {0, 1, 3})),
-            "m", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3})),
+            "m", map("key", Blob.createBsonBinary(1, new byte[] {1, 2, 3})),
             "n", map("key", randomColl.getFirestore().collection("c1").document("doc")),
             "o", map("key", new BsonObjectId("507f191e810c19729de860ea")),
             "p", map("key", new GeoPoint(0, 0)),

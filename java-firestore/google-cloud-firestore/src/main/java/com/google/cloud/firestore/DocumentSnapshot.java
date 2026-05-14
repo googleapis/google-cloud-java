@@ -483,18 +483,6 @@ public class DocumentSnapshot {
   }
 
   /**
-   * Returns the value of the field as a BsonBinaryData.
-   *
-   * @param field The path to the field.
-   * @throws RuntimeException if the value is not a BsonBinaryData.
-   * @return The value of the field.
-   */
-  @Nullable
-  public BsonBinaryData getBsonBinaryData(@Nonnull String field) {
-    return (BsonBinaryData) get(field);
-  }
-
-  /**
    * Gets the reference to the document.
    *
    * @return The reference to the document.

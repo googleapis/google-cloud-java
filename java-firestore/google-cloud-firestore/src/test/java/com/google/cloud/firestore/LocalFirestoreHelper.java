@@ -967,6 +967,7 @@ public final class LocalFirestoreHelper {
 
     return builder.build();
   }
+
   private static boolean supportsExtendedTypes() {
     String edition = System.getProperty("FIRESTORE_EDITION");
     if (edition == null) {
@@ -1002,7 +1003,7 @@ public final class LocalFirestoreHelper {
     public Decimal128Value decimal128Value;
     public BsonObjectId bsonObjectId;
     public BsonTimestamp bsonTimestamp;
-    public BsonBinaryData bsonBinaryData;
+    public Blob bsonBinaryData;
 
     public AllSupportedTypes() {
       if (supportsExtendedTypes()) {
@@ -1013,7 +1014,7 @@ public final class LocalFirestoreHelper {
         decimal128Value = new Decimal128Value("1.2e3");
         bsonObjectId = new BsonObjectId("507f191e810c19729de860eb");
         bsonTimestamp = new BsonTimestamp(100, 10);
-        bsonBinaryData = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3});
+        bsonBinaryData = Blob.createBsonBinary(127, new byte[] {1, 2, 3});
       }
     }
 
@@ -1182,7 +1183,7 @@ public final class LocalFirestoreHelper {
       ALL_SUPPORTED_TYPES_MAP.put("bsonObjectId", new BsonObjectId("507f191e810c19729de860eb"));
       ALL_SUPPORTED_TYPES_MAP.put("bsonTimestamp", new BsonTimestamp(100, 10));
       ALL_SUPPORTED_TYPES_MAP.put(
-          "bsonBinaryData", BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3}));
+          "bsonBinaryData", Blob.createBsonBinary(127, new byte[] {1, 2, 3}));
     } else {
       ALL_SUPPORTED_TYPES_MAP.put("minKey", null);
       ALL_SUPPORTED_TYPES_MAP.put("maxKey", null);
@@ -1327,8 +1328,7 @@ public final class LocalFirestoreHelper {
                   .setMapValue(
                       MapValue.newBuilder()
                           .putFields(
-                              "__decimal128__",
-                              Value.newBuilder().setStringValue("1.2e3").build())
+                              "__decimal128__", Value.newBuilder().setStringValue("1.2e3").build())
                           .build())
                   .build())
           .put(
@@ -1338,9 +1338,7 @@ public final class LocalFirestoreHelper {
                       MapValue.newBuilder()
                           .putFields(
                               "__oid__",
-                              Value.newBuilder()
-                                  .setStringValue("507f191e810c19729de860eb")
-                                  .build())
+                              Value.newBuilder().setStringValue("507f191e810c19729de860eb").build())
                           .build())
                   .build())
           .put(
