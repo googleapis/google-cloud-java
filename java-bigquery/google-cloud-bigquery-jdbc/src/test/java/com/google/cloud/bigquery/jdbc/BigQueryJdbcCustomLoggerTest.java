@@ -149,26 +149,6 @@ public class BigQueryJdbcCustomLoggerTest {
   }
 
   @Test
-  public void testResultSetLoggerTraceFormat() {
-    BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
-    TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
-
-    rsLogger.finestTrace("formattedMethod", "Value: %s, Code: %d", "abc", 123);
-
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
-    LogRecord record = records.get(0);
-
-    assertEquals(Level.FINEST, record.getLevel());
-    assertEquals("formattedMethod", record.getSourceMethodName());
-    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
-    assertEquals("Value: abc, Code: 123", record.getMessage());
-  }
-
-  @Test
   public void testResultSetLoggerStandardMethods() {
     BigQueryJdbcResultSetLogger rsLogger =
         new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);

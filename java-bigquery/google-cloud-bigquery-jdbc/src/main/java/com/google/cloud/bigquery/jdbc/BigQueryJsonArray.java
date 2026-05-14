@@ -30,14 +30,16 @@ import java.util.List;
 /** An implementation of {@link BigQueryBaseArray} used to represent Array values from Json data. */
 @InternalApi
 class BigQueryJsonArray extends BigQueryBaseArray {
-  private static final BigQueryJdbcResultSetLogger LOG =
-      BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class);
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
   private List<FieldValue> values;
 
   BigQueryJsonArray(Field schema, FieldValue values) {
-    super(schema);
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class));
+  }
+
+  BigQueryJsonArray(Field schema, FieldValue values, BigQueryJdbcResultSetLogger log) {
+    super(schema, log);
     this.values = (values == null || values.isNull()) ? null : values.getRepeatedValue();
   }
 
@@ -99,7 +101,8 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   Object getCoercedValue(int index) {
     FieldValue fieldValue = this.values.get(index);
     return this.arrayOfStruct
-        ? new BigQueryJsonStruct(this.schema.getSubFields(), fieldValue)
-        : BIGQUERY_TYPE_COERCER.coerceTo(getTargetClass(), fieldValue);
+        ? new BigQueryJsonStruct(
+            this.schema.getSubFields(), fieldValue, this.LOG.getJsonStructLogger())
+        : BIGQUERY_TYPE_COERCER.coerceTo(getTargetClass(), fieldValue, this.LOG);
   }
 }

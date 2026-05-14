@@ -41,14 +41,14 @@ import java.util.stream.Collectors;
  * reference to an SQL ARRAY value.
  */
 abstract class BigQueryBaseArray implements java.sql.Array {
-  private static final BigQueryJdbcResultSetLogger LOG =
-      BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseArray.class);
+  protected final BigQueryJdbcResultSetLogger LOG;
 
   protected final boolean arrayOfStruct;
   private boolean valid;
   protected Field schema;
 
-  BigQueryBaseArray(Field schema) {
+  BigQueryBaseArray(Field schema, BigQueryJdbcResultSetLogger log) {
+    this.LOG = log;
     this.schema = schema;
     this.arrayOfStruct = isStruct(schema);
     this.valid = true;
@@ -152,7 +152,6 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   abstract Object getCoercedValue(int index);
 
   static boolean isArray(Field currentSchema) {
-    LOG.finestTrace("isArray", "++enter++");
     return currentSchema.getMode() == REPEATED;
   }
 
