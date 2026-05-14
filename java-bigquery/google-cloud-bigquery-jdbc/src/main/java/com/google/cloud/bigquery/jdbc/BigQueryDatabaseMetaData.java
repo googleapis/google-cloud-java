@@ -45,8 +45,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
-import io.opentelemetry.api.trace.StatusCode;
-import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import java.io.BufferedReader;
@@ -864,7 +862,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           procedureNamePattern,
                           procedureNameRegex,
                           LOG);
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingRoutines tasks.");
@@ -888,9 +887,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       final Routine finalRoutine = routine;
                       Future<?> processFuture =
                           routineProcessorExecutor.submit(
-                              () ->
-                                  processProcedureInfo(
-                                      finalRoutine, collectedResults, localResultSchemaFields));
+                              Context.current()
+                                  .wrap(
+                                      () ->
+                                          processProcedureInfo(
+                                              finalRoutine,
+                                              collectedResults,
+                                              localResultSchemaFields)));
                       processingTaskFutures.add(processFuture);
                     } else {
                       LOG.finer("Skipping non-procedure routine: " + routine.getRoutineId());
@@ -1280,7 +1283,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   procedureNamePattern,
                   procedureNameRegex,
                   logger);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -1357,7 +1360,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return null;
             }
           };
-      getRoutineFutures.add(getRoutineDetailsExecutor.submit(getCallable));
+      getRoutineFutures.add(getRoutineDetailsExecutor.submit(Context.current().wrap(getCallable)));
     }
     logger.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
 
@@ -1407,9 +1410,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           final Routine finalFullRoutine = fullRoutine;
           Future<?> processFuture =
               processArgsExecutor.submit(
-                  () ->
-                      processProcedureArguments(
-                          finalFullRoutine, columnNameRegex, collectedResults, resultSchemaFields));
+                  Context.current()
+                      .wrap(
+                          () ->
+                              processProcedureArguments(
+                                  finalFullRoutine,
+                                  columnNameRegex,
+                                  collectedResults,
+                                  resultSchemaFields)));
           outArgumentProcessingFutures.add(processFuture);
         } else {
           logger.warning(
@@ -4080,7 +4088,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         functionNameRegex,
                         LOG);
                   };
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine(
@@ -4515,7 +4524,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   functionNamePattern,
                   functionNameRegex,
                   logger);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -5443,16 +5452,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private <T> T withTracing(String spanName, TracedMetadataOperation<T> operation)
       throws SQLException {
-    Tracer tracer = this.connection.getTracer();
-    Span span = tracer.spanBuilder(spanName).startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      return operation.run();
-    } catch (Exception ex) {
-      span.recordException(ex);
-      span.setStatus(StatusCode.ERROR, ex.getMessage());
-      throw ex;
-    } finally {
-      span.end();
-    }
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        spanName, this.connection, null, () -> operation.run());
   }
 }

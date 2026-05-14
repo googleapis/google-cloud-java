@@ -43,7 +43,9 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -149,6 +151,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
   private OpenTelemetry openTelemetry;
+  private Context otelContext;
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   DatabaseMetaData databaseMetaData;
@@ -161,6 +164,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
     this.connectionId = UUID.randomUUID().toString();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, this.connectionId)
+            .build();
+    this.otelContext = Context.current().with(baggage);
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       LOG.finest("++enter++");
 
@@ -1059,9 +1067,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.httpTransportOptions != null) {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
-    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
-      this.tracer = BigQueryJdbcOpenTelemetry.getTracer(this.openTelemetry);
-      bigQueryOptions.setOpenTelemetryTracer(this.tracer);
+    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+      Tracer sdkTracer = this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.BIGQUERY_NAMESPACE);
+      bigQueryOptions.setOpenTelemetryTracer(sdkTracer);
+      this.tracer =
+          this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
     }
 
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();
@@ -1112,7 +1122,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
 
-    if (Boolean.TRUE.equals(this.enableGcpTraceExporter) || this.customOpenTelemetry != null) {
+    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
       bigQueryReadSettings.setOpenTelemetryTracerProvider(this.openTelemetry.getTracerProvider());
     }
 
@@ -1219,6 +1229,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   public Tracer getTracer() {
     return this.tracer;
+  }
+
+  public Context getOtelContext() {
+    return this.otelContext;
+  }
+
+  public String getPartnerToken() {
+    return this.partnerToken;
   }
 
   public boolean isReadOnlyTokenUsed() {

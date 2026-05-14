@@ -22,14 +22,20 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
 import java.nio.charset.StandardCharsets;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -39,6 +45,14 @@ public class BigQueryJdbcOpenTelemetry {
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
   static final String BIGQUERY_NAMESPACE = "com.google.cloud.bigquery";
   public static final String CONNECTION_ID_BAGGAGE_KEY = "jdbc.connection_id";
+  public static final String DB_SYSTEM_KEY = "db.system";
+  public static final String DB_SYSTEM_VALUE = "bigquery";
+  public static final String DB_CONNECTION_ID_KEY = "db.connection_id";
+  public static final String DB_APPLICATION_KEY = "db.application";
+  public static final String DEFAULT_APPLICATION_NAME = "Google-BigQuery-JDBC-Driver";
+  public static final String DB_STATEMENT_KEY = "db.statement";
+  public static final String DB_STATEMENT_COUNT_KEY = "db.statement.count";
+  public static final String DB_BATCH_STATEMENTS_KEY = "db.batch.statements";
   private static final String OTEL_TRACES_EXPORTER = "otel.traces.exporter";
   private static final String OTEL_EXPORTER_OTLP_ENDPOINT = "otel.exporter.otlp.endpoint";
   private static final String OTEL_LOGS_EXPORTER = "otel.logs.exporter";
@@ -286,5 +300,41 @@ public class BigQueryJdbcOpenTelemetry {
   /** Gets a Tracer for the JDBC driver instrumentation scope. */
   public static Tracer getTracer(OpenTelemetry openTelemetry) {
     return openTelemetry.getTracer(INSTRUMENTATION_SCOPE_NAME);
+  }
+
+  public static <T> T withTracing(
+      String spanName, BigQueryConnection connection, String sql, Callable<T> operation)
+      throws SQLException {
+
+    Context parentContext = connection.getOtelContext();
+    Tracer tracer = connection.getTracer();
+    Span span = tracer.spanBuilder(spanName).setParent(parentContext).startSpan();
+
+    span.setAttribute(DB_SYSTEM_KEY, DB_SYSTEM_VALUE);
+    span.setAttribute(DB_CONNECTION_ID_KEY, connection.getConnectionId());
+
+    String appName = connection.getPartnerToken();
+    if (appName == null || appName.isEmpty()) {
+      appName = DEFAULT_APPLICATION_NAME;
+    }
+    span.setAttribute(DB_APPLICATION_KEY, appName);
+
+    if (sql != null) {
+      span.setAttribute(DB_STATEMENT_KEY, sql);
+    }
+
+    Context fullContext = parentContext.with(span);
+    try (Scope scope = fullContext.makeCurrent()) {
+      return operation.call();
+    } catch (Exception ex) {
+      span.recordException(ex);
+      span.setStatus(StatusCode.ERROR, ex.getMessage());
+      if (ex instanceof SQLException) {
+        throw (SQLException) ex;
+      }
+      throw new BigQueryJdbcRuntimeException(ex);
+    } finally {
+      span.end();
+    }
   }
 }

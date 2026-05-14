@@ -59,6 +59,7 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import io.opentelemetry.sdk.trace.data.SpanData;
@@ -181,6 +182,7 @@ public class BigQueryStatementTest {
                 .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME))
         .when(bigQueryConnection)
         .getTracer();
+    doReturn(Context.current()).when(bigQueryConnection).getOtelContext();
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
     bigquery = mock(BigQuery.class);
     bigQueryConnection.bigQuery = bigquery;
@@ -188,6 +190,7 @@ public class BigQueryStatementTest {
     jobId = JobId.newBuilder().setJob(jobIdVal).build();
 
     doReturn(bigquery).when(bigQueryConnection).getBigQuery();
+    doReturn("test-connection-id").when(bigQueryConnection).getConnectionId();
     doReturn(10L).when(bigQueryConnection).getJobTimeoutInSeconds();
     doReturn(10L).when(bigQueryConnection).getMaxBytesBilled();
     doReturn(LABELS).when(bigQueryConnection).getLabels();
@@ -586,6 +589,15 @@ public class BigQueryStatementTest {
             span, (AttributeKey<Object>) entry.getKey(), entry.getValue());
       }
     }
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
   }
 
   Stream<Arguments> statementOperationProvider() {
