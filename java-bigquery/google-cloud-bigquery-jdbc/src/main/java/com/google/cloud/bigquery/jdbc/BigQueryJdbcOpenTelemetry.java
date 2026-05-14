@@ -323,11 +323,9 @@ public class BigQueryJdbcOpenTelemetry {
       span.setAttribute(DB_STATEMENT_KEY, sql);
     }
 
-    String connectionId =
-        Baggage.fromContext(connection.getOtelContext()).getEntryValue(CONNECTION_ID_BAGGAGE_KEY);
     Baggage updatedBaggage =
         Baggage.fromContext(Context.current()).toBuilder()
-            .put(CONNECTION_ID_BAGGAGE_KEY, connectionId)
+            .put(CONNECTION_ID_BAGGAGE_KEY, connection.getConnectionId())
             .build();
 
     // Create full context with new span and updated baggage
