@@ -36,8 +36,8 @@ jobs:
       with:
         filters: |
           src:
-            - '!(google-auth-library-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
-            - '!(google-auth-library-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -123,6 +123,8 @@ jobs:
         filters: |
           google-auth-library-java:
             - 'google-auth-library-java/**'
+          grpc-gcp:
+            - 'grpc-gcp/**'
           java-bigquery:
             - 'java-bigquery/**'
             - 'google-auth-library-java/**/*.java'
@@ -160,6 +162,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
           java-spanner:
             - 'java-spanner/**'
+            - 'grpc-gcp/**'
             - 'google-auth-library-java/**/*.java'
             - 'google-auth-library-java/**/pom.xml'
             - 'sdk-platform-java/**/*.java'
