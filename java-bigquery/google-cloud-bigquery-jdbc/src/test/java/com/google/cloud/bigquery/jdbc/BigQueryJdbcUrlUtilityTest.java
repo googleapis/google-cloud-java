@@ -228,18 +228,16 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
     String url6 = "jdbc:bigquery://;RetryMaxDelay=-1";
     assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url6));
-  }
 
-  @Test
-  public void testValidZeroConnectionProperties() {
-    String url = "jdbc:bigquery://;MaxResults=0";
-    assertDoesNotThrow(() -> DataSource.fromUrl(url));
+    String url7 = "jdbc:bigquery://;MaxResults=0";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url7));
   }
 
   @Test
   public void testInvalidSetterValues() {
     DataSource ds = new DataSource();
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(-1L));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(0L));
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setTimeout(-1));
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setJobTimeout(-1));
     assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setRetryInitialDelay(-1));

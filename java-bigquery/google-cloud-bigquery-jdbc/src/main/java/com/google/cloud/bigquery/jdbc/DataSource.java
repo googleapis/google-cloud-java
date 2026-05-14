@@ -671,8 +671,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setMaxResults(Long maxResults) {
-    if (maxResults != null) {
-      validateNonNegative(maxResults, BigQueryJdbcUrlUtility.MAX_RESULTS_PROPERTY_NAME);
+    if (maxResults != null && maxResults <= 0) {
+      throw new BigQueryJdbcRuntimeException(
+          "Invalid value for MaxResults. It must be greater than 0.");
     }
     this.maxResults = maxResults;
   }
