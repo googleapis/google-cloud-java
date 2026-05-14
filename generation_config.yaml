@@ -1335,8 +1335,6 @@ libraries:
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
   GAPICs:
-  - proto_path: google/iam/v1
-  - proto_path: google/iam/v1beta
   - proto_path: google/iam/v2
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
@@ -3096,3 +3094,66 @@ libraries:
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
   - proto_path: google/iam/v3beta
+- api_shortname: pubsub
+  name_pretty: Cloud Pub/Sub
+  api_reference: https://cloud.google.com/pubsub/
+  product_documentation: https://cloud.google.com/pubsub/docs/
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
+  api_description: is designed to provide reliable, many-to-many, asynchronous messaging
+    between applications. Publisher applications can send messages to a topic and
+    other applications can subscribe to that topic to receive the messages. By decoupling
+    senders and receivers, Google Cloud Pub/Sub allows developers to communicate between
+    independently written applications.
+  issue_tracker: https://issuetracker.google.com/savedsearches/559741
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-pubsub
+  codeowner_team: '@googleapis/pubsub-team'
+  api_id: pubsub.googleapis.com
+  library_type: GAPIC_COMBO
+  requires_billing: true
+  recommended_package: com.google.cloud.pubsub.v1
+  GAPICs:
+  - proto_path: google/pubsub/v1
+- api_shortname: bigtable
+  api_description: API for reading and writing the contents of Bigtables associated
+    with a cloud project.
+  name_pretty: Cloud Bigtable
+  product_documentation: https://cloud.google.com/bigtable
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/559777
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-bigtable
+  codeowner_team: '@googleapis/bigtable-team'
+  api_id: bigtable.googleapis.com
+  library_type: GAPIC_COMBO
+  extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
+  excluded_poms: google-cloud-bigtable-bom
+  recommended_package: com.google.cloud.bigtable
+  GAPICs:
+  - proto_path: google/bigtable/v2
+  - proto_path: google/bigtable/admin/v2
+- api_shortname: firestore
+  name_pretty: Cloud Firestore
+  product_documentation: https://cloud.google.com/firestore
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/5337669
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-firestore
+  codeowner_team: '@googleapis/firestore-team'
+  api_id: firestore.googleapis.com
+  library_type: GAPIC_COMBO
+  api_description: is a fully-managed NoSQL document database for mobile, web, and
+    server development from Firebase and Google Cloud Platform.  It's backed by a
+    multi-region replicated database that ensures once data is committed, it's durable
+    even in the face of unexpected disasters. Not only that, but despite being a distributed
+    database, it's also strongly consistent and offers seamless integration with other
+    Firebase and Google Cloud Platform products, including Google Cloud Functions.
+  transport: grpc
+  excluded_poms: google-cloud-firestore,google-cloud-firestore-bom
+  recommended_package: com.google.cloud.firestore
+  GAPICs:
+  - proto_path: google/firestore/v1
+  - proto_path: google/firestore/admin/v1
+  - proto_path: google/firestore/bundle

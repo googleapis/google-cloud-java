@@ -60,6 +60,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -160,6 +161,7 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
     client = spanner.getDatabaseClient(DatabaseId.of("test-project", "i", "d"));
   }
 
+  @Ignore("Flaky test: b/510147927")
   @Test
   public void testMetricsSingleUseQuery() {
     Stopwatch stopwatch = Stopwatch.createStarted();

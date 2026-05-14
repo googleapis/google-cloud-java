@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.exception;
 
 import com.google.api.core.InternalApi;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 
 /**
  * Thrown to indicate that the current TypeCoercer can not perform the coercion as the Coercion
@@ -25,8 +24,6 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
  */
 @InternalApi
 public class BigQueryJdbcCoercionNotFoundException extends RuntimeException {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJdbcCoercionNotFoundException.class.getName());
 
   /**
    * Construct a new exception.
@@ -39,6 +36,5 @@ public class BigQueryJdbcCoercionNotFoundException extends RuntimeException {
         String.format(
             "Coercion not found for [%s -> %s] conversion",
             source.getCanonicalName(), target.getCanonicalName()));
-    LOG.severe(this.getMessage(), this);
   }
 }

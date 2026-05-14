@@ -16,38 +16,15 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
-
-/**
- * Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal.
- * Allocates a dedicated, independent InheritableThreadLocal object per concrete BigQueryConnection
- * instance.
- */
+/** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
-  private static final ConcurrentHashMap<BigQueryConnection, InheritableThreadLocal<String>>
-      instanceLocals = new ConcurrentHashMap<>();
-  private static final ConcurrentHashMap<BigQueryConnection, String> instanceIds =
-      new ConcurrentHashMap<>();
-
-  /** Allocates an exclusive InheritableThreadLocal and registers the connection mapping. */
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
-  static MdcCloseable registerInstance(BigQueryConnection connection, String id) {
-    if (connection != null) {
-      String cleanId =
-          instanceIds.computeIfAbsent(
-              connection,
-              k -> {
-                String baseId = (id != null && !id.isEmpty()) ? id : UUID.randomUUID().toString();
-                return baseId;
-              });
-
-      currentConnectionId.set(cleanId);
-      InheritableThreadLocal<String> threadLocal =
-          instanceLocals.computeIfAbsent(connection, k -> new InheritableThreadLocal<>());
-      threadLocal.set(cleanId);
+  /** Sets the current connection context on the executing thread. */
+  static MdcCloseable registerInstance(String connectionId) {
+    if (connectionId != null) {
+      currentConnectionId.set(connectionId);
     }
     return () -> clear();
   }
@@ -59,22 +36,8 @@ class BigQueryJdbcMdc {
     return currentConnectionId.get();
   }
 
-  /** Clears the connection ID context from all active connection contexts on the current thread. */
-  static void removeInstance(BigQueryConnection connection) {
-    if (connection != null) {
-      InheritableThreadLocal<String> local = instanceLocals.remove(connection);
-      if (local != null) {
-        local.remove();
-      }
-      instanceIds.remove(connection);
-    }
-  }
-
   static void clear() {
     currentConnectionId.remove();
-    for (InheritableThreadLocal<String> local : instanceLocals.values()) {
-      local.remove();
-    }
   }
 
   /**

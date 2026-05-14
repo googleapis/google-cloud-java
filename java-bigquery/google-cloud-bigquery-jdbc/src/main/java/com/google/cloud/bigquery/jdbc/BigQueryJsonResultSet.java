@@ -137,11 +137,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // We are working with the nested record, the cursor would have been
       // populated.
       if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
-        IllegalStateException ex =
-            new IllegalStateException(
-                "Cursor/ArrayFieldValueList can not be null working with the nested record");
-        LOG.severe(ex.getMessage(), ex);
-        throw ex;
+        throw new IllegalStateException(
+            "Cursor/ArrayFieldValueList can not be null working with the nested record");
       }
       // Check if there's a next record in the array which can be read
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
@@ -188,7 +185,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObject", "++enter++");
     FieldValue value = getObjectInternal(columnIndex);
     if (value == null || value.isNull()) {
       return null;
@@ -233,7 +230,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    */
   private FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObjectInternal", "++enter++");
     FieldValue value;
     if (this.isNested) {
       boolean validIndexForNestedResultSet = columnIndex == 1 || columnIndex == 2;
@@ -275,7 +272,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
-    LOG.fine("Closing BigqueryJsonResultSet %s.", this);
+    LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
     if (ownedThreads != null) {
       for (Thread ownedThread : ownedThreads) {
@@ -290,7 +287,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isBeforeFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isBeforeFirst", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
@@ -301,14 +298,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isAfterLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isAfterLast", "++enter++");
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isFirst", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
     } else {
@@ -319,7 +316,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isLast", "++enter++");
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {

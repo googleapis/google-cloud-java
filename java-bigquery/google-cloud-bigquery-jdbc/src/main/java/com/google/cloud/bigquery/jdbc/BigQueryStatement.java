@@ -57,7 +57,6 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -239,12 +238,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      return executeQueryImpl(sql);
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    return executeQueryImpl(sql);
   }
 
   private ResultSet executeQueryImpl(String sql) throws SQLException {
@@ -266,12 +262,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      return executeLargeUpdateImpl(sql);
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    return executeLargeUpdateImpl(sql);
   }
 
   private long executeLargeUpdateImpl(String sql) throws SQLException {
@@ -291,13 +284,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
-      LOG.finest("++enter++");
-      return checkUpdateCount(executeLargeUpdate(sql));
-    } finally {
-      BigQueryJdbcMdc.clear();
-    }
+    LOG.finest("++enter++");
+    return checkUpdateCount(executeLargeUpdate(sql));
   }
 
   int checkUpdateCount(long updateCount) {
@@ -312,12 +300,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      return executeImpl(sql);
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    return executeImpl(sql);
   }
 
   private boolean executeImpl(String sql) throws SQLException {
@@ -406,23 +391,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.fine("Closing Statement %s.", this);
+    LOG.fine("Closing Statement %s.", this);
 
-      boolean cancelSucceeded = false;
-      try {
-        cancel(); // This attempts to cancel jobs and calls closeStatementResources()
-        cancelSucceeded = true;
-      } catch (SQLException e) {
-        LOG.warning("Failed to cancel statement during close().", e);
-      } finally {
-        if (!cancelSucceeded) {
-          closeStatementResources();
-        }
-        this.connection = null;
-        this.isClosed = true;
+    boolean cancelSucceeded = false;
+    try {
+      cancel(); // This attempts to cancel jobs and calls closeStatementResources()
+      cancelSucceeded = true;
+    } catch (SQLException e) {
+      LOG.warning("Failed to cancel statement during close().", e);
+    } finally {
+      if (!cancelSucceeded) {
+        closeStatementResources();
       }
+      this.connection = null;
+      this.isClosed = true;
     }
   }
 
@@ -474,31 +456,28 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("Statement %s cancelled", this);
-      synchronized (cancelLock) {
-        this.isCanceled = true;
-        for (JobId jobId : this.jobIds) {
-          try {
-            this.bigQuery.cancel(jobId);
-            LOG.info("Job " + jobId + "cancelled.");
-          } catch (BigQueryException e) {
-            if (e.getMessage() != null
-                && (e.getMessage().contains("Job is already in state DONE")
-                    || e.getMessage().contains("Error: 3848323"))) {
-              LOG.warning("Attempted to cancel a job that was already done: " + jobId);
-            } else {
-              throw new BigQueryJdbcException(e);
-            }
+    LOG.finest("Statement %s cancelled", this);
+    synchronized (cancelLock) {
+      this.isCanceled = true;
+      for (JobId jobId : this.jobIds) {
+        try {
+          this.bigQuery.cancel(jobId);
+          LOG.info("Job " + jobId + "cancelled.");
+        } catch (BigQueryException e) {
+          if (e.getMessage() != null
+              && (e.getMessage().contains("Job is already in state DONE")
+                  || e.getMessage().contains("Error: 3848323"))) {
+            LOG.warning("Attempted to cancel a job that was already done: " + jobId);
+          } else {
+            throw new BigQueryJdbcException(e);
           }
         }
-        jobIds.clear();
       }
-      // If a ResultSet exists, then it will be closed as well, closing the
-      // ownedThreads
-      closeStatementResources();
+      jobIds.clear();
     }
+    // If a ResultSet exists, then it will be closed as well, closing the
+    // ownedThreads
+    closeStatementResources();
   }
 
   @Override
@@ -989,15 +968,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finest("++enter++");
     long totalRows = results.getTotalRows();
 
-    if (totalRows == 0 || totalRows < querySettings.getHighThroughputMinTableSize()) {
+    // SAFEGUARD: If all data has already been retrieved in the first page,
+    // NEVER switch to the Read API as it would discard in-memory data and cause a double-fetch.
+    if (totalRows == 0
+        || totalRows < querySettings.getHighThroughputMinTableSize()
+        || !results.hasNextPage()) {
       return false;
     }
 
-    // TODO(BQ Team): TableResult doesnt expose the number of records in the current page, hence the
-    // below log iterates and counts. This is inefficient and we may eventually want to expose
-    // PageSize with TableResults
-    // TODO(Obada): Scope for performance optimization.
-    int pageSize = Iterators.size(results.getValues().iterator());
+    long pageSize = querySettings.getMaxResultPerPage();
+
+    // Prevent division by zero due to potential overflows/empty sets:
+    if (pageSize <= 0) {
+      pageSize = 1;
+    }
+
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
@@ -1506,12 +1491,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
-      checkClosed();
-      return getMoreResultsImpl(current);
-    }
+    LOG.finest("++enter++");
+    checkClosed();
+    return getMoreResultsImpl(current);
   }
 
   private boolean getMoreResultsImpl(int current) throws SQLException {

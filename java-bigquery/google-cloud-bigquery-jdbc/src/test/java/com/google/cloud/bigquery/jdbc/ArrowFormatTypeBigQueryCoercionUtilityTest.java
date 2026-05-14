@@ -32,6 +32,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.util.TimeZone;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
@@ -164,8 +165,28 @@ public class ArrowFormatTypeBigQueryCoercionUtilityTest {
 
   @Test
   public void longToTime() {
-    assertThat(INSTANCE.coerceTo(Time.class, 1408452095220000L))
-        .isEqualTo(new Time(1408452095000L));
+    long value = 1408452095220000L;
+    // 1408452095220000 microseconds is 1408452095220 milliseconds.
+    // Since the test runs under UTC timezone by TimeZoneRule, expected localMillis is
+    // 1408452095220L.
+    assertThat(INSTANCE.coerceTo(Time.class, value)).isEqualTo(new Time(1408452095220L));
+  }
+
+  @Test
+  public void longToTimeInNonUTCTimeZone() {
+    TimeZone originalTimeZone = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"));
+      TimeZoneCache.reset();
+      long value = 1408452095220000L;
+      // 1408452095220000 microseconds is 1408452095220 milliseconds.
+      // Under America/Los_Angeles (PDT, -7 hours offset in Aug 2014), the subtracted offset
+      // results in 1408452095220 - (-25200000) = 1408477295220L.
+      assertThat(INSTANCE.coerceTo(Time.class, value)).isEqualTo(new Time(1408477295220L));
+    } finally {
+      TimeZone.setDefault(originalTimeZone);
+      TimeZoneCache.reset();
+    }
   }
 
   @Test

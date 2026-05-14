@@ -1,0 +1,1451 @@
+{
+  "readChangeStreamTests": [
+    {
+      "description": "1 heartbeat",
+      "api_responses": [
+        {
+          "heartbeat": {
+            "continuation_token": {
+              "partition": {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": ""
+                }
+              },
+              "token": "heartbeat-token"
+            },
+            "estimated_low_watermark": "2022-07-01T00:00:00Z"
+          }
+        }
+      ],
+      "results": [
+        {
+          "record" : {
+            "heartbeat": {
+              "continuation_token": {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": ""
+                  }
+                },
+                "token": "heartbeat-token"
+              },
+              "estimated_low_watermark": "2022-07-01T00:00:00Z"
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 CloseStream",
+      "api_responses": [
+        {
+          "close_stream": {
+            "status": {
+              "code": "11",
+              "message": "Partition boundaries are misaligned."
+            },
+            "continuation_tokens": [
+              {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000001"
+                  }
+                },
+                "token": "close-stream-token-1"
+              },
+              {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "0000000000000001",
+                    "end_key_open": "0000000000000003"
+                  }
+                },
+                "token": "close-stream-token-2"
+              }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              },
+              {
+                "row_range": {
+                  "start_key_closed": "0000000000000002",
+                  "end_key_open": "0000000000000003"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "record" : {
+            "close_stream": {
+              "status": {
+                "code": "11",
+                "message": "Partition boundaries are misaligned."
+              },
+              "continuation_tokens": [
+                {
+                  "partition": {
+                    "row_range": {
+                      "start_key_closed": "",
+                      "end_key_open": "0000000000000001"
+                    }
+                  },
+                  "token": "close-stream-token-1"
+                },
+                {
+                  "partition": {
+                    "row_range": {
+                      "start_key_closed": "0000000000000001",
+                      "end_key_open": "0000000000000003"
+                    }
+                  },
+                  "token": "close-stream-token-2"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
+                },
+                {
+                  "row_range": {
+                    "start_key_closed": "0000000000000002",
+                    "end_key_open": "0000000000000003"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 heartbeat + 1 CloseStream",
+      "api_responses": [
+        {
+          "heartbeat": {
+            "continuation_token": {
+              "partition": {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": ""
+                }
+              },
+              "token": "heartbeat-token"
+            },
+            "estimated_low_watermark": "2022-07-01T00:00:00Z"
+          }
+        },
+        {
+          "close_stream": {
+            "status": {
+              "code": "11",
+              "message": "Partition boundaries are misaligned."
+            },
+            "continuation_tokens": [
+              {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000001"
+                  }
+                },
+                "token": "close-stream-token-1"
+              }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "record" : {
+            "heartbeat": {
+              "continuation_token": {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": ""
+                  }
+                },
+                "token": "heartbeat-token"
+              },
+              "estimated_low_watermark": "2022-07-01T00:00:00Z"
+            }
+          },
+          "error": false
+        },
+        {
+          "record" : {
+            "close_stream": {
+              "status": {
+                "code": "11",
+                "message": "Partition boundaries are misaligned."
+              },
+              "continuation_tokens": [
+                {
+                  "partition": {
+                    "row_range": {
+                      "start_key_closed": "",
+                      "end_key_open": "0000000000000001"
+                    }
+                  },
+                  "token": "close-stream-token-1"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 logical mutation no chunking([{DF,DC,SC}]->ChangeStreamMutation{DF,DC,SC})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                },
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 incomplete logical mutation(missing `done: true`)",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "token": "data-change-token",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "error": true
+        }
+      ]
+    },
+    {
+      "description": "GC mutation no source cluster id",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "GARBAGE_COLLECTION",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "GARBAGE_COLLECTION",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 chunked SetCell([{SC_chunk1(v)}, {SC_chunk2(alue-VAL)}]->ChangeStreamMutation{SC(value-VAL)})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "ChunkedValueSize mismatch for a chunked SetCell([{SC_chunk1(v)}, {SC_chunk2(alue-VAL)}]->error)",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 1
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "error": true
+        }
+      ]
+    },
+    {
+      "description": "1 chunked SetCell([{SC_chunk1(v)}, {SC_chunk2(alue-VAL)}, {SC_chunk3(-VAL)}]->ChangeStreamMutation{SC(value-VAL-VAL)})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 13
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 13
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 9,
+                  "chunked_value_size": 13,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "LVZBTA=="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFMLVZBTA=="
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "2 chunked SetCells([{SC1_chunk1(v)}, {SC1_chunk2(alue-VAL), SC2_chunk1(v)}, {SC2_chunk2(alue-VAL)}]->ChangeStreamMutation{SC1(value-VAL),SC2(value-VAL)})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              },
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                },
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 chunked SetCell + 1 unchunked SetCell([{SC1_chunk1(v)}, {SC1_chunk2(alue-VAL), SC2(value-VAL)}]->ChangeStreamMutation{SC1(value-VAL),SC2(value-VAL)})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                },
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 unchunked SetCell + 1 chunked SetCell([{SC1(v), SC2_chunk1(v)}, {SC2_chunk2(alue-VAL)}]->ChangeStreamMutation{SC1(v),SC2(value-VAL)})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              },
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                },
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 mod + 1 chunked SetCell + 1 mod([{DF1,SC_chunk1(v)}, {SC_chunk2(alue-VAL), DF2}]->ChangeStreamMutation{DF1,SC(value-VAL),DF2})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              },
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                },
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "1 chunked SetCell + many nonchunked mods([{SC_chunk1(v)}, {SC_chunk2(alue-VAL),DF,DC}]->ChangeStreamMutation{SC(value-VAL),DF,DC})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_size": 9
+                },
+                "mutation": {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dg=="
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "chunk_info": {
+                  "chunked_value_offset": 1,
+                  "chunked_value_size": 9,
+                  "last_chunk": true
+                },
+                "mutation": {
+                  "set_cell": {
+                    "value": "YWx1ZS1WQUw="
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "set_cell": {
+                    "family_name": "family",
+                    "column_qualifier": "0000000000000000",
+                    "timestamp_micros": 1000,
+                    "value": "dmFsdWUtVkFM"
+                  }
+                },
+                {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                },
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "non SetCell chunking([{DF1},{DF2,DC}]->ChangeStreamMutation{DF1,DF2,DC})",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              },
+              {
+                "mutation": {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "delete_from_column" : {
+                    "family_name": "family",
+                    "column_qualifier": "dg==",
+                    "time_range": {
+                      "start_timestamp_micros": 5000,
+                      "end_timestamp_micros": 15000
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    },
+    {
+      "description": "2 logical mutations with non SetCell chunking + CloseStream([{Change1_DF1}, {Change1_DF2}, {Change2_DF3}, {Change2_DF4}, {CloseStream}]->[ChangeStreamMutation1{DF1,DF2}),ChangeStreamMutation2{DF3,DF4}),CloseStream]",
+      "api_responses": [
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        },
+        {
+          "data_change": {
+            "row_key": "0000000000000000",
+            "type": "USER",
+            "source_cluster_id": "source-cluster-id",
+            "commit_timestamp": "2022-07-01T00:00:00Z",
+            "tiebreaker": 100,
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "data_change": {
+            "type": "CONTINUATION",
+            "token": "data-change-token",
+            "estimated_low_watermark": "2022-07-01T00:00:00Z",
+            "chunks": [
+              {
+                "mutation": {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              }
+            ],
+            "done": true
+          }
+        },
+        {
+          "close_stream": {
+            "status": {
+              "code": "11",
+              "message": "Partition boundaries are misaligned."
+            },
+            "continuation_tokens": [
+              {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000001"
+                  }
+                },
+                "token": "close-stream-token-1"
+              },
+              {
+                "partition": {
+                  "row_range": {
+                    "start_key_closed": "0000000000000001",
+                    "end_key_open": "0000000000000003"
+                  }
+                },
+                "token": "close-stream-token-2"
+              }
+            ],
+            "new_partitions": [
+              {
+                "row_range": {
+                  "start_key_closed": "",
+                  "end_key_open": "0000000000000002"
+                }
+              },
+              {
+                "row_range": {
+                  "start_key_closed": "0000000000000002",
+                  "end_key_open": "0000000000000003"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        },
+        {
+          "record": {
+            "change_stream_mutation": {
+              "row_key": "0000000000000000",
+              "type": "USER",
+              "source_cluster_id": "source-cluster-id",
+              "commit_timestamp": "2022-07-01T00:00:00Z",
+              "tiebreaker": 100,
+              "token": "data-change-token",
+              "estimated_low_watermark": "2022-07-01T00:00:00Z",
+              "mutations": [
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                },
+                {
+                  "delete_from_family": {
+                    "family_name": "family"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        },
+        {
+          "record" : {
+            "close_stream": {
+              "status": {
+                "code": "11",
+                "message": "Partition boundaries are misaligned."
+              },
+              "continuation_tokens": [
+                {
+                  "partition": {
+                    "row_range": {
+                      "start_key_closed": "",
+                      "end_key_open": "0000000000000001"
+                    }
+                  },
+                  "token": "close-stream-token-1"
+                },
+                {
+                  "partition": {
+                    "row_range": {
+                      "start_key_closed": "0000000000000001",
+                      "end_key_open": "0000000000000003"
+                    }
+                  },
+                  "token": "close-stream-token-2"
+                }
+              ],
+              "new_partitions": [
+                {
+                  "row_range": {
+                    "start_key_closed": "",
+                    "end_key_open": "0000000000000002"
+                  }
+                },
+                {
+                  "row_range": {
+                    "start_key_closed": "0000000000000002",
+                    "end_key_open": "0000000000000003"
+                  }
+                }
+              ]
+            }
+          },
+          "error": false
+        }
+      ]
+    }
+  ]
+}
