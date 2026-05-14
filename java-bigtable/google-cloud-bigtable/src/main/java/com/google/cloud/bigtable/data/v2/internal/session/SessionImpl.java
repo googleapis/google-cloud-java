@@ -330,10 +330,10 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   @Override
   public Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
-    // start monitoring for heartbeat when the vrpc is started
-    this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
-
     synchronized (lock) {
+      // start monitoring for heartbeat when the vrpc is started
+      this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+
       if (currentRpc != null) {
         return Status.INTERNAL.withDescription(
             "Session error: RPC multiplexing is not yet supported");
