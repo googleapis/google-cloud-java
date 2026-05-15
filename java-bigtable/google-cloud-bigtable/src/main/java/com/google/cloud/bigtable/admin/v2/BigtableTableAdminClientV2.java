@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -30,7 +31,9 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
 import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
@@ -38,10 +41,13 @@ import com.google.cloud.bigtable.admin.v2.stub.AwaitConsistencyCallableV2;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.cloud.bigtable.admin.v2.stub.GrpcBigtableTableAdminStub;
 import com.google.common.base.Strings;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
+import io.grpc.MethodDescriptor.Marshaller;
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
 import javax.annotation.Nullable;
 
@@ -153,18 +159,29 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
           java.util.concurrent.ScheduledExecutorService backgroundExecutor)
           throws IOException {
 
-    // Using getRestoreTableMethod() as a placeholder descriptor for the LRO optimization tracking
-    // is a technique that leverages type erasure and unsafe casting.
-    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable
-    // LRO,
+    // Reusing getRestoreTableMethod() as a placeholder descriptor for LRO optimization tracking.
+    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable LRO,
     // we reuse getRestoreTableMethod() (which is an LRO and returns a google.longrunning.Operation)
-    // and cast its request type argument from RestoreTableRequest to Void. This satisfies the
-    // OperationCallable constructor requirements and correctly handles LRO operation name polling.
-    @SuppressWarnings("unchecked")
+    // and attach a throwing Marshaller for Void to satisfy the OperationCallable constructor requirements.
+    // Note: We do not plumb the gRPC ManagedChannel into the ClientContext below because this callable
+    // is only used for resumeFutureCall() (polling existing LROs via OperationsStub), which already encapsulates
+    // its own channel. The initial RPC is never called through this OperationCallable.
     MethodDescriptor<Void, Operation> fakeDescriptor =
-        (MethodDescriptor<Void, Operation>)
-            (MethodDescriptor<?, ?>)
-                com.google.bigtable.admin.v2.BigtableTableAdminGrpc.getRestoreTableMethod();
+        BigtableTableAdminGrpc.getRestoreTableMethod()
+            .toBuilder(
+                new Marshaller<Void>() {
+                  @Override
+                  public InputStream stream(Void value) {
+                    throw new UnsupportedOperationException();
+                  }
+
+                  @Override
+                  public Void parse(InputStream stream) {
+                    throw new UnsupportedOperationException();
+                  }
+                },
+                BigtableTableAdminGrpc.getRestoreTableMethod().getResponseMarshaller())
+            .build();
 
     GrpcCallSettings<Void, Operation> unusedInitialCallSettings =
         GrpcCallSettings.create(fakeDescriptor);
@@ -220,25 +237,19 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
    * @return An ApiFuture that tracks the optimization progress.
    */
   public ApiFuture<Empty> awaitOptimizeRestoredTable(ApiFuture<RestoredTableResult> restoreFuture) {
-    // 1. Block and wait for the restore operation to complete
-    RestoredTableResult result;
-    try {
-      result = restoreFuture.get();
-    } catch (Exception e) {
-      throw new RuntimeException("Restore operation failed", e);
-    }
+    return ApiFutures.transformAsync(
+        restoreFuture,
+        result -> {
+          OptimizeRestoredTableOperationToken token =
+              result.getOptimizeRestoredTableOperationToken();
 
-    // 2. Extract the operation token from the result
-    // (RestoredTableResult already wraps the OptimizeRestoredTableOperationToken)
-    OptimizeRestoredTableOperationToken token = result.getOptimizeRestoredTableOperationToken();
+          if (token == null || Strings.isNullOrEmpty(token.getOperationName())) {
+            return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+          }
 
-    if (token == null || Strings.isNullOrEmpty(token.getOperationName())) {
-      // If there is no optimization operation, return immediate success.
-      return ApiFutures.immediateFuture(Empty.getDefaultInstance());
-    }
-
-    // 3. Return the future for the optimization operation
-    return getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
+          return getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
+        },
+        MoreExecutors.directExecutor());
   }
 
   /**
@@ -287,14 +298,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     ApiFuture<Empty> emptyFuture =
         getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
     return ApiFutures.transform(
-        emptyFuture,
-        new com.google.api.core.ApiFunction<Empty, Void>() {
-          @Override
-          public Void apply(Empty input) {
-            return null;
-          }
-        },
-        com.google.common.util.concurrent.MoreExecutors.directExecutor());
+        emptyFuture, input -> null, MoreExecutors.directExecutor());
   }
 
   /**
@@ -311,6 +315,18 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   }
 
   /**
+   * Polls an existing consistency token until table replication is consistent across all clusters.
+   * Useful for checking consistency of a token generated in a separate process. Blocks until
+   * completion.
+   *
+   * @param tableName The typesafe fully qualified table name to check.
+   * @param consistencyToken The token to poll.
+   */
+  public void waitForConsistency(TableName tableName, String consistencyToken) {
+    waitForConsistency(tableName.toString(), consistencyToken);
+  }
+
+  /**
    * Asynchronously polls the consistency token. Returns a future that completes when table
    * replication is consistent across all clusters.
    *
@@ -320,6 +336,17 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   public ApiFuture<Void> waitForConsistencyAsync(String tableName, String consistencyToken) {
     return getAwaitConsistencyCallable()
         .futureCall(ConsistencyRequest.forReplicationFromTableName(tableName, consistencyToken));
+  }
+
+  /**
+   * Asynchronously polls the consistency token. Returns a future that completes when table
+   * replication is consistent across all clusters.
+   *
+   * @param tableName The typesafe fully qualified table name to check.
+   * @param consistencyToken The token to poll.
+   */
+  public ApiFuture<Void> waitForConsistencyAsync(TableName tableName, String consistencyToken) {
+    return waitForConsistencyAsync(tableName.toString(), consistencyToken);
   }
 
   private UnaryCallable<ConsistencyRequest, Void> getAwaitConsistencyCallable() {

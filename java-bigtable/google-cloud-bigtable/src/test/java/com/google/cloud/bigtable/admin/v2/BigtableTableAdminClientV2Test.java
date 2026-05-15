@@ -22,6 +22,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
+import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.models.ConsistencyRequest;
 import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationToken;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
@@ -90,6 +91,31 @@ public class BigtableTableAdminClientV2Test {
   }
 
   @Test
+  public void testWaitForConsistencyWithTableName() {
+    // Setup
+    String token = "my-token";
+    TableName tableName = TableName.of("my-project", "my-instance", "my-table");
+    ConsistencyRequest expectedRequest =
+        ConsistencyRequest.forReplicationFromTableName(tableName.toString(), token);
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockAwaitConsistencyCallable.futureCall(expectedRequest))
+        .thenAnswer(
+            (Answer<ApiFuture<Void>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(null);
+                });
+
+    // Execute
+    client.waitForConsistency(tableName, token);
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
+  }
+
+  @Test
   public void testAwaitOptimizeRestoredTable() throws Exception {
     // Setup
     String optimizeToken = "my-optimization-token";
@@ -103,21 +129,21 @@ public class BigtableTableAdminClientV2Test {
     RestoredTableResult mockResult = Mockito.mock(RestoredTableResult.class);
     Mockito.when(mockResult.getOptimizeRestoredTableOperationToken()).thenReturn(mockToken);
 
-    // 3. Mock the Input Future (returning the result)
-    ApiFuture<RestoredTableResult> mockRestoreFuture = Mockito.mock(ApiFuture.class);
-    Mockito.when(mockRestoreFuture.get()).thenReturn(mockResult);
+    // 3. Mock the Input Future (returning immediate result)
+    ApiFuture<RestoredTableResult> restoreFuture = ApiFutures.immediateFuture(mockResult);
 
     // 4. Mock the Stub's behavior (resuming the Optimize Op)
     OperationFuture<Empty, OptimizeRestoredTableMetadata> mockOptimizeOp =
         Mockito.mock(OperationFuture.class);
+    Mockito.when(mockOptimizeOp.get()).thenReturn(Empty.getDefaultInstance());
     Mockito.when(mockOptimizeRestoredTableCallable.resumeFutureCall(optimizeToken))
         .thenReturn(mockOptimizeOp);
 
     // Execute
-    ApiFuture<Empty> result = client.awaitOptimizeRestoredTable(mockRestoreFuture);
+    ApiFuture<Empty> result = client.awaitOptimizeRestoredTable(restoreFuture);
 
     // Verify
-    assertThat(result).isEqualTo(mockOptimizeOp);
+    assertThat(result.get()).isEqualTo(Empty.getDefaultInstance());
     Mockito.verify(mockOptimizeRestoredTableCallable).resumeFutureCall(optimizeToken);
   }
 
@@ -127,12 +153,11 @@ public class BigtableTableAdminClientV2Test {
     RestoredTableResult mockResult = Mockito.mock(RestoredTableResult.class);
     Mockito.when(mockResult.getOptimizeRestoredTableOperationToken()).thenReturn(null);
 
-    // Mock the Input Future
-    ApiFuture<RestoredTableResult> mockRestoreFuture = Mockito.mock(ApiFuture.class);
-    Mockito.when(mockRestoreFuture.get()).thenReturn(mockResult);
+    // Mock the Input Future (returning immediate result)
+    ApiFuture<RestoredTableResult> restoreFuture = ApiFutures.immediateFuture(mockResult);
 
     // Execute
-    ApiFuture<Empty> result = client.awaitOptimizeRestoredTable(mockRestoreFuture);
+    ApiFuture<Empty> result = client.awaitOptimizeRestoredTable(restoreFuture);
 
     // Verify: Returns immediate success (Empty) without calling the stub
     assertThat(result.get()).isEqualTo(Empty.getDefaultInstance());
