@@ -21,8 +21,6 @@ import org.apache.arrow.vector.util.JsonStringArrayList;
 
 /** This class acts as a facade layer and wraps Arrow's VectorSchemaRoot & JsonStringArrayList */
 class BigQueryArrowBatchWrapper {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryArrowBatchWrapper.class.getName());
   // Reference to the current arrowBatch
   private final ArrowRecordBatch currentArrowBatch;
   // Reference to the nested Records, set as null otherwise (Arrays)
@@ -45,35 +43,29 @@ class BigQueryArrowBatchWrapper {
   }
 
   static BigQueryArrowBatchWrapper of(ArrowRecordBatch currentArrowBatch, boolean... isLast) {
-    LOG.finest("++enter++");
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
     return new BigQueryArrowBatchWrapper(currentArrowBatch, null, isLastFlag, null);
   }
 
   static BigQueryArrowBatchWrapper getNestedFieldValueListWrapper(
       JsonStringArrayList nestedRecords, boolean... isLast) {
-    LOG.finest("++enter++");
     boolean isLastFlag = isLast != null && isLast.length == 1 && isLast[0];
     return new BigQueryArrowBatchWrapper(null, nestedRecords, isLastFlag, null);
   }
 
   static BigQueryArrowBatchWrapper ofError(Exception exception) {
-    LOG.finest("++enter++");
     return new BigQueryArrowBatchWrapper(null, null, true, exception);
   }
 
   ArrowRecordBatch getCurrentArrowBatch() {
-    LOG.finest("++enter++");
     return this.currentArrowBatch;
   }
 
   JsonStringArrayList getNestedRecords() {
-    LOG.finest("++enter++");
     return this.nestedRecords;
   }
 
   boolean isLast() {
-    LOG.finest("++enter++");
     return this.isLast;
   }
 
