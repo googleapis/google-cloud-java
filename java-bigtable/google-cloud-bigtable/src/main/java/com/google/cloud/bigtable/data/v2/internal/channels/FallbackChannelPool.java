@@ -37,7 +37,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 public class FallbackChannelPool implements ChannelPool {
-  private FallbackConfiguration config;
+  private volatile FallbackConfiguration config;
   private final ChannelPool primary;
   private final ChannelPool secondary;
   private final PoolFallbackListener poolFallbackListener;
@@ -94,21 +94,28 @@ public class FallbackChannelPool implements ChannelPool {
   }
 
   // For now only updates error rate, interval, and is enabled.
-  synchronized void updateConfig(FallbackConfiguration newConfig) {
-    config =
-        config.toBuilder()
-            .setEnabled(newConfig.isEnabled())
-            .setCheckInterval(newConfig.getCheckInterval())
-            .setErrorRate(newConfig.getErrorRate())
-            .build();
+  void updateConfig(FallbackConfiguration newConfig) {
+    boolean triggerCallback = false;
+    FallbackConfiguration localConfig;
+    synchronized (this) {
+      config =
+          config.toBuilder()
+              .setEnabled(newConfig.isEnabled())
+              .setCheckInterval(newConfig.getCheckInterval())
+              .setErrorRate(newConfig.getErrorRate())
+              .build();
+      localConfig = config;
 
-    if (!config.isEnabled()) {
-      if (currentPool.compareAndSet(secondary, primary)) {
-        poolFallbackListener.onFallback(
-            config.getFallbackName(),
-            config.getPrimaryName(),
-            ChannelFallbackReason.FALLBACK_DISABLE);
+      if (!localConfig.isEnabled()) {
+        triggerCallback = currentPool.compareAndSet(secondary, primary);
       }
+    }
+
+    if (triggerCallback) {
+      poolFallbackListener.onFallback(
+          localConfig.getFallbackName(),
+          localConfig.getPrimaryName(),
+          ChannelFallbackReason.FALLBACK_DISABLE);
     }
   }
 
@@ -193,19 +200,22 @@ public class FallbackChannelPool implements ChannelPool {
     scheduleCheckRates();
   }
 
-  private synchronized void checkRates() {
+  private void checkRates() {
     int successes = successCount.getAndSet(0);
     int failures = failureCount.getAndSet(0);
     int total = successes + failures;
+    FallbackConfiguration localConfig = config;
 
-    if (!config.isEnabled()) {
+    if (!localConfig.isEnabled()) {
       return;
     }
 
-    if (total > 0 && ((double) failures) / total >= config.getErrorRate()) {
+    if (total > 0 && ((double) failures) / total >= localConfig.getErrorRate()) {
       if (currentPool.compareAndSet(primary, secondary)) {
         poolFallbackListener.onFallback(
-            config.getPrimaryName(), config.getFallbackName(), ChannelFallbackReason.ERROR_RATE);
+            localConfig.getPrimaryName(),
+            localConfig.getFallbackName(),
+            ChannelFallbackReason.ERROR_RATE);
       }
     }
   }

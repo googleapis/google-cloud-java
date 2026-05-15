@@ -96,4 +96,47 @@ public interface MaintenancePolicyOrBuilder
    * @return The bytes for resourceVersion.
    */
   com.google.protobuf.ByteString getResourceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the disruptionBudget field is set.
+   */
+  boolean hasDisruptionBudget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The disruptionBudget.
+   */
+  com.google.container.v1beta1.DisruptionBudget getDisruptionBudget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The upgrade disruption budget for the cluster control plane.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.DisruptionBudget disruption_budget = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.DisruptionBudgetOrBuilder getDisruptionBudgetOrBuilder();
 }

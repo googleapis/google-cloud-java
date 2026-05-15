@@ -866,7 +866,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    *
    * @param customField Required. The `CustomField` to update.
    *     <p>The `CustomField`'s `name` is used to identify the `CustomField` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomField updateCustomField(CustomField customField, FieldMask updateMask) {

@@ -167,8 +167,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private BigQuerySettings generateBigQuerySettings() {
-    LOG.finest("++enter++");
-
+    LOG.finer("++enter++");
     BigQuerySettings.Builder querySettings = BigQuerySettings.newBuilder();
     DatasetId defaultDataset = this.connection.getDefaultDataset();
     if (defaultDataset != null) {
@@ -238,7 +237,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     return executeQueryImpl(sql);
   }
@@ -262,7 +260,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     return executeLargeUpdateImpl(sql);
   }
@@ -284,12 +281,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
     return checkUpdateCount(executeLargeUpdate(sql));
   }
 
   int checkUpdateCount(long updateCount) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (updateCount > Integer.MAX_VALUE) {
       LOG.warning("Warning: Table update exceeded maximum limit!");
       // Update count is -2 if update is successful but the update count exceeds Integer.MAX_VALUE
@@ -300,7 +296,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     return executeImpl(sql);
   }
@@ -321,7 +316,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
     // We're supporting them in a limited capacity, for pure SELECT statements.
     if (this.connection.isReadOnlyTokenUsed()) {
@@ -347,7 +342,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   SqlType getQueryType(QueryJobConfiguration jobConfiguration, StatementType statementType)
       throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (statementType == null) {
       statementType = getStatementType(jobConfiguration);
     }
@@ -361,7 +356,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   QueryStatistics getQueryStatistics(QueryJobConfiguration queryJobConfiguration)
       throws BigQueryJdbcSqlSyntaxErrorException, BigQueryJdbcException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     QueryJobConfiguration dryRunJobConfiguration =
         queryJobConfiguration.toBuilder().setDryRun(true).build();
     Job job;
@@ -456,7 +451,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    LOG.finest("Statement %s cancelled", this);
+    LOG.finer("Statement %s cancelled", this);
     synchronized (cancelLock) {
       this.isCanceled = true;
       for (JobId jobId : this.jobIds) {
@@ -516,7 +511,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void closeStatementResources() throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (this.currentResultSet != null) {
       // If Statement has 'CloseOnCompletion' set, resultset might
       // call into the same function; In order to avoid stack overflow
@@ -558,7 +553,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @InternalApi
   ExecuteResult executeJob(QueryJobConfiguration jobConfiguration)
       throws InterruptedException, BigQueryException, BigQueryJdbcException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     Job job = null;
     // Location is not properly passed from the connection,
     // so we need to explicitly set it;
@@ -603,7 +598,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @InternalApi
   void runQuery(String query, QueryJobConfiguration jobConfiguration)
       throws SQLException, InterruptedException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     LOG.fine("Run Query started");
 
     if (queryTimeout > 0) {
@@ -683,7 +678,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   void handleQueryResult(String query, TableResult results, SqlType queryType)
       throws SQLException, InterruptedException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     switch (queryType) {
       case SELECT:
         processQueryResponse(query, results);
@@ -758,7 +753,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @InternalApi
   ReadSession getReadSession(CreateReadSessionRequest readSessionRequest) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     return getBigQueryReadClient().createReadSession(readSessionRequest);
   }
 
@@ -770,7 +765,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   /** Uses Bigquery Storage Read API and returns the stream as ResultSet */
   @InternalApi
   ResultSet processArrowResultSet(TableResult results) throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
 
     // set the resultset
     long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
@@ -830,7 +825,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       ReadSession readSession,
       BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
       BigQueryReadClient bqReadClient) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
 
     Runnable arrowStreamProcessor =
         () -> {
@@ -894,11 +889,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             enqueueError(arrowBatchWrapperBlockingQueue, e);
             Thread.currentThread().interrupt();
           } catch (Exception e) {
-            LOG.log(
-                Level.WARNING,
-                "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
-                e);
-            enqueueError(arrowBatchWrapperBlockingQueue, e);
+            if (e.getCause() instanceof InterruptedException
+                || Thread.currentThread().isInterrupted()) {
+              LOG.log(
+                  Level.WARNING,
+                  "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
+                  e);
+              enqueueError(arrowBatchWrapperBlockingQueue, e);
+              Thread.currentThread().interrupt();
+            } else {
+              LOG.log(
+                  Level.WARNING,
+                  "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
+                  e);
+              enqueueError(arrowBatchWrapperBlockingQueue, e);
+            }
           } finally { // logic needed for graceful shutdown
             enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
           }
@@ -911,24 +916,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
-    JobId jobId = results.getJobId();
-    String queryId = results.getQueryId();
-    LOG.info(
-        "Processing query response. JobId: %s, QueryId: %s, Total rows: %s",
-        jobId, queryId, results.getTotalRows());
-    LOG.fine("Processing query response. Query: %s", query);
-
-    ResultSet resultSet = null;
-    if (jobId != null && useReadAPI(results)) {
-      try {
-        LOG.info("Using ReadAPI to read the data.");
-        resultSet = processArrowResultSet(results);
-      } catch (SQLException e) {
-        if (!isPermissionDeniedException(e)) {
-          throw e;
-        }
-        LOG.log(Level.WARNING, "Permission denied for Read API, falling back to JSON API", e);
-      }
+    LOG.finer(
+        "API call completed{Query=%s, Parent Job ID=%s, Total rows=%s} ",
+        query, results.getJobId(), results.getTotalRows());
+    JobId currentJobId = results.getJobId();
+    if (currentJobId == null) {
+      LOG.fine("Standard API with Stateless query used.");
+      this.currentResultSet = processJsonResultSet(results);
+    } else if (useReadAPI(results)) {
+      LOG.fine("HighThroughputAPI used.");
+      LOG.info("HTAPI job ID: " + currentJobId.getJob());
+      this.currentResultSet = processArrowResultSet(results);
+    } else {
+      // read API cannot be used.
+      LOG.fine("Standard API used.");
+      this.currentResultSet = processJsonResultSet(results);
     }
 
     if (resultSet == null) {
@@ -956,7 +958,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   // AND the User must not have disabled the Read API
   @VisibleForTesting
   boolean useReadAPI(TableResult results) throws BigQueryJdbcSqlFeatureNotSupportedException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (!meetsReadRatio(results)) {
       return false;
     }
@@ -965,7 +967,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean meetsReadRatio(TableResult results) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     long totalRows = results.getTotalRows();
 
     // SAFEGUARD: If all data has already been retrieved in the first page,
@@ -1043,7 +1045,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   void populateFirstPage(
       TableResult result, BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     // parse and put the first page in the pageCache before the other pages are parsed from the RPC
     // calls
     try {
@@ -1071,7 +1073,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       JobId jobId,
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     // parse and put the first page in the pageCache before the other pages are parsed from the RPC
     // calls
     populateFirstPage(result, rpcResponseQueue);
@@ -1138,7 +1140,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       Schema schema,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
 
     Runnable populateBufferRunnable =
         () -> { // producer thread populating the buffer
@@ -1189,11 +1191,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             }
 
           } catch (Exception ex) {
-            LOG.log(
-                Level.WARNING,
-                "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
-                ex);
-            enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+            if (ex.getCause() instanceof InterruptedException
+                || Thread.currentThread().isInterrupted()) {
+              LOG.log(
+                  Level.WARNING,
+                  "\n" + Thread.currentThread().getName() + " Interrupted @ populateBufferAsync",
+                  ex);
+              enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+              Thread.currentThread().interrupt();
+            } else {
+              LOG.log(
+                  Level.WARNING,
+                  "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
+                  ex);
+              enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+            }
           } finally {
             enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
           }
@@ -1209,7 +1221,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @VisibleForTesting
   int getPageCacheSize(Integer numBufferedRows, Schema schema) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     // Min number of pages to cache
     final int MIN_CACHE_SIZE = 3;
     // Min number of pages to cache
@@ -1260,12 +1272,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   /** Returns the destinationTable from jobId by calling `jobs.get` API */
   TableId getDestinationTable(JobId jobId) {
     Job job = this.bigQuery.getJob(jobId);
-    LOG.finest("Destination Table retrieved from %s", job.getJobId());
+    LOG.finer("Destination Table retrieved from %s", job.getJobId());
     return ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
   }
 
   QueryJobConfiguration.Builder getJobConfig(String query) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     QueryJobConfiguration.Builder queryConfigBuilder = QueryJobConfiguration.newBuilder(query);
     if (this.querySettings.getJobTimeoutMs() > 0) {
       queryConfigBuilder.setJobTimeoutMs(this.querySettings.getJobTimeoutMs());
@@ -1330,9 +1342,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @InternalApi
   JobIdWrapper insertJob(JobConfiguration jobConfiguration) throws SQLException {
+    LOG.finer("++enter++");
     Job job;
     JobInfo jobInfo = JobInfo.of(jobConfiguration);
-    LOG.finest("++enter++");
     try {
       job = this.bigQuery.create(jobInfo);
     } catch (BigQueryException ex) {
@@ -1429,7 +1441,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (sql == null || sql.isEmpty()) {
       return;
     }
-    LOG.finest("++enter++");
     sql = sql.trim();
     if (!sql.endsWith(";")) {
       sql += "; ";
@@ -1451,7 +1462,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int[] executeBatch() throws SQLException {
-    LOG.finest("++enter++");
     int[] result = new int[this.batchQueries.size()];
     if (this.batchQueries.isEmpty()) {
       return result;
@@ -1491,7 +1501,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     return getMoreResultsImpl(current);
   }

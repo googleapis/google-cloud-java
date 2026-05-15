@@ -48,12 +48,10 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Properties;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -88,6 +86,7 @@ public class ClientConfigurationManager implements AutoCloseable {
   private class ListenerEntry<T> implements ListenerHandle {
     private final Function<ClientConfiguration, T> extractor;
     private final ConfigListener<T> listener;
+    private volatile boolean closed = false;
 
     private ListenerEntry(Function<ClientConfiguration, T> extractor, ConfigListener<T> listener) {
       this.extractor = extractor;
@@ -95,6 +94,9 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
 
     private void maybeNotify(ClientConfiguration oldConfig, ClientConfiguration newConfig) {
+      if (closed) {
+        return;
+      }
       T oldValue = extractor.apply(oldConfig);
       T newValue = extractor.apply(newConfig);
       if (Objects.equals(oldValue, newValue)) {
@@ -105,12 +107,9 @@ public class ClientConfigurationManager implements AutoCloseable {
 
     @Override
     public void close() {
+      closed = true;
       synchronized (ClientConfigurationManager.this) {
-        if (notifying) {
-          pendingListenerRemovals.add(this);
-        } else {
-          listeners.remove(this);
-        }
+        listeners.remove(this);
       }
     }
   }
@@ -140,12 +139,6 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   @GuardedBy("this")
   private final List<ListenerEntry<?>> listeners = new ArrayList<>();
-
-  @GuardedBy("this")
-  private boolean notifying = false;
-
-  @GuardedBy("this")
-  private final Set<ListenerEntry<?>> pendingListenerRemovals = new HashSet<>();
 
   @GuardedBy("this")
   @Nullable
@@ -443,22 +436,24 @@ public class ClientConfigurationManager implements AutoCloseable {
             TimeUnit.MILLISECONDS);
   }
 
-  private synchronized void setClientConfiguration(ClientConfiguration result) {
-    ClientConfiguration old = this.clientConfiguration;
-
-    clientConfiguration = result;
-    if (clientConfiguration.hasPollingConfiguration()) {
-      this.validUntil =
-          Instant.now()
-              .plus(
-                  toJavaDuration(
-                      clientConfiguration.getPollingConfiguration().getValidityDuration()));
-    } else if (clientConfiguration.getStopPolling()) {
-      this.validUntil = Instant.MAX;
+  private void setClientConfiguration(ClientConfiguration result) {
+    ClientConfiguration old;
+    synchronized (this) {
+      old = this.clientConfiguration;
+      clientConfiguration = result;
+      if (clientConfiguration.hasPollingConfiguration()) {
+        this.validUntil =
+            Instant.now()
+                .plus(
+                    toJavaDuration(
+                        clientConfiguration.getPollingConfiguration().getValidityDuration()));
+      } else if (clientConfiguration.getStopPolling()) {
+        this.validUntil = Instant.MAX;
+      }
     }
 
     maybeLogConfigChange(old, result);
-    notifyListeners(old, clientConfiguration);
+    notifyListeners(old, result);
   }
 
   private void maybeLogConfigChange(ClientConfiguration oldCfg, ClientConfiguration newCfg) {
@@ -486,26 +481,24 @@ public class ClientConfigurationManager implements AutoCloseable {
     return oldCfg.equals(newCfg);
   }
 
-  @GuardedBy("this")
   private void notifyListeners(ClientConfiguration oldConfig, ClientConfiguration newConfig) {
-    notifying = true;
-    // Snapshot the listeners so that new listeners added this cycle dont get notified
-    List<ListenerEntry<?>> snapshot = new ArrayList<>(listeners);
-
+    List<ListenerEntry<?>> snapshot;
+    synchronized (this) {
+      snapshot = new ArrayList<>(listeners);
+    }
     for (ListenerEntry<?> e : snapshot) {
-      if (pendingListenerRemovals.contains(e)) {
-        continue;
-      }
       e.maybeNotify(oldConfig, newConfig);
     }
-
-    listeners.removeAll(pendingListenerRemovals);
-    pendingListenerRemovals.clear();
-    notifying = false;
   }
 
-  private synchronized boolean handleFailedFetch(Throwable throwable, int attempt) {
-    if (validUntil.isBefore(Instant.now())) {
+  private boolean handleFailedFetch(Throwable throwable, int attempt) {
+    boolean shouldReset = false;
+    synchronized (this) {
+      if (validUntil.isBefore(Instant.now())) {
+        shouldReset = true;
+      }
+    }
+    if (shouldReset) {
       setClientConfiguration(defaultConfig);
     }
 
@@ -524,10 +517,17 @@ public class ClientConfigurationManager implements AutoCloseable {
       case INVALID_ARGUMENT:
         return false;
       default:
-        if (closing) {
+        boolean isClosing;
+        int maxRpcRetryCount;
+        synchronized (this) {
+          isClosing = closing;
+          maxRpcRetryCount =
+              getClientConfiguration().getPollingConfiguration().getMaxRpcRetryCount();
+        }
+        if (isClosing) {
           return false;
         }
-        return attempt < getClientConfiguration().getPollingConfiguration().getMaxRpcRetryCount();
+        return attempt < maxRpcRetryCount;
     }
   }
 

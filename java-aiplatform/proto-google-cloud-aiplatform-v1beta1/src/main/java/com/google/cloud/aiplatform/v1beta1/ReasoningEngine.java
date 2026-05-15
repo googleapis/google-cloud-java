@@ -86,6 +86,3865 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.ReasoningEngine.Builder.class);
   }
 
+  public interface TrafficConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trafficSplitManual field is set.
+     */
+    boolean hasTrafficSplitManual();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficSplitManual.
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+        getTrafficSplitManual();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManualOrBuilder
+        getTrafficSplitManualOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trafficSplitAlwaysLatest field is set.
+     */
+    boolean hasTrafficSplitAlwaysLatest();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficSplitAlwaysLatest.
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+        getTrafficSplitAlwaysLatest();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+            .TrafficSplitAlwaysLatestOrBuilder
+        getTrafficSplitAlwaysLatestOrBuilder();
+
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitCase
+        getTrafficSplitCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic distribution configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig}
+   */
+  public static final class TrafficConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)
+      TrafficConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TrafficConfig");
+    }
+
+    // Use TrafficConfig.newBuilder() to construct.
+    private TrafficConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TrafficConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.class,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder.class);
+    }
+
+    public interface TrafficSplitManualOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Target>
+          getTargetsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target
+          getTargets(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      int getTargetsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.TargetOrBuilder>
+          getTargetsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              .TargetOrBuilder
+          getTargetsOrBuilder(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Manual traffic distribution configuration, where the user specifies the
+     * Runtime Revision IDs and the percentage of traffic to send to each.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual}
+     */
+    public static final class TrafficSplitManual extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+        TrafficSplitManualOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "TrafficSplitManual");
+      }
+
+      // Use TrafficSplitManual.newBuilder() to construct.
+      private TrafficSplitManual(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TrafficSplitManual() {
+        targets_ = java.util.Collections.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Builder.class);
+      }
+
+      public interface TargetOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Runtime Revision name to which to send this portion of
+         * traffic, if traffic allocation is by Runtime Revision.
+         * </pre>
+         *
+         * <code>
+         * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The runtimeRevisionName.
+         */
+        java.lang.String getRuntimeRevisionName();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Runtime Revision name to which to send this portion of
+         * traffic, if traffic allocation is by Runtime Revision.
+         * </pre>
+         *
+         * <code>
+         * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for runtimeRevisionName.
+         */
+        com.google.protobuf.ByteString getRuntimeRevisionNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifies percent of the traffic to this Runtime Revision.
+         * </pre>
+         *
+         * <code>int32 percent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The percent.
+         */
+        int getPercent();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A single target for the traffic split, specifying a Runtime Revision
+       * and the percentage of traffic to send to it.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target}
+       */
+      public static final class Target extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target)
+          TargetOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "Target");
+        }
+
+        // Use Target.newBuilder() to construct.
+        private Target(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Target() {
+          runtimeRevisionName_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Target.class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Target.Builder.class);
+        }
+
+        public static final int RUNTIME_REVISION_NAME_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object runtimeRevisionName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Runtime Revision name to which to send this portion of
+         * traffic, if traffic allocation is by Runtime Revision.
+         * </pre>
+         *
+         * <code>
+         * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The runtimeRevisionName.
+         */
+        @java.lang.Override
+        public java.lang.String getRuntimeRevisionName() {
+          java.lang.Object ref = runtimeRevisionName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            runtimeRevisionName_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The Runtime Revision name to which to send this portion of
+         * traffic, if traffic allocation is by Runtime Revision.
+         * </pre>
+         *
+         * <code>
+         * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for runtimeRevisionName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getRuntimeRevisionNameBytes() {
+          java.lang.Object ref = runtimeRevisionName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            runtimeRevisionName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int PERCENT_FIELD_NUMBER = 2;
+        private int percent_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifies percent of the traffic to this Runtime Revision.
+         * </pre>
+         *
+         * <code>int32 percent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The percent.
+         */
+        @java.lang.Override
+        public int getPercent() {
+          return percent_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(runtimeRevisionName_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, runtimeRevisionName_);
+          }
+          if (percent_ != 0) {
+            output.writeInt32(2, percent_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(runtimeRevisionName_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, runtimeRevisionName_);
+          }
+          if (percent_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, percent_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Target)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Target
+              other =
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                          .TrafficSplitManual.Target)
+                      obj;
+
+          if (!getRuntimeRevisionName().equals(other.getRuntimeRevisionName())) return false;
+          if (getPercent() != other.getPercent()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + RUNTIME_REVISION_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getRuntimeRevisionName().hashCode();
+          hash = (37 * hash) + PERCENT_FIELD_NUMBER;
+          hash = (53 * hash) + getPercent();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A single target for the traffic split, specifying a Runtime Revision
+         * and the percentage of traffic to send to it.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target)
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .TargetOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target.class,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            runtimeRevisionName_ = "";
+            percent_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_Target_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual.Target
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual.Target
+              build() {
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual.Target
+              buildPartial() {
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                result =
+                    new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                      .Target
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.runtimeRevisionName_ = runtimeRevisionName_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.percent_ = percent_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                          .TrafficSplitManual.Target)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                      .Target
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitManual.Target.getDefaultInstance()) return this;
+            if (!other.getRuntimeRevisionName().isEmpty()) {
+              runtimeRevisionName_ = other.runtimeRevisionName_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.getPercent() != 0) {
+              setPercent(other.getPercent());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      runtimeRevisionName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      percent_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object runtimeRevisionName_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The Runtime Revision name to which to send this portion of
+           * traffic, if traffic allocation is by Runtime Revision.
+           * </pre>
+           *
+           * <code>
+           * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+           * </code>
+           *
+           * @return The runtimeRevisionName.
+           */
+          public java.lang.String getRuntimeRevisionName() {
+            java.lang.Object ref = runtimeRevisionName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              runtimeRevisionName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The Runtime Revision name to which to send this portion of
+           * traffic, if traffic allocation is by Runtime Revision.
+           * </pre>
+           *
+           * <code>
+           * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+           * </code>
+           *
+           * @return The bytes for runtimeRevisionName.
+           */
+          public com.google.protobuf.ByteString getRuntimeRevisionNameBytes() {
+            java.lang.Object ref = runtimeRevisionName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              runtimeRevisionName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The Runtime Revision name to which to send this portion of
+           * traffic, if traffic allocation is by Runtime Revision.
+           * </pre>
+           *
+           * <code>
+           * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+           * </code>
+           *
+           * @param value The runtimeRevisionName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setRuntimeRevisionName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            runtimeRevisionName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The Runtime Revision name to which to send this portion of
+           * traffic, if traffic allocation is by Runtime Revision.
+           * </pre>
+           *
+           * <code>
+           * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearRuntimeRevisionName() {
+            runtimeRevisionName_ = getDefaultInstance().getRuntimeRevisionName();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. The Runtime Revision name to which to send this portion of
+           * traffic, if traffic allocation is by Runtime Revision.
+           * </pre>
+           *
+           * <code>
+           * string runtime_revision_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+           * </code>
+           *
+           * @param value The bytes for runtimeRevisionName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setRuntimeRevisionNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            runtimeRevisionName_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private int percent_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifies percent of the traffic to this Runtime Revision.
+           * </pre>
+           *
+           * <code>int32 percent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The percent.
+           */
+          @java.lang.Override
+          public int getPercent() {
+            return percent_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifies percent of the traffic to this Runtime Revision.
+           * </pre>
+           *
+           * <code>int32 percent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The percent to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPercent(int value) {
+
+            percent_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifies percent of the traffic to this Runtime Revision.
+           * </pre>
+           *
+           * <code>int32 percent = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPercent() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            percent_ = 0;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target)
+        private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual.Target();
+        }
+
+        public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual.Target
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Target> PARSER =
+            new com.google.protobuf.AbstractParser<Target>() {
+              @java.lang.Override
+              public Target parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Target> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Target> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .Target
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int TARGETS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Target>
+          targets_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Target>
+          getTargetsList() {
+        return targets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.TargetOrBuilder>
+          getTargetsOrBuilderList() {
+        return targets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public int getTargetsCount() {
+        return targets_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              .Target
+          getTargets(int index) {
+        return targets_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of traffic targets for the Runtimes Revisions. The sum of
+       * percentages must equal to 100.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              .TargetOrBuilder
+          getTargetsOrBuilder(int index) {
+        return targets_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < targets_.size(); i++) {
+          output.writeMessage(1, targets_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < targets_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, targets_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual other =
+            (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+                obj;
+
+        if (!getTargetsList().equals(other.getTargetsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getTargetsCount() > 0) {
+          hash = (37 * hash) + TARGETS_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Manual traffic distribution configuration, where the user specifies the
+       * Runtime Revision IDs and the percentage of traffic to send to each.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManualOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (targetsBuilder_ == null) {
+            targets_ = java.util.Collections.emptyList();
+          } else {
+            targets_ = null;
+            targetsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitManual_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+            build() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                result) {
+          if (targetsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              targets_ = java.util.Collections.unmodifiableList(targets_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.targets_ = targets_;
+          } else {
+            result.targets_ = targetsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManual.getDefaultInstance()) return this;
+          if (targetsBuilder_ == null) {
+            if (!other.targets_.isEmpty()) {
+              if (targets_.isEmpty()) {
+                targets_ = other.targets_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureTargetsIsMutable();
+                targets_.addAll(other.targets_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.targets_.isEmpty()) {
+              if (targetsBuilder_.isEmpty()) {
+                targetsBuilder_.dispose();
+                targetsBuilder_ = null;
+                targets_ = other.targets_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                targetsBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetTargetsFieldBuilder()
+                        : null;
+              } else {
+                targetsBuilder_.addAllMessages(other.targets_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                            .TrafficSplitManual.Target
+                        m =
+                            input.readMessage(
+                                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                                    .TrafficSplitManual.Target.parser(),
+                                extensionRegistry);
+                    if (targetsBuilder_ == null) {
+                      ensureTargetsIsMutable();
+                      targets_.add(m);
+                    } else {
+                      targetsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target>
+            targets_ = java.util.Collections.emptyList();
+
+        private void ensureTargetsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            targets_ =
+                new java.util.ArrayList<
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target>(targets_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .TargetOrBuilder>
+            targetsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target>
+            getTargetsList() {
+          if (targetsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(targets_);
+          } else {
+            return targetsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public int getTargetsCount() {
+          if (targetsBuilder_ == null) {
+            return targets_.size();
+          } else {
+            return targetsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .Target
+            getTargets(int index) {
+          if (targetsBuilder_ == null) {
+            return targets_.get(index);
+          } else {
+            return targetsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder setTargets(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                value) {
+          if (targetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureTargetsIsMutable();
+            targets_.set(index, value);
+            onChanged();
+          } else {
+            targetsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder setTargets(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder
+                builderForValue) {
+          if (targetsBuilder_ == null) {
+            ensureTargetsIsMutable();
+            targets_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            targetsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder addTargets(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                value) {
+          if (targetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureTargetsIsMutable();
+            targets_.add(value);
+            onChanged();
+          } else {
+            targetsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder addTargets(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target
+                value) {
+          if (targetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureTargetsIsMutable();
+            targets_.add(index, value);
+            onChanged();
+          } else {
+            targetsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder addTargets(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder
+                builderForValue) {
+          if (targetsBuilder_ == null) {
+            ensureTargetsIsMutable();
+            targets_.add(builderForValue.build());
+            onChanged();
+          } else {
+            targetsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder addTargets(
+            int index,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder
+                builderForValue) {
+          if (targetsBuilder_ == null) {
+            ensureTargetsIsMutable();
+            targets_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            targetsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder addAllTargets(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                            .TrafficSplitManual.Target>
+                values) {
+          if (targetsBuilder_ == null) {
+            ensureTargetsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targets_);
+            onChanged();
+          } else {
+            targetsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder clearTargets() {
+          if (targetsBuilder_ == null) {
+            targets_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            targetsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public Builder removeTargets(int index) {
+          if (targetsBuilder_ == null) {
+            ensureTargetsIsMutable();
+            targets_.remove(index);
+            onChanged();
+          } else {
+            targetsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .Target.Builder
+            getTargetsBuilder(int index) {
+          return internalGetTargetsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .TargetOrBuilder
+            getTargetsOrBuilder(int index) {
+          if (targetsBuilder_ == null) {
+            return targets_.get(index);
+          } else {
+            return targetsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.TargetOrBuilder>
+            getTargetsOrBuilderList() {
+          if (targetsBuilder_ != null) {
+            return targetsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(targets_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .Target.Builder
+            addTargetsBuilder() {
+          return internalGetTargetsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Target.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                .Target.Builder
+            addTargetsBuilder(int index) {
+          return internalGetTargetsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Target.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of traffic targets for the Runtimes Revisions. The sum of
+         * percentages must equal to 100.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual.Target targets = 1;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder>
+            getTargetsBuilderList() {
+          return internalGetTargetsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .Target.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .TargetOrBuilder>
+            internalGetTargetsFieldBuilder() {
+          if (targetsBuilder_ == null) {
+            targetsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.Target.Builder,
+                    com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual.TargetOrBuilder>(
+                    targets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+            targets_ = null;
+          }
+          return targetsBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+      private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TrafficSplitManual> PARSER =
+          new com.google.protobuf.AbstractParser<TrafficSplitManual>() {
+            @java.lang.Override
+            public TrafficSplitManual parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TrafficSplitManual> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TrafficSplitManual> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface TrafficSplitAlwaysLatestOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest)
+        com.google.protobuf.MessageOrBuilder {}
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic distribution configuration, where all traffic is sent to the
+     * latest Runtime Revision.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest}
+     */
+    public static final class TrafficSplitAlwaysLatest extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest)
+        TrafficSplitAlwaysLatestOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "TrafficSplitAlwaysLatest");
+      }
+
+      // Use TrafficSplitAlwaysLatest.newBuilder() to construct.
+      private TrafficSplitAlwaysLatest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private TrafficSplitAlwaysLatest() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest.class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+            other =
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitAlwaysLatest)
+                    obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Traffic distribution configuration, where all traffic is sent to the
+       * latest Runtime Revision.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest)
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatestOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest.class,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_TrafficSplitAlwaysLatest_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest
+            build() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest
+            buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+              result =
+                  new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitAlwaysLatest)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest
+                other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest.getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest)
+      private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<TrafficSplitAlwaysLatest> PARSER =
+          new com.google.protobuf.AbstractParser<TrafficSplitAlwaysLatest>() {
+            @java.lang.Override
+            public TrafficSplitAlwaysLatest parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<TrafficSplitAlwaysLatest> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TrafficSplitAlwaysLatest> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int trafficSplitCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object trafficSplit_;
+
+    public enum TrafficSplitCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      TRAFFIC_SPLIT_MANUAL(18),
+      TRAFFIC_SPLIT_ALWAYS_LATEST(19),
+      TRAFFICSPLIT_NOT_SET(0);
+      private final int value;
+
+      private TrafficSplitCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TrafficSplitCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TrafficSplitCase forNumber(int value) {
+        switch (value) {
+          case 18:
+            return TRAFFIC_SPLIT_MANUAL;
+          case 19:
+            return TRAFFIC_SPLIT_ALWAYS_LATEST;
+          case 0:
+            return TRAFFICSPLIT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TrafficSplitCase getTrafficSplitCase() {
+      return TrafficSplitCase.forNumber(trafficSplitCase_);
+    }
+
+    public static final int TRAFFIC_SPLIT_MANUAL_FIELD_NUMBER = 18;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trafficSplitManual field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrafficSplitManual() {
+      return trafficSplitCase_ == 18;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficSplitManual.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+        getTrafficSplitManual() {
+      if (trafficSplitCase_ == 18) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual)
+            trafficSplit_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Manual traffic distribution configuration, where the user
+     * specifies the Runtime Revision IDs and the percentage of traffic to
+     * send to each.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+            .TrafficSplitManualOrBuilder
+        getTrafficSplitManualOrBuilder() {
+      if (trafficSplitCase_ == 18) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitManual)
+            trafficSplit_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+          .getDefaultInstance();
+    }
+
+    public static final int TRAFFIC_SPLIT_ALWAYS_LATEST_FIELD_NUMBER = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trafficSplitAlwaysLatest field is set.
+     */
+    @java.lang.Override
+    public boolean hasTrafficSplitAlwaysLatest() {
+      return trafficSplitCase_ == 19;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficSplitAlwaysLatest.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+            .TrafficSplitAlwaysLatest
+        getTrafficSplitAlwaysLatest() {
+      if (trafficSplitCase_ == 19) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest)
+            trafficSplit_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+          .TrafficSplitAlwaysLatest.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration, where all traffic is sent
+     * to the latest Runtime Revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+            .TrafficSplitAlwaysLatestOrBuilder
+        getTrafficSplitAlwaysLatestOrBuilder() {
+      if (trafficSplitCase_ == 19) {
+        return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .TrafficSplitAlwaysLatest)
+            trafficSplit_;
+      }
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+          .TrafficSplitAlwaysLatest.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (trafficSplitCase_ == 18) {
+        output.writeMessage(
+            18,
+            (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual)
+                trafficSplit_);
+      }
+      if (trafficSplitCase_ == 19) {
+        output.writeMessage(
+            19,
+            (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest)
+                trafficSplit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (trafficSplitCase_ == 18) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                18,
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitManual)
+                    trafficSplit_);
+      }
+      if (trafficSplitCase_ == 19) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                19,
+                (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                        .TrafficSplitAlwaysLatest)
+                    trafficSplit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig other =
+          (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig) obj;
+
+      if (!getTrafficSplitCase().equals(other.getTrafficSplitCase())) return false;
+      switch (trafficSplitCase_) {
+        case 18:
+          if (!getTrafficSplitManual().equals(other.getTrafficSplitManual())) return false;
+          break;
+        case 19:
+          if (!getTrafficSplitAlwaysLatest().equals(other.getTrafficSplitAlwaysLatest()))
+            return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (trafficSplitCase_) {
+        case 18:
+          hash = (37 * hash) + TRAFFIC_SPLIT_MANUAL_FIELD_NUMBER;
+          hash = (53 * hash) + getTrafficSplitManual().hashCode();
+          break;
+        case 19:
+          hash = (37 * hash) + TRAFFIC_SPLIT_ALWAYS_LATEST_FIELD_NUMBER;
+          hash = (53 * hash) + getTrafficSplitAlwaysLatest().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic distribution configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.class,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (trafficSplitManualBuilder_ != null) {
+          trafficSplitManualBuilder_.clear();
+        }
+        if (trafficSplitAlwaysLatestBuilder_ != null) {
+          trafficSplitAlwaysLatestBuilder_.clear();
+        }
+        trafficSplitCase_ = 0;
+        trafficSplit_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngine_TrafficConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig build() {
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig result =
+            new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig result) {
+        result.trafficSplitCase_ = trafficSplitCase_;
+        result.trafficSplit_ = this.trafficSplit_;
+        if (trafficSplitCase_ == 18 && trafficSplitManualBuilder_ != null) {
+          result.trafficSplit_ = trafficSplitManualBuilder_.build();
+        }
+        if (trafficSplitCase_ == 19 && trafficSplitAlwaysLatestBuilder_ != null) {
+          result.trafficSplit_ = trafficSplitAlwaysLatestBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                .getDefaultInstance()) return this;
+        switch (other.getTrafficSplitCase()) {
+          case TRAFFIC_SPLIT_MANUAL:
+            {
+              mergeTrafficSplitManual(other.getTrafficSplitManual());
+              break;
+            }
+          case TRAFFIC_SPLIT_ALWAYS_LATEST:
+            {
+              mergeTrafficSplitAlwaysLatest(other.getTrafficSplitAlwaysLatest());
+              break;
+            }
+          case TRAFFICSPLIT_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 146:
+                {
+                  input.readMessage(
+                      internalGetTrafficSplitManualFieldBuilder().getBuilder(), extensionRegistry);
+                  trafficSplitCase_ = 18;
+                  break;
+                } // case 146
+              case 154:
+                {
+                  input.readMessage(
+                      internalGetTrafficSplitAlwaysLatestFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  trafficSplitCase_ = 19;
+                  break;
+                } // case 154
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int trafficSplitCase_ = 0;
+      private java.lang.Object trafficSplit_;
+
+      public TrafficSplitCase getTrafficSplitCase() {
+        return TrafficSplitCase.forNumber(trafficSplitCase_);
+      }
+
+      public Builder clearTrafficSplit() {
+        trafficSplitCase_ = 0;
+        trafficSplit_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManualOrBuilder>
+          trafficSplitManualBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the trafficSplitManual field is set.
+       */
+      @java.lang.Override
+      public boolean hasTrafficSplitManual() {
+        return trafficSplitCase_ == 18;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The trafficSplitManual.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+          getTrafficSplitManual() {
+        if (trafficSplitManualBuilder_ == null) {
+          if (trafficSplitCase_ == 18) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitManual)
+                trafficSplit_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual.getDefaultInstance();
+        } else {
+          if (trafficSplitCase_ == 18) {
+            return trafficSplitManualBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTrafficSplitManual(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              value) {
+        if (trafficSplitManualBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trafficSplit_ = value;
+          onChanged();
+        } else {
+          trafficSplitManualBuilder_.setMessage(value);
+        }
+        trafficSplitCase_ = 18;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTrafficSplitManual(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Builder
+              builderForValue) {
+        if (trafficSplitManualBuilder_ == null) {
+          trafficSplit_ = builderForValue.build();
+          onChanged();
+        } else {
+          trafficSplitManualBuilder_.setMessage(builderForValue.build());
+        }
+        trafficSplitCase_ = 18;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTrafficSplitManual(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              value) {
+        if (trafficSplitManualBuilder_ == null) {
+          if (trafficSplitCase_ == 18
+              && trafficSplit_
+                  != com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.getDefaultInstance()) {
+            trafficSplit_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                                .TrafficSplitManual)
+                            trafficSplit_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            trafficSplit_ = value;
+          }
+          onChanged();
+        } else {
+          if (trafficSplitCase_ == 18) {
+            trafficSplitManualBuilder_.mergeFrom(value);
+          } else {
+            trafficSplitManualBuilder_.setMessage(value);
+          }
+        }
+        trafficSplitCase_ = 18;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTrafficSplitManual() {
+        if (trafficSplitManualBuilder_ == null) {
+          if (trafficSplitCase_ == 18) {
+            trafficSplitCase_ = 0;
+            trafficSplit_ = null;
+            onChanged();
+          }
+        } else {
+          if (trafficSplitCase_ == 18) {
+            trafficSplitCase_ = 0;
+            trafficSplit_ = null;
+          }
+          trafficSplitManualBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+              .Builder
+          getTrafficSplitManualBuilder() {
+        return internalGetTrafficSplitManualFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManualOrBuilder
+          getTrafficSplitManualOrBuilder() {
+        if ((trafficSplitCase_ == 18) && (trafficSplitManualBuilder_ != null)) {
+          return trafficSplitManualBuilder_.getMessageOrBuilder();
+        } else {
+          if (trafficSplitCase_ == 18) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitManual)
+                trafficSplit_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitManual.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Manual traffic distribution configuration, where the user
+       * specifies the Runtime Revision IDs and the percentage of traffic to
+       * send to each.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual traffic_split_manual = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                  .Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitManualOrBuilder>
+          internalGetTrafficSplitManualFieldBuilder() {
+        if (trafficSplitManualBuilder_ == null) {
+          if (!(trafficSplitCase_ == 18)) {
+            trafficSplit_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitManual
+                    .getDefaultInstance();
+          }
+          trafficSplitManualBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManual.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitManualOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                          .TrafficSplitManual)
+                      trafficSplit_,
+                  getParentForChildren(),
+                  isClean());
+          trafficSplit_ = null;
+        }
+        trafficSplitCase_ = 18;
+        onChanged();
+        return trafficSplitManualBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest.Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatestOrBuilder>
+          trafficSplitAlwaysLatestBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the trafficSplitAlwaysLatest field is set.
+       */
+      @java.lang.Override
+      public boolean hasTrafficSplitAlwaysLatest() {
+        return trafficSplitCase_ == 19;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The trafficSplitAlwaysLatest.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest
+          getTrafficSplitAlwaysLatest() {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          if (trafficSplitCase_ == 19) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest)
+                trafficSplit_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest.getDefaultInstance();
+        } else {
+          if (trafficSplitCase_ == 19) {
+            return trafficSplitAlwaysLatestBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTrafficSplitAlwaysLatest(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+              value) {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          trafficSplit_ = value;
+          onChanged();
+        } else {
+          trafficSplitAlwaysLatestBuilder_.setMessage(value);
+        }
+        trafficSplitCase_ = 19;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTrafficSplitAlwaysLatest(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+                  .Builder
+              builderForValue) {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          trafficSplit_ = builderForValue.build();
+          onChanged();
+        } else {
+          trafficSplitAlwaysLatestBuilder_.setMessage(builderForValue.build());
+        }
+        trafficSplitCase_ = 19;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTrafficSplitAlwaysLatest(
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest
+              value) {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          if (trafficSplitCase_ == 19
+              && trafficSplit_
+                  != com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest.getDefaultInstance()) {
+            trafficSplit_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest.newBuilder(
+                        (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                                .TrafficSplitAlwaysLatest)
+                            trafficSplit_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            trafficSplit_ = value;
+          }
+          onChanged();
+        } else {
+          if (trafficSplitCase_ == 19) {
+            trafficSplitAlwaysLatestBuilder_.mergeFrom(value);
+          } else {
+            trafficSplitAlwaysLatestBuilder_.setMessage(value);
+          }
+        }
+        trafficSplitCase_ = 19;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTrafficSplitAlwaysLatest() {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          if (trafficSplitCase_ == 19) {
+            trafficSplitCase_ = 0;
+            trafficSplit_ = null;
+            onChanged();
+          }
+        } else {
+          if (trafficSplitCase_ == 19) {
+            trafficSplitCase_ = 0;
+            trafficSplit_ = null;
+          }
+          trafficSplitAlwaysLatestBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest.Builder
+          getTrafficSplitAlwaysLatestBuilder() {
+        return internalGetTrafficSplitAlwaysLatestFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatestOrBuilder
+          getTrafficSplitAlwaysLatestOrBuilder() {
+        if ((trafficSplitCase_ == 19) && (trafficSplitAlwaysLatestBuilder_ != null)) {
+          return trafficSplitAlwaysLatestBuilder_.getMessageOrBuilder();
+        } else {
+          if (trafficSplitCase_ == 19) {
+            return (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest)
+                trafficSplit_;
+          }
+          return com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+              .TrafficSplitAlwaysLatest.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Traffic distribution configuration, where all traffic is sent
+       * to the latest Runtime Revision.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.TrafficSplitAlwaysLatest traffic_split_always_latest = 19 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatest.Builder,
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                  .TrafficSplitAlwaysLatestOrBuilder>
+          internalGetTrafficSplitAlwaysLatestFieldBuilder() {
+        if (trafficSplitAlwaysLatestBuilder_ == null) {
+          if (!(trafficSplitCase_ == 19)) {
+            trafficSplit_ =
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .TrafficSplitAlwaysLatest.getDefaultInstance();
+          }
+          trafficSplitAlwaysLatestBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatest.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                      .TrafficSplitAlwaysLatestOrBuilder>(
+                  (com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                          .TrafficSplitAlwaysLatest)
+                      trafficSplit_,
+                  getParentForChildren(),
+                  isClean());
+          trafficSplit_ = null;
+        }
+        trafficSplitCase_ = 19;
+        onChanged();
+        return trafficSplitAlwaysLatestBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TrafficConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TrafficConfig>() {
+          @java.lang.Override
+          public TrafficConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TrafficConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TrafficConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -697,6 +4556,66 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int TRAFFIC_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig trafficConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trafficConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrafficConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig getTrafficConfig() {
+    return trafficConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.getDefaultInstance()
+        : trafficConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder
+      getTrafficConfigOrBuilder() {
+    return trafficConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.getDefaultInstance()
+        : trafficConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -740,6 +4659,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 17);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(20, getTrafficConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -786,6 +4708,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, labels__);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getTrafficConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -827,6 +4752,10 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasTrafficConfig() != other.hasTrafficConfig()) return false;
+    if (hasTrafficConfig()) {
+      if (!getTrafficConfig().equals(other.getTrafficConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -869,6 +4798,10 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasTrafficConfig()) {
+      hash = (37 * hash) + TRAFFIC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTrafficConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1039,6 +4972,7 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetContextSpecFieldBuilder();
         internalGetEncryptionSpecFieldBuilder();
+        internalGetTrafficConfigFieldBuilder();
       }
     }
 
@@ -1076,6 +5010,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
         encryptionSpecBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      trafficConfig_ = null;
+      if (trafficConfigBuilder_ != null) {
+        trafficConfigBuilder_.dispose();
+        trafficConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1151,6 +5090,11 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.trafficConfig_ =
+            trafficConfigBuilder_ == null ? trafficConfig_ : trafficConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1204,6 +5148,9 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000200;
+      if (other.hasTrafficConfig()) {
+        mergeTrafficConfig(other.getTrafficConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1300,6 +5247,13 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 138
+            case 162:
+              {
+                input.readMessage(
+                    internalGetTrafficConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3029,6 +6983,225 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000200;
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig trafficConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder>
+        trafficConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the trafficConfig field is set.
+     */
+    public boolean hasTrafficConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig getTrafficConfig() {
+      if (trafficConfigBuilder_ == null) {
+        return trafficConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.getDefaultInstance()
+            : trafficConfig_;
+      } else {
+        return trafficConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrafficConfig(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig value) {
+      if (trafficConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        trafficConfig_ = value;
+      } else {
+        trafficConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTrafficConfig(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder builderForValue) {
+      if (trafficConfigBuilder_ == null) {
+        trafficConfig_ = builderForValue.build();
+      } else {
+        trafficConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTrafficConfig(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig value) {
+      if (trafficConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && trafficConfig_ != null
+            && trafficConfig_
+                != com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig
+                    .getDefaultInstance()) {
+          getTrafficConfigBuilder().mergeFrom(value);
+        } else {
+          trafficConfig_ = value;
+        }
+      } else {
+        trafficConfigBuilder_.mergeFrom(value);
+      }
+      if (trafficConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTrafficConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      trafficConfig_ = null;
+      if (trafficConfigBuilder_ != null) {
+        trafficConfigBuilder_.dispose();
+        trafficConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder
+        getTrafficConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetTrafficConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder
+        getTrafficConfigOrBuilder() {
+      if (trafficConfigBuilder_ != null) {
+        return trafficConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return trafficConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.getDefaultInstance()
+            : trafficConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder>
+        internalGetTrafficConfigFieldBuilder() {
+      if (trafficConfigBuilder_ == null) {
+        trafficConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder>(
+                getTrafficConfig(), getParentForChildren(), isClean());
+        trafficConfig_ = null;
+      }
+      return trafficConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ReasoningEngine)
