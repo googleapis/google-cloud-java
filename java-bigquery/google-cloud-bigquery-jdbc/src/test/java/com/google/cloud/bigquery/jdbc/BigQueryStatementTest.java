@@ -31,6 +31,7 @@ import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -47,6 +48,7 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
@@ -55,6 +57,7 @@ import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
@@ -752,5 +755,71 @@ public class BigQueryStatementTest {
     // This should not throw ArithmeticException (/ by zero) and should evaluate safely
     boolean useReadApi = statement.useReadAPI(tableResult);
     assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
+  }
+
+  @Test
+  public void testExecute_registersException() throws Exception {
+    // Mock bigquery to throw a backend exception
+    BigQueryException expectedException = new BigQueryException(500, "Backend Error");
+    Mockito.doThrow(expectedException)
+        .when(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+
+    BigQueryStatement spiedStatement = Mockito.spy(bigQueryStatement);
+
+    // Execute and expect the exception to be propagated to JDBC
+    Assertions.assertThrows(SQLException.class, () -> spiedStatement.executeQuery("SELECT 1"));
+
+    // Retrieve the exported span from OTel extension
+    List<SpanData> spans = otelTesting.getSpans();
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(spans, "BigQueryStatement.executeQuery");
+
+    // Assert that the span recorded the error correctly
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.ERROR);
+    OpenTelemetryTestUtility.assertSpanHasException(span, BigQueryJdbcException.class);
+  }
+
+  @Test
+  public void testExecute_propagatesContextAndBaggage() throws Exception {
+    // Mock bigquery using thenAnswer to hook into the call and assert Context/Baggage
+    Mockito.doAnswer(
+            invocation -> {
+              // This code runs on the execution thread during the SDK call
+              String connectionIdBaggage =
+                  Baggage.current()
+                      .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
+              assertEquals("test-connection-id", connectionIdBaggage);
+
+              Span currentSpan = Span.current();
+              assertTrue(currentSpan.getSpanContext().isValid());
+
+              // Return a mock TableResult to allow the execution to proceed
+              TableResult tableResultMock = mock(TableResult.class);
+              doReturn(jobId).when(tableResultMock).getJobId();
+              doReturn(Schema.of()).when(tableResultMock).getSchema();
+              return tableResultMock;
+            })
+        .when(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+
+    BigQueryStatement spiedStatement = Mockito.spy(bigQueryStatement);
+
+    // Setup connection mocks to allow the statement to execute successfully
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(Mockito.any(JobInfo.class));
+
+    BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(resultSetMock)
+        .when(spiedStatement)
+        .processJsonResultSet(Mockito.any(TableResult.class));
+
+    // Execute query
+    spiedStatement.executeQuery("SELECT 1");
+
+    // Verify the SDK call actually occurred
+    verify(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
   }
 }
