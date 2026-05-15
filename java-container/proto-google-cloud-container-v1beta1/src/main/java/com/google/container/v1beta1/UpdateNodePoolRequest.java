@@ -100,7 +100,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4480
+   *     google/container/v1beta1/cluster_service.proto;l=4739
    * @return The projectId.
    */
   @java.lang.Override
@@ -129,7 +129,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4480
+   *     google/container/v1beta1/cluster_service.proto;l=4739
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -164,7 +164,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4486
+   *     google/container/v1beta1/cluster_service.proto;l=4745
    * @return The zone.
    */
   @java.lang.Override
@@ -194,7 +194,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4486
+   *     google/container/v1beta1/cluster_service.proto;l=4745
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -227,7 +227,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4490
+   *     google/container/v1beta1/cluster_service.proto;l=4749
    * @return The clusterId.
    */
   @java.lang.Override
@@ -255,7 +255,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4490
+   *     google/container/v1beta1/cluster_service.proto;l=4749
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -288,7 +288,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4494
+   *     google/container/v1beta1/cluster_service.proto;l=4753
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -316,7 +316,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4494
+   *     google/container/v1beta1/cluster_service.proto;l=4753
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -2233,6 +2233,59 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : consolidationDelay_;
   }
 
+  public static final int TAINT_CONFIG_FIELD_NUMBER = 51;
+  private com.google.container.v1beta1.TaintConfig taintConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   *
+   * @return Whether the taintConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaintConfig() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   *
+   * @return The taintConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.TaintConfig getTaintConfig() {
+    return taintConfig_ == null
+        ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+    return taintConfig_ == null
+        ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+        : taintConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2357,6 +2410,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00400000) != 0)) {
       output.writeMessage(49, getConsolidationDelay());
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      output.writeMessage(51, getTaintConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2490,6 +2546,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, getConsolidationDelay());
     }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getTaintConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2611,6 +2670,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasConsolidationDelay() != other.hasConsolidationDelay()) return false;
     if (hasConsolidationDelay()) {
       if (!getConsolidationDelay().equals(other.getConsolidationDelay())) return false;
+    }
+    if (hasTaintConfig() != other.hasTaintConfig()) return false;
+    if (hasTaintConfig()) {
+      if (!getTaintConfig().equals(other.getTaintConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2748,6 +2811,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasConsolidationDelay()) {
       hash = (37 * hash) + CONSOLIDATION_DELAY_FIELD_NUMBER;
       hash = (53 * hash) + getConsolidationDelay().hashCode();
+    }
+    if (hasTaintConfig()) {
+      hash = (37 * hash) + TAINT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTaintConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2913,6 +2980,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         internalGetBootDiskFieldBuilder();
         internalGetNodeDrainConfigFieldBuilder();
         internalGetConsolidationDelayFieldBuilder();
+        internalGetTaintConfigFieldBuilder();
       }
     }
 
@@ -3051,6 +3119,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (consolidationDelayBuilder_ != null) {
         consolidationDelayBuilder_.dispose();
         consolidationDelayBuilder_ = null;
+      }
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
       }
       return this;
     }
@@ -3274,6 +3347,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 : consolidationDelayBuilder_.build();
         to_bitField0_ |= 0x00400000;
       }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.taintConfig_ =
+            taintConfigBuilder_ == null ? taintConfig_ : taintConfigBuilder_.build();
+        to_bitField0_ |= 0x00800000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3458,6 +3536,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasConsolidationDelay()) {
         mergeConsolidationDelay(other.getConsolidationDelay());
+      }
+      if (other.hasTaintConfig()) {
+        mergeTaintConfig(other.getTaintConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3735,6 +3816,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField1_ |= 0x00000010;
                 break;
               } // case 394
+            case 410:
+              {
+                input.readMessage(
+                    internalGetTaintConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 410
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3769,7 +3857,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4739
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -3797,7 +3885,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4739
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -3825,7 +3913,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4739
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -3852,7 +3940,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4739
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3875,7 +3963,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4480
+     *     google/container/v1beta1/cluster_service.proto;l=4739
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -3906,7 +3994,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4745
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -3935,7 +4023,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4745
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -3964,7 +4052,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4745
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3992,7 +4080,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4745
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4016,7 +4104,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4486
+     *     google/container/v1beta1/cluster_service.proto;l=4745
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -4045,7 +4133,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4749
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -4072,7 +4160,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4749
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -4099,7 +4187,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4749
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -4125,7 +4213,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4749
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4147,7 +4235,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4490
+     *     google/container/v1beta1/cluster_service.proto;l=4749
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -4176,7 +4264,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4753
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -4203,7 +4291,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4753
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -4230,7 +4318,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4753
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4256,7 +4344,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4753
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4278,7 +4366,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4494
+     *     google/container/v1beta1/cluster_service.proto;l=4753
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -10566,6 +10654,201 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         consolidationDelay_ = null;
       }
       return consolidationDelayBuilder_;
+    }
+
+    private com.google.container.v1beta1.TaintConfig taintConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.TaintConfig,
+            com.google.container.v1beta1.TaintConfig.Builder,
+            com.google.container.v1beta1.TaintConfigOrBuilder>
+        taintConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     *
+     * @return Whether the taintConfig field is set.
+     */
+    public boolean hasTaintConfig() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     *
+     * @return The taintConfig.
+     */
+    public com.google.container.v1beta1.TaintConfig getTaintConfig() {
+      if (taintConfigBuilder_ == null) {
+        return taintConfig_ == null
+            ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      } else {
+        return taintConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder setTaintConfig(com.google.container.v1beta1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taintConfig_ = value;
+      } else {
+        taintConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder setTaintConfig(
+        com.google.container.v1beta1.TaintConfig.Builder builderForValue) {
+      if (taintConfigBuilder_ == null) {
+        taintConfig_ = builderForValue.build();
+      } else {
+        taintConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder mergeTaintConfig(com.google.container.v1beta1.TaintConfig value) {
+      if (taintConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000020) != 0)
+            && taintConfig_ != null
+            && taintConfig_ != com.google.container.v1beta1.TaintConfig.getDefaultInstance()) {
+          getTaintConfigBuilder().mergeFrom(value);
+        } else {
+          taintConfig_ = value;
+        }
+      } else {
+        taintConfigBuilder_.mergeFrom(value);
+      }
+      if (taintConfig_ != null) {
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public Builder clearTaintConfig() {
+      bitField1_ = (bitField1_ & ~0x00000020);
+      taintConfig_ = null;
+      if (taintConfigBuilder_ != null) {
+        taintConfigBuilder_.dispose();
+        taintConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public com.google.container.v1beta1.TaintConfig.Builder getTaintConfigBuilder() {
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return internalGetTaintConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    public com.google.container.v1beta1.TaintConfigOrBuilder getTaintConfigOrBuilder() {
+      if (taintConfigBuilder_ != null) {
+        return taintConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return taintConfig_ == null
+            ? com.google.container.v1beta1.TaintConfig.getDefaultInstance()
+            : taintConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The taint configuration for the node pool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.TaintConfig taint_config = 51;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.TaintConfig,
+            com.google.container.v1beta1.TaintConfig.Builder,
+            com.google.container.v1beta1.TaintConfigOrBuilder>
+        internalGetTaintConfigFieldBuilder() {
+      if (taintConfigBuilder_ == null) {
+        taintConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.TaintConfig,
+                com.google.container.v1beta1.TaintConfig.Builder,
+                com.google.container.v1beta1.TaintConfigOrBuilder>(
+                getTaintConfig(), getParentForChildren(), isClean());
+        taintConfig_ = null;
+      }
+      return taintConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1beta1.UpdateNodePoolRequest)

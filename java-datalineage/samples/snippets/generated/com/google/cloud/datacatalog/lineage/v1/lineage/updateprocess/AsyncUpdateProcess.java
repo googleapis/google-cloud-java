@@ -41,6 +41,7 @@ public class AsyncUpdateProcess {
               .setProcess(Process.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAllowMissing(true)
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Process> future = lineageClient.updateProcessCallable().futureCall(request);
       // Do something.

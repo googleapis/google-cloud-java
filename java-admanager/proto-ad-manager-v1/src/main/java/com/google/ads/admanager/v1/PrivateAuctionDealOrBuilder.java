@@ -60,28 +60,36 @@ public interface PrivateAuctionDealOrBuilder
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
    * @return Whether the privateAuctionDealId field is set.
    */
+  @java.lang.Deprecated
   boolean hasPrivateAuctionDealId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
    * @return The privateAuctionDealId.
    */
+  @java.lang.Deprecated
   long getPrivateAuctionDealId();
 
   /**
