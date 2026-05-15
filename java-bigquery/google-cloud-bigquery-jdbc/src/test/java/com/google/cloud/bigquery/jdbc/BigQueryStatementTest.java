@@ -574,6 +574,9 @@ public class BigQueryStatementTest {
     doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
     doReturn(code).when(statusCodeMock).getCode();
     return apiExceptionMock;
+  }
+
+  @Test
   public void testUseReadAPI_SafeguardSmallDataset() throws SQLException {
     // Setup: totalRows < MinTableSize, so it should not activate the Read API
     doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();

@@ -916,21 +916,24 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
-    LOG.finer(
-        "API call completed{Query=%s, Parent Job ID=%s, Total rows=%s} ",
-        query, results.getJobId(), results.getTotalRows());
-    JobId currentJobId = results.getJobId();
-    if (currentJobId == null) {
-      LOG.fine("Standard API with Stateless query used.");
-      this.currentResultSet = processJsonResultSet(results);
-    } else if (useReadAPI(results)) {
-      LOG.fine("HighThroughputAPI used.");
-      LOG.info("HTAPI job ID: " + currentJobId.getJob());
-      this.currentResultSet = processArrowResultSet(results);
-    } else {
-      // read API cannot be used.
-      LOG.fine("Standard API used.");
-      this.currentResultSet = processJsonResultSet(results);
+    JobId jobId = results.getJobId();
+    String queryId = results.getQueryId();
+    LOG.info(
+        "Processing query response. JobId: %s, QueryId: %s, Total rows: %s",
+        jobId, queryId, results.getTotalRows());
+    LOG.fine("Processing query response. Query: %s", query);
+
+    ResultSet resultSet = null;
+    if (jobId != null && useReadAPI(results)) {
+      try {
+        LOG.info("Using ReadAPI to read the data.");
+        resultSet = processArrowResultSet(results);
+      } catch (SQLException e) {
+        if (!isPermissionDeniedException(e)) {
+          throw e;
+        }
+        LOG.log(Level.WARNING, "Permission denied for Read API, falling back to JSON API", e);
+      }
     }
 
     if (resultSet == null) {
