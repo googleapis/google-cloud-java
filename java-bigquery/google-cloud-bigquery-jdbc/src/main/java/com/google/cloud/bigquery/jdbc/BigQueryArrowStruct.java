@@ -30,9 +30,6 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
  */
 class BigQueryArrowStruct extends BigQueryBaseStruct {
-  private static final BigQueryJdbcResultSetLogger LOG =
-      BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class);
-
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
 
@@ -41,6 +38,12 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   private final JsonStringHashMap<?, ?> values;
 
   BigQueryArrowStruct(FieldList schema, JsonStringHashMap<?, ?> values) {
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
+  }
+
+  BigQueryArrowStruct(
+      FieldList schema, JsonStringHashMap<?, ?> values, BigQueryJdbcResultSetLogger log) {
+    super(log);
     this.schema = schema;
     this.values = values;
   }
@@ -73,15 +76,18 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   private Object getValue(Field currentSchema, Object currentValue) {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
-      return new BigQueryArrowArray(currentSchema, (JsonStringArrayList<?>) currentValue);
+      return new BigQueryArrowArray(
+          currentSchema, (JsonStringArrayList<?>) currentValue, this.LOG.getArrowArrayLogger());
     } else if (isStruct(currentSchema)) {
       return new BigQueryArrowStruct(
-          currentSchema.getSubFields(), (JsonStringHashMap<?, ?>) currentValue);
+          currentSchema.getSubFields(),
+          (JsonStringHashMap<?, ?>) currentValue,
+          this.LOG.getArrowStructLogger());
     } else {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               currentSchema.getType().getStandardType());
-      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue);
+      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue, this.LOG);
     }
   }
 }

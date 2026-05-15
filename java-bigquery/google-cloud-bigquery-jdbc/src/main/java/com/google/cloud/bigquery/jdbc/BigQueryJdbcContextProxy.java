@@ -81,9 +81,10 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    String methodName = method.getName();
+
     // Handle standard Object methods explicitly
     if (method.getDeclaringClass() == Object.class) {
-      String methodName = method.getName();
       if (methodName.equals("equals")) {
         Object other = args[0];
         if (other == null) {
@@ -106,7 +107,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     }
 
     // Support standard JDBC Wrapper unwrap operations
-    if (method.getName().equals("unwrap") && args != null && args.length == 1) {
+    if (methodName.equals("unwrap") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
       if (iface.isInstance(target)) {
         return target;
@@ -117,7 +118,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
         throw e.getCause();
       }
     }
-    if (method.getName().equals("isWrapperFor") && args != null && args.length == 1) {
+    if (methodName.equals("isWrapperFor") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
       if (iface.isInstance(target)) {
         return true;
@@ -131,18 +132,21 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
     // Wrap execution in the context of the active connection for all non-bypassed methods
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
-      if (LOG.isLoggable(Level.FINER)) {
-        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++enter++");
+      boolean isFinerLoggable = LOG.isLoggable(Level.FINER);
+      String targetClassName = null;
+      if (isFinerLoggable) {
+        targetClassName = target.getClass().getName();
+        LOG.logp(Level.FINER, targetClassName, methodName, "++entry++");
       }
 
       Object result = method.invoke(target, args);
 
       // Suppress exit logging for Connection.close() since its file handler is unmounted during
       // execution
-      if (LOG.isLoggable(Level.FINER)
+      if (isFinerLoggable
           && !(java.sql.Connection.class.isAssignableFrom(interfaceType)
-              && "close".equals(method.getName()))) {
-        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++exit++");
+              && "close".equals(methodName))) {
+        LOG.logp(Level.FINER, targetClassName, methodName, "++exit++");
       }
 
       // Symmetrical Cascade: Dynamic ResultSet concrete classes are deliberately unproxied here.
@@ -170,12 +174,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
       // context
       try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
         String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
-        LOG.logp(
-            Level.SEVERE,
-            target.getClass().getName(),
-            method.getName(),
-            "Exception occurred during " + method.getName() + ": " + errMsg,
-            cause);
+        LOG.severe("Exception occurred during " + methodName + ": " + errMsg, cause);
       }
 
       throw cause;

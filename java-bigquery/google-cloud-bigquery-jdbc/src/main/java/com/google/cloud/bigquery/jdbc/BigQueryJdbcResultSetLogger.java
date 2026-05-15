@@ -44,6 +44,43 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     return new BigQueryJdbcResultSetLogger(clazz, connectionId);
   }
 
+  public String getConnectionId() {
+    return connectionId;
+  }
+
+  private BigQueryJdbcResultSetLogger arrowStructLogger;
+  private BigQueryJdbcResultSetLogger jsonStructLogger;
+  private BigQueryJdbcResultSetLogger arrowArrayLogger;
+  private BigQueryJdbcResultSetLogger jsonArrayLogger;
+
+  public BigQueryJdbcResultSetLogger getArrowStructLogger() {
+    if (arrowStructLogger == null) {
+      arrowStructLogger = getLogger(BigQueryArrowStruct.class, connectionId);
+    }
+    return arrowStructLogger;
+  }
+
+  public BigQueryJdbcResultSetLogger getJsonStructLogger() {
+    if (jsonStructLogger == null) {
+      jsonStructLogger = getLogger(BigQueryJsonStruct.class, connectionId);
+    }
+    return jsonStructLogger;
+  }
+
+  public BigQueryJdbcResultSetLogger getArrowArrayLogger() {
+    if (arrowArrayLogger == null) {
+      arrowArrayLogger = getLogger(BigQueryArrowArray.class, connectionId);
+    }
+    return arrowArrayLogger;
+  }
+
+  public BigQueryJdbcResultSetLogger getJsonArrayLogger() {
+    if (jsonArrayLogger == null) {
+      jsonArrayLogger = getLogger(BigQueryJsonArray.class, connectionId);
+    }
+    return jsonArrayLogger;
+  }
+
   public BigQueryJdbcResultSetLogger(Class<?> clazz) {
     this(clazz, null);
   }
@@ -104,13 +141,6 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     logTrace(Level.FINEST, methodName, msg);
   }
 
-  /** Log a formatted message at Level.FINEST with predefined class name and method name. */
-  public void finestTrace(String methodName, String format, Object... args) {
-    if (isLoggable(Level.FINEST)) {
-      logTrace(Level.FINEST, methodName, String.format(format, args));
-    }
-  }
-
   /** Log a lazy message at Level.FINEST with predefined class name and method name. */
   public void finestTrace(String methodName, Supplier<String> msgSupplier) {
     logTrace(Level.FINEST, methodName, msgSupplier);
@@ -121,13 +151,6 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     logTrace(Level.FINER, methodName, msg);
   }
 
-  /** Log a formatted message at Level.FINER with predefined class name and method name. */
-  public void finerTrace(String methodName, String format, Object... args) {
-    if (isLoggable(Level.FINER)) {
-      logTrace(Level.FINER, methodName, String.format(format, args));
-    }
-  }
-
   /** Log a lazy message at Level.FINER with predefined class name and method name. */
   public void finerTrace(String methodName, Supplier<String> msgSupplier) {
     logTrace(Level.FINER, methodName, msgSupplier);
@@ -136,13 +159,6 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
   /** Log a message at Level.FINE with predefined class name and method name. */
   public void fineTrace(String methodName, String msg) {
     logTrace(Level.FINE, methodName, msg);
-  }
-
-  /** Log a formatted message at Level.FINE with predefined class name and method name. */
-  public void fineTrace(String methodName, String format, Object... args) {
-    if (isLoggable(Level.FINE)) {
-      logTrace(Level.FINE, methodName, String.format(format, args));
-    }
   }
 
   /** Log a lazy message at Level.FINE with predefined class name and method name. */

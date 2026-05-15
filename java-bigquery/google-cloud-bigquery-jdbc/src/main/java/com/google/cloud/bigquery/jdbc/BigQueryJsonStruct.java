@@ -30,9 +30,6 @@ import java.util.List;
  */
 @InternalApi
 class BigQueryJsonStruct extends BigQueryBaseStruct {
-  private static final BigQueryJdbcResultSetLogger LOG =
-      BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class);
-
   private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
       BigQueryTypeCoercionUtility.INSTANCE;
 
@@ -40,6 +37,11 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   private final List<FieldValue> values;
 
   public BigQueryJsonStruct(FieldList schema, FieldValue values) {
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
+  }
+
+  public BigQueryJsonStruct(FieldList schema, FieldValue values, BigQueryJdbcResultSetLogger log) {
+    super(log);
     this.schema = schema;
     this.values = (values == null || values.isNull()) ? null : values.getRecordValue();
   }
@@ -67,14 +69,15 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   private Object getValue(Field currentSchema, FieldValue currentValue) {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
-      return new BigQueryJsonArray(currentSchema, currentValue);
+      return new BigQueryJsonArray(currentSchema, currentValue, this.LOG.getJsonArrayLogger());
     } else if (isStruct(currentSchema)) {
-      return new BigQueryJsonStruct(currentSchema.getSubFields(), currentValue);
+      return new BigQueryJsonStruct(
+          currentSchema.getSubFields(), currentValue, this.LOG.getJsonStructLogger());
     } else {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               currentSchema.getType().getStandardType());
-      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue);
+      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue, this.LOG);
     }
   }
 }
