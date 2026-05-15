@@ -105,7 +105,11 @@ def __search_for_bom_artifact(
         if module.is_file() or module.name in module_exclusions:
             continue
         for sub_module in module.iterdir():
-            if sub_module.is_dir() and sub_module.name.endswith("-bom") and sub_module.name not in sub_module_exclusions:
+            if (
+                sub_module.is_dir()
+                and sub_module.name.endswith("-bom")
+                and sub_module.name not in sub_module_exclusions
+            ):
                 root = etree.parse(f"{sub_module}/pom.xml").getroot()
                 group_id = root.find(f"{project_tag}{group_id_tag}").text
                 if group_id not in group_id_inclusions:
