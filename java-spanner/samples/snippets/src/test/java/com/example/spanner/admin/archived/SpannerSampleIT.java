@@ -462,11 +462,10 @@ public class SpannerSampleIT {
         .get();
     try {
       String out = SampleRunner
-          .runSample(() -> CreateDatabaseWithEncryptionKey.createDatabaseWithEncryptionKey(dbClient,
-              projectId, instanceId, encryptedDatabaseId, key));
+          .runSample(() -> SpannerSample.createDatabase(dbClient,
+              DatabaseId.of(projectId, instanceId, encryptedDatabaseId)));
       assertThat(out).contains(String.format(
-          "Database projects/%s/instances/%s/databases/%s created with encryption key %s",
-          projectId, instanceId, encryptedDatabaseId, key));
+          "Created database [%s]", DatabaseId.of(projectId, instanceId, encryptedDatabaseId)));
 
       out = SampleRunner.runSampleWithRetry(
           () -> CreateBackupWithEncryptionKey.createBackupWithEncryptionKey(dbClient, projectId,
