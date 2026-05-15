@@ -288,7 +288,7 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    BigDecimal expected = mock(BigDecimal.class);
+    BigDecimal expected = new BigDecimal("123.456");
 
     statement.getParameterHandler().setParameter(1, expected, BigDecimal.class);
     BigDecimal actual = statement.getBigDecimal(1);
@@ -300,7 +300,7 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    BigDecimal expected = mock(BigDecimal.class);
+    BigDecimal expected = new BigDecimal("123.456");
 
     statement
         .getParameterHandler()
@@ -851,7 +851,7 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    BigDecimal expected = mock(BigDecimal.class);
+    BigDecimal expected = new BigDecimal("123.456");
 
     statement.setBigDecimal(PARAM_KEY, expected);
     BigDecimal actual = statement.getBigDecimal(PARAM_KEY);
