@@ -49,7 +49,7 @@ set +e
 # Build the proxy
 pushd .
 cd java-bigtable/test-proxy
-mvn clean install -U -DskipTests
+mvn clean install -U -DskipTests -Dcheckstyle.skip=true
 popd
 
 declare -a configs=("default" "enable_all")
