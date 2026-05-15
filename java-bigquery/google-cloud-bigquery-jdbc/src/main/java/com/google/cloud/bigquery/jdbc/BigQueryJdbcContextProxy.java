@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.logging.Level;
 
 /**
  * Dynamic InvocationHandler that transparently wraps JDBC operations. Sets the connection context
@@ -130,7 +131,19 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
     // Wrap execution in the context of the active connection for all non-bypassed methods
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+      if (LOG.isLoggable(Level.FINER)) {
+        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++enter++");
+      }
+
       Object result = method.invoke(target, args);
+
+      // Suppress exit logging for Connection.close() since its file handler is unmounted during
+      // execution
+      if (LOG.isLoggable(Level.FINER)
+          && !(java.sql.Connection.class.isAssignableFrom(interfaceType)
+              && "close".equals(method.getName()))) {
+        LOG.logp(Level.FINER, target.getClass().getName(), method.getName(), "++exit++");
+      }
 
       // Symmetrical Cascade: Dynamic ResultSet concrete classes are deliberately unproxied here.
       // Bypassing proxies on high-frequency ResultSet iterations avoids dynamic invocation
@@ -157,7 +170,12 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
       // context
       try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
         String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
-        LOG.severe("Exception occurred during " + method.getName() + ": " + errMsg, cause);
+        LOG.logp(
+            Level.SEVERE,
+            target.getClass().getName(),
+            method.getName(),
+            "Exception occurred during " + method.getName() + ": " + errMsg,
+            cause);
       }
 
       throw cause;

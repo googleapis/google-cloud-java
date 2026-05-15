@@ -38,7 +38,7 @@ class BigQueryThreadFactory implements ThreadFactory {
   public Thread newThread(Runnable r) {
     Thread t = new Thread(r, threadPrefix + (++threadSerialNum)); // non thread safe increment
     t.setDaemon(true);
-    LOG.finest("New thread %s created.", t.getName());
+    LOG.finer("New thread %s created.", t.getName());
     return t;
   }
 }
