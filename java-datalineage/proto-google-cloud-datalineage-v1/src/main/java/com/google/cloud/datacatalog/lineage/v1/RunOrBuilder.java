@@ -65,7 +65,7 @@ public interface RunOrBuilder
    *
    * <pre>
    * Optional. A human-readable name you can set to display in a user interface.
-   * Must be not longer than 1024 characters and only contain UTF-8 letters
+   * Must be not longer than 200 characters and only contain UTF-8 letters
    * or numbers, spaces or characters like `_-:&amp;.`
    * </pre>
    *
@@ -80,7 +80,7 @@ public interface RunOrBuilder
    *
    * <pre>
    * Optional. A human-readable name you can set to display in a user interface.
-   * Must be not longer than 1024 characters and only contain UTF-8 letters
+   * Must be not longer than 200 characters and only contain UTF-8 letters
    * or numbers, spaces or characters like `_-:&amp;.`
    * </pre>
    *

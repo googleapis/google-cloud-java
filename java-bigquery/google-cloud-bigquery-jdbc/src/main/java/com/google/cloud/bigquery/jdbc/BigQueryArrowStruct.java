@@ -55,7 +55,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   @Override
   public Object[] getAttributes() {
-    LOG.finestTrace("getAttributes", "++enter++");
+    LOG.finestTrace("getAttributes");
     int size = this.schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
 
@@ -74,7 +74,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   }
 
   private Object getValue(Field currentSchema, Object currentValue) {
-    LOG.finestTrace("getValue", "++enter++");
+    LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(
           currentSchema, (JsonStringArrayList<?>) currentValue, this.LOG.getArrowArrayLogger());

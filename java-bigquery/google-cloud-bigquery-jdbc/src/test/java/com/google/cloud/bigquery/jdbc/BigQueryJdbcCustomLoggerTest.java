@@ -300,12 +300,11 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     assertEquals("job-999", params[1]);
   }
 
-  @Test
-  public void testArrowDatatypesConnectionIdPropagation() throws Exception {
-    String connectionId = "conn-arrow-999";
-    BigQueryJdbcResultSetLogger logger =
-        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class, connectionId);
-
+  private void assertConnectionIdPropagated(
+      BigQueryJdbcResultSetLogger logger,
+      String connectionId,
+      String expectedMessage,
+      Runnable action) {
     Level originalRootLevel = BigQueryJdbcRootLogger.getRootLogger().getLevel();
     Level originalLoggerLevel = logger.getLevel();
     Map<Handler, Level> originalHandlerLevels = new HashMap<>();
@@ -318,78 +317,11 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     logger.setLevel(Level.ALL);
 
     try {
-      // 1. Arrow Array
-      Field arraySchema = Field.of("name", LegacySQLTypeName.INTEGER);
-      JsonStringArrayList<Object> arrayValues = new JsonStringArrayList<>();
-      arrayValues.add(123L);
-      BigQueryArrowArray array = new BigQueryArrowArray(arraySchema, arrayValues, logger);
-
       capturedLogs.clear();
-      array.LOG.fine("Log from Arrow Array");
-
+      action.run();
       assertEquals(1, capturedLogs.size());
       assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
-
-      // 2. Arrow Struct
-      FieldList structSchema = FieldList.of(Field.of("col", LegacySQLTypeName.INTEGER));
-      JsonStringHashMap<String, Object> structValues = new JsonStringHashMap<>();
-      structValues.put("col", 456L);
-      BigQueryJdbcResultSetLogger structLogger =
-          BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class, connectionId);
-      structLogger.setLevel(Level.ALL);
-      BigQueryArrowStruct struct =
-          new BigQueryArrowStruct(structSchema, structValues, structLogger);
-
-      capturedLogs.clear();
-      struct.LOG.fine("Log from Arrow Struct");
-
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
-
-      // 3. Nested Struct in Arrow Array
-      FieldList subFields = FieldList.of(Field.of("sub_col", LegacySQLTypeName.INTEGER));
-      Field arrayNestedSchema =
-          Field.newBuilder("struct_arr", LegacySQLTypeName.RECORD, subFields)
-              .setMode(Field.Mode.REPEATED)
-              .build();
-      JsonStringHashMap<String, Object> map = new JsonStringHashMap<>();
-      map.put("sub_col", 456L);
-      JsonStringArrayList<Object> nestedValues = new JsonStringArrayList<>();
-      nestedValues.add(map);
-      BigQueryArrowArray arrayWithNested =
-          new BigQueryArrowArray(arrayNestedSchema, nestedValues, logger);
-
-      Object[] result = (Object[]) arrayWithNested.getArray();
-      BigQueryArrowStruct nestedStruct = (BigQueryArrowStruct) result[0];
-
-      capturedLogs.clear();
-      nestedStruct.LOG.fine("Log from Nested Struct");
-
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
-
-      // 4. Nested Array in Arrow Struct
-      Field arrayField =
-          Field.newBuilder("array_col", LegacySQLTypeName.INTEGER)
-              .setMode(Field.Mode.REPEATED)
-              .build();
-      FieldList nestedSchema = FieldList.of(arrayField);
-      JsonStringArrayList<Object> arrayVal = new JsonStringArrayList<>();
-      arrayVal.add(123L);
-      JsonStringHashMap<String, Object> values = new JsonStringHashMap<>();
-      values.put("array_col", arrayVal);
-
-      BigQueryArrowStruct structWithNestedArray =
-          new BigQueryArrowStruct(nestedSchema, values, structLogger);
-      Object[] attributes = structWithNestedArray.getAttributes();
-      BigQueryArrowArray nestedArray = (BigQueryArrowArray) attributes[0];
-
-      capturedLogs.clear();
-      nestedArray.LOG.fine("Log from Nested Array");
-
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
-
+      assertTrue(assertLogContains(expectedMessage));
     } finally {
       BigQueryJdbcRootLogger.getRootLogger().setLevel(originalRootLevel);
       logger.setLevel(originalLoggerLevel);
@@ -400,112 +332,199 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testJsonDatatypesConnectionIdPropagation() throws Exception {
+  public void testArrowArrayConnectionIdPropagation() {
+    String connectionId = "conn-arrow-999";
+    BigQueryJdbcResultSetLogger logger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class, connectionId);
+
+    Field arraySchema = Field.of("name", LegacySQLTypeName.INTEGER);
+    JsonStringArrayList<Object> arrayValues = new JsonStringArrayList<>();
+    arrayValues.add(123L);
+    BigQueryArrowArray array = new BigQueryArrowArray(arraySchema, arrayValues, logger);
+
+    assertConnectionIdPropagated(
+        logger, connectionId, "Log from Arrow Array", () -> array.LOG.fine("Log from Arrow Array"));
+  }
+
+  @Test
+  public void testArrowStructConnectionIdPropagation() {
+    String connectionId = "conn-arrow-999";
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class, connectionId);
+
+    FieldList structSchema = FieldList.of(Field.of("col", LegacySQLTypeName.INTEGER));
+    JsonStringHashMap<String, Object> structValues = new JsonStringHashMap<>();
+    structValues.put("col", 456L);
+    BigQueryArrowStruct struct = new BigQueryArrowStruct(structSchema, structValues, structLogger);
+
+    assertConnectionIdPropagated(
+        structLogger,
+        connectionId,
+        "Log from Arrow Struct",
+        () -> struct.LOG.fine("Log from Arrow Struct"));
+  }
+
+  @Test
+  public void testNestedStructInArrowArrayConnectionIdPropagation() throws Exception {
+    String connectionId = "conn-arrow-999";
+    BigQueryJdbcResultSetLogger logger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class, connectionId);
+
+    FieldList subFields = FieldList.of(Field.of("sub_col", LegacySQLTypeName.INTEGER));
+    Field arrayNestedSchema =
+        Field.newBuilder("struct_arr", LegacySQLTypeName.RECORD, subFields)
+            .setMode(Field.Mode.REPEATED)
+            .build();
+    JsonStringHashMap<String, Object> map = new JsonStringHashMap<>();
+    map.put("sub_col", 456L);
+    JsonStringArrayList<Object> nestedValues = new JsonStringArrayList<>();
+    nestedValues.add(map);
+    BigQueryArrowArray arrayWithNested =
+        new BigQueryArrowArray(arrayNestedSchema, nestedValues, logger);
+
+    Object[] result = (Object[]) arrayWithNested.getArray();
+    BigQueryArrowStruct nestedStruct = (BigQueryArrowStruct) result[0];
+
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class, connectionId);
+    assertConnectionIdPropagated(
+        structLogger,
+        connectionId,
+        "Log from Nested Struct",
+        () -> nestedStruct.LOG.fine("Log from Nested Struct"));
+  }
+
+  @Test
+  public void testNestedArrayInArrowStructConnectionIdPropagation() throws Exception {
+    String connectionId = "conn-arrow-999";
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class, connectionId);
+
+    Field arrayField =
+        Field.newBuilder("array_col", LegacySQLTypeName.INTEGER)
+            .setMode(Field.Mode.REPEATED)
+            .build();
+    FieldList nestedSchema = FieldList.of(arrayField);
+    JsonStringArrayList<Object> arrayVal = new JsonStringArrayList<>();
+    arrayVal.add(123L);
+    JsonStringHashMap<String, Object> values = new JsonStringHashMap<>();
+    values.put("array_col", arrayVal);
+
+    BigQueryArrowStruct structWithNestedArray =
+        new BigQueryArrowStruct(nestedSchema, values, structLogger);
+    Object[] attributes = structWithNestedArray.getAttributes();
+    BigQueryArrowArray nestedArray = (BigQueryArrowArray) attributes[0];
+
+    BigQueryJdbcResultSetLogger arrayLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class, connectionId);
+    assertConnectionIdPropagated(
+        arrayLogger,
+        connectionId,
+        "Log from Nested Array",
+        () -> nestedArray.LOG.fine("Log from Nested Array"));
+  }
+
+  @Test
+  public void testJsonArrayConnectionIdPropagation() {
     String connectionId = "conn-json-888";
     BigQueryJdbcResultSetLogger logger =
         BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class, connectionId);
 
-    Level originalRootLevel = BigQueryJdbcRootLogger.getRootLogger().getLevel();
-    Level originalLoggerLevel = logger.getLevel();
-    Map<Handler, Level> originalHandlerLevels = new HashMap<>();
-    for (Handler h : BigQueryJdbcRootLogger.getRootLogger().getHandlers()) {
-      originalHandlerLevels.put(h, h.getLevel());
-      h.setLevel(Level.ALL);
-    }
+    Field arraySchema = Field.of("name", LegacySQLTypeName.INTEGER);
+    FieldValue arrayValue =
+        FieldValue.of(
+            Attribute.REPEATED,
+            FieldValueList.of(
+                Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "123"))));
+    BigQueryJsonArray array = new BigQueryJsonArray(arraySchema, arrayValue, logger);
 
-    BigQueryJdbcRootLogger.getRootLogger().setLevel(Level.ALL);
-    logger.setLevel(Level.ALL);
+    assertConnectionIdPropagated(
+        logger, connectionId, "Log from JSON Array", () -> array.LOG.fine("Log from JSON Array"));
+  }
 
-    try {
-      // 1. JSON Array
-      Field arraySchema = Field.of("name", LegacySQLTypeName.INTEGER);
-      FieldValue arrayValue =
-          FieldValue.of(
-              Attribute.REPEATED,
-              FieldValueList.of(
-                  Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "123"))));
-      BigQueryJsonArray array = new BigQueryJsonArray(arraySchema, arrayValue, logger);
+  @Test
+  public void testJsonStructConnectionIdPropagation() {
+    String connectionId = "conn-json-888";
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class, connectionId);
 
-      capturedLogs.clear();
-      array.LOG.fine("Log from JSON Array");
+    FieldList structSchema = FieldList.of(Field.of("col", LegacySQLTypeName.INTEGER));
+    FieldValue structValue =
+        FieldValue.of(
+            Attribute.RECORD,
+            FieldValueList.of(
+                Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "456"))));
+    BigQueryJsonStruct struct = new BigQueryJsonStruct(structSchema, structValue, structLogger);
 
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
+    assertConnectionIdPropagated(
+        structLogger,
+        connectionId,
+        "Log from JSON Struct",
+        () -> struct.LOG.fine("Log from JSON Struct"));
+  }
 
-      // 2. JSON Struct
-      FieldList structSchema = FieldList.of(Field.of("col", LegacySQLTypeName.INTEGER));
-      FieldValue structValue =
-          FieldValue.of(
-              Attribute.RECORD,
-              FieldValueList.of(
-                  Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "456"))));
-      BigQueryJdbcResultSetLogger structLogger =
-          BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class, connectionId);
-      structLogger.setLevel(Level.ALL);
-      BigQueryJsonStruct struct = new BigQueryJsonStruct(structSchema, structValue, structLogger);
+  @Test
+  public void testNestedStructInJsonArrayConnectionIdPropagation() throws Exception {
+    String connectionId = "conn-json-888";
+    BigQueryJdbcResultSetLogger logger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class, connectionId);
 
-      capturedLogs.clear();
-      struct.LOG.fine("Log from JSON Struct");
+    FieldList subFields = FieldList.of(Field.of("sub_col", LegacySQLTypeName.INTEGER));
+    Field arrayNestedSchema =
+        Field.newBuilder("struct_arr", LegacySQLTypeName.RECORD, subFields)
+            .setMode(Field.Mode.REPEATED)
+            .build();
+    FieldValue recordVal =
+        FieldValue.of(
+            Attribute.RECORD,
+            FieldValueList.of(
+                Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "789"))));
+    FieldValue listVal =
+        FieldValue.of(Attribute.REPEATED, FieldValueList.of(Collections.singletonList(recordVal)));
+    BigQueryJsonArray arrayWithNested = new BigQueryJsonArray(arrayNestedSchema, listVal, logger);
 
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
+    Object[] result = (Object[]) arrayWithNested.getArray();
+    BigQueryJsonStruct nestedStruct = (BigQueryJsonStruct) result[0];
 
-      // 3. Nested Struct in JSON Array
-      FieldList subFields = FieldList.of(Field.of("sub_col", LegacySQLTypeName.INTEGER));
-      Field arrayNestedSchema =
-          Field.newBuilder("struct_arr", LegacySQLTypeName.RECORD, subFields)
-              .setMode(Field.Mode.REPEATED)
-              .build();
-      FieldValue recordVal =
-          FieldValue.of(
-              Attribute.RECORD,
-              FieldValueList.of(
-                  Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "789"))));
-      FieldValue listVal =
-          FieldValue.of(
-              Attribute.REPEATED, FieldValueList.of(Collections.singletonList(recordVal)));
-      BigQueryJsonArray arrayWithNested = new BigQueryJsonArray(arrayNestedSchema, listVal, logger);
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class, connectionId);
+    assertConnectionIdPropagated(
+        structLogger,
+        connectionId,
+        "Log from Nested JSON Struct",
+        () -> nestedStruct.LOG.fine("Log from Nested JSON Struct"));
+  }
 
-      Object[] result = (Object[]) arrayWithNested.getArray();
-      BigQueryJsonStruct nestedStruct = (BigQueryJsonStruct) result[0];
+  @Test
+  public void testNestedArrayInJsonStructConnectionIdPropagation() throws Exception {
+    String connectionId = "conn-json-888";
+    BigQueryJdbcResultSetLogger structLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class, connectionId);
 
-      capturedLogs.clear();
-      nestedStruct.LOG.fine("Log from Nested JSON Struct");
+    Field arrayField =
+        Field.newBuilder("array_col", LegacySQLTypeName.INTEGER)
+            .setMode(Field.Mode.REPEATED)
+            .build();
+    FieldList nestedSchema = FieldList.of(arrayField);
+    FieldValue arrayVal =
+        FieldValue.of(
+            Attribute.REPEATED,
+            FieldValueList.of(
+                Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "123"))));
+    FieldValue rootVal =
+        FieldValue.of(Attribute.RECORD, FieldValueList.of(Collections.singletonList(arrayVal)));
 
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
+    BigQueryJsonStruct structWithNestedArray =
+        new BigQueryJsonStruct(nestedSchema, rootVal, structLogger);
+    Object[] attributes = structWithNestedArray.getAttributes();
+    BigQueryJsonArray nestedArray = (BigQueryJsonArray) attributes[0];
 
-      // 4. Nested Array in JSON Struct
-      Field arrayField =
-          Field.newBuilder("array_col", LegacySQLTypeName.INTEGER)
-              .setMode(Field.Mode.REPEATED)
-              .build();
-      FieldList nestedSchema = FieldList.of(arrayField);
-      FieldValue arrayVal =
-          FieldValue.of(
-              Attribute.REPEATED,
-              FieldValueList.of(
-                  Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "123"))));
-      FieldValue rootVal =
-          FieldValue.of(Attribute.RECORD, FieldValueList.of(Collections.singletonList(arrayVal)));
-
-      BigQueryJsonStruct structWithNestedArray =
-          new BigQueryJsonStruct(nestedSchema, rootVal, structLogger);
-      Object[] attributes = structWithNestedArray.getAttributes();
-      BigQueryJsonArray nestedArray = (BigQueryJsonArray) attributes[0];
-
-      capturedLogs.clear();
-      nestedArray.LOG.fine("Log from Nested JSON Array");
-
-      assertEquals(1, capturedLogs.size());
-      assertEquals(connectionId, capturedLogs.get(0).getParameters()[0]);
-
-    } finally {
-      BigQueryJdbcRootLogger.getRootLogger().setLevel(originalRootLevel);
-      logger.setLevel(originalLoggerLevel);
-      for (Entry<Handler, Level> entry : originalHandlerLevels.entrySet()) {
-        entry.getKey().setLevel(entry.getValue());
-      }
-    }
+    BigQueryJdbcResultSetLogger arrayLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class, connectionId);
+    assertConnectionIdPropagated(
+        arrayLogger,
+        connectionId,
+        "Log from Nested JSON Array",
+        () -> nestedArray.LOG.fine("Log from Nested JSON Array"));
   }
 }

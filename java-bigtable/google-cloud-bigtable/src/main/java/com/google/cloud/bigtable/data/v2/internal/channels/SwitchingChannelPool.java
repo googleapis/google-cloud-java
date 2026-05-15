@@ -162,14 +162,18 @@ public class SwitchingChannelPool implements ChannelPool {
   }
 
   @Override
-  public synchronized void close() {
-    if (isClosed) {
-      return;
-    }
-
+  public void close() {
     configListener.close();
-    delegate.close();
-    isClosed = true;
+    ChannelPool cp;
+    synchronized (this) {
+      if (isClosed) {
+        return;
+      }
+
+      cp = delegate;
+      isClosed = true;
+    }
+    cp.close();
   }
 
   @Override

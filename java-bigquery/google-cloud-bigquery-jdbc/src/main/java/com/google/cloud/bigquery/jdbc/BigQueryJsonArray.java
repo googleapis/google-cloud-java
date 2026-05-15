@@ -46,7 +46,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   @Override
   public Object getArray() {
     ensureValid();
-    LOG.finestTrace("getArray", "++enter++");
+    LOG.finestTrace("getArray");
     if (this.values == null) {
       return null;
     }
@@ -56,7 +56,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   @Override
   public Object getArray(long index, int count) {
     ensureValid();
-    LOG.finestTrace("getArray", "++enter++");
+    LOG.finestTrace("getArray");
     if (this.values == null) {
       return null;
     }
@@ -67,7 +67,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   @Override
   public ResultSet getResultSet() {
     ensureValid();
-    LOG.finestTrace("getResultSet", "++enter++");
+    LOG.finestTrace("getResultSet");
     if (this.values == null) {
       return new BigQueryJsonResultSet();
     }
@@ -80,7 +80,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   @Override
   public ResultSet getResultSet(long index, int count) {
     ensureValid();
-    LOG.finestTrace("getResultSet", "++enter++");
+    LOG.finestTrace("getResultSet");
     if (this.values == null) {
       return new BigQueryJsonResultSet();
     }

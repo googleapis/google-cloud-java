@@ -200,11 +200,14 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
-    // Send vRPCs until after a goaway time
     Stopwatch stopwatch = Stopwatch.createStarted();
+    int numOkBeforeError = 0;
+    int numOkAfterError = 0;
     int numUncommittedErrors = 0;
-    int numOk = 0;
-    while (stopwatch.elapsed(TimeUnit.MILLISECONDS) < goAwayDelay.toMillis()) {
+    int otherErrors = 0;
+    boolean encounteredError = false;
+
+    while (stopwatch.elapsed(TimeUnit.MILLISECONDS) < goAwayDelay.toMillis() + 200) {
       VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
           session.newCall(FakeDescriptor.SCRIPTED);
       UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
@@ -214,25 +217,38 @@ public class SessionImplTest {
           f);
       try {
         f.get();
-        numOk++;
+        if (!encounteredError) {
+          numOkBeforeError++;
+        } else {
+          numOkAfterError++;
+        }
       } catch (ExecutionException e) {
+        encounteredError = true;
         if (e.getCause() instanceof VRpcException) {
           VRpcException vrpcException = (VRpcException) e.getCause();
           if (vrpcException.getResult().getState() == State.UNCOMMITED) {
             numUncommittedErrors++;
+          } else {
+            otherErrors++;
           }
         } else {
-          throw e;
+          otherErrors++;
         }
       }
     }
 
     assertWithMessage("Ensure that some vRpcs succeeded prior to the goaway")
-        .that(numOk)
+        .that(numOkBeforeError)
         .isGreaterThan(0);
-    assertWithMessage("Ensure that only the last vRpc could be rejected with an uncommited error")
+    assertWithMessage("Ensure that no vRpcs succeeded after the first error")
+        .that(numOkAfterError)
+        .isEqualTo(0);
+    assertWithMessage("Ensure that we received uncommitted errors after goaway")
         .that(numUncommittedErrors)
-        .isAtMost(1);
+        .isGreaterThan(0);
+    assertWithMessage("Ensure that we received no other types of errors")
+        .that(otherErrors)
+        .isEqualTo(0);
 
     assertThat(sessionListener.popUntil(GoAwayResponse.class)).isInstanceOf(GoAwayResponse.class);
 

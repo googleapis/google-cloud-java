@@ -44,7 +44,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
 
   @Override
   public Object getArray() {
-    LOG.finestTrace("getArray", "++enter++");
+    LOG.finestTrace("getArray");
     ensureValid();
     if (values == null) {
       return null;
@@ -54,7 +54,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
 
   @Override
   public Object getArray(long index, int count) {
-    LOG.finestTrace("getArray", "++enter++");
+    LOG.finestTrace("getArray");
     ensureValid();
     if (values == null) {
       return null;
@@ -65,7 +65,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
 
   @Override
   public ResultSet getResultSet() throws SQLException {
-    LOG.finestTrace("getResultSet", "++enter++");
+    LOG.finestTrace("getResultSet");
     ensureValid();
     if (values == null) {
       return new BigQueryArrowResultSet();
@@ -78,7 +78,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
 
   @Override
   public ResultSet getResultSet(long index, int count) throws SQLException {
-    LOG.finestTrace("getResultSet", "++enter++");
+    LOG.finestTrace("getResultSet");
     ensureValid();
     if (values == null) {
       return new BigQueryArrowResultSet();
@@ -92,14 +92,14 @@ class BigQueryArrowArray extends BigQueryBaseArray {
 
   @Override
   public void free() {
-    LOG.finestTrace("free", "++enter++");
+    LOG.finestTrace("free");
     this.values = null;
     markInvalid();
   }
 
   @Override
   Object getCoercedValue(int index) {
-    LOG.finestTrace("getCoercedValue", "++enter++");
+    LOG.finestTrace("getCoercedValue");
     Object value = this.values.get(index);
     return this.arrayOfStruct
         ? new BigQueryArrowStruct(

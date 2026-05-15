@@ -1552,4 +1552,15 @@ public class LineageClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void searchLineageStreamingTest() throws Exception {}
+
+  @Test
+  public void searchLineageStreamingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
 }
