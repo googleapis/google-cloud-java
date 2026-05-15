@@ -18,7 +18,7 @@ CREDENTIALS ?= $(GOOGLE_APPLICATION_CREDENTIALS)
 # We assume OAuthType=3 (Service Account) as in the original specs
 BASE_URL = jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=$(PROJECT_ID);OAuthType=3;OAuthPvtKeyPath=$(CREDENTIALS);Timeout=3600;
 
-REST_OPTS = EnableHighThroughputAPI=0
+REST_OPTS = EnableHighThroughputAPI=0;
 HTAPI_OPTS = EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThroughputMinTableSize=0;
 
 # Python script

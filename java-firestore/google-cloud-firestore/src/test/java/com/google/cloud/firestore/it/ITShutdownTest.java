@@ -38,7 +38,8 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ITShutdownTest extends ITBaseTest {
-  @Rule public final Timeout timeout = new Timeout(5, TimeUnit.SECONDS);
+  // 45s budget for ITBaseTest backend priming + 5s budget for shutdown execution
+  @Rule public final Timeout timeout = new Timeout(50, TimeUnit.SECONDS);
   @Rule public TestName testName = new TestName();
 
   @Test
