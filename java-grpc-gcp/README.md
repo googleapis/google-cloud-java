@@ -2,6 +2,11 @@
 
 grpc-gcp provides gRPC support for Google Cloud Clients.
 
+This module is currently used by the Google Cloud Spanner client library to provide
+gRPC-GCP channel pooling and related transport behavior. It is published separately
+as `com.google.cloud:grpc-gcp` because Spanner exposes grpc-gcp types in its public
+API.
+
 ## Usage
 
 Use Spanner API as an example.

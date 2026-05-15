@@ -7,7 +7,10 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <!-- Do not depend on the version in this monorepo. It causes publication order problems. -->
+    <!-- Do not inherit google-cloud-jar-parent here. grpc-gcp is managed by
+    first-party-dependencies, which is imported by google-cloud-shared-dependencies;
+    importing shared dependency management from grpc-gcp would create a dependency
+    management cycle. -->
     <version>1.17.0</version>
     <relativePath/>
   </parent>
