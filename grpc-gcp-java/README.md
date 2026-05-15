@@ -73,7 +73,7 @@ SpannerBlockingStub stub =
 Download source.
 
 ```sh
-git clone https://github.com/googleapis/google-cloud-java.git && cd google-cloud-java/java-grpc-gcp
+git clone https://github.com/googleapis/google-cloud-java.git && cd google-cloud-java/grpc-gcp-java
 ```
 
 Build project with unit tests.

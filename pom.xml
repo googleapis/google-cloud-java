@@ -15,6 +15,7 @@
     <module>google-cloud-jar-parent</module>
     <module>google-cloud-pom-parent</module>
     <module>google-auth-library-java</module>
+    <module>grpc-gcp-java</module>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
@@ -125,7 +126,6 @@
     <module>java-gkehub</module>
     <module>java-gkerecommender</module>
     <module>java-grafeas</module>
-    <module>java-grpc-gcp</module>
     <module>java-gsuite-addons</module>
     <module>java-health</module>
     <module>java-hypercomputecluster</module>
