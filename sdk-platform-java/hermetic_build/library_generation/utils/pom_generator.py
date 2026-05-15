@@ -72,7 +72,6 @@ MODULE_ALLOWLIST = set(
         "google-auth-library-java",
         "sdk-platform-java",
         "java-showcase",
-        "grpc-gcp",
         "grpc-gcp-java",
     ]
 )
