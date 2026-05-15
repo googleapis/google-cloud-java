@@ -16,7 +16,7 @@
   </parent>
 
   <properties>
-    <bigtable.client.version>2.78.1-SNAPSHOT</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <bigtable.client.version>2.78.1</bigtable.client.version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </properties>
 
   <dependencyManagement>
