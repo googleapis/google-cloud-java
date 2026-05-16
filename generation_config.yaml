@@ -1,5 +1,5 @@
 googleapis_commitish: 1dbb1a14e079f78d9214f8e48bf083f32e3ddb96
-libraries_bom_version: 26.82.0
+libraries_bom_version: 26.83.0
 is_monorepo: true
 libraries:
 - api_shortname: accessapproval
