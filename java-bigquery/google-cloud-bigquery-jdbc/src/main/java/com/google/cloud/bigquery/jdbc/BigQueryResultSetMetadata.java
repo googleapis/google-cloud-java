@@ -37,7 +37,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   private static final int DEFAULT_DISPLAY_SIZE = 50;
 
   private BigQueryResultSetMetadata(FieldList schemaFieldList, Statement statement) {
-    LOG.finestTrace("<init>", "++enter++");
+    LOG.finestTrace("<init>");
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
