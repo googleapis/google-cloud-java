@@ -135,7 +135,7 @@ public class FallbackChannelPool implements ChannelPool {
     final SessionStream stream = current.newStream(desc, callOptions);
 
     return new ForwardingSessionStream(stream) {
-      private boolean ignoreError;
+      private volatile boolean ignoreError;
 
       @Override
       public void start(Listener responseListener, Metadata headers) {
