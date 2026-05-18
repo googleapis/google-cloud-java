@@ -634,6 +634,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       this.deadlineMonitor = monitorDeadline(executorService, ctx.getOperationInfo().getDeadline());
 
       synchronized (SessionPoolImpl.this) {
+        if (isCancelled) {
+          // If the vRPC is already cancelled from a different thread return
+          // early to avoid double close
+          return;
+        }
         if (SessionPoolImpl.this.poolState != PoolState.STARTED) {
           listener.onClose(
               VRpcResult.createUncommitedError(
