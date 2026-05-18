@@ -139,7 +139,7 @@ class SessionList {
       if (handle.refCount > 0) {
         continue;
       }
-      if (handle.lastConnected.isBefore(horizon)) {
+      if (!handle.lastConnected.isBefore(horizon)) {
         continue;
       }
       it.remove();
