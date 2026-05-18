@@ -140,9 +140,8 @@ class SessionList {
         continue;
       }
       if (handle.lastConnected.isBefore(horizon)) {
-        continue;
+        it.remove();
       }
-      it.remove();
     }
   }
 
