@@ -16,6 +16,9 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
+import static com.google.cloud.firestore.LocalFirestoreHelper.map;
+
 import com.google.api.core.ApiFuture;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.LocalFirestoreHelper.SingleField;
@@ -27,10 +30,6 @@ import com.google.firestore.v1.MapValue;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.NullValue;
 import com.google.type.LatLng;
-
-import static com.google.cloud.firestore.LocalFirestoreHelper.commitResponse;
-import static com.google.cloud.firestore.LocalFirestoreHelper.map;
-
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,7 +38,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 
 public final class RecordTestHelper {
 
@@ -70,64 +68,42 @@ public final class RecordTestHelper {
   public static final GeoPoint GEO_POINT;
   public static final Blob BLOB;
 
+  public record SingleComponent(String foo) {}
 
-  public record SingleComponent(
-      String foo) {
-  }
-  
-  public record NestedRecord(
-      SingleComponent first,
-      AllSupportedTypes second) {
-  }
+  public record NestedRecord(SingleComponent first, AllSupportedTypes second) {}
 
-  public record NestedRecordWithPOJO(
-      SingleField first,
-      AllSupportedTypes second) {
-  }
+  public record NestedRecordWithPOJO(SingleField first, AllSupportedTypes second) {}
 
   public static class NestedPOJOWithRecord {
     public SingleField first = new SingleField();
     public AllSupportedTypes second = ALL_SUPPORTED_TYPES_OBJECT;
   }
 
-  public record ServerTimestamp (
+  public record ServerTimestamp(
+      @com.google.cloud.firestore.annotation.ServerTimestamp Date foo, Inner inner) {
 
-    @com.google.cloud.firestore.annotation.ServerTimestamp Date foo,
-    Inner inner
-
-  ){
-    record Inner (
-
-      @com.google.cloud.firestore.annotation.ServerTimestamp Date bar
-    ){}
+    record Inner(@com.google.cloud.firestore.annotation.ServerTimestamp Date bar) {}
   }
 
-  public record InvalidRecord (
-    BigInteger bigIntegerValue,
-    Byte byteValue,
-    Short shortValue
-  ){}
+  public record InvalidRecord(BigInteger bigIntegerValue, Byte byteValue, Short shortValue) {}
 
-
-  public record AllSupportedTypes (
-
-    String foo,
-    Double doubleValue,
-    long longValue,
-    double nanValue,
-    double infValue,
-    double negInfValue,
-    boolean trueValue,
-    boolean falseValue,
-    SingleComponent objectValue,
-    Date dateValue,
-    Timestamp timestampValue,
-    List<String> arrayValue,
-    String nullValue,
-    Blob bytesValue,
-    GeoPoint geoPointValue,
-    Map<String, Object> model
-  ){}
+  public record AllSupportedTypes(
+      String foo,
+      Double doubleValue,
+      long longValue,
+      double nanValue,
+      double infValue,
+      double negInfValue,
+      boolean trueValue,
+      boolean falseValue,
+      SingleComponent objectValue,
+      Date dateValue,
+      Timestamp timestampValue,
+      List<String> arrayValue,
+      String nullValue,
+      Blob bytesValue,
+      GeoPoint geoPointValue,
+      Map<String, Object> model) {}
 
   static {
     try {
@@ -154,11 +130,24 @@ public final class RecordTestHelper {
     SERVER_TIMESTAMP_PROTO = Collections.emptyMap();
     SERVER_TIMESTAMP_OBJECT = new ServerTimestamp(null, new ServerTimestamp.Inner(null));
 
-    ALL_SUPPORTED_TYPES_OBJECT = new AllSupportedTypes("bar", 0.0, 0L, Double.NaN, Double.POSITIVE_INFINITY,
-                                                       Double.NEGATIVE_INFINITY, true, false,
-                                                       new SingleComponent("bar"), DATE,
-                                                       TIMESTAMP, ImmutableList.of("foo"), null, BLOB, GEO_POINT,
-                                                       ImmutableMap.of("foo", SINGLE_COMPONENT_OBJECT.foo()));
+    ALL_SUPPORTED_TYPES_OBJECT =
+        new AllSupportedTypes(
+            "bar",
+            0.0,
+            0L,
+            Double.NaN,
+            Double.POSITIVE_INFINITY,
+            Double.NEGATIVE_INFINITY,
+            true,
+            false,
+            new SingleComponent("bar"),
+            DATE,
+            TIMESTAMP,
+            ImmutableList.of("foo"),
+            null,
+            BLOB,
+            GEO_POINT,
+            ImmutableMap.of("foo", SINGLE_COMPONENT_OBJECT.foo()));
     ALL_SUPPORTED_TYPES_PROTO =
         ImmutableMap.<String, Value>builder()
             .put("foo", Value.newBuilder().setStringValue("bar").build())
@@ -194,7 +183,7 @@ public final class RecordTestHelper {
                 "arrayValue",
                 Value.newBuilder()
                     .setArrayValue(
-                                    ArrayValue.newBuilder().addValues(Value.newBuilder().setStringValue("foo")))
+                        ArrayValue.newBuilder().addValues(Value.newBuilder().setStringValue("foo")))
                     .build())
             .put("nullValue", Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build())
             .put("bytesValue", Value.newBuilder().setBytesValue(BLOB.toByteString()).build())
@@ -202,7 +191,7 @@ public final class RecordTestHelper {
                 "geoPointValue",
                 Value.newBuilder()
                     .setGeoPointValue(
-                                    LatLng.newBuilder().setLatitude(50.1430847).setLongitude(-122.9477780))
+                        LatLng.newBuilder().setLatitude(50.1430847).setLongitude(-122.9477780))
                     .build())
             .put(
                 "model",
@@ -216,9 +205,9 @@ public final class RecordTestHelper {
 
     NESTED_RECORD_OBJECT = new NestedRecord(SINGLE_COMPONENT_OBJECT, ALL_SUPPORTED_TYPES_OBJECT);
 
-    NESTED_RECORD_WITH_POJO_OBJECT = new NestedRecordWithPOJO(new SingleField(), ALL_SUPPORTED_TYPES_OBJECT);
+    NESTED_RECORD_WITH_POJO_OBJECT =
+        new NestedRecordWithPOJO(new SingleField(), ALL_SUPPORTED_TYPES_OBJECT);
 
     NESTED_POJO_WITH_RECORD_OBJECT = new NestedPOJOWithRecord();
   }
-
 }
