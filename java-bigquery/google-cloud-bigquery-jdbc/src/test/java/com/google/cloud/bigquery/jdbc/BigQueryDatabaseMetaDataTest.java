@@ -342,14 +342,14 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(Integer.valueOf(38), infoBigNumeric.decimalDigits);
     assertEquals(Integer.valueOf(10), infoBigNumeric.numPrecRadix);
 
-    // GEOGRAPHY -> VARCHAR
+    // GEOGRAPHY -> OTHER
     Field fieldGeo =
         Field.newBuilder("test_geo", StandardSQLTypeName.GEOGRAPHY)
             .setMode(Field.Mode.NULLABLE)
             .build();
     BigQueryDatabaseMetaData.ColumnTypeInfo infoGeo = dbMetadata.mapBigQueryTypeToJdbc(fieldGeo);
-    assertEquals(Types.VARCHAR, infoGeo.jdbcType);
-    assertEquals("VARCHAR", infoGeo.typeName);
+    assertEquals(Types.OTHER, infoGeo.jdbcType);
+    assertEquals("GEOGRAPHY", infoGeo.typeName);
     assertNull(infoGeo.columnSize);
 
     // DATE
