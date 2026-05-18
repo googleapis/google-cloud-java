@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DatastoreUtils;
 import com.google.common.base.Preconditions;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
@@ -127,11 +128,7 @@ public class BuiltInDatastoreMetricsProvider {
     String databaseId = options.getDatabaseId();
 
     // No need to send metrics when using an emulator
-    String emulatorHost =
-        System.getProperty(
-            DatastoreOptions.LOCAL_HOST_ENV_VAR,
-            System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR));
-    boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
+    boolean emulatorEnabled = DatastoreUtils.isEmulator(options);
 
     if (emulatorEnabled) {
       logger.log(Level.FINE, "Emulator detected in Datastore. Metrics are not being recorded.");

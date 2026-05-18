@@ -20,6 +20,7 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.tracing.MetricsRecorder;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DatastoreUtils;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import java.util.ArrayList;
@@ -90,8 +91,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     List<DatastoreMetricsRecorder> recorders = new ArrayList<>();
 
     // No need to send metrics when using an emulator
-    String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
-    boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
+    boolean emulatorEnabled = DatastoreUtils.isEmulator(options);
 
     if (emulatorEnabled) {
       logger.log(Level.FINE, "Emulator detected in Datastore. Metrics are not being recorded.");
