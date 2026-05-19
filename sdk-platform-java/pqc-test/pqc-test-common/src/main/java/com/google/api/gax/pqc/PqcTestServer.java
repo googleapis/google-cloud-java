@@ -118,7 +118,8 @@ public class PqcTestServer {
   public void stop() {
     if (httpServer != null) httpServer.stop(0);
     if (grpcServer != null) grpcServer.shutdown();
-    // Remove BC JCA provider on stop
+    // Remove BC JCA and JSSE providers on stop
+    Security.removeProvider("BCJSSE");
     Security.removeProvider("BC");
   }
 

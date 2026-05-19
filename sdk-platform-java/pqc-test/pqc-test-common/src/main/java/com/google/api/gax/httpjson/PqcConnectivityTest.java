@@ -53,6 +53,8 @@ public class PqcConnectivityTest {
     if (server != null) {
       server.stop();
     }
+    Security.removeProvider("BCJSSE");
+    Security.removeProvider("BC");
   }
 
   public void runTests() throws Exception {
@@ -143,11 +145,7 @@ public class PqcConnectivityTest {
 
                         Class<?> tmFactoryClass = Class.forName("io.grpc.netty.shaded.io.netty.handler.ssl.util.InsecureTrustManagerFactory");
                         Object tmFactoryInstance = tmFactoryClass.getField("INSTANCE").get(null);
-                        Class<?> trustManagerFactoryClass = Class.forName("javax.net.ssl.TrustManagerFactory");
-                        java.lang.reflect.Method getTrustManagersMethod = tmFactoryClass.getMethod("getTrustManagers");
-                        // wait, insecure TM factory has getTrustManagers? Actually it inherits from SimpleTrustManagerFactory which has getTrustManagers? No, javax.net.ssl.TrustManagerFactory has getTrustManagers()
-                        // Netty's InsecureTrustManagerFactory extends SimpleTrustManagerFactory. We can just pass the TrustManagerFactory itself to SslContextBuilder.trustManager(TrustManagerFactory)
-                        
+
                         java.lang.reflect.Method forClientMethod = Class.forName("io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder").getMethod("forClient");
                         Object scBuilder = forClientMethod.invoke(null);
                         

@@ -187,26 +187,18 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    // 1. Get the scope-specific PQC-hardened SSLContext utilizing Bouncy Castle.
-    SSLContext sslContext = com.google.api.client.util.SslUtils.getTlsSslContext();
-    
-    // 2. Initialize the NetHttpTransport builder pre-configured with our PQC SSL context.
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder()
-        .setSslSocketFactory(sslContext.getSocketFactory());
-        
-    // 3. Verify if mTLS is supported and explicitly requested in the current client session.
-    if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
-      // 4. Retrieve the mutual TLS client key store from the session-specific mtlsProvider.
+    if (mtlsProvider == null) {
+      // Returning null allows ManagedHttpJsonChannel to instantiate a default NetHttpTransport,
+      // which is automatically PQC-hardened if Bouncy Castle JSSE is available on the classpath.
+      return null;
+    }
+    if (certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-      // 5. Ensure key store is valid before configuring mutual TLS client certificates.
       if (mtlsKeyStore != null) {
-        // 6. Configure the mutual TLS certificates while preserving the PQC SSL context.
-        builder.trustCertificates(null, mtlsKeyStore, "");
+        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
       }
     }
-    
-    // 7. Return the compiled and PQC-hardened NetHttpTransport instance.
-    return builder.build();
+    return null;
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {

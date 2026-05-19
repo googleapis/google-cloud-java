@@ -33,6 +33,8 @@ package com.google.auth.oauth2;
 
 import com.google.api.client.util.SslUtils;
 import java.security.GeneralSecurityException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -106,15 +108,20 @@ public class OAuth2Utils {
   public static final String CLOUD_PLATFORM_SCOPE =
       "https://www.googleapis.com/auth/cloud-platform";
 
+  private static final Logger logger = Logger.getLogger(OAuth2Utils.class.getName());
+
   static final HttpTransport HTTP_TRANSPORT;
   static {
+    HttpTransport transport;
     try {
-      HTTP_TRANSPORT = new NetHttpTransport.Builder()
+      transport = new NetHttpTransport.Builder()
           .setSslSocketFactory(SslUtils.getTlsSslContext().getSocketFactory())
           .build();
     } catch (GeneralSecurityException e) {
-      throw new RuntimeException("Failed to initialize PQC-hardened HTTP transport", e);
+      logger.log(Level.WARNING, "Failed to initialize PQC-hardened HTTP transport, falling back to default", e);
+      transport = new NetHttpTransport();
     }
+    HTTP_TRANSPORT = transport;
   }
 
   public static final HttpTransportFactory HTTP_TRANSPORT_FACTORY =
