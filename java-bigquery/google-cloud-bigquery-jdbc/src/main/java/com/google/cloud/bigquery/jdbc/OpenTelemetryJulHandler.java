@@ -56,11 +56,6 @@ public class OpenTelemetryJulHandler extends Handler {
           Baggage.fromContext(Context.current())
               .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
 
-      // Fallback to MDC if not in baggage (if MDC is available and used)
-      if (connectionId == null) {
-        connectionId = BigQueryJdbcMdc.getConnectionId();
-      }
-
       if (connectionId == null) {
         return;
       }

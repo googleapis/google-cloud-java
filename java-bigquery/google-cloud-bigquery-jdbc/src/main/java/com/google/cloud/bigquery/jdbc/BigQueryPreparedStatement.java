@@ -91,6 +91,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public ResultSet executeQuery() throws SQLException {
     LOG.finest("++enter++");
+    checkClosed();
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeQuery",
+        this.connection,
+        this.currentQuery,
+        () -> executeQueryImpl());
+  }
+
+  private ResultSet executeQueryImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -106,6 +115,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public long executeLargeUpdate() throws SQLException {
     LOG.finest("++enter++");
+    checkClosed();
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeLargeUpdate",
+        this.connection,
+        this.currentQuery,
+        () -> executeLargeUpdateImpl());
+  }
+
+  private long executeLargeUpdateImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -127,6 +145,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public boolean execute() throws SQLException {
     LOG.finest("++enter++");
+    checkClosed();
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.execute",
+        this.connection,
+        this.currentQuery,
+        () -> executeImpl());
+  }
+
+  private boolean executeImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);

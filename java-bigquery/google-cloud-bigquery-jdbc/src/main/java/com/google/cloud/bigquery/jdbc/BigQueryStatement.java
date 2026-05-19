@@ -244,12 +244,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public ResultSet executeQuery(String sql) throws SQLException {
     LOG.finest("++enter++");
     checkClosed();
-    return withTracing(
-        "BigQueryStatement.executeQuery",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeQueryImpl(sql);
-        });
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryStatement.executeQuery", this.connection, sql, () -> executeQueryImpl(sql));
   }
 
   private ResultSet executeQueryImpl(String sql) throws SQLException {
@@ -273,12 +269,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public long executeLargeUpdate(String sql) throws SQLException {
     LOG.finest("++enter++");
     checkClosed();
-    return withTracing(
+    return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeLargeUpdate",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeLargeUpdateImpl(sql);
-        });
+        this.connection,
+        sql,
+        () -> executeLargeUpdateImpl(sql));
   }
 
   private long executeLargeUpdateImpl(String sql) throws SQLException {
@@ -316,12 +311,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public boolean execute(String sql) throws SQLException {
     LOG.finest("++enter++");
     checkClosed();
-    return withTracing(
-        "BigQueryStatement.execute",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeImpl(sql);
-        });
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryStatement.execute", this.connection, sql, () -> executeImpl(sql));
   }
 
   private boolean executeImpl(String sql) throws SQLException {
@@ -1366,12 +1357,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
-    return withTracing(
+    return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeBatch",
-        (span) -> {
-          span.setAttribute("db.statement.count", this.batchQueries.size());
+        this.connection,
+        null,
+        () -> {
+          Span span = Span.current();
           span.setAttribute(
-              AttributeKey.stringArrayKey("db.batch.statements"),
+              BigQueryJdbcOpenTelemetry.DB_STATEMENT_COUNT_KEY, this.batchQueries.size());
+          span.setAttribute(
+              AttributeKey.stringArrayKey(BigQueryJdbcOpenTelemetry.DB_BATCH_STATEMENTS_KEY),
               new ArrayList<>(this.batchQueries));
 
           StringBuilder sb = new StringBuilder();
@@ -1554,25 +1549,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
-  }
-
-  @FunctionalInterface
-  private interface TracedOperation<T> {
-    T run(Span span) throws SQLException;
-  }
-
-  private <T> T withTracing(String spanName, TracedOperation<T> operation) throws SQLException {
-    Tracer tracer = this.connection.getTracer();
-    Span span = tracer.spanBuilder(spanName).startSpan();
-    try (Scope scope = span.makeCurrent()) {
-      return operation.run(span);
-    } catch (SQLException | RuntimeException ex) {
-      span.recordException(ex);
-      span.setStatus(StatusCode.ERROR, ex.getMessage());
-      throw ex;
-    } finally {
-      span.end();
-    }
   }
 
   private void fetchNextPages(

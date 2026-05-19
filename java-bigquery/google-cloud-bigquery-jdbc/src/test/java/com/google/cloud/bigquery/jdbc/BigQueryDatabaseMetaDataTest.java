@@ -30,9 +30,11 @@ import static org.mockito.Mockito.*;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import io.opentelemetry.sdk.trace.data.SpanData;
@@ -81,11 +83,13 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
     when(bigQueryConnection.getTracer())
         .thenReturn(
             otelTesting
                 .getOpenTelemetry()
                 .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+    when(bigQueryConnection.getOtelContext()).thenReturn(Context.current());
 
     Page<Dataset> datasetPageMock = mock(Page.class);
     when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
@@ -3249,6 +3253,15 @@ public class BigQueryDatabaseMetaDataTest {
     SpanData span =
         OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
     OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
   }
 
   @FunctionalInterface
