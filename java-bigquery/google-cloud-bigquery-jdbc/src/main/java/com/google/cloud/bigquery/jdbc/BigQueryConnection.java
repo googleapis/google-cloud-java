@@ -363,7 +363,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return connectionUrl;
   }
 
-  String getConnectionId() {
+  public String getConnectionId() {
     return this.connectionId;
   }
 

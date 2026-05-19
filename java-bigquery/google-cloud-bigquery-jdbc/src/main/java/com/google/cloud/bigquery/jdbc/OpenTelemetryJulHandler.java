@@ -42,7 +42,9 @@ import java.util.regex.Pattern;
 public class OpenTelemetryJulHandler extends Handler {
   private static final Pattern UNSAFE_LOG_CHARACTERS = Pattern.compile("[^a-zA-Z0-9./_-]");
 
-  public OpenTelemetryJulHandler() {}
+  public OpenTelemetryJulHandler() {
+    setLevel(Level.ALL);
+  }
 
   @Override
   public void publish(LogRecord record) {

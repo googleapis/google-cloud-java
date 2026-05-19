@@ -26,16 +26,25 @@ import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Properties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 public class BigQueryConnectionTest {
+
+  @RegisterExtension
+  static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -454,6 +463,27 @@ public class BigQueryConnectionTest {
 
     try (BigQueryConnection connection = new BigQueryConnection(url)) {
       assertEquals(expectedIsReadOnly, connection.isReadOnlyTokenUsed());
+    }
+  }
+
+  @Test
+  public void testConnect_withCustomOpenTelemetry_usesCustomInstance() throws Exception {
+    DataSource ds = DataSource.fromUrl(BASE_URL);
+    ds.setCustomOpenTelemetry(otelTesting.getOpenTelemetry());
+
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL, ds)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      Tracer tracer = connection.getTracer();
+      assertNotNull(tracer);
+
+      Span span = tracer.spanBuilder("custom-otel-span").startSpan();
+      span.end();
+
+      List<SpanData> spans = otelTesting.getSpans();
+      assertEquals(1, spans.size());
+      assertEquals("custom-otel-span", spans.get(0).getName());
     }
   }
 }
