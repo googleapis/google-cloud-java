@@ -59,7 +59,6 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.UnaryOperator;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -89,7 +88,6 @@ final class OtelStorageDecorator implements Storage {
     this.bucketMetadataCache = BucketMetadataCache.getbucketmetadatacache();
     this.cacheExecutor = AcoSpanBuilder.newCacheExecutor();
   }
-
 
   @Override
   public Bucket create(BucketInfo bucketInfo, BucketTargetOption... options) {
@@ -1615,7 +1613,6 @@ final class OtelStorageDecorator implements Storage {
       if (parentContextOverride != null) {
         spanBuilder.setParent(parentContextOverride);
       }
-
       return new AcoSpanBuilder(spanBuilder, parentDecorator);
     }
   }

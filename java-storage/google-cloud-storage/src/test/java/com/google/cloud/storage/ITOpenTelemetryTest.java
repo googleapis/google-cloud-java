@@ -76,12 +76,6 @@ public final class ITOpenTelemetryTest {
         () ->
             assertThat(getAttributeValue(span1, "rpc.system"))
                 .isEqualTo(transport.name().toLowerCase()),
-        () ->
-            assertThat(getAttributeValue(span1, "gcp.resource.destination.id"))
-                .isEqualTo("projects/_/buckets/" + bucket.getName()),
-        () ->
-            assertThat(getAttributeValue(span1, "gcp.resource.destination.location"))
-                .isEqualTo("global"),
         () -> assertThat(getAttributeValue(span2, "gcp.client.service")).isEqualTo("Storage"),
         () ->
             assertThat(getAttributeValue(span2, "gcp.resource.destination.id"))
@@ -89,6 +83,77 @@ public final class ITOpenTelemetryTest {
         () ->
             assertThat(getAttributeValue(span2, "gcp.resource.destination.location"))
                 .isNotEqualTo("global"));
+  }
+
+  @Test
+  public void testAcoNonExistentBucketNoAttributes() throws Exception {
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+    String nonExistentBucket = "non-existent-bucket-" + generator.randomBucketName();
+
+    try (Storage storage = storageOptions.getService()) {
+      storage.get(nonExistentBucket);
+      Thread.sleep(800);
+      storage.get(nonExistentBucket);
+    }
+
+    // We should have at least 2 get spans
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData getSpan1 = exporter.getExportedSpans().get(0);
+    SpanData getSpan2 = exporter.getExportedSpans().get(1);
+
+    assertAll(
+        () -> assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.id")).isNull(),
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.location")).isNull());
+  }
+
+  @Test
+  public void testAcoForbiddenBucketFallbackAttributes() throws Exception {
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+
+    try (Storage storage = storageOptions.getService()) {
+      try {
+        storage.get("test");
+      } catch (StorageException e) {
+        // Expected 403 Forbidden
+      }
+      Thread.sleep(800);
+      try {
+        storage.get("test");
+      } catch (StorageException e) {
+        // Expected 403 Forbidden
+      }
+    }
+
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData getSpan1 = exporter.getExportedSpans().get(0);
+    SpanData getSpan2 = exporter.getExportedSpans().get(1);
+
+    assertAll(
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.id"))
+                .isEqualTo("projects/_/buckets/test"),
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.location"))
+                .isEqualTo("global"));
   }
 
   @Test

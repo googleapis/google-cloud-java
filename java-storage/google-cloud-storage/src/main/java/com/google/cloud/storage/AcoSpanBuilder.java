@@ -71,13 +71,8 @@ final class AcoSpanBuilder implements SpanBuilder {
   @Override
   public Span startSpan() {
     if (bucketName != null && parent != null) {
-      checkCacheAndTriggerFetch(parent.delegate, parent.bucketMetadataCache, parent.cacheExecutor, bucketName);
-      BucketMetadataCache.BucketMetadata md =
-          parent.bucketMetadataCache.get(bucketName);
-      if (md != null) {
-        delegate.setAttribute("gcp.resource.destination.id", md.resource);
-        delegate.setAttribute("gcp.resource.destination.location", md.location);
-      }
+      checkCacheAndTriggerFetch(
+          parent.delegate, parent.bucketMetadataCache, parent.cacheExecutor, bucketName);
       return new AcoSpan(delegate.startSpan(), bucketName, parent);
     }
     return delegate.startSpan();
@@ -174,8 +169,12 @@ final class AcoSpanBuilder implements SpanBuilder {
       resource = "projects/_/buckets/" + bucketName;
     }
 
-    String location = bucket.getLocation() != null ? bucket.getLocation().toLowerCase(Locale.US) : "global";
-    String locationType = bucket.getLocationType() != null ? bucket.getLocationType().toLowerCase(Locale.US) : "region";
+    String location =
+        bucket.getLocation() != null ? bucket.getLocation().toLowerCase(Locale.US) : "global";
+    String locationType =
+        bucket.getLocationType() != null
+            ? bucket.getLocationType().toLowerCase(Locale.US)
+            : "region";
 
     if ("multi-region".equals(locationType) || "dual-region".equals(locationType)) {
       location = "global";
@@ -193,14 +192,29 @@ final class AcoSpanBuilder implements SpanBuilder {
       return;
     }
 
-    bucketMetadataCache.put(bucketName, "projects/_/buckets/" + bucketName, "global");
+    // Put fetchPending placeholder synchronously to block concurrent stampedes
+    bucketMetadataCache.put(bucketName, "projects/_/buckets/" + bucketName, "global", true);
 
     cacheExecutor.submit(
         () -> {
           try {
             Tuple<String, String> layout = fetch(delegate, bucketName);
             if (layout != null) {
-              bucketMetadataCache.put(bucketName, layout);
+              bucketMetadataCache.put(bucketName, layout, false);
+            } else {
+              // Bucket does not exist (fetch returned null) -> Evict cache entry
+              bucketMetadataCache.remove(bucketName);
+            }
+          } catch (StorageException e) {
+            if (e.getCode() == 404) {
+              // Bucket not found -> Evict cache entry
+              bucketMetadataCache.remove(bucketName);
+            } else if (e.getCode() == 403) {
+              // Permission Denied -> Retain fallback values with fetchPending=false (Do Not Retry)
+              bucketMetadataCache.put(
+                  bucketName, "projects/_/buckets/" + bucketName, "global", false);
+            } else {
+              LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
             }
           } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Background GetBucket failed", e);

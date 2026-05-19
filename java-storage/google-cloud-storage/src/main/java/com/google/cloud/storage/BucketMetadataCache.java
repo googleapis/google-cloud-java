@@ -52,15 +52,15 @@ final class BucketMetadataCache {
     }
   }
 
-  void put(String bucketName, String resource, String location) {
+  void put(String bucketName, String resource, String location, boolean pending) {
     synchronized (lock) {
-      cache.put(bucketName, new BucketMetadata(resource, location));
+      cache.put(bucketName, new BucketMetadata(resource, location, pending));
     }
   }
 
-  void put(String bucketName, Tuple<String, String> layout) {
+  void put(String bucketName, Tuple<String, String> layout, boolean pending) {
     synchronized (lock) {
-      cache.put(bucketName, new BucketMetadata(layout.x(), layout.y()));
+      cache.put(bucketName, new BucketMetadata(layout.x(), layout.y(), pending));
     }
   }
 
@@ -81,13 +81,16 @@ final class BucketMetadataCache {
       return cache.containsKey(bucketName);
     }
   }
-    static final class BucketMetadata {
+
+  static final class BucketMetadata {
     final String resource;
     final String location;
+    final boolean fetchPending;
 
-    BucketMetadata(String resource, String location) {
+    BucketMetadata(String resource, String location, boolean fetchPending) {
       this.resource = resource;
       this.location = location;
+      this.fetchPending = fetchPending;
     }
   }
 }

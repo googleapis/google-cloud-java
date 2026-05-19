@@ -36,9 +36,8 @@ final class AcoSpan implements Span {
 
   private void applyCacheAttributes() {
     if (bucketName != null && parent != null) {
-      BucketMetadataCache.BucketMetadata md =
-          parent.bucketMetadataCache.get(bucketName);
-      if (md != null) {
+      BucketMetadataCache.BucketMetadata md = parent.bucketMetadataCache.get(bucketName);
+      if (md != null && !md.fetchPending) {
         delegate.setAttribute("gcp.resource.destination.id", md.resource);
         delegate.setAttribute("gcp.resource.destination.location", md.location);
       }
