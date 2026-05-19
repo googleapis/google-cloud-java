@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import com.google.cloud.Tuple;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -23,9 +24,17 @@ import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.context.Context;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 final class AcoSpanBuilder implements SpanBuilder {
+
+  private static final Logger LOGGER = Logger.getLogger(AcoSpanBuilder.class.getName());
+
   private final SpanBuilder delegate;
   private final OtelStorageDecorator parent;
   private String bucketName;
@@ -39,7 +48,7 @@ final class AcoSpanBuilder implements SpanBuilder {
   public SpanBuilder setAttribute(String key, String value) {
     delegate.setAttribute(key, value);
     if ("gsutil.uri".equals(key) && value != null) {
-      String name = OtelStorageDecorator.extractBucketName(value);
+      String name = extractBucketName(value);
       if (name != null && !name.isEmpty()) {
         this.bucketName = name;
       }
@@ -51,7 +60,7 @@ final class AcoSpanBuilder implements SpanBuilder {
   public <T> SpanBuilder setAttribute(AttributeKey<T> key, T value) {
     delegate.setAttribute(key, value);
     if ("gsutil.uri".equals(key.getKey()) && value instanceof String) {
-      String name = OtelStorageDecorator.extractBucketName((String) value);
+      String name = extractBucketName((String) value);
       if (name != null && !name.isEmpty()) {
         this.bucketName = name;
       }
@@ -62,9 +71,9 @@ final class AcoSpanBuilder implements SpanBuilder {
   @Override
   public Span startSpan() {
     if (bucketName != null && parent != null) {
-      parent.checkCacheAndTriggerFetch(bucketName);
+      checkCacheAndTriggerFetch(parent.delegate, parent.bucketMetadataCache, parent.cacheExecutor, bucketName);
       BucketMetadataCache.BucketMetadata md =
-          parent.getBucketMetadataCache().get(bucketName);
+          parent.bucketMetadataCache.get(bucketName);
       if (md != null) {
         delegate.setAttribute("gcp.resource.destination.id", md.resource);
         delegate.setAttribute("gcp.resource.destination.location", md.location);
@@ -126,5 +135,76 @@ final class AcoSpanBuilder implements SpanBuilder {
   public SpanBuilder addLink(SpanContext c, Attributes a) {
     delegate.addLink(c, a);
     return this;
+  }
+
+  static ExecutorService newCacheExecutor() {
+    return Executors.newFixedThreadPool(
+        4,
+        r -> {
+          Thread t = new Thread(r);
+          t.setDaemon(true);
+          t.setName("gcs-aco-metadata-cache-pool");
+          return t;
+        });
+  }
+
+  static String extractBucketName(String uri) {
+    if (uri == null || !uri.startsWith("gs://")) {
+      return null;
+    }
+    String remainder = uri.substring(5);
+    int firstSlash = remainder.indexOf('/');
+    if (firstSlash == -1) {
+      return remainder;
+    }
+    return remainder.substring(0, firstSlash);
+  }
+
+  static Tuple<String, String> fetch(Storage delegate, String bucketName) {
+    Bucket bucket = delegate.get(bucketName);
+    if (bucket == null) {
+      return null;
+    }
+
+    String projectId = bucket.getProject() != null ? bucket.getProject().toString() : null;
+    String resource;
+    if (projectId != null && !projectId.isEmpty()) {
+      resource = "projects/" + projectId + "/buckets/" + bucketName;
+    } else {
+      resource = "projects/_/buckets/" + bucketName;
+    }
+
+    String location = bucket.getLocation() != null ? bucket.getLocation().toLowerCase(Locale.US) : "global";
+    String locationType = bucket.getLocationType() != null ? bucket.getLocationType().toLowerCase(Locale.US) : "region";
+
+    if ("multi-region".equals(locationType) || "dual-region".equals(locationType)) {
+      location = "global";
+    }
+
+    return Tuple.of(resource, location);
+  }
+
+  static void checkCacheAndTriggerFetch(
+      Storage delegate,
+      BucketMetadataCache bucketMetadataCache,
+      ExecutorService cacheExecutor,
+      String bucketName) {
+    if (bucketMetadataCache.containsKey(bucketName)) {
+      return;
+    }
+
+    bucketMetadataCache.put(bucketName, "projects/_/buckets/" + bucketName, "global");
+
+    cacheExecutor.submit(
+        () -> {
+          try {
+            Tuple<String, String> layout = fetch(delegate, bucketName);
+            if (layout != null) {
+              bucketMetadataCache.put(bucketName, layout);
+            }
+          } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
+          }
+        });
   }
 }

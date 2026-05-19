@@ -48,9 +48,9 @@ public class OtelStorageDecoratorAcoUnitTest {
     assertNotNull(decoratedStorage);
 
     OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
-    osd.checkCacheAndTriggerFetch("test-poc-bucket");
+    AcoSpanBuilder.checkCacheAndTriggerFetch(osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "test-poc-bucket");
 
-    BucketMetadataCache cache = osd.getBucketMetadataCache();
+    BucketMetadataCache cache = osd.bucketMetadataCache;
     BucketMetadataCache.BucketMetadata meta = cache.get("test-poc-bucket");
     assertNotNull(meta);
     assertEquals("projects/_/buckets/test-poc-bucket", meta.resource);
