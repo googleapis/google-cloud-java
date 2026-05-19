@@ -62,8 +62,11 @@ final class AcoSpan implements Span {
     delegate.recordException(exception);
     if (exception instanceof StorageException && parent != null) {
       StorageException se = (StorageException) exception;
-      if (se.getCode() == 404) {
-        parent.getBucketMetadataCache().remove(bucketName);
+      if (se.getCode() == 404 && se.getMessage() != null) {
+        String msg = se.getMessage().toLowerCase(java.util.Locale.US);
+        if (msg.contains("bucket not found") || msg.contains("bucket does not exist")) {
+          parent.getBucketMetadataCache().remove(bucketName);
+        }
       }
     }
     return this;
@@ -74,8 +77,11 @@ final class AcoSpan implements Span {
     delegate.recordException(exception, attributes);
     if (exception instanceof StorageException && parent != null) {
       StorageException se = (StorageException) exception;
-      if (se.getCode() == 404) {
-        parent.getBucketMetadataCache().remove(bucketName);
+      if (se.getCode() == 404 && se.getMessage() != null) {
+        String msg = se.getMessage().toLowerCase(java.util.Locale.US);
+        if (msg.contains("bucket not found") || msg.contains("bucket does not exist")) {
+          parent.getBucketMetadataCache().remove(bucketName);
+        }
       }
     }
     return this;
