@@ -104,7 +104,6 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
         status = cancelStatus;
       } else if (state != State.NEW) {
         status = Status.INTERNAL.withDescription("VRpc already started in state: " + state);
-        state = State.CLOSED;
       } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
           < TimeUnit.MILLISECONDS.toMicros(1)) {
         // Don't send RPCs that don't have any hope of succeeding
@@ -179,7 +178,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   void handleResponse(VirtualRpcResponse response) {
     synchronized (lock) {
-      if (state != State.STARTED) {
+      if (state != State.STARTED && state != State.STARTING) {
         // This can happen if the call was cancelled just before the response arrived.
         // Silently ignore it.
         return;
