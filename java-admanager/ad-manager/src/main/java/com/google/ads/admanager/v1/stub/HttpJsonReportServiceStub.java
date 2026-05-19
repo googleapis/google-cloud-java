@@ -359,6 +359,11 @@ public class HttpJsonReportServiceStub extends ReportServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=networks/*/operations/reports/runs/*}:cancel")
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet("/v1/{name=networks/*/operations/reports/runs/*}")

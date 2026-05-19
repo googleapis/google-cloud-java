@@ -134,7 +134,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteBatch</td>
- *      <td><p> Deletes the batch workload resource. If the batch is not in terminal state, the delete fails and the response returns `FAILED_PRECONDITION`.</td>
+ *      <td><p> Deletes the batch workload resource. If the batch is not in a `CANCELLED`, `SUCCEEDED` or `FAILED` [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails and the response returns `FAILED_PRECONDITION`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -778,8 +778,9 @@ public class BatchControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the batch workload resource. If the batch is not in terminal state, the delete fails
-   * and the response returns `FAILED_PRECONDITION`.
+   * Deletes the batch workload resource. If the batch is not in a `CANCELLED`, `SUCCEEDED` or
+   * `FAILED` [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails and the
+   * response returns `FAILED_PRECONDITION`.
    *
    * <p>Sample code:
    *
@@ -807,8 +808,9 @@ public class BatchControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the batch workload resource. If the batch is not in terminal state, the delete fails
-   * and the response returns `FAILED_PRECONDITION`.
+   * Deletes the batch workload resource. If the batch is not in a `CANCELLED`, `SUCCEEDED` or
+   * `FAILED` [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails and the
+   * response returns `FAILED_PRECONDITION`.
    *
    * <p>Sample code:
    *
@@ -835,8 +837,9 @@ public class BatchControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the batch workload resource. If the batch is not in terminal state, the delete fails
-   * and the response returns `FAILED_PRECONDITION`.
+   * Deletes the batch workload resource. If the batch is not in a `CANCELLED`, `SUCCEEDED` or
+   * `FAILED` [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails and the
+   * response returns `FAILED_PRECONDITION`.
    *
    * <p>Sample code:
    *
@@ -864,8 +867,9 @@ public class BatchControllerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the batch workload resource. If the batch is not in terminal state, the delete fails
-   * and the response returns `FAILED_PRECONDITION`.
+   * Deletes the batch workload resource. If the batch is not in a `CANCELLED`, `SUCCEEDED` or
+   * `FAILED` [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails and the
+   * response returns `FAILED_PRECONDITION`.
    *
    * <p>Sample code:
    *

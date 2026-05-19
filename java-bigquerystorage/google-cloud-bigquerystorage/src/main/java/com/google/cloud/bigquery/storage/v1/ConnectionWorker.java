@@ -383,13 +383,14 @@ class ConnectionWorker implements AutoCloseable {
       String streamName;
       String writerId;
       String windowStartTime;
+      String windowDuration;
     }
 
     /*
      * Compute current values of all health check metrics.
      */
     private void gatherHealthCheckMetrics(HealthCheckFields healthCheckFields) {
-      healthCheckFields.streamName = streamName;
+      healthCheckFields.streamName = isMultiplexing ? "MULTIPLEXING" : streamName;
       healthCheckFields.writerId = writerId;
       healthCheckFields.queuedRequestCountMax = windowedQueuedRequestsMax;
       healthCheckFields.queuedRetryCountMax = windowedQueuedRetriesMax;
@@ -412,6 +413,7 @@ class ConnectionWorker implements AutoCloseable {
       healthCheckFields.connectionClosedCount = windowedConnectionClosedCount;
       healthCheckFields.isConnected = streamConnectionIsConnected;
       healthCheckFields.windowStartTime = healthCheckTimeStamp.toString();
+      healthCheckFields.windowDuration = HEALTH_CHECK_INTERVAL.toString();
     }
 
     /*

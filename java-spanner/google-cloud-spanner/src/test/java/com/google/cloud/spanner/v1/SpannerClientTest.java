@@ -52,7 +52,9 @@ import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
+import com.google.spanner.v1.Group;
 import com.google.spanner.v1.KeySet;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -64,7 +66,9 @@ import com.google.spanner.v1.PartitionOptions;
 import com.google.spanner.v1.PartitionQueryRequest;
 import com.google.spanner.v1.PartitionReadRequest;
 import com.google.spanner.v1.PartitionResponse;
+import com.google.spanner.v1.Range;
 import com.google.spanner.v1.ReadRequest;
+import com.google.spanner.v1.RecipeList;
 import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.ResultSetMetadata;
@@ -1473,6 +1477,61 @@ public class SpannerClientTest {
 
     try {
       List<BatchWriteResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void fetchCacheUpdateTest() throws Exception {
+    CacheUpdate expectedResponse =
+        CacheUpdate.newBuilder()
+            .setDatabaseId(816491103)
+            .addAllRange(new ArrayList<Range>())
+            .addAllGroup(new ArrayList<Group>())
+            .setKeyRecipes(RecipeList.newBuilder().build())
+            .build();
+    mockSpanner.addResponse(expectedResponse);
+    FetchCacheUpdateRequest request =
+        FetchCacheUpdateRequest.newBuilder()
+            .setDatabase(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
+            .setMaxRecipeCount(-423637479)
+            .setMaxRangeCount(1695701298)
+            .build();
+
+    MockStreamObserver<CacheUpdate> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate> callable =
+        client.fetchCacheUpdateCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<CacheUpdate> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void fetchCacheUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpanner.addException(exception);
+    FetchCacheUpdateRequest request =
+        FetchCacheUpdateRequest.newBuilder()
+            .setDatabase(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
+            .setMaxRecipeCount(-423637479)
+            .setMaxRangeCount(1695701298)
+            .build();
+
+    MockStreamObserver<CacheUpdate> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate> callable =
+        client.fetchCacheUpdateCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<CacheUpdate> actualResponses = responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);

@@ -60,8 +60,8 @@ public interface UsageMetricsOrBuilder
    *
    *
    * <pre>
-   * Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-   * [Dataproc Serverless pricing]
+   * Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+   * `seconds`) (see [Dataproc Serverless pricing]
    * (https://cloud.google.com/dataproc-serverless/pricing)).
    * </pre>
    *
@@ -75,7 +75,7 @@ public interface UsageMetricsOrBuilder
    *
    *
    * <pre>
-   * Optional. Accelerator type being used, if any
+   * Optional. [DEPRECATED] Accelerator type being used, if any
    * </pre>
    *
    * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -88,7 +88,7 @@ public interface UsageMetricsOrBuilder
    *
    *
    * <pre>
-   * Optional. Accelerator type being used, if any
+   * Optional. [DEPRECATED] Accelerator type being used, if any
    * </pre>
    *
    * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96,4 +96,44 @@ public interface UsageMetricsOrBuilder
    * @return The bytes for acceleratorType.
    */
   com.google.protobuf.ByteString getAcceleratorTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

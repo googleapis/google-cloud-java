@@ -229,11 +229,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The maximum number of processes to return in a single page of the response.
-   * A page may contain fewer results than this value.
+   * Optional. The maximum number of processes to return in a single page of the
+   * response. A page may contain fewer results than this value.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -251,15 +251,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The page token received from a previous `BatchSearchLinkProcesses` call.
-   * Use it to get the next page.
+   * Optional. The page token received from a previous
+   * `BatchSearchLinkProcesses` call. Use it to get the next page.
    *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -280,15 +280,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The page token received from a previous `BatchSearchLinkProcesses` call.
-   * Use it to get the next page.
+   * Optional. The page token received from a previous
+   * `BatchSearchLinkProcesses` call. Use it to get the next page.
    *
    * When requesting subsequent pages of a response, remember that
    * all parameters must match the values you provided
    * in the original request.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -1076,11 +1076,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of processes to return in a single page of the response.
-     * A page may contain fewer results than this value.
+     * Optional. The maximum number of processes to return in a single page of the
+     * response. A page may contain fewer results than this value.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1093,11 +1093,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of processes to return in a single page of the response.
-     * A page may contain fewer results than this value.
+     * Optional. The maximum number of processes to return in a single page of the
+     * response. A page may contain fewer results than this value.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1114,11 +1114,11 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of processes to return in a single page of the response.
-     * A page may contain fewer results than this value.
+     * Optional. The maximum number of processes to return in a single page of the
+     * response. A page may contain fewer results than this value.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1135,15 +1135,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The page token received from a previous `BatchSearchLinkProcesses` call.
-     * Use it to get the next page.
+     * Optional. The page token received from a previous
+     * `BatchSearchLinkProcesses` call. Use it to get the next page.
      *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1163,15 +1163,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The page token received from a previous `BatchSearchLinkProcesses` call.
-     * Use it to get the next page.
+     * Optional. The page token received from a previous
+     * `BatchSearchLinkProcesses` call. Use it to get the next page.
      *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1191,15 +1191,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The page token received from a previous `BatchSearchLinkProcesses` call.
-     * Use it to get the next page.
+     * Optional. The page token received from a previous
+     * `BatchSearchLinkProcesses` call. Use it to get the next page.
      *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1218,15 +1218,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The page token received from a previous `BatchSearchLinkProcesses` call.
-     * Use it to get the next page.
+     * Optional. The page token received from a previous
+     * `BatchSearchLinkProcesses` call. Use it to get the next page.
      *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1241,15 +1241,15 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The page token received from a previous `BatchSearchLinkProcesses` call.
-     * Use it to get the next page.
+     * Optional. The page token received from a previous
+     * `BatchSearchLinkProcesses` call. Use it to get the next page.
      *
      * When requesting subsequent pages of a response, remember that
      * all parameters must match the values you provided
      * in the original request.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

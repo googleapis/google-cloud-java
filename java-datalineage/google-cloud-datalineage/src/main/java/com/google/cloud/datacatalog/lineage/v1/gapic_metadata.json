@@ -52,6 +52,9 @@
             "ProcessOpenLineageRunEvent": {
               "methods": ["processOpenLineageRunEvent", "processOpenLineageRunEvent", "processOpenLineageRunEventCallable"]
             },
+            "SearchLineageStreaming": {
+              "methods": ["searchLineageStreamingCallable"]
+            },
             "SearchLinks": {
               "methods": ["searchLinks", "searchLinksPagedCallable", "searchLinksCallable"]
             },

@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * A piece of content from a Publisher's CMS.
+ * A piece of `Content` from a Publisher's CMS.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.Content}
@@ -372,7 +372,7 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A piece of content from a Publisher's CMS.
+   * A piece of `Content` from a Publisher's CMS.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.Content}
