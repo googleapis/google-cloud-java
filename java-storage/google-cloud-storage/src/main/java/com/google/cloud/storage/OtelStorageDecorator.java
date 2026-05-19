@@ -77,6 +77,7 @@ final class OtelStorageDecorator implements Storage {
   private final OpenTelemetry otel;
   private final Attributes baseAttributes;
   private final Tracer tracer;
+  private final BucketMetadataCache bucketMetadataCache;
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
@@ -84,50 +85,33 @@ final class OtelStorageDecorator implements Storage {
     this.baseAttributes = baseAttributes;
     this.tracer =
         TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
+        this.bucketMetadataCache = BucketMetadataCache.getbucketmetadatacache();
+  }
+    BucketMetadataCache getBucketMetadataCache() {
+    return bucketMetadataCache;
   }
 
-  static String extractBucketName(String uri) {
-    if (uri == null || !uri.startsWith("gs://")) {
-      return null;
-    }
-    String remainder = uri.substring(5);
-    int firstSlash = remainder.indexOf('/');
-    if (firstSlash == -1) {
-      return remainder;
-    }
-    return remainder.substring(0, firstSlash);
+    Tuple<String, String> fetch(String bucketName) {
+      Bucket bucket = delegate.get(bucketName);
+      System.out.println("getting using delegate.get");
+      String actualResource = "projects/" + bucket.getProject() + "/buckets/" + bucketName;
+      String actualLocation = bucket.getLocation();
+      return Tuple.of(actualResource, actualLocation);
   }
-
-  private final ExecutorService cacheExecutor =
-      Executors.newCachedThreadPool(
-          r -> {
-            Thread t = new Thread(r);
-            t.setDaemon(true);
-            t.setName("gcs-aco-metadata-cache-pool");
-            return t;
-          });
 
   void checkCacheAndTriggerFetch(String bucketName) {
-    if (!(delegate instanceof StorageInternal)) {
-      return;
-    }
-    StorageInternal internal = (StorageInternal) delegate;
-    BucketMetadataCache cache = internal.getBucketMetadataCache();
-
-    if (cache.containsKey(bucketName)) {
+    if (bucketMetadataCache.containsKey(bucketName)) {
       return;
     }
 
-    cache.put(
-        bucketName,
-        new BucketMetadataCache.BucketMetadata("projects/_/buckets/" + bucketName, "global"));
+    bucketMetadataCache.put(bucketName, "projects/_/buckets/" + bucketName, "global");
 
     cacheExecutor.submit(
         () -> {
           try {
             com.google.cloud.Tuple<String, String> layout =
-                internal.internalGetBucket(bucketName);
-            cache.put(bucketName, new BucketMetadataCache.BucketMetadata(layout.x(), layout.y()));
+                fetch(bucketName);
+            bucketMetadataCache.put(bucketName, layout);
           } catch (Exception e) {
             System.err.println("Background GetBucket failed: " + e.getMessage());
             e.printStackTrace();
@@ -1475,9 +1459,7 @@ final class OtelStorageDecorator implements Storage {
   @Override
   public void close() throws Exception {
     try {
-      if (delegate instanceof StorageInternal) {
-        ((StorageInternal) delegate).getBucketMetadataCache().clear();
-      }
+      bucketMetadataCache.clear();
       cacheExecutor.shutdownNow();
     } finally {
       delegate.close();

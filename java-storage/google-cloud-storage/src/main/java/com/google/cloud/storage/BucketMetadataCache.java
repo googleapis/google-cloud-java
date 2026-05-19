@@ -16,21 +16,13 @@
 
 package com.google.cloud.storage;
 
+import com.google.cloud.Tuple;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 final class BucketMetadataCache {
 
-  static final class BucketMetadata {
-    final String resource;
-    final String location;
-
-    BucketMetadata(String resource, String location) {
-      this.resource = resource;
-      this.location = location;
-    }
-  }
-
+  private static final int DEFAULT_CAPACITY = 10000;
   private final Object lock = new Object();
   private final Map<String, BucketMetadata> cache;
 
@@ -44,6 +36,10 @@ final class BucketMetadataCache {
         };
   }
 
+  static BucketMetadataCache getbucketmetadatacache() {
+    return new BucketMetadataCache(DEFAULT_CAPACITY);
+  }
+
   BucketMetadata get(String bucketName) {
     synchronized (lock) {
       return cache.get(bucketName);
@@ -53,6 +49,18 @@ final class BucketMetadataCache {
   void put(String bucketName, BucketMetadata metadata) {
     synchronized (lock) {
       cache.put(bucketName, metadata);
+    }
+  }
+
+  void put(String bucketName, String resource, String location) {
+    synchronized (lock) {
+      cache.put(bucketName, new BucketMetadata(resource, location));
+    }
+  }
+
+  void put(String bucketName, Tuple<String, String> layout) {
+    synchronized (lock) {
+      cache.put(bucketName, new BucketMetadata(layout.x(), layout.y()));
     }
   }
 
@@ -71,6 +79,15 @@ final class BucketMetadataCache {
   boolean containsKey(String bucketName) {
     synchronized (lock) {
       return cache.containsKey(bucketName);
+    }
+  }
+    static final class BucketMetadata {
+    final String resource;
+    final String location;
+
+    BucketMetadata(String resource, String location) {
+      this.resource = resource;
+      this.location = location;
     }
   }
 }

@@ -35,9 +35,9 @@ final class AcoSpan implements Span {
   }
 
   private void applyCacheAttributes() {
-    if (bucketName != null && parent != null && parent.delegate instanceof StorageInternal) {
+    if (bucketName != null && parent != null) {
       BucketMetadataCache.BucketMetadata md =
-          ((StorageInternal) parent.delegate).getBucketMetadataCache().get(bucketName);
+          parent.getBucketMetadataCache().get(bucketName);
       if (md != null) {
         delegate.setAttribute("gcp.resource.destination.id", md.resource);
         delegate.setAttribute("gcp.resource.destination.location", md.location);
@@ -60,12 +60,10 @@ final class AcoSpan implements Span {
   @Override
   public Span recordException(Throwable exception) {
     delegate.recordException(exception);
-    if (exception instanceof StorageException
-        && parent != null
-        && parent.delegate instanceof StorageInternal) {
+    if (exception instanceof StorageException && parent != null) {
       StorageException se = (StorageException) exception;
       if (se.getCode() == 404) {
-        ((StorageInternal) parent.delegate).getBucketMetadataCache().remove(bucketName);
+        parent.getBucketMetadataCache().remove(bucketName);
       }
     }
     return this;
@@ -74,12 +72,10 @@ final class AcoSpan implements Span {
   @Override
   public Span recordException(Throwable exception, Attributes attributes) {
     delegate.recordException(exception, attributes);
-    if (exception instanceof StorageException
-        && parent != null
-        && parent.delegate instanceof StorageInternal) {
+    if (exception instanceof StorageException && parent != null) {
       StorageException se = (StorageException) exception;
       if (se.getCode() == 404) {
-        ((StorageInternal) parent.delegate).getBucketMetadataCache().remove(bucketName);
+        parent.getBucketMetadataCache().remove(bucketName);
       }
     }
     return this;

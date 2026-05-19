@@ -186,8 +186,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   // workaround for https://github.com/googleapis/java-storage/issues/1736
   private final Opts<UserProject> defaultOpts;
   @Deprecated private final Supplier<ProjectId> defaultProjectId;
-  private volatile BucketMetadataCache bucketMetadataCache;
-  private final java.lang.Object cacheInitLock = new java.lang.Object();
 
   GrpcStorageImpl(
       GrpcStorageOptions options,
@@ -208,38 +206,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     this.retryAlgorithmManager = options.getRetryAlgorithmManager();
     this.syntaxDecoders = new SyntaxDecoders();
     this.defaultProjectId = Suppliers.memoize(() -> UnifiedOpts.projectId(options.getProjectId()));
-  }
-
-  @Override
-  public BucketMetadataCache getBucketMetadataCache() {
-    if (bucketMetadataCache == null) {
-      synchronized (cacheInitLock) {
-        if (bucketMetadataCache == null) {
-          bucketMetadataCache = new BucketMetadataCache(10000);
-        }
-      }
-    }
-    return bucketMetadataCache;
-  }
-
-  @Override
-  public com.google.cloud.Tuple<String, String> internalGetBucket(String bucketName) {
-    GetBucketRequest request =
-        GetBucketRequest.newBuilder()
-            .setName(bucketNameCodec.encode(bucketName))
-            .build();
-    GrpcCallContext merge = merge(GrpcCallContext.createDefault(), Retrying.newCallContext());
-    Bucket bucket = storageClient.getBucketCallable().call(request, merge);
-    String pNum = bucket.getProject();
-    if (pNum == null || pNum.isEmpty()) {
-      pNum = "projects/_";
-    }
-    String actualResource = pNum + "/buckets/" + bucketName;
-    String actualLocation = bucket.getLocation();
-    if (actualLocation == null || actualLocation.isEmpty()) {
-      actualLocation = "global";
-    }
-    return com.google.cloud.Tuple.of(actualResource, actualLocation);
   }
 
   @Override

@@ -640,13 +640,6 @@ public interface StorageRpc extends ServiceRpc {
    */
   ServiceAccount getServiceAccount(String projectId);
 
-  /**
-   * Returns the bucket resource id and location for the specified bucket.
-   *
-   * @throws StorageException upon failure
-   */
-  com.google.cloud.Tuple<String, String> getBucketMetadata(String bucketName);
-
   @InternalApi
   Storage getStorage();
 }

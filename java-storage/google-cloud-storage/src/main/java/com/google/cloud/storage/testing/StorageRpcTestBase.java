@@ -323,11 +323,6 @@ public class StorageRpcTestBase implements StorageRpc {
   }
 
   @Override
-  public com.google.cloud.Tuple<String, String> getBucketMetadata(String bucketName) {
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
-
-  @Override
   public StorageObject moveObject(
       String bucket,
       String sourceObject,

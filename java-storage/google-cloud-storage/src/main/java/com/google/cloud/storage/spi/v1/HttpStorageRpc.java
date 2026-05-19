@@ -583,22 +583,6 @@ public class HttpStorageRpc implements StorageRpc {
     }
   }
 
-  @Override
-  public com.google.cloud.Tuple<String, String> getBucketMetadata(String bucketName) {
-    try {
-      com.google.api.services.storage.model.Bucket bucket =
-          storage.buckets().get(bucketName).execute();
-      String actualResource = "projects/" + bucket.getProjectNumber() + "/buckets/" + bucketName;
-      String actualLocation = bucket.getLocation();
-      if (actualLocation == null) {
-        actualLocation = "global";
-      }
-      return com.google.cloud.Tuple.of(actualResource, actualLocation);
-    } catch (IOException e) {
-      throw translate(e);
-    }
-  }
-
   private Storage.Objects.Get getCall(StorageObject object, Map<Option, ?> options)
       throws IOException {
     Storage.Objects.Get get = storage.objects().get(object.getBucket(), object.getName());

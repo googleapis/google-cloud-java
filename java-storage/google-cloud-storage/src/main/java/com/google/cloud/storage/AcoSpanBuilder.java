@@ -61,10 +61,10 @@ final class AcoSpanBuilder implements SpanBuilder {
 
   @Override
   public Span startSpan() {
-    if (bucketName != null && parent != null && parent.delegate instanceof StorageInternal) {
+    if (bucketName != null && parent != null) {
       parent.checkCacheAndTriggerFetch(bucketName);
       BucketMetadataCache.BucketMetadata md =
-          ((StorageInternal) parent.delegate).getBucketMetadataCache().get(bucketName);
+          parent.getBucketMetadataCache().get(bucketName);
       if (md != null) {
         delegate.setAttribute("gcp.resource.destination.id", md.resource);
         delegate.setAttribute("gcp.resource.destination.location", md.location);

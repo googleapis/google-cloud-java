@@ -117,25 +117,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   final StorageRpc storageRpc;
   final WriterFactory writerFactory;
   final Retrier retrier;
-  private volatile BucketMetadataCache bucketMetadataCache;
-  private final java.lang.Object cacheInitLock = new java.lang.Object();
-
-  @Override
-  public BucketMetadataCache getBucketMetadataCache() {
-    if (bucketMetadataCache == null) {
-      synchronized (cacheInitLock) {
-        if (bucketMetadataCache == null) {
-          bucketMetadataCache = new BucketMetadataCache(10000);
-        }
-      }
-    }
-    return bucketMetadataCache;
-  }
-
-  @Override
-  public com.google.cloud.Tuple<String, String> internalGetBucket(String bucketName) {
-    return storageRpc.getBucketMetadata(bucketName);
-  }
 
   StorageImpl(HttpStorageOptions options, WriterFactory writerFactory, Retrier retrier) {
     super(options);

@@ -31,12 +31,7 @@ public class OtelStorageDecoratorAcoUnitTest {
 
   @Test
   public void testCacheAndProxyDecorationFlow() throws Exception {
-    Storage mockStorage =
-        mock(Storage.class, Mockito.withSettings().extraInterfaces(StorageInternal.class));
-    StorageInternal mockInternal = (StorageInternal) mockStorage;
-
-    BucketMetadataCache cache = new BucketMetadataCache(10000);
-    Mockito.when(mockInternal.getBucketMetadataCache()).thenReturn(cache);
+    Storage mockStorage = mock(Storage.class);
 
     OpenTelemetry mockOtel = mock(OpenTelemetry.class);
     Tracer mockTracer = mock(Tracer.class);
@@ -55,6 +50,7 @@ public class OtelStorageDecoratorAcoUnitTest {
     OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
     osd.checkCacheAndTriggerFetch("test-poc-bucket");
 
+    BucketMetadataCache cache = osd.getBucketMetadataCache();
     BucketMetadataCache.BucketMetadata meta = cache.get("test-poc-bucket");
     assertNotNull(meta);
     assertEquals("projects/_/buckets/test-poc-bucket", meta.resource);
