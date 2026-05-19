@@ -168,8 +168,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   void handleSessionClose(VRpcResult result) {
     synchronized (lock) {
-      if (state != State.STARTED && state != State.CANCELLED) {
-        logger.warning("tried to close a vRPC after it was already closed state: " + state);
+      if (state == State.CLOSED) {
         return;
       }
       state = State.CLOSED;
