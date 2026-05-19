@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_postgresql_async_read_write_transaction]
+// [START spanner_postgresql_async_read_write_transaction]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.spanner.AsyncRunner;
@@ -46,7 +46,7 @@ class PgAsyncRunnerExample {
     String databaseId = "my-database";
 
     try (Spanner spanner =
-             SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       asyncRunner(client);
@@ -99,8 +99,7 @@ class PgAsyncRunnerExample {
                           .bind("p1")
                           .to(album2Budget)
                           .build();
-                  return txn.batchUpdateAsync(
-                      ImmutableList.of(updateStatement1, updateStatement2));
+                  return txn.batchUpdateAsync(ImmutableList.of(updateStatement1, updateStatement2));
                 } else {
                   return ApiFutures.immediateFuture(new long[] {0L, 0L});
                 }
@@ -114,11 +113,9 @@ class PgAsyncRunnerExample {
 
     ApiFuture<Long> totalUpdateCount =
         ApiFutures.transform(
-            rowCounts,
-            input -> Arrays.stream(input).sum(),
-            MoreExecutors.directExecutor());
+            rowCounts, input -> Arrays.stream(input).sum(), MoreExecutors.directExecutor());
     System.out.printf("%d records updated.%n", totalUpdateCount.get(30L, TimeUnit.SECONDS));
     executor.shutdown();
   }
 }
-//[END spanner_postgresql_async_read_write_transaction]
+// [END spanner_postgresql_async_read_write_transaction]

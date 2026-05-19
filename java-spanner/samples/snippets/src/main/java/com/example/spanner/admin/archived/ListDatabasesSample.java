@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_list_databases]
+// [START spanner_list_databases]
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Database;
@@ -34,18 +34,17 @@ public class ListDatabasesSample {
   }
 
   static void listDatabases(String projectId, String instanceId) {
-    try (Spanner spanner = SpannerOptions
-        .newBuilder()
-        .setProjectId(projectId)
-        .build()
-        .getService()) {
+    try (Spanner spanner =
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       Page<Database> page = databaseAdminClient.listDatabases(instanceId);
       System.out.println("Databases for projects/" + projectId + "/instances/" + instanceId);
       while (page != null) {
         for (Database database : page.iterateAll()) {
-          final String defaultLeader = database.getDefaultLeader().equals("")
-              ? "" : "(default leader = " + database.getDefaultLeader() + ")";
+          final String defaultLeader =
+              database.getDefaultLeader().equals("")
+                  ? ""
+                  : "(default leader = " + database.getDefaultLeader() + ")";
           System.out.println("\t" + database.getId() + " " + defaultLeader);
         }
         page = page.getNextPage();
@@ -53,4 +52,4 @@ public class ListDatabasesSample {
     }
   }
 }
-//[END spanner_list_databases]
+// [END spanner_list_databases]

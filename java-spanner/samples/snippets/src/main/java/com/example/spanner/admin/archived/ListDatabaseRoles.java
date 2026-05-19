@@ -36,10 +36,7 @@ public class ListDatabaseRoles {
 
   static void listDatabaseRoles(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-                 SpannerOptions.newBuilder()
-                         .setProjectId(projectId)
-                         .build()
-                         .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
       String databasePath = DatabaseId.of(projectId, instanceId, databaseId).getName();
       System.out.println("List of Database roles");

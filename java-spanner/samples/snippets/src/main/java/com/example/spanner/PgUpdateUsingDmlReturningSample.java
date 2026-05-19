@@ -37,10 +37,7 @@ public class PgUpdateUsingDmlReturningSample {
 
   static void updateUsingDmlReturning(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseClient dbClient =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       // Update MarketingBudget column for records satisfying

@@ -33,9 +33,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for Cloud Spanner Async API examples.
- */
+/** Integration tests for Cloud Spanner Async API examples. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 public class AsyncExamplesIT extends SampleTestBase {
@@ -167,30 +165,34 @@ public class AsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncQuery_shouldReturnData() throws Exception {
-    String out = runSample(
-        () -> AsyncQueryExample.asyncQuery(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> AsyncQueryExample.asyncQuery(spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
-  public void asyncQueryToListAsync_shouldReturnData()
-      throws Exception {
-    String out = runSample(
-        () -> AsyncQueryToListAsyncExample.asyncQueryToList(spanner.getDatabaseClient(databaseId)));
+  public void asyncQueryToListAsync_shouldReturnData() throws Exception {
+    String out =
+        runSample(
+            () ->
+                AsyncQueryToListAsyncExample.asyncQueryToList(
+                    spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
-  public void asyncRead_shouldReturnData()
-      throws Exception {
+  public void asyncRead_shouldReturnData() throws Exception {
     String out = runSample(() -> AsyncReadExample.asyncRead(spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
   public void asyncReadUsingIndex_shouldReturnDataInCorrectOrder() throws Exception {
-    String out = runSample(() -> AsyncReadUsingIndexExample
-        .asyncReadUsingIndex(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                AsyncReadUsingIndexExample.asyncReadUsingIndex(
+                    spanner.getDatabaseClient(databaseId)));
     assertThat(out)
         .contains(
             "2 Forever Hold Your Peace\n"
@@ -202,8 +204,11 @@ public class AsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncReadOnlyTransaction_shouldReturnData() throws Exception {
-    String out = runSample(() -> AsyncReadOnlyTransactionExample
-        .asyncReadOnlyTransaction(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                AsyncReadOnlyTransactionExample.asyncReadOnlyTransaction(
+                    spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
     assertSingersOutput(out);
   }
@@ -216,22 +221,25 @@ public class AsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncRunner_shouldUpdateRows() throws Exception {
-    String out = runSample(
-        () -> AsyncRunnerExample.asyncRunner(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> AsyncRunnerExample.asyncRunner(spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("2 records updated.");
   }
 
   @Test
   public void asyncTransactionManager_shouldUpdateRows() throws Exception {
-    String out = runSample(() -> AsyncTransactionManagerExample
-        .asyncTransactionManager(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                AsyncTransactionManagerExample.asyncTransactionManager(
+                    spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("2 records updated.");
   }
 
   @Test
   public void asyncReadRow_shouldPrintRow() throws Exception {
-    String out = runSample(
-        () -> AsyncReadRowExample.asyncReadRow(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> AsyncReadRowExample.asyncReadRow(spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("1 1 Total Junk");
     assertThat(out).doesNotContain("1 2 Go, Go, Go");
     assertThat(out).doesNotContain("2 1 Green");

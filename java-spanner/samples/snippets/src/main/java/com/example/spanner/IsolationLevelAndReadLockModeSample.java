@@ -38,37 +38,36 @@ public class IsolationLevelAndReadLockModeSample {
             .setIsolationLevel(IsolationLevel.SERIALIZABLE)
             .build();
     SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setDefaultTransactionOptions(transactionOptions)
-            .build();
+        SpannerOptions.newBuilder().setDefaultTransactionOptions(transactionOptions).build();
     Spanner spanner = options.getService();
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     dbClient
         // The isolation level specified at the transaction-level takes precedence
         // over the isolation level configured at the client-level.
         .readWriteTransaction(Options.isolationLevel(IsolationLevel.REPEATABLE_READ))
-        .run(transaction -> {
-          // Read an AlbumTitle.
-          String selectSql =
-              "SELECT AlbumTitle from Albums WHERE SingerId = 1 and AlbumId = 1";
-          String title = null;
-          try (ResultSet resultSet = transaction.executeQuery(Statement.of(selectSql))) {
-            if (resultSet.next()) {
-              title = resultSet.getString("AlbumTitle");
-            }
-          }
-          System.out.printf("Current album title: %s\n", title);
+        .run(
+            transaction -> {
+              // Read an AlbumTitle.
+              String selectSql = "SELECT AlbumTitle from Albums WHERE SingerId = 1 and AlbumId = 1";
+              String title = null;
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(selectSql))) {
+                if (resultSet.next()) {
+                  title = resultSet.getString("AlbumTitle");
+                }
+              }
+              System.out.printf("Current album title: %s\n", title);
 
-          // Update the title.
-          String updateSql =
-              "UPDATE Albums "
-                  + "SET AlbumTitle = 'New Album Title' "
-                  + "WHERE SingerId = 1 and AlbumId = 1";
-          long rowCount = transaction.executeUpdate(Statement.of(updateSql));
-          System.out.printf("%d record updated.\n", rowCount);
-          return null;
-        });
+              // Update the title.
+              String updateSql =
+                  "UPDATE Albums "
+                      + "SET AlbumTitle = 'New Album Title' "
+                      + "WHERE SingerId = 1 and AlbumId = 1";
+              long rowCount = transaction.executeUpdate(Statement.of(updateSql));
+              System.out.printf("%d record updated.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_isolation_level]
 
   // [START spanner_read_lock_mode]
@@ -80,36 +79,34 @@ public class IsolationLevelAndReadLockModeSample {
             .setReadLockMode(ReadLockMode.OPTIMISTIC)
             .build();
     SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setDefaultTransactionOptions(transactionOptions)
-            .build();
+        SpannerOptions.newBuilder().setDefaultTransactionOptions(transactionOptions).build();
     Spanner spanner = options.getService();
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     dbClient
         // The read lock mode specified at the transaction-level takes precedence
         // over the read lock mode configured at the client-level.
         .readWriteTransaction(Options.readLockMode(ReadLockMode.PESSIMISTIC))
-        .run(transaction -> {
-          // Read an AlbumTitle.
-          String selectSql =
-              "SELECT AlbumTitle from Albums WHERE SingerId = 1 and AlbumId = 1";
-          String title = null;
-          try (ResultSet resultSet = transaction.executeQuery(Statement.of(selectSql))) {
-            if (resultSet.next()) {
-              title = resultSet.getString("AlbumTitle");
-            }
-          }
-          System.out.printf("Current album title: %s\n", title);
+        .run(
+            transaction -> {
+              // Read an AlbumTitle.
+              String selectSql = "SELECT AlbumTitle from Albums WHERE SingerId = 1 and AlbumId = 1";
+              String title = null;
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(selectSql))) {
+                if (resultSet.next()) {
+                  title = resultSet.getString("AlbumTitle");
+                }
+              }
+              System.out.printf("Current album title: %s\n", title);
 
-          // Update the title.
-          String updateSql =
-              "UPDATE Albums "
-                  + "SET AlbumTitle = 'New Album Title' "
-                  + "WHERE SingerId = 1 and AlbumId = 1";
-          long rowCount = transaction.executeUpdate(Statement.of(updateSql));
-          System.out.printf("%d record updated.\n", rowCount);
-          return null;
-        });
+              // Update the title.
+              String updateSql =
+                  "UPDATE Albums "
+                      + "SET AlbumTitle = 'New Album Title' "
+                      + "WHERE SingerId = 1 and AlbumId = 1";
+              long rowCount = transaction.executeUpdate(Statement.of(updateSql));
+              System.out.printf("%d record updated.\n", rowCount);
+              return null;
+            });
   }
   // [END spanner_read_lock_mode]
 }

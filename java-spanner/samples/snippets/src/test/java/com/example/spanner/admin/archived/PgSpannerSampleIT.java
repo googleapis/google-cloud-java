@@ -35,9 +35,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@code PgSpannerSample}
- */
+/** Unit tests for {@code PgSpannerSample} */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class PgSpannerSampleIT {
@@ -69,14 +67,17 @@ public class PgSpannerSampleIT {
     Pattern samplePattern = getTestDbIdPattern(PgSpannerSampleIT.baseDbId);
     Pattern restoredPattern = getTestDbIdPattern("restored");
     for (Database db : dbClient.listDatabases(PgSpannerSampleIT.instanceId).iterateAll()) {
-      if (TimeUnit.HOURS.convert(now.getSeconds() - db.getCreateTime().getSeconds(),
-          TimeUnit.SECONDS) > 24) {
+      if (TimeUnit.HOURS.convert(
+              now.getSeconds() - db.getCreateTime().getSeconds(), TimeUnit.SECONDS)
+          > 24) {
         if (db.getId().getDatabase().length() >= DBID_LENGTH) {
-          if (samplePattern.matcher(toComparableId(PgSpannerSampleIT.baseDbId,
-              db.getId().getDatabase())).matches()) {
+          if (samplePattern
+              .matcher(toComparableId(PgSpannerSampleIT.baseDbId, db.getId().getDatabase()))
+              .matches()) {
             db.drop();
           }
-          if (restoredPattern.matcher(toComparableId("restored", db.getId().getDatabase()))
+          if (restoredPattern
+              .matcher(toComparableId("restored", db.getId().getDatabase()))
               .matches()) {
             db.drop();
           }
@@ -119,7 +120,7 @@ public class PgSpannerSampleIT {
     final PrintStream out = new PrintStream(bout);
     System.setOut(out);
     System.out.println(instanceId + ":" + databaseId);
-    PgSpannerSample.main(new String[]{command, instanceId, databaseId});
+    PgSpannerSample.main(new String[] {command, instanceId, databaseId});
     System.setOut(stdOut);
     return bout.toString();
   }
@@ -194,8 +195,7 @@ public class PgSpannerSampleIT {
 
     System.out.println("Read only transaction ...");
     out = runSample("readonlytransaction");
-    assertThat(out.replaceAll("[\r\n]+", " "))
-        .containsMatch("(Total Junk.*){2}");
+    assertThat(out.replaceAll("[\r\n]+", " ")).containsMatch("(Total Junk.*){2}");
 
     System.out.println("Add Timestamp column ...");
     out = runSample("addlastupdatetimestampcolumn");

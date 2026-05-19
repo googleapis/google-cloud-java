@@ -30,7 +30,9 @@ public class CreateInstanceWithProcessingUnitsSampleIT extends SampleTestBaseV2 
         SampleRunner.runSample(
             () -> CreateInstanceWithProcessingUnitsExample.createInstance(projectId, instanceId));
     assertThat(out)
-        .contains(String.format("Instance %s has %d processing units",
-            InstanceName.of(projectId, instanceId).toString(), 500));
+        .contains(
+            String.format(
+                "Instance %s has %d processing units",
+                InstanceName.of(projectId, instanceId).toString(), 500));
   }
 }

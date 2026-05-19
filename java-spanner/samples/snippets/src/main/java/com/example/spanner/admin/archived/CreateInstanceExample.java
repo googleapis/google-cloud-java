@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_create_instance]
+// [START spanner_create_instance]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Instance;
 import com.google.cloud.spanner.InstanceAdminClient;
@@ -70,4 +70,4 @@ class CreateInstanceExample {
     }
   }
 }
-//[END spanner_create_instance]
+// [END spanner_create_instance]

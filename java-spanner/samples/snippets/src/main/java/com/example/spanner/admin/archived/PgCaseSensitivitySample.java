@@ -44,10 +44,7 @@ public class PgCaseSensitivitySample {
 
   static void pgCaseSensitivity(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
 
       // Spanner PostgreSQL follows the case sensitivity rules of PostgreSQL. This means that:

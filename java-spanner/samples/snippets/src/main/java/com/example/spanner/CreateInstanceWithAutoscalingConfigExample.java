@@ -40,10 +40,7 @@ class CreateInstanceWithAutoscalingConfigExample {
 
   static void createInstance(String projectId, String instanceId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
       // Set Instance configuration.
       String configId = "regional-us-east4";
@@ -65,8 +62,7 @@ class CreateInstanceWithAutoscalingConfigExample {
           Instance.newBuilder()
               .setAutoscalingConfig(autoscalingConfig)
               .setDisplayName(displayName)
-              .setConfig(
-                  InstanceConfigName.of(projectId, configId).toString())
+              .setConfig(InstanceConfigName.of(projectId, configId).toString())
               .setEdition(Edition.ENTERPRISE)
               .build();
 
@@ -74,14 +70,17 @@ class CreateInstanceWithAutoscalingConfigExample {
       System.out.printf("Creating instance %s.%n", instanceId);
       try {
         // Wait for the createInstance operation to finish.
-        Instance instanceResult = instanceAdminClient.createInstanceAsync(
-            CreateInstanceRequest.newBuilder()
-                .setParent(ProjectName.of(projectId).toString())
-                .setInstanceId(instanceId)
-                .setInstance(instance)
-                .build()).get();
-        System.out.printf("Autoscaler instance %s was successfully created%n",
-            instanceResult.getName());
+        Instance instanceResult =
+            instanceAdminClient
+                .createInstanceAsync(
+                    CreateInstanceRequest.newBuilder()
+                        .setParent(ProjectName.of(projectId).toString())
+                        .setInstanceId(instanceId)
+                        .setInstance(instance)
+                        .build())
+                .get();
+        System.out.printf(
+            "Autoscaler instance %s was successfully created%n", instanceResult.getName());
       } catch (ExecutionException e) {
         System.out.printf(
             "Error: Creating instance %s failed with error message %s%n",

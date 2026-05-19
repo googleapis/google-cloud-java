@@ -40,10 +40,7 @@ class CreateInstanceWithAsymmetricAutoscalingConfigExample {
 
   static void createInstance(String projectId, String instanceId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
       // Set Instance configuration.
       String configId = "nam-eur-asia3";
@@ -64,33 +61,38 @@ class CreateInstanceWithAsymmetricAutoscalingConfigExample {
                       .setStorageUtilizationPercent(95))
               .addAsymmetricAutoscalingOptions(
                   AutoscalingConfig.AsymmetricAutoscalingOption.newBuilder()
-                  .setReplicaSelection(ReplicaSelection.newBuilder().setLocation("europe-west1")))
+                      .setReplicaSelection(
+                          ReplicaSelection.newBuilder().setLocation("europe-west1")))
               .addAsymmetricAutoscalingOptions(
                   AutoscalingConfig.AsymmetricAutoscalingOption.newBuilder()
-                  .setReplicaSelection(ReplicaSelection.newBuilder().setLocation("europe-west4")))
+                      .setReplicaSelection(
+                          ReplicaSelection.newBuilder().setLocation("europe-west4")))
               .addAsymmetricAutoscalingOptions(
                   AutoscalingConfig.AsymmetricAutoscalingOption.newBuilder()
-                  .setReplicaSelection(ReplicaSelection.newBuilder().setLocation("asia-east1")))
+                      .setReplicaSelection(ReplicaSelection.newBuilder().setLocation("asia-east1")))
               .build();
       Instance instance =
           Instance.newBuilder()
               .setAutoscalingConfig(autoscalingConfig)
               .setDisplayName(displayName)
-              .setConfig(
-                  InstanceConfigName.of(projectId, configId).toString())
+              .setConfig(InstanceConfigName.of(projectId, configId).toString())
               .build();
 
       // Creates a new instance
       System.out.printf("Creating instance %s.%n", instanceId);
       try {
         // Wait for the createInstance operation to finish.
-        Instance instanceResult = instanceAdminClient.createInstanceAsync(
-            CreateInstanceRequest.newBuilder()
-                .setParent(ProjectName.of(projectId).toString())
-                .setInstanceId(instanceId)
-                .setInstance(instance)
-                .build()).get();
-        System.out.printf("Asymmetric Autoscaling instance %s was successfully created%n",
+        Instance instanceResult =
+            instanceAdminClient
+                .createInstanceAsync(
+                    CreateInstanceRequest.newBuilder()
+                        .setParent(ProjectName.of(projectId).toString())
+                        .setInstanceId(instanceId)
+                        .setInstance(instance)
+                        .build())
+                .get();
+        System.out.printf(
+            "Asymmetric Autoscaling instance %s was successfully created%n",
             instanceResult.getName());
       } catch (ExecutionException e) {
         System.out.printf(

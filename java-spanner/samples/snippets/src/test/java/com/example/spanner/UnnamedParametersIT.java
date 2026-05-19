@@ -52,8 +52,9 @@ public class UnnamedParametersIT extends SampleTestBase {
   public void testUnnamedParameters() throws Exception {
     final String out =
         SampleRunner.runSample(
-            () -> UnnamedParametersExample.executeQueryWithUnnamedParameters(projectId, instanceId,
-                databaseId));
+            () ->
+                UnnamedParametersExample.executeQueryWithUnnamedParameters(
+                    projectId, instanceId, databaseId));
     assertTrue(out.contains("Row is inserted."));
     assertTrue(out.contains("Google"));
     assertTrue(out.contains("Row is fetched."));

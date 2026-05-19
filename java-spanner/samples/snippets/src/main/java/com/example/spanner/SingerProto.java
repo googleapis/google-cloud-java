@@ -28,6 +28,7 @@ public final class SingerProto {
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
+
   /** Protobuf enum {@code examples.spanner.music.Genre} */
   public enum Genre implements com.google.protobuf.ProtocolMessageEnum {
     /** <code>POP = 0;</code> */
@@ -43,10 +44,13 @@ public final class SingerProto {
 
     /** <code>POP = 0;</code> */
     public static final int POP_VALUE = 0;
+
     /** <code>JAZZ = 1;</code> */
     public static final int JAZZ_VALUE = 1;
+
     /** <code>FOLK = 2;</code> */
     public static final int FOLK_VALUE = 2;
+
     /** <code>ROCK = 3;</code> */
     public static final int ROCK_VALUE = 3;
 
@@ -144,6 +148,7 @@ public final class SingerProto {
      * @return Whether the singerId field is set.
      */
     boolean hasSingerId();
+
     /**
      * <code>optional int64 singer_id = 1;</code>
      *
@@ -157,12 +162,14 @@ public final class SingerProto {
      * @return Whether the birthDate field is set.
      */
     boolean hasBirthDate();
+
     /**
      * <code>optional string birth_date = 2;</code>
      *
      * @return The birthDate.
      */
     String getBirthDate();
+
     /**
      * <code>optional string birth_date = 2;</code>
      *
@@ -176,12 +183,14 @@ public final class SingerProto {
      * @return Whether the nationality field is set.
      */
     boolean hasNationality();
+
     /**
      * <code>optional string nationality = 3;</code>
      *
      * @return The nationality.
      */
     String getNationality();
+
     /**
      * <code>optional string nationality = 3;</code>
      *
@@ -195,12 +204,14 @@ public final class SingerProto {
      * @return Whether the genre field is set.
      */
     boolean hasGenre();
+
     /**
      * <code>optional .examples.spanner.music.Genre genre = 4;</code>
      *
      * @return The enum numeric value on the wire for genre.
      */
     int getGenreValue();
+
     /**
      * <code>optional .examples.spanner.music.Genre genre = 4;</code>
      *
@@ -208,12 +219,14 @@ public final class SingerProto {
      */
     Genre getGenre();
   }
+
   /** Protobuf type {@code examples.spanner.music.SingerInfo} */
   public static final class SingerInfo extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:examples.spanner.music.SingerInfo)
       SingerInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SingerInfo.newBuilder() to construct.
     private SingerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -244,6 +257,7 @@ public final class SingerProto {
     private int bitField0_;
     public static final int SINGER_ID_FIELD_NUMBER = 1;
     private long singerId_ = 0L;
+
     /**
      * <code>optional int64 singer_id = 1;</code>
      *
@@ -253,6 +267,7 @@ public final class SingerProto {
     public boolean hasSingerId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional int64 singer_id = 1;</code>
      *
@@ -267,6 +282,7 @@ public final class SingerProto {
 
     @SuppressWarnings("serial")
     private volatile Object birthDate_ = "";
+
     /**
      * <code>optional string birth_date = 2;</code>
      *
@@ -276,6 +292,7 @@ public final class SingerProto {
     public boolean hasBirthDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      * <code>optional string birth_date = 2;</code>
      *
@@ -293,6 +310,7 @@ public final class SingerProto {
         return s;
       }
     }
+
     /**
      * <code>optional string birth_date = 2;</code>
      *
@@ -315,6 +333,7 @@ public final class SingerProto {
 
     @SuppressWarnings("serial")
     private volatile Object nationality_ = "";
+
     /**
      * <code>optional string nationality = 3;</code>
      *
@@ -324,6 +343,7 @@ public final class SingerProto {
     public boolean hasNationality() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      * <code>optional string nationality = 3;</code>
      *
@@ -341,6 +361,7 @@ public final class SingerProto {
         return s;
       }
     }
+
     /**
      * <code>optional string nationality = 3;</code>
      *
@@ -361,6 +382,7 @@ public final class SingerProto {
 
     public static final int GENRE_FIELD_NUMBER = 4;
     private int genre_ = 0;
+
     /**
      * <code>optional .examples.spanner.music.Genre genre = 4;</code>
      *
@@ -370,6 +392,7 @@ public final class SingerProto {
     public boolean hasGenre() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      * <code>optional .examples.spanner.music.Genre genre = 4;</code>
      *
@@ -379,6 +402,7 @@ public final class SingerProto {
     public int getGenreValue() {
       return genre_;
     }
+
     /**
      * <code>optional .examples.spanner.music.Genre genre = 4;</code>
      *
@@ -593,6 +617,7 @@ public final class SingerProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code examples.spanner.music.SingerInfo} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -808,6 +833,7 @@ public final class SingerProto {
       private int bitField0_;
 
       private long singerId_;
+
       /**
        * <code>optional int64 singer_id = 1;</code>
        *
@@ -817,6 +843,7 @@ public final class SingerProto {
       public boolean hasSingerId() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        * <code>optional int64 singer_id = 1;</code>
        *
@@ -826,6 +853,7 @@ public final class SingerProto {
       public long getSingerId() {
         return singerId_;
       }
+
       /**
        * <code>optional int64 singer_id = 1;</code>
        *
@@ -839,6 +867,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional int64 singer_id = 1;</code>
        *
@@ -852,6 +881,7 @@ public final class SingerProto {
       }
 
       private Object birthDate_ = "";
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -860,6 +890,7 @@ public final class SingerProto {
       public boolean hasBirthDate() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -876,6 +907,7 @@ public final class SingerProto {
           return (String) ref;
         }
       }
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -892,6 +924,7 @@ public final class SingerProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -907,6 +940,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -918,6 +952,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional string birth_date = 2;</code>
        *
@@ -936,6 +971,7 @@ public final class SingerProto {
       }
 
       private Object nationality_ = "";
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -944,6 +980,7 @@ public final class SingerProto {
       public boolean hasNationality() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -960,6 +997,7 @@ public final class SingerProto {
           return (String) ref;
         }
       }
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -976,6 +1014,7 @@ public final class SingerProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -991,6 +1030,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -1002,6 +1042,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional string nationality = 3;</code>
        *
@@ -1020,6 +1061,7 @@ public final class SingerProto {
       }
 
       private int genre_ = 0;
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1029,6 +1071,7 @@ public final class SingerProto {
       public boolean hasGenre() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1038,6 +1081,7 @@ public final class SingerProto {
       public int getGenreValue() {
         return genre_;
       }
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1050,6 +1094,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1060,6 +1105,7 @@ public final class SingerProto {
         Genre result = Genre.forNumber(genre_);
         return result == null ? Genre.UNRECOGNIZED : result;
       }
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1075,6 +1121,7 @@ public final class SingerProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>optional .examples.spanner.music.Genre genre = 4;</code>
        *
@@ -1164,15 +1211,25 @@ public final class SingerProto {
 
   static {
     String[] descriptorData = {
-      "\n\014singer.proto\022\026examples.spanner.music\"\301"
-          + "\001\n\nSingerInfo\022\026\n\tsinger_id\030\001 \001(\003H\000\210\001\001\022\027\n"
-          + "\nbirth_date\030\002 \001(\tH\001\210\001\001\022\030\n\013nationality\030\003 "
-          + "\001(\tH\002\210\001\001\0221\n\005genre\030\004 \001(\0162\035.examples.spann"
-          + "er.music.GenreH\003\210\001\001B\014\n\n_singer_idB\r\n\013_bi"
-          + "rth_dateB\016\n\014_nationalityB\010\n\006_genre*.\n\005Ge"
-          + "nre\022\007\n\003POP\020\000\022\010\n\004JAZZ\020\001\022\010\n\004FOLK\020\002\022\010\n\004ROCK"
-          + "\020\003B$\n\023com.example.spannerB\013SingerProtoP\000"
-          + "b\006proto3"
+      "\n"
+          + "\014singer.proto\022\026examples.spanner.music\"\301\001\n\n"
+          + "SingerInfo\022\026\n"
+          + "\tsinger_id\030\001 \001(\003H\000\210\001\001\022\027\n"
+          + "\n"
+          + "birth_date\030\002 \001(\tH\001\210\001\001\022\030\n"
+          + "\013nationality\030\003 \001(\tH\002\210\001\001\0221\n"
+          + "\005genre\030\004"
+          + " \001(\0162\035.examples.spanner.music.GenreH\003\210\001\001B\014\n\n"
+          + "_singer_idB\r\n"
+          + "\013_birth_dateB\016\n"
+          + "\014_nationalityB\010\n"
+          + "\006_genre*.\n"
+          + "\005Genre\022\007\n"
+          + "\003POP\020\000\022\010\n"
+          + "\004JAZZ\020\001\022\010\n"
+          + "\004FOLK\020\002\022\010\n"
+          + "\004ROCK\020\003B$\n"
+          + "\023com.example.spannerB\013SingerProtoP\000b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

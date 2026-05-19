@@ -34,7 +34,7 @@ class PgQueryWithNumericParameterSample {
     String databaseId = "my-database";
 
     try (Spanner spanner =
-             SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       queryWithNumericParameter(client);
@@ -44,15 +44,14 @@ class PgQueryWithNumericParameterSample {
   static void queryWithNumericParameter(DatabaseClient client) {
     Statement statement =
         Statement.newBuilder(
-            "SELECT venueid as \"VenueId\", revenue as \"Revenue\" FROM Venues WHERE Revenue "
-                + "< $1")
+                "SELECT venueid as \"VenueId\", revenue as \"Revenue\" FROM Venues WHERE Revenue "
+                    + "< $1")
             .bind("p1")
             .to(Value.pgNumeric("100000"))
             .build();
     try (ResultSet resultSet = client.singleUse().executeQuery(statement)) {
       while (resultSet.next()) {
-        System.out.printf(
-            "%d %s%n", resultSet.getLong("VenueId"), resultSet.getValue("Revenue"));
+        System.out.printf("%d %s%n", resultSet.getLong("VenueId"), resultSet.getValue("Revenue"));
       }
     }
   }

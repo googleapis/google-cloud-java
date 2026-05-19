@@ -42,34 +42,39 @@ public class AddAndDropDatabaseRole {
   }
 
   static void addAndDropDatabaseRole(
-      String projectId, String instanceId, String databaseId,
-      String parentRole, String childRole, String... tables) {
+      String projectId,
+      String instanceId,
+      String databaseId,
+      String parentRole,
+      String childRole,
+      String... tables) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       System.out.println("Waiting for role create operation to complete...");
-      List<String> roleStatements = new ArrayList<>(ImmutableList.of(
-          String.format("CREATE ROLE %s", parentRole),
-          String.format("CREATE ROLE %s", childRole),
-          String.format("GRANT ROLE %s TO ROLE %s", parentRole, childRole)));
+      List<String> roleStatements =
+          new ArrayList<>(
+              ImmutableList.of(
+                  String.format("CREATE ROLE %s", parentRole),
+                  String.format("CREATE ROLE %s", childRole),
+                  String.format("GRANT ROLE %s TO ROLE %s", parentRole, childRole)));
       for (String table : tables) {
         roleStatements.add(String.format("GRANT SELECT ON TABLE %s TO ROLE %s", table, parentRole));
       }
-      databaseAdminClient.updateDatabaseDdlAsync(
+      databaseAdminClient
+          .updateDatabaseDdlAsync(
               DatabaseName.of(projectId, instanceId, databaseId), roleStatements)
           .get(5, TimeUnit.MINUTES);
-      System.out.printf(
-          "Created roles %s and %s and granted privileges%n", parentRole, childRole);
+      System.out.printf("Created roles %s and %s and granted privileges%n", parentRole, childRole);
       // Delete role and membership.
       System.out.println("Waiting for role revoke & drop operation to complete...");
-      databaseAdminClient.updateDatabaseDdlAsync(
-          DatabaseName.of(projectId, instanceId, databaseId),
-          ImmutableList.of(
-              String.format("REVOKE ROLE %s FROM ROLE %s", parentRole, childRole),
-              String.format("DROP ROLE %s", childRole))).get(5, TimeUnit.MINUTES);
+      databaseAdminClient
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
+              ImmutableList.of(
+                  String.format("REVOKE ROLE %s FROM ROLE %s", parentRole, childRole),
+                  String.format("DROP ROLE %s", childRole)))
+          .get(5, TimeUnit.MINUTES);
       System.out.printf("Revoked privileges and dropped role %s%n", childRole);
     } catch (ExecutionException | TimeoutException e) {
       System.out.printf(

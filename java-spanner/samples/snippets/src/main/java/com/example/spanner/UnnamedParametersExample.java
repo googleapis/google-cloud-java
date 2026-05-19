@@ -51,8 +51,9 @@ public class UnnamedParametersExample {
           .readWriteTransaction()
           .run(
               transaction -> {
-                Statement statement = statementFactory
-                    .withUnnamedParameters("INSERT INTO Students(StudentId, Name, IsNRI, AvgMarks, "
+                Statement statement =
+                    statementFactory.withUnnamedParameters(
+                        "INSERT INTO Students(StudentId, Name, IsNRI, AvgMarks, "
                             + "JoinedAt, PinCode, CreatedAt) VALUES(?, ?, ?, ?, ?, ?, ?)",
                         1000001,
                         "Google",

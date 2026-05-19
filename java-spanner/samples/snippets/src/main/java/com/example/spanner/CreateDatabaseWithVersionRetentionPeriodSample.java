@@ -38,24 +38,30 @@ public class CreateDatabaseWithVersionRetentionPeriodSample {
     String databaseId = "my-database";
     String versionRetentionPeriod = "7d";
 
-    createDatabaseWithVersionRetentionPeriod(projectId, instanceId, databaseId,
-        versionRetentionPeriod);
+    createDatabaseWithVersionRetentionPeriod(
+        projectId, instanceId, databaseId, versionRetentionPeriod);
   }
 
-  static void createDatabaseWithVersionRetentionPeriod(String projectId,
-      String instanceId, String databaseId, String versionRetentionPeriod) {
+  static void createDatabaseWithVersionRetentionPeriod(
+      String projectId, String instanceId, String databaseId, String versionRetentionPeriod) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       CreateDatabaseRequest request =
           CreateDatabaseRequest.newBuilder()
               .setParent(InstanceName.of(projectId, instanceId).toString())
               .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
-              .addAllExtraStatements(Lists.newArrayList("ALTER DATABASE " + "`" + databaseId + "`"
-                  + " SET OPTIONS ( version_retention_period = '" + versionRetentionPeriod + "' )"))
+              .addAllExtraStatements(
+                  Lists.newArrayList(
+                      "ALTER DATABASE "
+                          + "`"
+                          + databaseId
+                          + "`"
+                          + " SET OPTIONS ( version_retention_period = '"
+                          + versionRetentionPeriod
+                          + "' )"))
               .build();
-      Database database =
-          databaseAdminClient.createDatabaseAsync(request).get();
+      Database database = databaseAdminClient.createDatabaseAsync(request).get();
       System.out.println("Created database [" + database.getName() + "]");
       System.out.println("\tVersion retention period: " + database.getVersionRetentionPeriod());
       System.out.println("\tEarliest version time: " + database.getEarliestVersionTime());

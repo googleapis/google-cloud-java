@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_update_database_with_default_leader]
+// [START spanner_update_database_with_default_leader]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.DatabaseAdminClient;
@@ -41,25 +41,18 @@ public class UpdateDatabaseWithDefaultLeaderSample {
 
   static void updateDatabaseWithDefaultLeader(
       String projectId, String instanceId, String databaseId, String defaultLeader) {
-    try (Spanner spanner = SpannerOptions
-        .newBuilder()
-        .setProjectId(projectId)
-        .build()
-        .getService()) {
+    try (Spanner spanner =
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
-      final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation = databaseAdminClient
-          .updateDatabaseDdl(
+      final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
+          databaseAdminClient.updateDatabaseDdl(
               instanceId,
               databaseId,
               Collections.singletonList(
                   String.format(
                       "ALTER DATABASE `%s` SET OPTIONS (default_leader = '%s')",
-                      databaseId,
-                      defaultLeader
-                  )
-              ),
-              null
-          );
+                      databaseId, defaultLeader)),
+              null);
       operation.get();
       System.out.println("Updated default leader to " + defaultLeader);
     } catch (ExecutionException e) {
@@ -72,4 +65,4 @@ public class UpdateDatabaseWithDefaultLeaderSample {
     }
   }
 }
-//[END spanner_update_database_with_default_leader]
+// [END spanner_update_database_with_default_leader]

@@ -35,19 +35,21 @@ public class AlterTableWithForeignKeyDeleteCascadeSampleIT extends SampleTestBas
         CreateDatabaseRequest.newBuilder()
             .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
             .setParent(InstanceName.of(projectId, instanceId).toString())
-            .addAllExtraStatements(Arrays.asList(
-                "CREATE TABLE Customers (\n"
-                    + "              CustomerId INT64 NOT NULL,\n"
-                    + "              CustomerName STRING(62) NOT NULL,\n"
-                    + "              ) PRIMARY KEY (CustomerId)",
-                "CREATE TABLE ShoppingCarts (\n"
-                    + "              CartId INT64 NOT NULL,\n"
-                    + "              CustomerId INT64 NOT NULL,\n"
-                    + "              CustomerName STRING(62) NOT NULL,\n"
-                    + "              CONSTRAINT FKShoppingCartsCustomerId"
-                    + " FOREIGN KEY (CustomerId)\n"
-                    + "              REFERENCES Customers (CustomerId)\n"
-                    + "              ) PRIMARY KEY (CartId)\n")).build();
+            .addAllExtraStatements(
+                Arrays.asList(
+                    "CREATE TABLE Customers (\n"
+                        + "              CustomerId INT64 NOT NULL,\n"
+                        + "              CustomerName STRING(62) NOT NULL,\n"
+                        + "              ) PRIMARY KEY (CustomerId)",
+                    "CREATE TABLE ShoppingCarts (\n"
+                        + "              CartId INT64 NOT NULL,\n"
+                        + "              CustomerId INT64 NOT NULL,\n"
+                        + "              CustomerName STRING(62) NOT NULL,\n"
+                        + "              CONSTRAINT FKShoppingCartsCustomerId"
+                        + " FOREIGN KEY (CustomerId)\n"
+                        + "              REFERENCES Customers (CustomerId)\n"
+                        + "              ) PRIMARY KEY (CartId)\n"))
+            .build();
     databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
 
     // Runs sample

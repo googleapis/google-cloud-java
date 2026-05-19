@@ -26,14 +26,15 @@ public class ListInstanceConfigsSampleIT extends SampleTestBase {
 
   @Test
   public void testListInstanceConfigs() throws Exception {
-    final String out = SampleRunner.runSample(() ->
-        ListInstanceConfigsSample.listInstanceConfigs(projectId)
-    );
+    final String out =
+        SampleRunner.runSample(() -> ListInstanceConfigsSample.listInstanceConfigs(projectId));
 
     assertTrue(
-        "Expected instance config " + instanceConfigName + " to contain at least one leader option."
-            + " Output received was " + out,
-        out.matches("(?s:.*nam6: \\[.+\\].*)")
-    );
+        "Expected instance config "
+            + instanceConfigName
+            + " to contain at least one leader option."
+            + " Output received was "
+            + out,
+        out.matches("(?s:.*nam6: \\[.+\\].*)"));
   }
 }

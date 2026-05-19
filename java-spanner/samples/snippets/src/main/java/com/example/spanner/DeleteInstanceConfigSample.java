@@ -36,13 +36,10 @@ class DeleteInstanceConfigSample {
 
   static void deleteInstanceConfig(String projectId, String instanceConfigId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
-      final InstanceConfigName instanceConfigName = InstanceConfigName.of(projectId,
-          instanceConfigId);
+      final InstanceConfigName instanceConfigName =
+          InstanceConfigName.of(projectId, instanceConfigId);
       final DeleteInstanceConfigRequest request =
           DeleteInstanceConfigRequest.newBuilder().setName(instanceConfigName.toString()).build();
 

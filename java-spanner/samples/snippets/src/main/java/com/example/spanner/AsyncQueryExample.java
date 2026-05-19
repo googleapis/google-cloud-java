@@ -104,4 +104,4 @@ class AsyncQueryExample {
     executor.shutdown();
   }
 }
-//[END spanner_async_query_data]
+// [END spanner_async_query_data]

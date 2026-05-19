@@ -49,10 +49,7 @@ public class ReadDataWithDatabaseRole {
       ResultSet resultSet =
           dbClient
               .singleUse()
-              .read(
-                  "Singers",
-                  KeySet.all(),
-                  Arrays.asList("SingerId", "FirstName", "LastName"));
+              .read("Singers", KeySet.all(), Arrays.asList("SingerId", "FirstName", "LastName"));
       while (resultSet.next()) {
         System.out.printf("SingerId: %d\n", resultSet.getLong(0));
         System.out.printf("FirstName: %s\n", resultSet.getString(1));

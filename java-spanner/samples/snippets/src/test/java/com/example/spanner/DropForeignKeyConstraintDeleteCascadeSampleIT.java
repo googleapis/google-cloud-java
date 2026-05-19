@@ -35,19 +35,21 @@ public class DropForeignKeyConstraintDeleteCascadeSampleIT extends SampleTestBas
         CreateDatabaseRequest.newBuilder()
             .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
             .setParent(InstanceName.of(projectId, instanceId).toString())
-            .addAllExtraStatements(Lists.newArrayList(
-                "CREATE TABLE Customers (\n"
-                    + "              CustomerId INT64 NOT NULL,\n"
-                    + "              CustomerName STRING(62) NOT NULL,\n"
-                    + "              ) PRIMARY KEY (CustomerId)",
-                "CREATE TABLE ShoppingCarts (\n"
-                    + "              CartId INT64 NOT NULL,\n"
-                    + "              CustomerId INT64 NOT NULL,\n"
-                    + "              CustomerName STRING(62) NOT NULL,\n"
-                    + "              CONSTRAINT FKShoppingCartsCustomerName"
-                    + " FOREIGN KEY (CustomerName)\n"
-                    + "              REFERENCES Customers (CustomerName) ON DELETE CASCADE\n"
-                    + "              ) PRIMARY KEY (CartId)\n")).build();
+            .addAllExtraStatements(
+                Lists.newArrayList(
+                    "CREATE TABLE Customers (\n"
+                        + "              CustomerId INT64 NOT NULL,\n"
+                        + "              CustomerName STRING(62) NOT NULL,\n"
+                        + "              ) PRIMARY KEY (CustomerId)",
+                    "CREATE TABLE ShoppingCarts (\n"
+                        + "              CartId INT64 NOT NULL,\n"
+                        + "              CustomerId INT64 NOT NULL,\n"
+                        + "              CustomerName STRING(62) NOT NULL,\n"
+                        + "              CONSTRAINT FKShoppingCartsCustomerName"
+                        + " FOREIGN KEY (CustomerName)\n"
+                        + "              REFERENCES Customers (CustomerName) ON DELETE CASCADE\n"
+                        + "              ) PRIMARY KEY (CartId)\n"))
+            .build();
     databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
 
     // Runs sample

@@ -29,45 +29,53 @@ public class QueryInformationSchemaDatabaseOptionsSampleIT extends SampleTestBas
   @Test
   public void testQueryInformationSchemaDatabaseOptions() throws Exception {
     // Finds a possible new leader option
-    final InstanceConfigId instanceConfigId = instanceAdminClient
-        .getInstance(multiRegionalInstanceId)
-        .getInstanceConfigId();
-    final InstanceConfig config = instanceAdminClient
-        .getInstanceConfig(instanceConfigId.getInstanceConfig());
+    final InstanceConfigId instanceConfigId =
+        instanceAdminClient.getInstance(multiRegionalInstanceId).getInstanceConfigId();
+    final InstanceConfig config =
+        instanceAdminClient.getInstanceConfig(instanceConfigId.getInstanceConfig());
     assertTrue(
         "Expected instance config " + instanceConfigId + " to have at least one leader option",
-        config.getLeaderOptions().size() > 0
-    );
+        config.getLeaderOptions().size() > 0);
     final String defaultLeader = config.getLeaderOptions().get(0);
 
     // Creates database
     final String databaseId = idGenerator.generateDatabaseId();
-    databaseAdminClient.createDatabase(
-        multiRegionalInstanceId,
-        databaseId,
-        Arrays.asList(
-            "CREATE TABLE Singers (Id INT64 NOT NULL) PRIMARY KEY (Id)",
-            "ALTER DATABASE `"
-                + databaseId
-                + "` SET OPTIONS ( default_leader = '"
-                + defaultLeader
-                + "')"
-        )
-    ).get(5, TimeUnit.MINUTES);
+    databaseAdminClient
+        .createDatabase(
+            multiRegionalInstanceId,
+            databaseId,
+            Arrays.asList(
+                "CREATE TABLE Singers (Id INT64 NOT NULL) PRIMARY KEY (Id)",
+                "ALTER DATABASE `"
+                    + databaseId
+                    + "` SET OPTIONS ( default_leader = '"
+                    + defaultLeader
+                    + "')"))
+        .get(5, TimeUnit.MINUTES);
 
     // Runs sample
-    final String out = SampleRunner.runSample(() -> QueryInformationSchemaDatabaseOptionsSample
-        .queryInformationSchemaDatabaseOptions(projectId, multiRegionalInstanceId, databaseId)
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                QueryInformationSchemaDatabaseOptionsSample.queryInformationSchemaDatabaseOptions(
+                    projectId, multiRegionalInstanceId, databaseId));
 
     assertTrue(
-        "Expected to have retrieved default_leader for " + databaseId + " as " + defaultLeader + "."
-            + " Output received was " + out,
+        "Expected to have retrieved default_leader for "
+            + databaseId
+            + " as "
+            + defaultLeader
+            + "."
+            + " Output received was "
+            + out,
         out.contains(
             "The default_leader for projects/"
-                + projectId + "/instances/" + multiRegionalInstanceId + "/databases/" + databaseId
-                + " is " + defaultLeader
-        )
-    );
+                + projectId
+                + "/instances/"
+                + multiRegionalInstanceId
+                + "/databases/"
+                + databaseId
+                + " is "
+                + defaultLeader));
   }
 }

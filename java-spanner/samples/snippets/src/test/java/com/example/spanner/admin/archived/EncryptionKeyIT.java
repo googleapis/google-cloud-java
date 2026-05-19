@@ -45,12 +45,19 @@ public class EncryptionKeyIT extends SampleTestBase {
 
   @BeforeClass
   public static void setUp() {
-    String keyLocation = Preconditions
-        .checkNotNull(System.getProperty("spanner.test.key.location"));
+    String keyLocation =
+        Preconditions.checkNotNull(System.getProperty("spanner.test.key.location"));
     String keyRing = Preconditions.checkNotNull(System.getProperty("spanner.test.key.ring"));
     String keyName = Preconditions.checkNotNull(System.getProperty("spanner.test.key.name"));
-    key = "projects/" + projectId + "/locations/" + keyLocation + "/keyRings/" + keyRing
-        + "/cryptoKeys/" + keyName;
+    key =
+        "projects/"
+            + projectId
+            + "/locations/"
+            + keyLocation
+            + "/keyRings/"
+            + keyRing
+            + "/cryptoKeys/"
+            + keyName;
   }
 
   @Test
@@ -59,45 +66,67 @@ public class EncryptionKeyIT extends SampleTestBase {
     final String backupId = idGenerator.generateBackupId();
     final String restoreId = idGenerator.generateDatabaseId();
 
-    String out = SampleRunner.runSample(() ->
-        CreateDatabaseWithEncryptionKey.createDatabaseWithEncryptionKey(
-            databaseAdminClient,
-            projectId,
-            instanceId,
-            databaseId,
-            key
-        ));
-    assertThat(out).contains(
-        "Database projects/" + projectId + "/instances/" + instanceId + "/databases/" + databaseId
-            + " created with encryption key " + key);
+    String out =
+        SampleRunner.runSample(
+            () ->
+                CreateDatabaseWithEncryptionKey.createDatabaseWithEncryptionKey(
+                    databaseAdminClient, projectId, instanceId, databaseId, key));
+    assertThat(out)
+        .contains(
+            "Database projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/databases/"
+                + databaseId
+                + " created with encryption key "
+                + key);
 
-    out = SampleRunner.runSampleWithRetry(() ->
-        CreateBackupWithEncryptionKey.createBackupWithEncryptionKey(
-            databaseAdminClient,
-            projectId,
-            instanceId,
-            databaseId,
-            backupId,
-            key
-        ), new ShouldRetryBackupOperation());
-    assertThat(out).containsMatch(
-        "Backup projects/" + projectId + "/instances/" + instanceId + "/backups/" + backupId
-            + " of size \\d+ bytes was created at (.*) using encryption key " + key);
+    out =
+        SampleRunner.runSampleWithRetry(
+            () ->
+                CreateBackupWithEncryptionKey.createBackupWithEncryptionKey(
+                    databaseAdminClient, projectId, instanceId, databaseId, backupId, key),
+            new ShouldRetryBackupOperation());
+    assertThat(out)
+        .containsMatch(
+            "Backup projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/backups/"
+                + backupId
+                + " of size \\d+ bytes was created at (.*) using encryption key "
+                + key);
 
-    out = SampleRunner.runSampleWithRetry(() ->
-        RestoreBackupWithEncryptionKey.restoreBackupWithEncryptionKey(
-            databaseAdminClient,
-            projectId,
-            instanceId,
-            backupId,
-            restoreId,
-            key
-        ), new ShouldRetryBackupOperation());
-    assertThat(out).contains(
-        "Database projects/" + projectId + "/instances/" + instanceId + "/databases/" + databaseId
-            + " restored to projects/" + projectId + "/instances/" + instanceId + "/databases/"
-            + restoreId + " from backup projects/" + projectId + "/instances/" + instanceId
-            + "/backups/" + backupId + " using encryption key " + key);
+    out =
+        SampleRunner.runSampleWithRetry(
+            () ->
+                RestoreBackupWithEncryptionKey.restoreBackupWithEncryptionKey(
+                    databaseAdminClient, projectId, instanceId, backupId, restoreId, key),
+            new ShouldRetryBackupOperation());
+    assertThat(out)
+        .contains(
+            "Database projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/databases/"
+                + databaseId
+                + " restored to projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/databases/"
+                + restoreId
+                + " from backup projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/backups/"
+                + backupId
+                + " using encryption key "
+                + key);
   }
 
   static class ShouldRetryBackupOperation implements Predicate<SpannerException> {
@@ -112,9 +141,12 @@ public class EncryptionKeyIT extends SampleTestBase {
         attempts++;
         if (attempts == MAX_ATTEMPTS) {
           // Throw custom exception so it is easier to locate in the log why it went wrong.
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED,
-              String.format("Operation failed %d times because of other pending operations. "
-                  + "Giving up operation.\n", attempts),
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.DEADLINE_EXCEEDED,
+              String.format(
+                  "Operation failed %d times because of other pending operations. "
+                      + "Giving up operation.\n",
+                  attempts),
               e);
         }
         // Wait one minute before retrying.

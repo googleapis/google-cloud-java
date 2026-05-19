@@ -30,7 +30,8 @@ public class CreateInstanceWithAutoscalingConfigSampleIT extends SampleTestBaseV
         SampleRunner.runSample(
             () -> CreateInstanceWithAutoscalingConfigExample.createInstance(projectId, instanceId));
     assertThat(out)
-        .contains(String.format("Autoscaler instance %s",
-            InstanceName.of(projectId, instanceId).toString()));
+        .contains(
+            String.format(
+                "Autoscaler instance %s", InstanceName.of(projectId, instanceId).toString()));
   }
 }

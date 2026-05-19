@@ -33,9 +33,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for {@link SetMaxCommitDelaySample}
- */
+/** Integration tests for {@link SetMaxCommitDelaySample} */
 @RunWith(JUnit4.class)
 public class SetMaxCommitDelaySampleIT extends SampleTestBase {
 
@@ -69,24 +67,24 @@ public class SetMaxCommitDelaySampleIT extends SampleTestBase {
   @Before
   public void insertTestData() {
     final DatabaseClient client = spanner.getDatabaseClient(databaseId);
-    client.write(Arrays.asList(
-        Mutation.newInsertBuilder("Singers")
-            .set("SingerId")
-            .to(1L)
-            .set("FirstName")
-            .to("first name 1")
-            .set("LastName")
-            .to("last name 1")
-            .build(),
-        Mutation.newInsertBuilder("Singers")
-            .set("SingerId")
-            .to(2L)
-            .set("FirstName")
-            .to("first name 2")
-            .set("LastName")
-            .to("last name 2")
-            .build()
-    ));
+    client.write(
+        Arrays.asList(
+            Mutation.newInsertBuilder("Singers")
+                .set("SingerId")
+                .to(1L)
+                .set("FirstName")
+                .to("first name 1")
+                .set("LastName")
+                .to("last name 1")
+                .build(),
+            Mutation.newInsertBuilder("Singers")
+                .set("SingerId")
+                .to(2L)
+                .set("FirstName")
+                .to("first name 2")
+                .set("LastName")
+                .to("last name 2")
+                .build()));
   }
 
   @After

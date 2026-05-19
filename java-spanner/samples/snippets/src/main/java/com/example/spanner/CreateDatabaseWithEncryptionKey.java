@@ -42,40 +42,39 @@ public class CreateDatabaseWithEncryptionKey {
         "projects/" + projectId + "/locations/<location>/keyRings/<keyRing>/cryptoKeys/<keyId>";
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient adminClient = spanner.createDatabaseAdminClient()) {
-      createDatabaseWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          databaseId,
-          kmsKeyName);
+      createDatabaseWithEncryptionKey(adminClient, projectId, instanceId, databaseId, kmsKeyName);
     }
   }
 
-  static void createDatabaseWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String databaseId, String kmsKeyName) {
+  static void createDatabaseWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String databaseId,
+      String kmsKeyName) {
     InstanceName instanceName = InstanceName.of(projectId, instanceId);
-    CreateDatabaseRequest request = CreateDatabaseRequest.newBuilder()
-        .setParent(instanceName.toString())
-        .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
-        .setEncryptionConfig(EncryptionConfig.newBuilder().setKmsKeyName(kmsKeyName).build())
-        .addAllExtraStatements(
-            ImmutableList.of(
-                "CREATE TABLE Singers ("
-                    + "  SingerId   INT64 NOT NULL,"
-                    + "  FirstName  STRING(1024),"
-                    + "  LastName   STRING(1024),"
-                    + "  SingerInfo BYTES(MAX)"
-                    + ") PRIMARY KEY (SingerId)",
-                "CREATE TABLE Albums ("
-                    + "  SingerId     INT64 NOT NULL,"
-                    + "  AlbumId      INT64 NOT NULL,"
-                    + "  AlbumTitle   STRING(MAX)"
-                    + ") PRIMARY KEY (SingerId, AlbumId),"
-                    + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"
-            ))
-        .build();
+    CreateDatabaseRequest request =
+        CreateDatabaseRequest.newBuilder()
+            .setParent(instanceName.toString())
+            .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
+            .setEncryptionConfig(EncryptionConfig.newBuilder().setKmsKeyName(kmsKeyName).build())
+            .addAllExtraStatements(
+                ImmutableList.of(
+                    "CREATE TABLE Singers ("
+                        + "  SingerId   INT64 NOT NULL,"
+                        + "  FirstName  STRING(1024),"
+                        + "  LastName   STRING(1024),"
+                        + "  SingerInfo BYTES(MAX)"
+                        + ") PRIMARY KEY (SingerId)",
+                    "CREATE TABLE Albums ("
+                        + "  SingerId     INT64 NOT NULL,"
+                        + "  AlbumId      INT64 NOT NULL,"
+                        + "  AlbumTitle   STRING(MAX)"
+                        + ") PRIMARY KEY (SingerId, AlbumId),"
+                        + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"))
+            .build();
     try {
       System.out.println("Waiting for operation to complete...");
       Database createdDatabase =
@@ -83,9 +82,7 @@ public class CreateDatabaseWithEncryptionKey {
 
       System.out.printf(
           "Database %s created with encryption key %s%n",
-          createdDatabase.getName(),
-          createdDatabase.getEncryptionConfig().getKmsKeyName()
-      );
+          createdDatabase.getName(), createdDatabase.getEncryptionConfig().getKmsKeyName());
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
       throw SpannerExceptionFactory.asSpannerException(e.getCause());

@@ -17,7 +17,6 @@
 package com.example.spanner;
 
 import static com.example.spanner.SampleRunner.runSample;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -67,27 +66,20 @@ public class SequenceSampleIT extends SampleTestBaseV2 {
         CreateDatabaseRequest.newBuilder()
             .setParent(getInstanceName(projectId, instanceId))
             .setCreateStatement(getCreateDatabaseStatement(databaseId, dialect))
-            .setDatabaseDialect(dialect).build();
-    databaseAdminClient
-        .createDatabaseAsync(createDatabaseRequest)
-        .get(10, TimeUnit.MINUTES);
+            .setDatabaseDialect(dialect)
+            .build();
+    databaseAdminClient.createDatabaseAsync(createDatabaseRequest).get(10, TimeUnit.MINUTES);
   }
 
   @Test
   public void createSequence() throws Exception {
     String out;
     if (dialect == DatabaseDialect.GOOGLE_STANDARD_SQL) {
-      out =
-          runSample(
-              () ->
-                  CreateSequenceSample.createSequence(
-                      projectId, instanceId, databaseId));
+      out = runSample(() -> CreateSequenceSample.createSequence(projectId, instanceId, databaseId));
     } else {
       out =
           runSample(
-              () ->
-                  PgCreateSequenceSample.pgCreateSequence(
-                      projectId, instanceId, databaseId));
+              () -> PgCreateSequenceSample.pgCreateSequence(projectId, instanceId, databaseId));
     }
     assertTrue(
         out.contains(
@@ -102,17 +94,10 @@ public class SequenceSampleIT extends SampleTestBaseV2 {
   public void alterSequence() throws Exception {
     String out;
     if (dialect == DatabaseDialect.GOOGLE_STANDARD_SQL) {
-      out =
-          runSample(
-              () ->
-                  AlterSequenceSample.alterSequence(
-                      projectId, instanceId, databaseId));
+      out = runSample(() -> AlterSequenceSample.alterSequence(projectId, instanceId, databaseId));
     } else {
       out =
-          runSample(
-              () ->
-                  PgAlterSequenceSample.pgAlterSequence(
-                      projectId, instanceId, databaseId));
+          runSample(() -> PgAlterSequenceSample.pgAlterSequence(projectId, instanceId, databaseId));
     }
     assertTrue(
         out.contains("Altered Seq sequence to skip an inclusive range between 1000 and 5000000"));
@@ -125,16 +110,9 @@ public class SequenceSampleIT extends SampleTestBaseV2 {
   public void dropSequence() throws Exception {
     String out;
     if (dialect == DatabaseDialect.GOOGLE_STANDARD_SQL) {
-      out =
-          runSample(
-              () ->
-                  DropSequenceSample.dropSequence(projectId, instanceId, databaseId));
+      out = runSample(() -> DropSequenceSample.dropSequence(projectId, instanceId, databaseId));
     } else {
-      out =
-          runSample(
-              () ->
-                  PgDropSequenceSample.pgDropSequence(
-                      projectId, instanceId, databaseId));
+      out = runSample(() -> PgDropSequenceSample.pgDropSequence(projectId, instanceId, databaseId));
     }
     assertTrue(
         out.contains(

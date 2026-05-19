@@ -16,7 +16,6 @@
 
 package com.example.spanner;
 
-import com.example.spanner.SampleIdGenerator;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient;
@@ -29,9 +28,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-/**
- * Base class for sample integration intests using auto-generated admin clients.
- */
+/** Base class for sample integration intests using auto-generated admin clients. */
 public class SampleTestBaseV2 {
 
   private static final String BASE_INSTANCE_ID =
@@ -50,8 +47,8 @@ public class SampleTestBaseV2 {
   protected static Spanner spanner;
   protected static final String multiRegionalInstanceId =
       System.getProperty("spanner.test.instance.mr");
-  protected static final String instanceConfigName = System
-      .getProperty("spanner.test.instance.config");
+  protected static final String instanceConfigName =
+      System.getProperty("spanner.test.instance.config");
   protected static SampleIdGenerator idGenerator;
 
   @BeforeClass
@@ -74,8 +71,9 @@ public class SampleTestBaseV2 {
     spanner = options.getService();
     databaseAdminClient = DatabaseAdminClient.create(databaseAdminSettingsBuilder.build());
     instanceAdminClient = InstanceAdminClient.create(instanceAdminSettingBuilder.build());
-    idGenerator = new SampleIdGenerator(
-        BASE_DATABASE_ID, BASE_BACKUP_ID, BASE_INSTANCE_CONFIG_ID, BASE_INSTANCE_ID);
+    idGenerator =
+        new SampleIdGenerator(
+            BASE_DATABASE_ID, BASE_BACKUP_ID, BASE_INSTANCE_CONFIG_ID, BASE_INSTANCE_ID);
   }
 
   @AfterClass
@@ -99,8 +97,7 @@ public class SampleTestBaseV2 {
       System.out.println("Trying to drop " + databaseId);
       try {
         // If the database is not found, it is ignored (no exception is thrown)
-        databaseAdminClient.dropDatabase(
-            getDatabaseName(projectId, instanceId, databaseId));
+        databaseAdminClient.dropDatabase(getDatabaseName(projectId, instanceId, databaseId));
         databaseAdminClient.dropDatabase(
             getDatabaseName(projectId, multiRegionalInstanceId, databaseId));
       } catch (Exception e) {
@@ -116,8 +113,7 @@ public class SampleTestBaseV2 {
       System.out.println("Trying to delete " + backupId);
       try {
         // If the backup is not found, it is ignored (no exception is thrown)
-        databaseAdminClient.deleteBackup(
-            getBackupName(projectId, instanceId, backupId));
+        databaseAdminClient.deleteBackup(getBackupName(projectId, instanceId, backupId));
         databaseAdminClient.deleteBackup(
             getBackupName(projectId, multiRegionalInstanceId, backupId));
       } catch (Exception e) {
@@ -148,16 +144,15 @@ public class SampleTestBaseV2 {
     instanceAdminClient.awaitTermination(AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
   }
 
-  static String getDatabaseName(final String projectId,
-      final String instanceId, final String databaseId) {
+  static String getDatabaseName(
+      final String projectId, final String instanceId, final String databaseId) {
     return String.format(
         "projects/%s/instances/%s/databases/%s", projectId, instanceId, databaseId);
   }
 
-  static String getBackupName(final String projectId,
-      final String instanceId, final String backupId) {
-    return String.format(
-        "projects/%s/instances/%s/backups/%s", projectId, instanceId, backupId);
+  static String getBackupName(
+      final String projectId, final String instanceId, final String backupId) {
+    return String.format("projects/%s/instances/%s/backups/%s", projectId, instanceId, backupId);
   }
 
   static String getInstanceName(final String projectId, final String instanceId) {

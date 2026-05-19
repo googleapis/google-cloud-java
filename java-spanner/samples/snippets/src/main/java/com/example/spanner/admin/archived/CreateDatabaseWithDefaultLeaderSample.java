@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_create_database_with_default_leader]
+// [START spanner_create_database_with_default_leader]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Database;
@@ -42,14 +42,11 @@ public class CreateDatabaseWithDefaultLeaderSample {
 
   static void createDatabaseWithDefaultLeader(
       String projectId, String instanceId, String databaseId, String defaultLeader) {
-    try (Spanner spanner = SpannerOptions
-        .newBuilder()
-        .setProjectId(projectId)
-        .build()
-        .getService()) {
+    try (Spanner spanner =
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
-      final OperationFuture<Database, CreateDatabaseMetadata> operation = databaseAdminClient
-          .createDatabase(
+      final OperationFuture<Database, CreateDatabaseMetadata> operation =
+          databaseAdminClient.createDatabase(
               instanceId,
               databaseId,
               Arrays.asList(
@@ -65,10 +62,13 @@ public class CreateDatabaseWithDefaultLeaderSample {
                       + "  AlbumTitle   STRING(MAX)"
                       + ") PRIMARY KEY (SingerId, AlbumId),"
                       + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
-                  "ALTER DATABASE " + "`" + databaseId + "`"
-                      + " SET OPTIONS ( default_leader = '" + defaultLeader + "' )"
-              )
-          );
+                  "ALTER DATABASE "
+                      + "`"
+                      + databaseId
+                      + "`"
+                      + " SET OPTIONS ( default_leader = '"
+                      + defaultLeader
+                      + "' )"));
       final Database database = operation.get();
       System.out.println("Created database [" + database.getId() + "]");
       System.out.println("\tDefault leader: " + database.getDefaultLeader());
@@ -82,4 +82,4 @@ public class CreateDatabaseWithDefaultLeaderSample {
     }
   }
 }
-//[END spanner_create_database_with_default_leader]
+// [END spanner_create_database_with_default_leader]

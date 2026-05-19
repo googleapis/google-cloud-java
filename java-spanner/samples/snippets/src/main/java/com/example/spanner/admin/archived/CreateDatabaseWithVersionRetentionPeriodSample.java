@@ -41,13 +41,16 @@ public class CreateDatabaseWithVersionRetentionPeriodSample {
     try (Spanner spanner =
         SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
-      createDatabaseWithVersionRetentionPeriod(adminClient, instanceId, databaseId,
-          versionRetentionPeriod);
+      createDatabaseWithVersionRetentionPeriod(
+          adminClient, instanceId, databaseId, versionRetentionPeriod);
     }
   }
 
-  static void createDatabaseWithVersionRetentionPeriod(DatabaseAdminClient adminClient,
-      String instanceId, String databaseId, String versionRetentionPeriod) {
+  static void createDatabaseWithVersionRetentionPeriod(
+      DatabaseAdminClient adminClient,
+      String instanceId,
+      String databaseId,
+      String versionRetentionPeriod) {
     OperationFuture<Database, CreateDatabaseMetadata> op =
         adminClient.createDatabase(
             instanceId,
@@ -65,9 +68,13 @@ public class CreateDatabaseWithVersionRetentionPeriodSample {
                     + "  AlbumTitle   STRING(MAX)"
                     + ") PRIMARY KEY (SingerId, AlbumId),"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
-                "ALTER DATABASE " + "`" + databaseId + "`"
-                    + " SET OPTIONS ( version_retention_period = '" + versionRetentionPeriod + "' )"
-            ));
+                "ALTER DATABASE "
+                    + "`"
+                    + databaseId
+                    + "`"
+                    + " SET OPTIONS ( version_retention_period = '"
+                    + versionRetentionPeriod
+                    + "' )"));
     try {
       Database database = op.get();
       System.out.println("Created database [" + database.getId() + "]");

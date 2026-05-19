@@ -17,7 +17,6 @@
 package com.example.spanner.admin.archived;
 
 import static com.example.spanner.SampleRunner.runSample;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.example.spanner.SampleTestBase;

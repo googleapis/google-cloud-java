@@ -33,28 +33,31 @@ public class CreateDatabaseWithDefaultLeaderSampleIT extends SampleTestBaseV2 {
 
     // Finds possible default leader
 
-    final String instanceConfigId = instanceAdminClient.getInstance(
-        InstanceName.of(projectId, multiRegionalInstanceId)).getConfig();
+    final String instanceConfigId =
+        instanceAdminClient
+            .getInstance(InstanceName.of(projectId, multiRegionalInstanceId))
+            .getConfig();
     final InstanceConfig config = instanceAdminClient.getInstanceConfig(instanceConfigId);
     assertTrue(
         "Expected instance config " + instanceConfigId + " to have at least one leader option",
-        config.getLeaderOptionsCount() > 0
-    );
+        config.getLeaderOptionsCount() > 0);
     final String defaultLeader = config.getLeaderOptions(0);
 
     // Runs sample
-    final String out = SampleRunner.runSample(() ->
-        CreateDatabaseWithDefaultLeaderSample.createDatabaseWithDefaultLeader(
-            getInstanceName(projectId, multiRegionalInstanceId),
-            databaseId,
-            defaultLeader
-        )
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                CreateDatabaseWithDefaultLeaderSample.createDatabaseWithDefaultLeader(
+                    getInstanceName(projectId, multiRegionalInstanceId),
+                    databaseId,
+                    defaultLeader));
 
     assertTrue(
-        "Expected created database to have default leader " + defaultLeader + "."
-            + " Output received was " + out,
-        out.contains("Default leader: " + defaultLeader)
-    );
+        "Expected created database to have default leader "
+            + defaultLeader
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("Default leader: " + defaultLeader));
   }
 }

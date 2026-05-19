@@ -39,16 +39,15 @@ public class SampleTestBase {
   protected static final String instanceId = System.getProperty("spanner.test.instance");
   protected static final String multiRegionalInstanceId =
       System.getProperty("spanner.test.instance.mr");
-  protected static final String instanceConfigName = System
-      .getProperty("spanner.test.instance.config");
+  protected static final String instanceConfigName =
+      System.getProperty("spanner.test.instance.config");
   protected static SampleIdGenerator idGenerator;
 
   @BeforeClass
   public static void beforeClass() {
     final String serverUrl = "";
-    final SpannerOptions.Builder optionsBuilder = SpannerOptions
-        .newBuilder()
-        .setAutoThrottleAdministrativeRequests();
+    final SpannerOptions.Builder optionsBuilder =
+        SpannerOptions.newBuilder().setAutoThrottleAdministrativeRequests();
     if (!serverUrl.isEmpty()) {
       optionsBuilder.setHost(serverUrl);
     }
@@ -57,8 +56,9 @@ public class SampleTestBase {
     spanner = options.getService();
     databaseAdminClient = spanner.getDatabaseAdminClient();
     instanceAdminClient = spanner.getInstanceAdminClient();
-    idGenerator = new SampleIdGenerator(
-        BASE_DATABASE_ID, BASE_BACKUP_ID, BASE_INSTANCE_CONFIG_ID, BASE_INSTANCE_ID);
+    idGenerator =
+        new SampleIdGenerator(
+            BASE_DATABASE_ID, BASE_BACKUP_ID, BASE_INSTANCE_CONFIG_ID, BASE_INSTANCE_ID);
   }
 
   @AfterClass

@@ -16,12 +16,11 @@
 
 package com.example.spanner;
 
-//[START spanner_async_read_write_transaction]
+// [START spanner_async_read_write_transaction]
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.spanner.AsyncRunner;
-import com.google.cloud.spanner.AsyncRunner.AsyncWork;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Key;
@@ -30,7 +29,6 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Struct;
-import com.google.cloud.spanner.TransactionContext;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -103,8 +101,7 @@ class AsyncRunnerExample {
                           .bind("AlbumBudget")
                           .to(album2Budget)
                           .build();
-                  return txn.batchUpdateAsync(
-                      ImmutableList.of(updateStatement1, updateStatement2));
+                  return txn.batchUpdateAsync(ImmutableList.of(updateStatement1, updateStatement2));
                 } else {
                   return ApiFutures.immediateFuture(new long[] {0L, 0L});
                 }
@@ -131,4 +128,4 @@ class AsyncRunnerExample {
     executor.shutdown();
   }
 }
-//[END spanner_async_read_write_transaction]
+// [END spanner_async_read_write_transaction]

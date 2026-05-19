@@ -39,16 +39,15 @@ class AddNumericColumnSample {
   static void addNumericColumn(String projectId, String instanceId, String databaseId)
       throws InterruptedException, ExecutionException {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       // Wait for the operation to finish.
       // This will throw an ExecutionException if the operation fails.
-      databaseAdminClient.updateDatabaseDdlAsync(
-          DatabaseName.of(projectId, instanceId, databaseId),
-          ImmutableList.of("ALTER TABLE Venues ADD COLUMN Revenue NUMERIC")).get();
+      databaseAdminClient
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
+              ImmutableList.of("ALTER TABLE Venues ADD COLUMN Revenue NUMERIC"))
+          .get();
       System.out.printf("Successfully added column `Revenue`%n");
     }
   }

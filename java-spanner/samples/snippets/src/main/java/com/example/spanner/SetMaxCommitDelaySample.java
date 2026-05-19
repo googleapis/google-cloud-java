@@ -38,31 +38,33 @@ public class SetMaxCommitDelaySample {
 
     try (Spanner spanner =
         SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
-      final DatabaseClient databaseClient = spanner
-          .getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
+      final DatabaseClient databaseClient =
+          spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       setMaxCommitDelay(databaseClient);
     }
   }
 
   static void setMaxCommitDelay(DatabaseClient databaseClient) {
-    final CommitResponse commitResponse = databaseClient.writeWithOptions(Arrays.asList(
-        Mutation.newInsertOrUpdateBuilder("Albums")
-            .set("SingerId")
-            .to("1")
-            .set("AlbumId")
-            .to("1")
-            .set("MarketingBudget")
-            .to("200000")
-            .build(),
-        Mutation.newInsertOrUpdateBuilder("Albums")
-            .set("SingerId")
-            .to("2")
-            .set("AlbumId")
-            .to("2")
-            .set("MarketingBudget")
-            .to("400000")
-            .build()
-    ), Options.maxCommitDelay(Duration.ofMillis(100)));
+    final CommitResponse commitResponse =
+        databaseClient.writeWithOptions(
+            Arrays.asList(
+                Mutation.newInsertOrUpdateBuilder("Albums")
+                    .set("SingerId")
+                    .to("1")
+                    .set("AlbumId")
+                    .to("1")
+                    .set("MarketingBudget")
+                    .to("200000")
+                    .build(),
+                Mutation.newInsertOrUpdateBuilder("Albums")
+                    .set("SingerId")
+                    .to("2")
+                    .set("AlbumId")
+                    .to("2")
+                    .set("MarketingBudget")
+                    .to("400000")
+                    .build()),
+            Options.maxCommitDelay(Duration.ofMillis(100)));
 
     System.out.println(
         "Updated data with timestamp + " + commitResponse.getCommitTimestamp() + ".");

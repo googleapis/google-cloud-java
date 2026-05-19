@@ -87,23 +87,25 @@ public class PgSpannerStandaloneExamplesIT {
             dbClient.newDatabaseBuilder(dbId).setDialect(Dialect.POSTGRESQL).build(),
             Collections.emptyList())
         .get();
-    dbClient.updateDatabaseDdl(
-        instanceId,
-        databaseId,
-        Arrays.asList(
-            "CREATE TABLE Singers ("
-                + "  SingerId   bigint NOT NULL,"
-                + "  FirstName  character varying(1024),"
-                + "  LastName   character varying(1024),"
-                + "  SingerInfo bytea,"
-                + "  PRIMARY KEY (SingerId)"
-                + ")",
-            "CREATE TABLE Venues ("
-                + "VenueId      bigint NOT NULL,"
-                + "Revenue      NUMERIC,"
-                + "VenueDetails JSONB,"
-                + "PRIMARY KEY (VenueId))"),
-        null).get();
+    dbClient
+        .updateDatabaseDdl(
+            instanceId,
+            databaseId,
+            Arrays.asList(
+                "CREATE TABLE Singers ("
+                    + "  SingerId   bigint NOT NULL,"
+                    + "  FirstName  character varying(1024),"
+                    + "  LastName   character varying(1024),"
+                    + "  SingerInfo bytea,"
+                    + "  PRIMARY KEY (SingerId)"
+                    + ")",
+                "CREATE TABLE Venues ("
+                    + "VenueId      bigint NOT NULL,"
+                    + "Revenue      NUMERIC,"
+                    + "VenueDetails JSONB,"
+                    + "PRIMARY KEY (VenueId))"),
+            null)
+        .get();
   }
 
   @AfterClass

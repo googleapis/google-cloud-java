@@ -50,29 +50,32 @@ public class CreateBackupWithEncryptionKey {
         SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
       createBackupWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          databaseId,
-          backupId,
-          kmsKeyName);
+          adminClient, projectId, instanceId, databaseId, backupId, kmsKeyName);
     }
   }
 
-  static Void createBackupWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String databaseId, String backupId, String kmsKeyName)
+  static Void createBackupWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String databaseId,
+      String backupId,
+      String kmsKeyName)
       throws InterruptedException {
     // Set expire time to 14 days from now.
-    final Timestamp expireTime = Timestamp.ofTimeMicroseconds(TimeUnit.MICROSECONDS.convert(
-        System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
-    final Backup backupToCreate = adminClient
-        .newBackupBuilder(BackupId.of(projectId, instanceId, backupId))
-        .setDatabase(DatabaseId.of(projectId, instanceId, databaseId))
-        .setExpireTime(expireTime)
-        .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
-        .build();
-    final OperationFuture<Backup, CreateBackupMetadata> operation = adminClient
-        .createBackup(backupToCreate);
+    final Timestamp expireTime =
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
+    final Backup backupToCreate =
+        adminClient
+            .newBackupBuilder(BackupId.of(projectId, instanceId, backupId))
+            .setDatabase(DatabaseId.of(projectId, instanceId, databaseId))
+            .setExpireTime(expireTime)
+            .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
+            .build();
+    final OperationFuture<Backup, CreateBackupMetadata> operation =
+        adminClient.createBackup(backupToCreate);
 
     Backup backup;
     try {
@@ -98,8 +101,7 @@ public class CreateBackupWithEncryptionKey {
             backup.getProto().getCreateTime().getSeconds(),
             backup.getProto().getCreateTime().getNanos(),
             OffsetDateTime.now().getOffset()),
-        kmsKeyName
-    );
+        kmsKeyName);
 
     return null;
   }

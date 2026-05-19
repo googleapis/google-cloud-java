@@ -46,25 +46,26 @@ public class RestoreBackupWithEncryptionKey {
         SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
       restoreBackupWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          backupId,
-          databaseId,
-          kmsKeyName);
+          adminClient, projectId, instanceId, backupId, databaseId, kmsKeyName);
     }
   }
 
-  static Void restoreBackupWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String backupId, String restoreId, String kmsKeyName) {
-    final Restore restore = adminClient
-        .newRestoreBuilder(
-            BackupId.of(projectId, instanceId, backupId),
-            DatabaseId.of(projectId, instanceId, restoreId))
-        .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
-        .build();
-    final OperationFuture<Database, RestoreDatabaseMetadata> operation = adminClient
-        .restoreDatabase(restore);
+  static Void restoreBackupWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String backupId,
+      String restoreId,
+      String kmsKeyName) {
+    final Restore restore =
+        adminClient
+            .newRestoreBuilder(
+                BackupId.of(projectId, instanceId, backupId),
+                DatabaseId.of(projectId, instanceId, restoreId))
+            .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
+            .build();
+    final OperationFuture<Database, RestoreDatabaseMetadata> operation =
+        adminClient.restoreDatabase(restore);
 
     Database database;
     try {
@@ -84,8 +85,7 @@ public class RestoreBackupWithEncryptionKey {
         database.getRestoreInfo().getSourceDatabase(),
         database.getId(),
         database.getRestoreInfo().getBackup(),
-        database.getEncryptionConfig().getKmsKeyName()
-    );
+        database.getEncryptionConfig().getKmsKeyName());
     return null;
   }
 }

@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_get_instance_config]
+// [START spanner_get_instance_config]
 
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
@@ -35,23 +35,18 @@ public class GetInstanceConfigSample {
 
   static void getInstanceConfig(String projectId, String instanceConfigId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
-      final InstanceConfigName instanceConfigName = InstanceConfigName.of(projectId,
-          instanceConfigId);
+      final InstanceConfigName instanceConfigName =
+          InstanceConfigName.of(projectId, instanceConfigId);
 
       final InstanceConfig instanceConfig =
           instanceAdminClient.getInstanceConfig(instanceConfigName.toString());
 
       System.out.printf(
           "Available leader options for instance config %s: %s%n",
-          instanceConfig.getName(),
-          instanceConfig.getLeaderOptionsList()
-      );
+          instanceConfig.getName(), instanceConfig.getLeaderOptionsList());
     }
   }
 }
-//[END spanner_get_instance_config]
+// [END spanner_get_instance_config]

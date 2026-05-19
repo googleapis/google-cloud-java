@@ -45,11 +45,12 @@ public class AlterSequenceSample {
 
   static void alterSequence(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
 
       databaseAdminClient
-          .updateDatabaseDdlAsync(DatabaseName.of(projectId, instanceId, databaseId),
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
               ImmutableList.of(
                   "ALTER SEQUENCE Seq SET OPTIONS "
                       + "(skip_range_min = 1000, skip_range_max = 5000000)"))

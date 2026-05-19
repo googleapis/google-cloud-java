@@ -28,10 +28,13 @@ public class CreateInstanceWithAsymmetricAutoscalingConfigSampleIT extends Sampl
     String instanceId = idGenerator.generateInstanceId();
     String out =
         SampleRunner.runSample(
-            () -> CreateInstanceWithAsymmetricAutoscalingConfigExample
-                    .createInstance(projectId, instanceId));
+            () ->
+                CreateInstanceWithAsymmetricAutoscalingConfigExample.createInstance(
+                    projectId, instanceId));
     assertThat(out)
-        .contains(String.format("Asymmetric Autoscaling instance %s",
-            InstanceName.of(projectId, instanceId).toString()));
+        .contains(
+            String.format(
+                "Asymmetric Autoscaling instance %s",
+                InstanceName.of(projectId, instanceId).toString()));
   }
 }

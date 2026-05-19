@@ -37,10 +37,7 @@ public class PgInsertUsingDmlReturningSample {
 
   static void insertUsingDmlReturning(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseClient dbClient =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       // Insert records into SINGERS table and returns the

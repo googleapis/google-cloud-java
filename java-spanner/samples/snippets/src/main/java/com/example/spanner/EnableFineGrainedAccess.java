@@ -51,14 +51,15 @@ public class EnableFineGrainedAccess {
       String title,
       String role) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       final GetPolicyOptions options =
           GetPolicyOptions.newBuilder().setRequestedPolicyVersion(3).build();
       final GetIamPolicyRequest getRequest =
           GetIamPolicyRequest.newBuilder()
               .setResource(DatabaseName.of(projectId, instanceId, databaseId).toString())
-              .setOptions(options).build();
+              .setOptions(options)
+              .build();
       final Policy policy = databaseAdminClient.getIamPolicy(getRequest);
       int policyVersion = policy.getVersion();
       // The policy in the response from getDatabaseIAMPolicy might use the policy version
@@ -80,9 +81,12 @@ public class EnableFineGrainedAccess {
           Binding.newBuilder()
               .setRole("roles/spanner.databaseRoleUser")
               .setCondition(
-                  Expr.newBuilder().setDescription(title).setExpression(
-                      String.format("resource.name.endsWith(\"/databaseRoles/%s\")", role)
-                  ).setTitle(title).build())
+                  Expr.newBuilder()
+                      .setDescription(title)
+                      .setExpression(
+                          String.format("resource.name.endsWith(\"/databaseRoles/%s\")", role))
+                      .setTitle(title)
+                      .build())
               .addAllMembers(ImmutableList.of(iamMember))
               .build();
       ImmutableList<Binding> bindings =
@@ -100,7 +104,8 @@ public class EnableFineGrainedAccess {
       final SetIamPolicyRequest setRequest =
           SetIamPolicyRequest.newBuilder()
               .setResource(DatabaseName.of(projectId, instanceId, databaseId).toString())
-              .setPolicy(policyWithConditions).build();
+              .setPolicy(policyWithConditions)
+              .build();
       final Policy response = databaseAdminClient.setIamPolicy(setRequest);
       System.out.printf(
           "Enabled fine-grained access in IAM with version %d%n", response.getVersion());

@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_query_information_schema_database_options]
+// [START spanner_query_information_schema_database_options]
 
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -37,21 +37,19 @@ public class QueryInformationSchemaDatabaseOptionsSample {
 
   static void queryInformationSchemaDatabaseOptions(
       String projectId, String instanceId, String databaseId) {
-    try (Spanner spanner = SpannerOptions
-        .newBuilder()
-        .setProjectId(projectId)
-        .build()
-        .getService()) {
+    try (Spanner spanner =
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseId id = DatabaseId.of(projectId, instanceId, databaseId);
       final DatabaseClient databaseClient = spanner.getDatabaseClient(id);
 
-      try (ResultSet resultSet = databaseClient
-          .singleUse()
-          .executeQuery(Statement.of(
-              "SELECT OPTION_NAME, OPTION_VALUE"
-                  + " FROM INFORMATION_SCHEMA.DATABASE_OPTIONS"
-                  + " WHERE OPTION_NAME = 'default_leader'")
-          )) {
+      try (ResultSet resultSet =
+          databaseClient
+              .singleUse()
+              .executeQuery(
+                  Statement.of(
+                      "SELECT OPTION_NAME, OPTION_VALUE"
+                          + " FROM INFORMATION_SCHEMA.DATABASE_OPTIONS"
+                          + " WHERE OPTION_NAME = 'default_leader'"))) {
         if (resultSet.next()) {
           final String optionName = resultSet.getString("OPTION_NAME");
           final String optionValue = resultSet.getString("OPTION_VALUE");
@@ -59,11 +57,10 @@ public class QueryInformationSchemaDatabaseOptionsSample {
           System.out.println("The " + optionName + " for " + id + " is " + optionValue);
         } else {
           System.out.println(
-              "Database " + id + " does not have a value for option 'default_leader'"
-          );
+              "Database " + id + " does not have a value for option 'default_leader'");
         }
       }
     }
   }
 }
-//[END spanner_query_information_schema_database_options]
+// [END spanner_query_information_schema_database_options]

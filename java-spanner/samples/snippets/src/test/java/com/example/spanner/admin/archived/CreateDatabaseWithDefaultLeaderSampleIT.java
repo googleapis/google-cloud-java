@@ -31,31 +31,28 @@ public class CreateDatabaseWithDefaultLeaderSampleIT extends SampleTestBase {
     final String databaseId = idGenerator.generateDatabaseId();
 
     // Finds possible default leader
-    final InstanceConfigId instanceConfigId = instanceAdminClient
-        .getInstance(multiRegionalInstanceId)
-        .getInstanceConfigId();
-    final InstanceConfig config = instanceAdminClient
-        .getInstanceConfig(instanceConfigId.getInstanceConfig());
+    final InstanceConfigId instanceConfigId =
+        instanceAdminClient.getInstance(multiRegionalInstanceId).getInstanceConfigId();
+    final InstanceConfig config =
+        instanceAdminClient.getInstanceConfig(instanceConfigId.getInstanceConfig());
     assertTrue(
         "Expected instance config " + instanceConfigId + " to have at least one leader option",
-        config.getLeaderOptions().size() > 0
-    );
+        config.getLeaderOptions().size() > 0);
     final String defaultLeader = config.getLeaderOptions().get(0);
 
     // Runs sample
-    final String out = SampleRunner.runSample(() ->
-        CreateDatabaseWithDefaultLeaderSample.createDatabaseWithDefaultLeader(
-            projectId,
-            multiRegionalInstanceId,
-            databaseId,
-            defaultLeader
-        )
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                CreateDatabaseWithDefaultLeaderSample.createDatabaseWithDefaultLeader(
+                    projectId, multiRegionalInstanceId, databaseId, defaultLeader));
 
     assertTrue(
-        "Expected created database to have default leader " + defaultLeader + "."
-            + " Output received was " + out,
-        out.contains("Default leader: " + defaultLeader)
-    );
+        "Expected created database to have default leader "
+            + defaultLeader
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("Default leader: " + defaultLeader));
   }
 }

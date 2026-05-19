@@ -39,10 +39,7 @@ public class PgInterleavedTableSample {
 
   static void pgInterleavedTable(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
 
       // The Spanner PostgreSQL dialect extends the PostgreSQL dialect with certain Spanner

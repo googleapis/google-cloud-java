@@ -60,6 +60,7 @@ public class BatchWriteAtLeastOnceSample {
               .set("LastName")
               .to("Terry")
               .build());
+
   private static final MutationGroup MUTATION_GROUP2 =
       MutationGroup.of(
           Mutation.newInsertOrUpdateBuilder("Singers")
@@ -111,8 +112,7 @@ public class BatchWriteAtLeastOnceSample {
       // non-atomically and respond back with a stream of BatchWriteResponse.
       ServerStream<BatchWriteResponse> responses =
           dbClient.batchWriteAtLeastOnce(
-              ImmutableList.of(MUTATION_GROUP1, MUTATION_GROUP2),
-              Options.tag("batch-write-tag"));
+              ImmutableList.of(MUTATION_GROUP1, MUTATION_GROUP2), Options.tag("batch-write-tag"));
 
       // Iterates through the results in the stream response and prints the MutationGroup indexes,
       // commit timestamp and status.
@@ -124,8 +124,10 @@ public class BatchWriteAtLeastOnceSample {
         } else {
           System.out.printf(
               "Mutation group indexes %s could not be applied with error code %s and "
-                  + "error message %s", response.getIndexesList(),
-              Code.forNumber(response.getStatus().getCode()), response.getStatus().getMessage());
+                  + "error message %s",
+              response.getIndexesList(),
+              Code.forNumber(response.getStatus().getCode()),
+              response.getStatus().getMessage());
         }
       }
     }

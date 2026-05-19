@@ -38,10 +38,7 @@ class PgBatchDmlSample {
 
   static void batchDml(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
 

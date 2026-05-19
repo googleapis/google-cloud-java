@@ -38,10 +38,7 @@ public class DeleteUsingDmlReturningSample {
   static void deleteUsingDmlReturningSample(
       String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseClient dbClient =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       // Delete records from SINGERS table satisfying a

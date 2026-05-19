@@ -44,21 +44,22 @@ public class UpdateDatabaseSample {
     updateDatabase(projectId, instanceId, databaseId);
   }
 
-  static void updateDatabase(
-      String projectId, String instanceId, String databaseId) {
+  static void updateDatabase(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       final Database database =
           Database.newBuilder()
               .setName(DatabaseName.of(projectId, instanceId, databaseId).toString())
-              .setEnableDropProtection(true).build();
+              .setEnableDropProtection(true)
+              .build();
       final UpdateDatabaseRequest updateDatabaseRequest =
           UpdateDatabaseRequest.newBuilder()
               .setDatabase(database)
               .setUpdateMask(
-                  FieldMask.newBuilder().addAllPaths(
-                      Lists.newArrayList("enable_drop_protection")).build())
+                  FieldMask.newBuilder()
+                      .addAllPaths(Lists.newArrayList("enable_drop_protection"))
+                      .build())
               .build();
       OperationFuture<Database, UpdateDatabaseMetadata> operation =
           databaseAdminClient.updateDatabaseAsync(updateDatabaseRequest);

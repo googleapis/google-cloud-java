@@ -45,45 +45,44 @@ public class CreateDatabaseWithEncryptionKey {
     try (Spanner spanner =
         SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
-      createDatabaseWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          databaseId,
-          kmsKeyName);
+      createDatabaseWithEncryptionKey(adminClient, projectId, instanceId, databaseId, kmsKeyName);
     }
   }
 
-  static void createDatabaseWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String databaseId, String kmsKeyName) {
-    final Database databaseToCreate = adminClient
-        .newDatabaseBuilder(DatabaseId.of(projectId, instanceId, databaseId))
-        .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
-        .build();
-    final OperationFuture<Database, CreateDatabaseMetadata> operation = adminClient
-        .createDatabase(databaseToCreate, Arrays.asList(
-            "CREATE TABLE Singers ("
-                + "  SingerId   INT64 NOT NULL,"
-                + "  FirstName  STRING(1024),"
-                + "  LastName   STRING(1024),"
-                + "  SingerInfo BYTES(MAX)"
-                + ") PRIMARY KEY (SingerId)",
-            "CREATE TABLE Albums ("
-                + "  SingerId     INT64 NOT NULL,"
-                + "  AlbumId      INT64 NOT NULL,"
-                + "  AlbumTitle   STRING(MAX)"
-                + ") PRIMARY KEY (SingerId, AlbumId),"
-                + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"
-        ));
+  static void createDatabaseWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String databaseId,
+      String kmsKeyName) {
+    final Database databaseToCreate =
+        adminClient
+            .newDatabaseBuilder(DatabaseId.of(projectId, instanceId, databaseId))
+            .setEncryptionConfig(EncryptionConfigs.customerManagedEncryption(kmsKeyName))
+            .build();
+    final OperationFuture<Database, CreateDatabaseMetadata> operation =
+        adminClient.createDatabase(
+            databaseToCreate,
+            Arrays.asList(
+                "CREATE TABLE Singers ("
+                    + "  SingerId   INT64 NOT NULL,"
+                    + "  FirstName  STRING(1024),"
+                    + "  LastName   STRING(1024),"
+                    + "  SingerInfo BYTES(MAX)"
+                    + ") PRIMARY KEY (SingerId)",
+                "CREATE TABLE Albums ("
+                    + "  SingerId     INT64 NOT NULL,"
+                    + "  AlbumId      INT64 NOT NULL,"
+                    + "  AlbumTitle   STRING(MAX)"
+                    + ") PRIMARY KEY (SingerId, AlbumId),"
+                    + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
     try {
       System.out.println("Waiting for operation to complete...");
       Database createdDatabase = operation.get(120, TimeUnit.SECONDS);
 
       System.out.printf(
           "Database %s created with encryption key %s%n",
-          createdDatabase.getId(),
-          createdDatabase.getEncryptionConfig().getKmsKeyName()
-      );
+          createdDatabase.getId(), createdDatabase.getEncryptionConfig().getKmsKeyName());
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
       throw SpannerExceptionFactory.asSpannerException(e.getCause());

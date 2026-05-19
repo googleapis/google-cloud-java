@@ -36,8 +36,8 @@ public class UpdateDatabaseSampleIT extends SampleTestBaseV2 {
     // Create database
     final String databaseId = idGenerator.generateDatabaseId();
     databaseAdminClient
-        .createDatabaseAsync(getInstanceName(projectId, instanceId),
-            "CREATE DATABASE `" + databaseId + "`")
+        .createDatabaseAsync(
+            getInstanceName(projectId, instanceId), "CREATE DATABASE `" + databaseId + "`")
         .get(5, TimeUnit.MINUTES);
 
     // Runs sample
@@ -46,20 +46,23 @@ public class UpdateDatabaseSampleIT extends SampleTestBaseV2 {
             () -> UpdateDatabaseSample.updateDatabase(projectId, instanceId, databaseId));
     assertTrue(
         "Expected that database would have been updated. Output received was " + out,
-        out.contains(String.format(
-            "Updated database %s", DatabaseName.of(projectId, instanceId, databaseId))));
+        out.contains(
+            String.format(
+                "Updated database %s", DatabaseName.of(projectId, instanceId, databaseId))));
 
     // Cleanup
     final com.google.spanner.admin.database.v1.Database database =
         com.google.spanner.admin.database.v1.Database.newBuilder()
             .setName(DatabaseName.of(projectId, instanceId, databaseId).toString())
-            .setEnableDropProtection(false).build();
+            .setEnableDropProtection(false)
+            .build();
     final UpdateDatabaseRequest updateDatabaseRequest =
         UpdateDatabaseRequest.newBuilder()
             .setDatabase(database)
             .setUpdateMask(
-                FieldMask.newBuilder().addAllPaths(
-                    Lists.newArrayList("enable_drop_protection")).build())
+                FieldMask.newBuilder()
+                    .addAllPaths(Lists.newArrayList("enable_drop_protection"))
+                    .build())
             .build();
 
     OperationFuture<Database, UpdateDatabaseMetadata> operation =

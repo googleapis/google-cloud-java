@@ -42,12 +42,19 @@ public class CopyBackupIT extends SampleTestBaseV2 {
 
   @BeforeClass
   public static void setUp() {
-    String keyLocation = Preconditions
-        .checkNotNull(System.getProperty("spanner.test.key.location"));
+    String keyLocation =
+        Preconditions.checkNotNull(System.getProperty("spanner.test.key.location"));
     String keyRing = Preconditions.checkNotNull(System.getProperty("spanner.test.key.ring"));
     String keyName = Preconditions.checkNotNull(System.getProperty("spanner.test.key.name"));
-    key = "projects/" + projectId + "/locations/" + keyLocation + "/keyRings/" + keyRing
-        + "/cryptoKeys/" + keyName;
+    key =
+        "projects/"
+            + projectId
+            + "/locations/"
+            + keyLocation
+            + "/keyRings/"
+            + keyRing
+            + "/cryptoKeys/"
+            + keyName;
   }
 
   @Test
@@ -56,31 +63,54 @@ public class CopyBackupIT extends SampleTestBaseV2 {
     final String sourceBackupId = idGenerator.generateBackupId();
     final String destinationBackupId = idGenerator.generateBackupId();
 
-    String out = SampleRunner.runSample(() ->
-        SpannerSample.createDatabase(
-            databaseAdminClient, InstanceName.of(projectId, instanceId), databaseId));
-    assertThat(out).contains(String.format(
-        "Created database [%s]", DatabaseName.of(projectId, instanceId, databaseId)));
+    String out =
+        SampleRunner.runSample(
+            () ->
+                SpannerSample.createDatabase(
+                    databaseAdminClient, InstanceName.of(projectId, instanceId), databaseId));
+    assertThat(out)
+        .contains(
+            String.format(
+                "Created database [%s]", DatabaseName.of(projectId, instanceId, databaseId)));
 
-    out = SampleRunner.runSampleWithRetry(() ->
-        CreateBackupWithEncryptionKey.createBackupWithEncryptionKey(
-            databaseAdminClient, projectId, instanceId, databaseId, sourceBackupId, key
-        ), new ShouldRetryBackupOperation());
-    assertThat(out).containsMatch(
-        "Backup projects/" + projectId + "/instances/" + instanceId + "/backups/"
-            + sourceBackupId + " of size \\d+ bytes was created at (.*) using encryption key "
-            + key);
+    out =
+        SampleRunner.runSampleWithRetry(
+            () ->
+                CreateBackupWithEncryptionKey.createBackupWithEncryptionKey(
+                    databaseAdminClient, projectId, instanceId, databaseId, sourceBackupId, key),
+            new ShouldRetryBackupOperation());
+    assertThat(out)
+        .containsMatch(
+            "Backup projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/backups/"
+                + sourceBackupId
+                + " of size \\d+ bytes was created at (.*) using encryption key "
+                + key);
 
-    out = SampleRunner.runSampleWithRetry(() ->
-        CopyBackupSample.copyBackup(
-            databaseAdminClient, projectId, instanceId, sourceBackupId, destinationBackupId
-        ), new ShouldRetryBackupOperation());
+    out =
+        SampleRunner.runSampleWithRetry(
+            () ->
+                CopyBackupSample.copyBackup(
+                    databaseAdminClient,
+                    projectId,
+                    instanceId,
+                    sourceBackupId,
+                    destinationBackupId),
+            new ShouldRetryBackupOperation());
 
-    assertThat(out).contains("Copied backup [" + BackupName.of(
-        projectId, instanceId, destinationBackupId).toString() + "]");
-    assertThat(out).containsMatch(String.format(
-        "Backup projects/%s/instances/%s/backups/%s of size \\d+ bytes was copied at (.*)",
-        projectId, instanceId, destinationBackupId, key));
+    assertThat(out)
+        .contains(
+            "Copied backup ["
+                + BackupName.of(projectId, instanceId, destinationBackupId).toString()
+                + "]");
+    assertThat(out)
+        .containsMatch(
+            String.format(
+                "Backup projects/%s/instances/%s/backups/%s of size \\d+ bytes was copied at (.*)",
+                projectId, instanceId, destinationBackupId, key));
   }
 
   static class ShouldRetryBackupOperation implements Predicate<SpannerException> {
@@ -95,9 +125,12 @@ public class CopyBackupIT extends SampleTestBaseV2 {
         attempts++;
         if (attempts == MAX_ATTEMPTS) {
           // Throw custom exception so it is easier to locate in the log why it went wrong.
-          throw SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED,
-              String.format("Operation failed %d times because of other pending operations. "
-                  + "Giving up operation.\n", attempts),
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.DEADLINE_EXCEEDED,
+              String.format(
+                  "Operation failed %d times because of other pending operations. "
+                      + "Giving up operation.\n",
+                  attempts),
               e);
         }
         // Wait one minute before retrying.
@@ -108,4 +141,3 @@ public class CopyBackupIT extends SampleTestBaseV2 {
     }
   }
 }
-

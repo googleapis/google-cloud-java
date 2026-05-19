@@ -49,35 +49,40 @@ class StatementTimeoutExample {
   }
 
   static void executeSqlWithTimeout(DatabaseClient client) {
-    CallContextConfigurator configurator = new CallContextConfigurator() {
-      public <ReqT, RespT> ApiCallContext configure(ApiCallContext context, ReqT request,
-          MethodDescriptor<ReqT, RespT> method) {
-        // DML uses the ExecuteSql RPC.
-        if (method == SpannerGrpc.getExecuteSqlMethod()) {
-          // NOTE: You can use a GrpcCallContext to set a custom timeout for a single RPC
-          // invocation. This timeout can however ONLY BE SHORTER than the default timeout
-          // for the RPC. If you set a timeout that is longer than the default timeout, then
-          // the default timeout will be used.
-          return GrpcCallContext.createDefault()
-              .withCallOptions(CallOptions.DEFAULT.withDeadlineAfter(60L, TimeUnit.SECONDS));
-        }
-        // Return null to indicate that the default should be used for other methods.
-        return null;
-      }
-    };
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            // DML uses the ExecuteSql RPC.
+            if (method == SpannerGrpc.getExecuteSqlMethod()) {
+              // NOTE: You can use a GrpcCallContext to set a custom timeout for a single RPC
+              // invocation. This timeout can however ONLY BE SHORTER than the default timeout
+              // for the RPC. If you set a timeout that is longer than the default timeout, then
+              // the default timeout will be used.
+              return GrpcCallContext.createDefault()
+                  .withCallOptions(CallOptions.DEFAULT.withDeadlineAfter(60L, TimeUnit.SECONDS));
+            }
+            // Return null to indicate that the default should be used for other methods.
+            return null;
+          }
+        };
     // Create a context that uses the custom call configuration.
     Context context =
         Context.current().withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, configurator);
     // Run the transaction in the custom context.
-    context.run(() ->
-        client.readWriteTransaction().<long[]>run(transaction -> {
-          String sql = "INSERT INTO Singers (SingerId, FirstName, LastName)\n"
-              + "VALUES (20, 'George', 'Washington')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record inserted.%n", rowCount);
-          return null;
-        })
-    );
+    context.run(
+        () ->
+            client
+                .readWriteTransaction()
+                .<long[]>run(
+                    transaction -> {
+                      String sql =
+                          "INSERT INTO Singers (SingerId, FirstName, LastName)\n"
+                              + "VALUES (20, 'George', 'Washington')";
+                      long rowCount = transaction.executeUpdate(Statement.of(sql));
+                      System.out.printf("%d record inserted.%n", rowCount);
+                      return null;
+                    }));
   }
   // [END spanner_set_statement_timeout]
 }

@@ -28,9 +28,7 @@ public class ListDatabasesIT extends SampleTestBaseV2 {
   @Test
   public void testListDatabaseRoles() throws Exception {
     final String out =
-        SampleRunner.runSample(
-            () ->
-                ListDatabasesSample.listDatabases(projectId, instanceId));
+        SampleRunner.runSample(() -> ListDatabasesSample.listDatabases(projectId, instanceId));
     assertTrue(out.contains("Databases for projects"));
   }
 }

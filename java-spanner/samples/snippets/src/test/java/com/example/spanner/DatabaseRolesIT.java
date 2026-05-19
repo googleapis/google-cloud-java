@@ -34,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for FGAC samples for GoogleStandardSql dialect.
- */
+/** Integration tests for FGAC samples for GoogleStandardSql dialect. */
 @RunWith(JUnit4.class)
 public class DatabaseRolesIT extends SampleTestBaseV2 {
 
@@ -51,22 +49,24 @@ public class DatabaseRolesIT extends SampleTestBaseV2 {
                 com.google.spanner.admin.database.v1.InstanceName.of(projectId, instanceId)
                     .toString())
             .setCreateStatement("CREATE DATABASE `" + database + "`")
-            .addAllExtraStatements(Lists.newArrayList(
-                "CREATE TABLE Singers ("
-                    + "  SingerId   INT64 NOT NULL,"
-                    + "  FirstName  STRING(1024),"
-                    + "  LastName   STRING(1024),"
-                    + "  SingerInfo BYTES(MAX),"
-                    + "  FullName STRING(2048) AS "
-                    + "  (ARRAY_TO_STRING([FirstName, LastName], \" \")) STORED"
-                    + ") PRIMARY KEY (SingerId)",
-                "CREATE TABLE Albums ("
-                    + "  SingerId     INT64 NOT NULL,"
-                    + "  AlbumId      INT64 NOT NULL,"
-                    + "  AlbumTitle   STRING(MAX),"
-                    + "  MarketingBudget INT64"
-                    + ") PRIMARY KEY (SingerId, AlbumId),"
-                    + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE")).build();
+            .addAllExtraStatements(
+                Lists.newArrayList(
+                    "CREATE TABLE Singers ("
+                        + "  SingerId   INT64 NOT NULL,"
+                        + "  FirstName  STRING(1024),"
+                        + "  LastName   STRING(1024),"
+                        + "  SingerInfo BYTES(MAX),"
+                        + "  FullName STRING(2048) AS "
+                        + "  (ARRAY_TO_STRING([FirstName, LastName], \" \")) STORED"
+                        + ") PRIMARY KEY (SingerId)",
+                    "CREATE TABLE Albums ("
+                        + "  SingerId     INT64 NOT NULL,"
+                        + "  AlbumId      INT64 NOT NULL,"
+                        + "  AlbumTitle   STRING(MAX),"
+                        + "  MarketingBudget INT64"
+                        + ") PRIMARY KEY (SingerId, AlbumId),"
+                        + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"))
+            .build();
     databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
     databaseId = DatabaseId.of(projectId, instanceId, database);
   }
@@ -108,8 +108,13 @@ public class DatabaseRolesIT extends SampleTestBaseV2 {
         SampleRunner.runSample(
             () ->
                 AddAndDropDatabaseRole.addAndDropDatabaseRole(
-                    projectId, instanceId, databaseId.getDatabase(), "new_parent", "new_child",
-                    "Singers", "Albums"));
+                    projectId,
+                    instanceId,
+                    databaseId.getDatabase(),
+                    "new_parent",
+                    "new_child",
+                    "Singers",
+                    "Albums"));
     assertTrue(out.contains("Created roles new_parent and new_child and granted privileges"));
     assertTrue(out.contains("Revoked privileges and dropped role new_child"));
   }

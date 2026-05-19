@@ -37,20 +37,18 @@ public class ListInstanceConfigOperationsSample {
 
   static void listInstanceConfigOperations(String projectId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
       final ProjectName projectName = ProjectName.of(projectId);
       System.out.printf(
-          "Getting list of instance config operations for project %s...\n",
-          projectId);
+          "Getting list of instance config operations for project %s...\n", projectId);
       final ListInstanceConfigOperationsRequest request =
           ListInstanceConfigOperationsRequest.newBuilder()
               .setParent(projectName.toString())
-              .setFilter("(metadata.@type=type.googleapis.com/"
-                  + "google.spanner.admin.instance.v1.CreateInstanceConfigMetadata)").build();
+              .setFilter(
+                  "(metadata.@type=type.googleapis.com/"
+                      + "google.spanner.admin.instance.v1.CreateInstanceConfigMetadata)")
+              .build();
       final Iterable<Operation> instanceConfigOperations =
           instanceAdminClient.listInstanceConfigOperations(request).iterateAll();
       for (Operation operation : instanceConfigOperations) {
@@ -61,8 +59,7 @@ public class ListInstanceConfigOperationsSample {
             metadata.getInstanceConfig().getName(), metadata.getProgress().getProgressPercent());
       }
       System.out.printf(
-          "Obtained list of instance config operations for project %s...\n",
-          projectName);
+          "Obtained list of instance config operations for project %s...\n", projectName);
     } catch (InvalidProtocolBufferException e) {
       System.out.printf(
           "Error: Listing instance config operations failed with error message %s\n",

@@ -36,9 +36,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@code PgSpannerSample}
- */
+/** Unit tests for {@code PgSpannerSample} */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class PgSpannerSampleIT extends SampleTestBaseV2 {
@@ -66,17 +64,20 @@ public class PgSpannerSampleIT extends SampleTestBaseV2 {
     Timestamp now = Timestamp.now();
     Pattern samplePattern = getTestDbIdPattern(PgSpannerSampleIT.baseDbId);
     Pattern restoredPattern = getTestDbIdPattern("restored");
-    for (Database db : dbClient.listDatabases(
-        InstanceName.of(projectId, instanceId)).iterateAll()) {
+    for (Database db :
+        dbClient.listDatabases(InstanceName.of(projectId, instanceId)).iterateAll()) {
       DatabaseName databaseName = DatabaseName.parse(db.getName());
-      if (TimeUnit.HOURS.convert(now.getSeconds() - db.getCreateTime().getSeconds(),
-          TimeUnit.SECONDS) > 24) {
+      if (TimeUnit.HOURS.convert(
+              now.getSeconds() - db.getCreateTime().getSeconds(), TimeUnit.SECONDS)
+          > 24) {
         if (databaseName.getDatabase().length() >= DBID_LENGTH) {
-          if (samplePattern.matcher(
-              toComparableId(PgSpannerSampleIT.baseDbId, databaseName.getDatabase())).matches()) {
+          if (samplePattern
+              .matcher(toComparableId(PgSpannerSampleIT.baseDbId, databaseName.getDatabase()))
+              .matches()) {
             dbClient.dropDatabase(db.getName());
           }
-          if (restoredPattern.matcher(toComparableId("restored", databaseName.getDatabase()))
+          if (restoredPattern
+              .matcher(toComparableId("restored", databaseName.getDatabase()))
               .matches()) {
             dbClient.dropDatabase(db.getName());
           }
@@ -104,7 +105,7 @@ public class PgSpannerSampleIT extends SampleTestBaseV2 {
     final PrintStream out = new PrintStream(bout);
     System.setOut(out);
     System.out.println(instanceId + ":" + dbId.getDatabase());
-    PgSpannerSample.main(new String[]{command, instanceId, dbId.getDatabase()});
+    PgSpannerSample.main(new String[] {command, instanceId, dbId.getDatabase()});
     System.setOut(stdOut);
     return bout.toString();
   }
@@ -179,8 +180,7 @@ public class PgSpannerSampleIT extends SampleTestBaseV2 {
 
     System.out.println("Read only transaction ...");
     out = runSample("readonlytransaction");
-    assertThat(out.replaceAll("[\r\n]+", " "))
-        .containsMatch("(Total Junk.*){2}");
+    assertThat(out.replaceAll("[\r\n]+", " ")).containsMatch("(Total Junk.*){2}");
 
     System.out.println("Add Timestamp column ...");
     out = runSample("addlastupdatetimestampcolumn");

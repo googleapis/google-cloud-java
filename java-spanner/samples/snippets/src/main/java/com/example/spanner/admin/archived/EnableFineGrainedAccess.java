@@ -46,10 +46,7 @@ public class EnableFineGrainedAccess {
       String title,
       String role) {
     try (Spanner spanner =
-                 SpannerOptions.newBuilder()
-                         .setProjectId(projectId)
-                         .build()
-                         .getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
       Policy policy = adminClient.getDatabaseIAMPolicy(instanceId, databaseId, 3);
       int policyVersion = policy.getVersion();

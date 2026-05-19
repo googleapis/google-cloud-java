@@ -40,10 +40,11 @@ public class DropSequenceSample {
 
   static void dropSequence(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       databaseAdminClient
-          .updateDatabaseDdlAsync(DatabaseName.of(projectId, instanceId, databaseId),
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
               ImmutableList.of(
                   "ALTER TABLE Customers ALTER COLUMN CustomerId DROP DEFAULT",
                   "DROP SEQUENCE Seq"))

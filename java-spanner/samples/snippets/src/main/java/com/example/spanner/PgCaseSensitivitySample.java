@@ -45,7 +45,7 @@ public class PgCaseSensitivitySample {
   static void pgCaseSensitivity(String projectId, String instanceId, String databaseId) {
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
 
       // Spanner PostgreSQL follows the case sensitivity rules of PostgreSQL. This means that:
@@ -53,18 +53,20 @@ public class PgCaseSensitivitySample {
       // 2. Identifiers that are double-quoted retain their case and are case-sensitive.
       // See https://www.postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS
       // for more information.
-      databaseAdminClient.updateDatabaseDdlAsync(
-          DatabaseName.of(projectId, instanceId, databaseId),
-          Lists.newArrayList(
-              "CREATE TABLE Singers ("
-                  // SingerId will be folded to `singerid`.
-                  + "  SingerId      bigint NOT NULL PRIMARY KEY,"
-                  // FirstName and LastName are double-quoted and will therefore retain their
-                  // mixed case and are case-sensitive. This means that any statement that
-                  // references any of these columns must use double quotes.
-                  + "  \"FirstName\" varchar(1024) NOT NULL,"
-                  + "  \"LastName\"  varchar(1024) NOT NULL"
-                  + ")")).get();
+      databaseAdminClient
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
+              Lists.newArrayList(
+                  "CREATE TABLE Singers ("
+                      // SingerId will be folded to `singerid`.
+                      + "  SingerId      bigint NOT NULL PRIMARY KEY,"
+                      // FirstName and LastName are double-quoted and will therefore retain their
+                      // mixed case and are case-sensitive. This means that any statement that
+                      // references any of these columns must use double quotes.
+                      + "  \"FirstName\" varchar(1024) NOT NULL,"
+                      + "  \"LastName\"  varchar(1024) NOT NULL"
+                      + ")"))
+          .get();
 
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));

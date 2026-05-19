@@ -39,27 +39,28 @@ public class PgInterleavedTableSample {
   static void pgInterleavedTable(String projectId, String instanceId, String databaseId) {
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       // The Spanner PostgreSQL dialect extends the PostgreSQL dialect with certain Spanner
       // specific features, such as interleaved tables.
       // See https://cloud.google.com/spanner/docs/postgresql/data-definition-language#create_table
       // for the full CREATE TABLE syntax.
-      databaseAdminClient.updateDatabaseDdlAsync(DatabaseName.of(projectId,
-              instanceId,
-              databaseId),
-          Arrays.asList(
-              "CREATE TABLE Singers ("
-                  + "  SingerId  bigint NOT NULL PRIMARY KEY,"
-                  + "  FirstName varchar(1024) NOT NULL,"
-                  + "  LastName  varchar(1024) NOT NULL"
-                  + ")",
-              "CREATE TABLE Albums ("
-                  + "  SingerId bigint NOT NULL,"
-                  + "  AlbumId  bigint NOT NULL,"
-                  + "  Title    varchar(1024) NOT NULL,"
-                  + "  PRIMARY KEY (SingerId, AlbumId)"
-                  + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE")).get();
+      databaseAdminClient
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId),
+              Arrays.asList(
+                  "CREATE TABLE Singers ("
+                      + "  SingerId  bigint NOT NULL PRIMARY KEY,"
+                      + "  FirstName varchar(1024) NOT NULL,"
+                      + "  LastName  varchar(1024) NOT NULL"
+                      + ")",
+                  "CREATE TABLE Albums ("
+                      + "  SingerId bigint NOT NULL,"
+                      + "  AlbumId  bigint NOT NULL,"
+                      + "  Title    varchar(1024) NOT NULL,"
+                      + "  PRIMARY KEY (SingerId, AlbumId)"
+                      + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE"))
+          .get();
       System.out.println("Created interleaved table hierarchy using PostgreSQL dialect");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.

@@ -41,36 +41,35 @@ public class CopyBackupSample {
     String sourceBackupId = "my-backup";
     String destinationBackupId = "my-destination-backup";
     try (Spanner spanner =
-                 SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       copyBackup(databaseAdminClient, projectId, instanceId, sourceBackupId, destinationBackupId);
     }
   }
 
   static void copyBackup(
-          DatabaseAdminClient databaseAdminClient,
-          String projectId,
-          String instanceId,
-          String sourceBackupId,
-          String destinationBackupId) {
+      DatabaseAdminClient databaseAdminClient,
+      String projectId,
+      String instanceId,
+      String sourceBackupId,
+      String destinationBackupId) {
 
     Timestamp expireTime =
-            Timestamp.ofTimeMicroseconds(
-                  TimeUnit.MICROSECONDS.convert(
-                          System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14),
-                          TimeUnit.MILLISECONDS));
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
     // Creates a copy of an existing backup.
     Backup destinationBackup =
-          databaseAdminClient
-                  .newBackupBuilder(BackupId.of(projectId, instanceId, destinationBackupId))
-                  .setExpireTime(expireTime)
-                   .build();
+        databaseAdminClient
+            .newBackupBuilder(BackupId.of(projectId, instanceId, destinationBackupId))
+            .setExpireTime(expireTime)
+            .build();
 
     // Initiate the request which returns an OperationFuture.
     System.out.println("Copying backup [" + destinationBackup.getId() + "]...");
     OperationFuture<Backup, CopyBackupMetadata> operation =
-          databaseAdminClient.copyBackup(
-                  BackupId.of(projectId, instanceId, sourceBackupId), destinationBackup);
+        databaseAdminClient.copyBackup(
+            BackupId.of(projectId, instanceId, sourceBackupId), destinationBackup);
     try {
       // Wait for the backup operation to complete.
       destinationBackup = operation.get();
@@ -83,18 +82,18 @@ public class CopyBackupSample {
     // Load the metadata of the new backup from the server.
     destinationBackup = destinationBackup.reload();
     System.out.println(
-              String.format(
-                      "Backup %s of size %d bytes was copied at %s for version of database at %s",
-                      destinationBackup.getId().getName(),
-                      destinationBackup.getSize(),
-                      LocalDateTime.ofEpochSecond(
-                              destinationBackup.getProto().getCreateTime().getSeconds(),
-                              destinationBackup.getProto().getCreateTime().getNanos(),
-                              OffsetDateTime.now().getOffset()),
-                      LocalDateTime.ofEpochSecond(
-                              destinationBackup.getProto().getVersionTime().getSeconds(),
-                              destinationBackup.getProto().getVersionTime().getNanos(),
-                              OffsetDateTime.now().getOffset())));
+        String.format(
+            "Backup %s of size %d bytes was copied at %s for version of database at %s",
+            destinationBackup.getId().getName(),
+            destinationBackup.getSize(),
+            LocalDateTime.ofEpochSecond(
+                destinationBackup.getProto().getCreateTime().getSeconds(),
+                destinationBackup.getProto().getCreateTime().getNanos(),
+                OffsetDateTime.now().getOffset()),
+            LocalDateTime.ofEpochSecond(
+                destinationBackup.getProto().getVersionTime().getSeconds(),
+                destinationBackup.getProto().getVersionTime().getNanos(),
+                OffsetDateTime.now().getOffset())));
     return;
   }
 }

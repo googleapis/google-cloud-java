@@ -41,7 +41,7 @@ public class PgDropSequenceSample {
   static void pgDropSequence(String projectId, String instanceId, String databaseId) {
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       databaseAdminClient
           .updateDatabaseDdlAsync(

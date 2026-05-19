@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_create_database_with_default_leader]
+// [START spanner_create_database_with_default_leader]
 
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
@@ -37,30 +37,38 @@ public class CreateDatabaseWithDefaultLeaderSample {
     createDatabaseWithDefaultLeader(instanceName, databaseId, defaultLeader);
   }
 
-  static void createDatabaseWithDefaultLeader(String instanceName, String databaseId,
-      String defaultLeader) throws IOException {
+  static void createDatabaseWithDefaultLeader(
+      String instanceName, String databaseId, String defaultLeader) throws IOException {
     try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
       Database createdDatabase =
-          databaseAdminClient.createDatabaseAsync(
-              CreateDatabaseRequest.newBuilder()
-                  .setParent(instanceName)
-                  .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
-                  .addAllExtraStatements(
-                      ImmutableList.of("CREATE TABLE Singers ("
-                              + "  SingerId   INT64 NOT NULL,"
-                              + "  FirstName  STRING(1024),"
-                              + "  LastName   STRING(1024),"
-                              + "  SingerInfo BYTES(MAX)"
-                              + ") PRIMARY KEY (SingerId)",
-                          "CREATE TABLE Albums ("
-                              + "  SingerId     INT64 NOT NULL,"
-                              + "  AlbumId      INT64 NOT NULL,"
-                              + "  AlbumTitle   STRING(MAX)"
-                              + ") PRIMARY KEY (SingerId, AlbumId),"
-                              + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
-                          "ALTER DATABASE " + "`" + databaseId + "`"
-                              + " SET OPTIONS ( default_leader = '" + defaultLeader + "' )"))
-                  .build()).get();
+          databaseAdminClient
+              .createDatabaseAsync(
+                  CreateDatabaseRequest.newBuilder()
+                      .setParent(instanceName)
+                      .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
+                      .addAllExtraStatements(
+                          ImmutableList.of(
+                              "CREATE TABLE Singers ("
+                                  + "  SingerId   INT64 NOT NULL,"
+                                  + "  FirstName  STRING(1024),"
+                                  + "  LastName   STRING(1024),"
+                                  + "  SingerInfo BYTES(MAX)"
+                                  + ") PRIMARY KEY (SingerId)",
+                              "CREATE TABLE Albums ("
+                                  + "  SingerId     INT64 NOT NULL,"
+                                  + "  AlbumId      INT64 NOT NULL,"
+                                  + "  AlbumTitle   STRING(MAX)"
+                                  + ") PRIMARY KEY (SingerId, AlbumId),"
+                                  + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
+                              "ALTER DATABASE "
+                                  + "`"
+                                  + databaseId
+                                  + "`"
+                                  + " SET OPTIONS ( default_leader = '"
+                                  + defaultLeader
+                                  + "' )"))
+                      .build())
+              .get();
       System.out.println("Created database [" + createdDatabase.getName() + "]");
       System.out.println("\tDefault leader: " + createdDatabase.getDefaultLeader());
     } catch (ExecutionException e) {
@@ -73,4 +81,4 @@ public class CreateDatabaseWithDefaultLeaderSample {
     }
   }
 }
-//[END spanner_create_database_with_default_leader]
+// [END spanner_create_database_with_default_leader]

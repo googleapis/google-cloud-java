@@ -22,7 +22,6 @@ import com.google.cloud.spanner.DatabaseId;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.ExecutionException;
 import org.junit.Before;
-import org.junit.Test;
 
 public class DatabaseAddSplitPointsIT extends SampleTestBase {
   private static String databaseId;

@@ -48,29 +48,34 @@ public class CreateBackupWithEncryptionKey {
         "projects/" + projectId + "/locations/<location>/keyRings/<keyRing>/cryptoKeys/<keyId>";
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient adminClient = spanner.createDatabaseAdminClient()) {
       createBackupWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          databaseId,
-          backupId,
-          kmsKeyName);
+          adminClient, projectId, instanceId, databaseId, backupId, kmsKeyName);
     }
   }
 
-  static Void createBackupWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String databaseId, String backupId, String kmsKeyName) {
+  static Void createBackupWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String databaseId,
+      String backupId,
+      String kmsKeyName) {
     // Set expire time to 14 days from now.
     final Timestamp expireTime =
-        Timestamp.newBuilder().setSeconds(TimeUnit.MILLISECONDS.toSeconds((
-            System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14)))).build();
+        Timestamp.newBuilder()
+            .setSeconds(
+                TimeUnit.MILLISECONDS.toSeconds(
+                    (System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14))))
+            .build();
     final BackupName backupName = BackupName.of(projectId, instanceId, backupId);
-    Backup backup = Backup.newBuilder()
-        .setName(backupName.toString())
-        .setDatabase(DatabaseName.of(projectId, instanceId, databaseId).toString())
-        .setExpireTime(expireTime).build();
+    Backup backup =
+        Backup.newBuilder()
+            .setName(backupName.toString())
+            .setDatabase(DatabaseName.of(projectId, instanceId, databaseId).toString())
+            .setExpireTime(expireTime)
+            .build();
 
     final CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
@@ -80,7 +85,9 @@ public class CreateBackupWithEncryptionKey {
             .setEncryptionConfig(
                 CreateBackupEncryptionConfig.newBuilder()
                     .setEncryptionType(EncryptionType.CUSTOMER_MANAGED_ENCRYPTION)
-                    .setKmsKeyName(kmsKeyName).build()).build();
+                    .setKmsKeyName(kmsKeyName)
+                    .build())
+            .build();
     try {
       System.out.println("Waiting for operation to complete...");
       backup = adminClient.createBackupAsync(request).get(1200, TimeUnit.SECONDS);
@@ -103,8 +110,7 @@ public class CreateBackupWithEncryptionKey {
             backup.getCreateTime().getSeconds(),
             backup.getCreateTime().getNanos(),
             OffsetDateTime.now().getOffset()),
-        kmsKeyName
-    );
+        kmsKeyName);
 
     return null;
   }

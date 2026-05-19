@@ -43,7 +43,7 @@ public class CopyBackupSample {
     String destinationBackupId = "my-destination-backup";
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       copyBackup(databaseAdminClient, projectId, instanceId, sourceBackupId, destinationBackupId);
     }
@@ -59,8 +59,7 @@ public class CopyBackupSample {
     Timestamp expireTime =
         Timestamp.ofTimeMicroseconds(
             TimeUnit.MICROSECONDS.convert(
-                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14),
-                TimeUnit.MILLISECONDS));
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
 
     // Initiate the request which returns an OperationFuture.
     System.out.println("Copying backup [" + destinationBackupId + "]...");
@@ -68,9 +67,14 @@ public class CopyBackupSample {
     try {
       // Creates a copy of an existing backup.
       // Wait for the backup operation to complete.
-      destinationBackup = databaseAdminClient.copyBackupAsync(
-          InstanceName.of(projectId, instanceId), destinationBackupId,
-          BackupName.of(projectId, instanceId, sourceBackupId), expireTime.toProto()).get();
+      destinationBackup =
+          databaseAdminClient
+              .copyBackupAsync(
+                  InstanceName.of(projectId, instanceId),
+                  destinationBackupId,
+                  BackupName.of(projectId, instanceId, sourceBackupId),
+                  expireTime.toProto())
+              .get();
       System.out.println("Copied backup [" + destinationBackup.getName() + "]");
     } catch (ExecutionException e) {
       throw (SpannerException) e.getCause();
@@ -85,11 +89,13 @@ public class CopyBackupSample {
             destinationBackup.getName(),
             destinationBackup.getSizeBytes(),
             OffsetDateTime.ofInstant(
-                Instant.ofEpochSecond(destinationBackup.getCreateTime().getSeconds(),
+                Instant.ofEpochSecond(
+                    destinationBackup.getCreateTime().getSeconds(),
                     destinationBackup.getCreateTime().getNanos()),
                 ZoneId.systemDefault()),
             OffsetDateTime.ofInstant(
-                Instant.ofEpochSecond(destinationBackup.getVersionTime().getSeconds(),
+                Instant.ofEpochSecond(
+                    destinationBackup.getVersionTime().getSeconds(),
                     destinationBackup.getVersionTime().getNanos()),
                 ZoneId.systemDefault())));
   }

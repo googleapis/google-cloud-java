@@ -29,34 +29,42 @@ public class UpdateDatabaseWithDefaultLeaderSampleIT extends SampleTestBaseV2 {
   public void testUpdateDatabaseWithDefaultLeader() throws Exception {
     // Create database
     final String databaseId = idGenerator.generateDatabaseId();
-    final Database createdDatabase = databaseAdminClient
-        .createDatabaseAsync(getInstanceName(projectId, multiRegionalInstanceId),
-            "CREATE DATABASE `" + databaseId + "`")
-        .get(5, TimeUnit.MINUTES);
+    final Database createdDatabase =
+        databaseAdminClient
+            .createDatabaseAsync(
+                getInstanceName(projectId, multiRegionalInstanceId),
+                "CREATE DATABASE `" + databaseId + "`")
+            .get(5, TimeUnit.MINUTES);
     final String defaultLeader = createdDatabase.getDefaultLeader();
 
     // Finds a possible new leader option
     final String instanceConfigId =
-        instanceAdminClient.getInstance(getInstanceName(projectId, multiRegionalInstanceId))
+        instanceAdminClient
+            .getInstance(getInstanceName(projectId, multiRegionalInstanceId))
             .getConfig();
     final InstanceConfig config = instanceAdminClient.getInstanceConfig(instanceConfigId);
     final String newLeader =
         config.getLeaderOptionsList().stream()
             .filter(leader -> !leader.equals(defaultLeader))
-            .findFirst().orElseThrow(() ->
-                new RuntimeException("Expected to find a leader option different than "
-                    + defaultLeader)
-            );
+            .findFirst()
+            .orElseThrow(
+                () ->
+                    new RuntimeException(
+                        "Expected to find a leader option different than " + defaultLeader));
 
     // Runs sample
-    final String out = SampleRunner.runSample(() -> UpdateDatabaseWithDefaultLeaderSample
-        .updateDatabaseWithDefaultLeader(projectId, multiRegionalInstanceId, databaseId, newLeader)
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                UpdateDatabaseWithDefaultLeaderSample.updateDatabaseWithDefaultLeader(
+                    projectId, multiRegionalInstanceId, databaseId, newLeader));
 
     assertTrue(
-        "Expected that database new leader would had been updated to " + newLeader + "."
-            + " Output received was " + out,
-        out.contains("Updated default leader to " + newLeader)
-    );
+        "Expected that database new leader would had been updated to "
+            + newLeader
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("Updated default leader to " + newLeader));
   }
 }

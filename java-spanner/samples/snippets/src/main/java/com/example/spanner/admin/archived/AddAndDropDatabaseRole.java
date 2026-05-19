@@ -42,10 +42,7 @@ public class AddAndDropDatabaseRole {
   static void addAndDropDatabaseRole(
       String projectId, String instanceId, String databaseId, String parentRole, String childRole) {
     try (Spanner spanner =
-                 SpannerOptions.newBuilder()
-                         .setProjectId(projectId)
-                         .build()
-                         .getService())  {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient adminClient = spanner.getDatabaseAdminClient();
       OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
           adminClient.updateDatabaseDdl(

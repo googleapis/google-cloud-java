@@ -38,10 +38,10 @@ class AlterTableWithForeignKeyDeleteCascadeSample {
   static void alterForeignKeyDeleteCascadeConstraint(
       String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
-      databaseAdminClient.updateDatabaseDdlAsync(DatabaseName.of(projectId, instanceId,
-              databaseId),
+      databaseAdminClient.updateDatabaseDdlAsync(
+          DatabaseName.of(projectId, instanceId, databaseId),
           ImmutableList.of(
               "ALTER TABLE ShoppingCarts\n"
                   + "              ADD CONSTRAINT FKShoppingCartsCustomerName\n"

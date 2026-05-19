@@ -54,7 +54,6 @@ import com.google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -62,9 +61,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Example code for using the Cloud Spanner PostgreSQL interface.
- */
+/** Example code for using the Cloud Spanner PostgreSQL interface. */
 public class PgSpannerSample {
   // [START spanner_postgresql_insert_data]
   static final List<Singer> SINGERS =
@@ -81,6 +78,7 @@ public class PgSpannerSample {
           new Album(2, 1, "Green"),
           new Album(2, 2, "Forever Hold Your Peace"),
           new Album(2, 3, "Terrified"));
+
   // [END spanner_postgresql_insert_data]
 
   /** Class to contain performance sample data. */
@@ -157,6 +155,7 @@ public class PgSpannerSample {
               false,
               0.72598f,
               new BigDecimal("390650.99")));
+
   // [END spanner_postgresql_insert_datatypes_data]
 
   /** Class to contain venue sample data. */
@@ -196,9 +195,10 @@ public class PgSpannerSample {
 
   // [START spanner_postgresql_create_database]
   static void createPostgreSqlDatabase(DatabaseAdminClient dbAdminClient, DatabaseId id) {
-    OperationFuture<Database, CreateDatabaseMetadata> op = dbAdminClient.createDatabase(
-        dbAdminClient.newDatabaseBuilder(id).setDialect(Dialect.POSTGRESQL).build(),
-        Collections.emptyList());
+    OperationFuture<Database, CreateDatabaseMetadata> op =
+        dbAdminClient.createDatabase(
+            dbAdminClient.newDatabaseBuilder(id).setDialect(Dialect.POSTGRESQL).build(),
+            Collections.emptyList());
     try {
       // Initiate the request which returns an OperationFuture.
       Database db = op.get();
@@ -212,6 +212,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_database]
 
   // [START spanner_postgresql_insert_data]
@@ -241,6 +242,7 @@ public class PgSpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_postgresql_insert_data]
 
   // [START spanner_postgresql_delete_data]
@@ -266,48 +268,50 @@ public class PgSpannerSample {
     dbClient.write(mutations);
     System.out.printf("Records deleted.\n");
   }
+
   // [END spanner_postgresql_delete_data]
 
   // [START spanner_postgresql_query_data]
   static void query(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse() // Execute a single read or query against Cloud Spanner.
-                 .executeQuery(Statement.of("SELECT SingerId, AlbumId, AlbumTitle FROM Albums"))) {
+        dbClient
+            .singleUse() // Execute a single read or query against Cloud Spanner.
+            .executeQuery(Statement.of("SELECT SingerId, AlbumId, AlbumTitle FROM Albums"))) {
       while (resultSet.next()) {
         System.out.printf(
-            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1),
-            resultSet.getString(2));
+            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
       }
     }
   }
+
   // [END spanner_postgresql_query_data]
 
   // [START spanner_postgresql_read_data]
   static void read(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .read(
-                     "Albums",
-                     KeySet.all(), // Read all rows in a table.
-                     Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
+        dbClient
+            .singleUse()
+            .read(
+                "Albums",
+                KeySet.all(), // Read all rows in a table.
+                Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
       while (resultSet.next()) {
         System.out.printf(
-            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1),
-            resultSet.getString(2));
+            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
       }
     }
   }
+
   // [END spanner_postgresql_read_data]
 
   // [START spanner_postgresql_add_column]
   static void addMarketingBudget(DatabaseAdminClient adminClient, DatabaseId dbId) {
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> op = adminClient.updateDatabaseDdl(
-        dbId.getInstanceId().getInstance(),
-        dbId.getDatabase(),
-        Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget bigint"),
-        null);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
+        adminClient.updateDatabaseDdl(
+            dbId.getInstanceId().getInstance(),
+            dbId.getDatabase(),
+            Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget bigint"),
+            null);
     try {
       // Initiate the request which returns an OperationFuture.
       op.get();
@@ -321,6 +325,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_add_column]
 
   // Before executing this method, a new column MarketingBudget has to be added to the Albums
@@ -350,51 +355,54 @@ public class PgSpannerSample {
     // This writes all the mutations to Cloud Spanner atomically.
     dbClient.write(mutations);
   }
+
   // [END spanner_postgresql_update_data]
 
   // [START spanner_postgresql_read_write_transaction]
   static void writeWithTransaction(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          Struct row =
-              transaction.readRow("Albums", Key.of(2, 2), Arrays.asList("MarketingBudget"));
-          long album2Budget = row.getLong(0);
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            long album1Budget =
-                transaction
-                    .readRow("Albums", Key.of(1, 1), Arrays.asList("MarketingBudget"))
-                    .getLong(0);
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            transaction.buffer(
-                Mutation.newUpdateBuilder("Albums")
-                    .set("SingerId")
-                    .to(1)
-                    .set("AlbumId")
-                    .to(1)
-                    .set("MarketingBudget")
-                    .to(album1Budget)
-                    .build());
-            transaction.buffer(
-                Mutation.newUpdateBuilder("Albums")
-                    .set("SingerId")
-                    .to(2)
-                    .set("AlbumId")
-                    .to(2)
-                    .set("MarketingBudget")
-                    .to(album2Budget)
-                    .build());
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              Struct row =
+                  transaction.readRow("Albums", Key.of(2, 2), Arrays.asList("MarketingBudget"));
+              long album2Budget = row.getLong(0);
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                long album1Budget =
+                    transaction
+                        .readRow("Albums", Key.of(1, 1), Arrays.asList("MarketingBudget"))
+                        .getLong(0);
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                transaction.buffer(
+                    Mutation.newUpdateBuilder("Albums")
+                        .set("SingerId")
+                        .to(1)
+                        .set("AlbumId")
+                        .to(1)
+                        .set("MarketingBudget")
+                        .to(album1Budget)
+                        .build());
+                transaction.buffer(
+                    Mutation.newUpdateBuilder("Albums")
+                        .set("SingerId")
+                        .to(2)
+                        .set("AlbumId")
+                        .to(2)
+                        .set("MarketingBudget")
+                        .to(album2Budget)
+                        .build());
+              }
+              return null;
+            });
   }
+
   // [END spanner_postgresql_read_write_transaction]
 
   // [START spanner_postgresql_query_data_with_new_column]
@@ -403,11 +411,13 @@ public class PgSpannerSample {
     // null. A try-with-resource block is used to automatically release resources held by
     // ResultSet.
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(Statement.of("SELECT singerid as \"SingerId\", "
-                     + "albumid as \"AlbumId\", marketingbudget as \"MarketingBudget\" "
-                     + "FROM Albums"))) {
+        dbClient
+            .singleUse()
+            .executeQuery(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", "
+                        + "albumid as \"AlbumId\", marketingbudget as \"MarketingBudget\" "
+                        + "FROM Albums"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s\n",
@@ -415,11 +425,11 @@ public class PgSpannerSample {
             resultSet.getLong("AlbumId"),
             // We check that the value is non null. ResultSet getters can only be used to retrieve
             // non null values.
-            resultSet.isNull("MarketingBudget") ? "NULL" :
-                resultSet.getLong("MarketingBudget"));
+            resultSet.isNull("MarketingBudget") ? "NULL" : resultSet.getLong("MarketingBudget"));
       }
     }
   }
+
   // [END spanner_postgresql_query_data_with_new_column]
 
   // [START spanner_postgresql_create_index]
@@ -443,34 +453,37 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_index]
 
   // [START spanner_postgresql_read_data_with_index]
   static void readUsingIndex(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .readUsingIndex(
-                     "Albums",
-                     "AlbumsByAlbumTitle",
-                     KeySet.all(),
-                     Arrays.asList("AlbumId", "AlbumTitle"))) {
+        dbClient
+            .singleUse()
+            .readUsingIndex(
+                "Albums",
+                "AlbumsByAlbumTitle",
+                KeySet.all(),
+                Arrays.asList("AlbumId", "AlbumTitle"))) {
       while (resultSet.next()) {
         System.out.printf("%d %s\n", resultSet.getLong(0), resultSet.getString(1));
       }
     }
   }
+
   // [END spanner_postgresql_read_data_with_index]
 
   // [START spanner_postgresql_create_storing_index]
   static void addStoringIndex(DatabaseAdminClient adminClient, DatabaseId dbId) {
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> op = adminClient.updateDatabaseDdl(
-        dbId.getInstanceId().getInstance(),
-        dbId.getDatabase(),
-        Arrays.asList(
-            "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
-                + "INCLUDE (MarketingBudget)"),
-        null);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
+        adminClient.updateDatabaseDdl(
+            dbId.getInstanceId().getInstance(),
+            dbId.getDatabase(),
+            Arrays.asList(
+                "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
+                    + "INCLUDE (MarketingBudget)"),
+            null);
     try {
       // Initiate the request which returns an OperationFuture.
       op.get();
@@ -484,6 +497,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_storing_index]
 
   // Before running this example, create a storing index AlbumsByAlbumTitle2 by applying the DDL
@@ -492,13 +506,13 @@ public class PgSpannerSample {
   static void readStoringIndex(DatabaseClient dbClient) {
     // We can read MarketingBudget also from the index since it stores a copy of MarketingBudget.
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .readUsingIndex(
-                     "Albums",
-                     "AlbumsByAlbumTitle2",
-                     KeySet.all(),
-                     Arrays.asList("AlbumId", "AlbumTitle", "MarketingBudget"))) {
+        dbClient
+            .singleUse()
+            .readUsingIndex(
+                "Albums",
+                "AlbumsByAlbumTitle2",
+                KeySet.all(),
+                Arrays.asList("AlbumId", "AlbumTitle", "MarketingBudget"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %s %s\n",
@@ -508,6 +522,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_read_data_with_storing_index]
 
   // [START spanner_postgresql_read_only_transaction]
@@ -521,30 +536,31 @@ public class PgSpannerSample {
       while (queryResultSet.next()) {
         System.out.printf(
             "%d %d %s\n",
-            queryResultSet.getLong(0), queryResultSet.getLong(1),
-            queryResultSet.getString(2));
+            queryResultSet.getLong(0), queryResultSet.getLong(1), queryResultSet.getString(2));
       }
       try (ResultSet readResultSet =
-               transaction.read(
-                   "Albums", KeySet.all(), Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
+          transaction.read(
+              "Albums", KeySet.all(), Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
         while (readResultSet.next()) {
           System.out.printf(
               "%d %d %s\n",
-              readResultSet.getLong(0), readResultSet.getLong(1),
-              readResultSet.getString(2));
+              readResultSet.getLong(0), readResultSet.getLong(1), readResultSet.getString(2));
         }
       }
     }
   }
+
   // [END spanner_postgresql_read_only_transaction]
 
   // [START spanner_postgresql_query_singers_table]
   static void querySingersTable(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(Statement.of("SELECT singerid as \"SingerId\", "
-                     + "firstname as \"FirstName\", lastname as \"LastName\" FROM Singers"))) {
+        dbClient
+            .singleUse()
+            .executeQuery(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", "
+                        + "firstname as \"FirstName\", lastname as \"LastName\" FROM Singers"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%s %s %s\n",
@@ -554,26 +570,28 @@ public class PgSpannerSample {
       }
     }
   }
-  // [END spanner_postgresql_query_singers_table]
 
+  // [END spanner_postgresql_query_singers_table]
 
   // [START spanner_postgresql_dml_getting_started_insert]
   static void writeUsingDml(DatabaseClient dbClient) {
     // Insert 4 singer records
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
-                  + "(12, 'Melissa', 'Garcia'), "
-                  + "(13, 'Russell', 'Morales'), "
-                  + "(14, 'Jacqueline', 'Long'), "
-                  + "(15, 'Dylan', 'Shaw')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d records inserted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
+                      + "(12, 'Melissa', 'Garcia'), "
+                      + "(13, 'Russell', 'Morales'), "
+                      + "(14, 'Jacqueline', 'Long'), "
+                      + "(15, 'Dylan', 'Shaw')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d records inserted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_getting_started_insert]
 
   // [START spanner_postgresql_query_with_parameter]
@@ -597,60 +615,63 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_parameter]
 
   // [START spanner_postgresql_dml_getting_started_update]
   static void writeWithTransactionUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          String sql1 =
-              "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
-                  + "SingerId = 2 and AlbumId = 2";
-          ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
-          long album2Budget = 0;
-          while (resultSet.next()) {
-            album2Budget = resultSet.getLong("MarketingBudget");
-          }
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            String sql2 =
-                "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
-                    + "SingerId = 1 and AlbumId = 1";
-            ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
-            long album1Budget = 0;
-            while (resultSet2.next()) {
-              album1Budget = resultSet2.getLong("MarketingBudget");
-            }
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            Statement updateStatement =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = $1 "
-                            + "WHERE SingerId = 1 and AlbumId = 1")
-                    .bind("p1")
-                    .to(album1Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement);
-            Statement updateStatement2 =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = $1 "
-                            + "WHERE SingerId = 2 and AlbumId = 2")
-                    .bind("p1")
-                    .to(album2Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement2);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              String sql1 =
+                  "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
+                      + "SingerId = 2 and AlbumId = 2";
+              ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
+              long album2Budget = 0;
+              while (resultSet.next()) {
+                album2Budget = resultSet.getLong("MarketingBudget");
+              }
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                String sql2 =
+                    "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
+                        + "SingerId = 1 and AlbumId = 1";
+                ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
+                long album1Budget = 0;
+                while (resultSet2.next()) {
+                  album1Budget = resultSet2.getLong("MarketingBudget");
+                }
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                Statement updateStatement =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = $1 "
+                                + "WHERE SingerId = 1 and AlbumId = 1")
+                        .bind("p1")
+                        .to(album1Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement);
+                Statement updateStatement2 =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = $1 "
+                                + "WHERE SingerId = 2 and AlbumId = 2")
+                        .bind("p1")
+                        .to(album2Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement2);
+              }
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_getting_started_update]
 
   // [START spanner_postgresql_create_table_using_ddl]
@@ -690,17 +711,17 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_database]
   // [END spanner_postgresql_create_table_using_ddl]
 
   // [START spanner_postgresql_read_stale_data]
   static void readStaleData(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse(TimestampBound.ofExactStaleness(15, TimeUnit.SECONDS))
-                 .read(
-                     "Albums", KeySet.all(),
-                     Arrays.asList("SingerId", "AlbumId", "MarketingBudget"))) {
+        dbClient
+            .singleUse(TimestampBound.ofExactStaleness(15, TimeUnit.SECONDS))
+            .read(
+                "Albums", KeySet.all(), Arrays.asList("SingerId", "AlbumId", "MarketingBudget"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s\n",
@@ -710,6 +731,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_read_stale_data]
 
   // Before executing this method, a new column MarketingBudget has to be added to the Albums
@@ -745,6 +767,7 @@ public class PgSpannerSample {
     // This writes all the mutations to Cloud Spanner atomically.
     dbClient.write(mutations);
   }
+
   // [END spanner_postgresql_update_data_with_timestamp_column]
 
   // [START spanner_postgresql_add_timestamp_column]
@@ -753,8 +776,7 @@ public class PgSpannerSample {
         adminClient.updateDatabaseDdl(
             dbId.getInstanceId().getInstance(),
             dbId.getDatabase(),
-            Arrays.asList(
-                "ALTER TABLE Albums ADD COLUMN LastUpdateTime spanner.commit_timestamp"),
+            Arrays.asList("ALTER TABLE Albums ADD COLUMN LastUpdateTime spanner.commit_timestamp"),
             null);
     try {
       // Initiate the request which returns an OperationFuture.
@@ -769,6 +791,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_add_timestamp_column]
 
   // [START spanner_postgresql_query_data_with_timestamp_column]
@@ -777,14 +800,14 @@ public class PgSpannerSample {
     // null. A try-with-resource block is used to automatically release resources held by
     // ResultSet.
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(
-                     Statement.of(
-                         "SELECT singerid as \"SingerId\", albumid as \"AlbumId\", "
-                             + "marketingbudget as \"MarketingBudget\","
-                             + "lastupdatetime as \"LastUpdateTime\" FROM Albums"
-                             + " ORDER BY LastUpdateTime DESC"))) {
+        dbClient
+            .singleUse()
+            .executeQuery(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", albumid as \"AlbumId\", "
+                        + "marketingbudget as \"MarketingBudget\","
+                        + "lastupdatetime as \"LastUpdateTime\" FROM Albums"
+                        + " ORDER BY LastUpdateTime DESC"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s %s\n",
@@ -797,6 +820,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_data_with_timestamp_column]
 
   // [START spanner_postgresql_create_table_with_timestamp_column]
@@ -827,6 +851,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_table_with_timestamp_column]
 
   // [START spanner_postgresql_insert_data_with_timestamp_column]
@@ -847,6 +872,7 @@ public class PgSpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_postgresql_insert_data_with_timestamp_column]
 
   static void queryPerformancesTable(DatabaseClient dbClient) {
@@ -854,13 +880,13 @@ public class PgSpannerSample {
     // null. A try-with-resource block is used to automatically release resources held by
     // ResultSet.
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(
-                     Statement.of(
-                         "SELECT singerid as \"SingerId\", venueid as \"VenueId\", "
-                             + "revenue as \"Revenue\", lastupdatetime as \"LastUpdateTime\" "
-                             + "FROM Performances ORDER BY LastUpdateTime DESC"))) {
+        dbClient
+            .singleUse()
+            .executeQuery(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", venueid as \"VenueId\", "
+                        + "revenue as \"Revenue\", lastupdatetime as \"LastUpdateTime\" "
+                        + "FROM Performances ORDER BY LastUpdateTime DESC"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s %s\n",
@@ -878,72 +904,80 @@ public class PgSpannerSample {
   static void insertUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) "
-                  + " VALUES (10, 'Virginia', 'Watson')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record inserted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) "
+                      + " VALUES (10, 'Virginia', 'Watson')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record inserted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_standard_insert]
 
   // [START spanner_postgresql_dml_standard_update]
   static void updateUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "UPDATE Albums "
-                  + "SET MarketingBudget = MarketingBudget * 2 "
-                  + "WHERE SingerId = 1 and AlbumId = 1";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record updated.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "UPDATE Albums "
+                      + "SET MarketingBudget = MarketingBudget * 2 "
+                      + "WHERE SingerId = 1 and AlbumId = 1";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record updated.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_standard_update]
 
   // [START spanner_postgresql_dml_standard_delete]
   static void deleteUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql = "DELETE FROM Singers WHERE FirstName = 'Alice'";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record deleted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql = "DELETE FROM Singers WHERE FirstName = 'Alice'";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record deleted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_standard_delete]
 
   // [START spanner_postgresql_dml_write_then_read]
   static void writeAndReadUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Insert record.
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) "
-                  + " VALUES (11, 'Timothy', 'Campbell')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record inserted.\n", rowCount);
-          // Read newly inserted record.
-          sql = "SELECT firstname as \"FirstName\", lastname as \"LastName\" FROM Singers WHERE "
-              + "SingerId = 11";
-          // We use a try-with-resource block to automatically release resources held by
-          // ResultSet.
-          try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql))) {
-            while (resultSet.next()) {
-              System.out.printf(
-                  "%s %s\n",
-                  resultSet.getString("FirstName"), resultSet.getString("LastName"));
-            }
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Insert record.
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) "
+                      + " VALUES (11, 'Timothy', 'Campbell')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record inserted.\n", rowCount);
+              // Read newly inserted record.
+              sql =
+                  "SELECT firstname as \"FirstName\", lastname as \"LastName\" FROM Singers WHERE "
+                      + "SingerId = 11";
+              // We use a try-with-resource block to automatically release resources held by
+              // ResultSet.
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql))) {
+                while (resultSet.next()) {
+                  System.out.printf(
+                      "%s %s\n", resultSet.getString("FirstName"), resultSet.getString("LastName"));
+                }
+              }
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_write_then_read]
 
   // [START spanner_postgresql_dml_partitioned_update]
@@ -952,6 +986,7 @@ public class PgSpannerSample {
     long rowCount = dbClient.executePartitionedUpdate(Statement.of(sql));
     System.out.printf("%d records updated.\n", rowCount);
   }
+
   // [END spanner_postgresql_dml_partitioned_update]
 
   // [START spanner_postgresql_dml_partitioned_delete]
@@ -960,36 +995,39 @@ public class PgSpannerSample {
     long rowCount = dbClient.executePartitionedUpdate(Statement.of(sql));
     System.out.printf("%d records deleted.\n", rowCount);
   }
+
   // [END spanner_postgresql_dml_partitioned_delete]
 
   // [START spanner_postgresql_dml_batch_update]
   static void updateUsingBatchDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          List<Statement> stmts = new ArrayList<Statement>();
-          String sql =
-              "INSERT INTO Albums "
-                  + "(SingerId, AlbumId, AlbumTitle, MarketingBudget) "
-                  + "VALUES (1, 3, 'Test Album Title', 10000) ";
-          stmts.add(Statement.of(sql));
-          sql =
-              "UPDATE Albums "
-                  + "SET MarketingBudget = MarketingBudget * 2 "
-                  + "WHERE SingerId = 1 and AlbumId = 3";
-          stmts.add(Statement.of(sql));
-          long[] rowCounts;
-          try {
-            rowCounts = transaction.batchUpdate(stmts);
-          } catch (SpannerBatchUpdateException e) {
-            rowCounts = e.getUpdateCounts();
-          }
-          for (int i = 0; i < rowCounts.length; i++) {
-            System.out.printf("%d record updated by stmt %d.\n", rowCounts[i], i);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              List<Statement> stmts = new ArrayList<Statement>();
+              String sql =
+                  "INSERT INTO Albums "
+                      + "(SingerId, AlbumId, AlbumTitle, MarketingBudget) "
+                      + "VALUES (1, 3, 'Test Album Title', 10000) ";
+              stmts.add(Statement.of(sql));
+              sql =
+                  "UPDATE Albums "
+                      + "SET MarketingBudget = MarketingBudget * 2 "
+                      + "WHERE SingerId = 1 and AlbumId = 3";
+              stmts.add(Statement.of(sql));
+              long[] rowCounts;
+              try {
+                rowCounts = transaction.batchUpdate(stmts);
+              } catch (SpannerBatchUpdateException e) {
+                rowCounts = e.getUpdateCounts();
+              }
+              for (int i = 0; i < rowCounts.length; i++) {
+                System.out.printf("%d record updated by stmt %d.\n", rowCounts[i], i);
+              }
+              return null;
+            });
   }
+
   // [END spanner_postgresql_dml_batch_update]
 
   // [START spanner_postgresql_create_table_with_datatypes]
@@ -1023,6 +1061,7 @@ public class PgSpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_postgresql_create_table_with_datatypes]
 
   // [START spanner_postgresql_insert_datatypes_data]
@@ -1051,6 +1090,7 @@ public class PgSpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_postgresql_insert_datatypes_data]
 
   // [START spanner_postgresql_query_with_bool_parameter]
@@ -1074,6 +1114,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_bool_parameter]
 
   // [START spanner_postgresql_query_with_bytes_parameter]
@@ -1094,6 +1135,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_bytes_parameter]
 
   // [START spanner_postgresql_query_with_float_parameter]
@@ -1117,6 +1159,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_float_parameter]
 
   // [START spanner_postgresql_query_with_int_parameter]
@@ -1126,7 +1169,8 @@ public class PgSpannerSample {
         Statement.newBuilder(
                 "SELECT venueid as \"VenueId\", venuename as \"VenueName\", "
                     + "capacity as \"Capacity\" "
-                    + "FROM Venues " + "WHERE Capacity >= $1")
+                    + "FROM Venues "
+                    + "WHERE Capacity >= $1")
             .bind("p1")
             .to(exampleInt)
             .build();
@@ -1140,6 +1184,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_int_parameter]
 
   // [START spanner_postgresql_query_with_string_parameter]
@@ -1159,6 +1204,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_string_parameter]
 
   // [START spanner_postgresql_query_with_timestamp_parameter]
@@ -1181,6 +1227,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_timestamp_parameter]
 
   // [START spanner_postgresql_query_with_numeric_parameter]
@@ -1203,6 +1250,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_query_with_numeric_parameter]
 
   // [START spanner_postgresql_create_client_with_query_options]
@@ -1210,8 +1258,8 @@ public class PgSpannerSample {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setDefaultQueryOptions(
-                db, ExecuteSqlRequest.QueryOptions
-                    .newBuilder()
+                db,
+                ExecuteSqlRequest.QueryOptions.newBuilder()
                     .setOptimizerVersion("1")
                     // The list of available statistics packages can be found by querying the
                     // "INFORMATION_SCHEMA.spanner_postgresql_STATISTICS" table.
@@ -1221,48 +1269,52 @@ public class PgSpannerSample {
     Spanner spanner = options.getService();
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(Statement.of("SELECT SingerId, AlbumId, AlbumTitle FROM Albums"))) {
+        dbClient
+            .singleUse()
+            .executeQuery(Statement.of("SELECT SingerId, AlbumId, AlbumTitle FROM Albums"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
       }
     }
   }
+
   // [END spanner_postgresql_create_client_with_query_options]
 
   // [START spanner_postgresql_query_with_query_options]
   static void queryWithQueryOptions(DatabaseClient dbClient) {
     try (ResultSet resultSet =
-             dbClient
-                 .singleUse()
-                 .executeQuery(
-                     Statement
-                         .newBuilder("SELECT SingerId, AlbumId, AlbumTitle FROM Albums")
-                         .withQueryOptions(ExecuteSqlRequest.QueryOptions
-                             .newBuilder()
-                             .setOptimizerVersion("1")
-                             // The list of available statistics packages can be found by querying
-                             // the "INFORMATION_SCHEMA.spanner_postgresql_STATISTICS" table.
-                             .setOptimizerStatisticsPackage("latest")
-                             .build())
-                         .build())) {
+        dbClient
+            .singleUse()
+            .executeQuery(
+                Statement.newBuilder("SELECT SingerId, AlbumId, AlbumTitle FROM Albums")
+                    .withQueryOptions(
+                        ExecuteSqlRequest.QueryOptions.newBuilder()
+                            .setOptimizerVersion("1")
+                            // The list of available statistics packages can be found by querying
+                            // the "INFORMATION_SCHEMA.spanner_postgresql_STATISTICS" table.
+                            .setOptimizerStatisticsPackage("latest")
+                            .build())
+                    .build())) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
       }
     }
   }
+
   // [END spanner_postgresql_query_with_query_options]
 
   // [START spanner_postgresql_list_backup_operations]
   static void listBackupOperations(InstanceAdminClient instanceAdminClient, DatabaseId databaseId) {
     Instance instance = instanceAdminClient.getInstance(databaseId.getInstanceId().getInstance());
     // Get create backup operations for the sample database.
-    Timestamp last24Hours = Timestamp.ofTimeSecondsAndNanos(TimeUnit.SECONDS.convert(
-        TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
-        TimeUnit.HOURS), 0);
+    Timestamp last24Hours =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.SECONDS.convert(
+                TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
+                TimeUnit.HOURS),
+            0);
     String filter =
         String.format(
             "(metadata.database:%s) AND "
@@ -1270,8 +1322,8 @@ public class PgSpannerSample {
                 + "google.spanner.admin.database.v1.CreateBackupMetadata) AND "
                 + "(metadata.progress.start_time > \"%s\")",
             databaseId.getName(), last24Hours);
-    Page<com.google.longrunning.Operation> operations = instance
-        .listBackupOperations(Options.filter(filter));
+    Page<com.google.longrunning.Operation> operations =
+        instance.listBackupOperations(Options.filter(filter));
     for (com.google.longrunning.Operation op : operations.iterateAll()) {
       try {
         CreateBackupMetadata metadata = op.getMetadata().unpack(CreateBackupMetadata.class);
@@ -1287,6 +1339,7 @@ public class PgSpannerSample {
       }
     }
   }
+
   // [END spanner_postgresql_list_backup_operations]
 
   // [START spanner_postgresql_list_database_operations]
@@ -1296,26 +1349,33 @@ public class PgSpannerSample {
       InstanceId instanceId) {
     Instance instance = instanceAdminClient.getInstance(instanceId.getInstance());
     // Get optimize restored database operations.
-    Timestamp last24Hours = Timestamp.ofTimeSecondsAndNanos(TimeUnit.SECONDS.convert(
-        TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
-        TimeUnit.HOURS), 0);
-    String filter = String.format("(metadata.@type:type.googleapis.com/"
-        + "google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata) AND "
-        + "(metadata.progress.start_time > \"%s\")", last24Hours);
+    Timestamp last24Hours =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.SECONDS.convert(
+                TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
+                TimeUnit.HOURS),
+            0);
+    String filter =
+        String.format(
+            "(metadata.@type:type.googleapis.com/"
+                + "google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata) AND "
+                + "(metadata.progress.start_time > \"%s\")",
+            last24Hours);
     for (Operation op : instance.listDatabaseOperations(Options.filter(filter)).iterateAll()) {
       try {
         OptimizeRestoredDatabaseMetadata metadata =
             op.getMetadata().unpack(OptimizeRestoredDatabaseMetadata.class);
-        System.out.println(String.format(
-            "Database %s restored from backup is %d%% optimized",
-            metadata.getName(),
-            metadata.getProgress().getProgressPercent()));
+        System.out.println(
+            String.format(
+                "Database %s restored from backup is %d%% optimized",
+                metadata.getName(), metadata.getProgress().getProgressPercent()));
       } catch (InvalidProtocolBufferException e) {
         // The returned operation does not contain OptimizeRestoredDatabaseMetadata.
         System.err.println(e.getMessage());
       }
     }
   }
+
   // [END spanner_postgresql_list_database_operations]
 
   static void run(

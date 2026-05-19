@@ -45,15 +45,13 @@ public class CustomInstanceConfigSampleIT extends SampleTestBaseV2 {
 
     // Fetch the instance config that was created above.
     final String out3 =
-        SampleRunner.runSample(
-            () -> ListInstanceConfigsSample.listInstanceConfigs(projectId));
+        SampleRunner.runSample(() -> ListInstanceConfigsSample.listInstanceConfigs(projectId));
     assertTrue(out3.contains("Available leader options for instance config"));
 
     // List the instance config operations.
     final String out4 =
         SampleRunner.runSample(
-            () ->
-                ListInstanceConfigOperationsSample.listInstanceConfigOperations(projectId));
+            () -> ListInstanceConfigOperationsSample.listInstanceConfigOperations(projectId));
     assertTrue(out4.contains("Obtained list of instance config operations"));
 
     // Update display name to a randomly generated instance config id.

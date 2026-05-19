@@ -33,7 +33,8 @@ public class CreateTableWithForeignKeyDeleteCascadeSampleIT extends SampleTestBa
     final CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
-            .setParent(InstanceName.of(projectId, instanceId).toString()).build();
+            .setParent(InstanceName.of(projectId, instanceId).toString())
+            .build();
     databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
 
     // Runs sample

@@ -17,7 +17,6 @@
 package com.example.spanner;
 
 import static com.example.spanner.SampleRunner.runSample;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.spanner.DatabaseClient;
@@ -35,9 +34,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for {@link TagSample}
- */
+/** Integration tests for {@link TagSample} */
 @RunWith(JUnit4.class)
 public class TagSampleIT extends SampleTestBase {
 

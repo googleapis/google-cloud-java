@@ -35,9 +35,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for Cloud Spanner Async API examples for Postgresql.
- */
+/** Integration tests for Cloud Spanner Async API examples for Postgresql. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 public class PgAsyncExamplesIT extends SampleTestBase {
@@ -52,29 +50,32 @@ public class PgAsyncExamplesIT extends SampleTestBase {
         .createDatabase(
             databaseAdminClient
                 .newDatabaseBuilder(databaseId)
-                .setDialect(Dialect.POSTGRESQL).build(),
+                .setDialect(Dialect.POSTGRESQL)
+                .build(),
             Collections.emptyList())
         .get();
-    databaseAdminClient.updateDatabaseDdl(
-        instanceId,
-        database,
-        Arrays.asList(
-            "CREATE TABLE Singers ("
-                + "  SingerId   bigint NOT NULL,"
-                + "  FirstName  character varying(1024),"
-                + "  LastName   character varying(1024),"
-                + "  SingerInfo bytea,"
-                + "  PRIMARY KEY (SingerId)"
-                + ")",
-            "CREATE TABLE Albums ("
-                + "  SingerId     bigint NOT NULL,"
-                + "  AlbumId      bigint NOT NULL,"
-                + "  AlbumTitle   character varying(1024),"
-                + "  MarketingBudget bigint,"
-                + "  PRIMARY KEY (SingerId, AlbumId)"
-                + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
-            "CREATE INDEX AlbumsByAlbumTitle ON Albums(AlbumTitle)"),
-        null).get();
+    databaseAdminClient
+        .updateDatabaseDdl(
+            instanceId,
+            database,
+            Arrays.asList(
+                "CREATE TABLE Singers ("
+                    + "  SingerId   bigint NOT NULL,"
+                    + "  FirstName  character varying(1024),"
+                    + "  LastName   character varying(1024),"
+                    + "  SingerInfo bytea,"
+                    + "  PRIMARY KEY (SingerId)"
+                    + ")",
+                "CREATE TABLE Albums ("
+                    + "  SingerId     bigint NOT NULL,"
+                    + "  AlbumId      bigint NOT NULL,"
+                    + "  AlbumTitle   character varying(1024),"
+                    + "  MarketingBudget bigint,"
+                    + "  PRIMARY KEY (SingerId, AlbumId)"
+                    + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE",
+                "CREATE INDEX AlbumsByAlbumTitle ON Albums(AlbumTitle)"),
+            null)
+        .get();
   }
 
   static class Singer {
@@ -176,31 +177,34 @@ public class PgAsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncQuery_shouldReturnData() throws Exception {
-    String out = runSample(
-        () -> AsyncQueryExample.asyncQuery(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> AsyncQueryExample.asyncQuery(spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
-  public void asyncQueryToListAsync_shouldReturnData()
-      throws Exception {
-    String out = runSample(
-        () -> PgAsyncQueryToListAsyncExample
-            .asyncQueryToList(spanner.getDatabaseClient(databaseId)));
+  public void asyncQueryToListAsync_shouldReturnData() throws Exception {
+    String out =
+        runSample(
+            () ->
+                PgAsyncQueryToListAsyncExample.asyncQueryToList(
+                    spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
-  public void asyncRead_shouldReturnData()
-      throws Exception {
+  public void asyncRead_shouldReturnData() throws Exception {
     String out = runSample(() -> AsyncReadExample.asyncRead(spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
   }
 
   @Test
   public void asyncReadUsingIndex_shouldReturnDataInCorrectOrder() throws Exception {
-    String out = runSample(() -> AsyncReadUsingIndexExample
-        .asyncReadUsingIndex(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                AsyncReadUsingIndexExample.asyncReadUsingIndex(
+                    spanner.getDatabaseClient(databaseId)));
     assertThat(out)
         .contains(
             "2 Forever Hold Your Peace\n"
@@ -212,8 +216,11 @@ public class PgAsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncReadOnlyTransaction_shouldReturnData() throws Exception {
-    String out = runSample(() -> AsyncReadOnlyTransactionExample
-        .asyncReadOnlyTransaction(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                AsyncReadOnlyTransactionExample.asyncReadOnlyTransaction(
+                    spanner.getDatabaseClient(databaseId)));
     assertAlbumsOutput(out);
     assertSingersOutput(out);
   }
@@ -226,22 +233,25 @@ public class PgAsyncExamplesIT extends SampleTestBase {
 
   @Test
   public void asyncRunner_shouldUpdateRows() throws Exception {
-    String out = runSample(
-        () -> PgAsyncRunnerExample.asyncRunner(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> PgAsyncRunnerExample.asyncRunner(spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("2 records updated.");
   }
 
   @Test
   public void asyncTransactionManager_shouldUpdateRows() throws Exception {
-    String out = runSample(() -> PgAsyncTransactionManagerExample
-        .asyncTransactionManager(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(
+            () ->
+                PgAsyncTransactionManagerExample.asyncTransactionManager(
+                    spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("2 records updated.");
   }
 
   @Test
   public void asyncReadRow_shouldPrintRow() throws Exception {
-    String out = runSample(
-        () -> AsyncReadRowExample.asyncReadRow(spanner.getDatabaseClient(databaseId)));
+    String out =
+        runSample(() -> AsyncReadRowExample.asyncReadRow(spanner.getDatabaseClient(databaseId)));
     assertThat(out).contains("1 1 Total Junk");
     assertThat(out).doesNotContain("1 2 Go, Go, Go");
     assertThat(out).doesNotContain("2 1 Green");

@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_get_database_ddl]
+// [START spanner_get_database_ddl]
 
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.Spanner;
@@ -33,13 +33,9 @@ public class GetDatabaseDdlSample {
     getDatabaseDdl(projectId, instanceId, databaseId);
   }
 
-  static void getDatabaseDdl(
-      String projectId, String instanceId, String databaseId) {
-    try (Spanner spanner = SpannerOptions
-        .newBuilder()
-        .setProjectId(projectId)
-        .build()
-        .getService()) {
+  static void getDatabaseDdl(String projectId, String instanceId, String databaseId) {
+    try (Spanner spanner =
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       final DatabaseAdminClient databaseAdminClient = spanner.getDatabaseAdminClient();
       final List<String> ddls = databaseAdminClient.getDatabaseDdl(instanceId, databaseId);
       System.out.println("Retrieved database DDL for " + databaseId);
@@ -49,4 +45,4 @@ public class GetDatabaseDdlSample {
     }
   }
 }
-//[END spanner_get_database_ddl]
+// [END spanner_get_database_ddl]

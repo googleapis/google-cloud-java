@@ -30,13 +30,14 @@ public class GetDatabaseDdlSampleIT extends SampleTestBaseV2 {
   @Test
   public void testGetDatabaseDdl() throws Exception {
     // Finds a possible new leader option
-    final String instanceConfigId = instanceAdminClient.getInstance(
-        InstanceName.of(projectId, multiRegionalInstanceId)).getConfig();
+    final String instanceConfigId =
+        instanceAdminClient
+            .getInstance(InstanceName.of(projectId, multiRegionalInstanceId))
+            .getConfig();
     final InstanceConfig config = instanceAdminClient.getInstanceConfig(instanceConfigId);
     assertTrue(
         "Expected instance config " + instanceConfigId + " to have at least one leader option",
-        config.getLeaderOptionsList().size() > 0
-    );
+        config.getLeaderOptionsList().size() > 0);
     final String defaultLeader = config.getLeaderOptions(0);
 
     // Creates database
@@ -44,38 +45,44 @@ public class GetDatabaseDdlSampleIT extends SampleTestBaseV2 {
     final CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(
-                com.google.spanner.admin.database.v1.InstanceName.of(projectId,
-                    multiRegionalInstanceId).toString())
+                com.google.spanner.admin.database.v1.InstanceName.of(
+                        projectId, multiRegionalInstanceId)
+                    .toString())
             .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
-            .addAllExtraStatements(Lists.newArrayList(
-                "CREATE TABLE Singers (Id INT64 NOT NULL) PRIMARY KEY (Id)",
-                "ALTER DATABASE `"
-                    + databaseId
-                    + "` SET OPTIONS ( default_leader = '"
-                    + defaultLeader
-                    + "')"
-            )).build();
+            .addAllExtraStatements(
+                Lists.newArrayList(
+                    "CREATE TABLE Singers (Id INT64 NOT NULL) PRIMARY KEY (Id)",
+                    "ALTER DATABASE `"
+                        + databaseId
+                        + "` SET OPTIONS ( default_leader = '"
+                        + defaultLeader
+                        + "')"))
+            .build();
     databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
 
     // Runs sample
-    final String out = SampleRunner.runSample(() -> GetDatabaseDdlSample
-        .getDatabaseDdl(projectId, multiRegionalInstanceId, databaseId)
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                GetDatabaseDdlSample.getDatabaseDdl(
+                    projectId, multiRegionalInstanceId, databaseId));
 
     assertTrue(
-        "Expected to have retrieved database DDL for " + databaseId + "."
-            + " Output received was " + out,
-        out.contains("Retrieved database DDL for " + databaseId)
-    );
+        "Expected to have retrieved database DDL for "
+            + databaseId
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("Retrieved database DDL for " + databaseId));
     assertTrue(
-        "Expected leader to be set to " + defaultLeader + "."
-            + " Output received was " + out,
-        out.contains("default_leader = '" + defaultLeader + "'")
-    );
+        "Expected leader to be set to " + defaultLeader + "." + " Output received was " + out,
+        out.contains("default_leader = '" + defaultLeader + "'"));
     assertTrue(
-        "Expected table to have been created in " + databaseId + "."
-            + " Output received was " + out,
-        out.contains("CREATE TABLE Singers")
-    );
+        "Expected table to have been created in "
+            + databaseId
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("CREATE TABLE Singers"));
   }
 }

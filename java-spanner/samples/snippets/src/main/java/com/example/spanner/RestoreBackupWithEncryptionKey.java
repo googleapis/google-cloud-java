@@ -43,27 +43,30 @@ public class RestoreBackupWithEncryptionKey {
         "projects/" + projectId + "/locations/<location>/keyRings/<keyRing>/cryptoKeys/<keyId>";
 
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient adminClient = spanner.createDatabaseAdminClient()) {
       restoreBackupWithEncryptionKey(
-          adminClient,
-          projectId,
-          instanceId,
-          backupId,
-          databaseId,
-          kmsKeyName);
+          adminClient, projectId, instanceId, backupId, databaseId, kmsKeyName);
     }
   }
 
-  static Void restoreBackupWithEncryptionKey(DatabaseAdminClient adminClient,
-      String projectId, String instanceId, String backupId, String restoreId, String kmsKeyName) {
+  static Void restoreBackupWithEncryptionKey(
+      DatabaseAdminClient adminClient,
+      String projectId,
+      String instanceId,
+      String backupId,
+      String restoreId,
+      String kmsKeyName) {
     RestoreDatabaseRequest request =
         RestoreDatabaseRequest.newBuilder()
             .setParent(InstanceName.of(projectId, instanceId).toString())
             .setDatabaseId(restoreId)
             .setBackup(BackupName.of(projectId, instanceId, backupId).toString())
-            .setEncryptionConfig(RestoreDatabaseEncryptionConfig.newBuilder()
-                .setEncryptionType(CUSTOMER_MANAGED_ENCRYPTION).setKmsKeyName(kmsKeyName)).build();
+            .setEncryptionConfig(
+                RestoreDatabaseEncryptionConfig.newBuilder()
+                    .setEncryptionType(CUSTOMER_MANAGED_ENCRYPTION)
+                    .setKmsKeyName(kmsKeyName))
+            .build();
     Database database;
     try {
       System.out.println("Waiting for operation to complete...");
@@ -83,8 +86,7 @@ public class RestoreBackupWithEncryptionKey {
         database.getRestoreInfo().getBackupInfo().getSourceDatabase(),
         database.getName(),
         database.getRestoreInfo().getBackupInfo().getBackup(),
-        database.getEncryptionConfig().getKmsKeyName()
-    );
+        database.getEncryptionConfig().getKmsKeyName());
     return null;
   }
 }

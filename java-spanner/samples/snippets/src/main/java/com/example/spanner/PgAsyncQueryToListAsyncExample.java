@@ -51,7 +51,7 @@ public class PgAsyncQueryToListAsyncExample {
     String databaseId = "my-database";
 
     try (Spanner spanner =
-             SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       asyncQueryToList(client);
@@ -64,11 +64,13 @@ public class PgAsyncQueryToListAsyncExample {
     ExecutorService executor = Executors.newSingleThreadExecutor();
     ApiFuture<? extends List<Album>> albums;
     try (AsyncResultSet resultSet =
-             client
-                 .singleUse()
-                 .executeQueryAsync(Statement.of("SELECT singerid as \"SingerId\", "
-                     + "albumid as \"AlbumId\", albumtitle as \"AlbumTitle\" "
-                     + "FROM Albums"))) {
+        client
+            .singleUse()
+            .executeQueryAsync(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", "
+                        + "albumid as \"AlbumId\", albumtitle as \"AlbumTitle\" "
+                        + "FROM Albums"))) {
       // Convert the result set to a list of Albums asynchronously.
       albums =
           resultSet.toListAsync(
@@ -87,4 +89,4 @@ public class PgAsyncQueryToListAsyncExample {
     executor.shutdown();
   }
 }
-//[END spanner_postgresql_async_query_to_list]
+// [END spanner_postgresql_async_query_to_list]

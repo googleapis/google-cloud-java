@@ -45,10 +45,11 @@ public class PgCreateSequenceSample {
 
   static void pgCreateSequence(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       databaseAdminClient
-          .updateDatabaseDdlAsync(DatabaseName.of(projectId, instanceId, databaseId).toString(),
+          .updateDatabaseDdlAsync(
+              DatabaseName.of(projectId, instanceId, databaseId).toString(),
               ImmutableList.of(
                   "CREATE SEQUENCE Seq BIT_REVERSED_POSITIVE;",
                   "CREATE TABLE Customers (CustomerId BIGINT DEFAULT nextval('Seq'), "

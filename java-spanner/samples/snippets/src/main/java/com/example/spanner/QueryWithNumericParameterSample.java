@@ -43,8 +43,7 @@ class QueryWithNumericParameterSample {
 
   static void queryWithNumericParameter(DatabaseClient client) {
     Statement statement =
-        Statement.newBuilder(
-                "SELECT VenueId, Revenue FROM Venues WHERE Revenue < @numeric")
+        Statement.newBuilder("SELECT VenueId, Revenue FROM Venues WHERE Revenue < @numeric")
             .bind("numeric")
             .to(new BigDecimal("100000"))
             .build();

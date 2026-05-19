@@ -269,6 +269,7 @@ public class SpannerSample {
                   "{\"name\":null,"
                       + "\"open\":{\"Monday\":true,\"Tuesday\":false},"
                       + "\"tags\":[\"large\",\"airy\"]}")));
+
   // [END spanner_insert_datatypes_data]
 
   // [START spanner_create_database]
@@ -305,6 +306,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_create_database]
 
   // [START spanner_create_table_with_timestamp_column]
@@ -336,6 +338,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_create_table_with_timestamp_column]
 
   // [START spanner_insert_data_with_timestamp_column]
@@ -358,6 +361,7 @@ public class SpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_insert_data_with_timestamp_column]
 
   // [START spanner_insert_data]
@@ -387,6 +391,7 @@ public class SpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_insert_data]
 
   // [START spanner_delete_data]
@@ -412,6 +417,7 @@ public class SpannerSample {
     dbClient.write(mutations);
     System.out.printf("Records deleted.\n");
   }
+
   // [END spanner_delete_data]
 
   // [START spanner_query_data]
@@ -426,6 +432,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_data]
 
   // [START spanner_read_data]
@@ -443,6 +450,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_read_data]
 
   // [START spanner_add_column]
@@ -466,6 +474,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_add_column]
 
   // Before executing this method, a new column MarketingBudget has to be added to the Albums
@@ -495,51 +504,54 @@ public class SpannerSample {
     // This writes all the mutations to Cloud Spanner atomically.
     dbClient.write(mutations);
   }
+
   // [END spanner_update_data]
 
   // [START spanner_read_write_transaction]
   static void writeWithTransaction(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          Struct row =
-              transaction.readRow("Albums", Key.of(2, 2), Arrays.asList("MarketingBudget"));
-          long album2Budget = row.getLong(0);
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            long album1Budget =
-                transaction
-                    .readRow("Albums", Key.of(1, 1), Arrays.asList("MarketingBudget"))
-                    .getLong(0);
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            transaction.buffer(
-                Mutation.newUpdateBuilder("Albums")
-                    .set("SingerId")
-                    .to(1)
-                    .set("AlbumId")
-                    .to(1)
-                    .set("MarketingBudget")
-                    .to(album1Budget)
-                    .build());
-            transaction.buffer(
-                Mutation.newUpdateBuilder("Albums")
-                    .set("SingerId")
-                    .to(2)
-                    .set("AlbumId")
-                    .to(2)
-                    .set("MarketingBudget")
-                    .to(album2Budget)
-                    .build());
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              Struct row =
+                  transaction.readRow("Albums", Key.of(2, 2), Arrays.asList("MarketingBudget"));
+              long album2Budget = row.getLong(0);
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                long album1Budget =
+                    transaction
+                        .readRow("Albums", Key.of(1, 1), Arrays.asList("MarketingBudget"))
+                        .getLong(0);
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                transaction.buffer(
+                    Mutation.newUpdateBuilder("Albums")
+                        .set("SingerId")
+                        .to(1)
+                        .set("AlbumId")
+                        .to(1)
+                        .set("MarketingBudget")
+                        .to(album1Budget)
+                        .build());
+                transaction.buffer(
+                    Mutation.newUpdateBuilder("Albums")
+                        .set("SingerId")
+                        .to(2)
+                        .set("AlbumId")
+                        .to(2)
+                        .set("MarketingBudget")
+                        .to(album2Budget)
+                        .build());
+              }
+              return null;
+            });
   }
+
   // [END spanner_read_write_transaction]
 
   // [START spanner_query_data_with_new_column]
@@ -562,6 +574,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_data_with_new_column]
 
   // [START spanner_create_index]
@@ -585,6 +598,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_create_index]
 
   // Before running this example, add the index AlbumsByAlbumTitle by applying the DDL statement
@@ -616,6 +630,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_data_with_index]
 
   // [START spanner_read_data_with_index]
@@ -633,6 +648,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_read_data_with_index]
 
   // [START spanner_create_storing_index]
@@ -658,6 +674,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_create_storing_index]
 
   // Before running this example, create a storing index AlbumsByAlbumTitle2 by applying the DDL
@@ -682,6 +699,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_read_data_with_storing_index]
 
   // [START spanner_read_only_transaction]
@@ -708,6 +726,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_read_only_transaction]
 
   // [START spanner_read_stale_data]
@@ -726,6 +745,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_read_stale_data]
 
   // [START spanner_add_timestamp_column]
@@ -751,6 +771,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_add_timestamp_column]
 
   // Before executing this method, a new column MarketingBudget has to be added to the Albums
@@ -786,6 +807,7 @@ public class SpannerSample {
     // This writes all the mutations to Cloud Spanner atomically.
     dbClient.write(mutations);
   }
+
   // [END spanner_update_data_with_timestamp_column]
 
   // [START spanner_query_data_with_timestamp_column]
@@ -812,6 +834,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_data_with_timestamp_column]
 
   static void querySingersTable(DatabaseClient dbClient) {
@@ -878,6 +901,7 @@ public class SpannerSample {
     dbClient.write(mutations);
     System.out.println("Inserted example data for struct parameter queries.");
   }
+
   // [END spanner_write_data_for_struct_queries]
 
   static void queryWithStruct(DatabaseClient dbClient) {
@@ -959,6 +983,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_field_access_on_struct_parameters]
 
   // [START spanner_field_access_on_nested_struct_parameters]
@@ -1005,92 +1030,102 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_field_access_on_nested_struct_parameters]
 
   // [START spanner_dml_standard_insert]
   static void insertUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) "
-                  + " VALUES (10, 'Virginia', 'Watson')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record inserted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) "
+                      + " VALUES (10, 'Virginia', 'Watson')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record inserted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_standard_insert]
 
   // [START spanner_dml_standard_update]
   static void updateUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "UPDATE Albums "
-                  + "SET MarketingBudget = MarketingBudget * 2 "
-                  + "WHERE SingerId = 1 and AlbumId = 1";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record updated.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "UPDATE Albums "
+                      + "SET MarketingBudget = MarketingBudget * 2 "
+                      + "WHERE SingerId = 1 and AlbumId = 1";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record updated.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_standard_update]
 
   // [START spanner_dml_standard_delete]
   static void deleteUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql = "DELETE FROM Singers WHERE FirstName = 'Alice'";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record deleted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql = "DELETE FROM Singers WHERE FirstName = 'Alice'";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record deleted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_standard_delete]
 
   // [START spanner_dml_standard_update_with_timestamp]
   static void updateUsingDmlWithTimestamp(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "UPDATE Albums "
-                  + "SET LastUpdateTime = PENDING_COMMIT_TIMESTAMP() WHERE SingerId = 1";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d records updated.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "UPDATE Albums "
+                      + "SET LastUpdateTime = PENDING_COMMIT_TIMESTAMP() WHERE SingerId = 1";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d records updated.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_standard_update_with_timestamp]
 
   // [START spanner_dml_write_then_read]
   static void writeAndReadUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Insert record.
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) "
-                  + " VALUES (11, 'Timothy', 'Campbell')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d record inserted.\n", rowCount);
-          // Read newly inserted record.
-          sql = "SELECT FirstName, LastName FROM Singers WHERE SingerId = 11";
-          // We use a try-with-resource block to automatically release resources held by
-          // ResultSet.
-          try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql))) {
-            while (resultSet.next()) {
-              System.out.printf(
-                  "%s %s\n",
-                  resultSet.getString("FirstName"), resultSet.getString("LastName"));
-            }
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Insert record.
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) "
+                      + " VALUES (11, 'Timothy', 'Campbell')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d record inserted.\n", rowCount);
+              // Read newly inserted record.
+              sql = "SELECT FirstName, LastName FROM Singers WHERE SingerId = 11";
+              // We use a try-with-resource block to automatically release resources held by
+              // ResultSet.
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql))) {
+                while (resultSet.next()) {
+                  System.out.printf(
+                      "%s %s\n", resultSet.getString("FirstName"), resultSet.getString("LastName"));
+                }
+              }
+              return null;
+            });
   }
+
   // [END spanner_dml_write_then_read]
 
   // [START spanner_dml_structs]
@@ -1107,12 +1142,14 @@ public class SpannerSample {
             .build();
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          long rowCount = transaction.executeUpdate(s);
-          System.out.printf("%d record updated.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              long rowCount = transaction.executeUpdate(s);
+              System.out.printf("%d record updated.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_structs]
 
   // [START spanner_dml_getting_started_insert]
@@ -1120,18 +1157,20 @@ public class SpannerSample {
     // Insert 4 singer records
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
-                  + "(12, 'Melissa', 'Garcia'), "
-                  + "(13, 'Russell', 'Morales'), "
-                  + "(14, 'Jacqueline', 'Long'), "
-                  + "(15, 'Dylan', 'Shaw')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d records inserted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
+                      + "(12, 'Melissa', 'Garcia'), "
+                      + "(13, 'Russell', 'Morales'), "
+                      + "(14, 'Jacqueline', 'Long'), "
+                      + "(15, 'Dylan', 'Shaw')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d records inserted.\n", rowCount);
+              return null;
+            });
   }
+
   // [END spanner_dml_getting_started_insert]
 
   // [START spanner_query_with_parameter]
@@ -1154,58 +1193,60 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_parameter]
 
   // [START spanner_dml_getting_started_update]
   static void writeWithTransactionUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          String sql1 =
-              "SELECT MarketingBudget from Albums WHERE SingerId = 2 and AlbumId = 2";
-          ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
-          long album2Budget = 0;
-          while (resultSet.next()) {
-            album2Budget = resultSet.getLong("MarketingBudget");
-          }
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            String sql2 =
-                "SELECT MarketingBudget from Albums WHERE SingerId = 1 and AlbumId = 1";
-            ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
-            long album1Budget = 0;
-            while (resultSet2.next()) {
-              album1Budget = resultSet2.getLong("MarketingBudget");
-            }
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            Statement updateStatement =
-                Statement.newBuilder(
-                    "UPDATE Albums "
-                        + "SET MarketingBudget = @AlbumBudget "
-                        + "WHERE SingerId = 1 and AlbumId = 1")
-                    .bind("AlbumBudget")
-                    .to(album1Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement);
-            Statement updateStatement2 =
-                Statement.newBuilder(
-                    "UPDATE Albums "
-                        + "SET MarketingBudget = @AlbumBudget "
-                        + "WHERE SingerId = 2 and AlbumId = 2")
-                    .bind("AlbumBudget")
-                    .to(album2Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement2);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              String sql1 = "SELECT MarketingBudget from Albums WHERE SingerId = 2 and AlbumId = 2";
+              ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
+              long album2Budget = 0;
+              while (resultSet.next()) {
+                album2Budget = resultSet.getLong("MarketingBudget");
+              }
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                String sql2 =
+                    "SELECT MarketingBudget from Albums WHERE SingerId = 1 and AlbumId = 1";
+                ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
+                long album1Budget = 0;
+                while (resultSet2.next()) {
+                  album1Budget = resultSet2.getLong("MarketingBudget");
+                }
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                Statement updateStatement =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = @AlbumBudget "
+                                + "WHERE SingerId = 1 and AlbumId = 1")
+                        .bind("AlbumBudget")
+                        .to(album1Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement);
+                Statement updateStatement2 =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = @AlbumBudget "
+                                + "WHERE SingerId = 2 and AlbumId = 2")
+                        .bind("AlbumBudget")
+                        .to(album2Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement2);
+              }
+              return null;
+            });
   }
+
   // [END spanner_dml_getting_started_update]
 
   // [START spanner_dml_partitioned_update]
@@ -1214,6 +1255,7 @@ public class SpannerSample {
     long rowCount = dbClient.executePartitionedUpdate(Statement.of(sql));
     System.out.printf("%d records updated.\n", rowCount);
   }
+
   // [END spanner_dml_partitioned_update]
 
   // [START spanner_dml_partitioned_delete]
@@ -1222,36 +1264,39 @@ public class SpannerSample {
     long rowCount = dbClient.executePartitionedUpdate(Statement.of(sql));
     System.out.printf("%d records deleted.\n", rowCount);
   }
+
   // [END spanner_dml_partitioned_delete]
 
   // [START spanner_dml_batch_update]
   static void updateUsingBatchDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          List<Statement> stmts = new ArrayList<Statement>();
-          String sql =
-              "INSERT INTO Albums "
-                  + "(SingerId, AlbumId, AlbumTitle, MarketingBudget) "
-                  + "VALUES (1, 3, 'Test Album Title', 10000) ";
-          stmts.add(Statement.of(sql));
-          sql =
-              "UPDATE Albums "
-                  + "SET MarketingBudget = MarketingBudget * 2 "
-                  + "WHERE SingerId = 1 and AlbumId = 3";
-          stmts.add(Statement.of(sql));
-          long[] rowCounts;
-          try {
-            rowCounts = transaction.batchUpdate(stmts);
-          } catch (SpannerBatchUpdateException e) {
-            rowCounts = e.getUpdateCounts();
-          }
-          for (int i = 0; i < rowCounts.length; i++) {
-            System.out.printf("%d record updated by stmt %d.\n", rowCounts[i], i);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              List<Statement> stmts = new ArrayList<Statement>();
+              String sql =
+                  "INSERT INTO Albums "
+                      + "(SingerId, AlbumId, AlbumTitle, MarketingBudget) "
+                      + "VALUES (1, 3, 'Test Album Title', 10000) ";
+              stmts.add(Statement.of(sql));
+              sql =
+                  "UPDATE Albums "
+                      + "SET MarketingBudget = MarketingBudget * 2 "
+                      + "WHERE SingerId = 1 and AlbumId = 3";
+              stmts.add(Statement.of(sql));
+              long[] rowCounts;
+              try {
+                rowCounts = transaction.batchUpdate(stmts);
+              } catch (SpannerBatchUpdateException e) {
+                rowCounts = e.getUpdateCounts();
+              }
+              for (int i = 0; i < rowCounts.length; i++) {
+                System.out.printf("%d record updated by stmt %d.\n", rowCounts[i], i);
+              }
+              return null;
+            });
   }
+
   // [END spanner_dml_batch_update]
 
   // [START spanner_create_table_with_datatypes]
@@ -1288,6 +1333,7 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_create_table_with_datatypes]
 
   // [START spanner_insert_datatypes_data]
@@ -1322,6 +1368,7 @@ public class SpannerSample {
     }
     dbClient.write(mutations);
   }
+
   // [END spanner_insert_datatypes_data]
 
   // [START spanner_query_with_array_parameter]
@@ -1347,6 +1394,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_array_parameter]
 
   // [START spanner_query_with_bool_parameter]
@@ -1369,6 +1417,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_bool_parameter]
 
   // [START spanner_query_with_bytes_parameter]
@@ -1388,6 +1437,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_bytes_parameter]
 
   // [START spanner_query_with_date_parameter]
@@ -1410,6 +1460,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_date_parameter]
 
   // [START spanner_query_with_float_parameter]
@@ -1432,6 +1483,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_float_parameter]
 
   // [START spanner_query_with_int_parameter]
@@ -1453,6 +1505,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_int_parameter]
 
   // [START spanner_query_with_string_parameter]
@@ -1471,6 +1524,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_string_parameter]
 
   // [START spanner_query_with_timestamp_parameter]
@@ -1493,6 +1547,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_timestamp_parameter]
 
   // [START spanner_query_with_numeric_parameter]
@@ -1516,6 +1571,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_numeric_parameter]
 
   // [START spanner_create_client_with_query_options]
@@ -1523,8 +1579,8 @@ public class SpannerSample {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setDefaultQueryOptions(
-                db, QueryOptions
-                    .newBuilder()
+                db,
+                QueryOptions.newBuilder()
                     .setOptimizerVersion("1")
                     // The list of available statistics packages can be found by querying the
                     // "INFORMATION_SCHEMA.SPANNER_STATISTICS" table.
@@ -1543,6 +1599,7 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_create_client_with_query_options]
 
   // [START spanner_query_with_query_options]
@@ -1551,15 +1608,15 @@ public class SpannerSample {
         dbClient
             .singleUse()
             .executeQuery(
-                Statement
-                    .newBuilder("SELECT SingerId, AlbumId, AlbumTitle FROM Albums")
-                    .withQueryOptions(QueryOptions
-                        .newBuilder()
-                        .setOptimizerVersion("1")
-                        // The list of available statistics packages can be found by querying the
-                        // "INFORMATION_SCHEMA.SPANNER_STATISTICS" table.
-                        .setOptimizerStatisticsPackage("latest")
-                        .build())
+                Statement.newBuilder("SELECT SingerId, AlbumId, AlbumTitle FROM Albums")
+                    .withQueryOptions(
+                        QueryOptions.newBuilder()
+                            .setOptimizerVersion("1")
+                            // The list of available statistics packages can be found by querying
+                            // the
+                            // "INFORMATION_SCHEMA.SPANNER_STATISTICS" table.
+                            .setOptimizerStatisticsPackage("latest")
+                            .build())
                     .build())) {
       while (resultSet.next()) {
         System.out.printf(
@@ -1567,14 +1624,20 @@ public class SpannerSample {
       }
     }
   }
+
   // [END spanner_query_with_query_options]
 
   // [START spanner_create_backup]
-  static void createBackup(DatabaseAdminClient dbAdminClient, DatabaseId databaseId,
-      BackupId backupId, Timestamp versionTime) {
+  static void createBackup(
+      DatabaseAdminClient dbAdminClient,
+      DatabaseId databaseId,
+      BackupId backupId,
+      Timestamp versionTime) {
     // Set expire time to 14 days from now.
-    Timestamp expireTime = Timestamp.ofTimeMicroseconds(TimeUnit.MICROSECONDS.convert(
-        System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
+    Timestamp expireTime =
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
     Backup backup =
         dbAdminClient
             .newBackupBuilder(backupId)
@@ -1609,17 +1672,19 @@ public class SpannerSample {
             LocalDateTime.ofEpochSecond(
                 backup.getProto().getVersionTime().getSeconds(),
                 backup.getProto().getVersionTime().getNanos(),
-                OffsetDateTime.now().getOffset())
-            ));
+                OffsetDateTime.now().getOffset())));
   }
+
   // [END spanner_create_backup]
 
   // [START spanner_cancel_backup_create]
   static void cancelCreateBackup(
       DatabaseAdminClient dbAdminClient, DatabaseId databaseId, BackupId backupId) {
     // Set expire time to 14 days from now.
-    Timestamp expireTime = Timestamp.ofTimeMicroseconds(TimeUnit.MICROSECONDS.convert(
-        System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
+    Timestamp expireTime =
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(14), TimeUnit.MILLISECONDS));
 
     // Create a backup instance.
     Backup backup =
@@ -1648,8 +1713,10 @@ public class SpannerSample {
       if (pollingFuture.get().getErrorCode() == null) {
         // Backup was created before it could be cancelled. Delete the backup.
         backup.delete();
-        System.out.println("Backup operation for [" + backup.getId()
-            + "] successfully finished before it could be cancelled");
+        System.out.println(
+            "Backup operation for ["
+                + backup.getId()
+                + "] successfully finished before it could be cancelled");
       } else if (pollingFuture.get().getErrorCode().getCode() == StatusCode.Code.CANCELLED) {
         System.out.println("Backup operation for [" + backup.getId() + "] successfully cancelled");
       }
@@ -1659,24 +1726,27 @@ public class SpannerSample {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_cancel_backup_create]
 
   // [START spanner_list_backup_operations]
   static void listBackupOperations(
-          InstanceAdminClient instanceAdminClient, DatabaseId databaseId, BackupId backupId) {
+      InstanceAdminClient instanceAdminClient, DatabaseId databaseId, BackupId backupId) {
     Instance instance = instanceAdminClient.getInstance(databaseId.getInstanceId().getInstance());
     // Get create backup operations for the sample database.
-    Timestamp last24Hours = Timestamp.ofTimeSecondsAndNanos(TimeUnit.SECONDS.convert(
-        TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
-        TimeUnit.HOURS), 0);
+    Timestamp last24Hours =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.SECONDS.convert(
+                TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
+                TimeUnit.HOURS),
+            0);
     String filter =
         String.format(
-                "(metadata.@type:type.googleapis.com/"
-                        + "google.spanner.admin.database.v1.CreateBackupMetadata) "
-                        + "AND (metadata.database:%s)",
-                databaseId.getName());
-    Page<Operation> createBackupOperations = instance.listBackupOperations(
-              Options.filter(filter));
+            "(metadata.@type:type.googleapis.com/"
+                + "google.spanner.admin.database.v1.CreateBackupMetadata) "
+                + "AND (metadata.database:%s)",
+            databaseId.getName());
+    Page<Operation> createBackupOperations = instance.listBackupOperations(Options.filter(filter));
     System.out.println("Create Backup Operations:");
     for (Operation op : createBackupOperations.iterateAll()) {
       try {
@@ -1694,29 +1764,29 @@ public class SpannerSample {
     }
     // Get copy backup operations for the sample database.
     filter =
-              String.format(
-                      "(metadata.@type:type.googleapis.com/"
-                              + "google.spanner.admin.database.v1.CopyBackupMetadata) "
-                              + "AND (metadata.source_backup:%s)",
-                      backupId.getName());
+        String.format(
+            "(metadata.@type:type.googleapis.com/"
+                + "google.spanner.admin.database.v1.CopyBackupMetadata) "
+                + "AND (metadata.source_backup:%s)",
+            backupId.getName());
     Page<Operation> copyBackupOperations = instance.listBackupOperations(Options.filter(filter));
     System.out.println("Copy Backup Operations:");
     for (Operation op : copyBackupOperations.iterateAll()) {
       try {
-        CopyBackupMetadata copyBackupMetadata =
-                op.getMetadata().unpack(CopyBackupMetadata.class);
+        CopyBackupMetadata copyBackupMetadata = op.getMetadata().unpack(CopyBackupMetadata.class);
         System.out.println(
-                      String.format(
-                              "Copy Backup %s on backup %s pending: %d%% complete",
-                              copyBackupMetadata.getName(),
-                              copyBackupMetadata.getSourceBackup(),
-                              copyBackupMetadata.getProgress().getProgressPercent()));
+            String.format(
+                "Copy Backup %s on backup %s pending: %d%% complete",
+                copyBackupMetadata.getName(),
+                copyBackupMetadata.getSourceBackup(),
+                copyBackupMetadata.getProgress().getProgressPercent()));
       } catch (InvalidProtocolBufferException e) {
         // The returned operation does not contain CopyBackupMetadata.
         System.err.println(e.getMessage());
       }
     }
   }
+
   // [END spanner_list_backup_operations]
 
   // [START spanner_list_database_operations]
@@ -1726,26 +1796,33 @@ public class SpannerSample {
       InstanceId instanceId) {
     Instance instance = instanceAdminClient.getInstance(instanceId.getInstance());
     // Get optimize restored database operations.
-    Timestamp last24Hours = Timestamp.ofTimeSecondsAndNanos(TimeUnit.SECONDS.convert(
-        TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
-        TimeUnit.HOURS), 0);
-    String filter = String.format("(metadata.@type:type.googleapis.com/"
-                    + "google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata) AND "
-                    + "(metadata.progress.start_time > \"%s\")", last24Hours);
+    Timestamp last24Hours =
+        Timestamp.ofTimeSecondsAndNanos(
+            TimeUnit.SECONDS.convert(
+                TimeUnit.HOURS.convert(Timestamp.now().getSeconds(), TimeUnit.SECONDS) - 24,
+                TimeUnit.HOURS),
+            0);
+    String filter =
+        String.format(
+            "(metadata.@type:type.googleapis.com/"
+                + "google.spanner.admin.database.v1.OptimizeRestoredDatabaseMetadata) AND "
+                + "(metadata.progress.start_time > \"%s\")",
+            last24Hours);
     for (Operation op : instance.listDatabaseOperations(Options.filter(filter)).iterateAll()) {
       try {
         OptimizeRestoredDatabaseMetadata metadata =
             op.getMetadata().unpack(OptimizeRestoredDatabaseMetadata.class);
-        System.out.println(String.format(
-            "Database %s restored from backup is %d%% optimized",
-            metadata.getName(),
-            metadata.getProgress().getProgressPercent()));
+        System.out.println(
+            String.format(
+                "Database %s restored from backup is %d%% optimized",
+                metadata.getName(), metadata.getProgress().getProgressPercent()));
       } catch (InvalidProtocolBufferException e) {
         // The returned operation does not contain OptimizeRestoredDatabaseMetadata.
         System.err.println(e.getMessage());
       }
     }
   }
+
   // [END spanner_list_database_operations]
 
   // [START spanner_list_backups]
@@ -1761,29 +1838,35 @@ public class SpannerSample {
     // List all backups with a specific name.
     System.out.println(
         String.format("All backups with backup name containing \"%s\":", backupId.getBackup()));
-    for (Backup backup : instance.listBackups(
-        Options.filter(String.format("name:%s", backupId.getBackup()))).iterateAll()) {
+    for (Backup backup :
+        instance
+            .listBackups(Options.filter(String.format("name:%s", backupId.getBackup())))
+            .iterateAll()) {
       System.out.println(backup);
     }
 
     // List all backups for databases whose name contains a certain text.
     System.out.println(
         String.format(
-            "All backups for databases with a name containing \"%s\":",
-            databaseId.getDatabase()));
-    for (Backup backup : instance.listBackups(
-        Options.filter(String.format("database:%s", databaseId.getDatabase()))).iterateAll()) {
+            "All backups for databases with a name containing \"%s\":", databaseId.getDatabase()));
+    for (Backup backup :
+        instance
+            .listBackups(Options.filter(String.format("database:%s", databaseId.getDatabase())))
+            .iterateAll()) {
       System.out.println(backup);
     }
 
     // List all backups that expire before a certain time.
-    Timestamp expireTime = Timestamp.ofTimeMicroseconds(TimeUnit.MICROSECONDS.convert(
-        System.currentTimeMillis() + TimeUnit.DAYS.toMillis(30), TimeUnit.MILLISECONDS));
+    Timestamp expireTime =
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() + TimeUnit.DAYS.toMillis(30), TimeUnit.MILLISECONDS));
     System.out.println(String.format("All backups that expire before %s:", expireTime.toString()));
     for (Backup backup :
-        instance.listBackups(
-            Options.filter(String.format("expire_time < \"%s\"", expireTime.toString())))
-        .iterateAll()) {
+        instance
+            .listBackups(
+                Options.filter(String.format("expire_time < \"%s\"", expireTime.toString())))
+            .iterateAll()) {
       System.out.println(backup);
     }
 
@@ -1794,15 +1877,17 @@ public class SpannerSample {
     }
 
     // List all backups with a create time after a certain timestamp and that are also ready.
-    Timestamp createTime = Timestamp.ofTimeMicroseconds(TimeUnit.MICROSECONDS.convert(
-        System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1), TimeUnit.MILLISECONDS));
+    Timestamp createTime =
+        Timestamp.ofTimeMicroseconds(
+            TimeUnit.MICROSECONDS.convert(
+                System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1), TimeUnit.MILLISECONDS));
     System.out.println(
-        String.format(
-            "All databases created after %s and that are ready:", createTime.toString()));
+        String.format("All databases created after %s and that are ready:", createTime.toString()));
     for (Backup backup :
         instance
-            .listBackups(Options.filter(
-                String.format("create_time >= \"%s\" AND state:READY", createTime.toString())))
+            .listBackups(
+                Options.filter(
+                    String.format("create_time >= \"%s\" AND state:READY", createTime.toString())))
             .iterateAll()) {
       System.out.println(backup);
     }
@@ -1820,6 +1905,7 @@ public class SpannerSample {
       page = page.getNextPage();
     }
   }
+
   // [END spanner_list_backups]
 
   // [START spanner_restore_backup]
@@ -1830,32 +1916,33 @@ public class SpannerSample {
       DatabaseId restoreToDatabase) {
     Backup backup = dbAdminClient.newBackupBuilder(backupId).build();
     // Initiate the request which returns an OperationFuture.
-    System.out.println(String.format(
-        "Restoring backup [%s] to database [%s]...",
-        backup.getId().toString(),
-        restoreToDatabase.toString()));
+    System.out.println(
+        String.format(
+            "Restoring backup [%s] to database [%s]...",
+            backup.getId().toString(), restoreToDatabase.toString()));
     try {
       OperationFuture<Database, RestoreDatabaseMetadata> op = backup.restore(restoreToDatabase);
       // Wait until the database has been restored.
       Database db = op.get();
       // Refresh database metadata and get the restore info.
       RestoreInfo restore = db.reload().getRestoreInfo();
-      Timestamp versionTime = Timestamp.fromProto(restore
-          .getProto()
-          .getBackupInfo()
-          .getVersionTime());
+      Timestamp versionTime =
+          Timestamp.fromProto(restore.getProto().getBackupInfo().getVersionTime());
       System.out.println(
           "Restored database ["
               + restore.getSourceDatabase().getName()
               + "] from ["
               + restore.getBackup().getName()
-              + "] with version time [" + versionTime + "]");
+              + "] with version time ["
+              + versionTime
+              + "]");
     } catch (ExecutionException e) {
       throw SpannerExceptionFactory.newSpannerException(e.getCause());
     } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
+
   // [END spanner_restore_backup]
 
   // [START spanner_update_backup]
@@ -1870,24 +1957,29 @@ public class SpannerSample {
                 + TimeUnit.NANOSECONDS.toMicros(backup.getExpireTime().getNanos())
                 + TimeUnit.DAYS.toMicros(30L));
     // New Expire Time must be less than Max Expire Time
-    expireTime = expireTime.compareTo(backup.getMaxExpireTime())
-            < 0 ? expireTime : backup.getMaxExpireTime();
+    expireTime =
+        expireTime.compareTo(backup.getMaxExpireTime()) < 0
+            ? expireTime
+            : backup.getMaxExpireTime();
     int timeDiff = expireTime.compareTo(backup.getExpireTime());
     Timestamp newExpireTime = (timeDiff < 0) ? expireTime : backup.getExpireTime();
 
-    System.out.println(String.format(
-        "Updating expire time of backup [%s] to %s...",
-        backupId.toString(),
-        LocalDateTime.ofEpochSecond(
-          expireTime.getSeconds(),
-          expireTime.getNanos(),
-          OffsetDateTime.now().getOffset()).toString()));
+    System.out.println(
+        String.format(
+            "Updating expire time of backup [%s] to %s...",
+            backupId.toString(),
+            LocalDateTime.ofEpochSecond(
+                    expireTime.getSeconds(),
+                    expireTime.getNanos(),
+                    OffsetDateTime.now().getOffset())
+                .toString()));
 
     // Update expire time.
     backup = backup.toBuilder().setExpireTime(expireTime).build();
     backup.updateExpireTime();
     System.out.println("Updated backup [" + backupId + "]");
   }
+
   // [END spanner_update_backup]
 
   // [START spanner_delete_backup]
@@ -1904,6 +1996,7 @@ public class SpannerSample {
       System.out.println("Deleted backup [" + backupId + "]");
     }
   }
+
   // [END spanner_delete_backup]
 
   static void run(
@@ -2112,8 +2205,8 @@ public class SpannerSample {
   static Timestamp getVersionTime(DatabaseClient dbClient) {
     // Generates a version time for the backup
     Timestamp versionTime;
-    try (ResultSet resultSet = dbClient.singleUse()
-        .executeQuery(Statement.of("SELECT CURRENT_TIMESTAMP()"))) {
+    try (ResultSet resultSet =
+        dbClient.singleUse().executeQuery(Statement.of("SELECT CURRENT_TIMESTAMP()"))) {
       resultSet.next();
       versionTime = resultSet.getTimestamp(0);
     }
@@ -2208,8 +2301,7 @@ public class SpannerSample {
       // Generate a backup id for the sample database.
       String backupName =
           String.format(
-              "%s_%02d",
-              db.getDatabase(), LocalDate.now().get(ChronoField.ALIGNED_WEEK_OF_YEAR));
+              "%s_%02d", db.getDatabase(), LocalDate.now().get(ChronoField.ALIGNED_WEEK_OF_YEAR));
       BackupId backup = BackupId.of(db.getInstanceId(), backupName);
       if (args.length == 4) {
         backupName = args[3];

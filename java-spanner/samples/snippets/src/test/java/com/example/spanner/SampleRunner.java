@@ -21,9 +21,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.function.Predicate;
 
-/**
- * Runs a sample and captures the output as a String.
- */
+/** Runs a sample and captures the output as a String. */
 public class SampleRunner {
 
   @FunctionalInterface
@@ -41,8 +39,8 @@ public class SampleRunner {
    * SpannerException}. The predicate can return different answers for the same error, for example
    * by only allowing the retry of a certain error a specific number of times.
    */
-  public static String runSampleWithRetry(SampleRunnerCallable sample,
-      Predicate<SpannerException> shouldRetry) throws Exception {
+  public static String runSampleWithRetry(
+      SampleRunnerCallable sample, Predicate<SpannerException> shouldRetry) throws Exception {
     final PrintStream stdOut = System.out;
     final ByteArrayOutputStream bout = new ByteArrayOutputStream();
     final PrintStream out = new PrintStream(bout);

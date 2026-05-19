@@ -24,9 +24,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Integration tests for {@link CreateDatabaseWithVersionRetentionPeriodSample}
- */
+/** Integration tests for {@link CreateDatabaseWithVersionRetentionPeriodSample} */
 @RunWith(JUnit4.class)
 public class CreateDatabaseWithVersionRetentionPeriodSampleIT extends SampleTestBase {
 
@@ -35,14 +33,22 @@ public class CreateDatabaseWithVersionRetentionPeriodSampleIT extends SampleTest
     final String databaseId = idGenerator.generateDatabaseId();
     final String versionRetentionPeriod = "7d";
 
-    final String out = SampleRunner.runSample(() -> CreateDatabaseWithVersionRetentionPeriodSample
-        .createDatabaseWithVersionRetentionPeriod(
-            databaseAdminClient, instanceId, databaseId, versionRetentionPeriod
-        ));
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                CreateDatabaseWithVersionRetentionPeriodSample
+                    .createDatabaseWithVersionRetentionPeriod(
+                        databaseAdminClient, instanceId, databaseId, versionRetentionPeriod));
 
-    assertThat(out).contains(
-        "Created database [projects/" + projectId + "/instances/" + instanceId + "/databases/"
-            + databaseId + "]");
+    assertThat(out)
+        .contains(
+            "Created database [projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/databases/"
+                + databaseId
+                + "]");
     assertThat(out).contains("Version retention period: " + versionRetentionPeriod);
   }
 }

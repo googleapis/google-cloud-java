@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_set_custom_timeout_and_retry]
+// [START spanner_set_custom_timeout_and_retry]
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
@@ -78,14 +78,15 @@ class CustomTimeoutAndRetrySettingsExample {
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       client
           .readWriteTransaction()
-          .run(transaction -> {
-            String sql =
-                "INSERT INTO Singers (SingerId, FirstName, LastName)\n"
-                    + "VALUES (20, 'George', 'Washington')";
-            long rowCount = transaction.executeUpdate(Statement.of(sql));
-            System.out.printf("%d record inserted.%n", rowCount);
-            return null;
-          });
+          .run(
+              transaction -> {
+                String sql =
+                    "INSERT INTO Singers (SingerId, FirstName, LastName)\n"
+                        + "VALUES (20, 'George', 'Washington')";
+                long rowCount = transaction.executeUpdate(Statement.of(sql));
+                System.out.printf("%d record inserted.%n", rowCount);
+                return null;
+              });
     }
   }
 }

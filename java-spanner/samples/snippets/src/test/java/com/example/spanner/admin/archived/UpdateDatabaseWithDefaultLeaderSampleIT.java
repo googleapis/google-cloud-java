@@ -20,7 +20,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.example.spanner.SampleRunner;
 import com.example.spanner.SampleTestBase;
-import com.example.spanner.admin.archived.UpdateDatabaseWithDefaultLeaderSample;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.InstanceConfig;
 import com.google.cloud.spanner.InstanceConfigId;
@@ -34,35 +33,39 @@ public class UpdateDatabaseWithDefaultLeaderSampleIT extends SampleTestBase {
   public void testUpdateDatabaseWithDefaultLeader() throws Exception {
     // Create database
     final String databaseId = idGenerator.generateDatabaseId();
-    final Database createdDatabase = databaseAdminClient
-        .createDatabase(multiRegionalInstanceId, databaseId, Collections.emptyList())
-        .get(5, TimeUnit.MINUTES);
+    final Database createdDatabase =
+        databaseAdminClient
+            .createDatabase(multiRegionalInstanceId, databaseId, Collections.emptyList())
+            .get(5, TimeUnit.MINUTES);
     final String defaultLeader = createdDatabase.getDefaultLeader();
 
     // Finds a possible new leader option
-    final InstanceConfigId instanceConfigId = instanceAdminClient
-        .getInstance(multiRegionalInstanceId)
-        .getInstanceConfigId();
-    final InstanceConfig config = instanceAdminClient
-        .getInstanceConfig(instanceConfigId.getInstanceConfig());
-    final String newLeader = config
-        .getLeaderOptions()
-        .stream()
-        .filter(leader -> !leader.equals(defaultLeader))
-        .findFirst()
-        .orElseThrow(() ->
-            new RuntimeException("Expected to find a leader option different than " + defaultLeader)
-        );
+    final InstanceConfigId instanceConfigId =
+        instanceAdminClient.getInstance(multiRegionalInstanceId).getInstanceConfigId();
+    final InstanceConfig config =
+        instanceAdminClient.getInstanceConfig(instanceConfigId.getInstanceConfig());
+    final String newLeader =
+        config.getLeaderOptions().stream()
+            .filter(leader -> !leader.equals(defaultLeader))
+            .findFirst()
+            .orElseThrow(
+                () ->
+                    new RuntimeException(
+                        "Expected to find a leader option different than " + defaultLeader));
 
     // Runs sample
-    final String out = SampleRunner.runSample(() -> UpdateDatabaseWithDefaultLeaderSample
-        .updateDatabaseWithDefaultLeader(projectId, multiRegionalInstanceId, databaseId, newLeader)
-    );
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                UpdateDatabaseWithDefaultLeaderSample.updateDatabaseWithDefaultLeader(
+                    projectId, multiRegionalInstanceId, databaseId, newLeader));
 
     assertTrue(
-        "Expected that database new leader would had been updated to " + newLeader + "."
-            + " Output received was " + out,
-        out.contains("Updated default leader to " + newLeader)
-    );
+        "Expected that database new leader would had been updated to "
+            + newLeader
+            + "."
+            + " Output received was "
+            + out,
+        out.contains("Updated default leader to " + newLeader));
   }
 }

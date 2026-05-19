@@ -39,14 +39,13 @@ public class ListInstanceConfigOperationsSample {
 
       try {
         System.out.printf(
-            "Getting list of instance config operations for project %s...\n",
-            projectId);
+            "Getting list of instance config operations for project %s...\n", projectId);
         final Iterable<Operation> instanceConfigOperations =
             instanceAdminClient
                 .listInstanceConfigOperations(
                     Options.filter(
                         "(metadata.@type=type.googleapis.com/"
-                        + "google.spanner.admin.instance.v1.CreateInstanceConfigMetadata)"))
+                            + "google.spanner.admin.instance.v1.CreateInstanceConfigMetadata)"))
                 .iterateAll();
         for (Operation operation : instanceConfigOperations) {
           CreateInstanceConfigMetadata metadata =

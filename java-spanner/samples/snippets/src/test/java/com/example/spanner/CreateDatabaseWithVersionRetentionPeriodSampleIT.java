@@ -23,8 +23,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Integration tests for
- * {@link com.example.spanner.admin.archived.CreateDatabaseWithVersionRetentionPeriodSample}
+ * Integration tests for {@link
+ * com.example.spanner.admin.archived.CreateDatabaseWithVersionRetentionPeriodSample}
  */
 @RunWith(JUnit4.class)
 public class CreateDatabaseWithVersionRetentionPeriodSampleIT extends SampleTestBaseV2 {
@@ -34,14 +34,22 @@ public class CreateDatabaseWithVersionRetentionPeriodSampleIT extends SampleTest
     final String databaseId = idGenerator.generateDatabaseId();
     final String versionRetentionPeriod = "7d";
 
-    final String out = SampleRunner.runSample(() -> CreateDatabaseWithVersionRetentionPeriodSample
-        .createDatabaseWithVersionRetentionPeriod(
-            projectId, instanceId, databaseId, versionRetentionPeriod
-        ));
+    final String out =
+        SampleRunner.runSample(
+            () ->
+                CreateDatabaseWithVersionRetentionPeriodSample
+                    .createDatabaseWithVersionRetentionPeriod(
+                        projectId, instanceId, databaseId, versionRetentionPeriod));
 
-    assertThat(out).contains(
-        "Created database [projects/" + projectId + "/instances/" + instanceId + "/databases/"
-            + databaseId + "]");
+    assertThat(out)
+        .contains(
+            "Created database [projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/databases/"
+                + databaseId
+                + "]");
     assertThat(out).contains("Version retention period: " + versionRetentionPeriod);
   }
 }

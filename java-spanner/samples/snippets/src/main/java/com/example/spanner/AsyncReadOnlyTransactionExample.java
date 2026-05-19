@@ -132,4 +132,4 @@ class AsyncReadOnlyTransactionExample {
     executor.shutdown();
   }
 }
-//[END spanner_async_read_only_transaction]
+// [END spanner_async_read_only_transaction]

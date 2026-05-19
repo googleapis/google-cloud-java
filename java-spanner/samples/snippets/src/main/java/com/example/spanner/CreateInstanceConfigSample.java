@@ -47,38 +47,44 @@ class CreateInstanceConfigSample {
   static void createInstanceConfig(
       String projectId, String baseInstanceConfigId, String instanceConfigId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
-      final InstanceConfigName baseInstanceConfigName = InstanceConfigName.of(projectId,
-          baseInstanceConfigId);
+      final InstanceConfigName baseInstanceConfigName =
+          InstanceConfigName.of(projectId, baseInstanceConfigId);
       final InstanceConfig baseConfig =
           instanceAdminClient.getInstanceConfig(baseInstanceConfigName.toString());
-      final InstanceConfigName instanceConfigName = InstanceConfigName.of(projectId,
-          instanceConfigId);
+      final InstanceConfigName instanceConfigName =
+          InstanceConfigName.of(projectId, instanceConfigId);
       /**
        * The replicas for the custom instance configuration must include all the replicas of the
        * base configuration, in addition to at least one from the list of optional replicas of the
        * base configuration.
        */
       final List<ReplicaInfo> replicas =
-          Stream.concat(baseConfig.getReplicasList().stream(),
-              baseConfig.getOptionalReplicasList().stream().limit(1)).collect(Collectors.toList());
+          Stream.concat(
+                  baseConfig.getReplicasList().stream(),
+                  baseConfig.getOptionalReplicasList().stream().limit(1))
+              .collect(Collectors.toList());
       final InstanceConfig instanceConfig =
-          InstanceConfig.newBuilder().setName(instanceConfigName.toString())
+          InstanceConfig.newBuilder()
+              .setName(instanceConfigName.toString())
               .setBaseConfig(baseInstanceConfigName.toString())
-              .setDisplayName("Instance Configuration").addAllReplicas(replicas).build();
+              .setDisplayName("Instance Configuration")
+              .addAllReplicas(replicas)
+              .build();
       final CreateInstanceConfigRequest createInstanceConfigRequest =
-          CreateInstanceConfigRequest.newBuilder().setParent(ProjectName.of(projectId).toString())
-              .setInstanceConfigId(instanceConfigId).setInstanceConfig(instanceConfig).build();
+          CreateInstanceConfigRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInstanceConfigId(instanceConfigId)
+              .setInstanceConfig(instanceConfig)
+              .build();
       try {
-        System.out.printf("Waiting for create operation for %s to complete...\n",
-            instanceConfigName);
+        System.out.printf(
+            "Waiting for create operation for %s to complete...\n", instanceConfigName);
         InstanceConfig instanceConfigResult =
-            instanceAdminClient.createInstanceConfigAsync(
-                createInstanceConfigRequest).get(5, TimeUnit.MINUTES);
+            instanceAdminClient
+                .createInstanceConfigAsync(createInstanceConfigRequest)
+                .get(5, TimeUnit.MINUTES);
         System.out.printf("Created instance configuration %s\n", instanceConfigResult.getName());
       } catch (ExecutionException | TimeoutException e) {
         System.out.printf(

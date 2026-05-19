@@ -41,10 +41,7 @@ class UpdateInstanceConfigSample {
 
   static void updateInstanceConfig(String projectId, String instanceConfigId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder()
-            .setProjectId(projectId)
-            .build()
-            .getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient()) {
       final InstanceConfigName instanceConfigName =
           InstanceConfigName.of(projectId, instanceConfigId);
@@ -52,24 +49,28 @@ class UpdateInstanceConfigSample {
           InstanceConfig.newBuilder()
               .setName(instanceConfigName.toString())
               .setDisplayName("updated custom instance config")
-              .putLabels("updated", "true").build();
+              .putLabels("updated", "true")
+              .build();
       /**
-       * The field mask must always be specified; this prevents any future
-       * fields in [InstanceConfig][google.spanner.admin.instance.v1.InstanceConfig]
-       * from being erased accidentally by clients that do not know about them.
+       * The field mask must always be specified; this prevents any future fields in
+       * [InstanceConfig][google.spanner.admin.instance.v1.InstanceConfig] from being erased
+       * accidentally by clients that do not know about them.
        */
       final UpdateInstanceConfigRequest updateInstanceConfigRequest =
           UpdateInstanceConfigRequest.newBuilder()
               .setInstanceConfig(instanceConfig)
               .setUpdateMask(
-                  FieldMask.newBuilder().addAllPaths(ImmutableList.of("display_name", "labels"))
-                      .build()).build();
+                  FieldMask.newBuilder()
+                      .addAllPaths(ImmutableList.of("display_name", "labels"))
+                      .build())
+              .build();
       try {
-        System.out.printf("Waiting for update operation on %s to complete...\n",
-            instanceConfigName);
+        System.out.printf(
+            "Waiting for update operation on %s to complete...\n", instanceConfigName);
         InstanceConfig instanceConfigResult =
-            instanceAdminClient.updateInstanceConfigAsync(
-                updateInstanceConfigRequest).get(5, TimeUnit.MINUTES);
+            instanceAdminClient
+                .updateInstanceConfigAsync(updateInstanceConfigRequest)
+                .get(5, TimeUnit.MINUTES);
         System.out.printf(
             "Updated instance configuration %s with new display name %s\n",
             instanceConfigResult.getName(), instanceConfig.getDisplayName());

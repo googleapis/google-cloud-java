@@ -38,11 +38,10 @@ public class ListDatabaseRoles {
 
   static void listDatabaseRoles(String projectId, String instanceId, String databaseId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       DatabaseName databaseName = DatabaseName.of(projectId, instanceId, databaseId);
-      ListDatabaseRolesPagedResponse response
-          = databaseAdminClient.listDatabaseRoles(databaseName);
+      ListDatabaseRolesPagedResponse response = databaseAdminClient.listDatabaseRoles(databaseName);
       System.out.println("List of Database roles");
       for (ListDatabaseRolesPage page : response.iteratePages()) {
         for (DatabaseRole role : page.iterateAll()) {

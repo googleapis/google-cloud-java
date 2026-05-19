@@ -21,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.example.spanner.SampleRunner;
 import com.example.spanner.SampleTestBase;
-import com.example.spanner.admin.archived.UpdateDatabaseSample;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseId;

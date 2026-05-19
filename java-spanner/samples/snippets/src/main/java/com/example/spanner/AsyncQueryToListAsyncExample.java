@@ -31,9 +31,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/**
- * Example code for using Async query on Cloud Spanner and convert it to list.
- */
+/** Example code for using Async query on Cloud Spanner and convert it to list. */
 class AsyncQueryToListAsyncExample {
   static class Album {
     final long singerId;
@@ -88,4 +86,4 @@ class AsyncQueryToListAsyncExample {
     executor.shutdown();
   }
 }
-//[END spanner_async_query_to_list]
+// [END spanner_async_query_to_list]

@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_postgresql_async_transaction_manager]
+// [START spanner_postgresql_async_transaction_manager]
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.spanner.AbortedException;
@@ -51,7 +51,7 @@ class PgAsyncTransactionManagerExample {
     String databaseId = "my-database";
 
     try (Spanner spanner =
-             SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        SpannerOptions.newBuilder().setProjectId(projectId).build().getService()) {
       DatabaseClient client =
           spanner.getDatabaseClient(DatabaseId.of(projectId, instanceId, databaseId));
       asyncTransactionManager(client);
@@ -130,11 +130,9 @@ class PgAsyncTransactionManagerExample {
     // Calculate the total update count.
     ApiFuture<Long> totalUpdateCount =
         ApiFutures.transform(
-            updateCounts,
-            input -> Arrays.stream(input).sum(),
-            MoreExecutors.directExecutor());
+            updateCounts, input -> Arrays.stream(input).sum(), MoreExecutors.directExecutor());
     System.out.printf("%d records updated.%n", totalUpdateCount.get(30L, TimeUnit.SECONDS));
     executor.shutdown();
   }
 }
-//[END spanner_postgresql_async_transaction_manager]
+// [END spanner_postgresql_async_transaction_manager]

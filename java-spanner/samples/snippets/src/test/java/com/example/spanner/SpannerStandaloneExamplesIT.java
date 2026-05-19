@@ -22,14 +22,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-import com.example.spanner.CustomTimeoutAndRetrySettingsExample;
-import com.example.spanner.QueryWithJsonParameterSample;
-import com.example.spanner.QueryWithNumericParameterSample;
-import com.example.spanner.StatementTimeoutExample;
-import com.example.spanner.TransactionTimeoutExample;
-import com.example.spanner.UpdateJsonDataSample;
-import com.example.spanner.UpdateNumericDataSample;
-import com.example.spanner.admin.archived.SpannerSampleIT;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.DatabaseClient;

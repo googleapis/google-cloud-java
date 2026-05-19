@@ -16,7 +16,7 @@
 
 package com.example.spanner.admin.archived;
 
-//[START spanner_create_instance_with_processing_units]
+// [START spanner_create_instance_with_processing_units]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Instance;
@@ -51,12 +51,12 @@ class CreateInstanceWithProcessingUnitsExample {
       // Creates a new instance
       System.out.printf("Creating instance %s.%n", instanceId);
       OperationFuture<Instance, CreateInstanceMetadata> operation =
-          instanceAdminClient.createInstance(InstanceInfo
-              .newBuilder(InstanceId.of(projectId, instanceId))
-              .setInstanceConfigId(InstanceConfigId.of(projectId, configId))
-              .setProcessingUnits(processingUnits)
-              .setDisplayName(displayName)
-              .build());
+          instanceAdminClient.createInstance(
+              InstanceInfo.newBuilder(InstanceId.of(projectId, instanceId))
+                  .setInstanceConfigId(InstanceConfigId.of(projectId, configId))
+                  .setProcessingUnits(processingUnits)
+                  .setDisplayName(displayName)
+                  .build());
 
       // Wait for the createInstance operation to finish.
       System.out.printf("Waiting for operation on %s to complete...%n", instanceId);
@@ -65,12 +65,13 @@ class CreateInstanceWithProcessingUnitsExample {
       System.out.printf("Created instance %s.%n", createdInstance.getId().getInstance());
 
       Instance instance = instanceAdminClient.getInstance(instanceId);
-      System.out.printf("Instance %s has %d processing units.%n", instance.getId().getInstance(),
-          instance.getProcessingUnits());
+      System.out.printf(
+          "Instance %s has %d processing units.%n",
+          instance.getId().getInstance(), instance.getProcessingUnits());
     } catch (Exception e) {
       System.out.printf("Error: %s.%n", e.getMessage());
     }
     spanner.close();
   }
 }
-//[END spanner_create_instance_with_processing_units]
+// [END spanner_create_instance_with_processing_units]

@@ -16,7 +16,7 @@
 
 package com.example.spanner;
 
-//[START spanner_list_databases]
+// [START spanner_list_databases]
 
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
@@ -37,7 +37,7 @@ public class ListDatabasesSample {
 
   static void listDatabases(String projectId, String instanceId) {
     try (Spanner spanner =
-        SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
+            SpannerOptions.newBuilder().setProjectId(projectId).build().getService();
         DatabaseAdminClient databaseAdminClient = spanner.createDatabaseAdminClient()) {
       ListDatabasesPagedResponse response =
           databaseAdminClient.listDatabases(InstanceName.of(projectId, instanceId));
@@ -46,12 +46,14 @@ public class ListDatabasesSample {
 
       for (ListDatabasesPage page : response.iteratePages()) {
         for (Database database : page.iterateAll()) {
-          final String defaultLeader = database.getDefaultLeader().equals("")
-              ? "" : "(default leader = " + database.getDefaultLeader() + ")";
+          final String defaultLeader =
+              database.getDefaultLeader().equals("")
+                  ? ""
+                  : "(default leader = " + database.getDefaultLeader() + ")";
           System.out.println("\t" + database.getName() + " " + defaultLeader);
         }
       }
     }
   }
 }
-//[END spanner_list_databases]
+// [END spanner_list_databases]
