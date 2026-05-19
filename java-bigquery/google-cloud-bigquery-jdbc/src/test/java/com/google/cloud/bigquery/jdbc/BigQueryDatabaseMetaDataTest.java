@@ -3237,4 +3237,3 @@ public class BigQueryDatabaseMetaDataTest {
     verify(bigQueryConnection, times(2)).createStatement();
   }
 }
-

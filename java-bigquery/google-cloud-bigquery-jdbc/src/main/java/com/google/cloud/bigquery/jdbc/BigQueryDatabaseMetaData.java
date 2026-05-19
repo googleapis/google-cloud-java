@@ -2638,13 +2638,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  private void closeStatementIgnoreException(Statement statement){
-    if (statement == null){
+  private void closeStatementIgnoreException(Statement statement) {
+    if (statement == null) {
       return;
     }
     try {
       statement.close();
-    } catch (SQLException e){
+    } catch (SQLException e) {
       // pass
     }
   }
