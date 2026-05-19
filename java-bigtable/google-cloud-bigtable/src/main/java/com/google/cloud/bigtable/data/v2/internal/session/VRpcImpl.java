@@ -20,7 +20,6 @@ import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.VirtualRpcRequest;
 import com.google.bigtable.v2.VirtualRpcRequest.Metadata;
 import com.google.bigtable.v2.VirtualRpcResponse;
-import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Message;
@@ -61,7 +60,9 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   private enum State {
     NEW,
+    STARTING,
     STARTED,
+    CANCELLED,
     CLOSED
   }
 
@@ -71,25 +72,23 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   private VRpcListener<RespT> listener;
   private PeerInfo peerInfo;
 
-  @GuardedBy("this")
+  private final Object lock = new Object();
+
+  @GuardedBy("lock")
   private State state = State.NEW;
 
-  @GuardedBy("this")
+  @GuardedBy("lock")
   private Status cancelStatus = null;
-
-  private final DebugTagTracer debugTagTracer;
 
   public VRpcImpl(
       VRpcSessionApi session,
       VRpcDescriptor<OpenReqT, ReqT, RespT> desc,
       long rpcId,
-      PeerInfo peerInfo,
-      DebugTagTracer debugTagTracer) {
+      PeerInfo peerInfo) {
     this.session = session;
     this.desc = desc;
     this.rpcId = rpcId;
     this.peerInfo = peerInfo;
-    this.debugTagTracer = debugTagTracer;
   }
 
   @Override
@@ -97,73 +96,79 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
     this.listener = listener;
 
     Status status = null;
-    boolean retryable = true;
+    VirtualRpcRequest request = null;
 
-    synchronized (this) {
-      if (state == State.CLOSED && cancelStatus != null) {
+    synchronized (lock) {
+      if (state == State.CANCELLED) {
+        state = State.CLOSED;
         status = cancelStatus;
-        retryable = false;
       } else if (state != State.NEW) {
         status = Status.INTERNAL.withDescription("VRpc already started in state: " + state);
-        retryable = false;
+        state = State.CLOSED;
       } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
           < TimeUnit.MILLISECONDS.toMicros(1)) {
         // Don't send RPCs that don't have any hope of succeeding
         state = State.CLOSED;
         status =
             Status.DEADLINE_EXCEEDED.withDescription("Remaining deadline is too short to send RPC");
-        retryable = false;
       } else {
-        state = State.STARTED;
+        state = State.STARTING;
         Metadata vRpcMetadata =
             Metadata.newBuilder()
                 .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())
                 .setTraceparent(ctx.getTraceParent())
                 .build();
         ctx.getTracer().onRequestSent(peerInfo);
-        status =
-            session.startRpc(
-                this,
-                VirtualRpcRequest.newBuilder()
-                    .setRpcId(rpcId)
-                    .setMetadata(vRpcMetadata)
-                    .setDeadline(
-                        Durations.fromNanos(
-                            ctx.getOperationInfo()
-                                .getDeadline()
-                                .timeRemaining(TimeUnit.NANOSECONDS)))
-                    .setPayload(desc.encode(req))
-                    .build());
-
-        if (!status.isOk()) {
-          // if status is not OK, the session might not be ready and the vRPC can be
-          // retried on a
-          // different session
-          state = State.CLOSED;
-        }
+        request =
+            VirtualRpcRequest.newBuilder()
+                .setRpcId(rpcId)
+                .setMetadata(vRpcMetadata)
+                .setDeadline(
+                    Durations.fromNanos(
+                        ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
+                .setPayload(desc.encode(req))
+                .build();
       }
     }
 
-    if (status != null && !status.isOk()) {
-      synchronized (this) {
-        debugTagTracer.checkPrecondition(
-            state == State.STARTED || state == State.CLOSED,
-            "vrpc_incorrect_start_state",
-            "VRpc has incorrect state. Expected to be started or closed but was %s",
-            state);
+    if (status != null) {
+      listener.onClose(VRpcResult.createRejectedError(status));
+      return;
+    }
+
+    Status startRpcStatus = session.startRpc(this, request);
+
+    if (startRpcStatus.isOk()) {
+      boolean shouldCancelSession = false;
+      Status localCancel = null;
+      synchronized (lock) {
+        if (state == State.STARTING) {
+          state = State.STARTED;
+        } else if (state == State.CANCELLED) {
+          shouldCancelSession = true;
+          localCancel = cancelStatus;
+        }
       }
-      // TODO: loop through the session executor
-      if (retryable) {
-        listener.onClose(VRpcResult.createUncommitedError(status));
-      } else {
-        listener.onClose(VRpcResult.createRejectedError(status));
+      if (shouldCancelSession) {
+        session.cancelRpc(rpcId, localCancel.getDescription(), localCancel.getCause());
       }
+    } else {
+      VRpcResult result;
+      synchronized (lock) {
+        if (state == State.CANCELLED) {
+          result = VRpcResult.createRejectedError(cancelStatus);
+        } else {
+          result = VRpcResult.createUncommitedError(startRpcStatus);
+        }
+        state = State.CLOSED;
+      }
+      listener.onClose(result);
     }
   }
 
   void handleSessionClose(VRpcResult result) {
-    synchronized (this) {
-      if (state != State.STARTED) {
+    synchronized (lock) {
+      if (state != State.STARTED && state != State.CANCELLED) {
         logger.warning("tried to close a vRPC after it was already closed state: " + state);
         return;
       }
@@ -174,7 +179,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   }
 
   void handleResponse(VirtualRpcResponse response) {
-    synchronized (this) {
+    synchronized (lock) {
       if (state != State.STARTED) {
         // This can happen if the call was cancelled just before the response arrived.
         // Silently ignore it.
@@ -211,7 +216,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   }
 
   void handleError(VRpcResult result) {
-    synchronized (this) {
+    synchronized (lock) {
       if (state == State.CLOSED) {
         return;
       }
@@ -223,9 +228,10 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    synchronized (this) {
-      if (state == State.NEW) {
-        state = State.CLOSED;
+    boolean isRealCall = false;
+    synchronized (lock) {
+      if (state == State.NEW || state == State.STARTING) {
+        state = State.CANCELLED;
         Status status = Status.CANCELLED;
         if (message != null) {
           status = status.withDescription(message);
@@ -235,9 +241,14 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
         }
         cancelStatus = status;
         return;
+      } else if (state == State.STARTED) {
+        isRealCall = true;
       }
+      // ignore closed vRPCs
     }
-    session.cancelRpc(rpcId, message, cause);
+    if (isRealCall) {
+      session.cancelRpc(rpcId, message, cause);
+    }
   }
 
   @Override
