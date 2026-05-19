@@ -367,7 +367,8 @@ public class BigQueryDatabaseMetaDataTest {
         Field.newBuilder("test_interval", StandardSQLTypeName.INTERVAL)
             .setMode(Field.Mode.NULLABLE)
             .build();
-    BigQueryDatabaseMetaData.ColumnTypeInfo infoInterval = dbMetadata.mapBigQueryTypeToJdbc(fieldInterval);
+    BigQueryDatabaseMetaData.ColumnTypeInfo infoInterval =
+        dbMetadata.mapBigQueryTypeToJdbc(fieldInterval);
     assertEquals(Types.OTHER, infoInterval.jdbcType);
     assertEquals("INTERVAL", infoInterval.typeName);
     assertNull(infoInterval.columnSize);
