@@ -109,9 +109,7 @@ public class GcpManagedChannel extends ManagedChannel {
   public static final CallOptions.Key<Integer> CHANNEL_ID_KEY =
       CallOptions.Key.create("GcpChannelId");
 
-  /**
-   * CallOptions key for sticky channel routing without affinity-key map state.
-   */
+  /** CallOptions key for sticky channel routing without affinity-key map state. */
   public static final CallOptions.Key<ChannelAffinityRef> CHANNEL_AFFINITY_REF_KEY =
       CallOptions.Key.create("GcpChannelAffinityRef");
 
@@ -1698,7 +1696,9 @@ public class GcpManagedChannel extends ManagedChannel {
     return mappedChannel;
   }
 
-  /** Pick a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map. */
+  /**
+   * Pick a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map.
+   */
   protected ChannelRef getChannelRefByAffinityRef(ChannelAffinityRef affinityRef) {
     maybeDynamicUpscale();
     while (true) {
