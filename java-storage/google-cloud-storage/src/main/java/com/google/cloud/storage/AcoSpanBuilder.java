@@ -226,9 +226,13 @@ final class AcoSpanBuilder implements SpanBuilder {
                   bucketName, "projects/_/buckets/" + bucketName, "global", false);
             } else {
               LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
+              // Transient failure -> Evict cache entry to allow future retries
+              bucketMetadataCache.remove(bucketName);
             }
           } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
+            // Transient failure -> Evict cache entry to allow future retries
+            bucketMetadataCache.remove(bucketName);
           }
         });
   }
