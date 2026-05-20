@@ -232,8 +232,15 @@ public class RetryAlgorithm<ResponseT> {
       ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)
       throws CancellationException {
-    return shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
-        && shouldRetryBasedOnTiming(context, nextAttemptSettings);
+    boolean retryBasedOnResult = shouldRetryBasedOnResult(context, previousThrowable, previousResponse);
+
+    // Short-circuit when operation has succeeded to avoid erroneously throwing CancellationException below
+    if (!retryBasedOnResult && previousThrowable == null) {
+      return false;
+    }
+
+    boolean retryBasedOnTiming = shouldRetryBasedOnTiming(context, nextAttemptSettings); // throws CancellationException
+    return retryBasedOnResult && retryBasedOnTiming;
   }
 
   boolean shouldRetryBasedOnResult(
