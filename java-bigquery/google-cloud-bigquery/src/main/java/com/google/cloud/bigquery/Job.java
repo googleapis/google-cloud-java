@@ -424,6 +424,7 @@ public class Job extends JobInfo {
                 .setJobId(job.getJobId())
                 .setTotalRows(0L)
                 .setPageNoSchema(new PageImpl<FieldValueList>(null, "", null))
+                .setRowsInPage(0L)
                 .build();
         return emptyTableResult;
       }

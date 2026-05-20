@@ -210,6 +210,7 @@ public class SerializationTest extends BaseSerializationTest {
           .setSchema(Schema.of())
           .setTotalRows(0L)
           .setPageNoSchema(new PageImpl(null, "", ImmutableList.of()))
+          .setRowsInPage(0L)
           .build();
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
