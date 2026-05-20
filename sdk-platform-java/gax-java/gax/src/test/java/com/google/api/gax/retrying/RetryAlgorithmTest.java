@@ -213,8 +213,10 @@ class RetryAlgorithmTest {
     TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
     when(resultAlgorithm.shouldRetry(previousThrowable, previousResult)).thenReturn(false);
 
-    algorithm.shouldRetry(previousThrowable, previousResult, previousSettings);
+    boolean shouldRetry =
+        algorithm.shouldRetry(previousThrowable, previousResult, previousSettings);
 
+    assertFalse(shouldRetry);
     verify(timedAlgorithm).shouldRetry(previousSettings);
   }
 
