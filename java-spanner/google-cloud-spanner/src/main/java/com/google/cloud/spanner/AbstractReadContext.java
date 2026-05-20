@@ -247,7 +247,8 @@ abstract class AbstractReadContext
 
     @Override
     boolean prepareRetryOnDifferentGrpcChannel() {
-      AtomicReference<Integer> channelIdRef = Option.CHANNEL_ID_AFFINITY.getChannelIdAffinity(channelHint);
+      AtomicReference<Integer> channelIdRef =
+          Option.CHANNEL_ID_AFFINITY.getChannelIdAffinity(channelHint);
       if (session.getIsMultiplexed() && channelIdRef != null) {
         Integer channelId = channelIdRef.get();
         if (channelId != null) {

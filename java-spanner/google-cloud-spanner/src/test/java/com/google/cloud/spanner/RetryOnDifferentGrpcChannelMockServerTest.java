@@ -109,7 +109,9 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
                 String key =
                     affinityKey != null
                         ? affinityKey
-                        : channelIdAffinity == null ? null : "channel-id-" + channelIdAffinity.get();
+                        : channelIdAffinity == null
+                            ? null
+                            : "channel-id-" + channelIdAffinity.get();
                 if (key != null) {
                   synchronized (LOGICAL_AFFINITY_KEYS) {
                     Set<String> keys =

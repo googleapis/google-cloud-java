@@ -123,8 +123,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
 public class GapicSpannerRpcTest {
@@ -532,6 +530,7 @@ public class GapicSpannerRpcTest {
         .isNotNull();
     rpc.shutdown();
   }
+
   @Test
   public void testNewCallContextWithRouteToLeaderHeader() {
     SpannerOptions options =

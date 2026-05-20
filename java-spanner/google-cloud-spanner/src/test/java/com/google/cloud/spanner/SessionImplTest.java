@@ -380,8 +380,9 @@ public class SessionImplTest {
 
   @SuppressWarnings("unchecked")
   @Test
-  public void multiUseReadOnlyTransactionCloseDoesNotClearGrpcGcpAffinityWhenUsingChannelIdAffinity()
-      throws ParseException {
+  public void
+      multiUseReadOnlyTransactionCloseDoesNotClearGrpcGcpAffinityWhenUsingChannelIdAffinity()
+          throws ParseException {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
         ArgumentCaptor.forClass((Class) Map.class);
