@@ -31,6 +31,7 @@ package com.google.api.gax.retrying;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -200,5 +201,35 @@ class RetryAlgorithmTest {
     Object previousResult = new Object();
 
     assertFalse(algorithm.shouldRetry(context, previousThrowable, previousResult, null));
+  }
+
+  @Test
+  void testShouldRetry_prevThrowableNotNull_shouldRetryBasedOnResultFalse_callsTimedAlgorithm() {
+    ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
+    TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
+    RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    Throwable previousThrowable = new Throwable();
+    Object previousResult = new Object();
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    when(resultAlgorithm.shouldRetry(previousThrowable, previousResult)).thenReturn(false);
+
+    algorithm.shouldRetry(previousThrowable, previousResult, previousSettings);
+
+    verify(timedAlgorithm).shouldRetry(previousSettings);
+  }
+
+  @Test
+  void testShouldRetry_prevThrowableNull_shouldRetryBasedOnResultFalse_shortCircuits() {
+    ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
+    TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
+    RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    Object previousResult = new Object();
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    when(resultAlgorithm.shouldRetry(null, previousResult)).thenReturn(false);
+
+    boolean shouldRetry = algorithm.shouldRetry(null, previousResult, previousSettings);
+
+    assertFalse(shouldRetry);
+    verify(timedAlgorithm, never()).shouldRetry(previousSettings);
   }
 }
