@@ -86,3 +86,7 @@ monorepo
 *.tfstate.lock.info
 
 .jqwik-database
+
+# Agent configuration and local skills
+.agent/
+.agents/
