@@ -47,6 +47,7 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.Mutation.Write;
 import com.google.spanner.v1.PartialResultSet;
+import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.RollbackRequest;
@@ -626,6 +627,45 @@ public class SessionImplTest {
               consumer.getValue().onCompleted();
               return new NoOpStreamingCall();
             });
+  }
+
+  @Test
+  public void multiUseReadOnlyTransactionCanUseInlineBegin() throws ParseException {
+    com.google.protobuf.Timestamp t = Timestamps.parse("2015-10-01T10:54:20.021Z");
+    PartialResultSet resultSet =
+        PartialResultSet.newBuilder()
+            .setMetadata(
+                newMetadata(Type.struct(Type.StructField.of("C", Type.string())))
+                    .toBuilder()
+                    .setTransaction(
+                        Transaction.newBuilder()
+                            .setId(ByteString.copyFromUtf8("inline-tx"))
+                            .setReadTimestamp(t)))
+            .build();
+    final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
+        ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
+    final ArgumentCaptor<ReadRequest> request = ArgumentCaptor.forClass(ReadRequest.class);
+    Mockito.when(rpc.read(request.capture(), consumer.capture(), anyMap(), any(), eq(false)))
+        .then(
+            invocation -> {
+              consumer.getValue().onPartialResultSet(resultSet);
+              consumer.getValue().onCompleted();
+              return new NoOpStreamingCall();
+            });
+
+    try (ReadOnlyTransaction txn =
+        session.readOnlyTransaction(
+            TimestampBound.strong(),
+            Options.beginTransactionOption(Options.BeginTransactionOption.INLINE))) {
+      txn.readRow("Dummy", Key.of(), Collections.singletonList("C"));
+      txn.readRow("Dummy", Key.of(), Collections.singletonList("C"));
+      assertEquals(Timestamp.fromProto(t), txn.getReadTimestamp());
+    }
+
+    Mockito.verify(rpc, Mockito.never()).beginTransaction(Mockito.any(), anyMap(), eq(false));
+    assertEquals(2, request.getAllValues().size());
+    assertThat(request.getAllValues().get(0).getTransaction().hasBegin()).isTrue();
+    assertEquals(ByteString.copyFromUtf8("inline-tx"), request.getAllValues().get(1).getTransaction().getId());
   }
 
   @Test

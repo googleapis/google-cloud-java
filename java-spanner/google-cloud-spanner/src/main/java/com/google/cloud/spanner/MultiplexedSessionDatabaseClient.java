@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.cloud.spanner.SessionImpl.NO_CHANNEL_HINT;
 
 import com.google.api.core.ApiFuture;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ServerStream;
@@ -560,12 +561,25 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    return createMultiplexedSessionTransaction(/* singleUse= */ false).readOnlyTransaction();
+    return readOnlyTransaction(TimestampBound.strong());
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return createMultiplexedSessionTransaction(/* singleUse= */ false).readOnlyTransaction(bound);
+    return readOnlyTransaction(
+        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
+    return createMultiplexedSessionTransaction(/* singleUse= */ false)
+        .readOnlyTransaction(bound, options);
   }
 
   @Override

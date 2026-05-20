@@ -27,6 +27,7 @@ import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
 import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionOption;
@@ -419,11 +420,25 @@ class SessionImpl implements Session {
   }
 
   @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
+  }
+
+  @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
+    return readOnlyTransaction(
+        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
+    Options readOnlyTransactionOptions = Options.fromReadOnlyTransactionOptions(options);
     return setActive(
         MultiUseReadOnlyTransaction.newBuilder()
             .setSession(this)
             .setTimestampBound(bound)
+            .setBeginTransactionOption(readOnlyTransactionOptions.beginTransactionOption())
             .setRpc(spanner.getRpc())
             .setDefaultQueryOptions(spanner.getDefaultQueryOptions(getDatabaseId()))
             .setDefaultPrefetchChunks(spanner.getDefaultPrefetchChunks())

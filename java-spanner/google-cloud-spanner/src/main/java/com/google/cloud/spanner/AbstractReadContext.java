@@ -59,7 +59,10 @@ import com.google.spanner.v1.TransactionSelector;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -321,6 +324,8 @@ abstract class AbstractReadContext
       private TimestampBound bound;
       private Timestamp timestamp;
       private ByteString transactionId;
+      private Options.BeginTransactionOption beginTransactionOption =
+          Options.BeginTransactionOption.EXPLICIT;
 
       private Builder() {}
 
@@ -336,6 +341,11 @@ abstract class AbstractReadContext
 
       Builder setTransactionId(ByteString transactionId) {
         this.transactionId = transactionId;
+        return this;
+      }
+
+      Builder setBeginTransactionOption(Options.BeginTransactionOption beginTransactionOption) {
+        this.beginTransactionOption = beginTransactionOption;
         return this;
       }
 
@@ -359,9 +369,15 @@ abstract class AbstractReadContext
     @GuardedBy("txnLock")
     private ByteString transactionId;
 
+    @GuardedBy("txnLock")
+    private SettableApiFuture<ByteString> transactionIdFuture;
+
     private final AtomicInteger pendingStarts = new AtomicInteger(0);
 
+    private static final long WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS = 60_000L;
+
     private final Map<SpannerRpc.Option, ?> channelHint;
+    private final Options.BeginTransactionOption beginTransactionOption;
 
     MultiUseReadOnlyTransaction(Builder builder) {
       super(builder);
@@ -386,6 +402,7 @@ abstract class AbstractReadContext
               session.getOptions(),
               ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
               session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
+      this.beginTransactionOption = builder.beginTransactionOption;
     }
 
     @Override
@@ -398,21 +415,67 @@ abstract class AbstractReadContext
       return false;
     }
 
+    private boolean shouldUseInlinedBegin() {
+      return beginTransactionOption == Options.BeginTransactionOption.INLINE;
+    }
+
     @Override
     void beforeReadOrQuery() {
       super.beforeReadOrQuery();
-      initTransaction();
+      if (shouldUseInlinedBegin()) {
+        SessionImpl.throwIfTransactionsPending();
+      } else {
+        initTransaction();
+      }
     }
 
     @Override
     @Nullable
     TransactionSelector getTransactionSelector() {
-      // No need for synchronization: super.readInternal() is always preceded by a check of
-      // "transactionId" that provides a happens-before from initialization, and the value is never
-      // changed afterwards.
-      @SuppressWarnings("GuardedByChecker")
-      TransactionSelector selector = TransactionSelector.newBuilder().setId(transactionId).build();
-      return selector;
+      if (!shouldUseInlinedBegin()) {
+        // No need for synchronization: super.readInternal() is always preceded by a check of
+        // "transactionId" that provides a happens-before from initialization, and the value is never
+        // changed afterwards.
+        @SuppressWarnings("GuardedByChecker")
+        TransactionSelector selector =
+            TransactionSelector.newBuilder().setId(transactionId).build();
+        return selector;
+      }
+
+      ApiFuture<ByteString> futureToWaitFor = null;
+      txnLock.lock();
+      try {
+        if (transactionId != null) {
+          return TransactionSelector.newBuilder().setId(transactionId).build();
+        }
+        if (transactionIdFuture == null) {
+          transactionIdFuture = SettableApiFuture.create();
+          return TransactionSelector.newBuilder()
+              .setBegin(createReadOnlyTransactionOptions())
+              .build();
+        }
+        futureToWaitFor = transactionIdFuture;
+      } finally {
+        txnLock.unlock();
+      }
+
+      try {
+        return TransactionSelector.newBuilder()
+            .setId(
+                futureToWaitFor.get(
+                    WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS))
+            .build();
+      } catch (ExecutionException e) {
+        throw SpannerExceptionFactory.asSpannerException(e.getCause());
+      } catch (TimeoutException e) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.ABORTED,
+            "Timeout while waiting for an inlined read-only transaction to be returned by another"
+                + " statement.",
+            e);
+      } catch (InterruptedException e) {
+        throw SpannerExceptionFactory.newSpannerExceptionForCancellation(null, e);
+      }
     }
 
     private void decrementPendingStartsAndSignal() {
@@ -504,6 +567,73 @@ abstract class AbstractReadContext
     }
 
     @Override
+    public void onTransactionMetadata(Transaction transaction, boolean shouldIncludeId) {
+      Timestamp readTimestamp = null;
+      if (transaction.hasReadTimestamp()) {
+        try {
+          readTimestamp = Timestamp.fromProto(transaction.getReadTimestamp());
+        } catch (IllegalArgumentException e) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+        }
+      }
+      if (shouldIncludeId && transaction.getId().isEmpty()) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION, NO_TRANSACTION_RETURNED_MSG);
+      }
+      txnLock.lock();
+      try {
+        if (timestamp == null) {
+          if (readTimestamp == null) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
+          }
+          timestamp = readTimestamp;
+        }
+        if (shouldIncludeId && transactionId == null) {
+          transactionId = transaction.getId();
+          if (transactionIdFuture != null && !transactionIdFuture.isDone()) {
+            transactionIdFuture.set(transactionId);
+          }
+        }
+      } finally {
+        txnLock.unlock();
+      }
+    }
+
+    @Override
+    public SpannerException onError(
+        SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+      e = super.onError(e, withBeginTransaction, lastStatement);
+      if (withBeginTransaction) {
+        failTransactionIdFuture(e);
+      }
+      return e;
+    }
+
+    @Override
+    public void onDone(boolean withBeginTransaction) {
+      if (withBeginTransaction) {
+        failTransactionIdFuture(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.FAILED_PRECONDITION,
+                "ResultSet was closed before a read-only transaction id was returned"));
+      }
+      super.onDone(withBeginTransaction);
+    }
+
+    private void failTransactionIdFuture(Throwable t) {
+      txnLock.lock();
+      try {
+        if (transactionIdFuture != null && !transactionIdFuture.isDone()) {
+          transactionIdFuture.setException(t);
+        }
+      } finally {
+        txnLock.unlock();
+      }
+    }
+
+    @Override
     public Timestamp getReadTimestamp() {
       txnLock.lock();
       try {
@@ -544,6 +674,19 @@ abstract class AbstractReadContext
       super.close();
     }
 
+    private TransactionOptions createReadOnlyTransactionOptions() {
+      TransactionOptions.Builder options = TransactionOptions.newBuilder();
+      if (timestamp != null) {
+        options
+            .getReadOnlyBuilder()
+            .setReadTimestamp(timestamp.toProto())
+            .setReturnReadTimestamp(true);
+      } else {
+        bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
+      }
+      return options.build();
+    }
+
     /**
      * Initializes the transaction with the timestamp specified within MultiUseReadOnlyTransaction.
      * This is used only for fallback of PartitionQueryRequest and PartitionReadRequest with
@@ -553,19 +696,10 @@ abstract class AbstractReadContext
       txnLock.lock();
       try {
         span.addAnnotation("Creating Transaction");
-        TransactionOptions.Builder options = TransactionOptions.newBuilder();
-        if (timestamp != null) {
-          options
-              .getReadOnlyBuilder()
-              .setReadTimestamp(timestamp.toProto())
-              .setReturnReadTimestamp(true);
-        } else {
-          bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
-        }
         final BeginTransactionRequest request =
             BeginTransactionRequest.newBuilder()
                 .setSession(session.getName())
-                .setOptions(options)
+                .setOptions(createReadOnlyTransactionOptions())
                 .build();
         initTransactionInternal(request);
       } finally {
@@ -589,12 +723,10 @@ abstract class AbstractReadContext
           return;
         }
         span.addAnnotation("Creating Transaction");
-        TransactionOptions.Builder options = TransactionOptions.newBuilder();
-        bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
         final BeginTransactionRequest request =
             BeginTransactionRequest.newBuilder()
                 .setSession(session.getName())
-                .setOptions(options)
+                .setOptions(createReadOnlyTransactionOptions())
                 .build();
         initTransactionInternal(request);
       } finally {
