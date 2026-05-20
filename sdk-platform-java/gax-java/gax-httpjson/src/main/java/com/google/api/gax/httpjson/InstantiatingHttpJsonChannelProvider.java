@@ -187,9 +187,9 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+
+
     if (mtlsProvider == null) {
-      // Returning null allows ManagedHttpJsonChannel to instantiate a default NetHttpTransport,
-      // which is automatically PQC-hardened if Bouncy Castle JSSE is available on the classpath.
       return null;
     }
     if (certificateBasedAccess.useMtlsClientCertificate()) {

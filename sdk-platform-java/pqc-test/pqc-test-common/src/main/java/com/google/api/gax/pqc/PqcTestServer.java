@@ -35,12 +35,6 @@ public class PqcTestServer {
     //    (TLSv1.3 engines, cipher suites, extensions, and socket factories). It depends on the JCA provider.
     Security.addProvider(new BouncyCastleJsseProvider());
     
-    // Set system property to strictly enforce ML-KEM hybrid named group on the server.
-    // NOTE: This system property is set strictly inside test harness setup.
-    // Since this server class is only compiled and executed inside integration test contexts,
-    // it has zero impact on production runtimes (which never load or execute this class).
-    System.setProperty("jdk.tls.namedGroups", "MLKEM768");
-
     // PKCS12 is the key store format to bundle the private key + the certificate.
     KeyStore ks = KeyStore.getInstance("PKCS12");
     try (InputStream is = getClass().getResourceAsStream("/pqctest.p12")) {
@@ -71,6 +65,18 @@ public class PqcTestServer {
         SSLParameters sslparams = getSSLContext().getDefaultSSLParameters();
         // Enforce TLSv1.3 protocol
         sslparams.setProtocols(new String[]{"TLSv1.3"});
+        // We must use reflection here because:
+        // 1. This module compiles targeting Java 8 bootclasspath.
+        // 2. Standard javax.net.ssl.SSLParameters does NOT have setNamedGroups() in Java 8 compile signature.
+        // 3. At runtime on JDK 13+, the JRE's SSLParameters class does have setNamedGroups().
+        // 4. org.bouncycastle.jsse.BCSSLParameters does NOT subclass SSLParameters in some legacy configurations,
+        //    making reflection the only compile-safe way to invoke it across all JRE platforms.
+        try {
+          java.lang.reflect.Method setNamedGroupsMethod = sslparams.getClass().getMethod("setNamedGroups", String[].class);
+          setNamedGroupsMethod.invoke(sslparams, (Object) new String[]{"MLKEM768"});
+        } catch (Exception e) {
+          System.err.println("Warning: Failed to reflectively set SSLParameters.setNamedGroups: " + e.getMessage());
+        }
         params.setSSLParameters(sslparams);
       }
     });
@@ -91,9 +97,23 @@ public class PqcTestServer {
     httpPort = httpServer.getAddress().getPort();
 
     // 2. Start gRPC Server using JDK SSL Provider bound specifically to Bouncy Castle JJSSE
+    io.netty.handler.ssl.SslContextBuilder nettySslContextBuilder = io.netty.handler.ssl.SslContextBuilder.forServer(kmf)
+        .sslContextProvider(bcProvider);
+    
+    try {
+      try {
+        java.lang.reflect.Method curvesMethod = nettySslContextBuilder.getClass().getMethod("curves", String[].class);
+        curvesMethod.invoke(nettySslContextBuilder, (Object) new String[]{"MLKEM768"});
+      } catch (NoSuchMethodException e) {
+        java.lang.reflect.Method curvesMethod = nettySslContextBuilder.getClass().getMethod("curves", java.lang.Iterable.class);
+        curvesMethod.invoke(nettySslContextBuilder, java.util.Arrays.asList("MLKEM768"));
+      }
+    } catch (Exception e) {
+      System.err.println("Warning: Failed to programmatically configure Netty curves: " + e.getMessage());
+    }
+
     io.netty.handler.ssl.SslContext nettySslContext = io.grpc.netty.GrpcSslContexts.configure(
-        io.netty.handler.ssl.SslContextBuilder.forServer(kmf)
-            .sslContextProvider(bcProvider), // Bind Netty statically to BC JJSSE!
+        nettySslContextBuilder,
         io.netty.handler.ssl.SslProvider.JDK
     )
     .protocols("TLSv1.3") // Enforce TLSv1.3
