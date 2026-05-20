@@ -139,7 +139,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String URL;
   BigQueryConnection connection;
-  Statement statement = null;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
   private static final AtomicReference<String> parsedDriverVersion = new AtomicReference<>(null);
@@ -2639,16 +2638,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
+  private void closeStatementIgnoreException(Statement statement) {
+    if (statement == null) {
+      return;
+    }
+    try {
+      statement.close();
+    } catch (SQLException e) {
+      // pass
+    }
+  }
+
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getPrimaryKeys", e);
     }
   }
@@ -2657,13 +2667,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getImportedKeys", e);
     }
   }
@@ -2672,13 +2682,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
     }
   }
@@ -2693,10 +2703,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignTable)
       throws SQLException {
     String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql =
           replaceSqlParameters(
               sql,
@@ -2706,8 +2715,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               foreignCatalog,
               foreignSchema,
               foreignTable);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getCrossReference", e);
     }
   }

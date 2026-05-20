@@ -3206,4 +3206,34 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
   }
+
+  @Test
+  public void testMetadataMethodsDoNotInterfere() throws SQLException {
+    Statement mockStatement1 = mock(Statement.class);
+    Statement mockStatement2 = mock(Statement.class);
+    ResultSet mockResultSet1 = mock(ResultSet.class);
+    ResultSet mockResultSet2 = mock(ResultSet.class);
+
+    when(bigQueryConnection.createStatement())
+        .thenReturn(mockStatement1)
+        .thenReturn(mockStatement2);
+
+    when(mockStatement1.executeQuery(any())).thenReturn(mockResultSet1);
+    when(mockStatement2.executeQuery(any())).thenReturn(mockResultSet2);
+
+    // Call first metadata method
+    ResultSet rs1 = dbMetadata.getPrimaryKeys("cat", "schema", "table");
+    assertSame(mockResultSet1, rs1);
+
+    // Call second metadata method
+    ResultSet rs2 = dbMetadata.getImportedKeys("cat", "schema", "table");
+    assertSame(mockResultSet2, rs2);
+
+    // Verify closeOnCompletion was called on both statements
+    verify(mockStatement1).closeOnCompletion();
+    verify(mockStatement2).closeOnCompletion();
+
+    // Verify connection.createStatement() was called twice
+    verify(bigQueryConnection, times(2)).createStatement();
+  }
 }
