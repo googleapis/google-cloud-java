@@ -71,7 +71,7 @@ class TableResultTest {
     assertThat(next.getSchema()).isNull();
     assertThat(next.hasNextPage()).isFalse();
     assertThat(next.getNextPageToken()).isNull();
-    assertThat(next.getRowsInPage()).isNull();
+    assertThat(next.getRowsInPage()).isEqualTo(1L);
     assertThat(next.getValues()).containsExactly(newFieldValueList("2"));
     assertThat(next.getNextPage()).isNull();
 
@@ -103,7 +103,7 @@ class TableResultTest {
     assertThat(next.getSchema()).isEqualTo(SCHEMA);
     assertThat(next.hasNextPage()).isFalse();
     assertThat(next.getNextPageToken()).isNull();
-    assertThat(next.getRowsInPage()).isNull();
+    assertThat(next.getRowsInPage()).isEqualTo(1L);
     assertThat(next.getValues())
         .containsExactly(newFieldValueList("2").withSchema(SCHEMA.getFields()));
     assertThat(next.getNextPage()).isNull();

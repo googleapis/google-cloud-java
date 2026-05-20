@@ -100,12 +100,18 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Override
   public TableResult getNextPage() {
     if (getPageNoSchema().hasNextPage()) {
+      Page<FieldValueList> nextPageNoSchema = getPageNoSchema().getNextPage();
+      long nextRows =
+          nextPageNoSchema.getValues() != null
+              ? (long) Iterables.size(nextPageNoSchema.getValues())
+              : 0L;
       return TableResult.newBuilder()
           .setSchema(getSchema())
           .setTotalRows(getTotalRows())
-          .setPageNoSchema(getPageNoSchema().getNextPage())
+          .setPageNoSchema(nextPageNoSchema)
           .setQueryId(getQueryId())
           .setJobCreationReason(getJobCreationReason())
+          .setRowsInPage(nextRows)
           .build();
     }
     return null;
