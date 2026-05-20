@@ -469,4 +469,98 @@ class ChannelPoolDpImplTest {
 
     pool.close();
   }
+
+  @Test
+  void testRecycleChannelOnConsecutiveFailures() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+
+      // Should not be recycled yet
+      verify(channel, times(0)).shutdown();
+      verify(channelSupplier, times(1)).get();
+    }
+
+    // 5th failure
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+    listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+
+    // Now it should be recycled
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get();
+
+    pool.close();
+  }
+
+  @Test
+  void testResetConsecutiveFailuresOnSuccess() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+    doReturn(Attributes.EMPTY).when(clientCall).getAttributes();
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    // 4 failures
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    verify(channel, times(0)).shutdown();
+
+    // A success: onHeaders (which calls onBeforeSessionStart)
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+
+    PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(555).build();
+    Metadata headers = new Metadata();
+    headers.put(
+        SessionStreamImpl.PEER_INFO_KEY,
+        Base64.getEncoder().encodeToString(peerInfo.toByteArray()));
+    listener.getValue().onHeaders(headers);
+    listener.getValue().onClose(Status.OK, new Metadata());
+
+    // Another 4 failures - should still not recycle because counter was reset
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    verify(channel, times(0)).shutdown();
+
+    pool.close();
+  }
+
+  @Test
+  void testCancelledDoesNotIncrementFailures() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    for (int i = 0; i < 10; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.CANCELLED, new Metadata());
+    }
+
+    // Should never be recycled
+    verify(channel, times(0)).shutdown();
+    verify(channelSupplier, times(1)).get();
+
+    pool.close();
+  }
 }

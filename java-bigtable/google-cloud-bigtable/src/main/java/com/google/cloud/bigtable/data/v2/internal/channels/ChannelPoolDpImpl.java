@@ -65,6 +65,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
   private static final String DEFAULT_LOG_NAME = "pool";
   private static final AtomicInteger INDEX = new AtomicInteger();
 
+  // TODO: Move to client configuration.
+  private static final int CONSECUTIVE_OPEN_SESSION_FAILURE_THRESHOLD = 5;
+  private static final Duration INITIAL_RECYCLE_BACKOFF = Duration.ofMillis(1);
+  private static final Duration MAX_RECYCLE_BACKOFF = Duration.ofMinutes(1);
+
   private final String poolLogId;
 
   @VisibleForTesting volatile int minGroups;
@@ -94,6 +99,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
   @GuardedBy("this")
   private boolean closed = false;
+
+  @GuardedBy("this")
+  private long lastRecycleNano = 0;
+
+  @GuardedBy("this")
+  private Duration recycleBackoff = INITIAL_RECYCLE_BACKOFF;
 
   public ChannelPoolDpImpl(
       Supplier<ManagedChannel> channelSupplier,
@@ -221,6 +232,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
               public void onBeforeSessionStart(PeerInfo peerInfo) {
                 afeId = AfeId.extract(peerInfo);
                 synchronized (ChannelPoolDpImpl.this) {
+                  channelWrapper.consecutiveFailures = 0;
+                  recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   rehomeChannel(channelWrapper, afeId);
                   sessionsPerAfeId.add(afeId);
                 }
@@ -232,6 +245,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
                 synchronized (ChannelPoolDpImpl.this) {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
+                  } else if (!status.isOk() && status.getCode() != Code.CANCELLED) {
+                    channelWrapper.consecutiveFailures++;
                   }
                   releaseChannel(channelWrapper, status);
                 }
@@ -306,12 +321,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
     channelWrapper.group.numStreams--;
     channelWrapper.numOutstanding--;
 
-    if (shouldRecycleChannel(status)) {
+    if (shouldRecycleChannel(channelWrapper, status)) {
       recycleChannel(channelWrapper);
     }
   }
 
-  private static boolean shouldRecycleChannel(Status status) {
+  private static boolean shouldRecycleChannel(ChannelWrapper channelWrapper, Status status) {
     if (status.getCode() == Code.UNIMPLEMENTED) {
       return true;
     }
@@ -319,6 +334,10 @@ public class ChannelPoolDpImpl implements ChannelPool {
     // TODO: replace this with a flag in the ErrorDetails
     if (status.getDescription() != null
         && status.getDescription().toLowerCase(Locale.ENGLISH).contains("server is draining")) {
+      return true;
+    }
+
+    if (channelWrapper.consecutiveFailures >= CONSECUTIVE_OPEN_SESSION_FAILURE_THRESHOLD) {
       return true;
     }
 
@@ -330,6 +349,16 @@ public class ChannelPoolDpImpl implements ChannelPool {
     if (channelWrapper.channel.isShutdown()) {
       // Channel is already recycled.
       return;
+    }
+
+    if (lastRecycleNano > System.nanoTime() - recycleBackoff.toNanos()) {
+      return;
+    }
+
+    lastRecycleNano = System.nanoTime();
+    recycleBackoff = recycleBackoff.multipliedBy(2);
+    if (recycleBackoff.compareTo(MAX_RECYCLE_BACKOFF) > 0) {
+      recycleBackoff = MAX_RECYCLE_BACKOFF;
     }
 
     channelWrapper.group.channels.remove(channelWrapper);
@@ -480,6 +509,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     private final ManagedChannel channel;
     private final Instant createdAt;
     private int numOutstanding = 0;
+    private int consecutiveFailures = 0;
 
     public ChannelWrapper(AfeChannelGroup group, ManagedChannel channel, Clock clock) {
       this.group = group;
