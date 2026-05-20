@@ -147,10 +147,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -164,10 +164,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -181,10 +181,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The list of fields to update.
+   * Optional. The list of fields to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -815,10 +815,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the updateMask field is set.
@@ -831,10 +831,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The updateMask.
@@ -853,10 +853,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
@@ -877,10 +877,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -898,10 +898,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
@@ -927,10 +927,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUpdateMask() {
@@ -948,10 +948,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
@@ -964,10 +964,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -984,10 +984,10 @@ public final class UpdatePlacementRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The list of fields to update.
+     * Optional. The list of fields to update.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

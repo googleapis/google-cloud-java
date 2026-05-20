@@ -31,7 +31,7 @@ public interface EntityReferenceOrBuilder
    *
    * <pre>
    * Required. [Fully Qualified Name
-   * (FQN)](https://cloud.google.com/data-catalog/docs/fully-qualified-names)
+   * (FQN)](https://cloud.google.com/dataplex/docs/fully-qualified-names)
    * of the entity.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface EntityReferenceOrBuilder
    *
    * <pre>
    * Required. [Fully Qualified Name
-   * (FQN)](https://cloud.google.com/data-catalog/docs/fully-qualified-names)
+   * (FQN)](https://cloud.google.com/dataplex/docs/fully-qualified-names)
    * of the entity.
    * </pre>
    *
@@ -55,4 +55,94 @@ public interface EntityReferenceOrBuilder
    * @return The bytes for fullyQualifiedName.
    */
   com.google.protobuf.ByteString getFullyQualifiedNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field path within the entity. Each nesting level should be a
+   * separate value in the repeated field. The order matters. Must be empty for
+   * asset level lineage
+   *
+   * For example to address "salary.net" subfield where "salary" is a column and
+   * "net" is a proto field two values in the `field` should be reported,
+   * the first is "salary" and the second is "net".
+   *
+   * Each field length is limited to 500 characters.
+   * Maximum supported nesting level is 20.
+   * </pre>
+   *
+   * <code>repeated string field = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the field.
+   */
+  java.util.List<java.lang.String> getFieldList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field path within the entity. Each nesting level should be a
+   * separate value in the repeated field. The order matters. Must be empty for
+   * asset level lineage
+   *
+   * For example to address "salary.net" subfield where "salary" is a column and
+   * "net" is a proto field two values in the `field` should be reported,
+   * the first is "salary" and the second is "net".
+   *
+   * Each field length is limited to 500 characters.
+   * Maximum supported nesting level is 20.
+   * </pre>
+   *
+   * <code>repeated string field = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of field.
+   */
+  int getFieldCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field path within the entity. Each nesting level should be a
+   * separate value in the repeated field. The order matters. Must be empty for
+   * asset level lineage
+   *
+   * For example to address "salary.net" subfield where "salary" is a column and
+   * "net" is a proto field two values in the `field` should be reported,
+   * the first is "salary" and the second is "net".
+   *
+   * Each field length is limited to 500 characters.
+   * Maximum supported nesting level is 20.
+   * </pre>
+   *
+   * <code>repeated string field = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The field at the given index.
+   */
+  java.lang.String getField(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field path within the entity. Each nesting level should be a
+   * separate value in the repeated field. The order matters. Must be empty for
+   * asset level lineage
+   *
+   * For example to address "salary.net" subfield where "salary" is a column and
+   * "net" is a proto field two values in the `field` should be reported,
+   * the first is "salary" and the second is "net".
+   *
+   * Each field length is limited to 500 characters.
+   * Maximum supported nesting level is 20.
+   * </pre>
+   *
+   * <code>repeated string field = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the field at the given index.
+   */
+  com.google.protobuf.ByteString getFieldBytes(int index);
 }

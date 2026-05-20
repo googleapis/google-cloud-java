@@ -91,11 +91,29 @@
         "grpc": {
           "libraryClient": "ApplicationServiceClient",
           "rpcs": {
+            "BatchArchiveApplications": {
+              "methods": ["batchArchiveApplications", "batchArchiveApplications", "batchArchiveApplications", "batchArchiveApplicationsCallable"]
+            },
+            "BatchCreateApplications": {
+              "methods": ["batchCreateApplications", "batchCreateApplications", "batchCreateApplications", "batchCreateApplicationsCallable"]
+            },
+            "BatchUnarchiveApplications": {
+              "methods": ["batchUnarchiveApplications", "batchUnarchiveApplications", "batchUnarchiveApplications", "batchUnarchiveApplicationsCallable"]
+            },
+            "BatchUpdateApplications": {
+              "methods": ["batchUpdateApplications", "batchUpdateApplications", "batchUpdateApplications", "batchUpdateApplicationsCallable"]
+            },
+            "CreateApplication": {
+              "methods": ["createApplication", "createApplication", "createApplication", "createApplicationCallable"]
+            },
             "GetApplication": {
               "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
             },
             "ListApplications": {
               "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplication", "updateApplication", "updateApplicationCallable"]
             }
           }
         }
@@ -166,6 +184,12 @@
         "grpc": {
           "libraryClient": "CmsMetadataKeyServiceClient",
           "rpcs": {
+            "BatchActivateCmsMetadataKeys": {
+              "methods": ["batchActivateCmsMetadataKeys", "batchActivateCmsMetadataKeys", "batchActivateCmsMetadataKeys", "batchActivateCmsMetadataKeysCallable"]
+            },
+            "BatchDeactivateCmsMetadataKeys": {
+              "methods": ["batchDeactivateCmsMetadataKeys", "batchDeactivateCmsMetadataKeys", "batchDeactivateCmsMetadataKeys", "batchDeactivateCmsMetadataKeysCallable"]
+            },
             "GetCmsMetadataKey": {
               "methods": ["getCmsMetadataKey", "getCmsMetadataKey", "getCmsMetadataKey", "getCmsMetadataKeyCallable"]
             },
@@ -181,6 +205,12 @@
         "grpc": {
           "libraryClient": "CmsMetadataValueServiceClient",
           "rpcs": {
+            "BatchActivateCmsMetadataValues": {
+              "methods": ["batchActivateCmsMetadataValues", "batchActivateCmsMetadataValues", "batchActivateCmsMetadataValues", "batchActivateCmsMetadataValuesCallable"]
+            },
+            "BatchDeactivateCmsMetadataValues": {
+              "methods": ["batchDeactivateCmsMetadataValues", "batchDeactivateCmsMetadataValues", "batchDeactivateCmsMetadataValues", "batchDeactivateCmsMetadataValuesCallable"]
+            },
             "GetCmsMetadataValue": {
               "methods": ["getCmsMetadataValue", "getCmsMetadataValue", "getCmsMetadataValue", "getCmsMetadataValueCallable"]
             },
@@ -461,6 +491,39 @@
         }
       }
     },
+    "LabelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LabelServiceClient",
+          "rpcs": {
+            "BatchActivateLabels": {
+              "methods": ["batchActivateLabels", "batchActivateLabels", "batchActivateLabels", "batchActivateLabelsCallable"]
+            },
+            "BatchCreateLabels": {
+              "methods": ["batchCreateLabels", "batchCreateLabels", "batchCreateLabels", "batchCreateLabelsCallable"]
+            },
+            "BatchDeactivateLabels": {
+              "methods": ["batchDeactivateLabels", "batchDeactivateLabels", "batchDeactivateLabels", "batchDeactivateLabelsCallable"]
+            },
+            "BatchUpdateLabels": {
+              "methods": ["batchUpdateLabels", "batchUpdateLabels", "batchUpdateLabels", "batchUpdateLabelsCallable"]
+            },
+            "CreateLabel": {
+              "methods": ["createLabel", "createLabel", "createLabel", "createLabelCallable"]
+            },
+            "GetLabel": {
+              "methods": ["getLabel", "getLabel", "getLabel", "getLabelCallable"]
+            },
+            "ListLabels": {
+              "methods": ["listLabels", "listLabels", "listLabels", "listLabelsPagedCallable", "listLabelsCallable"]
+            },
+            "UpdateLabel": {
+              "methods": ["updateLabel", "updateLabel", "updateLabelCallable"]
+            }
+          }
+        }
+      }
+    },
     "LineItemService": {
       "clients": {
         "grpc": {
@@ -471,6 +534,33 @@
             },
             "ListLineItems": {
               "methods": ["listLineItems", "listLineItems", "listLineItems", "listLineItemsPagedCallable", "listLineItemsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LinkedDeviceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LinkedDeviceServiceClient",
+          "rpcs": {
+            "GetLinkedDevice": {
+              "methods": ["getLinkedDevice", "getLinkedDevice", "getLinkedDevice", "getLinkedDeviceCallable"]
+            },
+            "ListLinkedDevices": {
+              "methods": ["listLinkedDevices", "listLinkedDevices", "listLinkedDevices", "listLinkedDevicesPagedCallable", "listLinkedDevicesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "McmEarningsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "McmEarningsServiceClient",
+          "rpcs": {
+            "FetchMcmEarnings": {
+              "methods": ["fetchMcmEarnings", "fetchMcmEarnings", "fetchMcmEarnings", "fetchMcmEarningsPagedCallable", "fetchMcmEarningsCallable"]
             }
           }
         }
@@ -696,6 +786,21 @@
             },
             "UpdateReport": {
               "methods": ["updateReport", "updateReport", "updateReportCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RichMediaAdsCompanyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RichMediaAdsCompanyServiceClient",
+          "rpcs": {
+            "GetRichMediaAdsCompany": {
+              "methods": ["getRichMediaAdsCompany", "getRichMediaAdsCompany", "getRichMediaAdsCompany", "getRichMediaAdsCompanyCallable"]
+            },
+            "ListRichMediaAdsCompanies": {
+              "methods": ["listRichMediaAdsCompanies", "listRichMediaAdsCompanies", "listRichMediaAdsCompanies", "listRichMediaAdsCompaniesPagedCallable", "listRichMediaAdsCompaniesCallable"]
             }
           }
         }

@@ -96,19 +96,16 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
     Status status;
     boolean retryable = true;
 
-    if (state.get() != State.NEW) {
+    if (!state.compareAndSet(State.NEW, State.STARTED)) {
       status = Status.INTERNAL.withDescription("VRpc already started in state: " + state.get());
       retryable = false;
     } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
         < TimeUnit.MILLISECONDS.toMicros(1)) {
-      // transitioning to the close state is handled below
-      state.set(State.STARTED);
       // Don't send RPCs that don't have any hope of succeeding
       status =
           Status.DEADLINE_EXCEEDED.withDescription("Remaining deadline is too short to send RPC");
       retryable = false;
     } else {
-      state.set(State.STARTED);
       Metadata vRpcMetadata =
           Metadata.newBuilder()
               .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())

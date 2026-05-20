@@ -66,7 +66,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Array getArray(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Array) {
       return (Array) param;
@@ -79,7 +78,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Array getArray(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Array) {
       return (Array) param;
@@ -92,7 +90,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public BigDecimal getBigDecimal(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof BigDecimal) {
       return (BigDecimal) param;
@@ -105,7 +102,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public BigDecimal getBigDecimal(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof BigDecimal) {
       return (BigDecimal) param;
@@ -117,14 +113,14 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(int arg0, int arg1) throws SQLException {
-    LOG.finest("++enter++");
     return getBigDecimal(arg0);
   }
 
   @Override
   public Blob getBlob(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Blob) {
       return (Blob) param;
@@ -137,7 +133,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Blob getBlob(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Blob) {
       return (Blob) param;
@@ -150,7 +145,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public boolean getBoolean(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Boolean) {
       return (Boolean) param;
@@ -163,7 +157,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public boolean getBoolean(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Boolean) {
       return (Boolean) param;
@@ -176,7 +169,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte getByte(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Byte) {
       return (Byte) param;
@@ -189,7 +181,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte getByte(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Byte) {
       return (Byte) param;
@@ -202,7 +193,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte[] getBytes(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof byte[] || param.getClass().isAssignableFrom(byte[].class)) {
       return (byte[]) param;
@@ -215,7 +205,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public byte[] getBytes(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof byte[] || param.getClass().isAssignableFrom(byte[].class)) {
       return (byte[]) param;
@@ -229,7 +218,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   //  FilterReader, InputStreamReader, PipedReader, StringReader
   @Override
   public Reader getCharacterStream(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String || param.getClass().isAssignableFrom(String.class)) {
       return new StringReader(param.toString());
@@ -281,7 +269,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Reader getCharacterStream(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String || param.getClass().isAssignableFrom(String.class)) {
       return new StringReader(param.toString());
@@ -333,7 +320,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Clob getClob(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Clob) {
       return (Clob) param;
@@ -346,7 +332,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Clob getClob(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Clob) {
       return (Clob) param;
@@ -359,7 +344,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Date) {
       return (Date) param;
@@ -372,7 +356,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Date) {
       return (Date) param;
@@ -385,7 +368,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(int arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Date) {
       Date dateParam = (Date) param;
@@ -406,7 +388,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Date getDate(String arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Date) {
       Date dateParam = (Date) param;
@@ -427,7 +408,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public double getDouble(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Double) {
       return (Double) param;
@@ -440,7 +420,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public double getDouble(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Double) {
       return (Double) param;
@@ -453,7 +432,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public float getFloat(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Float) {
       return (Float) param;
@@ -466,7 +444,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public float getFloat(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Float) {
       return (Float) param;
@@ -479,7 +456,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public int getInt(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Integer) {
       return (Integer) param;
@@ -492,7 +468,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public int getInt(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Integer) {
       return (Integer) param;
@@ -505,7 +480,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public long getLong(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Long) {
       return (Long) param;
@@ -524,7 +498,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public long getLong(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Long) {
       return (Long) param;
@@ -543,19 +516,16 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Reader getNCharacterStream(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     return getCharacterStream(arg0);
   }
 
   @Override
   public Reader getNCharacterStream(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     return getCharacterStream(arg0);
   }
 
   @Override
   public NClob getNClob(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof NClob) {}
     if (param.getClass().isAssignableFrom(NClob.class)) {
@@ -566,7 +536,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public NClob getNClob(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof NClob) {
       return (NClob) param;
@@ -579,7 +548,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getNString(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String) {
       return param.toString();
@@ -592,7 +560,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getNString(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String) {
       return param.toString();
@@ -605,19 +572,16 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Object getObject(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     return this.parameterHandler.getParameter(arg0);
   }
 
   @Override
   public Object getObject(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     return this.parameterHandler.getParameter(arg0);
   }
 
   @Override
   public Object getObject(int arg0, Map<String, Class<?>> arg1) throws SQLException {
-    LOG.finest("++enter++");
     String paramKey = this.parameterHandler.getSqlType(arg0).name();
     if (arg1.containsKey(paramKey)) {
       Class<?> argJavaType = arg1.get(paramKey);
@@ -631,7 +595,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Object getObject(String arg0, Map<String, Class<?>> arg1) throws SQLException {
-    LOG.finest("++enter++");
     String paramKey = this.parameterHandler.getSqlType(arg0).name();
     if (arg1.containsKey(paramKey)) {
       Class<?> argJavaType = arg1.get(paramKey);
@@ -645,7 +608,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public <T> T getObject(int arg0, Class<T> arg1) throws SQLException {
-    LOG.finest("++enter++");
     Class<?> javaType = this.parameterHandler.getType(arg0);
     if (javaType.isAssignableFrom(arg1)) {
       return (T) this.parameterHandler.getParameter(arg0);
@@ -655,7 +617,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public <T> T getObject(String arg0, Class<T> arg1) throws SQLException {
-    LOG.finest("++enter++");
     Class<?> javaType = this.parameterHandler.getType(arg0);
     if (javaType.isAssignableFrom(arg1)) {
       return (T) this.parameterHandler.getParameter(arg0);
@@ -677,7 +638,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public RowId getRowId(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof RowId) {
       return (RowId) param;
@@ -690,7 +650,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public RowId getRowId(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof RowId) {
       return (RowId) param;
@@ -715,7 +674,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public short getShort(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Short) {
       return (Short) param;
@@ -728,7 +686,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public short getShort(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Short) {
       return (Short) param;
@@ -741,7 +698,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getString(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String) {
       return param.toString();
@@ -754,7 +710,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public String getString(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof String) {
       return param.toString();
@@ -767,7 +722,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Time) {
       return (Time) param;
@@ -780,7 +734,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Time) {
       return (Time) param;
@@ -793,7 +746,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(int arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Time) {
       Time timeParam = (Time) param;
@@ -814,7 +766,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Time getTime(String arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Time) {
       Time timeParam = (Time) param;
@@ -835,7 +786,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Timestamp) {
       return (Timestamp) param;
@@ -848,7 +798,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Timestamp) {
       return (Timestamp) param;
@@ -861,7 +810,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(int arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Timestamp) {
       Timestamp timestampParam = (Timestamp) param;
@@ -882,7 +830,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(String arg0, Calendar arg1) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof Timestamp) {
       Timestamp timestampParam = (Timestamp) param;
@@ -903,7 +850,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public URL getURL(int arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof URL) {
       return (URL) param;
@@ -916,7 +862,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public URL getURL(String arg0) throws SQLException {
-    LOG.finest("++enter++");
     Object param = this.parameterHandler.getParameter(arg0);
     if (param instanceof URL) {
       return (URL) param;
@@ -929,8 +874,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void registerOutParameter(int paramIndex, int sqlType) throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest("registerOutParameter: paramIndex %s, sqlType %s", paramIndex, sqlType);
+    LOG.finer("registerOutParameter: paramIndex %s, sqlType %s", paramIndex, sqlType);
     checkClosed();
     try {
       this.parameterHandler.setParameter(
@@ -948,8 +892,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void registerOutParameter(String paramName, int sqlType) throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest("registerOutParameter: paramName %s, sqlType %s", paramName, sqlType);
+    LOG.finer("registerOutParameter: paramName %s, sqlType %s", paramName, sqlType);
     checkClosed();
     try {
       this.parameterHandler.setParameter(
@@ -967,8 +910,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void registerOutParameter(int paramIndex, int sqlType, int scale) throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest(
+    LOG.finer(
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramIndex, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
@@ -995,8 +937,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public void registerOutParameter(int paramIndex, int sqlType, String typeName)
       throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest(
+    LOG.finer(
         "registerOutParameter: paramIndex %s, sqlType %s, typeName %s",
         paramIndex, sqlType, typeName);
     // fully qualified sql typeName is not supported by the driver and hence ignored.
@@ -1005,8 +946,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public void registerOutParameter(String paramName, int sqlType, int scale) throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest(
+    LOG.finer(
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramName, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
@@ -1033,8 +973,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public void registerOutParameter(String paramName, int sqlType, String typeName)
       throws SQLException {
-    LOG.finest("++enter++");
-    LOG.finest(
+    LOG.finer(
         "registerOutParameter: paramIndex %s, sqlType %s, typeName %s",
         paramName, sqlType, typeName);
     // fully qualified sql typeName is not supported by the driver and hence ignored.

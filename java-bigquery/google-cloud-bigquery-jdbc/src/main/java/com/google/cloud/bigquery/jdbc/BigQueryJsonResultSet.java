@@ -185,38 +185,40 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObject");
     FieldValue value = getObjectInternal(columnIndex);
     if (value == null || value.isNull()) {
       return null;
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
     }
 
     if (this.isNested && columnIndex == 2) {
       Field arrayField = this.schema.getFields().get(0);
       if (isStruct(arrayField)) {
-        return new BigQueryJsonStruct(arrayField.getSubFields(), value);
+        return new BigQueryJsonStruct(
+            arrayField.getSubFields(), value, this.LOG.getJsonStructLogger());
       }
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value);
+      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
     }
 
     int extraIndex = this.isNested ? 2 : 1;
     Field fieldSchema = this.schemaFieldList.get(columnIndex - extraIndex);
     if (isArray(fieldSchema)) {
-      return new BigQueryJsonArray(fieldSchema, value);
+      return new BigQueryJsonArray(fieldSchema, value, this.LOG.getJsonArrayLogger());
     } else if (isStruct(fieldSchema)) {
-      return new BigQueryJsonStruct(fieldSchema.getSubFields(), value);
+      return new BigQueryJsonStruct(
+          fieldSchema.getSubFields(), value, this.LOG.getJsonStructLogger());
     } else {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value);
+      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
     }
   }
 
@@ -230,7 +232,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    */
   private FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("getObjectInternal");
     FieldValue value;
     if (this.isNested) {
       boolean validIndexForNestedResultSet = columnIndex == 1 || columnIndex == 2;
@@ -272,7 +274,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
-    LOG.fine("Closing BigqueryJsonResultSet %s.", this);
+    LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
     if (ownedThreads != null) {
       for (Thread ownedThread : ownedThreads) {
@@ -287,7 +289,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isBeforeFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isBeforeFirst");
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
@@ -298,14 +300,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isAfterLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isAfterLast");
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isFirst");
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
     } else {
@@ -316,7 +318,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
+    LOG.finestTrace("isLast");
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {

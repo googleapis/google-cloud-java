@@ -72,7 +72,7 @@ final class BigQueryJdbcUrlUtility {
   static final String QUERY_PROPERTIES_NAME = "QueryProperties";
   static final int DEFAULT_HTAPI_ACTIVATION_RATIO_VALUE = 2;
   static final String HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME = "HighThroughputMinTableSize";
-  static final int DEFAULT_HTAPI_MIN_TABLE_SIZE_VALUE = 100;
+  static final int DEFAULT_HTAPI_MIN_TABLE_SIZE_VALUE = 10000;
   static final int DEFAULT_OAUTH_TYPE_VALUE = -1;
   static final String LOCATION_PROPERTY_NAME = "Location";
   static final String ENDPOINT_OVERRIDES_PROPERTY_NAME = "EndpointOverrides";
@@ -721,7 +721,9 @@ final class BigQueryJdbcUrlUtility {
           continue;
         }
       }
-      map.put(PROPERTY_NAME_MAP.get(key), CharEscapers.decodeUriPath(kv[1].replace("+", "%2B")));
+      String propertyName = PROPERTY_NAME_MAP.get(key);
+      String value = CharEscapers.decodeUriPath(kv[1].replace("+", "%2B"));
+      map.put(propertyName, value);
     }
     return Collections.unmodifiableMap(map);
   }

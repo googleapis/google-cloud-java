@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -35,6 +36,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
+import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.Attributes;
 import java.io.ByteArrayInputStream;
@@ -48,6 +50,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.VarCharVector;
@@ -716,6 +719,12 @@ class ConnectionWorkerTest {
         .build();
   }
 
+  private AppendRowsResponse createAppendResponseWithError(Status.Code code, String message) {
+    return AppendRowsResponse.newBuilder()
+        .setError(com.google.rpc.Status.newBuilder().setCode(code.value()).setMessage(message))
+        .build();
+  }
+
   private ConnectionWorker createMultiplexedConnectionWorker() throws IOException {
     // By default use only the first table as table reference.
     return createMultiplexedConnectionWorker(
@@ -1151,8 +1160,348 @@ class ConnectionWorkerTest {
   }
 
   @Test
+  void testHealthCheck() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    int msecResponseDelay = 500;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    int appendCount = 3;
+    long sizePerRequest = 27;
+    for (int i = 0; i < appendCount; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    for (int i = 0; i < appendCount; i++) {
+      futures.add(
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    // Sleep for quarter second to ensure requests are queued
+    Thread.sleep(250);
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertTrue(
+        healthCheckFields.msecLongestResponseWaitTime > 1
+            && healthCheckFields.msecLongestResponseWaitTime < msecResponseDelay);
+    assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
+    assertEquals(appendCount * sizePerRequest, healthCheckFields.inflightBytes);
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
+    assertEquals(connectionWorker.getWriterId(), healthCheckFields.writerId);
+
+    // Wait for responses to arrive
+    for (ApiFuture<AppendRowsResponse> future : futures) {
+      future.get();
+    }
+
+    // Ensure connection is closed
+    connectionWorker.close();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertTrue(healthCheckFields.msecMaxLatency >= msecResponseDelay);
+    assertTrue(healthCheckFields.msecAvgLatency >= msecResponseDelay);
+    assertTrue(healthCheckFields.msecMaxLatency >= healthCheckFields.msecAvgLatency);
+    assertTrue(healthCheckFields.sendBps > 0L);
+    assertTrue(healthCheckFields.receiveBps > 0L);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(appendCount, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+    assertEquals(appendCount, healthCheckFields.requestsSentCount);
+    assertEquals(appendCount, healthCheckFields.responseCount);
+    assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
+    assertEquals(0, healthCheckFields.queuedRetryCountMax);
+    assertEquals(false, healthCheckFields.isConnected);
+    assertTrue(healthCheckFields.connectionAttemptCount > 0);
+    assertTrue(healthCheckFields.connectionClosedCount > 0);
+  }
+
+  @Test
   void testLocationName() throws Exception {
     assertEquals(
         "projects/p1/locations/us", ConnectionWorker.getRoutingHeader(TEST_STREAM_1, "us"));
+  }
+
+  @Test
+  void testHealthCheckThresholds() throws Exception {
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields fields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+
+    // Default everything to zero/healthy
+    fields.msecLongestResponseWaitTime = 0;
+    fields.msecMaxLatency = 0;
+    fields.msecAvgLatency = 0;
+    fields.sendBps = 0;
+    fields.receiveBps = 0;
+    fields.responseCodes.clear();
+    fields.requestsSentCount = 0;
+    fields.responseCount = 0;
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 0;
+    fields.inflightBytes = 0;
+    fields.connectionAttemptCount = 0;
+    fields.connectionClosedCount = 0;
+    fields.isConnected = false;
+
+    // Should be healthy with default values
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // msecLongestResponseWaitTime >= responseWaitTimeThreshold (5000)
+    fields.msecLongestResponseWaitTime = 5000;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.msecLongestResponseWaitTime = 0;
+
+    // msecMaxLatency >= latencyThreshold (5000)
+    fields.msecMaxLatency = 5000;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.msecMaxLatency = 0;
+
+    // Division by zero check (allResponses == 0) -> should not crash and be false
+    fields.responseCodes.clear();
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // Trigger percentErrorResponsesThreshold (10%)
+    fields.responseCodes.put(Status.Code.OK.value(), 8);
+    fields.responseCodes.put(Status.Code.INTERNAL.value(), 2); // 2/10 = 20%
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.responseCodes.clear();
+
+    // Healthy response codes
+    fields.responseCodes.put(Status.Code.OK.value(), 10);
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.responseCodes.clear();
+
+    // queuedRequestCountMax >= queuedRequestsThreshold (100)
+    fields.queuedRequestCountMax = 100;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.queuedRequestCountMax = 0;
+
+    // Division by zero check (queuedRequestCountMax == 0) -> should not crash
+    // and be false
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 10;
+    assertEquals(false, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+
+    // Trigger percentRetriesThreshold (25%)
+    fields.queuedRequestCountMax = 10;
+    fields.queuedRetryCountMax = 3; // 3/10 = 30%
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.queuedRequestCountMax = 0;
+    fields.queuedRetryCountMax = 0;
+
+    // inflightBytes >= queuedBytesThreshold (52428800)
+    fields.inflightBytes = 50 * 1024 * 1024;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.inflightBytes = 0;
+
+    // connectionAttemptCount >= connectionAttemptThreshold (1)
+    fields.connectionAttemptCount = 1;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+    fields.connectionAttemptCount = 0;
+
+    // connectionClosedCount >= connectionCloseThreshold (1)
+    fields.connectionClosedCount = 1;
+    assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
+  }
+
+  @Test
+  void testInflightRetryCountHealthMetric() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ true);
+    connectionWorker.setTestOnlyHealthCheckInterval(Duration.ofSeconds(10));
+
+    // Simulate a retriable error
+    int msecResponseDelay = 1000;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    // Add responses for the retries and the final success
+    testBigQueryWrite.addResponse(
+        createAppendResponseWithError(Status.INTERNAL.getCode(), "force the first retry"));
+    testBigQueryWrite.addResponse(
+        createAppendResponseWithError(Status.INTERNAL.getCode(), "force the second retry"));
+    testBigQueryWrite.addResponse(createAppendResponse(-1));
+
+    ApiFuture<AppendRowsResponse> future =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), -1);
+
+    // Wait for the initial failure and retry to be enqueued
+    Thread.sleep(1500);
+
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(1, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertFalse(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals("MULTIPLEXING", healthCheckFields.streamName);
+    assertEquals(Duration.ofSeconds(10).toString(), healthCheckFields.windowDuration);
+
+    // Allow the retries to complete successfully
+    future.get();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(1, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(2, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+  }
+
+  private static class DummyResponseSupplierWillFailThenSucceed
+      implements Supplier<FakeBigQueryWriteImpl.Response> {
+
+    private final int totalFailCount;
+    private int failCount;
+    private final com.google.rpc.Status failStatus;
+    private final FakeBigQueryWriteImpl.Response response;
+
+    DummyResponseSupplierWillFailThenSucceed(
+        FakeBigQueryWriteImpl.Response response,
+        int totalFailCount,
+        com.google.rpc.Status failStatus) {
+      this.totalFailCount = totalFailCount;
+      this.response = response;
+      this.failStatus = failStatus;
+      this.failCount = 0;
+    }
+
+    @Override
+    public FakeBigQueryWriteImpl.Response get() {
+      if (failCount >= totalFailCount) {
+        return response;
+      }
+      failCount++;
+      return new FakeBigQueryWriteImpl.Response(
+          AppendRowsResponse.newBuilder().setError(this.failStatus).build());
+    }
+  }
+
+  @Test
+  void testInflightRetryCountHealthMetricExactlyOnce() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            100000,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ false);
+
+    // Simulate a retriable error
+    int msecResponseDelay = 1000;
+    testBigQueryWrite.setResponseSleep(java.time.Duration.ofMillis(msecResponseDelay));
+
+    // Add responses for the retries and the final success
+    testBigQueryWrite.addResponse(
+        new DummyResponseSupplierWillFailThenSucceed(
+            new FakeBigQueryWriteImpl.Response(createAppendResponse(0)),
+            /* totalFailCount= */ 1,
+            com.google.rpc.Status.newBuilder().setCode(Code.INTERNAL.ordinal()).build()));
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+
+    ApiFuture<AppendRowsResponse> future1 =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0);
+    ApiFuture<AppendRowsResponse> future2 =
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(1)}), 1);
+
+    // Wait for the initial failure and retry to be enqueued
+    Thread.sleep(1500);
+
+    ConnectionWorker.HealthCheckMetrics.HealthCheckFields healthCheckFields =
+        connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(2, healthCheckFields.queuedRequestCountMax);
+    assertEquals(
+        1,
+        healthCheckFields
+            .queuedRetryCountMax); // Only the failed request is included in the retry count, even
+    // though all inflight requests are resent.
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertFalse(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+
+    // Allow the retries to complete successfully
+    future2.get();
+
+    healthCheckFields = connectionWorker.gatherTestOnlyHealthCheckMetrics();
+    assertEquals(2, healthCheckFields.queuedRequestCountMax);
+    assertEquals(1, healthCheckFields.queuedRetryCountMax);
+    assertTrue(healthCheckFields.responseCodes.containsKey(Code.INTERNAL.value()));
+    assertEquals(1, healthCheckFields.responseCodes.get(Code.INTERNAL.value()));
+    assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
+    assertEquals(3, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
+    assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
   }
 }

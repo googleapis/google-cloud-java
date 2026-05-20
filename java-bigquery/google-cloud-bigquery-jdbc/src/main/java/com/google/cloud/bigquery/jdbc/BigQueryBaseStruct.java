@@ -36,8 +36,11 @@ import java.util.Map;
  * attribute of the SQL structured type that it represents.
  */
 abstract class BigQueryBaseStruct implements java.sql.Struct {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryBaseStruct.class.getName());
+  protected final BigQueryJdbcResultSetLogger LOG;
+
+  BigQueryBaseStruct(BigQueryJdbcResultSetLogger log) {
+    this.LOG = log;
+  }
 
   abstract FieldList getSchema();
 
@@ -52,7 +55,6 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
   }
 
   static boolean isStruct(Field currentSchema) {
-    LOG.finest("++enter++");
     return currentSchema.getType().getStandardType() == STRUCT;
   }
 

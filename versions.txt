@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.86.0:1.87.0-SNAPSHOT
+google-cloud-java:1.86.2:1.87.0-SNAPSHOT
 google-cloud-accessapproval:2.93.0:2.94.0-SNAPSHOT
 grpc-google-cloud-accessapproval-v1:2.93.0:2.94.0-SNAPSHOT
 proto-google-cloud-accessapproval-v1:2.93.0:2.94.0-SNAPSHOT
@@ -957,13 +957,13 @@ grpc-google-cloud-bigquerystorage-v1alpha:3.28.0:3.29.0-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1alpha:3.28.0:3.29.0-SNAPSHOT
 proto-google-cloud-bigquerystorage-v1beta:3.28.0:3.29.0-SNAPSHOT
 grpc-google-cloud-bigquerystorage-v1beta:3.28.0:3.29.0-SNAPSHOT
-google-cloud-datastore:2.41.0:2.42.0-SNAPSHOT
-google-cloud-datastore-bom:2.41.0:2.42.0-SNAPSHOT
-proto-google-cloud-datastore-v1:0.132.0:0.133.0-SNAPSHOT
-datastore-v1-proto-client:2.41.0:2.42.0-SNAPSHOT
-proto-google-cloud-datastore-admin-v1:2.41.0:2.42.0-SNAPSHOT
-grpc-google-cloud-datastore-admin-v1:2.41.0:2.42.0-SNAPSHOT
-grpc-google-cloud-datastore-v1:2.41.0:2.42.0-SNAPSHOT
+google-cloud-datastore:3.0.0:3.0.1-SNAPSHOT
+google-cloud-datastore-bom:3.0.0:3.0.1-SNAPSHOT
+proto-google-cloud-datastore-v1:0.133.0:0.134.0-SNAPSHOT
+datastore-v1-proto-client:3.0.0:3.0.1-SNAPSHOT
+proto-google-cloud-datastore-admin-v1:3.0.0:3.0.1-SNAPSHOT
+grpc-google-cloud-datastore-admin-v1:3.0.0:3.0.1-SNAPSHOT
+grpc-google-cloud-datastore-v1:3.0.0:3.0.1-SNAPSHOT
 google-cloud-logging-logback:0.141.0-alpha:0.142.0-alpha-SNAPSHOT
 proto-google-cloud-ces-v1beta:0.8.0:0.9.0-SNAPSHOT
 grpc-google-cloud-ces-v1beta:0.8.0:0.9.0-SNAPSHOT
@@ -1002,6 +1002,7 @@ grpc-google-cloud-spanner-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-admin-instance-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:6.117.0:6.118.0-SNAPSHOT
 google-cloud-spanner:6.117.0:6.118.0-SNAPSHOT
+grpc-gcp:1.10.0:1.11.0-SNAPSHOT
 google-cloud-spanner-executor:6.117.0:6.118.0-SNAPSHOT
 proto-google-cloud-spanner-executor-v1:6.117.0:6.118.0-SNAPSHOT
 grpc-google-cloud-spanner-executor-v1:6.117.0:6.118.0-SNAPSHOT
@@ -1037,13 +1038,13 @@ grpc-google-cloud-valkey-v1:0.38.0:0.39.0-SNAPSHOT
 google-cloud-pubsub:1.150.2:1.150.3-SNAPSHOT
 grpc-google-cloud-pubsub-v1:1.132.2:1.132.3-SNAPSHOT
 proto-google-cloud-pubsub-v1:1.132.2:1.132.3-SNAPSHOT
-google-cloud-bigtable:2.78.0:2.78.1-SNAPSHOT
-grpc-google-cloud-bigtable-admin-v2:2.78.0:2.78.1-SNAPSHOT
-grpc-google-cloud-bigtable-v2:2.78.0:2.78.1-SNAPSHOT
-proto-google-cloud-bigtable-admin-v2:2.78.0:2.78.1-SNAPSHOT
-proto-google-cloud-bigtable-v2:2.78.0:2.78.1-SNAPSHOT
-google-cloud-bigtable-emulator:0.215.0:0.215.1-SNAPSHOT
-google-cloud-bigtable-emulator-core:0.215.0:0.215.1-SNAPSHOT
+google-cloud-bigtable:2.78.1:2.79.0-SNAPSHOT
+grpc-google-cloud-bigtable-admin-v2:2.78.1:2.79.0-SNAPSHOT
+grpc-google-cloud-bigtable-v2:2.78.1:2.79.0-SNAPSHOT
+proto-google-cloud-bigtable-admin-v2:2.78.1:2.79.0-SNAPSHOT
+proto-google-cloud-bigtable-v2:2.78.1:2.79.0-SNAPSHOT
+google-cloud-bigtable-emulator:0.215.1:0.216.0-SNAPSHOT
+google-cloud-bigtable-emulator-core:0.215.1:0.216.0-SNAPSHOT
 google-cloud-firestore:3.42.0:3.42.1-SNAPSHOT
 google-cloud-firestore-admin:3.42.0:3.42.1-SNAPSHOT
 google-cloud-firestore-bom:3.42.0:3.42.1-SNAPSHOT
