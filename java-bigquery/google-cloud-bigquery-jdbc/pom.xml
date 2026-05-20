@@ -117,112 +117,12 @@
                   </transformers>
                   <relocations>
                     <relocation>
-                      <pattern>com.google.api.client</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.api.client</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.api.core</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.api.core</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.api.gax</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.api.gax</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.api.pathtemplate</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.api.pathtemplate</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.api.resourcenames</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.api.resourcenames</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.apps</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.apps</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.auth</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.auth</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.auto</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.auto</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.cloud.audit</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.cloud.audit</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.cloud.http</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.cloud.http</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.cloud.location</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.cloud.location</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.cloud.spi</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.cloud.spi</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.cloud.testing</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.cloud.testing</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.common</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.common</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.errorprone</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.errorprone</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.flatbuffers</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.flatbuffers</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.geo</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.geo</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.gson</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.gson</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.iam</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.iam</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.j2objc</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.j2objc</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.logging</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.logging</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.longrunning</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.longrunning</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.protobuf</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.protobuf</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.rpc</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.rpc</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.shopping</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.shopping</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.thirdparty</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.thirdparty</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>com.google.type</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com.google.type</shadedPattern>
+                      <pattern>com.google</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.com.google</shadedPattern>
+                      <excludes>
+                        <exclude>com.google.cloud.bigquery.**</exclude>
+                        <exclude>com.google.api.services.bigquery.**</exclude>
+                      </excludes>
                     </relocation>
                     <relocation>
                       <pattern>com.fasterxml.jackson</pattern>
@@ -251,10 +151,6 @@
                     <relocation>
                       <pattern>org.json</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.org.json</shadedPattern>
-                    </relocation>
-                    <relocation>
-                      <pattern>org.slf4j</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.org.slf4j</shadedPattern>
                     </relocation>
                     <relocation>
                       <pattern>io.grpc</pattern>
