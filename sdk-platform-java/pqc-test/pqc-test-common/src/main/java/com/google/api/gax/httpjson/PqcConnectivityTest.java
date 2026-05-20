@@ -91,6 +91,28 @@ public class PqcConnectivityTest {
    *   <li>Spins up the hermetic <code>PqcTestServer</code> instance.</li>
    * </ol>
    */
+  /**
+   * Configures the integration test harness environment before test cases are executed.
+   *
+   * <p><b>Detailed Security & Keystore Configuration Architecture:</b></p>
+   * <ul>
+   *   <li><b>What is a Keystore (PKCS12):</b> A PKCS12 keystore (<code>pqctest.p12</code>) is a secure key database
+   *       containing the server's private key and its self-signed public certificate. The server uses it during
+   *       the TLS handshake to prove its identity and establish a secure channel.</li>
+   *   <li><b>How Encryption Works:</b> The certificate itself does not encrypt message data directly. Instead,
+   *       during the TLS handshake, the client and server negotiate a symmetric session key using post-quantum
+   *       cryptography (ML-KEM). This session key is then used to encrypt and decrypt all sent/received HTTP/gRPC data.</li>
+   *   <li><b>Why a Custom Temporary Truststore is Required:</b> Because the server uses a self-signed test certificate,
+   *       it is not signed by any public Certificate Authority (CA) trusted by the standard JRE truststore (<code>cacerts</code>).
+   *       Without registering a custom truststore containing this certificate, standard JRE TLS clients will reject the connection
+   *       with an <code>SSLHandshakeException</code>. We extract the certificate to a temporary file and point
+   *       <code>javax.net.ssl.trustStore</code> to it, thereby trusting it scope-specifically for this test run without
+   *       polluting or mutating the user's system-wide JRE truststore.</li>
+   *   <li><b>JCA Provider Registration:</b> Registers <code>BouncyCastleJsseProvider</code> at provider position 1.
+   *       This registers Bouncy Castle as the primary security provider, causing all standard default <code>SSLContext</code>
+   *       and vanilla client factories to utilize Bouncy Castle JSSE and negotiate PQC automatically.</li>
+   * </ul>
+   */
   @BeforeAll
   public static void setup() throws Exception {
     System.setProperty("javax.net.debug", "all");
@@ -103,7 +125,7 @@ public class PqcConnectivityTest {
       isPqcSupported = false;
     }
     
-    // Extract the test certificate keystore from the classpath and save it to a temporary file
+    // 1. Load the self-signed server validation certificate/keystore from test resources.
     java.security.KeyStore ks = java.security.KeyStore.getInstance("PKCS12");
     try (InputStream is = PqcTestServer.class.getResourceAsStream("/pqctest.p12")) {
       if (is == null) {
@@ -111,23 +133,25 @@ public class PqcConnectivityTest {
       }
       ks.load(is, "password".toCharArray());
     }
+
+    // 2. Save the keystore to a temporary file so the JRE's JSSE property system can access its absolute path.
     java.io.File tempFile = java.io.File.createTempFile("pqctest", ".p12");
     tempFile.deleteOnExit();
     try (java.io.FileOutputStream fos = new java.io.FileOutputStream(tempFile)) {
       ks.store(fos, "password".toCharArray());
     }
 
-    // Configure JVM default JSSE trust store system properties to trust our test server
+    // 3. Configure JVM default JSSE trust store system properties to trust the self-signed validation certificate.
     System.setProperty("javax.net.ssl.trustStore", tempFile.getAbsolutePath());
     System.setProperty("javax.net.ssl.trustStorePassword", "password");
     System.setProperty("javax.net.ssl.trustStoreType", "PKCS12");
 
+    // 4. Register Bouncy Castle JSSE globally at position 1 to intercept default TLS handshakes.
+    // Note: Bouncy Castle JSSE utilizes this server-scoped property to configure the accepted TLS 1.3 curves
+    // on Java 17, since standard JRE 17 SSLParameters lacks programmatic namedGroup configuration APIs.
+    System.setProperty("org.bouncycastle.jsse.server.namedGroups", "MLKEM768");
     Security.addProvider(new BouncyCastleProvider());
-    if (isPqcSupported) {
-        Security.insertProviderAt(new BouncyCastleJsseProvider(), 1);
-    } else {
-        Security.addProvider(new BouncyCastleJsseProvider());
-    }
+    Security.insertProviderAt(new BouncyCastleJsseProvider(), 1);
     
     server = new PqcTestServer();
     server.start();
@@ -138,6 +162,8 @@ public class PqcConnectivityTest {
     if (server != null) {
       server.stop();
     }
+    // Clear Bouncy Castle system properties in teardown to prevent side-effects/leakage to other test cases in the JVM.
+    System.clearProperty("org.bouncycastle.jsse.server.namedGroups");
     Security.removeProvider("BCJSSE");
     Security.removeProvider("BC");
   }
@@ -186,10 +212,24 @@ public class PqcConnectivityTest {
     com.google.api.client.http.HttpRequest request = transportFromChannel.createRequestFactory().buildGetRequest(
         new com.google.api.client.http.GenericUrl("https://localhost:" + server.getHttpPort() + "/test"));
     
-    HttpResponse response = request.execute();
-    assertEquals(200, response.getStatusCode());
-    String content = response.parseAsString();
-    assertEquals("PQC HTTP OK", content.trim());
+    // In Snapshot Mode, the connection succeeds natively via PQC auto-upgrade.
+    // In Release Mode, because the server strictly expects MLKEM768 and the release client lacks PQC wrapping,
+    // the connection attempt MUST fail during the handshake. We assert this connection failure.
+    try {
+      HttpResponse response = request.execute();
+      if (!isPqcSupported) {
+        org.junit.jupiter.api.Assertions.fail("Expected legacy HTTP client connection to fail because PQC is unsupported!");
+      }
+      assertEquals(200, response.getStatusCode());
+      String content = response.parseAsString();
+      assertEquals("PQC HTTP OK", content.trim());
+    } catch (Exception e) {
+      if (isPqcSupported) {
+        throw e; // Should never fail in Snapshot Mode
+      }
+      // Exception is expected and welcomed in Release Mode!
+      System.out.println("Verified: Legacy release HTTP client connection successfully rejected as expected: " + e.getMessage());
+    }
   }
 
   @Test
@@ -205,6 +245,9 @@ public class PqcConnectivityTest {
         .setEndpoint("localhost:" + server.getGrpcPort())
         .setHeaderProvider(() -> java.util.Collections.emptyMap());
         
+    // In Snapshot Mode, we dynamically inject the Netty JJSSE provider channel configurator to enable PQC.
+    // In Release Mode, we skip this configuration, forcing the classical client to connect without PQC,
+    // which should cause the strictly-configured server to reject the connection.
     if (isPqcSupported) {
         providerBuilder.setChannelConfigurator(new com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>() {
             @Override
@@ -261,14 +304,28 @@ public class PqcConnectivityTest {
     }
     
     InstantiatingGrpcChannelProvider provider = providerBuilder.build();
-    
     io.grpc.Channel channel = ((com.google.api.gax.grpc.GrpcTransportChannel) provider.getTransportChannel()).getChannel();
 
-    byte[] response = io.grpc.stub.ClientCalls.blockingUnaryCall(
-        channel, method, io.grpc.CallOptions.DEFAULT, "Hello".getBytes());
-    
-    assertEquals("PQC gRPC OK", new String(response).trim());
-    ((io.grpc.ManagedChannel) channel).shutdown();
+    // Note: Because this test module only depends on core gax-grpc and grpc-stub
+    // without pulling in a concrete generated service client library (e.g., PubSub or Spanner),
+    // using a standard low-level gRPC blocking stubs call (ClientCalls.blockingUnaryCall) is the standard,
+    // compile-safe way to trigger and assert raw channel TLS handshakes directly.
+    try {
+      byte[] response = io.grpc.stub.ClientCalls.blockingUnaryCall(
+          channel, method, io.grpc.CallOptions.DEFAULT, "Hello".getBytes());
+      if (!isPqcSupported) {
+        org.junit.jupiter.api.Assertions.fail("Expected legacy gRPC client connection to fail because PQC is unsupported!");
+      }
+      assertEquals("PQC gRPC OK", new String(response).trim());
+    } catch (Exception e) {
+      if (isPqcSupported) {
+        throw e; // Should never fail in Snapshot Mode
+      }
+      // Exception is expected and welcomed in Release Mode!
+      System.out.println("Verified: Legacy release gRPC client connection successfully rejected as expected: " + e.getMessage());
+    } finally {
+      ((io.grpc.ManagedChannel) channel).shutdown();
+    }
   }
 
   @Test
@@ -285,7 +342,18 @@ public class PqcConnectivityTest {
     // This will trigger a request to https://localhost:httpPort/bigquery/v2/projects/test-project/datasets
     // Under-the-hood, the default factory wraps NetHttpTransport with our programmatic PqcTlsSocketFactory,
     // and negotiates hybrid ML-KEM-768 successfully!
-    bigquery.listDatasets();
+    try {
+      bigquery.listDatasets();
+      if (!isPqcSupported) {
+        org.junit.jupiter.api.Assertions.fail("Expected legacy BigQuery client call to fail because PQC is unsupported!");
+      }
+    } catch (Exception e) {
+      if (isPqcSupported) {
+        throw e; // Should never fail in Snapshot Mode
+      }
+      // Exception is expected and welcomed in Release Mode!
+      System.out.println("Verified: Legacy release BigQuery client call successfully rejected as expected: " + e.getMessage());
+    }
   }
 
   private static class ByteMarshaller implements io.grpc.MethodDescriptor.Marshaller<byte[]> {

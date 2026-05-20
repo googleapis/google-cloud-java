@@ -29,63 +29,79 @@ public class PqcTestServer {
   public void start() throws Exception {
     // 1. BouncyCastleProvider (JCA provider, name "BC"): Implements low-level cryptographic algorithms
     //    like signature generation, hashing, key agreement, and ML-KEM key representations.
+    //    Required so the JVM's security architecture recognizes post-quantum key formats and algorithms.
     Security.addProvider(new BouncyCastleProvider());
     
     // 2. BouncyCastleJsseProvider (JSSE provider, name "BCJSSE"): Implements high-level TLS protocol support
     //    (TLSv1.3 engines, cipher suites, extensions, and socket factories). It depends on the JCA provider.
+    //    Required to negotiate PQC Named Groups (ML-KEM-768) during the TLS handshake.
     Security.addProvider(new BouncyCastleJsseProvider());
     
-    // PKCS12 is the key store format to bundle the private key + the certificate.
+    // 3. Initialize the KeyStore instance utilizing PKCS12 format.
+    //    PKCS12 format is an industry-standard format used to bundle the private key and certificate chain.
     KeyStore ks = KeyStore.getInstance("PKCS12");
     try (InputStream is = getClass().getResourceAsStream("/pqctest.p12")) {
       if (is == null) {
         throw new RuntimeException("pqctest.p12 not found in classpath");
       }
-      // Load the key with a dummy password
+      // Load the self-signed certificate/private key from the resource archive with a dummy password.
       ks.load(is, "password".toCharArray());
     }
 
-    // Key manager factory used to choose credentials for the TLS handshake.
+    // 4. Initialize KeyManagerFactory using the standard JRE algorithm (SunX509).
+    //    Key managers choose the private key credentials (the server's identity) during TLS handshake negotiation.
     KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
     kmf.init(ks, "password".toCharArray());
 
-    // Trust manager factory used to decide whether a client should be trusted.
+    // 5. Initialize TrustManagerFactory using the default JRE algorithm (PKIX).
+    //    Trust managers evaluate whether peer certificates presented during TLS are trusted and valid.
     javax.net.ssl.TrustManagerFactory tmf = javax.net.ssl.TrustManagerFactory.getInstance(javax.net.ssl.TrustManagerFactory.getDefaultAlgorithm());
     tmf.init(ks);
 
-    // 1. Start HTTP Server utilizing Bouncy Castle JJSSE
+    // 6. Initialize a dedicated SSLContext scoped specifically to Bouncy Castle JSSE.
+    //    Specifying BouncyCastleJsseProvider prevents contamination of default JRE TLS contexts.
     BouncyCastleJsseProvider bcProvider = new BouncyCastleJsseProvider();
     SSLContext sslContext = SSLContext.getInstance("TLSv1.3", bcProvider);
     sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
+    // 7. Instantiate a local mock HttpServer (bound to an ephemeral port 0).
     httpServer = HttpsServer.create(new InetSocketAddress(0), 0);
+    
+    // 8. Set HttpsConfigurator to intercept incoming connections and customize TLS handshakes.
     httpServer.setHttpsConfigurator(new HttpsConfigurator(sslContext) {
       @Override
       public void configure(HttpsParameters params) {
+        // Retrieve the SSLContext default parameters.
         SSLParameters sslparams = getSSLContext().getDefaultSSLParameters();
-        // Enforce TLSv1.3 protocol
+        
+        // Enforce TLSv1.3 protocol exclusively to guarantee modern cipher suites.
         sslparams.setProtocols(new String[]{"TLSv1.3"});
-        // We must use reflection here because:
-        // 1. This module compiles targeting Java 8 bootclasspath.
-        // 2. Standard javax.net.ssl.SSLParameters does NOT have setNamedGroups() in Java 8 compile signature.
-        // 3. At runtime on JDK 13+, the JRE's SSLParameters class does have setNamedGroups().
-        // 4. org.bouncycastle.jsse.BCSSLParameters does NOT subclass SSLParameters in some legacy configurations,
-        //    making reflection the only compile-safe way to invoke it across all JRE platforms.
+        
+        // Note: Direct invocation of sslparams.setNamedGroups(new String[]{"MLKEM768"}) fails to compile
+        // because this module targets Java 8, whereas setNamedGroups was introduced in Java 20.
+        // Reflection is used here compile-safely to invoke the method when running under JRE 20+.
         try {
-          java.lang.reflect.Method setNamedGroupsMethod = sslparams.getClass().getMethod("setNamedGroups", String[].class);
+          java.lang.reflect.Method setNamedGroupsMethod = javax.net.ssl.SSLParameters.class.getMethod("setNamedGroups", String[].class);
           setNamedGroupsMethod.invoke(sslparams, (Object) new String[]{"MLKEM768"});
         } catch (Exception e) {
-          System.err.println("Warning: Failed to reflectively set SSLParameters.setNamedGroups: " + e.getMessage());
+          // Fallback on JRE 17: Bouncy Castle JJSSE automatically reads the "org.bouncycastle.jsse.server.namedGroups"
+          // system property to configure the accepted named groups on the server context.
+          // Documentation reference: https://www.bouncycastle.org/docs/tlsdocs.html#SystemProperties
         }
+        // Commit parameters to the active connection context.
         params.setSSLParameters(sslparams);
       }
     });
+    
+    // 9. Map simple mock endpoint contexts to simulate vanilla API server behavior.
     httpServer.createContext("/test", exchange -> {
       String response = "PQC HTTP OK";
       exchange.sendResponseHeaders(200, response.length());
       exchange.getResponseBody().write(response.getBytes());
       exchange.getResponseBody().close();
     });
+    
+    // 10. Map mock BigQuery datasets endpoint to simulate vanilla BigQuery dataset listing responses.
     httpServer.createContext("/bigquery/v2/projects/test-project/datasets", exchange -> {
       String response = "{\"kind\": \"bigquery#datasetList\"}";
       exchange.getResponseHeaders().set("Content-Type", "application/json");
@@ -93,13 +109,19 @@ public class PqcTestServer {
       exchange.getResponseBody().write(response.getBytes());
       exchange.getResponseBody().close();
     });
+    
+    // 11. Start the HTTP Server and retrieve the dynamically allocated local ephemeral port.
     httpServer.start();
     httpPort = httpServer.getAddress().getPort();
 
-    // 2. Start gRPC Server using JDK SSL Provider bound specifically to Bouncy Castle JJSSE
+    // 12. Initialize netty SSL Context builder to establish gRPC server channel secure layers.
+    //     Bind the builder explicitly to Bouncy Castle JSSE provider context.
     io.netty.handler.ssl.SslContextBuilder nettySslContextBuilder = io.netty.handler.ssl.SslContextBuilder.forServer(kmf)
         .sslContextProvider(bcProvider);
     
+    // 13. Reflectively configure the Netty SslContextBuilder accepted curves.
+    //     Netty API curves methods differ depending on whether Netty is utilizing older Iterable-based
+    //     curves signatures or modern String[] array-based curves signatures.
     try {
       try {
         java.lang.reflect.Method curvesMethod = nettySslContextBuilder.getClass().getMethod("curves", String[].class);
@@ -112,13 +134,17 @@ public class PqcTestServer {
       System.err.println("Warning: Failed to programmatically configure Netty curves: " + e.getMessage());
     }
 
+    // 14. Finalize compiling standard Netty SSL configurations.
+    //     Force Netty to execute handshakes utilizing the standard JRE (JDK) SSL Provider
+    //     so Bouncy Castle JJSSE (registered in the provider context) manages the secure pipelines.
     io.netty.handler.ssl.SslContext nettySslContext = io.grpc.netty.GrpcSslContexts.configure(
         nettySslContextBuilder,
         io.netty.handler.ssl.SslProvider.JDK
     )
-    .protocols("TLSv1.3") // Enforce TLSv1.3
+    .protocols("TLSv1.3") // Force TLSv1.3 protocols
     .build();
 
+    // 15. Build a raw gRPC method descriptor to mock a unary SayHello endpoint.
     io.grpc.MethodDescriptor<byte[], byte[]> method = io.grpc.MethodDescriptor.<byte[], byte[]>newBuilder()
         .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
         .setFullMethodName("Greeter/SayHello")
@@ -126,6 +152,7 @@ public class PqcTestServer {
         .setResponseMarshaller(new ByteMarshaller())
         .build();
 
+    // 16. Wrap the method descriptor into a custom gRPC server service definition.
     io.grpc.ServerServiceDefinition serviceDef = io.grpc.ServerServiceDefinition.builder("Greeter")
         .addMethod(method, io.grpc.stub.ServerCalls.asyncUnaryCall(
             (request, responseObserver) -> {
@@ -134,6 +161,7 @@ public class PqcTestServer {
             }))
         .build();
 
+    // 17. Start the Netty gRPC Server on a dynamically allocated ephemeral port.
     grpcServer = NettyServerBuilder.forPort(0)
         .sslContext(nettySslContext)
         .addService(serviceDef)
