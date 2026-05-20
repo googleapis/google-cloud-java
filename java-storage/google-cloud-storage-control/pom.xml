@@ -100,6 +100,13 @@
 
     <profiles>
         <profile>
+            <id>native</id>
+            <properties>
+                <!-- skip native tests for this module, it will be tested in google-cloud-storage -->
+                <skipTests>true</skipTests>
+            </properties>
+        </profile>
+        <profile>
             <id>java9</id>
             <activation>
                 <jdk>[9,)</jdk>
