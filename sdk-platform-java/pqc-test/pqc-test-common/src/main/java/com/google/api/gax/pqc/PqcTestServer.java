@@ -80,6 +80,13 @@ public class PqcTestServer {
       exchange.getResponseBody().write(response.getBytes());
       exchange.getResponseBody().close();
     });
+    httpServer.createContext("/bigquery/v2/projects/test-project/datasets", exchange -> {
+      String response = "{\"kind\": \"bigquery#datasetList\"}";
+      exchange.getResponseHeaders().set("Content-Type", "application/json");
+      exchange.sendResponseHeaders(200, response.length());
+      exchange.getResponseBody().write(response.getBytes());
+      exchange.getResponseBody().close();
+    });
     httpServer.start();
     httpPort = httpServer.getAddress().getPort();
 

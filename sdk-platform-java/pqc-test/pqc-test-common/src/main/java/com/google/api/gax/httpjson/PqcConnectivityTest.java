@@ -18,6 +18,13 @@ import org.bouncycastle.jsse.provider.BouncyCastleJsseProvider;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import java.security.Security;
 
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.TransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.auth.http.HttpTransportFactory;
+
 /**
  * PqcConnectivityTest serves as the base class for validating Post-Quantum Cryptography (PQC)
  * connectivity in the Google Cloud Java SDK.
@@ -60,6 +67,7 @@ public class PqcConnectivityTest {
   public void runTests() throws Exception {
     testHttpPqc();
     testGrpcPqc();
+    testBigQueryPqc();
   }
 
   @Test
@@ -178,6 +186,39 @@ public class PqcConnectivityTest {
     
     assertEquals("PQC gRPC OK", new String(response).trim());
     ((io.grpc.ManagedChannel) channel).shutdown();
+  }
+
+  @Test
+  public void testBigQueryPqc() throws Exception {
+    java.security.KeyStore ks = java.security.KeyStore.getInstance("PKCS12");
+    ks.load(PqcTestServer.class.getResourceAsStream("/pqctest.p12"), "password".toCharArray());
+    
+    // Build a custom HttpTransport explicitly trusting the self-signed certificate keystore.
+    final com.google.api.client.http.HttpTransport httpTransport = new com.google.api.client.http.javanet.NetHttpTransport.Builder()
+        .trustCertificates(ks)
+        .build();
+        
+    TransportOptions transportOptions = HttpTransportOptions.newBuilder()
+        .setHttpTransportFactory(new HttpTransportFactory() {
+          @Override
+          public com.google.api.client.http.HttpTransport create() {
+            return httpTransport;
+          }
+        })
+        .build();
+
+    BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
+        .setProjectId("test-project")
+        .setHost("https://localhost:" + server.getHttpPort())
+        .setCredentials(NoCredentials.getInstance())
+        .setTransportOptions(transportOptions)
+        .build();
+
+    BigQuery bigquery = bigqueryOptions.getService();
+    
+    // This will trigger a request to https://localhost:httpPort/bigquery/v2/projects/test-project/datasets
+    // Handshake must succeed. If it fails, it throws SSLHandshakeException.
+    bigquery.listDatasets();
   }
 
   private static class ByteMarshaller implements io.grpc.MethodDescriptor.Marshaller<byte[]> {
