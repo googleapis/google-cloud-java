@@ -19,12 +19,12 @@ package com.google.cloud.spanner;
 import static com.google.cloud.spanner.SessionImpl.NO_CHANNEL_HINT;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DelayedReadContext.DelayedReadOnlyTransaction;
 import com.google.cloud.spanner.MultiplexedSessionDatabaseClient.MultiplexedSessionTransaction;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.common.util.concurrent.MoreExecutors;

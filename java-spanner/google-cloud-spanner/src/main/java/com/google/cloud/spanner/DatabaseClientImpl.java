@@ -229,7 +229,8 @@ class DatabaseClientImpl implements DatabaseClient {
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return readOnlyTransaction(bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+    return readOnlyTransaction(
+        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
   }
 
   @Override

@@ -18,8 +18,8 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
-import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
+import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.Statement.StatementFactory;
@@ -353,9 +353,8 @@ public interface DatabaseClient {
   ReadOnlyTransaction readOnlyTransaction();
 
   /**
-   * Returns a read-only transaction context in which multiple reads and/or queries can be
-   * performed using {@link TimestampBound#strong()} concurrency and the given read-only
-   * transaction options.
+   * Returns a read-only transaction context in which multiple reads and/or queries can be performed
+   * using {@link TimestampBound#strong()} concurrency and the given read-only transaction options.
    *
    * @param options options for starting the read-only transaction
    */
@@ -397,8 +396,8 @@ public interface DatabaseClient {
   ReadOnlyTransaction readOnlyTransaction(TimestampBound bound);
 
   /**
-   * Returns a read-only transaction context in which multiple reads and/or queries can be
-   * performed at the given timestamp bound and with the given read-only transaction options.
+   * Returns a read-only transaction context in which multiple reads and/or queries can be performed
+   * at the given timestamp bound and with the given read-only transaction options.
    *
    * <p>Options can include:
    *
@@ -414,7 +413,8 @@ public interface DatabaseClient {
   default ReadOnlyTransaction readOnlyTransaction(
       TimestampBound bound, ReadOnlyTransactionOption... options) {
     Options readOnlyTransactionOptions = Options.fromReadOnlyTransactionOptions(options);
-    if (readOnlyTransactionOptions.beginTransactionOption() == Options.BeginTransactionOption.EXPLICIT) {
+    if (readOnlyTransactionOptions.beginTransactionOption()
+        == Options.BeginTransactionOption.EXPLICIT) {
       return readOnlyTransaction(bound);
     }
     throw new UnsupportedOperationException(

@@ -423,6 +423,8 @@ abstract class AbstractReadContext
     void beforeReadOrQuery() {
       super.beforeReadOrQuery();
       if (shouldUseInlinedBegin()) {
+        // Keep the same nested transaction guard as the explicit BeginTransaction path. This checks
+        // TransactionRunner's thread-local pending state, not the session's active transaction.
         SessionImpl.throwIfTransactionsPending();
       } else {
         initTransaction();
@@ -434,7 +436,8 @@ abstract class AbstractReadContext
     TransactionSelector getTransactionSelector() {
       if (!shouldUseInlinedBegin()) {
         // No need for synchronization: super.readInternal() is always preceded by a check of
-        // "transactionId" that provides a happens-before from initialization, and the value is never
+        // "transactionId" that provides a happens-before from initialization, and the value is
+        // never
         // changed afterwards.
         @SuppressWarnings("GuardedByChecker")
         TransactionSelector selector =
@@ -461,19 +464,18 @@ abstract class AbstractReadContext
 
       try {
         return TransactionSelector.newBuilder()
-            .setId(
-                futureToWaitFor.get(
-                    WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS))
+            .setId(futureToWaitFor.get(WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS))
             .build();
       } catch (ExecutionException e) {
         throw SpannerExceptionFactory.asSpannerException(e.getCause());
       } catch (TimeoutException e) {
         throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.ABORTED,
+            ErrorCode.DEADLINE_EXCEEDED,
             "Timeout while waiting for an inlined read-only transaction to be returned by another"
                 + " statement.",
             e);
       } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
         throw SpannerExceptionFactory.newSpannerExceptionForCancellation(null, e);
       }
     }
@@ -620,6 +622,13 @@ abstract class AbstractReadContext
                 "ResultSet was closed before a read-only transaction id was returned"));
       }
       super.onDone(withBeginTransaction);
+    }
+
+    @Override
+    void onStartFailed(boolean withBeginTransaction, Throwable t) {
+      if (withBeginTransaction) {
+        failTransactionIdFuture(t);
+      }
     }
 
     private void failTransactionIdFuture(Throwable t) {
@@ -1108,15 +1117,22 @@ abstract class AbstractReadContext
             if (selector != null) {
               request.setTransaction(selector);
             }
-            SpannerRpc.StreamingCall call =
-                rpc.executeQuery(
-                    request.build(),
-                    stream.consumer(),
-                    getTransactionChannelHint(),
-                    requestId,
-                    isRouteToLeader());
+            boolean withBeginTransaction = request.getTransaction().hasBegin();
+            SpannerRpc.StreamingCall call;
+            try {
+              call =
+                  rpc.executeQuery(
+                      request.build(),
+                      stream.consumer(),
+                      getTransactionChannelHint(),
+                      requestId,
+                      isRouteToLeader());
+            } catch (RuntimeException | Error t) {
+              onStartFailed(withBeginTransaction, t);
+              throw t;
+            }
             session.markUsed(clock.instant());
-            stream.setCall(call, request.getTransaction().hasBegin());
+            stream.setCall(call, withBeginTransaction);
             return stream;
           }
 
@@ -1232,6 +1248,8 @@ abstract class AbstractReadContext
     this.session.onReadDone();
   }
 
+  void onStartFailed(boolean withBeginTransaction, Throwable t) {}
+
   /**
    * For transactions other than read-write, the MultiplexedSessionPrecommitToken will not be
    * present in the RPC response. In such cases, this method will be a no-op.
@@ -1331,15 +1349,22 @@ abstract class AbstractReadContext
               builder.setTransaction(selector);
             }
             builder.setRequestOptions(buildRequestOptions(readOptions));
-            SpannerRpc.StreamingCall call =
-                rpc.read(
-                    builder.build(),
-                    stream.consumer(),
-                    getTransactionChannelHint(),
-                    requestId,
-                    isRouteToLeader());
+            boolean withBeginTransaction = builder.getTransaction().hasBegin();
+            SpannerRpc.StreamingCall call;
+            try {
+              call =
+                  rpc.read(
+                      builder.build(),
+                      stream.consumer(),
+                      getTransactionChannelHint(),
+                      requestId,
+                      isRouteToLeader());
+            } catch (RuntimeException | Error t) {
+              onStartFailed(withBeginTransaction, t);
+              throw t;
+            }
             session.markUsed(clock.instant());
-            stream.setCall(call, /* withBeginTransaction= */ builder.getTransaction().hasBegin());
+            stream.setCall(call, withBeginTransaction);
             return stream;
           }
 

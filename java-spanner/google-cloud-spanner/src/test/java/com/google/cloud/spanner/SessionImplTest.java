@@ -635,8 +635,7 @@ public class SessionImplTest {
     PartialResultSet resultSet =
         PartialResultSet.newBuilder()
             .setMetadata(
-                newMetadata(Type.struct(Type.StructField.of("C", Type.string())))
-                    .toBuilder()
+                newMetadata(Type.struct(Type.StructField.of("C", Type.string()))).toBuilder()
                     .setTransaction(
                         Transaction.newBuilder()
                             .setId(ByteString.copyFromUtf8("inline-tx"))
@@ -665,7 +664,9 @@ public class SessionImplTest {
     Mockito.verify(rpc, Mockito.never()).beginTransaction(Mockito.any(), anyMap(), eq(false));
     assertEquals(2, request.getAllValues().size());
     assertThat(request.getAllValues().get(0).getTransaction().hasBegin()).isTrue();
-    assertEquals(ByteString.copyFromUtf8("inline-tx"), request.getAllValues().get(1).getTransaction().getId());
+    assertEquals(
+        ByteString.copyFromUtf8("inline-tx"),
+        request.getAllValues().get(1).getTransaction().getId());
   }
 
   @Test

@@ -316,8 +316,8 @@ public final class Options implements Serializable {
   }
 
   /**
-   * Specifies how a multi-use read-only transaction should be started. The default is
-   * {@link BeginTransactionOption#EXPLICIT}.
+   * Specifies how a multi-use read-only transaction should be started. The default is {@link
+   * BeginTransactionOption#EXPLICIT}.
    */
   public static ReadOnlyTransactionOption beginTransactionOption(BeginTransactionOption option) {
     return new BeginTransactionOptionOption(Preconditions.checkNotNull(option));
@@ -833,7 +833,9 @@ public final class Options implements Serializable {
   }
 
   BeginTransactionOption beginTransactionOption() {
-    return beginTransactionOption == null ? BeginTransactionOption.EXPLICIT : beginTransactionOption;
+    return beginTransactionOption == null
+        ? BeginTransactionOption.EXPLICIT
+        : beginTransactionOption;
   }
 
   @Override
