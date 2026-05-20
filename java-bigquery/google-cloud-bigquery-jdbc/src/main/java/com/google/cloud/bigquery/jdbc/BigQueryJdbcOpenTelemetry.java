@@ -295,7 +295,7 @@ public class BigQueryJdbcOpenTelemetry {
             props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
           }
 
-          // Set safe, generous default limits on attribute value lengths (60KB) to protect
+          // Set safe, generous default limits on attribute value lengths (32KB) to protect
           // customers from GCP Cloud Trace 64KB span ingestion failures when logging massive
           // exception stack traces or database schema metadata.
           // Respect any existing user configuration overrides.
