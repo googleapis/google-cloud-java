@@ -456,4 +456,55 @@ public class BigQueryConnectionTest {
       assertEquals(expectedIsReadOnly, connection.isReadOnlyTokenUsed());
     }
   }
+
+  @Test
+  public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
+    java.util.logging.Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    java.util.logging.Level originalLevel = rootLogger.getLevel();
+    rootLogger.setLevel(java.util.logging.Level.INFO);
+
+    java.util.List<java.util.logging.LogRecord> records = new java.util.ArrayList<>();
+    java.util.logging.Handler handler =
+        new java.util.logging.Handler() {
+          @Override
+          public void publish(java.util.logging.LogRecord record) {
+            records.add(record);
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() throws SecurityException {}
+        };
+    rootLogger.addHandler(handler);
+
+    try {
+      String url =
+          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+              + "OAuthType=2;ProjectId=MyTestProjectId;"
+              + "OAuthAccessToken=secretAccessToken;Location=US;"
+              + "PartnerToken=GPN:secretPartnerToken;";
+      try (BigQueryConnection connection = new BigQueryConnection(url)) {
+        // Just trigger the constructor
+      }
+
+      boolean foundLog = false;
+      for (java.util.logging.LogRecord record : records) {
+        if (record.getMessage().contains("Connection properties:")) {
+          foundLog = true;
+          String logMessage = record.getMessage();
+          assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
+          assertTrue(logMessage.contains("Location=US"));
+          assertTrue(logMessage.contains("OAuthAccessToken=*****"));
+          assertTrue(logMessage.contains("PartnerToken= (GPN:secretPartnerToken)"));
+          assertFalse(logMessage.contains("secretAccessToken"));
+        }
+      }
+      assertTrue(foundLog, "Log message about Connection properties was not found");
+    } finally {
+      rootLogger.removeHandler(handler);
+      rootLogger.setLevel(originalLevel);
+    }
+  }
 }

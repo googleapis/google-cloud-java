@@ -152,6 +152,24 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.connectionId = UUID.randomUUID().toString();
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       this.connectionUrl = url;
+      if (LOG.isLoggable(java.util.logging.Level.INFO)) {
+        Properties connectionProps = ds.createProperties();
+        Properties maskedProps = new Properties();
+        for (String name : connectionProps.stringPropertyNames()) {
+          String value = connectionProps.getProperty(name);
+          String lowerName = name.toLowerCase();
+          if ((lowerName.contains("key")
+                  || lowerName.contains("token")
+                  || lowerName.contains("password")
+                  || lowerName.contains("pwd")
+                  || lowerName.contains("secret"))
+              && !lowerName.equals("partnertoken")) {
+            value = "*****";
+          }
+          maskedProps.setProperty(name, value);
+        }
+        LOG.info("Connection properties: %s", maskedProps.toString());
+      }
       this.openStatements = ConcurrentHashMap.newKeySet();
       this.autoCommit = true;
       this.sqlWarnings = new ArrayList<>();
