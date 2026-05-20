@@ -937,7 +937,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @param adUnit Required. The `AdUnit` to update.
    *     <p>The `AdUnit`'s name is used to identify the `AdUnit` to update. Format:
    *     `networks/{network_code}/adUnits/{ad_unit_id}`
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AdUnit updateAdUnit(AdUnit adUnit, FieldMask updateMask) {

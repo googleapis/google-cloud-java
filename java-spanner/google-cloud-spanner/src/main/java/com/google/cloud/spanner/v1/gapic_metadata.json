@@ -37,6 +37,9 @@
             "ExecuteStreamingSql": {
               "methods": ["executeStreamingSqlCallable"]
             },
+            "FetchCacheUpdate": {
+              "methods": ["fetchCacheUpdateCallable"]
+            },
             "GetSession": {
               "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
             },

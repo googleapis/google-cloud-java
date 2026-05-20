@@ -398,7 +398,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=613
+   *     google/chat/v1/message.proto;l=617
    * @return The threadKey.
    */
   @java.lang.Override
@@ -432,7 +432,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=613
+   *     google/chat/v1/message.proto;l=617
    * @return The bytes for threadKey.
    */
   @java.lang.Override
@@ -644,6 +644,72 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int CREATE_MESSAGE_NOTIFICATION_OPTIONS_FIELD_NUMBER = 10;
+  private com.google.chat.v1.CreateMessageNotificationOptions createMessageNotificationOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the createMessageNotificationOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateMessageNotificationOptions() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The createMessageNotificationOptions.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CreateMessageNotificationOptions getCreateMessageNotificationOptions() {
+    return createMessageNotificationOptions_ == null
+        ? com.google.chat.v1.CreateMessageNotificationOptions.getDefaultInstance()
+        : createMessageNotificationOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder
+      getCreateMessageNotificationOptionsOrBuilder() {
+    return createMessageNotificationOptions_ == null
+        ? com.google.chat.v1.CreateMessageNotificationOptions.getDefaultInstance()
+        : createMessageNotificationOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -679,6 +745,9 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(messageId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, messageId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getCreateMessageNotificationOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -709,6 +778,11 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(messageId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, messageId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getCreateMessageNotificationOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -733,6 +807,12 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (messageReplyOption_ != other.messageReplyOption_) return false;
     if (!getMessageId().equals(other.getMessageId())) return false;
+    if (hasCreateMessageNotificationOptions() != other.hasCreateMessageNotificationOptions())
+      return false;
+    if (hasCreateMessageNotificationOptions()) {
+      if (!getCreateMessageNotificationOptions()
+          .equals(other.getCreateMessageNotificationOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -758,6 +838,10 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + messageReplyOption_;
     hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getMessageId().hashCode();
+    if (hasCreateMessageNotificationOptions()) {
+      hash = (37 * hash) + CREATE_MESSAGE_NOTIFICATION_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateMessageNotificationOptions().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -900,6 +984,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetMessageFieldBuilder();
+        internalGetCreateMessageNotificationOptionsFieldBuilder();
       }
     }
 
@@ -917,6 +1002,11 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       requestId_ = "";
       messageReplyOption_ = 0;
       messageId_ = "";
+      createMessageNotificationOptions_ = null;
+      if (createMessageNotificationOptionsBuilder_ != null) {
+        createMessageNotificationOptionsBuilder_.dispose();
+        createMessageNotificationOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -973,6 +1063,13 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.messageId_ = messageId_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createMessageNotificationOptions_ =
+            createMessageNotificationOptionsBuilder_ == null
+                ? createMessageNotificationOptions_
+                : createMessageNotificationOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1013,6 +1110,9 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
         messageId_ = other.messageId_;
         bitField0_ |= 0x00000020;
         onChanged();
+      }
+      if (other.hasCreateMessageNotificationOptions()) {
+        mergeCreateMessageNotificationOptions(other.getCreateMessageNotificationOptions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1076,6 +1176,14 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000020;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetCreateMessageNotificationOptionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1435,7 +1543,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=613
+     *     google/chat/v1/message.proto;l=617
      * @return The threadKey.
      */
     @java.lang.Deprecated
@@ -1468,7 +1576,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=613
+     *     google/chat/v1/message.proto;l=617
      * @return The bytes for threadKey.
      */
     @java.lang.Deprecated
@@ -1501,7 +1609,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=613
+     *     google/chat/v1/message.proto;l=617
      * @param value The threadKey to set.
      * @return This builder for chaining.
      */
@@ -1533,7 +1641,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=613
+     *     google/chat/v1/message.proto;l=617
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1561,7 +1669,7 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-     *     google/chat/v1/message.proto;l=613
+     *     google/chat/v1/message.proto;l=617
      * @param value The bytes for threadKey to set.
      * @return This builder for chaining.
      */
@@ -2020,6 +2128,243 @@ public final class CreateMessageRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.chat.v1.CreateMessageNotificationOptions createMessageNotificationOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.CreateMessageNotificationOptions,
+            com.google.chat.v1.CreateMessageNotificationOptions.Builder,
+            com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder>
+        createMessageNotificationOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the createMessageNotificationOptions field is set.
+     */
+    public boolean hasCreateMessageNotificationOptions() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The createMessageNotificationOptions.
+     */
+    public com.google.chat.v1.CreateMessageNotificationOptions
+        getCreateMessageNotificationOptions() {
+      if (createMessageNotificationOptionsBuilder_ == null) {
+        return createMessageNotificationOptions_ == null
+            ? com.google.chat.v1.CreateMessageNotificationOptions.getDefaultInstance()
+            : createMessageNotificationOptions_;
+      } else {
+        return createMessageNotificationOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCreateMessageNotificationOptions(
+        com.google.chat.v1.CreateMessageNotificationOptions value) {
+      if (createMessageNotificationOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createMessageNotificationOptions_ = value;
+      } else {
+        createMessageNotificationOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCreateMessageNotificationOptions(
+        com.google.chat.v1.CreateMessageNotificationOptions.Builder builderForValue) {
+      if (createMessageNotificationOptionsBuilder_ == null) {
+        createMessageNotificationOptions_ = builderForValue.build();
+      } else {
+        createMessageNotificationOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCreateMessageNotificationOptions(
+        com.google.chat.v1.CreateMessageNotificationOptions value) {
+      if (createMessageNotificationOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && createMessageNotificationOptions_ != null
+            && createMessageNotificationOptions_
+                != com.google.chat.v1.CreateMessageNotificationOptions.getDefaultInstance()) {
+          getCreateMessageNotificationOptionsBuilder().mergeFrom(value);
+        } else {
+          createMessageNotificationOptions_ = value;
+        }
+      } else {
+        createMessageNotificationOptionsBuilder_.mergeFrom(value);
+      }
+      if (createMessageNotificationOptions_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCreateMessageNotificationOptions() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createMessageNotificationOptions_ = null;
+      if (createMessageNotificationOptionsBuilder_ != null) {
+        createMessageNotificationOptionsBuilder_.dispose();
+        createMessageNotificationOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.CreateMessageNotificationOptions.Builder
+        getCreateMessageNotificationOptionsBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetCreateMessageNotificationOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder
+        getCreateMessageNotificationOptionsOrBuilder() {
+      if (createMessageNotificationOptionsBuilder_ != null) {
+        return createMessageNotificationOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return createMessageNotificationOptions_ == null
+            ? com.google.chat.v1.CreateMessageNotificationOptions.getDefaultInstance()
+            : createMessageNotificationOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the notification behavior when the message is posted.
+     * To learn more, see [Force notifications or send silent
+     * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.CreateMessageNotificationOptions,
+            com.google.chat.v1.CreateMessageNotificationOptions.Builder,
+            com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder>
+        internalGetCreateMessageNotificationOptionsFieldBuilder() {
+      if (createMessageNotificationOptionsBuilder_ == null) {
+        createMessageNotificationOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.chat.v1.CreateMessageNotificationOptions,
+                com.google.chat.v1.CreateMessageNotificationOptions.Builder,
+                com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder>(
+                getCreateMessageNotificationOptions(), getParentForChildren(), isClean());
+        createMessageNotificationOptions_ = null;
+      }
+      return createMessageNotificationOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.chat.v1.CreateMessageRequest)

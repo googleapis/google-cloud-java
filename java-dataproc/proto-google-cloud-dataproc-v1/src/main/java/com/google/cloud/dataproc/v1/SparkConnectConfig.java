@@ -24,7 +24,7 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Spark Connect configuration for an interactive session.
+ * Spark connect configuration for an interactive session.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SparkConnectConfig}
@@ -223,7 +223,7 @@ public final class SparkConnectConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Spark Connect configuration for an interactive session.
+   * Spark connect configuration for an interactive session.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SparkConnectConfig}

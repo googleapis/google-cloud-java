@@ -35,6 +35,7 @@ import com.google.container.v1beta1.NodeTaints;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.ResourceLabels;
 import com.google.container.v1beta1.ResourceManagerTags;
+import com.google.container.v1beta1.TaintConfig;
 import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsNodeConfig;
@@ -94,6 +95,7 @@ public class SyncUpdateNodePool {
               .setBootDisk(BootDisk.newBuilder().build())
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
+              .setTaintConfig(TaintConfig.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

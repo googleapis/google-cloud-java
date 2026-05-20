@@ -1,0 +1,295 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.ads.admanager.v1.stub;
+
+import static com.google.ads.admanager.v1.RichMediaAdsCompanyServiceClient.ListRichMediaAdsCompaniesPagedResponse;
+
+import com.google.ads.admanager.v1.GetRichMediaAdsCompanyRequest;
+import com.google.ads.admanager.v1.ListRichMediaAdsCompaniesRequest;
+import com.google.ads.admanager.v1.ListRichMediaAdsCompaniesResponse;
+import com.google.ads.admanager.v1.RichMediaAdsCompany;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the RichMediaAdsCompanyService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+public class HttpJsonRichMediaAdsCompanyServiceStub extends RichMediaAdsCompanyServiceStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>
+      getRichMediaAdsCompanyMethodDescriptor =
+          ApiMethodDescriptor.<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.RichMediaAdsCompanyService/GetRichMediaAdsCompany")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRichMediaAdsCompanyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=networks/*/richMediaAdsCompanies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRichMediaAdsCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRichMediaAdsCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RichMediaAdsCompany>newBuilder()
+                      .setDefaultInstance(RichMediaAdsCompany.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>
+      listRichMediaAdsCompaniesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.RichMediaAdsCompanyService/ListRichMediaAdsCompanies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRichMediaAdsCompaniesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/richMediaAdsCompanies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRichMediaAdsCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRichMediaAdsCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "skip", request.getSkip());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRichMediaAdsCompaniesResponse>newBuilder()
+                      .setDefaultInstance(ListRichMediaAdsCompaniesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>
+      getRichMediaAdsCompanyCallable;
+  private final UnaryCallable<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>
+      listRichMediaAdsCompaniesCallable;
+  private final UnaryCallable<
+          ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesPagedResponse>
+      listRichMediaAdsCompaniesPagedCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonRichMediaAdsCompanyServiceStub create(
+      RichMediaAdsCompanyServiceStubSettings settings) throws IOException {
+    return new HttpJsonRichMediaAdsCompanyServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonRichMediaAdsCompanyServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonRichMediaAdsCompanyServiceStub(
+        RichMediaAdsCompanyServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonRichMediaAdsCompanyServiceStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonRichMediaAdsCompanyServiceStub(
+        RichMediaAdsCompanyServiceStubSettings.newBuilder().build(),
+        clientContext,
+        callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonRichMediaAdsCompanyServiceStub, using the given settings.
+   * This is protected so that it is easy to make a subclass, but otherwise, the static factory
+   * methods should be preferred.
+   */
+  protected HttpJsonRichMediaAdsCompanyServiceStub(
+      RichMediaAdsCompanyServiceStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new HttpJsonRichMediaAdsCompanyServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonRichMediaAdsCompanyServiceStub, using the given settings.
+   * This is protected so that it is easy to make a subclass, but otherwise, the static factory
+   * methods should be preferred.
+   */
+  protected HttpJsonRichMediaAdsCompanyServiceStub(
+      RichMediaAdsCompanyServiceStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>
+        getRichMediaAdsCompanyTransportSettings =
+            HttpJsonCallSettings.<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>newBuilder()
+                .setMethodDescriptor(getRichMediaAdsCompanyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>
+        listRichMediaAdsCompaniesTransportSettings =
+            HttpJsonCallSettings
+                .<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>newBuilder()
+                .setMethodDescriptor(listRichMediaAdsCompaniesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+
+    this.getRichMediaAdsCompanyCallable =
+        callableFactory.createUnaryCallable(
+            getRichMediaAdsCompanyTransportSettings,
+            settings.getRichMediaAdsCompanySettings(),
+            clientContext);
+    this.listRichMediaAdsCompaniesCallable =
+        callableFactory.createUnaryCallable(
+            listRichMediaAdsCompaniesTransportSettings,
+            settings.listRichMediaAdsCompaniesSettings(),
+            clientContext);
+    this.listRichMediaAdsCompaniesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRichMediaAdsCompaniesTransportSettings,
+            settings.listRichMediaAdsCompaniesSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getRichMediaAdsCompanyMethodDescriptor);
+    methodDescriptors.add(listRichMediaAdsCompaniesMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<GetRichMediaAdsCompanyRequest, RichMediaAdsCompany>
+      getRichMediaAdsCompanyCallable() {
+    return getRichMediaAdsCompanyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesResponse>
+      listRichMediaAdsCompaniesCallable() {
+    return listRichMediaAdsCompaniesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRichMediaAdsCompaniesRequest, ListRichMediaAdsCompaniesPagedResponse>
+      listRichMediaAdsCompaniesPagedCallable() {
+    return listRichMediaAdsCompaniesPagedCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

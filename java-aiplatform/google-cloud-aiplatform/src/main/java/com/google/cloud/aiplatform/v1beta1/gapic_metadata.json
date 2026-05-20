@@ -1687,6 +1687,9 @@
             "AsyncQueryReasoningEngine": {
               "methods": ["asyncQueryReasoningEngineAsync", "asyncQueryReasoningEngineOperationCallable", "asyncQueryReasoningEngineCallable"]
             },
+            "CancelAsyncQueryReasoningEngine": {
+              "methods": ["cancelAsyncQueryReasoningEngine", "cancelAsyncQueryReasoningEngineCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1704,6 +1707,39 @@
             },
             "StreamQueryReasoningEngine": {
               "methods": ["streamQueryReasoningEngineCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineRuntimeRevisionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineRuntimeRevisionServiceClient",
+          "rpcs": {
+            "DeleteReasoningEngineRuntimeRevision": {
+              "methods": ["deleteReasoningEngineRuntimeRevisionAsync", "deleteReasoningEngineRuntimeRevisionAsync", "deleteReasoningEngineRuntimeRevisionAsync", "deleteReasoningEngineRuntimeRevisionOperationCallable", "deleteReasoningEngineRuntimeRevisionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetReasoningEngineRuntimeRevision": {
+              "methods": ["getReasoningEngineRuntimeRevision", "getReasoningEngineRuntimeRevision", "getReasoningEngineRuntimeRevision", "getReasoningEngineRuntimeRevisionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReasoningEngineRuntimeRevisions": {
+              "methods": ["listReasoningEngineRuntimeRevisions", "listReasoningEngineRuntimeRevisions", "listReasoningEngineRuntimeRevisions", "listReasoningEngineRuntimeRevisionsPagedCallable", "listReasoningEngineRuntimeRevisionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]

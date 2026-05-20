@@ -342,15 +342,36 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(Integer.valueOf(38), infoBigNumeric.decimalDigits);
     assertEquals(Integer.valueOf(10), infoBigNumeric.numPrecRadix);
 
-    // GEOGRAPHY -> VARCHAR
+    // GEOGRAPHY -> OTHER
     Field fieldGeo =
         Field.newBuilder("test_geo", StandardSQLTypeName.GEOGRAPHY)
             .setMode(Field.Mode.NULLABLE)
             .build();
     BigQueryDatabaseMetaData.ColumnTypeInfo infoGeo = dbMetadata.mapBigQueryTypeToJdbc(fieldGeo);
-    assertEquals(Types.VARCHAR, infoGeo.jdbcType);
-    assertEquals("VARCHAR", infoGeo.typeName);
+    assertEquals(Types.OTHER, infoGeo.jdbcType);
+    assertEquals("GEOGRAPHY", infoGeo.typeName);
     assertNull(infoGeo.columnSize);
+
+    // JSON -> OTHER
+    Field fieldJson =
+        Field.newBuilder("test_json", StandardSQLTypeName.JSON)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    BigQueryDatabaseMetaData.ColumnTypeInfo infoJson = dbMetadata.mapBigQueryTypeToJdbc(fieldJson);
+    assertEquals(Types.OTHER, infoJson.jdbcType);
+    assertEquals("JSON", infoJson.typeName);
+    assertNull(infoJson.columnSize);
+
+    // INTERVAL -> OTHER
+    Field fieldInterval =
+        Field.newBuilder("test_interval", StandardSQLTypeName.INTERVAL)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    BigQueryDatabaseMetaData.ColumnTypeInfo infoInterval =
+        dbMetadata.mapBigQueryTypeToJdbc(fieldInterval);
+    assertEquals(Types.OTHER, infoInterval.jdbcType);
+    assertEquals("INTERVAL", infoInterval.typeName);
+    assertNull(infoInterval.columnSize);
 
     // DATE
     Field fieldDate =
@@ -3205,5 +3226,35 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @Test
+  public void testMetadataMethodsDoNotInterfere() throws SQLException {
+    Statement mockStatement1 = mock(Statement.class);
+    Statement mockStatement2 = mock(Statement.class);
+    ResultSet mockResultSet1 = mock(ResultSet.class);
+    ResultSet mockResultSet2 = mock(ResultSet.class);
+
+    when(bigQueryConnection.createStatement())
+        .thenReturn(mockStatement1)
+        .thenReturn(mockStatement2);
+
+    when(mockStatement1.executeQuery(any())).thenReturn(mockResultSet1);
+    when(mockStatement2.executeQuery(any())).thenReturn(mockResultSet2);
+
+    // Call first metadata method
+    ResultSet rs1 = dbMetadata.getPrimaryKeys("cat", "schema", "table");
+    assertSame(mockResultSet1, rs1);
+
+    // Call second metadata method
+    ResultSet rs2 = dbMetadata.getImportedKeys("cat", "schema", "table");
+    assertSame(mockResultSet2, rs2);
+
+    // Verify closeOnCompletion was called on both statements
+    verify(mockStatement1).closeOnCompletion();
+    verify(mockStatement2).closeOnCompletion();
+
+    // Verify connection.createStatement() was called twice
+    verify(bigQueryConnection, times(2)).createStatement();
   }
 }
