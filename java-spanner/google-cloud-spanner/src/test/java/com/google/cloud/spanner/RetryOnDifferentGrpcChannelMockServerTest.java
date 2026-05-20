@@ -38,7 +38,6 @@ import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.Context;
 import io.grpc.Deadline;
-import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.time.Duration;
@@ -64,6 +63,9 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
   /** Tracks the logical affinity keys before grpc-gcp routes the request. */
   private static final Map<String, Set<String>> LOGICAL_AFFINITY_KEYS = new HashMap<>();
 
+  /** Tracks the actual grpc-gcp channel IDs after grpc-gcp routes the request. */
+  private static final Map<String, Set<Integer>> ACTUAL_CHANNEL_IDS = new HashMap<>();
+
   @BeforeClass
   public static void setupAndStartServer() throws Exception {
     System.setProperty("spanner.retry_deadline_exceeded_on_different_channel", "true");
@@ -79,6 +81,7 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
   @After
   public void clearRequests() {
     LOGICAL_AFFINITY_KEYS.clear();
+    ACTUAL_CHANNEL_IDS.clear();
     mockSpanner.clearRequests();
     mockSpanner.removeAllExecutionTimes();
   }
@@ -122,7 +125,30 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
     return SpannerOptions.newBuilder()
         .setProjectId("my-project")
         .setHost(String.format("http://localhost:%d", getPort()))
-        .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+        .setChannelConfigurator(
+            builder ->
+                builder
+                    .usePlaintext()
+                    .intercept(
+                        new ClientInterceptor() {
+                          @Override
+                          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+                              MethodDescriptor<ReqT, RespT> method,
+                              CallOptions callOptions,
+                              Channel next) {
+                            Integer channelId =
+                                callOptions.getOption(GcpManagedChannel.CHANNEL_ID_KEY);
+                            if (channelId != null) {
+                              synchronized (ACTUAL_CHANNEL_IDS) {
+                                ACTUAL_CHANNEL_IDS
+                                    .computeIfAbsent(
+                                        method.getFullMethodName(), k -> new HashSet<>())
+                                    .add(channelId);
+                              }
+                            }
+                            return next.newCall(method, callOptions);
+                          }
+                        }))
         .setCredentials(NoCredentials.getInstance())
         .setInterceptorProvider(createAffinityKeyInterceptorProvider());
   }
@@ -313,10 +339,10 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
     List<ExecuteSqlRequest> requests = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
     // The requests use the same multiplexed session.
     assertEquals(requests.get(0).getSession(), requests.get(1).getSession());
-    // Verify that the retry used 2 distinct logical affinity keys (before grpc-gcp routing).
+    // Verify that the retry used 2 distinct actual grpc-gcp channels.
     assertEquals(
         2,
-        LOGICAL_AFFINITY_KEYS
+        ACTUAL_CHANNEL_IDS
             .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
             .size());
   }
