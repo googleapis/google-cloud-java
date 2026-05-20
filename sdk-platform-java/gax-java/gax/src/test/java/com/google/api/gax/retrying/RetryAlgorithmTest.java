@@ -204,7 +204,7 @@ class RetryAlgorithmTest {
   }
 
   @Test
-  void testShouldRetry_prevThrowableNotNull_shouldRetryBasedOnResultFalse_callsTimedAlgorithm() {
+  void testShouldRetry_resultFalseAndThrowableNotNull_callsTimed() {
     ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
     TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
@@ -219,7 +219,7 @@ class RetryAlgorithmTest {
   }
 
   @Test
-  void testShouldRetry_prevThrowableNull_shouldRetryBasedOnResultFalse_shortCircuits() {
+  void testShouldRetry_resultFalseAndThrowableNull_shortCircuits() {
     ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
     TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
     RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
