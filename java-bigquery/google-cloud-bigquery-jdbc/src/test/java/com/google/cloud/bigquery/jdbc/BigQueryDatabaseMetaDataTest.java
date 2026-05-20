@@ -342,15 +342,36 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(Integer.valueOf(38), infoBigNumeric.decimalDigits);
     assertEquals(Integer.valueOf(10), infoBigNumeric.numPrecRadix);
 
-    // GEOGRAPHY -> VARCHAR
+    // GEOGRAPHY -> OTHER
     Field fieldGeo =
         Field.newBuilder("test_geo", StandardSQLTypeName.GEOGRAPHY)
             .setMode(Field.Mode.NULLABLE)
             .build();
     BigQueryDatabaseMetaData.ColumnTypeInfo infoGeo = dbMetadata.mapBigQueryTypeToJdbc(fieldGeo);
-    assertEquals(Types.VARCHAR, infoGeo.jdbcType);
-    assertEquals("VARCHAR", infoGeo.typeName);
+    assertEquals(Types.OTHER, infoGeo.jdbcType);
+    assertEquals("GEOGRAPHY", infoGeo.typeName);
     assertNull(infoGeo.columnSize);
+
+    // JSON -> OTHER
+    Field fieldJson =
+        Field.newBuilder("test_json", StandardSQLTypeName.JSON)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    BigQueryDatabaseMetaData.ColumnTypeInfo infoJson = dbMetadata.mapBigQueryTypeToJdbc(fieldJson);
+    assertEquals(Types.OTHER, infoJson.jdbcType);
+    assertEquals("JSON", infoJson.typeName);
+    assertNull(infoJson.columnSize);
+
+    // INTERVAL -> OTHER
+    Field fieldInterval =
+        Field.newBuilder("test_interval", StandardSQLTypeName.INTERVAL)
+            .setMode(Field.Mode.NULLABLE)
+            .build();
+    BigQueryDatabaseMetaData.ColumnTypeInfo infoInterval =
+        dbMetadata.mapBigQueryTypeToJdbc(fieldInterval);
+    assertEquals(Types.OTHER, infoInterval.jdbcType);
+    assertEquals("INTERVAL", infoInterval.typeName);
+    assertNull(infoInterval.columnSize);
 
     // DATE
     Field fieldDate =

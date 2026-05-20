@@ -4855,9 +4855,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       case TIME:
         return new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null);
       case GEOGRAPHY:
+        return new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null);
       case JSON:
+        return new ColumnTypeInfo(Types.OTHER, "JSON", null, null, null);
       case INTERVAL:
-        return new ColumnTypeInfo(Types.VARCHAR, "VARCHAR", null, null, null);
+        return new ColumnTypeInfo(Types.OTHER, "INTERVAL", null, null, null);
       case BYTES:
         return new ColumnTypeInfo(Types.VARBINARY, "VARBINARY", null, null, null);
       case STRUCT:
