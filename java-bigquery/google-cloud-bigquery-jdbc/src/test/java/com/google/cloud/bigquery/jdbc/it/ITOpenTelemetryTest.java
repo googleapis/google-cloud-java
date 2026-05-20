@@ -16,10 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
@@ -38,37 +39,40 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ITOpenTelemetryTest {
 
-  private static final String projectId = ServiceOptions.getDefaultProjectId();
-  private static final String connectionUrl =
+  private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
+  private static final String CONNECTION_URL =
       String.format(
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;",
-          projectId);
+          PROJECT_ID);
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
+    assumeTrue(
+        PROJECT_ID != null && !PROJECT_ID.trim().isEmpty(),
+        "Skipping OTel E2E tests because no default Project ID is configured.");
 
     // Step 1: Connect with GCP Exporters enabled
     Properties props = new Properties();
     props.setProperty("enableGcpTraceExporter", "true");
     props.setProperty("enableGcpLogExporter", "true");
     props.setProperty("LogLevel", "3"); // Triggers FINE log generation
-    props.setProperty("gcpTelemetryProjectId", projectId);
+    props.setProperty("gcpTelemetryProjectId", PROJECT_ID);
     props.setProperty("EnableHighThroughputAPI", "0");
     props.setProperty("MaxResults", "50"); // Forces small page size (50) to trigger pagination
 
     String connectionUuid = null;
 
-    try (Connection connection = DriverManager.getConnection(connectionUrl, props);
+    try (Connection connection = DriverManager.getConnection(CONNECTION_URL, props);
         Statement statement = connection.createStatement()) {
 
       // Retrieve the Connection UUID programmatically
       BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
       connectionUuid = bqConnection.getConnectionId();
-      assertNotNull("Connection UUID should be generated", connectionUuid);
+      assertNotNull(connectionUuid, "Connection UUID should be generated");
 
       // Execute an in-memory array query (scans 0 bytes, extremely fast) and force pagination
       String paginationQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1000)) AS id;";
@@ -85,23 +89,23 @@ public class ITOpenTelemetryTest {
     String hexSpanId = null;
 
     try (Logging logging =
-        LoggingOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build().getService()) {
       String filter =
           "logName:\"projects/"
-              + projectId
+              + PROJECT_ID
               + "/logs/com.google.cloud.bigquery\" AND labels.\"jdbc.connection_id\"=\""
               + connectionUuid
               + "\"";
 
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
-      assertFalse("Telemetry logs should be exported to GCP", entries.isEmpty());
+      assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
 
       LogEntry sampleEntry = entries.get(0);
       traceId = sampleEntry.getTrace();
       hexSpanId = sampleEntry.getSpanId();
 
-      assertNotNull("Log entry must contain TraceId", traceId);
-      assertNotNull("Log entry must contain SpanId", hexSpanId);
+      assertNotNull(traceId, "Log entry must contain TraceId");
+      assertNotNull(hexSpanId, "Log entry must contain SpanId");
 
       // Verify Connection UUID label correlation on all entries
       for (LogEntry entry : entries) {
@@ -116,8 +120,8 @@ public class ITOpenTelemetryTest {
     }
 
     try (TraceServiceClient traceClient = TraceServiceClient.create()) {
-      Trace trace = fetchTraceWithRetry(traceClient, projectId, hexTraceId);
-      assertNotNull("Trace must be found in Cloud Trace API: " + hexTraceId, trace);
+      Trace trace = fetchTraceWithRetry(traceClient, PROJECT_ID, hexTraceId);
+      assertNotNull(trace, "Trace must be found in Cloud Trace API: " + hexTraceId);
 
       boolean foundParentExecuteQuery = false;
       boolean foundChildSdkSpans = false;
@@ -133,8 +137,8 @@ public class ITOpenTelemetryTest {
       }
 
       assertTrue(
-          "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'",
-          foundParentExecuteQuery);
+          foundParentExecuteQuery,
+          "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'");
 
       // Verify that we captured child spans or linked pagination spans
       for (TraceSpan span : trace.getSpansList()) {
@@ -146,32 +150,35 @@ public class ITOpenTelemetryTest {
         }
       }
 
-      assertTrue("OTel pagination must generate pagination spans", foundPaginationSpans);
+      assertTrue(foundPaginationSpans, "OTel pagination must generate pagination spans");
       assertTrue(
-          "OTel context must propagate parent to downstream pagination child spans",
-          foundChildSdkSpans);
+          foundChildSdkSpans,
+          "OTel context must propagate parent to downstream pagination child spans");
     }
   }
 
   @Test
   public void testExecute_withErrorCorrelation() throws Exception {
+    assumeTrue(
+        PROJECT_ID != null && !PROJECT_ID.trim().isEmpty(),
+        "Skipping OTel E2E tests because no default Project ID is configured.");
 
     // Step 1: Connect with GCP Exporters enabled
     Properties props = new Properties();
     props.setProperty("enableGcpTraceExporter", "true");
     props.setProperty("enableGcpLogExporter", "true");
     props.setProperty("LogLevel", "3"); // Triggers FINE log generation
-    props.setProperty("gcpTelemetryProjectId", projectId);
+    props.setProperty("gcpTelemetryProjectId", PROJECT_ID);
 
     String connectionUuid = null;
 
-    try (Connection connection = DriverManager.getConnection(connectionUrl, props);
+    try (Connection connection = DriverManager.getConnection(CONNECTION_URL, props);
         Statement statement = connection.createStatement()) {
 
       // Retrieve the Connection UUID programmatically
       BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
       connectionUuid = bqConnection.getConnectionId();
-      assertNotNull("Connection UUID should be generated", connectionUuid);
+      assertNotNull(connectionUuid, "Connection UUID should be generated");
 
       // Execute a query designed to fail due to non-existent table
       boolean caughtException = false;
@@ -180,7 +187,7 @@ public class ITOpenTelemetryTest {
       } catch (SQLException e) {
         caughtException = true;
       }
-      assertTrue("Expected SQLException to be thrown", caughtException);
+      assertTrue(caughtException, "Expected SQLException to be thrown");
     }
 
     // Step 2: Retrieve logs from Cloud Logging and assert error logs
@@ -188,23 +195,23 @@ public class ITOpenTelemetryTest {
     String hexSpanId = null;
 
     try (Logging logging =
-        LoggingOptions.newBuilder().setProjectId(projectId).build().getService()) {
+        LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build().getService()) {
       String filter =
           "logName:\"projects/"
-              + projectId
+              + PROJECT_ID
               + "/logs/com.google.cloud.bigquery\" AND labels.\"jdbc.connection_id\"=\""
               + connectionUuid
               + "\"";
 
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
-      assertFalse("Telemetry logs should be exported to GCP", entries.isEmpty());
+      assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
 
       LogEntry sampleEntry = entries.get(0);
       traceId = sampleEntry.getTrace();
       hexSpanId = sampleEntry.getSpanId();
 
-      assertNotNull("Log entry must contain TraceId", traceId);
-      assertNotNull("Log entry must contain SpanId", hexSpanId);
+      assertNotNull(traceId, "Log entry must contain TraceId");
+      assertNotNull(hexSpanId, "Log entry must contain SpanId");
     }
 
     // Step 3: Query Cloud Trace using TraceId and assert span status is ERROR
@@ -214,8 +221,8 @@ public class ITOpenTelemetryTest {
     }
 
     try (TraceServiceClient traceClient = TraceServiceClient.create()) {
-      Trace trace = fetchTraceWithRetry(traceClient, projectId, hexTraceId);
-      assertNotNull("Trace must be found in Cloud Trace API: " + hexTraceId, trace);
+      Trace trace = fetchTraceWithRetry(traceClient, PROJECT_ID, hexTraceId);
+      assertNotNull(trace, "Trace must be found in Cloud Trace API: " + hexTraceId);
 
       boolean foundParentExecuteQuery = false;
 
@@ -227,8 +234,8 @@ public class ITOpenTelemetryTest {
       }
 
       assertTrue(
-          "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'",
-          foundParentExecuteQuery);
+          foundParentExecuteQuery,
+          "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'");
     }
   }
 
