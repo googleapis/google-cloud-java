@@ -62,6 +62,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.grpc.GcpManagedChannel;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelBuilder;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
@@ -230,7 +231,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -2345,29 +2345,32 @@ public class GapicSpannerRpc implements SpannerRpc {
       boolean routeToLeader) {
     GrpcCallContext context = this.baseGrpcCallContext;
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
-    AtomicReference<Integer> channelIdAffinity =
-        options == null ? null : Option.CHANNEL_ID_AFFINITY.getChannelIdAffinity(options);
+    ChannelAffinityRef channelAffinityRef =
+        options == null ? null : Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(options);
     if (affinity != null) {
       if (this.isGrpcGcpExtensionEnabled) {
-        channelIdAffinity = new AtomicReference<>(affinity.intValue());
+        String affinityKey = String.valueOf(affinity);
+        context =
+            context.withCallOptions(
+                context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());
       }
     }
-    if (this.isGrpcGcpExtensionEnabled && channelIdAffinity != null) {
+    if (this.isGrpcGcpExtensionEnabled && channelAffinityRef != null) {
       context =
           context.withCallOptions(
               context
                   .getCallOptions()
-                  .withOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY, channelIdAffinity));
+                  .withOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY, channelAffinityRef));
     }
     // When grpc-gcp extension with dynamic channel pooling is enabled, the actual channel ID
     // will be set by RequestIdInterceptor after grpc-gcp selects the channel.
     // Set to 0 (unknown) here as a placeholder.
     int requestIdChannel =
         (this.isGrpcGcpExtensionEnabled
-                && (this.isDynamicChannelPoolEnabled || channelIdAffinity != null))
+                && (this.isDynamicChannelPoolEnabled || channelAffinityRef != null))
             ? 0
             : convertToRequestIdChannelNumber(affinity);
     if (requestId == null) {

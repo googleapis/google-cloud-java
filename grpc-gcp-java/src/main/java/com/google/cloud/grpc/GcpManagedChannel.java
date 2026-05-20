@@ -72,6 +72,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
@@ -109,12 +110,21 @@ public class GcpManagedChannel extends ManagedChannel {
       CallOptions.Key.create("GcpChannelId");
 
   /**
-   * CallOptions key for sticky channel routing without affinity-key map state. The referenced
-   * channel id is used when it points to an active channel in the pool. If it is unset or stale, a
-   * channel is selected normally and the reference is updated with the selected channel id.
+   * CallOptions key for sticky channel routing without affinity-key map state.
    */
-  public static final CallOptions.Key<AtomicReference<Integer>> CHANNEL_ID_AFFINITY_KEY =
-      CallOptions.Key.create("GcpChannelIdAffinity");
+  public static final CallOptions.Key<ChannelAffinityRef> CHANNEL_AFFINITY_REF_KEY =
+      CallOptions.Key.create("GcpChannelAffinityRef");
+
+  /** Opaque sticky channel reference for callers that should not depend on {@link ChannelRef}. */
+  public static final class ChannelAffinityRef {
+    private final AtomicReference<ChannelRef> channelRef = new AtomicReference<>();
+    private final AtomicBoolean useDifferentChannelOnNextCall = new AtomicBoolean();
+
+    /** Forces the next RPC to prefer a different active channel if one is available. */
+    public void useDifferentChannelOnNextCall() {
+      useDifferentChannelOnNextCall.set(true);
+    }
+  }
 
   @GuardedBy("this")
   private Integer bindingIndex = -1;
@@ -381,6 +391,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     for (ChannelRef channelRef : channelsToRemove) {
       channelRef.resetAffinityCount();
+      channelRef.deactivate();
       if (channelRef.getState() == ConnectivityState.READY) {
         decReadyChannels(false);
       }
@@ -1687,38 +1698,40 @@ public class GcpManagedChannel extends ManagedChannel {
     return mappedChannel;
   }
 
-  /**
-   * Pick a {@link ChannelRef} using a caller-owned channel id reference instead of grpc-gcp's
-   * affinity-key map.
-   *
-   * <p>If the reference points to an active channel, use that channel. If the reference is unset or
-   * stale, pick a channel normally and update the reference with the selected channel id.
-   */
-  protected ChannelRef getChannelRefByIdAffinity(AtomicReference<Integer> channelIdRef) {
+  /** Pick a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map. */
+  protected ChannelRef getChannelRefByAffinityRef(ChannelAffinityRef affinityRef) {
     maybeDynamicUpscale();
     while (true) {
-      Integer channelId = channelIdRef.get();
-      ChannelRef channelRef = getChannelRefById(channelId);
-      if (channelRef != null) {
+      ChannelRef channelRef = affinityRef.channelRef.get();
+      boolean useDifferentChannel = affinityRef.useDifferentChannelOnNextCall.getAndSet(false);
+      if (!useDifferentChannel && channelRef != null && channelRef.isActive()) {
         return channelRef;
       }
 
-      channelRef = pickLeastBusyChannel(/* forFallback= */ false);
-      if (channelIdRef.compareAndSet(channelId, channelRef.getId())) {
-        return channelRef;
+      ChannelRef selectedChannelRef =
+          useDifferentChannel
+              ? pickLeastBusyChannelDifferentFrom(channelRef)
+              : pickLeastBusyChannel(/* forFallback= */ false);
+      if (affinityRef.channelRef.compareAndSet(channelRef, selectedChannelRef)) {
+        return selectedChannelRef;
       }
     }
   }
 
-  private ChannelRef getChannelRefById(Integer channelId) {
-    if (channelId != null) {
-      for (ChannelRef channelRef : channelRefs) {
-        if (channelRef.getId() == channelId) {
-          return channelRef;
-        }
+  private ChannelRef pickLeastBusyChannelDifferentFrom(@Nullable ChannelRef excludedChannelRef) {
+    ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
+    if (excludedChannelRef == null
+        || channelRef != excludedChannelRef
+        || !excludedChannelRef.isActive()
+        || channelRefs.size() <= 1) {
+      return channelRef;
+    }
+    for (ChannelRef candidate : channelRefs) {
+      if (candidate != excludedChannelRef) {
+        return candidate;
       }
     }
-    return null;
+    return channelRef;
   }
 
   // Create a new channel and add it to channelRefs.
@@ -1731,6 +1744,7 @@ public class GcpManagedChannel extends ManagedChannel {
       ChannelRef chRef = reusedChannelRef.get();
       channelRefs.add(chRef);
       removedChannelRefs.remove(chRef);
+      chRef.activate();
       logger.finer(log("Channel %d reused.", chRef.getId()));
       incReadyChannels(false);
       maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
@@ -2004,10 +2018,10 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
-    AtomicReference<Integer> channelIdRef = callOptions.getOption(CHANNEL_ID_AFFINITY_KEY);
-    if (channelIdRef != null) {
+    ChannelAffinityRef channelAffinityRef = callOptions.getOption(CHANNEL_AFFINITY_REF_KEY);
+    if (channelAffinityRef != null) {
       return new GcpClientCall.SimpleGcpClientCall<>(
-          this, getChannelRefByIdAffinity(channelIdRef), methodDescriptor, callOptions);
+          this, getChannelRefByAffinityRef(channelAffinityRef), methodDescriptor, callOptions);
     }
 
     if (callOptions.getOption(DISABLE_AFFINITY_KEY)
@@ -2363,6 +2377,7 @@ public class GcpManagedChannel extends ManagedChannel {
     private final AtomicLong okCalls = new AtomicLong();
     private final AtomicLong errCalls = new AtomicLong();
     private final ChannelStateMonitor channelStateMonitor;
+    private volatile boolean active = true;
 
     protected ChannelRef(ManagedChannel channel) {
       this(channel, 0, 0);
@@ -2390,6 +2405,18 @@ public class GcpManagedChannel extends ManagedChannel {
 
     protected int getId() {
       return channelId;
+    }
+
+    protected boolean isActive() {
+      return active;
+    }
+
+    private void activate() {
+      active = true;
+    }
+
+    private void deactivate() {
+      active = false;
     }
 
     protected void affinityCountIncr() {

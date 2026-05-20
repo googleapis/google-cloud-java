@@ -28,6 +28,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
 import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
@@ -61,7 +62,6 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
@@ -247,13 +247,10 @@ abstract class AbstractReadContext
 
     @Override
     boolean prepareRetryOnDifferentGrpcChannel() {
-      AtomicReference<Integer> channelIdRef =
-          Option.CHANNEL_ID_AFFINITY.getChannelIdAffinity(channelHint);
-      if (session.getIsMultiplexed() && channelIdRef != null) {
-        Integer channelId = channelIdRef.get();
-        if (channelId != null) {
-          channelIdRef.set(channelId + 1);
-        }
+      ChannelAffinityRef channelAffinityRef =
+          Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(channelHint);
+      if (session.getIsMultiplexed() && channelAffinityRef != null) {
+        channelAffinityRef.useDifferentChannelOnNextCall();
         return true;
       }
       return super.prepareRetryOnDifferentGrpcChannel();
@@ -996,10 +993,10 @@ abstract class AbstractReadContext
       Long channelHintForTransaction,
       boolean grpcGcpEnabled) {
     // grpc-gcp uses a per-operation/per-transaction random hint instead of reusing the session
-    // hint so requests distribute independently from session affinity. Use direct channel-id
+    // hint so requests distribute independently from session affinity. Use direct channel-ref
     // affinity so grpc-gcp does not need affinity-key map entries for Spanner operations.
     if (grpcGcpEnabled && channelHintForTransaction != null) {
-      return optionMap(SessionOption.channelIdAffinity(new AtomicReference<>()));
+      return optionMap(SessionOption.channelAffinityRef(new ChannelAffinityRef()));
     }
     if (channelHintForSession != null) {
       return channelHintForSession;

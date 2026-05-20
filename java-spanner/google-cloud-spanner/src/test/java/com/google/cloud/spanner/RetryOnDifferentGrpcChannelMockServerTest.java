@@ -32,7 +32,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
-import com.google.spanner.v1.SpannerGrpc;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -52,7 +51,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -65,9 +63,6 @@ import org.junit.runners.JUnit4;
 public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServerTest {
   /** Tracks the logical affinity keys before grpc-gcp routes the request. */
   private static final Map<String, Set<String>> LOGICAL_AFFINITY_KEYS = new HashMap<>();
-
-  /** Tracks how many calls explicitly request grpc-gcp affinity unbind. */
-  private static final Map<String, Integer> UNBIND_AFFINITY_CALL_COUNTS = new HashMap<>();
 
   @BeforeClass
   public static void setupAndStartServer() throws Exception {
@@ -84,7 +79,6 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
   @After
   public void clearRequests() {
     LOGICAL_AFFINITY_KEYS.clear();
-    UNBIND_AFFINITY_CALL_COUNTS.clear();
     mockSpanner.clearRequests();
     mockSpanner.removeAllExecutionTimes();
   }
@@ -104,25 +98,19 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
                 String methodName = method.getFullMethodName();
                 // Capture affinity before grpc-gcp processes it.
                 String affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
-                AtomicReference<Integer> channelIdAffinity =
-                    callOptions.getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY);
+                GcpManagedChannel.ChannelAffinityRef channelAffinityRef =
+                    callOptions.getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY);
                 String key =
                     affinityKey != null
                         ? affinityKey
-                        : channelIdAffinity == null
+                        : channelAffinityRef == null
                             ? null
-                            : "channel-id-" + channelIdAffinity.get();
+                            : "channel-ref-" + System.identityHashCode(channelAffinityRef);
                 if (key != null) {
                   synchronized (LOGICAL_AFFINITY_KEYS) {
                     Set<String> keys =
                         LOGICAL_AFFINITY_KEYS.computeIfAbsent(methodName, k -> new HashSet<>());
                     keys.add(key);
-                  }
-                }
-                if (Boolean.TRUE.equals(
-                    callOptions.getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY))) {
-                  synchronized (UNBIND_AFFINITY_CALL_COUNTS) {
-                    UNBIND_AFFINITY_CALL_COUNTS.merge(methodName, 1, Integer::sum);
                   }
                 }
                 return next.newCall(method, callOptions);
@@ -331,11 +319,6 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
         LOGICAL_AFFINITY_KEYS
             .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
             .size());
-    assertEquals(
-        0,
-        UNBIND_AFFINITY_CALL_COUNTS
-            .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
-            .intValue());
   }
 
   @Test
@@ -370,11 +353,6 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
               .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
               .size();
       assertTrue(distinctLogicalKeys > 0);
-      assertEquals(
-          0,
-          UNBIND_AFFINITY_CALL_COUNTS
-              .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
-              .intValue());
     }
   }
 

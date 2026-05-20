@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
@@ -33,7 +34,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Client for creating single sessions and batches of sessions. */
@@ -90,8 +90,8 @@ class SessionClient implements AutoCloseable {
       return new SessionOption(SpannerRpc.Option.CHANNEL_HINT, hint);
     }
 
-    static SessionOption channelIdAffinity(AtomicReference<Integer> channelId) {
-      return new SessionOption(SpannerRpc.Option.CHANNEL_ID_AFFINITY, channelId);
+    static SessionOption channelAffinityRef(ChannelAffinityRef channelAffinityRef) {
+      return new SessionOption(SpannerRpc.Option.CHANNEL_ID_AFFINITY, channelAffinityRef);
     }
 
     SpannerRpc.Option rpcOption() {

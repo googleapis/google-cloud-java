@@ -47,7 +47,6 @@ import java.net.InetSocketAddress;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -128,14 +127,14 @@ public class TransactionChannelHintTest {
                   MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
                 // Capture channel affinity before grpc-gcp processes it.
                 String affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
-                AtomicReference<Integer> channelIdAffinity =
-                    callOptions.getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY);
+                GcpManagedChannel.ChannelAffinityRef channelAffinityRef =
+                    callOptions.getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY);
                 String key =
                     affinityKey != null
                         ? affinityKey
-                        : channelIdAffinity == null
+                        : channelAffinityRef == null
                             ? null
-                            : "channel-id-ref-" + System.identityHashCode(channelIdAffinity);
+                            : "channel-ref-" + System.identityHashCode(channelAffinityRef);
                 if (key != null) {
                   String methodName = method.getFullMethodName();
                   if (methodName.equals(

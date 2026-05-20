@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.ServiceRpc;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.BackupId;
 import com.google.cloud.spanner.Restore;
 import com.google.cloud.spanner.SpannerException;
@@ -63,7 +64,6 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 
 /**
@@ -105,7 +105,7 @@ public interface SpannerRpc extends ServiceRpc {
     }
 
     @InternalApi
-    public AtomicReference<Integer> getChannelIdAffinity(@Nullable Map<Option, ?> options) {
+    public ChannelAffinityRef getChannelAffinityRef(@Nullable Map<Option, ?> options) {
       return get(options);
     }
 

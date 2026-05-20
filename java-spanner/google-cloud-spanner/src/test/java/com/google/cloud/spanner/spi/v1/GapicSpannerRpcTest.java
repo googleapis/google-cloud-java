@@ -42,6 +42,7 @@ import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GcpManagedChannel;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
@@ -477,7 +478,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testNewCallContextWithGrpcGcpUsesChannelIdAffinityWithoutDcp() {
+  public void testNewCallContextWithGrpcGcpUsesChannelAffinityRefWithoutDcp() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("some-project")
@@ -487,7 +488,7 @@ public class GapicSpannerRpcTest {
             .build();
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
-    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
+    grpcGcpOptions.put(Option.CHANNEL_ID_AFFINITY, new ChannelAffinityRef());
 
     GrpcCallContext callContext =
         rpc.newCallContext(
@@ -497,9 +498,7 @@ public class GapicSpannerRpcTest {
             SpannerGrpc.getExecuteSqlMethod());
 
     assertNull(callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
-    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY))
-        .isNotEqualTo(Boolean.TRUE);
-    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY))
+    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY))
         .isNotNull();
     rpc.shutdown();
   }
@@ -514,7 +513,7 @@ public class GapicSpannerRpcTest {
             .build();
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
-    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
+    grpcGcpOptions.put(Option.CHANNEL_ID_AFFINITY, new ChannelAffinityRef());
 
     GrpcCallContext callContext =
         rpc.newCallContext(
@@ -524,9 +523,7 @@ public class GapicSpannerRpcTest {
             SpannerGrpc.getExecuteSqlMethod());
 
     assertNull(callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
-    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY))
-        .isNotEqualTo(Boolean.TRUE);
-    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY))
+    assertThat(callContext.getCallOptions().getOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY))
         .isNotNull();
     rpc.shutdown();
   }
