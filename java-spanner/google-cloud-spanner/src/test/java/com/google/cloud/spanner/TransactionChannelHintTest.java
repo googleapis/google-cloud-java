@@ -47,6 +47,7 @@ import java.net.InetSocketAddress;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -125,20 +126,28 @@ public class TransactionChannelHintTest {
               @Override
               public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
                   MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-                // Capture the AFFINITY_KEY before grpc-gcp processes it
+                // Capture channel affinity before grpc-gcp processes it.
                 String affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
-                if (affinityKey != null) {
+                AtomicReference<Integer> channelIdAffinity =
+                    callOptions.getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY);
+                String key =
+                    affinityKey != null
+                        ? affinityKey
+                        : channelIdAffinity == null
+                            ? null
+                            : "channel-id-ref-" + System.identityHashCode(channelIdAffinity);
+                if (key != null) {
                   String methodName = method.getFullMethodName();
                   if (methodName.equals(
                       SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName())) {
-                    executeSqlAffinityKeys.add(affinityKey);
+                    executeSqlAffinityKeys.add(key);
                   }
                   if (methodName.equals(SpannerGrpc.getStreamingReadMethod().getFullMethodName())) {
-                    streamingReadAffinityKeys.add(affinityKey);
+                    streamingReadAffinityKeys.add(key);
                   }
                   if (methodName.equals(
                       SpannerGrpc.getBeginTransactionMethod().getFullMethodName())) {
-                    beginTransactionAffinityKeys.add(affinityKey);
+                    beginTransactionAffinityKeys.add(key);
                   }
                 }
                 return next.newCall(method, callOptions);

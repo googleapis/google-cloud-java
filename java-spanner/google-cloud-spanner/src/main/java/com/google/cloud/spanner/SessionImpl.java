@@ -51,7 +51,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 
 /**
@@ -332,8 +332,7 @@ class SessionImpl implements Session {
     if (!spanner.getOptions().isGrpcGcpExtensionEnabled()) {
       return getOptions();
     }
-    return optionMap(
-        SessionOption.channelHint(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)));
+    return optionMap(SessionOption.channelIdAffinity(new AtomicReference<>()));
   }
 
   @Override

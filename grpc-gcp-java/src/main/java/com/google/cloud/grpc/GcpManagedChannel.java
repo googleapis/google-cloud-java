@@ -74,6 +74,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -106,6 +107,14 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   public static final CallOptions.Key<Integer> CHANNEL_ID_KEY =
       CallOptions.Key.create("GcpChannelId");
+
+  /**
+   * CallOptions key for sticky channel routing without affinity-key map state. The referenced
+   * channel id is used when it points to an active channel in the pool. If it is unset or stale, a
+   * channel is selected normally and the reference is updated with the selected channel id.
+   */
+  public static final CallOptions.Key<AtomicReference<Integer>> CHANNEL_ID_AFFINITY_KEY =
+      CallOptions.Key.create("GcpChannelIdAffinity");
 
   @GuardedBy("this")
   private Integer bindingIndex = -1;
@@ -1678,6 +1687,40 @@ public class GcpManagedChannel extends ManagedChannel {
     return mappedChannel;
   }
 
+  /**
+   * Pick a {@link ChannelRef} using a caller-owned channel id reference instead of grpc-gcp's
+   * affinity-key map.
+   *
+   * <p>If the reference points to an active channel, use that channel. If the reference is unset or
+   * stale, pick a channel normally and update the reference with the selected channel id.
+   */
+  protected ChannelRef getChannelRefByIdAffinity(AtomicReference<Integer> channelIdRef) {
+    maybeDynamicUpscale();
+    while (true) {
+      Integer channelId = channelIdRef.get();
+      ChannelRef channelRef = getChannelRefById(channelId);
+      if (channelRef != null) {
+        return channelRef;
+      }
+
+      channelRef = pickLeastBusyChannel(/* forFallback= */ false);
+      if (channelIdRef.compareAndSet(channelId, channelRef.getId())) {
+        return channelRef;
+      }
+    }
+  }
+
+  private ChannelRef getChannelRefById(Integer channelId) {
+    if (channelId != null) {
+      for (ChannelRef channelRef : channelRefs) {
+        if (channelRef.getId() == channelId) {
+          return channelRef;
+        }
+      }
+    }
+    return null;
+  }
+
   // Create a new channel and add it to channelRefs.
   // If we have a ready channel not in the pool that we wait for completing its RPCs,
   // then re-use that channel instead.
@@ -1961,6 +2004,12 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
+    AtomicReference<Integer> channelIdRef = callOptions.getOption(CHANNEL_ID_AFFINITY_KEY);
+    if (channelIdRef != null) {
+      return new GcpClientCall.SimpleGcpClientCall<>(
+          this, getChannelRefByIdAffinity(channelIdRef), methodDescriptor, callOptions);
+    }
+
     if (callOptions.getOption(DISABLE_AFFINITY_KEY)
         || DISABLE_AFFINITY_CTX_KEY.get(Context.current())) {
       if (logger.isLoggable(Level.FINEST)) {

@@ -52,6 +52,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -101,13 +102,19 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
               public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
                   MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
                 String methodName = method.getFullMethodName();
-                // Capture the AFFINITY_KEY before grpc-gcp processes it.
+                // Capture affinity before grpc-gcp processes it.
                 String affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
-                if (affinityKey != null) {
+                AtomicReference<Integer> channelIdAffinity =
+                    callOptions.getOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY);
+                String key =
+                    affinityKey != null
+                        ? affinityKey
+                        : channelIdAffinity == null ? null : "channel-id-" + channelIdAffinity.get();
+                if (key != null) {
                   synchronized (LOGICAL_AFFINITY_KEYS) {
                     Set<String> keys =
                         LOGICAL_AFFINITY_KEYS.computeIfAbsent(methodName, k -> new HashSet<>());
-                    keys.add(affinityKey);
+                    keys.add(key);
                   }
                 }
                 if (Boolean.TRUE.equals(
@@ -323,7 +330,7 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
             .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
             .size());
     assertEquals(
-        2,
+        0,
         UNBIND_AFFINITY_CALL_COUNTS
             .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
             .intValue());
@@ -354,14 +361,15 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
       // Verify that the retry mechanism is working (made numChannels requests).
       int totalRequests = mockSpanner.countRequestsOfType(ExecuteSqlRequest.class);
       assertEquals(numChannels, totalRequests);
-      // Verify each attempt used a distinct logical affinity key (before grpc-gcp routing).
+      // Direct channel-id affinity no longer creates a new logical affinity key for each retry.
+      // The retry mechanism itself is verified by the request count above.
       int distinctLogicalKeys =
           LOGICAL_AFFINITY_KEYS
               .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
               .size();
-      assertEquals(totalRequests, distinctLogicalKeys);
+      assertTrue(distinctLogicalKeys > 0);
       assertEquals(
-          totalRequests,
+          0,
           UNBIND_AFFINITY_CALL_COUNTS
               .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
               .intValue());

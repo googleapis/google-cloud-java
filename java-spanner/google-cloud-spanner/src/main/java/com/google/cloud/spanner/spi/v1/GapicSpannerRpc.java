@@ -230,6 +230,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -631,16 +632,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (keyAwareChannel != null) {
       keyAwareChannel.clearTransactionAffinity(transactionId);
     }
-  }
-
-  @Override
-  public void clearTransactionAndChannelAffinity(
-      ByteString transactionId, @Nullable Long channelHint) {
-    if (keyAwareChannel != null) {
-      keyAwareChannel.clearTransactionAndChannelAffinity(transactionId, channelHint);
-      return;
-    }
-    GrpcGcpAffinityUtil.clearChannelHintAffinity(grpcGcpChannel, channelHint);
   }
 
   private static String parseGrpcGcpApiConfig() {
@@ -2154,13 +2145,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       CommitRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context =
         newCallContext(options, request.getSession(), request, SpannerGrpc.getCommitMethod(), true);
-    // Signal grpc-gcp to unbind the affinity key after this call completes.
-    // Commit is a terminal RPC — no more RPCs will use this transaction's affinity key.
-    if (this.isGrpcGcpExtensionEnabled) {
-      context =
-          context.withCallOptions(
-              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-    }
     return spannerStub.commitCallable().futureCall(request, context);
   }
 
@@ -2180,13 +2164,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     GrpcCallContext context =
         newCallContext(
             options, request.getSession(), request, SpannerGrpc.getRollbackMethod(), true);
-    // Signal grpc-gcp to unbind the affinity key after this call completes.
-    // Rollback is a terminal RPC — no more RPCs will use this transaction's affinity key.
-    if (this.isGrpcGcpExtensionEnabled) {
-      context =
-          context.withCallOptions(
-              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-    }
     return spannerStub.rollbackCallable().futureCall(request, context);
   }
 
@@ -2368,31 +2345,29 @@ public class GapicSpannerRpc implements SpannerRpc {
       boolean routeToLeader) {
     GrpcCallContext context = this.baseGrpcCallContext;
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
+    AtomicReference<Integer> channelIdAffinity =
+        options == null ? null : Option.CHANNEL_ID_AFFINITY.getChannelIdAffinity(options);
     if (affinity != null) {
       if (this.isGrpcGcpExtensionEnabled) {
-        // Set channel affinity in gRPC-GCP. Always use the raw affinity value as the key.
-        // Cleanup is handled explicitly by unbind on terminal/single-use operations.
-        String affinityKey = String.valueOf(affinity);
-        context =
-            context.withCallOptions(
-                context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
-        // Check if the caller wants to unbind the affinity key after this call completes.
-        Boolean unbind = Option.UNBIND_CHANNEL_HINT.get(options);
-        if (Boolean.TRUE.equals(unbind)) {
-          context =
-              context.withCallOptions(
-                  context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-        }
+        channelIdAffinity = new AtomicReference<>(affinity.intValue());
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());
       }
     }
+    if (this.isGrpcGcpExtensionEnabled && channelIdAffinity != null) {
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(GcpManagedChannel.CHANNEL_ID_AFFINITY_KEY, channelIdAffinity));
+    }
     // When grpc-gcp extension with dynamic channel pooling is enabled, the actual channel ID
     // will be set by RequestIdInterceptor after grpc-gcp selects the channel.
     // Set to 0 (unknown) here as a placeholder.
     int requestIdChannel =
-        (this.isGrpcGcpExtensionEnabled && this.isDynamicChannelPoolEnabled)
+        (this.isGrpcGcpExtensionEnabled
+                && (this.isDynamicChannelPoolEnabled || channelIdAffinity != null))
             ? 0
             : convertToRequestIdChannelNumber(affinity);
     if (requestId == null) {

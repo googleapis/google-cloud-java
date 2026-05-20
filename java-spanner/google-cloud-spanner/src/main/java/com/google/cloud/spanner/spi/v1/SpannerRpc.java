@@ -63,6 +63,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 
 /**
@@ -82,7 +83,7 @@ public interface SpannerRpc extends ServiceRpc {
   /** Options passed in {@link SpannerRpc} methods to control how an RPC is issued. */
   enum Option {
     CHANNEL_HINT("Channel Hint"),
-    UNBIND_CHANNEL_HINT("Unbind Channel Hint");
+    CHANNEL_ID_AFFINITY("Channel ID Affinity");
 
     private final String value;
 
@@ -100,6 +101,11 @@ public interface SpannerRpc extends ServiceRpc {
 
     @InternalApi
     public Long getLong(@Nullable Map<Option, ?> options) {
+      return get(options);
+    }
+
+    @InternalApi
+    public AtomicReference<Integer> getChannelIdAffinity(@Nullable Map<Option, ?> options) {
       return get(options);
     }
 
@@ -198,15 +204,6 @@ public interface SpannerRpc extends ServiceRpc {
 
   /** Clears any client-side affinity associated with the given transaction id. */
   default void clearTransactionAffinity(ByteString transactionId) {}
-
-  /**
-   * Clears any client-side transaction affinity and transport-level channel affinity associated
-   * with the given transaction.
-   */
-  default void clearTransactionAndChannelAffinity(
-      ByteString transactionId, @Nullable Long channelHint) {
-    clearTransactionAffinity(transactionId);
-  }
 
   // Instance admin APIs.
   Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)

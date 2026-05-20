@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Client for creating single sessions and batches of sessions. */
@@ -89,8 +90,8 @@ class SessionClient implements AutoCloseable {
       return new SessionOption(SpannerRpc.Option.CHANNEL_HINT, hint);
     }
 
-    static SessionOption unbindChannelHint() {
-      return new SessionOption(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+    static SessionOption channelIdAffinity(AtomicReference<Integer> channelId) {
+      return new SessionOption(SpannerRpc.Option.CHANNEL_ID_AFFINITY, channelId);
     }
 
     SpannerRpc.Option rpcOption() {
