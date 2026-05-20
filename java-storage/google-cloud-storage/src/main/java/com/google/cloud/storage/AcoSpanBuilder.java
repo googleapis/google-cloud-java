@@ -33,6 +33,8 @@ import java.util.logging.Logger;
 final class AcoSpanBuilder implements SpanBuilder {
 
   private static final Logger LOGGER = Logger.getLogger(AcoSpanBuilder.class.getName());
+  private static final String MULTI_REGION = "multi-region";
+  private static final String DUAL_REGION = "dual-region";
 
   private final SpanBuilder delegate;
   private final OtelStorageDecorator parent;
@@ -71,7 +73,7 @@ final class AcoSpanBuilder implements SpanBuilder {
   public Span startSpan() {
     if (bucketName != null && parent != null) {
       checkCacheAndTriggerFetch(
-          parent.delegate, parent.bucketMetadataCache, parent.cacheExecutor, bucketName);
+          parent.delegate, parent.bucketMetadataCache, parent.getCacheExecutor(), bucketName);
       return new AcoSpan(delegate.startSpan(), bucketName, parent);
     }
     return delegate.startSpan();
@@ -139,15 +141,15 @@ final class AcoSpanBuilder implements SpanBuilder {
             poolSize, // max pool size dynamically scaled based on CPU cores
             5L, // 5 seconds keep-alive: terminates threads quickly when done
             TimeUnit.SECONDS,
-            new java.util.concurrent
-                .LinkedBlockingQueue<>(), // Unbounded queue ensures no tasks are ever rejected or
-            // lost
+            new java.util.concurrent.LinkedBlockingQueue<>(10000), // Bounded queue to prevent OOM
             r -> {
               Thread t = new Thread(r);
               t.setDaemon(true);
               t.setName("gcs-aco-metadata-cache-pool");
               return t;
-            });
+            },
+            new java.util.concurrent.ThreadPoolExecutor
+                .DiscardPolicy()); // Best-effort: silently discard on overflow
     executor.allowCoreThreadTimeOut(true);
     return executor;
   }
@@ -185,7 +187,7 @@ final class AcoSpanBuilder implements SpanBuilder {
             ? bucket.getLocationType().toLowerCase(Locale.US)
             : "region";
 
-    if ("multi-region".equals(locationType) || "dual-region".equals(locationType)) {
+    if (MULTI_REGION.equals(locationType) || DUAL_REGION.equals(locationType)) {
       location = "global";
     }
 

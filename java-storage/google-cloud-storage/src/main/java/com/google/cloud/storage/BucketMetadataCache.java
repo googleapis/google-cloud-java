@@ -19,11 +19,12 @@ package com.google.cloud.storage;
 import com.google.cloud.Tuple;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 final class BucketMetadataCache {
 
   private static final int DEFAULT_CAPACITY = 10000;
-  private final Object lock = new Object();
+  private final ReentrantLock lock = new ReentrantLock();
   private final Map<String, BucketMetadata> cache;
 
   BucketMetadataCache(int capacity) {
@@ -36,49 +37,70 @@ final class BucketMetadataCache {
         };
   }
 
-  static BucketMetadataCache getbucketmetadatacache() {
+  static BucketMetadataCache getBucketMetadataCache() {
     return new BucketMetadataCache(DEFAULT_CAPACITY);
   }
 
   BucketMetadata get(String bucketName) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       return cache.get(bucketName);
+    } finally {
+      lock.unlock();
     }
   }
 
   void put(String bucketName, BucketMetadata metadata) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       cache.put(bucketName, metadata);
+    } finally {
+      lock.unlock();
     }
   }
 
   void put(String bucketName, String resource, String location, boolean pending) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       cache.put(bucketName, new BucketMetadata(resource, location, pending));
+    } finally {
+      lock.unlock();
     }
   }
 
   void put(String bucketName, Tuple<String, String> layout, boolean pending) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       cache.put(bucketName, new BucketMetadata(layout.x(), layout.y(), pending));
+    } finally {
+      lock.unlock();
     }
   }
 
   void remove(String bucketName) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       cache.remove(bucketName);
+    } finally {
+      lock.unlock();
     }
   }
 
   void clear() {
-    synchronized (lock) {
+    lock.lock();
+    try {
       cache.clear();
+    } finally {
+      lock.unlock();
     }
   }
 
   boolean containsKey(String bucketName) {
-    synchronized (lock) {
+    lock.lock();
+    try {
       return cache.containsKey(bucketName);
+    } finally {
+      lock.unlock();
     }
   }
 

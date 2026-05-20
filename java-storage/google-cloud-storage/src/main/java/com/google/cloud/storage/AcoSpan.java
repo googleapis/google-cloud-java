@@ -59,21 +59,18 @@ final class AcoSpan implements Span {
   @Override
   public Span recordException(Throwable exception) {
     delegate.recordException(exception);
-    if (exception instanceof StorageException && parent != null) {
-      StorageException se = (StorageException) exception;
-      if (se.getCode() == 404 && se.getMessage() != null) {
-        String msg = se.getMessage().toLowerCase(java.util.Locale.US);
-        if (msg.contains("bucket not found") || msg.contains("bucket does not exist")) {
-          parent.bucketMetadataCache.remove(bucketName);
-        }
-      }
-    }
+    handleException(exception);
     return this;
   }
 
   @Override
   public Span recordException(Throwable exception, Attributes attributes) {
     delegate.recordException(exception, attributes);
+    handleException(exception);
+    return this;
+  }
+
+  private void handleException(Throwable exception) {
     if (exception instanceof StorageException && parent != null) {
       StorageException se = (StorageException) exception;
       if (se.getCode() == 404 && se.getMessage() != null) {
@@ -83,7 +80,6 @@ final class AcoSpan implements Span {
         }
       }
     }
-    return this;
   }
 
   @Override

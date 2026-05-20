@@ -77,7 +77,7 @@ final class OtelStorageDecorator implements Storage {
   private final Attributes baseAttributes;
   private final Tracer tracer;
   final BucketMetadataCache bucketMetadataCache;
-  final ExecutorService cacheExecutor;
+  private volatile ExecutorService cacheExecutor;
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
@@ -85,8 +85,20 @@ final class OtelStorageDecorator implements Storage {
     this.baseAttributes = baseAttributes;
     this.tracer =
         TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
-    this.bucketMetadataCache = BucketMetadataCache.getbucketmetadatacache();
-    this.cacheExecutor = AcoSpanBuilder.newCacheExecutor();
+    this.bucketMetadataCache = BucketMetadataCache.getBucketMetadataCache();
+  }
+
+  ExecutorService getCacheExecutor() {
+    ExecutorService result = cacheExecutor;
+    if (result == null) {
+      synchronized (this) {
+        result = cacheExecutor;
+        if (result == null) {
+          cacheExecutor = result = AcoSpanBuilder.newCacheExecutor();
+        }
+      }
+    }
+    return result;
   }
 
   @Override
@@ -1430,8 +1442,12 @@ final class OtelStorageDecorator implements Storage {
   public void close() throws Exception {
     try {
       bucketMetadataCache.clear();
-      cacheExecutor.shutdownNow();
-      cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
+      synchronized (this) {
+        if (cacheExecutor != null) {
+          cacheExecutor.shutdownNow();
+          cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
+        }
+      }
     } finally {
       delegate.close();
     }
