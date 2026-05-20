@@ -1720,18 +1720,25 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private ChannelRef pickLeastBusyChannelDifferentFrom(@Nullable ChannelRef excludedChannelRef) {
     ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
-    if (excludedChannelRef == null
-        || channelRef != excludedChannelRef
-        || !excludedChannelRef.isActive()
-        || channelRefs.size() <= 1) {
+    if (excludedChannelRef == null || channelRefs.size() <= 1) {
       return channelRef;
     }
+    if (channelRef != excludedChannelRef && channelRef.isActive()) {
+      return channelRef;
+    }
+    ChannelRef leastBusyChannelRef = null;
+    int leastBusyStreams = Integer.MAX_VALUE;
     for (ChannelRef candidate : channelRefs) {
-      if (candidate != excludedChannelRef) {
-        return candidate;
+      if (candidate == excludedChannelRef || !candidate.isActive()) {
+        continue;
+      }
+      int streams = candidate.getActiveStreamsCount();
+      if (leastBusyChannelRef == null || streams < leastBusyStreams) {
+        leastBusyChannelRef = candidate;
+        leastBusyStreams = streams;
       }
     }
-    return channelRef;
+    return leastBusyChannelRef == null ? channelRef : leastBusyChannelRef;
   }
 
   // Create a new channel and add it to channelRefs.
