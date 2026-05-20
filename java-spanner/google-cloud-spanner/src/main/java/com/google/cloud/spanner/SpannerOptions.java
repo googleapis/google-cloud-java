@@ -887,7 +887,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "Number of channels must fall in the range [1, %s], found: %s",
         MAX_CHANNELS,
         numChannels);
-
+    Preconditions.checkArgument(
+        builder.instanceType != InstanceType.OMNI || !Strings.isNullOrEmpty(builder.host),
+        "Host must be set for connecting to Spanner Omni instances");
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
@@ -1808,8 +1810,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public Builder setHost(String host) {
-      super.setHost(host);
       this.host = host;
+      if (this.instanceType == InstanceType.OMNI
+          && !Strings.isNullOrEmpty(this.host)
+          && this.usePlainText) {
+        Preconditions.checkArgument(
+            !this.host.startsWith("https:"),
+            "Please remove the 'https:' protocol prefix from the host string when using plain text"
+                + " communication");
+        if (!this.host.startsWith("http")) {
+          this.host = "http://" + this.host;
+        }
+      }
+      super.setHost(this.host);
       // Setting a host should override any SPANNER_EMULATOR_HOST setting.
       setEmulatorHost(null);
       return this;
@@ -1820,10 +1833,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @ObsoleteApi("Use setHost(String).setType(InstanceType.OMNI) instead")
     @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3676")
     public Builder setExperimentalHost(String host) {
-      setHost(host);
       if (!Strings.isNullOrEmpty(host)) {
         setType(InstanceType.OMNI);
       }
+      setHost(host);
       return this;
     }
 
@@ -1835,19 +1848,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     public Builder setType(InstanceType instanceType) {
       this.instanceType = instanceType;
       if (instanceType == InstanceType.OMNI) {
-        if (Strings.isNullOrEmpty(this.host)) {
-          throw new IllegalStateException("Host must be set before setting Type to OMNI");
-        }
-        if (this.usePlainText) {
-          Preconditions.checkArgument(
-              !this.host.startsWith("https:"),
-              "Please remove the 'https:' protocol prefix from the host string when using plain text"
-                  + " communication");
-          if (!this.host.startsWith("http")) {
-            this.host = "http://" + this.host;
-            setHost(this.host);
-          }
-        }
         setBuiltInMetricsEnabled(false);
         super.setProjectId(SPANNER_OMNI_PROJECT_ID);
         setSessionPoolOption(SessionPoolOptions.newBuilder().setExperimentalHost().build());
@@ -1981,9 +1981,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.usePlainText = true;
       this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
           .setCredentials(NoCredentials.getInstance());
-      if (this.instanceType == InstanceType.OMNI && !Strings.isNullOrEmpty(this.host)) {
+      if (this.instanceType == InstanceType.OMNI) {
         // Re-apply host settings to ensure http:// is prepended.
-        setType(InstanceType.OMNI);
+        setHost(this.host);
       }
       return this;
     }
