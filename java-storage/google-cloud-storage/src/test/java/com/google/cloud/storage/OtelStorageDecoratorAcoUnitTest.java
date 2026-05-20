@@ -27,7 +27,6 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.Tracer;
 import java.math.BigInteger;
-import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -68,8 +67,7 @@ public class OtelStorageDecoratorAcoUnitTest {
         osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "success-bucket");
 
     // Wait for background task to finish cleanly
-    osd.cacheExecutor.shutdown();
-    osd.cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
+    waitForCache(osd, "success-bucket");
 
     BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("success-bucket");
     assertNotNull(meta);
@@ -92,8 +90,7 @@ public class OtelStorageDecoratorAcoUnitTest {
         osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "nonexistent-bucket");
 
     // Wait for background task to finish
-    osd.cacheExecutor.shutdown();
-    osd.cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
+    waitForCache(osd, "nonexistent-bucket");
 
     // Verified not found -> Entry must be cleanly evicted (null)
     BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("nonexistent-bucket");
@@ -113,8 +110,7 @@ public class OtelStorageDecoratorAcoUnitTest {
         osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "nonexistent-bucket");
 
     // Wait for background task to finish
-    osd.cacheExecutor.shutdown();
-    osd.cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
+    waitForCache(osd, "nonexistent-bucket");
 
     // Verified not found -> Entry must be cleanly evicted (null)
     BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("nonexistent-bucket");
@@ -135,8 +131,7 @@ public class OtelStorageDecoratorAcoUnitTest {
         osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "forbidden-bucket");
 
     // Wait for background task to finish
-    osd.cacheExecutor.shutdown();
-    osd.cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
+    waitForCache(osd, "forbidden-bucket");
 
     // Forbidden -> Fallback values retained with pending = false (Do Not Retry)
     BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("forbidden-bucket");
@@ -167,8 +162,7 @@ public class OtelStorageDecoratorAcoUnitTest {
         osd.delegate, osd.bucketMetadataCache, osd.cacheExecutor, "concurrent-bucket");
 
     // Wait for background tasks
-    osd.cacheExecutor.shutdown();
-    osd.cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
+    waitForCache(osd, "concurrent-bucket");
 
     // Verify get was called exactly once (no duplicate fetches)
     Mockito.verify(mockStorage, Mockito.times(1)).get("concurrent-bucket");
@@ -216,5 +210,16 @@ public class OtelStorageDecoratorAcoUnitTest {
     Mockito.verify(mockSpan)
         .setAttribute("gcp.resource.destination.id", "projects/123/buckets/resolved-bucket");
     Mockito.verify(mockSpan).setAttribute("gcp.resource.destination.location", "us-east1");
+  }
+
+  private void waitForCache(OtelStorageDecorator osd, String bucketName) throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get(bucketName);
+      if (meta == null || !meta.fetchPending) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError("Timeout waiting for cache background fetch for: " + bucketName);
   }
 }

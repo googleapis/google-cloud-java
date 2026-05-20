@@ -26,7 +26,6 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.context.Context;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -133,14 +132,24 @@ final class AcoSpanBuilder implements SpanBuilder {
   }
 
   static ExecutorService newCacheExecutor() {
-    return Executors.newFixedThreadPool(
-        4,
-        r -> {
-          Thread t = new Thread(r);
-          t.setDaemon(true);
-          t.setName("gcs-aco-metadata-cache-pool");
-          return t;
-        });
+    int poolSize = Math.max(4, Runtime.getRuntime().availableProcessors());
+    java.util.concurrent.ThreadPoolExecutor executor =
+        new java.util.concurrent.ThreadPoolExecutor(
+            poolSize, // core pool size dynamically scaled based on CPU cores
+            poolSize, // max pool size dynamically scaled based on CPU cores
+            5L, // 5 seconds keep-alive: terminates threads quickly when done
+            TimeUnit.SECONDS,
+            new java.util.concurrent
+                .LinkedBlockingQueue<>(), // Unbounded queue ensures no tasks are ever rejected or
+            // lost
+            r -> {
+              Thread t = new Thread(r);
+              t.setDaemon(true);
+              t.setName("gcs-aco-metadata-cache-pool");
+              return t;
+            });
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
   }
 
   static String extractBucketName(String uri) {

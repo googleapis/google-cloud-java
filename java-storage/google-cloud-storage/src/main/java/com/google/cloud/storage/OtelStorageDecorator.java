@@ -1430,7 +1430,8 @@ final class OtelStorageDecorator implements Storage {
   public void close() throws Exception {
     try {
       bucketMetadataCache.clear();
-      cacheExecutor.shutdown();
+      cacheExecutor.shutdownNow();
+      cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
     } finally {
       delegate.close();
     }

@@ -118,7 +118,10 @@ public abstract class MultipartUploadClient {
             options.createRetrier(),
             MultipartUploadHttpRequestManager.createFrom(options),
             options.getRetryAlgorithmManager());
+    Storage service = options.getService();
+    OtelStorageDecorator osd =
+        service instanceof OtelStorageDecorator ? (OtelStorageDecorator) service : null;
     return OtelMultipartUploadClientDecorator.decorate(
-        client, options.getOpenTelemetry(), Transport.HTTP);
+        client, osd, options.getOpenTelemetry(), Transport.HTTP);
   }
 }

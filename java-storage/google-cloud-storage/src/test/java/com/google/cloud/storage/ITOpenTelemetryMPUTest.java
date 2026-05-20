@@ -132,17 +132,40 @@ public final class ITOpenTelemetryMPUTest {
     assertThat(uploadSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
     assertThat(uploadSpan.getAttributes().get(AttributeKey.longKey("partNumber"))).isEqualTo(1);
+    assertThat(
+            uploadSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            uploadSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
 
     SpanData completeSpan = spans.get(2);
     assertThat(completeSpan.getName())
         .isEqualTo("com.google.cloud.storage.MultipartUploadClient/completeMultipartUpload");
     assertThat(completeSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
+    assertThat(
+            completeSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            completeSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
 
     SpanData listSpan = spans.get(3);
     assertThat(listSpan.getName())
         .isEqualTo("com.google.cloud.storage.MultipartUploadClient/listMultipartUploads");
     assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/", bucket.getName()));
+    assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            listSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
   }
 }
