@@ -109,7 +109,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     // Support standard JDBC Wrapper unwrap operations
     if (methodName.equals("unwrap") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
-      if (iface.isInstance(target)) {
+      if (iface != null && iface.isInstance(target)) {
         return target;
       }
       try {
@@ -120,7 +120,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     }
     if (methodName.equals("isWrapperFor") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
-      if (iface.isInstance(target)) {
+      if (iface != null && iface.isInstance(target)) {
         return true;
       }
       try {

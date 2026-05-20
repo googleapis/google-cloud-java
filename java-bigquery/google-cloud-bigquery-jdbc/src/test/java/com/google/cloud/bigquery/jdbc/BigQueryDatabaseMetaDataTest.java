@@ -251,7 +251,7 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoInt64 =
         dbMetadata.mapBigQueryTypeToJdbc(fieldInt64);
     assertEquals(Types.BIGINT, infoInt64.jdbcType);
-    assertEquals("BIGINT", infoInt64.typeName);
+    assertEquals("INT64", infoInt64.typeName);
     assertEquals(Integer.valueOf(19), infoInt64.columnSize);
     assertEquals(Integer.valueOf(0), infoInt64.decimalDigits);
     assertEquals(Integer.valueOf(10), infoInt64.numPrecRadix);
@@ -264,7 +264,7 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoString =
         dbMetadata.mapBigQueryTypeToJdbc(fieldString);
     assertEquals(Types.NVARCHAR, infoString.jdbcType);
-    assertEquals("NVARCHAR", infoString.typeName);
+    assertEquals("STRING", infoString.typeName);
     assertNull(infoString.columnSize);
     assertNull(infoString.decimalDigits);
     assertNull(infoString.numPrecRadix);
@@ -276,7 +276,7 @@ public class BigQueryDatabaseMetaDataTest {
             .build();
     BigQueryDatabaseMetaData.ColumnTypeInfo infoBool = dbMetadata.mapBigQueryTypeToJdbc(fieldBool);
     assertEquals(Types.BOOLEAN, infoBool.jdbcType);
-    assertEquals("BOOLEAN", infoBool.typeName);
+    assertEquals("BOOL", infoBool.typeName);
     assertEquals(Integer.valueOf(1), infoBool.columnSize);
 
     // BYTES -> VARBINARY
@@ -287,7 +287,7 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoBytes =
         dbMetadata.mapBigQueryTypeToJdbc(fieldBytes);
     assertEquals(Types.VARBINARY, infoBytes.jdbcType);
-    assertEquals("VARBINARY", infoBytes.typeName);
+    assertEquals("BYTES", infoBytes.typeName);
     assertNull(infoBytes.columnSize);
 
     // TIMESTAMP -> TIMESTAMP
@@ -311,7 +311,7 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoDateTime =
         dbMetadata.mapBigQueryTypeToJdbc(fieldDateTime);
     assertEquals(Types.TIMESTAMP, infoDateTime.jdbcType);
-    assertEquals("TIMESTAMP", infoDateTime.typeName);
+    assertEquals("DATETIME", infoDateTime.typeName);
     assertEquals(Integer.valueOf(29), infoDateTime.columnSize);
     assertNull(infoDateTime.decimalDigits);
     assertNull(infoDateTime.numPrecRadix);
@@ -337,7 +337,7 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoBigNumeric =
         dbMetadata.mapBigQueryTypeToJdbc(fieldBigNumeric);
     assertEquals(Types.NUMERIC, infoBigNumeric.jdbcType);
-    assertEquals("NUMERIC", infoBigNumeric.typeName);
+    assertEquals("BIGNUMERIC", infoBigNumeric.typeName);
     assertEquals(Integer.valueOf(77), infoBigNumeric.columnSize);
     assertEquals(Integer.valueOf(38), infoBigNumeric.decimalDigits);
     assertEquals(Integer.valueOf(10), infoBigNumeric.numPrecRadix);
@@ -348,8 +348,8 @@ public class BigQueryDatabaseMetaDataTest {
             .setMode(Field.Mode.NULLABLE)
             .build();
     BigQueryDatabaseMetaData.ColumnTypeInfo infoGeo = dbMetadata.mapBigQueryTypeToJdbc(fieldGeo);
-    assertEquals(Types.VARCHAR, infoGeo.jdbcType);
-    assertEquals("VARCHAR", infoGeo.typeName);
+    assertEquals(Types.OTHER, infoGeo.jdbcType);
+    assertEquals("GEOGRAPHY", infoGeo.typeName);
     assertNull(infoGeo.columnSize);
 
     // DATE
@@ -424,7 +424,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(table, row.get(2).getStringValue()); // 3. TABLE_NAME
     assertEquals("user_name", row.get(3).getStringValue()); // 4. COLUMN_NAME
     assertEquals(String.valueOf(Types.NVARCHAR), row.get(4).getStringValue()); // 5. DATA_TYPE
-    assertEquals("NVARCHAR", row.get(5).getStringValue()); // 6. TYPE_NAME
+    assertEquals("STRING", row.get(5).getStringValue()); // 6. TYPE_NAME
     assertTrue(row.get(6).isNull()); // 7. COLUMN_SIZE (was null for STRING)
     assertTrue(row.get(7).isNull()); // 8. BUFFER_LENGTH (always null)
     assertTrue(row.get(8).isNull()); // 9. DECIMAL_DIGITS (null for STRING)
@@ -459,7 +459,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(24, row.size());
     assertEquals("user_id", row.get(3).getStringValue()); // COLUMN_NAME
     assertEquals(String.valueOf(Types.BIGINT), row.get(4).getStringValue()); // DATA_TYPE
-    assertEquals("BIGINT", row.get(5).getStringValue()); // TYPE_NAME
+    assertEquals("INT64", row.get(5).getStringValue()); // TYPE_NAME
     assertEquals("19", row.get(6).getStringValue()); // COLUMN_SIZE
     assertEquals("0", row.get(8).getStringValue()); // DECIMAL_DIGITS
     assertEquals("10", row.get(9).getStringValue()); // NUM_PREC_RADIX
@@ -1139,21 +1139,21 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoInt64 =
         dbMetadata.determineTypeInfoFromDataType(sqlInt64, "p", "c", 1);
     assertEquals(Types.BIGINT, infoInt64.jdbcType);
-    assertEquals("BIGINT", infoInt64.typeName);
+    assertEquals("INT64", infoInt64.typeName);
 
     // STRING
     StandardSQLDataType sqlString = mockStandardSQLDataType(StandardSQLTypeName.STRING);
     BigQueryDatabaseMetaData.ColumnTypeInfo infoString =
         dbMetadata.determineTypeInfoFromDataType(sqlString, "p", "c", 1);
     assertEquals(Types.NVARCHAR, infoString.jdbcType);
-    assertEquals("NVARCHAR", infoString.typeName);
+    assertEquals("STRING", infoString.typeName);
 
     // BOOL
     StandardSQLDataType sqlBool = mockStandardSQLDataType(StandardSQLTypeName.BOOL);
     BigQueryDatabaseMetaData.ColumnTypeInfo infoBool =
         dbMetadata.determineTypeInfoFromDataType(sqlBool, "p", "c", 1);
     assertEquals(Types.BOOLEAN, infoBool.jdbcType);
-    assertEquals("BOOLEAN", infoBool.typeName);
+    assertEquals("BOOL", infoBool.typeName);
 
     // STRUCT
     StandardSQLDataType sqlStruct = mockStandardSQLDataType(StandardSQLTypeName.STRUCT);
@@ -1162,21 +1162,21 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(Types.STRUCT, infoStruct.jdbcType);
     assertEquals("STRUCT", infoStruct.typeName);
 
-    // Case: null typeKind from StandardSQLDataType (should default to VARCHAR)
+    // Case: null typeKind from StandardSQLDataType (should default to STRING)
     StandardSQLDataType sqlNullKind = mock(StandardSQLDataType.class);
     when(sqlNullKind.getTypeKind()).thenReturn(null);
     BigQueryDatabaseMetaData.ColumnTypeInfo infoNullKind =
         dbMetadata.determineTypeInfoFromDataType(sqlNullKind, "p", "c", 1);
-    assertEquals(Types.VARCHAR, infoNullKind.jdbcType);
-    assertEquals("VARCHAR", infoNullKind.typeName);
+    assertEquals(Types.NVARCHAR, infoNullKind.jdbcType);
+    assertEquals("STRING", infoNullKind.typeName);
 
-    // Case: unknown typeKind from StandardSQLDataType (should default to VARCHAR)
+    // Case: unknown typeKind from StandardSQLDataType (should default to STRING)
     StandardSQLDataType sqlUnknownKind = mock(StandardSQLDataType.class);
     when(sqlUnknownKind.getTypeKind()).thenReturn("SUPER_DOOPER_TYPE");
     BigQueryDatabaseMetaData.ColumnTypeInfo infoUnknownKind =
         dbMetadata.determineTypeInfoFromDataType(sqlUnknownKind, "p", "c", 1);
-    assertEquals(Types.VARCHAR, infoUnknownKind.jdbcType);
-    assertEquals("VARCHAR", infoUnknownKind.typeName);
+    assertEquals(Types.NVARCHAR, infoUnknownKind.jdbcType);
+    assertEquals("STRING", infoUnknownKind.typeName);
   }
 
   @Test
@@ -1204,7 +1204,7 @@ public class BigQueryDatabaseMetaDataTest {
         String.valueOf(DatabaseMetaData.procedureColumnIn),
         row.get(4).getStringValue()); // 5. COLUMN_TYPE
     assertEquals(String.valueOf(Types.NVARCHAR), row.get(5).getStringValue()); // 6. DATA_TYPE
-    assertEquals("NVARCHAR", row.get(6).getStringValue()); // 7. TYPE_NAME
+    assertEquals("STRING", row.get(6).getStringValue()); // 7. TYPE_NAME
     assertTrue(row.get(7).isNull()); // 8. PRECISION
     assertTrue(row.get(8).isNull()); // 9. LENGTH
     assertTrue(row.get(9).isNull()); // 10. SCALE
@@ -2685,7 +2685,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("param_in", row.get(3).getStringValue());
     assertEquals(String.valueOf(DatabaseMetaData.functionColumnIn), row.get(4).getStringValue());
     assertEquals(String.valueOf(Types.NVARCHAR), row.get(5).getStringValue()); // DATA_TYPE
-    assertEquals("NVARCHAR", row.get(6).getStringValue()); // TYPE_NAME
+    assertEquals("STRING", row.get(6).getStringValue()); // TYPE_NAME
     assertTrue(row.get(7).isNull()); // PRECISION
     assertTrue(row.get(8).isNull()); // LENGTH
     assertTrue(row.get(9).isNull()); // SCALE
@@ -3205,5 +3205,23 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertTrue(dbMetadata.isWrapperFor(DatabaseMetaData.class));
+    assertTrue(dbMetadata.isWrapperFor(BigQueryDatabaseMetaData.class));
+    assertFalse(dbMetadata.isWrapperFor(java.sql.Connection.class));
+    assertFalse(dbMetadata.isWrapperFor(null));
+
+    assertSame(dbMetadata, dbMetadata.unwrap(DatabaseMetaData.class));
+    assertSame(dbMetadata, dbMetadata.unwrap(BigQueryDatabaseMetaData.class));
+
+    try {
+      dbMetadata.unwrap(java.sql.Connection.class);
+      org.junit.jupiter.api.Assertions.fail("Should have thrown SQLException");
+    } catch (SQLException e) {
+      assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
+    }
   }
 }

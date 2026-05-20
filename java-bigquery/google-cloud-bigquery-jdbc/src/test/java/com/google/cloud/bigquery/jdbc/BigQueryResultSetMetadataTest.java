@@ -274,4 +274,45 @@ public class BigQueryResultSetMetadataTest {
   public void testNestedColumnDisplaySize() throws SQLException {
     assertThat(resultSetMetaDataNested.getColumnDisplaySize(1)).isEqualTo(50);
   }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertThat(resultSetMetaData.isWrapperFor(ResultSetMetaData.class)).isTrue();
+    assertThat(resultSetMetaData.isWrapperFor(BigQueryResultSetMetadata.class)).isTrue();
+    assertThat(resultSetMetaData.isWrapperFor(java.sql.Connection.class)).isFalse();
+    assertThat(resultSetMetaData.isWrapperFor(null)).isFalse();
+
+    Object unwrappedMeta = resultSetMetaData.unwrap(ResultSetMetaData.class);
+    assertThat(unwrappedMeta).isNotSameInstanceAs(resultSetMetaData);
+    assertThat(unwrappedMeta).isInstanceOf(BigQueryResultSetMetadata.class);
+
+    Object unwrappedImpl = resultSetMetaData.unwrap(BigQueryResultSetMetadata.class);
+    assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
+    assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
+
+    try {
+      resultSetMetaData.unwrap(java.sql.Connection.class);
+      org.junit.jupiter.api.Assertions.fail("Should have thrown SQLException");
+    } catch (SQLException e) {
+      assertThat(e.getMessage()).contains("Cannot unwrap to java.sql.Connection");
+    }
+  }
+
+  @Test
+  public void testIsSearchableForOtherTypes() throws SQLException {
+    FieldList schemaFields =
+        FieldList.of(
+            Field.of("geo", StandardSQLTypeName.GEOGRAPHY),
+            Field.of("json", StandardSQLTypeName.JSON),
+            Field.of("interval", StandardSQLTypeName.INTERVAL),
+            Field.of("range", StandardSQLTypeName.RANGE));
+    BigQueryJsonResultSet otherTypesResultSet =
+        BigQueryJsonResultSet.of(
+            Schema.of(schemaFields), 1L, null, statement, new Thread[] {new Thread()});
+    ResultSetMetaData otherMetaData = otherTypesResultSet.getMetaData();
+    assertThat(otherMetaData.isSearchable(1)).isTrue(); // GEOGRAPHY
+    assertThat(otherMetaData.isSearchable(2)).isTrue(); // JSON
+    assertThat(otherMetaData.isSearchable(3)).isTrue(); // INTERVAL
+    assertThat(otherMetaData.isSearchable(4)).isTrue(); // RANGE
+  }
 }
