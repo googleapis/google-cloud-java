@@ -252,6 +252,9 @@ public class ITOpenTelemetryTest {
         if (result != null) {
           return result;
         }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException("Test execution interrupted", e);
       } catch (Exception e) {
         // Ignore exceptions during remote lookup and retry
       }

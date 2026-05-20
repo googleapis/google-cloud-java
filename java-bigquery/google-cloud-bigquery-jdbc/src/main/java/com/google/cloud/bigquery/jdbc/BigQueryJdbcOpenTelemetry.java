@@ -69,7 +69,7 @@ public class BigQueryJdbcOpenTelemetry {
       "otel.span.attribute.value.length.limit";
   private static final String OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT =
       "otel.attribute.value.length.limit";
-  private static final String DEFAULT_ATTRIBUTE_LENGTH_LIMIT = "61440";
+  private static final String DEFAULT_ATTRIBUTE_LENGTH_LIMIT = "32768";
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger("BigQueryJdbcOpenTelemetry");
 
