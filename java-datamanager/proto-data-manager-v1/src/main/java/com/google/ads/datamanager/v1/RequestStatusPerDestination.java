@@ -94,7 +94,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request succeeded.
+     * Processing succeeded for all records without any errors. However, there
+     * may be warnings in the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field.
      * </pre>
      *
      * <code>SUCCESS = 1;</code>
@@ -114,7 +117,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request failed.
+     * Processing failed for all records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -124,7 +131,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request partially succeeded.
+     * Processing completed successfully without errors for some records, but
+     * failed with errors for other records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>PARTIAL_SUCCESS = 4;</code>
@@ -158,7 +170,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request succeeded.
+     * Processing succeeded for all records without any errors. However, there
+     * may be warnings in the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field.
      * </pre>
      *
      * <code>SUCCESS = 1;</code>
@@ -180,7 +195,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request failed.
+     * Processing failed for all records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -191,7 +210,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request partially succeeded.
+     * Processing completed successfully without errors for some records, but
+     * failed with errors for other records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>PARTIAL_SUCCESS = 4;</code>
@@ -13053,7 +13077,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13070,7 +13103,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13089,7 +13131,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13109,7 +13160,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -13126,7 +13180,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -13145,7 +13202,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14258,7 +14318,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14274,7 +14343,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14296,7 +14374,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14320,7 +14407,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14341,7 +14437,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14370,7 +14475,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14391,7 +14505,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14407,7 +14530,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14427,7 +14559,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14461,7 +14602,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14477,7 +14621,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14499,7 +14646,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14523,7 +14673,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14545,7 +14698,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14574,7 +14730,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14595,7 +14754,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14611,7 +14773,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14631,7 +14796,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>

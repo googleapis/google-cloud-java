@@ -55,6 +55,10 @@ public final class Item extends com.google.protobuf.GeneratedMessage
     merchantProductId_ = "";
     itemId_ = "";
     additionalItemParameters_ = java.util.Collections.emptyList();
+    merchantId_ = "";
+    merchantFeedLabel_ = "";
+    merchantFeedLanguageCode_ = "";
+    customVariables_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +76,7 @@ public final class Item extends com.google.protobuf.GeneratedMessage
             com.google.ads.datamanager.v1.Item.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MERCHANT_PRODUCT_ID_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -320,6 +325,316 @@ public final class Item extends com.google.protobuf.GeneratedMessage
     return additionalItemParameters_.get(index);
   }
 
+  public static final int MERCHANT_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object merchantId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Merchant Center ID associated with the item. For Store Sales
+   * events this will override the value set at the cart level.  This field is
+   * ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantId.
+   */
+  @java.lang.Override
+  public java.lang.String getMerchantId() {
+    java.lang.Object ref = merchantId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      merchantId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Merchant Center ID associated with the item. For Store Sales
+   * events this will override the value set at the cart level.  This field is
+   * ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMerchantIdBytes() {
+    java.lang.Object ref = merchantId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      merchantId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MERCHANT_FEED_LABEL_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object merchantFeedLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The feed label of the Merchant Center feed. If countries are
+   * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+   * used instead. For Store Sales events this will override the value set at
+   * the cart level. This field is ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantFeedLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getMerchantFeedLabel() {
+    java.lang.Object ref = merchantFeedLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      merchantFeedLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The feed label of the Merchant Center feed. If countries are
+   * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+   * used instead. For Store Sales events this will override the value set at
+   * the cart level. This field is ignored for other events.
+   * </pre>
+   *
+   * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantFeedLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMerchantFeedLabelBytes() {
+    java.lang.Object ref = merchantFeedLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      merchantFeedLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MERCHANT_FEED_LANGUAGE_CODE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object merchantFeedLanguageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code in ISO 639-1 associated with the Merchant
+   * Center feed where your items are uploaded.
+   * </pre>
+   *
+   * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The merchantFeedLanguageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getMerchantFeedLanguageCode() {
+    java.lang.Object ref = merchantFeedLanguageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      merchantFeedLanguageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code in ISO 639-1 associated with the Merchant
+   * Center feed where your items are uploaded.
+   * </pre>
+   *
+   * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for merchantFeedLanguageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMerchantFeedLanguageCodeBytes() {
+    java.lang.Object ref = merchantFeedLanguageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      merchantFeedLanguageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONVERSION_VALUE_FIELD_NUMBER = 9;
+  private double conversionValue_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this item within the event,
+   * for cases where the conversion value is different for each item.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionValue() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion value associated with this item within the event,
+   * for cases where the conversion value is different for each item.
+   * </pre>
+   *
+   * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionValue.
+   */
+  @java.lang.Override
+  public double getConversionValue() {
+    return conversionValue_;
+  }
+
+  public static final int CUSTOM_VARIABLES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable> customVariables_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable> getCustomVariablesList() {
+    return customVariables_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>
+      getCustomVariablesOrBuilderList() {
+    return customVariables_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomVariablesCount() {
+    return customVariables_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.ItemCustomVariable getCustomVariables(int index) {
+    return customVariables_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional key/value pair information to send to the conversion
+   * containers (conversion action or Floodlight activity), when tracking
+   * per-item
+   * conversions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder getCustomVariablesOrBuilder(
+      int index) {
+    return customVariables_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -349,6 +664,21 @@ public final class Item extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < additionalItemParameters_.size(); i++) {
       output.writeMessage(5, additionalItemParameters_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, merchantId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantFeedLabel_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, merchantFeedLabel_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantFeedLanguageCode_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, merchantFeedLanguageCode_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(9, conversionValue_);
+    }
+    for (int i = 0; i < customVariables_.size(); i++) {
+      output.writeMessage(10, customVariables_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -375,6 +705,21 @@ public final class Item extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, additionalItemParameters_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, merchantId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantFeedLabel_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, merchantFeedLabel_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(merchantFeedLanguageCode_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, merchantFeedLanguageCode_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(9, conversionValue_);
+    }
+    for (int i = 0; i < customVariables_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, customVariables_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -397,6 +742,15 @@ public final class Item extends com.google.protobuf.GeneratedMessage
     if (!getItemId().equals(other.getItemId())) return false;
     if (!getAdditionalItemParametersList().equals(other.getAdditionalItemParametersList()))
       return false;
+    if (!getMerchantId().equals(other.getMerchantId())) return false;
+    if (!getMerchantFeedLabel().equals(other.getMerchantFeedLabel())) return false;
+    if (!getMerchantFeedLanguageCode().equals(other.getMerchantFeedLanguageCode())) return false;
+    if (hasConversionValue() != other.hasConversionValue()) return false;
+    if (hasConversionValue()) {
+      if (java.lang.Double.doubleToLongBits(getConversionValue())
+          != java.lang.Double.doubleToLongBits(other.getConversionValue())) return false;
+    }
+    if (!getCustomVariablesList().equals(other.getCustomVariablesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -422,6 +776,23 @@ public final class Item extends com.google.protobuf.GeneratedMessage
     if (getAdditionalItemParametersCount() > 0) {
       hash = (37 * hash) + ADDITIONAL_ITEM_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalItemParametersList().hashCode();
+    }
+    hash = (37 * hash) + MERCHANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMerchantId().hashCode();
+    hash = (37 * hash) + MERCHANT_FEED_LABEL_FIELD_NUMBER;
+    hash = (53 * hash) + getMerchantFeedLabel().hashCode();
+    hash = (37 * hash) + MERCHANT_FEED_LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getMerchantFeedLanguageCode().hashCode();
+    if (hasConversionValue()) {
+      hash = (37 * hash) + CONVERSION_VALUE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getConversionValue()));
+    }
+    if (getCustomVariablesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomVariablesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -573,6 +944,17 @@ public final class Item extends com.google.protobuf.GeneratedMessage
         additionalItemParametersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      merchantId_ = "";
+      merchantFeedLabel_ = "";
+      merchantFeedLanguageCode_ = "";
+      conversionValue_ = 0D;
+      if (customVariablesBuilder_ == null) {
+        customVariables_ = java.util.Collections.emptyList();
+      } else {
+        customVariables_ = null;
+        customVariablesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -618,6 +1000,15 @@ public final class Item extends com.google.protobuf.GeneratedMessage
       } else {
         result.additionalItemParameters_ = additionalItemParametersBuilder_.build();
       }
+      if (customVariablesBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          customVariables_ = java.util.Collections.unmodifiableList(customVariables_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.customVariables_ = customVariables_;
+      } else {
+        result.customVariables_ = customVariablesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.ads.datamanager.v1.Item result) {
@@ -634,6 +1025,21 @@ public final class Item extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.itemId_ = itemId_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.merchantId_ = merchantId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.merchantFeedLabel_ = merchantFeedLabel_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.merchantFeedLanguageCode_ = merchantFeedLanguageCode_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.conversionValue_ = conversionValue_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -688,6 +1094,51 @@ public final class Item extends com.google.protobuf.GeneratedMessage
                     : null;
           } else {
             additionalItemParametersBuilder_.addAllMessages(other.additionalItemParameters_);
+          }
+        }
+      }
+      if (!other.getMerchantId().isEmpty()) {
+        merchantId_ = other.merchantId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getMerchantFeedLabel().isEmpty()) {
+        merchantFeedLabel_ = other.merchantFeedLabel_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getMerchantFeedLanguageCode().isEmpty()) {
+        merchantFeedLanguageCode_ = other.merchantFeedLanguageCode_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasConversionValue()) {
+        setConversionValue(other.getConversionValue());
+      }
+      if (customVariablesBuilder_ == null) {
+        if (!other.customVariables_.isEmpty()) {
+          if (customVariables_.isEmpty()) {
+            customVariables_ = other.customVariables_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureCustomVariablesIsMutable();
+            customVariables_.addAll(other.customVariables_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customVariables_.isEmpty()) {
+          if (customVariablesBuilder_.isEmpty()) {
+            customVariablesBuilder_.dispose();
+            customVariablesBuilder_ = null;
+            customVariables_ = other.customVariables_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            customVariablesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCustomVariablesFieldBuilder()
+                    : null;
+          } else {
+            customVariablesBuilder_.addAllMessages(other.customVariables_);
           }
         }
       }
@@ -754,6 +1205,44 @@ public final class Item extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 42
+            case 50:
+              {
+                merchantId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                merchantFeedLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                merchantFeedLanguageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 73:
+              {
+                conversionValue_ = input.readDouble();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 73
+            case 82:
+              {
+                com.google.ads.datamanager.v1.ItemCustomVariable m =
+                    input.readMessage(
+                        com.google.ads.datamanager.v1.ItemCustomVariable.parser(),
+                        extensionRegistry);
+                if (customVariablesBuilder_ == null) {
+                  ensureCustomVariablesIsMutable();
+                  customVariables_.add(m);
+                } else {
+                  customVariablesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1577,6 +2066,918 @@ public final class Item extends com.google.protobuf.GeneratedMessage
         additionalItemParameters_ = null;
       }
       return additionalItemParametersBuilder_;
+    }
+
+    private java.lang.Object merchantId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Merchant Center ID associated with the item. For Store Sales
+     * events this will override the value set at the cart level.  This field is
+     * ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The merchantId.
+     */
+    public java.lang.String getMerchantId() {
+      java.lang.Object ref = merchantId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        merchantId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Merchant Center ID associated with the item. For Store Sales
+     * events this will override the value set at the cart level.  This field is
+     * ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for merchantId.
+     */
+    public com.google.protobuf.ByteString getMerchantIdBytes() {
+      java.lang.Object ref = merchantId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        merchantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Merchant Center ID associated with the item. For Store Sales
+     * events this will override the value set at the cart level.  This field is
+     * ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The merchantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      merchantId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Merchant Center ID associated with the item. For Store Sales
+     * events this will override the value set at the cart level.  This field is
+     * ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMerchantId() {
+      merchantId_ = getDefaultInstance().getMerchantId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Merchant Center ID associated with the item. For Store Sales
+     * events this will override the value set at the cart level.  This field is
+     * ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for merchantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      merchantId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object merchantFeedLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The feed label of the Merchant Center feed. If countries are
+     * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+     * used instead. For Store Sales events this will override the value set at
+     * the cart level. This field is ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The merchantFeedLabel.
+     */
+    public java.lang.String getMerchantFeedLabel() {
+      java.lang.Object ref = merchantFeedLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        merchantFeedLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The feed label of the Merchant Center feed. If countries are
+     * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+     * used instead. For Store Sales events this will override the value set at
+     * the cart level. This field is ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for merchantFeedLabel.
+     */
+    public com.google.protobuf.ByteString getMerchantFeedLabelBytes() {
+      java.lang.Object ref = merchantFeedLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        merchantFeedLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The feed label of the Merchant Center feed. If countries are
+     * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+     * used instead. For Store Sales events this will override the value set at
+     * the cart level. This field is ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The merchantFeedLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantFeedLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      merchantFeedLabel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The feed label of the Merchant Center feed. If countries are
+     * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+     * used instead. For Store Sales events this will override the value set at
+     * the cart level. This field is ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMerchantFeedLabel() {
+      merchantFeedLabel_ = getDefaultInstance().getMerchantFeedLabel();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The feed label of the Merchant Center feed. If countries are
+     * still being used, the 2-letter country code in ISO-3166-1 alpha-2 can be
+     * used instead. For Store Sales events this will override the value set at
+     * the cart level. This field is ignored for other events.
+     * </pre>
+     *
+     * <code>string merchant_feed_label = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for merchantFeedLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantFeedLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      merchantFeedLabel_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object merchantFeedLanguageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code in ISO 639-1 associated with the Merchant
+     * Center feed where your items are uploaded.
+     * </pre>
+     *
+     * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The merchantFeedLanguageCode.
+     */
+    public java.lang.String getMerchantFeedLanguageCode() {
+      java.lang.Object ref = merchantFeedLanguageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        merchantFeedLanguageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code in ISO 639-1 associated with the Merchant
+     * Center feed where your items are uploaded.
+     * </pre>
+     *
+     * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for merchantFeedLanguageCode.
+     */
+    public com.google.protobuf.ByteString getMerchantFeedLanguageCodeBytes() {
+      java.lang.Object ref = merchantFeedLanguageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        merchantFeedLanguageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code in ISO 639-1 associated with the Merchant
+     * Center feed where your items are uploaded.
+     * </pre>
+     *
+     * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The merchantFeedLanguageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantFeedLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      merchantFeedLanguageCode_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code in ISO 639-1 associated with the Merchant
+     * Center feed where your items are uploaded.
+     * </pre>
+     *
+     * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMerchantFeedLanguageCode() {
+      merchantFeedLanguageCode_ = getDefaultInstance().getMerchantFeedLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code in ISO 639-1 associated with the Merchant
+     * Center feed where your items are uploaded.
+     * </pre>
+     *
+     * <code>string merchant_feed_language_code = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for merchantFeedLanguageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMerchantFeedLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      merchantFeedLanguageCode_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private double conversionValue_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this item within the event,
+     * for cases where the conversion value is different for each item.
+     * </pre>
+     *
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the conversionValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionValue() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this item within the event,
+     * for cases where the conversion value is different for each item.
+     * </pre>
+     *
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The conversionValue.
+     */
+    @java.lang.Override
+    public double getConversionValue() {
+      return conversionValue_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this item within the event,
+     * for cases where the conversion value is different for each item.
+     * </pre>
+     *
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The conversionValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversionValue(double value) {
+
+      conversionValue_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion value associated with this item within the event,
+     * for cases where the conversion value is different for each item.
+     * </pre>
+     *
+     * <code>optional double conversion_value = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversionValue() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      conversionValue_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable> customVariables_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomVariablesIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        customVariables_ =
+            new java.util.ArrayList<com.google.ads.datamanager.v1.ItemCustomVariable>(
+                customVariables_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.ItemCustomVariable,
+            com.google.ads.datamanager.v1.ItemCustomVariable.Builder,
+            com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>
+        customVariablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable>
+        getCustomVariablesList() {
+      if (customVariablesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customVariables_);
+      } else {
+        return customVariablesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCustomVariablesCount() {
+      if (customVariablesBuilder_ == null) {
+        return customVariables_.size();
+      } else {
+        return customVariablesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.ItemCustomVariable getCustomVariables(int index) {
+      if (customVariablesBuilder_ == null) {
+        return customVariables_.get(index);
+      } else {
+        return customVariablesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomVariables(
+        int index, com.google.ads.datamanager.v1.ItemCustomVariable value) {
+      if (customVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVariablesIsMutable();
+        customVariables_.set(index, value);
+        onChanged();
+      } else {
+        customVariablesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomVariables(
+        int index, com.google.ads.datamanager.v1.ItemCustomVariable.Builder builderForValue) {
+      if (customVariablesBuilder_ == null) {
+        ensureCustomVariablesIsMutable();
+        customVariables_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customVariablesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVariables(com.google.ads.datamanager.v1.ItemCustomVariable value) {
+      if (customVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVariablesIsMutable();
+        customVariables_.add(value);
+        onChanged();
+      } else {
+        customVariablesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVariables(
+        int index, com.google.ads.datamanager.v1.ItemCustomVariable value) {
+      if (customVariablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomVariablesIsMutable();
+        customVariables_.add(index, value);
+        onChanged();
+      } else {
+        customVariablesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVariables(
+        com.google.ads.datamanager.v1.ItemCustomVariable.Builder builderForValue) {
+      if (customVariablesBuilder_ == null) {
+        ensureCustomVariablesIsMutable();
+        customVariables_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customVariablesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomVariables(
+        int index, com.google.ads.datamanager.v1.ItemCustomVariable.Builder builderForValue) {
+      if (customVariablesBuilder_ == null) {
+        ensureCustomVariablesIsMutable();
+        customVariables_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customVariablesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCustomVariables(
+        java.lang.Iterable<? extends com.google.ads.datamanager.v1.ItemCustomVariable> values) {
+      if (customVariablesBuilder_ == null) {
+        ensureCustomVariablesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customVariables_);
+        onChanged();
+      } else {
+        customVariablesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomVariables() {
+      if (customVariablesBuilder_ == null) {
+        customVariables_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        customVariablesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCustomVariables(int index) {
+      if (customVariablesBuilder_ == null) {
+        ensureCustomVariablesIsMutable();
+        customVariables_.remove(index);
+        onChanged();
+      } else {
+        customVariablesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.ItemCustomVariable.Builder getCustomVariablesBuilder(
+        int index) {
+      return internalGetCustomVariablesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder getCustomVariablesOrBuilder(
+        int index) {
+      if (customVariablesBuilder_ == null) {
+        return customVariables_.get(index);
+      } else {
+        return customVariablesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>
+        getCustomVariablesOrBuilderList() {
+      if (customVariablesBuilder_ != null) {
+        return customVariablesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customVariables_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.ItemCustomVariable.Builder addCustomVariablesBuilder() {
+      return internalGetCustomVariablesFieldBuilder()
+          .addBuilder(com.google.ads.datamanager.v1.ItemCustomVariable.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.ItemCustomVariable.Builder addCustomVariablesBuilder(
+        int index) {
+      return internalGetCustomVariablesFieldBuilder()
+          .addBuilder(index, com.google.ads.datamanager.v1.ItemCustomVariable.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional key/value pair information to send to the conversion
+     * containers (conversion action or Floodlight activity), when tracking
+     * per-item
+     * conversions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.ItemCustomVariable custom_variables = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.ItemCustomVariable.Builder>
+        getCustomVariablesBuilderList() {
+      return internalGetCustomVariablesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.ItemCustomVariable,
+            com.google.ads.datamanager.v1.ItemCustomVariable.Builder,
+            com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>
+        internalGetCustomVariablesFieldBuilder() {
+      if (customVariablesBuilder_ == null) {
+        customVariablesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.datamanager.v1.ItemCustomVariable,
+                com.google.ads.datamanager.v1.ItemCustomVariable.Builder,
+                com.google.ads.datamanager.v1.ItemCustomVariableOrBuilder>(
+                customVariables_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        customVariables_ = null;
+      }
+      return customVariablesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.Item)

@@ -41,6 +41,27 @@
         }
       }
     },
+    "DataSubscriptionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataSubscriptionServiceClient",
+          "rpcs": {
+            "CreateSubscriber": {
+              "methods": ["createSubscriberAsync", "createSubscriberAsync", "createSubscriberAsync", "createSubscriberOperationCallable", "createSubscriberCallable"]
+            },
+            "DeleteSubscriber": {
+              "methods": ["deleteSubscriberAsync", "deleteSubscriberAsync", "deleteSubscriberAsync", "deleteSubscriberOperationCallable", "deleteSubscriberCallable"]
+            },
+            "ListSubscribers": {
+              "methods": ["listSubscribers", "listSubscribers", "listSubscribers", "listSubscribersPagedCallable", "listSubscribersCallable"]
+            },
+            "UpdateSubscriber": {
+              "methods": ["updateSubscriberAsync", "updateSubscriberAsync", "updateSubscriberOperationCallable", "updateSubscriberCallable"]
+            }
+          }
+        }
+      }
+    },
     "HealthProfileService": {
       "clients": {
         "grpc": {

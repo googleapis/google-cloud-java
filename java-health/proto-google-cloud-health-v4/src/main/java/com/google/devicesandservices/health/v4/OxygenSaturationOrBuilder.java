@@ -76,7 +76,20 @@ public interface OxygenSaturationOrBuilder
    * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
    * </pre>
    *
-   * <code>double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  boolean hasPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The percentage.
    */

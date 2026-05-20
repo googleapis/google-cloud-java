@@ -25,6 +25,9 @@ package com.google.devicesandservices.health.v4;
  *
  * <pre>
  * Value of a daily rollup for a single civil time interval (aggregation window)
+ * of reconciled data points from all data sources, excluding those data points
+ * that are identified as recorded by wearables in intervals when they were not
+ * actually worn.
  * </pre>
  *
  * Protobuf type {@code google.devicesandservices.health.v4.DailyRollupDataPoint}
@@ -1996,6 +1999,9 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Value of a daily rollup for a single civil time interval (aggregation window)
+   * of reconciled data points from all data sources, excluding those data points
+   * that are identified as recorded by wearables in intervals when they were not
+   * actually worn.
    * </pre>
    *
    * Protobuf type {@code google.devicesandservices.health.v4.DailyRollupDataPoint}

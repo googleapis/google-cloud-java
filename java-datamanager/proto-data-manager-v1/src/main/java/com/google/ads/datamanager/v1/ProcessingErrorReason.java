@@ -321,6 +321,17 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    * <code>PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER = 26;</code>
    */
   PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER(26),
+  /**
+   *
+   *
+   * <pre>
+   * One-per-click conversion actions cannot be used with BRAIDs.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 28;
+   * </code>
+   */
+  PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID(28),
   UNRECOGNIZED(-1),
   ;
 
@@ -653,6 +664,19 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    */
   public static final int PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER_VALUE = 26;
 
+  /**
+   *
+   *
+   * <pre>
+   * One-per-click conversion actions cannot be used with BRAIDs.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 28;
+   * </code>
+   */
+  public static final int
+      PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID_VALUE = 28;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -733,6 +757,8 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
         return PROCESSING_ERROR_REASON_USER_IDENTIFIER_DECRYPTION_ERROR;
       case 26:
         return PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER;
+      case 28:
+        return PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID;
       default:
         return null;
     }

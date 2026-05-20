@@ -97,4 +97,240 @@ public interface DeviceInfoOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of device. For example, “desktop”, “tablet”,
+   * “mobile”, “smart TV”.
+   * </pre>
+   *
+   * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The category.
+   */
+  java.lang.String getCategory();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of device. For example, “desktop”, “tablet”,
+   * “mobile”, “smart TV”.
+   * </pre>
+   *
+   * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for category.
+   */
+  com.google.protobuf.ByteString getCategoryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language the device uses in ISO 639-1 format.
+   * </pre>
+   *
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language the device uses in ISO 639-1 format.
+   * </pre>
+   *
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The height of the screen in pixels.
+   * </pre>
+   *
+   * <code>int32 screen_height = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The screenHeight.
+   */
+  int getScreenHeight();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The width of the screen in pixels.
+   * </pre>
+   *
+   * <code>int32 screen_width = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The screenWidth.
+   */
+  int getScreenWidth();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operating system or platform of the device.
+   * </pre>
+   *
+   * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operatingSystem.
+   */
+  java.lang.String getOperatingSystem();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operating system or platform of the device.
+   * </pre>
+   *
+   * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operatingSystem.
+   */
+  com.google.protobuf.ByteString getOperatingSystemBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the operating system or platform.
+   * </pre>
+   *
+   * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operatingSystemVersion.
+   */
+  java.lang.String getOperatingSystemVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the operating system or platform.
+   * </pre>
+   *
+   * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operatingSystemVersion.
+   */
+  com.google.protobuf.ByteString getOperatingSystemVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model of the device.
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  java.lang.String getModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model of the device.
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand of the device.
+   * </pre>
+   *
+   * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The brand.
+   */
+  java.lang.String getBrand();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand of the device.
+   * </pre>
+   *
+   * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for brand.
+   */
+  com.google.protobuf.ByteString getBrandBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand or type of the browser.
+   * </pre>
+   *
+   * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The browser.
+   */
+  java.lang.String getBrowser();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand or type of the browser.
+   * </pre>
+   *
+   * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for browser.
+   */
+  com.google.protobuf.ByteString getBrowserBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the browser.
+   * </pre>
+   *
+   * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The browserVersion.
+   */
+  java.lang.String getBrowserVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the browser.
+   * </pre>
+   *
+   * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for browserVersion.
+   */
+  com.google.protobuf.ByteString getBrowserVersionBytes();
 }

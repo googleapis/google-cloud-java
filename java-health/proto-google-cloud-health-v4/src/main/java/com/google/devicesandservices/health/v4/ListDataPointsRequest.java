@@ -289,10 +289,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
    * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
    * - Supported logical operators: `AND`
    * - Example:
-   * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
    * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
    *
    *
+   *
+   * - Session start time (**ECG specific**):
+   * - Pattern: `electrocardiogram.interval.start_time`
+   * - Supported comparison operators: `&gt;=`
+   * - Timestamp literal expected in RFC-3339 format
+   * - Example:
+   * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+   * - Note: Only filtering by start time is supported for ECG. Filtering
+   * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+   * supported.
    * - Session civil start time (**Excluding Sleep**):
    * - Pattern: `{session_data_type}.interval.civil_start_time`
    * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -405,10 +414,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
    * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
    * - Supported logical operators: `AND`
    * - Example:
-   * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
    * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
    *
    *
+   *
+   * - Session start time (**ECG specific**):
+   * - Pattern: `electrocardiogram.interval.start_time`
+   * - Supported comparison operators: `&gt;=`
+   * - Timestamp literal expected in RFC-3339 format
+   * - Example:
+   * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+   * - Note: Only filtering by start time is supported for ECG. Filtering
+   * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+   * supported.
    * - Session civil start time (**Excluding Sleep**):
    * - Pattern: `{session_data_type}.interval.civil_start_time`
    * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -1255,10 +1273,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
      * - Supported logical operators: `AND`
      * - Example:
-     * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
      * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
      *
      *
+     *
+     * - Session start time (**ECG specific**):
+     * - Pattern: `electrocardiogram.interval.start_time`
+     * - Supported comparison operators: `&gt;=`
+     * - Timestamp literal expected in RFC-3339 format
+     * - Example:
+     * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+     * - Note: Only filtering by start time is supported for ECG. Filtering
+     * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+     * supported.
      * - Session civil start time (**Excluding Sleep**):
      * - Pattern: `{session_data_type}.interval.civil_start_time`
      * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -1370,10 +1397,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
      * - Supported logical operators: `AND`
      * - Example:
-     * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
      * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
      *
      *
+     *
+     * - Session start time (**ECG specific**):
+     * - Pattern: `electrocardiogram.interval.start_time`
+     * - Supported comparison operators: `&gt;=`
+     * - Timestamp literal expected in RFC-3339 format
+     * - Example:
+     * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+     * - Note: Only filtering by start time is supported for ECG. Filtering
+     * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+     * supported.
      * - Session civil start time (**Excluding Sleep**):
      * - Pattern: `{session_data_type}.interval.civil_start_time`
      * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -1485,10 +1521,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
      * - Supported logical operators: `AND`
      * - Example:
-     * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
      * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
      *
      *
+     *
+     * - Session start time (**ECG specific**):
+     * - Pattern: `electrocardiogram.interval.start_time`
+     * - Supported comparison operators: `&gt;=`
+     * - Timestamp literal expected in RFC-3339 format
+     * - Example:
+     * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+     * - Note: Only filtering by start time is supported for ECG. Filtering
+     * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+     * supported.
      * - Session civil start time (**Excluding Sleep**):
      * - Pattern: `{session_data_type}.interval.civil_start_time`
      * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -1599,10 +1644,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
      * - Supported logical operators: `AND`
      * - Example:
-     * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
      * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
      *
      *
+     *
+     * - Session start time (**ECG specific**):
+     * - Pattern: `electrocardiogram.interval.start_time`
+     * - Supported comparison operators: `&gt;=`
+     * - Timestamp literal expected in RFC-3339 format
+     * - Example:
+     * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+     * - Note: Only filtering by start time is supported for ECG. Filtering
+     * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+     * supported.
      * - Session civil start time (**Excluding Sleep**):
      * - Pattern: `{session_data_type}.interval.civil_start_time`
      * - Supported comparison operators: `&gt;=`, `&lt;`
@@ -1709,10 +1763,19 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * - Date literal expected in ISO 8601 `YYYY-MM-DD` format
      * - Supported logical operators: `AND`
      * - Example:
-     * - `daily_resting_heart_rate.date &gt;= "2024-08-14"`
      * - `daily_heart_rate_variability.date &lt; "2024-08-15"`
      *
      *
+     *
+     * - Session start time (**ECG specific**):
+     * - Pattern: `electrocardiogram.interval.start_time`
+     * - Supported comparison operators: `&gt;=`
+     * - Timestamp literal expected in RFC-3339 format
+     * - Example:
+     * - `electrocardiogram.interval.start_time &gt;= "2024-08-14T12:34:56Z"`
+     * - Note: Only filtering by start time is supported for ECG. Filtering
+     * by end time (e.g., `electrocardiogram.interval.end_time`) is not
+     * supported.
      * - Session civil start time (**Excluding Sleep**):
      * - Pattern: `{session_data_type}.interval.civil_start_time`
      * - Supported comparison operators: `&gt;=`, `&lt;`

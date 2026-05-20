@@ -33,7 +33,20 @@ public interface TotalCaloriesRollupValueOrBuilder
    * Sum of the total calories in kilocalories.
    * </pre>
    *
-   * <code>double kcal_sum = 1;</code>
+   * <code>optional double kcal_sum = 1;</code>
+   *
+   * @return Whether the kcalSum field is set.
+   */
+  boolean hasKcalSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the total calories in kilocalories.
+   * </pre>
+   *
+   * <code>optional double kcal_sum = 1;</code>
    *
    * @return The kcalSum.
    */

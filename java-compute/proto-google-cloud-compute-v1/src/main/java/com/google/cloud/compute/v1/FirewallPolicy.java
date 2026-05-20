@@ -88,7 +88,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * </pre>
@@ -108,6 +109,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
     UNDEFINED_POLICY_TYPE(0),
     /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
     RDMA_ROCE_POLICY(148757145),
+    /** <code>ULL_POLICY = 100494364;</code> */
+    ULL_POLICY(100494364),
     /** <code>VPC_POLICY = 74319208;</code> */
     VPC_POLICY(74319208),
     UNRECOGNIZED(-1),
@@ -136,6 +139,9 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
 
     /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
     public static final int RDMA_ROCE_POLICY_VALUE = 148757145;
+
+    /** <code>ULL_POLICY = 100494364;</code> */
+    public static final int ULL_POLICY_VALUE = 100494364;
 
     /** <code>VPC_POLICY = 74319208;</code> */
     public static final int VPC_POLICY_VALUE = 74319208;
@@ -168,6 +174,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_POLICY_TYPE;
         case 148757145:
           return RDMA_ROCE_POLICY;
+        case 100494364:
+          return ULL_POLICY;
         case 74319208:
           return VPC_POLICY;
         default:
@@ -988,7 +996,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.
@@ -1007,7 +1016,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.
@@ -1034,7 +1044,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.
@@ -4320,7 +4331,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.
@@ -4338,7 +4350,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.
@@ -4364,7 +4377,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.
@@ -4390,7 +4404,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.
@@ -4415,7 +4430,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.
@@ -4436,7 +4452,8 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+     * The type of the firewall policy. This field can be one of
+     * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
      *
      * Note: if not specified then VPC_POLICY will be used.
      * Check the PolicyType enum for the list of possible values.

@@ -179,4 +179,32 @@ public interface AdIdentifiersOrBuilder
    * </code>
    */
   com.google.ads.datamanager.v1.DeviceInfoOrBuilder getLandingPageDeviceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mobileDeviceId.
+   */
+  java.lang.String getMobileDeviceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mobileDeviceId.
+   */
+  com.google.protobuf.ByteString getMobileDeviceIdBytes();
 }

@@ -33,7 +33,20 @@ public interface BodyFatRollupValueOrBuilder
    * Average body fat percentage.
    * </pre>
    *
-   * <code>double body_fat_percentage_avg = 1;</code>
+   * <code>optional double body_fat_percentage_avg = 1;</code>
+   *
+   * @return Whether the bodyFatPercentageAvg field is set.
+   */
+  boolean hasBodyFatPercentageAvg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Average body fat percentage.
+   * </pre>
+   *
+   * <code>optional double body_fat_percentage_avg = 1;</code>
    *
    * @return The bodyFatPercentageAvg.
    */

@@ -33,7 +33,20 @@ public interface DistanceRollupValueOrBuilder
    * Sum of the distance in millimeters.
    * </pre>
    *
-   * <code>int64 millimeters_sum = 1;</code>
+   * <code>optional int64 millimeters_sum = 1;</code>
+   *
+   * @return Whether the millimetersSum field is set.
+   */
+  boolean hasMillimetersSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the distance in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 millimeters_sum = 1;</code>
    *
    * @return The millimetersSum.
    */

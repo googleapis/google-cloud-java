@@ -62,6 +62,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     clientId_ = "";
     userId_ = "";
     additionalEventParameters_ = java.util.Collections.emptyList();
+    appInstanceId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -173,8 +174,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The unique identifier for this event. Required for conversions
-   * using multiple data sources.
+   * Optional. The unique identifier for this event. Required for events sent as
+   * an additional data source for tag conversions.
    * </pre>
    *
    * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -198,8 +199,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The unique identifier for this event. Required for conversions
-   * using multiple data sources.
+   * Optional. The unique identifier for this event. Required for events sent as
+   * an additional data source for tag conversions.
    * </pre>
    *
    * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1281,6 +1282,188 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     return additionalEventParameters_.get(index);
   }
 
+  public static final int THIRD_PARTY_USER_DATA_FIELD_NUMBER = 20;
+  private com.google.ads.datamanager.v1.UserData thirdPartyUserData_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyUserData field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyUserData() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyUserData.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.UserData getThirdPartyUserData() {
+    return thirdPartyUserData_ == null
+        ? com.google.ads.datamanager.v1.UserData.getDefaultInstance()
+        : thirdPartyUserData_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.UserDataOrBuilder getThirdPartyUserDataOrBuilder() {
+    return thirdPartyUserData_ == null
+        ? com.google.ads.datamanager.v1.UserData.getDefaultInstance()
+        : thirdPartyUserData_;
+  }
+
+  public static final int EVENT_LOCATION_FIELD_NUMBER = 21;
+  private com.google.ads.datamanager.v1.EventLocation eventLocation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the eventLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasEventLocation() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The eventLocation.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.EventLocation getEventLocation() {
+    return eventLocation_ == null
+        ? com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()
+        : eventLocation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.EventLocationOrBuilder getEventLocationOrBuilder() {
+    return eventLocation_ == null
+        ? com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()
+        : eventLocation_;
+  }
+
+  public static final int APP_INSTANCE_ID_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appInstanceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for the user instance of an app client for
+   * this GA4 app stream.
+   * </pre>
+   *
+   * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The appInstanceId.
+   */
+  @java.lang.Override
+  public java.lang.String getAppInstanceId() {
+    java.lang.Object ref = appInstanceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appInstanceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for the user instance of an app client for
+   * this GA4 app stream.
+   * </pre>
+   *
+   * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for appInstanceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAppInstanceIdBytes() {
+    java.lang.Object ref = appInstanceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      appInstanceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1352,6 +1535,15 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < additionalEventParameters_.size(); i++) {
       output.writeMessage(19, additionalEventParameters_.get(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(20, getThirdPartyUserData());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(21, getEventLocation());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appInstanceId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, appInstanceId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1429,6 +1621,15 @@ public final class Event extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, additionalEventParameters_.get(i));
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getThirdPartyUserData());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEventLocation());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appInstanceId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(22, appInstanceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1492,6 +1693,15 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (!getUserId().equals(other.getUserId())) return false;
     if (!getAdditionalEventParametersList().equals(other.getAdditionalEventParametersList()))
       return false;
+    if (hasThirdPartyUserData() != other.hasThirdPartyUserData()) return false;
+    if (hasThirdPartyUserData()) {
+      if (!getThirdPartyUserData().equals(other.getThirdPartyUserData())) return false;
+    }
+    if (hasEventLocation() != other.hasEventLocation()) return false;
+    if (hasEventLocation()) {
+      if (!getEventLocation().equals(other.getEventLocation())) return false;
+    }
+    if (!getAppInstanceId().equals(other.getAppInstanceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1570,6 +1780,16 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ADDITIONAL_EVENT_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalEventParametersList().hashCode();
     }
+    if (hasThirdPartyUserData()) {
+      hash = (37 * hash) + THIRD_PARTY_USER_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getThirdPartyUserData().hashCode();
+    }
+    if (hasEventLocation()) {
+      hash = (37 * hash) + EVENT_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEventLocation().hashCode();
+    }
+    hash = (37 * hash) + APP_INSTANCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAppInstanceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1721,6 +1941,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         internalGetExperimentalFieldsFieldBuilder();
         internalGetUserPropertiesFieldBuilder();
         internalGetAdditionalEventParametersFieldBuilder();
+        internalGetThirdPartyUserDataFieldBuilder();
+        internalGetEventLocationFieldBuilder();
       }
     }
 
@@ -1797,6 +2019,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         additionalEventParametersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00040000);
+      thirdPartyUserData_ = null;
+      if (thirdPartyUserDataBuilder_ != null) {
+        thirdPartyUserDataBuilder_.dispose();
+        thirdPartyUserDataBuilder_ = null;
+      }
+      eventLocation_ = null;
+      if (eventLocationBuilder_ != null) {
+        eventLocationBuilder_.dispose();
+        eventLocationBuilder_ = null;
+      }
+      appInstanceId_ = "";
       return this;
     }
 
@@ -1929,6 +2162,21 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.userId_ = userId_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.thirdPartyUserData_ =
+            thirdPartyUserDataBuilder_ == null
+                ? thirdPartyUserData_
+                : thirdPartyUserDataBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.eventLocation_ =
+            eventLocationBuilder_ == null ? eventLocation_ : eventLocationBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.appInstanceId_ = appInstanceId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2090,6 +2338,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             additionalEventParametersBuilder_.addAllMessages(other.additionalEventParameters_);
           }
         }
+      }
+      if (other.hasThirdPartyUserData()) {
+        mergeThirdPartyUserData(other.getThirdPartyUserData());
+      }
+      if (other.hasEventLocation()) {
+        mergeEventLocation(other.getEventLocation());
+      }
+      if (!other.getAppInstanceId().isEmpty()) {
+        appInstanceId_ = other.appInstanceId_;
+        bitField0_ |= 0x00200000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2261,6 +2520,26 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetThirdPartyUserDataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetEventLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
+            case 178:
+              {
+                appInstanceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2506,8 +2785,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The unique identifier for this event. Required for conversions
-     * using multiple data sources.
+     * Optional. The unique identifier for this event. Required for events sent as
+     * an additional data source for tag conversions.
      * </pre>
      *
      * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2530,8 +2809,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The unique identifier for this event. Required for conversions
-     * using multiple data sources.
+     * Optional. The unique identifier for this event. Required for events sent as
+     * an additional data source for tag conversions.
      * </pre>
      *
      * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2554,8 +2833,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The unique identifier for this event. Required for conversions
-     * using multiple data sources.
+     * Optional. The unique identifier for this event. Required for events sent as
+     * an additional data source for tag conversions.
      * </pre>
      *
      * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2577,8 +2856,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The unique identifier for this event. Required for conversions
-     * using multiple data sources.
+     * Optional. The unique identifier for this event. Required for events sent as
+     * an additional data source for tag conversions.
      * </pre>
      *
      * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2596,8 +2875,8 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The unique identifier for this event. Required for conversions
-     * using multiple data sources.
+     * Optional. The unique identifier for this event. Required for events sent as
+     * an additional data source for tag conversions.
      * </pre>
      *
      * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6335,6 +6614,575 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         additionalEventParameters_ = null;
       }
       return additionalEventParametersBuilder_;
+    }
+
+    private com.google.ads.datamanager.v1.UserData thirdPartyUserData_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.UserData,
+            com.google.ads.datamanager.v1.UserData.Builder,
+            com.google.ads.datamanager.v1.UserDataOrBuilder>
+        thirdPartyUserDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thirdPartyUserData field is set.
+     */
+    public boolean hasThirdPartyUserData() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thirdPartyUserData.
+     */
+    public com.google.ads.datamanager.v1.UserData getThirdPartyUserData() {
+      if (thirdPartyUserDataBuilder_ == null) {
+        return thirdPartyUserData_ == null
+            ? com.google.ads.datamanager.v1.UserData.getDefaultInstance()
+            : thirdPartyUserData_;
+      } else {
+        return thirdPartyUserDataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyUserData(com.google.ads.datamanager.v1.UserData value) {
+      if (thirdPartyUserDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thirdPartyUserData_ = value;
+      } else {
+        thirdPartyUserDataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyUserData(
+        com.google.ads.datamanager.v1.UserData.Builder builderForValue) {
+      if (thirdPartyUserDataBuilder_ == null) {
+        thirdPartyUserData_ = builderForValue.build();
+      } else {
+        thirdPartyUserDataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeThirdPartyUserData(com.google.ads.datamanager.v1.UserData value) {
+      if (thirdPartyUserDataBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && thirdPartyUserData_ != null
+            && thirdPartyUserData_ != com.google.ads.datamanager.v1.UserData.getDefaultInstance()) {
+          getThirdPartyUserDataBuilder().mergeFrom(value);
+        } else {
+          thirdPartyUserData_ = value;
+        }
+      } else {
+        thirdPartyUserDataBuilder_.mergeFrom(value);
+      }
+      if (thirdPartyUserData_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearThirdPartyUserData() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      thirdPartyUserData_ = null;
+      if (thirdPartyUserDataBuilder_ != null) {
+        thirdPartyUserDataBuilder_.dispose();
+        thirdPartyUserDataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.UserData.Builder getThirdPartyUserDataBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetThirdPartyUserDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.UserDataOrBuilder getThirdPartyUserDataOrBuilder() {
+      if (thirdPartyUserDataBuilder_ != null) {
+        return thirdPartyUserDataBuilder_.getMessageOrBuilder();
+      } else {
+        return thirdPartyUserData_ == null
+            ? com.google.ads.datamanager.v1.UserData.getDefaultInstance()
+            : thirdPartyUserData_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The same type of data provided in user_data, but explicitly
+     * flagged as being provided as owned by a third-party and not first-party
+     * advertiser data.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.UserData,
+            com.google.ads.datamanager.v1.UserData.Builder,
+            com.google.ads.datamanager.v1.UserDataOrBuilder>
+        internalGetThirdPartyUserDataFieldBuilder() {
+      if (thirdPartyUserDataBuilder_ == null) {
+        thirdPartyUserDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.UserData,
+                com.google.ads.datamanager.v1.UserData.Builder,
+                com.google.ads.datamanager.v1.UserDataOrBuilder>(
+                getThirdPartyUserData(), getParentForChildren(), isClean());
+        thirdPartyUserData_ = null;
+      }
+      return thirdPartyUserDataBuilder_;
+    }
+
+    private com.google.ads.datamanager.v1.EventLocation eventLocation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.EventLocation,
+            com.google.ads.datamanager.v1.EventLocation.Builder,
+            com.google.ads.datamanager.v1.EventLocationOrBuilder>
+        eventLocationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the eventLocation field is set.
+     */
+    public boolean hasEventLocation() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The eventLocation.
+     */
+    public com.google.ads.datamanager.v1.EventLocation getEventLocation() {
+      if (eventLocationBuilder_ == null) {
+        return eventLocation_ == null
+            ? com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()
+            : eventLocation_;
+      } else {
+        return eventLocationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEventLocation(com.google.ads.datamanager.v1.EventLocation value) {
+      if (eventLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eventLocation_ = value;
+      } else {
+        eventLocationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEventLocation(
+        com.google.ads.datamanager.v1.EventLocation.Builder builderForValue) {
+      if (eventLocationBuilder_ == null) {
+        eventLocation_ = builderForValue.build();
+      } else {
+        eventLocationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEventLocation(com.google.ads.datamanager.v1.EventLocation value) {
+      if (eventLocationBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && eventLocation_ != null
+            && eventLocation_ != com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()) {
+          getEventLocationBuilder().mergeFrom(value);
+        } else {
+          eventLocation_ = value;
+        }
+      } else {
+        eventLocationBuilder_.mergeFrom(value);
+      }
+      if (eventLocation_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEventLocation() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      eventLocation_ = null;
+      if (eventLocationBuilder_ != null) {
+        eventLocationBuilder_.dispose();
+        eventLocationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EventLocation.Builder getEventLocationBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetEventLocationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EventLocationOrBuilder getEventLocationOrBuilder() {
+      if (eventLocationBuilder_ != null) {
+        return eventLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return eventLocation_ == null
+            ? com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()
+            : eventLocation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information gathered about the location of the user when this
+     * event occurred.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.EventLocation,
+            com.google.ads.datamanager.v1.EventLocation.Builder,
+            com.google.ads.datamanager.v1.EventLocationOrBuilder>
+        internalGetEventLocationFieldBuilder() {
+      if (eventLocationBuilder_ == null) {
+        eventLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.EventLocation,
+                com.google.ads.datamanager.v1.EventLocation.Builder,
+                com.google.ads.datamanager.v1.EventLocationOrBuilder>(
+                getEventLocation(), getParentForChildren(), isClean());
+        eventLocation_ = null;
+      }
+      return eventLocationBuilder_;
+    }
+
+    private java.lang.Object appInstanceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for the user instance of an app client for
+     * this GA4 app stream.
+     * </pre>
+     *
+     * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The appInstanceId.
+     */
+    public java.lang.String getAppInstanceId() {
+      java.lang.Object ref = appInstanceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appInstanceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for the user instance of an app client for
+     * this GA4 app stream.
+     * </pre>
+     *
+     * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for appInstanceId.
+     */
+    public com.google.protobuf.ByteString getAppInstanceIdBytes() {
+      java.lang.Object ref = appInstanceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        appInstanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for the user instance of an app client for
+     * this GA4 app stream.
+     * </pre>
+     *
+     * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The appInstanceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppInstanceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      appInstanceId_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for the user instance of an app client for
+     * this GA4 app stream.
+     * </pre>
+     *
+     * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppInstanceId() {
+      appInstanceId_ = getDefaultInstance().getAppInstanceId();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for the user instance of an app client for
+     * this GA4 app stream.
+     * </pre>
+     *
+     * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for appInstanceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppInstanceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      appInstanceId_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.Event)

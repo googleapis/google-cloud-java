@@ -57,6 +57,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     gclid_ = "";
     gbraid_ = "";
     wbraid_ = "";
+    mobileDeviceId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,6 +354,61 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         : landingPageDeviceInfo_;
   }
 
+  public static final int MOBILE_DEVICE_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mobileDeviceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mobileDeviceId.
+   */
+  @java.lang.Override
+  public java.lang.String getMobileDeviceId() {
+    java.lang.Object ref = mobileDeviceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mobileDeviceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mobileDeviceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMobileDeviceIdBytes() {
+    java.lang.Object ref = mobileDeviceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mobileDeviceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -382,6 +438,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getLandingPageDeviceInfo());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mobileDeviceId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, mobileDeviceId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -407,6 +466,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLandingPageDeviceInfo());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mobileDeviceId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, mobileDeviceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,6 +493,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (hasLandingPageDeviceInfo()) {
       if (!getLandingPageDeviceInfo().equals(other.getLandingPageDeviceInfo())) return false;
     }
+    if (!getMobileDeviceId().equals(other.getMobileDeviceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -454,6 +517,8 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + LANDING_PAGE_DEVICE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getLandingPageDeviceInfo().hashCode();
     }
+    hash = (37 * hash) + MOBILE_DEVICE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMobileDeviceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -613,6 +678,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         landingPageDeviceInfoBuilder_.dispose();
         landingPageDeviceInfoBuilder_ = null;
       }
+      mobileDeviceId_ = "";
       return this;
     }
 
@@ -669,6 +735,9 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 : landingPageDeviceInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mobileDeviceId_ = mobileDeviceId_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -706,6 +775,11 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasLandingPageDeviceInfo()) {
         mergeLandingPageDeviceInfo(other.getLandingPageDeviceInfo());
+      }
+      if (!other.getMobileDeviceId().isEmpty()) {
+        mobileDeviceId_ = other.mobileDeviceId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -764,6 +838,12 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                mobileDeviceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1458,6 +1538,122 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         landingPageDeviceInfo_ = null;
       }
       return landingPageDeviceInfoBuilder_;
+    }
+
+    private java.lang.Object mobileDeviceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mobileDeviceId.
+     */
+    public java.lang.String getMobileDeviceId() {
+      java.lang.Object ref = mobileDeviceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mobileDeviceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mobileDeviceId.
+     */
+    public com.google.protobuf.ByteString getMobileDeviceIdBytes() {
+      java.lang.Object ref = mobileDeviceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mobileDeviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mobileDeviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMobileDeviceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      mobileDeviceId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMobileDeviceId() {
+      mobileDeviceId_ = getDefaultInstance().getMobileDeviceId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mobileDeviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMobileDeviceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      mobileDeviceId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.AdIdentifiers)

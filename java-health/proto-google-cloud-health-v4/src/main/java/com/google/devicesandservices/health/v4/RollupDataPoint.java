@@ -24,7 +24,10 @@ package com.google.devicesandservices.health.v4;
  *
  *
  * <pre>
- * Value of a rollup for a single physical time interval (aggregation window)
+ * Value of a rollup for a single physical time interval (aggregation window) of
+ * reconciled data points from all data sources, excluding those data points
+ * that are identified as recorded by wearables in intervals when they were not
+ * actually worn.
  * </pre>
  *
  * Protobuf type {@code google.devicesandservices.health.v4.RollupDataPoint}
@@ -1787,7 +1790,10 @@ public final class RollupDataPoint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Value of a rollup for a single physical time interval (aggregation window)
+   * Value of a rollup for a single physical time interval (aggregation window) of
+   * reconciled data points from all data sources, excluding those data points
+   * that are identified as recorded by wearables in intervals when they were not
+   * actually worn.
    * </pre>
    *
    * Protobuf type {@code google.devicesandservices.health.v4.RollupDataPoint}

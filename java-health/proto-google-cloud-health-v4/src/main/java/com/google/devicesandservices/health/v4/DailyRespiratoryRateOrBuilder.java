@@ -70,7 +70,20 @@ public interface DailyRespiratoryRateOrBuilder
    * Required. The average number of breaths taken per minute.
    * </pre>
    *
-   * <code>double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the breathsPerMinute field is set.
+   */
+  boolean hasBreathsPerMinute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The average number of breaths taken per minute.
+   * </pre>
+   *
+   * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The breathsPerMinute.
    */
