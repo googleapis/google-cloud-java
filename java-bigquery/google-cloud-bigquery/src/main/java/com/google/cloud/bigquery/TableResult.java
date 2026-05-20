@@ -166,7 +166,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         && Iterators.elementsEqual(getValues().iterator(), response.getValues().iterator())
         && Objects.equals(getSchema(), response.getSchema())
         && getTotalRows() == response.getTotalRows()
-        && getQueryId() == response.getQueryId()
+        && Objects.equals(getQueryId(), response.getQueryId())
         && Objects.equals(getRowsInPage(), response.getRowsInPage());
   }
 }
