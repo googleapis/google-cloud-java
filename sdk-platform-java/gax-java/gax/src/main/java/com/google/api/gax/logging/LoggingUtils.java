@@ -46,6 +46,7 @@ public class LoggingUtils {
    * @return true if logging is enabled, false otherwise.
    */
   public static boolean isLoggingEnabled() {
+    // Dummy comment to trigger CI pipeline
     return loggingEnabled;
   }
 
