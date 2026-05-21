@@ -40,7 +40,6 @@ import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.Backup;
@@ -201,9 +200,6 @@ public interface SpannerRpc extends ServiceRpc {
   default RequestIdCreator getRequestIdCreator() {
     throw new UnsupportedOperationException("Not implemented");
   }
-
-  /** Clears any client-side affinity associated with the given transaction id. */
-  default void clearTransactionAffinity(ByteString transactionId) {}
 
   // Instance admin APIs.
   Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)

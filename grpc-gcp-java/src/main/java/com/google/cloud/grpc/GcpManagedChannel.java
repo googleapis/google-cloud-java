@@ -1720,6 +1720,7 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   protected ChannelRef getChannelRefByAffinityRef(ChannelAffinityRef affinityRef) {
     maybeDynamicUpscale();
+    // Retry if another thread updates the caller-owned affinity ref while we are picking a channel.
     while (true) {
       int state = affinityRef.state.get();
       int channelId = ChannelAffinityRef.channelIdFromState(state);

@@ -111,7 +111,6 @@ import com.google.longrunning.CancelOperationRequest;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsGrpc;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -625,13 +624,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       return (GcpManagedChannel) channel;
     }
     return null;
-  }
-
-  @Override
-  public void clearTransactionAffinity(ByteString transactionId) {
-    if (keyAwareChannel != null) {
-      keyAwareChannel.clearTransactionAffinity(transactionId);
-    }
   }
 
   private static String parseGrpcGcpApiConfig() {
