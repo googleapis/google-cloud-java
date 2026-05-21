@@ -10,6 +10,6 @@
   "repo_short": "google-cloud-java",
   "distribution_name": "com.google.cloud:google-cloud-bigquery-jdbc",
   "library_type": "OTHER",
-  "codeowner_team": "@googleapis/bigquery-team",
+  "codeowner_team": "@googleapis/bigquery-developer-tools-team",
   "recommended_package": "com.google.cloud.bigquery.jdbc"
 }
