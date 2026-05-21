@@ -415,7 +415,6 @@
       <id>bulkTests</id>
       <properties>
         <skipTests>true</skipTests>
-        <skipSurefire>true</skipSurefire>
       </properties>
     </profile>
 
