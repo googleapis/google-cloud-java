@@ -16,11 +16,13 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -46,6 +48,8 @@ import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 
 public class BigQueryDatabaseMetaDataTest {
 
@@ -3238,12 +3242,9 @@ public class BigQueryDatabaseMetaDataTest {
     assertSame(dbMetadata, dbMetadata.unwrap(DatabaseMetaData.class));
     assertSame(dbMetadata, dbMetadata.unwrap(BigQueryDatabaseMetaData.class));
 
-    try {
-      dbMetadata.unwrap(java.sql.Connection.class);
-      org.junit.jupiter.api.Assertions.fail("Should have thrown SQLException");
-    } catch (SQLException e) {
-      assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
-    }
+    SQLException e =
+        assertThrows(SQLException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
+    assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 
   @Test
@@ -3274,5 +3275,28 @@ public class BigQueryDatabaseMetaDataTest {
 
     // Verify connection.createStatement() was called twice
     verify(bigQueryConnection, times(2)).createStatement();
+  }
+
+  @ParameterizedTest
+  @EnumSource(StandardSQLTypeName.class)
+  public void testMetadataAndResultSetMetadataTypeMappingConsistency(StandardSQLTypeName type) {
+    Field field;
+    if (type == StandardSQLTypeName.STRUCT) {
+      field =
+          Field.of("col", StandardSQLTypeName.STRUCT, Field.of("sub", StandardSQLTypeName.STRING));
+    } else if (type == StandardSQLTypeName.ARRAY) {
+      field =
+          Field.newBuilder("col", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build();
+    } else {
+      field = Field.of("col", type);
+    }
+
+    BigQueryDatabaseMetaData.ColumnTypeInfo metadataTypeInfo =
+        dbMetadata.mapBigQueryTypeToJdbc(field);
+    Integer resultSetType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(type);
+
+    assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
+    assertEquals(
+        metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
   }
 }

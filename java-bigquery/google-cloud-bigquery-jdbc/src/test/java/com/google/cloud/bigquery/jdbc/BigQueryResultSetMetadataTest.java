@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -292,12 +293,9 @@ public class BigQueryResultSetMetadataTest {
     assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
     assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
 
-    try {
-      resultSetMetaData.unwrap(java.sql.Connection.class);
-      org.junit.jupiter.api.Assertions.fail("Should have thrown SQLException");
-    } catch (SQLException e) {
-      assertThat(e.getMessage()).contains("Cannot unwrap to java.sql.Connection");
-    }
+    SQLException e =
+        assertThrows(SQLException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
+    assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 
   @ParameterizedTest
@@ -306,15 +304,10 @@ public class BigQueryResultSetMetadataTest {
     Field field;
     if (type == StandardSQLTypeName.STRUCT) {
       field =
-          Field.of(
-              "col",
-              StandardSQLTypeName.STRUCT,
-              Field.of("sub", StandardSQLTypeName.STRING));
+          Field.of("col", StandardSQLTypeName.STRUCT, Field.of("sub", StandardSQLTypeName.STRING));
     } else if (type == StandardSQLTypeName.ARRAY) {
       field =
-          Field.newBuilder("col", StandardSQLTypeName.STRING)
-              .setMode(Field.Mode.REPEATED)
-              .build();
+          Field.newBuilder("col", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build();
     } else {
       field = Field.of("col", type);
     }
