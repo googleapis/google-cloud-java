@@ -36,8 +36,8 @@ jobs:
       with:
         filters: |
           src:
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'

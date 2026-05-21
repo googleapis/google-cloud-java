@@ -27,7 +27,7 @@ steps:
   id: "IT Tests"
   timeout: 2000s
   entrypoint: 'bash'
-  args: ['java-bigquery/.cloudbuild/scripts/jdbc-presubmit.sh']
+  args: ['java-bigquery-jdbc/.cloudbuild/scripts/jdbc-presubmit.sh']
   secretEnv: ['SA_EMAIL', 'KMS_RESOURCE_PATH', 'SA_SECRET']
 availableSecrets:
   secretManager:

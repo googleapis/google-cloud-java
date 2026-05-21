@@ -361,6 +361,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
+      <version>4.11.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -407,6 +408,15 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+
+    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+        <skipSurefire>true</skipSurefire>
+      </properties>
     </profile>
 
     <!-- Profile used inside docker -->
