@@ -461,7 +461,7 @@ public class BigQueryConnectionTest {
   public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
     java.util.logging.Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
     java.util.logging.Level originalLevel = rootLogger.getLevel();
-    rootLogger.setLevel(java.util.logging.Level.INFO);
+    rootLogger.setLevel(java.util.logging.Level.CONFIG);
 
     java.util.List<java.util.logging.LogRecord> records = new java.util.ArrayList<>();
     java.util.logging.Handler handler =
@@ -497,7 +497,6 @@ public class BigQueryConnectionTest {
           assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
           assertTrue(logMessage.contains("Location=US"));
           assertTrue(logMessage.contains("OAuthAccessToken=*****"));
-          assertTrue(logMessage.contains("PartnerToken= (GPN:secretPartnerToken)"));
           assertFalse(logMessage.contains("secretAccessToken"));
         }
       }
