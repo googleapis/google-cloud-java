@@ -70,7 +70,7 @@ public final class Registry extends RunListener {
   private final ListeningScheduledExecutorService exec =
       MoreExecutors.listeningDecorator(
           Executors.newScheduledThreadPool(
-              Math.min(8, 2 * Runtime.getRuntime().availableProcessors()),
+              2 * Runtime.getRuntime().availableProcessors(),
               new ThreadFactoryBuilder().setDaemon(true).setNameFormat("test-run-%d").build()));
 
   private final TestRunScopedInstance<TestBench> testBench =
