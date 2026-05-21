@@ -56,6 +56,11 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
   }
 
   @Override
+  public void refresh() {
+    channel.refresh();
+  }
+
+  @Override
   public synchronized void shutdown() {
     channel.shutdown();
   }

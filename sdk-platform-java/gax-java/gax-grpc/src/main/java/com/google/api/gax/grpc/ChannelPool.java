@@ -82,6 +82,7 @@ class ChannelPool extends ManagedChannel {
   private ScheduledFuture<?> resizeFuture = null;
 
   private final Object entryWriteLock = new Object();
+  private long lastRefreshTimeNanos = 0;
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
@@ -441,6 +442,13 @@ class ChannelPool extends ManagedChannel {
     // - then thread2 will shut down channel that thread1 will put back into circulation (after it
     //   replaces the list)
     synchronized (entryWriteLock) {
+      long now = System.nanoTime();
+      if (now - lastRefreshTimeNanos < TimeUnit.SECONDS.toNanos(5)) {
+        LOG.fine("Channel pool was refreshed recently, skipping duplicate refresh");
+        return;
+      }
+      lastRefreshTimeNanos = now;
+
       LOG.fine("Refreshing all channels");
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
 
