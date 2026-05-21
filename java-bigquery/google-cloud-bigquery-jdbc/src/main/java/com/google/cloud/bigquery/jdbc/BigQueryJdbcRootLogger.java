@@ -88,6 +88,12 @@ class BigQueryJdbcRootLogger {
       public String format(LogRecord record) {
         String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
         String connectionId = BigQueryJdbcMdc.getConnectionId();
+        if (connectionId == null || connectionId.isEmpty()) {
+          Object[] params = record.getParameters();
+          if (params != null && params.length > 0 && params[0] instanceof String) {
+            connectionId = (String) params[0];
+          }
+        }
         String connStr =
             (connectionId != null && !connectionId.isEmpty()) ? connectionId : "NO_CONN";
 
@@ -97,8 +103,15 @@ class BigQueryJdbcRootLogger {
         if (threadName.length() > MAX_THREAD_NAME_LENGTH) {
           threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
         }
+        int totalPad = MAX_THREAD_NAME_LENGTH - threadName.length();
+        int leftPad = totalPad / 2;
+        String centeredThreadName =
+            Strings.repeat(" ", leftPad) + threadName + Strings.repeat(" ", totalPad - leftPad);
 
-        String sourceClassName = record.getLoggerName();
+        String sourceClassName =
+            record.getSourceClassName() != null
+                ? record.getSourceClassName()
+                : record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
 
         // Expected log format: yyyy-MM-dd HH:mm:ss.SSS [CONNECTION_ID] LEVEL PID --- [THREAD] CLASS
@@ -108,15 +121,15 @@ class BigQueryJdbcRootLogger {
             .append(" [")
             .append(connStr)
             .append("] ")
-            .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
+            .append(Strings.padEnd(record.getLevel().getName(), 7, ' '))
             .append(" ")
             .append(PROCESS_ID)
             .append(" --- [")
-            .append(Strings.padEnd(threadName, 7, ' '))
+            .append(centeredThreadName)
             .append("] ")
-            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
+            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 65, ' '))
             .append(" ")
-            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
+            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 30, ' '))
             .append(": ")
             .append(record.getMessage())
             .append(System.lineSeparator());

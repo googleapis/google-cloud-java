@@ -110,6 +110,53 @@ public interface MaintenanceWindowOrBuilder
    *
    *
    * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   *
+   * @return Whether the recurringMaintenanceWindow field is set.
+   */
+  boolean hasRecurringMaintenanceWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   *
+   * @return The recurringMaintenanceWindow.
+   */
+  com.google.container.v1.RecurringMaintenanceWindow getRecurringMaintenanceWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   */
+  com.google.container.v1.RecurringMaintenanceWindowOrBuilder
+      getRecurringMaintenanceWindowOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Exceptions to maintenance window. Non-emergency maintenance should not
    * occur in these windows.
    * </pre>

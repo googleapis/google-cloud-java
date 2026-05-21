@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/firestore/v1/QueryMode</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/firestore/v1/QueryPlan*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/firestore/v1/QueryProfileProto</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/firestore/v1/ResultSetStatsOrBuilder</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/firestore/v1/ResultSetStats*</className>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest</className>
+    <field>MODE_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse</className>
+    <field>STATS_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest*</className>
+    <method>* getMode()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest*</className>
+    <method>* getModeValue()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest*</className>
+    <method>* clearMode()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest$Builder</className>
+    <method>* setMode(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequest$Builder</className>
+    <method>* setModeValue(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse*</className>
+    <method>* getStats()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse*</className>
+    <method>* hasStats()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse$Builder</className>
+    <method>* clearStats()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse$Builder</className>
+    <method>* setStats(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse*</className>
+    <method>* getStatsOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse$Builder</className>
+    <method>* getStatsBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponse$Builder</className>
+    <method>* mergeStats(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequestOrBuilder</className>
+    <method>com.google.firestore.v1.ExplainOptions getExplainOptions()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequestOrBuilder</className>
+    <method>com.google.firestore.v1.ExplainOptionsOrBuilder getExplainOptionsOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryRequestOrBuilder</className>
+    <method>boolean hasExplainOptions()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponseOrBuilder</className>
+    <method>com.google.firestore.v1.ExplainMetrics getExplainMetrics()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponseOrBuilder</className>
+    <method>com.google.firestore.v1.ExplainMetricsOrBuilder getExplainMetricsOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/Run*QueryResponseOrBuilder</className>
+    <method>boolean hasExplainMetrics()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQueryOrBuilder</className>
+    <method>com.google.firestore.v1.StructuredQuery$FindNearest getFindNearest()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQueryOrBuilder</className>
+    <method>com.google.firestore.v1.StructuredQuery$FindNearestOrBuilder getFindNearestOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQueryOrBuilder</className>
+    <method>boolean hasFindNearest()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>java.lang.String getDistanceResultField()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.ByteString getDistanceResultFieldBytes()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.DoubleValue getDistanceThreshold()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder()</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/StructuredQuery$FindNearestOrBuilder</className>
+    <method>boolean hasDistanceThreshold()</method>
+  </difference>
+
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4+ runtime upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/firestore/v1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/ValueOrBuilder</className>
+    <method>*</method>
+  </difference>
+</differences>

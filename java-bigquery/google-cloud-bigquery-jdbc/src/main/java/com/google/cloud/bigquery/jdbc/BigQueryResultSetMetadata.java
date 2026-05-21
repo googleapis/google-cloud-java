@@ -20,7 +20,6 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -28,7 +27,8 @@ import java.sql.Types;
 
 /** This class returns ResultSetMetadata for the JSON and the Arrow ResultSets */
 class BigQueryResultSetMetadata implements ResultSetMetaData {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(this.getClass());
   private final FieldList schemaFieldList;
   private final Statement statement;
   private final int columnCount;
@@ -36,7 +36,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   private static final int DEFAULT_DISPLAY_SIZE = 50;
 
   private BigQueryResultSetMetadata(FieldList schemaFieldList, Statement statement) {
-    LOG.finest("++enter++");
+    LOG.finestTrace("<init>");
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
@@ -44,6 +44,10 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   static BigQueryResultSetMetadata of(FieldList schemaFieldList, Statement statement) {
     return new BigQueryResultSetMetadata(schemaFieldList, statement);
+  }
+
+  Statement getStatement() {
+    return this.statement;
   }
 
   private Field getField(int sqlColumn) {
@@ -69,8 +73,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public boolean isSearchable(int column) {
-    int colType = getColumnType(column);
-    return colType != Types.OTHER;
+    return true;
   }
 
   @Override
@@ -200,14 +203,17 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
         .getName();
   }
 
-  // Unsupported methods:
+  // Wrapper methods:
   @Override
   public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException("unwrap is not implemented");
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new SQLException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
   public boolean isWrapperFor(Class<?> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException("isWrapperFor is not implemented");
+    return iface != null && iface.isInstance(this);
   }
 }

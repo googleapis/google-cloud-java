@@ -67,6 +67,21 @@ public class BigQueryJdbcCustomLogger extends Logger {
     }
   }
 
+  @Override
+  public void finest(String msg) {
+    logWithCaller(Level.FINEST, () -> msg);
+  }
+
+  @Override
+  public void finer(String msg) {
+    logWithCaller(Level.FINER, () -> msg);
+  }
+
+  @Override
+  public void fine(String msg) {
+    logWithCaller(Level.FINE, () -> msg);
+  }
+
   void finest(String format, Object... args) {
     logWithCaller(Level.FINEST, () -> String.format(format, args));
   }
@@ -109,5 +124,15 @@ public class BigQueryJdbcCustomLogger extends Logger {
 
   public void severe(String format, Throwable thrown, Object... args) {
     logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
+  }
+
+  @Override
+  public void finest(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINEST, msgSupplier);
+  }
+
+  @Override
+  public void fine(Supplier<String> msgSupplier) {
+    logWithCaller(Level.FINE, msgSupplier);
   }
 }

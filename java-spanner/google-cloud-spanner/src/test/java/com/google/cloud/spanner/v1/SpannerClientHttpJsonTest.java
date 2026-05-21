@@ -1363,4 +1363,15 @@ public class SpannerClientHttpJsonTest {
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
   }
+
+  @Test
+  public void fetchCacheUpdateTest() throws Exception {}
+
+  @Test
+  public void fetchCacheUpdateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
 }

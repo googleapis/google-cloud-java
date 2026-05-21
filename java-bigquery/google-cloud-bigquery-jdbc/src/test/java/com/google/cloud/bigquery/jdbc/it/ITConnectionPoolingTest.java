@@ -68,7 +68,7 @@ public class ITConnectionPoolingTest extends ITBase {
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
 
-    assertThrows(NumberFormatException.class, () -> pooledDataSource.getPooledConnection());
+    assertThrows(BigQueryJdbcException.class, () -> pooledDataSource.getPooledConnection());
   }
 
   @Test
@@ -321,9 +321,7 @@ public class ITConnectionPoolingTest extends ITBase {
     assertFalse(connection.isClosed());
 
     // Execute query with physical connection
-    String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
-            + " 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));

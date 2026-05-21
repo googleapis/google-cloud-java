@@ -130,13 +130,12 @@ public class BigQueryDriver implements Driver {
         // strip 'jdbc:' from the URL, add any extra properties
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(url.substring(5), this.toString(), info);
+        DataSource ds;
         try {
-          BigQueryJdbcUrlUtility.parseUrl(connectionUri);
+          ds = DataSource.fromUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
-
-        DataSource ds = DataSource.fromUrl(connectionUri);
 
         // LogLevel
         String logLevelStr = ds.getLogLevel();
@@ -173,7 +172,7 @@ public class BigQueryDriver implements Driver {
             logLevel,
             logPath,
             this.toString());
-        return connection;
+        return BigQueryJdbcContextProxy.wrap(connection, Connection.class);
       } else {
         return null;
       }

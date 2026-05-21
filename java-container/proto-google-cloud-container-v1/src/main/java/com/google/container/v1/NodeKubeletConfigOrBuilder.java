@@ -847,6 +847,53 @@ public interface NodeKubeletConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crashLoopBackOff field is set.
+   */
+  boolean hasCrashLoopBackOff();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crashLoopBackOff.
+   */
+  com.google.container.v1.NodeKubeletConfig.CrashLoopBackOffConfig getCrashLoopBackOff();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains configuration options to modify node-level parameters
+   * for container restart behavior.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeKubeletConfig.CrashLoopBackOffConfig crash_loop_back_off = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.NodeKubeletConfig.CrashLoopBackOffConfigOrBuilder
+      getCrashLoopBackOffOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. shutdown_grace_period_seconds is the maximum allowed grace period
    * (in seconds) the total duration that the node should delay the shutdown
    * during a graceful shutdown. This is the total grace period for pod

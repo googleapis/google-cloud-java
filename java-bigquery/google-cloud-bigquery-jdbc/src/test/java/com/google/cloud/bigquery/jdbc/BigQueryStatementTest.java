@@ -20,18 +20,22 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchem
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
@@ -44,6 +48,7 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
@@ -55,6 +60,7 @@ import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -493,5 +499,174 @@ public class BigQueryStatementTest {
     assertThat(type).isEqualTo(StatementType.SELECT);
     verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
         .create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testProcessQueryResponseFallbackToJsonOnReadApiFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a permission denied ApiException
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.PERMISSION_DENIED);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    // Mock processJsonResultSet to return our mock JSON result set
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+
+    // Verify that processJsonResultSet was indeed called as a fallback
+    verify(statementSpy).processJsonResultSet(tableResultMock);
+    // Verify that currentResultSet is set to the mocked JSON result set
+    assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
+  }
+
+  @Test
+  public void testProcessQueryResponseNoFallbackOnNonPermissionFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a non-permission ApiException (e.g., INTERNAL)
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.INTERNAL);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the non-permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    // Assert that the exception is propagated
+    try {
+      statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+      fail("Expected SQLException to be thrown");
+    } catch (SQLException e) {
+      assertEquals(exceptionToThrow, e);
+    }
+
+    // Verify that processJsonResultSet was NOT called
+    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+  }
+
+  private TableResult mockTableResultWithJob(String jobId) {
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(JobId.of(jobId)).when(tableResult).getJobId();
+    return tableResult;
+  }
+
+  private ApiException mockApiException(StatusCode.Code code) {
+    ApiException apiExceptionMock = mock(ApiException.class);
+    StatusCode statusCodeMock = mock(StatusCode.class);
+    doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
+    doReturn(code).when(statusCodeMock).getCode();
+    return apiExceptionMock;
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardSmallDataset() throws SQLException {
+    // Setup: totalRows < MinTableSize, so it should not activate the Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(50L).when(tableResult).getTotalRows();
+
+    // Standard java collection in values
+    List<FieldValueList> valuesList = new ArrayList<>();
+    for (int i = 0; i < 50; i++) {
+      valuesList.add(mock(FieldValueList.class));
+    }
+    doReturn(valuesList).when(tableResult).getValues();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_SafeguardNoNextPage() throws SQLException {
+    // Setup: totalRows = 500 > MinTableSize (100), but hasNextPage() is false.
+    // Safeguard should prevent double-fetching and not activate the Read API.
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(false).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_MeetsRatio() throws SQLException {
+    // Setup: totalRows = 500, maxResultPerPage = 100, MinTableSize = 100, ActivationRatio = 2
+    // ratio = 5 > 2, should activate Read API
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(100L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue();
+  }
+
+  @Test
+  public void testUseReadAPI_FailsMinTableSize() throws SQLException {
+    // Setup: totalRows = 80 < MinTableSize (100)
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(1000L).when(bigQueryConnection).getMaxResults();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(80L).when(tableResult).getTotalRows();
+
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isFalse();
+  }
+
+  @Test
+  public void testUseReadAPI_ZeroPageSizeDivisionByZeroSafeguard() throws SQLException {
+    // Setup: totalRows = 500, MinTableSize = 100, ActivationRatio = 2, maxResultPerPage = 0
+    // Verify that the division by zero check safely guards and falls back to pageSize = 1
+    doReturn(true).when(bigQueryConnection).isEnableHighThroughputAPI();
+    doReturn(100).when(bigQueryConnection).getHighThroughputMinTableSize();
+    doReturn(2).when(bigQueryConnection).getHighThroughputActivationRatio();
+    doReturn(0L).when(bigQueryConnection).getMaxResults(); // maxResultPerPage = 0
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(500L).when(tableResult).getTotalRows();
+    doReturn(true).when(tableResult).hasNextPage();
+
+    // This should not throw ArithmeticException (/ by zero) and should evaluate safely
+    boolean useReadApi = statement.useReadAPI(tableResult);
+    assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
   }
 }

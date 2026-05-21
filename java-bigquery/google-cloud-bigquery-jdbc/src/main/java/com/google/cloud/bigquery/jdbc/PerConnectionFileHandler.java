@@ -55,6 +55,9 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private String getLogFilePath(String id) {
+    if ("Jdbc-default".equals(id)) {
+      return baseLogPath.resolve("BQ-JDBC-GLOBAL.log").toString();
+    }
     String uuid = id;
     if (id.startsWith("BQ-JDBC-")) {
       uuid = id.substring("BQ-JDBC-".length());
@@ -87,6 +90,12 @@ class PerConnectionFileHandler extends Handler {
     }
 
     String connectionId = BigQueryJdbcMdc.getConnectionId();
+    if (connectionId == null || connectionId.isEmpty()) {
+      Object[] params = record.getParameters();
+      if (params != null && params.length > 0 && params[0] instanceof String) {
+        connectionId = (String) params[0];
+      }
+    }
     FileHandler handler = defaultHandler;
 
     if (connectionId != null && !connectionId.isEmpty()) {

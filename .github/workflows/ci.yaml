@@ -36,8 +36,8 @@ jobs:
       with:
         filters: |
           src:
-            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/*.java'
-            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -112,6 +112,7 @@ jobs:
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
+    - uses: actions/checkout@v4
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
@@ -122,6 +123,8 @@ jobs:
         filters: |
           google-auth-library-java:
             - 'google-auth-library-java/**'
+          grpc-gcp-java:
+            - 'grpc-gcp-java/**'
           java-bigquery:
             - 'java-bigquery/**'
             - 'google-auth-library-java/**/*.java'
@@ -159,6 +162,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
           java-spanner:
             - 'java-spanner/**'
+            - 'grpc-gcp-java/**'
             - 'google-auth-library-java/**/*.java'
             - 'google-auth-library-java/**/pom.xml'
             - 'sdk-platform-java/**/*.java'
@@ -166,6 +170,27 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
           java-storage:
             - 'java-storage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-pubsub:
+            - 'java-pubsub/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-bigtable:
+            - 'java-bigtable/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-firestore:
+            - 'java-firestore/**'
             - 'google-auth-library-java/**/*.java'
             - 'google-auth-library-java/**/pom.xml'
             - 'sdk-platform-java/**/*.java'
@@ -317,8 +342,8 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: lint
-        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
     runs-on: ubuntu-latest
     steps:

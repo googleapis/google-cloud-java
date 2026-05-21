@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>0.10.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -88,7 +88,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
-            <version>3.5.2</version> <!-- Use the latest version -->
+            <version>3.6.1</version>
             <executions>
               <execution>
                 <phase>package</phase>
@@ -97,6 +97,8 @@
                 </goals>
                 <configuration>
                   <shadedArtifactAttached>true</shadedArtifactAttached>
+                  <createSourcesJar>true</createSourcesJar>
+                  <shadeSourcesContent>true</shadeSourcesContent>
                   <shadedClassifierName>all</shadedClassifierName> <!-- Any name that makes sense -->
                   <createDependencyReducedPom>false</createDependencyReducedPom>
                   <archive>
@@ -115,23 +117,60 @@
                   </transformers>
                   <relocations>
                     <relocation>
-                      <pattern>com</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.com</shadedPattern>
+                      <pattern>com.google</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.com.google</shadedPattern>
                       <excludes>
                         <exclude>com.google.cloud.bigquery.**</exclude>
                         <exclude>com.google.api.services.bigquery.**</exclude>
                       </excludes>
                     </relocation>
                     <relocation>
-                      <pattern>org</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.org</shadedPattern>
-                      <excludes>
-                        <exclude>org.conscrypt.*</exclude>
-                      </excludes>
+                      <pattern>com.fasterxml.jackson</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.com.fasterxml.jackson</shadedPattern>
                     </relocation>
                     <relocation>
-                      <pattern>io</pattern>
-                      <shadedPattern>com.google.bqjdbc.shaded.io</shadedPattern>
+                      <pattern>org.apache</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.apache</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>org.checkerframework</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.checkerframework</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>org.codehaus</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.codehaus</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>org.jspecify</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.jspecify</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>org.threeten</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.threeten</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>org.json</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.org.json</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>io.grpc</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io.grpc</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>io.netty</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io.netty</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>io.opencensus</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io.opencensus</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>io.opentelemetry</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io.opentelemetry</shadedPattern>
+                    </relocation>
+                    <relocation>
+                      <pattern>io.perfmark</pattern>
+                      <shadedPattern>com.google.bqjdbc.shaded.io.perfmark</shadedPattern>
                     </relocation>
                   </relocations>
                   <filters>
@@ -146,6 +185,10 @@
                               <exclude>META-INF/*.DSA</exclude>
                               <exclude>META-INF/*.RSA</exclude>
                               <exclude>arrow-git.properties</exclude>
+                              <exclude>module-info.class</exclude>
+                              <exclude>META-INF/versions/*/module-info.class</exclude>
+                              <exclude>module-info.java</exclude>
+                              <exclude>META-INF/versions/*/module-info.java</exclude>
                           </excludes>
                       </filter>
                   </filters>
@@ -159,7 +202,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.66.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.67.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -169,7 +212,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.28.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.29.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -202,7 +245,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.28.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.29.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>

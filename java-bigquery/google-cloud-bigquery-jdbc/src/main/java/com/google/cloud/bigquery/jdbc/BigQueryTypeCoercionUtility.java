@@ -30,7 +30,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
@@ -198,14 +197,12 @@ class BigQueryTypeCoercionUtility {
 
     @Override
     public Time coerce(Long value) {
-
-      int HH = (int) TimeUnit.MICROSECONDS.toHours(value);
-      int MM = (int) (TimeUnit.MICROSECONDS.toMinutes(value) % 60);
-      int SS = (int) (TimeUnit.MICROSECONDS.toSeconds(value) % 60);
-
       // Note: BQ Time has a precision of up to six fractional digits (microsecond precision)
-      // but java.sql.Time do not. So data after seconds is not returned.
-      return new Time(HH, MM, SS);
+      // but java.sql.Time only supports up to millisecond precision. So data after milliseconds is
+      // truncated.
+      long millisOfDay = value / 1000;
+      long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
+      return new Time(localMillis);
     }
   }
 
@@ -214,10 +211,9 @@ class BigQueryTypeCoercionUtility {
     @Override
     public Timestamp coerce(Long value) {
       // Long value is in microseconds. All further calculations should account for the unit.
-      Instant instant = Instant.ofEpochMilli(value / 1000).plusNanos((value % 1000) * 1000);
-      // JDBC is defaulting to UTC because BQ UI defaults to UTC.
-      LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC"));
-      return Timestamp.valueOf(localDateTime);
+      Instant instant = Instant.EPOCH.plus(value, ChronoUnit.MICROS);
+      // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
+      return Timestamp.from(instant);
     }
   }
 
@@ -255,8 +251,11 @@ class BigQueryTypeCoercionUtility {
         LocalTime localTime = LocalTime.parse(strTime);
         // Convert LocalTime to milliseconds of the day. This correctly preserves millisecond
         // precision and truncates anything smaller
-        long millis = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
-        return new Time(millis);
+        long millisOfDay = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
+        // Adjust by local timezone offset to ensure correct wall-clock representation with
+        // millisecond precision
+        long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
+        return new Time(localMillis);
       } catch (java.time.format.DateTimeParseException e) {
         IllegalArgumentException ex =
             new IllegalArgumentException(
@@ -282,9 +281,8 @@ class BigQueryTypeCoercionUtility {
         // It's a TIMESTAMP numeric string.
         long microseconds = fieldValue.getTimestampValue();
         Instant instant = Instant.EPOCH.plus(microseconds, ChronoUnit.MICROS);
-        // JDBC is defaulting to UTC because BQ UI defaults to UTC.
-        LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC"));
-        return Timestamp.valueOf(localDateTime);
+        // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
+        return Timestamp.from(instant);
       }
     }
   }

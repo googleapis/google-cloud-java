@@ -84,13 +84,12 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   private int getParameterCount(String query) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     return (int) query.chars().filter(ch -> ch == POSITIONAL_PARAMETER_CHAR).count();
   }
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    LOG.finest("++enter++");
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -105,7 +104,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    LOG.finest("++enter++");
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -120,13 +118,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int executeUpdate() throws SQLException {
-    LOG.finest("++enter++");
     return checkUpdateCount(executeLargeUpdate());
   }
 
   @Override
   public boolean execute() throws SQLException {
-    LOG.finest("++enter++");
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -141,7 +137,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public void clearParameters() {
-    LOG.finest("++enter++");
     this.parameterHandler.clearParameters();
     this.parameterCount = 0;
   }
@@ -233,6 +228,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
+  @Deprecated
+  @SuppressWarnings("deprecation")
   public void setUnicodeStream(int parameterIndex, InputStream x, int length) {
     // TODO :NOT IMPLEMENTED
   }
@@ -252,7 +249,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public void addBatch() {
-    LOG.finest("++enter++");
     ArrayList<BigQueryJdbcParameter> currentParameterList =
         deepCopyParameterList(this.parameterHandler.parametersList);
     this.batchParameters.add(currentParameterList);
@@ -270,7 +266,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int[] executeBatch() throws SQLException {
-    LOG.finest("++enter++");
     int[] result = new int[this.batchParameters.size()];
     if (this.batchParameters.isEmpty()) {
       return result;
@@ -331,7 +326,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           IOException,
           InterruptedException,
           BigQueryJdbcException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     RetrySettings retrySettings = this.connection.getRetrySettings();
 
     BigQueryJdbcBulkInsertWriter bulkInsertWriter = new BigQueryJdbcBulkInsertWriter();
@@ -362,7 +357,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
               || this.batchParameters.size() == 0) {
             bulkInsertWriter.append(jsonArray, offset);
-            LOG.finest("Append called ");
+            LOG.finer("Append called ");
             offset += jsonArray.size();
             jsonArray = new JsonArray();
           }
@@ -386,12 +381,12 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (commitResponse.hasCommitTime() == false) {
       throw new BigQueryJdbcException("Error committing the streams");
     }
-    LOG.finest("Commit called.");
+    LOG.finer("Commit called.");
     return rowCount;
   }
 
   private void setInsertMetadata(QueryStatistics statistics) throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (!statistics.getStatementType().equals(StatementType.INSERT)
         || statistics.getSchema() == null
         || statistics.getReferencedTables().stream().distinct().count() > 1) {
@@ -403,14 +398,14 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     TableId tableID = statistics.getReferencedTables().get(0);
     this.insertTableName =
         TableName.of(tableID.getProject(), tableID.getDataset(), tableID.getTable());
-    LOG.finest(
+    LOG.finer(
         "this.insertTableName : %s, this.insertSchema : %s",
         this.insertTableName, this.insertSchema.toString());
   }
 
   QueryJobConfiguration getWriteBatchJobConfiguration(
       ArrayList<BigQueryJdbcParameter> currentParameterList) throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     BigQueryParameterHandler batchHandler =
         new BigQueryParameterHandler(this.parameterCount, currentParameterList);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -420,7 +415,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   QueryJobConfiguration getStandardBatchJobConfiguration(String query) throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(query);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
@@ -431,7 +426,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       for (BigQueryJdbcParameter parameter : parameterList) {
         Object parameterValue = parameter.getValue();
         StandardSQLTypeName sqlType = parameter.getSqlType();
-        LOG.finest(
+        LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
             parameterValue, sqlType, index++);
         jobConfiguration.addPositionalParameter(QueryParameterValue.of(parameterValue, sqlType));
@@ -441,7 +436,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   Boolean useWriteAPI() {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (this.querySettings.isUseWriteAPI()) {
       if (this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
         return true;

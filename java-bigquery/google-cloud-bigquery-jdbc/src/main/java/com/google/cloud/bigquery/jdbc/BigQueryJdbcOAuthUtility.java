@@ -114,7 +114,7 @@ final class BigQueryJdbcOAuthUtility {
    * @return A map of OAuth properties.
    */
   static Map<String, String> parseOAuthProperties(DataSource ds, String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     Map<String, String> oauthProperties = new HashMap<>();
 
     AuthType authType;
@@ -263,7 +263,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> overrideProperties,
       Boolean reqGoogleDriveScopeBool,
       String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
 
     AuthType authType =
         AuthType.valueOf(authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME));
@@ -327,7 +327,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
 
     ServiceAccountCredentials.Builder builder;
     try {
@@ -393,7 +393,7 @@ final class BigQueryJdbcOAuthUtility {
       int port,
       String callerClassName)
       throws URISyntaxException {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
 
     List<String> scopes = new ArrayList<>();
     scopes.add("https://www.googleapis.com/auth/bigquery");
@@ -421,7 +421,7 @@ final class BigQueryJdbcOAuthUtility {
 
   static UserCredentials getCredentialsFromCode(
       UserAuthorizer userAuthorizer, String code, String callerClassName) throws IOException {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     return userAuthorizer.getCredentialsFromCode(code, URI.create(""));
   }
 
@@ -429,7 +429,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     try {
       ServerSocket serverSocket = new ServerSocket(0);
       serverSocket.setSoTimeout(USER_AUTH_TIMEOUT_MS);
@@ -479,7 +479,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     GoogleCredentials.Builder builder = GoogleCredentials.newBuilder();
     if (overrideProperties.containsKey(
         BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
@@ -504,7 +504,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
       String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     if (authProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME)) {
       try {
         return getPreGeneratedRefreshTokenCredentials(
@@ -524,7 +524,7 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> overrideProperties,
       String callerClassName)
       throws URISyntaxException {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
 
     UserCredentials.Builder userCredentialsBuilder =
         UserCredentials.newBuilder()
@@ -549,7 +549,7 @@ final class BigQueryJdbcOAuthUtility {
   }
 
   private static GoogleCredentials getApplicationDefaultCredentials(String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     try {
       GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
       String principal = "unknown";
@@ -573,7 +573,7 @@ final class BigQueryJdbcOAuthUtility {
 
   private static GoogleCredentials getExternalAccountAuthCredentials(
       Map<String, String> authProperties, String callerClassName) {
-    LOG.finest("++enter++\t" + callerClassName);
+    LOG.finer("++enter++\t" + callerClassName);
     try {
       JsonObject jsonObject = null;
       String credentialsPath = null;
