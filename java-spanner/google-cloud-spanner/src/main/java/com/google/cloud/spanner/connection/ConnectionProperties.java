@@ -253,7 +253,10 @@ public class ConnectionProperties {
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);
-  /** @deprecated Use {@link #TYPE} with value "omni" instead. */
+
+  /**
+   * @deprecated Use {@link #TYPE} with value "omni" instead.
+   */
   @ObsoleteApi("Use TYPE with value \"omni\" instead")
   @Deprecated
   static final ConnectionProperty<Boolean> IS_EXPERIMENTAL_HOST =

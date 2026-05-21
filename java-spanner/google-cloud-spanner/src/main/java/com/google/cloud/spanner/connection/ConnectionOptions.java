@@ -659,7 +659,9 @@ public class ConnectionOptions {
       return this;
     }
 
-    /** @return the {@link ConnectionOptions} */
+    /**
+     * @return the {@link ConnectionOptions}
+     */
     public ConnectionOptions build() {
       Preconditions.checkState(this.uri != null, "Connection URI is required");
       return new ConnectionOptions(this);

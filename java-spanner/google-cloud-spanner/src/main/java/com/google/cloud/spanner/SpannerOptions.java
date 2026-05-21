@@ -321,7 +321,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    * Spanner Omni instance.
    */
   public enum InstanceType {
-    UNSPECIFIED,
     CLOUD,
     OMNI,
     EMULATOR
@@ -1270,7 +1269,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
-    private InstanceType instanceType = InstanceType.UNSPECIFIED;
+    private InstanceType instanceType = null;
     private String host = null;
 
     private static String createCustomClientLibToken(String token) {
@@ -1828,7 +1827,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
-    /** @deprecated Use {@link #setType(InstanceType)} instead. */
+    /**
+     * @deprecated Use {@link #setType(InstanceType)} instead.
+     */
     @Deprecated
     @ObsoleteApi("Use setHost(String).setType(InstanceType.OMNI) instead")
     @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3676")

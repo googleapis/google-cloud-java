@@ -917,9 +917,6 @@ class ClientSideStatementValueConverters {
     @Override
     public SpannerOptions.InstanceType convert(String value) {
       SpannerOptions.InstanceType converted = values.get(value);
-      if (converted == SpannerOptions.InstanceType.UNSPECIFIED) {
-        return null;
-      }
       return converted;
     }
   }
