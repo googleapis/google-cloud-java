@@ -58,6 +58,7 @@ import java.nio.channels.WritableByteChannel;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.UnaryOperator;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -75,13 +76,16 @@ final class OtelStorageDecorator implements Storage {
   private final OpenTelemetry otel;
   private final Attributes baseAttributes;
   private final Tracer tracer;
+  final BucketMetadataCache bucketMetadataCache;
+  private volatile ExecutorService cacheExecutor;
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
     this.otel = otel;
     this.baseAttributes = baseAttributes;
     this.tracer =
-        TracerDecorator.decorate(null, otel, baseAttributes, Storage.class.getName() + "/");
+        TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
+    this.bucketMetadataCache = BucketMetadataCache.getBucketMetadataCache();
   }
 
   @Override
@@ -1423,7 +1427,17 @@ final class OtelStorageDecorator implements Storage {
 
   @Override
   public void close() throws Exception {
-    delegate.close();
+    try {
+      bucketMetadataCache.clear();
+      synchronized (this) {
+        if (cacheExecutor != null) {
+          cacheExecutor.shutdownNow();
+          cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
+        }
+      }
+    } finally {
+      delegate.close();
+    }
   }
 
   @Override
@@ -1562,16 +1576,19 @@ final class OtelStorageDecorator implements Storage {
   }
 
   static final class TracerDecorator implements Tracer {
+    @Nullable private final OtelStorageDecorator parentDecorator;
     @Nullable private final Context parentContextOverride;
     private final Tracer delegate;
     private final Attributes baseAttributes;
     private final String spanNamePrefix;
 
     TracerDecorator(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         Tracer delegate,
         Attributes baseAttributes,
         String spanNamePrefix) {
+      this.parentDecorator = parentDecorator;
       this.parentContextOverride = parentContextOverride;
       this.delegate = delegate;
       this.baseAttributes = baseAttributes;
@@ -1579,6 +1596,7 @@ final class OtelStorageDecorator implements Storage {
     }
 
     static TracerDecorator decorate(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         OpenTelemetry otel,
         Attributes baseAttributes,
@@ -1588,7 +1606,8 @@ final class OtelStorageDecorator implements Storage {
       requireNonNull(spanNamePrefix, "spanNamePrefix must be non null");
       Tracer tracer =
           otel.getTracer(OTEL_SCOPE_NAME, StorageOptions.getDefaultInstance().getLibraryVersion());
-      return new TracerDecorator(parentContextOverride, tracer, baseAttributes, spanNamePrefix);
+      return new TracerDecorator(
+          parentDecorator, parentContextOverride, tracer, baseAttributes, spanNamePrefix);
     }
 
     @Override
@@ -1598,7 +1617,7 @@ final class OtelStorageDecorator implements Storage {
       if (parentContextOverride != null) {
         spanBuilder.setParent(parentContextOverride);
       }
-      return spanBuilder;
+      return new AcoSpanBuilder(spanBuilder, parentDecorator);
     }
   }
 
@@ -1671,6 +1690,7 @@ final class OtelStorageDecorator implements Storage {
       this.sessionSpan = sessionSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -1794,6 +1814,7 @@ final class OtelStorageDecorator implements Storage {
       this.parentContext = Context.current();
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2127,6 +2148,7 @@ final class OtelStorageDecorator implements Storage {
       this.uploadSpan = uploadSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2163,6 +2185,7 @@ final class OtelStorageDecorator implements Storage {
         this.openSpan = openSpan;
         this.tracer =
             TracerDecorator.decorate(
+                OtelStorageDecorator.this,
                 Context.current(),
                 otel,
                 OtelStorageDecorator.this.baseAttributes,
@@ -2275,5 +2298,18 @@ final class OtelStorageDecorator implements Storage {
         return delegate.isOpen();
       }
     }
+  }
+
+  ExecutorService getCacheExecutor() {
+    ExecutorService result = cacheExecutor;
+    if (result == null) {
+      synchronized (this) {
+        result = cacheExecutor;
+        if (result == null) {
+          cacheExecutor = result = AcoSpanBuilder.newCacheExecutor();
+        }
+      }
+    }
+    return result;
   }
 }

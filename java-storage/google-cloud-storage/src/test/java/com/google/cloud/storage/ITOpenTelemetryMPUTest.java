@@ -88,6 +88,10 @@ public final class ITOpenTelemetryMPUTest {
                   .key(objectName)
                   .build());
 
+      // Dynamically wait for the background prefetch to resolve to ensure 100% deterministic,
+      // non-flaky tracing
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, bucket.getName());
+
       byte[] data = "Hello, World!".getBytes(StandardCharsets.UTF_8);
       RequestBody body = RequestBody.of(ByteBuffer.wrap(data));
       UploadPartResponse upload =
@@ -132,17 +136,53 @@ public final class ITOpenTelemetryMPUTest {
     assertThat(uploadSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
     assertThat(uploadSpan.getAttributes().get(AttributeKey.longKey("partNumber"))).isEqualTo(1);
+    assertThat(
+            uploadSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            uploadSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
 
     SpanData completeSpan = spans.get(2);
     assertThat(completeSpan.getName())
         .isEqualTo("com.google.cloud.storage.MultipartUploadClient/completeMultipartUpload");
     assertThat(completeSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
+    assertThat(
+            completeSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            completeSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
 
     SpanData listSpan = spans.get(3);
     assertThat(listSpan.getName())
         .isEqualTo("com.google.cloud.storage.MultipartUploadClient/listMultipartUploads");
     assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
         .isEqualTo(String.format("gs://%s/", bucket.getName()));
+    assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gcp.resource.destination.id")))
+        .contains("buckets/" + bucket.getName());
+    assertThat(
+            listSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey("gcp.resource.destination.location")))
+        .isNotEqualTo("global");
+  }
+
+  private static void pollUntilMetadataResolved(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get(bucketName);
+      if (meta != null && !meta.fetchPending) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to resolve for bucket: " + bucketName);
   }
 }
