@@ -153,19 +153,25 @@ public class RetryAlgorithm<ResponseT> {
       Throwable previousThrowable,
       ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
-    // a small optimization that avoids calling relatively heavy methods
-    // like timedAlgorithm.createNextAttempt(), when it is not necessary.
-    if (!shouldRetryBasedOnResult(context, previousThrowable, previousResponse)) {
-      return null;
+    if (shouldRetryBasedOnResult(context, previousThrowable, previousResponse)) {
+      TimedAttemptSettings newSettings =
+          createNextAttemptBasedOnResult(
+              context, previousThrowable, previousResponse, previousSettings);
+      if (newSettings == null) {
+        newSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+      }
+      return newSettings;
     }
-
-    TimedAttemptSettings newSettings =
-        createNextAttemptBasedOnResult(
-            context, previousThrowable, previousResponse, previousSettings);
-    if (newSettings == null) {
-      newSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+    // If we shouldn't retry based on result and the last attempt failed with an
+    // exception, defer to any exception thrown by shouldRetryBasedOnTiming.
+    // This lets a timeout-related exception get propagated when justified
+    // rather than e.g. exceptions caused by very short RPC deadlines on a
+    // final polling attempt.
+    if (previousThrowable != null) {
+      TimedAttemptSettings nextSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+      shouldRetryBasedOnTiming(context, nextSettings);
     }
-    return newSettings;
+    return null;
   }
 
   private TimedAttemptSettings createNextAttemptBasedOnResult(
@@ -232,18 +238,8 @@ public class RetryAlgorithm<ResponseT> {
       ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)
       throws CancellationException {
-    boolean retryBasedOnResult =
-        shouldRetryBasedOnResult(context, previousThrowable, previousResponse);
-
-    // Short-circuit when operation has succeeded to avoid erroneously throwing
-    // CancellationException below
-    if (!retryBasedOnResult && previousThrowable == null) {
-      return false;
-    }
-
-    // throws CancellationException
-    boolean retryBasedOnTiming = shouldRetryBasedOnTiming(context, nextAttemptSettings);
-    return retryBasedOnResult && retryBasedOnTiming;
+    return shouldRetryBasedOnResult(context, previousThrowable, previousResponse)
+        && shouldRetryBasedOnTiming(context, nextAttemptSettings);
   }
 
   boolean shouldRetryBasedOnResult(
