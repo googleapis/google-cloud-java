@@ -41,7 +41,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
-import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableSortedSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -78,67 +78,69 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final Set<String> SAFE_TO_LOG_PROPERTIES =
-      ImmutableSet.of(
-          BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.KMS_KEY_NAME_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.QUERY_PROPERTIES_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.USE_QUERY_CACHE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.QUERY_DIALECT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ALLOW_LARGE_RESULTS_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LARGE_RESULTS_TABLE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LARGE_RESULTS_DATASET_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.DESTINATION_DATASET_EXPIRATION_TIME_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.MAX_RESULTS_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.PARTNER_TOKEN_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ENDPOINT_OVERRIDES_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.PRIVATE_SERVICE_CONNECT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.JOB_TIMEOUT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.RETRY_INITIAL_DELAY_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.RETRY_MAX_DELAY_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ADDITIONAL_PROJECTS_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.CONNECTION_POOL_SIZE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.ENABLE_WRITE_API_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.LABELS_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.REQUEST_REASON_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_AUDIENCE_URI_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_POOL_USER_PROJECT_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_SA_IMPERSONATION_URI_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_CHAIN_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME.toLowerCase(),
-          BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME.toLowerCase());
+      ImmutableSortedSet.orderedBy(String.CASE_INSENSITIVE_ORDER)
+          .add(
+              BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.KMS_KEY_NAME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.QUERY_PROPERTIES_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.USE_QUERY_CACHE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.QUERY_DIALECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ALLOW_LARGE_RESULTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LARGE_RESULTS_TABLE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LARGE_RESULTS_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.DESTINATION_DATASET_EXPIRATION_TIME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.MAX_RESULTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PARTNER_TOKEN_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENDPOINT_OVERRIDES_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PRIVATE_SERVICE_CONNECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.JOB_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_INITIAL_DELAY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_MAX_DELAY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ADDITIONAL_PROJECTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.CONNECTION_POOL_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_WRITE_API_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LABELS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.REQUEST_REASON_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_AUDIENCE_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_POOL_USER_PROJECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_SA_IMPERSONATION_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_CHAIN_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME)
+          .build();
   private HeaderProvider headerProvider;
   BigQueryReadClient bigQueryReadClient = null;
   BigQueryWriteClient bigQueryWriteClient = null;
@@ -220,8 +222,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         Properties maskedProps = new Properties();
         for (String name : connectionProps.stringPropertyNames()) {
           String value = connectionProps.getProperty(name);
-          String lowerName = name.toLowerCase();
-          if (!SAFE_TO_LOG_PROPERTIES.contains(lowerName)) {
+          if (!SAFE_TO_LOG_PROPERTIES.contains(name)) {
             value = "*****";
           }
           maskedProps.setProperty(name, value);

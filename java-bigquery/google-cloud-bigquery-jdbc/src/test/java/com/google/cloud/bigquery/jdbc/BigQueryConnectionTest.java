@@ -29,13 +29,17 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class BigQueryConnectionTest {
+public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -459,50 +463,32 @@ public class BigQueryConnectionTest {
 
   @Test
   public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
-    java.util.logging.Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
-    java.util.logging.Level originalLevel = rootLogger.getLevel();
-    rootLogger.setLevel(java.util.logging.Level.CONFIG);
-
-    java.util.List<java.util.logging.LogRecord> records = new java.util.ArrayList<>();
-    java.util.logging.Handler handler =
-        new java.util.logging.Handler() {
-          @Override
-          public void publish(java.util.logging.LogRecord record) {
-            records.add(record);
-          }
-
-          @Override
-          public void flush() {}
-
-          @Override
-          public void close() throws SecurityException {}
-        };
-    rootLogger.addHandler(handler);
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    Level originalLevel = rootLogger.getLevel();
+    rootLogger.setLevel(Level.CONFIG);
 
     try {
       String url =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "OAuthType=2;ProjectId=MyTestProjectId;"
-              + "OAuthAccessToken=secretAccessToken;Location=US;"
-              + "PartnerToken=GPN:secretPartnerToken;";
+              + "OAuthAccessToken=secretAccessToken;Location=US;";
       try (BigQueryConnection connection = new BigQueryConnection(url)) {
         // Just trigger the constructor
       }
 
-      boolean foundLog = false;
-      for (java.util.logging.LogRecord record : records) {
-        if (record.getMessage().contains("Connection properties:")) {
-          foundLog = true;
-          String logMessage = record.getMessage();
-          assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
-          assertTrue(logMessage.contains("Location=US"));
-          assertTrue(logMessage.contains("OAuthAccessToken=*****"));
-          assertFalse(logMessage.contains("secretAccessToken"));
-        }
-      }
-      assertTrue(foundLog, "Log message about Connection properties was not found");
+      Optional<LogRecord> connectionPropertiesLog =
+          capturedLogs.stream()
+              .filter(r -> r.getMessage().contains("Connection properties:"))
+              .findFirst();
+      assertTrue(
+          connectionPropertiesLog.isPresent(),
+          "Log message about Connection properties was not found");
+      String logMessage = connectionPropertiesLog.get().getMessage();
+      assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
+      assertTrue(logMessage.contains("Location=US"));
+      assertTrue(logMessage.contains("OAuthAccessToken=*****"));
+      assertFalse(logMessage.contains("secretAccessToken"));
     } finally {
-      rootLogger.removeHandler(handler);
       rootLogger.setLevel(originalLevel);
     }
   }
