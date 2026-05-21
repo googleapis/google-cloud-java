@@ -33,6 +33,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -298,21 +300,29 @@ public class BigQueryResultSetMetadataTest {
     }
   }
 
-  @Test
-  public void testIsSearchableForOtherTypes() throws SQLException {
-    FieldList schemaFields =
-        FieldList.of(
-            Field.of("geo", StandardSQLTypeName.GEOGRAPHY),
-            Field.of("json", StandardSQLTypeName.JSON),
-            Field.of("interval", StandardSQLTypeName.INTERVAL),
-            Field.of("range", StandardSQLTypeName.RANGE));
-    BigQueryJsonResultSet otherTypesResultSet =
+  @ParameterizedTest
+  @EnumSource(StandardSQLTypeName.class)
+  public void testIsSearchableForAllTypes(StandardSQLTypeName type) throws SQLException {
+    Field field;
+    if (type == StandardSQLTypeName.STRUCT) {
+      field =
+          Field.of(
+              "col",
+              StandardSQLTypeName.STRUCT,
+              Field.of("sub", StandardSQLTypeName.STRING));
+    } else if (type == StandardSQLTypeName.ARRAY) {
+      field =
+          Field.newBuilder("col", StandardSQLTypeName.STRING)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+    } else {
+      field = Field.of("col", type);
+    }
+    FieldList schemaFields = FieldList.of(field);
+    BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(
             Schema.of(schemaFields), 1L, null, statement, new Thread[] {new Thread()});
-    ResultSetMetaData otherMetaData = otherTypesResultSet.getMetaData();
-    assertThat(otherMetaData.isSearchable(1)).isTrue(); // GEOGRAPHY
-    assertThat(otherMetaData.isSearchable(2)).isTrue(); // JSON
-    assertThat(otherMetaData.isSearchable(3)).isTrue(); // INTERVAL
-    assertThat(otherMetaData.isSearchable(4)).isTrue(); // RANGE
+    ResultSetMetaData metaData = resultSet.getMetaData();
+    assertThat(metaData.isSearchable(1)).isTrue();
   }
 }
