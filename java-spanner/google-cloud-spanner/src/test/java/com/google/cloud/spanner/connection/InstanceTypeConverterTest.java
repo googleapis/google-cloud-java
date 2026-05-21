@@ -31,7 +31,12 @@ public class InstanceTypeConverterTest {
 
   @Test
   public void testConvert() throws CompileException {
-    String allowedValues = "'(CLOUD|OMNI|EMULATOR)'";
+    String allowedValues =
+        "'"
+            + java.util.Arrays.stream(InstanceType.values())
+                .map(Enum::name)
+                .collect(java.util.stream.Collectors.joining("|", "(", ")"))
+            + "'";
     InstanceTypeConverter converter = new InstanceTypeConverter(allowedValues);
 
     assertEquals(InstanceType.CLOUD, converter.convert("cloud"));
