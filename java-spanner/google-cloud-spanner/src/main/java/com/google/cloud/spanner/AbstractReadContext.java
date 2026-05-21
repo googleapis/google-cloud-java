@@ -437,8 +437,7 @@ abstract class AbstractReadContext
       if (!shouldUseInlinedBegin()) {
         // No need for synchronization: super.readInternal() is always preceded by a check of
         // "transactionId" that provides a happens-before from initialization, and the value is
-        // never
-        // changed afterwards.
+        // never changed afterwards.
         @SuppressWarnings("GuardedByChecker")
         TransactionSelector selector =
             TransactionSelector.newBuilder().setId(transactionId).build();
