@@ -194,4 +194,9 @@ public abstract class Credentials implements Serializable {
    * @throws IOException if there was an error getting up-to-date access.
    */
   public abstract void refresh() throws IOException;
+
+  /** Dummy method to test CI recognition of auth changes. */
+  public String getTestString() {
+    return "test";
+  }
 }

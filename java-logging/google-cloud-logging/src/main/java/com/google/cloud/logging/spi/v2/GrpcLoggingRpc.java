@@ -100,6 +100,7 @@ public class GrpcLoggingRpc implements LoggingRpc {
   private boolean closed;
 
   public GrpcLoggingRpc(final LoggingOptions options) throws IOException {
+    GaxProperties.getTestString();
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();

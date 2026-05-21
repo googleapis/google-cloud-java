@@ -104,6 +104,11 @@ public class GaxProperties {
     return PROTOBUF_VERSION;
   }
 
+  /** Returns a dummy test string. */
+  public static String getTestString() {
+    return "test";
+  }
+
   /**
    * Returns the current runtime version. For GraalVM the values in this method will be fetched at
    * build time and the values should not differ from the runtime (executable)
