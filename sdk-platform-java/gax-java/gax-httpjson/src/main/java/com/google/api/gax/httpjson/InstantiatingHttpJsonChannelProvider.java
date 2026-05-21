@@ -42,8 +42,6 @@ import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.DefaultMtlsProviderFactory;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.common.annotations.VisibleForTesting;
-import javax.net.ssl.SSLContext;
-import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -187,8 +185,6 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-
-
     if (mtlsProvider == null) {
       return null;
     }

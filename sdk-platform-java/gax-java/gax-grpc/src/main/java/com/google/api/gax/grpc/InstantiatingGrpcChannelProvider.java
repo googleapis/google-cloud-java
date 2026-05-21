@@ -812,14 +812,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     if (interceptorProvider != null) {
       builder.intercept(interceptorProvider.getInterceptors());
     }
-
     if (channelConfigurator != null) {
       builder = channelConfigurator.apply(builder);
     }
 
     return builder;
   }
-
 
   private ManagedChannel createSingleChannel() throws IOException {
     ManagedChannelBuilder<?> builder = createDecoratedChannelBuilder();
