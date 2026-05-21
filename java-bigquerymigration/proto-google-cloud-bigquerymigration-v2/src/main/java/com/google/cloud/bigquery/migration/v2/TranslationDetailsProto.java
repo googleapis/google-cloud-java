@@ -45,6 +45,14 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_TranslationDetails_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_SuggestionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_SuggestionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_SuggestionStep_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_SuggestionStep_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_migration_v2_SourceTargetMapping_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_SourceTargetMapping_fieldAccessorTable;
@@ -76,33 +84,48 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
       "\n<google/cloud/bigquery/migration/v2/tra"
           + "nslation_details.proto\022\"google.cloud.big"
           + "query.migration.v2\032\037google/api/field_beh"
-          + "avior.proto\"\216\002\n\022TranslationDetails\022V\n\025so"
+          + "avior.proto\"\337\002\n\022TranslationDetails\022V\n\025so"
           + "urce_target_mapping\030\001 \003(\01327.google.cloud"
           + ".bigquery.migration.v2.SourceTargetMappi"
           + "ng\022\027\n\017target_base_uri\030\002 \001(\t\022Q\n\022source_en"
           + "vironment\030\003 \001(\01325.google.cloud.bigquery."
           + "migration.v2.SourceEnvironment\022\036\n\026target"
           + "_return_literals\030\004 \003(\t\022\024\n\014target_types\030\005"
-          + " \003(\t\"\237\001\n\023SourceTargetMapping\022C\n\013source_s"
-          + "pec\030\001 \001(\0132..google.cloud.bigquery.migrat"
-          + "ion.v2.SourceSpec\022C\n\013target_spec\030\002 \001(\0132."
-          + ".google.cloud.bigquery.migration.v2.Targ"
-          + "etSpec\"\201\001\n\nSourceSpec\022\022\n\010base_uri\030\001 \001(\tH"
-          + "\000\022>\n\007literal\030\002 \001(\0132+.google.cloud.bigque"
-          + "ry.migration.v2.LiteralH\000\022\025\n\010encoding\030\003 "
-          + "\001(\tB\003\340A\001B\010\n\006source\"#\n\nTargetSpec\022\025\n\rrela"
-          + "tive_path\030\001 \001(\t\"h\n\007Literal\022\030\n\016literal_st"
-          + "ring\030\002 \001(\tH\000\022\027\n\rliteral_bytes\030\003 \001(\014H\000\022\032\n"
-          + "\rrelative_path\030\001 \001(\tB\003\340A\002B\016\n\014literal_dat"
-          + "a\"n\n\021SourceEnvironment\022\030\n\020default_databa"
-          + "se\030\001 \001(\t\022\032\n\022schema_search_path\030\002 \003(\t\022#\n\026"
-          + "metadata_store_dataset\030\003 \001(\tB\003\340A\001B\323\001\n&co"
-          + "m.google.cloud.bigquery.migration.v2B\027Tr"
-          + "anslationDetailsProtoP\001ZDcloud.google.co"
-          + "m/go/bigquery/migration/apiv2/migrationp"
-          + "b;migrationpb\252\002\"Google.Cloud.BigQuery.Mi"
-          + "gration.V2\312\002\"Google\\Cloud\\BigQuery\\Migra"
-          + "tion\\V2b\006proto3"
+          + " \003(\t\022O\n\021suggestion_config\030\006 \001(\01324.google"
+          + ".cloud.bigquery.migration.v2.SuggestionC"
+          + "onfig\"e\n\020SuggestionConfig\022Q\n\025skip_sugges"
+          + "tion_steps\030\001 \003(\01322.google.cloud.bigquery"
+          + ".migration.v2.SuggestionStep\"\200\003\n\016Suggest"
+          + "ionStep\022Z\n\017suggestion_type\030\001 \001(\0162A.googl"
+          + "e.cloud.bigquery.migration.v2.Suggestion"
+          + "Step.SuggestionType\022X\n\016rewrite_target\030\002 "
+          + "\001(\0162@.google.cloud.bigquery.migration.v2"
+          + ".SuggestionStep.RewriteTarget\"g\n\016Suggest"
+          + "ionType\022\037\n\033SUGGESTION_TYPE_UNSPECIFIED\020\000"
+          + "\022\027\n\023QUERY_CUSTOMIZATION\020\001\022\033\n\027TRANSLATION"
+          + "_EXPLANATION\020\002\"O\n\rRewriteTarget\022\036\n\032REWRI"
+          + "TE_TARGET_UNSPECIFIED\020\000\022\016\n\nSOURCE_SQL\020\001\022"
+          + "\016\n\nTARGET_SQL\020\002\"\237\001\n\023SourceTargetMapping\022"
+          + "C\n\013source_spec\030\001 \001(\0132..google.cloud.bigq"
+          + "uery.migration.v2.SourceSpec\022C\n\013target_s"
+          + "pec\030\002 \001(\0132..google.cloud.bigquery.migrat"
+          + "ion.v2.TargetSpec\"\232\001\n\nSourceSpec\022\022\n\010base"
+          + "_uri\030\001 \001(\tH\000\022>\n\007literal\030\002 \001(\0132+.google.c"
+          + "loud.bigquery.migration.v2.LiteralH\000\022\027\n\r"
+          + "gcs_file_path\030\004 \001(\tH\000\022\025\n\010encoding\030\003 \001(\tB"
+          + "\003\340A\001B\010\n\006source\"#\n\nTargetSpec\022\025\n\rrelative"
+          + "_path\030\001 \001(\t\"h\n\007Literal\022\030\n\016literal_string"
+          + "\030\002 \001(\tH\000\022\027\n\rliteral_bytes\030\003 \001(\014H\000\022\032\n\rrel"
+          + "ative_path\030\001 \001(\tB\003\340A\002B\016\n\014literal_data\"n\n"
+          + "\021SourceEnvironment\022\030\n\020default_database\030\001"
+          + " \001(\t\022\032\n\022schema_search_path\030\002 \003(\t\022#\n\026meta"
+          + "data_store_dataset\030\003 \001(\tB\003\340A\001B\323\001\n&com.go"
+          + "ogle.cloud.bigquery.migration.v2B\027Transl"
+          + "ationDetailsProtoP\001ZDcloud.google.com/go"
+          + "/bigquery/migration/apiv2/migrationpb;mi"
+          + "grationpb\252\002\"Google.Cloud.BigQuery.Migrat"
+          + "ion.V2\312\002\"Google\\Cloud\\BigQuery\\Migration"
+          + "\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -121,9 +144,26 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
               "SourceEnvironment",
               "TargetReturnLiterals",
               "TargetTypes",
+              "SuggestionConfig",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_SuggestionConfig_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_bigquery_migration_v2_SuggestionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_SuggestionConfig_descriptor,
+            new java.lang.String[] {
+              "SkipSuggestionSteps",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_SuggestionStep_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_bigquery_migration_v2_SuggestionStep_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_SuggestionStep_descriptor,
+            new java.lang.String[] {
+              "SuggestionType", "RewriteTarget",
             });
     internal_static_google_cloud_bigquery_migration_v2_SourceTargetMapping_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_bigquery_migration_v2_SourceTargetMapping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_SourceTargetMapping_descriptor,
@@ -131,15 +171,15 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
               "SourceSpec", "TargetSpec",
             });
     internal_static_google_cloud_bigquery_migration_v2_SourceSpec_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_bigquery_migration_v2_SourceSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_SourceSpec_descriptor,
             new java.lang.String[] {
-              "BaseUri", "Literal", "Encoding", "Source",
+              "BaseUri", "Literal", "GcsFilePath", "Encoding", "Source",
             });
     internal_static_google_cloud_bigquery_migration_v2_TargetSpec_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_bigquery_migration_v2_TargetSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_TargetSpec_descriptor,
@@ -147,7 +187,7 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
               "RelativePath",
             });
     internal_static_google_cloud_bigquery_migration_v2_Literal_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_bigquery_migration_v2_Literal_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_Literal_descriptor,
@@ -155,7 +195,7 @@ public final class TranslationDetailsProto extends com.google.protobuf.Generated
               "LiteralString", "LiteralBytes", "RelativePath", "LiteralData",
             });
     internal_static_google_cloud_bigquery_migration_v2_SourceEnvironment_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_bigquery_migration_v2_SourceEnvironment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_SourceEnvironment_descriptor,
