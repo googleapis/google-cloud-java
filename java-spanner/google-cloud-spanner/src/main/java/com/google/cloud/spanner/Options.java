@@ -89,7 +89,8 @@ public final class Options implements Serializable {
      * operation is not slow and the transaction starts serially. It can be less performant than
      * {@link #EXPLICIT} when multiple reads or queries are started concurrently, because only one
      * operation can carry the BeginTransaction option and the others must wait until that operation
-     * returns transaction metadata.
+     * returns transaction metadata. {@link ReadOnlyTransaction#getReadTimestamp()} is also not
+     * available until the first operation has returned transaction metadata.
      */
     INLINE
   }

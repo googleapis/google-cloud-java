@@ -426,8 +426,7 @@ class SessionImpl implements Session {
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return readOnlyTransaction(
-        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+    return readOnlyTransaction(bound, new ReadOnlyTransactionOption[0]);
   }
 
   @Override
