@@ -35,6 +35,8 @@ final class AcoSpanBuilder implements SpanBuilder {
   private static final Logger LOGGER = Logger.getLogger(AcoSpanBuilder.class.getName());
   private static final String MULTI_REGION = "multi-region";
   private static final String DUAL_REGION = "dual-region";
+  private static final String PLACEHOLDER_BUCKET_LOCATION = "global";
+  private static final String PLACEHOLDER_RESOURCE_PREFIX = "projects/_/buckets/";
 
   private final SpanBuilder delegate;
   private final OtelStorageDecorator parent;
@@ -48,7 +50,7 @@ final class AcoSpanBuilder implements SpanBuilder {
   @Override
   public SpanBuilder setAttribute(String key, String value) {
     delegate.setAttribute(key, value);
-    if ("gsutil.uri".equals(key) && value != null) {
+    if ("gsutil.uri".equals(key)) {
       String name = extractBucketName(value);
       if (name != null && !name.isEmpty()) {
         this.bucketName = name;
@@ -137,19 +139,17 @@ final class AcoSpanBuilder implements SpanBuilder {
     int poolSize = Math.max(4, Runtime.getRuntime().availableProcessors());
     java.util.concurrent.ThreadPoolExecutor executor =
         new java.util.concurrent.ThreadPoolExecutor(
-            poolSize, // core pool size dynamically scaled based on CPU cores
-            poolSize, // max pool size dynamically scaled based on CPU cores
-            5L, // 5 seconds keep-alive: terminates threads quickly when done
+            poolSize,
+            poolSize,
+            5L,
             TimeUnit.SECONDS,
-            new java.util.concurrent.LinkedBlockingQueue<>(10000), // Bounded queue to prevent OOM
+            new java.util.concurrent.LinkedBlockingQueue<>(10000),
             r -> {
               Thread t = new Thread(r);
               t.setDaemon(true);
               t.setName("gcs-aco-metadata-cache-pool");
               return t;
-            },
-            new java.util.concurrent.ThreadPoolExecutor
-                .DiscardPolicy()); // Best-effort: silently discard on overflow
+            });
     executor.allowCoreThreadTimeOut(true);
     return executor;
   }
@@ -177,7 +177,7 @@ final class AcoSpanBuilder implements SpanBuilder {
     if (projectId != null && !projectId.isEmpty()) {
       resource = "projects/" + projectId + "/buckets/" + bucketName;
     } else {
-      resource = "projects/_/buckets/" + bucketName;
+      resource = PLACEHOLDER_RESOURCE_PREFIX + bucketName;
     }
 
     String location =
@@ -199,41 +199,42 @@ final class AcoSpanBuilder implements SpanBuilder {
       BucketMetadataCache bucketMetadataCache,
       ExecutorService cacheExecutor,
       String bucketName) {
-    if (bucketMetadataCache.containsKey(bucketName)) {
+    if (!bucketMetadataCache.putPendingIfAbsent(
+        bucketName, PLACEHOLDER_RESOURCE_PREFIX + bucketName, PLACEHOLDER_BUCKET_LOCATION)) {
       return;
     }
 
-    // Put fetchPending placeholder synchronously to block concurrent stampedes
-    bucketMetadataCache.put(bucketName, "projects/_/buckets/" + bucketName, "global", true);
-
-    cacheExecutor.submit(
-        () -> {
-          try {
-            Tuple<String, String> layout = fetch(delegate, bucketName);
-            if (layout != null) {
-              bucketMetadataCache.put(bucketName, layout, false);
-            } else {
-              // Bucket does not exist (fetch returned null) -> Evict cache entry
-              bucketMetadataCache.remove(bucketName);
-            }
-          } catch (StorageException e) {
-            if (e.getCode() == 404) {
-              // Bucket not found -> Evict cache entry
-              bucketMetadataCache.remove(bucketName);
-            } else if (e.getCode() == 403) {
-              // Permission Denied -> Retain fallback values with fetchPending=false (Do Not Retry)
-              bucketMetadataCache.put(
-                  bucketName, "projects/_/buckets/" + bucketName, "global", false);
-            } else {
+    try {
+      cacheExecutor.submit(
+          () -> {
+            try {
+              Tuple<String, String> layout = fetch(delegate, bucketName);
+              if (layout != null) {
+                bucketMetadataCache.put(bucketName, layout, false);
+              } else {
+                bucketMetadataCache.remove(bucketName);
+              }
+            } catch (StorageException e) {
+              if (e.getCode() == 404) {
+                bucketMetadataCache.remove(bucketName);
+              } else if (e.getCode() == 403) {
+                bucketMetadataCache.put(
+                    bucketName,
+                    PLACEHOLDER_RESOURCE_PREFIX + bucketName,
+                    PLACEHOLDER_BUCKET_LOCATION,
+                    false);
+              } else {
+                LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
+                bucketMetadataCache.remove(bucketName);
+              }
+            } catch (Exception e) {
               LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
-              // Transient failure -> Evict cache entry to allow future retries
               bucketMetadataCache.remove(bucketName);
             }
-          } catch (Exception e) {
-            LOGGER.log(Level.WARNING, "Background GetBucket failed", e);
-            // Transient failure -> Evict cache entry to allow future retries
-            bucketMetadataCache.remove(bucketName);
-          }
-        });
+          });
+    } catch (java.util.concurrent.RejectedExecutionException e) {
+      LOGGER.log(Level.WARNING, "Background prefetch task rejected due to pool saturation", e);
+      bucketMetadataCache.remove(bucketName);
+    }
   }
 }

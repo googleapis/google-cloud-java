@@ -29,7 +29,7 @@ final class BucketMetadataCache {
 
   BucketMetadataCache(int capacity) {
     this.cache =
-        new LinkedHashMap<String, BucketMetadata>(16, 0.75f, true) {
+        new LinkedHashMap<String, BucketMetadata>(capacity, 0.75f, true) {
           @Override
           protected boolean removeEldestEntry(Map.Entry<String, BucketMetadata> eldest) {
             return size() > capacity;
@@ -99,6 +99,19 @@ final class BucketMetadataCache {
     lock.lock();
     try {
       return cache.containsKey(bucketName);
+    } finally {
+      lock.unlock();
+    }
+  }
+
+  boolean putPendingIfAbsent(String bucketName, String resource, String location) {
+    lock.lock();
+    try {
+      if (cache.containsKey(bucketName)) {
+        return false;
+      }
+      cache.put(bucketName, new BucketMetadata(resource, location, true));
+      return true;
     } finally {
       lock.unlock();
     }

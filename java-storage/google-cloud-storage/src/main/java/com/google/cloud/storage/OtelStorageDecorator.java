@@ -88,19 +88,6 @@ final class OtelStorageDecorator implements Storage {
     this.bucketMetadataCache = BucketMetadataCache.getBucketMetadataCache();
   }
 
-  ExecutorService getCacheExecutor() {
-    ExecutorService result = cacheExecutor;
-    if (result == null) {
-      synchronized (this) {
-        result = cacheExecutor;
-        if (result == null) {
-          cacheExecutor = result = AcoSpanBuilder.newCacheExecutor();
-        }
-      }
-    }
-    return result;
-  }
-
   @Override
   public Bucket create(BucketInfo bucketInfo, BucketTargetOption... options) {
     Span span =
@@ -2311,5 +2298,18 @@ final class OtelStorageDecorator implements Storage {
         return delegate.isOpen();
       }
     }
+  }
+
+  ExecutorService getCacheExecutor() {
+    ExecutorService result = cacheExecutor;
+    if (result == null) {
+      synchronized (this) {
+        result = cacheExecutor;
+        if (result == null) {
+          cacheExecutor = result = AcoSpanBuilder.newCacheExecutor();
+        }
+      }
+    }
+    return result;
   }
 }

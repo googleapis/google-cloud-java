@@ -63,7 +63,38 @@ public final class ITOpenTelemetryTest {
         storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
     try (Storage storage = storageOptions.getService()) {
       storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
-      Thread.sleep(800);
+    }
+
+    SpanData spanData = exporter.getExportedSpans().get(0);
+    assertAll(
+        () -> assertThat(getAttributeValue(spanData, "gcp.client.service")).isEqualTo("Storage"),
+        () ->
+            assertThat(getAttributeValue(spanData, "gcp.client.repo"))
+                .isEqualTo("googleapis/java-storage"),
+        () ->
+            assertThat(getAttributeValue(spanData, "gcp.client.artifact"))
+                .isEqualTo("com.google.cloud:google-cloud-storage"),
+        () ->
+            assertThat(getAttributeValue(spanData, "rpc.system"))
+                .isEqualTo(transport.name().toLowerCase()));
+  }
+
+  @Test
+  public void testAcoSuccessFlow() throws Exception {
+    TestExporter exporter = new TestExporter();
+
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+    try (Storage storage = storageOptions.getService()) {
+      storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, bucket.getName());
       storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
     }
 
@@ -101,7 +132,7 @@ public final class ITOpenTelemetryTest {
 
     try (Storage storage = storageOptions.getService()) {
       storage.get(nonExistentBucket);
-      Thread.sleep(800);
+      pollUntilMetadataEvicted((OtelStorageDecorator) storage, nonExistentBucket);
       storage.get(nonExistentBucket);
     }
 
@@ -135,7 +166,7 @@ public final class ITOpenTelemetryTest {
       } catch (StorageException e) {
         // Expected 403 Forbidden
       }
-      Thread.sleep(800);
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, "test");
       try {
         storage.get("test");
       } catch (StorageException e) {
@@ -160,6 +191,31 @@ public final class ITOpenTelemetryTest {
   public void noOpDoesNothing() {
     assertThat(storage.getOptions().getOpenTelemetry()).isSameInstanceAs(OpenTelemetry.noop());
     storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+  }
+
+  private static void pollUntilMetadataResolved(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get(bucketName);
+      if (meta != null && !meta.fetchPending) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to resolve for bucket: " + bucketName);
+  }
+
+  private static void pollUntilMetadataEvicted(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      if (!osd.bucketMetadataCache.containsKey(bucketName)) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to evict for nonexistent bucket: " + bucketName);
   }
 
   private static String getAttributeValue(SpanData spanData, String key) {

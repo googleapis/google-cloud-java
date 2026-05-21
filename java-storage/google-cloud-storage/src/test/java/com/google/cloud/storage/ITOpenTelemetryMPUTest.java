@@ -88,6 +88,10 @@ public final class ITOpenTelemetryMPUTest {
                   .key(objectName)
                   .build());
 
+      // Dynamically wait for the background prefetch to resolve to ensure 100% deterministic,
+      // non-flaky tracing
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, bucket.getName());
+
       byte[] data = "Hello, World!".getBytes(StandardCharsets.UTF_8);
       RequestBody body = RequestBody.of(ByteBuffer.wrap(data));
       UploadPartResponse upload =
@@ -167,5 +171,18 @@ public final class ITOpenTelemetryMPUTest {
                 .getAttributes()
                 .get(AttributeKey.stringKey("gcp.resource.destination.location")))
         .isNotEqualTo("global");
+  }
+
+  private static void pollUntilMetadataResolved(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get(bucketName);
+      if (meta != null && !meta.fetchPending) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to resolve for bucket: " + bucketName);
   }
 }
