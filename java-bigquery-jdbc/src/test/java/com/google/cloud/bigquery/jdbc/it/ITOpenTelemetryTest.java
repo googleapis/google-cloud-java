@@ -48,16 +48,6 @@ public class ITOpenTelemetryTest {
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;",
           PROJECT_ID);
 
-  private static class TelemetryContext {
-    final String traceId;
-    final String spanId;
-
-    TelemetryContext(String traceId, String spanId) {
-      this.traceId = traceId;
-      this.spanId = spanId;
-    }
-  }
-
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
 
@@ -91,11 +81,11 @@ public class ITOpenTelemetryTest {
       }
     }
 
-    // Step 2: Retrieve and assert logs
-    TelemetryContext telCtx = verifyAndFetchLogs(connectionUuid);
+    // Step 2: Retrieve and assert logs, harvesting the TraceId
+    String traceId = verifyAndFetchLogs(connectionUuid);
 
     // Step 3: Query Cloud Trace and assert parent-child hierarchy
-    Trace trace = verifyAndFetchTrace(telCtx.traceId);
+    Trace trace = verifyAndFetchTrace(traceId);
 
     boolean foundParentExecuteQuery = false;
     boolean foundChildSdkSpans = false;
@@ -154,11 +144,11 @@ public class ITOpenTelemetryTest {
       assertThrows(SQLException.class, () -> statement.executeQuery("SELECT * FROM;"));
     }
 
-    // Step 2: Retrieve and assert logs
-    TelemetryContext telCtx = verifyAndFetchLogs(connectionUuid);
+    // Step 2: Retrieve and assert logs, harvesting the TraceId
+    String traceId = verifyAndFetchLogs(connectionUuid);
 
     // Step 3: Query Cloud Trace and assert span status is ERROR
-    Trace trace = verifyAndFetchTrace(telCtx.traceId);
+    Trace trace = verifyAndFetchTrace(traceId);
 
     boolean foundParentExecuteQuery = false;
 
@@ -174,7 +164,7 @@ public class ITOpenTelemetryTest {
         "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'");
   }
 
-  private TelemetryContext verifyAndFetchLogs(String connectionUuid) throws Exception {
+  private String verifyAndFetchLogs(String connectionUuid) throws Exception {
     try (Logging logging =
         LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build().getService()) {
       String filter =
@@ -199,7 +189,7 @@ public class ITOpenTelemetryTest {
         assertEquals(connectionUuid, entry.getLabels().get("jdbc.connection_id"));
       }
 
-      return new TelemetryContext(traceId, hexSpanId);
+      return traceId;
     }
   }
 
