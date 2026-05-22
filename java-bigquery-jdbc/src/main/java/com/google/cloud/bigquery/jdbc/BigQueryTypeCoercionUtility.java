@@ -29,9 +29,12 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
 import java.time.Period;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.Text;
@@ -86,6 +89,37 @@ class BigQueryTypeCoercionUtility {
                 Timestamp.class)
             .registerTypeCoercion(
                 (Date date) -> new Timestamp(date.getTime()), Date.class, Timestamp.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> Date.valueOf(ldt.toLocalDate()),
+                LocalDateTime.class,
+                Date.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> {
+                  long millisOfDay =
+                      java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
+                          ldt.toLocalTime().toNanoOfDay());
+                  long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
+                  return new Time(localMillis);
+                },
+                LocalDateTime.class,
+                Time.class)
+            .registerTypeCoercion((Date date) -> date.toLocalDate(), Date.class, LocalDate.class)
+            .registerTypeCoercion(
+                (Time time) -> {
+                  long millis = time.getTime();
+                  long localMillis = millis + TimeZone.getDefault().getOffset(millis);
+                  return LocalTime.ofNanoOfDay(
+                      java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(localMillis));
+                },
+                Time.class,
+                LocalTime.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toLocalDateTime(), Timestamp.class, LocalDateTime.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toInstant().atOffset(ZoneOffset.UTC),
+                Timestamp.class,
+                OffsetDateTime.class)
+            .registerTypeCoercion((Timestamp ts) -> ts.toInstant(), Timestamp.class, Instant.class)
             .registerTypeCoercion(new TimestampToString())
             .registerTypeCoercion(new TimeToString())
             .registerTypeCoercion((Long l) -> l != 0L, Long.class, Boolean.class)
@@ -106,6 +140,13 @@ class BigQueryTypeCoercionUtility {
                 (Boolean b) -> b ? BigDecimal.ONE : BigDecimal.ZERO,
                 Boolean.class,
                 BigDecimal.class)
+            .registerTypeCoercion(
+                (Integer i) -> BigDecimal.valueOf(i), Integer.class, BigDecimal.class)
+            .registerTypeCoercion((Long l) -> BigDecimal.valueOf(l), Long.class, BigDecimal.class)
+            .registerTypeCoercion(
+                (Double d) -> BigDecimal.valueOf(d), Double.class, BigDecimal.class)
+            .registerTypeCoercion((Float f) -> BigDecimal.valueOf(f), Float.class, BigDecimal.class)
+            .registerTypeCoercion((String s) -> new BigDecimal(s), String.class, BigDecimal.class)
             .registerTypeCoercion(new PeriodDurationToString())
             .registerTypeCoercion(unused -> (byte) 0, Void.class, Byte.class)
             .registerTypeCoercion(unused -> 0, Void.class, Integer.class)

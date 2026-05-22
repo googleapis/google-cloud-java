@@ -246,6 +246,25 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public abstract Object getObject(int columnIndex) throws SQLException;
 
+  @Override
+  public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+    LOG.finestTrace("getObject");
+    try {
+      Object value = getObject(columnIndex);
+      if (value == null) {
+        return null;
+      }
+      return this.bigQueryTypeCoercer.coerceTo(type, value, this.LOG);
+    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      throw createCoercionException(columnIndex, type, e);
+    }
+  }
+
+  @Override
+  public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+    return getObject(getColumnIndex(columnLabel), type);
+  }
+
   protected int getColumnIndex(String columnLabel) throws SQLException {
     LOG.finestTrace("getColumnIndex");
     checkClosed();

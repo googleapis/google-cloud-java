@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeVecto
 import static com.google.common.truth.Truth.assertThat;
 import static org.apache.arrow.vector.types.Types.MinorType.INT;
 import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -32,10 +33,14 @@ import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Struct;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -344,6 +349,53 @@ public class BigQueryArrowResultSetTest {
     assertThat(cnt).isEqualTo(2);
     assertThat(bigQueryArrowResultSetNested.next()).isFalse();
     assertThat(bigQueryArrowResultSetNested.isAfterLast()).isTrue();
+  }
+
+  @Test
+  public void testGetObjectWithType() throws SQLException {
+    assertThat(bigQueryArrowResultSet.next()).isTrue();
+
+    // java.time types
+    assertThat(bigQueryArrowResultSet.getObject("dateField", LocalDate.class))
+        .isEqualTo(LocalDate.of(1970, 1, 1));
+    assertThat(bigQueryArrowResultSet.getObject(11, LocalDate.class))
+        .isEqualTo(LocalDate.of(1970, 1, 1));
+
+    assertThat(bigQueryArrowResultSet.getObject("timeField", LocalTime.class))
+        .isEqualTo(LocalTime.of(0, 0, 1, 234_000_000));
+    assertThat(bigQueryArrowResultSet.getObject(10, LocalTime.class))
+        .isEqualTo(LocalTime.of(0, 0, 1, 234_000_000));
+
+    assertThat(bigQueryArrowResultSet.getObject("timeStampField", LocalDateTime.class))
+        .isEqualTo(LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000));
+    assertThat(bigQueryArrowResultSet.getObject(5, LocalDateTime.class))
+        .isEqualTo(LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000));
+
+    // Boolean
+    assertThat(bigQueryArrowResultSet.getObject("boolField", Boolean.class)).isFalse();
+    assertThat(bigQueryArrowResultSet.getObject(1, Boolean.class)).isFalse();
+
+    // Numbers & Coercions
+    assertThat(bigQueryArrowResultSet.getObject("int64Filed", Long.class)).isEqualTo(1L);
+    assertThat(bigQueryArrowResultSet.getObject(2, Integer.class)).isEqualTo(1);
+    assertThat(bigQueryArrowResultSet.getObject(2, String.class)).isEqualTo("1");
+
+    assertThat(bigQueryArrowResultSet.getObject("float64Field", Double.class))
+        .isEqualTo(Double.valueOf(1.1f));
+
+    // String
+    assertThat(bigQueryArrowResultSet.getObject("stringField", String.class)).isEqualTo("text1");
+
+    // BigDecimal / Numeric
+    assertThat(bigQueryArrowResultSet.getObject("numericField", BigDecimal.class))
+        .isEqualTo(BigDecimal.ONE);
+    assertThat(bigQueryArrowResultSet.getObject(9, Long.class)).isEqualTo(1L);
+
+    // Unsupported coercions should fail
+    assertThrows(
+        SQLException.class, () -> bigQueryArrowResultSet.getObject("boolField", LocalDate.class));
+    assertThrows(
+        SQLException.class, () -> bigQueryArrowResultSet.getObject("dateField", Boolean.class));
   }
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {

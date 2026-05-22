@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -47,6 +48,7 @@ import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Calendar;
@@ -464,6 +466,58 @@ public class BigQueryJsonResultSetTest {
         .isEqualTo(bigQueryJsonResultSet.getDate(14, calendar).getTime());
     assertThat(bigQueryJsonResultSet.getDate("fourteenth").getTime())
         .isEqualTo(bigQueryJsonResultSet.getDate("fourteenth", calendar).getTime());
+  }
+
+  @Test
+  public void testGetObjectWithType() throws SQLException {
+    assertThat(resetResultSet()).isTrue();
+
+    // java.time types
+    assertThat(bigQueryJsonResultSet.getObject("fourteenth", LocalDate.class))
+        .isEqualTo(LocalDate.of(2020, 1, 15));
+    assertThat(bigQueryJsonResultSet.getObject(14, LocalDate.class))
+        .isEqualTo(LocalDate.of(2020, 1, 15));
+
+    assertThat(bigQueryJsonResultSet.getObject("twelfth", LocalTime.class))
+        .isEqualTo(LocalTime.of(11, 14, 19, 820000000));
+    assertThat(bigQueryJsonResultSet.getObject(12, LocalTime.class))
+        .isEqualTo(LocalTime.of(11, 14, 19, 820000000));
+
+    assertThat(bigQueryJsonResultSet.getObject("fifth", LocalDateTime.class))
+        .isEqualTo(LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000));
+    assertThat(bigQueryJsonResultSet.getObject(5, LocalDateTime.class))
+        .isEqualTo(LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000));
+
+    // Boolean
+    assertThat(bigQueryJsonResultSet.getObject("first", Boolean.class)).isFalse();
+    assertThat(bigQueryJsonResultSet.getObject(1, Boolean.class)).isFalse();
+
+    // Numbers & Coercions
+    assertThat(bigQueryJsonResultSet.getObject("second", Long.class)).isEqualTo(1L);
+    assertThat(bigQueryJsonResultSet.getObject(2, Integer.class)).isEqualTo(1);
+    assertThat(bigQueryJsonResultSet.getObject(2, Short.class)).isEqualTo((short) 1);
+    assertThat(bigQueryJsonResultSet.getObject(2, String.class)).isEqualTo("1");
+
+    assertThat(bigQueryJsonResultSet.getObject("third", Double.class)).isEqualTo(1.5D);
+    assertThat(bigQueryJsonResultSet.getObject(3, Float.class)).isEqualTo(1.5F);
+
+    // String
+    assertThat(bigQueryJsonResultSet.getObject("fourth", String.class)).isEqualTo(STRING_VAL);
+
+    // BigDecimal / Numeric
+    assertThat(bigQueryJsonResultSet.getObject("tenth", BigDecimal.class))
+        .isEqualTo(new BigDecimal("12345678"));
+    assertThat(bigQueryJsonResultSet.getObject(10, Long.class)).isEqualTo(12345678L);
+
+    assertThat(bigQueryJsonResultSet.getObject("eleventh", BigDecimal.class))
+        .isEqualTo(new BigDecimal("12345678.99"));
+    assertThat(bigQueryJsonResultSet.getObject(11, Double.class)).isEqualTo(12345678.99D);
+
+    // Unsupported coercions should fail
+    assertThrows(
+        SQLException.class, () -> bigQueryJsonResultSet.getObject("first", LocalDate.class));
+    assertThrows(
+        SQLException.class, () -> bigQueryJsonResultSet.getObject("fourteenth", Boolean.class));
   }
 
   private int resultSetRowCount(BigQueryJsonResultSet resultSet) throws SQLException {
