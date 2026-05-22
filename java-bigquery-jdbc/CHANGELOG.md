@@ -6,26 +6,26 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Features
 
-* feat(bqjdbc): Per connection logs - Add BigQueryJdbcMdc (#12833) ([f562667](https://github.com/googleapis/google-cloud-java/commit/f562667366260fd488ab149ec3e8b67b0bb350f3))
-* feat(bqjdbc): Per connection logs - Add PerConnectionFileHandler (#12899) ([5846197](https://github.com/googleapis/google-cloud-java/commit/5846197cc28a700964914d32cfbf90bfee3b37a8))
-* feat(bqjdbc): Integrate the PerConnectionFileHandler with BigQueryJdbcRootLogger (#12933) ([2e56184](https://github.com/googleapis/google-cloud-java/commit/2e56184849a0888256a48ace191a870287ce1fef))
-* feat(bqjdbc): Bypass dry-run job for read-only tokens. (#12961) ([cd57169](https://github.com/googleapis/google-cloud-java/commit/cd571691f5aaadbd3bfa7ee2dfad5414cef6127c2))
+* Per connection logs - Add BigQueryJdbcMdc (#12833) ([f562667](https://github.com/googleapis/google-cloud-java/commit/f562667366260fd488ab149ec3e8b67b0bb350f3))
+* Per connection logs - Add PerConnectionFileHandler (#12899) ([5846197](https://github.com/googleapis/google-cloud-java/commit/5846197cc28a700964914d32cfbf90bfee3b37a8))
+* Integrate the PerConnectionFileHandler with BigQueryJdbcRootLogger (#12933) ([2e56184](https://github.com/googleapis/google-cloud-java/commit/2e56184849a0888256a48ace191a870287ce1fef))
+* Bypass dry-run job for read-only tokens. (#12961) ([cd57169](https://github.com/googleapis/google-cloud-java/commit/cd571691f5aaadbd3bfa7ee2dfad5414cef6127c2))
 
 ### Bug Fixes
 
-* fix(bqjdbc): optimize formatter in BigQueryJdbcRootLogger (#12877) ([4233faf](https://github.com/googleapis/google-cloud-java/commit/4233fafb2118ad28f89c996899a52b37d48c79eb))
-* fix(bqjdbc): enhance logging with caller inference and explicit exception tracking (#12903) ([ce4969b](https://github.com/googleapis/google-cloud-java/commit/ce4969b81e18a165d2c6cb245a8073923ab92567))
-* fix(bqjdbc): Log exception messages - part 2 (#12907) ([5215b11](https://github.com/googleapis/google-cloud-java/commit/5215b119726f124ff9228dcfe86ebca54f7915ae))
-* fix(bqjdbc): Log exception messages - part 3 (#12920) ([45b572f](https://github.com/googleapis/google-cloud-java/commit/45b572fae59d9448d9d8c5561be3735496142154))
-* fix(bqjdbc): support Service Account Impersonation in ADC (#12967) ([8ce183c](https://github.com/googleapis/google-cloud-java/commit/8ce183cf802f1abadb809bfe733d904570980968))
-* fix(bqjdbc): metadata methods & getSqlTypeName for struct (#12947) ([37555fb](https://github.com/googleapis/google-cloud-java/commit/37555fb09f209bbeb8f32f1661d83a7548175411))
-* fix(bqjdbc): add default OAuth client id/secret (#12946) ([9b5c4fa](https://github.com/googleapis/google-cloud-java/commit/9b5c4fa3bff718170b63c1cc404e4dd4cacfbbdc))
+* optimize formatter in BigQueryJdbcRootLogger (#12877) ([4233faf](https://github.com/googleapis/google-cloud-java/commit/4233fafb2118ad28f89c996899a52b37d48c79eb))
+* enhance logging with caller inference and explicit exception tracking (#12903) ([ce4969b](https://github.com/googleapis/google-cloud-java/commit/ce4969b81e18a165d2c6cb245a8073923ab92567))
+* Log exception messages - part 2 (#12907) ([5215b11](https://github.com/googleapis/google-cloud-java/commit/5215b119726f124ff9228dcfe86ebca54f7915ae))
+* Log exception messages - part 3 (#12920) ([45b572f](https://github.com/googleapis/google-cloud-java/commit/45b572fae59d9448d9d8c5561be3735496142154))
+* support Service Account Impersonation in ADC (#12967) ([8ce183c](https://github.com/googleapis/google-cloud-java/commit/8ce183cf802f1abadb809bfe733d904570980968))
+* metadata methods & getSqlTypeName for struct (#12947) ([37555fb](https://github.com/googleapis/google-cloud-java/commit/37555fb09f209bbeb8f32f1661d83a7548175411))
+* add default OAuth client id/secret (#12946) ([9b5c4fa](https://github.com/googleapis/google-cloud-java/commit/9b5c4fa3bff718170b63c1cc404e4dd4cacfbbdc))
 
 ### Refactors & Chores
 
-* chore(bqjdbc): helper tools (#12973) ([856febf](https://github.com/googleapis/google-cloud-java/commit/856febf3773601e998a1cc61c397fad13c2bc084))
-* chore(bqjdbc): switch connection identifier to UUID (#12957) ([99b1894](https://github.com/googleapis/google-cloud-java/commit/99b1894e99f86f11d043b18dc7441d00fb54e245))
-* chore(bqjdbc): enhance exception messages to include chained exception message (#12996) ([c7f44aa](https://github.com/googleapis/google-cloud-java/commit/c7f44aa067c2eeef6ed5e7cbe7e0530555b74a06))
+* helper tools (#12973) ([856febf](https://github.com/googleapis/google-cloud-java/commit/856febf3773601e998a1cc61c397fad13c2bc084))
+* switch connection identifier to UUID (#12957) ([99b1894](https://github.com/googleapis/google-cloud-java/commit/99b1894e99f86f11d043b18dc7441d00fb54e245))
+* enhance exception messages to include chained exception message (#12996) ([c7f44aa](https://github.com/googleapis/google-cloud-java/commit/c7f44aa067c2eeef6ed5e7cbe7e0530555b74a06))
 
 ---
 
@@ -33,9 +33,9 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Bug Fixes
 
-* fix(bqjdbc): Revert DatabaseMetaData field to be non-static in BigQueryConnection (#12778) ([ac69c8d](https://github.com/googleapis/google-cloud-java/commit/ac69c8d9041121b7bdd1f7cb7b6b0d2f182ba138)) _(First released in v1.85.1 patch)_
-* fix(bqjdbc): add Google Driver scope to all credential types (#12847) ([5c890f8](https://github.com/googleapis/google-cloud-java/commit/5c890f80f7f7ffef1d099104f605298486fe636d)) _(First released in v1.85.1 patch)_
-* fix(bqjdbc): lazily instantiate Statement in BigQueryDatabaseMetaData (#12752) ([72e5508](https://github.com/googleapis/google-cloud-java/commit/72e5508669ea48cde28f02adfeedfb05cd73fc57)) _(First released in v1.85.0)_
+* Revert DatabaseMetaData field to be non-static in BigQueryConnection (#12778) ([ac69c8d](https://github.com/googleapis/google-cloud-java/commit/ac69c8d9041121b7bdd1f7cb7b6b0d2f182ba138)) _(First released in v1.85.1 patch)_
+* add Google Driver scope to all credential types (#12847) ([5c890f8](https://github.com/googleapis/google-cloud-java/commit/5c890f80f7f7ffef1d099104f605298486fe636d)) _(First released in v1.85.1 patch)_
+* lazily instantiate Statement in BigQueryDatabaseMetaData (#12752) ([72e5508](https://github.com/googleapis/google-cloud-java/commit/72e5508669ea48cde28f02adfeedfb05cd73fc57)) _(First released in v1.85.0)_
 
 ---
 
@@ -43,9 +43,9 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Refactors & Chores
 
-* chore(bqjdbc): move extended test suite to monorepo (#12696) ([9b455b9](https://github.com/googleapis/google-cloud-java/commit/9b455b9e0f70997f2e92a891146f1e9be96bbfd7))
+* move extended test suite to monorepo (#12696) ([9b455b9](https://github.com/googleapis/google-cloud-java/commit/9b455b9e0f70997f2e92a891146f1e9be96bbfd7))
 * chore(jdbc bq): makefile commands to run standalone IT tests (#12666) ([91eb471](https://github.com/googleapis/google-cloud-java/commit/91eb471c21d687e09f7505997d6220f9480eb5da))
-* chore(bq jdbc): change uber jar bundling rules (#12195) ([ed0ac75](https://github.com/googleapis/google-cloud-java/commit/ed0ac7548078c8d16f2386e0645d73c1ba8bd995))
+* change uber jar bundling rules (#12195) ([ed0ac75](https://github.com/googleapis/google-cloud-java/commit/ed0ac7548078c8d16f2386e0645d73c1ba8bd995))
 
 ---
 
@@ -53,8 +53,8 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Bug Fixes
 
-* fix(bq jdbc): ensure getMoreResults() always moves the cursor (#12353) ([ac1f0f4](https://github.com/googleapis/google-cloud-java/commit/ac1f0f44f92cdddb1aad7d0852a11203465fe874))
-* fix(bq jdbc): allow & ignore unknown parameters (#12352) ([2332ff1](https://github.com/googleapis/google-cloud-java/commit/2332ff1036116903ee5dab3e71c44950995fab61))
+* ensure getMoreResults() always moves the cursor (#12353) ([ac1f0f4](https://github.com/googleapis/google-cloud-java/commit/ac1f0f44f92cdddb1aad7d0852a11203465fe874))
+* allow & ignore unknown parameters (#12352) ([2332ff1](https://github.com/googleapis/google-cloud-java/commit/2332ff1036116903ee5dab3e71c44950995fab61))
 
 ---
 
@@ -62,13 +62,13 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Bug Fixes
 
-* fix(jdbc bq): unshade BQ SDK in uber jar (#12078) ([c4cabde](https://github.com/googleapis/google-cloud-java/commit/c4cabdee72c3abf9d1a0675d5092d0c5658dafc5))
+* unshade BQ SDK in uber jar (#12078) ([c4cabde](https://github.com/googleapis/google-cloud-java/commit/c4cabdee72c3abf9d1a0675d5092d0c5658dafc5))
 
 ### Refactors & Chores
 
-* chore(bq jdbc): migrate to junit5 (#12079) ([b1c6fad](https://github.com/googleapis/google-cloud-java/commit/b1c6fada37977c24c41c2d22303037b019d5abbe))
-* chore(bq jdbc): Add integration test suites (#12102) ([b1cdcb5](https://github.com/googleapis/google-cloud-java/commit/b1cdcb55ec8858aaba94115c896b2fa843d18584))
-* chore(bq jdbc): fix docker environment commands (#12107) ([353f577](https://github.com/googleapis/google-cloud-java/commit/353f577073952a848675805d410eea04e5a8288a))
+* migrate to junit5 (#12079) ([b1c6fad](https://github.com/googleapis/google-cloud-java/commit/b1c6fada37977c24c41c2d22303037b019d5abbe))
+* Add integration test suites (#12102) ([b1cdcb5](https://github.com/googleapis/google-cloud-java/commit/b1cdcb55ec8858aaba94115c896b2fa843d18584))
+* fix docker environment commands (#12107) ([353f577](https://github.com/googleapis/google-cloud-java/commit/353f577073952a848675805d410eea04e5a8288a))
 
 ---
 
@@ -76,8 +76,8 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Refactors & Chores
 
-* chore(bq jdbc): BQ JDBC presubmit & nightly (#12062) ([f541ef6](https://github.com/googleapis/google-cloud-java/commit/f541ef67adef0aa180740c184a89292e1c1bea66))
-* chore: match the file tree of 8ce5f4d4284 java-bigquery migration to monorepo ([11426be](https://github.com/googleapis/google-cloud-java/commit/11426bebb2ff87e005dca47c534f2d8e446a693d))
+* BQ JDBC presubmit & nightly (#12062) ([f541ef6](https://github.com/googleapis/google-cloud-java/commit/f541ef67adef0aa180740c184a89292e1c1bea66))
+* match the file tree of 8ce5f4d4284 java-bigquery migration to monorepo ([11426be](https://github.com/googleapis/google-cloud-java/commit/11426bebb2ff87e005dca47c534f2d8e446a693d))
 
 ---
 
@@ -85,16 +85,16 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Features
 
-* feat(jdbc): enforce strict JDBC URL parsing and sync `DataSource` properties (#4107) ([53fcbcf](https://github.com/googleapis/google-cloud-java/commit/53fcbcf59596d5d0c2d2e9aa5072016ebb1087c1))
-* feat(jdbc): centralize connection properties from `BigQueryConnection` and `DataSource` (#4116) ([1b2a116](https://github.com/googleapis/google-cloud-java/commit/1b2a1162ef7f37591862930d67bbc092daf817b0))
+* enforce strict JDBC URL parsing and sync `DataSource` properties (#4107) ([53fcbcf](https://github.com/googleapis/google-cloud-java/commit/53fcbcf59596d5d0c2d2e9aa5072016ebb1087c1))
+* centralize connection properties from `BigQueryConnection` and `DataSource` (#4116) ([1b2a116](https://github.com/googleapis/google-cloud-java/commit/1b2a1162ef7f37591862930d67bbc092daf817b0))
 
 ### Bug Fixes
 
-* fix(jdbc): various perf improvements (#4114) ([eeb73b1](https://github.com/googleapis/google-cloud-java/commit/eeb73b1efa4eb4b46a542a285ce68687b26d7de2))
+* various perf improvements (#4114) ([eeb73b1](https://github.com/googleapis/google-cloud-java/commit/eeb73b1efa4eb4b46a542a285ce68687b26d7de2))
 
 ### Refactors & Chores
 
-* chore(jdbc): add console logs during tests (#4130) ([ccdf939](https://github.com/googleapis/google-cloud-java/commit/ccdf93910ebbc58f8bf6bd636ca81473b5564d2f))
+* add console logs during tests (#4130) ([ccdf939](https://github.com/googleapis/google-cloud-java/commit/ccdf93910ebbc58f8bf6bd636ca81473b5564d2f))
 
 ---
 
@@ -102,7 +102,7 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Features
 
-* feat(jdbc): add retry mechanism for storage api (#4100) ([00a6539](https://github.com/googleapis/google-cloud-java/commit/00a653991dd746fead63586cb734d802ae9bbcd5))
+* add retry mechanism for storage api (#4100) ([00a6539](https://github.com/googleapis/google-cloud-java/commit/00a653991dd746fead63586cb734d802ae9bbcd5))
 
 ---
 
@@ -110,19 +110,19 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Features
 
-* feat(jdbc): enable gRPC Keep-Alive for Storage Read API (#4093) ([63b0ec5](https://github.com/googleapis/google-cloud-java/commit/63b0ec5fda2794beff54d6ba50bc8ae01f2bcdbf))
-* feat(jdbc): add `RequestReason` connection property (#4094) ([b4463ee](https://github.com/googleapis/google-cloud-java/commit/b4463ee276edd8321e92b5b6ce96d8116842f5ee))
-* feat(jdbc): add `HttpTransportOptions` timeout configuration (#4089) ([8b74a8d](https://github.com/googleapis/google-cloud-java/commit/8b74a8d5253e3f34c60c9927c95b704d61783540))
+* enable gRPC Keep-Alive for Storage Read API (#4093) ([63b0ec5](https://github.com/googleapis/google-cloud-java/commit/63b0ec5fda2794beff54d6ba50bc8ae01f2bcdbf))
+* add `RequestReason` connection property (#4094) ([b4463ee](https://github.com/googleapis/google-cloud-java/commit/b4463ee276edd8321e92b5b6ce96d8116842f5ee))
+* add `HttpTransportOptions` timeout configuration (#4089) ([8b74a8d](https://github.com/googleapis/google-cloud-java/commit/8b74a8d5253e3f34c60c9927c95b704d61783540))
 
 ### Bug Fixes
 
-* fix(jdbc): return null for invalid URLs in `connect()` to comply with JDBC spec (#4086) ([6f43754](https://github.com/googleapis/google-cloud-java/commit/6f43754e29320dbc39fb199cdb63276218c4bef6))
-* fix(jdbc): avoid String.format in log calls (#4096) ([8c4528a](https://github.com/googleapis/google-cloud-java/commit/8c4528a5f1ae905c9995a90aeec6c9f29ac445ea))
+* return null for invalid URLs in `connect()` to comply with JDBC spec (#4086) ([6f43754](https://github.com/googleapis/google-cloud-java/commit/6f43754e29320dbc39fb199cdb63276218c4bef6))
+* avoid String.format in log calls (#4096) ([8c4528a](https://github.com/googleapis/google-cloud-java/commit/8c4528a5f1ae905c9995a90aeec6c9f29ac445ea))
 
 ### Refactors & Chores
 
-* chore: add readme for `google-cloud-bigquery-jdbc` (#4071) ([47bf46d](https://github.com/googleapis/google-cloud-java/commit/47bf46dac409b1c835679267f5c16d3d9cd7e39b))
-* chore(jdbc): shade bq sdk in jdbc 'all' package (#4092) ([dcb7747](https://github.com/googleapis/google-cloud-java/commit/dcb7747a07bc5fdb480936c02d00df9152d4f2af))
+* add readme for `google-cloud-bigquery-jdbc` (#4071) ([47bf46d](https://github.com/googleapis/google-cloud-java/commit/47bf46dac409b1c835679267f5c16d3d9cd7e39b))
+* shade bq sdk in jdbc 'all' package (#4092) ([dcb7747](https://github.com/googleapis/google-cloud-java/commit/dcb7747a07bc5fdb480936c02d00df9152d4f2af))
 
 ---
 
@@ -130,7 +130,7 @@ All notable changes to the BigQuery JDBC driver (`google-cloud-bigquery-jdbc`) w
 
 ### Refactors & Chores
 
-* chore: move Google JDBC driver code (#4050) ([c3a1b78](https://github.com/googleapis/google-cloud-java/commit/c3a1b787e63c6e75805956f9abca8d93186424ab))
-* chore(jdbc): moving helper scripts & simplify dependencies (#4062) ([e9bc501](https://github.com/googleapis/google-cloud-java/commit/e9bc501db0403e1cd293f74c98867b04ed2b0b24))
-* chore(jdbc): JDBC presubmit & nightly pipelines (#4066) ([bd4d8ea](https://github.com/googleapis/google-cloud-java/commit/bd4d8ea255d4c2b8e20666124b0c41c347fba800))
-* chore(jdbc): add nightly JAR build (#4076) ([c48a7d7](https://github.com/googleapis/google-cloud-java/commit/c48a7d790632156fc7c9d92c37cb2ae7d3e6bb8a))
+* move Google JDBC driver code (#4050) ([c3a1b78](https://github.com/googleapis/google-cloud-java/commit/c3a1b787e63c6e75805956f9abca8d93186424ab))
+* moving helper scripts & simplify dependencies (#4062) ([e9bc501](https://github.com/googleapis/google-cloud-java/commit/e9bc501db0403e1cd293f74c98867b04ed2b0b24))
+* JDBC presubmit & nightly pipelines (#4066) ([bd4d8ea](https://github.com/googleapis/google-cloud-java/commit/bd4d8ea255d4c2b8e20666124b0c41c347fba800))
+* add nightly JAR build (#4076) ([c48a7d7](https://github.com/googleapis/google-cloud-java/commit/c48a7d790632156fc7c9d92c37cb2ae7d3e6bb8a))
