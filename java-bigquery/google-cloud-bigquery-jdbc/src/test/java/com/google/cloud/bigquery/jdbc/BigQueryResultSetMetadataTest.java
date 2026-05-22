@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -33,6 +34,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -273,5 +276,46 @@ public class BigQueryResultSetMetadataTest {
   @Test
   public void testNestedColumnDisplaySize() throws SQLException {
     assertThat(resultSetMetaDataNested.getColumnDisplaySize(1)).isEqualTo(50);
+  }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertThat(resultSetMetaData.isWrapperFor(ResultSetMetaData.class)).isTrue();
+    assertThat(resultSetMetaData.isWrapperFor(BigQueryResultSetMetadata.class)).isTrue();
+    assertThat(resultSetMetaData.isWrapperFor(java.sql.Connection.class)).isFalse();
+    assertThat(resultSetMetaData.isWrapperFor(null)).isFalse();
+
+    Object unwrappedMeta = resultSetMetaData.unwrap(ResultSetMetaData.class);
+    assertThat(unwrappedMeta).isNotSameInstanceAs(resultSetMetaData);
+    assertThat(unwrappedMeta).isInstanceOf(BigQueryResultSetMetadata.class);
+
+    Object unwrappedImpl = resultSetMetaData.unwrap(BigQueryResultSetMetadata.class);
+    assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
+    assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
+
+    SQLException e =
+        assertThrows(SQLException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
+    assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
+  }
+
+  @ParameterizedTest
+  @EnumSource(StandardSQLTypeName.class)
+  public void testIsSearchableForAllTypes(StandardSQLTypeName type) throws SQLException {
+    Field field;
+    if (type == StandardSQLTypeName.STRUCT) {
+      field =
+          Field.of("col", StandardSQLTypeName.STRUCT, Field.of("sub", StandardSQLTypeName.STRING));
+    } else if (type == StandardSQLTypeName.ARRAY) {
+      field =
+          Field.newBuilder("col", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build();
+    } else {
+      field = Field.of("col", type);
+    }
+    FieldList schemaFields = FieldList.of(field);
+    BigQueryJsonResultSet resultSet =
+        BigQueryJsonResultSet.of(
+            Schema.of(schemaFields), 1L, null, statement, new Thread[] {new Thread()});
+    ResultSetMetaData metaData = resultSet.getMetaData();
+    assertThat(metaData.isSearchable(1)).isTrue();
   }
 }

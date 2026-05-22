@@ -392,7 +392,7 @@ public class DataSource implements javax.sql.DataSource {
     return DriverManager.getConnection(getURL(), createProperties());
   }
 
-  private Properties createProperties() {
+  Properties createProperties() {
     Properties connectionProperties = new Properties();
     if (this.projectId != null) {
       connectionProperties.setProperty(
