@@ -85,6 +85,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   private int bitField1_;
+  private int bitField2_;
   public static final int DESIRED_NODE_VERSION_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -901,7 +902,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3376
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3610
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -926,7 +927,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3376
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3610
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -1278,7 +1279,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3414
+   *     google/container/v1/cluster_service.proto;l=3648
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1308,7 +1309,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3414
+   *     google/container/v1/cluster_service.proto;l=3648
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Override
@@ -1990,7 +1991,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3459
+   *     See google/container/v1/cluster_service.proto;l=3693
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Override
@@ -2014,7 +2015,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3459
+   *     See google/container/v1/cluster_service.proto;l=3693
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Override
@@ -3369,16 +3370,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=3798
    * @return Whether the desiredCompliancePostureConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDesiredCompliancePostureConfig() {
     return ((bitField1_ & 0x00008000) != 0);
   }
@@ -3387,16 +3395,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=3798
    * @return The desiredCompliancePostureConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.CompliancePostureConfig getDesiredCompliancePostureConfig() {
     return desiredCompliancePostureConfig_ == null
         ? com.google.container.v1.CompliancePostureConfig.getDefaultInstance()
@@ -3407,14 +3422,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1.CompliancePostureConfigOrBuilder
       getDesiredCompliancePostureConfigOrBuilder() {
     return desiredCompliancePostureConfig_ == null
@@ -3558,7 +3578,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3575
+   *     google/container/v1/cluster_service.proto;l=3814
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Override
@@ -3584,7 +3604,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3575
+   *     google/container/v1/cluster_service.proto;l=3814
    * @return The userManagedKeysConfig.
    */
   @java.lang.Override
@@ -3755,7 +3775,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3588
+   *     google/container/v1/cluster_service.proto;l=3827
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Override
@@ -3779,7 +3799,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3588
+   *     google/container/v1/cluster_service.proto;l=3827
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Override
@@ -4195,6 +4215,59 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         : desiredNetworkTierConfig_;
   }
 
+  public static final int DESIRED_SECRET_SYNC_CONFIG_FIELD_NUMBER = 158;
+  private com.google.container.v1.SecretSyncConfig desiredSecretSyncConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   *
+   * @return Whether the desiredSecretSyncConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredSecretSyncConfig() {
+    return ((bitField1_ & 0x20000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   *
+   * @return The desiredSecretSyncConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecretSyncConfig getDesiredSecretSyncConfig() {
+    return desiredSecretSyncConfig_ == null
+        ? com.google.container.v1.SecretSyncConfig.getDefaultInstance()
+        : desiredSecretSyncConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.SecretSyncConfigOrBuilder getDesiredSecretSyncConfigOrBuilder() {
+    return desiredSecretSyncConfig_ == null
+        ? com.google.container.v1.SecretSyncConfig.getDefaultInstance()
+        : desiredSecretSyncConfig_;
+  }
+
   public static final int DESIRED_PRIVILEGED_ADMISSION_CONFIG_FIELD_NUMBER = 159;
   private com.google.container.v1.PrivilegedAdmissionConfig desiredPrivilegedAdmissionConfig_;
 
@@ -4212,7 +4285,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredPrivilegedAdmissionConfig() {
-    return ((bitField1_ & 0x20000000) != 0);
+    return ((bitField1_ & 0x40000000) != 0);
   }
 
   /**
@@ -4252,6 +4325,60 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         : desiredPrivilegedAdmissionConfig_;
   }
 
+  public static final int DESIRED_CONTROL_PLANE_EGRESS_FIELD_NUMBER = 160;
+  private com.google.container.v1.ControlPlaneEgress desiredControlPlaneEgress_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   *
+   * @return Whether the desiredControlPlaneEgress field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredControlPlaneEgress() {
+    return ((bitField1_ & 0x80000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   *
+   * @return The desiredControlPlaneEgress.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ControlPlaneEgress getDesiredControlPlaneEgress() {
+    return desiredControlPlaneEgress_ == null
+        ? com.google.container.v1.ControlPlaneEgress.getDefaultInstance()
+        : desiredControlPlaneEgress_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ControlPlaneEgressOrBuilder
+      getDesiredControlPlaneEgressOrBuilder() {
+    return desiredControlPlaneEgress_ == null
+        ? com.google.container.v1.ControlPlaneEgress.getDefaultInstance()
+        : desiredControlPlaneEgress_;
+  }
+
   public static final int DESIRED_MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER = 163;
   private com.google.container.v1.ManagedOpenTelemetryConfig desiredManagedOpentelemetryConfig_;
 
@@ -4270,7 +4397,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredManagedOpentelemetryConfig() {
-    return ((bitField1_ & 0x40000000) != 0);
+    return ((bitField2_ & 0x00000001) != 0);
   }
 
   /**
@@ -4310,6 +4437,185 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     return desiredManagedOpentelemetryConfig_ == null
         ? com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()
         : desiredManagedOpentelemetryConfig_;
+  }
+
+  public static final int DESIRED_AUTOPILOT_CLUSTER_POLICY_CONFIG_FIELD_NUMBER = 164;
+  private com.google.container.v1.ClusterPolicyConfig desiredAutopilotClusterPolicyConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   *
+   * @return Whether the desiredAutopilotClusterPolicyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredAutopilotClusterPolicyConfig() {
+    return ((bitField2_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   *
+   * @return The desiredAutopilotClusterPolicyConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ClusterPolicyConfig getDesiredAutopilotClusterPolicyConfig() {
+    return desiredAutopilotClusterPolicyConfig_ == null
+        ? com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()
+        : desiredAutopilotClusterPolicyConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ClusterPolicyConfigOrBuilder
+      getDesiredAutopilotClusterPolicyConfigOrBuilder() {
+    return desiredAutopilotClusterPolicyConfig_ == null
+        ? com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()
+        : desiredAutopilotClusterPolicyConfig_;
+  }
+
+  public static final int DESIRED_MANAGED_MACHINE_LEARNING_DIAGNOSTICS_CONFIG_FIELD_NUMBER = 166;
+  private com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
+      desiredManagedMachineLearningDiagnosticsConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   *
+   * @return Whether the desiredManagedMachineLearningDiagnosticsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredManagedMachineLearningDiagnosticsConfig() {
+    return ((bitField2_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   *
+   * @return The desiredManagedMachineLearningDiagnosticsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
+      getDesiredManagedMachineLearningDiagnosticsConfig() {
+    return desiredManagedMachineLearningDiagnosticsConfig_ == null
+        ? com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.getDefaultInstance()
+        : desiredManagedMachineLearningDiagnosticsConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedMachineLearningDiagnosticsConfigOrBuilder
+      getDesiredManagedMachineLearningDiagnosticsConfigOrBuilder() {
+    return desiredManagedMachineLearningDiagnosticsConfig_ == null
+        ? com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.getDefaultInstance()
+        : desiredManagedMachineLearningDiagnosticsConfig_;
+  }
+
+  public static final int DESIRED_NODE_CREATION_CONFIG_FIELD_NUMBER = 171;
+  private com.google.container.v1.NodeCreationConfig desiredNodeCreationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredNodeCreationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodeCreationConfig() {
+    return ((bitField2_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredNodeCreationConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeCreationConfig getDesiredNodeCreationConfig() {
+    return desiredNodeCreationConfig_ == null
+        ? com.google.container.v1.NodeCreationConfig.getDefaultInstance()
+        : desiredNodeCreationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeCreationConfigOrBuilder
+      getDesiredNodeCreationConfigOrBuilder() {
+    return desiredNodeCreationConfig_ == null
+        ? com.google.container.v1.NodeCreationConfig.getDefaultInstance()
+        : desiredNodeCreationConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4546,10 +4852,25 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       output.writeMessage(156, getDesiredAnonymousAuthenticationConfig());
     }
     if (((bitField1_ & 0x20000000) != 0)) {
-      output.writeMessage(159, getDesiredPrivilegedAdmissionConfig());
+      output.writeMessage(158, getDesiredSecretSyncConfig());
     }
     if (((bitField1_ & 0x40000000) != 0)) {
+      output.writeMessage(159, getDesiredPrivilegedAdmissionConfig());
+    }
+    if (((bitField1_ & 0x80000000) != 0)) {
+      output.writeMessage(160, getDesiredControlPlaneEgress());
+    }
+    if (((bitField2_ & 0x00000001) != 0)) {
       output.writeMessage(163, getDesiredManagedOpentelemetryConfig());
+    }
+    if (((bitField2_ & 0x00000002) != 0)) {
+      output.writeMessage(164, getDesiredAutopilotClusterPolicyConfig());
+    }
+    if (((bitField2_ & 0x00000004) != 0)) {
+      output.writeMessage(166, getDesiredManagedMachineLearningDiagnosticsConfig());
+    }
+    if (((bitField2_ & 0x00000008) != 0)) {
+      output.writeMessage(171, getDesiredNodeCreationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4891,12 +5212,37 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     if (((bitField1_ & 0x20000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              159, getDesiredPrivilegedAdmissionConfig());
+              158, getDesiredSecretSyncConfig());
     }
     if (((bitField1_ & 0x40000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
+              159, getDesiredPrivilegedAdmissionConfig());
+    }
+    if (((bitField1_ & 0x80000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              160, getDesiredControlPlaneEgress());
+    }
+    if (((bitField2_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
               163, getDesiredManagedOpentelemetryConfig());
+    }
+    if (((bitField2_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              164, getDesiredAutopilotClusterPolicyConfig());
+    }
+    if (((bitField2_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              166, getDesiredManagedMachineLearningDiagnosticsConfig());
+    }
+    if (((bitField2_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              171, getDesiredNodeCreationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5230,17 +5576,43 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     if (hasDesiredNetworkTierConfig()) {
       if (!getDesiredNetworkTierConfig().equals(other.getDesiredNetworkTierConfig())) return false;
     }
+    if (hasDesiredSecretSyncConfig() != other.hasDesiredSecretSyncConfig()) return false;
+    if (hasDesiredSecretSyncConfig()) {
+      if (!getDesiredSecretSyncConfig().equals(other.getDesiredSecretSyncConfig())) return false;
+    }
     if (hasDesiredPrivilegedAdmissionConfig() != other.hasDesiredPrivilegedAdmissionConfig())
       return false;
     if (hasDesiredPrivilegedAdmissionConfig()) {
       if (!getDesiredPrivilegedAdmissionConfig()
           .equals(other.getDesiredPrivilegedAdmissionConfig())) return false;
     }
+    if (hasDesiredControlPlaneEgress() != other.hasDesiredControlPlaneEgress()) return false;
+    if (hasDesiredControlPlaneEgress()) {
+      if (!getDesiredControlPlaneEgress().equals(other.getDesiredControlPlaneEgress()))
+        return false;
+    }
     if (hasDesiredManagedOpentelemetryConfig() != other.hasDesiredManagedOpentelemetryConfig())
       return false;
     if (hasDesiredManagedOpentelemetryConfig()) {
       if (!getDesiredManagedOpentelemetryConfig()
           .equals(other.getDesiredManagedOpentelemetryConfig())) return false;
+    }
+    if (hasDesiredAutopilotClusterPolicyConfig() != other.hasDesiredAutopilotClusterPolicyConfig())
+      return false;
+    if (hasDesiredAutopilotClusterPolicyConfig()) {
+      if (!getDesiredAutopilotClusterPolicyConfig()
+          .equals(other.getDesiredAutopilotClusterPolicyConfig())) return false;
+    }
+    if (hasDesiredManagedMachineLearningDiagnosticsConfig()
+        != other.hasDesiredManagedMachineLearningDiagnosticsConfig()) return false;
+    if (hasDesiredManagedMachineLearningDiagnosticsConfig()) {
+      if (!getDesiredManagedMachineLearningDiagnosticsConfig()
+          .equals(other.getDesiredManagedMachineLearningDiagnosticsConfig())) return false;
+    }
+    if (hasDesiredNodeCreationConfig() != other.hasDesiredNodeCreationConfig()) return false;
+    if (hasDesiredNodeCreationConfig()) {
+      if (!getDesiredNodeCreationConfig().equals(other.getDesiredNodeCreationConfig()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5533,13 +5905,33 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DESIRED_NETWORK_TIER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNetworkTierConfig().hashCode();
     }
+    if (hasDesiredSecretSyncConfig()) {
+      hash = (37 * hash) + DESIRED_SECRET_SYNC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredSecretSyncConfig().hashCode();
+    }
     if (hasDesiredPrivilegedAdmissionConfig()) {
       hash = (37 * hash) + DESIRED_PRIVILEGED_ADMISSION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredPrivilegedAdmissionConfig().hashCode();
     }
+    if (hasDesiredControlPlaneEgress()) {
+      hash = (37 * hash) + DESIRED_CONTROL_PLANE_EGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredControlPlaneEgress().hashCode();
+    }
     if (hasDesiredManagedOpentelemetryConfig()) {
       hash = (37 * hash) + DESIRED_MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredManagedOpentelemetryConfig().hashCode();
+    }
+    if (hasDesiredAutopilotClusterPolicyConfig()) {
+      hash = (37 * hash) + DESIRED_AUTOPILOT_CLUSTER_POLICY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredAutopilotClusterPolicyConfig().hashCode();
+    }
+    if (hasDesiredManagedMachineLearningDiagnosticsConfig()) {
+      hash = (37 * hash) + DESIRED_MANAGED_MACHINE_LEARNING_DIAGNOSTICS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredManagedMachineLearningDiagnosticsConfig().hashCode();
+    }
+    if (hasDesiredNodeCreationConfig()) {
+      hash = (37 * hash) + DESIRED_NODE_CREATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodeCreationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5737,8 +6129,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         internalGetDesiredAnonymousAuthenticationConfigFieldBuilder();
         internalGetGkeAutoUpgradeConfigFieldBuilder();
         internalGetDesiredNetworkTierConfigFieldBuilder();
+        internalGetDesiredSecretSyncConfigFieldBuilder();
         internalGetDesiredPrivilegedAdmissionConfigFieldBuilder();
+        internalGetDesiredControlPlaneEgressFieldBuilder();
         internalGetDesiredManagedOpentelemetryConfigFieldBuilder();
+        internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder();
+        internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder();
+        internalGetDesiredNodeCreationConfigFieldBuilder();
       }
     }
 
@@ -6036,15 +6433,40 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredNetworkTierConfigBuilder_.dispose();
         desiredNetworkTierConfigBuilder_ = null;
       }
+      desiredSecretSyncConfig_ = null;
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        desiredSecretSyncConfigBuilder_.dispose();
+        desiredSecretSyncConfigBuilder_ = null;
+      }
       desiredPrivilegedAdmissionConfig_ = null;
       if (desiredPrivilegedAdmissionConfigBuilder_ != null) {
         desiredPrivilegedAdmissionConfigBuilder_.dispose();
         desiredPrivilegedAdmissionConfigBuilder_ = null;
       }
+      desiredControlPlaneEgress_ = null;
+      if (desiredControlPlaneEgressBuilder_ != null) {
+        desiredControlPlaneEgressBuilder_.dispose();
+        desiredControlPlaneEgressBuilder_ = null;
+      }
       desiredManagedOpentelemetryConfig_ = null;
       if (desiredManagedOpentelemetryConfigBuilder_ != null) {
         desiredManagedOpentelemetryConfigBuilder_.dispose();
         desiredManagedOpentelemetryConfigBuilder_ = null;
+      }
+      desiredAutopilotClusterPolicyConfig_ = null;
+      if (desiredAutopilotClusterPolicyConfigBuilder_ != null) {
+        desiredAutopilotClusterPolicyConfigBuilder_.dispose();
+        desiredAutopilotClusterPolicyConfigBuilder_ = null;
+      }
+      desiredManagedMachineLearningDiagnosticsConfig_ = null;
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ != null) {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_.dispose();
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_ = null;
+      }
+      desiredNodeCreationConfig_ = null;
+      if (desiredNodeCreationConfigBuilder_ != null) {
+        desiredNodeCreationConfigBuilder_.dispose();
+        desiredNodeCreationConfigBuilder_ = null;
       }
       return this;
     }
@@ -6542,20 +6964,57 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         to_bitField1_ |= 0x10000000;
       }
       if (((from_bitField2_ & 0x00000100) != 0)) {
+        result.desiredSecretSyncConfig_ =
+            desiredSecretSyncConfigBuilder_ == null
+                ? desiredSecretSyncConfig_
+                : desiredSecretSyncConfigBuilder_.build();
+        to_bitField1_ |= 0x20000000;
+      }
+      if (((from_bitField2_ & 0x00000200) != 0)) {
         result.desiredPrivilegedAdmissionConfig_ =
             desiredPrivilegedAdmissionConfigBuilder_ == null
                 ? desiredPrivilegedAdmissionConfig_
                 : desiredPrivilegedAdmissionConfigBuilder_.build();
-        to_bitField1_ |= 0x20000000;
+        to_bitField1_ |= 0x40000000;
       }
-      if (((from_bitField2_ & 0x00000200) != 0)) {
+      if (((from_bitField2_ & 0x00000400) != 0)) {
+        result.desiredControlPlaneEgress_ =
+            desiredControlPlaneEgressBuilder_ == null
+                ? desiredControlPlaneEgress_
+                : desiredControlPlaneEgressBuilder_.build();
+        to_bitField1_ |= 0x80000000;
+      }
+      int to_bitField2_ = 0;
+      if (((from_bitField2_ & 0x00000800) != 0)) {
         result.desiredManagedOpentelemetryConfig_ =
             desiredManagedOpentelemetryConfigBuilder_ == null
                 ? desiredManagedOpentelemetryConfig_
                 : desiredManagedOpentelemetryConfigBuilder_.build();
-        to_bitField1_ |= 0x40000000;
+        to_bitField2_ |= 0x00000001;
+      }
+      if (((from_bitField2_ & 0x00001000) != 0)) {
+        result.desiredAutopilotClusterPolicyConfig_ =
+            desiredAutopilotClusterPolicyConfigBuilder_ == null
+                ? desiredAutopilotClusterPolicyConfig_
+                : desiredAutopilotClusterPolicyConfigBuilder_.build();
+        to_bitField2_ |= 0x00000002;
+      }
+      if (((from_bitField2_ & 0x00002000) != 0)) {
+        result.desiredManagedMachineLearningDiagnosticsConfig_ =
+            desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null
+                ? desiredManagedMachineLearningDiagnosticsConfig_
+                : desiredManagedMachineLearningDiagnosticsConfigBuilder_.build();
+        to_bitField2_ |= 0x00000004;
+      }
+      if (((from_bitField2_ & 0x00004000) != 0)) {
+        result.desiredNodeCreationConfig_ =
+            desiredNodeCreationConfigBuilder_ == null
+                ? desiredNodeCreationConfig_
+                : desiredNodeCreationConfigBuilder_.build();
+        to_bitField2_ |= 0x00000008;
       }
       result.bitField1_ |= to_bitField1_;
+      result.bitField2_ |= to_bitField2_;
     }
 
     @java.lang.Override
@@ -6813,11 +7272,27 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       if (other.hasDesiredNetworkTierConfig()) {
         mergeDesiredNetworkTierConfig(other.getDesiredNetworkTierConfig());
       }
+      if (other.hasDesiredSecretSyncConfig()) {
+        mergeDesiredSecretSyncConfig(other.getDesiredSecretSyncConfig());
+      }
       if (other.hasDesiredPrivilegedAdmissionConfig()) {
         mergeDesiredPrivilegedAdmissionConfig(other.getDesiredPrivilegedAdmissionConfig());
       }
+      if (other.hasDesiredControlPlaneEgress()) {
+        mergeDesiredControlPlaneEgress(other.getDesiredControlPlaneEgress());
+      }
       if (other.hasDesiredManagedOpentelemetryConfig()) {
         mergeDesiredManagedOpentelemetryConfig(other.getDesiredManagedOpentelemetryConfig());
+      }
+      if (other.hasDesiredAutopilotClusterPolicyConfig()) {
+        mergeDesiredAutopilotClusterPolicyConfig(other.getDesiredAutopilotClusterPolicyConfig());
+      }
+      if (other.hasDesiredManagedMachineLearningDiagnosticsConfig()) {
+        mergeDesiredManagedMachineLearningDiagnosticsConfig(
+            other.getDesiredManagedMachineLearningDiagnosticsConfig());
+      }
+      if (other.hasDesiredNodeCreationConfig()) {
+        mergeDesiredNodeCreationConfig(other.getDesiredNodeCreationConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7374,22 +7849,63 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
                 bitField2_ |= 0x00000020;
                 break;
               } // case 1250
+            case 1266:
+              {
+                input.readMessage(
+                    internalGetDesiredSecretSyncConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00000100;
+                break;
+              } // case 1266
             case 1274:
               {
                 input.readMessage(
                     internalGetDesiredPrivilegedAdmissionConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00000100;
+                bitField2_ |= 0x00000200;
                 break;
               } // case 1274
+            case 1282:
+              {
+                input.readMessage(
+                    internalGetDesiredControlPlaneEgressFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00000400;
+                break;
+              } // case 1282
             case 1306:
               {
                 input.readMessage(
                     internalGetDesiredManagedOpentelemetryConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00000200;
+                bitField2_ |= 0x00000800;
                 break;
               } // case 1306
+            case 1314:
+              {
+                input.readMessage(
+                    internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00001000;
+                break;
+              } // case 1314
+            case 1330:
+              {
+                input.readMessage(
+                    internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder()
+                        .getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00002000;
+                break;
+              } // case 1330
+            case 1370:
+              {
+                input.readMessage(
+                    internalGetDesiredNodeCreationConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00004000;
+                break;
+              } // case 1370
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9870,7 +10386,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3376
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3610
      * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -9894,7 +10410,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3376
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3610
      * @return The desiredMasterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -11129,7 +11645,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3414
+     *     See google/container/v1/cluster_service.proto;l=3648
      * @return Whether the desiredPrivateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -11158,7 +11674,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3414
+     *     See google/container/v1/cluster_service.proto;l=3648
      * @return The desiredPrivateClusterConfig.
      */
     @java.lang.Deprecated
@@ -13664,7 +14180,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3459
+     *     See google/container/v1/cluster_service.proto;l=3693
      * @return Whether the desiredEnablePrivateEndpoint field is set.
      */
     @java.lang.Override
@@ -13688,7 +14204,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3459
+     *     See google/container/v1/cluster_service.proto;l=3693
      * @return The desiredEnablePrivateEndpoint.
      */
     @java.lang.Override
@@ -13712,7 +14228,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3459
+     *     See google/container/v1/cluster_service.proto;l=3693
      * @param value The desiredEnablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -13740,7 +14256,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3459
+     *     See google/container/v1/cluster_service.proto;l=3693
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -18145,15 +18661,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3798
      * @return Whether the desiredCompliancePostureConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDesiredCompliancePostureConfig() {
       return ((bitField1_ & 0x04000000) != 0);
     }
@@ -18162,15 +18685,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3798
      * @return The desiredCompliancePostureConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1.CompliancePostureConfig getDesiredCompliancePostureConfig() {
       if (desiredCompliancePostureConfigBuilder_ == null) {
         return desiredCompliancePostureConfig_ == null
@@ -18185,13 +18715,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredCompliancePostureConfig(
         com.google.container.v1.CompliancePostureConfig value) {
       if (desiredCompliancePostureConfigBuilder_ == null) {
@@ -18211,13 +18746,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredCompliancePostureConfig(
         com.google.container.v1.CompliancePostureConfig.Builder builderForValue) {
       if (desiredCompliancePostureConfigBuilder_ == null) {
@@ -18234,13 +18774,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDesiredCompliancePostureConfig(
         com.google.container.v1.CompliancePostureConfig value) {
       if (desiredCompliancePostureConfigBuilder_ == null) {
@@ -18266,13 +18811,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDesiredCompliancePostureConfig() {
       bitField1_ = (bitField1_ & ~0x04000000);
       desiredCompliancePostureConfig_ = null;
@@ -18288,13 +18838,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.CompliancePostureConfig.Builder
         getDesiredCompliancePostureConfigBuilder() {
       bitField1_ |= 0x04000000;
@@ -18306,13 +18861,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1.CompliancePostureConfigOrBuilder
         getDesiredCompliancePostureConfigOrBuilder() {
       if (desiredCompliancePostureConfigBuilder_ != null) {
@@ -18328,11 +18888,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Compliance Posture is no longer supported.
+     * For more details, see
+     * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+     *
      * Enable/Disable Compliance Posture features for the cluster.
      * </pre>
      *
      * <code>
-     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140;
+     * optional .google.container.v1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -18800,7 +19364,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3575
+     *     google/container/v1/cluster_service.proto;l=3814
      * @return Whether the userManagedKeysConfig field is set.
      */
     @java.lang.Deprecated
@@ -18825,7 +19389,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3575
+     *     google/container/v1/cluster_service.proto;l=3814
      * @return The userManagedKeysConfig.
      */
     @java.lang.Deprecated
@@ -19505,7 +20069,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3588
+     *     google/container/v1/cluster_service.proto;l=3827
      * @return Whether the desiredEnterpriseConfig field is set.
      */
     @java.lang.Deprecated
@@ -19528,7 +20092,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3588
+     *     google/container/v1/cluster_service.proto;l=3827
      * @return The desiredEnterpriseConfig.
      */
     @java.lang.Deprecated
@@ -21085,6 +21649,202 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       return desiredNetworkTierConfigBuilder_;
     }
 
+    private com.google.container.v1.SecretSyncConfig desiredSecretSyncConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.SecretSyncConfig,
+            com.google.container.v1.SecretSyncConfig.Builder,
+            com.google.container.v1.SecretSyncConfigOrBuilder>
+        desiredSecretSyncConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     *
+     * @return Whether the desiredSecretSyncConfig field is set.
+     */
+    public boolean hasDesiredSecretSyncConfig() {
+      return ((bitField2_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     *
+     * @return The desiredSecretSyncConfig.
+     */
+    public com.google.container.v1.SecretSyncConfig getDesiredSecretSyncConfig() {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        return desiredSecretSyncConfig_ == null
+            ? com.google.container.v1.SecretSyncConfig.getDefaultInstance()
+            : desiredSecretSyncConfig_;
+      } else {
+        return desiredSecretSyncConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder setDesiredSecretSyncConfig(com.google.container.v1.SecretSyncConfig value) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredSecretSyncConfig_ = value;
+      } else {
+        desiredSecretSyncConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder setDesiredSecretSyncConfig(
+        com.google.container.v1.SecretSyncConfig.Builder builderForValue) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        desiredSecretSyncConfig_ = builderForValue.build();
+      } else {
+        desiredSecretSyncConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder mergeDesiredSecretSyncConfig(com.google.container.v1.SecretSyncConfig value) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00000100) != 0)
+            && desiredSecretSyncConfig_ != null
+            && desiredSecretSyncConfig_
+                != com.google.container.v1.SecretSyncConfig.getDefaultInstance()) {
+          getDesiredSecretSyncConfigBuilder().mergeFrom(value);
+        } else {
+          desiredSecretSyncConfig_ = value;
+        }
+      } else {
+        desiredSecretSyncConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredSecretSyncConfig_ != null) {
+        bitField2_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder clearDesiredSecretSyncConfig() {
+      bitField2_ = (bitField2_ & ~0x00000100);
+      desiredSecretSyncConfig_ = null;
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        desiredSecretSyncConfigBuilder_.dispose();
+        desiredSecretSyncConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public com.google.container.v1.SecretSyncConfig.Builder getDesiredSecretSyncConfigBuilder() {
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return internalGetDesiredSecretSyncConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public com.google.container.v1.SecretSyncConfigOrBuilder getDesiredSecretSyncConfigOrBuilder() {
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        return desiredSecretSyncConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredSecretSyncConfig_ == null
+            ? com.google.container.v1.SecretSyncConfig.getDefaultInstance()
+            : desiredSecretSyncConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.SecretSyncConfig,
+            com.google.container.v1.SecretSyncConfig.Builder,
+            com.google.container.v1.SecretSyncConfigOrBuilder>
+        internalGetDesiredSecretSyncConfigFieldBuilder() {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        desiredSecretSyncConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.SecretSyncConfig,
+                com.google.container.v1.SecretSyncConfig.Builder,
+                com.google.container.v1.SecretSyncConfigOrBuilder>(
+                getDesiredSecretSyncConfig(), getParentForChildren(), isClean());
+        desiredSecretSyncConfig_ = null;
+      }
+      return desiredSecretSyncConfigBuilder_;
+    }
+
     private com.google.container.v1.PrivilegedAdmissionConfig desiredPrivilegedAdmissionConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.container.v1.PrivilegedAdmissionConfig,
@@ -21106,7 +21866,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredPrivilegedAdmissionConfig field is set.
      */
     public boolean hasDesiredPrivilegedAdmissionConfig() {
-      return ((bitField2_ & 0x00000100) != 0);
+      return ((bitField2_ & 0x00000200) != 0);
     }
 
     /**
@@ -21153,7 +21913,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredPrivilegedAdmissionConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -21176,7 +21936,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredPrivilegedAdmissionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -21195,7 +21955,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredPrivilegedAdmissionConfig(
         com.google.container.v1.PrivilegedAdmissionConfig value) {
       if (desiredPrivilegedAdmissionConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00000100) != 0)
+        if (((bitField2_ & 0x00000200) != 0)
             && desiredPrivilegedAdmissionConfig_ != null
             && desiredPrivilegedAdmissionConfig_
                 != com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()) {
@@ -21207,7 +21967,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredPrivilegedAdmissionConfigBuilder_.mergeFrom(value);
       }
       if (desiredPrivilegedAdmissionConfig_ != null) {
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -21225,7 +21985,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredPrivilegedAdmissionConfig() {
-      bitField2_ = (bitField2_ & ~0x00000100);
+      bitField2_ = (bitField2_ & ~0x00000200);
       desiredPrivilegedAdmissionConfig_ = null;
       if (desiredPrivilegedAdmissionConfigBuilder_ != null) {
         desiredPrivilegedAdmissionConfigBuilder_.dispose();
@@ -21248,7 +22008,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.PrivilegedAdmissionConfig.Builder
         getDesiredPrivilegedAdmissionConfigBuilder() {
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000200;
       onChanged();
       return internalGetDesiredPrivilegedAdmissionConfigFieldBuilder().getBuilder();
     }
@@ -21303,6 +22063,205 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       return desiredPrivilegedAdmissionConfigBuilder_;
     }
 
+    private com.google.container.v1.ControlPlaneEgress desiredControlPlaneEgress_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ControlPlaneEgress,
+            com.google.container.v1.ControlPlaneEgress.Builder,
+            com.google.container.v1.ControlPlaneEgressOrBuilder>
+        desiredControlPlaneEgressBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     *
+     * @return Whether the desiredControlPlaneEgress field is set.
+     */
+    public boolean hasDesiredControlPlaneEgress() {
+      return ((bitField2_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     *
+     * @return The desiredControlPlaneEgress.
+     */
+    public com.google.container.v1.ControlPlaneEgress getDesiredControlPlaneEgress() {
+      if (desiredControlPlaneEgressBuilder_ == null) {
+        return desiredControlPlaneEgress_ == null
+            ? com.google.container.v1.ControlPlaneEgress.getDefaultInstance()
+            : desiredControlPlaneEgress_;
+      } else {
+        return desiredControlPlaneEgressBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public Builder setDesiredControlPlaneEgress(com.google.container.v1.ControlPlaneEgress value) {
+      if (desiredControlPlaneEgressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredControlPlaneEgress_ = value;
+      } else {
+        desiredControlPlaneEgressBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public Builder setDesiredControlPlaneEgress(
+        com.google.container.v1.ControlPlaneEgress.Builder builderForValue) {
+      if (desiredControlPlaneEgressBuilder_ == null) {
+        desiredControlPlaneEgress_ = builderForValue.build();
+      } else {
+        desiredControlPlaneEgressBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public Builder mergeDesiredControlPlaneEgress(
+        com.google.container.v1.ControlPlaneEgress value) {
+      if (desiredControlPlaneEgressBuilder_ == null) {
+        if (((bitField2_ & 0x00000400) != 0)
+            && desiredControlPlaneEgress_ != null
+            && desiredControlPlaneEgress_
+                != com.google.container.v1.ControlPlaneEgress.getDefaultInstance()) {
+          getDesiredControlPlaneEgressBuilder().mergeFrom(value);
+        } else {
+          desiredControlPlaneEgress_ = value;
+        }
+      } else {
+        desiredControlPlaneEgressBuilder_.mergeFrom(value);
+      }
+      if (desiredControlPlaneEgress_ != null) {
+        bitField2_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public Builder clearDesiredControlPlaneEgress() {
+      bitField2_ = (bitField2_ & ~0x00000400);
+      desiredControlPlaneEgress_ = null;
+      if (desiredControlPlaneEgressBuilder_ != null) {
+        desiredControlPlaneEgressBuilder_.dispose();
+        desiredControlPlaneEgressBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public com.google.container.v1.ControlPlaneEgress.Builder
+        getDesiredControlPlaneEgressBuilder() {
+      bitField2_ |= 0x00000400;
+      onChanged();
+      return internalGetDesiredControlPlaneEgressFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    public com.google.container.v1.ControlPlaneEgressOrBuilder
+        getDesiredControlPlaneEgressOrBuilder() {
+      if (desiredControlPlaneEgressBuilder_ != null) {
+        return desiredControlPlaneEgressBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredControlPlaneEgress_ == null
+            ? com.google.container.v1.ControlPlaneEgress.getDefaultInstance()
+            : desiredControlPlaneEgress_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired control plane egress control config for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ControlPlaneEgress,
+            com.google.container.v1.ControlPlaneEgress.Builder,
+            com.google.container.v1.ControlPlaneEgressOrBuilder>
+        internalGetDesiredControlPlaneEgressFieldBuilder() {
+      if (desiredControlPlaneEgressBuilder_ == null) {
+        desiredControlPlaneEgressBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.ControlPlaneEgress,
+                com.google.container.v1.ControlPlaneEgress.Builder,
+                com.google.container.v1.ControlPlaneEgressOrBuilder>(
+                getDesiredControlPlaneEgress(), getParentForChildren(), isClean());
+        desiredControlPlaneEgress_ = null;
+      }
+      return desiredControlPlaneEgressBuilder_;
+    }
+
     private com.google.container.v1.ManagedOpenTelemetryConfig desiredManagedOpentelemetryConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.container.v1.ManagedOpenTelemetryConfig,
@@ -21324,7 +22283,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredManagedOpentelemetryConfig field is set.
      */
     public boolean hasDesiredManagedOpentelemetryConfig() {
-      return ((bitField2_ & 0x00000200) != 0);
+      return ((bitField2_ & 0x00000800) != 0);
     }
 
     /**
@@ -21372,7 +22331,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedOpentelemetryConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -21395,7 +22354,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedOpentelemetryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -21414,7 +22373,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredManagedOpentelemetryConfig(
         com.google.container.v1.ManagedOpenTelemetryConfig value) {
       if (desiredManagedOpentelemetryConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00000200) != 0)
+        if (((bitField2_ & 0x00000800) != 0)
             && desiredManagedOpentelemetryConfig_ != null
             && desiredManagedOpentelemetryConfig_
                 != com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()) {
@@ -21426,7 +22385,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredManagedOpentelemetryConfigBuilder_.mergeFrom(value);
       }
       if (desiredManagedOpentelemetryConfig_ != null) {
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -21444,7 +22403,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredManagedOpentelemetryConfig() {
-      bitField2_ = (bitField2_ & ~0x00000200);
+      bitField2_ = (bitField2_ & ~0x00000800);
       desiredManagedOpentelemetryConfig_ = null;
       if (desiredManagedOpentelemetryConfigBuilder_ != null) {
         desiredManagedOpentelemetryConfigBuilder_.dispose();
@@ -21467,7 +22426,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.ManagedOpenTelemetryConfig.Builder
         getDesiredManagedOpentelemetryConfigBuilder() {
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000800;
       onChanged();
       return internalGetDesiredManagedOpentelemetryConfigFieldBuilder().getBuilder();
     }
@@ -21520,6 +22479,655 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredManagedOpentelemetryConfig_ = null;
       }
       return desiredManagedOpentelemetryConfigBuilder_;
+    }
+
+    private com.google.container.v1.ClusterPolicyConfig desiredAutopilotClusterPolicyConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ClusterPolicyConfig,
+            com.google.container.v1.ClusterPolicyConfig.Builder,
+            com.google.container.v1.ClusterPolicyConfigOrBuilder>
+        desiredAutopilotClusterPolicyConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     *
+     * @return Whether the desiredAutopilotClusterPolicyConfig field is set.
+     */
+    public boolean hasDesiredAutopilotClusterPolicyConfig() {
+      return ((bitField2_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     *
+     * @return The desiredAutopilotClusterPolicyConfig.
+     */
+    public com.google.container.v1.ClusterPolicyConfig getDesiredAutopilotClusterPolicyConfig() {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
+        return desiredAutopilotClusterPolicyConfig_ == null
+            ? com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()
+            : desiredAutopilotClusterPolicyConfig_;
+      } else {
+        return desiredAutopilotClusterPolicyConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public Builder setDesiredAutopilotClusterPolicyConfig(
+        com.google.container.v1.ClusterPolicyConfig value) {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredAutopilotClusterPolicyConfig_ = value;
+      } else {
+        desiredAutopilotClusterPolicyConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public Builder setDesiredAutopilotClusterPolicyConfig(
+        com.google.container.v1.ClusterPolicyConfig.Builder builderForValue) {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
+        desiredAutopilotClusterPolicyConfig_ = builderForValue.build();
+      } else {
+        desiredAutopilotClusterPolicyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public Builder mergeDesiredAutopilotClusterPolicyConfig(
+        com.google.container.v1.ClusterPolicyConfig value) {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00001000) != 0)
+            && desiredAutopilotClusterPolicyConfig_ != null
+            && desiredAutopilotClusterPolicyConfig_
+                != com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()) {
+          getDesiredAutopilotClusterPolicyConfigBuilder().mergeFrom(value);
+        } else {
+          desiredAutopilotClusterPolicyConfig_ = value;
+        }
+      } else {
+        desiredAutopilotClusterPolicyConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredAutopilotClusterPolicyConfig_ != null) {
+        bitField2_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public Builder clearDesiredAutopilotClusterPolicyConfig() {
+      bitField2_ = (bitField2_ & ~0x00001000);
+      desiredAutopilotClusterPolicyConfig_ = null;
+      if (desiredAutopilotClusterPolicyConfigBuilder_ != null) {
+        desiredAutopilotClusterPolicyConfigBuilder_.dispose();
+        desiredAutopilotClusterPolicyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public com.google.container.v1.ClusterPolicyConfig.Builder
+        getDesiredAutopilotClusterPolicyConfigBuilder() {
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    public com.google.container.v1.ClusterPolicyConfigOrBuilder
+        getDesiredAutopilotClusterPolicyConfigOrBuilder() {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ != null) {
+        return desiredAutopilotClusterPolicyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredAutopilotClusterPolicyConfig_ == null
+            ? com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()
+            : desiredAutopilotClusterPolicyConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired autopilot cluster policies that to be enforced in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ClusterPolicyConfig,
+            com.google.container.v1.ClusterPolicyConfig.Builder,
+            com.google.container.v1.ClusterPolicyConfigOrBuilder>
+        internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder() {
+      if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
+        desiredAutopilotClusterPolicyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.ClusterPolicyConfig,
+                com.google.container.v1.ClusterPolicyConfig.Builder,
+                com.google.container.v1.ClusterPolicyConfigOrBuilder>(
+                getDesiredAutopilotClusterPolicyConfig(), getParentForChildren(), isClean());
+        desiredAutopilotClusterPolicyConfig_ = null;
+      }
+      return desiredAutopilotClusterPolicyConfigBuilder_;
+    }
+
+    private com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
+        desiredManagedMachineLearningDiagnosticsConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfig,
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder,
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfigOrBuilder>
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     *
+     * @return Whether the desiredManagedMachineLearningDiagnosticsConfig field is set.
+     */
+    public boolean hasDesiredManagedMachineLearningDiagnosticsConfig() {
+      return ((bitField2_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     *
+     * @return The desiredManagedMachineLearningDiagnosticsConfig.
+     */
+    public com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
+        getDesiredManagedMachineLearningDiagnosticsConfig() {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
+        return desiredManagedMachineLearningDiagnosticsConfig_ == null
+            ? com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.getDefaultInstance()
+            : desiredManagedMachineLearningDiagnosticsConfig_;
+      } else {
+        return desiredManagedMachineLearningDiagnosticsConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public Builder setDesiredManagedMachineLearningDiagnosticsConfig(
+        com.google.container.v1.ManagedMachineLearningDiagnosticsConfig value) {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredManagedMachineLearningDiagnosticsConfig_ = value;
+      } else {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public Builder setDesiredManagedMachineLearningDiagnosticsConfig(
+        com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder builderForValue) {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
+        desiredManagedMachineLearningDiagnosticsConfig_ = builderForValue.build();
+      } else {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public Builder mergeDesiredManagedMachineLearningDiagnosticsConfig(
+        com.google.container.v1.ManagedMachineLearningDiagnosticsConfig value) {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00002000) != 0)
+            && desiredManagedMachineLearningDiagnosticsConfig_ != null
+            && desiredManagedMachineLearningDiagnosticsConfig_
+                != com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
+                    .getDefaultInstance()) {
+          getDesiredManagedMachineLearningDiagnosticsConfigBuilder().mergeFrom(value);
+        } else {
+          desiredManagedMachineLearningDiagnosticsConfig_ = value;
+        }
+      } else {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredManagedMachineLearningDiagnosticsConfig_ != null) {
+        bitField2_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public Builder clearDesiredManagedMachineLearningDiagnosticsConfig() {
+      bitField2_ = (bitField2_ & ~0x00002000);
+      desiredManagedMachineLearningDiagnosticsConfig_ = null;
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ != null) {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_.dispose();
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder
+        getDesiredManagedMachineLearningDiagnosticsConfigBuilder() {
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    public com.google.container.v1.ManagedMachineLearningDiagnosticsConfigOrBuilder
+        getDesiredManagedMachineLearningDiagnosticsConfigOrBuilder() {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ != null) {
+        return desiredManagedMachineLearningDiagnosticsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredManagedMachineLearningDiagnosticsConfig_ == null
+            ? com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.getDefaultInstance()
+            : desiredManagedMachineLearningDiagnosticsConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The desired managed machine learning diagnostics configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfig,
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder,
+            com.google.container.v1.ManagedMachineLearningDiagnosticsConfigOrBuilder>
+        internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder() {
+      if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
+        desiredManagedMachineLearningDiagnosticsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.ManagedMachineLearningDiagnosticsConfig,
+                com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder,
+                com.google.container.v1.ManagedMachineLearningDiagnosticsConfigOrBuilder>(
+                getDesiredManagedMachineLearningDiagnosticsConfig(),
+                getParentForChildren(),
+                isClean());
+        desiredManagedMachineLearningDiagnosticsConfig_ = null;
+      }
+      return desiredManagedMachineLearningDiagnosticsConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodeCreationConfig desiredNodeCreationConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodeCreationConfig,
+            com.google.container.v1.NodeCreationConfig.Builder,
+            com.google.container.v1.NodeCreationConfigOrBuilder>
+        desiredNodeCreationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the desiredNodeCreationConfig field is set.
+     */
+    public boolean hasDesiredNodeCreationConfig() {
+      return ((bitField2_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The desiredNodeCreationConfig.
+     */
+    public com.google.container.v1.NodeCreationConfig getDesiredNodeCreationConfig() {
+      if (desiredNodeCreationConfigBuilder_ == null) {
+        return desiredNodeCreationConfig_ == null
+            ? com.google.container.v1.NodeCreationConfig.getDefaultInstance()
+            : desiredNodeCreationConfig_;
+      } else {
+        return desiredNodeCreationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDesiredNodeCreationConfig(com.google.container.v1.NodeCreationConfig value) {
+      if (desiredNodeCreationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodeCreationConfig_ = value;
+      } else {
+        desiredNodeCreationConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDesiredNodeCreationConfig(
+        com.google.container.v1.NodeCreationConfig.Builder builderForValue) {
+      if (desiredNodeCreationConfigBuilder_ == null) {
+        desiredNodeCreationConfig_ = builderForValue.build();
+      } else {
+        desiredNodeCreationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDesiredNodeCreationConfig(
+        com.google.container.v1.NodeCreationConfig value) {
+      if (desiredNodeCreationConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00004000) != 0)
+            && desiredNodeCreationConfig_ != null
+            && desiredNodeCreationConfig_
+                != com.google.container.v1.NodeCreationConfig.getDefaultInstance()) {
+          getDesiredNodeCreationConfigBuilder().mergeFrom(value);
+        } else {
+          desiredNodeCreationConfig_ = value;
+        }
+      } else {
+        desiredNodeCreationConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredNodeCreationConfig_ != null) {
+        bitField2_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDesiredNodeCreationConfig() {
+      bitField2_ = (bitField2_ & ~0x00004000);
+      desiredNodeCreationConfig_ = null;
+      if (desiredNodeCreationConfigBuilder_ != null) {
+        desiredNodeCreationConfigBuilder_.dispose();
+        desiredNodeCreationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodeCreationConfig.Builder
+        getDesiredNodeCreationConfigBuilder() {
+      bitField2_ |= 0x00004000;
+      onChanged();
+      return internalGetDesiredNodeCreationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodeCreationConfigOrBuilder
+        getDesiredNodeCreationConfigOrBuilder() {
+      if (desiredNodeCreationConfigBuilder_ != null) {
+        return desiredNodeCreationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodeCreationConfig_ == null
+            ? com.google.container.v1.NodeCreationConfig.getDefaultInstance()
+            : desiredNodeCreationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired NodeCreationConfig for the cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodeCreationConfig,
+            com.google.container.v1.NodeCreationConfig.Builder,
+            com.google.container.v1.NodeCreationConfigOrBuilder>
+        internalGetDesiredNodeCreationConfigFieldBuilder() {
+      if (desiredNodeCreationConfigBuilder_ == null) {
+        desiredNodeCreationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.NodeCreationConfig,
+                com.google.container.v1.NodeCreationConfig.Builder,
+                com.google.container.v1.NodeCreationConfigOrBuilder>(
+                getDesiredNodeCreationConfig(), getParentForChildren(), isClean());
+        desiredNodeCreationConfig_ = null;
+      }
+      return desiredNodeCreationConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.ClusterUpdate)

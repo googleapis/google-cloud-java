@@ -97,7 +97,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       BigQuery bigQuery)
       throws SQLException {
     super(bigQuery, statement, schema, isNested);
-    LOG.finestTrace("<init>", "++enter++");
+    LOG.finestTrace("<init>");
     this.totalRows = totalRows;
     this.buffer = buffer;
     this.currentNestedBatch = currentNestedBatch;
@@ -182,7 +182,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     private void deserializeArrowBatch(ArrowRecordBatch batch) throws SQLException {
-      LOG.finestTrace("deserializeArrowBatch", "++enter++");
+      LOG.finestTrace("deserializeArrowBatch");
       try {
         if (vectorSchemaRoot != null) {
           // Clear vectorSchemaRoot before populating a new batch
@@ -279,7 +279,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   }
 
   private Object getObjectInternal(int columnIndex) throws SQLException {
-    LOG.finestTrace("getObjectInternal", "++enter++");
+    LOG.finestTrace("getObjectInternal");
     checkClosed();
     Object value;
     if (this.isNested) {
@@ -321,7 +321,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   public Object getObject(int columnIndex) throws SQLException {
 
     // columnIndex is SQL index starting at 1
-    LOG.finestTrace("getObject", "++enter++");
+    LOG.finestTrace("getObject");
     checkClosed();
     Object value = getObjectInternal(columnIndex);
     if (value == null) {
@@ -329,18 +329,21 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
     }
 
     if (this.isNested && columnIndex == 2) {
       Field arrayField = this.schema.getFields().get(0);
       if (isStruct(arrayField)) {
-        return new BigQueryArrowStruct(arrayField.getSubFields(), (JsonStringHashMap<?, ?>) value);
+        return new BigQueryArrowStruct(
+            arrayField.getSubFields(),
+            (JsonStringHashMap<?, ?>) value,
+            this.LOG.getArrowStructLogger());
       }
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value);
+      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -358,7 +361,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             newList.add(null);
           }
         }
-        return new BigQueryArrowArray(fieldSchema, newList);
+        return new BigQueryArrowArray(fieldSchema, newList, this.LOG.getArrowArrayLogger());
       } else if (elementTypeName == StandardSQLTypeName.RANGE) {
         JsonStringArrayList<String> newList = new JsonStringArrayList<>();
         for (Object item : originalList) {
@@ -378,11 +381,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             newList.add(null);
           }
         }
-        return new BigQueryArrowArray(fieldSchema, newList);
+        return new BigQueryArrowArray(fieldSchema, newList, this.LOG.getArrowArrayLogger());
       }
-      return new BigQueryArrowArray(fieldSchema, originalList);
+      return new BigQueryArrowArray(fieldSchema, originalList, this.LOG.getArrowArrayLogger());
     } else if (isStruct(fieldSchema)) {
-      return new BigQueryArrowStruct(fieldSchema.getSubFields(), (JsonStringHashMap<?, ?>) value);
+      return new BigQueryArrowStruct(
+          fieldSchema.getSubFields(),
+          (JsonStringHashMap<?, ?>) value,
+          this.LOG.getArrowStructLogger());
     } else if (fieldSchema.getType().getStandardType() == StandardSQLTypeName.RANGE) {
       JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) value;
       Object start = rangeMap.get("start");
@@ -406,7 +412,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value);
+      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
     }
   }
 
@@ -433,17 +439,17 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     switch (elementType) {
       case DATE:
         // Arrow gives DATE as an Integer (days since epoch)
-        Date date = this.bigQueryTypeCoercer.coerceTo(Date.class, (Integer) element);
+        Date date = this.bigQueryTypeCoercer.coerceTo(Date.class, (Integer) element, this.LOG);
         return date.toString();
       case DATETIME:
         // Arrow gives DATETIME as a LocalDateTime
         Timestamp dtTs =
-            this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (LocalDateTime) element);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, dtTs);
+            this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (LocalDateTime) element, this.LOG);
+        return this.bigQueryTypeCoercer.coerceTo(String.class, dtTs, this.LOG);
       case TIMESTAMP:
         // Arrow gives TIMESTAMP as a Long (microseconds since epoch)
-        Timestamp ts = this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (Long) element);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, ts);
+        Timestamp ts = this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (Long) element, this.LOG);
+        return this.bigQueryTypeCoercer.coerceTo(String.class, ts, this.LOG);
       default:
         // Fallback for any other unexpected type
         return element.toString();
@@ -463,7 +469,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isBeforeFirst() throws SQLException {
-    LOG.finestTrace("isBeforeFirst", "++enter++");
+    LOG.finestTrace("isBeforeFirst");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
@@ -474,14 +480,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isAfterLast() throws SQLException {
-    LOG.finestTrace("isAfterLast", "++enter++");
+    LOG.finestTrace("isAfterLast");
     checkClosed();
     return this.afterLast;
   }
 
   @Override
   public boolean isFirst() throws SQLException {
-    LOG.finestTrace("isFirst", "++enter++");
+    LOG.finestTrace("isFirst");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex == this.fromIndex;
@@ -492,7 +498,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isLast() throws SQLException {
-    LOG.finestTrace("isLast", "++enter++");
+    LOG.finestTrace("isLast");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;

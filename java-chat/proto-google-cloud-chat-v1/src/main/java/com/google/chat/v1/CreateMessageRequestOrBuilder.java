@@ -114,7 +114,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=613
+   *     google/chat/v1/message.proto;l=617
    * @return The threadKey.
    */
   @java.lang.Deprecated
@@ -137,7 +137,7 @@ public interface CreateMessageRequestOrBuilder
    * </code>
    *
    * @deprecated google.chat.v1.CreateMessageRequest.thread_key is deprecated. See
-   *     google/chat/v1/message.proto;l=613
+   *     google/chat/v1/message.proto;l=617
    * @return The bytes for threadKey.
    */
   @java.lang.Deprecated
@@ -270,4 +270,54 @@ public interface CreateMessageRequestOrBuilder
    * @return The bytes for messageId.
    */
   com.google.protobuf.ByteString getMessageIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the createMessageNotificationOptions field is set.
+   */
+  boolean hasCreateMessageNotificationOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The createMessageNotificationOptions.
+   */
+  com.google.chat.v1.CreateMessageNotificationOptions getCreateMessageNotificationOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the notification behavior when the message is posted.
+   * To learn more, see [Force notifications or send silent
+   * messages](https://developer.google.com/workspace/chat/create-messages#force-notify-silent).
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.CreateMessageNotificationOptions create_message_notification_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.chat.v1.CreateMessageNotificationOptionsOrBuilder
+      getCreateMessageNotificationOptionsOrBuilder();
 }

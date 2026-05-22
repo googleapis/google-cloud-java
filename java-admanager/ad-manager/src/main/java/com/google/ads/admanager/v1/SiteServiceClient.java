@@ -844,7 +844,7 @@ public class SiteServiceClient implements BackgroundResource {
    *
    * @param site Required. The `Site` to update.
    *     <p>The `Site`'s `name` is used to identify the `Site` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Site updateSite(Site site, FieldMask updateMask) {

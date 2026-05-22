@@ -1438,6 +1438,26 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     return threadReply_;
   }
 
+  public static final int SILENT_FIELD_NUMBER = 46;
+  private boolean silent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this is a silent message. Silent messages are messages
+   * where Chat suppresses push notifications for recipients.
+   * </pre>
+   *
+   * <code>bool silent = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The silent.
+   */
+  @java.lang.Override
+  public boolean getSilent() {
+    return silent_;
+  }
+
   public static final int CLIENT_ASSIGNED_MESSAGE_ID_FIELD_NUMBER = 32;
 
   @SuppressWarnings("serial")
@@ -2132,6 +2152,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < accessoryWidgets_.size(); i++) {
       output.writeMessage(44, accessoryWidgets_.get(i));
     }
+    if (silent_ != false) {
+      output.writeBool(46, silent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2224,6 +2247,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(44, accessoryWidgets_.get(i));
     }
+    if (silent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, silent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2285,6 +2311,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       if (!getMatchedUrl().equals(other.getMatchedUrl())) return false;
     }
     if (getThreadReply() != other.getThreadReply()) return false;
+    if (getSilent() != other.getSilent()) return false;
     if (!getClientAssignedMessageId().equals(other.getClientAssignedMessageId())) return false;
     if (!getEmojiReactionSummariesList().equals(other.getEmojiReactionSummariesList()))
       return false;
@@ -2377,6 +2404,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + THREAD_REPLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getThreadReply());
+    hash = (37 * hash) + SILENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSilent());
     hash = (37 * hash) + CLIENT_ASSIGNED_MESSAGE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getClientAssignedMessageId().hashCode();
     if (getEmojiReactionSummariesCount() > 0) {
@@ -2646,6 +2675,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         matchedUrlBuilder_ = null;
       }
       threadReply_ = false;
+      silent_ = false;
       clientAssignedMessageId_ = "";
       if (emojiReactionSummariesBuilder_ == null) {
         emojiReactionSummaries_ = java.util.Collections.emptyList();
@@ -2653,7 +2683,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         emojiReactionSummaries_ = null;
         emojiReactionSummariesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       privateMessageViewer_ = null;
       if (privateMessageViewerBuilder_ != null) {
         privateMessageViewerBuilder_.dispose();
@@ -2675,14 +2705,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         attachedGifs_ = null;
         attachedGifsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       if (accessoryWidgetsBuilder_ == null) {
         accessoryWidgets_ = java.util.Collections.emptyList();
       } else {
         accessoryWidgets_ = null;
         accessoryWidgetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       return this;
     }
 
@@ -2754,27 +2784,27 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         result.attachment_ = attachmentBuilder_.build();
       }
       if (emojiReactionSummariesBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           emojiReactionSummaries_ = java.util.Collections.unmodifiableList(emojiReactionSummaries_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.emojiReactionSummaries_ = emojiReactionSummaries_;
       } else {
         result.emojiReactionSummaries_ = emojiReactionSummariesBuilder_.build();
       }
       if (attachedGifsBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x02000000) != 0)) {
           attachedGifs_ = java.util.Collections.unmodifiableList(attachedGifs_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         }
         result.attachedGifs_ = attachedGifs_;
       } else {
         result.attachedGifs_ = attachedGifsBuilder_.build();
       }
       if (accessoryWidgetsBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)) {
+        if (((bitField0_ & 0x04000000) != 0)) {
           accessoryWidgets_ = java.util.Collections.unmodifiableList(accessoryWidgets_);
-          bitField0_ = (bitField0_ & ~0x02000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.accessoryWidgets_ = accessoryWidgets_;
       } else {
@@ -2843,21 +2873,24 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         result.threadReply_ = threadReply_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.silent_ = silent_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.clientAssignedMessageId_ = clientAssignedMessageId_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.privateMessageViewer_ =
             privateMessageViewerBuilder_ == null
                 ? privateMessageViewer_
                 : privateMessageViewerBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.deletionMetadata_ =
             deletionMetadataBuilder_ == null ? deletionMetadata_ : deletionMetadataBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.quotedMessageMetadata_ =
             quotedMessageMetadataBuilder_ == null
                 ? quotedMessageMetadata_
@@ -3042,16 +3075,19 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       if (other.getThreadReply() != false) {
         setThreadReply(other.getThreadReply());
       }
+      if (other.getSilent() != false) {
+        setSilent(other.getSilent());
+      }
       if (!other.getClientAssignedMessageId().isEmpty()) {
         clientAssignedMessageId_ = other.clientAssignedMessageId_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (emojiReactionSummariesBuilder_ == null) {
         if (!other.emojiReactionSummaries_.isEmpty()) {
           if (emojiReactionSummaries_.isEmpty()) {
             emojiReactionSummaries_ = other.emojiReactionSummaries_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureEmojiReactionSummariesIsMutable();
             emojiReactionSummaries_.addAll(other.emojiReactionSummaries_);
@@ -3064,7 +3100,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             emojiReactionSummariesBuilder_.dispose();
             emojiReactionSummariesBuilder_ = null;
             emojiReactionSummaries_ = other.emojiReactionSummaries_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             emojiReactionSummariesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEmojiReactionSummariesFieldBuilder()
@@ -3087,7 +3123,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         if (!other.attachedGifs_.isEmpty()) {
           if (attachedGifs_.isEmpty()) {
             attachedGifs_ = other.attachedGifs_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
           } else {
             ensureAttachedGifsIsMutable();
             attachedGifs_.addAll(other.attachedGifs_);
@@ -3100,7 +3136,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             attachedGifsBuilder_.dispose();
             attachedGifsBuilder_ = null;
             attachedGifs_ = other.attachedGifs_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
             attachedGifsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAttachedGifsFieldBuilder()
@@ -3114,7 +3150,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         if (!other.accessoryWidgets_.isEmpty()) {
           if (accessoryWidgets_.isEmpty()) {
             accessoryWidgets_ = other.accessoryWidgets_;
-            bitField0_ = (bitField0_ & ~0x02000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureAccessoryWidgetsIsMutable();
             accessoryWidgets_.addAll(other.accessoryWidgets_);
@@ -3127,7 +3163,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             accessoryWidgetsBuilder_.dispose();
             accessoryWidgetsBuilder_ = null;
             accessoryWidgets_ = other.accessoryWidgets_;
-            bitField0_ = (bitField0_ & ~0x02000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
             accessoryWidgetsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAccessoryWidgetsFieldBuilder()
@@ -3305,7 +3341,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             case 258:
               {
                 clientAssignedMessageId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 258
             case 266:
@@ -3325,21 +3361,21 @@ public final class Message extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetPrivateMessageViewerFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 290
             case 306:
               {
                 input.readMessage(
                     internalGetDeletionMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 306
             case 314:
               {
                 input.readMessage(
                     internalGetQuotedMessageMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 314
             case 338:
@@ -3373,6 +3409,12 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 354
+            case 368:
+              {
+                silent_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 368
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8202,6 +8244,65 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean silent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this is a silent message. Silent messages are messages
+     * where Chat suppresses push notifications for recipients.
+     * </pre>
+     *
+     * <code>bool silent = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The silent.
+     */
+    @java.lang.Override
+    public boolean getSilent() {
+      return silent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this is a silent message. Silent messages are messages
+     * where Chat suppresses push notifications for recipients.
+     * </pre>
+     *
+     * <code>bool silent = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The silent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSilent(boolean value) {
+
+      silent_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this is a silent message. Silent messages are messages
+     * where Chat suppresses push notifications for recipients.
+     * </pre>
+     *
+     * <code>bool silent = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSilent() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      silent_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object clientAssignedMessageId_ = "";
 
     /**
@@ -8285,7 +8386,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       clientAssignedMessageId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8309,7 +8410,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearClientAssignedMessageId() {
       clientAssignedMessageId_ = getDefaultInstance().getClientAssignedMessageId();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -8338,7 +8439,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       clientAssignedMessageId_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8347,11 +8448,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureEmojiReactionSummariesIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         emojiReactionSummaries_ =
             new java.util.ArrayList<com.google.chat.v1.EmojiReactionSummary>(
                 emojiReactionSummaries_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -8601,7 +8702,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     public Builder clearEmojiReactionSummaries() {
       if (emojiReactionSummariesBuilder_ == null) {
         emojiReactionSummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         emojiReactionSummariesBuilder_.clear();
@@ -8748,7 +8849,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 com.google.chat.v1.EmojiReactionSummary.Builder,
                 com.google.chat.v1.EmojiReactionSummaryOrBuilder>(
                 emojiReactionSummaries_,
-                ((bitField0_ & 0x00100000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         emojiReactionSummaries_ = null;
@@ -8787,7 +8888,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the privateMessageViewer field is set.
      */
     public boolean hasPrivateMessageViewer() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -8853,7 +8954,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         privateMessageViewerBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8885,7 +8986,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         privateMessageViewerBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8913,7 +9014,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePrivateMessageViewer(com.google.chat.v1.User value) {
       if (privateMessageViewerBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && privateMessageViewer_ != null
             && privateMessageViewer_ != com.google.chat.v1.User.getDefaultInstance()) {
           getPrivateMessageViewerBuilder().mergeFrom(value);
@@ -8924,7 +9025,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         privateMessageViewerBuilder_.mergeFrom(value);
       }
       if (privateMessageViewer_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -8952,7 +9053,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPrivateMessageViewer() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       privateMessageViewer_ = null;
       if (privateMessageViewerBuilder_ != null) {
         privateMessageViewerBuilder_.dispose();
@@ -8984,7 +9085,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.chat.v1.User.Builder getPrivateMessageViewerBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetPrivateMessageViewerFieldBuilder().getBuilder();
     }
@@ -9080,7 +9181,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the deletionMetadata field is set.
      */
     public boolean hasDeletionMetadata() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -9128,7 +9229,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         deletionMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9152,7 +9253,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         deletionMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9171,7 +9272,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDeletionMetadata(com.google.chat.v1.DeletionMetadata value) {
       if (deletionMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && deletionMetadata_ != null
             && deletionMetadata_ != com.google.chat.v1.DeletionMetadata.getDefaultInstance()) {
           getDeletionMetadataBuilder().mergeFrom(value);
@@ -9182,7 +9283,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         deletionMetadataBuilder_.mergeFrom(value);
       }
       if (deletionMetadata_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -9201,7 +9302,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeletionMetadata() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       deletionMetadata_ = null;
       if (deletionMetadataBuilder_ != null) {
         deletionMetadataBuilder_.dispose();
@@ -9224,7 +9325,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.chat.v1.DeletionMetadata.Builder getDeletionMetadataBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetDeletionMetadataFieldBuilder().getBuilder();
     }
@@ -9311,7 +9412,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the quotedMessageMetadata field is set.
      */
     public boolean hasQuotedMessageMetadata() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -9377,7 +9478,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         quotedMessageMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9410,7 +9511,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         quotedMessageMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9438,7 +9539,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeQuotedMessageMetadata(com.google.chat.v1.QuotedMessageMetadata value) {
       if (quotedMessageMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && quotedMessageMetadata_ != null
             && quotedMessageMetadata_
                 != com.google.chat.v1.QuotedMessageMetadata.getDefaultInstance()) {
@@ -9450,7 +9551,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         quotedMessageMetadataBuilder_.mergeFrom(value);
       }
       if (quotedMessageMetadata_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -9478,7 +9579,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearQuotedMessageMetadata() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       quotedMessageMetadata_ = null;
       if (quotedMessageMetadataBuilder_ != null) {
         quotedMessageMetadataBuilder_.dispose();
@@ -9510,7 +9611,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.chat.v1.QuotedMessageMetadata.Builder getQuotedMessageMetadataBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetQuotedMessageMetadataFieldBuilder().getBuilder();
     }
@@ -9588,9 +9689,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAttachedGifsIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         attachedGifs_ = new java.util.ArrayList<com.google.chat.v1.AttachedGif>(attachedGifs_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
       }
     }
 
@@ -9837,7 +9938,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     public Builder clearAttachedGifs() {
       if (attachedGifsBuilder_ == null) {
         attachedGifs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
       } else {
         attachedGifsBuilder_.clear();
@@ -9979,7 +10080,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 com.google.chat.v1.AttachedGif,
                 com.google.chat.v1.AttachedGif.Builder,
                 com.google.chat.v1.AttachedGifOrBuilder>(
-                attachedGifs_, ((bitField0_ & 0x01000000) != 0), getParentForChildren(), isClean());
+                attachedGifs_, ((bitField0_ & 0x02000000) != 0), getParentForChildren(), isClean());
         attachedGifs_ = null;
       }
       return attachedGifsBuilder_;
@@ -9989,10 +10090,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAccessoryWidgetsIsMutable() {
-      if (!((bitField0_ & 0x02000000) != 0)) {
+      if (!((bitField0_ & 0x04000000) != 0)) {
         accessoryWidgets_ =
             new java.util.ArrayList<com.google.chat.v1.AccessoryWidget>(accessoryWidgets_);
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
       }
     }
 
@@ -10327,7 +10428,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     public Builder clearAccessoryWidgets() {
       if (accessoryWidgetsBuilder_ == null) {
         accessoryWidgets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
       } else {
         accessoryWidgetsBuilder_.clear();
@@ -10527,7 +10628,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 com.google.chat.v1.AccessoryWidget.Builder,
                 com.google.chat.v1.AccessoryWidgetOrBuilder>(
                 accessoryWidgets_,
-                ((bitField0_ & 0x02000000) != 0),
+                ((bitField0_ & 0x04000000) != 0),
                 getParentForChildren(),
                 isClean());
         accessoryWidgets_ = null;

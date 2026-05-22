@@ -94,6 +94,10 @@ class BigQueryTypeCoercer {
    *     coercion.
    */
   <T> T coerceTo(Class<T> targetClass, Object value) {
+    return coerceTo(targetClass, value, null);
+  }
+
+  <T> T coerceTo(Class<T> targetClass, Object value, BigQueryJdbcResultSetLogger log) {
     Class<?> sourceClass = value == null ? Void.class : value.getClass();
     // FieldValue object for null-values requires special check
     if (sourceClass == FieldValue.class && ((FieldValue.class.cast(value)).isNull())) {
@@ -104,7 +108,8 @@ class BigQueryTypeCoercer {
       return targetClass.cast(value);
     }
     BigQueryCoercion<Object, T> coercion = findCoercion(sourceClass, targetClass);
-    LOG.finest("%s coercion for %s", coercion, value);
+    BigQueryJdbcCustomLogger effectiveLog = log != null ? log : LOG;
+    effectiveLog.finest("%s coercion for %s", coercion, value);
     // Value is null case & no explicit coercion
     if (sourceClass == Void.class && coercion == null) {
       return null;

@@ -747,7 +747,9 @@ final class BigQueryJdbcUrlUtility {
           continue;
         }
       }
-      map.put(PROPERTY_NAME_MAP.get(key), CharEscapers.decodeUriPath(kv[1].replace("+", "%2B")));
+      String propertyName = PROPERTY_NAME_MAP.get(key);
+      String value = CharEscapers.decodeUriPath(kv[1].replace("+", "%2B"));
+      map.put(propertyName, value);
     }
     return Collections.unmodifiableMap(map);
   }

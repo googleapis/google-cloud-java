@@ -160,6 +160,14 @@ public class ReasoningEngineExecutionServiceSettings
         .asyncQueryReasoningEngineOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelAsyncQueryReasoningEngine. */
+  public UnaryCallSettings<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .cancelAsyncQueryReasoningEngineSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -311,6 +319,13 @@ public class ReasoningEngineExecutionServiceSettings
             AsyncQueryReasoningEngineOperationMetadata>
         asyncQueryReasoningEngineOperationSettings() {
       return getStubSettingsBuilder().asyncQueryReasoningEngineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAsyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineSettings() {
+      return getStubSettingsBuilder().cancelAsyncQueryReasoningEngineSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

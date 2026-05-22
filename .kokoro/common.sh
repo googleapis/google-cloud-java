@@ -39,6 +39,8 @@ excluded_modules=(
   'java-firestore'
   'java-bigtable'
   'java-pubsub'
+  'java-common-protos'
+  'java-iam'
 )
 
 function retry_with_backoff {

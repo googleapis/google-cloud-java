@@ -43,6 +43,7 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
@@ -64,6 +65,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
@@ -144,7 +146,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String URL;
   BigQueryConnection connection;
-  Statement statement = null;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
   private static final AtomicReference<String> parsedDriverVersion = new AtomicReference<>(null);
@@ -1666,8 +1667,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String columnName,
       int ordinalPosition) {
 
-    ColumnTypeInfo defaultVarcharTypeInfo =
-        new ColumnTypeInfo(Types.VARCHAR, "VARCHAR", null, null, null);
+    ColumnTypeInfo defaultStringTypeInfo =
+        new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     try {
       String typeKind = argumentDataType.getTypeKind();
       if (typeKind != null && !typeKind.isEmpty()) {
@@ -1680,10 +1681,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     } catch (Exception e) {
       LOG.warning(
           "Proc: %s, Arg: %s (Pos %d) - Caught an unexpected Exception during type"
-              + " determination. Defaulting type to VARCHAR. Error: %s",
+              + " determination. Defaulting type to STRING. Error: %s",
           procedureName, columnName, ordinalPosition, e.getMessage());
     }
-    return defaultVarcharTypeInfo;
+    return defaultStringTypeInfo;
   }
 
   Comparator<FieldValueList> defineGetProcedureColumnsComparator(FieldList resultSchemaFields) {
@@ -2747,16 +2748,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
+  private void closeStatementIgnoreException(Statement statement) {
+    if (statement == null) {
+      return;
+    }
+    try {
+      statement.close();
+    } catch (SQLException e) {
+      // pass
+    }
+  }
+
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getPrimaryKeys", e);
     }
   }
@@ -2765,13 +2777,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getImportedKeys", e);
     }
   }
@@ -2780,13 +2792,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
     }
   }
@@ -2801,10 +2813,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignTable)
       throws SQLException {
     String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
+    Statement stmt = this.connection.createStatement();
     try {
-      if (this.statement == null) {
-        this.statement = this.connection.createStatement();
-      }
+      stmt.closeOnCompletion();
       String formattedSql =
           replaceSqlParameters(
               sql,
@@ -2814,8 +2825,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               foreignCatalog,
               foreignSchema,
               foreignTable);
-      return this.statement.executeQuery(formattedSql);
+      return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
+      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getCrossReference", e);
     }
   }
@@ -4881,13 +4893,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) {
-    return null;
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new SQLException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 
   // --- Helper Methods ---
@@ -4959,45 +4974,58 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Tuple.of(effectiveCatalog, effectiveSchemaPattern);
   }
 
+  // BigQuery STRING represents Unicode character strings (UTF-8).
+  // Standard JDBC maps UTF-8/Unicode data to Types.NVARCHAR rather than Types.VARCHAR.
+  private static final Map<StandardSQLTypeName, ColumnTypeInfo> STANDARD_TYPE_INFO =
+      ImmutableMap.<StandardSQLTypeName, ColumnTypeInfo>builder()
+          .put(StandardSQLTypeName.INT64, new ColumnTypeInfo(Types.BIGINT, "INT64", 19, 0, 10))
+          .put(StandardSQLTypeName.BOOL, new ColumnTypeInfo(Types.BOOLEAN, "BOOL", 1, null, null))
+          .put(
+              StandardSQLTypeName.FLOAT64,
+              new ColumnTypeInfo(Types.DOUBLE, "FLOAT64", 15, null, 10))
+          .put(StandardSQLTypeName.NUMERIC, new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 38, 9, 10))
+          .put(
+              StandardSQLTypeName.BIGNUMERIC,
+              new ColumnTypeInfo(Types.NUMERIC, "BIGNUMERIC", 77, 38, 10))
+          .put(
+              StandardSQLTypeName.STRING,
+              new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null))
+          .put(
+              StandardSQLTypeName.TIMESTAMP,
+              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 29, null, null))
+          .put(
+              StandardSQLTypeName.DATETIME,
+              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 29, null, null))
+          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, null, null))
+          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null))
+          .put(
+              StandardSQLTypeName.GEOGRAPHY,
+              new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null))
+          .put(StandardSQLTypeName.JSON, new ColumnTypeInfo(Types.OTHER, "JSON", null, null, null))
+          .put(
+              StandardSQLTypeName.INTERVAL,
+              new ColumnTypeInfo(Types.OTHER, "INTERVAL", null, null, null))
+          .put(
+              StandardSQLTypeName.RANGE, new ColumnTypeInfo(Types.OTHER, "RANGE", null, null, null))
+          .put(
+              StandardSQLTypeName.BYTES,
+              new ColumnTypeInfo(Types.VARBINARY, "BYTES", null, null, null))
+          .put(
+              StandardSQLTypeName.STRUCT,
+              new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
+          .build();
+
   private ColumnTypeInfo getColumnTypeInfoForSqlType(StandardSQLTypeName bqType) {
     if (bqType == null) {
-      LOG.warning("Null BigQuery type encountered: " + bqType.name() + ". Mapping to VARCHAR.");
-      return new ColumnTypeInfo(Types.VARCHAR, bqType.name(), null, null, null);
+      LOG.warning("Null BigQuery type encountered. Mapping to STRING.");
+      return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     }
-
-    switch (bqType) {
-      case INT64:
-        return new ColumnTypeInfo(Types.BIGINT, "BIGINT", 19, 0, 10);
-      case BOOL:
-        return new ColumnTypeInfo(Types.BOOLEAN, "BOOLEAN", 1, null, null);
-      case FLOAT64:
-        return new ColumnTypeInfo(Types.DOUBLE, "DOUBLE", 15, null, 10);
-      case NUMERIC:
-        return new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 38, 9, 10);
-      case BIGNUMERIC:
-        return new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 77, 38, 10);
-      case STRING:
-        return new ColumnTypeInfo(Types.NVARCHAR, "NVARCHAR", null, null, null);
-      case TIMESTAMP:
-      case DATETIME:
-        return new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 29, null, null);
-      case DATE:
-        return new ColumnTypeInfo(Types.DATE, "DATE", 10, null, null);
-      case TIME:
-        return new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null);
-      case GEOGRAPHY:
-      case JSON:
-      case INTERVAL:
-        return new ColumnTypeInfo(Types.VARCHAR, "VARCHAR", null, null, null);
-      case BYTES:
-        return new ColumnTypeInfo(Types.VARBINARY, "VARBINARY", null, null, null);
-      case STRUCT:
-        return new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null);
-      default:
-        LOG.warning(
-            "Unknown BigQuery type encountered: " + bqType.name() + ". Mapping to VARCHAR.");
-        return new ColumnTypeInfo(Types.VARCHAR, bqType.name(), null, null, null);
+    ColumnTypeInfo info = STANDARD_TYPE_INFO.get(bqType);
+    if (info == null) {
+      LOG.warning("Unknown BigQuery type encountered: " + bqType.name() + ". Mapping to STRING.");
+      return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     }
+    return info;
   }
 
   <T> List<T> findMatchingBigQueryObjects(
