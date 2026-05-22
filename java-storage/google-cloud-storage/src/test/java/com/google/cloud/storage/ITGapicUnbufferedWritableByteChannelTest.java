@@ -380,12 +380,9 @@ public final class ITGapicUnbufferedWritableByteChannelTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(DirectWriteService.class);
     private final BiConsumer<StreamObserver<WriteObjectResponse>, List<WriteObjectRequest>> c;
 
-    private ImmutableList.Builder<WriteObjectRequest> requests;
-
     DirectWriteService(
         BiConsumer<StreamObserver<WriteObjectResponse>, List<WriteObjectRequest>> c) {
       this.c = c;
-      this.requests = new ImmutableList.Builder<>();
     }
 
     DirectWriteService(ImmutableMap<List<WriteObjectRequest>, WriteObjectResponse> writes) {
@@ -420,6 +417,9 @@ public final class ITGapicUnbufferedWritableByteChannelTest {
     @Override
     public StreamObserver<WriteObjectRequest> writeObject(StreamObserver<WriteObjectResponse> obs) {
       return new Adapter() {
+        private final ImmutableList.Builder<WriteObjectRequest> requests =
+            new ImmutableList.Builder<>();
+
         @Override
         public void onNext(WriteObjectRequest value) {
           requests.add(value);
@@ -432,7 +432,6 @@ public final class ITGapicUnbufferedWritableByteChannelTest {
         public void onCompleted() {
           ImmutableList<WriteObjectRequest> build = requests.build();
           c.accept(obs, build);
-          requests = new ImmutableList.Builder<>();
         }
       };
     }

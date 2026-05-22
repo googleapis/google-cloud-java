@@ -165,6 +165,9 @@ final class BidiUploadStreamingStream {
   public boolean finishWrite(long length) {
     lock.lock();
     try {
+      if (state.getState() == State.TERMINAL_SUCCESS) {
+        return true;
+      }
       // if we're already finalizing, ack rather than enqueueing again
       if (state.isFinalizing() && state.getTotalSentBytes() == length) {
         return true;
@@ -191,6 +194,10 @@ final class BidiUploadStreamingStream {
   public boolean closeStream(long length) {
     lock.lock();
     try {
+
+      if (state.getState() == State.TERMINAL_SUCCESS) {
+        return true;
+      }
 
       boolean offer = state.finalFlush(length);
       if (offer) {

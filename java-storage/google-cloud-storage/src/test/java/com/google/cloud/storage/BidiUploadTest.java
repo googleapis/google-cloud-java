@@ -1357,6 +1357,11 @@ public final class BidiUploadTest {
             }
 
             @Override
+            State getState() {
+              return State.RUNNING;
+            }
+
+            @Override
             long getTotalSentBytes() {
               return 0;
             }
