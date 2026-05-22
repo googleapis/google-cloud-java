@@ -45,6 +45,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.DateMilliVector;
@@ -64,6 +65,9 @@ import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryArrowResultSetTest {
 
@@ -351,53 +355,58 @@ public class BigQueryArrowResultSetTest {
     assertThat(bigQueryArrowResultSetNested.isAfterLast()).isTrue();
   }
 
-  @Test
-  public void testGetObjectWithType() throws SQLException {
+  public static Stream<Arguments> successfulCoercionCases() {
+    return Stream.of(
+        Arguments.of("dateField", LocalDate.class, LocalDate.of(1970, 1, 1)),
+        Arguments.of(11, LocalDate.class, LocalDate.of(1970, 1, 1)),
+        Arguments.of("timeField", LocalTime.class, LocalTime.of(0, 0, 1, 234_000_000)),
+        Arguments.of(10, LocalTime.class, LocalTime.of(0, 0, 1, 234_000_000)),
+        Arguments.of(
+            "timeStampField",
+            LocalDateTime.class,
+            LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000)),
+        Arguments.of(5, LocalDateTime.class, LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000)),
+        Arguments.of("boolField", Boolean.class, false),
+        Arguments.of(1, Boolean.class, false),
+        Arguments.of("int64Filed", Long.class, 1L),
+        Arguments.of(2, Integer.class, 1),
+        Arguments.of(2, String.class, "1"),
+        Arguments.of("float64Field", Double.class, 1.1),
+        Arguments.of("stringField", String.class, "text1"),
+        Arguments.of("numericField", BigDecimal.class, BigDecimal.ONE),
+        Arguments.of(9, Long.class, 1L));
+  }
+
+  public static Stream<Arguments> failingCoercionCases() {
+    return Stream.of(
+        Arguments.of("boolField", LocalDate.class),
+        Arguments.of("dateField", Boolean.class),
+        Arguments.of("stringField", BigDecimal.class));
+  }
+
+  @ParameterizedTest
+  @MethodSource("successfulCoercionCases")
+  public void testGetObjectWithType_success(Object column, Class<?> type, Object expectedValue)
+      throws SQLException {
     assertThat(bigQueryArrowResultSet.next()).isTrue();
+    if (column instanceof String) {
+      assertThat(bigQueryArrowResultSet.getObject((String) column, type)).isEqualTo(expectedValue);
+    } else {
+      assertThat(bigQueryArrowResultSet.getObject((Integer) column, type)).isEqualTo(expectedValue);
+    }
+  }
 
-    // java.time types
-    assertThat(bigQueryArrowResultSet.getObject("dateField", LocalDate.class))
-        .isEqualTo(LocalDate.of(1970, 1, 1));
-    assertThat(bigQueryArrowResultSet.getObject(11, LocalDate.class))
-        .isEqualTo(LocalDate.of(1970, 1, 1));
-
-    assertThat(bigQueryArrowResultSet.getObject("timeField", LocalTime.class))
-        .isEqualTo(LocalTime.of(0, 0, 1, 234_000_000));
-    assertThat(bigQueryArrowResultSet.getObject(10, LocalTime.class))
-        .isEqualTo(LocalTime.of(0, 0, 1, 234_000_000));
-
-    assertThat(bigQueryArrowResultSet.getObject("timeStampField", LocalDateTime.class))
-        .isEqualTo(LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000));
-    assertThat(bigQueryArrowResultSet.getObject(5, LocalDateTime.class))
-        .isEqualTo(LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000));
-
-    // Boolean
-    assertThat(bigQueryArrowResultSet.getObject("boolField", Boolean.class)).isFalse();
-    assertThat(bigQueryArrowResultSet.getObject(1, Boolean.class)).isFalse();
-
-    // Numbers & Coercions
-    assertThat(bigQueryArrowResultSet.getObject("int64Filed", Long.class)).isEqualTo(1L);
-    assertThat(bigQueryArrowResultSet.getObject(2, Integer.class)).isEqualTo(1);
-    assertThat(bigQueryArrowResultSet.getObject(2, String.class)).isEqualTo("1");
-
-    assertThat(bigQueryArrowResultSet.getObject("float64Field", Double.class)).isEqualTo(1.1);
-
-    // String
-    assertThat(bigQueryArrowResultSet.getObject("stringField", String.class)).isEqualTo("text1");
-
-    // BigDecimal / Numeric
-    assertThat(bigQueryArrowResultSet.getObject("numericField", BigDecimal.class))
-        .isEqualTo(BigDecimal.ONE);
-    assertThat(bigQueryArrowResultSet.getObject(9, Long.class)).isEqualTo(1L);
-
-    // Unsupported/malformed coercions should fail
-    assertThrows(
-        SQLException.class, () -> bigQueryArrowResultSet.getObject("boolField", LocalDate.class));
-    assertThrows(
-        SQLException.class, () -> bigQueryArrowResultSet.getObject("dateField", Boolean.class));
-    assertThrows(
-        SQLException.class,
-        () -> bigQueryArrowResultSet.getObject("stringField", BigDecimal.class));
+  @ParameterizedTest
+  @MethodSource("failingCoercionCases")
+  public void testGetObjectWithType_failure(Object column, Class<?> type) throws SQLException {
+    assertThat(bigQueryArrowResultSet.next()).isTrue();
+    if (column instanceof String) {
+      assertThrows(
+          SQLException.class, () -> bigQueryArrowResultSet.getObject((String) column, type));
+    } else {
+      assertThrows(
+          SQLException.class, () -> bigQueryArrowResultSet.getObject((Integer) column, type));
+    }
   }
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {

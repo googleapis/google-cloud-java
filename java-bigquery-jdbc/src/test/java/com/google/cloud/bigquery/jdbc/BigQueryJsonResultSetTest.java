@@ -56,9 +56,13 @@ import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryJsonResultSetTest {
 
@@ -468,58 +472,60 @@ public class BigQueryJsonResultSetTest {
         .isEqualTo(bigQueryJsonResultSet.getDate("fourteenth", calendar).getTime());
   }
 
-  @Test
-  public void testGetObjectWithType() throws SQLException {
+  public static Stream<Arguments> successfulCoercionCases() {
+    return Stream.of(
+        Arguments.of("fourteenth", LocalDate.class, LocalDate.of(2020, 1, 15)),
+        Arguments.of(14, LocalDate.class, LocalDate.of(2020, 1, 15)),
+        Arguments.of("twelfth", LocalTime.class, LocalTime.of(11, 14, 19, 820000000)),
+        Arguments.of(12, LocalTime.class, LocalTime.of(11, 14, 19, 820000000)),
+        Arguments.of(
+            "fifth", LocalDateTime.class, LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000)),
+        Arguments.of(5, LocalDateTime.class, LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000)),
+        Arguments.of("first", Boolean.class, false),
+        Arguments.of(1, Boolean.class, false),
+        Arguments.of("second", Long.class, 1L),
+        Arguments.of(2, Integer.class, 1),
+        Arguments.of(2, Short.class, (short) 1),
+        Arguments.of(2, String.class, "1"),
+        Arguments.of("third", Double.class, 1.5D),
+        Arguments.of(3, Float.class, 1.5F),
+        Arguments.of("fourth", String.class, STRING_VAL),
+        Arguments.of("tenth", BigDecimal.class, new BigDecimal("12345678")),
+        Arguments.of(10, Long.class, 12345678L),
+        Arguments.of("eleventh", BigDecimal.class, new BigDecimal("12345678.99")),
+        Arguments.of(11, Double.class, 12345678.99D));
+  }
+
+  public static Stream<Arguments> failingCoercionCases() {
+    return Stream.of(
+        Arguments.of("first", LocalDate.class),
+        Arguments.of("fourteenth", Boolean.class),
+        Arguments.of("fourth", BigDecimal.class));
+  }
+
+  @ParameterizedTest
+  @MethodSource("successfulCoercionCases")
+  public void testGetObjectWithType_success(Object column, Class<?> type, Object expectedValue)
+      throws SQLException {
     assertThat(resetResultSet()).isTrue();
+    if (column instanceof String) {
+      assertThat(bigQueryJsonResultSet.getObject((String) column, type)).isEqualTo(expectedValue);
+    } else {
+      assertThat(bigQueryJsonResultSet.getObject((Integer) column, type)).isEqualTo(expectedValue);
+    }
+  }
 
-    // java.time types
-    assertThat(bigQueryJsonResultSet.getObject("fourteenth", LocalDate.class))
-        .isEqualTo(LocalDate.of(2020, 1, 15));
-    assertThat(bigQueryJsonResultSet.getObject(14, LocalDate.class))
-        .isEqualTo(LocalDate.of(2020, 1, 15));
-
-    assertThat(bigQueryJsonResultSet.getObject("twelfth", LocalTime.class))
-        .isEqualTo(LocalTime.of(11, 14, 19, 820000000));
-    assertThat(bigQueryJsonResultSet.getObject(12, LocalTime.class))
-        .isEqualTo(LocalTime.of(11, 14, 19, 820000000));
-
-    assertThat(bigQueryJsonResultSet.getObject("fifth", LocalDateTime.class))
-        .isEqualTo(LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000));
-    assertThat(bigQueryJsonResultSet.getObject(5, LocalDateTime.class))
-        .isEqualTo(LocalDateTime.of(2023, 3, 30, 11, 14, 19, 820000000));
-
-    // Boolean
-    assertThat(bigQueryJsonResultSet.getObject("first", Boolean.class)).isFalse();
-    assertThat(bigQueryJsonResultSet.getObject(1, Boolean.class)).isFalse();
-
-    // Numbers & Coercions
-    assertThat(bigQueryJsonResultSet.getObject("second", Long.class)).isEqualTo(1L);
-    assertThat(bigQueryJsonResultSet.getObject(2, Integer.class)).isEqualTo(1);
-    assertThat(bigQueryJsonResultSet.getObject(2, Short.class)).isEqualTo((short) 1);
-    assertThat(bigQueryJsonResultSet.getObject(2, String.class)).isEqualTo("1");
-
-    assertThat(bigQueryJsonResultSet.getObject("third", Double.class)).isEqualTo(1.5D);
-    assertThat(bigQueryJsonResultSet.getObject(3, Float.class)).isEqualTo(1.5F);
-
-    // String
-    assertThat(bigQueryJsonResultSet.getObject("fourth", String.class)).isEqualTo(STRING_VAL);
-
-    // BigDecimal / Numeric
-    assertThat(bigQueryJsonResultSet.getObject("tenth", BigDecimal.class))
-        .isEqualTo(new BigDecimal("12345678"));
-    assertThat(bigQueryJsonResultSet.getObject(10, Long.class)).isEqualTo(12345678L);
-
-    assertThat(bigQueryJsonResultSet.getObject("eleventh", BigDecimal.class))
-        .isEqualTo(new BigDecimal("12345678.99"));
-    assertThat(bigQueryJsonResultSet.getObject(11, Double.class)).isEqualTo(12345678.99D);
-
-    // Unsupported/malformed coercions should fail
-    assertThrows(
-        SQLException.class, () -> bigQueryJsonResultSet.getObject("first", LocalDate.class));
-    assertThrows(
-        SQLException.class, () -> bigQueryJsonResultSet.getObject("fourteenth", Boolean.class));
-    assertThrows(
-        SQLException.class, () -> bigQueryJsonResultSet.getObject("fourth", BigDecimal.class));
+  @ParameterizedTest
+  @MethodSource("failingCoercionCases")
+  public void testGetObjectWithType_failure(Object column, Class<?> type) throws SQLException {
+    assertThat(resetResultSet()).isTrue();
+    if (column instanceof String) {
+      assertThrows(
+          SQLException.class, () -> bigQueryJsonResultSet.getObject((String) column, type));
+    } else {
+      assertThrows(
+          SQLException.class, () -> bigQueryJsonResultSet.getObject((Integer) column, type));
+    }
   }
 
   private int resultSetRowCount(BigQueryJsonResultSet resultSet) throws SQLException {
