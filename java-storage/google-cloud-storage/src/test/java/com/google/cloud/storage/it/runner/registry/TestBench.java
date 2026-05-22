@@ -442,8 +442,8 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   static final class Builder {
-    private static final String DEFAULT_BASE_URI = "http://localhost:9000";
-    private static final String DEFAULT_GRPC_BASE_URI = "http://localhost:9005";
+    private static final String DEFAULT_BASE_URI = "http://127.0.0.1:9000";
+    private static final String DEFAULT_GRPC_BASE_URI = "http://127.0.0.1:9005";
     private static final String DEFAULT_IMAGE_NAME;
     private static final String DEFAULT_IMAGE_TAG;
 
