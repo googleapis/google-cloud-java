@@ -24,7 +24,7 @@ steps:
   id: "IT Tests"
   timeout: 10000s
   entrypoint: 'bash'
-  args: ['java-bigquery/.cloudbuild/scripts/jdbc-nightly.sh']
+  args: ['java-bigquery-jdbc/.cloudbuild/scripts/jdbc-nightly.sh']
   secretEnv: ['SA_EMAIL', 'KMS_RESOURCE_PATH', 'SA_SECRET']
 
 availableSecrets:
