@@ -68,23 +68,30 @@ class BigQueryTypeCoercionUtility {
             .registerTypeCoercion(new BytesArrayToString())
 
             // Read API Type coercions
-            .registerTypeCoercion(Timestamp::valueOf, LocalDateTime.class, Timestamp.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> Timestamp.from(ldt.toInstant(ZoneOffset.UTC)),
+                LocalDateTime.class,
+                Timestamp.class)
             .registerTypeCoercion(Text::toString, Text.class, String.class)
             .registerTypeCoercion(new TextToInteger())
             .registerTypeCoercion(new LongToTimestamp())
             .registerTypeCoercion(new LongToTime())
             .registerTypeCoercion(new IntegerToDate())
             .registerTypeCoercion(
-                (Timestamp ts) -> Date.valueOf(ts.toLocalDateTime().toLocalDate()),
+                (Timestamp ts) ->
+                    Date.valueOf(ts.toInstant().atOffset(ZoneOffset.UTC).toLocalDate()),
                 Timestamp.class,
                 Date.class)
             .registerTypeCoercion(
-                (Timestamp ts) -> Time.valueOf(ts.toLocalDateTime().toLocalTime()),
+                (Timestamp ts) ->
+                    Time.valueOf(ts.toInstant().atOffset(ZoneOffset.UTC).toLocalTime()),
                 Timestamp.class,
                 Time.class)
             .registerTypeCoercion(
                 (Time time) -> // Per JDBC spec, the date component should be 1970-01-01
-                Timestamp.valueOf(LocalDateTime.of(LocalDate.ofEpochDay(0), time.toLocalTime())),
+                Timestamp.from(
+                        LocalDateTime.of(LocalDate.ofEpochDay(0), time.toLocalTime())
+                            .toInstant(ZoneOffset.UTC)),
                 Time.class,
                 Timestamp.class)
             .registerTypeCoercion(
@@ -95,9 +102,9 @@ class BigQueryTypeCoercionUtility {
                 Date.class)
             .registerTypeCoercion(
                 (LocalDateTime ldt) -> {
-                  long millisOfDay =
-                      java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(
-                          ldt.toLocalTime().toNanoOfDay());
+                  // Custom conversion is used to preserve sub-second (millisecond) precision,
+                  // as standard java.sql.Time.valueOf(LocalTime) truncates milliseconds.
+                  long millisOfDay = TimeUnit.NANOSECONDS.toMillis(ldt.toLocalTime().toNanoOfDay());
                   long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
                   return new Time(localMillis);
                 },
@@ -106,15 +113,18 @@ class BigQueryTypeCoercionUtility {
             .registerTypeCoercion((Date date) -> date.toLocalDate(), Date.class, LocalDate.class)
             .registerTypeCoercion(
                 (Time time) -> {
+                  // Custom conversion is used to preserve sub-second (millisecond) precision,
+                  // as standard java.sql.Time.toLocalTime() truncates milliseconds.
                   long millis = time.getTime();
                   long localMillis = millis + TimeZone.getDefault().getOffset(millis);
-                  return LocalTime.ofNanoOfDay(
-                      java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(localMillis));
+                  return LocalTime.ofNanoOfDay(TimeUnit.MILLISECONDS.toNanos(localMillis));
                 },
                 Time.class,
                 LocalTime.class)
             .registerTypeCoercion(
-                (Timestamp ts) -> ts.toLocalDateTime(), Timestamp.class, LocalDateTime.class)
+                (Timestamp ts) -> ts.toInstant().atOffset(ZoneOffset.UTC).toLocalDateTime(),
+                Timestamp.class,
+                LocalDateTime.class)
             .registerTypeCoercion(
                 (Timestamp ts) -> ts.toInstant().atOffset(ZoneOffset.UTC),
                 Timestamp.class,

@@ -513,11 +513,13 @@ public class BigQueryJsonResultSetTest {
         .isEqualTo(new BigDecimal("12345678.99"));
     assertThat(bigQueryJsonResultSet.getObject(11, Double.class)).isEqualTo(12345678.99D);
 
-    // Unsupported coercions should fail
+    // Unsupported/malformed coercions should fail
     assertThrows(
         SQLException.class, () -> bigQueryJsonResultSet.getObject("first", LocalDate.class));
     assertThrows(
         SQLException.class, () -> bigQueryJsonResultSet.getObject("fourteenth", Boolean.class));
+    assertThrows(
+        SQLException.class, () -> bigQueryJsonResultSet.getObject("fourth", BigDecimal.class));
   }
 
   private int resultSetRowCount(BigQueryJsonResultSet resultSet) throws SQLException {

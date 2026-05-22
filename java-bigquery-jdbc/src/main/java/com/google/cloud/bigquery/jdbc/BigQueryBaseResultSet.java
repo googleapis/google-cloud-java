@@ -255,7 +255,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         return null;
       }
       return this.bigQueryTypeCoercer.coerceTo(type, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+    } catch (RuntimeException e) {
       throw createCoercionException(columnIndex, type, e);
     }
   }

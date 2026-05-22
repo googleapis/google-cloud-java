@@ -115,7 +115,7 @@ public class BigQueryArrowResultSetTest {
     Float8Vector float64Field =
         new Float8Vector("float64Field", allocator); // Mapped with StandardSQLTypeName.FLOAT64
     float64Field.allocateNew(2);
-    float64Field.set(0, 1.1f);
+    float64Field.set(0, 1.1);
     float64Field.setValueCount(1);
     VarCharVector stringField =
         new VarCharVector("stringField", allocator); // Mapped with StandardSQLTypeName.STRING
@@ -380,8 +380,7 @@ public class BigQueryArrowResultSetTest {
     assertThat(bigQueryArrowResultSet.getObject(2, Integer.class)).isEqualTo(1);
     assertThat(bigQueryArrowResultSet.getObject(2, String.class)).isEqualTo("1");
 
-    assertThat(bigQueryArrowResultSet.getObject("float64Field", Double.class))
-        .isEqualTo(Double.valueOf(1.1f));
+    assertThat(bigQueryArrowResultSet.getObject("float64Field", Double.class)).isEqualTo(1.1);
 
     // String
     assertThat(bigQueryArrowResultSet.getObject("stringField", String.class)).isEqualTo("text1");
@@ -391,11 +390,14 @@ public class BigQueryArrowResultSetTest {
         .isEqualTo(BigDecimal.ONE);
     assertThat(bigQueryArrowResultSet.getObject(9, Long.class)).isEqualTo(1L);
 
-    // Unsupported coercions should fail
+    // Unsupported/malformed coercions should fail
     assertThrows(
         SQLException.class, () -> bigQueryArrowResultSet.getObject("boolField", LocalDate.class));
     assertThrows(
         SQLException.class, () -> bigQueryArrowResultSet.getObject("dateField", Boolean.class));
+    assertThrows(
+        SQLException.class,
+        () -> bigQueryArrowResultSet.getObject("stringField", BigDecimal.class));
   }
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {
