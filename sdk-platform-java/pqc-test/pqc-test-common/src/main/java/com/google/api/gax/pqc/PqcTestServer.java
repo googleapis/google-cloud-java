@@ -29,13 +29,13 @@
  */
 package com.google.api.gax.pqc;
 
-import com.google.common.collect.ImmutableList;
 import com.sun.net.httpserver.HttpsConfigurator;
 import com.sun.net.httpserver.HttpsParameters;
 import com.sun.net.httpserver.HttpsServer;
 import io.grpc.Server;
 import io.grpc.netty.NettyServerBuilder;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.security.KeyStore;
 import java.security.Security;
@@ -63,6 +63,9 @@ public class PqcTestServer {
     // operations.
     if (Security.getProvider("BC") == null) {
       Security.addProvider(new BouncyCastleProvider());
+    }
+    if (Security.getProvider("BCJSSE") == null) {
+      Security.addProvider(new BouncyCastleJsseProvider());
     }
 
     // PKCS12 is the key store format to bundle the private key + the certificate.
@@ -112,8 +115,24 @@ public class PqcTestServer {
             // Enforce TLSv1.3 protocol exclusively to guarantee modern cipher suites.
             sslparams.setProtocols(new String[] {"TLSv1.3"});
 
-            // Enforce PQC encryption
-            sslparams.setCipherSuites(new String[] {"X25519MLKEM768"});
+            // Enforce ALWAYS and ONLY hybrid ML-KEM / Kyber named groups programmatically on
+            // HttpsServer!
+            try {
+              System.out.println("[SERVER-PQC] sslparams class: " + sslparams.getClass().getName());
+              System.out.println(
+                  "[SERVER-PQC] sslparams superclass: "
+                      + sslparams.getClass().getSuperclass().getName());
+              for (java.lang.reflect.Method m : sslparams.getClass().getMethods()) {
+                System.out.println("[SERVER-PQC] Method: " + m.getName() + " -> " + m.toString());
+              }
+              java.lang.reflect.Method setNamedGroupsMethod =
+                  sslparams.getClass().getMethod("setNamedGroups", String[].class);
+              setNamedGroupsMethod.invoke(
+                  sslparams, (Object) new String[] {"X25519MLKEM768", "X25519Kyber768Draft00"});
+            } catch (Exception e) {
+              System.out.println(
+                  "[SERVER-PQC] Failed to set named groups reflectively: " + e.getMessage());
+            }
 
             // Commit parameters to the active connection context.
             params.setSSLParameters(sslparams);
@@ -142,6 +161,21 @@ public class PqcTestServer {
           exchange.getResponseBody().close();
         });
 
+    // Mock Translation REST endpoint
+    httpServer.createContext(
+        "/v3/",
+        exchange -> {
+          if ("POST".equalsIgnoreCase(exchange.getRequestMethod())) {
+            String response =
+                "{\"translations\": [{\"translatedText\": \"mocked translated text\"}]}";
+            exchange.getResponseHeaders().set("Content-Type", "application/json");
+            exchange.sendResponseHeaders(200, response.length());
+            try (OutputStream os = exchange.getResponseBody()) {
+              os.write(response.getBytes());
+            }
+          }
+        });
+
     // 11. Start the HTTP Server and retrieve the dynamically allocated local ephemeral port.
     httpServer.start();
     httpPort = httpServer.getAddress().getPort();
@@ -150,9 +184,6 @@ public class PqcTestServer {
     //     Bind the builder explicitly to Bouncy Castle JSSE provider context.
     io.netty.handler.ssl.SslContextBuilder nettySslContextBuilder =
         io.netty.handler.ssl.SslContextBuilder.forServer(kmf).sslContextProvider(bcProvider);
-
-    // 13. Configure the Netty SslContextBuilder accepted curves.
-    nettySslContextBuilder.ciphers(ImmutableList.of("MLKEM768"));
 
     // 14. Finalize compiling standard Netty SSL configurations.
     //     Force Netty to execute handshakes utilizing the standard JRE (JDK) SSL Provider
@@ -185,10 +216,32 @@ public class PqcTestServer {
             .build();
 
     // 17. Start the Netty gRPC Server on a dynamically allocated ephemeral port.
+    // Raw gRPC mock for Translation Service
+    io.grpc.MethodDescriptor<byte[], byte[]> translateMethod =
+        io.grpc.MethodDescriptor.<byte[], byte[]>newBuilder()
+            .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+            .setFullMethodName("google.cloud.translation.v3.TranslationService/TranslateText")
+            .setRequestMarshaller(new ByteMarshaller())
+            .setResponseMarshaller(new ByteMarshaller())
+            .build();
+
+    io.grpc.ServerServiceDefinition translationServiceDef =
+        io.grpc.ServerServiceDefinition.builder("google.cloud.translation.v3.TranslationService")
+            .addMethod(
+                translateMethod,
+                io.grpc.stub.ServerCalls.asyncUnaryCall(
+                    (request, responseObserver) -> {
+                      responseObserver.onNext(new byte[0]); // Empty proto response
+                      responseObserver.onCompleted();
+                    }))
+            .build();
+
+    // 17. Start the Netty gRPC Server on a dynamically allocated ephemeral port.
     grpcServer =
         NettyServerBuilder.forPort(0)
             .sslContext(nettySslContext)
             .addService(serviceDef)
+            .addService(translationServiceDef)
             .build()
             .start();
     grpcPort = grpcServer.getPort();

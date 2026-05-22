@@ -30,21 +30,39 @@
 
 package com.google.api.gax.httpjson;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.translate.v3.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class RunPqcTest extends PqcConnectivityTest {
 
+  @Override
+  protected boolean clientSupportsPqc() {
+    return true;
+  }
+
+  @Override
+  protected boolean expectHttpSuccess() {
+    return true;
+  }
+
+  @Override
+  protected boolean expectGrpcSuccess() {
+    return true;
+  }
+
+  @Override
+  protected boolean expectBigQuerySuccess() {
+    return true;
+  }
 
   @Test
   @Override
@@ -63,7 +81,7 @@ public class RunPqcTest extends PqcConnectivityTest {
               .setParent("projects/test-project")
               .addAllContents(contents)
               .build();
-      
+
       TranslateTextResponse response = client.translateText(request);
       assertNotNull(response);
     }
@@ -86,7 +104,7 @@ public class RunPqcTest extends PqcConnectivityTest {
               .setParent("projects/test-project")
               .addAllContents(contents)
               .build();
-      
+
       TranslateTextResponse response = client.translateText(request);
       assertEquals("mocked translated text", response.getTranslations(0).getTranslatedText());
     }
@@ -125,10 +143,4 @@ public class RunPqcTest extends PqcConnectivityTest {
           "Verified: BigQuery client call successfully rejected as expected: " + e.getMessage());
     }
   }
-
-
-
-
-
-
 }

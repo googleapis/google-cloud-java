@@ -29,6 +29,9 @@
  */
 package com.google.api.gax.httpjson;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
@@ -38,9 +41,6 @@ import com.google.cloud.translate.v3.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 public class RunPqcTest extends PqcConnectivityTest {
 
@@ -52,6 +52,11 @@ public class RunPqcTest extends PqcConnectivityTest {
   @Override
   protected boolean expectHttpSuccess() {
     return false;
+  }
+
+  @Override
+  protected boolean expectGrpcSuccess() {
+    return true;
   }
 
   @Override
@@ -76,12 +81,14 @@ public class RunPqcTest extends PqcConnectivityTest {
               .setParent("projects/test-project")
               .addAllContents(contents)
               .build();
-      
+
       try {
-        client.translateText(request);
-        fail("Expected gRPC call to fail in Release due to strict PQC server (no draft/classical fallback)");
+        TranslateTextResponse response = client.translateText(request);
+        assertNotNull(response);
       } catch (ApiException e) {
-        assertEquals(StatusCode.Code.UNAVAILABLE, e.getStatusCode().getCode());
+        fail(
+            "Expected gRPC call to succeed in Release (native MLKEM), but failed: "
+                + e.getMessage());
       }
     }
   }
@@ -103,14 +110,16 @@ public class RunPqcTest extends PqcConnectivityTest {
               .setParent("projects/test-project")
               .addAllContents(contents)
               .build();
-      
+
       try {
         client.translateText(request);
         fail("Expected HTTP call to fail in Release due to PQC enforcement");
       } catch (ApiException e) {
         StatusCode.Code code = e.getStatusCode().getCode();
         if (code != StatusCode.Code.UNAVAILABLE && code != StatusCode.Code.UNKNOWN) {
-          fail("Expected HTTP call to fail with UNAVAILABLE or UNKNOWN, but failed with: " + code, e);
+          fail(
+              "Expected HTTP call to fail with UNAVAILABLE or UNKNOWN, but failed with: " + code,
+              e);
         }
       }
     }

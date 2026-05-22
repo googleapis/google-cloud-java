@@ -90,8 +90,8 @@ import org.junit.jupiter.api.Test;
 public class PqcConnectivityTest {
 
   private static Process serverProcess;
-  private static int httpPort;
-  private static int grpcPort;
+  protected static int httpPort;
+  protected static int grpcPort;
   private static boolean isPqcSupported;
 
   /**
@@ -158,7 +158,6 @@ public class PqcConnectivityTest {
 
   @BeforeAll
   public static void setup() throws Exception {
-    System.setProperty("javax.net.debug", "all");
 
     // Dynamically detect if PQC auto-upgrade wrapping is supported by current classpath
     // dependencies (Snapshot vs Release)
@@ -243,6 +242,22 @@ public class PqcConnectivityTest {
     if (!httpPortFound || !grpcPortFound) {
       throw new RuntimeException("PqcTestServer failed to initialize ephemeral ports!");
     }
+
+    // Start a background thread to continuously drain the server's stdout
+    Thread drainThread =
+        new Thread(
+            () -> {
+              try {
+                String l;
+                while ((l = reader.readLine()) != null) {
+                  System.out.println("[SERVER-OUT] " + l);
+                }
+              } catch (java.io.IOException e) {
+                // Ignore stream closed
+              }
+            });
+    drainThread.setDaemon(true);
+    drainThread.start();
   }
 
   @AfterAll
