@@ -912,8 +912,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       enqueueError(arrowBatchWrapperBlockingQueue, e);
       Thread.currentThread().interrupt();
     } catch (Exception e) {
-      if (e.getCause() instanceof InterruptedException
-          || Thread.currentThread().isInterrupted()) {
+      if (e.getCause() instanceof InterruptedException || Thread.currentThread().isInterrupted()) {
         LOG.log(
             Level.WARNING,
             "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
@@ -1684,8 +1683,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
 
     } catch (Exception ex) {
-      if (ex.getCause() instanceof InterruptedException
-          || Thread.currentThread().isInterrupted()) {
+      if (ex.getCause() instanceof InterruptedException || Thread.currentThread().isInterrupted()) {
         LOG.log(
             Level.WARNING,
             "\n" + Thread.currentThread().getName() + " Interrupted @ populateBufferAsync",

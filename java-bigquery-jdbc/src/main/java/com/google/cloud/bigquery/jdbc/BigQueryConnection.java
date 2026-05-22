@@ -42,6 +42,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSortedSet;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
@@ -438,6 +439,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return connectionUrl;
   }
 
+  @VisibleForTesting
   public String getConnectionId() {
     return this.connectionId;
   }
