@@ -30,36 +30,78 @@
 
 package com.google.api.gax.httpjson;
 
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.translate.v3.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class RunPqcTest extends PqcConnectivityTest {
+
+
+  @Test
+  @Override
+  public void testGrpcPqc() throws Exception {
+    TranslationServiceSettings settings =
+        TranslationServiceSettings.newBuilder()
+            .setEndpoint("localhost:" + grpcPort)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+
+    try (TranslationServiceClient client = TranslationServiceClient.create(settings)) {
+      List<String> contents = new ArrayList<>();
+      contents.add("house");
+      TranslateTextRequest request =
+          TranslateTextRequest.newBuilder()
+              .setParent("projects/test-project")
+              .addAllContents(contents)
+              .build();
+      
+      TranslateTextResponse response = client.translateText(request);
+      assertNotNull(response);
+    }
+  }
 
   @Test
   @Override
   public void testHttpPqc() throws Exception {
-    try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+    TranslationServiceSettings settings =
+        TranslationServiceSettings.newHttpJsonBuilder()
+            .setEndpoint("localhost:" + httpPort)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+
+    try (TranslationServiceClient client = TranslationServiceClient.create(settings)) {
       List<String> contents = new ArrayList<>();
       contents.add("house");
       TranslateTextRequest request =
-          TranslateTextRequest.newBuilder().addAllContents(contents).build();
-      TranslateTextResponse response = translationServiceClient.translateText(request);
+          TranslateTextRequest.newBuilder()
+              .setParent("projects/test-project")
+              .addAllContents(contents)
+              .build();
+      
+      TranslateTextResponse response = client.translateText(request);
+      assertEquals("mocked translated text", response.getTranslations(0).getTranslatedText());
     }
   }
 
+  @Test
   @Override
-  public void testBigQueryPqc() {
+  public void testBigQueryPqc() throws Exception {
 
     // 100% Vanilla BigQuery Client instantiation with NO transport factory or custom option
     // mutations!
     BigQueryOptions bigqueryOptions =
         BigQueryOptions.newBuilder()
             .setProjectId("test-project")
-            .setHost("https://localhost:" + 1234)
+            .setHost("https://localhost:" + httpPort)
             .setCredentials(NoCredentials.getInstance())
             .build();
 
@@ -73,7 +115,7 @@ public class RunPqcTest extends PqcConnectivityTest {
     try {
       bigquery.listDatasets();
       if (!expectBigQuerySuccess()) {
-        org.junit.jupiter.api.Assertions.fail("Expected BigQuery client call to fail!");
+        fail("Expected BigQuery client call to fail!");
       }
     } catch (Exception e) {
       if (expectBigQuerySuccess()) {
@@ -83,4 +125,10 @@ public class RunPqcTest extends PqcConnectivityTest {
           "Verified: BigQuery client call successfully rejected as expected: " + e.getMessage());
     }
   }
+
+
+
+
+
+
 }
