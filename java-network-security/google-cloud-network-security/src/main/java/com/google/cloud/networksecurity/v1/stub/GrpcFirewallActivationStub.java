@@ -19,6 +19,7 @@ package com.google.cloud.networksecurity.v1.stub;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointAssociationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListLocationsPagedResponse;
+import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListProjectFirewallEndpointsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -82,12 +83,37 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+      listProjectFirewallEndpointsMethodDescriptor =
+          MethodDescriptor.<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networksecurity.v1.FirewallActivation/ListProjectFirewallEndpoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFirewallEndpointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFirewallEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointMethodDescriptor =
           MethodDescriptor.<GetFirewallEndpointRequest, FirewallEndpoint>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.networksecurity.v1.FirewallActivation/GetFirewallEndpoint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFirewallEndpointRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FirewallEndpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointMethodDescriptor =
+          MethodDescriptor.<GetFirewallEndpointRequest, FirewallEndpoint>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networksecurity.v1.FirewallActivation/GetProjectFirewallEndpoint")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFirewallEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallEndpoint.getDefaultInstance()))
@@ -106,6 +132,18 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointMethodDescriptor =
+          MethodDescriptor.<CreateFirewallEndpointRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networksecurity.v1.FirewallActivation/CreateProjectFirewallEndpoint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateFirewallEndpointRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteFirewallEndpointRequest, Operation>
       deleteFirewallEndpointMethodDescriptor =
           MethodDescriptor.<DeleteFirewallEndpointRequest, Operation>newBuilder()
@@ -118,12 +156,36 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointMethodDescriptor =
+          MethodDescriptor.<DeleteFirewallEndpointRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networksecurity.v1.FirewallActivation/DeleteProjectFirewallEndpoint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFirewallEndpointRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointMethodDescriptor =
           MethodDescriptor.<UpdateFirewallEndpointRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
                   "google.cloud.networksecurity.v1.FirewallActivation/UpdateFirewallEndpoint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateFirewallEndpointRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointMethodDescriptor =
+          MethodDescriptor.<UpdateFirewallEndpointRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networksecurity.v1.FirewallActivation/UpdateProjectFirewallEndpoint")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFirewallEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
@@ -257,22 +319,43 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
       listFirewallEndpointsCallable;
   private final UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsPagedResponse>
       listFirewallEndpointsPagedCallable;
+  private final UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+      listProjectFirewallEndpointsCallable;
+  private final UnaryCallable<
+          ListFirewallEndpointsRequest, ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsPagedCallable;
   private final UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointCallable;
+  private final UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointCallable;
   private final UnaryCallable<CreateFirewallEndpointRequest, Operation>
       createFirewallEndpointCallable;
   private final OperationCallable<
           CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       createFirewallEndpointOperationCallable;
+  private final UnaryCallable<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointCallable;
+  private final OperationCallable<
+          CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationCallable;
   private final UnaryCallable<DeleteFirewallEndpointRequest, Operation>
       deleteFirewallEndpointCallable;
   private final OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
       deleteFirewallEndpointOperationCallable;
+  private final UnaryCallable<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointCallable;
+  private final OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationCallable;
   private final UnaryCallable<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointCallable;
   private final OperationCallable<
           UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       updateFirewallEndpointOperationCallable;
+  private final UnaryCallable<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointCallable;
+  private final OperationCallable<
+          UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationCallable;
   private final UnaryCallable<
           ListFirewallEndpointAssociationsRequest, ListFirewallEndpointAssociationsResponse>
       listFirewallEndpointAssociationsCallable;
@@ -362,10 +445,35 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+        listProjectFirewallEndpointsTransportSettings =
+            GrpcCallSettings
+                .<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>newBuilder()
+                .setMethodDescriptor(listProjectFirewallEndpointsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
         getFirewallEndpointTransportSettings =
             GrpcCallSettings.<GetFirewallEndpointRequest, FirewallEndpoint>newBuilder()
                 .setMethodDescriptor(getFirewallEndpointMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
+        getProjectFirewallEndpointTransportSettings =
+            GrpcCallSettings.<GetFirewallEndpointRequest, FirewallEndpoint>newBuilder()
+                .setMethodDescriptor(getProjectFirewallEndpointMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -386,6 +494,18 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateFirewallEndpointRequest, Operation>
+        createProjectFirewallEndpointTransportSettings =
+            GrpcCallSettings.<CreateFirewallEndpointRequest, Operation>newBuilder()
+                .setMethodDescriptor(createProjectFirewallEndpointMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<DeleteFirewallEndpointRequest, Operation>
         deleteFirewallEndpointTransportSettings =
             GrpcCallSettings.<DeleteFirewallEndpointRequest, Operation>newBuilder()
@@ -398,10 +518,35 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<DeleteFirewallEndpointRequest, Operation>
+        deleteProjectFirewallEndpointTransportSettings =
+            GrpcCallSettings.<DeleteFirewallEndpointRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteProjectFirewallEndpointMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<UpdateFirewallEndpointRequest, Operation>
         updateFirewallEndpointTransportSettings =
             GrpcCallSettings.<UpdateFirewallEndpointRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateFirewallEndpointMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "firewall_endpoint.name",
+                          String.valueOf(request.getFirewallEndpoint().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateFirewallEndpointRequest, Operation>
+        updateProjectFirewallEndpointTransportSettings =
+            GrpcCallSettings.<UpdateFirewallEndpointRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateProjectFirewallEndpointMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -541,10 +686,25 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
             listFirewallEndpointsTransportSettings,
             settings.listFirewallEndpointsSettings(),
             clientContext);
+    this.listProjectFirewallEndpointsCallable =
+        callableFactory.createUnaryCallable(
+            listProjectFirewallEndpointsTransportSettings,
+            settings.listProjectFirewallEndpointsSettings(),
+            clientContext);
+    this.listProjectFirewallEndpointsPagedCallable =
+        callableFactory.createPagedCallable(
+            listProjectFirewallEndpointsTransportSettings,
+            settings.listProjectFirewallEndpointsSettings(),
+            clientContext);
     this.getFirewallEndpointCallable =
         callableFactory.createUnaryCallable(
             getFirewallEndpointTransportSettings,
             settings.getFirewallEndpointSettings(),
+            clientContext);
+    this.getProjectFirewallEndpointCallable =
+        callableFactory.createUnaryCallable(
+            getProjectFirewallEndpointTransportSettings,
+            settings.getProjectFirewallEndpointSettings(),
             clientContext);
     this.createFirewallEndpointCallable =
         callableFactory.createUnaryCallable(
@@ -555,6 +715,17 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
         callableFactory.createOperationCallable(
             createFirewallEndpointTransportSettings,
             settings.createFirewallEndpointOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createProjectFirewallEndpointCallable =
+        callableFactory.createUnaryCallable(
+            createProjectFirewallEndpointTransportSettings,
+            settings.createProjectFirewallEndpointSettings(),
+            clientContext);
+    this.createProjectFirewallEndpointOperationCallable =
+        callableFactory.createOperationCallable(
+            createProjectFirewallEndpointTransportSettings,
+            settings.createProjectFirewallEndpointOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteFirewallEndpointCallable =
@@ -568,6 +739,17 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
             settings.deleteFirewallEndpointOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteProjectFirewallEndpointCallable =
+        callableFactory.createUnaryCallable(
+            deleteProjectFirewallEndpointTransportSettings,
+            settings.deleteProjectFirewallEndpointSettings(),
+            clientContext);
+    this.deleteProjectFirewallEndpointOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteProjectFirewallEndpointTransportSettings,
+            settings.deleteProjectFirewallEndpointOperationSettings(),
+            clientContext,
+            operationsStub);
     this.updateFirewallEndpointCallable =
         callableFactory.createUnaryCallable(
             updateFirewallEndpointTransportSettings,
@@ -577,6 +759,17 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
         callableFactory.createOperationCallable(
             updateFirewallEndpointTransportSettings,
             settings.updateFirewallEndpointOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateProjectFirewallEndpointCallable =
+        callableFactory.createUnaryCallable(
+            updateProjectFirewallEndpointTransportSettings,
+            settings.updateProjectFirewallEndpointSettings(),
+            clientContext);
+    this.updateProjectFirewallEndpointOperationCallable =
+        callableFactory.createOperationCallable(
+            updateProjectFirewallEndpointTransportSettings,
+            settings.updateProjectFirewallEndpointOperationSettings(),
             clientContext,
             operationsStub);
     this.listFirewallEndpointAssociationsCallable =
@@ -669,8 +862,26 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
   }
 
   @Override
+  public UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+      listProjectFirewallEndpointsCallable() {
+    return listProjectFirewallEndpointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFirewallEndpointsRequest, ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsPagedCallable() {
+    return listProjectFirewallEndpointsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint> getFirewallEndpointCallable() {
     return getFirewallEndpointCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointCallable() {
+    return getProjectFirewallEndpointCallable;
   }
 
   @Override
@@ -685,6 +896,18 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
   }
 
   @Override
+  public UnaryCallable<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointCallable() {
+    return createProjectFirewallEndpointCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationCallable() {
+    return createProjectFirewallEndpointOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteFirewallEndpointRequest, Operation> deleteFirewallEndpointCallable() {
     return deleteFirewallEndpointCallable;
   }
@@ -696,6 +919,18 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
   }
 
   @Override
+  public UnaryCallable<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointCallable() {
+    return deleteProjectFirewallEndpointCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationCallable() {
+    return deleteProjectFirewallEndpointOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateFirewallEndpointRequest, Operation> updateFirewallEndpointCallable() {
     return updateFirewallEndpointCallable;
   }
@@ -704,6 +939,18 @@ public class GrpcFirewallActivationStub extends FirewallActivationStub {
   public OperationCallable<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       updateFirewallEndpointOperationCallable() {
     return updateFirewallEndpointOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointCallable() {
+    return updateProjectFirewallEndpointCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationCallable() {
+    return updateProjectFirewallEndpointOperationCallable;
   }
 
   @Override
