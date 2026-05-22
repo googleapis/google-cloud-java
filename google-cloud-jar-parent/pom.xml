@@ -227,6 +227,7 @@
         <configuration>
           <forkCount>1C</forkCount>
           <reuseForks>true</reuseForks>
+          <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
         </configuration>
       </plugin>
       <plugin>
