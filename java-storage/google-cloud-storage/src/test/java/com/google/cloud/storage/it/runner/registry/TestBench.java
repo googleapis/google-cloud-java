@@ -262,7 +262,7 @@ public final class TestBench implements ManagedLifecycle {
               dockerImage,
               "gunicorn",
               "--bind=0.0.0.0:9000",
-              "--worker-class=sync",
+              "--worker-class=gthread",
               "--threads=10",
               "--access-logfile=-",
               "--keep-alive=0",
@@ -401,6 +401,15 @@ public final class TestBench implements ManagedLifecycle {
     }
   }
 
+  private static int findFreePort() {
+    try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+      socket.setReuseAddress(true);
+      return socket.getLocalPort();
+    } catch (java.io.IOException e) {
+      throw new RuntimeException("Failed to find a free port", e);
+    }
+  }
+
   static Builder newBuilder() {
     return new Builder();
   }
@@ -495,13 +504,16 @@ public final class TestBench implements ManagedLifecycle {
     private String containerName;
 
     private Builder() {
-      this(
-          false,
-          DEFAULT_BASE_URI,
-          DEFAULT_GRPC_BASE_URI,
-          DEFAULT_IMAGE_NAME,
-          DEFAULT_IMAGE_TAG,
-          DEFAULT_CONTAINER_NAME);
+      int httpPort = findFreePort();
+      int grpcPort = findFreePort();
+      String uuid = java.util.UUID.randomUUID().toString().substring(0, 8);
+
+      this.ignorePullError = false;
+      this.baseUri = "http://127.0.0.1:" + httpPort;
+      this.gRPCBaseUri = "http://127.0.0.1:" + grpcPort;
+      this.dockerImageName = DEFAULT_IMAGE_NAME;
+      this.dockerImageTag = DEFAULT_IMAGE_TAG;
+      this.containerName = DEFAULT_CONTAINER_NAME + "_" + uuid;
     }
 
     private Builder(
