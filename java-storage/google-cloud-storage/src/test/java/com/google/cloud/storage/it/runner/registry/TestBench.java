@@ -128,6 +128,8 @@ public final class TestBench implements ManagedLifecycle {
             .createRequestFactory(
                 request -> {
                   request.setCurlLoggingEnabled(false);
+                  request.setConnectTimeout(5000);
+                  request.setReadTimeout(10000);
                   request.getHeaders().setAccept("application/json");
                   request
                       .getHeaders()

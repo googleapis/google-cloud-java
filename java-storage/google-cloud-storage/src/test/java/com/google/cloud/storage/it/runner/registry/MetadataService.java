@@ -42,6 +42,8 @@ final class MetadataService {
                   .createRequestFactory(
                       request -> {
                         request.setCurlLoggingEnabled(false);
+                        request.setConnectTimeout(1000);
+                        request.setReadTimeout(2000);
                         request.getHeaders().set("Metadata-Flavor", "Google");
                       }));
   private static final String baseUri = "http://metadata.google.internal";
