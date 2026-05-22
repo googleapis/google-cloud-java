@@ -33,7 +33,9 @@ jobs:
       with:
         filters: |
           library:
+            - 'java-bigquery/**'
             - 'java-bigquery-jdbc/**'
+            - 'java-bigquerystorage/**'
             - '.github/workflows/java-bigquery-jdbc-ci.yaml'
             - 'google-auth-library-java/**/*.java'
             - 'google-auth-library-java/**/pom.xml'
