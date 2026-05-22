@@ -15,9 +15,9 @@ ifndef GOOGLE_APPLICATION_CREDENTIALS
 endif
 
 install:
-	cd "$(PWD)/../.." && \
+	cd "$(PWD)/.." && \
 	source ".kokoro/common.sh" && \
-	install_modules java-bigquery
+	install_modules java-bigquery-jdbc
 
 clean:
 	mvn clean
