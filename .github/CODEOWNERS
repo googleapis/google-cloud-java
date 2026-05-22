@@ -9,6 +9,7 @@
 /java-vertexai/   @googleapis/vertexai-team @googleapis/cloud-sdk-java-team
 /java-bigquerystorage/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
 /java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
+/java-bigquery-jdbc/ @googleapis/bigquery-developer-tools-team @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
 /grpc-gcp-java/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
 /java-spanner/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
 /java-spanner-jdbc/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team

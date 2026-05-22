@@ -255,7 +255,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-kms-v1</artifactId>
-      <version>0.187.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
+      <version>2.96.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-kms-v1:current} -->
       <scope>test</scope>
     </dependency>
 

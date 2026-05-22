@@ -44,12 +44,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
-        <version>0.196.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
+        <version>2.101.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1p1beta1</artifactId>
-        <version>0.196.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1p1beta1:current} -->
+        <version>2.101.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -59,12 +59,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-v1beta1</artifactId>
-        <version>0.196.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1beta1:current} -->
+        <version>2.101.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-v1p1beta1</artifactId>
-        <version>0.196.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1p1beta1:current} -->
+        <version>2.101.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1p1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
