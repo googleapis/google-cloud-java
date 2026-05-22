@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
@@ -61,9 +60,6 @@ public class ITOpenTelemetryTest {
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
-    assumeTrue(
-        PROJECT_ID != null && !PROJECT_ID.trim().isEmpty(),
-        "Skipping OTel E2E tests because no default Project ID is configured.");
 
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
@@ -136,9 +132,6 @@ public class ITOpenTelemetryTest {
 
   @Test
   public void testExecute_withErrorCorrelation() throws Exception {
-    assumeTrue(
-        PROJECT_ID != null && !PROJECT_ID.trim().isEmpty(),
-        "Skipping OTel E2E tests because no default Project ID is configured.");
 
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
