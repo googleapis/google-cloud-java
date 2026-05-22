@@ -60,11 +60,11 @@ public interface DeleteLineageEventRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true and the lineage event is not found, the request
+   * Optional. If set to true and the lineage event is not found, the request
    * succeeds but the server doesn't perform any actions.
    * </pre>
    *
-   * <code>bool allow_missing = 2;</code>
+   * <code>bool allow_missing = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */

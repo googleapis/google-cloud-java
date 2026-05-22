@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -366,7 +367,13 @@ public class DataSource implements javax.sql.DataSource {
     for (Map.Entry<String, String> entry : properties.entrySet()) {
       BiConsumer<DataSource, String> setter = PROPERTY_SETTERS.get(entry.getKey());
       if (setter != null) {
-        setter.accept(dataSource, entry.getValue());
+        try {
+          setter.accept(dataSource, entry.getValue());
+        } catch (NumberFormatException e) {
+          throw new BigQueryJdbcRuntimeException(
+              String.format("Invalid value for %s. It must be a valid integer.", entry.getKey()),
+              e);
+        }
       }
     }
     return dataSource;
@@ -415,7 +422,7 @@ public class DataSource implements javax.sql.DataSource {
     return DriverManager.getConnection(getURL(), props);
   }
 
-  private Properties createProperties() {
+  Properties createProperties() {
     Properties connectionProperties = new Properties();
     if (this.projectId != null) {
       connectionProperties.setProperty(
@@ -704,6 +711,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setMaxResults(Long maxResults) {
+    if (maxResults != null && maxResults <= 0) {
+      throw new BigQueryJdbcRuntimeException(
+          "Invalid value for MaxResults. It must be greater than 0.");
+    }
     this.maxResults = maxResults;
   }
 
@@ -776,6 +787,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setConnectionPoolSize(Long connectionPoolSize) {
+    if (connectionPoolSize != null) {
+      validateNonNegative(
+          connectionPoolSize, BigQueryJdbcUrlUtility.CONNECTION_POOL_SIZE_PROPERTY_NAME);
+    }
     this.connectionPoolSize = connectionPoolSize;
   }
 
@@ -786,6 +801,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setListenerPoolSize(Long listenerPoolSize) {
+    if (listenerPoolSize != null) {
+      validateNonNegative(
+          listenerPoolSize, BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME);
+    }
     this.listenerPoolSize = listenerPoolSize;
   }
 
@@ -814,10 +833,19 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {
+    if (highThroughputMinTableSize != null) {
+      validateNonNegative(
+          highThroughputMinTableSize, BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME);
+    }
     this.highThroughputMinTableSize = highThroughputMinTableSize;
   }
 
   public void setHighThroughputActivationRatio(Integer highThroughputActivationRatio) {
+    if (highThroughputActivationRatio != null) {
+      validateNonNegative(
+          highThroughputActivationRatio,
+          BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME);
+    }
     this.highThroughputActivationRatio = highThroughputActivationRatio;
   }
 
@@ -1128,6 +1156,11 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setMetadataFetchThreadCount(Integer metadataFetchThreadCount) {
+    if (metadataFetchThreadCount != null) {
+      validateNonNegative(
+          metadataFetchThreadCount,
+          BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME);
+    }
     this.metadataFetchThreadCount = metadataFetchThreadCount;
   }
 
@@ -1186,18 +1219,31 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setJobTimeout(Integer jobTimeout) {
+    if (jobTimeout != null) {
+      validateNonNegative(jobTimeout, BigQueryJdbcUrlUtility.JOB_TIMEOUT_PROPERTY_NAME);
+    }
     this.jobTimeout = jobTimeout;
   }
 
   public void setRetryInitialDelay(Integer retryInitialDelay) {
+    if (retryInitialDelay != null) {
+      validateNonNegative(
+          retryInitialDelay, BigQueryJdbcUrlUtility.RETRY_INITIAL_DELAY_PROPERTY_NAME);
+    }
     this.retryInitialDelay = retryInitialDelay;
   }
 
   public void setRetryMaxDelay(Integer retryMaxDelay) {
+    if (retryMaxDelay != null) {
+      validateNonNegative(retryMaxDelay, BigQueryJdbcUrlUtility.RETRY_MAX_DELAY_PROPERTY_NAME);
+    }
     this.retryMaxDelay = retryMaxDelay;
   }
 
   public void setTimeout(Integer timeout) {
+    if (timeout != null) {
+      validateNonNegative(timeout, BigQueryJdbcUrlUtility.RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME);
+    }
     this.timeout = timeout;
   }
 
@@ -1206,6 +1252,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setHttpConnectTimeout(Integer httpConnectTimeout) {
+    if (httpConnectTimeout != null) {
+      validateNonNegative(
+          httpConnectTimeout, BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME);
+    }
     this.httpConnectTimeout = httpConnectTimeout;
   }
 
@@ -1214,6 +1264,9 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setHttpReadTimeout(Integer httpReadTimeout) {
+    if (httpReadTimeout != null) {
+      validateNonNegative(httpReadTimeout, BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME);
+    }
     this.httpReadTimeout = httpReadTimeout;
   }
 
@@ -1234,6 +1287,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setSwaActivationRowCount(Integer swaActivationRowCount) {
+    if (swaActivationRowCount != null) {
+      validateNonNegative(
+          swaActivationRowCount, BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME);
+    }
     this.swaActivationRowCount = swaActivationRowCount;
   }
 
@@ -1244,6 +1301,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setSwaAppendRowCount(Integer swaAppendRowCount) {
+    if (swaAppendRowCount != null) {
+      validateNonNegative(
+          swaAppendRowCount, BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME);
+    }
     this.swaAppendRowCount = swaAppendRowCount;
   }
 
@@ -1394,5 +1455,13 @@ public class DataSource implements javax.sql.DataSource {
   @Override
   public boolean isWrapperFor(Class<?> iface) {
     return false;
+  }
+
+  private static void validateNonNegative(long val, String propertyName) {
+    if (val < 0) {
+      throw new BigQueryJdbcRuntimeException(
+          String.format(
+              "Invalid value for %s. It must be greater than or equal to 0.", propertyName));
+    }
   }
 }

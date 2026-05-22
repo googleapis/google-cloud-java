@@ -42,6 +42,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
+import com.google.common.collect.ImmutableSortedSet;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Tracer;
@@ -81,6 +82,70 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
+  private static final Set<String> SAFE_TO_LOG_PROPERTIES =
+      ImmutableSortedSet.orderedBy(String.CASE_INSENSITIVE_ORDER)
+          .add(
+              BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTAPI_ACTIVATION_RATIO_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.KMS_KEY_NAME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.QUERY_PROPERTIES_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.USE_QUERY_CACHE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.QUERY_DIALECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ALLOW_LARGE_RESULTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LARGE_RESULTS_TABLE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LARGE_RESULTS_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.DESTINATION_DATASET_EXPIRATION_TIME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.MAX_RESULTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PARTNER_TOKEN_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENDPOINT_OVERRIDES_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.PRIVATE_SERVICE_CONNECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_TIMEOUT_IN_SECS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.JOB_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_INITIAL_DELAY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.RETRY_MAX_DELAY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ADDITIONAL_PROJECTS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.CONNECTION_POOL_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_WRITE_API_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.LABELS_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.REQUEST_REASON_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_AUDIENCE_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_POOL_USER_PROJECT_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_SA_IMPERSONATION_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_CHAIN_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME)
+          .build();
   private HeaderProvider headerProvider;
   BigQueryReadClient bigQueryReadClient = null;
   BigQueryWriteClient bigQueryWriteClient = null;
@@ -170,9 +235,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             .build();
     this.otelContext = Context.current().with(baggage);
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      LOG.finest("++enter++");
-
       this.connectionUrl = url;
+      if (LOG.isLoggable(java.util.logging.Level.CONFIG)) {
+        Properties connectionProps = ds.createProperties();
+        Properties maskedProps = new Properties();
+        for (String name : connectionProps.stringPropertyNames()) {
+          String value = connectionProps.getProperty(name);
+          if (!SAFE_TO_LOG_PROPERTIES.contains(name)) {
+            value = "*****";
+          }
+          maskedProps.setProperty(name, value);
+        }
+        LOG.config("Connection properties: %s", maskedProps.toString());
+      }
       this.openStatements = ConcurrentHashMap.newKeySet();
       this.autoCommit = true;
       this.sqlWarnings = new ArrayList<>();
@@ -297,7 +372,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   String getLibraryVersion(Class<?> libraryClass) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     String version = null;
     try (InputStream in =
         libraryClass.getResourceAsStream(
@@ -329,7 +404,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   protected void addOpenStatements(Statement statement) {
-    LOG.finest("Statement %s added to Connection %s.", statement, this);
+    LOG.finer("Statement %s added to Connection %s.", statement, this);
     this.openStatements.add(statement);
   }
 
@@ -375,7 +450,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public Statement createStatement() throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     BigQueryStatement currentStatement = new BigQueryStatement(this);
     LOG.fine("Statement %s created.", currentStatement);
@@ -399,7 +473,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public Statement createStatement(int resultSetType, int resultSetConcurrency)
       throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
@@ -424,7 +497,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public Statement createStatement(
       int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
@@ -436,7 +508,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
     LOG.fine("Prepared Statement %s created.", currentStatement);
@@ -446,7 +517,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql, int autoGeneratedKeys) throws SQLException {
-    LOG.finest("++enter++");
     if (autoGeneratedKeys != Statement.NO_GENERATED_KEYS) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException("autoGeneratedKeys is not supported");
     }
@@ -462,7 +532,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public PreparedStatement prepareStatement(
       String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
       throws SQLException {
-    LOG.finest("++enter++");
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
         || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
@@ -474,7 +543,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public PreparedStatement prepareStatement(String sql, int resultSetType, int resultSetConcurrency)
       throws SQLException {
-    LOG.finest("++enter++");
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException("Unsupported prepareStatement feature");
@@ -565,7 +633,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    * href="https://cloud.google.com/bigquery/docs/transactions">Multi-statement transactions</a>.
    */
   private void beginTransaction() {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     QueryJobConfiguration.Builder transactionBeginJobConfig =
         QueryJobConfiguration.newBuilder("BEGIN TRANSACTION;");
     try {
@@ -693,14 +761,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean isValid(int timeout) throws SQLException {
-    LOG.finest("++enter++");
     if (timeout < 0) {
       throw new BigQueryJdbcException("timeout must be >= 0");
     }
     if (!isClosed()) {
       try (Statement statement = createStatement();
           ResultSet rs = statement.executeQuery("SELECT 1")) {
-        LOG.finest("Running validation query");
+        LOG.finer("Running validation query");
         if (rs.next()) {
           if (rs.getInt(1) == 1) {
             return true;
@@ -715,7 +782,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void abort(Executor executor) throws SQLException {
-    LOG.finest("++enter++");
     close();
   }
 
@@ -756,14 +822,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean getAutoCommit() {
-    LOG.finest("++enter++");
     checkClosed();
     return this.autoCommit;
   }
 
   @Override
   public void setAutoCommit(boolean autoCommit) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     checkIfEnabledSession("setAutoCommit");
     if (this.autoCommit == autoCommit) {
@@ -782,7 +846,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void commit() {
-    LOG.finest("++enter++");
     checkClosed();
     checkIfEnabledSession("commit");
     if (!isTransactionStarted()) {
@@ -801,7 +864,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void rollback() throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     checkIfEnabledSession("rollback");
     if (!isTransactionStarted()) {
@@ -834,7 +896,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
-    LOG.finest("++enter++");
     if (databaseMetaData == null) {
       databaseMetaData = new BigQueryDatabaseMetaData(this);
     }
@@ -848,7 +909,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setTransactionIsolation(int level) throws SQLException {
-    LOG.finest("++enter++");
     if (level != Connection.TRANSACTION_SERIALIZABLE) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
           "Unsupported transaction isolation level");
@@ -883,7 +943,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       return;
     }
 
-    LOG.finest("++enter++");
     LOG.fine("Closing Connection " + this);
     closeImpl();
   }
@@ -944,7 +1003,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private ConnectionProperty getSessionPropertyFromQueryProperties(
       Map<String, String> queryPropertiesMap) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     if (queryPropertiesMap != null) {
       if (queryPropertiesMap.containsKey("session_id")) {
         return ConnectionProperty.newBuilder()
@@ -958,7 +1017,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private List<ConnectionProperty> convertMapToConnectionPropertiesList(
       Map<String, String> queryPropertiesMap) {
-    LOG.finest("++enter++");
+    LOG.finer("++enter++");
     List<ConnectionProperty> connectionProperties = new ArrayList<ConnectionProperty>();
     if (queryPropertiesMap != null) {
       for (Map.Entry<String, String> entry : queryPropertiesMap.entrySet()) {
@@ -1202,7 +1261,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public CallableStatement prepareCall(String sql, int resultSetType, int resultSetConcurrency)
       throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
@@ -1216,7 +1274,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public CallableStatement prepareCall(
       String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
       throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY

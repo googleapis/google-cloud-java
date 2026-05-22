@@ -34,14 +34,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class BigQueryConnectionTest {
+public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   @RegisterExtension
   static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
@@ -484,6 +488,36 @@ public class BigQueryConnectionTest {
       List<SpanData> spans = otelTesting.getSpans();
       assertEquals(1, spans.size());
       assertEquals("custom-otel-span", spans.get(0).getName());
+
+  @Test
+  public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    Level originalLevel = rootLogger.getLevel();
+    rootLogger.setLevel(Level.CONFIG);
+
+    try {
+      String url =
+          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+              + "OAuthType=2;ProjectId=MyTestProjectId;"
+              + "OAuthAccessToken=secretAccessToken;Location=US;";
+      try (BigQueryConnection connection = new BigQueryConnection(url)) {
+        // Just trigger the constructor
+      }
+
+      Optional<LogRecord> connectionPropertiesLog =
+          capturedLogs.stream()
+              .filter(r -> r.getMessage().contains("Connection properties:"))
+              .findFirst();
+      assertTrue(
+          connectionPropertiesLog.isPresent(),
+          "Log message about Connection properties was not found");
+      String logMessage = connectionPropertiesLog.get().getMessage();
+      assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
+      assertTrue(logMessage.contains("Location=US"));
+      assertTrue(logMessage.contains("OAuthAccessToken=*****"));
+      assertFalse(logMessage.contains("secretAccessToken"));
+    } finally {
+      rootLogger.setLevel(originalLevel);
     }
   }
 }

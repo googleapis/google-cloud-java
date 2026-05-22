@@ -113,7 +113,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private VRpcResult currentCancel = null;
 
   private SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
-  private Duration heartbeatInterval =
+  private volatile Duration heartbeatInterval =
       Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
 
   private volatile Instant nextHeartbeat;

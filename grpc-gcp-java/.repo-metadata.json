@@ -1,0 +1,17 @@
+{
+  "api_shortname": "grpc-gcp",
+  "name_pretty": "gRPC GCP Extension",
+  "product_documentation": "https://github.com/GoogleCloudPlatform/grpc-gcp-java",
+  "api_description": "gRPC extension library for Google Cloud Platform clients.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/grpc-gcp/latest/overview",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "google-cloud-java",
+  "distribution_name": "com.google.cloud:grpc-gcp",
+  "library_type": "OTHER",
+  "codeowner_team": "@googleapis/cloud-sdk-java-team",
+  "recommended_package": "com.google.cloud.grpc",
+  "min_java_version": 8
+}

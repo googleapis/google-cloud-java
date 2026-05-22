@@ -342,6 +342,40 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  public void testMetadataResultSetsDoNotInterfere() throws SQLException {
+    try (Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG))) {
+      DatabaseMetaData metaData = connection.getMetaData();
+
+      // Get primary keys for table 1
+      ResultSet primaryKeys1 =
+          metaData.getPrimaryKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
+
+      // Get imported keys for table 1, BEFORE fully consuming primaryKeys1
+      ResultSet importedKeys =
+          metaData.getImportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
+
+      // Now try to read from primaryKeys1
+      Assertions.assertTrue(primaryKeys1.next());
+      Assertions.assertEquals("id", primaryKeys1.getString("COLUMN_NAME"));
+
+      // Read from importedKeys
+      Assertions.assertTrue(importedKeys.next());
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME2, importedKeys.getString("PKTABLE_NAME"));
+
+      // Read more from primaryKeys1 (should be finished now)
+      Assertions.assertFalse(primaryKeys1.next());
+
+      // Read more from importedKeys
+      Assertions.assertTrue(importedKeys.next());
+      Assertions.assertEquals(CONSTRAINTS_TABLE_NAME2, importedKeys.getString("PKTABLE_NAME"));
+
+      primaryKeys1.close();
+      importedKeys.close();
+    }
+  }
+
+  @Test
   public void testDatabaseMetadataGetCatalogs() throws SQLException {
 
     Connection connection =

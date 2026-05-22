@@ -20,7 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
@@ -205,5 +207,57 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
     assertThat(parsedProperties.get("ProjectId")).isEqualTo(complexValue);
     assertFalse(parsedProperties.containsKey("ExtraProperty"));
+  }
+
+  @Test
+  public void testInvalidConnectionProperties() {
+    String url = "jdbc:bigquery://;MaxResults=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url));
+
+    String url2 = "jdbc:bigquery://;ConnectionPoolSize=-2";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
+
+    String url3 = "jdbc:bigquery://;Timeout=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url3));
+
+    String url4 = "jdbc:bigquery://;JobTimeout=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url4));
+
+    String url5 = "jdbc:bigquery://;RetryInitialDelay=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url5));
+
+    String url6 = "jdbc:bigquery://;RetryMaxDelay=-1";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url6));
+
+    String url7 = "jdbc:bigquery://;MaxResults=0";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url7));
+  }
+
+  @Test
+  public void testInvalidSetterValues() {
+    DataSource ds = new DataSource();
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(-1L));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setMaxResults(0L));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setTimeout(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setJobTimeout(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setRetryInitialDelay(-1));
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> ds.setRetryMaxDelay(-1));
+  }
+
+  @Test
+  public void testNonNumericConnectionProperties() {
+    String url = "jdbc:bigquery://;MaxResults=abc";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url));
+  }
+
+  @Test
+  public void testUnrecognizedConnectionProperties() {
+    // Unrecognized key-value pair should be ignored (log warning, no exception)
+    String url = "jdbc:bigquery://;UnknownProperty=value";
+    assertDoesNotThrow(() -> DataSource.fromUrl(url));
+
+    // Malformed property (not key-value) should throw exception
+    String url2 = "jdbc:bigquery://;MalformedProperty";
+    assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
   }
 }

@@ -20,12 +20,15 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchem
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
@@ -60,7 +63,6 @@ import com.google.common.collect.Maps;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
@@ -584,7 +586,7 @@ public class BigQueryStatementTest {
 
     SpanData span =
         OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
-    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+    OpenTelemetryTestUtility.assertSpanStatus(span, io.opentelemetry.api.trace.StatusCode.UNSET);
 
     if (expectedAttributes != null) {
       for (Map.Entry<AttributeKey<?>, Object> entry : expectedAttributes.entrySet()) {
@@ -661,6 +663,81 @@ public class BigQueryStatementTest {
     assertThat(type).isEqualTo(StatementType.SELECT);
     verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
         .create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testProcessQueryResponseFallbackToJsonOnReadApiFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a permission denied ApiException
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.PERMISSION_DENIED);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    // Mock processJsonResultSet to return our mock JSON result set
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+
+    // Verify that processJsonResultSet was indeed called as a fallback
+    verify(statementSpy).processJsonResultSet(tableResultMock);
+    // Verify that currentResultSet is set to the mocked JSON result set
+    assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
+  }
+
+  @Test
+  public void testProcessQueryResponseNoFallbackOnNonPermissionFailure() throws SQLException {
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    TableResult tableResultMock = mockTableResultWithJob("job-id");
+
+    // Force useReadAPI to return true to enter the HTAPI block
+    doReturn(true).when(statementSpy).useReadAPI(tableResultMock);
+
+    // Mock a non-permission ApiException (e.g., INTERNAL)
+    ApiException apiExceptionMock = mockApiException(StatusCode.Code.INTERNAL);
+
+    BigQueryJdbcException exceptionToThrow =
+        new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
+
+    // Force processArrowResultSet to throw the non-permission exception
+    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+
+    BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+
+    // Assert that the exception is propagated
+    try {
+      statementSpy.processQueryResponse("SELECT 1", tableResultMock);
+      fail("Expected SQLException to be thrown");
+    } catch (SQLException e) {
+      assertEquals(exceptionToThrow, e);
+    }
+
+    // Verify that processJsonResultSet was NOT called
+    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+  }
+
+  private TableResult mockTableResultWithJob(String jobId) {
+    TableResult tableResult = mock(TableResult.class);
+    doReturn(JobId.of(jobId)).when(tableResult).getJobId();
+    return tableResult;
+  }
+
+  private ApiException mockApiException(StatusCode.Code code) {
+    ApiException apiExceptionMock = mock(ApiException.class);
+    StatusCode statusCodeMock = mock(StatusCode.class);
+    doReturn(statusCodeMock).when(apiExceptionMock).getStatusCode();
+    doReturn(code).when(statusCodeMock).getCode();
+    return apiExceptionMock;
   }
 
   @Test
@@ -776,7 +853,7 @@ public class BigQueryStatementTest {
         OpenTelemetryTestUtility.findSpanByName(spans, "BigQueryStatement.executeQuery");
 
     // Assert that the span recorded the error correctly
-    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.ERROR);
+    OpenTelemetryTestUtility.assertSpanStatus(span, io.opentelemetry.api.trace.StatusCode.ERROR);
     OpenTelemetryTestUtility.assertSpanHasException(span, BigQueryJdbcException.class);
   }
 

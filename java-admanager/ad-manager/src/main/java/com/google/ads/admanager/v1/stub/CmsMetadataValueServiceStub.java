@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesResponse;
 import com.google.ads.admanager.v1.CmsMetadataValue;
 import com.google.ads.admanager.v1.GetCmsMetadataValueRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataValuesRequest;
@@ -48,6 +52,20 @@ public abstract class CmsMetadataValueServiceStub implements BackgroundResource 
   public UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse>
       listCmsMetadataValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: listCmsMetadataValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCmsMetadataValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCmsMetadataValuesCallable()");
   }
 
   @Override

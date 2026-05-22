@@ -257,7 +257,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public abstract Object getObject(int columnIndex) throws SQLException;
 
   protected int getColumnIndex(String columnLabel) throws SQLException {
-    LOG.finestTrace("getColumnIndex", "++enter++");
+    LOG.finestTrace("getColumnIndex");
     checkClosed();
     if (columnLabel == null) {
       throw logAndCreateException("Column label cannot be null");
@@ -268,10 +268,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public String getString(int columnIndex) throws SQLException {
-    LOG.finestTrace("getString", "++enter++");
+    LOG.finestTrace("getString");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(String.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(String.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, String.class, e);
     }
@@ -279,7 +279,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public boolean getBoolean(int columnIndex) throws SQLException {
-    LOG.finestTrace("getBoolean", "++enter++");
+    LOG.finestTrace("getBoolean");
 
     StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
     if (type == StandardSQLTypeName.GEOGRAPHY
@@ -290,7 +290,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Boolean.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Boolean.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, Boolean.class, e);
     }
@@ -298,10 +298,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public byte getByte(int columnIndex) throws SQLException {
-    LOG.finestTrace("getByte", "++enter++");
+    LOG.finestTrace("getByte");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Byte.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Byte.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Byte.class, e);
     }
@@ -309,10 +309,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public short getShort(int columnIndex) throws SQLException {
-    LOG.finestTrace("getShort", "++enter++");
+    LOG.finestTrace("getShort");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Short.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Short.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Short.class, e);
     }
@@ -320,10 +320,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public int getInt(int columnIndex) throws SQLException {
-    LOG.finestTrace("getInt", "++enter++");
+    LOG.finestTrace("getInt");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Integer.class, e);
     }
@@ -331,10 +331,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public long getLong(int columnIndex) throws SQLException {
-    LOG.finestTrace("getLong", "++enter++");
+    LOG.finestTrace("getLong");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Long.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Long.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Long.class, e);
     }
@@ -342,10 +342,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public float getFloat(int columnIndex) throws SQLException {
-    LOG.finestTrace("getFloat", "++enter++");
+    LOG.finestTrace("getFloat");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Float.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Float.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Float.class, e);
     }
@@ -353,10 +353,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public double getDouble(int columnIndex) throws SQLException {
-    LOG.finestTrace("getDouble", "++enter++");
+    LOG.finestTrace("getDouble");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Double.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(Double.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, Double.class, e);
     }
@@ -366,10 +366,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Deprecated
   @SuppressWarnings("deprecation")
   public BigDecimal getBigDecimal(int columnIndex, int scale) throws SQLException {
-    LOG.finestTrace("getBigDecimal", "++enter++");
+    LOG.finestTrace("getBigDecimal");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, BigDecimal.class, e);
     }
@@ -377,10 +377,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public byte[] getBytes(int columnIndex) throws SQLException {
-    LOG.finestTrace("getBytes", "++enter++");
+    LOG.finestTrace("getBytes");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(byte[].class, value);
+      return this.bigQueryTypeCoercer.coerceTo(byte[].class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, byte[].class, e);
     }
@@ -388,10 +388,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Date getDate(int columnIndex) throws SQLException {
-    LOG.finestTrace("getDate", "++enter++");
+    LOG.finestTrace("getDate");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Date.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(java.sql.Date.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, java.sql.Date.class, e);
     }
@@ -399,14 +399,14 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Time getTime(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTime", "++enter++");
+    LOG.finestTrace("getTime");
     StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
     if (type == StandardSQLTypeName.INT64) {
       throw createCoercionException(columnIndex, java.sql.Time.class, null);
     }
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Time.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(java.sql.Time.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, java.sql.Time.class, e);
     }
@@ -414,14 +414,14 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Timestamp getTimestamp(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTimestamp", "++enter++");
+    LOG.finestTrace("getTimestamp");
     StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
     if (type == StandardSQLTypeName.INT64) {
       throw createCoercionException(columnIndex, java.sql.Timestamp.class, null);
     }
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Timestamp.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(java.sql.Timestamp.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException e) {
       throw createCoercionException(columnIndex, java.sql.Timestamp.class, e);
     }
@@ -429,10 +429,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public BigDecimal getBigDecimal(int columnIndex) throws SQLException {
-    LOG.finestTrace("getBigDecimal", "++enter++");
+    LOG.finestTrace("getBigDecimal");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value);
+      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value, this.LOG);
     } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
       throw createCoercionException(columnIndex, BigDecimal.class, e);
     }
@@ -440,7 +440,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Array getArray(int columnIndex) throws SQLException {
-    LOG.finestTrace("getArray", "++enter++");
+    LOG.finestTrace("getArray");
     try {
       return (Array) getObject(columnIndex);
     } catch (ClassCastException e) {
@@ -450,27 +450,27 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Blob getBlob(int columnIndex) throws SQLException {
-    LOG.finestTrace("getBlob", "++enter++");
+    LOG.finestTrace("getBlob");
     byte[] value = getBytes(columnIndex);
     return new javax.sql.rowset.serial.SerialBlob(value);
   }
 
   @Override
   public Clob getClob(int columnIndex) throws SQLException {
-    LOG.finestTrace("getClob", "++enter++");
+    LOG.finestTrace("getClob");
     String value = getString(columnIndex);
     return new javax.sql.rowset.serial.SerialClob(value.toCharArray());
   }
 
   @Override
   public Reader getCharacterStream(int columnIndex) throws SQLException {
-    LOG.finestTrace("getCharacterStream", "++enter++");
+    LOG.finestTrace("getCharacterStream");
     String value = getString(columnIndex);
     return value == null ? null : new StringReader(value);
   }
 
   private InputStream getInputStream(String value, java.nio.charset.Charset charset) {
-    LOG.finestTrace("getInputStream", "++enter++");
+    LOG.finestTrace("getInputStream");
     if (value == null) {
       return null;
     }
@@ -479,7 +479,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public InputStream getAsciiStream(int columnIndex) throws SQLException {
-    LOG.finestTrace("getAsciiStream", "++enter++");
+    LOG.finestTrace("getAsciiStream");
     return getInputStream(getString(columnIndex), StandardCharsets.US_ASCII);
   }
 
@@ -487,20 +487,20 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Deprecated
   @SuppressWarnings("deprecation")
   public InputStream getUnicodeStream(int columnIndex) throws SQLException {
-    LOG.finestTrace("getUnicodeStream", "++enter++");
+    LOG.finestTrace("getUnicodeStream");
     return getInputStream(getString(columnIndex), StandardCharsets.UTF_16LE);
   }
 
   @Override
   public InputStream getBinaryStream(int columnIndex) throws SQLException {
-    LOG.finestTrace("getBinaryStream", "++enter++");
+    LOG.finestTrace("getBinaryStream");
     byte[] bytes = getBytes(columnIndex);
     return bytes == null ? null : new java.io.ByteArrayInputStream(bytes);
   }
 
   @Override
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
-    LOG.finestTrace("getDate", "++enter++");
+    LOG.finestTrace("getDate");
     Date date = getDate(columnIndex);
     if (date == null || cal == null) {
       return null;
@@ -511,7 +511,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
-    LOG.finestTrace("getTime", "++enter++");
+    LOG.finestTrace("getTime");
     Time time = getTime(columnIndex);
     if (time == null || cal == null) {
       return null;
@@ -522,7 +522,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
-    LOG.finestTrace("getTimestamp", "++enter++");
+    LOG.finestTrace("getTimestamp");
     Timestamp timeStamp = getTimestamp(columnIndex);
     if (timeStamp == null || cal == null) {
       return null;
@@ -533,7 +533,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public int findColumn(String columnLabel) throws SQLException {
-    LOG.finestTrace("findColumn", "++enter++");
+    LOG.finestTrace("findColumn");
     return getColumnIndex(columnLabel);
   }
 

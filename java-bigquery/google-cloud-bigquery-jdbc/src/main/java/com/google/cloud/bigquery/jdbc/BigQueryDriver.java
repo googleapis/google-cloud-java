@@ -134,17 +134,15 @@ public class BigQueryDriver implements Driver {
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(
                 url.substring(5), this.toString(), connectInfo);
+        DataSource ds;
         try {
-          BigQueryJdbcUrlUtility.parseUrl(connectionUri);
+          ds = DataSource.fromUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
-
-        DataSource ds = DataSource.fromUrl(connectionUri);
         if (customOpenTelemetryObj instanceof OpenTelemetry) {
           ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
         }
-
         // LogLevel
         String logLevelStr = ds.getLogLevel();
         if (logLevelStr == null) {

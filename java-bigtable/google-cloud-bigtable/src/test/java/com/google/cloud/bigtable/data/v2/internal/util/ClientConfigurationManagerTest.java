@@ -56,6 +56,7 @@ import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -298,6 +299,90 @@ class ClientConfigurationManagerTest {
     expectedConfig.getSessionConfigurationBuilder().setSessionLoad(0);
 
     assertThat(initialConfig).isEqualTo(service.config.get());
+  }
+
+  @Test
+  void testDeadlockPrevention() throws Exception {
+    // Initialize the manager and fetch the initial config to schedule polling.
+    manager.start().get();
+
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+    Runnable triggerPollRunnable = runnableCaptor.getValue();
+
+    // Define the "alien" lock object.
+    final Object alienLock = new Object();
+
+    // Latches to coordinate the deadlock scenario deterministically.
+    final CountDownLatch alienLockAcquiredLatch = new CountDownLatch(1);
+    final CountDownLatch startGetterLatch = new CountDownLatch(1);
+
+    // Register a listener that acts as the "alien" callback.
+    manager.addListener(
+        ClientConfiguration::getSessionConfiguration,
+        new ConfigListener<SessionClientConfiguration>() {
+          @Override
+          public void onChange(SessionClientConfiguration newValue) {
+            // Signal that we have entered the listener callback (released the manager monitor lock)
+            startGetterLatch.countDown();
+
+            // Try to acquire the alien lock. If we still hold the manager monitor lock,
+            // this will cause a deadlock with the other thread calling getClientConfiguration().
+            synchronized (alienLock) {
+              // Do nothing
+            }
+          }
+        });
+
+    // Start Thread B which will hold the alienLock and call getClientConfiguration()
+    final AtomicReference<ClientConfiguration> retrievedConfig = new AtomicReference<>();
+    final AtomicReference<Throwable> threadBError = new AtomicReference<>();
+
+    Thread threadB =
+        new Thread(
+            () -> {
+              synchronized (alienLock) {
+                // Signal that we hold the alien lock
+                alienLockAcquiredLatch.countDown();
+                try {
+                  // Wait until Thread A enters the onChange callback
+                  if (startGetterLatch.await(5, TimeUnit.SECONDS)) {
+                    // Call getClientConfiguration() which requires the synchronized lock on
+                    // ClientConfigurationManager
+                    retrievedConfig.set(manager.getClientConfiguration());
+                  } else {
+                    threadBError.set(
+                        new RuntimeException("Timeout waiting for listener onChange to start"));
+                  }
+                } catch (InterruptedException e) {
+                  threadBError.set(e);
+                }
+              }
+            });
+    threadB.start();
+
+    // Wait for Thread B to acquire the alien lock
+    assertThat(alienLockAcquiredLatch.await(5, TimeUnit.SECONDS)).isTrue();
+
+    // Thread A (current thread): Trigger config change to invoke listener
+    ClientConfiguration.Builder builder = service.config.get().toBuilder();
+    builder
+        .getSessionConfigurationBuilder()
+        .getSessionPoolConfigurationBuilder()
+        .setLoadBalancingOptions(
+            LoadBalancingOptions.newBuilder()
+                .setLeastInFlight(LeastInFlight.newBuilder().setRandomSubsetSize(20)));
+    service.config.set(builder.build());
+
+    // Trigger the poll (which calls setClientConfiguration -> notifyListeners)
+    triggerPollRunnable.run();
+    outstandingRpcCounter.waitUntilRpcsDone();
+
+    // Wait for Thread B to finish
+    threadB.join(5000);
+    assertThat(threadB.isAlive()).isFalse();
+    assertThat(threadBError.get()).isNull();
+    assertThat(retrievedConfig.get()).isNotNull();
   }
 
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
