@@ -488,6 +488,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       List<SpanData> spans = otelTesting.getSpans();
       assertEquals(1, spans.size());
       assertEquals("custom-otel-span", spans.get(0).getName());
+    }
+  }
 
   @Test
   public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
