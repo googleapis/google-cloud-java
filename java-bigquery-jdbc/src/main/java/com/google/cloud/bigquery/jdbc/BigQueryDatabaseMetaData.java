@@ -5083,55 +5083,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     boolean escaped = false;
     for (int i = 0; i < sqlLikePattern.length(); i++) {
       char c = sqlLikePattern.charAt(i);
-      if (escaped) {
-        if (isRegexMetacharacter(c)) {
-          regex.append('\\').append(c);
-        } else {
-          regex.append(c);
-        }
-        escaped = false;
-      } else if (c == '\\') {
+      if (!escaped && c == '\\') {
         escaped = true;
+        continue;
+      } else if (!escaped && c == '%') {
+        regex.append(".*");
+      } else if (!escaped && c == '_') {
+        regex.append('.');
       } else {
-        switch (c) {
-          case '%':
-            regex.append(".*");
-            break;
-          case '_':
-            regex.append('.');
-            break;
-          default:
-            if (isRegexMetacharacter(c)) {
-              regex.append('\\').append(c);
-            } else {
-              regex.append(c);
-            }
-            break;
+        if (isRegexMetacharacter(c)) {
+          regex.append('\\');
         }
+        regex.append(c);
+        escaped = false;
       }
-    }
-    if (escaped) {
-      regex.append('\\').append('\\');
     }
     regex.append('$');
     return Pattern.compile(regex.toString(), Pattern.CASE_INSENSITIVE);
   }
 
-  private boolean isRegexMetacharacter(char c) {
-    return c == '\\'
-        || c == '.'
-        || c == '['
-        || c == ']'
-        || c == '('
-        || c == ')'
-        || c == '{'
-        || c == '}'
-        || c == '*'
-        || c == '+'
-        || c == '?'
-        || c == '^'
-        || c == '$'
-        || c == '|';
+  private static boolean isRegexMetacharacter(char c) {
+    return "\\.[]{}()*+?^$|".indexOf(c) != -1;
   }
 
   boolean needsListing(String pattern) {
