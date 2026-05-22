@@ -489,6 +489,14 @@ public final class TestBench implements ManagedLifecycle {
 
     private static final String DEFAULT_CONTAINER_NAME = "default";
 
+    private static int findFreePort() {
+      try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+        return socket.getLocalPort();
+      } catch (IOException e) {
+        throw new RuntimeException("No free port available", e);
+      }
+    }
+
     private boolean ignorePullError;
     private String baseUri;
     private String gRPCBaseUri;
@@ -499,8 +507,8 @@ public final class TestBench implements ManagedLifecycle {
     private Builder() {
       this(
           false,
-          DEFAULT_BASE_URI,
-          DEFAULT_GRPC_BASE_URI,
+          "http://localhost:" + findFreePort(),
+          "http://localhost:" + findFreePort(),
           DEFAULT_IMAGE_NAME,
           DEFAULT_IMAGE_TAG,
           DEFAULT_CONTAINER_NAME);
@@ -552,13 +560,15 @@ public final class TestBench implements ManagedLifecycle {
     }
 
     public TestBench build() {
+      String suffix = Optional.ofNullable(System.getProperty("surefire.forkNumber"))
+          .orElseGet(() -> java.util.UUID.randomUUID().toString().substring(0, 8));
       return new TestBench(
           ignorePullError,
           baseUri,
           gRPCBaseUri,
           requireNonNull(dockerImageName, "dockerImageName must be non null"),
           requireNonNull(dockerImageTag, "dockerImageTag must be non null"),
-          String.format(Locale.US, "storage-testbench_%s", containerName));
+          String.format(Locale.US, "storage-testbench_%s_%s", containerName, suffix));
     }
   }
 
