@@ -262,7 +262,7 @@ public final class TestBench implements ManagedLifecycle {
               dockerImage,
               "gunicorn",
               "--bind=0.0.0.0:9000",
-              "--worker-class=sync",
+              "--worker-class=gevent",
               "--threads=10",
               "--access-logfile=-",
               "--keep-alive=0",
