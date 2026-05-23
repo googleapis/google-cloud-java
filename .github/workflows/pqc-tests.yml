@@ -44,7 +44,7 @@ jobs:
     - name: Build and Install Core Dependency Reactor
       run: |
         cd google-cloud-java-pqc
-        mvn clean install -pl sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+        mvn clean install -pl sdk-platform-java,java-bigquery,java-translate,sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
 
     # 6. Run Snapshot PQC Tests (EXPECT PASS)
     - name: Run Snapshot PQC Connectivity Tests (Expect PASS)
