@@ -33,7 +33,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.107.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
+        <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommender-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -43,7 +43,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommender-v1beta1</artifactId>
-        <version>0.107.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
+        <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommender-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
