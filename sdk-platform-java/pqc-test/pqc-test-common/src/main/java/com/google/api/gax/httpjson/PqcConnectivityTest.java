@@ -140,7 +140,6 @@ public class PqcConnectivityTest {
    *       utilize Bouncy Castle JSSE and negotiate PQC automatically.
    * </ul>
    */
-
   protected boolean clientSupportsPqc() {
     return true;
   }

@@ -102,10 +102,11 @@ public class PqcTestServer {
     bcContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
     // Wrap Bouncy Castle Context in our programmatic PQC-enforcing context wrapper!
-    SSLContext sslContext = new SSLContext(
-        new PqcEnforcingSSLContextSpi(bcContext),
-        bcContext.getProvider(),
-        bcContext.getProtocol()) {};
+    SSLContext sslContext =
+        new SSLContext(
+            new PqcEnforcingSSLContextSpi(bcContext),
+            bcContext.getProvider(),
+            bcContext.getProtocol()) {};
 
     // 7. Instantiate a local mock HttpServer (bound to an ephemeral port 0).
     httpServer = HttpsServer.create(new InetSocketAddress(0), 0);
@@ -304,41 +305,145 @@ public class PqcTestServer {
       if (objEngine instanceof org.bouncycastle.jsse.BCSSLEngine) {
         org.bouncycastle.jsse.BCSSLEngine bcEngine = (org.bouncycastle.jsse.BCSSLEngine) objEngine;
         org.bouncycastle.jsse.BCSSLParameters bcParams = bcEngine.getParameters();
-        bcParams.setNamedGroups(new String[]{"X25519MLKEM768"});
+        bcParams.setNamedGroups(new String[] {"X25519MLKEM768"});
         bcEngine.setParameters(bcParams);
       }
     }
 
-    @Override public javax.net.ssl.SSLParameters getSSLParameters() { return delegate.getSSLParameters(); }
-    @Override public void beginHandshake() throws javax.net.ssl.SSLException { delegate.beginHandshake(); }
-    @Override public void closeInbound() throws javax.net.ssl.SSLException { delegate.closeInbound(); }
-    @Override public void closeOutbound() { delegate.closeOutbound(); }
-    @Override public java.lang.Runnable getDelegatedTask() { return delegate.getDelegatedTask(); }
-    @Override public java.lang.String[] getEnabledCipherSuites() { return delegate.getEnabledCipherSuites(); }
-    @Override public java.lang.String[] getEnabledProtocols() { return delegate.getEnabledProtocols(); }
-    @Override public javax.net.ssl.SSLEngineResult.HandshakeStatus getHandshakeStatus() { return delegate.getHandshakeStatus(); }
-    @Override public boolean getNeedClientAuth() { return delegate.getNeedClientAuth(); }
-    @Override public javax.net.ssl.SSLSession getSession() { return delegate.getSession(); }
-    @Override public java.lang.String[] getSupportedCipherSuites() { return delegate.getSupportedCipherSuites(); }
-    @Override public java.lang.String[] getSupportedProtocols() { return delegate.getSupportedProtocols(); }
-    @Override public boolean getUseClientMode() { return delegate.getUseClientMode(); }
-    @Override public boolean getWantClientAuth() { return delegate.getWantClientAuth(); }
-    @Override public boolean isInboundDone() { return delegate.isInboundDone(); }
-    @Override public boolean isOutboundDone() { return delegate.isOutboundDone(); }
-    @Override public void setEnabledCipherSuites(java.lang.String[] suites) { delegate.setEnabledCipherSuites(suites); }
-    @Override public void setEnabledProtocols(java.lang.String[] protocols) { delegate.setEnabledProtocols(protocols); }
-    @Override public void setNeedClientAuth(boolean need) { delegate.setNeedClientAuth(need); }
-    @Override public void setUseClientMode(boolean mode) { delegate.setUseClientMode(mode); }
-    @Override public void setWantClientAuth(boolean want) { delegate.setWantClientAuth(want); }
-    @Override public javax.net.ssl.SSLEngineResult unwrap(java.nio.ByteBuffer src, java.nio.ByteBuffer[] dsts, int offset, int length) throws javax.net.ssl.SSLException { return delegate.unwrap(src, dsts, offset, length); }
-    @Override public javax.net.ssl.SSLEngineResult wrap(java.nio.ByteBuffer[] srcs, int offset, int length, java.nio.ByteBuffer dst) throws javax.net.ssl.SSLException { return delegate.wrap(srcs, offset, length, dst); }
+    @Override
+    public javax.net.ssl.SSLParameters getSSLParameters() {
+      return delegate.getSSLParameters();
+    }
+
+    @Override
+    public void beginHandshake() throws javax.net.ssl.SSLException {
+      delegate.beginHandshake();
+    }
+
+    @Override
+    public void closeInbound() throws javax.net.ssl.SSLException {
+      delegate.closeInbound();
+    }
+
+    @Override
+    public void closeOutbound() {
+      delegate.closeOutbound();
+    }
+
+    @Override
+    public java.lang.Runnable getDelegatedTask() {
+      return delegate.getDelegatedTask();
+    }
+
+    @Override
+    public java.lang.String[] getEnabledCipherSuites() {
+      return delegate.getEnabledCipherSuites();
+    }
+
+    @Override
+    public java.lang.String[] getEnabledProtocols() {
+      return delegate.getEnabledProtocols();
+    }
+
+    @Override
+    public javax.net.ssl.SSLEngineResult.HandshakeStatus getHandshakeStatus() {
+      return delegate.getHandshakeStatus();
+    }
+
+    @Override
+    public boolean getNeedClientAuth() {
+      return delegate.getNeedClientAuth();
+    }
+
+    @Override
+    public javax.net.ssl.SSLSession getSession() {
+      return delegate.getSession();
+    }
+
+    @Override
+    public java.lang.String[] getSupportedCipherSuites() {
+      return delegate.getSupportedCipherSuites();
+    }
+
+    @Override
+    public java.lang.String[] getSupportedProtocols() {
+      return delegate.getSupportedProtocols();
+    }
+
+    @Override
+    public boolean getUseClientMode() {
+      return delegate.getUseClientMode();
+    }
+
+    @Override
+    public boolean getWantClientAuth() {
+      return delegate.getWantClientAuth();
+    }
+
+    @Override
+    public boolean isInboundDone() {
+      return delegate.isInboundDone();
+    }
+
+    @Override
+    public boolean isOutboundDone() {
+      return delegate.isOutboundDone();
+    }
+
+    @Override
+    public void setEnabledCipherSuites(java.lang.String[] suites) {
+      delegate.setEnabledCipherSuites(suites);
+    }
+
+    @Override
+    public void setEnabledProtocols(java.lang.String[] protocols) {
+      delegate.setEnabledProtocols(protocols);
+    }
+
+    @Override
+    public void setNeedClientAuth(boolean need) {
+      delegate.setNeedClientAuth(need);
+    }
+
+    @Override
+    public void setUseClientMode(boolean mode) {
+      delegate.setUseClientMode(mode);
+    }
+
+    @Override
+    public void setWantClientAuth(boolean want) {
+      delegate.setWantClientAuth(want);
+    }
+
+    @Override
+    public javax.net.ssl.SSLEngineResult unwrap(
+        java.nio.ByteBuffer src, java.nio.ByteBuffer[] dsts, int offset, int length)
+        throws javax.net.ssl.SSLException {
+      return delegate.unwrap(src, dsts, offset, length);
+    }
+
+    @Override
+    public javax.net.ssl.SSLEngineResult wrap(
+        java.nio.ByteBuffer[] srcs, int offset, int length, java.nio.ByteBuffer dst)
+        throws javax.net.ssl.SSLException {
+      return delegate.wrap(srcs, offset, length, dst);
+    }
 
     // Missing abstract methods
-    @Override public boolean getEnableSessionCreation() { return delegate.getEnableSessionCreation(); }
-    @Override public void setEnableSessionCreation(boolean flag) { delegate.setEnableSessionCreation(flag); }
+    @Override
+    public boolean getEnableSessionCreation() {
+      return delegate.getEnableSessionCreation();
+    }
 
-    @Override public javax.net.ssl.SSLSession getHandshakeSession() { return delegate.getHandshakeSession(); }
+    @Override
+    public void setEnableSessionCreation(boolean flag) {
+      delegate.setEnableSessionCreation(flag);
+    }
 
+    @Override
+    public javax.net.ssl.SSLSession getHandshakeSession() {
+      return delegate.getHandshakeSession();
+    }
   }
 
   private static class PqcEnforcingSSLContextSpi extends javax.net.ssl.SSLContextSpi {
@@ -379,7 +484,11 @@ public class PqcTestServer {
     }
 
     @Override
-    protected void engineInit(javax.net.ssl.KeyManager[] km, javax.net.ssl.TrustManager[] tm, java.security.SecureRandom sr) throws java.security.KeyManagementException {
+    protected void engineInit(
+        javax.net.ssl.KeyManager[] km,
+        javax.net.ssl.TrustManager[] tm,
+        java.security.SecureRandom sr)
+        throws java.security.KeyManagementException {
       // No-op because delegate is already initialized
     }
   }

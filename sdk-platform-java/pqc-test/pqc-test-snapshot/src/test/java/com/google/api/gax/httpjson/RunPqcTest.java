@@ -32,7 +32,6 @@ package com.google.api.gax.httpjson;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.NoCredentials;
@@ -114,7 +113,7 @@ public class RunPqcTest extends PqcConnectivityTest {
     // https://localhost:httpPort/bigquery/v2/projects/test-project/datasets
     // Under-the-hood, the default factory wraps NetHttpTransport with our programmatic
     // PqcTlsSocketFactory,
-		// and negotiates hybrid ML-KEM-768 successfully!
-		bigquery.listDatasets();
+    // and negotiates hybrid ML-KEM-768 successfully!
+    bigquery.listDatasets();
   }
 }
