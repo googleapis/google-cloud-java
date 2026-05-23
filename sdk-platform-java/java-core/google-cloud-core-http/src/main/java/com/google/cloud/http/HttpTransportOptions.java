@@ -66,9 +66,6 @@ public class HttpTransportOptions implements TransportOptions {
           // Maybe not on App Engine
         }
       }
-
-
-
       return new NetHttpTransport();
     }
   }
