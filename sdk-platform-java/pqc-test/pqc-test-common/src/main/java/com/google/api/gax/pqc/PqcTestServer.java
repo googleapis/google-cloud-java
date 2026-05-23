@@ -241,7 +241,6 @@ public class PqcTestServer {
     if (httpServer != null) httpServer.stop(0);
     if (grpcServer != null) grpcServer.shutdown();
     Security.removeProvider("BC");
-    System.clearProperty("org.bouncycastle.jsse.server.namedGroups");
   }
 
   public int getHttpPort() {

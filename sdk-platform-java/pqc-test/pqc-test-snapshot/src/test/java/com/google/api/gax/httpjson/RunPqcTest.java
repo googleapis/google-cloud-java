@@ -49,21 +49,6 @@ public class RunPqcTest extends PqcConnectivityTest {
     return true;
   }
 
-  @Override
-  protected boolean expectHttpSuccess() {
-    return true;
-  }
-
-  @Override
-  protected boolean expectGrpcSuccess() {
-    return true;
-  }
-
-  @Override
-  protected boolean expectBigQuerySuccess() {
-    return true;
-  }
-
   @Test
   @Override
   public void testGrpcPqc() throws Exception {
@@ -129,18 +114,7 @@ public class RunPqcTest extends PqcConnectivityTest {
     // https://localhost:httpPort/bigquery/v2/projects/test-project/datasets
     // Under-the-hood, the default factory wraps NetHttpTransport with our programmatic
     // PqcTlsSocketFactory,
-    // and negotiates hybrid ML-KEM-768 successfully!
-    try {
-      bigquery.listDatasets();
-      if (!expectBigQuerySuccess()) {
-        fail("Expected BigQuery client call to fail!");
-      }
-    } catch (Exception e) {
-      if (expectBigQuerySuccess()) {
-        throw e;
-      }
-      System.out.println(
-          "Verified: BigQuery client call successfully rejected as expected: " + e.getMessage());
-    }
+		// and negotiates hybrid ML-KEM-768 successfully!
+		bigquery.listDatasets();
   }
 }

@@ -140,17 +140,6 @@ public class PqcConnectivityTest {
    *       utilize Bouncy Castle JSSE and negotiate PQC automatically.
    * </ul>
    */
-  protected boolean expectHttpSuccess() {
-    return true;
-  }
-
-  protected boolean expectGrpcSuccess() {
-    return true;
-  }
-
-  protected boolean expectBigQuerySuccess() {
-    return true;
-  }
 
   protected boolean clientSupportsPqc() {
     return true;
