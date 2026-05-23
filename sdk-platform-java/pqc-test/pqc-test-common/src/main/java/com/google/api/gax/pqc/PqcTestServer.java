@@ -98,8 +98,14 @@ public class PqcTestServer {
     // 6. Initialize a dedicated SSLContext scoped specifically to Bouncy Castle JSSE.
     //    Specifying BouncyCastleJsseProvider prevents contamination of default JRE TLS contexts.
     BouncyCastleJsseProvider bcProvider = new BouncyCastleJsseProvider();
-    SSLContext sslContext = SSLContext.getInstance("TLSv1.3", bcProvider);
-    sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+    SSLContext bcContext = SSLContext.getInstance("TLSv1.3", bcProvider);
+    bcContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+
+    // Wrap Bouncy Castle Context in our programmatic PQC-enforcing context wrapper!
+    SSLContext sslContext = new SSLContext(
+        new PqcEnforcingSSLContextSpi(bcContext),
+        bcContext.getProvider(),
+        bcContext.getProtocol()) {};
 
     // 7. Instantiate a local mock HttpServer (bound to an ephemeral port 0).
     httpServer = HttpsServer.create(new InetSocketAddress(0), 0);
@@ -117,22 +123,6 @@ public class PqcTestServer {
 
             // Enforce ALWAYS and ONLY hybrid ML-KEM / Kyber named groups programmatically on
             // HttpsServer!
-            try {
-              System.out.println("[SERVER-PQC] sslparams class: " + sslparams.getClass().getName());
-              System.out.println(
-                  "[SERVER-PQC] sslparams superclass: "
-                      + sslparams.getClass().getSuperclass().getName());
-              for (java.lang.reflect.Method m : sslparams.getClass().getMethods()) {
-                System.out.println("[SERVER-PQC] Method: " + m.getName() + " -> " + m.toString());
-              }
-              java.lang.reflect.Method setNamedGroupsMethod =
-                  sslparams.getClass().getMethod("setNamedGroups", String[].class);
-              setNamedGroupsMethod.invoke(
-                  sslparams, (Object) new String[] {"X25519MLKEM768", "X25519Kyber768Draft00"});
-            } catch (Exception e) {
-              System.out.println(
-                  "[SERVER-PQC] Failed to set named groups reflectively: " + e.getMessage());
-            }
 
             // Commit parameters to the active connection context.
             params.setSSLParameters(sslparams);
@@ -298,6 +288,100 @@ public class PqcTestServer {
       // Ignore and exit
     } finally {
       server.stop();
+    }
+  }
+
+  private static class PqcEnforcingSSLEngine extends javax.net.ssl.SSLEngine {
+    private final javax.net.ssl.SSLEngine delegate;
+
+    PqcEnforcingSSLEngine(javax.net.ssl.SSLEngine delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public void setSSLParameters(javax.net.ssl.SSLParameters params) {
+      delegate.setSSLParameters(params);
+      Object objEngine = delegate;
+      if (objEngine instanceof org.bouncycastle.jsse.BCSSLEngine) {
+        org.bouncycastle.jsse.BCSSLEngine bcEngine = (org.bouncycastle.jsse.BCSSLEngine) objEngine;
+        org.bouncycastle.jsse.BCSSLParameters bcParams = bcEngine.getParameters();
+        bcParams.setNamedGroups(new String[]{"X25519MLKEM768"});
+        bcEngine.setParameters(bcParams);
+      }
+    }
+
+    @Override public javax.net.ssl.SSLParameters getSSLParameters() { return delegate.getSSLParameters(); }
+    @Override public void beginHandshake() throws javax.net.ssl.SSLException { delegate.beginHandshake(); }
+    @Override public void closeInbound() throws javax.net.ssl.SSLException { delegate.closeInbound(); }
+    @Override public void closeOutbound() { delegate.closeOutbound(); }
+    @Override public java.lang.Runnable getDelegatedTask() { return delegate.getDelegatedTask(); }
+    @Override public java.lang.String[] getEnabledCipherSuites() { return delegate.getEnabledCipherSuites(); }
+    @Override public java.lang.String[] getEnabledProtocols() { return delegate.getEnabledProtocols(); }
+    @Override public javax.net.ssl.SSLEngineResult.HandshakeStatus getHandshakeStatus() { return delegate.getHandshakeStatus(); }
+    @Override public boolean getNeedClientAuth() { return delegate.getNeedClientAuth(); }
+    @Override public javax.net.ssl.SSLSession getSession() { return delegate.getSession(); }
+    @Override public java.lang.String[] getSupportedCipherSuites() { return delegate.getSupportedCipherSuites(); }
+    @Override public java.lang.String[] getSupportedProtocols() { return delegate.getSupportedProtocols(); }
+    @Override public boolean getUseClientMode() { return delegate.getUseClientMode(); }
+    @Override public boolean getWantClientAuth() { return delegate.getWantClientAuth(); }
+    @Override public boolean isInboundDone() { return delegate.isInboundDone(); }
+    @Override public boolean isOutboundDone() { return delegate.isOutboundDone(); }
+    @Override public void setEnabledCipherSuites(java.lang.String[] suites) { delegate.setEnabledCipherSuites(suites); }
+    @Override public void setEnabledProtocols(java.lang.String[] protocols) { delegate.setEnabledProtocols(protocols); }
+    @Override public void setNeedClientAuth(boolean need) { delegate.setNeedClientAuth(need); }
+    @Override public void setUseClientMode(boolean mode) { delegate.setUseClientMode(mode); }
+    @Override public void setWantClientAuth(boolean want) { delegate.setWantClientAuth(want); }
+    @Override public javax.net.ssl.SSLEngineResult unwrap(java.nio.ByteBuffer src, java.nio.ByteBuffer[] dsts, int offset, int length) throws javax.net.ssl.SSLException { return delegate.unwrap(src, dsts, offset, length); }
+    @Override public javax.net.ssl.SSLEngineResult wrap(java.nio.ByteBuffer[] srcs, int offset, int length, java.nio.ByteBuffer dst) throws javax.net.ssl.SSLException { return delegate.wrap(srcs, offset, length, dst); }
+
+    // Missing abstract methods
+    @Override public boolean getEnableSessionCreation() { return delegate.getEnableSessionCreation(); }
+    @Override public void setEnableSessionCreation(boolean flag) { delegate.setEnableSessionCreation(flag); }
+
+    @Override public javax.net.ssl.SSLSession getHandshakeSession() { return delegate.getHandshakeSession(); }
+
+  }
+
+  private static class PqcEnforcingSSLContextSpi extends javax.net.ssl.SSLContextSpi {
+    private final javax.net.ssl.SSLContext delegate;
+
+    PqcEnforcingSSLContextSpi(javax.net.ssl.SSLContext delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    protected javax.net.ssl.SSLEngine engineCreateSSLEngine() {
+      return new PqcEnforcingSSLEngine(delegate.createSSLEngine());
+    }
+
+    @Override
+    protected javax.net.ssl.SSLEngine engineCreateSSLEngine(java.lang.String host, int port) {
+      return new PqcEnforcingSSLEngine(delegate.createSSLEngine(host, port));
+    }
+
+    @Override
+    protected javax.net.ssl.SSLSessionContext engineGetClientSessionContext() {
+      return delegate.getClientSessionContext();
+    }
+
+    @Override
+    protected javax.net.ssl.SSLSessionContext engineGetServerSessionContext() {
+      return delegate.getServerSessionContext();
+    }
+
+    @Override
+    protected javax.net.ssl.SSLServerSocketFactory engineGetServerSocketFactory() {
+      return delegate.getServerSocketFactory();
+    }
+
+    @Override
+    protected javax.net.ssl.SSLSocketFactory engineGetSocketFactory() {
+      return delegate.getSocketFactory();
+    }
+
+    @Override
+    protected void engineInit(javax.net.ssl.KeyManager[] km, javax.net.ssl.TrustManager[] tm, java.security.SecureRandom sr) throws java.security.KeyManagementException {
+      // No-op because delegate is already initialized
     }
   }
 }
