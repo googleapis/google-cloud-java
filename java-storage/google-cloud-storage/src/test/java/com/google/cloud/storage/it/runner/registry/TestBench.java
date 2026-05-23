@@ -402,8 +402,9 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   private static int findFreePort() {
-    try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+    try (java.net.ServerSocket socket = new java.net.ServerSocket()) {
       socket.setReuseAddress(true);
+      socket.bind(new java.net.InetSocketAddress("127.0.0.1", 0));
       return socket.getLocalPort();
     } catch (java.io.IOException e) {
       throw new RuntimeException("Failed to find a free port", e);
@@ -451,8 +452,8 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   static final class Builder {
-    private static final String DEFAULT_BASE_URI = "http://localhost:9000";
-    private static final String DEFAULT_GRPC_BASE_URI = "http://localhost:9005";
+    private static final String DEFAULT_BASE_URI = "http://localhost";
+    private static final String DEFAULT_GRPC_BASE_URI = "http://localhost";
     private static final String DEFAULT_IMAGE_NAME;
     private static final String DEFAULT_IMAGE_TAG;
 
@@ -504,16 +505,13 @@ public final class TestBench implements ManagedLifecycle {
     private String containerName;
 
     private Builder() {
-      int httpPort = findFreePort();
-      int grpcPort = findFreePort();
-      String uuid = java.util.UUID.randomUUID().toString().substring(0, 8);
-
-      this.ignorePullError = false;
-      this.baseUri = "http://127.0.0.1:" + httpPort;
-      this.gRPCBaseUri = "http://127.0.0.1:" + grpcPort;
-      this.dockerImageName = DEFAULT_IMAGE_NAME;
-      this.dockerImageTag = DEFAULT_IMAGE_TAG;
-      this.containerName = DEFAULT_CONTAINER_NAME + "_" + uuid;
+      this(
+          false,
+          DEFAULT_BASE_URI + ":" + findFreePort(),
+          DEFAULT_GRPC_BASE_URI + ":" + findFreePort(),
+          DEFAULT_IMAGE_NAME,
+          DEFAULT_IMAGE_TAG,
+          DEFAULT_CONTAINER_NAME + "_" + java.util.UUID.randomUUID().toString().substring(0, 8));
     }
 
     private Builder(
