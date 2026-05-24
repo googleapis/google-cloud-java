@@ -5098,6 +5098,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         escaped = false;
       }
     }
+    if (escaped) {
+      regex.append('\\').append('\\');
+    }
     regex.append('$');
     return Pattern.compile(regex.toString(), Pattern.CASE_INSENSITIVE);
   }

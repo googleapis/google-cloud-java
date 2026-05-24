@@ -254,6 +254,12 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(escapedPercent);
     assertTrue(escapedPercent.matcher("100%discount").matches());
     assertFalse(escapedPercent.matcher("100PERCENTdiscount").matches());
+
+    // Escape character at the end
+    Pattern escapeLast = dbMetadata.compileSqlLikePattern("test\\");
+    assertNotNull(escapeLast);
+    assertTrue(escapeLast.matcher("test\\").matches());
+    assertFalse(escapeLast.matcher("test").matches());
   }
 
   @Test
