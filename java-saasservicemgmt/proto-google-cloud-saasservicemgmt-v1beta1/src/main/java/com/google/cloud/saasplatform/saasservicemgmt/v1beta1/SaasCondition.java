@@ -24,18 +24,16 @@ package com.google.cloud.saasplatform.saasservicemgmt.v1beta1;
  *
  *
  * <pre>
- * UnitOperationCondition describes the status of an Unit Operation.
- * UnitOperationCondition is individual components that contribute to an overall
- * state.
+ * SaasCondition describes the status of a Saas.
  * </pre>
  *
- * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition}
+ * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition}
  */
 @com.google.protobuf.Generated
-public final class UnitOperationCondition extends com.google.protobuf.GeneratedMessage
+public final class SaasCondition extends com.google.protobuf.GeneratedMessage
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition)
-    UnitOperationConditionOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition)
+    SaasConditionOrBuilder {
   private static final long serialVersionUID = 0L;
 
   static {
@@ -45,15 +43,15 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
         /* minor= */ 33,
         /* patch= */ 2,
         /* suffix= */ "",
-        "UnitOperationCondition");
+        "SaasCondition");
   }
 
-  // Use UnitOperationCondition.newBuilder() to construct.
-  private UnitOperationCondition(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use SaasCondition.newBuilder() to construct.
+  private SaasCondition(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
-  private UnitOperationCondition() {
+  private SaasCondition() {
     status_ = 0;
     type_ = 0;
     message_ = "";
@@ -62,18 +60,17 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto
-        .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_descriptor;
+        .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto
-        .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_fieldAccessorTable
+        .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.class,
-            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Builder
-                .class);
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.class,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder.class);
   }
 
   /**
@@ -83,8 +80,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * Enumeration of condition statuses.
    * </pre>
    *
-   * Protobuf enum {@code
-   * google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status}
+   * Protobuf enum {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status}
    */
   public enum Status implements com.google.protobuf.ProtocolMessageEnum {
     /**
@@ -245,8 +241,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-          .getDescriptor()
+      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.getDescriptor()
           .getEnumTypes()
           .get(0);
     }
@@ -269,7 +264,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status)
+    // @@protoc_insertion_point(enum_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status)
   }
 
   /**
@@ -279,8 +274,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * Enumeration of condition types.
    * </pre>
    *
-   * Protobuf enum {@code
-   * google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type}
+   * Protobuf enum {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type}
    */
   public enum Type implements com.google.protobuf.ProtocolMessageEnum {
     /**
@@ -297,76 +291,22 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Condition type is scheduled.
+     * Condition type is ready.
      * </pre>
      *
-     * <code>TYPE_SCHEDULED = 2;</code>
+     * <code>TYPE_READY = 1;</code>
      */
-    TYPE_SCHEDULED(2),
+    TYPE_READY(1),
     /**
      *
      *
      * <pre>
-     * Condition type is running.
+     * Condition type is synchronized.
      * </pre>
      *
-     * <code>TYPE_RUNNING = 3;</code>
+     * <code>TYPE_SYNCHRONIZED = 2;</code>
      */
-    TYPE_RUNNING(3),
-    /**
-     *
-     *
-     * <pre>
-     * Condition type is succeeded.
-     * </pre>
-     *
-     * <code>TYPE_SUCCEEDED = 4;</code>
-     */
-    TYPE_SUCCEEDED(4),
-    /**
-     *
-     *
-     * <pre>
-     * Condition type is cancelled.
-     * </pre>
-     *
-     * <code>TYPE_CANCELLED = 5;</code>
-     */
-    TYPE_CANCELLED(5),
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if AppHub app has been created.
-     * </pre>
-     *
-     * <code>TYPE_APP_CREATED = 6;</code>
-     */
-    TYPE_APP_CREATED(6),
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if services and workloads have been registered with AppHub.
-     * </pre>
-     *
-     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
-     */
-    TYPE_APP_COMPONENTS_REGISTERED(7),
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if the UnitOperation's core workload execution completed
-     * successfully.
-     * The workload is the core execution operation performed for a
-     * UnitOperation (e.g., provisioning, updating, or deprovisioning
-     * resources) excluding post-operation checks.
-     * </pre>
-     *
-     * <code>TYPE_WORKLOAD_SUCCEEDED = 8;</code>
-     */
-    TYPE_WORKLOAD_SUCCEEDED(8),
+    TYPE_SYNCHRONIZED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -395,82 +335,23 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Condition type is scheduled.
+     * Condition type is ready.
      * </pre>
      *
-     * <code>TYPE_SCHEDULED = 2;</code>
+     * <code>TYPE_READY = 1;</code>
      */
-    public static final int TYPE_SCHEDULED_VALUE = 2;
+    public static final int TYPE_READY_VALUE = 1;
 
     /**
      *
      *
      * <pre>
-     * Condition type is running.
+     * Condition type is synchronized.
      * </pre>
      *
-     * <code>TYPE_RUNNING = 3;</code>
+     * <code>TYPE_SYNCHRONIZED = 2;</code>
      */
-    public static final int TYPE_RUNNING_VALUE = 3;
-
-    /**
-     *
-     *
-     * <pre>
-     * Condition type is succeeded.
-     * </pre>
-     *
-     * <code>TYPE_SUCCEEDED = 4;</code>
-     */
-    public static final int TYPE_SUCCEEDED_VALUE = 4;
-
-    /**
-     *
-     *
-     * <pre>
-     * Condition type is cancelled.
-     * </pre>
-     *
-     * <code>TYPE_CANCELLED = 5;</code>
-     */
-    public static final int TYPE_CANCELLED_VALUE = 5;
-
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if AppHub app has been created.
-     * </pre>
-     *
-     * <code>TYPE_APP_CREATED = 6;</code>
-     */
-    public static final int TYPE_APP_CREATED_VALUE = 6;
-
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if services and workloads have been registered with AppHub.
-     * </pre>
-     *
-     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
-     */
-    public static final int TYPE_APP_COMPONENTS_REGISTERED_VALUE = 7;
-
-    /**
-     *
-     *
-     * <pre>
-     * Indicates if the UnitOperation's core workload execution completed
-     * successfully.
-     * The workload is the core execution operation performed for a
-     * UnitOperation (e.g., provisioning, updating, or deprovisioning
-     * resources) excluding post-operation checks.
-     * </pre>
-     *
-     * <code>TYPE_WORKLOAD_SUCCEEDED = 8;</code>
-     */
-    public static final int TYPE_WORKLOAD_SUCCEEDED_VALUE = 8;
+    public static final int TYPE_SYNCHRONIZED_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -498,20 +379,10 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
       switch (value) {
         case 0:
           return TYPE_UNSPECIFIED;
+        case 1:
+          return TYPE_READY;
         case 2:
-          return TYPE_SCHEDULED;
-        case 3:
-          return TYPE_RUNNING;
-        case 4:
-          return TYPE_SUCCEEDED;
-        case 5:
-          return TYPE_CANCELLED;
-        case 6:
-          return TYPE_APP_CREATED;
-        case 7:
-          return TYPE_APP_COMPONENTS_REGISTERED;
-        case 8:
-          return TYPE_WORKLOAD_SUCCEEDED;
+          return TYPE_SYNCHRONIZED;
         default:
           return null;
       }
@@ -541,8 +412,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-          .getDescriptor()
+      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.getDescriptor()
           .getEnumTypes()
           .get(1);
     }
@@ -565,7 +435,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type)
+    // @@protoc_insertion_point(enum_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type)
   }
 
   private int bitField0_;
@@ -580,7 +450,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -598,24 +468,22 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The status.
    */
   @java.lang.Override
-  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-      getStatus() {
-    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status result =
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-            .forNumber(status_);
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status getStatus() {
+    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status result =
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status.forNumber(
+            status_);
     return result == null
-        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-            .UNRECOGNIZED
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status.UNRECOGNIZED
         : result;
   }
 
-  public static final int TYPE_FIELD_NUMBER = 2;
+  public static final int TYPE_FIELD_NUMBER = 6;
   private int type_ = 0;
 
   /**
@@ -626,7 +494,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -644,20 +512,17 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    * </pre>
    *
    * <code>
-   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The type.
    */
   @java.lang.Override
-  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-      getType() {
-    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type result =
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type.forNumber(
-            type_);
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type getType() {
+    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type result =
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.forNumber(type_);
     return result == null
-        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-            .UNRECOGNIZED
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.UNRECOGNIZED
         : result;
   }
 
@@ -843,16 +708,10 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (status_
-        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status
             .STATUS_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(1, status_);
-    }
-    if (type_
-        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-            .TYPE_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(2, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getLastTransitionTime());
@@ -862,6 +721,11 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reason_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, reason_);
+    }
+    if (type_
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -873,16 +737,10 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (status_
-        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status
             .STATUS_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, status_);
-    }
-    if (type_
-        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-            .TYPE_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastTransitionTime());
@@ -892,6 +750,11 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(reason_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, reason_);
+    }
+    if (type_
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -903,12 +766,11 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj
-        instanceof com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition)) {
+    if (!(obj instanceof com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition)) {
       return super.equals(obj);
     }
-    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition other =
-        (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition) obj;
+    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition other =
+        (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition) obj;
 
     if (status_ != other.status_) return false;
     if (type_ != other.type_) return false;
@@ -946,63 +808,59 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     return hash;
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(
-          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1010,16 +868,15 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-      parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
@@ -1034,7 +891,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
   }
 
   public static Builder newBuilder(
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition prototype) {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -1053,35 +910,32 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * UnitOperationCondition describes the status of an Unit Operation.
-   * UnitOperationCondition is individual components that contribute to an overall
-   * state.
+   * SaasCondition describes the status of a Saas.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition}
+   * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition)
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationConditionOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition)
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto
-          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_descriptor;
+          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto
-          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_fieldAccessorTable
+          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.class,
-              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Builder
-                  .class);
+              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.class,
+              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder.class);
     }
 
     // Construct using
-    // com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.newBuilder()
+    // com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1116,20 +970,19 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto
-          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperationCondition_descriptor;
+          .internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_SaasCondition_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
         getDefaultInstanceForType() {
-      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition build() {
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition result =
-          buildPartial();
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition build() {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1137,10 +990,9 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
-        buildPartial() {
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition result =
-          new com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition(this);
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition buildPartial() {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition result =
+          new com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1149,7 +1001,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
 
     private void buildPartial0(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition result) {
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.status_ = status_;
@@ -1176,10 +1028,9 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other
-          instanceof com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition) {
+      if (other instanceof com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition) {
         return mergeFrom(
-            (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition) other);
+            (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1187,9 +1038,9 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
     }
 
     public Builder mergeFrom(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition other) {
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition other) {
       if (other
-          == com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+          == com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
               .getDefaultInstance()) return this;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
@@ -1242,12 +1093,6 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-            case 16:
-              {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
             case 26:
               {
                 input.readMessage(
@@ -1267,6 +1112,12 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1296,7 +1147,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -1314,7 +1165,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -1335,20 +1186,18 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The status.
      */
     @java.lang.Override
-    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-        getStatus() {
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status result =
-          com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-              .forNumber(status_);
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status getStatus() {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status result =
+          com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status.forNumber(
+              status_);
       return result == null
-          ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status
-              .UNRECOGNIZED
+          ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status.UNRECOGNIZED
           : result;
     }
 
@@ -1360,14 +1209,14 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The status to set.
      * @return This builder for chaining.
      */
     public Builder setStatus(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status value) {
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1385,7 +1234,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Status status = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1407,7 +1256,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -1425,7 +1274,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for type to set.
@@ -1446,20 +1295,17 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The type.
      */
     @java.lang.Override
-    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-        getType() {
-      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type result =
-          com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-              .forNumber(type_);
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type getType() {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type result =
+          com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.forNumber(type_);
       return result == null
-          ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type
-              .UNRECOGNIZED
+          ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type.UNRECOGNIZED
           : result;
     }
 
@@ -1471,14 +1317,14 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The type to set.
      * @return This builder for chaining.
      */
     public Builder setType(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type value) {
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1496,7 +1342,7 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * </pre>
      *
      * <code>
-     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition.Type type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Type type = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1947,27 +1793,26 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition)
+    // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition)
-  private static final com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+  // @@protoc_insertion_point(class_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition)
+  private static final com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE =
-        new com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition();
+    DEFAULT_INSTANCE = new com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition();
   }
 
-  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+  public static com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UnitOperationCondition> PARSER =
-      new com.google.protobuf.AbstractParser<UnitOperationCondition>() {
+  private static final com.google.protobuf.Parser<SaasCondition> PARSER =
+      new com.google.protobuf.AbstractParser<SaasCondition>() {
         @java.lang.Override
-        public UnitOperationCondition parsePartialFrom(
+        public SaasCondition parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1986,17 +1831,17 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
         }
       };
 
-  public static com.google.protobuf.Parser<UnitOperationCondition> parser() {
+  public static com.google.protobuf.Parser<SaasCondition> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UnitOperationCondition> getParserForType() {
+  public com.google.protobuf.Parser<SaasCondition> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationCondition
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
