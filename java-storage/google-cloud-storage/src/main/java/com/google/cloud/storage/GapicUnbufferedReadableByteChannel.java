@@ -33,6 +33,7 @@ import com.google.cloud.storage.GrpcUtils.ZeroCopyServerStreamingCallable;
 import com.google.cloud.storage.Hasher.UncheckedChecksumMismatchException;
 import com.google.cloud.storage.ResponseContentLifecycleHandle.ChildRef;
 import com.google.cloud.storage.Retrying.Retrier;
+import java.util.OptionalLong;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.common.base.Suppliers;
 import com.google.protobuf.ByteString;
@@ -91,7 +92,9 @@ final class GapicUnbufferedReadableByteChannel
     this.result = result;
     this.read = read;
     this.req = req;
-    this.hasher = hasher;
+    this.hasher = (req.getReadOffset() == 0)
+        ? new CumulativeHasher(hasher, 0, req.getReadLimit() <= 0 ? OptionalLong.empty() : OptionalLong.of(req.getReadLimit()))
+        : hasher;
     this.fetchOffset = new AtomicLong(req.getReadOffset());
     this.blobOffset = req.getReadOffset();
     this.retrier = retrier;
@@ -174,6 +177,7 @@ final class GapicUnbufferedReadableByteChannel
       }
       if (take == EOF_MARKER) {
         complete = true;
+        validateCumulativeChecksum();
         break;
       }
 
@@ -310,6 +314,18 @@ final class GapicUnbufferedReadableByteChannel
         new StorageException(HttpStatusCodes.STATUS_CODE_PRECONDITION_FAILED, message);
     return new IOException(message, cause);
   }
+
+  private void validateCumulativeChecksum() throws IOException {
+    if (hasher instanceof CumulativeHasher) {
+      CumulativeHasher cumulativeHasher = (CumulativeHasher) hasher;
+      try {
+        cumulativeHasher.validateCumulativeChecksum(metadata);
+      } catch (UncheckedCumulativeChecksumMismatchException exception) {
+        throw new IOException(StorageException.coalesce(exception));
+      }
+    }
+  }
+
 
   private final class ReadObjectObserver extends StateCheckingResponseObserver<ReadObjectResponse> {
 
