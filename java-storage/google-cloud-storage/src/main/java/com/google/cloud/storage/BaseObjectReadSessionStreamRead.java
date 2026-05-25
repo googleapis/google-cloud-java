@@ -150,7 +150,10 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
         IOAutoCloseable onCloseCallback) {
       super(rangeSpec, retryContext, onCloseCallback);
       this.readId = readId;
-      this.hasher = hasher;
+      this.hasher =
+          (rangeSpec.begin() == 0)
+              ? new CumulativeHasher(hasher, 0, rangeSpec.maxLength())
+              : hasher;
       this.complete = SettableApiFuture.create();
       this.childRefs = Collections.synchronizedList(new ArrayList<>());
     }
@@ -280,7 +283,10 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
         IOAutoCloseable onCloseCallback) {
       super(rangeSpec, retryContext, onCloseCallback);
       this.readId = new AtomicLong(readId);
-      this.hasher = hasher;
+      this.hasher =
+          (rangeSpec.begin() == 0)
+              ? new CumulativeHasher(hasher, 0, rangeSpec.maxLength())
+              : hasher;
       this.closed = false;
       this.failFuture = SettableApiFuture.create();
       this.queue = new ArrayBlockingQueue<>(2);
