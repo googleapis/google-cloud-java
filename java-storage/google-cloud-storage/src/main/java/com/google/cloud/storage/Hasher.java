@@ -258,4 +258,3 @@ interface Hasher {
     }
   }
 }
-
