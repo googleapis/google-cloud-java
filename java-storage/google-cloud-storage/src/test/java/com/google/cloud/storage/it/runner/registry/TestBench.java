@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -115,7 +115,7 @@ public final class TestBench implements ManagedLifecycle {
       String dockerImageName,
       String dockerImageTag,
       String containerName) {
-    this.ignorePullError = true;
+    this.ignorePullError = ignorePullError;
     this.baseUri = baseUri;
     this.gRPCBaseUri = gRPCBaseUri;
     this.dockerImageName = dockerImageName;
@@ -133,6 +133,10 @@ public final class TestBench implements ManagedLifecycle {
                       .getHeaders()
                       .setUserAgent(
                           String.format(Locale.US, "%s/ test-bench/", this.containerName));
+
+                  // ADDED: Prevent client-side infinite hangs if the server is unresponsive
+                  request.setConnectTimeout(15000);
+                  request.setReadTimeout(15000);
                 });
   }
 
@@ -210,19 +214,27 @@ public final class TestBench implements ManagedLifecycle {
       // expected when the server isn't running already
     }
     try {
-      tempDirectory = Files.createTempDirectory(containerName);
-      outPath = tempDirectory.resolve("stdout");
-      errPath = tempDirectory.resolve("stderr");
+      // ADDED: Route logs to Bazel/Sponge artifact directories so Test Fusion can see them
+      String bazelOutputDir = System.getenv("TEST_UNDECLARED_OUTPUTS_DIR");
+      Path baseArtifactDir;
+      if (bazelOutputDir != null && !bazelOutputDir.isEmpty()) {
+        baseArtifactDir = java.nio.file.Paths.get(bazelOutputDir);
+      } else {
+        baseArtifactDir = java.nio.file.Paths.get("target", "testbench-logs");
+      }
+
+      tempDirectory = baseArtifactDir.resolve(containerName);
+      Files.createDirectories(tempDirectory);
+      outPath = tempDirectory.resolve("gunicorn-stdout.log");
+      errPath = tempDirectory.resolve("gunicorn-stderr.log");
 
       File outFile = outPath.toFile();
       File errFile = errPath.toFile();
-      LOGGER.info("Redirecting server stdout to: {}", outFile.getAbsolutePath());
-      LOGGER.info("Redirecting server stderr to: {}", errFile.getAbsolutePath());
+      LOGGER.info("Redirecting server stdout to artifact: {}", outFile.getAbsolutePath());
+      LOGGER.info("Redirecting server stderr to artifact: {}", errFile.getAbsolutePath());
+
       String dockerImage = String.format(Locale.US, "%s:%s", dockerImageName, dockerImageTag);
-      // First try and pull the docker image, this validates docker is available and running
-      // on the host, as well as gives time for the image to be downloaded independently of
-      // trying to start the container. (Below, when we first start the container we then attempt
-      // to issue a call against the api before we yield to run our tests.)
+      // First try and pull the docker image
       try {
         Process p =
             new ProcessBuilder()
@@ -248,6 +260,8 @@ public final class TestBench implements ManagedLifecycle {
 
       int port = URI.create(baseUri).getPort();
       int gRPCPort = URI.create(gRPCBaseUri).getPort();
+
+      // ADDED: gthread, 40 threads, and debug logging
       final List<String> command =
           ImmutableList.of(
               "docker",
@@ -263,10 +277,13 @@ public final class TestBench implements ManagedLifecycle {
               "gunicorn",
               "--bind=0.0.0.0:9000",
               "--worker-class=gthread",
-              "--threads=10",
+              "--threads=40",
               "--access-logfile=-",
+              "--error-logfile=-",
+              "--log-level=debug",
               "--keep-alive=0",
               "testbench:run()");
+
       process =
           new ProcessBuilder()
               .command(command)
@@ -274,9 +291,20 @@ public final class TestBench implements ManagedLifecycle {
               .redirectError(errFile)
               .start();
       LOGGER.info(command.toString());
+
       try {
         // wait a small amount of time for the server to come up before probing
         Thread.sleep(500);
+
+        // ADDED: Fail fast if container crashed due to port collision
+        if (!process.isAlive()) {
+          dumpServerLogs(outPath, errPath);
+          throw new IllegalStateException(
+              "TestBench Docker container died immediately. Exit code: "
+                  + process.exitValue()
+                  + ". Probable port collision.");
+        }
+
         // wait for the server to come up
         List<RetryTestResource> existingResources =
             runWithRetries(
@@ -370,13 +398,16 @@ public final class TestBench implements ManagedLifecycle {
             }
           },
           NanoClock.getDefaultClock());
-      try {
-        Files.delete(errPath);
-        Files.delete(outPath);
-        Files.delete(tempDirectory);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+
+      // ADDED: Commented out file deletion so Test Fusion can preserve artifacts
+      // try {
+      //   Files.delete(errPath);
+      //   Files.delete(outPath);
+      //   Files.delete(tempDirectory);
+      // } catch (IOException e) {
+      //   throw new RuntimeException(e);
+      // }
+      LOGGER.info("Skipping artifact deletion to preserve logs for Test Fusion.");
     } catch (InterruptedException | IOException e) {
       throw new RuntimeException(e);
     }
@@ -393,6 +424,7 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   private void dumpServerLog(String prefix, File out) throws IOException {
+    if (!out.exists()) return;
     try (BufferedReader reader = new BufferedReader(new FileReader(out))) {
       String line;
       while ((line = reader.readLine()) != null) {
@@ -401,9 +433,11 @@ public final class TestBench implements ManagedLifecycle {
     }
   }
 
+  // ADDED: Fixed findFreePort to properly apply setReuseAddress
   private static int findFreePort() {
-    try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+    try (java.net.ServerSocket socket = new java.net.ServerSocket()) {
       socket.setReuseAddress(true);
+      socket.bind(new java.net.InetSocketAddress(0));
       return socket.getLocalPort();
     } catch (java.io.IOException e) {
       throw new RuntimeException("Failed to find a free port", e);
@@ -503,17 +537,15 @@ public final class TestBench implements ManagedLifecycle {
     private String dockerImageTag;
     private String containerName;
 
+    // ADDED: Refactored constructor to prevent uninitialized variables
     private Builder() {
-      int httpPort = findFreePort();
-      int grpcPort = findFreePort();
-      String uuid = java.util.UUID.randomUUID().toString().substring(0, 8);
-
-      this.ignorePullError = false;
-      this.baseUri = "http://127.0.0.1:" + httpPort;
-      this.gRPCBaseUri = "http://127.0.0.1:" + grpcPort;
-      this.dockerImageName = DEFAULT_IMAGE_NAME;
-      this.dockerImageTag = DEFAULT_IMAGE_TAG;
-      this.containerName = DEFAULT_CONTAINER_NAME + "_" + uuid;
+      this(
+          false,
+          "http://127.0.0.1:" + findFreePort(),
+          "http://127.0.0.1:" + findFreePort(),
+          DEFAULT_IMAGE_NAME,
+          DEFAULT_IMAGE_TAG,
+          DEFAULT_CONTAINER_NAME + "_" + java.util.UUID.randomUUID().toString().substring(0, 8));
     }
 
     private Builder(
@@ -529,6 +561,13 @@ public final class TestBench implements ManagedLifecycle {
       this.dockerImageName = dockerImageName;
       this.dockerImageTag = dockerImageTag;
       this.containerName = containerName;
+
+      // ADDED: Trace logging for port assignments to verify collisions in CI
+      LOGGER.info(
+          "DEBUG-BUILDER: Initialized testbench config -> Container: {}, HTTP: {}, GRPC: {}",
+          containerName,
+          baseUri,
+          gRPCBaseUri);
     }
 
     public Builder setIgnorePullError(boolean ignorePullError) {
