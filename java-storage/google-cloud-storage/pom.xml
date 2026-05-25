@@ -467,6 +467,7 @@
           <forkCount>1C</forkCount>
           <reuseForks>true</reuseForks>
           <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+          <enableProcessChecker>all</enableProcessChecker>
         </configuration>
         <executions>
           <execution>
