@@ -62,87 +62,88 @@ public final class ITOpenTelemetryMPUTest {
   public void checkMPUInstrumentation() throws Exception {
     TestExporter exporter = new TestExporter();
 
-    OpenTelemetrySdk openTelemetrySdk =
+    try (OpenTelemetrySdk openTelemetrySdk =
         OpenTelemetrySdk.builder()
             .setTracerProvider(
                 SdkTracerProvider.builder()
                     .addSpanProcessor(SimpleSpanProcessor.create(exporter))
                     .build())
-            .build();
+            .build()) {
 
-    HttpStorageOptions httpStorageOptions = (HttpStorageOptions) storage.getOptions();
-    StorageOptions storageOptions =
-        httpStorageOptions.toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+      HttpStorageOptions httpStorageOptions = (HttpStorageOptions) storage.getOptions();
+      StorageOptions storageOptions =
+          httpStorageOptions.toBuilder().setOpenTelemetry(openTelemetrySdk).build();
 
-    String objectName = generator.randomObjectName();
+      String objectName = generator.randomObjectName();
 
-    try (Storage storage = storageOptions.getService()) {
-      MultipartUploadClient mpuClient =
-          MultipartUploadClient.create(
-              MultipartUploadSettings.of((HttpStorageOptions) storage.getOptions()));
+      try (Storage storage = storageOptions.getService()) {
+        MultipartUploadClient mpuClient =
+            MultipartUploadClient.create(
+                MultipartUploadSettings.of((HttpStorageOptions) storage.getOptions()));
 
-      CreateMultipartUploadResponse create =
-          mpuClient.createMultipartUpload(
-              CreateMultipartUploadRequest.builder()
-                  .bucket(bucket.getName())
-                  .key(objectName)
-                  .build());
+        CreateMultipartUploadResponse create =
+            mpuClient.createMultipartUpload(
+                CreateMultipartUploadRequest.builder()
+                    .bucket(bucket.getName())
+                    .key(objectName)
+                    .build());
 
-      byte[] data = "Hello, World!".getBytes(StandardCharsets.UTF_8);
-      RequestBody body = RequestBody.of(ByteBuffer.wrap(data));
-      UploadPartResponse upload =
-          mpuClient.uploadPart(
-              UploadPartRequest.builder()
-                  .bucket(bucket.getName())
-                  .key(objectName)
-                  .uploadId(create.uploadId())
-                  .partNumber(1)
-                  .build(),
-              body);
+        byte[] data = "Hello, World!".getBytes(StandardCharsets.UTF_8);
+        RequestBody body = RequestBody.of(ByteBuffer.wrap(data));
+        UploadPartResponse upload =
+            mpuClient.uploadPart(
+                UploadPartRequest.builder()
+                    .bucket(bucket.getName())
+                    .key(objectName)
+                    .uploadId(create.uploadId())
+                    .partNumber(1)
+                    .build(),
+                body);
 
-      mpuClient.completeMultipartUpload(
-          CompleteMultipartUploadRequest.builder()
-              .bucket(bucket.getName())
-              .key(objectName)
-              .uploadId(create.uploadId())
-              .multipartUpload(
-                  CompletedMultipartUpload.builder()
-                      .parts(
-                          ImmutableList.of(
-                              CompletedPart.builder().partNumber(1).eTag(upload.eTag()).build()))
-                      .build())
-              .build());
+        mpuClient.completeMultipartUpload(
+            CompleteMultipartUploadRequest.builder()
+                .bucket(bucket.getName())
+                .key(objectName)
+                .uploadId(create.uploadId())
+                .multipartUpload(
+                    CompletedMultipartUpload.builder()
+                        .parts(
+                            ImmutableList.of(
+                                CompletedPart.builder().partNumber(1).eTag(upload.eTag()).build()))
+                        .build())
+                .build());
 
-      mpuClient.listMultipartUploads(
-          ListMultipartUploadsRequest.builder().bucket(bucket.getName()).build());
+        mpuClient.listMultipartUploads(
+            ListMultipartUploadsRequest.builder().bucket(bucket.getName()).build());
+      }
+
+      List<SpanData> spans = exporter.getExportedSpans();
+      assertThat(spans).hasSize(4);
+
+      SpanData createSpan = spans.get(0);
+      assertThat(createSpan.getName())
+          .isEqualTo("com.google.cloud.storage.MultipartUploadClient/createMultipartUpload");
+      assertThat(createSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
+          .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
+
+      SpanData uploadSpan = spans.get(1);
+      assertThat(uploadSpan.getName())
+          .isEqualTo("com.google.cloud.storage.MultipartUploadClient/uploadPart");
+      assertThat(uploadSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
+          .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
+      assertThat(uploadSpan.getAttributes().get(AttributeKey.longKey("partNumber"))).isEqualTo(1);
+
+      SpanData completeSpan = spans.get(2);
+      assertThat(completeSpan.getName())
+          .isEqualTo("com.google.cloud.storage.MultipartUploadClient/completeMultipartUpload");
+      assertThat(completeSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
+          .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
+
+      SpanData listSpan = spans.get(3);
+      assertThat(listSpan.getName())
+          .isEqualTo("com.google.cloud.storage.MultipartUploadClient/listMultipartUploads");
+      assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
+          .isEqualTo(String.format("gs://%s/", bucket.getName()));
     }
-
-    List<SpanData> spans = exporter.getExportedSpans();
-    assertThat(spans).hasSize(4);
-
-    SpanData createSpan = spans.get(0);
-    assertThat(createSpan.getName())
-        .isEqualTo("com.google.cloud.storage.MultipartUploadClient/createMultipartUpload");
-    assertThat(createSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
-        .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
-
-    SpanData uploadSpan = spans.get(1);
-    assertThat(uploadSpan.getName())
-        .isEqualTo("com.google.cloud.storage.MultipartUploadClient/uploadPart");
-    assertThat(uploadSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
-        .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
-    assertThat(uploadSpan.getAttributes().get(AttributeKey.longKey("partNumber"))).isEqualTo(1);
-
-    SpanData completeSpan = spans.get(2);
-    assertThat(completeSpan.getName())
-        .isEqualTo("com.google.cloud.storage.MultipartUploadClient/completeMultipartUpload");
-    assertThat(completeSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
-        .isEqualTo(String.format("gs://%s/%s", bucket.getName(), objectName));
-
-    SpanData listSpan = spans.get(3);
-    assertThat(listSpan.getName())
-        .isEqualTo("com.google.cloud.storage.MultipartUploadClient/listMultipartUploads");
-    assertThat(listSpan.getAttributes().get(AttributeKey.stringKey("gsutil.uri")))
-        .isEqualTo(String.format("gs://%s/", bucket.getName()));
   }
 }

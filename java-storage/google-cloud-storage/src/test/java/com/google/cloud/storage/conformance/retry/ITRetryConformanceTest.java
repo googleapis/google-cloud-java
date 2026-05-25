@@ -268,16 +268,18 @@ public class ITRetryConformanceTest {
     private RetryTests loadRetryTestsDefinition() throws IOException {
       ClassLoader cl = Thread.currentThread().getContextClassLoader();
 
-      InputStream dataJson = cl.getResourceAsStream(retryTestsJsonResourcePath);
-      assertNotNull(
-          String.format(
-              Locale.US, "Unable to load test definition: %s", retryTestsJsonResourcePath),
-          dataJson);
+      try (InputStream dataJson = cl.getResourceAsStream(retryTestsJsonResourcePath)) {
+        assertNotNull(
+            String.format(
+                Locale.US, "Unable to load test definition: %s", retryTestsJsonResourcePath),
+            dataJson);
 
-      InputStreamReader reader = new InputStreamReader(dataJson, Charsets.UTF_8);
-      RetryTests.Builder testBuilder = RetryTests.newBuilder();
-      JsonFormat.parser().merge(reader, testBuilder);
-      return testBuilder.build();
+        try (InputStreamReader reader = new InputStreamReader(dataJson, Charsets.UTF_8)) {
+          RetryTests.Builder testBuilder = RetryTests.newBuilder();
+          JsonFormat.parser().merge(reader, testBuilder);
+          return testBuilder.build();
+        }
+      }
     }
 
     /** Permute the RetryTest, Instructions and methods with our mappings */

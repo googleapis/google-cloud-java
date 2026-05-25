@@ -63,30 +63,6 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * A {@link ManagedLifecycle} which integrates with the <a target="_blank"
- * href="https://github.com/googleapis/storage-testbench">storage-testbench</a> by pulling the
- * docker image, starting the container, providing methods for interacting with the {@code
- * /retry_test} rest api, stopping the container.
- *
- * <p>A single instance of the testbench is expected to be managed by the {@link
- * com.google.cloud.storage.it.runner.registry.Registry} which is used by {@link
- * com.google.cloud.storage.it.runner.StorageITRunner}. Accessing the testbench can be accomplished
- * by doing the following:
- *
- * <ol>
- *   <li>Annotating your test class {@code @RunWith(StorageITRunner.class)}
- *   <li>Configuring the backend for your integration tests to be {@link
- *       com.google.cloud.storage.it.runner.annotations.Backend#TEST_BENCH} by doing either
- *       <ol>
- *         <li>Annotating your test class with {@code @SingleBackend(Backend.TEST_BENCH)}
- *         <li>Annotating your test class with {@code @CrossRun} and ensuring {@code
- *             Backend.TEST_BENCH} is included in the {@code backends} parameter
- *       </ol>
- *   <li>Specifying {@code @Inject public TestBench testBench;} as a field for the instance of
- *       testbench to be injected to your test
- * </ol>
- */
 public final class TestBench implements ManagedLifecycle {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TestBench.class);
@@ -133,8 +109,6 @@ public final class TestBench implements ManagedLifecycle {
                       .getHeaders()
                       .setUserAgent(
                           String.format(Locale.US, "%s/ test-bench/", this.containerName));
-
-                  // ADDED: Prevent client-side infinite hangs if the server is unresponsive
                   request.setConnectTimeout(15000);
                   request.setReadTimeout(15000);
                 });
@@ -214,7 +188,7 @@ public final class TestBench implements ManagedLifecycle {
       // expected when the server isn't running already
     }
     try {
-      // ADDED: Route logs to Bazel/Sponge artifact directories so Test Fusion can see them
+      // Route logs to Bazel/Sponge artifact directories so Test Fusion can see them
       String bazelOutputDir = System.getenv("TEST_UNDECLARED_OUTPUTS_DIR");
       Path baseArtifactDir;
       if (bazelOutputDir != null && !bazelOutputDir.isEmpty()) {
@@ -234,7 +208,6 @@ public final class TestBench implements ManagedLifecycle {
       LOGGER.info("Redirecting server stderr to artifact: {}", errFile.getAbsolutePath());
 
       String dockerImage = String.format(Locale.US, "%s:%s", dockerImageName, dockerImageTag);
-      // First try and pull the docker image
       try {
         Process p =
             new ProcessBuilder()
@@ -261,7 +234,6 @@ public final class TestBench implements ManagedLifecycle {
       int port = URI.create(baseUri).getPort();
       int gRPCPort = URI.create(gRPCBaseUri).getPort();
 
-      // ADDED: gthread, 40 threads, and debug logging
       final List<String> command =
           ImmutableList.of(
               "docker",
@@ -277,26 +249,25 @@ public final class TestBench implements ManagedLifecycle {
               "gunicorn",
               "--bind=0.0.0.0:9000",
               "--worker-class=gthread",
-              "--threads=40",
+              "--threads=40", // High threads to prevent deadlock
               "--access-logfile=-",
               "--error-logfile=-",
-              "--log-level=debug",
+              "--log-level=debug", // Detailed Python output
               "--keep-alive=0",
               "testbench:run()");
 
       process =
           new ProcessBuilder()
               .command(command)
-              .redirectOutput(outFile)
+              .redirectOutput(outFile) // OS handles writing, NO Java threads used here
               .redirectError(errFile)
               .start();
       LOGGER.info(command.toString());
 
       try {
-        // wait a small amount of time for the server to come up before probing
         Thread.sleep(500);
 
-        // ADDED: Fail fast if container crashed due to port collision
+        // Fail fast if container crashed immediately due to a port collision
         if (!process.isAlive()) {
           dumpServerLogs(outPath, errPath);
           throw new IllegalStateException(
@@ -305,7 +276,6 @@ public final class TestBench implements ManagedLifecycle {
                   + ". Probable port collision.");
         }
 
-        // wait for the server to come up
         List<RetryTestResource> existingResources =
             runWithRetries(
                 TestBench.this::listRetryTests,
@@ -327,7 +297,6 @@ public final class TestBench implements ManagedLifecycle {
           LOGGER.info(
               "Test Server already has retry tests in it, is it running outside the tests?");
         }
-        // Start gRPC Service
         if (!startGRPCServer(gRPCPort)) {
           throw new IllegalStateException(
               "Failed to start server within a reasonable amount of time. Host url(gRPC): "
@@ -347,7 +316,6 @@ public final class TestBench implements ManagedLifecycle {
   @Override
   public void stop() {
     if (runningOutsideAlready) {
-      // if the server was running outside the tests already simply return
       return;
     }
     try {
@@ -374,13 +342,11 @@ public final class TestBench implements ManagedLifecycle {
         LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
       }
 
-      // wait for the server to shutdown
       runWithRetries(
           () -> {
             try {
               listRetryTests();
             } catch (SocketException e) {
-              // desired result
               return null;
             }
             throw new NotShutdownException();
@@ -399,15 +365,9 @@ public final class TestBench implements ManagedLifecycle {
           },
           NanoClock.getDefaultClock());
 
-      // ADDED: Commented out file deletion so Test Fusion can preserve artifacts
-      // try {
-      //   Files.delete(errPath);
-      //   Files.delete(outPath);
-      //   Files.delete(tempDirectory);
-      // } catch (IOException e) {
-      //   throw new RuntimeException(e);
-      // }
+      // Intentionally NOT deleting the log files here so Test Fusion can archive them.
       LOGGER.info("Skipping artifact deletion to preserve logs for Test Fusion.");
+
     } catch (InterruptedException | IOException e) {
       throw new RuntimeException(e);
     }
@@ -433,7 +393,6 @@ public final class TestBench implements ManagedLifecycle {
     }
   }
 
-  // ADDED: Fixed findFreePort to properly apply setReuseAddress
   private static int findFreePort() {
     try (java.net.ServerSocket socket = new java.net.ServerSocket()) {
       socket.setReuseAddress(true);
@@ -498,7 +457,6 @@ public final class TestBench implements ManagedLifecycle {
                     InputStream dockerfileText =
                         cl.getResourceAsStream(
                             "com/google/cloud/storage/it/runner/registry/Dockerfile");
-                    //noinspection UnstableApiUsage
                     return Optional.ofNullable(dockerfileText)
                         .map(is -> new InputStreamReader(is, Charsets.UTF_8))
                         .flatMap(
@@ -537,7 +495,6 @@ public final class TestBench implements ManagedLifecycle {
     private String dockerImageTag;
     private String containerName;
 
-    // ADDED: Refactored constructor to prevent uninitialized variables
     private Builder() {
       this(
           false,
@@ -562,7 +519,6 @@ public final class TestBench implements ManagedLifecycle {
       this.dockerImageTag = dockerImageTag;
       this.containerName = containerName;
 
-      // ADDED: Trace logging for port assignments to verify collisions in CI
       LOGGER.info(
           "DEBUG-BUILDER: Initialized testbench config -> Container: {}, HTTP: {}, GRPC: {}",
           containerName,
