@@ -29,20 +29,27 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Array;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Struct;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Stream;
@@ -70,6 +77,13 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryArrowResultSetTest {
+
+  static {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    TimeZoneCache.reset();
+  }
+
+  @RegisterExtension public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final FieldList fieldList =
       FieldList.of(
@@ -374,7 +388,13 @@ public class BigQueryArrowResultSetTest {
         Arguments.of("float64Field", Double.class, 1.1),
         Arguments.of("stringField", String.class, "text1"),
         Arguments.of("numericField", BigDecimal.class, BigDecimal.ONE),
-        Arguments.of(9, Long.class, 1L));
+        Arguments.of(9, Long.class, 1L),
+        Arguments.of("timeField", Time.class, new Time(1234L)),
+        Arguments.of(10, Time.class, new Time(1234L)),
+        Arguments.of("timeStampField", Timestamp.class, new Timestamp(10L)),
+        Arguments.of(5, Timestamp.class, new Timestamp(10L)),
+        Arguments.of("dateField", Date.class, new Date(0L)),
+        Arguments.of(11, Date.class, new Date(0L)));
   }
 
   public static Stream<Arguments> failingCoercionCases() {
@@ -408,6 +428,7 @@ public class BigQueryArrowResultSetTest {
           SQLException.class, () -> bigQueryArrowResultSet.getObject((Integer) column, type));
     }
   }
+
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {
     int rowCount = 0;

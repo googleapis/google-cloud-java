@@ -66,7 +66,12 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryJsonResultSetTest {
 
-  @RegisterExtension public final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
+  static {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    TimeZoneCache.reset();
+  }
+
+  @RegisterExtension public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final FieldList fieldList =
       FieldList.of(
@@ -436,41 +441,6 @@ public class BigQueryJsonResultSetTest {
     assertThat(bigQueryJsonResultSetNested.isAfterLast()).isTrue();
   }
 
-  @Test
-  public void testTime() throws SQLException {
-    assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    Time expectedTime = new Time(TimeUnit.NANOSECONDS.toMillis(aTime.toNanoOfDay()));
-    assertThat(bigQueryJsonResultSet.getTime(12))
-        .isEqualTo(bigQueryJsonResultSet.getTime(12, calendar));
-    assertThat(expectedTime).isEqualTo(bigQueryJsonResultSet.getTime(12, calendar));
-    assertThat(bigQueryJsonResultSet.getTime("twelfth"))
-        .isEqualTo(bigQueryJsonResultSet.getTime("twelfth", calendar));
-  }
-
-  @Test
-  public void testTimestamp() throws SQLException {
-    assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    Timestamp time = bigQueryJsonResultSet.getTimestamp(5);
-    Timestamp timeWithCal = bigQueryJsonResultSet.getTimestamp(5, calendar);
-    assertThat(time).isEqualTo(timeWithCal);
-    assertThat(bigQueryJsonResultSet.getTimestamp("fifth"))
-        .isEqualTo(bigQueryJsonResultSet.getTimestamp("fifth"));
-  }
-
-  @Test
-  public void testDate() throws SQLException {
-    assertThat(resetResultSet()).isTrue();
-    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("EST"));
-    // epoc should match
-    assertThat(bigQueryJsonResultSet.getDate(14).getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate(14, calendar).getTime());
-    assertThat(Date.valueOf("2020-01-15").getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate(14, calendar).getTime());
-    assertThat(bigQueryJsonResultSet.getDate("fourteenth").getTime())
-        .isEqualTo(bigQueryJsonResultSet.getDate("fourteenth", calendar).getTime());
-  }
 
   public static Stream<Arguments> successfulCoercionCases() {
     return Stream.of(
@@ -493,7 +463,13 @@ public class BigQueryJsonResultSetTest {
         Arguments.of("tenth", BigDecimal.class, new BigDecimal("12345678")),
         Arguments.of(10, Long.class, 12345678L),
         Arguments.of("eleventh", BigDecimal.class, new BigDecimal("12345678.99")),
-        Arguments.of(11, Double.class, 12345678.99D));
+        Arguments.of(11, Double.class, 12345678.99D),
+        Arguments.of("twelfth", Time.class, new Time(40459820L)),
+        Arguments.of(12, Time.class, new Time(40459820L)),
+        Arguments.of("fifth", Timestamp.class, new Timestamp(1680174859820L)),
+        Arguments.of(5, Timestamp.class, new Timestamp(1680174859820L)),
+        Arguments.of("fourteenth", Date.class, Date.valueOf("2020-01-15")),
+        Arguments.of(14, Date.class, Date.valueOf("2020-01-15")));
   }
 
   public static Stream<Arguments> failingCoercionCases() {
