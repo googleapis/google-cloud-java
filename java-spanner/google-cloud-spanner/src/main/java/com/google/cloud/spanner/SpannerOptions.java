@@ -96,6 +96,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -309,6 +310,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
   private final RequestOptions.ClientContext clientContext;
+  private final boolean autoTaggingEnabled;
+  private final List<String> autoTaggingPackages;
+  private final int autoTaggingTracerLimit;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -1008,6 +1012,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;
     clientContext = builder.clientContext;
+    autoTaggingEnabled = builder.autoTaggingEnabled;
+    autoTaggingPackages = builder.autoTaggingPackages;
+    autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
 
   private String getResolvedUniverseDomain() {
@@ -1076,6 +1083,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     default boolean isEnableLocationApi() {
+      return false;
+    }
+
+    default boolean isAutoTaggingDisabled() {
+      return false;
+    }
+
+    default boolean isAutoTaggingEnabled() {
       return false;
     }
 
@@ -1183,6 +1198,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     @Override
+    public boolean isAutoTaggingDisabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_DISABLE_AUTO_TAGGING"))
+          || Boolean.parseBoolean(System.getProperty("spanner.disable_auto_tagging"));
+    }
+
+    @Override
+    public boolean isAutoTaggingEnabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_ENABLE_AUTO_TAGGING"))
+          || Boolean.getBoolean("spanner.enable_auto_tagging");
+    }
+
+    @Override
     public String getMonitoringHost() {
       return System.getenv(SPANNER_MONITORING_HOST);
     }
@@ -1271,6 +1298,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private RequestOptions.ClientContext clientContext;
     private InstanceType instanceType = null;
     private String host = null;
+    private boolean autoTaggingEnabled = false;
+    private List<String> autoTaggingPackages = Collections.emptyList();
+    private int autoTaggingTracerLimit = 50;
 
     private static String createCustomClientLibToken(String token) {
       return token + " " + ServiceOptions.getGoogApiClientLibName();
@@ -1377,6 +1407,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.monitoringHost = options.monitoringHost;
       this.defaultTransactionOptions = options.defaultTransactionOptions;
       this.clientContext = options.clientContext;
+      this.autoTaggingEnabled = options.autoTaggingEnabled;
+      this.autoTaggingPackages = options.autoTaggingPackages;
+      this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
     }
 
     @Override
@@ -2156,6 +2189,36 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    public Builder enableAutoTagging() {
+      this.autoTaggingEnabled = true;
+      return this;
+    }
+
+    public Builder disableAutoTagging() {
+      this.autoTaggingEnabled = false;
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(String... autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(
+                  java.util.Arrays.asList(Preconditions.checkNotNull(autoTaggingPackages))));
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(List<String> autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(Preconditions.checkNotNull(autoTaggingPackages)));
+      return this;
+    }
+
+    public Builder setAutoTaggingTracerLimit(int autoTaggingTracerLimit) {
+      this.autoTaggingTracerLimit = autoTaggingTracerLimit;
+      return this;
+    }
+
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
@@ -2581,6 +2644,25 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public TransactionOptions getDefaultTransactionOptions() {
     return defaultTransactionOptions;
+  }
+
+  public boolean isAutoTaggingEnabled() {
+    if (environment.isAutoTaggingDisabled()) {
+      return false;
+    }
+    return autoTaggingEnabled || environment.isAutoTaggingEnabled();
+  }
+
+  public List<String> getAutoTaggingPackages() {
+    return autoTaggingPackages;
+  }
+
+  public int getAutoTaggingTracerLimit() {
+    return autoTaggingTracerLimit;
+  }
+
+  public boolean isAutoTaggingDisabled() {
+    return environment.isAutoTaggingDisabled();
   }
 
   @BetaApi
