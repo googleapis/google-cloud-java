@@ -32,6 +32,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.opentelemetry.detection.AttributeKeys;
 import com.google.cloud.opentelemetry.detection.DetectedPlatform;
 import com.google.cloud.opentelemetry.detection.GCPPlatformDetector;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
@@ -75,10 +76,12 @@ final class BuiltInMetricsProvider {
   private static final String default_location = "global";
 
   private OpenTelemetry openTelemetry;
+  private String projectId;
+  private boolean mismatchedProjectIdLogged;
 
   private BuiltInMetricsProvider() {}
 
-  OpenTelemetry getOrCreateOpenTelemetry(
+  synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
@@ -88,7 +91,7 @@ final class BuiltInMetricsProvider {
         SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
         BuiltInMetricsView.registerBuiltinMetrics(
             SpannerCloudMonitoringExporter.create(
-                projectId, credentials, monitoringHost, universeDomain),
+                this::getProjectId, credentials, monitoringHost, universeDomain),
             sdkMeterProviderBuilder);
         sdkMeterProviderBuilder.setResource(Resource.create(createResourceAttributes(projectId)));
         SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
@@ -104,6 +107,39 @@ final class BuiltInMetricsProvider {
           ex);
       return null;
     }
+  }
+
+  synchronized void setProjectIdIfAbsent(String projectId) {
+    if (this.projectId == null) {
+      this.projectId = projectId;
+    } else if (!this.projectId.equals(projectId) && !mismatchedProjectIdLogged) {
+      mismatchedProjectIdLogged = true;
+      logger.log(
+          Level.WARNING,
+          "Built-in metrics are already initialized for project {0}. Metrics for project {1} will"
+              + " be exported using the existing project.",
+          new Object[] {this.projectId, projectId});
+    }
+  }
+
+  @Nullable
+  synchronized OpenTelemetry getOpenTelemetry() {
+    return this.openTelemetry;
+  }
+
+  @VisibleForTesting
+  synchronized String getProjectId() {
+    return this.projectId;
+  }
+
+  @VisibleForTesting
+  synchronized void reset() {
+    if (this.openTelemetry instanceof OpenTelemetrySdk) {
+      ((OpenTelemetrySdk) this.openTelemetry).getSdkMeterProvider().close();
+    }
+    this.openTelemetry = null;
+    this.projectId = null;
+    this.mismatchedProjectIdLogged = false;
   }
 
   // TODO: Remove when

@@ -2520,6 +2520,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
   }
 
+  void initializeBuiltInMetrics(DatabaseId databaseId) {
+    if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
+      this.builtInMetricsProvider.setProjectIdIfAbsent(databaseId.getInstanceId().getProject());
+      this.builtInMetricsProvider.getOrCreateOpenTelemetry(
+          databaseId.getInstanceId().getProject(),
+          getCredentials(),
+          this.monitoringHost,
+          getUniverseDomain());
+    }
+  }
+
   public ApiTracerFactory getApiTracerFactory(boolean isAdminClient, boolean isEmulatorEnabled) {
     return createApiTracerFactory(isAdminClient, isEmulatorEnabled);
   }

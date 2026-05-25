@@ -42,16 +42,15 @@ import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.export.MetricExporter;
-import io.opentelemetry.sdk.resources.Resource;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -72,10 +71,19 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
   private final AtomicBoolean spannerExportFailureLogged = new AtomicBoolean(false);
   private final AtomicBoolean lastExportSkippedData = new AtomicBoolean(false);
   private final MetricServiceClient client;
-  private final String spannerProjectId;
+  private final Supplier<String> spannerProjectIdSupplier;
 
   static SpannerCloudMonitoringExporter create(
       String projectId,
+      @Nullable Credentials credentials,
+      @Nullable String monitoringHost,
+      String universeDomain)
+      throws IOException {
+    return create(() -> projectId, credentials, monitoringHost, universeDomain);
+  }
+
+  static SpannerCloudMonitoringExporter create(
+      Supplier<String> projectIdSupplier,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain)
@@ -114,13 +122,18 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new SpannerCloudMonitoringExporter(
-        projectId, MetricServiceClient.create(settingsBuilder.build()));
+        projectIdSupplier, MetricServiceClient.create(settingsBuilder.build()));
   }
 
   @VisibleForTesting
   SpannerCloudMonitoringExporter(String projectId, MetricServiceClient client) {
+    this(() -> projectId, client);
+  }
+
+  @VisibleForTesting
+  SpannerCloudMonitoringExporter(Supplier<String> projectIdSupplier, MetricServiceClient client) {
     this.client = client;
-    this.spannerProjectId = projectId;
+    this.spannerProjectIdSupplier = projectIdSupplier;
   }
 
   @Override
@@ -140,29 +153,14 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
 
   /** Export client built in metrics */
   private CompletableResultCode exportSpannerClientMetrics(Collection<MetricData> collection) {
-    // Filter spanner metrics. Only include metrics that contain a valid project.
-    List<MetricData> spannerMetricData = collection.stream().collect(Collectors.toList());
-
-    // Log warnings for metrics that will be skipped.
-    boolean mustFilter = false;
-    if (spannerMetricData.stream()
-        .map(metricData -> metricData.getResource())
-        .anyMatch(this::shouldSkipPointDataDueToProjectId)) {
-      logger.log(
-          Level.WARNING, "Some metric data contain a different projectId. These will be skipped.");
-      mustFilter = true;
+    String spannerProjectId = spannerProjectIdSupplier.get();
+    if (Strings.isNullOrEmpty(spannerProjectId)) {
+      return CompletableResultCode.ofSuccess();
     }
-
-    if (mustFilter) {
-      spannerMetricData =
-          spannerMetricData.stream()
-              .filter(this::shouldSkipMetricData)
-              .collect(Collectors.toList());
-    }
-    lastExportSkippedData.set(mustFilter);
+    lastExportSkippedData.set(false);
 
     // Skips exporting if there's none
-    if (spannerMetricData.isEmpty()) {
+    if (collection.isEmpty()) {
       return CompletableResultCode.ofSuccess();
     }
 
@@ -170,7 +168,7 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     try {
       spannerTimeSeries =
           SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
-              spannerMetricData, this.spannerProjectId);
+              new ArrayList<>(collection), spannerProjectId);
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,
@@ -216,14 +214,6 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
         MoreExecutors.directExecutor());
 
     return spannerExportCode;
-  }
-
-  private boolean shouldSkipMetricData(MetricData metricData) {
-    return shouldSkipPointDataDueToProjectId(metricData.getResource());
-  }
-
-  private boolean shouldSkipPointDataDueToProjectId(Resource resource) {
-    return !spannerProjectId.equals(SpannerCloudMonitoringExporterUtils.getProjectId(resource));
   }
 
   boolean lastExportSkippedData() {

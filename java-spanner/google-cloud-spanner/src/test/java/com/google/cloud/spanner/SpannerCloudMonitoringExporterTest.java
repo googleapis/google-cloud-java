@@ -203,6 +203,47 @@ public class SpannerCloudMonitoringExporterTest {
   }
 
   @Test
+  public void testExportingOverridesResourceProject() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = Mockito.mock(UnaryCallable.class);
+    Mockito.when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    Mockito.when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Resource resourceWithDifferentProject =
+        Resource.create(
+            resourceAttributes.toBuilder().put(PROJECT_ID_KEY, "resource-project").build());
+    LongPointData longPointData = ImmutableLongPointData.create(10, 15, attributes, 11L);
+    MetricData longData =
+        ImmutableMetricData.createLongSum(
+            resourceWithDifferentProject,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+
+    exporter.export(Collections.singletonList(longData));
+
+    CreateTimeSeriesRequest request = argumentCaptor.getValue();
+    assertThat(request.getName()).isEqualTo("projects/" + projectId);
+    assertThat(request.getTimeSeries(0).getResource().getLabelsMap())
+        .containsEntry(PROJECT_ID_KEY.getKey(), projectId);
+  }
+
+  @Test
+  public void testExportingSkipsUntilProjectIsSet() {
+    exporter = new SpannerCloudMonitoringExporter(() -> null, fakeMetricServiceClient);
+
+    exporter.export(Collections.emptyList());
+
+    Mockito.verify(mockMetricServiceStub, Mockito.never()).createServiceTimeSeriesCallable();
+  }
+
+  @Test
   public void testExportingHistogramData() {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);

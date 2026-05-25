@@ -61,7 +61,6 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.MetricDataType;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
-import io.opentelemetry.sdk.resources.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -74,10 +73,6 @@ class SpannerCloudMonitoringExporterUtils {
       Logger.getLogger(SpannerCloudMonitoringExporterUtils.class.getName());
 
   private SpannerCloudMonitoringExporterUtils() {}
-
-  static String getProjectId(Resource resource) {
-    return resource.getAttributes().get(PROJECT_ID_KEY);
-  }
 
   static List<TimeSeries> convertToSpannerTimeSeries(
       List<MetricData> collection, String projectId) {
@@ -102,6 +97,7 @@ class SpannerCloudMonitoringExporterUtils {
         monitoredResourceBuilder.putLabels(
             key.getKey(), String.valueOf(resourceAttributes.get(key)));
       }
+      monitoredResourceBuilder.putLabels(PROJECT_ID_KEY.getKey(), projectId);
 
       metricData.getData().getPoints().stream()
           .map(
