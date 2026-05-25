@@ -213,6 +213,12 @@ public class MockAutoTaggingTest extends AbstractMockServerTest {
       ExecuteSqlRequest sqlRequest = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(0);
       String transactionTag = sqlRequest.getRequestOptions().getTransactionTag();
       assertEquals("TagTestHelper.runAsync", transactionTag);
+      assertEquals("", sqlRequest.getRequestOptions().getRequestTag());
+
+      // Verify transaction tag matches on CommitRequest
+      assertEquals(1, mockSpanner.countRequestsOfType(CommitRequest.class));
+      CommitRequest commitRequest = mockSpanner.getRequestsOfType(CommitRequest.class).get(0);
+      assertEquals(transactionTag, commitRequest.getRequestOptions().getTransactionTag());
     }
   }
 
@@ -294,6 +300,20 @@ public class MockAutoTaggingTest extends AbstractMockServerTest {
       ExecuteSqlRequest sqlRequest = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(0);
       assertEquals(
           "TagTestHelper.readOnlyTxnConsume", sqlRequest.getRequestOptions().getRequestTag());
+      assertEquals("", sqlRequest.getRequestOptions().getTransactionTag());
+    }
+
+    mockSpanner.clearRequests();
+    try (Spanner spannerInstance = createSpanner(false, "com.example.spanner")) {
+      DatabaseClient databaseClient =
+          spannerInstance.getDatabaseClient(DatabaseId.of("proj", "inst", "db"));
+      try (ReadOnlyTransaction transaction = databaseClient.readOnlyTransaction()) {
+        TagTestHelper.readOnlyTxnConsume(transaction, Statement.of("SELECT * FROM Albums"));
+      }
+
+      assertEquals(1, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+      ExecuteSqlRequest sqlRequest = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(0);
+      assertEquals("", sqlRequest.getRequestOptions().getRequestTag());
       assertEquals("", sqlRequest.getRequestOptions().getTransactionTag());
     }
   }
