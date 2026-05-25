@@ -254,7 +254,7 @@ public final class TestBench implements ManagedLifecycle {
           ImmutableList.of(
               "docker",
               "run",
-              "-i",
+              "-d",
               "--rm",
               "--publish",
               port + ":9000",
@@ -325,28 +325,13 @@ public final class TestBench implements ManagedLifecycle {
       return;
     }
     try {
-      process.destroy();
-      process.waitFor(2, TimeUnit.SECONDS);
-      boolean attemptForceStopContainer = false;
-      try {
-        int processExitValue = process.exitValue();
-        if (processExitValue != 0) {
-          attemptForceStopContainer = true;
-        }
-        LOGGER.warn("Container exit value = {}", processExitValue);
-      } catch (IllegalThreadStateException e) {
-        attemptForceStopContainer = true;
-      }
-
-      if (attemptForceStopContainer) {
-        LOGGER.warn("Container did not gracefully exit, attempting to explicitly stop it.");
-        ImmutableList<String> command = ImmutableList.of("docker", "kill", containerName);
-        LOGGER.warn(command.toString());
-        Process shutdownProcess = new ProcessBuilder(command).start();
-        shutdownProcess.waitFor(5, TimeUnit.SECONDS);
-        int shutdownProcessExitValue = shutdownProcess.exitValue();
-        LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
-      }
+      LOGGER.warn("Stopping container: {}", containerName);
+      ImmutableList<String> killCommand = ImmutableList.of("docker", "kill", containerName);
+      LOGGER.warn(killCommand.toString());
+      Process shutdownProcess = new ProcessBuilder(killCommand).start();
+      shutdownProcess.waitFor(5, TimeUnit.SECONDS);
+      int shutdownProcessExitValue = shutdownProcess.exitValue();
+      LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
 
       // wait for the server to shutdown
       runWithRetries(
