@@ -87,10 +87,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
     Object metadata =
         Object.newBuilder()
             .setSize(testContent.length())
-            .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(testContent.getCrc32c())
-                    .build())
+            .setChecksums(ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c()).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -137,9 +134,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
         Object.newBuilder()
             .setSize(testContent.length())
             .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(testContent.getCrc32c() + 1)
-                    .build())
+                ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c() + 1).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -173,7 +168,8 @@ public final class GapicUnbufferedReadableByteChannelTest {
       ByteBuffer buffer = ByteBuffer.allocate(15);
       IOException exception = assertThrows(IOException.class, () -> c.read(buffer));
       assertThat(exception.getCause()).isInstanceOf(StorageException.class);
-      assertThat(exception.getCause().getCause()).isInstanceOf(UncheckedCumulativeChecksumMismatchException.class);
+      assertThat(exception.getCause().getCause())
+          .isInstanceOf(UncheckedCumulativeChecksumMismatchException.class);
     }
   }
 
@@ -186,9 +182,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
         Object.newBuilder()
             .setSize(testContent.length())
             .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(testContent.getCrc32c() + 1)
-                    .build())
+                ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c() + 1).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -239,10 +233,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
     Object metadata =
         Object.newBuilder()
             .setSize(fullContent.length())
-            .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(fullContent.getCrc32c())
-                    .build())
+            .setChecksums(ObjectChecksums.newBuilder().setCrc32C(fullContent.getCrc32c()).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -259,26 +250,28 @@ public final class GapicUnbufferedReadableByteChannelTest {
                       ResponseObserver<ReadObjectResponse> respond,
                       ApiCallContext context) {
                     respond.onStart(TestUtils.nullStreamController());
-                    new Thread(() -> {
-                      try {
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk1.asChecksummedData())
-                                .build());
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk2.asChecksummedData())
-                                .build());
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk3.asChecksummedData())
-                                .setMetadata(metadata)
-                                .build());
-                        respond.onComplete();
-                      } catch (Throwable t) {
-                        respond.onError(t);
-                      }
-                    }).start();
+                    new Thread(
+                            () -> {
+                              try {
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk1.asChecksummedData())
+                                        .build());
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk2.asChecksummedData())
+                                        .build());
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk3.asChecksummedData())
+                                        .setMetadata(metadata)
+                                        .build());
+                                respond.onComplete();
+                              } catch (Throwable t) {
+                                respond.onError(t);
+                              }
+                            })
+                        .start();
                   }
                 },
                 manager),
@@ -306,9 +299,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
         Object.newBuilder()
             .setSize(fullContent.length())
             .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(fullContent.getCrc32c() + 1)
-                    .build())
+                ObjectChecksums.newBuilder().setCrc32C(fullContent.getCrc32c() + 1).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -325,26 +316,28 @@ public final class GapicUnbufferedReadableByteChannelTest {
                       ResponseObserver<ReadObjectResponse> respond,
                       ApiCallContext context) {
                     respond.onStart(TestUtils.nullStreamController());
-                    new Thread(() -> {
-                      try {
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk1.asChecksummedData())
-                                .build());
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk2.asChecksummedData())
-                                .build());
-                        respond.onResponse(
-                            ReadObjectResponse.newBuilder()
-                                .setChecksummedData(chunk3.asChecksummedData())
-                                .setMetadata(metadata)
-                                .build());
-                        respond.onComplete();
-                      } catch (Throwable t) {
-                        respond.onError(t);
-                      }
-                    }).start();
+                    new Thread(
+                            () -> {
+                              try {
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk1.asChecksummedData())
+                                        .build());
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk2.asChecksummedData())
+                                        .build());
+                                respond.onResponse(
+                                    ReadObjectResponse.newBuilder()
+                                        .setChecksummedData(chunk3.asChecksummedData())
+                                        .setMetadata(metadata)
+                                        .build());
+                                respond.onComplete();
+                              } catch (Throwable t) {
+                                respond.onError(t);
+                              }
+                            })
+                        .start();
                   }
                 },
                 manager),
@@ -354,11 +347,15 @@ public final class GapicUnbufferedReadableByteChannelTest {
             Retrying.neverRetry())) {
 
       ByteBuffer buffer = ByteBuffer.allocate(20);
-      IOException exception = assertThrows(IOException.class, () -> {
-        c.read(new ByteBuffer[] {buffer}, 0, 1);
-      });
+      IOException exception =
+          assertThrows(
+              IOException.class,
+              () -> {
+                c.read(new ByteBuffer[] {buffer}, 0, 1);
+              });
       assertThat(exception.getCause()).isInstanceOf(StorageException.class);
-      assertThat(exception.getCause().getCause()).isInstanceOf(UncheckedCumulativeChecksumMismatchException.class);
+      assertThat(exception.getCause().getCause())
+          .isInstanceOf(UncheckedCumulativeChecksumMismatchException.class);
     }
   }
 
@@ -416,9 +413,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
         Object.newBuilder()
             .setSize(testContent.length())
             .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(testContent.getCrc32c() + 1)
-                    .build())
+                ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c() + 1).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -462,10 +457,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
     Object metadata =
         Object.newBuilder()
             .setSize(0)
-            .setChecksums(
-                ObjectChecksums.newBuilder()
-                    .setCrc32C(0)
-                    .build())
+            .setChecksums(ObjectChecksums.newBuilder().setCrc32C(0).build())
             .build();
 
     ResponseContentLifecycleManager<ReadObjectResponse> manager =
@@ -483,9 +475,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
                       ApiCallContext context) {
                     respond.onStart(TestUtils.nullStreamController());
                     respond.onResponse(
-                        ReadObjectResponse.newBuilder()
-                            .setMetadata(metadata)
-                            .build());
+                        ReadObjectResponse.newBuilder().setMetadata(metadata).build());
                     respond.onComplete();
                   }
                 },

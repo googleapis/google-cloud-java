@@ -33,7 +33,6 @@ import com.google.cloud.storage.GrpcUtils.ZeroCopyServerStreamingCallable;
 import com.google.cloud.storage.Hasher.UncheckedChecksumMismatchException;
 import com.google.cloud.storage.ResponseContentLifecycleHandle.ChildRef;
 import com.google.cloud.storage.Retrying.Retrier;
-import java.util.OptionalLong;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.common.base.Suppliers;
 import com.google.protobuf.ByteString;
@@ -50,6 +49,7 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
 import java.util.Locale;
+import java.util.OptionalLong;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -92,9 +92,15 @@ final class GapicUnbufferedReadableByteChannel
     this.result = result;
     this.read = read;
     this.req = req;
-    this.hasher = (req.getReadOffset() == 0)
-        ? new CumulativeHasher(hasher, 0, req.getReadLimit() <= 0 ? OptionalLong.empty() : OptionalLong.of(req.getReadLimit()))
-        : hasher;
+    this.hasher =
+        (req.getReadOffset() == 0)
+            ? new CumulativeHasher(
+                hasher,
+                0,
+                req.getReadLimit() <= 0
+                    ? OptionalLong.empty()
+                    : OptionalLong.of(req.getReadLimit()))
+            : hasher;
     this.fetchOffset = new AtomicLong(req.getReadOffset());
     this.blobOffset = req.getReadOffset();
     this.retrier = retrier;
@@ -325,7 +331,6 @@ final class GapicUnbufferedReadableByteChannel
       }
     }
   }
-
 
   private final class ReadObjectObserver extends StateCheckingResponseObserver<ReadObjectResponse> {
 
