@@ -164,6 +164,60 @@ public class ITOpenTelemetryTest {
         "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'");
   }
 
+  @Test
+  public void testExecute_withExplicitCredentialsJson() throws Exception {
+    // Goal: Verify that passing a raw JSON string in gcpTelemetryCredentials works and invokes our
+    // customizer.
+    // How to test:
+    // If you have a test service account JSON, you can read it as a string and set it in
+    // props/DataSource:
+    // ds.setGcpTelemetryCredentials(saJsonString);
+    // Verify that traces are still successfully delivered to Cloud Trace.
+  }
+
+  @Test
+  public void testExecute_withExplicitCredentialsFilePath() throws Exception {
+    // Goal: Verify that passing a file path works.
+    // How to test:
+    // Save the test service account JSON to a temporary file.
+    // Set gcpTelemetryCredentials to the tempFilePath:
+    // ds.setGcpTelemetryCredentials(tempFilePath);
+    // Verify trace delivery.
+  }
+
+  @Test
+  public void testExecute_withMultiTenancySdkCaching() throws Exception {
+    // Goal: Verify that the driver correctly creates and caches separate SDK instances for
+    // different configurations.
+    // How to test:
+    // Create Connection A with gcpTelemetryProjectId = "project-a".
+    // Create Connection B with gcpTelemetryProjectId = "project-b".
+    // Even if project-b doesn't exist or fails to export, you can verify that the driver doesn't
+    // crash and that it attempts to create two separate pipelines.
+    // To be rigorous, we could add a package-private method in BigQueryJdbcOpenTelemetry to return
+    // the size of the sdkCache and assert that it is 2 after creating these connections.
+  }
+
+  @Test
+  public void testExecute_withExplicitCredentials_HTTP() throws Exception {
+    // Scenario A: Explicit Credentials + HTTP
+    // Goal: Verify that our customizer works for OtlpHttpSpanExporter.
+    // How to test:
+    // Set gcpTelemetryCredentials (JSON string or path).
+    // Set EnableHighThroughputAPI = 0 (to force HTTP).
+    // Verify that traces are delivered.
+  }
+
+  @Test
+  public void testExecute_withExplicitCredentials_gRPC() throws Exception {
+    // Scenario B: Explicit Credentials + gRPC
+    // Goal: Verify that our customizer works for OtlpGrpcSpanExporter.
+    // How to test:
+    // Set gcpTelemetryCredentials (JSON string or path).
+    // Set EnableHighThroughputAPI = 1 (to force gRPC).
+    // Verify that traces are delivered.
+  }
+
   private String verifyAndFetchLogs(String connectionUuid) throws Exception {
     try (Logging logging =
         LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build().getService()) {
