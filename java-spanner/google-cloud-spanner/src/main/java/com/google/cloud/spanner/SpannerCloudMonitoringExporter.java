@@ -69,7 +69,6 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
   private final AtomicBoolean spannerExportFailureLogged = new AtomicBoolean(false);
-  private final AtomicBoolean lastExportSkippedData = new AtomicBoolean(false);
   private final MetricServiceClient client;
   private final Supplier<String> spannerProjectIdSupplier;
 
@@ -157,8 +156,6 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     if (Strings.isNullOrEmpty(spannerProjectId)) {
       return CompletableResultCode.ofSuccess();
     }
-    lastExportSkippedData.set(false);
-
     // Skips exporting if there's none
     if (collection.isEmpty()) {
       return CompletableResultCode.ofSuccess();
@@ -168,7 +165,7 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     try {
       spannerTimeSeries =
           SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
-              new ArrayList<>(collection), spannerProjectId);
+              collection, spannerProjectId);
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,
@@ -214,10 +211,6 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
         MoreExecutors.directExecutor());
 
     return spannerExportCode;
-  }
-
-  boolean lastExportSkippedData() {
-    return this.lastExportSkippedData.get();
   }
 
   private ApiFuture<List<Empty>> exportTimeSeriesInBatch(

@@ -31,7 +31,6 @@ import static com.google.cloud.spanner.BuiltInMetricsConstant.OPERATION_LATENCIE
 import static com.google.cloud.spanner.BuiltInMetricsConstant.PROJECT_ID_KEY;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -164,8 +163,6 @@ public class SpannerCloudMonitoringExporterTest {
                 true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
 
     exporter.export(Collections.singletonList(longData));
-    assertFalse(exporter.lastExportSkippedData());
-
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
     assertThat(request.getTimeSeriesList()).hasSize(1);
@@ -237,8 +234,18 @@ public class SpannerCloudMonitoringExporterTest {
   @Test
   public void testExportingSkipsUntilProjectIsSet() {
     exporter = new SpannerCloudMonitoringExporter(() -> null, fakeMetricServiceClient);
+    LongPointData longPointData = ImmutableLongPointData.create(10, 15, attributes, 11L);
+    MetricData longData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
 
-    exporter.export(Collections.emptyList());
+    exporter.export(Collections.singletonList(longData));
 
     Mockito.verify(mockMetricServiceStub, Mockito.never()).createServiceTimeSeriesCallable();
   }
@@ -279,8 +286,6 @@ public class SpannerCloudMonitoringExporterTest {
                 AggregationTemporality.CUMULATIVE, ImmutableList.of(histogramPointData)));
 
     exporter.export(Collections.singletonList(histogramData));
-    assertFalse(exporter.lastExportSkippedData());
-
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
     assertThat(request.getTimeSeriesList()).hasSize(1);
@@ -355,8 +360,6 @@ public class SpannerCloudMonitoringExporterTest {
 
     assertThat(firstRequest.getTimeSeriesList()).hasSize(200);
     assertThat(secondRequest.getTimeSeriesList()).hasSize(50);
-    assertFalse(exporter.lastExportSkippedData());
-
     for (int i = 0; i < 250; i++) {
       TimeSeries timeSeries;
       if (i < 200) {
@@ -449,8 +452,6 @@ public class SpannerCloudMonitoringExporterTest {
                 AggregationTemporality.CUMULATIVE, ImmutableList.of(histogramPointData)));
 
     exporter.export(Collections.singletonList(histogramData));
-    assertFalse(exporter.lastExportSkippedData());
-
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
     TimeSeries timeSeries = request.getTimeSeriesList().get(0);
     Distribution distribution = timeSeries.getPoints(0).getValue().getDistributionValue();

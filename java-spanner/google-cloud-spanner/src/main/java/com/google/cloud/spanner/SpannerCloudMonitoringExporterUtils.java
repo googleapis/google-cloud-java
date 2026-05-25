@@ -62,6 +62,7 @@ import io.opentelemetry.sdk.metrics.data.MetricDataType;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,7 +76,7 @@ class SpannerCloudMonitoringExporterUtils {
   private SpannerCloudMonitoringExporterUtils() {}
 
   static List<TimeSeries> convertToSpannerTimeSeries(
-      List<MetricData> collection, String projectId) {
+      Collection<MetricData> collection, String projectId) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
     for (MetricData metricData : collection) {
