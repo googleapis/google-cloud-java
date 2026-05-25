@@ -28,12 +28,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.178.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datalabeling-v1beta1:current} -->
+        <version>0.213.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
-        <version>0.178.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
+        <version>0.213.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datalabeling-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
