@@ -358,4 +358,22 @@ public class MockAutoTaggingTest extends AbstractMockServerTest {
       assertEquals("", sqlRequest.getRequestOptions().getRequestTag());
     }
   }
+
+  @Test
+  public void testBlindWriteAutoTagging() {
+    try (Spanner spannerInstance = createSpanner(true, "com.example.spanner")) {
+      DatabaseClient databaseClient =
+          spannerInstance.getDatabaseClient(DatabaseId.of("proj", "inst", "db"));
+
+      TagTestHelper.blindWrite(
+          databaseClient, Mutation.newInsertBuilder("Albums").set("Id").to(1).build());
+
+      assertEquals(0, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+      assertEquals(1, mockSpanner.countRequestsOfType(CommitRequest.class));
+      CommitRequest commitRequest = mockSpanner.getRequestsOfType(CommitRequest.class).get(0);
+      assertEquals(
+          "TagTestHelper.blindWrite", commitRequest.getRequestOptions().getTransactionTag());
+      assertEquals("", commitRequest.getRequestOptions().getRequestTag());
+    }
+  }
 }

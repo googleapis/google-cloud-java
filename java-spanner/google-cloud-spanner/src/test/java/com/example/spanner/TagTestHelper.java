@@ -95,6 +95,11 @@ public final class TagTestHelper {
         MoreExecutors.directExecutor());
   }
 
+  public static void blindWrite(
+      DatabaseClient client, com.google.cloud.spanner.Mutation mutation) {
+    client.write(java.util.Collections.singletonList(mutation));
+  }
+
   /** Subclass with an extremely long name to test tag truncation rules. */
   public static final class ExtremelyLongClassNameForTestingTagTruncationSupportUnderCheckstyle {
     public static <T> T run(
