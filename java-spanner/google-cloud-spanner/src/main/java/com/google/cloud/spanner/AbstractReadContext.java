@@ -644,6 +644,7 @@ abstract class AbstractReadContext
   private final DirectedReadOptions defaultDirectedReadOptions;
   private final DecodeMode defaultDecodeMode;
   private final Clock clock;
+  private volatile String cachedRequestTag;
 
   @GuardedBy("lock")
   private boolean isValid = true;
@@ -841,7 +842,22 @@ abstract class AbstractReadContext
       builder.setClientContext(clientContextBuilder.build());
     }
     if (getTransactionTag() != null) {
-      builder.setTransactionTag(getTransactionTag());
+      // Read-write transactions support transaction-level tags only. We populate the
+      // transaction tag on the builder if it is non-empty.
+      if (!getTransactionTag().isEmpty()) {
+        builder.setTransactionTag(getTransactionTag());
+      }
+    } else if (session.getSpanner().getOptions().isAutoTaggingEnabled()
+        && builder.getRequestTag().isEmpty()) {
+      // Read-only contexts (both single-use and multi-use) do not support transaction-level tags.
+      // We lazily resolve and populate the request tag instead.
+      if (this.cachedRequestTag == null) {
+        String autoTag = AutoTagHelper.getAutoTag(session.getSpanner().getOptions());
+        this.cachedRequestTag = autoTag == null ? "" : autoTag;
+      }
+      if (!this.cachedRequestTag.isEmpty()) {
+        builder.setRequestTag(this.cachedRequestTag);
+      }
     }
     return builder.build();
   }
