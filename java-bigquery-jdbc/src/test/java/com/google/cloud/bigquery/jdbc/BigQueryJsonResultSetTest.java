@@ -51,7 +51,6 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -440,7 +439,6 @@ public class BigQueryJsonResultSetTest {
     assertThat(bigQueryJsonResultSetNested.next()).isFalse();
     assertThat(bigQueryJsonResultSetNested.isAfterLast()).isTrue();
   }
-
 
   public static Stream<Arguments> successfulCoercionCases() {
     return Stream.of(

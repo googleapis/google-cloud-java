@@ -30,7 +30,6 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
-import org.junit.jupiter.api.extension.RegisterExtension;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.common.collect.ImmutableList;
@@ -47,7 +46,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
@@ -72,6 +70,7 @@ import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -428,7 +427,6 @@ public class BigQueryArrowResultSetTest {
           SQLException.class, () -> bigQueryArrowResultSet.getObject((Integer) column, type));
     }
   }
-
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {
     int rowCount = 0;

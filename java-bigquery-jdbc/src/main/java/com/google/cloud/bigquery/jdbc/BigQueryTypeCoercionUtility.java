@@ -34,7 +34,6 @@ import java.time.Period;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.Text;
@@ -116,7 +115,7 @@ class BigQueryTypeCoercionUtility {
                   // Custom conversion is used to preserve sub-second (millisecond) precision,
                   // as standard java.sql.Time.toLocalTime() truncates milliseconds.
                   long millis = time.getTime();
-                  long localMillis = millis + TimeZone.getDefault().getOffset(millis);
+                  long localMillis = millis + TimeZoneCache.getOffset(millis);
                   return LocalTime.ofNanoOfDay(TimeUnit.MILLISECONDS.toNanos(localMillis));
                 },
                 Time.class,
