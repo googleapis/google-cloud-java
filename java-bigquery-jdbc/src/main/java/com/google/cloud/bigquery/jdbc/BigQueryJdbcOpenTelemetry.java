@@ -29,12 +29,17 @@ import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
+import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporter;
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
+import java.io.IOException;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -221,6 +226,23 @@ public class BigQueryJdbcOpenTelemetry {
         BigQueryJdbcOpenTelemetry.class.getName());
   }
 
+  private static Map<String, String> getAuthHeaders(Credentials credentials) {
+    try {
+      Map<String, List<String>> metadata =
+          credentials.getRequestMetadata(URI.create(OTLP_ENDPOINT_VALUE));
+      Map<String, String> headers = new HashMap<>();
+      metadata.forEach(
+          (headerKey, headerValues) -> {
+            if (!headerValues.isEmpty()) {
+              headers.put(headerKey, headerValues.get(0));
+            }
+          });
+      return headers;
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to get auth headers", e);
+    }
+  }
+
   public static TelemetryConfig getConnectionConfig(String connectionId) {
     return connectionConfigs.get(connectionId);
   }
@@ -270,13 +292,9 @@ public class BigQueryJdbcOpenTelemetry {
         key,
         k -> {
           Map<String, String> props = new HashMap<>();
+          Credentials credentials = null;
           if (gcpTelemetryCredentials != null) {
-            byte[] credsBytes = gcpTelemetryCredentials.getBytes(StandardCharsets.UTF_8);
-            if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
-              props.put(CREDENTIALS_JSON, gcpTelemetryCredentials);
-            } else {
-              props.put(CREDENTIALS_PATH, gcpTelemetryCredentials);
-            }
+            credentials = resolveCredentialsFromString(gcpTelemetryCredentials);
           }
 
           if (enableGcpTraceExporter) {
@@ -306,8 +324,30 @@ public class BigQueryJdbcOpenTelemetry {
             props.put(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
           }
 
-          AutoConfiguredOpenTelemetrySdk autoConfigured =
-              AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
+          final Credentials finalCreds = credentials;
+          AutoConfiguredOpenTelemetrySdk autoConfigured;
+
+          if (finalCreds != null) {
+            autoConfigured =
+                AutoConfiguredOpenTelemetrySdk.builder()
+                    .addPropertiesSupplier(() -> props)
+                    .addSpanExporterCustomizer(
+                        (spanExporter, configProperties) -> {
+                          if (spanExporter instanceof OtlpHttpSpanExporter) {
+                            return ((OtlpHttpSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(finalCreds)).build();
+                          }
+                          if (spanExporter instanceof OtlpGrpcSpanExporter) {
+                            return ((OtlpGrpcSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(finalCreds)).build();
+                          }
+                          return spanExporter;
+                        })
+                    .build();
+          } else {
+            autoConfigured =
+                AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
+          }
 
           OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
 
