@@ -51,6 +51,7 @@
     <module>java-biglake</module>
     <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
+    <module>java-bigquery-jdbc</module>
     <module>java-bigqueryconnection</module>
     <module>java-bigquerydatapolicy</module>
     <module>java-bigquerydatatransfer</module>
