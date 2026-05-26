@@ -13,14 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import copy
+import os
 import shutil
+import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 import library_generation.utils.utilities as util
 from common.model.generation_config import GenerationConfig
 from common.model.library_config import LibraryConfig
 from common.utils.proto_path_utils import ends_with_version
-from library_generation.generate_composed_library import generate_composed_library
+from library_generation.generate_composed_library import (
+    generate_composed_library,
+    library_generation_worker,
+)
 from library_generation.utils.monorepo_postprocessor import monorepo_postprocessing
 
 from common.model.gapic_config import GapicConfig
@@ -57,14 +64,13 @@ def generate_from_yaml(
     )
     # copy api definition to output folder.
     shutil.copytree(api_definitions_path, repo_config.output_folder, dirs_exist_ok=True)
-    for library_path, library in repo_config.get_libraries().items():
-        print(f"generating library {library.get_library_name()}")
-        generate_composed_library(
-            config=config,
-            library_path=library_path,
-            library=library,
-            repo_config=repo_config,
-        )
+    sys.stdout = ThreadLocalStream(original_stdout)
+    sys.stderr = ThreadLocalStream(original_stderr)
+    try:
+        _generate_libraries_in_parallel(config, repo_config)
+    finally:
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
 
     if not config.is_monorepo():
         return
@@ -152,3 +158,63 @@ def _get_target_libraries_from_api_path(
             target_libraries.append(target_library)
             return target_libraries
     return []
+
+
+
+class ThreadLocalStream:
+    """
+    Thread-safe interceptor to route print() statements into thread-local buffers.
+    Necessary because sys.stdout is a global stream; direct threading writes interleave outputs.
+    """
+
+    def __init__(self, original_stream):
+        self.original_stream = original_stream
+        self.local = threading.local()
+
+    @property
+    def buffer(self):
+        return getattr(self.local, "buffer", None)
+
+    def write(self, data):
+        writer = self.buffer if self.buffer is not None else self.original_stream
+        writer.write(data)
+
+    def flush(self):
+        if self.buffer is not None:
+            self.buffer.flush()
+        self.original_stream.flush()
+
+
+original_stdout, original_stderr = sys.stdout, sys.stderr
+
+print_lock = threading.Lock()
+
+
+def _print_worker_result(lib_name, logs, err):
+    """
+    Atomically prints the buffered output of a worker thread directly to original_stdout,
+    preventing output interleaving in the console.
+    """
+    with print_lock:
+        status = "[FAILURE]" if err else "[SUCCESS]"
+        original_stdout.write(f"\n{'='*40}\n{status} Logs for {lib_name}:\n{'='*40}\n")
+        original_stdout.write(logs)
+        if err:
+            original_stdout.write(f"\nError details:\n{err}\n")
+        original_stdout.flush()
+
+
+def _generate_libraries_in_parallel(config, repo_config):
+    cores = os.cpu_count() or 4
+    with ThreadPoolExecutor(max_workers=min(cores, 5)) as executor:
+        futures = {
+            executor.submit(
+                library_generation_worker, config, path, lib, repo_config
+            ): lib.get_library_name()
+            for path, lib in repo_config.get_libraries().items()
+        }
+
+        for future in as_completed(futures):
+            lib_name = futures[future]
+            logs, err = future.result()
+            _print_worker_result(lib_name, logs, err)

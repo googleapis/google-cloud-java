@@ -125,7 +125,9 @@ if [ -z "${artifact}" ]; then
   artifact=""
 fi
 
-temp_destination_path="${output_folder}/temp_preprocessed-$RANDOM"
+# Use mktemp to guarantee collision-free unique directories when multiple 
+# library generation processes run concurrently in a shared output folder
+temp_destination_path=$(mktemp -d -p "${output_folder}" temp_preprocessed-XXXXXX)
 mkdir -p "${output_folder}/${destination_path}"
 if [ -d "${temp_destination_path}" ]; then
   # we don't want the preprocessed sources of a previous run

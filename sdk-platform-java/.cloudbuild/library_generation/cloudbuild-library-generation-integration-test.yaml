@@ -51,7 +51,7 @@ steps:
     cd /workspace
     git clone https://github.com/googleapis/google-cloud-java
     cd google-cloud-java
-    git checkout chore/test-hermetic-build
+    git checkout chore/test-hermetic-build-parallel
     mkdir ../golden
     cd ../golden
     cp -r ../google-cloud-java/java-apigee-connect .
@@ -82,13 +82,12 @@ steps:
     "run",
     "--rm",
     "-v", "/workspace/google-cloud-java:/workspace",
-    "-v", "/workspace/sdk-platform-java/hermetic_build/library_generation/tests/resources/integration/google-cloud-java:/workspace/config",
     "-v", "/workspace/googleapis:/workspace/apis",
     # Fix gapic-generator-java so that the generation result stays
     # the same.
     "-v", "/workspace/gapic-generator-java.jar:/home/.library_generation/gapic-generator-java.jar",
     "${_TEST_IMAGE}",
-    "--generation-config-path=/workspace/config/generation_config.yaml",
+    "--generation-config-path=/workspace/generation_config.yaml",
     "--api-definitions-path=/workspace/apis"
   ]
   env:
