@@ -320,14 +320,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Specifies the type of Spanner instance to connect to (CLOUD, OMNI, or EMULATOR). Currently,
-   * this is a no-op for most types, but setting it to OMNI is mandatory when connecting to a
-   * Spanner Omni instance.
+   * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+   * mandatory when connecting to a Spanner Omni instance.
    */
   public enum InstanceType {
     CLOUD,
-    OMNI,
-    EMULATOR
+    OMNI
   }
 
   private static final Object lock = new Object();
@@ -1296,7 +1294,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
-    private InstanceType instanceType = null;
+    private InstanceType instanceType = InstanceType.CLOUD;
     private String host = null;
     private boolean autoTaggingEnabled = false;
     private List<String> autoTaggingPackages = Collections.emptyList();
@@ -1840,9 +1838,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
-    @Override
-    public Builder setHost(String host) {
-      this.host = host;
+    private void configureOmniHost() {
       if (this.instanceType == InstanceType.OMNI
           && !Strings.isNullOrEmpty(this.host)
           && this.usePlainText) {
@@ -1854,6 +1850,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           this.host = "http://" + this.host;
         }
       }
+    }
+
+    @Override
+    public Builder setHost(String host) {
+      this.host = host;
+      configureOmniHost();
       super.setHost(this.host);
       // Setting a host should override any SPANNER_EMULATOR_HOST setting.
       setEmulatorHost(null);
@@ -1875,17 +1877,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Specifies the type of Spanner instance to connect to (CLOUD, OMNI, or EMULATOR). Currently,
-     * this is a no-op for most types, but setting it to OMNI is mandatory when connecting to a
-     * Spanner Omni instance.
+     * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+     * mandatory when connecting to a Spanner Omni instance.
      */
     public Builder setType(InstanceType instanceType) {
       this.instanceType = instanceType;
-      if (instanceType == InstanceType.OMNI) {
-        setBuiltInMetricsEnabled(false);
-        super.setProjectId(SPANNER_OMNI_PROJECT_ID);
-        setSessionPoolOption(SessionPoolOptions.newBuilder().setExperimentalHost().build());
-      }
       return this;
     }
 
@@ -2017,7 +2013,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           .setCredentials(NoCredentials.getInstance());
       if (this.instanceType == InstanceType.OMNI) {
         // Re-apply host settings to ensure http:// is prepended.
-        setHost(this.host);
+        configureOmniHost();
+        super.setHost(this.host);
       }
       return this;
     }
@@ -2222,6 +2219,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
+      if (this.instanceType == InstanceType.OMNI) {
+        this.enableBuiltInMetrics = false;
+        super.setProjectId(SPANNER_OMNI_PROJECT_ID);
+        if (this.sessionPoolOptions == null) {
+          this.sessionPoolOptions = SessionPoolOptions.newBuilder().setExperimentalHost().build();
+        } else {
+          this.sessionPoolOptions =
+              this.sessionPoolOptions.toBuilder().setExperimentalHost().build();
+        }
+        configureOmniHost();
+        super.setHost(this.host);
+      }
       // Set the host of emulator has been set.
       if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {

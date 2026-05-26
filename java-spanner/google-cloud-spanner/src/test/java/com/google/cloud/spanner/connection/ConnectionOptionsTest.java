@@ -1290,7 +1290,8 @@ public class ConnectionOptionsTest {
     ConnectionOptions optionsWithoutExperimentalHostParam =
         builderWithoutExperimentalHostParam.build();
     assertFalse(optionsWithoutExperimentalHostParam.isSpannerOmni());
-    assertNull(optionsWithoutExperimentalHostParam.getInstanceType());
+    assertEquals(
+        SpannerOptions.InstanceType.CLOUD, optionsWithoutExperimentalHostParam.getInstanceType());
     assertEquals(0, optionsWithoutExperimentalHostParam.getSessionPoolOptions().getMinSessions());
     assertTrue(
         optionsWithoutExperimentalHostParam.getSessionPoolOptions().getUseMultiplexedSession());
@@ -1329,14 +1330,6 @@ public class ConnectionOptionsTest {
             .build();
     assertEquals(SpannerOptions.InstanceType.CLOUD, optionsWithCloudType.getInstanceType());
     assertFalse(optionsWithCloudType.isSpannerOmni());
-
-    ConnectionOptions optionsWithEmulatorType =
-        ConnectionOptions.newBuilder()
-            .setUri(
-                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=emulator")
-            .build();
-    assertEquals(SpannerOptions.InstanceType.EMULATOR, optionsWithEmulatorType.getInstanceType());
-    assertFalse(optionsWithEmulatorType.isSpannerOmni());
 
     ConnectionOptions optionsWithOmniType =
         ConnectionOptions.newBuilder()

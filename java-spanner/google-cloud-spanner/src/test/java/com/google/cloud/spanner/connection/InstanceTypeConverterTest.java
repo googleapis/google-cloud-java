@@ -47,10 +47,6 @@ public class InstanceTypeConverterTest {
     assertEquals(InstanceType.OMNI, converter.convert("OMNI"));
     assertEquals(InstanceType.OMNI, converter.convert("Omni"));
 
-    assertEquals(InstanceType.EMULATOR, converter.convert("emulator"));
-    assertEquals(InstanceType.EMULATOR, converter.convert("EMULATOR"));
-    assertEquals(InstanceType.EMULATOR, converter.convert("Emulator"));
-
     assertNull(converter.convert(""));
     assertNull(converter.convert(" "));
     assertNull(converter.convert("random string"));

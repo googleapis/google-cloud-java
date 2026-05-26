@@ -153,7 +153,7 @@ public class ConnectionOptions {
       new LocalConnectionChecker();
   static final boolean DEFAULT_USE_PLAIN_TEXT = false;
   static final boolean DEFAULT_IS_EXPERIMENTAL_HOST = false;
-  static final SpannerOptions.InstanceType DEFAULT_TYPE = null;
+  static final SpannerOptions.InstanceType DEFAULT_TYPE = SpannerOptions.InstanceType.CLOUD;
   static final boolean DEFAULT_AUTOCOMMIT = true;
   static final boolean DEFAULT_READONLY = false;
   static final boolean DEFAULT_RETRY_ABORTS_INTERNALLY = true;
@@ -650,9 +650,8 @@ public class ConnectionOptions {
     }
 
     /**
-     * Specifies the type of Spanner instance to connect to (cloud, omni, or emulator). Currently,
-     * this is a no-op for cloud and emulator, but setting it to omni connects to a Spanner Omni
-     * instance.
+     * Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni is
+     * mandatory when connecting to a Spanner Omni instance.
      */
     public Builder setType(SpannerOptions.InstanceType instanceType) {
       setConnectionPropertyValue(TYPE, instanceType);
@@ -680,6 +679,7 @@ public class ConnectionOptions {
 
   private final ConnectionState initialConnectionState;
   private final String uri;
+  private final boolean typeExplicitlySet;
   private final String warnings;
   private final Credentials fixedCredentials;
 
@@ -714,6 +714,9 @@ public class ConnectionOptions {
             .putAll(builder.connectionPropertyValues)
             .buildKeepingLast();
     this.uri = builder.uri;
+    this.typeExplicitlySet =
+        ConnectionProperties.parseValues(builder.uri).containsKey(TYPE_PROPERTY_NAME)
+            || builder.connectionPropertyValues.containsKey(TYPE.getKey());
     ConnectionPropertyValue<Boolean> value = cast(connectionPropertyValues.get(LENIENT.getKey()));
     this.warnings = checkValidProperties(value != null && value.getValue(), uri);
     this.fixedCredentials = builder.credentials;
@@ -1225,15 +1228,15 @@ public class ConnectionOptions {
 
   boolean isSpannerOmni() {
     return getInitialConnectionPropertyValue(IS_EXPERIMENTAL_HOST)
-        || getInitialConnectionPropertyValue(TYPE) == SpannerOptions.InstanceType.OMNI;
+        || (typeExplicitlySet
+            && getInitialConnectionPropertyValue(TYPE) == SpannerOptions.InstanceType.OMNI);
   }
 
   SpannerOptions.InstanceType getInstanceType() {
-    SpannerOptions.InstanceType type = getInitialConnectionPropertyValue(TYPE);
-    if (type == null && isSpannerOmni()) {
+    if (!typeExplicitlySet && getInitialConnectionPropertyValue(IS_EXPERIMENTAL_HOST)) {
       return SpannerOptions.InstanceType.OMNI;
     }
-    return type;
+    return getInitialConnectionPropertyValue(TYPE);
   }
 
   Boolean isEnableDirectAccess() {
