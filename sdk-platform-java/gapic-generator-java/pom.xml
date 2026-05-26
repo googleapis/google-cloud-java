@@ -126,9 +126,7 @@
         <artifactId>download-maven-plugin</artifactId>
         <version>1.6.8</version>
         <configuration>
-          <cacheDirectory>
-            ${project.build.directory}/download-cache
-          </cacheDirectory>
+          <skipCache>true</skipCache>
         </configuration>
         <executions>
           <execution>
