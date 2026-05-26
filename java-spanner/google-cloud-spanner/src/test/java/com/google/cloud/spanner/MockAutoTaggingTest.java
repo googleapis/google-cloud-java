@@ -35,12 +35,14 @@ public class MockAutoTaggingTest extends AbstractMockServerTest {
 
   @Before
   public void setUpProperties() {
+    SpannerOptions.useDefaultEnvironment();
     System.clearProperty("spanner.disable_auto_tagging");
     System.clearProperty("spanner.enable_auto_tagging");
   }
 
   @After
   public void tearDownProperties() {
+    SpannerOptions.useDefaultEnvironment();
     System.clearProperty("spanner.disable_auto_tagging");
     System.clearProperty("spanner.enable_auto_tagging");
   }
