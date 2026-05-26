@@ -219,7 +219,9 @@ def update_parent_pom(filename: str, modules: List[module.Module]):
 
     module_names = [m.artifact_id for m in modules]
     extra_modules = [
-        m.text for i, m in enumerate(existing) if m.text not in module_names
+        m.text
+        for i, m in enumerate(existing)
+        if m.tag != etree.Comment and m.text not in module_names
     ]
 
     modules_to_write = module_names + extra_modules
