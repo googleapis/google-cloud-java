@@ -75,7 +75,6 @@ class BigQuerySqlTypeConverter {
         return SqlType.EXPORT;
       case "EXPORT_MODEL":
       case "LOAD_DATA":
-        return SqlType.DDL;
       default:
         return SqlType.OTHER;
     }

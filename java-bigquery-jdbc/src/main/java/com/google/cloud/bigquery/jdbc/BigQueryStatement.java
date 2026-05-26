@@ -685,15 +685,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         break;
       case DML:
       case DML_EXTRA:
-        try {
-          Job completedJob = this.bigQuery.getJob(results.getJobId()).waitFor();
-          JobStatistics.QueryStatistics statistics = completedJob.getStatistics();
-          updateAffectedRowCount(statistics.getNumDmlAffectedRows());
-        } catch (InterruptedException ex) {
-          throw new BigQueryJdbcRuntimeException(ex);
-        } catch (NullPointerException ex) {
-          throw new BigQueryJdbcException(ex);
-        }
+        QueryStatistics dmlStats = getQueryStatisticsFromJob(results);
+        Long dmlRowCount = (dmlStats != null) ? dmlStats.getNumDmlAffectedRows() : null;
+        updateAffectedRowCount(dmlRowCount);
         break;
       case TCL:
       case DDL:
@@ -726,28 +720,42 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         }
         break;
       case EXPORT:
-        try {
-          Job job = this.bigQuery.getJob(results.getJobId());
-          Job completedJob = (job != null) ? job.waitFor() : null;
-          JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
-
-          Long rowCount = 0L;
-          if (stats instanceof JobStatistics.QueryStatistics) {
-            JobStatistics.QueryStatistics queryStats = (JobStatistics.QueryStatistics) stats;
-            JobStatistics.QueryStatistics.ExportDataStats exportStats =
-                queryStats.getExportDataStats();
-            if (exportStats != null && exportStats.getRowCount() != null) {
-              rowCount = exportStats.getRowCount();
-            }
+        QueryStatistics exportStats = getQueryStatisticsFromJob(results);
+        Long exportRowCount = 0L;
+        if (exportStats != null) {
+          QueryStatistics.ExportDataStats dataStats = exportStats.getExportDataStats();
+          if (dataStats != null && dataStats.getRowCount() != null) {
+            exportRowCount = dataStats.getRowCount();
           }
-          updateAffectedRowCount(rowCount);
-        } catch (InterruptedException ex) {
-          Thread.currentThread().interrupt();
-          throw new BigQueryJdbcRuntimeException(ex);
         }
+        updateAffectedRowCount(exportRowCount);
         break;
       case OTHER:
-        throw new BigQueryJdbcException(String.format("Unexpected value: " + queryType));
+        String truncatedQuery =
+            (query != null && query.length() > 60) ? query.substring(0, 60) + "..." : query;
+        String jobId = (results.getJobId() != null) ? results.getJobId().getJob() : "unknown";
+        LOG.warning(
+            "Encountered unmapped SQL statement type [Job ID: %s]. Treating as update statement: %s",
+            jobId, truncatedQuery);
+        updateAffectedRowCount(results.getTotalRows());
+        break;
+    }
+  }
+
+  private QueryStatistics getQueryStatisticsFromJob(TableResult results) throws SQLException {
+    try {
+      Job job = this.bigQuery.getJob(results.getJobId());
+      Job completedJob = (job != null) ? job.waitFor() : null;
+      JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
+      if (stats instanceof QueryStatistics) {
+        return (QueryStatistics) stats;
+      }
+      return null;
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcRuntimeException("Interrupted while waiting for job completion", ex);
+    } catch (BigQueryException ex) {
+      throw new BigQueryJdbcException("BigQueryException while waiting for job completion", ex);
     }
   }
 
