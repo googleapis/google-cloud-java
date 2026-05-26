@@ -39,6 +39,7 @@ public class BigtableInstanceAdminClientV2Test {
     BaseBigtableInstanceAdminSettings settings =
         BaseBigtableInstanceAdminSettings.newBuilder()
             .setCredentialsProvider(com.google.api.gax.core.NoCredentialsProvider.create())
+            .setEndpoint("localhost:8080")
             .build();
     try (BigtableInstanceAdminClientV2 settingsClient =
         BigtableInstanceAdminClientV2.create(settings)) {

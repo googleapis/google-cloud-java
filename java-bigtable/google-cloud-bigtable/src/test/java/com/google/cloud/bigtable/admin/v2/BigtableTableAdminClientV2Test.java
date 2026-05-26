@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.admin.v2.stub.AwaitConsistencyCallableV2;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.GrpcBigtableTableAdminStub;
 import com.google.protobuf.Empty;
+import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Before;
 import org.junit.Rule;
@@ -136,6 +137,15 @@ public class BigtableTableAdminClientV2Test {
     OperationFuture<Empty, OptimizeRestoredTableMetadata> mockOptimizeOp =
         Mockito.mock(OperationFuture.class);
     Mockito.when(mockOptimizeOp.get()).thenReturn(Empty.getDefaultInstance());
+    Mockito.doAnswer(
+            invocation -> {
+              Runnable runnable = invocation.getArgument(0);
+              Executor executor = invocation.getArgument(1);
+              executor.execute(runnable);
+              return null;
+            })
+        .when(mockOptimizeOp)
+        .addListener(Mockito.any(Runnable.class), Mockito.any(Executor.class));
     Mockito.when(mockOptimizeRestoredTableCallable.resumeFutureCall(optimizeToken))
         .thenReturn(mockOptimizeOp);
 
@@ -168,6 +178,7 @@ public class BigtableTableAdminClientV2Test {
     BaseBigtableTableAdminSettings settings =
         BaseBigtableTableAdminSettings.newBuilder()
             .setCredentialsProvider(com.google.api.gax.core.NoCredentialsProvider.create())
+            .setEndpoint("localhost:8080")
             .build();
     try (BigtableTableAdminClientV2 settingsClient = BigtableTableAdminClientV2.create(settings)) {
       // Verify that the underlying stub is NOT an Enhanced stub by default
