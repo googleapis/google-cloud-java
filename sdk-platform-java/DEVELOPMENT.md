@@ -63,4 +63,53 @@ See the [Unit Tests](https://github.com/googleapis/google-cloud-java/blob/main/s
 See [Running the Integration Tests](https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-showcase/README.md#running-the-integration-tests) and [Update the Golden Showcase Files](https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-showcase/README.md#update-the-golden-showcase-files) sections in java-showcase/README.md for how to run and update showcase integration tests.
 
 See the [Integration Tests](https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/gapic-generator-java/DEVELOPMENT.md#integration-tests) section in gapic-generator-java/DEVELOPMENT.md for how to run golden integration tests.
+
+## Client Library Generation (Librarian)
+
+Librarian is a tool for managing client library configuration and generation. The configuration is stored in `librarian.yaml` at the root of the repository.
+
+### Contact and Support
+*   **On-Call Schedule:** You can check the current on-call rotation at `go/librarian-oncall` or by checking the rotation schedule at [Librarian Rotations](https://rotations.corp.google.com/rotation/6013581851623424).
+*   **Support/Chat Room:** Ask questions in the group/chat room `cloud-sdk-librarian-oncall.prod`.
+*   **Email:** Reach out to `cloud-sdk-librarian-oncall@google.com`.
+
+### Review Requirement for `librarian.yaml`
+Any changes to `librarian.yaml` (adding APIs, updating dependencies, changing configurations, etc.) **must** be reviewed and approved by the Librarian on-call team. Please include `cloud-sdk-librarian-oncall@google.com` or an on-call engineer as a reviewer on your PR.
+
+### Running Librarian Locally
+
+Librarian tools are automatically set up to use local paths for Java code generators. In `librarian.yaml`:
+*   `protoc-gen-java_gapic` points to `sdk-platform-java/gapic-generator-java`.
+
+#### Prerequisite
+Make sure you have Go installed (as Librarian is written in Go).
+
+#### Running the Generator with Local Changes
+
+If you want to test changes to the generator (`gapic-generator-java`) or local changes to `librarian.yaml` (e.g., testing a protobuf major version bump or unmerged generator change):
+
+1.  **Modify `librarian.yaml` or make changes to the generator source code.**
+2.  **Ensure local tools path is in your PATH:**
+    Librarian installs wrapper scripts into `$HOME/java_tools/bin` by default. You should add this directory to your shell's `PATH` environment variable:
+    ```sh
+    export PATH="$HOME/java_tools/bin:$PATH"
+    ```
+3.  **Re-install the local tools:**
+    Run the following command from the root of the `google-cloud-java` repository to compile your local generator changes and update the wrappers:
+    ```sh
+    # Retrieve the configured librarian version
+    V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+    # Re-install the local tools
+    go run github.com/googleapis/librarian/cmd/librarian@${V} install
+    ```
+4.  **Regenerate the client library:**
+    To regenerate all libraries:
+    ```sh
+    go run github.com/googleapis/librarian/cmd/librarian@${V} generate --all
+    ```
+    Or to regenerate a single library (e.g., `accessapproval`):
+    ```sh
+    go run github.com/googleapis/librarian/cmd/librarian@${V} generate accessapproval
+    ```
+
  
