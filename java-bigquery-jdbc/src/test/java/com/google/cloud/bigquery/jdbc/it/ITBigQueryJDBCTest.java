@@ -58,7 +58,6 @@ import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
 import java.util.function.BiFunction;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -141,8 +140,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
     assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
     assertEquals("POINT(1 2)", resultSet.getString(14));
-    assertEquals(
-        "{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
+    assertEquals("{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
     connection.close();
     connection.close();
   }
