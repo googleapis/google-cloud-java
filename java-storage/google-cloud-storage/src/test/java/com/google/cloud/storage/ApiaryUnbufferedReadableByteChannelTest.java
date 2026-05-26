@@ -121,16 +121,15 @@ public class ApiaryUnbufferedReadableByteChannelTest {
             Hasher.defaultHasher()); ) {
 
       ByteBuffer buf = ByteBuffer.allocate(4096);
-      IOException expected =
+      Hasher.ChecksumMismatchException expected =
           assertThrows(
-              IOException.class,
+              Hasher.ChecksumMismatchException.class,
               () -> {
                 while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
                   buf.clear();
                 }
               });
 
-      assertTrue(expected instanceof Hasher.ChecksumMismatchException);
       assertTrue(expected.getMessage().contains("Mismatch checksum value"));
     }
   }

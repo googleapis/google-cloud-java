@@ -143,7 +143,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
             Crc32cValue<?> expected = Crc32cValue.of(expectedVal, 0);
             Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(calculatedCrc32c, 0);
 
-            Hasher.defaultHasher().validate(expected, actual);
+            hasher.validate(expected, actual);
           }
         } else {
           totalRead += read;
@@ -238,7 +238,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
       boolean isHasherEnabled = !(hasher instanceof Hasher.NoOpHasher);
       boolean isFullObjectDownload = (request.getByteRangeSpec().getHttpRangeHeader() == null);
-      if (isHasherEnabled && isFullObjectDownload) {
+      if (isHasherEnabled && isFullObjectDownload && expectedCrc32cBase64 != null) {
         this.hashingInputStream = new HashingInputStream(Hashing.crc32c(), content);
         content = this.hashingInputStream;
       }
