@@ -557,6 +557,87 @@ public final class ObjectReadSessionStreamTest {
   }
 
   @Test
+  public void validateCumulativeChecksum_bidi_disabled_noFailureOnMismatch() throws Exception {
+    ChecksummedTestContent testContent =
+        ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(10));
+
+    Object bidiMetadata =
+        Object.newBuilder()
+            .setSize(testContent.length())
+            .setChecksums(
+                ObjectChecksums.newBuilder().setCrc32C(testContent.getCrc32c() + 1).build())
+            .build();
+
+    SettableApiFuture<ResponseObserver<BidiReadObjectResponse>> observerFuture =
+        SettableApiFuture.create();
+
+    ZeroCopyBidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse> customCallable =
+        new ZeroCopyBidiStreamingCallable<>(
+            new BidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse>() {
+              @Override
+              public ClientStream<BidiReadObjectRequest> internalCall(
+                  ResponseObserver<BidiReadObjectResponse> responseObserver,
+                  ClientStreamReadyObserver<BidiReadObjectRequest> onReady,
+                  ApiCallContext context) {
+                observerFuture.set(responseObserver);
+                responseObserver.onStart(TestUtils.nullStreamController());
+                return new ClientStream<BidiReadObjectRequest>() {
+                  @Override
+                  public void send(BidiReadObjectRequest request) {}
+
+                  @Override
+                  public void closeSendWithError(Throwable t) {}
+
+                  @Override
+                  public void closeSend() {
+                    responseObserver.onComplete();
+                  }
+
+                  @Override
+                  public boolean isSendReady() {
+                    return true;
+                  }
+                };
+              }
+            },
+            ResponseContentLifecycleManager.noopBidiReadObjectResponse());
+
+    try (AccumulatingRead<byte[]> read1 =
+        ObjectReadSessionStreamRead.createByteArrayAccumulatingRead(
+            1, RangeSpec.all(), Hasher.noop(), RetryContext.neverRetry())) {
+      state.putOutstandingRead(1, read1);
+
+      try (ObjectReadSessionStream stream =
+          ObjectReadSessionStream.create(exec, customCallable, state, RetryContext.neverRetry())) {
+
+        stream.send(BidiReadObjectRequest.getDefaultInstance());
+
+        ResponseObserver<BidiReadObjectResponse> observer = observerFuture.get(2, TimeUnit.SECONDS);
+
+        BidiReadObjectResponse resp =
+            BidiReadObjectResponse.newBuilder()
+                .setMetadata(bidiMetadata)
+                .addObjectDataRanges(
+                    com.google.storage.v2.ObjectRangeData.newBuilder()
+                        .setReadRange(
+                            com.google.storage.v2.ReadRange.newBuilder()
+                                .setReadId(1)
+                                .setReadOffset(0)
+                                .build())
+                        .setChecksummedData(testContent.asChecksummedData())
+                        .setRangeEnd(true)
+                        .build())
+                .build();
+
+        observer.onResponse(resp);
+
+        byte[] resultBytes = read1.get(2, TimeUnit.SECONDS);
+        assertThat(xxd(ByteBuffer.wrap(resultBytes))).isEqualTo(xxd(testContent.asByteBuffer()));
+      }
+    }
+  }
+
+  @Test
   public void validateCumulativeChecksum_bidi_skippedForRangedRead() throws Exception {
     ChecksummedTestContent testContent =
         ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(10));
