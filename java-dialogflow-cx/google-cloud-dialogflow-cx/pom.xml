@@ -46,6 +46,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-dialogflow-cx-v3beta1</artifactId>
@@ -54,6 +55,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-dialogflow-cx-v3</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -87,6 +89,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
@@ -97,6 +100,7 @@
       <artifactId>grpc-google-cloud-dialogflow-cx-v3</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
