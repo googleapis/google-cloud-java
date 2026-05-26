@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-talent-v4beta1</artifactId>
-  <version>0.137.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
+  <version>2.94.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-talent-v4beta1:current} -->
   <name>grpc-google-cloud-talent-v4beta1</name>
   <description>GRPC library for grpc-google-cloud-talent-v4beta1</description>
   <parent>

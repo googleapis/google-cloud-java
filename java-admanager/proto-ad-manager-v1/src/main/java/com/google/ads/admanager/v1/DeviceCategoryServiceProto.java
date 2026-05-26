@@ -82,7 +82,7 @@ public final class DeviceCategoryServiceProto extends com.google.protobuf.Genera
           + "\021device_categories\030\001"
           + " \003(\0132\'.google.ads.admanager.v1.DeviceCategory\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\314\003\n"
+          + "total_size\030\003 \001(\0052\377\003\n"
           + "\025DeviceCategoryService\022\250\001\n"
           + "\021GetDeviceCategory\0221.google.ads.admanage"
           + "r.v1.GetDeviceCategoryRequest\032\'.google.a"
@@ -92,11 +92,13 @@ public final class DeviceCategoryServiceProto extends com.google.protobuf.Genera
           + "equest\0325.google.ads.admanager.v1.ListDev"
           + "iceCategoriesResponse\"9\332A\006parent\202\323\344\223\002*\022("
           + "/v1/{parent=networks/*}/deviceCategories"
-          + "\032G\312A\030admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\316\001\n"
-          + "\033com.google.ads.admanager.v1B\032DeviceCategor"
-          + "yServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;admanage"
-          + "r\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads"
-          + "\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\032z\312A\030admanager.googleapis.com\322A\\https://"
+          + "www.googleapis.com/auth/admanager,https:"
+          + "//www.googleapis.com/auth/admanager.readonlyB\316\001\n"
+          + "\033com.google.ads.admanager.v1B\032DeviceCategoryServiceProtoP\001Z@google.golan"
+          + "g.org/genproto/googleapis/ads/admanager/"
+          + "v1;admanager\252\002\027Google.Ads.AdManager.V1\312\002"
+          + "\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

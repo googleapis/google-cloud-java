@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -98,6 +99,113 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listApplicationsPagedCallable()
  *           <li><p> listApplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateApplication</td>
+ *      <td><p> API to create a `Application` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createApplication(CreateApplicationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createApplication(NetworkName parent, Application application)
+ *           <li><p> createApplication(String parent, Application application)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createApplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateApplications</td>
+ *      <td><p> API to batch create `Application` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateApplications(NetworkName parent, List&lt;CreateApplicationRequest&gt; requests)
+ *           <li><p> batchCreateApplications(String parent, List&lt;CreateApplicationRequest&gt; requests)
+ *           <li><p> batchCreateApplications(BatchCreateApplicationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateApplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateApplication</td>
+ *      <td><p> API to update a `Application` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateApplication(UpdateApplicationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateApplication(Application application, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateApplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateApplications</td>
+ *      <td><p> API to batch update `Application` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateApplications(NetworkName parent, List&lt;UpdateApplicationRequest&gt; requests)
+ *           <li><p> batchUpdateApplications(String parent, List&lt;UpdateApplicationRequest&gt; requests)
+ *           <li><p> batchUpdateApplications(BatchUpdateApplicationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateApplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchArchiveApplications</td>
+ *      <td><p> / API to batch archive `Application` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchArchiveApplications(BatchArchiveApplicationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchArchiveApplications(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchArchiveApplications(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchArchiveApplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUnarchiveApplications</td>
+ *      <td><p> / API to batch unarchive `Application` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUnarchiveApplications(BatchUnarchiveApplicationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchUnarchiveApplications(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchUnarchiveApplications(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUnarchiveApplicationsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -479,6 +587,740 @@ public class ApplicationServiceClient implements BackgroundResource {
   public final UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable() {
     return stub.listApplicationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   Application application = Application.newBuilder().build();
+   *   Application response = applicationServiceClient.createApplication(parent, application);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Application` will be created. Format:
+   *     `networks/{network_code}`
+   * @param application Required. The `Application` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application createApplication(NetworkName parent, Application application) {
+    CreateApplicationRequest request =
+        CreateApplicationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setApplication(application)
+            .build();
+    return createApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   Application application = Application.newBuilder().build();
+   *   Application response = applicationServiceClient.createApplication(parent, application);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `Application` will be created. Format:
+   *     `networks/{network_code}`
+   * @param application Required. The `Application` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application createApplication(String parent, Application application) {
+    CreateApplicationRequest request =
+        CreateApplicationRequest.newBuilder().setParent(parent).setApplication(application).build();
+    return createApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   CreateApplicationRequest request =
+   *       CreateApplicationRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setApplication(Application.newBuilder().build())
+   *           .build();
+   *   Application response = applicationServiceClient.createApplication(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application createApplication(CreateApplicationRequest request) {
+    return createApplicationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to create a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   CreateApplicationRequest request =
+   *       CreateApplicationRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setApplication(Application.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Application> future =
+   *       applicationServiceClient.createApplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Application response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
+    return stub.createApplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<CreateApplicationRequest> requests = new ArrayList<>();
+   *   BatchCreateApplicationsResponse response =
+   *       applicationServiceClient.batchCreateApplications(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Applications` will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateApplicationRequest must match this
+   *     field.
+   * @param requests Required. The `Application` objects to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateApplicationsResponse batchCreateApplications(
+      NetworkName parent, List<CreateApplicationRequest> requests) {
+    BatchCreateApplicationsRequest request =
+        BatchCreateApplicationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<CreateApplicationRequest> requests = new ArrayList<>();
+   *   BatchCreateApplicationsResponse response =
+   *       applicationServiceClient.batchCreateApplications(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Applications` will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateApplicationRequest must match this
+   *     field.
+   * @param requests Required. The `Application` objects to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateApplicationsResponse batchCreateApplications(
+      String parent, List<CreateApplicationRequest> requests) {
+    BatchCreateApplicationsRequest request =
+        BatchCreateApplicationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreateApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchCreateApplicationsRequest request =
+   *       BatchCreateApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateApplicationRequest>())
+   *           .build();
+   *   BatchCreateApplicationsResponse response =
+   *       applicationServiceClient.batchCreateApplications(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateApplicationsResponse batchCreateApplications(
+      BatchCreateApplicationsRequest request) {
+    return batchCreateApplicationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch create `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchCreateApplicationsRequest request =
+   *       BatchCreateApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateApplicationRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateApplicationsResponse> future =
+   *       applicationServiceClient.batchCreateApplicationsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateApplicationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateApplicationsRequest, BatchCreateApplicationsResponse>
+      batchCreateApplicationsCallable() {
+    return stub.batchCreateApplicationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   Application application = Application.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Application response = applicationServiceClient.updateApplication(application, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param application Required. The `Application` to update.
+   *     <p>The `Application`'s `name` is used to identify the `Application` to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application updateApplication(Application application, FieldMask updateMask) {
+    UpdateApplicationRequest request =
+        UpdateApplicationRequest.newBuilder()
+            .setApplication(application)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   UpdateApplicationRequest request =
+   *       UpdateApplicationRequest.newBuilder()
+   *           .setApplication(Application.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Application response = applicationServiceClient.updateApplication(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Application updateApplication(UpdateApplicationRequest request) {
+    return updateApplicationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to update a `Application` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   UpdateApplicationRequest request =
+   *       UpdateApplicationRequest.newBuilder()
+   *           .setApplication(Application.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Application> future =
+   *       applicationServiceClient.updateApplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Application response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
+    return stub.updateApplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateApplicationRequest> requests = new ArrayList<>();
+   *   BatchUpdateApplicationsResponse response =
+   *       applicationServiceClient.batchUpdateApplications(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Applications` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateApplicationRequest must match this
+   *     field.
+   * @param requests Required. The `Application` objects to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateApplicationsResponse batchUpdateApplications(
+      NetworkName parent, List<UpdateApplicationRequest> requests) {
+    BatchUpdateApplicationsRequest request =
+        BatchUpdateApplicationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateApplicationRequest> requests = new ArrayList<>();
+   *   BatchUpdateApplicationsResponse response =
+   *       applicationServiceClient.batchUpdateApplications(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `Applications` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateApplicationRequest must match this
+   *     field.
+   * @param requests Required. The `Application` objects to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateApplicationsResponse batchUpdateApplications(
+      String parent, List<UpdateApplicationRequest> requests) {
+    BatchUpdateApplicationsRequest request =
+        BatchUpdateApplicationsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchUpdateApplicationsRequest request =
+   *       BatchUpdateApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateApplicationRequest>())
+   *           .build();
+   *   BatchUpdateApplicationsResponse response =
+   *       applicationServiceClient.batchUpdateApplications(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateApplicationsResponse batchUpdateApplications(
+      BatchUpdateApplicationsRequest request) {
+    return batchUpdateApplicationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * API to batch update `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchUpdateApplicationsRequest request =
+   *       BatchUpdateApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateApplicationRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateApplicationsResponse> future =
+   *       applicationServiceClient.batchUpdateApplicationsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateApplicationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateApplicationsRequest, BatchUpdateApplicationsResponse>
+      batchUpdateApplicationsCallable() {
+    return stub.batchUpdateApplicationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch archive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchArchiveApplicationsResponse response =
+   *       applicationServiceClient.batchArchiveApplications(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource shared by all `Applications` to archive. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The `Application` objects to archive.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchiveApplicationsResponse batchArchiveApplications(
+      NetworkName parent, List<String> names) {
+    BatchArchiveApplicationsRequest request =
+        BatchArchiveApplicationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchArchiveApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch archive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchArchiveApplicationsResponse response =
+   *       applicationServiceClient.batchArchiveApplications(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource shared by all `Applications` to archive. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The `Application` objects to archive.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchiveApplicationsResponse batchArchiveApplications(
+      String parent, List<String> names) {
+    BatchArchiveApplicationsRequest request =
+        BatchArchiveApplicationsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchArchiveApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch archive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchArchiveApplicationsRequest request =
+   *       BatchArchiveApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchArchiveApplicationsResponse response =
+   *       applicationServiceClient.batchArchiveApplications(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchArchiveApplicationsResponse batchArchiveApplications(
+      BatchArchiveApplicationsRequest request) {
+    return batchArchiveApplicationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch archive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchArchiveApplicationsRequest request =
+   *       BatchArchiveApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchArchiveApplicationsResponse> future =
+   *       applicationServiceClient.batchArchiveApplicationsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchArchiveApplicationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchArchiveApplicationsRequest, BatchArchiveApplicationsResponse>
+      batchArchiveApplicationsCallable() {
+    return stub.batchArchiveApplicationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch unarchive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchUnarchiveApplicationsResponse response =
+   *       applicationServiceClient.batchUnarchiveApplications(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource shared by all `Applications` to Unarchive. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The `Application` objects to unarchive.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUnarchiveApplicationsResponse batchUnarchiveApplications(
+      NetworkName parent, List<String> names) {
+    BatchUnarchiveApplicationsRequest request =
+        BatchUnarchiveApplicationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchUnarchiveApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch unarchive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchUnarchiveApplicationsResponse response =
+   *       applicationServiceClient.batchUnarchiveApplications(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource shared by all `Applications` to Unarchive. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The `Application` objects to unarchive.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUnarchiveApplicationsResponse batchUnarchiveApplications(
+      String parent, List<String> names) {
+    BatchUnarchiveApplicationsRequest request =
+        BatchUnarchiveApplicationsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchUnarchiveApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch unarchive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchUnarchiveApplicationsRequest request =
+   *       BatchUnarchiveApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchUnarchiveApplicationsResponse response =
+   *       applicationServiceClient.batchUnarchiveApplications(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUnarchiveApplicationsResponse batchUnarchiveApplications(
+      BatchUnarchiveApplicationsRequest request) {
+    return batchUnarchiveApplicationsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * / API to batch unarchive `Application` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
+   *   BatchUnarchiveApplicationsRequest request =
+   *       BatchUnarchiveApplicationsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchUnarchiveApplicationsResponse> future =
+   *       applicationServiceClient.batchUnarchiveApplicationsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUnarchiveApplicationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUnarchiveApplicationsRequest, BatchUnarchiveApplicationsResponse>
+      batchUnarchiveApplicationsCallable() {
+    return stub.batchUnarchiveApplicationsCallable();
   }
 
   @Override

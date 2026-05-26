@@ -104,6 +104,22 @@ public class CmsMetadataValueServiceSettings
         .listCmsMetadataValuesSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesSettings() {
+    return ((CmsMetadataValueServiceStubSettings) getStubSettings())
+        .batchActivateCmsMetadataValuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesSettings() {
+    return ((CmsMetadataValueServiceStubSettings) getStubSettings())
+        .batchDeactivateCmsMetadataValuesSettings();
+  }
+
   public static final CmsMetadataValueServiceSettings create(
       CmsMetadataValueServiceStubSettings stub) throws IOException {
     return new CmsMetadataValueServiceSettings.Builder(stub.toBuilder()).build();
@@ -215,6 +231,20 @@ public class CmsMetadataValueServiceSettings
             ListCmsMetadataValuesPagedResponse>
         listCmsMetadataValuesSettings() {
       return getStubSettingsBuilder().listCmsMetadataValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+        batchActivateCmsMetadataValuesSettings() {
+      return getStubSettingsBuilder().batchActivateCmsMetadataValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+        batchDeactivateCmsMetadataValuesSettings() {
+      return getStubSettingsBuilder().batchDeactivateCmsMetadataValuesSettings();
     }
 
     @Override

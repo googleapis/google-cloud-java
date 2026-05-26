@@ -265,10 +265,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
      * used to encrypt the boot disk attached to each node in the node pool.
      * Specify the key using the following format:
-     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bootDiskKmsKey.
      */
@@ -282,10 +284,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
      * used to encrypt the boot disk attached to each node in the node pool.
      * Specify the key using the following format:
-     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for bootDiskKmsKey.
      */
@@ -649,10 +653,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
      * used to encrypt the boot disk attached to each node in the node pool.
      * Specify the key using the following format:
-     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bootDiskKmsKey.
      */
@@ -677,10 +683,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
      * used to encrypt the boot disk attached to each node in the node pool.
      * Specify the key using the following format:
-     * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for bootDiskKmsKey.
      */
@@ -2106,10 +2114,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
        * used to encrypt the boot disk attached to each node in the node pool.
        * Specify the key using the following format:
-       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
        * </pre>
        *
-       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bootDiskKmsKey.
        */
@@ -2133,10 +2143,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
        * used to encrypt the boot disk attached to each node in the node pool.
        * Specify the key using the following format:
-       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
        * </pre>
        *
-       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for bootDiskKmsKey.
        */
@@ -2160,10 +2172,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
        * used to encrypt the boot disk attached to each node in the node pool.
        * Specify the key using the following format:
-       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
        * </pre>
        *
-       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bootDiskKmsKey to set.
        * @return This builder for chaining.
@@ -2186,10 +2200,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
        * used to encrypt the boot disk attached to each node in the node pool.
        * Specify the key using the following format:
-       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
        * </pre>
        *
-       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -2208,10 +2224,12 @@ public final class GkeNodePoolConfig extends com.google.protobuf.GeneratedMessag
        * (https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)
        * used to encrypt the boot disk attached to each node in the node pool.
        * Specify the key using the following format:
-       * &lt;code&gt;projects/&lt;var&gt;KEY_PROJECT_ID&lt;/var&gt;/locations/&lt;var&gt;LOCATION&lt;/var&gt;/keyRings/&lt;var&gt;RING_NAME&lt;/var&gt;/cryptoKeys/&lt;var&gt;KEY_NAME&lt;/var&gt;&lt;/code&gt;.
+       * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
        * </pre>
        *
-       * <code>string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string boot_disk_kms_key = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @param value The bytes for bootDiskKmsKey to set.
        * @return This builder for chaining.

@@ -300,16 +300,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. `EntitySignalsMapping` ID.
+   * Output only. Deprecated: `EntitySignalsMapping` ID.
    * </pre>
    *
    * <code>
-   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
    * @return Whether the entitySignalsMappingId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasEntitySignalsMappingId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -318,16 +321,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. `EntitySignalsMapping` ID.
+   * Output only. Deprecated: `EntitySignalsMapping` ID.
    * </pre>
    *
    * <code>
-   * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
    * @return The entitySignalsMappingId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getEntitySignalsMappingId() {
     return entitySignalsMappingId_;
   }
@@ -1254,16 +1260,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. `EntitySignalsMapping` ID.
+     * Output only. Deprecated: `EntitySignalsMapping` ID.
      * </pre>
      *
      * <code>
-     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
      * @return Whether the entitySignalsMappingId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasEntitySignalsMappingId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -1272,16 +1281,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. `EntitySignalsMapping` ID.
+     * Output only. Deprecated: `EntitySignalsMapping` ID.
      * </pre>
      *
      * <code>
-     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
      * @return The entitySignalsMappingId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getEntitySignalsMappingId() {
       return entitySignalsMappingId_;
     }
@@ -1290,16 +1302,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. `EntitySignalsMapping` ID.
+     * Output only. Deprecated: `EntitySignalsMapping` ID.
      * </pre>
      *
      * <code>
-     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
      * @param value The entitySignalsMappingId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEntitySignalsMappingId(long value) {
 
       entitySignalsMappingId_ = value;
@@ -1312,15 +1327,18 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. `EntitySignalsMapping` ID.
+     * Output only. Deprecated: `EntitySignalsMapping` ID.
      * </pre>
      *
      * <code>
-     * optional int64 entity_signals_mapping_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional int64 entity_signals_mapping_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEntitySignalsMappingId() {
       bitField0_ = (bitField0_ & ~0x00000010);
       entitySignalsMappingId_ = 0L;

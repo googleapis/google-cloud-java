@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesResponse;
 import com.google.ads.admanager.v1.CmsMetadataValue;
 import com.google.ads.admanager.v1.GetCmsMetadataValueRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataValuesRequest;
@@ -130,12 +134,102 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CmsMetadataValueService/BatchActivateCmsMetadataValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateCmsMetadataValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/cmsMetadataValues:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCmsMetadataValuesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCmsMetadataValuesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateCmsMetadataValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchActivateCmsMetadataValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CmsMetadataValueService/BatchDeactivateCmsMetadataValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeactivateCmsMetadataValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/cmsMetadataValues:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCmsMetadataValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCmsMetadataValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchDeactivateCmsMetadataValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchDeactivateCmsMetadataValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCmsMetadataValueRequest, CmsMetadataValue>
       getCmsMetadataValueCallable;
   private final UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse>
       listCmsMetadataValuesCallable;
   private final UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesPagedResponse>
       listCmsMetadataValuesPagedCallable;
+  private final UnaryCallable<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesCallable;
+  private final UnaryCallable<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -207,6 +301,38 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<
+            BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+        batchActivateCmsMetadataValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchActivateCmsMetadataValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+        batchDeactivateCmsMetadataValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateCmsMetadataValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getCmsMetadataValueCallable =
         callableFactory.createUnaryCallable(
@@ -223,6 +349,16 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
             listCmsMetadataValuesTransportSettings,
             settings.listCmsMetadataValuesSettings(),
             clientContext);
+    this.batchActivateCmsMetadataValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateCmsMetadataValuesTransportSettings,
+            settings.batchActivateCmsMetadataValuesSettings(),
+            clientContext);
+    this.batchDeactivateCmsMetadataValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateCmsMetadataValuesTransportSettings,
+            settings.batchDeactivateCmsMetadataValuesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -233,6 +369,8 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCmsMetadataValueMethodDescriptor);
     methodDescriptors.add(listCmsMetadataValuesMethodDescriptor);
+    methodDescriptors.add(batchActivateCmsMetadataValuesMethodDescriptor);
+    methodDescriptors.add(batchDeactivateCmsMetadataValuesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -251,6 +389,20 @@ public class HttpJsonCmsMetadataValueServiceStub extends CmsMetadataValueService
   public UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesPagedResponse>
       listCmsMetadataValuesPagedCallable() {
     return listCmsMetadataValuesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesCallable() {
+    return batchActivateCmsMetadataValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesCallable() {
+    return batchDeactivateCmsMetadataValuesCallable;
   }
 
   @Override

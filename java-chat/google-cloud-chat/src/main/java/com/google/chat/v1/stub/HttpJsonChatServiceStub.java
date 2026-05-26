@@ -149,6 +149,10 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMessageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "createMessageNotificationOptions",
+                                request.getCreateMessageNotificationOptions());
                             serializer.putQueryParam(fields, "messageId", request.getMessageId());
                             serializer.putQueryParam(
                                 fields, "messageReplyOption", request.getMessageReplyOptionValue());

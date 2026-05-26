@@ -474,6 +474,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= LabelServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `Label` objects.
+ *
+ * <p>Sample for LabelServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LabelServiceClient labelServiceClient = LabelServiceClient.create()) {
+ *   LabelName name = LabelName.of("[NETWORK_CODE]", "[LABEL]");
+ *   Label response = labelServiceClient.getLabel(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= LineItemServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `LineItem` objects.
@@ -489,6 +507,44 @@
  * try (LineItemServiceClient lineItemServiceClient = LineItemServiceClient.create()) {
  *   LineItemName name = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
  *   LineItem response = lineItemServiceClient.getLineItem(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= LinkedDeviceServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LinkedDevice` objects.
+ *
+ * <p>Sample for LinkedDeviceServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LinkedDeviceServiceClient linkedDeviceServiceClient = LinkedDeviceServiceClient.create()) {
+ *   LinkedDeviceName name = LinkedDeviceName.of("[NETWORK_CODE]", "[LINKED_DEVICE]");
+ *   LinkedDevice response = linkedDeviceServiceClient.getLinkedDevice(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= McmEarningsServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `McmEarnings` objects.
+ *
+ * <p>Sample for McmEarningsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (McmEarningsServiceClient mcmEarningsServiceClient = McmEarningsServiceClient.create()) {
+ *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+ *   for (McmEarnings element : mcmEarningsServiceClient.fetchMcmEarnings(parent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
  * }
  * }</pre>
  *
@@ -718,6 +774,26 @@
  * try (ReportServiceClient reportServiceClient = ReportServiceClient.create()) {
  *   ReportName name = ReportName.of("[NETWORK_CODE]", "[REPORT]");
  *   Report response = reportServiceClient.getReport(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RichMediaAdsCompanyServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `RichMediaAdsCompany` objects.
+ *
+ * <p>Sample for RichMediaAdsCompanyServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RichMediaAdsCompanyServiceClient richMediaAdsCompanyServiceClient =
+ *     RichMediaAdsCompanyServiceClient.create()) {
+ *   RichMediaAdsCompanyName name =
+ *       RichMediaAdsCompanyName.of("[NETWORK_CODE]", "[RICH_MEDIA_ADS_COMPANY]");
+ *   RichMediaAdsCompany response = richMediaAdsCompanyServiceClient.getRichMediaAdsCompany(name);
  * }
  * }</pre>
  *

@@ -21,6 +21,7 @@ excluded_modules=(
   'java-vertexai'
   'java-logging'
   'java-bigquery'
+  'java-bigquery-jdbc'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
@@ -39,6 +40,8 @@ excluded_modules=(
   'java-firestore'
   'java-bigtable'
   'java-pubsub'
+  'java-common-protos'
+  'java-iam'
 )
 
 function retry_with_backoff {

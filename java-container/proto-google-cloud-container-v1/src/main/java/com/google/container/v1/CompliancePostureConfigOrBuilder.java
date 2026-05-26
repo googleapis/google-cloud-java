@@ -21,6 +21,7 @@
 package com.google.container.v1;
 
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public interface CompliancePostureConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.CompliancePostureConfig)
