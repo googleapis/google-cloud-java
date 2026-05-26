@@ -18,22 +18,19 @@ package com.google.cloud.storage;
 
 import com.google.api.client.http.HttpResponse;
 import com.google.api.core.InternalApi;
+import com.google.common.hash.Hashing;
+import com.google.common.hash.HashingOutputStream;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
 /**
  * Internal utility class to perform client-side CRC32C checksum validation on downloaded data
  * specifically for the {@code HttpStorageRpc} transport layer.
- *
- * <p>Since this class resides in the {@code com.google.cloud.storage} package, it has full,
- * package-private compile-time access to internal components (like {@link Hasher} and {@link
- * Crc32cValue}) without leaking GCS internal types into public client API surfaces.
  */
 @InternalApi
 public final class HttpStorageRpcHasherHelper {
@@ -50,10 +47,11 @@ public final class HttpStorageRpcHasherHelper {
    * Returns a wrapping output stream that hashes the written content if validation is enabled, or
    * the original output stream otherwise.
    */
+  @SuppressWarnings("UnstableApiUsage")
   public OutputStream wrap(OutputStream out, boolean isChecksumValidationEnabled) {
     boolean isHasherEnabled = !(hasher instanceof Hasher.NoOpHasher);
     return (isChecksumValidationEnabled && isHasherEnabled)
-        ? new Crc32cHashingOutputStream(out)
+        ? new HashingOutputStream(Hashing.crc32c(), out)
         : out;
   }
 
@@ -63,7 +61,7 @@ public final class HttpStorageRpcHasherHelper {
    * @throws IOException if the checksums do not match.
    */
   public void validate(HttpResponse response, byte[] content) throws IOException {
-    Map<String, String> hashes = extractHashesFromHeader(response);
+    Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(response);
     String expectedCrc32cBase64 = hashes.get("crc32c");
     if (expectedCrc32cBase64 != null) {
       validateCrc32c(expectedCrc32cBase64, content);
@@ -76,13 +74,15 @@ public final class HttpStorageRpcHasherHelper {
    *
    * @throws IOException if the checksums do not match.
    */
+  @SuppressWarnings("UnstableApiUsage")
   public void validate(HttpResponse response, OutputStream activeStream) throws IOException {
-    if (activeStream instanceof Crc32cHashingOutputStream) {
-      Crc32cHashingOutputStream targetStream = (Crc32cHashingOutputStream) activeStream;
-      Map<String, String> hashes = extractHashesFromHeader(response);
+    if (activeStream instanceof HashingOutputStream) {
+      HashingOutputStream targetStream = (HashingOutputStream) activeStream;
+
+      Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(response);
       String expectedCrc32cBase64 = hashes.get("crc32c");
       if (expectedCrc32cBase64 != null) {
-        validateCrc32c(expectedCrc32cBase64, targetStream.hash());
+        validateCrc32c(expectedCrc32cBase64, targetStream.hash().asInt());
       }
     }
   }
@@ -126,48 +126,5 @@ public final class HttpStorageRpcHasherHelper {
             return ByteBuffer.wrap(content);
           }
         });
-  }
-
-  @SuppressWarnings("UnstableApiUsage")
-  private static class Crc32cHashingOutputStream extends java.io.FilterOutputStream {
-    private final com.google.common.hash.Hasher hasher;
-
-    Crc32cHashingOutputStream(OutputStream out) {
-      super(out);
-      this.hasher = com.google.common.hash.Hashing.crc32c().newHasher();
-    }
-
-    @Override
-    public void write(int b) throws IOException {
-      out.write(b);
-      hasher.putByte((byte) b);
-    }
-
-    @Override
-    public void write(byte[] b, int off, int len) throws IOException {
-      out.write(b, off, len);
-      hasher.putBytes(b, off, len);
-    }
-
-    int hash() {
-      return hasher.hash().asInt();
-    }
-  }
-
-  private static Map<String, String> extractHashesFromHeader(HttpResponse response) {
-    List<String> hashHeaders = response.getHeaders().getHeaderStringValues("x-goog-hash");
-    if (hashHeaders == null || hashHeaders.isEmpty()) {
-      return java.util.Collections.emptyMap();
-    }
-
-    return hashHeaders.stream()
-        .flatMap(h -> java.util.Arrays.stream(h.split(",")))
-        .map(String::trim)
-        .filter(s -> !s.isEmpty())
-        .map(s -> s.split("=", 2))
-        .filter(a -> a.length == 2)
-        .filter(a -> "crc32c".equalsIgnoreCase(a[0]) || "md5".equalsIgnoreCase(a[0]))
-        .collect(
-            java.util.stream.Collectors.toMap(a -> a[0].toLowerCase(), a -> a[1], (v1, v2) -> v1));
   }
 }
