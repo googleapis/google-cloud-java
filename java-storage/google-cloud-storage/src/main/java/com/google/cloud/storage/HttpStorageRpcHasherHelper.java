@@ -102,8 +102,6 @@ public final class HttpStorageRpcHasherHelper {
     Crc32cValue<?> expected = Crc32cValue.of(expectedVal, 0);
     Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(calculatedCrc32c, 0);
 
-    // Invoke standard package-private validate path natively
-    System.out.println("validating checksum");
     hasher.validate(expected, actual);
   }
 
@@ -120,7 +118,6 @@ public final class HttpStorageRpcHasherHelper {
     int expectedVal = Ints.fromByteArray(decoded);
 
     Crc32cValue<?> expected = Crc32cValue.of(expectedVal, 0);
-    System.out.println("validating checksum");
     hasher.validate(
         expected,
         new Supplier<ByteBuffer>() {
