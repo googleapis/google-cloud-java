@@ -70,25 +70,20 @@ Librarian is a tool for managing client library configuration and generation. Th
 
 ### Contact and Support
 *   **On-Call Schedule:** You can check the current on-call rotation at `go/librarian-oncall` or by checking the rotation schedule at [Librarian Rotations](https://rotations.corp.google.com/rotation/6013581851623424).
-*   **Support/Chat Room:** Ask questions in the group/chat room `cloud-sdk-librarian-oncall.prod`.
 *   **Email:** Reach out to `cloud-sdk-librarian-oncall@google.com`.
 
 ### Review Requirement for `librarian.yaml`
 Any changes to `librarian.yaml` (adding APIs, updating dependencies, changing configurations, etc.) **must** be reviewed and approved by the Librarian on-call team. Please include `cloud-sdk-librarian-oncall@google.com` or an on-call engineer as a reviewer on your PR.
 
-### Running Librarian Locally
-
-Librarian tools are automatically set up to use local paths for Java code generators. In `librarian.yaml`:
-*   `protoc-gen-java_gapic` points to `sdk-platform-java/gapic-generator-java`.
-
 #### Prerequisite
-Make sure you have Go installed (as Librarian is written in Go).
+Make sure you have Go installed (as Librarian is written in Go), as well as Python, Maven, and JD17 (use https://sdkman.io/).
 
 #### Running the Generator with Local Changes
-
 If you want to test changes to the generator (`gapic-generator-java`) or local changes to `librarian.yaml` (e.g., testing a protobuf major version bump or unmerged generator change):
 
-1.  **Modify `librarian.yaml` or make changes to the generator source code.**
+1.  **Modify `librarian.yaml` to point to the new version.**
+    - If you want to point to an experimental version of the generator, you can update `local_path` to the local path you want to test.
+    - If you want to bump the protoc-gen-java_grpc, you can change its `version` property.
 2.  **Ensure local tools path is in your PATH:**
     Librarian installs wrapper scripts into `$HOME/java_tools/bin` by default. You should add this directory to your shell's `PATH` environment variable:
     ```sh
