@@ -727,15 +727,22 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         break;
       case EXPORT:
         try {
-          Job completedJob = this.bigQuery.getJob(results.getJobId()).waitFor();
-          JobStatistics.QueryStatistics statistics =
-              (JobStatistics.QueryStatistics) completedJob.getStatistics();
-          if (statistics.getExportDataStats() != null) {
-            updateAffectedRowCount(statistics.getExportDataStats().getRowCount());
-          } else {
-            updateAffectedRowCount(0L);
+          Job job = this.bigQuery.getJob(results.getJobId());
+          Job completedJob = (job != null) ? job.waitFor() : null;
+          JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
+
+          Long rowCount = 0L;
+          if (stats instanceof JobStatistics.QueryStatistics) {
+            JobStatistics.QueryStatistics queryStats = (JobStatistics.QueryStatistics) stats;
+            JobStatistics.QueryStatistics.ExportDataStats exportStats =
+                queryStats.getExportDataStats();
+            if (exportStats != null && exportStats.getRowCount() != null) {
+              rowCount = exportStats.getRowCount();
+            }
           }
+          updateAffectedRowCount(rowCount);
         } catch (InterruptedException ex) {
+          Thread.currentThread().interrupt();
           throw new BigQueryJdbcRuntimeException(ex);
         }
         break;
