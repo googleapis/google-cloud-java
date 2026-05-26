@@ -124,6 +124,7 @@ public class ReadBenchmark {
           SpannerOptions.newBuilder()
               .setProjectId("[PROJECT]")
               .setCredentials(NoCredentials.getInstance())
+              .disableAutoTagging()
               .setChannelConfigurator(
                   managedChannelBuilder ->
                       ManagedChannelBuilder.forAddress("0.0.0.0", gRPCServer.getPort())
