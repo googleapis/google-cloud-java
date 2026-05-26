@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.api.core.ApiAsyncFunction;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -160,15 +159,18 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
           throws IOException {
 
     // Reusing getRestoreTableMethod() as a placeholder descriptor for LRO optimization tracking.
-    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable LRO,
+    // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable
+    // LRO,
     // we reuse getRestoreTableMethod() (which is an LRO and returns a google.longrunning.Operation)
-    // and attach a throwing Marshaller for Void to satisfy the OperationCallable constructor requirements.
-    // Note: We do not plumb the gRPC ManagedChannel into the ClientContext below because this callable
-    // is only used for resumeFutureCall() (polling existing LROs via OperationsStub), which already encapsulates
+    // and attach a throwing Marshaller for Void to satisfy the OperationCallable constructor
+    // requirements.
+    // Note: We do not plumb the gRPC ManagedChannel into the ClientContext below because this
+    // callable
+    // is only used for resumeFutureCall() (polling existing LROs via OperationsStub), which already
+    // encapsulates
     // its own channel. The initial RPC is never called through this OperationCallable.
     MethodDescriptor<Void, Operation> fakeDescriptor =
-        BigtableTableAdminGrpc.getRestoreTableMethod()
-            .toBuilder(
+        BigtableTableAdminGrpc.getRestoreTableMethod().toBuilder(
                 new Marshaller<Void>() {
                   @Override
                   public InputStream stream(Void value) {
@@ -297,8 +299,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
       OptimizeRestoredTableOperationToken token) {
     ApiFuture<Empty> emptyFuture =
         getOptimizeRestoredTableCallable().resumeFutureCall(token.getOperationName());
-    return ApiFutures.transform(
-        emptyFuture, input -> null, MoreExecutors.directExecutor());
+    return ApiFutures.transform(emptyFuture, input -> null, MoreExecutors.directExecutor());
   }
 
   /**
