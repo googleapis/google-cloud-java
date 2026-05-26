@@ -881,7 +881,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
+    super(
+        SpannerFactory.class,
+        SpannerRpcFactory.class,
+        Builder.prepareBuilder(builder),
+        new SpannerDefaults());
     numChannels = builder.numChannels == null ? DEFAULT_CHANNELS : builder.numChannels;
     Preconditions.checkArgument(
         numChannels >= 1 && numChannels <= MAX_CHANNELS,
@@ -1221,6 +1225,25 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
+    private static Builder prepareBuilder(Builder builder) {
+      if (builder.instanceType == InstanceType.OMNI) {
+        builder.enableBuiltInMetrics = false;
+        builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
+        builder.configureOmniHost();
+        if (builder.sessionPoolOptions == null) {
+          builder.sessionPoolOptions =
+              SessionPoolOptions.newBuilder().setExperimentalHost().build();
+        } else {
+          builder.sessionPoolOptions =
+              builder.sessionPoolOptions.toBuilder().setExperimentalHost().build();
+        }
+        if (builder.credentials == null) {
+          builder.setCredentials(environment.getDefaultSpannerOmniCredentials());
+        }
+      }
+      return builder;
+    }
+
     static final int DEFAULT_PREFETCH_CHUNKS = 4;
     static final QueryOptions DEFAULT_QUERY_OPTIONS = QueryOptions.getDefaultInstance();
     static final DecodeMode DEFAULT_DECODE_MODE = DecodeMode.DIRECT;
@@ -2219,18 +2242,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
-      if (this.instanceType == InstanceType.OMNI) {
-        this.enableBuiltInMetrics = false;
-        super.setProjectId(SPANNER_OMNI_PROJECT_ID);
-        if (this.sessionPoolOptions == null) {
-          this.sessionPoolOptions = SessionPoolOptions.newBuilder().setExperimentalHost().build();
-        } else {
-          this.sessionPoolOptions =
-              this.sessionPoolOptions.toBuilder().setExperimentalHost().build();
-        }
-        configureOmniHost();
-        super.setHost(this.host);
-      }
       // Set the host of emulator has been set.
       if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {
@@ -2242,8 +2253,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
         // As we are using plain text, we should never send any credentials.
         this.setCredentials(NoCredentials.getInstance());
-      } else if (this.instanceType == InstanceType.OMNI && credentials == null) {
-        credentials = environment.getDefaultSpannerOmniCredentials();
       }
       if (this.numChannels == null) {
         this.numChannels =

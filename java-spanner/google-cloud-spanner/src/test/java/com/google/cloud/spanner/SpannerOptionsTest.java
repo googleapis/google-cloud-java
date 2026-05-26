@@ -1405,4 +1405,33 @@ public class SpannerOptionsTest {
     assertEquals(
         Duration.ofSeconds(42), options.getSessionPoolOptions().getAcquireSessionTimeout());
   }
+
+  private static class TestSpannerOptions extends SpannerOptions {
+    TestSpannerOptions(SpannerOptions.Builder builder) {
+      super(builder);
+    }
+  }
+
+  @Test
+  public void testOmniEnforcedInConstructor() {
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("http://localhost:8080")
+            .setProjectId("some-custom-project")
+            .setBuiltInMetricsEnabled(true)
+            .setSessionPoolOption(
+                SessionPoolOptions.newBuilder()
+                    .setAcquireSessionTimeoutDuration(Duration.ofSeconds(42))
+                    .build())
+            .setCredentials(NoCredentials.getInstance());
+
+    SpannerOptions options = new TestSpannerOptions(builder);
+
+    assertEquals(SpannerOptions.SPANNER_OMNI_PROJECT_ID, options.getProjectId());
+    assertFalse(options.isEnableBuiltInMetrics());
+    assertTrue(options.getSessionPoolOptions().getUseMultiplexedSession());
+    assertEquals(
+        Duration.ofSeconds(42), options.getSessionPoolOptions().getAcquireSessionTimeout());
+  }
 }
