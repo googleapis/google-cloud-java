@@ -725,6 +725,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           throw new BigQueryJdbcException(ex);
         }
         break;
+      case EXPORT:
+        try {
+          Job completedJob = this.bigQuery.getJob(results.getJobId()).waitFor();
+          JobStatistics.QueryStatistics statistics =
+              (JobStatistics.QueryStatistics) completedJob.getStatistics();
+          if (statistics.getExportDataStats() != null) {
+            updateAffectedRowCount(statistics.getExportDataStats().getRowCount());
+          } else {
+            updateAffectedRowCount(0L);
+          }
+        } catch (InterruptedException ex) {
+          throw new BigQueryJdbcRuntimeException(ex);
+        }
+        break;
       case OTHER:
         throw new BigQueryJdbcException(String.format("Unexpected value: " + queryType));
     }
@@ -1610,6 +1624,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     DDL,
     SCRIPT,
     TCL,
+    EXPORT,
     OTHER
   }
 

@@ -72,8 +72,10 @@ class BigQuerySqlTypeConverter {
       case "ROLLBACK_TRANSACTION":
         return SqlType.TCL;
       case "EXPORT_DATA":
+        return SqlType.EXPORT;
       case "EXPORT_MODEL":
       case "LOAD_DATA":
+        return SqlType.DDL;
       default:
         return SqlType.OTHER;
     }
