@@ -18,9 +18,9 @@ package com.google.cloud.bigquery.jdbc.it;
 
 import static java.sql.Types.TIME;
 import static java.sql.Types.TIMESTAMP;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -41,10 +41,9 @@ import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
 public class ITDatabaseMetadataTest extends ITBase {
@@ -68,13 +67,13 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws SQLException {}
 
   @Test
@@ -1681,8 +1680,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1710,8 +1709,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1738,8 +1737,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1763,7 +1762,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
       }
       ++count;
     }

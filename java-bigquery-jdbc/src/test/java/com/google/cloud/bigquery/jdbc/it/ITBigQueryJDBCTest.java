@@ -58,7 +58,7 @@ import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
 import java.util.function.BiFunction;
-import org.junit.Assert;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -121,27 +121,27 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
 
     ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
     resultSet.next();
-    Assert.assertEquals(15, resultSetMetaData.getColumnCount());
-    Assert.assertTrue(resultSet.getBoolean(1));
-    Assert.assertEquals(33, resultSet.getInt(2));
-    Assert.assertEquals(50.05f, resultSet.getFloat(3), 0.0);
-    Assert.assertEquals(123.456, resultSet.getDouble(4), 0.0);
-    Assert.assertEquals(123.456789, resultSet.getDouble(5), 0.0);
-    Assert.assertEquals("testString", resultSet.getString(6));
-    Assert.assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
-    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
-    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
-    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
-    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
-    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
-    Assert.assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
-    Assert.assertEquals("POINT(1 2)", resultSet.getString(14));
-    Assert.assertEquals(
+    assertEquals(15, resultSetMetaData.getColumnCount());
+    assertTrue(resultSet.getBoolean(1));
+    assertEquals(33, resultSet.getInt(2));
+    assertEquals(50.05f, resultSet.getFloat(3), 0.0);
+    assertEquals(123.456, resultSet.getDouble(4), 0.0);
+    assertEquals(123.456789, resultSet.getDouble(5), 0.0);
+    assertEquals("testString", resultSet.getString(6));
+    assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
+    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
+    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
+    assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
+    assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
+    assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
+    assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
+    assertEquals("POINT(1 2)", resultSet.getString(14));
+    assertEquals(
         "{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
     connection.close();
     connection.close();
@@ -162,7 +162,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     Statement bigQueryStatement = connection.createStatement();
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
-    Assert.assertEquals(0, resultSetRowCount(jsonResultSet));
+    assertEquals(0, resultSetRowCount(jsonResultSet));
     connection.close();
   }
 
@@ -214,10 +214,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     while (rs.next()) {
       double tripDis = rs.getDouble("trip_distance");
       ++cnt;
-      Assert.assertTrue(oldTriDis <= tripDis);
+      assertTrue(oldTriDis <= tripDis);
       oldTriDis = tripDis;
     }
-    Assert.assertEquals(expectedCnt, cnt); // all the records were retrieved
+    assertEquals(expectedCnt, cnt); // all the records were retrieved
     connection.close();
   }
 
@@ -235,7 +235,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     int expectedCnt = 5000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -252,7 +252,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     int expectedCnt = 1000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -269,7 +269,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     int expectedCnt = 5000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
@@ -285,12 +285,12 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
-    Assert.assertEquals(850, resultSetRowCount(jsonResultSet));
+    assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
         "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
-    Assert.assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
+    assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
     connectionUseStateless.close();
   }
 
@@ -583,16 +583,16 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.close();
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -652,16 +652,16 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.rollback();
 
     // Separate query to check if transaction rollback worked
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -711,10 +711,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     while (hasMoreResult || statement.getUpdateCount() != -1) {
       if (statement.getUpdateCount() == -1) {
         ResultSet result = statement.getResultSet();
-        Assert.assertTrue(result.next());
-        Assert.assertEquals(-1, statement.getUpdateCount());
+        assertTrue(result.next());
+        assertEquals(-1, statement.getUpdateCount());
       } else {
-        Assert.assertTrue(statement.getUpdateCount() > -1);
+        assertTrue(statement.getUpdateCount() > -1);
       }
       hasMoreResult = statement.getMoreResults();
       resultsCount++;
@@ -725,9 +725,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     int rowCount = 0;
     while (resultSet.next()) {
       rowCount++;
-      Assert.assertEquals(14, resultSet.getInt(3));
+      assertEquals(14, resultSet.getInt(3));
     }
-    Assert.assertEquals(2, rowCount);
+    assertEquals(2, rowCount);
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -801,15 +801,15 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     int rows = statement.executeUpdate(updateQuery);
-    Assert.assertEquals(1, rows);
+    assertEquals(1, rows);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
 
     // Separate query to check nothing committed
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -843,17 +843,17 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     boolean status = statement.execute(insertQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     status = statement.execute(updateQuery);
-    Assert.assertFalse(status);
+    assertFalse(status);
     status = statement.execute(selectQuery);
-    Assert.assertTrue(status);
+    assertTrue(status);
     connection.commit();
 
     // Separate query to check inserted and updated data committed
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertTrue(resultSet.next());
-    Assert.assertEquals(14, resultSet.getInt(3));
+    assertTrue(resultSet.next());
+    assertEquals(14, resultSet.getInt(3));
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -898,7 +898,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // do a check to see if no vals inserted
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
-    Assert.assertFalse(resultSet.next());
+    assertFalse(resultSet.next());
 
     bigQueryStatement.execute(
         String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
@@ -1746,7 +1746,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     // act & assertion
-    Assert.assertThrows(SQLException.class, () -> statement.execute(selectLegacyQuery));
+    assertThrows(SQLException.class, () -> statement.execute(selectLegacyQuery));
     connection.close();
   }
 
@@ -1768,7 +1768,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
     // assertion
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
     connection.close();
   }
 
@@ -1856,7 +1856,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
 
     // assertion
-    Assert.assertNotNull(resultSet);
+    assertNotNull(resultSet);
     connection.close();
   }
 
