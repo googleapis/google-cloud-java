@@ -74,6 +74,7 @@ import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
 import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
+import com.google.cloud.dataplex.v1.ModifyEntryRequest;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -260,6 +261,10 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     throw new UnsupportedOperationException("Not implemented: lookupEntryCallable()");
+  }
+
+  public UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable() {
+    throw new UnsupportedOperationException("Not implemented: modifyEntryCallable()");
   }
 
   public UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>

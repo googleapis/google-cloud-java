@@ -2201,6 +2201,71 @@ public class CatalogServiceClientHttpJsonTest {
   }
 
   @Test
+  public void modifyEntryTest() throws Exception {
+    Entry expectedResponse =
+        Entry.newBuilder()
+            .setName(EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+            .setEntryType("entryType-479362356")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAspects(new HashMap<String, Aspect>())
+            .setParentEntry("parentEntry991029736")
+            .setFullyQualifiedName("fullyQualifiedName288467357")
+            .setEntrySource(EntrySource.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ModifyEntryRequest request =
+        ModifyEntryRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .setEntry(Entry.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .setDeleteMissingAspects(true)
+            .addAllAspectKeys(new ArrayList<String>())
+            .build();
+
+    Entry actualResponse = client.modifyEntry(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void modifyEntryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ModifyEntryRequest request =
+          ModifyEntryRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .setEntry(Entry.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setDeleteMissingAspects(true)
+              .addAllAspectKeys(new ArrayList<String>())
+              .build();
+      client.modifyEntry(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchEntriesTest() throws Exception {
     SearchEntriesResult responsesElement = SearchEntriesResult.newBuilder().build();
     SearchEntriesResponse expectedResponse =
@@ -3063,6 +3128,7 @@ public class CatalogServiceClientHttpJsonTest {
         LookupContextRequest.newBuilder()
             .setName("projects/project-9062/locations/location-9062")
             .addAllResources(new ArrayList<String>())
+            .setContext("context951530927")
             .putAllOptions(new HashMap<String, String>())
             .build();
 
@@ -3096,6 +3162,7 @@ public class CatalogServiceClientHttpJsonTest {
           LookupContextRequest.newBuilder()
               .setName("projects/project-9062/locations/location-9062")
               .addAllResources(new ArrayList<String>())
+              .setContext("context951530927")
               .putAllOptions(new HashMap<String, String>())
               .build();
       client.lookupContext(request);

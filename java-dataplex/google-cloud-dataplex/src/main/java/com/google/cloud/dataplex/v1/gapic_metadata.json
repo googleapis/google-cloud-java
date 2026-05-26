@@ -178,6 +178,9 @@
             "LookupEntryLinks": {
               "methods": ["lookupEntryLinks", "lookupEntryLinksPagedCallable", "lookupEntryLinksCallable"]
             },
+            "ModifyEntry": {
+              "methods": ["modifyEntry", "modifyEntryCallable"]
+            },
             "SearchEntries": {
               "methods": ["searchEntries", "searchEntries", "searchEntries", "searchEntriesPagedCallable", "searchEntriesCallable"]
             },
@@ -286,6 +289,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "RequestDataProductAccess": {
+              "methods": ["requestDataProductAccess", "requestDataProductAccess", "requestDataProductAccess", "requestDataProductAccessCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -376,6 +382,9 @@
         "grpc": {
           "libraryClient": "DataScanServiceClient",
           "rpcs": {
+            "CancelDataScanJob": {
+              "methods": ["cancelDataScanJob", "cancelDataScanJob", "cancelDataScanJob", "cancelDataScanJobCallable"]
+            },
             "CreateDataScan": {
               "methods": ["createDataScanAsync", "createDataScanAsync", "createDataScanAsync", "createDataScanOperationCallable", "createDataScanCallable"]
             },

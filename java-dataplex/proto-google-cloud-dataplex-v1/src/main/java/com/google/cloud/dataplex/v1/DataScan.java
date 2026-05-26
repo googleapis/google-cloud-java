@@ -40,10 +40,11 @@ package com.google.cloud.dataplex.v1;
  * * Data discovery: scans data in Cloud Storage buckets to extract and then
  * catalog metadata. For more information, see [Discover and catalog Cloud
  * Storage data](https://cloud.google.com/bigquery/docs/automatic-discovery).
- * * Data documentation: analyzes the table details and generates insights
- * including descriptions and sample SQL queries for the table. For more
- * information, see [Generate data insights in
- * BigQuery](https://cloud.google.com/bigquery/docs/data-insights).
+ * * Data documentation: analyzes the table or dataset metadata and generates
+ * insights. For tables, insights include descriptions and sample SQL
+ * queries. For datasets, insights include descriptions, schema relationships
+ * and sample SQL queries. For more information, see [Generate data insights
+ * in BigQuery](https://cloud.google.com/bigquery/docs/data-insights).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataScan}
@@ -4036,6 +4037,68 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance();
   }
 
+  public static final int EXECUTION_IDENTITY_FIELD_NUMBER = 300;
+  private com.google.cloud.dataplex.v1.ExecutionIdentity executionIdentity_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the executionIdentity field is set.
+   */
+  @java.lang.Override
+  public boolean hasExecutionIdentity() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The executionIdentity.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.ExecutionIdentity getExecutionIdentity() {
+    return executionIdentity_ == null
+        ? com.google.cloud.dataplex.v1.ExecutionIdentity.getDefaultInstance()
+        : executionIdentity_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder getExecutionIdentityOrBuilder() {
+    return executionIdentity_ == null
+        ? com.google.cloud.dataplex.v1.ExecutionIdentity.getDefaultInstance()
+        : executionIdentity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4108,6 +4171,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
     }
     if (resultCase_ == 203) {
       output.writeMessage(203, (com.google.cloud.dataplex.v1.DataDocumentationResult) result_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(300, getExecutionIdentity());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4201,6 +4267,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               203, (com.google.cloud.dataplex.v1.DataDocumentationResult) result_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(300, getExecutionIdentity());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4243,6 +4312,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
       if (!getExecutionStatus().equals(other.getExecutionStatus())) return false;
     }
     if (type_ != other.type_) return false;
+    if (hasExecutionIdentity() != other.hasExecutionIdentity()) return false;
+    if (hasExecutionIdentity()) {
+      if (!getExecutionIdentity().equals(other.getExecutionIdentity())) return false;
+    }
     if (!getSpecCase().equals(other.getSpecCase())) return false;
     switch (specCase_) {
       case 100:
@@ -4324,6 +4397,10 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (hasExecutionIdentity()) {
+      hash = (37 * hash) + EXECUTION_IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getExecutionIdentity().hashCode();
+    }
     switch (specCase_) {
       case 100:
         hash = (37 * hash) + DATA_QUALITY_SPEC_FIELD_NUMBER;
@@ -4484,10 +4561,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
    * * Data discovery: scans data in Cloud Storage buckets to extract and then
    * catalog metadata. For more information, see [Discover and catalog Cloud
    * Storage data](https://cloud.google.com/bigquery/docs/automatic-discovery).
-   * * Data documentation: analyzes the table details and generates insights
-   * including descriptions and sample SQL queries for the table. For more
-   * information, see [Generate data insights in
-   * BigQuery](https://cloud.google.com/bigquery/docs/data-insights).
+   * * Data documentation: analyzes the table or dataset metadata and generates
+   * insights. For tables, insights include descriptions and sample SQL
+   * queries. For datasets, insights include descriptions, schema relationships
+   * and sample SQL queries. For more information, see [Generate data insights
+   * in BigQuery](https://cloud.google.com/bigquery/docs/data-insights).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataScan}
@@ -4550,6 +4628,7 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
         internalGetDataFieldBuilder();
         internalGetExecutionSpecFieldBuilder();
         internalGetExecutionStatusFieldBuilder();
+        internalGetExecutionIdentityFieldBuilder();
       }
     }
 
@@ -4612,6 +4691,11 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
       }
       if (dataDocumentationResultBuilder_ != null) {
         dataDocumentationResultBuilder_.clear();
+      }
+      executionIdentity_ = null;
+      if (executionIdentityBuilder_ != null) {
+        executionIdentityBuilder_.dispose();
+        executionIdentityBuilder_ = null;
       }
       specCase_ = 0;
       spec_ = null;
@@ -4698,6 +4782,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.executionIdentity_ =
+            executionIdentityBuilder_ == null
+                ? executionIdentity_
+                : executionIdentityBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4787,6 +4878,9 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
       }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (other.hasExecutionIdentity()) {
+        mergeExecutionIdentity(other.getExecutionIdentity());
       }
       switch (other.getSpecCase()) {
         case DATA_QUALITY_SPEC:
@@ -5005,6 +5099,13 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
                 resultCase_ = 203;
                 break;
               } // case 1626
+            case 2402:
+              {
+                input.readMessage(
+                    internalGetExecutionIdentityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 2402
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8841,6 +8942,229 @@ public final class DataScan extends com.google.protobuf.GeneratedMessage
       resultCase_ = 203;
       onChanged();
       return dataDocumentationResultBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.ExecutionIdentity executionIdentity_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.ExecutionIdentity,
+            com.google.cloud.dataplex.v1.ExecutionIdentity.Builder,
+            com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder>
+        executionIdentityBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the executionIdentity field is set.
+     */
+    public boolean hasExecutionIdentity() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The executionIdentity.
+     */
+    public com.google.cloud.dataplex.v1.ExecutionIdentity getExecutionIdentity() {
+      if (executionIdentityBuilder_ == null) {
+        return executionIdentity_ == null
+            ? com.google.cloud.dataplex.v1.ExecutionIdentity.getDefaultInstance()
+            : executionIdentity_;
+      } else {
+        return executionIdentityBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setExecutionIdentity(com.google.cloud.dataplex.v1.ExecutionIdentity value) {
+      if (executionIdentityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        executionIdentity_ = value;
+      } else {
+        executionIdentityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setExecutionIdentity(
+        com.google.cloud.dataplex.v1.ExecutionIdentity.Builder builderForValue) {
+      if (executionIdentityBuilder_ == null) {
+        executionIdentity_ = builderForValue.build();
+      } else {
+        executionIdentityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeExecutionIdentity(com.google.cloud.dataplex.v1.ExecutionIdentity value) {
+      if (executionIdentityBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && executionIdentity_ != null
+            && executionIdentity_
+                != com.google.cloud.dataplex.v1.ExecutionIdentity.getDefaultInstance()) {
+          getExecutionIdentityBuilder().mergeFrom(value);
+        } else {
+          executionIdentity_ = value;
+        }
+      } else {
+        executionIdentityBuilder_.mergeFrom(value);
+      }
+      if (executionIdentity_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearExecutionIdentity() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      executionIdentity_ = null;
+      if (executionIdentityBuilder_ != null) {
+        executionIdentityBuilder_.dispose();
+        executionIdentityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.ExecutionIdentity.Builder getExecutionIdentityBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetExecutionIdentityFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder getExecutionIdentityOrBuilder() {
+      if (executionIdentityBuilder_ != null) {
+        return executionIdentityBuilder_.getMessageOrBuilder();
+      } else {
+        return executionIdentity_ == null
+            ? com.google.cloud.dataplex.v1.ExecutionIdentity.getDefaultInstance()
+            : executionIdentity_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The identity to run the datascan.
+     * If not specified, defaults to the Dataplex Service Agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.ExecutionIdentity,
+            com.google.cloud.dataplex.v1.ExecutionIdentity.Builder,
+            com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder>
+        internalGetExecutionIdentityFieldBuilder() {
+      if (executionIdentityBuilder_ == null) {
+        executionIdentityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.ExecutionIdentity,
+                com.google.cloud.dataplex.v1.ExecutionIdentity.Builder,
+                com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder>(
+                getExecutionIdentity(), getParentForChildren(), isClean());
+        executionIdentity_ = null;
+      }
+      return executionIdentityBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataScan)

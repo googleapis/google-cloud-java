@@ -54,6 +54,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
   private DataScanJob() {
     name_ = "";
     uid_ = "";
+    partialFailureMessage_ = "";
     state_ = 0;
     message_ = "";
     type_ = 0;
@@ -154,6 +155,16 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * <code>PENDING = 7;</code>
      */
     PENDING(7),
+    /**
+     *
+     *
+     * <pre>
+     * The DataScanJob succeeded with errors.
+     * </pre>
+     *
+     * <code>SUCCEEDED_WITH_ERRORS = 8;</code>
+     */
+    SUCCEEDED_WITH_ERRORS(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -244,6 +255,17 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public static final int PENDING_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * The DataScanJob succeeded with errors.
+     * </pre>
+     *
+     * <code>SUCCEEDED_WITH_ERRORS = 8;</code>
+     */
+    public static final int SUCCEEDED_WITH_ERRORS_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -282,6 +304,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
           return FAILED;
         case 7:
           return PENDING;
+        case 8:
+          return SUCCEEDED_WITH_ERRORS;
         default:
           return null;
       }
@@ -620,6 +644,59 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  public static final int PARTIAL_FAILURE_MESSAGE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object partialFailureMessage_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A message indicating partial failure details.
+   * </pre>
+   *
+   * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The partialFailureMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getPartialFailureMessage() {
+    java.lang.Object ref = partialFailureMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partialFailureMessage_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A message indicating partial failure details.
+   * </pre>
+   *
+   * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for partialFailureMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPartialFailureMessageBytes() {
+    java.lang.Object ref = partialFailureMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      partialFailureMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int START_TIME_FIELD_NUMBER = 3;
@@ -1382,6 +1459,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(8, getCreateTime());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(partialFailureMessage_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, partialFailureMessage_);
+    }
     if (specCase_ == 100) {
       output.writeMessage(100, (com.google.cloud.dataplex.v1.DataQualitySpec) spec_);
     }
@@ -1438,6 +1518,9 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCreateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(partialFailureMessage_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, partialFailureMessage_);
     }
     if (specCase_ == 100) {
       size +=
@@ -1500,6 +1583,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (!getPartialFailureMessage().equals(other.getPartialFailureMessage())) return false;
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -1564,6 +1648,8 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    hash = (37 * hash) + PARTIAL_FAILURE_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getPartialFailureMessage().hashCode();
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -1776,6 +1862,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      partialFailureMessage_ = "";
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -1866,20 +1953,23 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.partialFailureMessage_ = partialFailureMessage_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.message_ = message_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.type_ = type_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1941,6 +2031,11 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (!other.getPartialFailureMessage().isEmpty()) {
+        partialFailureMessage_ = other.partialFailureMessage_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -1952,7 +2047,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -2052,31 +2147,31 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
               {
                 message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 66:
@@ -2086,6 +2181,12 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 66
+            case 74:
+              {
+                partialFailureMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 74
             case 802:
               {
                 input.readMessage(
@@ -2664,6 +2765,117 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
+    private java.lang.Object partialFailureMessage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A message indicating partial failure details.
+     * </pre>
+     *
+     * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The partialFailureMessage.
+     */
+    public java.lang.String getPartialFailureMessage() {
+      java.lang.Object ref = partialFailureMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partialFailureMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A message indicating partial failure details.
+     * </pre>
+     *
+     * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for partialFailureMessage.
+     */
+    public com.google.protobuf.ByteString getPartialFailureMessageBytes() {
+      java.lang.Object ref = partialFailureMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partialFailureMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A message indicating partial failure details.
+     * </pre>
+     *
+     * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The partialFailureMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailureMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      partialFailureMessage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A message indicating partial failure details.
+     * </pre>
+     *
+     * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPartialFailureMessage() {
+      partialFailureMessage_ = getDefaultInstance().getPartialFailureMessage();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A message indicating partial failure details.
+     * </pre>
+     *
+     * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for partialFailureMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartialFailureMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      partialFailureMessage_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -2684,7 +2896,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2726,7 +2938,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2747,7 +2959,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2764,7 +2976,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -2775,7 +2987,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2792,7 +3004,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -2813,7 +3025,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetStartTimeFieldBuilder().getBuilder();
     }
@@ -2883,7 +3095,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2925,7 +3137,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2946,7 +3158,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2963,7 +3175,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -2974,7 +3186,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2991,7 +3203,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -3012,7 +3224,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetEndTimeFieldBuilder().getBuilder();
     }
@@ -3098,7 +3310,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3141,7 +3353,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3161,7 +3373,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -3232,7 +3444,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       message_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3250,7 +3462,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMessage() {
       message_ = getDefaultInstance().getMessage();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3273,7 +3485,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       message_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3314,7 +3526,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3357,7 +3569,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -3377,7 +3589,7 @@ public final class DataScanJob extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       type_ = 0;
       onChanged();
       return this;
