@@ -686,7 +686,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       case DML:
       case DML_EXTRA:
         QueryStatistics dmlStats = getQueryStatisticsFromJob(results);
-        Long dmlRowCount = (dmlStats != null) ? dmlStats.getNumDmlAffectedRows() : null;
+        Long dmlRowCount =
+            (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
+                ? dmlStats.getNumDmlAffectedRows()
+                : 0L;
         updateAffectedRowCount(dmlRowCount);
         break;
       case TCL:
@@ -731,12 +734,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         updateAffectedRowCount(exportRowCount);
         break;
       case OTHER:
-        String truncatedQuery =
-            (query != null && query.length() > 60) ? query.substring(0, 60) + "..." : query;
-        String jobId = (results.getJobId() != null) ? results.getJobId().getJob() : "unknown";
+        String truncatedQuery = truncateQuery(query);
+        String id =
+            (results.getJobId() != null) ? results.getJobId().getJob() : results.getQueryId();
         LOG.warning(
-            "Encountered unmapped SQL statement type [Job ID: %s]. Treating as update statement: %s",
-            jobId, truncatedQuery);
+            "Encountered unmapped SQL statement type [Job/Query ID: %s]. Treating as update statement: %s",
+            id, truncatedQuery);
         updateAffectedRowCount(results.getTotalRows());
         break;
     }
@@ -1618,11 +1621,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (sql == null) {
       return;
     }
-    String sanitizedSql = sql.trim().replaceAll("\\s+", " ");
-    String truncatedSql =
-        sanitizedSql.length() > 256 ? sanitizedSql.substring(0, 256) + "..." : sanitizedSql;
+    String truncatedSql = truncateQuery(sql);
     LOG.info("Executing query: " + truncatedSql);
     LOG.info("Using query settings: " + this.querySettings.toString());
+  }
+
+  private String truncateQuery(String sql) {
+    if (sql == null) {
+      return null;
+    }
+    String sanitizedSql = sql.trim().replaceAll("\\s+", " ");
+    return sanitizedSql.length() > 256 ? sanitizedSql.substring(0, 256) + "..." : sanitizedSql;
   }
 
   /** Throws a {@link BigQueryJdbcException} if this object is closed */
