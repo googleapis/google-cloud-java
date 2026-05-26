@@ -125,6 +125,11 @@
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.6.8</version>
+        <configuration>
+          <cacheDirectory>
+            ${project.build.directory}/download-cache
+          </cacheDirectory>
+        </configuration>
         <executions>
           <execution>
             <id>download-metadata-proto</id>
