@@ -53,7 +53,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
