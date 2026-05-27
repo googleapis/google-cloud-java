@@ -39,7 +39,9 @@ import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
+import io.grpc.SynchronizationContext;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicReference;
 
 class TableBase implements AutoCloseable {
   private final SessionPool<?> sessionPool;
@@ -109,11 +111,20 @@ class TableBase implements AutoCloseable {
 
   public void readRow(
       SessionReadRowRequest req, VRpcListener<SessionReadRowResponse> listener, Deadline deadline) {
+    AtomicReference<RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse>> retryRef =
+        new AtomicReference<>();
+    SynchronizationContext syncContext =
+        new SynchronizationContext(
+            (t, e) -> {
+              RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> r = retryRef.get();
+              if (r != null) r.cancel("Unexpected error in op SynchronizationContext", e);
+            });
     RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), backgroundExecutor);
+        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), backgroundExecutor, syncContext);
+    retryRef.set(retry);
 
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, true, tracer);
+    VRpcCallContext ctx = VRpcCallContext.create(deadline, true, tracer, syncContext);
 
     CancellableVRpc<SessionReadRowRequest, SessionReadRowResponse> cancellableVRpc =
         new CancellableVRpc<>(retry, Context.current());
@@ -125,14 +136,23 @@ class TableBase implements AutoCloseable {
       SessionMutateRowRequest req,
       VRpcListener<SessionMutateRowResponse> listener,
       Deadline deadline) {
+    AtomicReference<RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse>> retryRef =
+        new AtomicReference<>();
+    SynchronizationContext syncContext =
+        new SynchronizationContext(
+            (t, e) -> {
+              RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> r = retryRef.get();
+              if (r != null) r.cancel("Unexpected error in op SynchronizationContext", e);
+            });
     RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), backgroundExecutor);
+        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), backgroundExecutor, syncContext);
+    retryRef.set(retry);
 
     boolean idempotent = Util.isIdempotent(req.getMutationsList());
 
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer);
+    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, syncContext);
 
     CancellableVRpc<SessionMutateRowRequest, SessionMutateRowResponse> cancellable =
         new CancellableVRpc<>(retry, Context.current());

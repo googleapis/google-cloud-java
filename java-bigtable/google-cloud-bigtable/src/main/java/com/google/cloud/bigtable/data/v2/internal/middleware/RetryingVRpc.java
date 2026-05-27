@@ -56,21 +56,17 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   // Breaks the loop if uncaught exception happens during sync context execution.
   private boolean isCancelling;
 
-  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, ScheduledExecutorService executor) {
+  public RetryingVRpc(
+      Supplier<VRpc<ReqT, RespT>> supplier,
+      ScheduledExecutorService executor,
+      SynchronizationContext syncContext) {
     this.attemptFactory = supplier;
 
     grpcContext = Context.current();
     otelContext = io.opentelemetry.context.Context.current();
 
     this.executor = otelContext.wrap(executor);
-    this.syncContext =
-        new SynchronizationContext(
-            (t, e) -> {
-              this.cancel(
-                  "Unexpected error while notifying the caller of RetryingVRpc. Trying to cancel"
-                      + " vRpc to ensure consistent state",
-                  e);
-            });
+    this.syncContext = syncContext;
 
     started = false;
     isCancelling = false;

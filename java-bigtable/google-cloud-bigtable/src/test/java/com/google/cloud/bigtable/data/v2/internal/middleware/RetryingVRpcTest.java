@@ -58,6 +58,7 @@ import io.grpc.InsecureChannelCredentials;
 import io.grpc.Metadata;
 import io.grpc.Server;
 import io.grpc.Status;
+import io.grpc.SynchronizationContext;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -132,8 +133,10 @@ public class RetryingVRpcTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -198,8 +201,10 @@ public class RetryingVRpcTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -273,8 +278,10 @@ public class RetryingVRpcTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -332,8 +339,10 @@ public class RetryingVRpcTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -391,8 +400,10 @@ public class RetryingVRpcTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(1).build(),

@@ -67,6 +67,7 @@ import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
 import io.grpc.Metadata;
 import io.grpc.Server;
+import io.grpc.SynchronizationContext;
 import io.opencensus.stats.Stats;
 import io.opencensus.tags.Tags;
 import io.opentelemetry.api.common.Attributes;
@@ -198,8 +199,10 @@ public class VRpcTracerTest {
     // Test
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     Stopwatch stopwatch = Stopwatch.createStarted();
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -256,9 +259,11 @@ public class VRpcTracerTest {
     // Test
     Stopwatch stopwatch = Stopwatch.createStarted();
     AtomicLong maxAttemptLatency = new AtomicLong();
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor));
+            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext));
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -315,8 +320,10 @@ public class VRpcTracerTest {
     sessionListener.popUntil(OpenSessionResponse.class);
 
     // Test
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     MethodInfo methodInfo =
@@ -365,9 +372,13 @@ public class VRpcTracerTest {
     session.start(openSessionRequest, new Metadata(), sessionListener);
 
     // Test
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> { throw new AssertionError("Unexpected exception", e); });
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor));
+            () ->
+                new RetryingVRpc<>(
+                    () -> session.newCall(FakeDescriptor.SCRIPTED), executor, syncContext));
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> attemptFinished = new CompletableFuture<>();
     MethodInfo methodInfo =

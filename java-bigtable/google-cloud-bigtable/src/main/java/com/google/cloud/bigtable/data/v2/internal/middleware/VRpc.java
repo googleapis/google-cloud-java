@@ -108,6 +108,11 @@ public interface VRpc<ReqT, RespT> {
 
     public static VRpcCallContext create(
         Deadline deadline, boolean isIdempotent, VRpcTracer tracer) {
+      return create(deadline, isIdempotent, tracer, MoreExecutors.directExecutor());
+    }
+
+    public static VRpcCallContext create(
+        Deadline deadline, boolean isIdempotent, VRpcTracer tracer, Executor executor) {
 
       Deadline grpcContextDeadline = Context.current().getDeadline();
 
@@ -127,7 +132,7 @@ public interface VRpc<ReqT, RespT> {
           OperationInfo.create(operationTimeout, isIdempotent),
           "TODO",
           tracer,
-          MoreExecutors.directExecutor());
+          executor);
     }
 
     public VRpcCallContext createForNextAttempt() {
