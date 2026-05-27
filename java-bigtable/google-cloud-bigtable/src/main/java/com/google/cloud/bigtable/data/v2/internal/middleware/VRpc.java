@@ -26,6 +26,7 @@ import com.google.common.base.Ticker;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Any;
 import com.google.rpc.RetryInfo;
+import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
@@ -33,6 +34,7 @@ import io.grpc.Status;
 import io.grpc.protobuf.StatusProto;
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,6 +94,14 @@ public interface VRpc<ReqT, RespT> {
 
     public abstract VRpcTracer getTracer();
 
+    /**
+     * Executor for op-level callback serialization. Defaults to {@link
+     * MoreExecutors#directExecutor()} — tasks run inline on the calling thread. Phase 3 will
+     * replace this with a {@code SerializingExecutor(userCallbackExecutor)} so user callbacks
+     * always run on a pool thread.
+     */
+    public abstract Executor getExecutor();
+
     // TODO: csm
     // Clientside metrics instrument
     // public abstract BigtableTracer getTracer();
@@ -114,12 +124,15 @@ public interface VRpc<ReqT, RespT> {
       }
 
       return new AutoValue_VRpc_VRpcCallContext(
-          OperationInfo.create(operationTimeout, isIdempotent), "TODO", tracer);
+          OperationInfo.create(operationTimeout, isIdempotent),
+          "TODO",
+          tracer,
+          MoreExecutors.directExecutor());
     }
 
     public VRpcCallContext createForNextAttempt() {
       return new AutoValue_VRpc_VRpcCallContext(
-          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer());
+          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer(), getExecutor());
     }
   }
 

@@ -69,6 +69,8 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   private final VRpcDescriptor<OpenReqT, ReqT, RespT> desc;
   final long rpcId;
   private VRpcListener<RespT> listener;
+  // Stored in start() so that handle*() methods can dispatch to the op executor in Phase 4.
+  private VRpcCallContext ctx;
   private PeerInfo peerInfo;
 
   private AtomicReference<State> state;
@@ -92,6 +94,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
     this.listener = listener;
+    this.ctx = ctx;
 
     Status status;
     boolean retryable = true;
