@@ -2029,6 +2029,104 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int REQUESTED_NOT_BEFORE_TIME_FIELD_NUMBER = 15;
+  private com.google.protobuf.Timestamp requestedNotBeforeTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The requested
+   * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+   * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * field may only be set if the
+   * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+   * field is set to true for the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   *
+   * If this field is specified, the certificate will be issued with this
+   * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+   * set to the issuance time or issuance time minus
+   * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+   * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestedNotBeforeTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestedNotBeforeTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The requested
+   * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+   * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * field may only be set if the
+   * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+   * field is set to true for the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   *
+   * If this field is specified, the certificate will be issued with this
+   * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+   * set to the issuance time or issuance time minus
+   * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+   * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestedNotBeforeTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getRequestedNotBeforeTime() {
+    return requestedNotBeforeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : requestedNotBeforeTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The requested
+   * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+   * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+   * field may only be set if the
+   * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+   * field is set to true for the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool].
+   *
+   * If this field is specified, the certificate will be issued with this
+   * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+   * set to the issuance time or issuance time minus
+   * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+   * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+   * configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getRequestedNotBeforeTimeOrBuilder() {
+    return requestedNotBeforeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : requestedNotBeforeTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2088,6 +2186,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 14);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(15, getRequestedNotBeforeTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2158,6 +2259,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, labels__);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRequestedNotBeforeTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2202,6 +2307,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasRequestedNotBeforeTime() != other.hasRequestedNotBeforeTime()) return false;
+    if (hasRequestedNotBeforeTime()) {
+      if (!getRequestedNotBeforeTime().equals(other.getRequestedNotBeforeTime())) return false;
+    }
     if (!getCertificateConfigCase().equals(other.getCertificateConfigCase())) return false;
     switch (certificateConfigCase_) {
       case 2:
@@ -2261,6 +2370,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasRequestedNotBeforeTime()) {
+      hash = (37 * hash) + REQUESTED_NOT_BEFORE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestedNotBeforeTime().hashCode();
     }
     switch (certificateConfigCase_) {
       case 2:
@@ -2444,6 +2557,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
         internalGetCertificateDescriptionFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetRequestedNotBeforeTimeFieldBuilder();
       }
     }
 
@@ -2486,6 +2600,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      requestedNotBeforeTime_ = null;
+      if (requestedNotBeforeTimeBuilder_ != null) {
+        requestedNotBeforeTimeBuilder_.dispose();
+        requestedNotBeforeTimeBuilder_ = null;
+      }
       certificateConfigCase_ = 0;
       certificateConfig_ = null;
       return this;
@@ -2575,6 +2694,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.requestedNotBeforeTime_ =
+            requestedNotBeforeTimeBuilder_ == null
+                ? requestedNotBeforeTime_
+                : requestedNotBeforeTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2649,6 +2775,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00002000;
+      if (other.hasRequestedNotBeforeTime()) {
+        mergeRequestedNotBeforeTime(other.getRequestedNotBeforeTime());
+      }
       switch (other.getCertificateConfigCase()) {
         case PEM_CSR:
           {
@@ -2791,6 +2920,14 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    internalGetRequestedNotBeforeTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5378,6 +5515,336 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00002000;
       return this;
+    }
+
+    private com.google.protobuf.Timestamp requestedNotBeforeTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        requestedNotBeforeTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestedNotBeforeTime field is set.
+     */
+    public boolean hasRequestedNotBeforeTime() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestedNotBeforeTime.
+     */
+    public com.google.protobuf.Timestamp getRequestedNotBeforeTime() {
+      if (requestedNotBeforeTimeBuilder_ == null) {
+        return requestedNotBeforeTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : requestedNotBeforeTime_;
+      } else {
+        return requestedNotBeforeTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestedNotBeforeTime(com.google.protobuf.Timestamp value) {
+      if (requestedNotBeforeTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestedNotBeforeTime_ = value;
+      } else {
+        requestedNotBeforeTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestedNotBeforeTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (requestedNotBeforeTimeBuilder_ == null) {
+        requestedNotBeforeTime_ = builderForValue.build();
+      } else {
+        requestedNotBeforeTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRequestedNotBeforeTime(com.google.protobuf.Timestamp value) {
+      if (requestedNotBeforeTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && requestedNotBeforeTime_ != null
+            && requestedNotBeforeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRequestedNotBeforeTimeBuilder().mergeFrom(value);
+        } else {
+          requestedNotBeforeTime_ = value;
+        }
+      } else {
+        requestedNotBeforeTimeBuilder_.mergeFrom(value);
+      }
+      if (requestedNotBeforeTime_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRequestedNotBeforeTime() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      requestedNotBeforeTime_ = null;
+      if (requestedNotBeforeTimeBuilder_ != null) {
+        requestedNotBeforeTimeBuilder_.dispose();
+        requestedNotBeforeTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getRequestedNotBeforeTimeBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return internalGetRequestedNotBeforeTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getRequestedNotBeforeTimeOrBuilder() {
+      if (requestedNotBeforeTimeBuilder_ != null) {
+        return requestedNotBeforeTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return requestedNotBeforeTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : requestedNotBeforeTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The requested
+     * [not_before_time][google.cloud.security.privateca.v1.CertificateDescription.SubjectDescription.not_before_time]
+     * of this [Certificate][google.cloud.security.privateca.v1.Certificate]. This
+     * field may only be set if the
+     * [CaPool.IssuancePolicy.allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * field is set to true for the issuing
+     * [CaPool][google.cloud.security.privateca.v1.CaPool].
+     *
+     * If this field is specified, the certificate will be issued with this
+     * 'not_before_time'. If this is not specified, the 'not_before_time' will be
+     * set to the issuance time or issuance time minus
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * depending on the [CaPool][google.cloud.security.privateca.v1.CaPool]
+     * configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp requested_not_before_time = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetRequestedNotBeforeTimeFieldBuilder() {
+      if (requestedNotBeforeTimeBuilder_ == null) {
+        requestedNotBeforeTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getRequestedNotBeforeTime(), getParentForChildren(), isClean());
+        requestedNotBeforeTime_ = null;
+      }
+      return requestedNotBeforeTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.security.privateca.v1.Certificate)
