@@ -628,41 +628,40 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                 return OpenTelemetry.noop();
               });
 
-      BigQueryConnection connection = new BigQueryConnection(BASE_URL, ds);
+      try (BigQueryConnection connection = new BigQueryConnection(BASE_URL, ds)) {
 
-      boolean shouldBeRegistered = enableLog || hasCustom || useGlobal;
+        boolean shouldBeRegistered = enableLog || hasCustom || useGlobal;
 
-      if (!shouldBeRegistered) {
-        mockedOtel.verify(
-            () ->
-                BigQueryJdbcOpenTelemetry.registerConnection(
-                    anyString(), any(), any(), anyBoolean()),
-            never());
-      } else {
-        final OpenTelemetry expectedOtelInstance;
-        if ("CUSTOM".equals(expectTrace) || "CUSTOM".equals(expectLog)) {
-          expectedOtelInstance = mockCustomOtel;
-        } else if ("GLOBAL".equals(expectTrace) || "GLOBAL".equals(expectLog)) {
-          expectedOtelInstance = mockGlobalOtel;
-        } else if ("DRIVER_MANAGED".equals(expectTrace) || "DRIVER_MANAGED".equals(expectLog)) {
-          expectedOtelInstance = mockDriverManagedOtel;
+        if (!shouldBeRegistered) {
+          mockedOtel.verify(
+              () ->
+                  BigQueryJdbcOpenTelemetry.registerConnection(
+                      anyString(), any(), any(), anyBoolean()),
+              never());
         } else {
-          expectedOtelInstance = OpenTelemetry.noop();
+          final OpenTelemetry expectedOtelInstance;
+          if ("CUSTOM".equals(expectTrace) || "CUSTOM".equals(expectLog)) {
+            expectedOtelInstance = mockCustomOtel;
+          } else if ("GLOBAL".equals(expectTrace) || "GLOBAL".equals(expectLog)) {
+            expectedOtelInstance = mockGlobalOtel;
+          } else if ("DRIVER_MANAGED".equals(expectTrace) || "DRIVER_MANAGED".equals(expectLog)) {
+            expectedOtelInstance = mockDriverManagedOtel;
+          } else {
+            expectedOtelInstance = OpenTelemetry.noop();
+          }
+
+          boolean expectUseDirectGcp = "DRIVER_MANAGED".equals(expectLog);
+          Logging expectedLogClient = expectUseDirectGcp ? mockLogging : null;
+
+          mockedOtel.verify(
+              () ->
+                  BigQueryJdbcOpenTelemetry.registerConnection(
+                      anyString(),
+                      eq(expectedOtelInstance),
+                      eq(expectedLogClient),
+                      eq(expectUseDirectGcp)));
         }
-
-        boolean expectUseDirectGcp = "DRIVER_MANAGED".equals(expectLog);
-        Logging expectedLogClient = expectUseDirectGcp ? mockLogging : null;
-
-        mockedOtel.verify(
-            () ->
-                BigQueryJdbcOpenTelemetry.registerConnection(
-                    anyString(),
-                    eq(expectedOtelInstance),
-                    eq(expectedLogClient),
-                    eq(expectUseDirectGcp)));
       }
-
-      connection.close();
     }
   }
 }
