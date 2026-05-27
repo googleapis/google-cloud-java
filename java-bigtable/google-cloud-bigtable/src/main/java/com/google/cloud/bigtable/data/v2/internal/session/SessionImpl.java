@@ -94,12 +94,24 @@ public class SessionImpl implements Session, VRpcSessionApi {
   @GuardedBy("lock")
   private Instant lastStateChangedAt;
 
+  // Set once under lock in start(), then read freely from gRPC callbacks without the lock.
+  // Safe because start() is always called before any callback fires, so the write is
+  // visible to all subsequent readers through the happens-before chain from stream.start().
   private Listener sessionListener;
 
+  // volatile: written under lock in handleSessionRefreshConfigResponse(); read without lock in
+  // getOpenParams() and isOpenParamsUpdated() so callers get a consistent (if possibly stale)
+  // snapshot without contending on the lock. Stale reads are acceptable for these accessors.
   private volatile OpenParams openParams;
 
   private volatile boolean openParamsUpdated;
 
+  // closeReason is written under lock in close(), forceClose(), handleGoAwayResponse(), and
+  // dispatchStreamClosed(). The one read that occurs outside the lock — in dispatchStreamClosed
+  // after the synchronized block — runs on the same gRPC callback thread that just released the
+  // lock, so the lock's release-acquire edge provides the necessary visibility. A stale read is
+  // structurally impossible given the control flow (closeReason is always set before the lock
+  // is released on every path that reaches that read site).
   @Nullable private CloseSessionRequest closeReason = null;
 
   @GuardedBy("lock")
@@ -112,10 +124,18 @@ public class SessionImpl implements Session, VRpcSessionApi {
   @GuardedBy("lock")
   private VRpcResult currentCancel = null;
 
+  @GuardedBy("lock")
   private SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
+
+  // volatile: written under lock in handleSessionParamsResponse(); read without lock in
+  // handleHeartBeatResponse() where a stale read is acceptable — the heartbeat deadline is a
+  // soft scheduling hint, not a correctness invariant. startRpc() reads this inside the lock.
   private volatile Duration heartbeatInterval =
       Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
 
+  // volatile: written from multiple sites without holding the lock (startRpc, handleVRpc*,
+  // handleHeartBeatResponse). Stale reads are acceptable — nextHeartbeat is used only as a
+  // scheduling hint by the pool's heartbeat monitor.
   private volatile Instant nextHeartbeat;
 
   public SessionImpl(
@@ -330,9 +350,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   @Override
   public Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
-    // start monitoring for heartbeat when the vrpc is started
-    this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
-
     synchronized (lock) {
       if (currentRpc != null) {
         return Status.INTERNAL.withDescription(
@@ -345,6 +362,11 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
       this.currentRpc = rpc;
       stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
+      // Start monitoring for heartbeat when the vRPC is started. heartbeatInterval is read
+      // inside the lock to avoid a race with handleSessionParamsResponse(). nextHeartbeat is
+      // volatile and written here without an atomicity guarantee — that is intentional; it is
+      // only a scheduling hint (see field comment).
+      this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
       return Status.OK;
     }
   }
