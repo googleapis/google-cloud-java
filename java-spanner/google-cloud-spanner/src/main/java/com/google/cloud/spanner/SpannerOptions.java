@@ -997,7 +997,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;
     clientContext = builder.clientContext;
-    autoTaggingEnabled = builder.autoTaggingEnabled;
+    if (environment.isAutoTaggingDisabled()) {
+      autoTaggingEnabled = false;
+    } else {
+      autoTaggingEnabled = builder.autoTaggingEnabled || environment.isAutoTaggingEnabled();
+    }
     autoTaggingPackages = builder.autoTaggingPackages;
     autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
@@ -2611,10 +2615,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   public boolean isAutoTaggingEnabled() {
-    if (environment.isAutoTaggingDisabled()) {
-      return false;
-    }
-    return autoTaggingEnabled || environment.isAutoTaggingEnabled();
+    return autoTaggingEnabled;
   }
 
   public List<String> getAutoTaggingPackages() {
@@ -2623,10 +2624,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public int getAutoTaggingTracerLimit() {
     return autoTaggingTracerLimit;
-  }
-
-  public boolean isAutoTaggingDisabled() {
-    return environment.isAutoTaggingDisabled();
   }
 
   @BetaApi
