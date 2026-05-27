@@ -50,6 +50,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.time.Duration;
@@ -207,6 +208,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
 
   BigQueryConnection(String url) throws IOException {
@@ -762,12 +764,16 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setClientInfo(String name, String value) {
-    // no-op
+    if (value == null) {
+      this.clientInfo.remove(name);
+    } else {
+      this.clientInfo.setProperty(name, value);
+    }
   }
 
   @Override
   public String getClientInfo(String name) {
-    return null;
+    return this.clientInfo.getProperty(name);
   }
 
   @Override
@@ -776,13 +782,33 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   @Override
+  public String nativeSQL(String sql) throws SQLException {
+    checkClosed();
+    return sql;
+  }
+
+  @Override
+  public void setNetworkTimeout(java.util.concurrent.Executor executor, int milliseconds)
+      throws SQLException {
+    throw new SQLFeatureNotSupportedException("setNetworkTimeout is not supported.");
+  }
+
+  @Override
+  public int getNetworkTimeout() throws SQLException {
+    throw new SQLFeatureNotSupportedException("getNetworkTimeout is not supported.");
+  }
+
+  @Override
   public Properties getClientInfo() {
-    return null;
+    return this.clientInfo;
   }
 
   @Override
   public void setClientInfo(Properties properties) {
-    // no-op
+    this.clientInfo.clear();
+    if (properties != null) {
+      this.clientInfo.putAll(properties);
+    }
   }
 
   @Override

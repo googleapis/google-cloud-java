@@ -182,10 +182,10 @@ abstract class BigQueryNoOpsConnection implements Connection {
   public void setSchema(String schema) {}
 
   @Override
-  public void setNetworkTimeout(Executor executor, int milliseconds) {}
+  public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {}
 
   @Override
-  public int getNetworkTimeout() {
+  public int getNetworkTimeout() throws SQLException {
     return 0;
   }
 }

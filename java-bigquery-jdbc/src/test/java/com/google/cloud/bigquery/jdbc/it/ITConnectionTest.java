@@ -75,7 +75,7 @@ public class ITConnectionTest {
     assertEquals(4, metaData.getJDBCMajorVersion());
     assertEquals(2, metaData.getJDBCMinorVersion());
     assertEquals("Google BigQuery", metaData.getDatabaseProductName());
-    assertEquals("SimbaJDBCDriverforGoogleBigQuery", metaData.getDriverName());
+    assertEquals("GoogleJDBCDriverForGoogleBigQuery", metaData.getDriverName());
   }
 
   @Test
