@@ -203,6 +203,96 @@ public class SpannerCloudMonitoringExporterTest {
   }
 
   @Test
+  public void testExportingOverridesResourceProjectWithPointLevelProject() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Attributes attributesWithDifferentProject =
+        attributes.toBuilder().put(PROJECT_ID_KEY, "target-project").build();
+
+    LongPointData longPointData =
+        ImmutableLongPointData.create(10, 15, attributesWithDifferentProject, 11L);
+
+    MetricData longData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+
+    exporter.export(Collections.singletonList(longData));
+
+    CreateTimeSeriesRequest request = argumentCaptor.getValue();
+    assertThat(request.getName()).isEqualTo("projects/target-project");
+    assertThat(request.getTimeSeries(0).getResource().getLabelsMap())
+        .containsEntry(PROJECT_ID_KEY.getKey(), "target-project");
+  }
+
+  @Test
+  public void testExportingRoutesMultipleProjectsInBatches() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Attributes attributesProjectX =
+        attributes.toBuilder().put(PROJECT_ID_KEY, "project-x").build();
+    Attributes attributesProjectY =
+        attributes.toBuilder().put(PROJECT_ID_KEY, "project-y").build();
+
+    LongPointData pointX =
+        ImmutableLongPointData.create(10, 15, attributesProjectX, 100L);
+    LongPointData pointY =
+        ImmutableLongPointData.create(10, 15, attributesProjectY, 200L);
+
+    MetricData metricX =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointX)));
+
+    MetricData metricY =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointY)));
+
+    exporter.export(Arrays.asList(metricX, metricY));
+
+    assertThat(argumentCaptor.getAllValues()).hasSize(2);
+    List<CreateTimeSeriesRequest> requests = argumentCaptor.getAllValues();
+
+    Set<String> targetProjects = requests.stream().map(CreateTimeSeriesRequest::getName).collect(Collectors.toSet());
+    assertThat(targetProjects).containsExactly("projects/project-x", "projects/project-y");
+
+    // Verify each request contains the correct timeseries matching its project name
+    for (CreateTimeSeriesRequest req : requests) {
+      String expectedProject = req.getName().substring("projects/".length());
+      assertThat(req.getTimeSeries(0).getResource().getLabelsMap().get(PROJECT_ID_KEY.getKey()))
+          .isEqualTo(expectedProject);
+    }
+  }
+
+  @Test
   public void testExportingHistogramData() {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);

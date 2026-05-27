@@ -102,12 +102,13 @@ class SpannerCloudMonitoringExporterUtils {
         monitoredResourceBuilder.putLabels(
             key.getKey(), String.valueOf(resourceAttributes.get(key)));
       }
+      MonitoredResource baseMonitoredResource = monitoredResourceBuilder.build();
 
       metricData.getData().getPoints().stream()
           .map(
               pointData ->
                   convertPointToSpannerTimeSeries(
-                      metricData, pointData, monitoredResourceBuilder, projectId))
+                      metricData, pointData, baseMonitoredResource, projectId))
           .forEach(allTimeSeries::add);
     }
     return allTimeSeries;
@@ -116,7 +117,7 @@ class SpannerCloudMonitoringExporterUtils {
   private static TimeSeries convertPointToSpannerTimeSeries(
       MetricData metricData,
       PointData pointData,
-      MonitoredResource.Builder monitoredResourceBuilder,
+      MonitoredResource baseMonitoredResource,
       String projectId) {
     MetricKind metricKind = convertMetricKind(metricData);
     TimeSeries.Builder builder =
@@ -126,10 +127,11 @@ class SpannerCloudMonitoringExporterUtils {
     Metric.Builder metricBuilder = Metric.newBuilder().setType(metricData.getName());
 
     Attributes attributes = pointData.getAttributes();
+    MonitoredResource.Builder pointResourceBuilder = baseMonitoredResource.toBuilder();
 
     for (AttributeKey<?> key : attributes.asMap().keySet()) {
       if (SPANNER_PROMOTED_RESOURCE_LABELS.contains(key)) {
-        monitoredResourceBuilder.putLabels(key.getKey(), String.valueOf(attributes.get(key)));
+        pointResourceBuilder.putLabels(key.getKey(), String.valueOf(attributes.get(key)));
       } else {
         // Replace metric label names by converting "." to "_" since Cloud Monitoring does not
         // support labels containing "."
@@ -141,7 +143,19 @@ class SpannerCloudMonitoringExporterUtils {
     // Add common labels like "client_name" and "client_uid" for all the exported metrics.
     metricBuilder.putAllLabels(BuiltInMetricsProvider.INSTANCE.createClientAttributes());
 
-    builder.setResource(monitoredResourceBuilder.build());
+    // Extract target project ID if present in metric point attributes, otherwise fallback to base/supplied project ID.
+    String targetProjectId = attributes.get(PROJECT_ID_KEY);
+    if (targetProjectId != null) {
+      pointResourceBuilder.putLabels(PROJECT_ID_KEY.getKey(), targetProjectId);
+    } else {
+      targetProjectId = pointResourceBuilder.getLabelsMap().get(PROJECT_ID_KEY.getKey());
+      if (targetProjectId == null) {
+        targetProjectId = projectId;
+      }
+      pointResourceBuilder.putLabels(PROJECT_ID_KEY.getKey(), targetProjectId);
+    }
+
+    builder.setResource(pointResourceBuilder.build());
     builder.setMetric(metricBuilder.build());
 
     TimeInterval timeInterval =
@@ -154,7 +168,7 @@ class SpannerCloudMonitoringExporterUtils {
             .setEndTime(Timestamps.fromNanos(pointData.getEpochNanos()))
             .build();
 
-    builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval, projectId));
+    builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval, targetProjectId));
 
     return builder.build();
   }

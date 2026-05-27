@@ -329,6 +329,7 @@ class HeaderInterceptor implements ClientInterceptor {
         key,
         () -> {
           Map<String, String> attributes = new HashMap<>();
+          attributes.put(BuiltInMetricsConstant.PROJECT_ID_KEY.getKey(), databaseName.getProject());
           attributes.put(BuiltInMetricsConstant.DATABASE_KEY.getKey(), databaseName.getDatabase());
           attributes.put(
               BuiltInMetricsConstant.INSTANCE_ID_KEY.getKey(), databaseName.getInstance());
