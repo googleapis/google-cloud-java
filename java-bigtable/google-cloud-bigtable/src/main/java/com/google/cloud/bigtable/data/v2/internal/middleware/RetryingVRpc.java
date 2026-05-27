@@ -27,6 +27,7 @@ import io.grpc.SynchronizationContext;
 import java.util.Optional;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -173,55 +174,55 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
           new VRpcListener<RespT>() {
             @Override
             public void onMessage(RespT msg) {
-              syncContext.execute(
-                  () -> {
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding response {0} because the attempt is no longer active.",
-                          msg);
-                      return;
-                    }
-                    tracer.onResponseReceived();
-                    Stopwatch appTimer = Stopwatch.createStarted();
-                    try {
-                      listener.onMessage(msg);
-                    } finally {
-                      tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
-                    }
-                  });
+              // VRpcImpl dispatches this callback onto ctx.getExecutor() (the same
+              // SynchronizationContext syncContext uses), so we are already inside the
+              // syncContext here — no additional wrapping needed.
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding response {0} because the attempt is no longer active.",
+                    msg);
+                return;
+              }
+              tracer.onResponseReceived();
+              Stopwatch appTimer = Stopwatch.createStarted();
+              try {
+                listener.onMessage(msg);
+              } finally {
+                tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
+              }
             }
 
             @Override
             public void onClose(VRpcResult result) {
-              syncContext.execute(
-                  () -> {
-                    tracer.onAttemptFinish(result);
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding server close with result {0} because the the attempt is no"
-                              + " longer active.",
-                          result);
-                      return;
-                    }
-                    if (shouldRetry(result)) {
-                      context = context.createForNextAttempt();
-                      Duration retryDelay =
-                          Optional.ofNullable(result.getRetryInfo())
-                              .map(RetryInfo::getRetryDelay)
-                              .orElse(Durations.ZERO);
-                      if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
-                        Scheduled scheduled = new Scheduled(retryDelay);
-                        onStateChange(scheduled);
-                      } else {
-                        onStateChange(new Idle());
-                      }
-                      return;
-                    }
+              // VRpcImpl dispatches this callback onto ctx.getExecutor() (the same
+              // SynchronizationContext syncContext uses), so we are already inside the
+              // syncContext here — no additional wrapping needed.
+              tracer.onAttemptFinish(result);
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding server close with result {0} because the the attempt is no"
+                        + " longer active.",
+                    result);
+                return;
+              }
+              if (shouldRetry(result)) {
+                context = context.createForNextAttempt();
+                Duration retryDelay =
+                    Optional.ofNullable(result.getRetryInfo())
+                        .map(RetryInfo::getRetryDelay)
+                        .orElse(Durations.ZERO);
+                if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
+                  Scheduled scheduled = new Scheduled(retryDelay);
+                  onStateChange(scheduled);
+                } else {
+                  onStateChange(new Idle());
+                }
+                return;
+              }
 
-                    onStateChange(new Done(result));
-                  });
+              onStateChange(new Done(result));
             }
           });
     }
@@ -267,7 +268,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   class Scheduled extends State {
     private final Duration retryDelay;
-    private SynchronizationContext.ScheduledHandle future;
+    private ScheduledFuture<?> future;
 
     Scheduled(Duration retryDelay) {
       this.retryDelay = retryDelay;
@@ -277,11 +278,11 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     public void onStart() {
       try {
         future =
-            syncContext.schedule(
-                () -> grpcContext.wrap(() -> onStateChange(new Idle())).run(),
+            executor.schedule(
+                grpcContext.wrap(
+                    () -> context.getExecutor().execute(() -> onStateChange(new Idle()))),
                 Durations.toMillis(retryDelay),
-                TimeUnit.MILLISECONDS,
-                executor);
+                TimeUnit.MILLISECONDS);
       } catch (RejectedExecutionException e) {
         onStateChange(
             new Done(
@@ -297,10 +298,9 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     public void onCancel(String reason, Throwable throwable) {
       // future can be null if schedule throws an exception that's not RejectedExecutionException.
       // In which case sync context uncaught exception handler will be called, which calls cancel on
-      // the current
-      // state before transition into done state.
-      if (future != null && future.isPending()) {
-        future.cancel();
+      // the current state before transition into done state.
+      if (future != null && !future.isDone()) {
+        future.cancel(false);
       }
     }
   }

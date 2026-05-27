@@ -67,11 +67,13 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Answers;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+@Timeout(30)
 @ExtendWith(MockitoExtension.class)
 public class RetryingVRpcTest {
   private ScheduledExecutorService executor;
@@ -140,7 +142,7 @@ public class RetryingVRpcTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
 
     assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
@@ -208,7 +210,7 @@ public class RetryingVRpcTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
     assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
 
@@ -286,7 +288,10 @@ public class RetryingVRpcTest {
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
         VRpc.VRpcCallContext.create(
-            Deadline.after(Durations.toMillis(deadline), TimeUnit.MILLISECONDS), true, tracer),
+            Deadline.after(Durations.toMillis(deadline), TimeUnit.MILLISECONDS),
+            true,
+            tracer,
+            syncContext),
         f);
     ExecutionException exception = assertThrows(ExecutionException.class, f::get);
     assertThat(exception).hasMessageThat().contains(errorMessage);
@@ -346,7 +351,7 @@ public class RetryingVRpcTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
     VRpcException cause =
         (VRpcException) assertThrows(ExecutionException.class, () -> f.get()).getCause();
@@ -407,7 +412,7 @@ public class RetryingVRpcTest {
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(1).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
 
     // Wait for the first attempt to fail and get scheduled for retry

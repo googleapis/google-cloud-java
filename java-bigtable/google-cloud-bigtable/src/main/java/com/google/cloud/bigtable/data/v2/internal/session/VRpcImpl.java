@@ -136,12 +136,11 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
           "vrpc_incorrect_start_state",
           "VRpc has incorrect state. Expected to be started but was %s",
           state);
-      // TODO: loop through the session executor
-      if (retryable) {
-        listener.onClose(VRpcResult.createUncommitedError(status));
-      } else {
-        listener.onClose(VRpcResult.createRejectedError(status));
-      }
+      VRpcResult result =
+          retryable
+              ? VRpcResult.createUncommitedError(status)
+              : VRpcResult.createRejectedError(status);
+      ctx.getExecutor().execute(() -> listener.onClose(result));
     }
   }
 
@@ -150,8 +149,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
       logger.warning("tried to close a vRPC after it was already closed state: " + state.get());
       return;
     }
-
-    listener.onClose(result);
+    ctx.getExecutor().execute(() -> listener.onClose(result));
   }
 
   void handleResponse(VirtualRpcResponse response) {
@@ -170,30 +168,32 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
       // Right now, vrpc streaming & cancellation is not supported, so notifying SessionImpl is
       // unnecessary. In the future handleResponse will need to notify that Session that the user
       // was already notified of the error and no further notifications should be delivered
-      VRpcResult result =
+      VRpcResult decodeError =
           VRpcResult.createLocalTransportError(
               Status.INTERNAL.withDescription("Failed to decode VRpc payload").withCause(e));
-      listener.onClose(result);
+      ctx.getExecutor().execute(() -> listener.onClose(decodeError));
       return;
     }
 
-    try {
-      listener.onMessage(resp);
-    } catch (Throwable e) {
-      VRpcResult result = VRpcResult.createUserError(e);
-      listener.onClose(result);
-      return;
-    }
-
-    listener.onClose(VRpcResult.createServerOk(response));
+    RespT finalResp = resp;
+    ctx.getExecutor()
+        .execute(
+            () -> {
+              try {
+                listener.onMessage(finalResp);
+              } catch (Throwable e) {
+                listener.onClose(VRpcResult.createUserError(e));
+                return;
+              }
+              listener.onClose(VRpcResult.createServerOk(response));
+            });
   }
 
   void handleError(VRpcResult result) {
     if (state.getAndSet(State.CLOSED) == State.CLOSED) {
       return;
     }
-
-    listener.onClose(result);
+    ctx.getExecutor().execute(() -> listener.onClose(result));
   }
 
   @Override

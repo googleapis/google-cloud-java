@@ -92,7 +92,9 @@ import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
+@Timeout(30)
 public class VRpcTracerTest {
   private static final Correspondence<MetricData, String> METRIC_DATA_BY_NAME =
       Correspondence.transforming(MetricData::getName, "MetricData name");
@@ -220,7 +222,7 @@ public class VRpcTracerTest {
         };
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         userFuture);
     SessionFakeScriptedResponse response = userFuture.get();
     assertThat(response).isEqualToDefaultInstance();
@@ -280,7 +282,7 @@ public class VRpcTracerTest {
         };
     delayedVRpc.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         userFuture);
 
     long sessionDelay = 5L;
@@ -339,7 +341,7 @@ public class VRpcTracerTest {
         };
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
     SessionFakeScriptedResponse response = f.get();
     assertThat(response).isEqualToDefaultInstance();
@@ -397,7 +399,7 @@ public class VRpcTracerTest {
 
     delayedVRpc.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
-        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, syncContext),
         f);
     long sessionDelay = 200;
     Thread.sleep(sessionDelay);

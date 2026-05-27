@@ -68,3 +68,40 @@ finished), but there is no logging or tracing event, making silent drops invisib
 Consider adding a debug-level counter or log.
 
 **File:** `session/SessionImpl.java` — `cancelRpc()`
+
+---
+
+## VRpcListener / UnaryResponseFuture
+
+### ISSUE-006: An exception thrown inside the op executor dispatch chain can leave the caller's future permanently unresolved (silent hang)
+
+**Observed during Step 4 of the threading refactor.** When `VRpcImpl` dispatches a callback
+via `ctx.getExecutor().execute(...)`, any uncaught exception that escapes from within that task
+can silently orphan the caller's `VRpcListener` (and any `Future` backed by it):
+
+1. `VRpcImpl.handleError()` calls `ctx.getExecutor().execute(() -> listener.onClose(result))`.
+2. If `ctx.getExecutor()` is a `SynchronizationContext` and the listener throws (e.g.
+   `throwIfNotInThisSynchronizationContext()` on the wrong thread), the SyncContext's
+   uncaught-exception handler fires.
+3. The handler calls `retrying.cancel(...)`, which submits a new task to the same
+   SynchronizationContext.
+4. That cancel task eventually reaches `RetryingVRpc.Done.onStart()`, which calls
+   `listener.onClose(CANCELLED)` — but only if the SyncContext drain loop is still healthy.
+5. If the SyncContext drain exited early or the downstream cancel itself throws, `listener.onClose`
+   is never called, so `f.get()` blocks forever — there is no timeout, no error, no log.
+
+**Symptoms:** test/operation hangs indefinitely on `Future.get()` after an exception in the
+callback chain.
+
+**Root cause class:** There is no invariant enforcement that every code path that may fail
+*must* call `listener.onClose()` exactly once. Exceptions that escape executor tasks bypass
+the normal close path.
+
+**Desired fix (post-refactor):** After the threading refactor is complete, audit every executor
+`execute()` task that can invoke a `VRpcListener` to ensure a try/catch wraps the body and
+calls `listener.onClose(createLocalTransportError(...))` in the catch branch. The
+`SynchronizationContext` uncaught-exception handler should be a last-resort log + metric, not
+a recovery mechanism. Consider a typed `VRpcTask` wrapper that enforces the "always close"
+contract at compile time.
+
+**Files:** `session/VRpcImpl.java`, `middleware/RetryingVRpc.java`
