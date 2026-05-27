@@ -1040,7 +1040,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private OpenTelemetry getOpenTelemetryInstance() {
-    boolean hasCustomOtel = this.customOpenTelemetry != null;
 
     String effectiveProjectId =
         (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;

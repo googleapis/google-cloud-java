@@ -567,6 +567,10 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
     OpenTelemetry mockGlobalOtel = mock(OpenTelemetry.class);
     OpenTelemetry mockDriverManagedOtel = mock(OpenTelemetry.class);
     Logging mockLogging = mock(Logging.class);
+    org.mockito.Mockito.when(mockCustomOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    org.mockito.Mockito.when(mockGlobalOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    org.mockito.Mockito.when(mockDriverManagedOtel.getTracer(anyString()))
+        .thenReturn(mock(Tracer.class));
 
     if (hasCustom) {
       ds.setCustomOpenTelemetry(mockCustomOtel);
