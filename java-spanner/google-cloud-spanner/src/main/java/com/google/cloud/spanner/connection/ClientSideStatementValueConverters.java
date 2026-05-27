@@ -26,6 +26,7 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.TimestampBound.Mode;
 import com.google.cloud.spanner.connection.PgTransactionMode.AccessMode;
@@ -892,6 +893,29 @@ class ClientSideStatementValueConverters {
 
     @Override
     public Dialect convert(String value) {
+      return values.get(value);
+    }
+  }
+
+  static class InstanceTypeConverter
+      implements ClientSideStatementValueConverter<SpannerOptions.InstanceType> {
+    static final InstanceTypeConverter INSTANCE = new InstanceTypeConverter();
+
+    private final CaseInsensitiveEnumMap<SpannerOptions.InstanceType> values =
+        new CaseInsensitiveEnumMap<>(SpannerOptions.InstanceType.class);
+
+    private InstanceTypeConverter() {}
+
+    /** Constructor needed for reflection. */
+    public InstanceTypeConverter(String allowedValues) {}
+
+    @Override
+    public Class<SpannerOptions.InstanceType> getParameterClass() {
+      return SpannerOptions.InstanceType.class;
+    }
+
+    @Override
+    public SpannerOptions.InstanceType convert(String value) {
       return values.get(value);
     }
   }

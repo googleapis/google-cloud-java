@@ -685,15 +685,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         break;
       case DML:
       case DML_EXTRA:
-        try {
-          Job completedJob = this.bigQuery.getJob(results.getJobId()).waitFor();
-          JobStatistics.QueryStatistics statistics = completedJob.getStatistics();
-          updateAffectedRowCount(statistics.getNumDmlAffectedRows());
-        } catch (InterruptedException ex) {
-          throw new BigQueryJdbcRuntimeException(ex);
-        } catch (NullPointerException ex) {
-          throw new BigQueryJdbcException(ex);
-        }
+        QueryStatistics dmlStats = getQueryStatisticsFromJob(results);
+        Long dmlRowCount =
+            (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
+                ? dmlStats.getNumDmlAffectedRows()
+                : 0L;
+        updateAffectedRowCount(dmlRowCount);
         break;
       case TCL:
       case DDL:
@@ -725,8 +722,43 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           throw new BigQueryJdbcException(ex);
         }
         break;
+      case EXPORT:
+        QueryStatistics exportStats = getQueryStatisticsFromJob(results);
+        Long exportRowCount = 0L;
+        if (exportStats != null) {
+          QueryStatistics.ExportDataStats dataStats = exportStats.getExportDataStats();
+          if (dataStats != null && dataStats.getRowCount() != null) {
+            exportRowCount = dataStats.getRowCount();
+          }
+        }
+        updateAffectedRowCount(exportRowCount);
+        break;
       case OTHER:
-        throw new BigQueryJdbcException(String.format("Unexpected value: " + queryType));
+        String truncatedQuery = truncateQuery(query);
+        String id =
+            (results.getJobId() != null) ? results.getJobId().getJob() : results.getQueryId();
+        LOG.warning(
+            "Encountered unmapped SQL statement type [Job/Query ID: %s]. Treating as update statement: %s",
+            id, truncatedQuery);
+        updateAffectedRowCount(results.getTotalRows());
+        break;
+    }
+  }
+
+  private QueryStatistics getQueryStatisticsFromJob(TableResult results) throws SQLException {
+    try {
+      Job job = this.bigQuery.getJob(results.getJobId());
+      Job completedJob = (job != null) ? job.waitFor() : null;
+      JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
+      if (stats instanceof QueryStatistics) {
+        return (QueryStatistics) stats;
+      }
+      return null;
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcRuntimeException("Interrupted while waiting for job completion", ex);
+    } catch (BigQueryException ex) {
+      throw new BigQueryJdbcException("BigQueryException while waiting for job completion", ex);
     }
   }
 
@@ -1589,11 +1621,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (sql == null) {
       return;
     }
-    String sanitizedSql = sql.trim().replaceAll("\\s+", " ");
-    String truncatedSql =
-        sanitizedSql.length() > 256 ? sanitizedSql.substring(0, 256) + "..." : sanitizedSql;
+    String truncatedSql = truncateQuery(sql);
     LOG.info("Executing query: " + truncatedSql);
     LOG.info("Using query settings: " + this.querySettings.toString());
+  }
+
+  private String truncateQuery(String sql) {
+    if (sql == null) {
+      return null;
+    }
+    String sanitizedSql = sql.trim().replaceAll("\\s+", " ");
+    return sanitizedSql.length() > 256 ? sanitizedSql.substring(0, 256) + "..." : sanitizedSql;
   }
 
   /** Throws a {@link BigQueryJdbcException} if this object is closed */
@@ -1610,6 +1648,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     DDL,
     SCRIPT,
     TCL,
+    EXPORT,
     OTHER
   }
 

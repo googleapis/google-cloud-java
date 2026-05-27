@@ -19,25 +19,27 @@ package com.google.cloud.spanner.testing;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.common.base.Strings;
 
-public class ExperimentalHostHelper {
+public class SpannerOmniHelper {
   private static final String EXPERIMENTAL_HOST = "spanner.experimental_host";
+  private static final String OMNI_HOST = "spanner.omni.host";
   private static final String USE_PLAIN_TEXT = "spanner.use_plain_text";
   private static final String USE_MTLS = "spanner.mtls";
   private static final String CLIENT_CERT_PATH = "spanner.client_cert_path";
   private static final String CLIENT_CERT_KEY_PATH = "spanner.client_cert_key_path";
 
   /**
-   * Checks whether the emulator is being used. This is done by checking if the
-   * SPANNER_EMULATOR_HOST environment variable is set.
+   * Checks whether the Spanner Omni host is being used. This is done by checking if the
+   * spanner.omni.host or spanner.experimental_host (for compatibility) system property is set.
    *
-   * @return true if the emulator is being used. Returns false otherwise.
+   * @return true if the Spanner Omni host is being used. Returns false otherwise.
    */
-  public static boolean isExperimentalHost() {
-    return !Strings.isNullOrEmpty(System.getProperty(EXPERIMENTAL_HOST));
+  public static boolean isSpannerOmni() {
+    return !Strings.isNullOrEmpty(System.getProperty(OMNI_HOST))
+        || !Strings.isNullOrEmpty(System.getProperty(EXPERIMENTAL_HOST));
   }
 
-  public static void appendExperimentalHost(StringBuilder uri) {
-    uri.append(";isExperimentalHost=true");
+  public static void appendSpannerOmniProperties(StringBuilder uri) {
+    uri.append(";type=omni");
     if (isMtlsSetup()) {
       String clientCertificate = System.getProperty(CLIENT_CERT_PATH, "");
       String clientKey = System.getProperty(CLIENT_CERT_KEY_PATH, "");
@@ -50,11 +52,15 @@ public class ExperimentalHostHelper {
     return Boolean.getBoolean(USE_MTLS);
   }
 
-  public static void setExperimentalHostSpannerOptions(SpannerOptions.Builder builder) {
+  public static void setSpannerOmniOptions(SpannerOptions.Builder builder) {
+    String omniEndpoint = System.getProperty(OMNI_HOST, "");
     String experimentalHost = System.getProperty(EXPERIMENTAL_HOST, "");
+    if (!Strings.isNullOrEmpty(experimentalHost)) {
+      omniEndpoint = experimentalHost;
+    }
     boolean usePlainText = Boolean.getBoolean(USE_PLAIN_TEXT);
-    builder.setExperimentalHost(experimentalHost);
-    builder.setBuiltInMetricsEnabled(false);
+    builder.setHost(omniEndpoint);
+    builder.setType(SpannerOptions.InstanceType.OMNI);
     if (usePlainText) {
       builder.usePlainText();
     }

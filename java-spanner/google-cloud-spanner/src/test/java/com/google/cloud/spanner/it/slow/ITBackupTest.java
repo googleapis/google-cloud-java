@@ -17,7 +17,7 @@
 package com.google.cloud.spanner.it.slow;
 
 import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.cloud.spanner.testing.TimestampHelper.afterDays;
 import static com.google.cloud.spanner.testing.TimestampHelper.afterMinutes;
 import static com.google.cloud.spanner.testing.TimestampHelper.daysAgo;
@@ -130,7 +130,7 @@ public class ITBackupTest {
 
   @BeforeClass
   public static void setup() {
-    assumeFalse("backups are not supported on experimental host yet", isExperimentalHost());
+    assumeFalse("backups are not supported on Spanner Omni yet", isSpannerOmni());
     assumeFalse("backups are not supported on the emulator", isUsingEmulator());
     keyName = System.getProperty(KMS_KEY_NAME_PROPERTY);
     Preconditions.checkNotNull(
