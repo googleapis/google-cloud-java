@@ -216,6 +216,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean enableGcpTraceExporter;
   boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
+  boolean useGlobalOpenTelemetry;
   private OpenTelemetry openTelemetry;
   private Context otelContext;
   Tracer tracer =
@@ -367,6 +368,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
       this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
       this.customOpenTelemetry = ds.getCustomOpenTelemetry();
+      this.useGlobalOpenTelemetry = ds.getUseGlobalOpenTelemetry();
       this.openTelemetry = getOpenTelemetryInstance();
       this.bigQuery = getBigQueryConnection();
     }
@@ -1048,22 +1050,27 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.useGlobalOpenTelemetry,
             this.enableGcpTraceExporter,
             this.enableGcpLogExporter,
             this.customOpenTelemetry,
             effectiveCredentials,
             effectiveProjectId);
 
+    boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
     Logging localLoggingClient = null;
-    if (this.enableGcpLogExporter && !hasCustomOtel) {
+    if (this.enableGcpLogExporter && !hasExternalOtel) {
       localLoggingClient =
           BigQueryJdbcOpenTelemetry.createLoggingClient(
               true, null, effectiveCredentials, effectiveProjectId, this.credentials);
     }
 
-    if (this.enableGcpLogExporter || hasCustomOtel) {
+    if (this.enableGcpLogExporter || hasExternalOtel) {
       BigQueryJdbcOpenTelemetry.registerConnection(
-          this.connectionId, openTelemetry, localLoggingClient, this.enableGcpLogExporter);
+          this.connectionId,
+          openTelemetry,
+          localLoggingClient,
+          this.enableGcpLogExporter && !hasExternalOtel);
     }
 
     return openTelemetry;
@@ -1128,7 +1135,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.httpTransportOptions != null) {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
       Tracer sdkTracer = this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.BIGQUERY_NAMESPACE);
       bigQueryOptions.setOpenTelemetryTracer(sdkTracer);
       this.tracer =

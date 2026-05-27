@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Span;
@@ -245,6 +246,7 @@ public class BigQueryJdbcOpenTelemetry {
    * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
    */
   public static OpenTelemetry getOpenTelemetry(
+      boolean useGlobalOpenTelemetry,
       boolean enableGcpTraceExporter,
       boolean enableGcpLogExporter,
       OpenTelemetry customOpenTelemetry,
@@ -253,6 +255,10 @@ public class BigQueryJdbcOpenTelemetry {
 
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
+    }
+
+    if (useGlobalOpenTelemetry) {
+      return GlobalOpenTelemetry.get();
     }
 
     // NOTE: Currently, tracing only fully supports Application Default Credentials (ADC).
