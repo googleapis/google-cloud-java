@@ -219,6 +219,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
         .getTracer()
         .attemptStarted(request, outerRetryingFuture.getAttemptSettings().getOverallAttemptCount());
 
+    final ApiCallContext finalContext = attemptContext;
     innerCallable.call(
         request,
         new StateCheckingResponseObserver<ResponseT>() {
@@ -234,6 +235,18 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
 
           @Override
           public void onErrorImpl(Throwable t) {
+            if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
+              Throwable cause = t;
+              if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
+                cause = cause.getCause();
+              }
+              if (cause instanceof UnauthenticatedException) {
+                TransportChannel transportChannel = finalContext.getTransportChannel();
+                if (transportChannel != null) {
+                  transportChannel.refresh();
+                }
+              }
+            }
             onAttemptError(t);
           }
 
