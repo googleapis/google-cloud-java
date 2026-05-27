@@ -140,6 +140,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   private final DebugTagTracer debugTagTracer;
 
+  // @SuppressWarnings("GuardedBy"): error-prone flags writes to @GuardedBy("this") fields
+  // (sessions, picker, poolSizer, pendingRpcs, budget, retryCreateSessionFuture) inside the
+  // constructor without holding the monitor. This is safe because the object is not yet published
+  // to other threads — no external reference exists until the constructor returns.
   @SuppressWarnings("GuardedBy")
   public SessionPoolImpl(
       Metrics metrics,
@@ -164,6 +168,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         createInitialBudget(configManager.getClientConfiguration()));
   }
 
+  // @SuppressWarnings("GuardedBy"): same rationale as the public constructor above.
   @SuppressWarnings("GuardedBy")
   @VisibleForTesting
   SessionPoolImpl(
@@ -751,7 +756,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     private final Clock clock;
     private final DebugTagTracer debugTagTracer;
 
-    // TODO: fix lock sharing
+    // The `lock` parameter is the pool-wide monitor (SessionPoolImpl.this). It is typed as Object
+    // because Watchdog is a static nested class and cannot reference the outer instance type in its
+    // constructor signature without creating a circular dependency. Phase 5 will replace this with
+    // a properly typed lock once the per-AFE sharding model is established.
     public Watchdog(
         Object lock,
         ScheduledExecutorService executor,
