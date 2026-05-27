@@ -243,6 +243,23 @@ public class BigQueryDatabaseMetaDataTest {
     assertNotNull(bracketPattern);
     assertTrue(bracketPattern.matcher("array[0]").matches());
     assertFalse(bracketPattern.matcher("array_0_").matches());
+
+    // Escaped wildcards
+    Pattern escapedUnderscore = dbMetadata.compileSqlLikePattern("test\\_table");
+    assertNotNull(escapedUnderscore);
+    assertTrue(escapedUnderscore.matcher("test_table").matches());
+    assertFalse(escapedUnderscore.matcher("test1table").matches());
+
+    Pattern escapedPercent = dbMetadata.compileSqlLikePattern("100\\%discount");
+    assertNotNull(escapedPercent);
+    assertTrue(escapedPercent.matcher("100%discount").matches());
+    assertFalse(escapedPercent.matcher("100PERCENTdiscount").matches());
+
+    // Escape character at the end
+    Pattern escapeLast = dbMetadata.compileSqlLikePattern("test\\");
+    assertNotNull(escapeLast);
+    assertTrue(escapeLast.matcher("test\\").matches());
+    assertFalse(escapeLast.matcher("test").matches());
   }
 
   @Test
