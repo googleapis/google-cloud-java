@@ -76,7 +76,7 @@ Librarian is a tool for managing client library configuration and generation. Th
 Any changes to `librarian.yaml` (adding APIs, updating dependencies, changing configurations, etc.) **must** be reviewed and approved by the Librarian on-call team. Please include `cloud-sdk-librarian-oncall@google.com` or an on-call engineer as a reviewer on your PR.
 
 #### Prerequisite
-Make sure you have Go installed (as Librarian is written in Go), as well as Python, Maven, and JD17 (use https://sdkman.io/).
+Make sure you have Go installed (as Librarian is written in Go), as well as Python, Maven, and JDK 17 (use https://sdkman.io/).
 
 #### Running the Generator with Local Changes
 If you want to test changes to the generator (`gapic-generator-java`) or local changes to `librarian.yaml` (e.g., testing a protobuf major version bump or unmerged generator change):
