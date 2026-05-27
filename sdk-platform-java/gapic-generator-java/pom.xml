@@ -122,6 +122,29 @@
       </plugin>
 
       <plugin>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <executions>
+          <execution>
+            <id>download-metadata-proto</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>
+                https://raw.githubusercontent.com/googleapis/googleapis/${googleapis.commit}/gapic/metadata/gapic_metadata.proto
+              </url>
+              <outputDirectory>target/generated-sources/proto</outputDirectory>
+              <skipCache>true</skipCache>
+              <overwrite>true</overwrite>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
         <version>0.6.1</version>
@@ -138,6 +161,16 @@
             </goals>
             <configuration>
               <protoSourceRoot>src/main/proto</protoSourceRoot>
+            </configuration>
+          </execution>
+          <execution>
+            <id>compile-downloaded-protos</id>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <protoSourceRoot>target/generated-sources/proto</protoSourceRoot>
+              <clearOutputDirectory>false</clearOutputDirectory>
             </configuration>
           </execution>
           <execution>
