@@ -124,7 +124,7 @@ public class RetryingVRpcTest {
 
   @Test
   void noRetryTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -157,7 +157,7 @@ public class RetryingVRpcTest {
   @Test
   public void retryServerError() throws Exception {
     int requestTag = 1;
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -225,7 +225,7 @@ public class RetryingVRpcTest {
   @Test
   public void retryDeadlineRespectedTest() throws Exception {
     int requestTag = 1;
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -307,7 +307,7 @@ public class RetryingVRpcTest {
   @Test
   public void vRpcFailureTest() throws Exception {
     // vrpc error on the session should not close the stream
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -367,7 +367,7 @@ public class RetryingVRpcTest {
 
   @Test
   void cancelInScheduledState() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 

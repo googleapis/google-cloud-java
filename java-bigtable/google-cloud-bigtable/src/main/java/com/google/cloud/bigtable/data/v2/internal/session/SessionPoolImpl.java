@@ -124,8 +124,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   private final ScheduledFuture<?> afeListPruneTask;
 
-  private final ScheduledFuture<?> heartbeatMonitor;
-
   private final ScheduledExecutorService executorService;
 
   @GuardedBy("this")
@@ -211,18 +209,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     // Watchdog checks for sessions in WAIT_SERVER_CLOSE state and runs every 5 minutes
     watchdog = new Watchdog(this, executorService, Duration.ofMinutes(5), sessions, debugTagTracer);
-    // Heartbeat monitor checks for sessions in READY state with active vRPCs and runs more
-    // frequently
-    heartbeatMonitor =
-        executorService.scheduleAtFixedRate(
-            () -> {
-              synchronized (SessionPoolImpl.this) {
-                sessions.checkHeartbeat(Clock.systemUTC());
-              }
-            },
-            SessionImpl.HEARTBEAT_CHECK_INTERVAL.toMillis(),
-            SessionImpl.HEARTBEAT_CHECK_INTERVAL.toMillis(),
-            TimeUnit.MILLISECONDS);
+    // Heartbeat monitoring is now done per-session via SessionImpl.sessionSyncContext.
     afeListPruneTask =
         executorService.scheduleAtFixedRate(
             () -> {
@@ -271,7 +258,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         pendingRpc.cancel("SessionPool closed: " + req, null);
       }
       afeListPruneTask.cancel(false);
-      heartbeatMonitor.cancel(false);
       if (retryCreateSessionFuture != null) {
         retryCreateSessionFuture.cancel(false);
         retryCreateSessionFuture = null;
@@ -350,7 +336,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       try (Scope ignored = io.opentelemetry.context.Context.root().makeCurrent()) {
 
         SessionStream stream = factory.createNew();
-        Session session = new SessionImpl(metrics, info, sessionNum++, stream);
+        Session session = new SessionImpl(metrics, info, sessionNum++, stream, executorService);
         SessionHandle handle = sessions.newHandle(session);
 
         Metadata localMd = new Metadata();

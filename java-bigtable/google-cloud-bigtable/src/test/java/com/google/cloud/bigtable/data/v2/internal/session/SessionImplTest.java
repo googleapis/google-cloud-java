@@ -135,7 +135,7 @@ public class SessionImplTest {
 
   @Test
   void sessionSendAndCloseTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -165,7 +165,7 @@ public class SessionImplTest {
 
   @Test
   void sessionCloseBeforeInit() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -182,7 +182,7 @@ public class SessionImplTest {
 
   @Test
   void sessionGoAwayTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     Duration goAwayDelay = Duration.ofMillis(500);
     FakeSessionListener sessionListener = new FakeSessionListener();
@@ -270,7 +270,7 @@ public class SessionImplTest {
 
   @Test
   void streamErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     Status.Code actualCode = Status.Code.INTERNAL;
@@ -339,7 +339,7 @@ public class SessionImplTest {
 
   @Test
   void rpcErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     com.google.rpc.Status expectedRpcStatus =
         com.google.rpc.Status.newBuilder()
@@ -406,7 +406,7 @@ public class SessionImplTest {
 
   @Test
   void localErrorTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     session.start(
@@ -453,7 +453,7 @@ public class SessionImplTest {
 
     Instant time = clock.instant();
 
-    SessionImpl session = new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew(), executor);
 
     int keepAliveDurationMs = 150;
 
@@ -509,7 +509,7 @@ public class SessionImplTest {
 
   @Test
   void testCancel() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
 
     int responseDelayMs = 200;
     // Configure the fake service to delay the response, giving us time to cancel it

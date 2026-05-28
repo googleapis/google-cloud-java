@@ -160,7 +160,7 @@ public class VRpcTracerTest {
     SessionFactory sessionFactory =
         new SessionFactory(
             channelPool, FakeDescriptor.FAKE_SESSION.getMethodDescriptor(), CallOptions.DEFAULT);
-    session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), executor);
   }
 
   @AfterEach
