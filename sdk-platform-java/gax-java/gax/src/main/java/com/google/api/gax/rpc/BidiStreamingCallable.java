@@ -240,38 +240,34 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
           ClientStreamReadyObserver<RequestT> onReady,
           ApiCallContext thisCallContext) {
         final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
-        ResponseObserver<ResponseT> refreshingObserver = responseObserver;
+        ResponseObserver<ResponseT> refreshingObserver =
+            new ResponseObserver<ResponseT>() {
+              @Override
+              public void onStart(StreamController controller) {
+                responseObserver.onStart(controller);
+              }
 
-        if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
-          refreshingObserver =
-              new ResponseObserver<ResponseT>() {
-                @Override
-                public void onStart(StreamController controller) {
-                  responseObserver.onStart(controller);
-                }
+              @Override
+              public void onResponse(ResponseT response) {
+                responseObserver.onResponse(response);
+              }
 
-                @Override
-                public void onResponse(ResponseT response) {
-                  responseObserver.onResponse(response);
-                }
-
-                @Override
-                public void onError(Throwable t) {
-                  if (t instanceof UnauthenticatedException) {
-                    TransportChannel transportChannel = mergedContext.getTransportChannel();
-                    if (transportChannel != null) {
-                      transportChannel.refresh();
-                    }
+              @Override
+              public void onError(Throwable t) {
+                if (t instanceof UnauthenticatedException) {
+                  TransportChannel transportChannel = mergedContext.getTransportChannel();
+                  if (transportChannel != null && transportChannel.shouldRefresh()) {
+                    transportChannel.refresh();
                   }
-                  responseObserver.onError(t);
                 }
+                responseObserver.onError(t);
+              }
 
-                @Override
-                public void onComplete() {
-                  responseObserver.onComplete();
-                }
-              };
-        }
+              @Override
+              public void onComplete() {
+                responseObserver.onComplete();
+              }
+            };
 
         return BidiStreamingCallable.this.internalCall(
             refreshingObserver, onReady, mergedContext);

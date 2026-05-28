@@ -235,16 +235,14 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
 
           @Override
           public void onErrorImpl(Throwable t) {
-            if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
-              Throwable cause = t;
-              if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
-                cause = cause.getCause();
-              }
-              if (cause instanceof UnauthenticatedException) {
-                TransportChannel transportChannel = finalContext.getTransportChannel();
-                if (transportChannel != null) {
-                  transportChannel.refresh();
-                }
+            Throwable cause = t;
+            if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
+              cause = cause.getCause();
+            }
+            if (cause instanceof UnauthenticatedException) {
+              TransportChannel transportChannel = finalContext.getTransportChannel();
+              if (transportChannel != null && transportChannel.shouldRefresh()) {
+                transportChannel.refresh();
               }
             }
             onAttemptError(t);

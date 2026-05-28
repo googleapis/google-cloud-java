@@ -63,6 +63,16 @@ public abstract class HttpJsonTransportChannel implements TransportChannel {
   }
 
   @Override
+  public void refresh() {
+    getManagedChannel().refresh();
+  }
+
+  @Override
+  public boolean shouldRefresh() {
+    return getManagedChannel().shouldRefresh();
+  }
+
+  @Override
   public void shutdown() {
     getManagedChannel().shutdown();
   }

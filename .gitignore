@@ -86,3 +86,7 @@ monorepo
 *.tfstate.lock.info
 
 .jqwik-database
+
+**/Agentic_Identities/**
+**/*.patch
+
