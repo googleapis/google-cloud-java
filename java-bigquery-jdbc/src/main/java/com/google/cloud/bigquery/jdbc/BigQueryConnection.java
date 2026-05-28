@@ -50,7 +50,6 @@ import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLFeatureNotSupportedException;
 import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.time.Duration;
@@ -785,17 +784,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public String nativeSQL(String sql) throws SQLException {
     checkClosed();
     return sql;
-  }
-
-  @Override
-  public void setNetworkTimeout(java.util.concurrent.Executor executor, int milliseconds)
-      throws SQLException {
-    throw new SQLFeatureNotSupportedException("setNetworkTimeout is not supported.");
-  }
-
-  @Override
-  public int getNetworkTimeout() throws SQLException {
-    throw new SQLFeatureNotSupportedException("getNetworkTimeout is not supported.");
   }
 
   @Override
