@@ -271,7 +271,8 @@ public class ConnectionProperties {
   static final ConnectionProperty<SpannerOptions.InstanceType> TYPE =
       create(
           TYPE_PROPERTY_NAME,
-          "Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni is mandatory when connecting to a Spanner Omni instance.",
+          "Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni"
+              + " is mandatory when connecting to a Spanner Omni instance.",
           DEFAULT_TYPE,
           new SpannerOptions.InstanceType[] {
             SpannerOptions.InstanceType.CLOUD, SpannerOptions.InstanceType.OMNI,
