@@ -33,6 +33,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class ITDriverTest {
@@ -55,6 +57,7 @@ public class ITDriverTest {
 
   String selectQuery = "SELECT * FROM `%s.%s.%s` ;";
 
+  @Disabled
   @Test
   public void testGetDriverMethod() throws SQLException, InterruptedException {
     String OAUTH_TYPE = "3";

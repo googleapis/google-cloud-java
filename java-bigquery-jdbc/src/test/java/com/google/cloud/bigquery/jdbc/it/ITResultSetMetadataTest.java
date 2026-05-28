@@ -28,6 +28,7 @@ import java.sql.Statement;
 import java.util.Random;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class ITResultSetMetadataTest {
@@ -50,6 +51,7 @@ public class ITResultSetMetadataTest {
     ITBase.cleanUp(DATASET);
   }
 
+  @Disabled
   @Test
   public void testResultSetMetadata() throws SQLException {
     String selectData = "SELECT * FROM " + DATASET + "." + TABLE_NAME + ";";

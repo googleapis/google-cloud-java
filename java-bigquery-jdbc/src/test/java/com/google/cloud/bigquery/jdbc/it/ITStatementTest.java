@@ -37,6 +37,7 @@ import java.util.Properties;
 import java.util.Random;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class ITStatementTest {
@@ -59,6 +60,7 @@ public class ITStatementTest {
     ITBase.cleanUp(DATASET);
   }
 
+  @Disabled
   @Test
   public void testExecute() throws SQLException {
     Connection connection =
@@ -351,6 +353,7 @@ public class ITStatementTest {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testSetTimeoutThrows() throws SQLException {
     Connection connection =

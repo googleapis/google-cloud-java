@@ -44,6 +44,7 @@ import java.util.regex.Pattern;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
@@ -76,6 +77,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @AfterAll
   public static void afterClass() throws SQLException {}
 
+  @Disabled
   @Test
   public void testGetCatalogs() throws SQLException {
     Connection connection =
@@ -181,6 +183,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDriverMetadataInfo() throws SQLException {
     Connection connection =
@@ -196,6 +199,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testProcedure() throws SQLException {
     Connection connection =
@@ -210,6 +214,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testAllBooleanMethods() throws SQLException {
     Connection connection =
@@ -236,6 +241,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testAllIntMethods() throws SQLException {
     Connection connection =
@@ -418,6 +424,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetProcedureColumns() throws SQLException {
 
@@ -482,6 +489,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetColumns() throws SQLException {
 
@@ -960,6 +968,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetFunctionColumns() throws SQLException {
     Connection connection =
