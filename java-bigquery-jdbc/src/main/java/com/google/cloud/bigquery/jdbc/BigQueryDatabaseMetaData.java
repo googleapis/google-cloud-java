@@ -5221,38 +5221,33 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     StringBuilder regex = new StringBuilder(sqlLikePattern.length() * 2);
     regex.append('^');
+    boolean escaped = false;
     for (int i = 0; i < sqlLikePattern.length(); i++) {
       char c = sqlLikePattern.charAt(i);
-      switch (c) {
-        case '%':
-          regex.append(".*");
-          break;
-        case '_':
-          regex.append('.');
-          break;
-        case '\\':
-        case '.':
-        case '[':
-        case ']':
-        case '(':
-        case ')':
-        case '{':
-        case '}':
-        case '*':
-        case '+':
-        case '?':
-        case '^':
-        case '$':
-        case '|':
-          regex.append('\\').append(c);
-          break;
-        default:
-          regex.append(c);
-          break;
+      if (!escaped && c == '\\') {
+        escaped = true;
+        continue;
+      } else if (!escaped && c == '%') {
+        regex.append(".*");
+      } else if (!escaped && c == '_') {
+        regex.append('.');
+      } else {
+        if (isRegexMetacharacter(c)) {
+          regex.append('\\');
+        }
+        regex.append(c);
+        escaped = false;
       }
+    }
+    if (escaped) {
+      regex.append('\\').append('\\');
     }
     regex.append('$');
     return Pattern.compile(regex.toString(), Pattern.CASE_INSENSITIVE);
+  }
+
+  private static boolean isRegexMetacharacter(char c) {
+    return "\\.[]{}()*+?^$|".indexOf(c) != -1;
   }
 
   boolean needsListing(String pattern) {

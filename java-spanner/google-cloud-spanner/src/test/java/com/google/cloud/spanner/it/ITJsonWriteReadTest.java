@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner.it;
 
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
@@ -112,7 +112,7 @@ public class ITJsonWriteReadTest {
 
   @Test
   public void testWriteAndReadInvalidJsonValues() throws IOException {
-    assumeFalse("Tracking the failure via b/441255097 for experimental host", isExperimentalHost());
+    assumeFalse("Tracking the failure via b/441255097 for Spanner Omni", isSpannerOmni());
     List<String> resources = getJsonFilePaths(RESOURCES_DIR + File.separator + INVALID_JSON_DIR);
 
     AtomicLong id = new AtomicLong(100);
