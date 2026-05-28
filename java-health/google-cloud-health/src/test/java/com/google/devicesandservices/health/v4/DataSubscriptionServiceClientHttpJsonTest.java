@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -459,6 +460,346 @@ public class DataSubscriptionServiceClientHttpJsonTest {
       client.deleteSubscriberAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+    CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+    String subscriptionId = "subscriptionId1478790936";
+
+    Subscription actualResponse = client.createSubscription(parent, subscription, subscriptionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+      CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+      String subscriptionId = "subscriptionId1478790936";
+      client.createSubscription(parent, subscription, subscriptionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSubscriptionTest2() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-954/subscribers/subscriber-954";
+    CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+    String subscriptionId = "subscriptionId1478790936";
+
+    Subscription actualResponse = client.createSubscription(parent, subscription, subscriptionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-954/subscribers/subscriber-954";
+      CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+      String subscriptionId = "subscriptionId1478790936";
+      client.createSubscription(parent, subscription, subscriptionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-954/subscribers/subscriber-954";
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-954/subscribers/subscriber-954";
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Subscription subscription =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Subscription actualResponse = client.updateSubscription(subscription, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Subscription subscription =
+          Subscription.newBuilder()
+              .setName(
+                  SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+              .addAllDataTypes(new ArrayList<String>())
+              .setUser(UserName.of("[USER]").toString())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubscription(subscription, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]");
+
+    client.deleteSubscription(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]");
+      client.deleteSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-217/subscribers/subscriber-217/subscriptions/subscription-217";
+
+    client.deleteSubscription(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-217/subscribers/subscriber-217/subscriptions/subscription-217";
+      client.deleteSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

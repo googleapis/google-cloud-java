@@ -228,6 +228,201 @@ public final class DataSubscriptionServiceGrpc {
     return getDeleteSubscriberMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.CreateSubscriptionRequest,
+          com.google.devicesandservices.health.v4.Subscription>
+      getCreateSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSubscription",
+      requestType = com.google.devicesandservices.health.v4.CreateSubscriptionRequest.class,
+      responseType = com.google.devicesandservices.health.v4.Subscription.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.CreateSubscriptionRequest,
+          com.google.devicesandservices.health.v4.Subscription>
+      getCreateSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.CreateSubscriptionRequest,
+            com.google.devicesandservices.health.v4.Subscription>
+        getCreateSubscriptionMethod;
+    if ((getCreateSubscriptionMethod = DataSubscriptionServiceGrpc.getCreateSubscriptionMethod)
+        == null) {
+      synchronized (DataSubscriptionServiceGrpc.class) {
+        if ((getCreateSubscriptionMethod = DataSubscriptionServiceGrpc.getCreateSubscriptionMethod)
+            == null) {
+          DataSubscriptionServiceGrpc.getCreateSubscriptionMethod =
+              getCreateSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.CreateSubscriptionRequest,
+                          com.google.devicesandservices.health.v4.Subscription>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.CreateSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.Subscription
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataSubscriptionServiceMethodDescriptorSupplier("CreateSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.ListSubscriptionsRequest,
+          com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+      getListSubscriptionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubscriptions",
+      requestType = com.google.devicesandservices.health.v4.ListSubscriptionsRequest.class,
+      responseType = com.google.devicesandservices.health.v4.ListSubscriptionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.ListSubscriptionsRequest,
+          com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+      getListSubscriptionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.ListSubscriptionsRequest,
+            com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+        getListSubscriptionsMethod;
+    if ((getListSubscriptionsMethod = DataSubscriptionServiceGrpc.getListSubscriptionsMethod)
+        == null) {
+      synchronized (DataSubscriptionServiceGrpc.class) {
+        if ((getListSubscriptionsMethod = DataSubscriptionServiceGrpc.getListSubscriptionsMethod)
+            == null) {
+          DataSubscriptionServiceGrpc.getListSubscriptionsMethod =
+              getListSubscriptionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.ListSubscriptionsRequest,
+                          com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSubscriptions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.ListSubscriptionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.ListSubscriptionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataSubscriptionServiceMethodDescriptorSupplier("ListSubscriptions"))
+                      .build();
+        }
+      }
+    }
+    return getListSubscriptionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.UpdateSubscriptionRequest,
+          com.google.devicesandservices.health.v4.Subscription>
+      getUpdateSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubscription",
+      requestType = com.google.devicesandservices.health.v4.UpdateSubscriptionRequest.class,
+      responseType = com.google.devicesandservices.health.v4.Subscription.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.UpdateSubscriptionRequest,
+          com.google.devicesandservices.health.v4.Subscription>
+      getUpdateSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.UpdateSubscriptionRequest,
+            com.google.devicesandservices.health.v4.Subscription>
+        getUpdateSubscriptionMethod;
+    if ((getUpdateSubscriptionMethod = DataSubscriptionServiceGrpc.getUpdateSubscriptionMethod)
+        == null) {
+      synchronized (DataSubscriptionServiceGrpc.class) {
+        if ((getUpdateSubscriptionMethod = DataSubscriptionServiceGrpc.getUpdateSubscriptionMethod)
+            == null) {
+          DataSubscriptionServiceGrpc.getUpdateSubscriptionMethod =
+              getUpdateSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.UpdateSubscriptionRequest,
+                          com.google.devicesandservices.health.v4.Subscription>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.UpdateSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.Subscription
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataSubscriptionServiceMethodDescriptorSupplier("UpdateSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.DeleteSubscriptionRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSubscription",
+      requestType = com.google.devicesandservices.health.v4.DeleteSubscriptionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.DeleteSubscriptionRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.DeleteSubscriptionRequest,
+            com.google.protobuf.Empty>
+        getDeleteSubscriptionMethod;
+    if ((getDeleteSubscriptionMethod = DataSubscriptionServiceGrpc.getDeleteSubscriptionMethod)
+        == null) {
+      synchronized (DataSubscriptionServiceGrpc.class) {
+        if ((getDeleteSubscriptionMethod = DataSubscriptionServiceGrpc.getDeleteSubscriptionMethod)
+            == null) {
+          DataSubscriptionServiceGrpc.getDeleteSubscriptionMethod =
+              getDeleteSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.DeleteSubscriptionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.DeleteSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataSubscriptionServiceMethodDescriptorSupplier("DeleteSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSubscriptionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataSubscriptionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataSubscriptionServiceStub> factory =
@@ -386,6 +581,70 @@ public final class DataSubscriptionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteSubscriberMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription for a specific user to a specific subscriber.
+     * This method requires the subscriber to have a `SubscriptionCreatePolicy`
+     * set to `MANUAL` for the given data types.
+     * </pre>
+     */
+    default void createSubscription(
+        com.google.devicesandservices.health.v4.CreateSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all active subscriptions for a given subscriber. This can be
+     * filtered, for example, by user or data type.
+     * </pre>
+     */
+    default void listSubscriptions(
+        com.google.devicesandservices.health.v4.ListSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubscriptionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the data types for an existing user subscription.
+     * </pre>
+     */
+    default void updateSubscription(
+        com.google.devicesandservices.health.v4.UpdateSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific user subscription, stopping notifications for this
+     * user to this subscriber.
+     * </pre>
+     */
+    default void deleteSubscription(
+        com.google.devicesandservices.health.v4.DeleteSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSubscriptionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -529,6 +788,78 @@ public final class DataSubscriptionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription for a specific user to a specific subscriber.
+     * This method requires the subscriber to have a `SubscriptionCreatePolicy`
+     * set to `MANUAL` for the given data types.
+     * </pre>
+     */
+    public void createSubscription(
+        com.google.devicesandservices.health.v4.CreateSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all active subscriptions for a given subscriber. This can be
+     * filtered, for example, by user or data type.
+     * </pre>
+     */
+    public void listSubscriptions(
+        com.google.devicesandservices.health.v4.ListSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the data types for an existing user subscription.
+     * </pre>
+     */
+    public void updateSubscription(
+        com.google.devicesandservices.health.v4.UpdateSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific user subscription, stopping notifications for this
+     * user to this subscriber.
+     * </pre>
+     */
+    public void deleteSubscription(
+        com.google.devicesandservices.health.v4.DeleteSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -645,6 +976,66 @@ public final class DataSubscriptionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubscriberMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription for a specific user to a specific subscriber.
+     * This method requires the subscriber to have a `SubscriptionCreatePolicy`
+     * set to `MANUAL` for the given data types.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.Subscription createSubscription(
+        com.google.devicesandservices.health.v4.CreateSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all active subscriptions for a given subscriber. This can be
+     * filtered, for example, by user or data type.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.ListSubscriptionsResponse listSubscriptions(
+        com.google.devicesandservices.health.v4.ListSubscriptionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the data types for an existing user subscription.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.Subscription updateSubscription(
+        com.google.devicesandservices.health.v4.UpdateSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific user subscription, stopping notifications for this
+     * user to this subscriber.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubscription(
+        com.google.devicesandservices.health.v4.DeleteSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -756,6 +1147,62 @@ public final class DataSubscriptionServiceGrpc {
         com.google.devicesandservices.health.v4.DeleteSubscriberRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSubscriberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription for a specific user to a specific subscriber.
+     * This method requires the subscriber to have a `SubscriptionCreatePolicy`
+     * set to `MANUAL` for the given data types.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.Subscription createSubscription(
+        com.google.devicesandservices.health.v4.CreateSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all active subscriptions for a given subscriber. This can be
+     * filtered, for example, by user or data type.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.ListSubscriptionsResponse listSubscriptions(
+        com.google.devicesandservices.health.v4.ListSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the data types for an existing user subscription.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.Subscription updateSubscription(
+        com.google.devicesandservices.health.v4.UpdateSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific user subscription, stopping notifications for this
+     * user to this subscriber.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubscription(
+        com.google.devicesandservices.health.v4.DeleteSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
   }
 
@@ -871,12 +1318,79 @@ public final class DataSubscriptionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSubscriberMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription for a specific user to a specific subscriber.
+     * This method requires the subscriber to have a `SubscriptionCreatePolicy`
+     * set to `MANUAL` for the given data types.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.Subscription>
+        createSubscription(
+            com.google.devicesandservices.health.v4.CreateSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all active subscriptions for a given subscriber. This can be
+     * filtered, for example, by user or data type.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.ListSubscriptionsResponse>
+        listSubscriptions(
+            com.google.devicesandservices.health.v4.ListSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the data types for an existing user subscription.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.Subscription>
+        updateSubscription(
+            com.google.devicesandservices.health.v4.UpdateSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific user subscription, stopping notifications for this
+     * user to this subscriber.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSubscription(
+            com.google.devicesandservices.health.v4.DeleteSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_SUBSCRIBER = 0;
   private static final int METHODID_LIST_SUBSCRIBERS = 1;
   private static final int METHODID_UPDATE_SUBSCRIBER = 2;
   private static final int METHODID_DELETE_SUBSCRIBER = 3;
+  private static final int METHODID_CREATE_SUBSCRIPTION = 4;
+  private static final int METHODID_LIST_SUBSCRIPTIONS = 5;
+  private static final int METHODID_UPDATE_SUBSCRIPTION = 6;
+  private static final int METHODID_DELETE_SUBSCRIPTION = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -916,6 +1430,30 @@ public final class DataSubscriptionServiceGrpc {
           serviceImpl.deleteSubscriber(
               (com.google.devicesandservices.health.v4.DeleteSubscriberRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_SUBSCRIPTION:
+          serviceImpl.createSubscription(
+              (com.google.devicesandservices.health.v4.CreateSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBSCRIPTIONS:
+          serviceImpl.listSubscriptions(
+              (com.google.devicesandservices.health.v4.ListSubscriptionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devicesandservices.health.v4.ListSubscriptionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBSCRIPTION:
+          serviceImpl.updateSubscription(
+              (com.google.devicesandservices.health.v4.UpdateSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Subscription>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SUBSCRIPTION:
+          serviceImpl.deleteSubscription(
+              (com.google.devicesandservices.health.v4.DeleteSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -960,6 +1498,33 @@ public final class DataSubscriptionServiceGrpc {
                 new MethodHandlers<
                     com.google.devicesandservices.health.v4.DeleteSubscriberRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_SUBSCRIBER)))
+        .addMethod(
+            getCreateSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.CreateSubscriptionRequest,
+                    com.google.devicesandservices.health.v4.Subscription>(
+                    service, METHODID_CREATE_SUBSCRIPTION)))
+        .addMethod(
+            getListSubscriptionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.ListSubscriptionsRequest,
+                    com.google.devicesandservices.health.v4.ListSubscriptionsResponse>(
+                    service, METHODID_LIST_SUBSCRIPTIONS)))
+        .addMethod(
+            getUpdateSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.UpdateSubscriptionRequest,
+                    com.google.devicesandservices.health.v4.Subscription>(
+                    service, METHODID_UPDATE_SUBSCRIPTION)))
+        .addMethod(
+            getDeleteSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.DeleteSubscriptionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SUBSCRIPTION)))
         .build();
   }
 
@@ -1015,6 +1580,10 @@ public final class DataSubscriptionServiceGrpc {
                       .addMethod(getListSubscribersMethod())
                       .addMethod(getUpdateSubscriberMethod())
                       .addMethod(getDeleteSubscriberMethod())
+                      .addMethod(getCreateSubscriptionMethod())
+                      .addMethod(getListSubscriptionsMethod())
+                      .addMethod(getUpdateSubscriptionMethod())
+                      .addMethod(getDeleteSubscriptionMethod())
                       .build();
         }
       }

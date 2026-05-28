@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4.stub;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -35,13 +36,19 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.CreateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.CreateSubscriberRequest;
+import com.google.devicesandservices.health.v4.CreateSubscriptionRequest;
 import com.google.devicesandservices.health.v4.DeleteSubscriberMetadata;
 import com.google.devicesandservices.health.v4.DeleteSubscriberRequest;
+import com.google.devicesandservices.health.v4.DeleteSubscriptionRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersResponse;
+import com.google.devicesandservices.health.v4.ListSubscriptionsRequest;
+import com.google.devicesandservices.health.v4.ListSubscriptionsResponse;
 import com.google.devicesandservices.health.v4.Subscriber;
+import com.google.devicesandservices.health.v4.Subscription;
 import com.google.devicesandservices.health.v4.UpdateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.UpdateSubscriberRequest;
+import com.google.devicesandservices.health.v4.UpdateSubscriptionRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -232,6 +239,159 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateSubscriptionRequest, Subscription>
+      createSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<CreateSubscriptionRequest, Subscription>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/CreateSubscription")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v4/{parent=projects/*/subscribers/*}/subscriptions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "subscriptionId", request.getSubscriptionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("subscription", request.getSubscription(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Subscription>newBuilder()
+                      .setDefaultInstance(Subscription.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsMethodDescriptor =
+          ApiMethodDescriptor.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/ListSubscriptions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSubscriptionsRequest>newBuilder()
+                      .setPath(
+                          "/v4/{parent=projects/*/subscribers/*}/subscriptions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSubscriptionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSubscriptionsResponse>newBuilder()
+                      .setDefaultInstance(ListSubscriptionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSubscriptionRequest, Subscription>
+      updateSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSubscriptionRequest, Subscription>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/UpdateSubscription")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v4/{subscription.name=projects/*/subscribers/*/subscriptions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "subscription.name", request.getSubscription().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("subscription", request.getSubscription(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Subscription>newBuilder()
+                      .setDefaultInstance(Subscription.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSubscriptionRequest, Empty>
+      deleteSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSubscriptionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/DeleteSubscription")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v4/{name=projects/*/subscribers/*/subscriptions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateSubscriberRequest, Operation> createSubscriberCallable;
   private final OperationCallable<CreateSubscriberRequest, Subscriber, CreateSubscriberMetadata>
       createSubscriberOperationCallable;
@@ -245,6 +405,13 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
   private final UnaryCallable<DeleteSubscriberRequest, Operation> deleteSubscriberCallable;
   private final OperationCallable<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationCallable;
+  private final UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable;
+  private final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable;
+  private final UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -342,6 +509,57 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<CreateSubscriptionRequest, Subscription>
+        createSubscriptionTransportSettings =
+            HttpJsonCallSettings.<CreateSubscriptionRequest, Subscription>newBuilder()
+                .setMethodDescriptor(createSubscriptionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
+        listSubscriptionsTransportSettings =
+            HttpJsonCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listSubscriptionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateSubscriptionRequest, Subscription>
+        updateSubscriptionTransportSettings =
+            HttpJsonCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
+                .setMethodDescriptor(updateSubscriptionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subscription.name", String.valueOf(request.getSubscription().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
+        HttpJsonCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.createSubscriberCallable =
         callableFactory.createUnaryCallable(
@@ -376,6 +594,31 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
             settings.deleteSubscriberOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            createSubscriptionTransportSettings,
+            settings.createSubscriptionSettings(),
+            clientContext);
+    this.listSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.updateSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            updateSubscriptionTransportSettings,
+            settings.updateSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -388,6 +631,10 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
     methodDescriptors.add(listSubscribersMethodDescriptor);
     methodDescriptors.add(updateSubscriberMethodDescriptor);
     methodDescriptors.add(deleteSubscriberMethodDescriptor);
+    methodDescriptors.add(createSubscriptionMethodDescriptor);
+    methodDescriptors.add(listSubscriptionsMethodDescriptor);
+    methodDescriptors.add(updateSubscriptionMethodDescriptor);
+    methodDescriptors.add(deleteSubscriptionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -437,6 +684,33 @@ public class HttpJsonDataSubscriptionServiceStub extends DataSubscriptionService
   public OperationCallable<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationCallable() {
     return deleteSubscriberOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable() {
+    return createSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return listSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return listSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+    return updateSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    return deleteSubscriptionCallable;
   }
 
   @Override

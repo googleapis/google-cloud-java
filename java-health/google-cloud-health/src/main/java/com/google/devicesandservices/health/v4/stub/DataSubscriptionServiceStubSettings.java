@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4.stub;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -55,13 +56,19 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.devicesandservices.health.v4.CreateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.CreateSubscriberRequest;
+import com.google.devicesandservices.health.v4.CreateSubscriptionRequest;
 import com.google.devicesandservices.health.v4.DeleteSubscriberMetadata;
 import com.google.devicesandservices.health.v4.DeleteSubscriberRequest;
+import com.google.devicesandservices.health.v4.DeleteSubscriptionRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersResponse;
+import com.google.devicesandservices.health.v4.ListSubscriptionsRequest;
+import com.google.devicesandservices.health.v4.ListSubscriptionsResponse;
 import com.google.devicesandservices.health.v4.Subscriber;
+import com.google.devicesandservices.health.v4.Subscription;
 import com.google.devicesandservices.health.v4.UpdateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.UpdateSubscriberRequest;
+import com.google.devicesandservices.health.v4.UpdateSubscriptionRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -86,7 +93,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of createSubscriber:
+ * of createSubscription:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -97,10 +104,10 @@ import javax.annotation.Generated;
  * DataSubscriptionServiceStubSettings.Builder dataSubscriptionServiceSettingsBuilder =
  *     DataSubscriptionServiceStubSettings.newBuilder();
  * dataSubscriptionServiceSettingsBuilder
- *     .createSubscriberSettings()
+ *     .createSubscriptionSettings()
  *     .setRetrySettings(
  *         dataSubscriptionServiceSettingsBuilder
- *             .createSubscriberSettings()
+ *             .createSubscriptionSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -166,6 +173,14 @@ public class DataSubscriptionServiceStubSettings
   private final UnaryCallSettings<DeleteSubscriberRequest, Operation> deleteSubscriberSettings;
   private final OperationCallSettings<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationSettings;
+  private final UnaryCallSettings<CreateSubscriptionRequest, Subscription>
+      createSubscriptionSettings;
+  private final PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings;
+  private final UnaryCallSettings<UpdateSubscriptionRequest, Subscription>
+      updateSubscriptionSettings;
+  private final UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
 
   private static final PagedListDescriptor<
           ListSubscribersRequest, ListSubscribersResponse, Subscriber>
@@ -204,6 +219,44 @@ public class DataSubscriptionServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+      LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectToken(
+                ListSubscriptionsRequest payload, String token) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectPageSize(
+                ListSubscriptionsRequest payload, int pageSize) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubscriptionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
+              return payload.getSubscriptionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
       LIST_SUBSCRIBERS_PAGE_STR_FACT =
@@ -218,6 +271,27 @@ public class DataSubscriptionServiceStubSettings
               PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> pageContext =
                   PageContext.create(callable, LIST_SUBSCRIBERS_PAGE_STR_DESC, request, context);
               return ListSubscribersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubscriptionsRequest,
+              ListSubscriptionsResponse,
+              ListSubscriptionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
+                ListSubscriptionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubscriptionsResponse> futureResponse) {
+              PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -259,6 +333,28 @@ public class DataSubscriptionServiceStubSettings
   public OperationCallSettings<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationSettings() {
     return deleteSubscriberOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSubscription. */
+  public UnaryCallSettings<CreateSubscriptionRequest, Subscription> createSubscriptionSettings() {
+    return createSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return listSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubscription. */
+  public UnaryCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
+    return updateSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
+    return deleteSubscriptionSettings;
   }
 
   public DataSubscriptionServiceStub createStub() throws IOException {
@@ -379,6 +475,10 @@ public class DataSubscriptionServiceStubSettings
     updateSubscriberOperationSettings = settingsBuilder.updateSubscriberOperationSettings().build();
     deleteSubscriberSettings = settingsBuilder.deleteSubscriberSettings().build();
     deleteSubscriberOperationSettings = settingsBuilder.deleteSubscriberOperationSettings().build();
+    createSubscriptionSettings = settingsBuilder.createSubscriptionSettings().build();
+    listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
+    updateSubscriptionSettings = settingsBuilder.updateSubscriptionSettings().build();
+    deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
   }
 
   @Override
@@ -412,6 +512,15 @@ public class DataSubscriptionServiceStubSettings
     private final OperationCallSettings.Builder<
             DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
         deleteSubscriberOperationSettings;
+    private final UnaryCallSettings.Builder<CreateSubscriptionRequest, Subscription>
+        createSubscriptionSettings;
+    private final PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings;
+    private final UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
+        updateSubscriptionSettings;
+    private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -467,13 +576,21 @@ public class DataSubscriptionServiceStubSettings
       updateSubscriberOperationSettings = OperationCallSettings.newBuilder();
       deleteSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSubscriberOperationSettings = OperationCallSettings.newBuilder();
+      createSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
+      updateSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriberSettings,
               listSubscribersSettings,
               updateSubscriberSettings,
-              deleteSubscriberSettings);
+              deleteSubscriberSettings,
+              createSubscriptionSettings,
+              listSubscriptionsSettings,
+              updateSubscriptionSettings,
+              deleteSubscriptionSettings);
       initDefaults(this);
     }
 
@@ -487,13 +604,21 @@ public class DataSubscriptionServiceStubSettings
       updateSubscriberOperationSettings = settings.updateSubscriberOperationSettings.toBuilder();
       deleteSubscriberSettings = settings.deleteSubscriberSettings.toBuilder();
       deleteSubscriberOperationSettings = settings.deleteSubscriberOperationSettings.toBuilder();
+      createSubscriptionSettings = settings.createSubscriptionSettings.toBuilder();
+      listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
+      updateSubscriptionSettings = settings.updateSubscriptionSettings.toBuilder();
+      deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createSubscriberSettings,
               listSubscribersSettings,
               updateSubscriberSettings,
-              deleteSubscriberSettings);
+              deleteSubscriberSettings,
+              createSubscriptionSettings,
+              listSubscriptionsSettings,
+              updateSubscriptionSettings,
+              deleteSubscriptionSettings);
     }
 
     private static Builder createDefault() {
@@ -538,6 +663,26 @@ public class DataSubscriptionServiceStubSettings
 
       builder
           .deleteSubscriberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteSubscriptionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -674,6 +819,31 @@ public class DataSubscriptionServiceStubSettings
     public OperationCallSettings.Builder<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
         deleteSubscriberOperationSettings() {
       return deleteSubscriberOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSubscription. */
+    public UnaryCallSettings.Builder<CreateSubscriptionRequest, Subscription>
+        createSubscriptionSettings() {
+      return createSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return listSubscriptionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubscription. */
+    public UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
+        updateSubscriptionSettings() {
+      return updateSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings() {
+      return deleteSubscriptionSettings;
     }
 
     @Override

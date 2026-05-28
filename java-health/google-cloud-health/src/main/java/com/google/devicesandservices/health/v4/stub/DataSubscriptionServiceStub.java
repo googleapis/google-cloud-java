@@ -17,19 +17,26 @@
 package com.google.devicesandservices.health.v4.stub;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.CreateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.CreateSubscriberRequest;
+import com.google.devicesandservices.health.v4.CreateSubscriptionRequest;
 import com.google.devicesandservices.health.v4.DeleteSubscriberMetadata;
 import com.google.devicesandservices.health.v4.DeleteSubscriberRequest;
+import com.google.devicesandservices.health.v4.DeleteSubscriptionRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersResponse;
+import com.google.devicesandservices.health.v4.ListSubscriptionsRequest;
+import com.google.devicesandservices.health.v4.ListSubscriptionsResponse;
 import com.google.devicesandservices.health.v4.Subscriber;
+import com.google.devicesandservices.health.v4.Subscription;
 import com.google.devicesandservices.health.v4.UpdateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.UpdateSubscriberRequest;
+import com.google.devicesandservices.health.v4.UpdateSubscriptionRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -86,6 +93,28 @@ public abstract class DataSubscriptionServiceStub implements BackgroundResource 
 
   public UnaryCallable<DeleteSubscriberRequest, Operation> deleteSubscriberCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSubscriberCallable()");
+  }
+
+  public UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
+  }
+
+  public UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSubscriptionCallable()");
+  }
+
+  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
   }
 
   @Override

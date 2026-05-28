@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -426,6 +427,297 @@ public class DataSubscriptionServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+    CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+    String subscriptionId = "subscriptionId1478790936";
+
+    Subscription actualResponse = client.createSubscription(parent, subscription, subscriptionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSubscriptionRequest actualRequest = ((CreateSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(subscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscriptionId, actualRequest.getSubscriptionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+      CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+      String subscriptionId = "subscriptionId1478790936";
+      client.createSubscription(parent, subscription, subscriptionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSubscriptionTest2() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+    String subscriptionId = "subscriptionId1478790936";
+
+    Subscription actualResponse = client.createSubscription(parent, subscription, subscriptionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSubscriptionRequest actualRequest = ((CreateSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(subscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscriptionId, actualRequest.getSubscriptionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+      String subscriptionId = "subscriptionId1478790936";
+      client.createSubscription(parent, subscription, subscriptionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubscriptionsRequest actualRequest = ((ListSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubscriptionsRequest actualRequest = ((ListSubscriptionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+            .addAllDataTypes(new ArrayList<String>())
+            .setUser(UserName.of("[USER]").toString())
+            .build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    Subscription subscription = Subscription.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Subscription actualResponse = client.updateSubscription(subscription, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSubscriptionRequest actualRequest = ((UpdateSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(subscription, actualRequest.getSubscription());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      Subscription subscription = Subscription.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubscription(subscription, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]");
+
+    client.deleteSubscription(name);
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSubscriptionRequest actualRequest = ((DeleteSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]");
+      client.deleteSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataSubscriptionService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteSubscription(name);
+
+    List<AbstractMessage> actualRequests = mockDataSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSubscriptionRequest actualRequest = ((DeleteSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataSubscriptionService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

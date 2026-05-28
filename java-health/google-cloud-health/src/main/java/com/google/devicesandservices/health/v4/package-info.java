@@ -55,13 +55,11 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
  *     DataSubscriptionServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   CreateSubscriberPayload subscriber = CreateSubscriberPayload.newBuilder().build();
- *   String subscriberId = "subscriberId327834531";
- *   Subscriber response =
- *       dataSubscriptionServiceClient
- *           .createSubscriberAsync(parent, subscriber, subscriberId)
- *           .get();
+ *   SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+ *   CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+ *   String subscriptionId = "subscriptionId1478790936";
+ *   Subscription response =
+ *       dataSubscriptionServiceClient.createSubscription(parent, subscription, subscriptionId);
  * }
  * }</pre>
  *

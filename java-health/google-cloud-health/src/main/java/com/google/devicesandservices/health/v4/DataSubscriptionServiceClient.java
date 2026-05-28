@@ -56,13 +56,11 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
  *     DataSubscriptionServiceClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   CreateSubscriberPayload subscriber = CreateSubscriberPayload.newBuilder().build();
- *   String subscriberId = "subscriberId327834531";
- *   Subscriber response =
- *       dataSubscriptionServiceClient
- *           .createSubscriberAsync(parent, subscriber, subscriberId)
- *           .get();
+ *   SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+ *   CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+ *   String subscriptionId = "subscriptionId1478790936";
+ *   Subscription response =
+ *       dataSubscriptionServiceClient.createSubscription(parent, subscription, subscriptionId);
  * }
  * }</pre>
  *
@@ -160,6 +158,82 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteSubscriberOperationCallable()
  *           <li><p> deleteSubscriberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSubscription</td>
+ *      <td><p> Creates a subscription for a specific user to a specific subscriber. This method requires the subscriber to have a `SubscriptionCreatePolicy` set to `MANUAL` for the given data types.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSubscription(CreateSubscriptionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSubscription(SubscriberName parent, CreateSubscriptionPayload subscription, String subscriptionId)
+ *           <li><p> createSubscription(String parent, CreateSubscriptionPayload subscription, String subscriptionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSubscriptionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSubscriptions</td>
+ *      <td><p> Lists all active subscriptions for a given subscriber. This can be filtered, for example, by user or data type.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSubscriptions(ListSubscriptionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSubscriptions(SubscriberName parent)
+ *           <li><p> listSubscriptions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSubscriptionsPagedCallable()
+ *           <li><p> listSubscriptionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSubscription</td>
+ *      <td><p> Updates the data types for an existing user subscription.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSubscription(UpdateSubscriptionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSubscription(Subscription subscription, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSubscriptionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSubscription</td>
+ *      <td><p> Deletes a specific user subscription, stopping notifications for this user to this subscriber.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSubscription(DeleteSubscriptionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSubscription(SubscriptionName name)
+ *           <li><p> deleteSubscription(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSubscriptionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1100,6 +1174,571 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
     return stub.deleteSubscriberCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subscription for a specific user to a specific subscriber. This method requires the
+   * subscriber to have a `SubscriptionCreatePolicy` set to `MANUAL` for the given data types.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+   *   CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+   *   String subscriptionId = "subscriptionId1478790936";
+   *   Subscription response =
+   *       dataSubscriptionServiceClient.createSubscription(parent, subscription, subscriptionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent subscriber. Format:
+   *     projects/{project}/subscribers/{subscriber} The {subscriber} ID is user-settable (4-36
+   *     characters, matching /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or
+   *     system-generated otherwise.
+   * @param subscription Required. The subscription to create.
+   * @param subscriptionId Optional. The {subscription_id} is user-settable (4-36 chars, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) or system-generated otherwise. If provided, the ID must
+   *     be unique within the parent subscriber.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription createSubscription(
+      SubscriberName parent, CreateSubscriptionPayload subscription, String subscriptionId) {
+    CreateSubscriptionRequest request =
+        CreateSubscriptionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSubscription(subscription)
+            .setSubscriptionId(subscriptionId)
+            .build();
+    return createSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subscription for a specific user to a specific subscriber. This method requires the
+   * subscriber to have a `SubscriptionCreatePolicy` set to `MANUAL` for the given data types.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   String parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString();
+   *   CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+   *   String subscriptionId = "subscriptionId1478790936";
+   *   Subscription response =
+   *       dataSubscriptionServiceClient.createSubscription(parent, subscription, subscriptionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent subscriber. Format:
+   *     projects/{project}/subscribers/{subscriber} The {subscriber} ID is user-settable (4-36
+   *     characters, matching /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or
+   *     system-generated otherwise.
+   * @param subscription Required. The subscription to create.
+   * @param subscriptionId Optional. The {subscription_id} is user-settable (4-36 chars, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) or system-generated otherwise. If provided, the ID must
+   *     be unique within the parent subscriber.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription createSubscription(
+      String parent, CreateSubscriptionPayload subscription, String subscriptionId) {
+    CreateSubscriptionRequest request =
+        CreateSubscriptionRequest.newBuilder()
+            .setParent(parent)
+            .setSubscription(subscription)
+            .setSubscriptionId(subscriptionId)
+            .build();
+    return createSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subscription for a specific user to a specific subscriber. This method requires the
+   * subscriber to have a `SubscriptionCreatePolicy` set to `MANUAL` for the given data types.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   CreateSubscriptionRequest request =
+   *       CreateSubscriptionRequest.newBuilder()
+   *           .setParent(SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString())
+   *           .setSubscriptionId("subscriptionId1478790936")
+   *           .setSubscription(CreateSubscriptionPayload.newBuilder().build())
+   *           .build();
+   *   Subscription response = dataSubscriptionServiceClient.createSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription createSubscription(CreateSubscriptionRequest request) {
+    return createSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subscription for a specific user to a specific subscriber. This method requires the
+   * subscriber to have a `SubscriptionCreatePolicy` set to `MANUAL` for the given data types.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   CreateSubscriptionRequest request =
+   *       CreateSubscriptionRequest.newBuilder()
+   *           .setParent(SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString())
+   *           .setSubscriptionId("subscriptionId1478790936")
+   *           .setSubscription(CreateSubscriptionPayload.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       dataSubscriptionServiceClient.createSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   Subscription response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable() {
+    return stub.createSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all active subscriptions for a given subscriber. This can be filtered, for example, by
+   * user or data type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+   *   for (Subscription element :
+   *       dataSubscriptionServiceClient.listSubscriptions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent subscriber. Format:
+   *     projects/{project}/subscribers/{subscriber} The {subscriber} ID is user-settable (4-36
+   *     characters, matching /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or
+   *     system-generated otherwise.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(SubscriberName parent) {
+    ListSubscriptionsRequest request =
+        ListSubscriptionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all active subscriptions for a given subscriber. This can be filtered, for example, by
+   * user or data type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   String parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString();
+   *   for (Subscription element :
+   *       dataSubscriptionServiceClient.listSubscriptions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent subscriber. Format:
+   *     projects/{project}/subscribers/{subscriber} The {subscriber} ID is user-settable (4-36
+   *     characters, matching /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or
+   *     system-generated otherwise.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(String parent) {
+    ListSubscriptionsRequest request =
+        ListSubscriptionsRequest.newBuilder().setParent(parent).build();
+    return listSubscriptions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all active subscriptions for a given subscriber. This can be filtered, for example, by
+   * user or data type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Subscription element :
+   *       dataSubscriptionServiceClient.listSubscriptions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscriptionsPagedResponse listSubscriptions(ListSubscriptionsRequest request) {
+    return listSubscriptionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all active subscriptions for a given subscriber. This can be filtered, for example, by
+   * user or data type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       dataSubscriptionServiceClient.listSubscriptionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Subscription element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return stub.listSubscriptionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all active subscriptions for a given subscriber. This can be filtered, for example, by
+   * user or data type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   ListSubscriptionsRequest request =
+   *       ListSubscriptionsRequest.newBuilder()
+   *           .setParent(SubscriberName.of("[PROJECT]", "[SUBSCRIBER]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubscriptionsResponse response =
+   *         dataSubscriptionServiceClient.listSubscriptionsCallable().call(request);
+   *     for (Subscription element : response.getSubscriptionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return stub.listSubscriptionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the data types for an existing user subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   Subscription subscription = Subscription.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Subscription response =
+   *       dataSubscriptionServiceClient.updateSubscription(subscription, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subscription Required. The subscription to update. The subscription's `name` field is
+   *     used to identify the subscription to update. Format:
+   *     projects/{project}/subscribers/{subscriber}/subscriptions/{subscription}
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription updateSubscription(Subscription subscription, FieldMask updateMask) {
+    UpdateSubscriptionRequest request =
+        UpdateSubscriptionRequest.newBuilder()
+            .setSubscription(subscription)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the data types for an existing user subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   UpdateSubscriptionRequest request =
+   *       UpdateSubscriptionRequest.newBuilder()
+   *           .setSubscription(Subscription.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Subscription response = dataSubscriptionServiceClient.updateSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Subscription updateSubscription(UpdateSubscriptionRequest request) {
+    return updateSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the data types for an existing user subscription.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   UpdateSubscriptionRequest request =
+   *       UpdateSubscriptionRequest.newBuilder()
+   *           .setSubscription(Subscription.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Subscription> future =
+   *       dataSubscriptionServiceClient.updateSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   Subscription response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+    return stub.updateSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific user subscription, stopping notifications for this user to this subscriber.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   SubscriptionName name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]");
+   *   dataSubscriptionServiceClient.deleteSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the subscription to delete. Format:
+   *     `projects/{project}/subscribers/{subscriber}/subscriptions/{subscription}` Example:
+   *     `projects/my-project/subscribers/my-subscriber-123/subscriptions/my-subscription-456` The
+   *     {subscriber} ID is user-settable (4-36 characters, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or system-generated
+   *     otherwise. The {subscription} ID is user-settable (4-36 characters, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) or system-generated if not provided during creation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubscription(SubscriptionName name) {
+    DeleteSubscriptionRequest request =
+        DeleteSubscriptionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific user subscription, stopping notifications for this user to this subscriber.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   String name = SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString();
+   *   dataSubscriptionServiceClient.deleteSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the subscription to delete. Format:
+   *     `projects/{project}/subscribers/{subscriber}/subscriptions/{subscription}` Example:
+   *     `projects/my-project/subscribers/my-subscriber-123/subscriptions/my-subscription-456` The
+   *     {subscriber} ID is user-settable (4-36 characters, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) if provided during creation, or system-generated
+   *     otherwise. The {subscription} ID is user-settable (4-36 characters, matching
+   *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) or system-generated if not provided during creation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubscription(String name) {
+    DeleteSubscriptionRequest request =
+        DeleteSubscriptionRequest.newBuilder().setName(name).build();
+    deleteSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific user subscription, stopping notifications for this user to this subscriber.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   DeleteSubscriptionRequest request =
+   *       DeleteSubscriptionRequest.newBuilder()
+   *           .setName(
+   *               SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   dataSubscriptionServiceClient.deleteSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubscription(DeleteSubscriptionRequest request) {
+    deleteSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific user subscription, stopping notifications for this user to this subscriber.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+   *     DataSubscriptionServiceClient.create()) {
+   *   DeleteSubscriptionRequest request =
+   *       DeleteSubscriptionRequest.newBuilder()
+   *           .setName(
+   *               SubscriptionName.of("[PROJECT]", "[SUBSCRIBER]", "[SUBSCRIPTION]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataSubscriptionServiceClient.deleteSubscriptionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    return stub.deleteSubscriptionCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1204,6 +1843,86 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
     protected ListSubscribersFixedSizeCollection createCollection(
         List<ListSubscribersPage> pages, int collectionSize) {
       return new ListSubscribersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubscriptionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubscriptionsPagedResponse> createAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      ApiFuture<ListSubscriptionsPage> futurePage =
+          ListSubscriptionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubscriptionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubscriptionsPagedResponse(ListSubscriptionsPage page) {
+      super(page, ListSubscriptionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubscriptionsPage
+      extends AbstractPage<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage> {
+
+    private ListSubscriptionsPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubscriptionsPage createEmptyPage() {
+      return new ListSubscriptionsPage(null, null);
+    }
+
+    @Override
+    protected ListSubscriptionsPage createPage(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ListSubscriptionsResponse response) {
+      return new ListSubscriptionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubscriptionsPage> createPageAsync(
+        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        ApiFuture<ListSubscriptionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubscriptionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubscriptionsRequest,
+          ListSubscriptionsResponse,
+          Subscription,
+          ListSubscriptionsPage,
+          ListSubscriptionsFixedSizeCollection> {
+
+    private ListSubscriptionsFixedSizeCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubscriptionsFixedSizeCollection createEmptyCollection() {
+      return new ListSubscriptionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubscriptionsFixedSizeCollection createCollection(
+        List<ListSubscriptionsPage> pages, int collectionSize) {
+      return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -55,7 +56,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of createSubscriber:
+ * of createSubscription:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -66,10 +67,10 @@ import javax.annotation.Generated;
  * DataSubscriptionServiceSettings.Builder dataSubscriptionServiceSettingsBuilder =
  *     DataSubscriptionServiceSettings.newBuilder();
  * dataSubscriptionServiceSettingsBuilder
- *     .createSubscriberSettings()
+ *     .createSubscriptionSettings()
  *     .setRetrySettings(
  *         dataSubscriptionServiceSettingsBuilder
- *             .createSubscriberSettings()
+ *             .createSubscriptionSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -160,6 +161,28 @@ public class DataSubscriptionServiceSettings
       deleteSubscriberOperationSettings() {
     return ((DataSubscriptionServiceStubSettings) getStubSettings())
         .deleteSubscriberOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSubscription. */
+  public UnaryCallSettings<CreateSubscriptionRequest, Subscription> createSubscriptionSettings() {
+    return ((DataSubscriptionServiceStubSettings) getStubSettings()).createSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return ((DataSubscriptionServiceStubSettings) getStubSettings()).listSubscriptionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSubscription. */
+  public UnaryCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionSettings() {
+    return ((DataSubscriptionServiceStubSettings) getStubSettings()).updateSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
+    return ((DataSubscriptionServiceStubSettings) getStubSettings()).deleteSubscriptionSettings();
   }
 
   public static final DataSubscriptionServiceSettings create(
@@ -318,6 +341,31 @@ public class DataSubscriptionServiceSettings
     public OperationCallSettings.Builder<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
         deleteSubscriberOperationSettings() {
       return getStubSettingsBuilder().deleteSubscriberOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSubscription. */
+    public UnaryCallSettings.Builder<CreateSubscriptionRequest, Subscription>
+        createSubscriptionSettings() {
+      return getStubSettingsBuilder().createSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return getStubSettingsBuilder().listSubscriptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubscription. */
+    public UnaryCallSettings.Builder<UpdateSubscriptionRequest, Subscription>
+        updateSubscriptionSettings() {
+      return getStubSettingsBuilder().updateSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings() {
+      return getStubSettingsBuilder().deleteSubscriptionSettings();
     }
 
     @Override

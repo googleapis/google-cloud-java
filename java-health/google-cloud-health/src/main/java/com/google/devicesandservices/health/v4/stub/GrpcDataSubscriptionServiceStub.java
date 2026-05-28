@@ -17,6 +17,7 @@
 package com.google.devicesandservices.health.v4.stub;
 
 import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscribersPagedResponse;
+import static com.google.devicesandservices.health.v4.DataSubscriptionServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -28,13 +29,19 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.CreateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.CreateSubscriberRequest;
+import com.google.devicesandservices.health.v4.CreateSubscriptionRequest;
 import com.google.devicesandservices.health.v4.DeleteSubscriberMetadata;
 import com.google.devicesandservices.health.v4.DeleteSubscriberRequest;
+import com.google.devicesandservices.health.v4.DeleteSubscriptionRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersRequest;
 import com.google.devicesandservices.health.v4.ListSubscribersResponse;
+import com.google.devicesandservices.health.v4.ListSubscriptionsRequest;
+import com.google.devicesandservices.health.v4.ListSubscriptionsResponse;
 import com.google.devicesandservices.health.v4.Subscriber;
+import com.google.devicesandservices.health.v4.Subscription;
 import com.google.devicesandservices.health.v4.UpdateSubscriberMetadata;
 import com.google.devicesandservices.health.v4.UpdateSubscriberRequest;
+import com.google.devicesandservices.health.v4.UpdateSubscriptionRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -101,6 +108,55 @@ public class GrpcDataSubscriptionServiceStub extends DataSubscriptionServiceStub
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateSubscriptionRequest, Subscription>
+      createSubscriptionMethodDescriptor =
+          MethodDescriptor.<CreateSubscriptionRequest, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/CreateSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsMethodDescriptor =
+          MethodDescriptor.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/ListSubscriptions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateSubscriptionRequest, Subscription>
+      updateSubscriptionMethodDescriptor =
+          MethodDescriptor.<UpdateSubscriptionRequest, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/UpdateSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteSubscriptionRequest, Empty>
+      deleteSubscriptionMethodDescriptor =
+          MethodDescriptor.<DeleteSubscriptionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.DataSubscriptionService/DeleteSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateSubscriberRequest, Operation> createSubscriberCallable;
   private final OperationCallable<CreateSubscriberRequest, Subscriber, CreateSubscriberMetadata>
       createSubscriberOperationCallable;
@@ -114,6 +170,13 @@ public class GrpcDataSubscriptionServiceStub extends DataSubscriptionServiceStub
   private final UnaryCallable<DeleteSubscriberRequest, Operation> deleteSubscriberCallable;
   private final OperationCallable<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationCallable;
+  private final UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable;
+  private final UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable;
+  private final UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -204,6 +267,51 @@ public class GrpcDataSubscriptionServiceStub extends DataSubscriptionServiceStub
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateSubscriptionRequest, Subscription> createSubscriptionTransportSettings =
+        GrpcCallSettings.<CreateSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(createSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
+        listSubscriptionsTransportSettings =
+            GrpcCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listSubscriptionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionTransportSettings =
+        GrpcCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(updateSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "subscription.name", String.valueOf(request.getSubscription().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
+        GrpcCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.createSubscriberCallable =
         callableFactory.createUnaryCallable(
@@ -238,6 +346,31 @@ public class GrpcDataSubscriptionServiceStub extends DataSubscriptionServiceStub
             settings.deleteSubscriberOperationSettings(),
             clientContext,
             operationsStub);
+    this.createSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            createSubscriptionTransportSettings,
+            settings.createSubscriptionSettings(),
+            clientContext);
+    this.listSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.updateSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            updateSubscriptionTransportSettings,
+            settings.updateSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -289,6 +422,33 @@ public class GrpcDataSubscriptionServiceStub extends DataSubscriptionServiceStub
   public OperationCallable<DeleteSubscriberRequest, Empty, DeleteSubscriberMetadata>
       deleteSubscriberOperationCallable() {
     return deleteSubscriberOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSubscriptionRequest, Subscription> createSubscriptionCallable() {
+    return createSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return listSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return listSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubscriptionRequest, Subscription> updateSubscriptionCallable() {
+    return updateSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+    return deleteSubscriptionCallable;
   }
 
   @Override

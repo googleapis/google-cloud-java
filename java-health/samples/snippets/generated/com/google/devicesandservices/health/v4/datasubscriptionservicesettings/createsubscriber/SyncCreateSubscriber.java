@@ -17,6 +17,9 @@
 package com.google.devicesandservices.health.v4.samples;
 
 // [START health_v4_generated_DataSubscriptionServiceSettings_CreateSubscriber_sync]
+import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.devicesandservices.health.v4.DataSubscriptionServiceSettings;
 import java.time.Duration;
 
@@ -34,24 +37,18 @@ public class SyncCreateSubscriber {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     DataSubscriptionServiceSettings.Builder dataSubscriptionServiceSettingsBuilder =
         DataSubscriptionServiceSettings.newBuilder();
-    dataSubscriptionServiceSettingsBuilder
-        .createSubscriberSettings()
-        .setRetrySettings(
-            dataSubscriptionServiceSettingsBuilder
-                .createSubscriberSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxAttempts(5)
-                .setMaxRetryDelayDuration(Duration.ofSeconds(30))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
-                .setRetryDelayMultiplier(1.3)
-                .setRpcTimeoutMultiplier(1.5)
-                .setTotalTimeoutDuration(Duration.ofSeconds(300))
+    TimedRetryAlgorithm timedRetryAlgorithm =
+        OperationalTimedPollAlgorithm.create(
+            RetrySettings.newBuilder()
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+                .setTotalTimeoutDuration(Duration.ofHours(24))
                 .build());
-    DataSubscriptionServiceSettings dataSubscriptionServiceSettings =
-        dataSubscriptionServiceSettingsBuilder.build();
+    dataSubscriptionServiceSettingsBuilder
+        .createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm)
+        .build();
   }
 }
 // [END health_v4_generated_DataSubscriptionServiceSettings_CreateSubscriber_sync]

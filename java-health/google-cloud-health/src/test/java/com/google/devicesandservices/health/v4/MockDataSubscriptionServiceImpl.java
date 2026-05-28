@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.devicesandservices.health.v4.DataSubscriptionServiceGrpc.DataSubscriptionServiceImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -139,6 +140,91 @@ public class MockDataSubscriptionServiceImpl extends DataSubscriptionServiceImpl
                   "Unrecognized response type %s for method DeleteSubscriber, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSubscription(
+      CreateSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext(((Subscription) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Subscription.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSubscriptions(
+      ListSubscriptionsRequest request,
+      StreamObserver<ListSubscriptionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSubscriptionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubscriptionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubscriptions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSubscriptionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSubscription(
+      UpdateSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext(((Subscription) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Subscription.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSubscription(
+      DeleteSubscriptionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSubscription, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }
