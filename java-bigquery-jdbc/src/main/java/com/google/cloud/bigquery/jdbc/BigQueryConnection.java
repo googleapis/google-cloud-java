@@ -44,6 +44,7 @@ import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSortedSet;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
@@ -1187,7 +1188,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             GrpcOpenTelemetry.newBuilder().sdk(this.openTelemetry).build();
         builder.setChannelConfigurator(
             b -> {
-              grpcOpenTelemetry.configureChannelBuilder(b);
+              grpcOpenTelemetry.configureChannelBuilder((ManagedChannelBuilder) b);
               return b;
             });
       }
