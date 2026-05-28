@@ -40,6 +40,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
 
@@ -119,6 +120,7 @@ public class BigQueryJdbcOpenTelemetry {
 
   private static final ConcurrentHashMap<String, TelemetryConfig> connectionConfigs =
       new ConcurrentHashMap<>();
+  private static final ReentrantLock lock = new ReentrantLock();
 
   private BigQueryJdbcOpenTelemetry() {}
 
@@ -141,16 +143,21 @@ public class BigQueryJdbcOpenTelemetry {
   }
 
   public static void ensureGlobalHandlerAttached() {
-    Logger logger = Logger.getLogger(BIGQUERY_NAMESPACE);
-    boolean present = false;
-    for (Handler h : logger.getHandlers()) {
-      if (h instanceof OpenTelemetryJulHandler) {
-        present = true;
-        break;
+    lock.lock();
+    try {
+      Logger logger = Logger.getLogger(BIGQUERY_NAMESPACE);
+      boolean present = false;
+      for (Handler h : logger.getHandlers()) {
+        if (h instanceof OpenTelemetryJulHandler) {
+          present = true;
+          break;
+        }
       }
-    }
-    if (!present) {
-      logger.addHandler(new OpenTelemetryJulHandler());
+      if (!present) {
+        logger.addHandler(new OpenTelemetryJulHandler());
+      }
+    } finally {
+      lock.unlock();
     }
   }
 
