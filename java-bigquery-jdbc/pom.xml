@@ -83,6 +83,10 @@
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies>
+                <ignoredUnusedDeclaredDependency>io.opentelemetry.contrib:opentelemetry-gcp-auth-extension</ignoredUnusedDeclaredDependency>
+                <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
+            </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
       <plugin>
@@ -422,6 +426,16 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-logs</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-trace</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
