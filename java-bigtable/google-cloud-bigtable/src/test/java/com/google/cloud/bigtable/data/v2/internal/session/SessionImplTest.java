@@ -497,8 +497,14 @@ public class SessionImplTest {
         VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
         f);
 
-    assertThat(session.getNextHeartbeat())
-        .isEqualTo(time.plus(Duration.ofMillis(keepAliveDurationMs)));
+    // startRpc() is now async; poll until sessionSyncContext processes it.
+    Instant expectedHeartbeat = time.plus(Duration.ofMillis(keepAliveDurationMs));
+    Stopwatch sw = Stopwatch.createStarted();
+    while (!session.getNextHeartbeat().equals(expectedHeartbeat)
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getNextHeartbeat()).isEqualTo(expectedHeartbeat);
 
     assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
 
