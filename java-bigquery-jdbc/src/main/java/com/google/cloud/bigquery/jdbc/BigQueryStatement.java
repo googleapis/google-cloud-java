@@ -912,20 +912,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       enqueueError(arrowBatchWrapperBlockingQueue, e);
       Thread.currentThread().interrupt();
     } catch (Exception e) {
-      if (e.getCause() instanceof InterruptedException || Thread.currentThread().isInterrupted()) {
-        LOG.log(
-            Level.WARNING,
-            "\n" + Thread.currentThread().getName() + " Interrupted @ arrowStreamProcessor",
-            e);
-        enqueueError(arrowBatchWrapperBlockingQueue, e);
-        Thread.currentThread().interrupt();
-      } else {
-        LOG.log(
-            Level.WARNING,
-            "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
-            e);
-        enqueueError(arrowBatchWrapperBlockingQueue, e);
-      }
+      LOG.log(
+          Level.WARNING,
+          "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
+          e);
+      enqueueError(arrowBatchWrapperBlockingQueue, e);
     } finally { // logic needed for graceful shutdown
       enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
     }
@@ -1683,20 +1674,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
 
     } catch (Exception ex) {
-      if (ex.getCause() instanceof InterruptedException || Thread.currentThread().isInterrupted()) {
-        LOG.log(
-            Level.WARNING,
-            "\n" + Thread.currentThread().getName() + " Interrupted @ populateBufferAsync",
-            ex);
-        enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-        Thread.currentThread().interrupt();
-      } else {
-        LOG.log(
-            Level.WARNING,
-            "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
-            ex);
-        enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-      }
+      LOG.log(
+          Level.WARNING,
+          "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
+          ex);
+      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
     } finally {
       enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
     }

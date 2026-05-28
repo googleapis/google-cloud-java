@@ -74,9 +74,8 @@ public class ITOpenTelemetryTest {
       // pages)
       String paginationQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 150)) AS id;";
       try (ResultSet paginatedRs = statement.executeQuery(paginationQuery)) {
-        int rowCount = 0;
-        while (paginatedRs.next() && rowCount < 150) {
-          rowCount++;
+        while (paginatedRs.next()) {
+          // Drain the result set to trigger pagination fetches
         }
       }
     }
