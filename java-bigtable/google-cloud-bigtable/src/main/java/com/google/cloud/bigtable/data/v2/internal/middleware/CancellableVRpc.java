@@ -47,9 +47,10 @@ public class CancellableVRpc<ReqT, RespT> extends ForwardingVRpc<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
+    super.start(req, ctx, new CancellationCleanupListener<>(listener, context, cancellationListener));
+    // Register AFTER super.start() returns so the listener never fires before RetryingVRpc
+    // has set up its state. Matches ClientCallImpl's ordering (grpc-java issue #1343).
     context.addListener(cancellationListener, MoreExecutors.directExecutor());
-    super.start(
-        req, ctx, new CancellationCleanupListener<>(listener, context, cancellationListener));
   }
 
   private static class CancellationCleanupListener<RespT> extends ForwardListener<RespT> {

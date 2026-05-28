@@ -50,11 +50,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private final ScheduledExecutorService scheduledExecutor;
   private final Executor opExecutor;
 
-  // current state and all the flags don't need to be volatile because they're only updated within
-  // the sync context.
-  private State currentState;
-  private boolean started;
-  // Breaks the loop if uncaught exception happens during sync context execution.
+  // currentState is volatile: start() runs on the calling thread while cancel() and response
+  // callbacks run on opExecutor. The volatile write of currentState in onStateChange() provides
+  // the happens-before anchor for all fields written before it in start() (request, listener,
+  // context, tracer). started is also volatile to cover the rare exception-in-start path where
+  // the currentState volatile write may not be reached.
+  private volatile State currentState;
+  private volatile boolean started;
+  // Only accessed on opExecutor — breaks the loop on uncaught exception during cancel.
   private boolean isCancelling;
 
   public RetryingVRpc(
@@ -76,28 +79,25 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-    opExecutor.execute(
-        () -> {
-          try {
-            if (started) {
-              listener.onClose(
-                  VRpcResult.createRejectedError(
-                      Status.FAILED_PRECONDITION.withDescription("operation is already started")));
-              return;
-            }
-            started = true;
+    try {
+      if (started) {
+        listener.onClose(
+            VRpcResult.createRejectedError(
+                Status.FAILED_PRECONDITION.withDescription("operation is already started")));
+        return;
+      }
+      started = true;
 
-            this.request = req;
-            this.listener = listener;
-            this.context = ctx;
-            this.tracer = context.getTracer();
+      this.request = req;
+      this.listener = listener;
+      this.context = ctx;
+      this.tracer = context.getTracer();
 
-            tracer.onOperationStart();
-            currentState.onStart();
-          } catch (Throwable t) {
-            cancel("Unexpected error in op executor", t);
-          }
-        });
+      tracer.onOperationStart();
+      currentState.onStart();
+    } catch (Throwable t) {
+      cancel("Unexpected error in start", t);
+    }
   }
 
   @Override
