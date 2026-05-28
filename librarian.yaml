@@ -16,8 +16,8 @@ version: v0.15.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 3aa565f453bae9dcef06685a6f84b6e48ccdf335
-    sha256: 1e65551719e3fb01f52f4da4373e222e4ee46df985b34ae40e6d06f79b0080cc
+    commit: cdc919ff596e263f2cc55a9780d2f74633da1ced
+    sha256: 7ffa366713bc955e172bba121f0d746b7fc1f6aab4ee46a6c65b4174b45d4043
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -2991,6 +2991,10 @@ libraries:
       api_description_override: is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.
       name_pretty_override: AI Platform Notebooks
       product_documentation_override: https://cloud.google.com/ai-platform-notebooks
+  - name: numberregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/numberregistry/v1alpha
   - name: optimization
     version: 1.91.0-SNAPSHOT
     apis:
