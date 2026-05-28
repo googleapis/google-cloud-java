@@ -124,9 +124,7 @@ public class ITPaginationTest extends BaseTest {
         break;
       }
     }
-    Assert.assertTrue(
-            "Expected iterator to traverse multiple pages",
-            count >= 2);
+    Assert.assertTrue("Expected iterator to traverse multiple pages", count >= 2);
   }
 
   @Test
