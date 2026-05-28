@@ -44,6 +44,7 @@ import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSortedSet;
+import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Tracer;
@@ -1139,6 +1140,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         || this.useGlobalOpenTelemetry) {
       Tracer sdkTracer = this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.BIGQUERY_NAMESPACE);
       bigQueryOptions.setOpenTelemetryTracer(sdkTracer);
+      bigQueryOptions.setEnableOpenTelemetryTracing(true);
       this.tracer =
           this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
     }
@@ -1176,7 +1178,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
     TransportChannelProvider activeProvider = this.transportChannelProvider;
     if (activeProvider == null) {
-      activeProvider = BigQueryReadSettings.defaultGrpcTransportProviderBuilder().build();
+      InstantiatingGrpcChannelProvider.Builder builder =
+          BigQueryReadSettings.defaultGrpcTransportProviderBuilder();
+      if (this.enableGcpTraceExporter
+          || this.customOpenTelemetry != null
+          || this.useGlobalOpenTelemetry) {
+        GrpcOpenTelemetry grpcOpenTelemetry =
+            GrpcOpenTelemetry.newBuilder().sdk(this.openTelemetry).build();
+        builder.setChannelConfigurator(
+            b -> {
+              grpcOpenTelemetry.configureChannelBuilder(b);
+              return b;
+            });
+      }
+      activeProvider = builder.build();
     }
 
     if (activeProvider instanceof InstantiatingGrpcChannelProvider) {
@@ -1191,8 +1206,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
 
-    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
       bigQueryReadSettings.setOpenTelemetryTracerProvider(this.openTelemetry.getTracerProvider());
+      bigQueryReadSettings.setEnableOpenTelemetryTracing(true);
     }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());
