@@ -43,7 +43,11 @@ import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
@@ -81,8 +85,19 @@ class ChannelPool extends ManagedChannel {
   private ScheduledFuture<?> refreshFuture = null;
   private ScheduledFuture<?> resizeFuture = null;
 
+  private static class DiskCheckResult {
+    final String fingerprint;
+    final long timestampNanos;
+
+    DiskCheckResult(String fingerprint, long timestampNanos) {
+      this.fingerprint = fingerprint;
+      this.timestampNanos = timestampNanos;
+    }
+  }
+
+  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);
   private final Object entryWriteLock = new Object();
-  private long lastRefreshTimeNanos = 0;
+  private volatile String activeCertFingerprint = "";
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
@@ -134,6 +149,11 @@ class ChannelPool extends ManagedChannel {
 
     entries.set(initialListBuilder.build());
     authority = entries.get().get(0).channel.authority();
+
+    String certPath = getWorkloadCertPath();
+    if (certPath != null) {
+      this.activeCertFingerprint = getCertificateFingerprint(certPath);
+    }
 
     if (!settings.isStaticSize()) {
       resizeFuture =
@@ -426,6 +446,74 @@ class ChannelPool extends ManagedChannel {
     }
   }
 
+
+  private static String getWorkloadCertPath() {
+    String configPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
+    if (configPath != null && !configPath.isEmpty()) {
+      java.io.File configFile = new java.io.File(configPath);
+      if (configFile.exists() && !configFile.isDirectory()) {
+        // If explicit config exists, check it
+      }
+    }
+    java.io.File bundleFile = new java.io.File("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem");
+    if (bundleFile.exists()) {
+      return bundleFile.getAbsolutePath();
+    }
+    java.io.File certsFile = new java.io.File("/var/run/secrets/workload-spiffe-credentials/certificates.pem");
+    if (certsFile.exists()) {
+      return certsFile.getAbsolutePath();
+    }
+    return null;
+  }
+
+  private static String getCertificateFingerprint(String certPath) {
+    try (FileInputStream fis = new FileInputStream(certPath)) {
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      X509Certificate cert = (X509Certificate) cf.generateCertificate(fis);
+      MessageDigest md = MessageDigest.getInstance("SHA-256");
+      byte[] der = cert.getEncoded();
+      byte[] digest = md.digest(der);
+      StringBuilder sb = new StringBuilder();
+      for (byte b : digest) {
+        sb.append(String.format("%02x", b));
+      }
+      return sb.toString();
+    } catch (Exception e) {
+      LOG.log(Level.FINE, "Could not read or parse workload certificate at path " + certPath, e);
+      return "";
+    }
+  }
+ 
+  private String getOrUpdateDiskFingerprint(String certPath) {
+    long now = System.nanoTime();
+    DiskCheckResult cached = lastDiskCheck.get();
+    if (cached != null && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
+      return cached.fingerprint;
+    }
+
+    synchronized (lastDiskCheck) {
+      cached = lastDiskCheck.get();
+      if (cached != null && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
+        return cached.fingerprint;
+      }
+      String fingerprint = getCertificateFingerprint(certPath);
+      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));
+      return fingerprint;
+    }
+  }
+
+  boolean shouldRefresh() {
+    String certPath = getWorkloadCertPath();
+    if (certPath == null) {
+      return false;
+    }
+    String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
+    if (currentDiskFingerprint.isEmpty()) {
+      return false;
+    }
+    return !currentDiskFingerprint.equalsIgnoreCase(activeCertFingerprint);
+  }
+
   /**
    * Replace all of the channels in the channel pool with fresh ones. This is meant to mitigate the
    * hourly GFE disconnects by giving clients the ability to prime the channel on reconnect.
@@ -442,14 +530,23 @@ class ChannelPool extends ManagedChannel {
     // - then thread2 will shut down channel that thread1 will put back into circulation (after it
     //   replaces the list)
     synchronized (entryWriteLock) {
-      long now = System.nanoTime();
-      if (now - lastRefreshTimeNanos < TimeUnit.SECONDS.toNanos(5)) {
-        LOG.fine("Channel pool was refreshed recently, skipping duplicate refresh");
+      String certPath = getWorkloadCertPath();
+      if (certPath == null) {
         return;
       }
-      lastRefreshTimeNanos = now;
+      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
+      if (currentDiskFingerprint.isEmpty()) {
+        return;
+      }
 
-      LOG.fine("Refreshing all channels");
+      // Double-check fingerprint inside the lock
+      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {
+        LOG.fine("Channel pool was already refreshed by a concurrent thread, skipping duplicate refresh");
+        return;
+      }
+
+      this.activeCertFingerprint = currentDiskFingerprint;
+      LOG.fine("Refreshing all channels with new certificate fingerprint: " + activeCertFingerprint);
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
 
       for (int i = 0; i < newEntries.size(); i++) {

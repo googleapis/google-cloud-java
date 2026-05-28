@@ -55,4 +55,12 @@ public interface TransportChannel extends BackgroundResource {
    * management.
    */
   default void refresh() {}
+
+  /**
+   * Returns true if a certificate rotation has been detected on disk and the transport channel
+   * should be refreshed, or false otherwise.
+   */
+  default boolean shouldRefresh() {
+    return false;
+  }
 }

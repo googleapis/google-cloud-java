@@ -75,33 +75,29 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
       public ApiStreamObserver<RequestT> clientStreamingCall(
           final ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
         final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
-        ApiStreamObserver<ResponseT> refreshingObserver = responseObserver;
+        ApiStreamObserver<ResponseT> refreshingObserver =
+            new ApiStreamObserver<ResponseT>() {
+              @Override
+              public void onNext(ResponseT response) {
+                responseObserver.onNext(response);
+              }
 
-        if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
-          refreshingObserver =
-              new ApiStreamObserver<ResponseT>() {
-                @Override
-                public void onNext(ResponseT response) {
-                  responseObserver.onNext(response);
-                }
-
-                @Override
-                public void onError(Throwable t) {
-                  if (t instanceof UnauthenticatedException) {
-                    TransportChannel transportChannel = mergedContext.getTransportChannel();
-                    if (transportChannel != null) {
-                      transportChannel.refresh();
-                    }
+              @Override
+              public void onError(Throwable t) {
+                if (t instanceof UnauthenticatedException) {
+                  TransportChannel transportChannel = mergedContext.getTransportChannel();
+                  if (transportChannel != null && transportChannel.shouldRefresh()) {
+                    transportChannel.refresh();
                   }
-                  responseObserver.onError(t);
                 }
+                responseObserver.onError(t);
+              }
 
-                @Override
-                public void onCompleted() {
-                  responseObserver.onCompleted();
-                }
-              };
-        }
+              @Override
+              public void onCompleted() {
+                responseObserver.onCompleted();
+              }
+            };
 
         return ClientStreamingCallable.this.clientStreamingCall(
             refreshingObserver, mergedContext);

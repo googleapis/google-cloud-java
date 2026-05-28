@@ -88,6 +88,10 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
 
   public void refresh() {}
 
+  public boolean shouldRefresh() {
+    return false;
+  }
+
   @VisibleForTesting
   Executor getExecutor() {
     return executor;

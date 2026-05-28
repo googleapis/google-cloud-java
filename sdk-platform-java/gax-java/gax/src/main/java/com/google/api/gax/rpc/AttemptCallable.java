@@ -85,27 +85,6 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
 
       ApiFuture<ResponseT> internalFuture = callable.futureCall(request, callContext);
 
-      if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
-        final ApiCallContext finalContext = callContext;
-        ApiFutures.addCallback(
-            internalFuture,
-            new com.google.api.core.ApiFutureCallback<ResponseT>() {
-              @Override
-              public void onFailure(Throwable t) {
-                if (t instanceof UnauthenticatedException) {
-                  TransportChannel transportChannel = finalContext.getTransportChannel();
-                  if (transportChannel != null) {
-                    transportChannel.refresh();
-                  }
-                }
-              }
-
-              @Override
-              public void onSuccess(ResponseT result) {}
-            },
-            com.google.common.util.concurrent.MoreExecutors.directExecutor());
-      }
-
       externalFuture.setAttemptFuture(internalFuture);
     } catch (Throwable e) {
       externalFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
