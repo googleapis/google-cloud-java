@@ -60,6 +60,7 @@
                 https://raw.githubusercontent.com/googleapis/gapic-showcase/v${gapic-showcase.version}/server/services/compliance_suite.json
               </url>
               <outputDirectory>src/test/resources</outputDirectory>
+              <skipCache>true</skipCache>
               <!-- Set this to always download the latest version and overwrite the existing file -->
               <overwrite>true</overwrite>
             </configuration>
