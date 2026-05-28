@@ -79,6 +79,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -276,6 +277,48 @@ public class SessionPoolImplTest {
         testSessionPool.close(CloseSessionRequest.getDefaultInstance());
       }
     }
+  }
+
+  @Test
+  void pendingVRpcOnClosedPoolDoesNotLeakDeadlineMonitor() throws InterruptedException {
+    // Regression: PendingVRpc.start used to arm the deadline timer before the pool-state
+    // check, so the fast-fail "pool closed" branch leaked an armed timer that fired later
+    // and called listener.onClose a second time with DEADLINE_EXCEEDED.
+    sessionPool.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("close before issuing rpc")
+            .build());
+
+    CopyOnWriteArrayList<VRpcResult> closes = new CopyOnWriteArrayList<>();
+    CountDownLatch firstClose = new CountDownLatch(1);
+    Duration deadline = Duration.ofMillis(100);
+
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    vrpc.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpcCallContext.create(
+            Deadline.after(deadline.toMillis(), TimeUnit.MILLISECONDS), true, vrpcTracer),
+        new VRpc.VRpcListener<SessionFakeScriptedResponse>() {
+          @Override
+          public void onMessage(SessionFakeScriptedResponse msg) {}
+
+          @Override
+          public void onClose(VRpcResult result) {
+            closes.add(result);
+            firstClose.countDown();
+          }
+        });
+
+    // The fast-fail UNAVAILABLE onClose should arrive immediately.
+    assertThat(firstClose.await(1, TimeUnit.SECONDS)).isTrue();
+    assertThat(closes).hasSize(1);
+
+    // Wait past the deadline. With the bug (leaked deadlineMonitor), a phantom
+    // onClose(DEADLINE_EXCEEDED) would arrive in this window. With the fix, no second close.
+    Thread.sleep(deadline.toMillis() * 5);
+    assertThat(closes).hasSize(1);
   }
 
   @Test
