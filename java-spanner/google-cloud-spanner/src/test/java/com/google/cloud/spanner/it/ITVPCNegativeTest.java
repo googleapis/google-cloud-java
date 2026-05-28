@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner.it;
 
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -80,7 +80,7 @@ public class ITVPCNegativeTest {
 
   @BeforeClass
   public static void setUpClass() {
-    assumeFalse("Not applicable for experimental host", isExperimentalHost());
+    assumeFalse("Not applicable for Spanner Omni", isSpannerOmni());
     assumeTrue(
         "To run tests, GOOGLE_CLOUD_TESTS_IN_VPCSC environment variable needs to be set to True",
         IN_VPCSC_TEST != null && IN_VPCSC_TEST.equalsIgnoreCase("true"));

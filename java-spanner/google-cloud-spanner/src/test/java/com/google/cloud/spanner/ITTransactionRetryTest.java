@@ -17,7 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -43,7 +43,7 @@ public class ITTransactionRetryTest {
     assumeFalse(
         "Skipping the test due to a known bug b/422916293",
         env.getTestHelper().getOptions().isEnableDirectAccess());
-    assumeFalse("Skipping the test due to a known bug b/422916293", isExperimentalHost());
+    assumeFalse("Skipping the test due to a known bug b/422916293", isSpannerOmni());
 
     // Creating a database with the table which contains INT64 columns
     Database db =
