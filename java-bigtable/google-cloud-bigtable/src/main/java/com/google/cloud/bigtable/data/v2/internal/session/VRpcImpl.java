@@ -54,7 +54,7 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   // Narrow view of SessionImpl
   interface VRpcSessionApi {
-    Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
+    void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
 
     void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause);
   }
@@ -96,52 +96,42 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
     this.listener = listener;
     this.ctx = ctx;
 
-    Status status;
-    boolean retryable = true;
-
     if (!state.compareAndSet(State.NEW, State.STARTED)) {
-      status = Status.INTERNAL.withDescription("VRpc already started in state: " + state.get());
-      retryable = false;
-    } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
-        < TimeUnit.MILLISECONDS.toMicros(1)) {
-      // Don't send RPCs that don't have any hope of succeeding
-      status =
-          Status.DEADLINE_EXCEEDED.withDescription("Remaining deadline is too short to send RPC");
-      retryable = false;
-    } else {
-      Metadata vRpcMetadata =
-          Metadata.newBuilder()
-              .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())
-              .setTraceparent(ctx.getTraceParent())
-              .build();
-      ctx.getTracer().onRequestSent(peerInfo);
-      status =
-          session.startRpc(
-              this,
-              VirtualRpcRequest.newBuilder()
-                  .setRpcId(rpcId)
-                  .setMetadata(vRpcMetadata)
-                  .setDeadline(
-                      Durations.fromNanos(
-                          ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
-                  .setPayload(desc.encode(req))
-                  .build());
-      // if status is not OK, the session might not be ready and the vRPC can be retried on a
-      // different session
+      VRpcResult result =
+          VRpcResult.createRejectedError(
+              Status.INTERNAL.withDescription("VRpc already started in state: " + state.get()));
+      ctx.getExecutor().execute(() -> listener.onClose(result));
+      return;
     }
 
-    if (!status.isOk()) {
-      debugTagTracer.checkPrecondition(
-          state.compareAndSet(State.STARTED, State.CLOSED),
-          "vrpc_incorrect_start_state",
-          "VRpc has incorrect state. Expected to be started but was %s",
-          state);
+    if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
+        < TimeUnit.MILLISECONDS.toMicros(1)) {
+      state.set(State.CLOSED);
       VRpcResult result =
-          retryable
-              ? VRpcResult.createUncommitedError(status)
-              : VRpcResult.createRejectedError(status);
+          VRpcResult.createRejectedError(
+              Status.DEADLINE_EXCEEDED.withDescription(
+                  "Remaining deadline is too short to send RPC"));
       ctx.getExecutor().execute(() -> listener.onClose(result));
+      return;
     }
+
+    Metadata vRpcMetadata =
+        Metadata.newBuilder()
+            .setAttemptNumber(ctx.getOperationInfo().getAttemptNumber())
+            .setTraceparent(ctx.getTraceParent())
+            .build();
+    ctx.getTracer().onRequestSent(peerInfo);
+    session.startRpc(
+        this,
+        VirtualRpcRequest.newBuilder()
+            .setRpcId(rpcId)
+            .setMetadata(vRpcMetadata)
+            .setDeadline(
+                Durations.fromNanos(
+                    ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
+            .setPayload(desc.encode(req))
+            .build());
+    // Session delivers startRpc errors asynchronously via handleError() on ctx.getExecutor()
   }
 
   void handleSessionClose(VRpcResult result) {

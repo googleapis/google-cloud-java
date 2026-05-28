@@ -375,38 +375,45 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   @Override
-  public Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
-    synchronized (lock) {
-      if (currentRpc != null) {
-        return Status.INTERNAL.withDescription(
-            "Session error: RPC multiplexing is not yet supported");
-      }
-      if (state != SessionState.READY) {
-        return Status.INTERNAL.withDescription(
-            "Session error: Session was not ready, state = " + state);
-      }
+  public void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
+    sessionSyncContext.execute(
+        () -> {
+          synchronized (lock) {
+            if (currentRpc != null) {
+              rpc.handleError(
+                  VRpcResult.createUncommitedError(
+                      Status.INTERNAL.withDescription(
+                          "Session error: RPC multiplexing is not yet supported")));
+              return;
+            }
+            if (state != SessionState.READY) {
+              rpc.handleError(
+                  VRpcResult.createUncommitedError(
+                      Status.INTERNAL.withDescription(
+                          "Session error: Session was not ready, state = " + state)));
+              return;
+            }
 
-      this.currentRpc = rpc;
-      stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
-      // Start monitoring for heartbeat when the vRPC is started. heartbeatInterval is read
-      // inside the lock to avoid a race with handleSessionParamsResponse(). nextHeartbeat is
-      // volatile and written here without an atomicity guarantee — that is intentional; it is
-      // only a scheduling hint (see field comment).
-      this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
-      return Status.OK;
-    }
+            this.currentRpc = rpc;
+            stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
+            this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+          }
+        });
   }
 
   @Override
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
-    synchronized (lock) {
-      if (currentRpc != null && rpcId == currentRpc.rpcId) {
-        currentCancel =
-            VRpcResult.createRejectedError(
-                Status.CANCELLED.withDescription(message).withCause(cause));
-      }
-      // do nothing if the rpc is already finished
-    }
+    sessionSyncContext.execute(
+        () -> {
+          synchronized (lock) {
+            if (currentRpc != null && rpcId == currentRpc.rpcId) {
+              currentCancel =
+                  VRpcResult.createRejectedError(
+                      Status.CANCELLED.withDescription(message).withCause(cause));
+            }
+            // do nothing if the rpc is already finished
+          }
+        });
   }
 
   private void scheduleHeartbeatCheck() {
