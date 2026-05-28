@@ -179,6 +179,7 @@
     <module>java-networkservices</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
+    <module>java-numberregistry</module>
     <module>java-optimization</module>
     <module>java-oracledatabase</module>
     <module>java-orchestration-airflow</module>

@@ -1,0 +1,108 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.numberregistry.v1alpha",
+  "libraryPackage": "com.google.cloud.numberregistry.v1alpha",
+  "services": {
+    "CloudNumberRegistry": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudNumberRegistryClient",
+          "rpcs": {
+            "CheckAvailabilityIpamAdminScopes": {
+              "methods": ["checkAvailabilityIpamAdminScopes", "checkAvailabilityIpamAdminScopes", "checkAvailabilityIpamAdminScopes", "checkAvailabilityIpamAdminScopesCallable"]
+            },
+            "CleanupIpamAdminScope": {
+              "methods": ["cleanupIpamAdminScopeAsync", "cleanupIpamAdminScopeAsync", "cleanupIpamAdminScopeAsync", "cleanupIpamAdminScopeOperationCallable", "cleanupIpamAdminScopeCallable"]
+            },
+            "CreateCustomRange": {
+              "methods": ["createCustomRangeAsync", "createCustomRangeAsync", "createCustomRangeAsync", "createCustomRangeOperationCallable", "createCustomRangeCallable"]
+            },
+            "CreateIpamAdminScope": {
+              "methods": ["createIpamAdminScopeAsync", "createIpamAdminScopeAsync", "createIpamAdminScopeAsync", "createIpamAdminScopeOperationCallable", "createIpamAdminScopeCallable"]
+            },
+            "CreateRealm": {
+              "methods": ["createRealmAsync", "createRealmAsync", "createRealmAsync", "createRealmOperationCallable", "createRealmCallable"]
+            },
+            "CreateRegistryBook": {
+              "methods": ["createRegistryBookAsync", "createRegistryBookAsync", "createRegistryBookAsync", "createRegistryBookOperationCallable", "createRegistryBookCallable"]
+            },
+            "DeleteCustomRange": {
+              "methods": ["deleteCustomRangeAsync", "deleteCustomRangeAsync", "deleteCustomRangeAsync", "deleteCustomRangeOperationCallable", "deleteCustomRangeCallable"]
+            },
+            "DeleteIpamAdminScope": {
+              "methods": ["deleteIpamAdminScopeAsync", "deleteIpamAdminScopeAsync", "deleteIpamAdminScopeAsync", "deleteIpamAdminScopeOperationCallable", "deleteIpamAdminScopeCallable"]
+            },
+            "DeleteRealm": {
+              "methods": ["deleteRealmAsync", "deleteRealmAsync", "deleteRealmAsync", "deleteRealmOperationCallable", "deleteRealmCallable"]
+            },
+            "DeleteRegistryBook": {
+              "methods": ["deleteRegistryBookAsync", "deleteRegistryBookAsync", "deleteRegistryBookAsync", "deleteRegistryBookOperationCallable", "deleteRegistryBookCallable"]
+            },
+            "DisableIpamAdminScope": {
+              "methods": ["disableIpamAdminScopeAsync", "disableIpamAdminScopeAsync", "disableIpamAdminScopeAsync", "disableIpamAdminScopeOperationCallable", "disableIpamAdminScopeCallable"]
+            },
+            "FindCustomRangeFreeIpRanges": {
+              "methods": ["findCustomRangeFreeIpRanges", "findCustomRangeFreeIpRanges", "findCustomRangeFreeIpRanges", "findCustomRangeFreeIpRangesCallable"]
+            },
+            "FindDiscoveredRangeFreeIpRanges": {
+              "methods": ["findDiscoveredRangeFreeIpRanges", "findDiscoveredRangeFreeIpRanges", "findDiscoveredRangeFreeIpRanges", "findDiscoveredRangeFreeIpRangesCallable"]
+            },
+            "GetCustomRange": {
+              "methods": ["getCustomRange", "getCustomRange", "getCustomRange", "getCustomRangeCallable"]
+            },
+            "GetDiscoveredRange": {
+              "methods": ["getDiscoveredRange", "getDiscoveredRange", "getDiscoveredRange", "getDiscoveredRangeCallable"]
+            },
+            "GetIpamAdminScope": {
+              "methods": ["getIpamAdminScope", "getIpamAdminScope", "getIpamAdminScope", "getIpamAdminScopeCallable"]
+            },
+            "GetRealm": {
+              "methods": ["getRealm", "getRealm", "getRealm", "getRealmCallable"]
+            },
+            "GetRegistryBook": {
+              "methods": ["getRegistryBook", "getRegistryBook", "getRegistryBook", "getRegistryBookCallable"]
+            },
+            "ListCustomRanges": {
+              "methods": ["listCustomRanges", "listCustomRanges", "listCustomRanges", "listCustomRangesPagedCallable", "listCustomRangesCallable"]
+            },
+            "ListDiscoveredRanges": {
+              "methods": ["listDiscoveredRanges", "listDiscoveredRanges", "listDiscoveredRanges", "listDiscoveredRangesPagedCallable", "listDiscoveredRangesCallable"]
+            },
+            "ListIpamAdminScopes": {
+              "methods": ["listIpamAdminScopes", "listIpamAdminScopes", "listIpamAdminScopes", "listIpamAdminScopesPagedCallable", "listIpamAdminScopesCallable"]
+            },
+            "ListRealms": {
+              "methods": ["listRealms", "listRealms", "listRealms", "listRealmsPagedCallable", "listRealmsCallable"]
+            },
+            "ListRegistryBooks": {
+              "methods": ["listRegistryBooks", "listRegistryBooks", "listRegistryBooks", "listRegistryBooksPagedCallable", "listRegistryBooksCallable"]
+            },
+            "SearchIpResources": {
+              "methods": ["searchIpResources", "searchIpResources", "searchIpResources", "searchIpResourcesPagedCallable", "searchIpResourcesCallable"]
+            },
+            "ShowCustomRangeUtilization": {
+              "methods": ["showCustomRangeUtilization", "showCustomRangeUtilization", "showCustomRangeUtilization", "showCustomRangeUtilizationCallable"]
+            },
+            "ShowDiscoveredRangeUtilization": {
+              "methods": ["showDiscoveredRangeUtilization", "showDiscoveredRangeUtilization", "showDiscoveredRangeUtilization", "showDiscoveredRangeUtilizationCallable"]
+            },
+            "UpdateCustomRange": {
+              "methods": ["updateCustomRangeAsync", "updateCustomRangeAsync", "updateCustomRangeOperationCallable", "updateCustomRangeCallable"]
+            },
+            "UpdateIpamAdminScope": {
+              "methods": ["updateIpamAdminScopeAsync", "updateIpamAdminScopeAsync", "updateIpamAdminScopeOperationCallable", "updateIpamAdminScopeCallable"]
+            },
+            "UpdateRealm": {
+              "methods": ["updateRealmAsync", "updateRealmAsync", "updateRealmOperationCallable", "updateRealmCallable"]
+            },
+            "UpdateRegistryBook": {
+              "methods": ["updateRegistryBookAsync", "updateRegistryBookAsync", "updateRegistryBookOperationCallable", "updateRegistryBookCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

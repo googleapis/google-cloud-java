@@ -1,0 +1,16 @@
+{
+  "api_shortname": "cloudnumberregistry",
+  "name_pretty": "Cloud Number Registry",
+  "product_documentation": "https://docs.cloud.google.com/number-registry/reference/rest",
+  "api_description": "",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-numberregistry/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-numberregistry",
+  "distribution_name": "com.google.cloud:google-cloud-numberregistry",
+  "api_id": "cloudnumberregistry.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

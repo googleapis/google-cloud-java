@@ -1053,3 +1053,8 @@ grpc-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-bundle-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-cloud-numberregistry-v1alpha:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-numberregistry-v1alpha:0.0.0:0.1.0-SNAPSHOT
+google-cloud-numberregistry:0.0.0:0.1.0-SNAPSHOT
+google-cloud-numberregistry-bom:0.0.0:0.1.0-SNAPSHOT
+google-cloud-numberregistry-parent:0.0.0:0.1.0-SNAPSHOT
