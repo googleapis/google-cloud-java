@@ -23,7 +23,9 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -55,7 +57,6 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.MockedStatic;
-import org.mockito.Mockito;
 
 public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
@@ -567,20 +568,19 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
     OpenTelemetry mockGlobalOtel = mock(OpenTelemetry.class);
     OpenTelemetry mockDriverManagedOtel = mock(OpenTelemetry.class);
     Logging mockLogging = mock(Logging.class);
-    org.mockito.Mockito.when(mockCustomOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
-    org.mockito.Mockito.when(mockGlobalOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
-    org.mockito.Mockito.when(mockDriverManagedOtel.getTracer(anyString()))
-        .thenReturn(mock(Tracer.class));
+    when(mockCustomOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    when(mockGlobalOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    when(mockDriverManagedOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
 
     if (hasCustom) {
       ds.setCustomOpenTelemetry(mockCustomOtel);
     }
 
     try (MockedStatic<BigQueryJdbcOpenTelemetry> mockedOtel =
-            Mockito.mockStatic(BigQueryJdbcOpenTelemetry.class);
+            mockStatic(BigQueryJdbcOpenTelemetry.class);
         MockedStatic<BigQueryJdbcOAuthUtility> mockedAuth =
-            Mockito.mockStatic(BigQueryJdbcOAuthUtility.class);
-        MockedStatic<GoogleCredentials> mockedCreds = Mockito.mockStatic(GoogleCredentials.class)) {
+            mockStatic(BigQueryJdbcOAuthUtility.class);
+        MockedStatic<GoogleCredentials> mockedCreds = mockStatic(GoogleCredentials.class)) {
 
       mockedCreds
           .when(GoogleCredentials::getApplicationDefault)
