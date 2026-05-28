@@ -17,6 +17,9 @@ on:
   schedule:
   - cron: '0 3 * * *' # Run once a day at 3:00 AM UTC
   workflow_dispatch: # Allow manual trigger
+  pull_request: # Run in dry-run mode to test changes to this workflow itself
+    paths:
+      - '.github/workflows/update_librarian_googleapis.yaml'
 jobs:
   update-librarian-googleapis:
     runs-on: ubuntu-24.04
@@ -37,13 +40,17 @@ jobs:
         set -x
         current_branch="update-librarian-googleapis-main"
         
-        # Try to find an open pull request associated with the branch
-        pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
-        
-        if [ -n "${pr_num}" ]; then
-          echo "Error: An open Pull Request already exists for this update: PR #${pr_num}."
-          echo "Please merge or close the existing PR before running this workflow again."
-          exit 1 # Fails this step and the workflow
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          echo "PR Test: Skipping open PR check."
+        else
+          # Try to find an open pull request associated with the branch
+          pr_num=$(gh pr list -s open -H "${current_branch}" -q . --json number | jq ".[] | .number")
+          
+          if [ -n "${pr_num}" ]; then
+            echo "Error: An open Pull Request already exists for this update: PR #${pr_num}."
+            echo "Please merge or close the existing PR before running this workflow again."
+            exit 1 # Fails this step and the workflow
+          fi
         fi
     - name: Set up Go
       uses: actions/setup-go@v5
@@ -84,6 +91,15 @@ jobs:
         PR_BODY: ${{ steps.detect.outputs.body }}
       run: |
         set -x
+        
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          echo "=== PR Test: DRY RUN MODE ACTIVE ==="
+          echo "Would have checked out branch: update-librarian-googleapis-main"
+          echo "Would have committed with title: $PR_TITLE"
+          echo "Would have pushed branch and created PR."
+          exit 0
+        fi
+        
         [ -z "$(git config user.email)" ] && git config --global user.email "cloud-java-bot@google.com"
         [ -z "$(git config user.name)" ] && git config --global user.name "cloud-java-bot"
         
