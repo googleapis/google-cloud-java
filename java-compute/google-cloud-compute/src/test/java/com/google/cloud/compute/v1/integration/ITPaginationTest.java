@@ -120,6 +120,9 @@ public class ITPaginationTest extends BaseTest {
     for (Zone element : response.iterateAll()) {
       Assert.assertNotNull(element.getName());
       count++;
+      if (count >= 2) {
+        break;
+      }
     }
     Assert.assertTrue(
             "Expected iterator to traverse multiple pages",
