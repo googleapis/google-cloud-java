@@ -168,6 +168,8 @@ final class BigQueryJdbcUrlUtility {
   static final boolean DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE = false;
   static final String ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME = "enableGcpLogExporter";
   static final boolean DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE = false;
+  static final String USE_GLOBAL_OTEL_PROPERTY_NAME = "useGlobalOpenTelemetry";
+  static final boolean DEFAULT_USE_GLOBAL_OTEL_VALUE = false;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -638,6 +640,12 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME)
                       .setDescription("GCP Project ID for OTel exporter.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(USE_GLOBAL_OTEL_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables usage of the Global OpenTelemetry instance when true. Default is false.")
+                      .setDefaultValue(String.valueOf(DEFAULT_USE_GLOBAL_OTEL_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
