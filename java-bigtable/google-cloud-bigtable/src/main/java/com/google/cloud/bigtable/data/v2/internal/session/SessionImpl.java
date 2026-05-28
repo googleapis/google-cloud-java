@@ -52,10 +52,10 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 
 /** Wraps a Bidi ClientCall and layers session semantics on top. */
 @VisibleForTesting
@@ -79,14 +79,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
           .setDescription("missed heartbeat")
           .build();
 
-  /*
-   * This lock should be mostly uncontended - all access should be naturally interleaved. Contention
-   * can only really happen when an unsolicited gRPC control message (ie GOAWAY) arrives at the same
-   * time as newCall or cancel.
-   * TODO: Contention will increase when multiplexing is implemented.
-   */
-  private final Object lock = new Object();
-
   private final Clock clock;
   private final ScheduledExecutorService scheduledExecutor;
   private final SynchronizationContext sessionSyncContext;
@@ -96,58 +88,36 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private final SessionInfo info;
 
-  @GuardedBy("lock")
   private final SessionStream stream;
 
-  @GuardedBy("lock")
-  private SessionState state = SessionState.NEW;
+  private volatile SessionState state = SessionState.NEW;
 
-  @GuardedBy("lock")
-  private Instant lastStateChangedAt;
+  private volatile Instant lastStateChangedAt;
 
   // Set once under lock in start(), then read freely from gRPC callbacks without the lock.
   // Safe because start() is always called before any callback fires, so the write is
   // visible to all subsequent readers through the happens-before chain from stream.start().
   private Listener sessionListener;
 
-  // volatile: written under lock in handleSessionRefreshConfigResponse(); read without lock in
-  // getOpenParams() and isOpenParamsUpdated() so callers get a consistent (if possibly stale)
-  // snapshot without contending on the lock. Stale reads are acceptable for these accessors.
-  private volatile OpenParams openParams;
+  private OpenParams openParams;
 
-  private volatile boolean openParamsUpdated;
+  private boolean openParamsUpdated;
 
-  // closeReason is written under lock in close(), forceClose(), handleGoAwayResponse(), and
-  // dispatchStreamClosed(). The one read that occurs outside the lock — in dispatchStreamClosed
-  // after the synchronized block — runs on the same gRPC callback thread that just released the
-  // lock, so the lock's release-acquire edge provides the necessary visibility. A stale read is
-  // structurally impossible given the control flow (closeReason is always set before the lock
-  // is released on every path that reaches that read site).
   @Nullable private CloseSessionRequest closeReason = null;
 
-  @GuardedBy("lock")
-  private long nextRpcId = 1;
+  private final AtomicLong nextRpcId = new AtomicLong(1);
 
   // TODO: replace with a map when implementing multiplexing
-  @GuardedBy("lock")
   private VRpcImpl<?, ?, ?> currentRpc = null;
 
-  @GuardedBy("lock")
   private VRpcResult currentCancel = null;
 
-  @GuardedBy("lock")
   private SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
 
-  // volatile: written under lock in handleSessionParamsResponse(); read without lock in
-  // handleHeartBeatResponse() where a stale read is acceptable — the heartbeat deadline is a
-  // soft scheduling hint, not a correctness invariant. startRpc() reads this inside the lock.
-  private volatile Duration heartbeatInterval =
+  private Duration heartbeatInterval =
       Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
 
-  // volatile: written from multiple sites without holding the lock (startRpc, handleVRpc*,
-  // handleHeartBeatResponse). Stale reads are acceptable — nextHeartbeat is used only as a
-  // scheduling hint by the pool's heartbeat monitor.
-  private volatile Instant nextHeartbeat;
+  private Instant nextHeartbeat;
 
   public SessionImpl(
       Metrics metrics,
@@ -186,16 +156,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   @Override
   public SessionState getState() {
-    synchronized (lock) {
-      return state;
-    }
+    return state;
   }
 
   @Override
   public Instant getLastStateChange() {
-    synchronized (lock) {
-      return lastStateChangedAt;
-    }
+    return lastStateChangedAt;
   }
 
   @Override
@@ -215,13 +181,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   @Override
   public PeerInfo getPeerInfo() {
-    // This lock might not be necessary, its populated once on a gRPC callback which should
-    // establish a happens before relationship. However access to the underlying stream is guarded
-    // with errorprone, so sync block is required to get around the lint.
-    // TODO: consider removing the sync block
-    synchronized (lock) {
-      return stream.getPeerInfo();
-    }
+    return stream.getPeerInfo();
   }
 
   @Override
@@ -231,98 +191,101 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   @Override
   public void forceClose(CloseSessionRequest closeReason) {
-    synchronized (lock) {
-      debugTagTracer.checkPrecondition(
-          state != SessionState.NEW,
-          "session_force_close_wrong_state",
-          "Tried to forceClose an unstarted session %s in state %s",
-          info.getLogName(),
-          state);
+    sessionSyncContext.execute(
+        () -> {
+          debugTagTracer.checkPrecondition(
+              state != SessionState.NEW,
+              "session_force_close_wrong_state",
+              "Tried to forceClose an unstarted session %s in state %s",
+              info.getLogName(),
+              state);
 
-      if (state == SessionState.CLOSED) {
-        return;
-      }
+          if (state == SessionState.CLOSED) {
+            return;
+          }
 
-      updateState(SessionState.WAIT_SERVER_CLOSE);
-      this.closeReason = closeReason;
+          updateState(SessionState.WAIT_SERVER_CLOSE);
+          this.closeReason = closeReason;
 
-      // Not sending the CloseSessionRequest because cancel() will just drop it
-      stream.forceClose(closeReason.getDescription(), null);
-      // Listeners will be notified by dispatchStreamClosed
-    }
+          // Not sending the CloseSessionRequest because cancel() will just drop it
+          stream.forceClose(closeReason.getDescription(), null);
+          // Listeners will be notified by dispatchStreamClosed
+        });
   }
 
   @Override
   public void start(OpenSessionRequest req, Metadata headers, Listener sessionListener) {
-    synchronized (lock) {
-      debugTagTracer.checkPrecondition(
-          state == SessionState.NEW,
-          "session_start_wrong_state",
-          "Tried to start a started session, current state: %s",
-          state);
+    sessionSyncContext.execute(
+        () -> {
+          debugTagTracer.checkPrecondition(
+              state == SessionState.NEW,
+              "session_start_wrong_state",
+              "Tried to start a started session, current state: %s",
+              state);
 
-      logger.fine(String.format("Starting session %s", info.getLogName()));
-      tracer.onStart();
+          logger.fine(String.format("Starting session %s", info.getLogName()));
+          tracer.onStart();
 
-      updateState(SessionState.STARTING);
-      openParams = OpenParams.create(headers, req);
-      this.sessionListener = sessionListener;
+          updateState(SessionState.STARTING);
+          openParams = OpenParams.create(headers, req);
+          this.sessionListener = sessionListener;
 
-      SessionRequest wrappedReq = SessionRequest.newBuilder().setOpenSession(req).build();
-      stream.start(
-          new SessionStream.Listener() {
-            @Override
-            public void onBeforeSessionStart(PeerInfo peerInfo) {}
+          SessionRequest wrappedReq = SessionRequest.newBuilder().setOpenSession(req).build();
+          stream.start(
+              new SessionStream.Listener() {
+                @Override
+                public void onBeforeSessionStart(PeerInfo peerInfo) {}
 
-            @Override
-            public void onMessage(SessionResponse message) {
-              sessionSyncContext.execute(() -> dispatchResponseMessage(message));
-            }
+                @Override
+                public void onMessage(SessionResponse message) {
+                  sessionSyncContext.execute(() -> dispatchResponseMessage(message));
+                }
 
-            @Override
-            public void onClose(Status status, Metadata trailers) {
-              sessionSyncContext.execute(() -> dispatchStreamClosed(status, trailers));
-            }
-          },
-          headers);
+                @Override
+                public void onClose(Status status, Metadata trailers) {
+                  sessionSyncContext.execute(() -> dispatchStreamClosed(status, trailers));
+                }
+              },
+              headers);
 
-      stream.sendMessage(wrappedReq);
-    }
+          stream.sendMessage(wrappedReq);
+        });
   }
 
   @Override
   public void close(CloseSessionRequest req) {
     logger.fine(String.format("Closing session %s for reason: %s", info.getLogName(), req));
 
-    synchronized (lock) {
-      // Throw an exception because this is a bug and we dont have a listener
-      debugTagTracer.checkPrecondition(
-          state != SessionState.NEW,
-          "session_close_wrong_state",
-          "Session error: Caller tried to close session %s before starting it with the reason: %s",
-          info.getLogName(),
-          req);
+    sessionSyncContext.execute(
+        () -> {
+          // Throw an exception because this is a bug and we dont have a listener
+          debugTagTracer.checkPrecondition(
+              state != SessionState.NEW,
+              "session_close_wrong_state",
+              "Session error: Caller tried to close session %s before starting it with the reason:"
+                  + " %s",
+              info.getLogName(),
+              req);
 
-      // Multiple close is a no-op
-      if (state.phase >= SessionState.CLOSING.phase) {
-        logger.fine(
-            String.format(
-                "Session error: Caller tried to close a session %s that is %s for reason: %s",
-                info.getLogName(), state, req));
-        return;
-      }
+          // Multiple close is a no-op
+          if (state.phase >= SessionState.CLOSING.phase) {
+            logger.fine(
+                String.format(
+                    "Session error: Caller tried to close a session %s that is %s for reason: %s",
+                    info.getLogName(), state, req));
+            return;
+          }
 
-      closeReason = req;
-      updateState(SessionState.CLOSING);
+          closeReason = req;
+          updateState(SessionState.CLOSING);
 
-      if (currentRpc == null) {
-        startGracefulClose();
-      }
-    }
+          if (currentRpc == null) {
+            startGracefulClose();
+          }
+        });
   }
 
   /** Wraps the flow of closing a session. */
-  @GuardedBy("lock")
   private void startGracefulClose() {
     debugTagTracer.checkPrecondition(
         state == SessionState.CLOSING,
@@ -362,42 +325,37 @@ public class SessionImpl implements Session, VRpcSessionApi {
         "session_new_call_wrong_type",
         "wrong VRpc descriptor type");
 
-    synchronized (lock) {
-      debugTagTracer.checkPrecondition(
-          state != SessionState.NEW,
-          "session_new_call_wrong_state",
-          "Session error: newCall called before start");
+    debugTagTracer.checkPrecondition(
+        state != SessionState.NEW,
+        "session_new_call_wrong_state",
+        "Session error: newCall called before start");
 
-      long rpcId = nextRpcId;
-      nextRpcId = Math.incrementExact(nextRpcId);
-      return new VRpcImpl<>(this, descriptor, rpcId, stream.getPeerInfo(), debugTagTracer);
-    }
+    long rpcId = nextRpcId.getAndIncrement();
+    return new VRpcImpl<>(this, descriptor, rpcId, stream.getPeerInfo(), debugTagTracer);
   }
 
   @Override
   public void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
     sessionSyncContext.execute(
         () -> {
-          synchronized (lock) {
-            if (currentRpc != null) {
-              rpc.handleError(
-                  VRpcResult.createUncommitedError(
-                      Status.INTERNAL.withDescription(
-                          "Session error: RPC multiplexing is not yet supported")));
-              return;
-            }
-            if (state != SessionState.READY) {
-              rpc.handleError(
-                  VRpcResult.createUncommitedError(
-                      Status.INTERNAL.withDescription(
-                          "Session error: Session was not ready, state = " + state)));
-              return;
-            }
-
-            this.currentRpc = rpc;
-            stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
-            this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+          if (currentRpc != null) {
+            rpc.handleError(
+                VRpcResult.createUncommitedError(
+                    Status.INTERNAL.withDescription(
+                        "Session error: RPC multiplexing is not yet supported")));
+            return;
           }
+          if (state != SessionState.READY) {
+            rpc.handleError(
+                VRpcResult.createUncommitedError(
+                    Status.INTERNAL.withDescription(
+                        "Session error: Session was not ready, state = " + state)));
+            return;
+          }
+
+          this.currentRpc = rpc;
+          stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
+          this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
         });
   }
 
@@ -405,14 +363,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
     sessionSyncContext.execute(
         () -> {
-          synchronized (lock) {
-            if (currentRpc != null && rpcId == currentRpc.rpcId) {
-              currentCancel =
-                  VRpcResult.createRejectedError(
-                      Status.CANCELLED.withDescription(message).withCause(cause));
-            }
-            // do nothing if the rpc is already finished
+          if (currentRpc != null && rpcId == currentRpc.rpcId) {
+            currentCancel =
+                VRpcResult.createRejectedError(
+                    Status.CANCELLED.withDescription(message).withCause(cause));
           }
+          // do nothing if the rpc is already finished
         });
   }
 
@@ -426,10 +382,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // Runs on sessionSyncContext. Checks if the heartbeat deadline has passed and force-closes the
   // session if so; otherwise re-schedules itself.
   private void checkHeartbeat() {
-    synchronized (lock) {
-      if (state.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
-        return;
-      }
+    if (state.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
+      return;
     }
     if (clock.instant().isAfter(nextHeartbeat)) {
       logger.warning(
@@ -473,50 +427,43 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private void handleOpenSessionResponse(OpenSessionResponse openSession) {
     logger.fine(String.format("%s Session is ready", info.getLogName()));
 
-    PeerInfo localPeerInfo;
+    debugTagTracer.checkPrecondition(
+        state != SessionState.NEW,
+        "session_open_wrong_state",
+        "Got session open response before session started");
+    debugTagTracer.checkPrecondition(
+        state != SessionState.CLOSED,
+        "session_open_wrong_state",
+        "Got session open response after session was closed");
 
-    synchronized (lock) {
-      debugTagTracer.checkPrecondition(
-          state != SessionState.NEW,
-          "session_open_wrong_state",
-          "Got session open response before session started");
-      debugTagTracer.checkPrecondition(
-          state != SessionState.CLOSED,
-          "session_open_wrong_state",
-          "Got session open response after session was closed");
-
-      if (state != SessionState.STARTING) {
-        logger.fine(String.format("Stream was already %s when session open was received", state));
-        return;
-      }
-      localPeerInfo = stream.getPeerInfo();
-      updateState(SessionState.READY);
+    if (state != SessionState.STARTING) {
+      logger.fine(String.format("Stream was already %s when session open was received", state));
+      return;
     }
+    PeerInfo localPeerInfo = stream.getPeerInfo();
+    updateState(SessionState.READY);
     tracer.onOpen(localPeerInfo);
     sessionListener.onReady(openSession);
     scheduleHeartbeatCheck();
   }
 
   private void handleSessionParamsResponse(SessionParametersResponse resp) {
-    synchronized (lock) {
-      if (state.phase >= SessionState.CLOSING.phase) {
-        logger.fine(
-            String.format("Stream was already %s when session params were received", state));
-        return;
-      }
+    if (state.phase >= SessionState.CLOSING.phase) {
+      logger.fine(String.format("Stream was already %s when session params were received", state));
+      return;
+    }
 
-      if (!sessionParameters.equals(resp)) {
-        this.sessionParameters = resp;
-        this.heartbeatInterval =
-            Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
-        logger.log(
-            Level.CONFIG,
-            () ->
-                String.format(
-                    "%s session params changed: %s",
-                    info.getLogName(),
-                    TextFormat.printer().emittingSingleLine(true).printToString(resp)));
-      }
+    if (!sessionParameters.equals(resp)) {
+      this.sessionParameters = resp;
+      this.heartbeatInterval =
+          Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
+      logger.log(
+          Level.CONFIG,
+          () ->
+              String.format(
+                  "%s session params changed: %s",
+                  info.getLogName(),
+                  TextFormat.printer().emittingSingleLine(true).printToString(resp)));
     }
   }
 
@@ -524,45 +471,39 @@ public class SessionImpl implements Session, VRpcSessionApi {
     // TODO: when stream is supported this should be updated to the next expected time instead of
     // session life time
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
-    VRpcImpl<?, ?, ?> localRpc;
-    VRpcResult localCancel;
 
-    boolean needsClose;
-
-    synchronized (lock) {
-      if (state.phase > SessionState.CLOSING.phase) {
-        debugTagTracer.record(
-            TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
-        logger.warning(
-            String.format(
-                "%s Discarding vRPC error because session is past the CLOSING phase with the"
-                    + " reason: %s",
-                info.getLogName(), closeReason));
-        return;
-      }
-
-      debugTagTracer.checkPrecondition(
-          state == SessionState.READY || state == SessionState.CLOSING,
-          "session_vrpc_response_wrong_state",
-          "Unexpected vRPC response when session is %s",
-          state);
-      debugTagTracer.checkPrecondition(
-          currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
-      debugTagTracer.checkPrecondition(
-          currentRpc.rpcId == vrpc.getRpcId(),
-          "session_vrpc_id_mismatch",
-          "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
-          currentRpc.rpcId,
-          vrpc.getRpcId());
-
-      // reset state of the current rpc
-      localCancel = currentCancel;
-      currentCancel = null;
-      localRpc = currentRpc;
-      // TODO: handle multiplexing
-      currentRpc = null;
-      needsClose = (state == SessionState.CLOSING);
+    if (state.phase > SessionState.CLOSING.phase) {
+      debugTagTracer.record(
+          TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
+      logger.warning(
+          String.format(
+              "%s Discarding vRPC error because session is past the CLOSING phase with the"
+                  + " reason: %s",
+              info.getLogName(), closeReason));
+      return;
     }
+
+    debugTagTracer.checkPrecondition(
+        state == SessionState.READY || state == SessionState.CLOSING,
+        "session_vrpc_response_wrong_state",
+        "Unexpected vRPC response when session is %s",
+        state);
+    debugTagTracer.checkPrecondition(
+        currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
+    debugTagTracer.checkPrecondition(
+        currentRpc.rpcId == vrpc.getRpcId(),
+        "session_vrpc_id_mismatch",
+        "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
+        currentRpc.rpcId,
+        vrpc.getRpcId());
+
+    // reset state of the current rpc
+    VRpcResult localCancel = currentCancel;
+    currentCancel = null;
+    VRpcImpl<?, ?, ?> localRpc = currentRpc;
+    // TODO: handle multiplexing
+    currentRpc = null;
+    boolean needsClose = (state == SessionState.CLOSING);
 
     if (localCancel != null) {
       tracer.onVRpcClose(localCancel.getStatus().getCode());
@@ -571,12 +512,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
       tracer.onVRpcClose(Status.OK.getCode());
       localRpc.handleResponse(vrpc);
     }
-    if (needsClose) {
-      synchronized (lock) {
-        if (state == SessionState.CLOSING) {
-          startGracefulClose();
-        }
-      }
+    if (needsClose && state == SessionState.CLOSING) {
+      startGracefulClose();
     }
   }
 
@@ -585,62 +522,54 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleSessionRefreshConfigResponse(SessionRefreshConfig config) {
-    synchronized (lock) {
-      Metadata grpcMetadata = new Metadata();
-      config
-          .getMetadataList()
-          .forEach(
-              entry ->
-                  grpcMetadata.put(
-                      Metadata.Key.of(entry.getKey(), Metadata.ASCII_STRING_MARSHALLER),
-                      entry.getValue().toStringUtf8()));
-      openParams = OpenParams.create(grpcMetadata, config.getOptimizedOpenRequest());
-      openParamsUpdated = true;
-    }
+    Metadata grpcMetadata = new Metadata();
+    config
+        .getMetadataList()
+        .forEach(
+            entry ->
+                grpcMetadata.put(
+                    Metadata.Key.of(entry.getKey(), Metadata.ASCII_STRING_MARSHALLER),
+                    entry.getValue().toStringUtf8()));
+    openParams = OpenParams.create(grpcMetadata, config.getOptimizedOpenRequest());
+    openParamsUpdated = true;
   }
 
   private void handleVRpcErrorResponse(ErrorResponse error) {
     // Skips the heartbeat check when there's no active vrpc on the session
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
 
-    VRpcImpl<?, ?, ?> localRpc;
-    boolean needsClose;
-    VRpcResult localCancel;
-
-    synchronized (lock) {
-      if (state.phase > SessionState.CLOSING.phase) {
-        debugTagTracer.record(
-            TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
-        logger.warning(
-            String.format(
-                "%s Discarding vRPC error because session is past the CLOSING phase with the"
-                    + " reason: %s, error was: %s",
-                info.getLogName(), closeReason, error));
-        return;
-      }
-
-      debugTagTracer.checkPrecondition(
-          state == SessionState.READY || state == SessionState.CLOSING,
-          "session_vrpc_response_wrong_state",
-          "Unexpected vRPC response when session is %s",
-          state);
-
-      debugTagTracer.checkPrecondition(
-          currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
-      debugTagTracer.checkPrecondition(
-          currentRpc.rpcId == error.getRpcId(),
-          "session_vrpc_id_mismatch",
-          "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
-          currentRpc.rpcId,
-          error.getRpcId());
-
-      // reset the state of the current rpc
-      localCancel = currentCancel;
-      currentCancel = null;
-      localRpc = currentRpc;
-      currentRpc = null;
-      needsClose = (state == SessionState.CLOSING);
+    if (state.phase > SessionState.CLOSING.phase) {
+      debugTagTracer.record(
+          TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
+      logger.warning(
+          String.format(
+              "%s Discarding vRPC error because session is past the CLOSING phase with the"
+                  + " reason: %s, error was: %s",
+              info.getLogName(), closeReason, error));
+      return;
     }
+
+    debugTagTracer.checkPrecondition(
+        state == SessionState.READY || state == SessionState.CLOSING,
+        "session_vrpc_response_wrong_state",
+        "Unexpected vRPC response when session is %s",
+        state);
+
+    debugTagTracer.checkPrecondition(
+        currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
+    debugTagTracer.checkPrecondition(
+        currentRpc.rpcId == error.getRpcId(),
+        "session_vrpc_id_mismatch",
+        "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
+        currentRpc.rpcId,
+        error.getRpcId());
+
+    // reset the state of the current rpc
+    VRpcResult localCancel = currentCancel;
+    currentCancel = null;
+    VRpcImpl<?, ?, ?> localRpc = currentRpc;
+    currentRpc = null;
+    boolean needsClose = (state == SessionState.CLOSING);
 
     if (localCancel != null) {
       tracer.onVRpcClose(localCancel.getStatus().getCode());
@@ -649,42 +578,35 @@ public class SessionImpl implements Session, VRpcSessionApi {
       tracer.onVRpcClose(Status.fromCodeValue(error.getStatus().getCode()).getCode());
       localRpc.handleError(VRpcResult.createServerError(error));
     }
-    if (needsClose) {
-      synchronized (lock) {
-        if (state == SessionState.CLOSING) {
-          startGracefulClose();
-        }
-      }
+    if (needsClose && state == SessionState.CLOSING) {
+      startGracefulClose();
     }
   }
 
   private void handleGoAwayResponse(GoAwayResponse goAwayResponse) {
-    synchronized (lock) {
-      if (state.phase >= SessionState.CLOSING.phase) {
-        debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_go_away_ignored");
-        logger.warning(
-            String.format(
-                "Session error: %s Ignoring goaway because session is %s",
-                info.getLogName(), state));
-        return;
-      }
+    if (state.phase >= SessionState.CLOSING.phase) {
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_go_away_ignored");
+      logger.warning(
+          String.format(
+              "Session error: %s Ignoring goaway because session is %s", info.getLogName(), state));
+      return;
+    }
 
-      debugTagTracer.checkPrecondition(
-          state.phase >= SessionState.STARTING.phase,
-          "session_go_away_wrong_state",
-          "Unexpected goaway when session is %s",
-          state);
+    debugTagTracer.checkPrecondition(
+        state.phase >= SessionState.STARTING.phase,
+        "session_go_away_wrong_state",
+        "Unexpected goaway when session is %s",
+        state);
 
-      updateState(SessionState.CLOSING);
-      closeReason =
-          CloseSessionRequest.newBuilder()
-              .setReason(CloseSessionReason.CLOSE_SESSION_REASON_GOAWAY)
-              .setDescription(
-                  "Server sent GO_AWAY_" + goAwayResponse.getReason().toUpperCase(Locale.ENGLISH))
-              .build();
-      if (currentRpc == null) {
-        startGracefulClose();
-      }
+    updateState(SessionState.CLOSING);
+    closeReason =
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_GOAWAY)
+            .setDescription(
+                "Server sent GO_AWAY_" + goAwayResponse.getReason().toUpperCase(Locale.ENGLISH))
+            .build();
+    if (currentRpc == null) {
+      startGracefulClose();
     }
     sessionListener.onGoAway(goAwayResponse);
   }
@@ -695,49 +617,43 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void dispatchStreamClosed(Status status, Metadata trailers) {
-    SessionState prevState;
-    VRpcImpl<?, ?, ?> localVRpc;
+    SessionState prevState = state;
 
-    PeerInfo localPeerInfo;
-    synchronized (lock) {
-      prevState = state;
+    if (!status.isOk()) {
+      String augmentedDescription =
+          Optional.ofNullable(status.getDescription()).map(d -> d + ". ").orElse("")
+              + "PeerInfo: "
+              + formatPeerInfo(getPeerInfo());
 
-      if (!status.isOk()) {
-        String augmentedDescription =
-            Optional.ofNullable(status.getDescription()).map(d -> d + ". ").orElse("")
-                + "PeerInfo: "
-                + formatPeerInfo(getPeerInfo());
-
-        status = status.withDescription(augmentedDescription);
-      }
-
-      if (state == SessionState.WAIT_SERVER_CLOSE) {
-        logger.fine(String.format("%s closed normally with status %s", info.getLogName(), status));
-      } else {
-        debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_abnormal_close");
-        // Unexpected path
-        String msg =
-            String.format(
-                "Session error: %s session closed unexpectedly in state %s. Status: %s",
-                info.getLogName(), state, status);
-        logger.warning(msg);
-
-        if (state == SessionState.CLOSED) {
-          return;
-        }
-
-        closeReason =
-            CloseSessionRequest.newBuilder()
-                .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
-                .setDescription("Unexpected session close with status: " + status.getCode())
-                .build();
-      }
-
-      localVRpc = currentRpc;
-      localPeerInfo = stream.getPeerInfo();
-      currentRpc = null;
-      updateState(SessionState.CLOSED);
+      status = status.withDescription(augmentedDescription);
     }
+
+    if (state == SessionState.WAIT_SERVER_CLOSE) {
+      logger.fine(String.format("%s closed normally with status %s", info.getLogName(), status));
+    } else {
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_abnormal_close");
+      // Unexpected path
+      String msg =
+          String.format(
+              "Session error: %s session closed unexpectedly in state %s. Status: %s",
+              info.getLogName(), state, status);
+      logger.warning(msg);
+
+      if (state == SessionState.CLOSED) {
+        return;
+      }
+
+      closeReason =
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+              .setDescription("Unexpected session close with status: " + status.getCode())
+              .build();
+    }
+
+    VRpcImpl<?, ?, ?> localVRpc = currentRpc;
+    PeerInfo localPeerInfo = stream.getPeerInfo();
+    currentRpc = null;
+    updateState(SessionState.CLOSED);
 
     if (localVRpc != null) {
       try {
@@ -757,7 +673,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
     sessionListener.onClose(prevState, status, trailers);
   }
 
-  @GuardedBy("lock")
   private void updateState(SessionState newState) {
     this.state = newState;
     this.lastStateChangedAt = clock.instant();
