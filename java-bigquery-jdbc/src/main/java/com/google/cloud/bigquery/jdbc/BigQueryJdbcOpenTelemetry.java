@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.trace.Span;
@@ -65,6 +66,11 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String OTLP_ENDPOINT_VALUE = "https://telemetry.googleapis.com:443";
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
+  private static final String OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT =
+      "otel.span.attribute.value.length.limit";
+  private static final String OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT =
+      "otel.attribute.value.length.limit";
+  private static final String DEFAULT_ATTRIBUTE_LENGTH_LIMIT = "32768";
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger("BigQueryJdbcOpenTelemetry");
 
@@ -240,6 +246,7 @@ public class BigQueryJdbcOpenTelemetry {
    * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
    */
   public static OpenTelemetry getOpenTelemetry(
+      boolean useGlobalOpenTelemetry,
       boolean enableGcpTraceExporter,
       boolean enableGcpLogExporter,
       OpenTelemetry customOpenTelemetry,
@@ -248,6 +255,10 @@ public class BigQueryJdbcOpenTelemetry {
 
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
+    }
+
+    if (useGlobalOpenTelemetry) {
+      return GlobalOpenTelemetry.get();
     }
 
     // NOTE: Currently, tracing only fully supports Application Default Credentials (ADC).
@@ -288,6 +299,17 @@ public class BigQueryJdbcOpenTelemetry {
 
           if (gcpTelemetryProjectId != null) {
             props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
+          }
+
+          // Set safe, generous default limits on attribute value lengths (32KB) to protect
+          // customers from GCP Cloud Trace 64KB span ingestion failures when logging massive
+          // exception stack traces or database schema metadata.
+          // Respect any existing user configuration overrides.
+          if (!props.containsKey(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
+            props.put(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
+          }
+          if (!props.containsKey(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
+            props.put(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
           }
 
           AutoConfiguredOpenTelemetrySdk autoConfigured =

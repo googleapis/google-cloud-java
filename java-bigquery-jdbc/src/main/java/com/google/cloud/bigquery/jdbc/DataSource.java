@@ -123,6 +123,7 @@ public class DataSource implements javax.sql.DataSource {
   private boolean enableGcpLogExporter =
       BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
   private OpenTelemetry customOpenTelemetry;
+  private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -358,6 +359,12 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableGcpLogExporter(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setUseGlobalOpenTelemetry(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -675,6 +682,11 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
           String.valueOf(this.enableGcpLogExporter));
     }
+    if (this.useGlobalOpenTelemetry) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
+          String.valueOf(this.useGlobalOpenTelemetry));
+    }
     return connectionProperties;
   }
 
@@ -830,6 +842,14 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setCustomOpenTelemetry(OpenTelemetry customOpenTelemetry) {
     this.customOpenTelemetry = customOpenTelemetry;
+  }
+
+  public boolean getUseGlobalOpenTelemetry() {
+    return useGlobalOpenTelemetry;
+  }
+
+  public void setUseGlobalOpenTelemetry(boolean useGlobalOpenTelemetry) {
+    this.useGlobalOpenTelemetry = useGlobalOpenTelemetry;
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {
