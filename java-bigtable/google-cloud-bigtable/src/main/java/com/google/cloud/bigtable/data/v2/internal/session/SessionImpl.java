@@ -81,6 +81,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private final Clock clock;
   private final ScheduledExecutorService scheduledExecutor;
+  // Serializes all session state mutations. SessionStream.Listener callbacks arrive on Netty I/O
+  // threads (DirectExecutor) and trampoline through this context before touching session state,
+  // then dispatch user-facing work to ctx.getExecutor() (the op-level SerializingExecutor).
   private final SynchronizationContext sessionSyncContext;
 
   private final SessionTracer tracer;
