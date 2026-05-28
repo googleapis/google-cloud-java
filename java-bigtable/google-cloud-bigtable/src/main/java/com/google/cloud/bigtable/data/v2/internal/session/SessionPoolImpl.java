@@ -245,6 +245,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   public void close(CloseSessionRequest req) {
     configListenerHandle.close();
 
+    List<PendingVRpc<?, ?>> toCancel;
     synchronized (this) {
       if (poolState == PoolState.CLOSED) {
         logger.fine(String.format("Tried to close a closed SessionPool %s", info.getLogName()));
@@ -254,9 +255,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
       poolState = PoolState.CLOSED;
 
-      for (PendingVRpc<?, ?> pendingRpc : pendingRpcs) {
-        pendingRpc.cancel("SessionPool closed: " + req, null);
-      }
+      toCancel = new ArrayList<>(pendingRpcs);
+      pendingRpcs.clear();
       afeListPruneTask.cancel(false);
       if (retryCreateSessionFuture != null) {
         retryCreateSessionFuture.cancel(false);
@@ -264,6 +264,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
       watchdog.close();
       sessions.close(req);
+    }
+
+    for (PendingVRpc<?, ?> pendingRpc : toCancel) {
+      pendingRpc.cancel("SessionPool closed: " + req, null);
     }
   }
 
@@ -506,7 +510,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                           status, trailers)));
       for (PendingVRpc<?, ?> vrpc : toBeClosed) {
         try {
-          vrpc.ctx.getExecutor().execute(() -> vrpc.listener.onClose(result));
+          vrpc.cancelWithResult(result);
         } catch (Throwable t) {
           logger.log(Level.WARNING, "Exception when closing request", t);
         }
@@ -517,10 +521,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("this")
   private void tryDrainPendingRpcs() {
     while (!pendingRpcs.isEmpty()) {
-      if (pendingRpcs.peek().isCancelled) {
-        pendingRpcs.pop();
-        continue;
-      }
       Optional<SessionHandle> handle = picker.pickSession();
       if (!handle.isPresent()) {
         break;
@@ -536,11 +536,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     Iterator<PendingVRpc<?, ?>> iter = pendingRpcs.iterator();
     while (iter.hasNext()) {
       PendingVRpc<?, ?> vrpc = iter.next();
-      // vrpcs that have started on a session gets closed in SessionImpl. Do not double close.
-      if (!vrpc.isCancelled && vrpc.realCall == null) {
-        iter.remove();
-        toBeClosed.add(vrpc);
-      }
+      iter.remove();
+      toBeClosed.add(vrpc);
     }
     return toBeClosed;
   }
@@ -561,7 +558,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     return new PendingVRpc<>(desc);
   }
 
-  @GuardedBy("this")
   private <ReqT extends Message, RespT extends Message> VRpc<ReqT, RespT> newRealCall(
       VRpcDescriptor<?, ReqT, RespT> desc, SessionHandle handle) {
 
@@ -654,9 +650,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
     }
 
-    // It's safe to call cancel on a vrpc more than once. It'll be a noop after the initial
-    // call. Cancelled vrpcs are removed from the pending vrpc queue the next time we
-    // drain the queue.
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
       Status status = Status.CANCELLED;
@@ -669,30 +662,31 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       cancel(status, false);
     }
 
-    // Cancel could race with drainTo which sets the real call. Assign realCall to a NOOP_CALL
-    // so if drainTo gets called at the same time, it'll just get swallowed and we're only calling
-    // onClose once on the listener. The cancel could also come from deadline monitor when
-    // the deadline expires. In this case if the real call is already set, we want to real call
-    // to handle the deadline and return early.
+    // cancel() and drainTo() are sequenced via ctx.getExecutor() (a per-op SerializingExecutor),
+    // so isCancelled and realCall are owned exclusively by that executor — no pool lock needed.
     private void cancel(Status status, boolean onlyCancelPendingCall) {
-      boolean delegateToRealCall = true;
       synchronized (SessionPoolImpl.this) {
-        if (isCancelled) {
-          return;
-        }
+        pendingRpcs.remove(this); // eager removal; no-op if already drained
+      }
+      ctx.getExecutor().execute(() -> {
+        if (isCancelled) return;
         isCancelled = true;
-        if (realCall == null) {
-          this.realCall = NOOP_CALL;
-          delegateToRealCall = false;
-        } else if (onlyCancelPendingCall) {
-          return;
+        if (realCall != null) {
+          if (!onlyCancelPendingCall) {
+            realCall.cancel(status.getDescription(), status.getCause());
+          }
+        } else {
+          listener.onClose(VRpcResult.createRejectedError(status));
         }
-      }
-      if (delegateToRealCall) {
-        realCall.cancel(status.getDescription(), status.getCause());
-      } else {
-        ctx.getExecutor().execute(() -> listener.onClose(VRpcResult.createRejectedError(status)));
-      }
+      });
+    }
+
+    void cancelWithResult(VRpcResult result) {
+      ctx.getExecutor().execute(() -> {
+        if (isCancelled) return;
+        isCancelled = true;
+        listener.onClose(result);
+      });
     }
 
     @Override
@@ -705,15 +699,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     private void drainTo(SessionHandle handle) {
-      synchronized (SessionPoolImpl.this) {
-        if (realCall == null) {
-          this.realCall = newRealCall(desc, handle);
-        }
-      }
-      this.realCall.start(req, ctx, listener);
       if (deadlineMonitor != null) {
         deadlineMonitor.cancel(false);
       }
+      ctx.getExecutor().execute(() -> {
+        if (isCancelled) {
+          SessionPoolImpl.this.onVRpcComplete(
+              handle, Duration.ZERO, VRpcResult.createRejectedError(Status.CANCELLED));
+          return;
+        }
+        realCall = newRealCall(desc, handle);
+        realCall.start(req, ctx, listener);
+      });
     }
 
     private VRpcListener<RespT> getListener() {
@@ -828,15 +825,4 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
   }
 
-  private static final VRpc NOOP_CALL =
-      new VRpc() {
-        @Override
-        public void start(Object req, VRpcCallContext ctx, VRpcListener listener) {}
-
-        @Override
-        public void cancel(@Nullable String message, @Nullable Throwable cause) {}
-
-        @Override
-        public void requestNext() {}
-      };
 }
