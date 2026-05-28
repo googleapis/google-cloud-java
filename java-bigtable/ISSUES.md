@@ -105,3 +105,53 @@ a recovery mechanism. Consider a typed `VRpcTask` wrapper that enforces the "alw
 contract at compile time.
 
 **Files:** `session/VRpcImpl.java`, `middleware/RetryingVRpc.java`
+
+---
+
+## SessionPoolImpl — PendingVRpc
+
+### ISSUE-007: `PendingVRpc.monitorDeadline()` causes `ScheduledExecutorService` heap churn under load
+
+Every RPC that cannot immediately acquire a session goes through `PendingVRpc` and schedules a
+deadline-monitoring `ScheduledFuture` on the pool's `ScheduledExecutorService`. Under normal
+conditions the future is cancelled almost immediately — sessions are expected to be available
+within ~1 ms at p50. `ScheduledFuture.cancel(false)` marks the future cancelled but does **not**
+remove it from the underlying `DelayQueue`. Cancelled futures remain in the heap until their
+deadline expires naturally (typically seconds to minutes), inflating the queue and increasing
+O(log n) insert/remove cost for every subsequent schedule operation.
+
+**Why this matters at the given operating point:**
+
+Both `PendingVRpc.monitorDeadline()` and per-session heartbeat scheduling hit the same
+`ScheduledExecutorService`, and their effects compound.
+
+**Heartbeat pressure:** At ~100 ms per heartbeat, each session fires 10 `schedule()` calls/sec.
+Heartbeat tasks run and reschedule — they do not cancel, so they produce no zombies — but they
+sustain O(log n) heap churn at 10N ops/sec for N sessions. This is not a low frequency in
+context: at a vRPC p50 of ~1 ms, a heartbeat fires every ~100 vRPCs, meaning background
+scheduling overhead is in the same order of magnitude as per-RPC work.
+
+**Deadline monitor zombie accumulation:** `cancel(false)` marks a future cancelled but does not
+remove it from the `DelayQueue`. At ~1 ms p50 session-wait, a deadline future (say, 60 s) is
+created and cancelled almost immediately. At 10 000 RPC/s with 10 % transiently pending:
+1 000 futures/sec added, each living ~60 s → steady-state zombie count of ~60 000 entries.
+
+**Compounding:** Heartbeat inserts pay O(log n) against a queue inflated by zombie deadline
+futures. With 10 sessions and 60 000 zombies, each heartbeat insert costs O(log 60 010) ≈ 16
+comparisons instead of O(log 10) ≈ 3. The absolute cost is small today but grows linearly with
+both session count and RPC throughput.
+
+**Mitigations (in increasing order of impact):**
+
+1. **Short-circuit**: if the deadline is already expired when `PendingVRpc.start()` is called,
+   reject immediately without scheduling a future.
+2. **`setRemoveOnCancelPolicy(true)`** on the `ScheduledThreadPoolExecutor`: removes cancelled
+   tasks from the queue eagerly in O(log n). Eliminates zombie accumulation. Requires
+   controlling the executor construction.
+3. **Hashed wheel timer** (e.g., Netty's `HashedWheelTimer`): O(1) insert and O(1) cancel with
+   no zombie accumulation. Neither deadline monitoring nor heartbeat checking requires
+   sub-millisecond precision; a wheel tick of ~10 ms is appropriate for both. This is the right
+   long-term fix for both sources of churn.
+
+**Files:** `session/SessionPoolImpl.java` — `PendingVRpc.monitorDeadline()` and
+`session/SessionImpl.java` — `scheduleHeartbeatCheck()`
