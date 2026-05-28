@@ -34,7 +34,6 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
   @BeforeEach
   public void setUpLogValidator() {
     logger = BigQueryJdbcRootLogger.getRootLogger();
-    logger.setLevel(java.util.logging.Level.ALL);
     capturedLogs.clear();
     threadId = Thread.currentThread().getId();
     handler =

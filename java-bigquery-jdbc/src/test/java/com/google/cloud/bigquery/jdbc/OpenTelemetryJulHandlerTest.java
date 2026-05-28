@@ -44,9 +44,11 @@ public class OpenTelemetryJulHandlerTest {
   static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
+  private java.util.logging.Level originalLevel;
 
   @BeforeEach
   public void setUp() {
+    originalLevel = logger.getLevel();
     logger.setLevel(java.util.logging.Level.ALL);
     BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
   }
@@ -56,6 +58,7 @@ public class OpenTelemetryJulHandlerTest {
     BigQueryJdbcOpenTelemetry.unregisterConnection("test-uuid");
     BigQueryJdbcOpenTelemetry.unregisterConnection("wrong-uuid");
     BigQueryJdbcOpenTelemetry.unregisterConnection("gcp-uuid");
+    logger.setLevel(originalLevel);
   }
 
   @Test
