@@ -34,18 +34,19 @@ import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
-import io.grpc.SynchronizationContext;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicReference;
 
 class TableBase implements AutoCloseable {
   private final SessionPool<?> sessionPool;
   private final ScheduledExecutorService backgroundExecutor;
+  private final Executor userCallbackExecutor;
   private final Metrics metrics;
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
@@ -79,7 +80,7 @@ class TableBase implements AutoCloseable {
 
     sessionPool.start(openReq, new Metadata());
 
-    return new TableBase(sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, executor);
+    return new TableBase(sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, executor, executor);
   }
 
   @VisibleForTesting
@@ -88,12 +89,14 @@ class TableBase implements AutoCloseable {
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
       Metrics metrics,
-      ScheduledExecutorService executor) {
+      ScheduledExecutorService backgroundExecutor,
+      Executor userCallbackExecutor) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
     this.metrics = metrics;
-    this.backgroundExecutor = executor;
+    this.backgroundExecutor = backgroundExecutor;
+    this.userCallbackExecutor = userCallbackExecutor;
   }
 
   @Override
@@ -111,20 +114,12 @@ class TableBase implements AutoCloseable {
 
   public void readRow(
       SessionReadRowRequest req, VRpcListener<SessionReadRowResponse> listener, Deadline deadline) {
-    AtomicReference<RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse>> retryRef =
-        new AtomicReference<>();
-    SynchronizationContext syncContext =
-        new SynchronizationContext(
-            (t, e) -> {
-              RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> r = retryRef.get();
-              if (r != null) r.cancel("Unexpected error in op SynchronizationContext", e);
-            });
+    Executor opExecutor = MoreExecutors.newSequentialExecutor(userCallbackExecutor);
     RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), backgroundExecutor, syncContext);
-    retryRef.set(retry);
+        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), backgroundExecutor, opExecutor);
 
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, true, tracer, syncContext);
+    VRpcCallContext ctx = VRpcCallContext.create(deadline, true, tracer, opExecutor);
 
     CancellableVRpc<SessionReadRowRequest, SessionReadRowResponse> cancellableVRpc =
         new CancellableVRpc<>(retry, Context.current());
@@ -136,23 +131,16 @@ class TableBase implements AutoCloseable {
       SessionMutateRowRequest req,
       VRpcListener<SessionMutateRowResponse> listener,
       Deadline deadline) {
-    AtomicReference<RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse>> retryRef =
-        new AtomicReference<>();
-    SynchronizationContext syncContext =
-        new SynchronizationContext(
-            (t, e) -> {
-              RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> r = retryRef.get();
-              if (r != null) r.cancel("Unexpected error in op SynchronizationContext", e);
-            });
+    Executor opExecutor = MoreExecutors.newSequentialExecutor(userCallbackExecutor);
     RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), backgroundExecutor, syncContext);
-    retryRef.set(retry);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(mutateRowDescriptor), backgroundExecutor, opExecutor);
 
     boolean idempotent = Util.isIdempotent(req.getMutationsList());
 
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, syncContext);
+    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, opExecutor);
 
     CancellableVRpc<SessionMutateRowRequest, SessionMutateRowResponse> cancellable =
         new CancellableVRpc<>(retry, Context.current());

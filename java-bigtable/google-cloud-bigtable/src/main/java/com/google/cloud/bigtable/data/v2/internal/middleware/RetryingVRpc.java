@@ -23,8 +23,8 @@ import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Status;
-import io.grpc.SynchronizationContext;
 import java.util.Optional;
+import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -47,8 +47,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private VRpcCallContext context;
   private VRpcTracer tracer;
 
-  private final ScheduledExecutorService executor;
-  private final SynchronizationContext syncContext;
+  private final ScheduledExecutorService scheduledExecutor;
+  private final Executor opExecutor;
 
   // current state and all the flags don't need to be volatile because they're only updated within
   // the sync context.
@@ -59,15 +59,15 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   public RetryingVRpc(
       Supplier<VRpc<ReqT, RespT>> supplier,
-      ScheduledExecutorService executor,
-      SynchronizationContext syncContext) {
+      ScheduledExecutorService scheduledExecutor,
+      Executor opExecutor) {
     this.attemptFactory = supplier;
 
     grpcContext = Context.current();
     otelContext = io.opentelemetry.context.Context.current();
 
-    this.executor = otelContext.wrap(executor);
-    this.syncContext = syncContext;
+    this.scheduledExecutor = otelContext.wrap(scheduledExecutor);
+    this.opExecutor = opExecutor;
 
     started = false;
     isCancelling = false;
@@ -76,29 +76,33 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-    syncContext.execute(
+    opExecutor.execute(
         () -> {
-          if (started) {
-            listener.onClose(
-                VRpcResult.createRejectedError(
-                    Status.FAILED_PRECONDITION.withDescription("operation is already started")));
-            return;
+          try {
+            if (started) {
+              listener.onClose(
+                  VRpcResult.createRejectedError(
+                      Status.FAILED_PRECONDITION.withDescription("operation is already started")));
+              return;
+            }
+            started = true;
+
+            this.request = req;
+            this.listener = listener;
+            this.context = ctx;
+            this.tracer = context.getTracer();
+
+            tracer.onOperationStart();
+            currentState.onStart();
+          } catch (Throwable t) {
+            cancel("Unexpected error in op executor", t);
           }
-          started = true;
-
-          this.request = req;
-          this.listener = listener;
-          this.context = ctx;
-          this.tracer = context.getTracer();
-
-          tracer.onOperationStart();
-          currentState.onStart();
         });
   }
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    syncContext.execute(
+    opExecutor.execute(
         () -> {
           if (currentState.isDone() || isCancelling) {
             LOG.fine("Ignoring cancel because the vRPC is already cancelled or done.");
@@ -129,7 +133,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   }
 
   void onStateChange(State state) {
-    syncContext.throwIfNotInThisSynchronizationContext();
     if (currentState.isDone()) {
       return;
     }
@@ -278,7 +281,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     public void onStart() {
       try {
         future =
-            executor.schedule(
+            scheduledExecutor.schedule(
                 grpcContext.wrap(
                     () -> context.getExecutor().execute(() -> onStateChange(new Idle()))),
                 Durations.toMillis(retryDelay),
