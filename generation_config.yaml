@@ -1185,13 +1185,12 @@ libraries:
     data using natural language.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
-  release_level: stable
+  release_level: preview
   distribution_name: com.google.cloud:google-cloud-geminidataanalytics
   api_id: geminidataanalytics.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.cloud
   cloud_api: true
-  googleapis_commitish: 96eefa39128a99f4dff4a57a64a1177b858f1b3f
   GAPICs:
   - proto_path: google/cloud/geminidataanalytics/v1
   - proto_path: google/cloud/geminidataanalytics/v1beta
