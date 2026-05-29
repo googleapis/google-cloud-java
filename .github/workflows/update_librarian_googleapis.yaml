@@ -33,7 +33,7 @@ jobs:
         repository: googleapis/google-cloud-java
         path: google-cloud-java
         fetch-depth: 0
-        token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        persist-credentials: false
     - name: Check for Open PR
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
