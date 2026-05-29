@@ -140,7 +140,7 @@ public class BigQueryJdbcOpenTelemetry {
                 }));
   }
 
-  public static void ensureGlobalHandlerAttached() {
+  public static synchronized void ensureGlobalHandlerAttached() {
     Logger logger = Logger.getLogger(BIGQUERY_NAMESPACE);
     boolean present = false;
     for (Handler h : logger.getHandlers()) {
