@@ -23,7 +23,6 @@ on:
       - 'librarian.yaml'
       - 'java-showcase/gapic-showcase/pom.xml'
       - '.github/workflows/showcase-version-check.yaml'
-      - '.github/scripts/verify_showcase_version.go'
 
 jobs:
   check-version:
@@ -52,23 +51,31 @@ jobs:
       - name: Verify showcase version and commit match
         shell: bash
         run: |
-          set +e
-          go run .github/scripts/verify_showcase_version.go \
-            -version "${{ steps.extract_version.outputs.version }}" \
-            -commit "${{ steps.extract_commit.outputs.commit }}"
-          exit_code=$?
-          set -e
-          if [ $exit_code -eq 0 ]; then
-            echo "Verification successful!"
-            exit 0
-          elif [ $exit_code -eq 2 ]; then
-            echo "MISMATCH=true" >> "$GITHUB_ENV"
-            echo "Error: Showcase version mismatch detected."
-            exit 2
-          else
-            echo "Error: Unexpected verification failure (exit code $exit_code)."
+          # 1. Query the remote repository for the specific version tag
+          REMOTE_URL="https://github.com/googleapis/gapic-showcase.git"
+          TAG_NAME="v${{ steps.extract_version.outputs.version }}"
+          
+          OUTPUT=$(git ls-remote "$REMOTE_URL" "refs/tags/$TAG_NAME")
+          
+          if [ -z "$OUTPUT" ]; then
+            echo "Error: Tag $TAG_NAME not found on remote $REMOTE_URL"
             exit 1
           fi
+          
+          # 2. Grab the commit hash from the very last line of the output
+          EXPECTED_COMMIT=$(echo "$OUTPUT" | tail -n 1 | awk '{print $1}')
+          
+          echo "Expected commit for tag $TAG_NAME: $EXPECTED_COMMIT"
+          echo "Current librarian commit: ${{ steps.extract_commit.outputs.commit }}"
+          
+          # 3. Cross-reference with librarian.yaml
+          if [ "${{ steps.extract_commit.outputs.commit }}" != "$EXPECTED_COMMIT" ]; then
+            echo "Mismatch: librarian.yaml has commit '${{ steps.extract_commit.outputs.commit }}', but tag '$TAG_NAME' is at commit '$EXPECTED_COMMIT'"
+            echo "MISMATCH=true" >> "$GITHUB_ENV"
+            exit 2
+          fi
+          
+          echo "Showcase version and commit are in sync!"
       - name: Create issue on mismatch
         if: failure() && env.MISMATCH == 'true'
         env:
