@@ -35,7 +35,13 @@ jobs:
         id: extract_version
         shell: bash
         run: |
-          version=$(awk -F'[<>]' '/gapic-showcase.version/{print $3; exit}' java-showcase/gapic-showcase/pom.xml)
+          version=$(mvn help:evaluate \
+            -f java-showcase/gapic-showcase/pom.xml \
+            -Dexpression=gapic-showcase.version \
+            -q \
+            -DforceStdout \
+            -Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR 2>/dev/null \
+            | grep -E '^[0-9]' || true)
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Set up Go
         uses: actions/setup-go@v5
