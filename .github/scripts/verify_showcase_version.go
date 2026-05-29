@@ -46,18 +46,25 @@ func main() {
 		os.Exit(1)
 	}
 
-	outputLine := strings.TrimSpace(string(outputBytes))
-	if outputLine == "" {
+	var expectedCommit string
+	for _, line := range strings.Split(strings.TrimSpace(string(outputBytes)), "\n") {
+		fields := strings.Fields(line)
+		if len(fields) < 2 {
+			continue
+		}
+		if fields[1] == "refs/tags/"+tagName+"^{}" {
+			expectedCommit = fields[0]
+			break
+		}
+		if fields[1] == "refs/tags/"+tagName {
+			expectedCommit = fields[0]
+		}
+	}
+
+	if expectedCommit == "" {
 		fmt.Fprintf(os.Stderr, "Error: Tag %s not found on remote %s\n", tagName, remoteUrl)
 		os.Exit(1)
 	}
-
-	outputFields := strings.Fields(outputLine)
-	if len(outputFields) < 2 {
-		fmt.Fprintf(os.Stderr, "Error parsing git ls-remote output: %q\n", outputLine)
-		os.Exit(1)
-	}
-	expectedCommit := strings.TrimSpace(outputFields[0])
 	fmt.Printf("Expected commit for tag %s: %s\n", tagName, expectedCommit)
 
 	if *showcaseCommit != expectedCommit {
