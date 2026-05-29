@@ -23,7 +23,7 @@ on:
       - 'librarian.yaml'
       - 'java-showcase/gapic-showcase/pom.xml'
       - '.github/workflows/showcase-version-check.yaml'
-      - '.github/scripts/verify-showcase-version.go'
+      - '.github/scripts/verify_showcase_version.go'
 
 jobs:
   check-version:
@@ -32,50 +32,60 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v4
-
       - name: Extract showcase version from pom.xml
         id: extract_version
         shell: bash
         run: |
           version=$(mvn help:evaluate -f java-showcase/gapic-showcase/pom.xml -Dexpression=gapic-showcase.version -q -DforceStdout 2>/dev/null || true)
-          if [ -z "$version" ]; then
-            echo "Warning: Maven evaluation failed. Falling back to XML parsing of pom.xml..."
-            version=$(grep -oE '<gapic-showcase\.version>[0-9]+\.[0-9]+\.[0-9]+</gapic-showcase\.version>' java-showcase/gapic-showcase/pom.xml | sed -E 's/<[^>]+>//g')
-          fi
-          if [ -z "$version" ]; then
-            echo "Error: Could not find gapic-showcase.version in pom.xml"
-            exit 1
-          fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
-
       - name: Extract showcase commit from librarian.yaml
         id: extract_commit
         shell: bash
         run: |
           commit=$(grep -A 1 "showcase:" librarian.yaml | grep "commit:" | awk '{print $2}')
-          if [ -z "$commit" ]; then
-            echo "Error: Could not find showcase commit in librarian.yaml"
-            exit 1
-          fi
           echo "commit=$commit" >> "$GITHUB_OUTPUT"
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.24'
-
       - name: Verify showcase version and commit match
+        shell: bash
         run: |
-          go run .github/scripts/verify-showcase-version.go \
+          set +e
+          go run .github/scripts/verify_showcase_version.go \
             -version "${{ steps.extract_version.outputs.version }}" \
             -commit "${{ steps.extract_commit.outputs.commit }}"
+          exit_code=$?
+          set -e
 
-      - name: Create issue on failure
-        if: failure()
+          if [ $exit_code -eq 0 ]; then
+            echo "Verification successful!"
+            exit 0
+          elif [ $exit_code -eq 2 ]; then
+            echo "MISMATCH=true" >> "$GITHUB_ENV"
+            echo "Error: Showcase version mismatch detected."
+            exit 2
+          else
+            echo "Error: Unexpected verification failure (exit code $exit_code)."
+            exit 1
+          fi
+
+      - name: Create issue on mismatch
+        if: failure() && env.MISMATCH == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh issue create \
             -R "${{ github.repository }}" \
-            -t "Showcase Version Check Failure" \
-            -b "The Showcase Version Check workflow has failed. Please check the logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} for details."
+            -t "Showcase Version Mismatch: librarian.yaml and pom.xml out of sync" \
+            -b "The Showcase version in java-showcase/gapic-showcase/pom.xml and the commit in librarian.yaml do not match. Please update them to match. See logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+      - name: Create issue on workflow failure
+        if: failure() && env.MISMATCH != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            -R "${{ github.repository }}" \
+            -t "Showcase Version Check Workflow Failure" \
+            -b "The Showcase Version Check workflow has failed due to an unexpected execution error. Please check the logs at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} for details."

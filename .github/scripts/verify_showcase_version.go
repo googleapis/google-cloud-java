@@ -62,7 +62,7 @@ func main() {
 
 	if *showcaseCommit != expectedCommit {
 		fmt.Fprintf(os.Stderr, "Mismatch: librarian.yaml has commit %q, but tag %q is at commit %q\n", *showcaseCommit, tagName, expectedCommit)
-		os.Exit(1)
+		os.Exit(2)
 	}
 
 	fmt.Println("Showcase version and commit are in sync!")
