@@ -17,15 +17,33 @@ on:
   push:
     branches:
     - main
-    paths-ignore:
-    - '.github/workflows/**'
   pull_request:
-    paths-ignore:
-    - '.github/workflows/**'
 name: ci
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      runnable: ${{ steps.filter.outputs.runnable }}
+    steps:
+    - uses: actions/checkout@v6
+      # Use this action, rather than a file filter so that we can make this
+      # mandatory.
+      # See https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-including-branches
+      # for more details.
+    - uses: dorny/paths-filter@v4
+      id: filter
+      with:
+        filters: |
+          runnable:
+            - '**'
+            - '!.github/workflows/**'
+
   # detect whether or note we should run "bulk" (non-handwritten) unit tests
   bulk-filter:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
@@ -110,6 +128,8 @@ jobs:
         JOB_NAME: units-8-runtime-${{matrix.java}}
   # detect which libraries have changed
   changes:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
@@ -306,7 +326,7 @@ jobs:
       env:
         BUILD_SUBDIR: ${{matrix.package}}
   required:
-    needs: [ changes, split-units, split-clirr, split-dependencies ]
+    needs: [ filter, changes, split-units, split-clirr, split-dependencies ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04
@@ -317,6 +337,8 @@ jobs:
       - name: Success otherwise
         run: echo "Success!"
   windows:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: windows-latest
     steps:
     - name: Support longpaths
@@ -333,6 +355,8 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: windows-units
   lint:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -349,6 +373,8 @@ jobs:
         HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - name: Get current week within the year
@@ -368,6 +394,8 @@ jobs:
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -385,6 +413,8 @@ jobs:
       with:
         bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:
+    needs: filter
+    if: ${{ needs.filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
