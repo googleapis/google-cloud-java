@@ -36,32 +36,17 @@ jobs:
         shell: bash
         run: |
           version=$(mvn help:evaluate -f java-showcase/gapic-showcase/pom.xml -Dexpression=gapic-showcase.version -q -DforceStdout 2>/dev/null || true)
-          if [ -z "$version" ]; then
-            echo "Warning: Maven evaluation failed. Falling back to XML parsing of pom.xml..."
-            version=$(grep -oE '<gapic-showcase\.version>[0-9]+\.[0-9]+\.[0-9]+</gapic-showcase\.version>' java-showcase/gapic-showcase/pom.xml | sed -E 's/<[^>]+>//g')
-          fi
-          if [ -z "$version" ]; then
-            echo "Error: Could not find gapic-showcase.version in pom.xml"
-            exit 1
-          fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
-
       - name: Extract showcase commit from librarian.yaml
         id: extract_commit
         shell: bash
         run: |
           commit=$(grep -A 1 "showcase:" librarian.yaml | grep "commit:" | awk '{print $2}')
-          if [ -z "$commit" ]; then
-            echo "Error: Could not find showcase commit in librarian.yaml"
-            exit 1
-          fi
           echo "commit=$commit" >> "$GITHUB_OUTPUT"
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.24'
-
       - name: Verify showcase version and commit match
         run: |
           go run .github/scripts/verify_showcase_version.go \
