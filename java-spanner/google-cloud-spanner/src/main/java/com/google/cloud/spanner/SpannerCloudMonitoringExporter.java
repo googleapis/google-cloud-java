@@ -231,7 +231,6 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     if (spannerExportFailureLoggedProjects.add(projectName.getProject())) {
       String msg = "createServiceTimeSeries request failed for spanner metrics.";
       if (throwable instanceof PermissionDeniedException) {
-        // TODO: Add the link of public documentation when available in the log message.
         msg +=
             String.format(
                 " Need monitoring metric writer permission on project=%s. Follow"
