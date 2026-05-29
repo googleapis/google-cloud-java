@@ -416,7 +416,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         new Supplier<JobId>() {
           @Override
           public JobId get() {
-            return JobId.of();
+            // Explicitly set the location for a new job when provided in options.
+            // Otherwise, the job may be created with an incorrect location
+            // (e.g. in transaction mode outside the US).
+            return JobId.of().setLocation(getOptions().getLocation());
           }
         };
     return create(jobInfo, idProvider, options);
