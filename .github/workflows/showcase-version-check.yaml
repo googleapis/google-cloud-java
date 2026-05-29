@@ -38,16 +38,17 @@ jobs:
         run: |
           version=$(awk -F'[<>]' '/gapic-showcase.version/{print $3; exit}' java-showcase/gapic-showcase/pom.xml)
           echo "version=$version" >> "$GITHUB_OUTPUT"
-      - name: Extract showcase commit from librarian.yaml
-        id: extract_commit
-        shell: bash
-        run: |
-          commit=$(grep -A 1 "showcase:" librarian.yaml | grep "commit:" | awk '{print $2}')
-          echo "commit=$commit" >> "$GITHUB_OUTPUT"
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.24'
+      - name: Extract showcase commit from librarian.yaml
+        id: extract_commit
+        shell: bash
+        run: |
+          version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+          commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.showcase.commit)
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
       - name: Verify showcase version and commit match
         shell: bash
         run: |
