@@ -142,7 +142,6 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals("POINT(1 2)", resultSet.getString(14));
     assertEquals("{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
     connection.close();
-    connection.close();
   }
 
   @Test
