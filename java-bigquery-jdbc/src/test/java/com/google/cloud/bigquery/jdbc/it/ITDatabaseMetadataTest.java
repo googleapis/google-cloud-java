@@ -55,9 +55,9 @@ public class ITDatabaseMetadataTest extends ITBase {
           + ";OAUTHTYPE=3";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
-  private static final String DATASET2 = "JDBC_PRESUBMIT_INTEGRATION_DATASET_2";
-  private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
+  private static String DATASET;
+  private static String DATASET2;
+  private static String CONSTRAINTS_DATASET;
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
@@ -70,6 +70,9 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
+    DATASET = ITBase.getSharedDataset();
+    DATASET2 = ITBase.getSharedDataset2();
+    CONSTRAINTS_DATASET = ITBase.getSharedDataset();
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }

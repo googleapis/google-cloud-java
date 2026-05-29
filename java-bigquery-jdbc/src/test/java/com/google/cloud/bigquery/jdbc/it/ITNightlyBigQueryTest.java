@@ -79,8 +79,8 @@ public class ITNightlyBigQueryTest {
   private static final String CALLABLE_STMT_DML_DELETE_PROC_NAME =
       "IT_CALLABLE_STMT_PROC_DML_DELETE_TEST";
   private static final String CALLABLE_STMT_DML_TABLE_NAME = "IT_CALLABLE_STMT_PROC_DML_TABLE";
-  private static final String DATASET = "JDBC_NIGHTLY_IT_DATASET";
-  private static final String DATASET2 = "JDBC_PRESUBMIT_INTEGRATION_DATASET_2";
+  private static String DATASET;
+  private static String DATASET2;
   static final String session_enabled_connection_uri =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
           + PROJECT_ID
@@ -93,6 +93,8 @@ public class ITNightlyBigQueryTest {
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
+    DATASET = ITBase.getSharedDataset();
+    DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
     bigQuery = BigQueryOptions.newBuilder().build().getService();
@@ -107,7 +109,6 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testMergeInExecuteBatch() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 
@@ -577,7 +578,6 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testPreparedStatementExecuteUpdate() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 

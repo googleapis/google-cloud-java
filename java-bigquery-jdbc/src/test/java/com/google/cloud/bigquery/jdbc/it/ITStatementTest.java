@@ -42,7 +42,7 @@ import org.junit.jupiter.api.Test;
 
 public class ITStatementTest {
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
-  private static final String DATASET = "JDBC_STATEMENT_TEST_DATASET";
+  private static String DATASET;
   private static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
   private static Random random = new Random();
@@ -51,13 +51,13 @@ public class ITStatementTest {
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
-    ITBase.setUpDataset(DATASET);
+    DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
 
   @AfterAll
   public static void afterClass() throws InterruptedException {
-    ITBase.cleanUp(DATASET);
+    // Shared dataset cleanup is handled by shutdown hook
   }
 
   @Disabled

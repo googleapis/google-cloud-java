@@ -37,18 +37,18 @@ public class ITResultSetMetadataTest {
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_RSMETADATA_TEST_TABLE" + randomNumber;
-  private static final String DATASET = "JDBC_RSMETADATA_TEST_DATASET";
+  private static String DATASET;
   private static ResultSetMetaData metaData;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
-    ITBase.setUpDataset(DATASET);
+    DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
 
   @AfterAll
   public static void afterClass() throws InterruptedException {
-    ITBase.cleanUp(DATASET);
+    // Shared dataset cleanup is handled by shutdown hook
   }
 
   @Disabled

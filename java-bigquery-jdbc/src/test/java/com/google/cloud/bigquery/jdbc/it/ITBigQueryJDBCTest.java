@@ -53,7 +53,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.LocalTime;
 import java.util.Properties;
 import java.util.Random;
@@ -75,7 +74,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           + " trip_distance asc LIMIT %s";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
+  private static String DATASET;
   private static final Object EXCEPTION_REPLACEMENT = "EXCEPTION-WAS-RAISED";
   static Connection bigQueryConnection;
   static BigQuery bigQuery;
@@ -85,6 +84,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
+    DATASET = ITBase.getSharedDataset();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
 
@@ -1564,7 +1564,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementExecuteUpdate() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "Inventory" + random.nextInt(9999);
     String TABLE_NAME2 = "DetailedInventory" + random.nextInt(9999);
 
@@ -1655,7 +1654,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementDateTimeValues() throws SQLException {
     Random random = new Random();
-    String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME1 = "DateTimeTestTable" + random.nextInt(9999);
 
     final String createTableQuery =
@@ -1677,7 +1675,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     PreparedStatement insertPs = bigQueryConnection.prepareStatement(insertQuery);
     insertPs.setString(1, "dishwasher");
     insertPs.setInt(2, 1);
-    insertPs.setTimestamp(3, Timestamp.from(Instant.now()));
+    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
     insertPs.setTime(4, Time.valueOf(LocalTime.NOON));
     insertPs.setDate(5, Date.valueOf("2025-12-3"));
 

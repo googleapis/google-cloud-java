@@ -43,7 +43,7 @@ import org.junit.jupiter.api.Test;
 
 public class ITConnectionTest {
 
-  private static final String DATASET = "JDBC_CONNECTION_TEST_DATASET";
+  private static String DATASET;
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
@@ -54,15 +54,14 @@ public class ITConnectionTest {
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
-
-    ITBase.setUpDataset(DATASET);
+    DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
   }
 
   @AfterAll
   public static void afterClass() throws InterruptedException {
-    ITBase.cleanUp(DATASET);
+    // Shared dataset cleanup is handled by shutdown hook
   }
 
   @Test
