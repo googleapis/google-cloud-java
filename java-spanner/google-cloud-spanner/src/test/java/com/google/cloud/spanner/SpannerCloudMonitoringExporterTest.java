@@ -23,12 +23,14 @@ import static com.google.cloud.spanner.BuiltInMetricsConstant.DATABASE_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.DIRECT_PATH_ENABLED_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.DIRECT_PATH_USED_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.GAX_METER_NAME;
+import static com.google.cloud.spanner.BuiltInMetricsConstant.GRPC_METER_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.INSTANCE_CONFIG_ID_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.INSTANCE_ID_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.LOCATION_ID_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.OPERATION_COUNT_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.OPERATION_LATENCIES_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.PROJECT_ID_KEY;
+import static com.google.cloud.spanner.BuiltInMetricsConstant.UNDEFINED_PROJECT_ID;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -106,12 +108,13 @@ public class SpannerCloudMonitoringExporterTest {
   @Before
   public void setUp() {
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
-    exporter = new SpannerCloudMonitoringExporter(projectId, fakeMetricServiceClient);
+    exporter = new SpannerCloudMonitoringExporter(fakeMetricServiceClient);
 
     this.client_uid = BuiltInMetricsProvider.INSTANCE.createClientAttributes().get("client_uid");
 
     attributes =
         Attributes.builder()
+            .put(PROJECT_ID_KEY, projectId)
             .put(INSTANCE_ID_KEY, instanceId)
             .put(DATABASE_KEY, databaseId)
             .put(CLIENT_NAME_KEY, clientName)
@@ -155,7 +158,7 @@ public class SpannerCloudMonitoringExporterTest {
     MetricData longData =
         ImmutableMetricData.createLongSum(
             resource,
-            scope,
+            InstrumentationScopeInfo.create(GRPC_METER_NAME),
             "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
             "description",
             "1",
@@ -200,7 +203,7 @@ public class SpannerCloudMonitoringExporterTest {
   }
 
   @Test
-  public void testExportingOverridesResourceProject() {
+  public void testExportingUsesPointProjectOverResourceProject() {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
@@ -212,7 +215,10 @@ public class SpannerCloudMonitoringExporterTest {
     Resource resourceWithDifferentProject =
         Resource.create(
             resourceAttributes.toBuilder().put(PROJECT_ID_KEY, "resource-project").build());
-    LongPointData longPointData = ImmutableLongPointData.create(10, 15, attributes, 11L);
+    Attributes attributesWithDifferentProject =
+        attributes.toBuilder().put(PROJECT_ID_KEY, "target-project").build();
+    LongPointData longPointData =
+        ImmutableLongPointData.create(10, 15, attributesWithDifferentProject, 11L);
     MetricData longData =
         ImmutableMetricData.createLongSum(
             resourceWithDifferentProject,
@@ -226,18 +232,30 @@ public class SpannerCloudMonitoringExporterTest {
     exporter.export(Collections.singletonList(longData));
 
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
-    assertThat(request.getName()).isEqualTo("projects/" + projectId);
+    assertThat(request.getName()).isEqualTo("projects/target-project");
     assertThat(request.getTimeSeries(0).getResource().getLabelsMap())
-        .containsEntry(PROJECT_ID_KEY.getKey(), projectId);
+        .containsEntry(PROJECT_ID_KEY.getKey(), "target-project");
   }
 
   @Test
-  public void testExportingSkipsUntilProjectIsSet() {
-    exporter = new SpannerCloudMonitoringExporter(() -> null, fakeMetricServiceClient);
-    LongPointData longPointData = ImmutableLongPointData.create(10, 15, attributes, 11L);
+  public void testExportingSkipsMetricsWithoutPointProjectOrFallbackProject() {
+    Resource resourceWithProject =
+        Resource.create(
+            resourceAttributes.toBuilder().put(PROJECT_ID_KEY, "resource-project").build());
+    Attributes attributesWithoutProject =
+        Attributes.builder()
+            .put(INSTANCE_ID_KEY, instanceId)
+            .put(DATABASE_KEY, databaseId)
+            .put(CLIENT_NAME_KEY, clientName)
+            .put(CLIENT_UID_KEY, this.client_uid)
+            .put(String.valueOf(DIRECT_PATH_ENABLED_KEY), true)
+            .put(String.valueOf(DIRECT_PATH_USED_KEY), true)
+            .build();
+    LongPointData longPointData =
+        ImmutableLongPointData.create(10, 15, attributesWithoutProject, 11L);
     MetricData longData =
         ImmutableMetricData.createLongSum(
-            resource,
+            resourceWithProject,
             scope,
             "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
             "description",
@@ -248,6 +266,141 @@ public class SpannerCloudMonitoringExporterTest {
     exporter.export(Collections.singletonList(longData));
 
     Mockito.verify(mockMetricServiceStub, Mockito.never()).createServiceTimeSeriesCallable();
+  }
+
+  @Test
+  public void testExportingUsesFallbackProjectForMetricsWithUndefinedPointProject() {
+    exporter =
+        new SpannerCloudMonitoringExporter(() -> "fallback-project", fakeMetricServiceClient);
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Attributes attributesWithUndefinedProject =
+        Attributes.builder()
+            .put(PROJECT_ID_KEY, UNDEFINED_PROJECT_ID)
+            .put(INSTANCE_ID_KEY, instanceId)
+            .put(DATABASE_KEY, databaseId)
+            .put(CLIENT_NAME_KEY, clientName)
+            .put(CLIENT_UID_KEY, this.client_uid)
+            .build();
+    LongPointData longPointData =
+        ImmutableLongPointData.create(10, 15, attributesWithUndefinedProject, 11L);
+    MetricData longData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            InstrumentationScopeInfo.create(GRPC_METER_NAME),
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+
+    exporter.export(Collections.singletonList(longData));
+
+    CreateTimeSeriesRequest request = argumentCaptor.getValue();
+    assertThat(request.getName()).isEqualTo("projects/fallback-project");
+    assertThat(request.getTimeSeries(0).getResource().getLabelsMap())
+        .containsEntry(PROJECT_ID_KEY.getKey(), "fallback-project");
+  }
+
+  @Test
+  public void testExportingRoutesPointProjectAndFallbackProject() {
+    exporter =
+        new SpannerCloudMonitoringExporter(() -> "fallback-project", fakeMetricServiceClient);
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    LongPointData pointWithProject =
+        ImmutableLongPointData.create(
+            10, 15, attributes.toBuilder().put(PROJECT_ID_KEY, "point-project").build(), 100L);
+    LongPointData pointWithoutProject =
+        ImmutableLongPointData.create(
+            10, 15, Attributes.builder().put(INSTANCE_ID_KEY, instanceId).build(), 200L);
+    MetricData metricWithProject =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointWithProject)));
+    MetricData metricWithoutProject =
+        ImmutableMetricData.createLongSum(
+            resource,
+            InstrumentationScopeInfo.create(GRPC_METER_NAME),
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointWithoutProject)));
+
+    exporter.export(Arrays.asList(metricWithProject, metricWithoutProject));
+
+    Map<String, CreateTimeSeriesRequest> requestsByName =
+        argumentCaptor.getAllValues().stream()
+            .collect(Collectors.toMap(CreateTimeSeriesRequest::getName, request -> request));
+    assertThat(requestsByName.keySet())
+        .containsExactly("projects/point-project", "projects/fallback-project");
+  }
+
+  @Test
+  public void testExportingRoutesMultipleProjects() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Attributes attributesProjectX = attributes.toBuilder().put(PROJECT_ID_KEY, "project-x").build();
+    Attributes attributesProjectY = attributes.toBuilder().put(PROJECT_ID_KEY, "project-y").build();
+    LongPointData pointX = ImmutableLongPointData.create(10, 15, attributesProjectX, 100L);
+    LongPointData pointY = ImmutableLongPointData.create(10, 15, attributesProjectY, 200L);
+
+    MetricData metricX =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointX)));
+    MetricData metricY =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointY)));
+
+    exporter.export(Arrays.asList(metricX, metricY));
+
+    assertThat(argumentCaptor.getAllValues()).hasSize(2);
+    Map<String, CreateTimeSeriesRequest> requestsByName =
+        argumentCaptor.getAllValues().stream()
+            .collect(Collectors.toMap(CreateTimeSeriesRequest::getName, request -> request));
+    assertThat(requestsByName.keySet()).containsExactly("projects/project-x", "projects/project-y");
+    assertThat(
+            requestsByName.get("projects/project-x").getTimeSeries(0).getResource().getLabelsMap())
+        .containsEntry(PROJECT_ID_KEY.getKey(), "project-x");
+    assertThat(
+            requestsByName.get("projects/project-y").getTimeSeries(0).getResource().getLabelsMap())
+        .containsEntry(PROJECT_ID_KEY.getKey(), "project-y");
   }
 
   @Test
@@ -500,7 +653,7 @@ public class SpannerCloudMonitoringExporterTest {
   @Test
   public void getAggregationTemporality() throws IOException {
     SpannerCloudMonitoringExporter actualExporter =
-        SpannerCloudMonitoringExporter.create(projectId, null, null, null);
+        SpannerCloudMonitoringExporter.create(() -> null, null, null, null);
     assertThat(actualExporter.getAggregationTemporality(InstrumentType.COUNTER))
         .isEqualTo(AggregationTemporality.CUMULATIVE);
   }
@@ -508,7 +661,7 @@ public class SpannerCloudMonitoringExporterTest {
   @Test
   public void testUniverseDomain() throws IOException {
     SpannerCloudMonitoringExporter actualExporter =
-        SpannerCloudMonitoringExporter.create(projectId, null, null, "abc.goog");
+        SpannerCloudMonitoringExporter.create(() -> null, null, null, "abc.goog");
     MetricServiceSettings metricServiceSettings =
         actualExporter.getMetricServiceClient().getSettings();
 
@@ -517,7 +670,7 @@ public class SpannerCloudMonitoringExporterTest {
 
     actualExporter =
         SpannerCloudMonitoringExporter.create(
-            projectId, null, "monitoringa.abc.goog:443", "abc.goog");
+            () -> null, null, "monitoringa.abc.goog:443", "abc.goog");
     metricServiceSettings = actualExporter.getMetricServiceClient().getSettings();
 
     assertEquals("abc.goog", metricServiceSettings.getUniverseDomain());

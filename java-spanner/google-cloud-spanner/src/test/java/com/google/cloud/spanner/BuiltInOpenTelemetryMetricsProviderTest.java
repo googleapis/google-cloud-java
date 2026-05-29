@@ -95,6 +95,7 @@ public class BuiltInOpenTelemetryMetricsProviderTest {
     SpannerOptions options = newTestOptions();
 
     options.initializeBuiltInMetrics(DatabaseId.of("database-project", "i", "d"));
+    options.initializeBuiltInMetrics(DatabaseId.of("other-project", "i", "d"));
 
     assertEquals("database-project", BuiltInMetricsProvider.INSTANCE.getProjectId());
   }

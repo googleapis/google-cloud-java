@@ -78,6 +78,7 @@ final class BuiltInMetricsProvider {
   private OpenTelemetry openTelemetry;
   private String projectId;
   private boolean mismatchedProjectIdLogged;
+  private Thread shutdownHook;
 
   private BuiltInMetricsProvider() {}
 
@@ -96,7 +97,8 @@ final class BuiltInMetricsProvider {
         sdkMeterProviderBuilder.setResource(Resource.create(createResourceAttributes(projectId)));
         SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
         this.openTelemetry = OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-        Runtime.getRuntime().addShutdownHook(new Thread(sdkMeterProvider::close));
+        this.shutdownHook = new Thread(sdkMeterProvider::close);
+        Runtime.getRuntime().addShutdownHook(this.shutdownHook);
       }
       return this.openTelemetry;
     } catch (IOException ex) {
@@ -116,8 +118,9 @@ final class BuiltInMetricsProvider {
       mismatchedProjectIdLogged = true;
       logger.log(
           Level.WARNING,
-          "Built-in metrics are already initialized for project {0}. Metrics for project {1} will"
-              + " be exported using the existing project.",
+          "Built-in metrics fallback project is already initialized to project {0}. Non-Spanner"
+              + " metrics without project information will be exported using that project instead"
+              + " of project {1}.",
           new Object[] {this.projectId, projectId});
     }
   }
@@ -127,7 +130,6 @@ final class BuiltInMetricsProvider {
     return this.openTelemetry;
   }
 
-  @VisibleForTesting
   synchronized String getProjectId() {
     return this.projectId;
   }
@@ -137,9 +139,17 @@ final class BuiltInMetricsProvider {
     if (this.openTelemetry instanceof OpenTelemetrySdk) {
       ((OpenTelemetrySdk) this.openTelemetry).getSdkMeterProvider().close();
     }
+    if (this.shutdownHook != null) {
+      try {
+        Runtime.getRuntime().removeShutdownHook(this.shutdownHook);
+      } catch (IllegalStateException ignored) {
+        // The JVM is already shutting down.
+      }
+    }
     this.openTelemetry = null;
     this.projectId = null;
     this.mismatchedProjectIdLogged = false;
+    this.shutdownHook = null;
   }
 
   // TODO: Remove when
