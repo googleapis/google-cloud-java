@@ -606,6 +606,43 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     return conversionValue_;
   }
 
+  public static final int CONVERSION_COUNT_FIELD_NUMBER = 23;
+  private double conversionCount_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasConversionCount() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionCount.
+   */
+  @java.lang.Override
+  public double getConversionCount() {
+    return conversionCount_;
+  }
+
   public static final int EVENT_SOURCE_FIELD_NUMBER = 10;
   private int eventSource_ = 0;
 
@@ -666,7 +703,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEventDeviceInfo() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -728,7 +765,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCartData() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -975,7 +1012,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUserProperties() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1302,7 +1339,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasThirdPartyUserData() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1366,7 +1403,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEventLocation() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1509,10 +1546,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         != com.google.ads.datamanager.v1.EventSource.EVENT_SOURCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, eventSource_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getEventDeviceInfo());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(12, getCartData());
     }
     for (int i = 0; i < customVariables_.size(); i++) {
@@ -1521,7 +1558,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < experimentalFields_.size(); i++) {
       output.writeMessage(14, experimentalFields_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(15, getUserProperties());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eventName_)) {
@@ -1536,14 +1573,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < additionalEventParameters_.size(); i++) {
       output.writeMessage(19, additionalEventParameters_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(20, getThirdPartyUserData());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(21, getEventLocation());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appInstanceId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 22, appInstanceId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeDouble(23, conversionCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1591,10 +1631,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         != com.google.ads.datamanager.v1.EventSource.EVENT_SOURCE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, eventSource_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEventDeviceInfo());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCartData());
     }
     for (int i = 0; i < customVariables_.size(); i++) {
@@ -1604,7 +1644,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, experimentalFields_.get(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUserProperties());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eventName_)) {
@@ -1621,14 +1661,17 @@ public final class Event extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, additionalEventParameters_.get(i));
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getThirdPartyUserData());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEventLocation());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appInstanceId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(22, appInstanceId_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(23, conversionCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1672,6 +1715,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (hasConversionValue()) {
       if (java.lang.Double.doubleToLongBits(getConversionValue())
           != java.lang.Double.doubleToLongBits(other.getConversionValue())) return false;
+    }
+    if (hasConversionCount() != other.hasConversionCount()) return false;
+    if (hasConversionCount()) {
+      if (java.lang.Double.doubleToLongBits(getConversionCount())
+          != java.lang.Double.doubleToLongBits(other.getConversionCount())) return false;
     }
     if (eventSource_ != other.eventSource_) return false;
     if (hasEventDeviceInfo() != other.hasEventDeviceInfo()) return false;
@@ -1747,6 +1795,13 @@ public final class Event extends com.google.protobuf.GeneratedMessage
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getConversionValue()));
+    }
+    if (hasConversionCount()) {
+      hash = (37 * hash) + CONVERSION_COUNT_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getConversionCount()));
     }
     hash = (37 * hash) + EVENT_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + eventSource_;
@@ -1979,6 +2034,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       currency_ = "";
       conversionValue_ = 0D;
+      conversionCount_ = 0D;
       eventSource_ = 0;
       eventDeviceInfo_ = null;
       if (eventDeviceInfoBuilder_ != null) {
@@ -1996,14 +2052,14 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         customVariables_ = null;
         customVariablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       if (experimentalFieldsBuilder_ == null) {
         experimentalFields_ = java.util.Collections.emptyList();
       } else {
         experimentalFields_ = null;
         experimentalFieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       userProperties_ = null;
       if (userPropertiesBuilder_ != null) {
         userPropertiesBuilder_.dispose();
@@ -2018,7 +2074,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         additionalEventParameters_ = null;
         additionalEventParametersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       thirdPartyUserData_ = null;
       if (thirdPartyUserDataBuilder_ != null) {
         thirdPartyUserDataBuilder_.dispose();
@@ -2066,28 +2122,28 @@ public final class Event extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.ads.datamanager.v1.Event result) {
       if (customVariablesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           customVariables_ = java.util.Collections.unmodifiableList(customVariables_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.customVariables_ = customVariables_;
       } else {
         result.customVariables_ = customVariablesBuilder_.build();
       }
       if (experimentalFieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           experimentalFields_ = java.util.Collections.unmodifiableList(experimentalFields_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.experimentalFields_ = experimentalFields_;
       } else {
         result.experimentalFields_ = experimentalFieldsBuilder_.build();
       }
       if (additionalEventParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           additionalEventParameters_ =
               java.util.Collections.unmodifiableList(additionalEventParameters_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.additionalEventParameters_ = additionalEventParameters_;
       } else {
@@ -2138,44 +2194,48 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.eventSource_ = eventSource_;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.eventDeviceInfo_ =
-            eventDeviceInfoBuilder_ == null ? eventDeviceInfo_ : eventDeviceInfoBuilder_.build();
+        result.conversionCount_ = conversionCount_;
         to_bitField0_ |= 0x00000040;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.eventSource_ = eventSource_;
+      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.cartData_ = cartDataBuilder_ == null ? cartData_ : cartDataBuilder_.build();
+        result.eventDeviceInfo_ =
+            eventDeviceInfoBuilder_ == null ? eventDeviceInfo_ : eventDeviceInfoBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.userProperties_ =
-            userPropertiesBuilder_ == null ? userProperties_ : userPropertiesBuilder_.build();
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.cartData_ = cartDataBuilder_ == null ? cartData_ : cartDataBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.eventName_ = eventName_;
+        result.userProperties_ =
+            userPropertiesBuilder_ == null ? userProperties_ : userPropertiesBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.clientId_ = clientId_;
+        result.eventName_ = eventName_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.clientId_ = clientId_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.userId_ = userId_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.thirdPartyUserData_ =
             thirdPartyUserDataBuilder_ == null
                 ? thirdPartyUserData_
                 : thirdPartyUserDataBuilder_.build();
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.eventLocation_ =
-            eventLocationBuilder_ == null ? eventLocation_ : eventLocationBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.eventLocation_ =
+            eventLocationBuilder_ == null ? eventLocation_ : eventLocationBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.appInstanceId_ = appInstanceId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2231,6 +2291,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (other.hasConversionValue()) {
         setConversionValue(other.getConversionValue());
       }
+      if (other.hasConversionCount()) {
+        setConversionCount(other.getConversionCount());
+      }
       if (other.eventSource_ != 0) {
         setEventSourceValue(other.getEventSourceValue());
       }
@@ -2244,7 +2307,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         if (!other.customVariables_.isEmpty()) {
           if (customVariables_.isEmpty()) {
             customVariables_ = other.customVariables_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureCustomVariablesIsMutable();
             customVariables_.addAll(other.customVariables_);
@@ -2257,7 +2320,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             customVariablesBuilder_.dispose();
             customVariablesBuilder_ = null;
             customVariables_ = other.customVariables_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             customVariablesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCustomVariablesFieldBuilder()
@@ -2271,7 +2334,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         if (!other.experimentalFields_.isEmpty()) {
           if (experimentalFields_.isEmpty()) {
             experimentalFields_ = other.experimentalFields_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureExperimentalFieldsIsMutable();
             experimentalFields_.addAll(other.experimentalFields_);
@@ -2284,7 +2347,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             experimentalFieldsBuilder_.dispose();
             experimentalFieldsBuilder_ = null;
             experimentalFields_ = other.experimentalFields_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             experimentalFieldsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetExperimentalFieldsFieldBuilder()
@@ -2299,24 +2362,24 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEventName().isEmpty()) {
         eventName_ = other.eventName_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getClientId().isEmpty()) {
         clientId_ = other.clientId_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (additionalEventParametersBuilder_ == null) {
         if (!other.additionalEventParameters_.isEmpty()) {
           if (additionalEventParameters_.isEmpty()) {
             additionalEventParameters_ = other.additionalEventParameters_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureAdditionalEventParametersIsMutable();
             additionalEventParameters_.addAll(other.additionalEventParameters_);
@@ -2329,7 +2392,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             additionalEventParametersBuilder_.dispose();
             additionalEventParametersBuilder_ = null;
             additionalEventParameters_ = other.additionalEventParameters_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             additionalEventParametersBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAdditionalEventParametersFieldBuilder()
@@ -2347,7 +2410,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getAppInstanceId().isEmpty()) {
         appInstanceId_ = other.appInstanceId_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2438,21 +2501,21 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             case 80:
               {
                 eventSource_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(
                     internalGetEventDeviceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetCartDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
@@ -2486,25 +2549,25 @@ public final class Event extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetUserPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 eventName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 138:
               {
                 clientId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 138
             case 146:
               {
                 userId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 146
             case 154:
@@ -2524,22 +2587,28 @@ public final class Event extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetThirdPartyUserDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 162
             case 170:
               {
                 input.readMessage(
                     internalGetEventLocationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 170
             case 178:
               {
                 appInstanceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 178
+            case 185:
+              {
+                conversionCount_ = input.readDouble();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 185
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4175,6 +4244,82 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private double conversionCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion quantity associated with the event, for
+     * counting-based conversions.
+     * </pre>
+     *
+     * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the conversionCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasConversionCount() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion quantity associated with the event, for
+     * counting-based conversions.
+     * </pre>
+     *
+     * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The conversionCount.
+     */
+    @java.lang.Override
+    public double getConversionCount() {
+      return conversionCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion quantity associated with the event, for
+     * counting-based conversions.
+     * </pre>
+     *
+     * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The conversionCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConversionCount(double value) {
+
+      conversionCount_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The conversion quantity associated with the event, for
+     * counting-based conversions.
+     * </pre>
+     *
+     * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConversionCount() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      conversionCount_ = 0D;
+      onChanged();
+      return this;
+    }
+
     private int eventSource_ = 0;
 
     /**
@@ -4211,7 +4356,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEventSourceValue(int value) {
       eventSource_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4254,7 +4399,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       eventSource_ = value.getNumber();
       onChanged();
       return this;
@@ -4274,7 +4419,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEventSource() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       eventSource_ = 0;
       onChanged();
       return this;
@@ -4302,7 +4447,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return Whether the eventDeviceInfo field is set.
      */
     public boolean hasEventDeviceInfo() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4350,7 +4495,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         eventDeviceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4374,7 +4519,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         eventDeviceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4393,7 +4538,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEventDeviceInfo(com.google.ads.datamanager.v1.DeviceInfo value) {
       if (eventDeviceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && eventDeviceInfo_ != null
             && eventDeviceInfo_ != com.google.ads.datamanager.v1.DeviceInfo.getDefaultInstance()) {
           getEventDeviceInfoBuilder().mergeFrom(value);
@@ -4404,7 +4549,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         eventDeviceInfoBuilder_.mergeFrom(value);
       }
       if (eventDeviceInfo_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4423,7 +4568,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEventDeviceInfo() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       eventDeviceInfo_ = null;
       if (eventDeviceInfoBuilder_ != null) {
         eventDeviceInfoBuilder_.dispose();
@@ -4446,7 +4591,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.DeviceInfo.Builder getEventDeviceInfoBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetEventDeviceInfoFieldBuilder().getBuilder();
     }
@@ -4524,7 +4669,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return Whether the cartData field is set.
      */
     public boolean hasCartData() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4572,7 +4717,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         cartDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4595,7 +4740,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         cartDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4614,7 +4759,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCartData(com.google.ads.datamanager.v1.CartData value) {
       if (cartDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && cartData_ != null
             && cartData_ != com.google.ads.datamanager.v1.CartData.getDefaultInstance()) {
           getCartDataBuilder().mergeFrom(value);
@@ -4625,7 +4770,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         cartDataBuilder_.mergeFrom(value);
       }
       if (cartData_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4644,7 +4789,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCartData() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       cartData_ = null;
       if (cartDataBuilder_ != null) {
         cartDataBuilder_.dispose();
@@ -4667,7 +4812,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.CartData.Builder getCartDataBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetCartDataFieldBuilder().getBuilder();
     }
@@ -4727,10 +4872,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureCustomVariablesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         customVariables_ =
             new java.util.ArrayList<com.google.ads.datamanager.v1.CustomVariable>(customVariables_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4991,7 +5136,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     public Builder clearCustomVariables() {
       if (customVariablesBuilder_ == null) {
         customVariables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         customVariablesBuilder_.clear();
@@ -5145,7 +5290,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 com.google.ads.datamanager.v1.CustomVariable.Builder,
                 com.google.ads.datamanager.v1.CustomVariableOrBuilder>(
                 customVariables_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         customVariables_ = null;
@@ -5157,11 +5302,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureExperimentalFieldsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         experimentalFields_ =
             new java.util.ArrayList<com.google.ads.datamanager.v1.ExperimentalField>(
                 experimentalFields_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -5423,7 +5568,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     public Builder clearExperimentalFields() {
       if (experimentalFieldsBuilder_ == null) {
         experimentalFields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         experimentalFieldsBuilder_.clear();
@@ -5577,7 +5722,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 com.google.ads.datamanager.v1.ExperimentalField.Builder,
                 com.google.ads.datamanager.v1.ExperimentalFieldOrBuilder>(
                 experimentalFields_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         experimentalFields_ = null;
@@ -5607,7 +5752,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return Whether the userProperties field is set.
      */
     public boolean hasUserProperties() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5655,7 +5800,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         userPropertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5679,7 +5824,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         userPropertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5698,7 +5843,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUserProperties(com.google.ads.datamanager.v1.UserProperties value) {
       if (userPropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && userProperties_ != null
             && userProperties_
                 != com.google.ads.datamanager.v1.UserProperties.getDefaultInstance()) {
@@ -5710,7 +5855,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         userPropertiesBuilder_.mergeFrom(value);
       }
       if (userProperties_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5729,7 +5874,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUserProperties() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       userProperties_ = null;
       if (userPropertiesBuilder_ != null) {
         userPropertiesBuilder_.dispose();
@@ -5752,7 +5897,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.UserProperties.Builder getUserPropertiesBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetUserPropertiesFieldBuilder().getBuilder();
     }
@@ -5873,7 +6018,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       eventName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5891,7 +6036,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEventName() {
       eventName_ = getDefaultInstance().getEventName();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5914,7 +6059,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       eventName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5987,7 +6132,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       clientId_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6006,7 +6151,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearClientId() {
       clientId_ = getDefaultInstance().getClientId();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -6030,7 +6175,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       clientId_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6100,7 +6245,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       userId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6118,7 +6263,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUserId() {
       userId_ = getDefaultInstance().getUserId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6141,7 +6286,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       userId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6150,11 +6295,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         additionalEventParameters_ = java.util.Collections.emptyList();
 
     private void ensureAdditionalEventParametersIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         additionalEventParameters_ =
             new java.util.ArrayList<com.google.ads.datamanager.v1.EventParameter>(
                 additionalEventParameters_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -6439,7 +6584,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     public Builder clearAdditionalEventParameters() {
       if (additionalEventParametersBuilder_ == null) {
         additionalEventParameters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         additionalEventParametersBuilder_.clear();
@@ -6608,7 +6753,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 com.google.ads.datamanager.v1.EventParameter.Builder,
                 com.google.ads.datamanager.v1.EventParameterOrBuilder>(
                 additionalEventParameters_,
-                ((bitField0_ & 0x00040000) != 0),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         additionalEventParameters_ = null;
@@ -6639,7 +6784,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return Whether the thirdPartyUserData field is set.
      */
     public boolean hasThirdPartyUserData() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6689,7 +6834,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         thirdPartyUserDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6714,7 +6859,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         thirdPartyUserDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6734,7 +6879,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeThirdPartyUserData(com.google.ads.datamanager.v1.UserData value) {
       if (thirdPartyUserDataBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && thirdPartyUserData_ != null
             && thirdPartyUserData_ != com.google.ads.datamanager.v1.UserData.getDefaultInstance()) {
           getThirdPartyUserDataBuilder().mergeFrom(value);
@@ -6745,7 +6890,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         thirdPartyUserDataBuilder_.mergeFrom(value);
       }
       if (thirdPartyUserData_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6765,7 +6910,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearThirdPartyUserData() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       thirdPartyUserData_ = null;
       if (thirdPartyUserDataBuilder_ != null) {
         thirdPartyUserDataBuilder_.dispose();
@@ -6789,7 +6934,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.UserData.Builder getThirdPartyUserDataBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetThirdPartyUserDataFieldBuilder().getBuilder();
     }
@@ -6869,7 +7014,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * @return Whether the eventLocation field is set.
      */
     public boolean hasEventLocation() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6917,7 +7062,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         eventLocationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6941,7 +7086,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       } else {
         eventLocationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6960,7 +7105,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEventLocation(com.google.ads.datamanager.v1.EventLocation value) {
       if (eventLocationBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && eventLocation_ != null
             && eventLocation_ != com.google.ads.datamanager.v1.EventLocation.getDefaultInstance()) {
           getEventLocationBuilder().mergeFrom(value);
@@ -6971,7 +7116,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         eventLocationBuilder_.mergeFrom(value);
       }
       if (eventLocation_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -6990,7 +7135,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEventLocation() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       eventLocation_ = null;
       if (eventLocationBuilder_ != null) {
         eventLocationBuilder_.dispose();
@@ -7013,7 +7158,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.EventLocation.Builder getEventLocationBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return internalGetEventLocationFieldBuilder().getBuilder();
     }
@@ -7137,7 +7282,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       appInstanceId_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7156,7 +7301,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAppInstanceId() {
       appInstanceId_ = getDefaultInstance().getAppInstanceId();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -7180,7 +7325,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       appInstanceId_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

@@ -544,12 +544,22 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The field value is too long.
+   * Length of the field value is too long.
    * </pre>
    *
    * <code>FIELD_VALUE_TOO_LONG = 50;</code>
    */
   FIELD_VALUE_TOO_LONG(50),
+  /**
+   *
+   *
+   * <pre>
+   * Length of the field value is too short.
+   * </pre>
+   *
+   * <code>FIELD_VALUE_TOO_SHORT = 106;</code>
+   */
+  FIELD_VALUE_TOO_SHORT(106),
   /**
    *
    *
@@ -560,6 +570,16 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOO_MANY_ELEMENTS = 51;</code>
    */
   TOO_MANY_ELEMENTS(51),
+  /**
+   *
+   *
+   * <pre>
+   * Too few elements in a list in the request.
+   * </pre>
+   *
+   * <code>TOO_FEW_ELEMENTS = 105;</code>
+   */
+  TOO_FEW_ELEMENTS(105),
   /**
    *
    *
@@ -1239,6 +1259,29 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CUSTOM_VARIABLE_NOT_FOUND = 120;</code>
    */
   CUSTOM_VARIABLE_NOT_FOUND(120),
+  /**
+   *
+   *
+   * <pre>
+   * The
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * field of the request was set to `true`, but auto detection of baseline
+   * location failed.
+   * </pre>
+   *
+   * <code>BASELINE_LOCATION_AUTO_DETECTION_FAILED = 122;</code>
+   */
+  BASELINE_LOCATION_AUTO_DETECTION_FAILED(122),
+  /**
+   *
+   *
+   * <pre>
+   * Insights missing for this dimension.
+   * </pre>
+   *
+   * <code>INSIGHTS_MISSING_FOR_DIMENSION = 123;</code>
+   */
+  INSIGHTS_MISSING_FOR_DIMENSION(123),
   UNRECOGNIZED(-1),
   ;
 
@@ -1813,12 +1856,23 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The field value is too long.
+   * Length of the field value is too long.
    * </pre>
    *
    * <code>FIELD_VALUE_TOO_LONG = 50;</code>
    */
   public static final int FIELD_VALUE_TOO_LONG_VALUE = 50;
+
+  /**
+   *
+   *
+   * <pre>
+   * Length of the field value is too short.
+   * </pre>
+   *
+   * <code>FIELD_VALUE_TOO_SHORT = 106;</code>
+   */
+  public static final int FIELD_VALUE_TOO_SHORT_VALUE = 106;
 
   /**
    *
@@ -1830,6 +1884,17 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOO_MANY_ELEMENTS = 51;</code>
    */
   public static final int TOO_MANY_ELEMENTS_VALUE = 51;
+
+  /**
+   *
+   *
+   * <pre>
+   * Too few elements in a list in the request.
+   * </pre>
+   *
+   * <code>TOO_FEW_ELEMENTS = 105;</code>
+   */
+  public static final int TOO_FEW_ELEMENTS_VALUE = 105;
 
   /**
    *
@@ -2577,6 +2642,31 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int CUSTOM_VARIABLE_NOT_FOUND_VALUE = 120;
 
+  /**
+   *
+   *
+   * <pre>
+   * The
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * field of the request was set to `true`, but auto detection of baseline
+   * location failed.
+   * </pre>
+   *
+   * <code>BASELINE_LOCATION_AUTO_DETECTION_FAILED = 122;</code>
+   */
+  public static final int BASELINE_LOCATION_AUTO_DETECTION_FAILED_VALUE = 122;
+
+  /**
+   *
+   *
+   * <pre>
+   * Insights missing for this dimension.
+   * </pre>
+   *
+   * <code>INSIGHTS_MISSING_FOR_DIMENSION = 123;</code>
+   */
+  public static final int INSIGHTS_MISSING_FOR_DIMENSION_VALUE = 123;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2703,8 +2793,12 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return MULTIPLE_DESTINATIONS_FOR_GOOGLE_ANALYTICS_EVENT;
       case 50:
         return FIELD_VALUE_TOO_LONG;
+      case 106:
+        return FIELD_VALUE_TOO_SHORT;
       case 51:
         return TOO_MANY_ELEMENTS;
+      case 105:
+        return TOO_FEW_ELEMENTS;
       case 52:
         return ALREADY_EXISTS;
       case 53:
@@ -2839,6 +2933,10 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return INVALID_CUSTOM_VARIABLE_VALUE;
       case 120:
         return CUSTOM_VARIABLE_NOT_FOUND;
+      case 122:
+        return BASELINE_LOCATION_AUTO_DETECTION_FAILED;
+      case 123:
+        return INSIGHTS_MISSING_FOR_DIMENSION;
       default:
         return null;
     }

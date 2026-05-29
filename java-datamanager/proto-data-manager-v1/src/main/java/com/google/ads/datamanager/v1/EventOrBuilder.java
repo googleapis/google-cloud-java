@@ -402,6 +402,34 @@ public interface EventOrBuilder
    *
    *
    * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionCount field is set.
+   */
+  boolean hasConversionCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionCount.
+   */
+  double getConversionCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Signal for where the event happened (web, app, in-store, etc.).
    * </pre>
    *
