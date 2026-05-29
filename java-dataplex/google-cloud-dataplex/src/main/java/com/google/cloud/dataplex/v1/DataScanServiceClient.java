@@ -237,6 +237,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CancelDataScanJob</td>
+ *      <td><p> Cancels a running/pending DataScan job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(CancelDataScanJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(DataScanJobName name)
+ *           <li><p> cancelDataScanJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GenerateDataQualityRules</td>
  *      <td><p> Generates recommended data quality rules based on the results of a data profiling scan.
  * <p>  Use the recommendations to build rules for a data quality scan.</td>
@@ -257,8 +276,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -488,7 +508,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
    *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -536,7 +557,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
    *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -1623,6 +1645,126 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(DataScanJobName name) {
+    CancelDataScanJobRequest request =
+        CancelDataScanJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   String name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(String name) {
+    CancelDataScanJobRequest request = CancelDataScanJobRequest.newBuilder().setName(name).build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(CancelDataScanJobRequest request) {
+    return cancelDataScanJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<CancelDataScanJobResponse> future =
+   *       dataScanServiceClient.cancelDataScanJobCallable().futureCall(request);
+   *   // Do something.
+   *   CancelDataScanJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return stub.cancelDataScanJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates recommended data quality rules based on the results of a data profiling scan.
    *
    * <p>Use the recommendations to build rules for a data quality scan.
@@ -1718,13 +1860,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1757,13 +1905,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1797,13 +1951,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

@@ -139,7 +139,23 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
    * Required. Distance in millimeters over the observed interval.
    * </pre>
    *
-   * <code>int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the millimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasMillimeters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Distance in millimeters over the observed interval.
+   * </pre>
+   *
+   * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The millimeters.
    */
@@ -165,7 +181,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getInterval());
     }
-    if (millimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(3, millimeters_);
     }
     getUnknownFields().writeTo(output);
@@ -180,7 +196,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInterval());
     }
-    if (millimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, millimeters_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -203,7 +219,10 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
     if (hasInterval()) {
       if (!getInterval().equals(other.getInterval())) return false;
     }
-    if (getMillimeters() != other.getMillimeters()) return false;
+    if (hasMillimeters() != other.hasMillimeters()) return false;
+    if (hasMillimeters()) {
+      if (getMillimeters() != other.getMillimeters()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -219,8 +238,10 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
     }
-    hash = (37 * hash) + MILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMillimeters());
+    if (hasMillimeters()) {
+      hash = (37 * hash) + MILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMillimeters());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -419,6 +440,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.millimeters_ = millimeters_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -439,7 +461,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
       if (other.hasInterval()) {
         mergeInterval(other.getInterval());
       }
-      if (other.getMillimeters() != 0L) {
+      if (other.hasMillimeters()) {
         setMillimeters(other.getMillimeters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -728,7 +750,23 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
      * Required. Distance in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the millimeters field is set.
+     */
+    @java.lang.Override
+    public boolean hasMillimeters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Distance in millimeters over the observed interval.
+     * </pre>
+     *
+     * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The millimeters.
      */
@@ -744,7 +782,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
      * Required. Distance in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The millimeters to set.
      * @return This builder for chaining.
@@ -764,7 +802,7 @@ public final class Distance extends com.google.protobuf.GeneratedMessage
      * Required. Distance in millimeters over the observed interval.
      * </pre>
      *
-     * <code>int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

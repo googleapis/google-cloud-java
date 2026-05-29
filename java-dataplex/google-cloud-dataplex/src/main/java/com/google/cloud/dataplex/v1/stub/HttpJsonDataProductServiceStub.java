@@ -49,6 +49,8 @@ import com.google.cloud.dataplex.v1.ListDataAssetsResponse;
 import com.google.cloud.dataplex.v1.ListDataProductsRequest;
 import com.google.cloud.dataplex.v1.ListDataProductsResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessRequest;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessResponse;
 import com.google.cloud.dataplex.v1.UpdateDataAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateDataProductRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -286,6 +288,46 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
               .setOperationSnapshotFactory(
                   (UpdateDataProductRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessMethodDescriptor =
+          ApiMethodDescriptor
+              .<RequestDataProductAccessRequest, RequestDataProductAccessResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataplex.v1.DataProductService/RequestDataProductAccess")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RequestDataProductAccessRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/dataProducts/*}:requestAccess",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RequestDataProductAccessRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RequestDataProductAccessRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RequestDataProductAccessResponse>newBuilder()
+                      .setDefaultInstance(RequestDataProductAccessResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateDataAssetRequest, Operation>
@@ -577,7 +619,6 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
@@ -592,7 +633,8 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -634,7 +676,6 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
@@ -649,7 +690,8 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
-                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -688,7 +730,6 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
@@ -703,7 +744,8 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -738,6 +780,8 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
   private final UnaryCallable<UpdateDataProductRequest, Operation> updateDataProductCallable;
   private final OperationCallable<UpdateDataProductRequest, DataProduct, OperationMetadata>
       updateDataProductOperationCallable;
+  private final UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable;
   private final UnaryCallable<CreateDataAssetRequest, Operation> createDataAssetCallable;
   private final OperationCallable<CreateDataAssetRequest, DataAsset, OperationMetadata>
       createDataAssetOperationCallable;
@@ -910,6 +954,20 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+        requestDataProductAccessTransportSettings =
+            HttpJsonCallSettings
+                .<RequestDataProductAccessRequest, RequestDataProductAccessResponse>newBuilder()
+                .setMethodDescriptor(requestDataProductAccessMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<CreateDataAssetRequest, Operation> createDataAssetTransportSettings =
         HttpJsonCallSettings.<CreateDataAssetRequest, Operation>newBuilder()
             .setMethodDescriptor(createDataAssetMethodDescriptor)
@@ -1073,6 +1131,11 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
             settings.updateDataProductOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.requestDataProductAccessCallable =
+        callableFactory.createUnaryCallable(
+            requestDataProductAccessTransportSettings,
+            settings.requestDataProductAccessSettings(),
+            clientContext);
     this.createDataAssetCallable =
         callableFactory.createUnaryCallable(
             createDataAssetTransportSettings, settings.createDataAssetSettings(), clientContext);
@@ -1142,6 +1205,7 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
     methodDescriptors.add(getDataProductMethodDescriptor);
     methodDescriptors.add(listDataProductsMethodDescriptor);
     methodDescriptors.add(updateDataProductMethodDescriptor);
+    methodDescriptors.add(requestDataProductAccessMethodDescriptor);
     methodDescriptors.add(createDataAssetMethodDescriptor);
     methodDescriptors.add(updateDataAssetMethodDescriptor);
     methodDescriptors.add(deleteDataAssetMethodDescriptor);
@@ -1207,6 +1271,12 @@ public class HttpJsonDataProductServiceStub extends DataProductServiceStub {
   public OperationCallable<UpdateDataProductRequest, DataProduct, OperationMetadata>
       updateDataProductOperationCallable() {
     return updateDataProductOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable() {
+    return requestDataProductAccessCallable;
   }
 
   @Override

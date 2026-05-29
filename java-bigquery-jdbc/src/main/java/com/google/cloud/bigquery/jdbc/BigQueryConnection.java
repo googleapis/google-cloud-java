@@ -207,6 +207,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
 
   BigQueryConnection(String url) throws IOException {
@@ -762,12 +763,16 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setClientInfo(String name, String value) {
-    // no-op
+    if (value == null) {
+      this.clientInfo.remove(name);
+    } else {
+      this.clientInfo.setProperty(name, value);
+    }
   }
 
   @Override
   public String getClientInfo(String name) {
-    return null;
+    return this.clientInfo.getProperty(name);
   }
 
   @Override
@@ -776,13 +781,22 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   @Override
+  public String nativeSQL(String sql) throws SQLException {
+    checkClosed();
+    return sql;
+  }
+
+  @Override
   public Properties getClientInfo() {
-    return null;
+    return this.clientInfo;
   }
 
   @Override
   public void setClientInfo(Properties properties) {
-    // no-op
+    this.clientInfo.clear();
+    if (properties != null) {
+      this.clientInfo.putAll(properties);
+    }
   }
 
   @Override
