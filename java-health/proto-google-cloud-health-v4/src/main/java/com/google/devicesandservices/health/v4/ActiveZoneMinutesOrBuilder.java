@@ -110,7 +110,22 @@ public interface ActiveZoneMinutesOrBuilder
    * 2 for high intensity zones (cardio, peak).
    * </pre>
    *
-   * <code>int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the activeZoneMinutes field is set.
+   */
+  boolean hasActiveZoneMinutes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of Active Zone Minutes earned in the given time interval.
+   * Note: active_zone_minutes equals to 1 for low intensity (fat burn) zones or
+   * 2 for high intensity zones (cardio, peak).
+   * </pre>
+   *
+   * <code>optional int64 active_zone_minutes = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The activeZoneMinutes.
    */

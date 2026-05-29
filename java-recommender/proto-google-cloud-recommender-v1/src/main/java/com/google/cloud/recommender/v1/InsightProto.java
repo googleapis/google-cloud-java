@@ -67,12 +67,13 @@ public final class InsightProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + ")google/cloud/recommender/v1/insight.pr"
-          + "oto\022\033google.cloud.recommender.v1\032\031google"
-          + "/api/resource.proto\032\036google/protobuf/dur"
-          + "ation.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\334"
+          + "oto\022\033google.cloud.recommender.v1\032\037google"
+          + "/api/field_behavior.proto\032\031google/api/re"
+          + "source.proto\032\036google/protobuf/duration.p"
+          + "roto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\341"
           + "\t\n"
-          + "\007Insight\022\014\n"
-          + "\004name\030\001 \001(\t\022\023\n"
+          + "\007Insight\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\013description\030\002 \001(\t\022\030\n"
           + "\020target_resources\030\t \003(\t\022\027\n"
           + "\017insight_subtype\030\n"
@@ -82,8 +83,8 @@ public final class InsightProto extends com.google.protobuf.GeneratedFile {
           + "\022observation_period\030\005 \001(\0132\031.google.protobuf.Duration\022A\n\n"
           + "state_info\030\006 \001(\0132-.google.cloud.recommender.v1.InsightStateInfo\022?\n"
           + "\010category\030\007 \001(\0162-.google.cloud.recommender.v1.Insight.Category\022?\n"
-          + "\010severity\030\017 \001(\0162-.goo"
-          + "gle.cloud.recommender.v1.Insight.Severity\022\014\n"
+          + "\010severity\030\017 \001(\0162-.googl"
+          + "e.cloud.recommender.v1.Insight.Severity\022\014\n"
           + "\004etag\030\013 \001(\t\022`\n"
           + "\032associated_recommendations\030\010"
           + " \003(\0132<.google.cloud.recommender.v1.Insight.RecommendationReference\0321\n"
@@ -103,17 +104,17 @@ public final class InsightProto extends com.google.protobuf.GeneratedFile {
           + "\006MEDIUM\020\002\022\010\n"
           + "\004HIGH\020\003\022\014\n"
           + "\010CRITICAL\020\004:\237\003\352A\233\003\n"
-          + "\"recommender.googleapis.com/Insight\022Vprojects/{pr"
-          + "oject}/locations/{location}/insightTypes/{insight_type}/insights/{insight}\022ebill"
-          + "ingAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}/i"
-          + "nsights/{insight}\022Tfolders/{folder}/locations/{location}/insightTypes/{insight_t"
-          + "ype}/insights/{insight}\022`organizations/{organization}/locations/{location}/insig"
-          + "htTypes/{insight_type}/insights/{insight}\"\257\002\n"
+          + "\"recommender.googleapis.com/Insight\022Vprojects/{proj"
+          + "ect}/locations/{location}/insightTypes/{insight_type}/insights/{insight}\022ebillin"
+          + "gAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}/ins"
+          + "ights/{insight}\022Tfolders/{folder}/locations/{location}/insightTypes/{insight_typ"
+          + "e}/insights/{insight}\022`organizations/{organization}/locations/{location}/insight"
+          + "Types/{insight_type}/insights/{insight}\"\257\002\n"
           + "\020InsightStateInfo\022B\n"
-          + "\005state\030\001 \001(\01623."
-          + "google.cloud.recommender.v1.InsightStateInfo.State\022X\n"
-          + "\016state_metadata\030\002 \003(\0132@.goo"
-          + "gle.cloud.recommender.v1.InsightStateInfo.StateMetadataEntry\0324\n"
+          + "\005state\030\001 \001(\01623.go"
+          + "ogle.cloud.recommender.v1.InsightStateInfo.State\022X\n"
+          + "\016state_metadata\030\002 \003(\0132@.googl"
+          + "e.cloud.recommender.v1.InsightStateInfo.StateMetadataEntry\0324\n"
           + "\022StateMetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"G\n"
@@ -122,19 +123,20 @@ public final class InsightProto extends com.google.protobuf.GeneratedFile {
           + "\006ACTIVE\020\001\022\014\n"
           + "\010ACCEPTED\020\002\022\r\n"
           + "\tDISMISSED\020\003B\360\003\n"
-          + "\037com.google.cloud.recommender.v1B\014InsightProtoP\001Z"
-          + "Acloud.google.com/go/recommender/apiv1/r"
-          + "ecommenderpb;recommenderpb\242\002\004CREC\252\002\033Google.Cloud.Recommender.V1\352A\323\002\n"
-          + "&recommender.googleapis.com/InsightType\022Cprojects/{p"
-          + "roject}/locations/{location}/insightTypes/{insight_type}\022RbillingAccounts/{billi"
-          + "ng_account}/locations/{location}/insightTypes/{insight_type}\022Afolders/{folder}/l"
-          + "ocations/{location}/insightTypes/{insight_type}\022Morganizations/{organization}/lo"
-          + "cations/{location}/insightTypes/{insight_type}b\006proto3"
+          + "\037com.google.cloud.recommender.v1B\014InsightProtoP\001ZAc"
+          + "loud.google.com/go/recommender/apiv1/rec"
+          + "ommenderpb;recommenderpb\242\002\004CREC\252\002\033Google.Cloud.Recommender.V1\352A\323\002\n"
+          + "&recommender.googleapis.com/InsightType\022Cprojects/{pro"
+          + "ject}/locations/{location}/insightTypes/{insight_type}\022RbillingAccounts/{billing"
+          + "_account}/locations/{location}/insightTypes/{insight_type}\022Afolders/{folder}/loc"
+          + "ations/{location}/insightTypes/{insight_type}\022Morganizations/{organization}/loca"
+          + "tions/{location}/insightTypes/{insight_type}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -184,12 +186,14 @@ public final class InsightProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

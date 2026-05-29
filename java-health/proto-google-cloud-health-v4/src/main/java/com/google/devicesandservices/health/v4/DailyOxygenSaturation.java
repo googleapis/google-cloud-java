@@ -131,7 +131,24 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
    * sleep.
    * </pre>
    *
-   * <code>double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the averagePercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasAveragePercentage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The average value of the oxygen saturation samples during the
+   * sleep.
+   * </pre>
+   *
+   * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The averagePercentage.
    */
@@ -151,7 +168,26 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
    * samples during sleep.
    * </pre>
    *
-   * <code>double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the lowerBoundPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasLowerBoundPercentage() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The lower bound of the confidence interval of oxygen saturation
+   * samples during sleep.
+   * </pre>
+   *
+   * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The lowerBoundPercentage.
    */
@@ -171,7 +207,26 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
    * samples during sleep.
    * </pre>
    *
-   * <code>double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the upperBoundPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpperBoundPercentage() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The upper bound of the confidence interval of oxygen saturation
+   * samples during sleep.
+   * </pre>
+   *
+   * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The upperBoundPercentage.
    */
@@ -191,7 +246,27 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
    * the past 7-30 days.
    * </pre>
    *
-   * <code>double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the standardDeviationPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasStandardDeviationPercentage() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Standard deviation of the daily oxygen saturation averages from
+   * the past 7-30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardDeviationPercentage.
@@ -218,16 +293,16 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(averagePercentage_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, averagePercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(lowerBoundPercentage_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(3, lowerBoundPercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(upperBoundPercentage_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeDouble(4, upperBoundPercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(standardDeviationPercentage_) != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeDouble(5, standardDeviationPercentage_);
     }
     getUnknownFields().writeTo(output);
@@ -242,16 +317,16 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(averagePercentage_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, averagePercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(lowerBoundPercentage_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, lowerBoundPercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(upperBoundPercentage_) != 0) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, upperBoundPercentage_);
     }
-    if (java.lang.Double.doubleToRawLongBits(standardDeviationPercentage_) != 0) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(5, standardDeviationPercentage_);
     }
@@ -275,14 +350,27 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
     if (hasDate()) {
       if (!getDate().equals(other.getDate())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getAveragePercentage())
-        != java.lang.Double.doubleToLongBits(other.getAveragePercentage())) return false;
-    if (java.lang.Double.doubleToLongBits(getLowerBoundPercentage())
-        != java.lang.Double.doubleToLongBits(other.getLowerBoundPercentage())) return false;
-    if (java.lang.Double.doubleToLongBits(getUpperBoundPercentage())
-        != java.lang.Double.doubleToLongBits(other.getUpperBoundPercentage())) return false;
-    if (java.lang.Double.doubleToLongBits(getStandardDeviationPercentage())
-        != java.lang.Double.doubleToLongBits(other.getStandardDeviationPercentage())) return false;
+    if (hasAveragePercentage() != other.hasAveragePercentage()) return false;
+    if (hasAveragePercentage()) {
+      if (java.lang.Double.doubleToLongBits(getAveragePercentage())
+          != java.lang.Double.doubleToLongBits(other.getAveragePercentage())) return false;
+    }
+    if (hasLowerBoundPercentage() != other.hasLowerBoundPercentage()) return false;
+    if (hasLowerBoundPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getLowerBoundPercentage())
+          != java.lang.Double.doubleToLongBits(other.getLowerBoundPercentage())) return false;
+    }
+    if (hasUpperBoundPercentage() != other.hasUpperBoundPercentage()) return false;
+    if (hasUpperBoundPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getUpperBoundPercentage())
+          != java.lang.Double.doubleToLongBits(other.getUpperBoundPercentage())) return false;
+    }
+    if (hasStandardDeviationPercentage() != other.hasStandardDeviationPercentage()) return false;
+    if (hasStandardDeviationPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getStandardDeviationPercentage())
+          != java.lang.Double.doubleToLongBits(other.getStandardDeviationPercentage()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -298,26 +386,34 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
     }
-    hash = (37 * hash) + AVERAGE_PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getAveragePercentage()));
-    hash = (37 * hash) + LOWER_BOUND_PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getLowerBoundPercentage()));
-    hash = (37 * hash) + UPPER_BOUND_PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getUpperBoundPercentage()));
-    hash = (37 * hash) + STANDARD_DEVIATION_PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getStandardDeviationPercentage()));
+    if (hasAveragePercentage()) {
+      hash = (37 * hash) + AVERAGE_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getAveragePercentage()));
+    }
+    if (hasLowerBoundPercentage()) {
+      hash = (37 * hash) + LOWER_BOUND_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getLowerBoundPercentage()));
+    }
+    if (hasUpperBoundPercentage()) {
+      hash = (37 * hash) + UPPER_BOUND_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getUpperBoundPercentage()));
+    }
+    if (hasStandardDeviationPercentage()) {
+      hash = (37 * hash) + STANDARD_DEVIATION_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getStandardDeviationPercentage()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -524,15 +620,19 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.averagePercentage_ = averagePercentage_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.lowerBoundPercentage_ = lowerBoundPercentage_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.upperBoundPercentage_ = upperBoundPercentage_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.standardDeviationPercentage_ = standardDeviationPercentage_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -554,16 +654,16 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
       if (other.hasDate()) {
         mergeDate(other.getDate());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getAveragePercentage()) != 0) {
+      if (other.hasAveragePercentage()) {
         setAveragePercentage(other.getAveragePercentage());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getLowerBoundPercentage()) != 0) {
+      if (other.hasLowerBoundPercentage()) {
         setLowerBoundPercentage(other.getLowerBoundPercentage());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getUpperBoundPercentage()) != 0) {
+      if (other.hasUpperBoundPercentage()) {
         setUpperBoundPercentage(other.getUpperBoundPercentage());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getStandardDeviationPercentage()) != 0) {
+      if (other.hasStandardDeviationPercentage()) {
         setStandardDeviationPercentage(other.getStandardDeviationPercentage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -835,7 +935,26 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * sleep.
      * </pre>
      *
-     * <code>double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the averagePercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasAveragePercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The average value of the oxygen saturation samples during the
+     * sleep.
+     * </pre>
+     *
+     * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The averagePercentage.
      */
@@ -852,7 +971,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * sleep.
      * </pre>
      *
-     * <code>double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The averagePercentage to set.
      * @return This builder for chaining.
@@ -873,7 +993,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * sleep.
      * </pre>
      *
-     * <code>double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -894,7 +1015,26 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the lowerBoundPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasLowerBoundPercentage() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The lower bound of the confidence interval of oxygen saturation
+     * samples during sleep.
+     * </pre>
+     *
+     * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The lowerBoundPercentage.
      */
@@ -911,7 +1051,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The lowerBoundPercentage to set.
      * @return This builder for chaining.
@@ -932,7 +1073,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -953,7 +1095,26 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the upperBoundPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpperBoundPercentage() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The upper bound of the confidence interval of oxygen saturation
+     * samples during sleep.
+     * </pre>
+     *
+     * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The upperBoundPercentage.
      */
@@ -970,7 +1131,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The upperBoundPercentage to set.
      * @return This builder for chaining.
@@ -991,7 +1153,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * samples during sleep.
      * </pre>
      *
-     * <code>double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1012,7 +1175,27 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * the past 7-30 days.
      * </pre>
      *
-     * <code>double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardDeviationPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardDeviationPercentage() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Standard deviation of the daily oxygen saturation averages from
+     * the past 7-30 days.
+     * </pre>
+     *
+     * <code>
+     * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The standardDeviationPercentage.
@@ -1030,7 +1213,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * the past 7-30 days.
      * </pre>
      *
-     * <code>double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The standardDeviationPercentage to set.
@@ -1052,7 +1236,8 @@ public final class DailyOxygenSaturation extends com.google.protobuf.GeneratedMe
      * the past 7-30 days.
      * </pre>
      *
-     * <code>double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

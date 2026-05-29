@@ -54,6 +54,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
   private TranslationTaskResult() {
     translatedLiterals_ = java.util.Collections.emptyList();
     reportLogMessages_ = java.util.Collections.emptyList();
+    consoleUri_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -235,6 +236,59 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     return reportLogMessages_.get(index);
   }
 
+  public static final int CONSOLE_URI_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consoleUri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Console URI for the migration workflow.
+   * </pre>
+   *
+   * <code>string console_uri = 3;</code>
+   *
+   * @return The consoleUri.
+   */
+  @java.lang.Override
+  public java.lang.String getConsoleUri() {
+    java.lang.Object ref = consoleUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consoleUri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Console URI for the migration workflow.
+   * </pre>
+   *
+   * <code>string console_uri = 3;</code>
+   *
+   * @return The bytes for consoleUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConsoleUriBytes() {
+    java.lang.Object ref = consoleUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      consoleUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -255,6 +309,9 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < reportLogMessages_.size(); i++) {
       output.writeMessage(2, reportLogMessages_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consoleUri_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, consoleUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -271,6 +328,9 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < reportLogMessages_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, reportLogMessages_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(consoleUri_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, consoleUri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -290,6 +350,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
 
     if (!getTranslatedLiteralsList().equals(other.getTranslatedLiteralsList())) return false;
     if (!getReportLogMessagesList().equals(other.getReportLogMessagesList())) return false;
+    if (!getConsoleUri().equals(other.getConsoleUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -309,6 +370,8 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + REPORT_LOG_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getReportLogMessagesList().hashCode();
     }
+    hash = (37 * hash) + CONSOLE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getConsoleUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,6 +527,7 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         reportLogMessagesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      consoleUri_ = "";
       return this;
     }
 
@@ -525,6 +589,9 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
     private void buildPartial0(
         com.google.cloud.bigquery.migration.v2.TranslationTaskResult result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consoleUri_ = consoleUri_;
+      }
     }
 
     @java.lang.Override
@@ -595,6 +662,11 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (!other.getConsoleUri().isEmpty()) {
+        consoleUri_ = other.consoleUri_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -648,6 +720,12 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                consoleUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1467,6 +1545,117 @@ public final class TranslationTaskResult extends com.google.protobuf.GeneratedMe
         reportLogMessages_ = null;
       }
       return reportLogMessagesBuilder_;
+    }
+
+    private java.lang.Object consoleUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Console URI for the migration workflow.
+     * </pre>
+     *
+     * <code>string console_uri = 3;</code>
+     *
+     * @return The consoleUri.
+     */
+    public java.lang.String getConsoleUri() {
+      java.lang.Object ref = consoleUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consoleUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Console URI for the migration workflow.
+     * </pre>
+     *
+     * <code>string console_uri = 3;</code>
+     *
+     * @return The bytes for consoleUri.
+     */
+    public com.google.protobuf.ByteString getConsoleUriBytes() {
+      java.lang.Object ref = consoleUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        consoleUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Console URI for the migration workflow.
+     * </pre>
+     *
+     * <code>string console_uri = 3;</code>
+     *
+     * @param value The consoleUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsoleUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      consoleUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Console URI for the migration workflow.
+     * </pre>
+     *
+     * <code>string console_uri = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConsoleUri() {
+      consoleUri_ = getDefaultInstance().getConsoleUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Console URI for the migration workflow.
+     * </pre>
+     *
+     * <code>string console_uri = 3;</code>
+     *
+     * @param value The bytes for consoleUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsoleUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      consoleUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.migration.v2.TranslationTaskResult)

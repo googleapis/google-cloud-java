@@ -71,7 +71,21 @@ public interface DailyOxygenSaturationOrBuilder
    * sleep.
    * </pre>
    *
-   * <code>double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the averagePercentage field is set.
+   */
+  boolean hasAveragePercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The average value of the oxygen saturation samples during the
+   * sleep.
+   * </pre>
+   *
+   * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The averagePercentage.
    */
@@ -85,7 +99,23 @@ public interface DailyOxygenSaturationOrBuilder
    * samples during sleep.
    * </pre>
    *
-   * <code>double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the lowerBoundPercentage field is set.
+   */
+  boolean hasLowerBoundPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The lower bound of the confidence interval of oxygen saturation
+   * samples during sleep.
+   * </pre>
+   *
+   * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The lowerBoundPercentage.
    */
@@ -99,7 +129,23 @@ public interface DailyOxygenSaturationOrBuilder
    * samples during sleep.
    * </pre>
    *
-   * <code>double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the upperBoundPercentage field is set.
+   */
+  boolean hasUpperBoundPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The upper bound of the confidence interval of oxygen saturation
+   * samples during sleep.
+   * </pre>
+   *
+   * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The upperBoundPercentage.
    */
@@ -113,7 +159,24 @@ public interface DailyOxygenSaturationOrBuilder
    * the past 7-30 days.
    * </pre>
    *
-   * <code>double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the standardDeviationPercentage field is set.
+   */
+  boolean hasStandardDeviationPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Standard deviation of the daily oxygen saturation averages from
+   * the past 7-30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double standard_deviation_percentage = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardDeviationPercentage.

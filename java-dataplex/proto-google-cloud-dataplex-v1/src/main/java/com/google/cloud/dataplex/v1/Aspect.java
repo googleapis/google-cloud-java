@@ -24,7 +24,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * An aspect is a single piece of metadata describing an entry.
+ * Represents a single piece of metadata describing an entry or entry link.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.Aspect}
@@ -620,7 +620,7 @@ public final class Aspect extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An aspect is a single piece of metadata describing an entry.
+   * Represents a single piece of metadata describing an entry or entry link.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.Aspect}

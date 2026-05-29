@@ -524,7 +524,8 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.
@@ -540,7 +541,8 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.
@@ -556,7 +558,8 @@ public interface FirewallPolicyOrBuilder
    *
    *
    * <pre>
-   * The type of the firewall policy. This field can be eitherVPC_POLICY or RDMA_ROCE_POLICY.
+   * The type of the firewall policy. This field can be one of
+   * VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY.
    *
    * Note: if not specified then VPC_POLICY will be used.
    * Check the PolicyType enum for the list of possible values.

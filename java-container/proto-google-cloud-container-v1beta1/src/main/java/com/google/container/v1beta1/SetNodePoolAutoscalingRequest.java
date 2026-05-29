@@ -92,7 +92,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4918
+   *     See google/container/v1beta1/cluster_service.proto;l=4952
    * @return The projectId.
    */
   @java.lang.Override
@@ -121,7 +121,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4918
+   *     See google/container/v1beta1/cluster_service.proto;l=4952
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -156,7 +156,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4924
+   *     google/container/v1beta1/cluster_service.proto;l=4958
    * @return The zone.
    */
   @java.lang.Override
@@ -186,7 +186,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4924
+   *     google/container/v1beta1/cluster_service.proto;l=4958
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -219,7 +219,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4928
+   *     See google/container/v1beta1/cluster_service.proto;l=4962
    * @return The clusterId.
    */
   @java.lang.Override
@@ -247,7 +247,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4928
+   *     See google/container/v1beta1/cluster_service.proto;l=4962
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4932
+   *     See google/container/v1beta1/cluster_service.proto;l=4966
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -308,7 +308,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=4932
+   *     See google/container/v1beta1/cluster_service.proto;l=4966
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -907,7 +907,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4918
+     *     See google/container/v1beta1/cluster_service.proto;l=4952
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -935,7 +935,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4918
+     *     See google/container/v1beta1/cluster_service.proto;l=4952
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -963,7 +963,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4918
+     *     See google/container/v1beta1/cluster_service.proto;l=4952
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -990,7 +990,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4918
+     *     See google/container/v1beta1/cluster_service.proto;l=4952
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1013,7 +1013,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4918
+     *     See google/container/v1beta1/cluster_service.proto;l=4952
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1044,7 +1044,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4924
+     *     google/container/v1beta1/cluster_service.proto;l=4958
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1073,7 +1073,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4924
+     *     google/container/v1beta1/cluster_service.proto;l=4958
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1102,7 +1102,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4924
+     *     google/container/v1beta1/cluster_service.proto;l=4958
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1130,7 +1130,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4924
+     *     google/container/v1beta1/cluster_service.proto;l=4958
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1154,7 +1154,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4924
+     *     google/container/v1beta1/cluster_service.proto;l=4958
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1183,7 +1183,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4928
+     *     See google/container/v1beta1/cluster_service.proto;l=4962
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1210,7 +1210,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4928
+     *     See google/container/v1beta1/cluster_service.proto;l=4962
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1237,7 +1237,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4928
+     *     See google/container/v1beta1/cluster_service.proto;l=4962
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1263,7 +1263,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4928
+     *     See google/container/v1beta1/cluster_service.proto;l=4962
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1285,7 +1285,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=4928
+     *     See google/container/v1beta1/cluster_service.proto;l=4962
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1314,7 +1314,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4932
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4966
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -1341,7 +1341,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4932
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4966
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -1368,7 +1368,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4932
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4966
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1394,7 +1394,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4932
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4966
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1416,7 +1416,7 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.SetNodePoolAutoscalingRequest.node_pool_id is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4932
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4966
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
