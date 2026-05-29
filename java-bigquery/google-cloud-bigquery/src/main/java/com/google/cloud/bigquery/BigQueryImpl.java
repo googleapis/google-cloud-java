@@ -452,7 +452,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.createJob")
-              .setAllAttributes(jobInfo.getJobId().getOtelAttributes())
+              .setAllAttributes(jobInfo.getJobId() != null ? jobInfo.getJobId().getOtelAttributes() : null)
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
@@ -2125,7 +2125,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.getQueryResults")
-              .setAllAttributes(jobId.getOtelAttributes())
+              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : null)
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
