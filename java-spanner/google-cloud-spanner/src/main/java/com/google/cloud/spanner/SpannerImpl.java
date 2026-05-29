@@ -309,6 +309,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         if (clientId == null) {
           clientId = nextDatabaseClientId(db);
         }
+        getOptions().initializeBuiltInMetrics(db);
         MultiplexedSessionDatabaseClient multiplexedSessionDatabaseClient =
             new MultiplexedSessionDatabaseClient(SpannerImpl.this.getSessionClient(db));
         DatabaseClientImpl dbClient =
@@ -337,6 +338,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (this.dbBatchClients.containsKey(db)) {
         return this.dbBatchClients.get(db);
       }
+      getOptions().initializeBuiltInMetrics(db);
       BatchClientImpl batchClient = new BatchClientImpl(getSessionClient(db));
       this.dbBatchClients.put(db, batchClient);
       return batchClient;
