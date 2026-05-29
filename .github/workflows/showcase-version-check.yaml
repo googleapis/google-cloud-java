@@ -57,7 +57,6 @@ jobs:
             -commit "${{ steps.extract_commit.outputs.commit }}"
           exit_code=$?
           set -e
-
           if [ $exit_code -eq 0 ]; then
             echo "Verification successful!"
             exit 0
@@ -69,7 +68,6 @@ jobs:
             echo "Error: Unexpected verification failure (exit code $exit_code)."
             exit 1
           fi
-
       - name: Create issue on mismatch
         if: failure() && env.MISMATCH == 'true'
         env:
@@ -79,7 +77,6 @@ jobs:
             -R "${{ github.repository }}" \
             -t "Showcase Version Mismatch: librarian.yaml and pom.xml out of sync" \
             -b "The Showcase version in java-showcase/gapic-showcase/pom.xml and the commit in librarian.yaml do not match. Please update them to match. See logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
       - name: Create issue on workflow failure
         if: failure() && env.MISMATCH != 'true'
         env:
