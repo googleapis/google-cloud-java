@@ -15,39 +15,22 @@ name: Librarian generate diff check on pull requests
 on:
   pull_request:
 
-env:
-  REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
-  GITHUB_REPOSITORY: ${{ github.repository }}
-
 jobs:
   library_generation:
     runs-on: ubuntu-24.04
     steps:
-    - name: Determine whether the pull request comes from a fork
-      run: |
-        if [[ "${GITHUB_REPOSITORY}" != "${REPO_FULL_NAME}" ]]; then
-          echo "This PR comes from a fork. Skip library generation."
-          echo "SHOULD_RUN=false" >> $GITHUB_ENV
-        else
-          echo "SHOULD_RUN=true" >> $GITHUB_ENV
-        fi
     - uses: actions/checkout@v4
-      if: env.SHOULD_RUN == 'true'
       with:
         fetch-depth: 0
-        token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
     - uses: actions/setup-go@v5
-      if: env.SHOULD_RUN == 'true'
       with:
         go-version: 'stable'
     - name: Install Librarian
-      if: env.SHOULD_RUN == 'true'
       run: |
         V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
         echo "Installing librarian version $V"
         go install github.com/googleapis/librarian/cmd/librarian@$V
     - name: Install protoc
-      if: env.SHOULD_RUN == 'true'
       run: |
         set -e
         VERSION="33.2"
@@ -56,13 +39,11 @@ jobs:
         sudo unzip -o /tmp/protoc.zip
         protoc --version
     - uses: actions/setup-java@v4
-      if: env.SHOULD_RUN == 'true'
       with:
         java-version: "17"
         distribution: "temurin"
         cache: "maven"
     - name: Verify Java and Maven installation
-      if: env.SHOULD_RUN == 'true'
       run: |
         java -version
         if ! command -v mvn &> /dev/null; then
@@ -70,22 +51,18 @@ jobs:
         fi
         mvn -version
     - uses: actions/setup-python@v5
-      if: env.SHOULD_RUN == 'true'
       with:
         python-version: "3.12"
         cache: 'pip'
     - name: Run librarian install
-      if: env.SHOULD_RUN == 'true'
       run: |
         librarian install
         echo "$HOME/java_tools/bin" >> $GITHUB_PATH
     - name: Run librarian generate
-      if: env.SHOULD_RUN == 'true'
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
       run: |
         librarian generate --all
     - name: Check for generated code changes
-      if: env.SHOULD_RUN == 'true'
       run: |
         git diff --exit-code
