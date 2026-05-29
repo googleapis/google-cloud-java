@@ -36,7 +36,7 @@ jobs:
         id: extract_version
         shell: bash
         run: |
-          version=$(mvn help:evaluate -f java-showcase/gapic-showcase/pom.xml -Dexpression=gapic-showcase.version -q -DforceStdout 2>/dev/null || true)
+          version=$(awk -F'[<>]' '/gapic-showcase.version/{print $3; exit}' java-showcase/gapic-showcase/pom.xml)
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Extract showcase commit from librarian.yaml
         id: extract_commit
