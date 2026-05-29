@@ -32,6 +32,10 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.trace.v1.TraceServiceClient;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
+import com.google.gson.JsonObject;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,7 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class ITOpenTelemetryTest {
+public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String CONNECTION_URL =
@@ -161,6 +165,88 @@ public class ITOpenTelemetryTest {
     assertTrue(
         foundParentExecuteQuery,
         "Traces must contain JDBC parent span 'BigQueryStatement.executeQuery'");
+  }
+
+  @Test
+  public void testExecute_withCustomCredentialsJson() throws Exception {
+    JsonObject authJson = getAuthJson();
+    DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+    ds.setEnableGcpTraceExporter(true);
+    ds.setGcpTelemetryProjectId(PROJECT_ID);
+    ds.setGcpTelemetryCredentials(authJson.toString());
+
+    verifyTraceDelivery(ds);
+  }
+
+  @Test
+  public void testExecute_withCustomCredentialsFilePath() throws Exception {
+    JsonObject authJson = getAuthJson();
+    File tempFile = File.createTempFile("auth", ".json");
+    tempFile.deleteOnExit();
+    Files.write(tempFile.toPath(), authJson.toString().getBytes(StandardCharsets.UTF_8));
+
+    DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+    ds.setEnableGcpTraceExporter(true);
+    ds.setGcpTelemetryProjectId(PROJECT_ID);
+    ds.setGcpTelemetryCredentials(tempFile.getAbsolutePath());
+
+    verifyTraceDelivery(ds);
+  }
+
+  @Test
+  public void testExecute_withHttpProtocol() throws Exception {
+    JsonObject authJson = getAuthJson();
+    System.setProperty("otel.exporter.otlp.protocol", "http/protobuf");
+
+    try {
+      DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+      ds.setEnableGcpTraceExporter(true);
+      ds.setGcpTelemetryProjectId(PROJECT_ID);
+      ds.setGcpTelemetryCredentials(authJson.toString());
+
+      verifyTraceDelivery(ds);
+    } finally {
+      System.clearProperty("otel.exporter.otlp.protocol");
+    }
+  }
+
+  @Test
+  public void testExecute_withGrpcProtocol() throws Exception {
+    JsonObject authJson = getAuthJson();
+    System.setProperty("otel.exporter.otlp.protocol", "grpc");
+
+    try {
+      DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+      ds.setEnableGcpTraceExporter(true);
+      ds.setGcpTelemetryProjectId(PROJECT_ID);
+      ds.setGcpTelemetryCredentials(authJson.toString());
+
+      verifyTraceDelivery(ds);
+    } finally {
+      System.clearProperty("otel.exporter.otlp.protocol");
+    }
+  }
+
+  private void verifyTraceDelivery(DataSource ds) throws Exception {
+    ds.setEnableGcpLogExporter(true);
+    ds.setLogLevel("5");
+
+    String connectionUuid = null;
+    try (Connection connection = ds.getConnection();
+        Statement statement = connection.createStatement()) {
+
+      BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
+      connectionUuid = bqConnection.getConnectionId();
+
+      String query = "SELECT 1;";
+      try (ResultSet rs = statement.executeQuery(query)) {
+        assertTrue(rs.next());
+      }
+    }
+
+    String traceId = verifyAndFetchLogs(connectionUuid);
+    Trace trace = verifyAndFetchTrace(traceId);
+    assertNotNull(trace, "Trace must be found");
   }
 
   private String verifyAndFetchLogs(String connectionUuid) throws Exception {

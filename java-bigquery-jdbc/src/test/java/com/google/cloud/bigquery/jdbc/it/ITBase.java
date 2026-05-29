@@ -17,12 +17,20 @@
 package com.google.cloud.bigquery.jdbc.it;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -289,6 +297,25 @@ public class ITBase extends BigQueryJdbcBaseTest {
         System.getenv(varName),
         "Environment variable " + varName + " is required to perform these tests.");
     return value;
+  }
+
+  protected static JsonObject getAuthJson() throws IOException {
+    final String secret = requireEnvVar("SA_SECRET");
+    JsonObject authJson;
+    // Supporting both formats of SA_SECRET:
+    // - Local runs can point to a json file
+    // - Cloud Build has JSON value
+    try {
+      InputStream stream = Files.newInputStream(Paths.get(secret));
+      InputStreamReader reader = new InputStreamReader(stream);
+      authJson = JsonParser.parseReader(reader).getAsJsonObject();
+    } catch (IOException e) {
+      authJson = JsonParser.parseString(secret).getAsJsonObject();
+    }
+    assertTrue(authJson.has("client_email"));
+    assertTrue(authJson.has("private_key"));
+    assertTrue(authJson.has("project_id"));
+    return authJson;
   }
 
   protected int resultSetRowCount(ResultSet resultSet) throws SQLException {
