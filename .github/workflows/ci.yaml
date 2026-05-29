@@ -25,7 +25,7 @@ jobs:
     permissions:
       pull-requests: read
     outputs:
-      runnable: ${{ steps.filter.outputs.runnable }}
+      runnable: ${{ fromJSON(steps.filter.outputs.all_count) > fromJSON(steps.filter.outputs.workflows_count) }}
     steps:
     - uses: actions/checkout@v6
       # Use this action, rather than a file filter so that we can make this
@@ -36,10 +36,10 @@ jobs:
       id: filter
       with:
         filters: |
-          runnable:
+          all:
             - '**'
-            - '!.github/workflows/**'
-
+          workflows:
+            - '.github/workflows/**'
   # detect whether or note we should run "bulk" (non-handwritten) unit tests
   bulk-filter:
     needs: filter
