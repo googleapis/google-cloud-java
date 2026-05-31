@@ -189,6 +189,10 @@ final class RegionalAccessBoundary implements Serializable {
       throw new IllegalArgumentException("The provided access token is expired.");
     }
 
+    if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory) {
+      url = url.replace("https://iamcredentials.googleapis.com/", "https://iamcredentials.mtls.googleapis.com/");
+    }
+
     HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
     HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(url));
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
