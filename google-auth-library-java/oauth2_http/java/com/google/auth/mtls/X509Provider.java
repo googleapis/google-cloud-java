@@ -110,41 +110,64 @@ public class X509Provider implements MtlsProvider {
    * @throws IOException if a general I/O error occurs while creating the KeyStore
    */
   @Override
-  public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    WorkloadCertificateConfiguration workloadCertConfig =
-        MtlsUtils.getWorkloadCertificateConfiguration(
-            envProvider, propProvider, certConfigPathOverride);
-
-    // Read the certificate and private key file paths into streams.
-    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
-        InputStream privateKeyStream =
-            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
-        SequenceInputStream certAndPrivateKeyStream =
-            new SequenceInputStream(certStream, privateKeyStream)) {
-
-      // Build a key store using the combined stream.
-      return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
-    } catch (CertificateSourceUnavailableException e) {
-      // Throw the CertificateSourceUnavailableException without wrapping.
+  public boolean isAvailable() throws IOException {
+    try {
+      return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
+    } catch (IOException e) {
+      // Broken configuration state defaults to throwing a failure
       throw e;
-    } catch (Exception e) {
-      // Wrap all other exception types to an IOException.
-      throw new IOException("X509Provider: Unexpected IOException:", e);
     }
   }
 
-  /**
-   * Returns true if the X509 mTLS provider is available.
-   *
-   * @throws IOException if a general I/O error occurs while determining availability.
-   */
   @Override
-  public boolean isAvailable() throws IOException {
-    try {
-      this.getKeyStore();
-    } catch (CertificateSourceUnavailableException e) {
-      return false;
+  public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
+    if (!MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
+      throw new CertificateSourceUnavailableException("mTLS is not enabled or cannot be established.");
     }
-    return true;
+
+    // 1. Attempt to load from resolved Config File
+    WorkloadCertificateConfiguration workloadCertConfig = null;
+    try {
+      workloadCertConfig = MtlsUtils.getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
+    } catch (IOException e) {
+      // Ignore configuration file errors here to fall back to SPIFFE discovery
+    }
+
+    if (workloadCertConfig != null) {
+      try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
+          InputStream privateKeyStream = new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+          SequenceInputStream certAndPrivateKeyStream = new SequenceInputStream(certStream, privateKeyStream)) {
+        return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      } catch (Exception e) {
+        throw new IOException("X509Provider: Unexpected error loading from config file:", e);
+      }
+    }
+
+    // 2. Fallback: Load from SPIFFE Credentials
+    File spiffeDir = new File(MtlsUtils.spiffeDirectory);
+    if (spiffeDir.isDirectory()) {
+      File credentialBundle = new File(spiffeDir, MtlsUtils.SPIFFE_CREDENTIAL_BUNDLE_FILE);
+      if (credentialBundle.isFile()) {
+        try (InputStream bundleStream = new FileInputStream(credentialBundle)) {
+          return SecurityUtils.createMtlsKeyStore(bundleStream);
+        } catch (Exception e) {
+          throw new IOException("X509Provider: Unexpected error loading from SPIFFE bundle:", e);
+        }
+      }
+      
+      File certsFile = new File(spiffeDir, MtlsUtils.SPIFFE_CERTIFICATE_FILE);
+      File keyFile = new File(spiffeDir, MtlsUtils.SPIFFE_PRIVATE_KEY_FILE);
+      if (certsFile.isFile() && keyFile.isFile()) {
+        try (InputStream certStream = new FileInputStream(certsFile);
+            InputStream privateKeyStream = new FileInputStream(keyFile);
+            SequenceInputStream certAndPrivateKeyStream = new SequenceInputStream(certStream, privateKeyStream)) {
+          return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+        } catch (Exception e) {
+          throw new IOException("X509Provider: Unexpected error loading from separate SPIFFE files:", e);
+        }
+      }
+    }
+
+    throw new CertificateSourceUnavailableException("mTLS is enabled, but no certificate source was resolved.");
   }
 }

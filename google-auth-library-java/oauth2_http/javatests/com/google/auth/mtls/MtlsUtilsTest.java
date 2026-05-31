@@ -243,4 +243,203 @@ class MtlsUtilsTest {
 
     assertEquals("APPDATA environment variable is not set on Windows.", exception.getMessage());
   }
+
+  // If client certificate usage is explicitly disabled, canMtlsBeEnabled should return false.
+  @Test
+  void canMtlsBeEnabled_allowanceExplicitFalse_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "false";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+    
+    assertFalse(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If client certificate usage is explicitly enabled and a valid configuration is present, canMtlsBeEnabled should return true.
+  @Test
+  void canMtlsBeEnabled_allowanceExplicitTrue_withConfig_returnsTrue() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.createFile(certFile);
+    Files.createFile(keyFile);
+    Files.write(configFile, createJsonConfigString(certFile, keyFile).getBytes());
+
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "true";
+            }
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return configFile.toString();
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If client certificate usage is unset but a valid configuration is present, mTLS should be enabled by default (returns true).
+  @Test
+  void canMtlsBeEnabled_allowanceUnset_withConfig_returnsTrue() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.createFile(certFile);
+    Files.createFile(keyFile);
+    Files.write(configFile, createJsonConfigString(certFile, keyFile).getBytes());
+
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return configFile.toString();
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the GOOGLE_API_CERTIFICATE_CONFIG environment variable points to a non-existent file, canMtlsBeEnabled should throw an IOException.
+  @Test
+  void canMtlsBeEnabled_envVarConfigMissingFile_throwsIOException() throws IOException {
+    Path nonExistentConfig = tempDir.resolve("non_existent.json");
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return nonExistentConfig.toString();
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(
+        IOException.class,
+        () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the well-known gcloud certificate configuration file exists, canMtlsBeEnabled should return true.
+  @Test
+  void canMtlsBeEnabled_wellKnownConfigExists_returnsTrue() throws IOException {
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path configFile = gcloudDir.resolve("certificate_config.json");
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.createFile(certFile);
+    Files.createFile(keyFile);
+    Files.write(configFile, createJsonConfigString(certFile, keyFile).getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        new PropertyProvider() {
+          @Override
+          public String getProperty(String name, String def) {
+            if ("os.name".equals(name)) return "Linux";
+            if ("user.home".equals(name)) return tempDir.toString();
+            return def;
+          }
+        };
+
+    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the configuration file exists but the certificate path it references does not exist, canMtlsBeEnabled should throw an IOException.
+  @Test
+  void canMtlsBeEnabled_configMissingCertFile_throwsIOException() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path nonExistentCert = tempDir.resolve("non_existent_cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.createFile(keyFile);
+    Files.write(configFile, createJsonConfigString(nonExistentCert, keyFile).getBytes());
+
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(
+        IOException.class,
+        () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the configuration file exists but the private key path it references does not exist, canMtlsBeEnabled should throw an IOException.
+  @Test
+  void canMtlsBeEnabled_configMissingKeyFile_throwsIOException() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path certFile = tempDir.resolve("cert.pem");
+    Path nonExistentKey = tempDir.resolve("non_existent_key.pem");
+    Files.createFile(certFile);
+    Files.write(configFile, createJsonConfigString(certFile, nonExistentKey).getBytes());
+
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(
+        IOException.class,
+        () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If no configuration file exists but a SPIFFE credential bundle file is present, canMtlsBeEnabled should return true.
+  @Test
+  void canMtlsBeEnabled_unset_spiffeBundlePresent_returnsTrue() throws IOException {
+    Path spiffeDir = tempDir.resolve("spiffe_workload_bundle");
+    Files.createDirectory(spiffeDir);
+    Files.createFile(spiffeDir.resolve("credentialbundle.pem"));
+
+    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
+    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
+    try {
+      EnvironmentProvider envProvider = name -> null;
+      PropertyProvider propProvider = (name, def) -> def;
+
+      assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    } finally {
+      MtlsUtils.spiffeDirectory = originalSpiffeDir;
+    }
+  }
+
+  // If no configuration file exists but separate SPIFFE certificate and key files are present, canMtlsBeEnabled should return true.
+  @Test
+  void canMtlsBeEnabled_unset_spiffeCertsPresent_returnsTrue() throws IOException {
+    Path spiffeDir = tempDir.resolve("spiffe_workload_certs");
+    Files.createDirectory(spiffeDir);
+    Files.createFile(spiffeDir.resolve("certificates.pem"));
+    Files.createFile(spiffeDir.resolve("private_key.pem"));
+
+    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
+    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
+    try {
+      EnvironmentProvider envProvider = name -> null;
+      PropertyProvider propProvider = (name, def) -> def;
+
+      assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    } finally {
+      MtlsUtils.spiffeDirectory = originalSpiffeDir;
+    }
+  }
+
+  private String createJsonConfigString(Path certPath, Path keyPath) {
+    return "{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+        + certPath.toString().replace("\\", "\\\\")
+        + "\",\"key_path\":\""
+        + keyPath.toString().replace("\\", "\\\\")
+        + "\"}}}";
+  }
 }

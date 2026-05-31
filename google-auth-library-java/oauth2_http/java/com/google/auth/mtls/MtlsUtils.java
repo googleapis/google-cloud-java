@@ -51,6 +51,12 @@ public class MtlsUtils {
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 
+  @com.google.common.annotations.VisibleForTesting
+  static String spiffeDirectory = "/var/run/secrets/workload-spiffe-credentials/";
+  static final String SPIFFE_CREDENTIAL_BUNDLE_FILE = "credentialbundle.pem";
+  static final String SPIFFE_CERTIFICATE_FILE = "certificates.pem";
+  static final String SPIFFE_PRIVATE_KEY_FILE = "private_key.pem";
+
   private MtlsUtils() {
     // Prevent instantiation for Utility class
   }
@@ -136,5 +142,74 @@ public class MtlsUtils {
       }
     }
     return new File(cloudConfigPath, WELL_KNOWN_CERTIFICATE_CONFIG_FILE);
+  }
+
+  /**
+   * Centralized helper method to determine if mutual TLS (mTLS) can be enabled.
+   *
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @param propProvider the property provider to use for resolving system properties
+   * @param certConfigPathOverride optional override path for the configuration file
+   * @return true if mTLS should be enabled, false otherwise
+   * @throws IOException if the configuration file is present but contains missing or malformed files
+   */
+  public static boolean canMtlsBeEnabled(
+      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride) throws IOException {
+    
+    // Check if client certificate usage is allowed
+    String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    if ("false".equalsIgnoreCase(useClientCertificate)) {
+      return false;
+    }
+
+    // Locate and process the certificate configuration file
+    String envPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
+    if (certConfigPathOverride != null || !Strings.isNullOrEmpty(envPath)) {
+      File certConfigFile = new File(certConfigPathOverride != null ? certConfigPathOverride : envPath);
+      if (!certConfigFile.isFile()) {
+        throw new CertificateSourceUnavailableException(
+            "Certificate configuration file does not exist or is not a file: "
+                + certConfigFile.getAbsolutePath());
+      }
+    }
+
+    WorkloadCertificateConfiguration workloadCertConfig = null;
+    try {
+      workloadCertConfig = getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
+    } catch (CertificateSourceUnavailableException e) {
+      // Config file is simply not present. This is fine, fallback to SPIFFE.
+    } catch (IOException e) {
+      // Config file exists but is malformed or points to invalid paths -> throw hard error
+      throw e;
+    }
+
+    if (workloadCertConfig != null) {
+      // Validate referenced files exist
+      File certFile = new File(workloadCertConfig.getCertPath());
+      File keyFile = new File(workloadCertConfig.getPrivateKeyPath());
+      if (!certFile.isFile() || !keyFile.isFile()) {
+        throw new IOException(
+            String.format(
+                "Certificate configuration exists but referenced files are missing: cert_path=%s, key_path=%s",
+                workloadCertConfig.getCertPath(), workloadCertConfig.getPrivateKeyPath()));
+      }
+      return true;
+    }
+
+    // Fallback to SPIFFE discovery if the directory exists
+    File spiffeDir = new File(spiffeDirectory);
+    if (spiffeDir.isDirectory()) {
+      File credentialBundle = new File(spiffeDir, SPIFFE_CREDENTIAL_BUNDLE_FILE);
+      if (credentialBundle.isFile()) {
+        return true;
+      }
+      File certsFile = new File(spiffeDir, SPIFFE_CERTIFICATE_FILE);
+      File keyFile = new File(spiffeDir, SPIFFE_PRIVATE_KEY_FILE);
+      if (certsFile.isFile() && keyFile.isFile()) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
