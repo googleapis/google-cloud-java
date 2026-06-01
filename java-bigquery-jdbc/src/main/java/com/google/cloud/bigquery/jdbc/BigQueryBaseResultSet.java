@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
@@ -673,5 +674,18 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Timestamp getTimestamp(String columnLabel, Calendar cal) throws SQLException {
     return getTimestamp(getColumnIndex(columnLabel), cal);
+  }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 }
