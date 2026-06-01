@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.15.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 3aa565f453bae9dcef06685a6f84b6e48ccdf335
-    sha256: 1e65551719e3fb01f52f4da4373e222e4ee46df985b34ae40e6d06f79b0080cc
+    commit: dae2a496666e372c1ebf56ceb54fe7f467a2c10e
+    sha256: 867490e3ce7818a2011475a888ce5d77c68cb7a13764f47d9aec8cf3038320e0
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -49,7 +48,7 @@ tools:
       local_path: sdk-platform-java/hermetic_build/library_generation
 default:
   java:
-    libraries_bom_version: 26.82.0
+    libraries_bom_version: 26.83.0
 libraries:
   - name: accessapproval
     version: 2.94.0-SNAPSHOT
@@ -1576,6 +1575,18 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Developer Connect API
       product_documentation_override: https://cloud.google.com/developer-connect/docs/overview
+  - name: developerknowledge
+    version: 0.0.1-SNAPSHOT
+    apis:
+      - path: google/developers/knowledge/v1
+    java:
+      api_id_override: developerknowledge.googleapis.com
+      api_description_override: The Developer Knowledge API provides access to Google's developer knowledge
+      artifact_id: google-cloud-developer-knowledge
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
+      library_type_override: GAPIC_AUTO
+      name_pretty_override: Developer Knowledge API
+      product_documentation_override: https://developers.google.com/knowledge
   - name: devicestreaming
     version: 0.33.0-SNAPSHOT
     apis:
