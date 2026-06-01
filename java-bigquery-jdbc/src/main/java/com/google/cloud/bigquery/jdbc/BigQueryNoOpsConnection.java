@@ -58,8 +58,6 @@ abstract class BigQueryNoOpsConnection implements Connection {
   @Override
   public void setCatalog(String catalog) {}
 
-  // TODO: post MVP feature
-
   @Override
   public Map<String, Class<?>> getTypeMap() throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);

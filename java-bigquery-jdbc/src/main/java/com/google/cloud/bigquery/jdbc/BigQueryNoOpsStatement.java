@@ -32,8 +32,6 @@ abstract class BigQueryNoOpsStatement implements Statement {
 
   @Override
   public ResultSet getGeneratedKeys() throws SQLException {
-    // TODO: Returns an empty resultset.
-    // return empty ResultSet
     throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
   }
 
