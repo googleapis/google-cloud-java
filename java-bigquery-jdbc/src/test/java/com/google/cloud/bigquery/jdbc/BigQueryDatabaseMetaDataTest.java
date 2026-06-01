@@ -320,8 +320,8 @@ public class BigQueryDatabaseMetaDataTest {
         dbMetadata.mapBigQueryTypeToJdbc(fieldTimestamp);
     assertEquals(Types.TIMESTAMP, infoTimestamp.jdbcType);
     assertEquals("TIMESTAMP", infoTimestamp.typeName);
-    assertEquals(Integer.valueOf(29), infoTimestamp.columnSize);
-    assertNull(infoTimestamp.decimalDigits);
+    assertEquals(Integer.valueOf(26), infoTimestamp.columnSize);
+    assertEquals(Integer.valueOf(6), infoTimestamp.decimalDigits);
     assertNull(infoTimestamp.numPrecRadix);
 
     // DATETIME -> TIMESTAMP
@@ -333,8 +333,8 @@ public class BigQueryDatabaseMetaDataTest {
         dbMetadata.mapBigQueryTypeToJdbc(fieldDateTime);
     assertEquals(Types.TIMESTAMP, infoDateTime.jdbcType);
     assertEquals("DATETIME", infoDateTime.typeName);
-    assertEquals(Integer.valueOf(29), infoDateTime.columnSize);
-    assertNull(infoDateTime.decimalDigits);
+    assertEquals(Integer.valueOf(26), infoDateTime.columnSize);
+    assertEquals(Integer.valueOf(6), infoDateTime.decimalDigits);
     assertNull(infoDateTime.numPrecRadix);
 
     // NUMERIC -> NUMERIC
@@ -402,6 +402,8 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoDate = dbMetadata.mapBigQueryTypeToJdbc(fieldDate);
     assertEquals(Types.DATE, infoDate.jdbcType);
     assertEquals("DATE", infoDate.typeName);
+    assertEquals(Integer.valueOf(10), infoDate.columnSize);
+    assertEquals(Integer.valueOf(0), infoDate.decimalDigits);
 
     // TIME
     Field fieldTime =
@@ -411,6 +413,8 @@ public class BigQueryDatabaseMetaDataTest {
     BigQueryDatabaseMetaData.ColumnTypeInfo infoTime = dbMetadata.mapBigQueryTypeToJdbc(fieldTime);
     assertEquals(Types.TIME, infoTime.jdbcType);
     assertEquals("TIME", infoTime.typeName);
+    assertEquals(Integer.valueOf(15), infoTime.columnSize);
+    assertEquals(Integer.valueOf(6), infoTime.decimalDigits);
 
     // STRUCT
     Field fieldStruct =
@@ -1295,7 +1299,7 @@ public class BigQueryDatabaseMetaDataTest {
         String.valueOf(DatabaseMetaData.procedureColumnInOut), row.get(4).getStringValue());
     assertEquals(String.valueOf(Types.TIMESTAMP), row.get(5).getStringValue());
     assertEquals("TIMESTAMP", row.get(6).getStringValue());
-    assertEquals("29", row.get(7).getStringValue()); // PRECISION for TIMESTAMP
+    assertEquals("26", row.get(7).getStringValue()); // PRECISION for TIMESTAMP
   }
 
   @Test

@@ -4835,6 +4835,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   // BigQuery STRING represents Unicode character strings (UTF-8).
   // Standard JDBC maps UTF-8/Unicode data to Types.NVARCHAR rather than Types.VARCHAR.
+  // Precision and scale values for temporal types (TIMESTAMP, DATETIME, DATE, TIME) are
+  // aligned with BigQueryResultSetMetadata to ensure consistent metadata behavior.
   private static final Map<StandardSQLTypeName, ColumnTypeInfo> STANDARD_TYPE_INFO =
       ImmutableMap.<StandardSQLTypeName, ColumnTypeInfo>builder()
           .put(StandardSQLTypeName.INT64, new ColumnTypeInfo(Types.BIGINT, "INT64", 19, 0, 10))
@@ -4851,12 +4853,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null))
           .put(
               StandardSQLTypeName.TIMESTAMP,
-              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 29, null, null))
+              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 26, 6, null))
           .put(
               StandardSQLTypeName.DATETIME,
-              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 29, null, null))
-          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, null, null))
-          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null))
+              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 26, 6, null))
+          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, 0, null))
+          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, 6, null))
           .put(
               StandardSQLTypeName.GEOGRAPHY,
               new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null))
