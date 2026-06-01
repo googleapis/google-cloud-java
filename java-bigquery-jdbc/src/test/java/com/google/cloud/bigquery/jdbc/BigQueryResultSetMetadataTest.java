@@ -26,6 +26,8 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.common.collect.ImmutableList;
 import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -267,8 +269,9 @@ public class BigQueryResultSetMetadataTest {
     assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
     assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
 
-    SQLException e =
-        assertThrows(SQLException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
+    BigQueryJdbcException e =
+        assertThrows(
+            BigQueryJdbcException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 

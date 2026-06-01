@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -229,7 +230,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     if (iface.isInstance(this)) {
       return iface.cast(this);
     }
-    throw new SQLException("Cannot unwrap to " + iface.getName());
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
