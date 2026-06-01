@@ -181,9 +181,19 @@ public class BigQueryResultSetMetadataTest {
 
   @Test
   public void testPrecision() throws SQLException {
-    assertThat(resultSetMetaData.getPrecision(10)).isEqualTo(12L);
-    assertThat(resultSetMetaData.getPrecision(1))
-        .isEqualTo(0); // schema doesn't have this info, should be defaulted to 0
+    assertThat(resultSetMetaData.getPrecision(1)).isEqualTo(1);
+    assertThat(resultSetMetaData.getPrecision(2)).isEqualTo(19);
+    assertThat(resultSetMetaData.getPrecision(3)).isEqualTo(15);
+    assertThat(resultSetMetaData.getPrecision(4)).isEqualTo(0);
+    assertThat(resultSetMetaData.getPrecision(5)).isEqualTo(26);
+    assertThat(resultSetMetaData.getPrecision(6)).isEqualTo(0);
+    assertThat(resultSetMetaData.getPrecision(7)).isEqualTo(0);
+    assertThat(resultSetMetaData.getPrecision(8)).isEqualTo(0);
+    assertThat(resultSetMetaData.getPrecision(9)).isEqualTo(0);
+    assertThat(resultSetMetaData.getPrecision(10)).isEqualTo(12);
+    assertThat(resultSetMetaData.getPrecision(11)).isEqualTo(77);
+    assertThat(resultSetMetaData.getPrecision(12)).isEqualTo(15);
+    assertThat(resultSetMetaData.getPrecision(13)).isEqualTo(10);
   }
 
   @Test
@@ -209,8 +219,19 @@ public class BigQueryResultSetMetadataTest {
 
   @Test
   public void testScale() throws SQLException {
-    assertThat(resultSetMetaData.getScale(10)).isEqualTo(9L);
-    assertThat(resultSetMetaData.getScale(4)).isEqualTo(0L);
+    assertThat(resultSetMetaData.getScale(1)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(2)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(3)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(4)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(5)).isEqualTo(6);
+    assertThat(resultSetMetaData.getScale(6)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(7)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(8)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(9)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(10)).isEqualTo(9);
+    assertThat(resultSetMetaData.getScale(11)).isEqualTo(38);
+    assertThat(resultSetMetaData.getScale(12)).isEqualTo(6);
+    assertThat(resultSetMetaData.getScale(13)).isEqualTo(0);
   }
 
   @Test
