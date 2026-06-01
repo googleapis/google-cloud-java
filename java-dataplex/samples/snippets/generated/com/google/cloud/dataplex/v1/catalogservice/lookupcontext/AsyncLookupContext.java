@@ -41,6 +41,7 @@ public class AsyncLookupContext {
           LookupContextRequest.newBuilder()
               .setName("name3373707")
               .addAllResources(new ArrayList<String>())
+              .setContext("context951530927")
               .putAllOptions(new HashMap<String, String>())
               .build();
       ApiFuture<LookupContextResponse> future =

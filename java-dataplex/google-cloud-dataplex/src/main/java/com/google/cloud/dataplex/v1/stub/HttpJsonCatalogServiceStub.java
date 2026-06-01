@@ -87,6 +87,7 @@ import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
 import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
+import com.google.cloud.dataplex.v1.ModifyEntryRequest;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -951,6 +952,42 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ModifyEntryRequest, Entry> modifyEntryMethodDescriptor =
+      ApiMethodDescriptor.<ModifyEntryRequest, Entry>newBuilder()
+          .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ModifyEntry")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<ModifyEntryRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*}:modifyEntry",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ModifyEntryRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ModifyEntryRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Entry>newBuilder()
+                  .setDefaultInstance(Entry.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private static final ApiMethodDescriptor<SearchEntriesRequest, SearchEntriesResponse>
       searchEntriesMethodDescriptor =
           ApiMethodDescriptor.<SearchEntriesRequest, SearchEntriesResponse>newBuilder()
@@ -1658,7 +1695,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
@@ -1673,7 +1709,8 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1715,7 +1752,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
@@ -1730,7 +1766,8 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
-                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1769,7 +1806,6 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
@@ -1784,7 +1820,8 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1854,6 +1891,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
       listEntriesPagedCallable;
   private final UnaryCallable<GetEntryRequest, Entry> getEntryCallable;
   private final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable;
+  private final UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable;
@@ -2237,6 +2275,17 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getEntry())
+            .build();
+    HttpJsonCallSettings<ModifyEntryRequest, Entry> modifyEntryTransportSettings =
+        HttpJsonCallSettings.<ModifyEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(modifyEntryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SearchEntriesRequest, SearchEntriesResponse>
         searchEntriesTransportSettings =
@@ -2623,6 +2672,9 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     this.lookupEntryCallable =
         callableFactory.createUnaryCallable(
             lookupEntryTransportSettings, settings.lookupEntrySettings(), clientContext);
+    this.modifyEntryCallable =
+        callableFactory.createUnaryCallable(
+            modifyEntryTransportSettings, settings.modifyEntrySettings(), clientContext);
     this.searchEntriesCallable =
         callableFactory.createUnaryCallable(
             searchEntriesTransportSettings, settings.searchEntriesSettings(), clientContext);
@@ -2770,6 +2822,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(listEntriesMethodDescriptor);
     methodDescriptors.add(getEntryMethodDescriptor);
     methodDescriptors.add(lookupEntryMethodDescriptor);
+    methodDescriptors.add(modifyEntryMethodDescriptor);
     methodDescriptors.add(searchEntriesMethodDescriptor);
     methodDescriptors.add(createMetadataJobMethodDescriptor);
     methodDescriptors.add(getMetadataJobMethodDescriptor);
@@ -2978,6 +3031,11 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return lookupEntryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable() {
+    return modifyEntryCallable;
   }
 
   @Override

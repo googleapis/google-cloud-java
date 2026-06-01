@@ -25,6 +25,9 @@ package com.google.devicesandservices.health.v4;
  *
  * <pre>
  * Value of a daily rollup for a single civil time interval (aggregation window)
+ * of reconciled data points from all data sources, excluding those data points
+ * that are identified as recorded by wearables in intervals when they were not
+ * actually worn.
  * </pre>
  *
  * Protobuf type {@code google.devicesandservices.health.v4.DailyRollupDataPoint}
@@ -93,10 +96,14 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     RUN_VO2_MAX(18),
     CALORIES_IN_HEART_RATE_ZONE(19),
     ACTIVITY_LEVEL(20),
+    NUTRITION_LOG(21),
     HYDRATION_LOG(22),
     TIME_IN_HEART_RATE_ZONE(23),
     ACTIVE_MINUTES(24),
     SWIM_LENGTHS_DATA(25),
+    CORE_BODY_TEMPERATURE(26),
+    ACTIVE_ENERGY_BURNED(27),
+    BLOOD_GLUCOSE(28),
     VALUE_NOT_SET(0);
     private final int value;
 
@@ -146,6 +153,8 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
           return CALORIES_IN_HEART_RATE_ZONE;
         case 20:
           return ACTIVITY_LEVEL;
+        case 21:
+          return NUTRITION_LOG;
         case 22:
           return HYDRATION_LOG;
         case 23:
@@ -154,6 +163,12 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
           return ACTIVE_MINUTES;
         case 25:
           return SWIM_LENGTHS_DATA;
+        case 26:
+          return CORE_BODY_TEMPERATURE;
+        case 27:
+          return ACTIVE_ENERGY_BURNED;
+        case 28:
+          return BLOOD_GLUCOSE;
         case 0:
           return VALUE_NOT_SET;
         default:
@@ -1131,6 +1146,67 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     return com.google.devicesandservices.health.v4.ActivityLevelRollupValue.getDefaultInstance();
   }
 
+  public static final int NUTRITION_LOG_FIELD_NUMBER = 21;
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+   *
+   * @return Whether the nutritionLog field is set.
+   */
+  @java.lang.Override
+  public boolean hasNutritionLog() {
+    return valueCase_ == 21;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+   *
+   * @return The nutritionLog.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.NutritionLogRollupValue getNutritionLog() {
+    if (valueCase_ == 21) {
+      return (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder
+      getNutritionLogOrBuilder() {
+    if (valueCase_ == 21) {
+      return (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+  }
+
   public static final int HYDRATION_LOG_FIELD_NUMBER = 22;
 
   /**
@@ -1387,6 +1463,201 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     return com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue.getDefaultInstance();
   }
 
+  public static final int CORE_BODY_TEMPERATURE_FIELD_NUMBER = 26;
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+   * </code>
+   *
+   * @return Whether the coreBodyTemperature field is set.
+   */
+  @java.lang.Override
+  public boolean hasCoreBodyTemperature() {
+    return valueCase_ == 26;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+   * </code>
+   *
+   * @return The coreBodyTemperature.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+      getCoreBodyTemperature() {
+    if (valueCase_ == 26) {
+      return (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder
+      getCoreBodyTemperatureOrBuilder() {
+    if (valueCase_ == 26) {
+      return (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+        .getDefaultInstance();
+  }
+
+  public static final int ACTIVE_ENERGY_BURNED_FIELD_NUMBER = 27;
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+   * </code>
+   *
+   * @return Whether the activeEnergyBurned field is set.
+   */
+  @java.lang.Override
+  public boolean hasActiveEnergyBurned() {
+    return valueCase_ == 27;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+   * </code>
+   *
+   * @return The activeEnergyBurned.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+      getActiveEnergyBurned() {
+    if (valueCase_ == 27) {
+      return (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder
+      getActiveEnergyBurnedOrBuilder() {
+    if (valueCase_ == 27) {
+      return (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+        .getDefaultInstance();
+  }
+
+  public static final int BLOOD_GLUCOSE_FIELD_NUMBER = 28;
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+   *
+   * @return Whether the bloodGlucose field is set.
+   */
+  @java.lang.Override
+  public boolean hasBloodGlucose() {
+    return valueCase_ == 28;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+   *
+   * @return The bloodGlucose.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.BloodGlucoseRollupValue getBloodGlucose() {
+    if (valueCase_ == 28) {
+      return (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder
+      getBloodGlucoseOrBuilder() {
+    if (valueCase_ == 28) {
+      return (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_;
+    }
+    return com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+  }
+
   public static final int CIVIL_START_TIME_FIELD_NUMBER = 1;
   private com.google.devicesandservices.health.v4.CivilDateTime civilStartTime_;
 
@@ -1571,6 +1842,10 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           20, (com.google.devicesandservices.health.v4.ActivityLevelRollupValue) value_);
     }
+    if (valueCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_);
+    }
     if (valueCase_ == 22) {
       output.writeMessage(
           22, (com.google.devicesandservices.health.v4.HydrationLogRollupValue) value_);
@@ -1586,6 +1861,18 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     if (valueCase_ == 25) {
       output.writeMessage(
           25, (com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue) value_);
+    }
+    if (valueCase_ == 26) {
+      output.writeMessage(
+          26, (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_);
+    }
+    if (valueCase_ == 27) {
+      output.writeMessage(
+          27, (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_);
+    }
+    if (valueCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1682,6 +1969,11 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, (com.google.devicesandservices.health.v4.ActivityLevelRollupValue) value_);
     }
+    if (valueCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_);
+    }
     if (valueCase_ == 22) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1701,6 +1993,21 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               25, (com.google.devicesandservices.health.v4.SwimLengthsDataRollupValue) value_);
+    }
+    if (valueCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_);
+    }
+    if (valueCase_ == 27) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_);
+    }
+    if (valueCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1775,6 +2082,9 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       case 20:
         if (!getActivityLevel().equals(other.getActivityLevel())) return false;
         break;
+      case 21:
+        if (!getNutritionLog().equals(other.getNutritionLog())) return false;
+        break;
       case 22:
         if (!getHydrationLog().equals(other.getHydrationLog())) return false;
         break;
@@ -1786,6 +2096,15 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         break;
       case 25:
         if (!getSwimLengthsData().equals(other.getSwimLengthsData())) return false;
+        break;
+      case 26:
+        if (!getCoreBodyTemperature().equals(other.getCoreBodyTemperature())) return false;
+        break;
+      case 27:
+        if (!getActiveEnergyBurned().equals(other.getActiveEnergyBurned())) return false;
+        break;
+      case 28:
+        if (!getBloodGlucose().equals(other.getBloodGlucose())) return false;
         break;
       case 0:
       default:
@@ -1870,6 +2189,10 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         hash = (37 * hash) + ACTIVITY_LEVEL_FIELD_NUMBER;
         hash = (53 * hash) + getActivityLevel().hashCode();
         break;
+      case 21:
+        hash = (37 * hash) + NUTRITION_LOG_FIELD_NUMBER;
+        hash = (53 * hash) + getNutritionLog().hashCode();
+        break;
       case 22:
         hash = (37 * hash) + HYDRATION_LOG_FIELD_NUMBER;
         hash = (53 * hash) + getHydrationLog().hashCode();
@@ -1885,6 +2208,18 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       case 25:
         hash = (37 * hash) + SWIM_LENGTHS_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getSwimLengthsData().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + CORE_BODY_TEMPERATURE_FIELD_NUMBER;
+        hash = (53 * hash) + getCoreBodyTemperature().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + ACTIVE_ENERGY_BURNED_FIELD_NUMBER;
+        hash = (53 * hash) + getActiveEnergyBurned().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + BLOOD_GLUCOSE_FIELD_NUMBER;
+        hash = (53 * hash) + getBloodGlucose().hashCode();
         break;
       case 0:
       default:
@@ -1996,6 +2331,9 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Value of a daily rollup for a single civil time interval (aggregation window)
+   * of reconciled data points from all data sources, excluding those data points
+   * that are identified as recorded by wearables in intervals when they were not
+   * actually worn.
    * </pre>
    *
    * Protobuf type {@code google.devicesandservices.health.v4.DailyRollupDataPoint}
@@ -2085,6 +2423,9 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       if (activityLevelBuilder_ != null) {
         activityLevelBuilder_.clear();
       }
+      if (nutritionLogBuilder_ != null) {
+        nutritionLogBuilder_.clear();
+      }
       if (hydrationLogBuilder_ != null) {
         hydrationLogBuilder_.clear();
       }
@@ -2096,6 +2437,15 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       }
       if (swimLengthsDataBuilder_ != null) {
         swimLengthsDataBuilder_.clear();
+      }
+      if (coreBodyTemperatureBuilder_ != null) {
+        coreBodyTemperatureBuilder_.clear();
+      }
+      if (activeEnergyBurnedBuilder_ != null) {
+        activeEnergyBurnedBuilder_.clear();
+      }
+      if (bloodGlucoseBuilder_ != null) {
+        bloodGlucoseBuilder_.clear();
       }
       civilStartTime_ = null;
       if (civilStartTimeBuilder_ != null) {
@@ -2149,12 +2499,12 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         com.google.devicesandservices.health.v4.DailyRollupDataPoint result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.civilStartTime_ =
             civilStartTimeBuilder_ == null ? civilStartTime_ : civilStartTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.civilEndTime_ =
             civilEndTimeBuilder_ == null ? civilEndTime_ : civilEndTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -2211,6 +2561,9 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       if (valueCase_ == 20 && activityLevelBuilder_ != null) {
         result.value_ = activityLevelBuilder_.build();
       }
+      if (valueCase_ == 21 && nutritionLogBuilder_ != null) {
+        result.value_ = nutritionLogBuilder_.build();
+      }
       if (valueCase_ == 22 && hydrationLogBuilder_ != null) {
         result.value_ = hydrationLogBuilder_.build();
       }
@@ -2222,6 +2575,15 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       }
       if (valueCase_ == 25 && swimLengthsDataBuilder_ != null) {
         result.value_ = swimLengthsDataBuilder_.build();
+      }
+      if (valueCase_ == 26 && coreBodyTemperatureBuilder_ != null) {
+        result.value_ = coreBodyTemperatureBuilder_.build();
+      }
+      if (valueCase_ == 27 && activeEnergyBurnedBuilder_ != null) {
+        result.value_ = activeEnergyBurnedBuilder_.build();
+      }
+      if (valueCase_ == 28 && bloodGlucoseBuilder_ != null) {
+        result.value_ = bloodGlucoseBuilder_.build();
       }
     }
 
@@ -2321,6 +2683,11 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
             mergeActivityLevel(other.getActivityLevel());
             break;
           }
+        case NUTRITION_LOG:
+          {
+            mergeNutritionLog(other.getNutritionLog());
+            break;
+          }
         case HYDRATION_LOG:
           {
             mergeHydrationLog(other.getHydrationLog());
@@ -2339,6 +2706,21 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         case SWIM_LENGTHS_DATA:
           {
             mergeSwimLengthsData(other.getSwimLengthsData());
+            break;
+          }
+        case CORE_BODY_TEMPERATURE:
+          {
+            mergeCoreBodyTemperature(other.getCoreBodyTemperature());
+            break;
+          }
+        case ACTIVE_ENERGY_BURNED:
+          {
+            mergeActiveEnergyBurned(other.getActiveEnergyBurned());
+            break;
+          }
+        case BLOOD_GLUCOSE:
+          {
+            mergeBloodGlucose(other.getBloodGlucose());
             break;
           }
         case VALUE_NOT_SET:
@@ -2376,14 +2758,14 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     internalGetCivilStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCivilEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 18
             case 42:
@@ -2490,6 +2872,13 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
                 valueCase_ = 20;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetNutritionLogFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 21;
+                break;
+              } // case 170
             case 178:
               {
                 input.readMessage(
@@ -2518,6 +2907,27 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
                 valueCase_ = 25;
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    internalGetCoreBodyTemperatureFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 26;
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    internalGetActiveEnergyBurnedFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 27;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    internalGetBloodGlucoseFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 28;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6359,6 +6769,249 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.NutritionLogRollupValue,
+            com.google.devicesandservices.health.v4.NutritionLogRollupValue.Builder,
+            com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder>
+        nutritionLogBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     *
+     * @return Whether the nutritionLog field is set.
+     */
+    @java.lang.Override
+    public boolean hasNutritionLog() {
+      return valueCase_ == 21;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     *
+     * @return The nutritionLog.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.NutritionLogRollupValue getNutritionLog() {
+      if (nutritionLogBuilder_ == null) {
+        if (valueCase_ == 21) {
+          return (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+      } else {
+        if (valueCase_ == 21) {
+          return nutritionLogBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    public Builder setNutritionLog(
+        com.google.devicesandservices.health.v4.NutritionLogRollupValue value) {
+      if (nutritionLogBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        nutritionLogBuilder_.setMessage(value);
+      }
+      valueCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    public Builder setNutritionLog(
+        com.google.devicesandservices.health.v4.NutritionLogRollupValue.Builder builderForValue) {
+      if (nutritionLogBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        nutritionLogBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    public Builder mergeNutritionLog(
+        com.google.devicesandservices.health.v4.NutritionLogRollupValue value) {
+      if (nutritionLogBuilder_ == null) {
+        if (valueCase_ == 21
+            && value_
+                != com.google.devicesandservices.health.v4.NutritionLogRollupValue
+                    .getDefaultInstance()) {
+          value_ =
+              com.google.devicesandservices.health.v4.NutritionLogRollupValue.newBuilder(
+                      (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 21) {
+          nutritionLogBuilder_.mergeFrom(value);
+        } else {
+          nutritionLogBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    public Builder clearNutritionLog() {
+      if (nutritionLogBuilder_ == null) {
+        if (valueCase_ == 21) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 21) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        nutritionLogBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    public com.google.devicesandservices.health.v4.NutritionLogRollupValue.Builder
+        getNutritionLogBuilder() {
+      return internalGetNutritionLogFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder
+        getNutritionLogOrBuilder() {
+      if ((valueCase_ == 21) && (nutritionLogBuilder_ != null)) {
+        return nutritionLogBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 21) {
+          return (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `nutrition-log` data type, or when requested explicitly using the
+     * `nutrition-log` rollup type identifier.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.NutritionLogRollupValue,
+            com.google.devicesandservices.health.v4.NutritionLogRollupValue.Builder,
+            com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder>
+        internalGetNutritionLogFieldBuilder() {
+      if (nutritionLogBuilder_ == null) {
+        if (!(valueCase_ == 21)) {
+          value_ =
+              com.google.devicesandservices.health.v4.NutritionLogRollupValue.getDefaultInstance();
+        }
+        nutritionLogBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.NutritionLogRollupValue,
+                com.google.devicesandservices.health.v4.NutritionLogRollupValue.Builder,
+                com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder>(
+                (com.google.devicesandservices.health.v4.NutritionLogRollupValue) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 21;
+      onChanged();
+      return nutritionLogBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4.HydrationLogRollupValue,
             com.google.devicesandservices.health.v4.HydrationLogRollupValue.Builder,
             com.google.devicesandservices.health.v4.HydrationLogRollupValueOrBuilder>
@@ -7381,6 +8034,767 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       return swimLengthsDataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.Builder,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder>
+        coreBodyTemperatureBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     *
+     * @return Whether the coreBodyTemperature field is set.
+     */
+    @java.lang.Override
+    public boolean hasCoreBodyTemperature() {
+      return valueCase_ == 26;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     *
+     * @return The coreBodyTemperature.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+        getCoreBodyTemperature() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (valueCase_ == 26) {
+          return (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+            .getDefaultInstance();
+      } else {
+        if (valueCase_ == 26) {
+          return coreBodyTemperatureBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    public Builder setCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue value) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        coreBodyTemperatureBuilder_.setMessage(value);
+      }
+      valueCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    public Builder setCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.Builder
+            builderForValue) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        coreBodyTemperatureBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    public Builder mergeCoreBodyTemperature(
+        com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue value) {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (valueCase_ == 26
+            && value_
+                != com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+                    .getDefaultInstance()) {
+          value_ =
+              com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.newBuilder(
+                      (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue)
+                          value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 26) {
+          coreBodyTemperatureBuilder_.mergeFrom(value);
+        } else {
+          coreBodyTemperatureBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    public Builder clearCoreBodyTemperature() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (valueCase_ == 26) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 26) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        coreBodyTemperatureBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.Builder
+        getCoreBodyTemperatureBuilder() {
+      return internalGetCoreBodyTemperatureFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder
+        getCoreBodyTemperatureOrBuilder() {
+      if ((valueCase_ == 26) && (coreBodyTemperatureBuilder_ != null)) {
+        return coreBodyTemperatureBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 26) {
+          return (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `core-body-temperature` data type, or when requested explicitly using
+     * the `core-body-temperature` rollup type identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.Builder,
+            com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder>
+        internalGetCoreBodyTemperatureFieldBuilder() {
+      if (coreBodyTemperatureBuilder_ == null) {
+        if (!(valueCase_ == 26)) {
+          value_ =
+              com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue
+                  .getDefaultInstance();
+        }
+        coreBodyTemperatureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue,
+                com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue.Builder,
+                com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder>(
+                (com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 26;
+      onChanged();
+      return coreBodyTemperatureBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.Builder,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder>
+        activeEnergyBurnedBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     *
+     * @return Whether the activeEnergyBurned field is set.
+     */
+    @java.lang.Override
+    public boolean hasActiveEnergyBurned() {
+      return valueCase_ == 27;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     *
+     * @return The activeEnergyBurned.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+        getActiveEnergyBurned() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (valueCase_ == 27) {
+          return (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+            .getDefaultInstance();
+      } else {
+        if (valueCase_ == 27) {
+          return activeEnergyBurnedBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    public Builder setActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue value) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        activeEnergyBurnedBuilder_.setMessage(value);
+      }
+      valueCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    public Builder setActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.Builder
+            builderForValue) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        activeEnergyBurnedBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    public Builder mergeActiveEnergyBurned(
+        com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue value) {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (valueCase_ == 27
+            && value_
+                != com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+                    .getDefaultInstance()) {
+          value_ =
+              com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.newBuilder(
+                      (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue)
+                          value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 27) {
+          activeEnergyBurnedBuilder_.mergeFrom(value);
+        } else {
+          activeEnergyBurnedBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    public Builder clearActiveEnergyBurned() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (valueCase_ == 27) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 27) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        activeEnergyBurnedBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.Builder
+        getActiveEnergyBurnedBuilder() {
+      return internalGetActiveEnergyBurnedFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder
+        getActiveEnergyBurnedOrBuilder() {
+      if ((valueCase_ == 27) && (activeEnergyBurnedBuilder_ != null)) {
+        return activeEnergyBurnedBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 27) {
+          return (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `active-energy-burned` data type.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 27;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.Builder,
+            com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder>
+        internalGetActiveEnergyBurnedFieldBuilder() {
+      if (activeEnergyBurnedBuilder_ == null) {
+        if (!(valueCase_ == 27)) {
+          value_ =
+              com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue
+                  .getDefaultInstance();
+        }
+        activeEnergyBurnedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue,
+                com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue.Builder,
+                com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder>(
+                (com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 27;
+      onChanged();
+      return activeEnergyBurnedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValue,
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.Builder,
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder>
+        bloodGlucoseBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     *
+     * @return Whether the bloodGlucose field is set.
+     */
+    @java.lang.Override
+    public boolean hasBloodGlucose() {
+      return valueCase_ == 28;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     *
+     * @return The bloodGlucose.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.BloodGlucoseRollupValue getBloodGlucose() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (valueCase_ == 28) {
+          return (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+      } else {
+        if (valueCase_ == 28) {
+          return bloodGlucoseBuilder_.getMessage();
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    public Builder setBloodGlucose(
+        com.google.devicesandservices.health.v4.BloodGlucoseRollupValue value) {
+      if (bloodGlucoseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        bloodGlucoseBuilder_.setMessage(value);
+      }
+      valueCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    public Builder setBloodGlucose(
+        com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.Builder builderForValue) {
+      if (bloodGlucoseBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        bloodGlucoseBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    public Builder mergeBloodGlucose(
+        com.google.devicesandservices.health.v4.BloodGlucoseRollupValue value) {
+      if (bloodGlucoseBuilder_ == null) {
+        if (valueCase_ == 28
+            && value_
+                != com.google.devicesandservices.health.v4.BloodGlucoseRollupValue
+                    .getDefaultInstance()) {
+          value_ =
+              com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.newBuilder(
+                      (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 28) {
+          bloodGlucoseBuilder_.mergeFrom(value);
+        } else {
+          bloodGlucoseBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    public Builder clearBloodGlucose() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (valueCase_ == 28) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 28) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        bloodGlucoseBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    public com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.Builder
+        getBloodGlucoseBuilder() {
+      return internalGetBloodGlucoseFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder
+        getBloodGlucoseOrBuilder() {
+      if ((valueCase_ == 28) && (bloodGlucoseBuilder_ != null)) {
+        return bloodGlucoseBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 28) {
+          return (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_;
+        }
+        return com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returned by default when rolling up data points from the
+     * `blood-glucose` data type.
+     * </pre>
+     *
+     * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValue,
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.Builder,
+            com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder>
+        internalGetBloodGlucoseFieldBuilder() {
+      if (bloodGlucoseBuilder_ == null) {
+        if (!(valueCase_ == 28)) {
+          value_ =
+              com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.getDefaultInstance();
+        }
+        bloodGlucoseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.devicesandservices.health.v4.BloodGlucoseRollupValue,
+                com.google.devicesandservices.health.v4.BloodGlucoseRollupValue.Builder,
+                com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder>(
+                (com.google.devicesandservices.health.v4.BloodGlucoseRollupValue) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 28;
+      onChanged();
+      return bloodGlucoseBuilder_;
+    }
+
     private com.google.devicesandservices.health.v4.CivilDateTime civilStartTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4.CivilDateTime,
@@ -7400,7 +8814,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * @return Whether the civilStartTime field is set.
      */
     public boolean hasCivilStartTime() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -7442,7 +8856,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilStartTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7463,7 +8877,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilStartTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7480,7 +8894,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     public Builder mergeCivilStartTime(
         com.google.devicesandservices.health.v4.CivilDateTime value) {
       if (civilStartTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && civilStartTime_ != null
             && civilStartTime_
                 != com.google.devicesandservices.health.v4.CivilDateTime.getDefaultInstance()) {
@@ -7492,7 +8906,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         civilStartTimeBuilder_.mergeFrom(value);
       }
       if (civilStartTime_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7508,7 +8922,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * <code>.google.devicesandservices.health.v4.CivilDateTime civil_start_time = 1;</code>
      */
     public Builder clearCivilStartTime() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       civilStartTime_ = null;
       if (civilStartTimeBuilder_ != null) {
         civilStartTimeBuilder_.dispose();
@@ -7529,7 +8943,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      */
     public com.google.devicesandservices.health.v4.CivilDateTime.Builder
         getCivilStartTimeBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetCivilStartTimeFieldBuilder().getBuilder();
     }
@@ -7599,7 +9013,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * @return Whether the civilEndTime field is set.
      */
     public boolean hasCivilEndTime() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7641,7 +9055,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilEndTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7662,7 +9076,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilEndTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7678,7 +9092,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCivilEndTime(com.google.devicesandservices.health.v4.CivilDateTime value) {
       if (civilEndTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && civilEndTime_ != null
             && civilEndTime_
                 != com.google.devicesandservices.health.v4.CivilDateTime.getDefaultInstance()) {
@@ -7690,7 +9104,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         civilEndTimeBuilder_.mergeFrom(value);
       }
       if (civilEndTime_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -7706,7 +9120,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * <code>.google.devicesandservices.health.v4.CivilDateTime civil_end_time = 2;</code>
      */
     public Builder clearCivilEndTime() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       civilEndTime_ = null;
       if (civilEndTimeBuilder_ != null) {
         civilEndTimeBuilder_.dispose();
@@ -7726,7 +9140,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * <code>.google.devicesandservices.health.v4.CivilDateTime civil_end_time = 2;</code>
      */
     public com.google.devicesandservices.health.v4.CivilDateTime.Builder getCivilEndTimeBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetCivilEndTimeFieldBuilder().getBuilder();
     }

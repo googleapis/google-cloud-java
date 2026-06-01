@@ -18,7 +18,10 @@ package com.google.storage.control.v2.stub;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -52,15 +55,23 @@ import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetFolderRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
+import com.google.storage.control.v2.IntelligenceFinding;
+import com.google.storage.control.v2.IntelligenceFindingRevision;
 import com.google.storage.control.v2.ListAnywhereCachesRequest;
 import com.google.storage.control.v2.ListAnywhereCachesResponse;
 import com.google.storage.control.v2.ListFoldersRequest;
 import com.google.storage.control.v2.ListFoldersResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ManagedFolder;
@@ -69,6 +80,8 @@ import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
 import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
@@ -391,6 +404,82 @@ public class GrpcStorageControlStub extends StorageControlStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingMethodDescriptor =
+          MethodDescriptor.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetIntelligenceFinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetIntelligenceFindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IntelligenceFinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsMethodDescriptor =
+          MethodDescriptor
+              .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListIntelligenceFindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListIntelligenceFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsMethodDescriptor =
+          MethodDescriptor
+              .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/SummarizeIntelligenceFindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SummarizeIntelligenceFindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SummarizeIntelligenceFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionMethodDescriptor =
+          MethodDescriptor
+              .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/GetIntelligenceFindingRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetIntelligenceFindingRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IntelligenceFindingRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindingRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListIntelligenceFindingRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListIntelligenceFindingRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
   private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
@@ -448,6 +537,27 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable;
+  private final UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1013,6 +1123,72 @@ public class GrpcStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
+    GrpcCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingTransportSettings =
+            GrpcCallSettings.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+        listIntelligenceFindingsTransportSettings =
+            GrpcCallSettings
+                .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+        summarizeIntelligenceFindingsTransportSettings =
+            GrpcCallSettings
+                .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                    newBuilder()
+                .setMethodDescriptor(summarizeIntelligenceFindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionTransportSettings =
+            GrpcCallSettings
+                .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+        listIntelligenceFindingRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.createFolderCallable =
         callableFactory.createUnaryCallable(
@@ -1165,6 +1341,46 @@ public class GrpcStorageControlStub extends StorageControlStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.getIntelligenceFindingCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingTransportSettings,
+            settings.getIntelligenceFindingSettings(),
+            clientContext);
+    this.listIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.listIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.getIntelligenceFindingRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingRevisionTransportSettings,
+            settings.getIntelligenceFindingRevisionSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1358,6 +1574,57 @@ public class GrpcStorageControlStub extends StorageControlStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable() {
+    return getIntelligenceFindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable() {
+    return listIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable() {
+    return listIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable() {
+    return summarizeIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable() {
+    return summarizeIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable() {
+    return getIntelligenceFindingRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable() {
+    return listIntelligenceFindingRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable() {
+    return listIntelligenceFindingRevisionsPagedCallable;
   }
 
   @Override

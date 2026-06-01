@@ -77,7 +77,21 @@ public interface VO2MaxOrBuilder
    * weight / min.
    * </pre>
    *
-   * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the vo2Max field is set.
+   */
+  boolean hasVo2Max();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. VO2 max value measured as in ml consumed oxygen / kg of body
+   * weight / min.
+   * </pre>
+   *
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vo2Max.
    */

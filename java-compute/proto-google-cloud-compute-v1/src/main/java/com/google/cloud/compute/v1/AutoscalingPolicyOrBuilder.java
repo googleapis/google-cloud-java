@@ -490,4 +490,44 @@ public interface AutoscalingPolicyOrBuilder
    */
   com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that autoscaler waits for load stabilization before
+   * making scale-in decisions. This is referred to as the
+   * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+   * This might appear as a delay in scaling in but it is an important mechanism
+   * for your application to not have fluctuating size due to short term load
+   * fluctuations.
+   *
+   * The default stabilization period is 600 seconds.
+   * </pre>
+   *
+   * <code>optional int32 stabilization_period_sec = 420200243;</code>
+   *
+   * @return Whether the stabilizationPeriodSec field is set.
+   */
+  boolean hasStabilizationPeriodSec();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that autoscaler waits for load stabilization before
+   * making scale-in decisions. This is referred to as the
+   * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+   * This might appear as a delay in scaling in but it is an important mechanism
+   * for your application to not have fluctuating size due to short term load
+   * fluctuations.
+   *
+   * The default stabilization period is 600 seconds.
+   * </pre>
+   *
+   * <code>optional int32 stabilization_period_sec = 420200243;</code>
+   *
+   * @return The stabilizationPeriodSec.
+   */
+  int getStabilizationPeriodSec();
 }

@@ -56,4 +56,30 @@ public interface SizeInfoOrBuilder
    * @return The searchNetworkMembersCount.
    */
   long getSearchNetworkMembersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated number of members in this user list on YouTube.
+   * </pre>
+   *
+   * <code>int64 youtube_members_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The youtubeMembersCount.
+   */
+  long getYoutubeMembersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated number of members in this user list on Gmail.
+   * </pre>
+   *
+   * <code>int64 gmail_members_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gmailMembersCount.
+   */
+  long getGmailMembersCount();
 }

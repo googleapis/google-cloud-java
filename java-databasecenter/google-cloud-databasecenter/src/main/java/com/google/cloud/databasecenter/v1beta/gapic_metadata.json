@@ -16,6 +16,9 @@
             "AggregateIssueStats": {
               "methods": ["aggregateIssueStats", "aggregateIssueStatsCallable"]
             },
+            "AggregateQueryStats": {
+              "methods": ["aggregateQueryStats", "aggregateQueryStatsPagedCallable", "aggregateQueryStatsCallable"]
+            },
             "QueryDatabaseResourceGroups": {
               "methods": ["queryDatabaseResourceGroups", "queryDatabaseResourceGroupsPagedCallable", "queryDatabaseResourceGroupsCallable"]
             },

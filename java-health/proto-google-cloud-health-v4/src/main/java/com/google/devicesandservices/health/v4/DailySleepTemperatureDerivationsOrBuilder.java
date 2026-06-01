@@ -71,7 +71,25 @@ public interface DailySleepTemperatureDerivationsOrBuilder
    * temperature samples taken from the user’s sleep.
    * </pre>
    *
-   * <code>double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the nightlyTemperatureCelsius field is set.
+   */
+  boolean hasNightlyTemperatureCelsius();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The user's nightly skin temperature. It is the mean of skin
+   * temperature samples taken from the user’s sleep.
+   * </pre>
+   *
+   * <code>
+   * optional double nightly_temperature_celsius = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nightlyTemperatureCelsius.
    */
@@ -85,7 +103,25 @@ public interface DailySleepTemperatureDerivationsOrBuilder
    * user's nightly skin temperature over the past 30 days.
    * </pre>
    *
-   * <code>double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the baselineTemperatureCelsius field is set.
+   */
+  boolean hasBaselineTemperatureCelsius();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user's baseline skin temperature. It is the median of the
+   * user's nightly skin temperature over the past 30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double baseline_temperature_celsius = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The baselineTemperatureCelsius.
    */
@@ -99,7 +135,24 @@ public interface DailySleepTemperatureDerivationsOrBuilder
    * temperature (temperature - baseline) over the past 30 days.
    * </pre>
    *
-   * <code>double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the relativeNightlyStddev30dCelsius field is set.
+   */
+  boolean hasRelativeNightlyStddev30DCelsius();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard deviation of the user’s relative nightly skin
+   * temperature (temperature - baseline) over the past 30 days.
+   * </pre>
+   *
+   * <code>
+   * optional double relative_nightly_stddev_30d_celsius = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The relativeNightlyStddev30dCelsius.

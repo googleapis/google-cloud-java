@@ -144,4 +144,30 @@ public interface TranslationTaskResultOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.GcsReportLogMessageOrBuilder getReportLogMessagesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Console URI for the migration workflow.
+   * </pre>
+   *
+   * <code>string console_uri = 3;</code>
+   *
+   * @return The consoleUri.
+   */
+  java.lang.String getConsoleUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Console URI for the migration workflow.
+   * </pre>
+   *
+   * <code>string console_uri = 3;</code>
+   *
+   * @return The bytes for consoleUri.
+   */
+  com.google.protobuf.ByteString getConsoleUriBytes();
 }

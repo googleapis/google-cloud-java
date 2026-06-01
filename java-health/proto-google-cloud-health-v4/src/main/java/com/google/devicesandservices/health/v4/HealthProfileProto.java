@@ -41,9 +41,21 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_User_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_User_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devicesandservices_health_v4_Profile_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_devicesandservices_health_v4_Profile_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_PairedDevice_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_PairedDevice_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_IrnProfile_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_IrnProfile_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devicesandservices_health_v4_Settings_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -56,6 +68,10 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_devicesandservices_health_v4_GetProfileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_devicesandservices_health_v4_GetProfileRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_GetIrnProfileRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_GetIrnProfileRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devicesandservices_health_v4_UpdateProfileRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -72,6 +88,18 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_devicesandservices_health_v4_GetIdentityRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_devicesandservices_health_v4_GetIdentityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_GetPairedDeviceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_GetPairedDeviceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_ListPairedDevicesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_ListPairedDevicesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devicesandservices_health_v4_ListPairedDevicesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_devicesandservices_health_v4_ListPairedDevicesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -87,7 +115,11 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
           + "proto\032\027google/api/client.proto\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf/field_mask.proto\032\026google/type/date.proto\"\252\004\n"
+          + " google/protobuf/field_mask.proto\032\037go"
+          + "ogle/protobuf/timestamp.proto\032\026google/type/date.proto\"U\n"
+          + "\004User\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010::\352A7\n"
+          + "\032health.googleapis.com/User\022\014users/{user}*\005users2\004user\"\252\004\n"
           + "\007Profile\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\020\n"
           + "\003age\030\006 \001(\005B\003\340A\001\0225\n"
@@ -105,33 +137,59 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
           + ")_user_configured_walking_stride_length_mmB+\n"
           + ")_user_configured_running_stride_length_mmB \n"
           + "\036_auto_walking_stride_length_mmB \n"
-          + "\036_auto_running_stride_length_mm\"\373\016\n"
+          + "\036_auto_running_stride_length_mm\"\356\003\n"
+          + "\014PairedDevice\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022V\n"
+          + "\013device_type\030\003 \001(\0162<.goo"
+          + "gle.devicesandservices.health.v4.PairedDevice.DeviceTypeB\003\340A\003\022\033\n"
+          + "\016battery_status\030\004 \001(\tB\003\340A\003\022\032\n\r"
+          + "battery_level\030\005 \001(\005B\003\340A\003\0227\n"
+          + "\016last_sync_time\030\006"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n"
+          + "\016device_version\030\007 \001(\tB\003\340A\003\022\030\n"
+          + "\013mac_address\030\010 \001(\tB\003\340A\003\022\025\n"
+          + "\010features\030\t \003(\tB\003\340A\003\"A\n\n"
+          + "DeviceType\022\033\n"
+          + "\027DEVICE_TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007TRACKER\020\001\022\t\n"
+          + "\005SCALE\020\002:p\352Am\n"
+          + "\"health.googleapis.com/PairedDevice\022*users/{user}/pairedDevices/{paired_device}*\r"
+          + "pairedDevices2\014pairedDevice\"\356\001\n\n"
+          + "IrnProfile\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
+          + "\021onboarding_status\030\002 \001(\010B\003\340A\002\022\036\n"
+          + "\021enrollment_status\030\003 \001(\010B\003\340A\002\0224\n"
+          + "\013update_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:W\352AT\n"
+          + " health.googleapis.com/IrnProfile\022\027users/{user}/irnProfile*\013irnProfiles2\n"
+          + "irnProfile\"\234\017\n"
           + "\010Settings\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022 \n"
           + "\023auto_stride_enabled\030\002 \001(\010B\003\340A\001\022V\n\r"
-          + "distance_unit\030\005 \001(\0162:.google.devi"
-          + "cesandservices.health.v4.Settings.DistanceUnitB\003\340A\001\022T\n"
-          + "\014glucose_unit\030\007 \001(\01629.goog"
-          + "le.devicesandservices.health.v4.Settings.GlucoseUnitB\003\340A\001\022R\n"
-          + "\013height_unit\030\010 \001(\01628"
-          + ".google.devicesandservices.health.v4.Settings.HeightUnitB\003\340A\001\022\034\n"
+          + "distance_unit\030\005"
+          + " \001(\0162:.google.devicesandservices.health.v4.Settings.DistanceUnitB\003\340A\001\022T\n"
+          + "\014glucose_unit\030\007"
+          + " \001(\01629.google.devicesandservices.health.v4.Settings.GlucoseUnitB\003\340A\001\022R\n"
+          + "\013height_unit\030\010 \001(\01628.google.devicesandserv"
+          + "ices.health.v4.Settings.HeightUnitB\003\340A\001\022\034\n"
           + "\017language_locale\030\t \001(\tB\003\340A\001\0222\n\n"
           + "utc_offset\030\n"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022g\n"
           + "\032stride_length_walking_type\030\r"
-          + " \001(\0162>.google.devicesands"
-          + "ervices.health.v4.Settings.StrideLengthTypeB\003\340A\001\022g\n"
-          + "\032stride_length_running_type\030\016"
-          + " \001(\0162>.google.devicesandservices.health.v4.Settings.StrideLengthTypeB\003\340A\001\022N\n"
-          + "\tswim_unit\030\017"
-          + " \001(\01626.google.devicesandservices.health.v4.Settings.SwimUnitB\003\340A\001\022\\\n"
-          + "\020temperature_unit\030\020 \001(\0162=.google.devicesands"
-          + "ervices.health.v4.Settings.TemperatureUnitB\003\340A\001\022\026\n"
+          + " \001(\0162>."
+          + "google.devicesandservices.health.v4.Settings.StrideLengthTypeB\003\340A\001\022g\n"
+          + "\032stride_length_running_type\030\016 \001(\0162>.google.devicesa"
+          + "ndservices.health.v4.Settings.StrideLengthTypeB\003\340A\001\022N\n"
+          + "\tswim_unit\030\017 \001(\01626.google."
+          + "devicesandservices.health.v4.Settings.SwimUnitB\003\340A\001\022\\\n"
+          + "\020temperature_unit\030\020 \001(\0162=."
+          + "google.devicesandservices.health.v4.Settings.TemperatureUnitB\003\340A\001\022\026\n"
           + "\ttime_zone\030\021 \001(\tB\003\340A\001\022R\n"
-          + "\013weight_unit\030\022"
-          + " \001(\01628.google.devicesandservices.health.v4.Settings.WeightUnitB\003\340A\001\022P\n\n"
-          + "water_unit\030\023"
-          + " \001(\01627.google.devicesandservices.health.v4.Settings.WaterUnitB\003\340A\001\"d\n"
+          + "\013weight_unit\030\022 \001(\01628.google."
+          + "devicesandservices.health.v4.Settings.WeightUnitB\003\340A\001\022P\n\n"
+          + "water_unit\030\023 \001(\01627.goog"
+          + "le.devicesandservices.health.v4.Settings.WaterUnitB\003\340A\001\022\037\n"
+          + "\022food_language_code\030\024 \001(\tB\003\340A\003\"d\n"
           + "\014DistanceUnit\022\035\n"
           + "\031DISTANCE_UNIT_UNSPECIFIED\020\000\022\027\n"
           + "\023DISTANCE_UNIT_MILES\020\001\022\034\n"
@@ -167,8 +225,8 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
           + "WATER_UNIT_ML\020\001\022\024\n"
           + "\020WATER_UNIT_FL_OZ\020\002\022\022\n"
           + "\016WATER_UNIT_CUP\020\003:N\352AK\n"
-          + "\036health.googleapis."
-          + "com/Settings\022\025users/{user}/settings*\010settings2\010settings\"\251\001\n"
+          + "\036health."
+          + "googleapis.com/Settings\022\025users/{user}/settings*\010settings2\010settings\"\251\001\n"
           + "\010Identity\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\033\n"
           + "\016legacy_user_id\030\002 \001(\tB\003\340A\003\022\033\n"
@@ -177,10 +235,13 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
           + "identities2\010identity\"H\n"
           + "\021GetProfileRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
-          + "\035health.googleapis.com/Profile\"\220\001\n"
+          + "\035health.googleapis.com/Profile\"N\n"
+          + "\024GetIrnProfileRequest\0226\n"
+          + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " health.googleapis.com/IrnProfile\"\220\001\n"
           + "\024UpdateProfileRequest\022B\n"
-          + "\007profile\030\001"
-          + " \001(\0132,.google.devicesandservices.health.v4.ProfileB\003\340A\002\0224\n"
+          + "\007profile\030\001 \001(\0132,.goo"
+          + "gle.devicesandservices.health.v4.ProfileB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"J\n"
           + "\022GetSettingsRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
@@ -191,37 +252,59 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"J\n"
           + "\022GetIdentityRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036health.googleapis.com/Identity2\211\n\n"
+          + "\036health.googleapis.com/Identity\"R\n"
+          + "\026GetPairedDeviceRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"health.googleapis.com/PairedDevice\"\207\001\n"
+          + "\030ListPairedDevicesRequest\022:\n"
+          + "\006parent\030\001 \001("
+          + "\tB*\340A\002\372A$\022\"health.googleapis.com/PairedDevice\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\177\n"
+          + "\031ListPairedDevicesResponse\022I\n"
+          + "\016paired_devices\030\001 \003(\01321.g"
+          + "oogle.devicesandservices.health.v4.PairedDevice\022\027\n"
+          + "\017next_page_token\030\002 \001(\t2\252\017\n"
           + "\024HealthProfileService\022\235\001\n\n"
-          + "GetProfile\0226.google.devicesandservices.health.v4.GetProfileR"
-          + "equest\032,.google.devicesandservices.healt"
-          + "h.v4.Profile\")\332A\004name\202\323\344\223\002\034\022\032/v4/{name=users/*/profile}\022\303\001\n\r"
-          + "UpdateProfile\0229.google.devicesandservices.health.v4.UpdatePr"
-          + "ofileRequest\032,.google.devicesandservices"
-          + ".health.v4.Profile\"I\332A\023profile,update_ma"
-          + "sk\202\323\344\223\002-2\"/v4/{profile.name=users/*/profile}:\007profile\022\241\001\n"
-          + "\013GetSettings\0227.google.devicesandservices.health.v4.GetSettingsR"
-          + "equest\032-.google.devicesandservices.healt"
-          + "h.v4.Settings\"*\332A\004name\202\323\344\223\002\035\022\033/v4/{name=users/*/settings}\022\312\001\n"
-          + "\016UpdateSettings\022:.google.devicesandservices.health.v4.Updat"
-          + "eSettingsRequest\032-.google.devicesandserv"
-          + "ices.health.v4.Settings\"M\332A\024settings,upd"
-          + "ate_mask\202\323\344\223\00202$/v4/{settings.name=users/*/settings}:\010settings\022\241\001\n"
-          + "\013GetIdentity\0227.google.devicesandservices.health.v4.Get"
-          + "IdentityRequest\032-.google.devicesandservi"
-          + "ces.health.v4.Identity\"*\332A\004name\202\323\344\223\002\035\022\033/"
-          + "v4/{name=users/*/identity}\032\365\002\312A\025health.g"
-          + "oogleapis.com\322A\331\002https://www.googleapis."
-          + "com/auth/googlehealth.activity_and_fitness.readonly,https://www.googleapis.com/a"
-          + "uth/googlehealth.health_metrics_and_measurements.readonly,https://www.googleapis"
-          + ".com/auth/googlehealth.profile.readonly,https://www.googleapis.com/auth/googlehe"
-          + "alth.settings.readonly,https://www.googl"
-          + "eapis.com/auth/googlehealth.sleep.readonlyB\210\002\n"
-          + "\'com.google.devicesandservices.health.v4B\022HealthProfileProtoP\001ZRgoogle.gol"
-          + "ang.org/genproto/googleapis/devicesandservices/health/apiv4main;healthpb\252\002#Googl"
-          + "e.DevicesAndServices.Health.V4\312\002#Google\\"
-          + "DevicesAndServices\\Health\\V4\352\002&Google::D"
-          + "evicesAndServices::Health::V4b\006proto3"
+          + "GetProfile\0226.google.devicesandservices.health.v4.GetProfil"
+          + "eRequest\032,.google.devicesandservices.hea"
+          + "lth.v4.Profile\")\332A\004name\202\323\344\223\002\034\022\032/v4/{name=users/*/profile}\022\303\001\n\r"
+          + "UpdateProfile\0229.google.devicesandservices.health.v4.Update"
+          + "ProfileRequest\032,.google.devicesandservic"
+          + "es.health.v4.Profile\"I\332A\023profile,update_"
+          + "mask\202\323\344\223\002-2\"/v4/{profile.name=users/*/profile}:\007profile\022\241\001\n"
+          + "\013GetSettings\0227.google.devicesandservices.health.v4.GetSetting"
+          + "sRequest\032-.google.devicesandservices.hea"
+          + "lth.v4.Settings\"*\332A\004name\202\323\344\223\002\035\022\033/v4/{name=users/*/settings}\022\312\001\n"
+          + "\016UpdateSettings\022:.google.devicesandservices.health.v4.Upd"
+          + "ateSettingsRequest\032-.google.devicesandse"
+          + "rvices.health.v4.Settings\"M\332A\024settings,u"
+          + "pdate_mask\202\323\344\223\00202$/v4/{settings.name=users/*/settings}:\010settings\022\241\001\n"
+          + "\013GetIdentity\0227.google.devicesandservices.health.v4.G"
+          + "etIdentityRequest\032-.google.devicesandser"
+          + "vices.health.v4.Identity\"*\332A\004name\202\323\344\223\002\035\022\033/v4/{name=users/*/identity}\022\251\001\n\r"
+          + "GetIrnProfile\0229.google.devicesandservices.healt"
+          + "h.v4.GetIrnProfileRequest\032/.google.devic"
+          + "esandservices.health.v4.IrnProfile\",\332A\004n"
+          + "ame\202\323\344\223\002\037\022\035/v4/{name=users/*/irnProfile}\022\264\001\n"
+          + "\017GetPairedDevice\022;.google.devicesandservices.health.v4.GetPairedDeviceReques"
+          + "t\0321.google.devicesandservices.health.v4."
+          + "PairedDevice\"1\332A\004name\202\323\344\223\002$\022\"/v4/{name=users/*/pairedDevices/*}\022\307\001\n"
+          + "\021ListPairedDevices\022=.google.devicesandservices.health"
+          + ".v4.ListPairedDevicesRequest\032>.google.devicesandservices.health.v4.ListPairedDev"
+          + "icesResponse\"3\332A\006parent\202\323\344\223\002$\022\"/v4/{pare"
+          + "nt=users/*}/pairedDevices\032\351\003\312A\025health.go"
+          + "ogleapis.com\322A\315\003https://www.googleapis.c"
+          + "om/auth/googlehealth.activity_and_fitness.readonly,https://www.googleapis.com/au"
+          + "th/googlehealth.ecg.readonly,https://www.googleapis.com/auth/googlehealth.health"
+          + "_metrics_and_measurements.readonly,https://www.googleapis.com/auth/googlehealth."
+          + "irn.readonly,https://www.googleapis.com/auth/googlehealth.profile.readonly,https"
+          + "://www.googleapis.com/auth/googlehealth.settings.readonly,https://www.googleapis"
+          + ".com/auth/googlehealth.sleep.readonlyB\210\002\n"
+          + "\'com.google.devicesandservices.health.v4B\022HealthProfileProtoP\001ZRgoogle.golang.o"
+          + "rg/genproto/googleapis/devicesandservices/health/apiv4main;healthpb\252\002#Google.Dev"
+          + "icesAndServices.Health.V4\312\002#Google\\Devic"
+          + "esAndServices\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -233,10 +316,19 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
             });
-    internal_static_google_devicesandservices_health_v4_Profile_descriptor =
+    internal_static_google_devicesandservices_health_v4_User_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_devicesandservices_health_v4_User_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_User_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_devicesandservices_health_v4_Profile_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_devicesandservices_health_v4_Profile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_Profile_descriptor,
@@ -249,8 +341,31 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "AutoWalkingStrideLengthMm",
               "AutoRunningStrideLengthMm",
             });
+    internal_static_google_devicesandservices_health_v4_PairedDevice_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_devicesandservices_health_v4_PairedDevice_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_PairedDevice_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DeviceType",
+              "BatteryStatus",
+              "BatteryLevel",
+              "LastSyncTime",
+              "DeviceVersion",
+              "MacAddress",
+              "Features",
+            });
+    internal_static_google_devicesandservices_health_v4_IrnProfile_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_devicesandservices_health_v4_IrnProfile_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_IrnProfile_descriptor,
+            new java.lang.String[] {
+              "Name", "OnboardingStatus", "EnrollmentStatus", "UpdateTime",
+            });
     internal_static_google_devicesandservices_health_v4_Settings_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(4);
     internal_static_google_devicesandservices_health_v4_Settings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_Settings_descriptor,
@@ -269,9 +384,10 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "TimeZone",
               "WeightUnit",
               "WaterUnit",
+              "FoodLanguageCode",
             });
     internal_static_google_devicesandservices_health_v4_Identity_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(5);
     internal_static_google_devicesandservices_health_v4_Identity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_Identity_descriptor,
@@ -279,15 +395,23 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "Name", "LegacyUserId", "HealthUserId",
             });
     internal_static_google_devicesandservices_health_v4_GetProfileRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(6);
     internal_static_google_devicesandservices_health_v4_GetProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_GetProfileRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_devicesandservices_health_v4_GetIrnProfileRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_devicesandservices_health_v4_GetIrnProfileRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_GetIrnProfileRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_devicesandservices_health_v4_UpdateProfileRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(8);
     internal_static_google_devicesandservices_health_v4_UpdateProfileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_UpdateProfileRequest_descriptor,
@@ -295,7 +419,7 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "Profile", "UpdateMask",
             });
     internal_static_google_devicesandservices_health_v4_GetSettingsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(9);
     internal_static_google_devicesandservices_health_v4_GetSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_GetSettingsRequest_descriptor,
@@ -303,7 +427,7 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "Name",
             });
     internal_static_google_devicesandservices_health_v4_UpdateSettingsRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(10);
     internal_static_google_devicesandservices_health_v4_UpdateSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_UpdateSettingsRequest_descriptor,
@@ -311,12 +435,36 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
               "Settings", "UpdateMask",
             });
     internal_static_google_devicesandservices_health_v4_GetIdentityRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(11);
     internal_static_google_devicesandservices_health_v4_GetIdentityRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4_GetIdentityRequest_descriptor,
             new java.lang.String[] {
               "Name",
+            });
+    internal_static_google_devicesandservices_health_v4_GetPairedDeviceRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_devicesandservices_health_v4_GetPairedDeviceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_GetPairedDeviceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_devicesandservices_health_v4_ListPairedDevicesRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_devicesandservices_health_v4_ListPairedDevicesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_ListPairedDevicesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_devicesandservices_health_v4_ListPairedDevicesResponse_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_devicesandservices_health_v4_ListPairedDevicesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_devicesandservices_health_v4_ListPairedDevicesResponse_descriptor,
+            new java.lang.String[] {
+              "PairedDevices", "NextPageToken",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
@@ -325,6 +473,7 @@ public final class HealthProfileProto extends com.google.protobuf.GeneratedFile 
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
