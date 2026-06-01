@@ -151,7 +151,7 @@ public class BigQueryDriver implements Driver {
         }
 
         BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
-
+        // Logging starts from here.
         DataSource ds;
         try {
           ds = DataSource.fromUrl(connectionUri);
@@ -160,7 +160,6 @@ public class BigQueryDriver implements Driver {
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
 
-        // Logging starts from here.
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
         LOG.info(
             "Driver info : { {Database Product Name : %s}, "
