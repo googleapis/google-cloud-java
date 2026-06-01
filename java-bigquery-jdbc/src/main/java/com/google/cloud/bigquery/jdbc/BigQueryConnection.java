@@ -1220,4 +1220,17 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
     return false;
   }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new SQLException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
+  }
 }

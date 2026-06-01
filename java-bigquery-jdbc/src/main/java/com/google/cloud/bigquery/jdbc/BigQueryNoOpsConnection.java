@@ -48,16 +48,6 @@ abstract class BigQueryNoOpsConnection implements Connection {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
-  }
-
-  @Override
   public boolean isReadOnly() {
     return false;
   }

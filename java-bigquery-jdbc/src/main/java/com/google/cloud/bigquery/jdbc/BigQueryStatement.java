@@ -1574,20 +1574,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return iface.isInstance(this);
-  }
-
-  @Override
-  public <T> T unwrap(Class<T> iface) throws SQLException {
-    if (!isWrapperFor(iface)) {
-      throw new BigQueryJdbcException(
-          String.format("Unable to cast Statement to %s class.", iface.getName()));
-    }
-    return (T) this;
-  }
-
-  @Override
   public int getResultSetHoldability() {
     return ResultSet.CLOSE_CURSORS_AT_COMMIT;
   }
@@ -1615,6 +1601,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public boolean isCloseOnCompletion() {
     return this.closeOnCompletion;
+  }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new SQLException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 
   protected void logQueryExecutionStart(String sql) {

@@ -674,4 +674,17 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public Timestamp getTimestamp(String columnLabel, Calendar cal) throws SQLException {
     return getTimestamp(getColumnIndex(columnLabel), cal);
   }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new SQLException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
+  }
 }
