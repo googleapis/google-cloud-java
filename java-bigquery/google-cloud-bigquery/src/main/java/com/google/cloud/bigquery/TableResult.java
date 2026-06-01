@@ -49,7 +49,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
 
     public abstract TableResult.Builder setJobCreationReason(JobCreationReason jobCreationReason);
 
-    public abstract TableResult.Builder setRowsInPage(Long rowsInPage);
+    abstract TableResult.Builder setRowsInPage(Long rowsInPage);
 
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
