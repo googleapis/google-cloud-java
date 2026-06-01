@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.cloud.spanner.SpannerException.DoNotConstructDirectly;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
@@ -56,6 +57,8 @@ public final class SpannerExceptionFactory {
       ProtoUtils.keyForProto(ResourceInfo.getDefaultInstance());
   private static final Metadata.Key<ErrorInfo> KEY_ERROR_INFO =
       ProtoUtils.keyForProto(ErrorInfo.getDefaultInstance());
+  private static final Metadata.Key<byte[]> KEY_ERROR_DETAILS =
+      Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
   public static SpannerException newSpannerException(ErrorCode code, @Nullable String message) {
     return newSpannerException(code, message, null);
@@ -247,6 +250,10 @@ public final class SpannerExceptionFactory {
   }
 
   private static ResourceInfo extractResourceInfo(Throwable cause) {
+    ErrorDetails details = extractErrorDetails(cause, null);
+    if (details != null && details.getResourceInfo() != null) {
+      return details.getResourceInfo();
+    }
     if (cause != null) {
       Metadata trailers = Status.trailersFromThrowable(cause);
       if (trailers != null) {
@@ -257,8 +264,9 @@ public final class SpannerExceptionFactory {
   }
 
   private static ErrorInfo extractErrorInfo(Throwable cause, ApiException apiException) {
-    if (apiException != null && apiException.getErrorDetails() != null) {
-      return apiException.getErrorDetails().getErrorInfo();
+    ErrorDetails details = extractErrorDetails(cause, apiException);
+    if (details != null && details.getErrorInfo() != null) {
+      return details.getErrorInfo();
     }
     if (cause != null) {
       Metadata trailers = Status.trailersFromThrowable(cause);
@@ -277,10 +285,26 @@ public final class SpannerExceptionFactory {
     Throwable prevCause = null;
     while (cause != null && cause != prevCause) {
       if (cause instanceof ApiException) {
-        return ((ApiException) cause).getErrorDetails();
+        if (((ApiException) cause).getErrorDetails() != null) {
+          return ((ApiException) cause).getErrorDetails();
+        }
       }
       if (cause instanceof SpannerException) {
-        return ((SpannerException) cause).getErrorDetails();
+        if (((SpannerException) cause).getErrorDetails() != null) {
+          return ((SpannerException) cause).getErrorDetails();
+        }
+      }
+      Metadata trailers = Status.trailersFromThrowable(cause);
+      if (trailers != null) {
+        byte[] bytes = trailers.get(KEY_ERROR_DETAILS);
+        if (bytes != null) {
+          try {
+            com.google.rpc.Status status = com.google.rpc.Status.parseFrom(bytes);
+            return ErrorDetails.builder().setRawErrorMessages(status.getDetailsList()).build();
+          } catch (InvalidProtocolBufferException e) {
+            // ignore and continue
+          }
+        }
       }
       prevCause = cause;
       cause = cause.getCause();
