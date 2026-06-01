@@ -656,16 +656,6 @@ abstract class BigQueryNoOpsResultSet implements ResultSet {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
-  public boolean isWrapperFor(Class<?> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
-  }
-
-  @Override
   public SQLWarning getWarnings() throws SQLException {
     throw new BigQueryJdbcSqlFeatureNotSupportedException(METHOD_NOT_IMPLEMENTED);
   }

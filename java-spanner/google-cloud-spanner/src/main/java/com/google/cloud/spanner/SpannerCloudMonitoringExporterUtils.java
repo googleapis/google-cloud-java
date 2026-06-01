@@ -30,6 +30,7 @@ import static com.google.cloud.spanner.BuiltInMetricsConstant.PROJECT_ID_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.SPANNER_METER_NAME;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.SPANNER_PROMOTED_RESOURCE_LABELS;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.SPANNER_RESOURCE_TYPE;
+import static com.google.cloud.spanner.BuiltInMetricsConstant.UNDEFINED_PROJECT_ID;
 
 import com.google.api.Distribution;
 import com.google.api.Distribution.BucketOptions;
@@ -61,12 +62,14 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.MetricDataType;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
-import io.opentelemetry.sdk.resources.Resource;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
 
 class SpannerCloudMonitoringExporterUtils {
 
@@ -75,12 +78,8 @@ class SpannerCloudMonitoringExporterUtils {
 
   private SpannerCloudMonitoringExporterUtils() {}
 
-  static String getProjectId(Resource resource) {
-    return resource.getAttributes().get(PROJECT_ID_KEY);
-  }
-
   static List<TimeSeries> convertToSpannerTimeSeries(
-      List<MetricData> collection, String projectId) {
+      Collection<MetricData> collection, String fallbackProjectId) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
     for (MetricData metricData : collection) {
@@ -99,25 +98,30 @@ class SpannerCloudMonitoringExporterUtils {
 
       Attributes resourceAttributes = metricData.getResource().getAttributes();
       for (AttributeKey<?> key : resourceAttributes.asMap().keySet()) {
-        monitoredResourceBuilder.putLabels(
-            key.getKey(), String.valueOf(resourceAttributes.get(key)));
+        if (!PROJECT_ID_KEY.equals(key)) {
+          monitoredResourceBuilder.putLabels(
+              key.getKey(), String.valueOf(resourceAttributes.get(key)));
+        }
       }
+      MonitoredResource baseMonitoredResource = monitoredResourceBuilder.build();
 
       metricData.getData().getPoints().stream()
           .map(
               pointData ->
                   convertPointToSpannerTimeSeries(
-                      metricData, pointData, monitoredResourceBuilder, projectId))
+                      metricData, pointData, baseMonitoredResource, fallbackProjectId))
+          .filter(Objects::nonNull)
           .forEach(allTimeSeries::add);
     }
     return allTimeSeries;
   }
 
+  @Nullable
   private static TimeSeries convertPointToSpannerTimeSeries(
       MetricData metricData,
       PointData pointData,
-      MonitoredResource.Builder monitoredResourceBuilder,
-      String projectId) {
+      MonitoredResource baseMonitoredResource,
+      String fallbackProjectId) {
     MetricKind metricKind = convertMetricKind(metricData);
     TimeSeries.Builder builder =
         TimeSeries.newBuilder()
@@ -126,9 +130,20 @@ class SpannerCloudMonitoringExporterUtils {
     Metric.Builder metricBuilder = Metric.newBuilder().setType(metricData.getName());
 
     Attributes attributes = pointData.getAttributes();
+    String projectId = attributes.get(PROJECT_ID_KEY);
+    if (!isUsableProjectId(projectId)) {
+      projectId = shouldUseFallbackProject(metricData) ? fallbackProjectId : null;
+    }
+    if (!isUsableProjectId(projectId)) {
+      return null;
+    }
+    MonitoredResource.Builder monitoredResourceBuilder = baseMonitoredResource.toBuilder();
+    monitoredResourceBuilder.putLabels(PROJECT_ID_KEY.getKey(), projectId);
 
     for (AttributeKey<?> key : attributes.asMap().keySet()) {
-      if (SPANNER_PROMOTED_RESOURCE_LABELS.contains(key)) {
+      if (PROJECT_ID_KEY.equals(key)) {
+        continue;
+      } else if (SPANNER_PROMOTED_RESOURCE_LABELS.contains(key)) {
         monitoredResourceBuilder.putLabels(key.getKey(), String.valueOf(attributes.get(key)));
       } else {
         // Replace metric label names by converting "." to "_" since Cloud Monitoring does not
@@ -157,6 +172,15 @@ class SpannerCloudMonitoringExporterUtils {
     builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval, projectId));
 
     return builder.build();
+  }
+
+  private static boolean isUsableProjectId(String projectId) {
+    return projectId != null && !projectId.isEmpty() && !UNDEFINED_PROJECT_ID.equals(projectId);
+  }
+
+  private static boolean shouldUseFallbackProject(MetricData metricData) {
+    String meterName = metricData.getInstrumentationScopeInfo().getName();
+    return GRPC_METER_NAME.equals(meterName) || GRPC_GCP_METER_NAME.equals(meterName);
   }
 
   private static MetricKind convertMetricKind(MetricData metricData) {

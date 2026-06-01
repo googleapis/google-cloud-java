@@ -16,6 +16,8 @@
 
 package com.google.devicesandservices.health.v4;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -23,12 +25,15 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import com.google.type.Date;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -222,6 +227,7 @@ public class HealthProfileServiceClientTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockHealthProfileService.addResponse(expectedResponse);
 
@@ -264,6 +270,7 @@ public class HealthProfileServiceClientTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockHealthProfileService.addResponse(expectedResponse);
 
@@ -306,6 +313,7 @@ public class HealthProfileServiceClientTest {
             .setLanguageLocale("languageLocale-445142062")
             .setUtcOffset(Duration.newBuilder().build())
             .setTimeZone("timeZone-2077180903")
+            .setFoodLanguageCode("foodLanguageCode2108624099")
             .build();
     mockHealthProfileService.addResponse(expectedResponse);
 
@@ -416,6 +424,264 @@ public class HealthProfileServiceClientTest {
     try {
       String name = "name3373707";
       client.getIdentity(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIrnProfileTest() throws Exception {
+    IrnProfile expectedResponse =
+        IrnProfile.newBuilder()
+            .setName(IrnProfileName.of("[USER]").toString())
+            .setOnboardingStatus(true)
+            .setEnrollmentStatus(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    IrnProfileName name = IrnProfileName.of("[USER]");
+
+    IrnProfile actualResponse = client.getIrnProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIrnProfileRequest actualRequest = ((GetIrnProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIrnProfileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      IrnProfileName name = IrnProfileName.of("[USER]");
+      client.getIrnProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIrnProfileTest2() throws Exception {
+    IrnProfile expectedResponse =
+        IrnProfile.newBuilder()
+            .setName(IrnProfileName.of("[USER]").toString())
+            .setOnboardingStatus(true)
+            .setEnrollmentStatus(true)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    IrnProfile actualResponse = client.getIrnProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIrnProfileRequest actualRequest = ((GetIrnProfileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIrnProfileExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getIrnProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPairedDeviceTest() throws Exception {
+    PairedDevice expectedResponse =
+        PairedDevice.newBuilder()
+            .setName(PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]").toString())
+            .setBatteryStatus("batteryStatus-1213535137")
+            .setBatteryLevel(-877252910)
+            .setLastSyncTime(Timestamp.newBuilder().build())
+            .setDeviceVersion("deviceVersion-766907998")
+            .setMacAddress("macAddress2081933221")
+            .addAllFeatures(new ArrayList<String>())
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    PairedDeviceName name = PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]");
+
+    PairedDevice actualResponse = client.getPairedDevice(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPairedDeviceRequest actualRequest = ((GetPairedDeviceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPairedDeviceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      PairedDeviceName name = PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]");
+      client.getPairedDevice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPairedDeviceTest2() throws Exception {
+    PairedDevice expectedResponse =
+        PairedDevice.newBuilder()
+            .setName(PairedDeviceName.of("[USER]", "[PAIRED_DEVICE]").toString())
+            .setBatteryStatus("batteryStatus-1213535137")
+            .setBatteryLevel(-877252910)
+            .setLastSyncTime(Timestamp.newBuilder().build())
+            .setDeviceVersion("deviceVersion-766907998")
+            .setMacAddress("macAddress2081933221")
+            .addAllFeatures(new ArrayList<String>())
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PairedDevice actualResponse = client.getPairedDevice(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPairedDeviceRequest actualRequest = ((GetPairedDeviceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPairedDeviceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPairedDevice(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPairedDevicesTest() throws Exception {
+    PairedDevice responsesElement = PairedDevice.newBuilder().build();
+    ListPairedDevicesResponse expectedResponse =
+        ListPairedDevicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPairedDevices(Arrays.asList(responsesElement))
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+
+    ListPairedDevicesPagedResponse pagedListResponse = client.listPairedDevices(parent);
+
+    List<PairedDevice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPairedDevicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPairedDevicesRequest actualRequest = ((ListPairedDevicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPairedDevicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      client.listPairedDevices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPairedDevicesTest2() throws Exception {
+    PairedDevice responsesElement = PairedDevice.newBuilder().build();
+    ListPairedDevicesResponse expectedResponse =
+        ListPairedDevicesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPairedDevices(Arrays.asList(responsesElement))
+            .build();
+    mockHealthProfileService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPairedDevicesPagedResponse pagedListResponse = client.listPairedDevices(parent);
+
+    List<PairedDevice> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPairedDevicesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHealthProfileService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPairedDevicesRequest actualRequest = ((ListPairedDevicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPairedDevicesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHealthProfileService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPairedDevices(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

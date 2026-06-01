@@ -159,4 +159,68 @@ public class MockHealthProfileServiceImpl extends HealthProfileServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getIrnProfile(
+      GetIrnProfileRequest request, StreamObserver<IrnProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IrnProfile) {
+      requests.add(request);
+      responseObserver.onNext(((IrnProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIrnProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IrnProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPairedDevice(
+      GetPairedDeviceRequest request, StreamObserver<PairedDevice> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PairedDevice) {
+      requests.add(request);
+      responseObserver.onNext(((PairedDevice) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPairedDevice, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PairedDevice.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPairedDevices(
+      ListPairedDevicesRequest request,
+      StreamObserver<ListPairedDevicesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPairedDevicesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPairedDevicesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPairedDevices, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPairedDevicesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

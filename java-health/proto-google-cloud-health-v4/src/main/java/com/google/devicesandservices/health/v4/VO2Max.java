@@ -537,7 +537,24 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
    * weight / min.
    * </pre>
    *
-   * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the vo2Max field is set.
+   */
+  @java.lang.Override
+  public boolean hasVo2Max() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. VO2 max value measured as in ml consumed oxygen / kg of body
+   * weight / min.
+   * </pre>
+   *
+   * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vo2Max.
    */
@@ -607,7 +624,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2Max_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, vo2Max_);
     }
     if (measurementMethod_
@@ -628,7 +645,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(vo2Max_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, vo2Max_);
     }
     if (measurementMethod_
@@ -657,8 +674,11 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getVo2Max())
-        != java.lang.Double.doubleToLongBits(other.getVo2Max())) return false;
+    if (hasVo2Max() != other.hasVo2Max()) return false;
+    if (hasVo2Max()) {
+      if (java.lang.Double.doubleToLongBits(getVo2Max())
+          != java.lang.Double.doubleToLongBits(other.getVo2Max())) return false;
+    }
     if (measurementMethod_ != other.measurementMethod_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -675,10 +695,13 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + VO2_MAX_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getVo2Max()));
+    if (hasVo2Max()) {
+      hash = (37 * hash) + VO2_MAX_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getVo2Max()));
+    }
     hash = (37 * hash) + MEASUREMENT_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + measurementMethod_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -880,6 +903,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.vo2Max_ = vo2Max_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.measurementMethod_ = measurementMethod_;
@@ -902,7 +926,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getVo2Max()) != 0) {
+      if (other.hasVo2Max()) {
         setVo2Max(other.getVo2Max());
       }
       if (other.measurementMethod_ != 0) {
@@ -1201,7 +1225,24 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      * weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the vo2Max field is set.
+     */
+    @java.lang.Override
+    public boolean hasVo2Max() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. VO2 max value measured as in ml consumed oxygen / kg of body
+     * weight / min.
+     * </pre>
+     *
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The vo2Max.
      */
@@ -1218,7 +1259,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      * weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The vo2Max to set.
      * @return This builder for chaining.
@@ -1239,7 +1280,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      * weight / min.
      * </pre>
      *
-     * <code>double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

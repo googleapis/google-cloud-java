@@ -106,7 +106,20 @@ public interface SwimLengthsDataOrBuilder
    * Required. Number of strokes in the lap.
    * </pre>
    *
-   * <code>int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the strokeCount field is set.
+   */
+  boolean hasStrokeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of strokes in the lap.
+   * </pre>
+   *
+   * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The strokeCount.
    */

@@ -16,6 +16,10 @@
 
 package com.google.storage.control.v2;
 
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -25,10 +29,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.collect.Lists;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.storage.control.v2.stub.HttpJsonStorageControlStub;
+import com.google.type.Interval;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -710,5 +718,486 @@ public class StorageControlClientHttpJsonTest {
   public void testIamPermissionsUnsupportedMethodTest() throws Exception {
     // The testIamPermissions() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void getIntelligenceFindingTest() throws Exception {
+    IntelligenceFinding expectedResponse =
+        IntelligenceFinding.newBuilder()
+            .setName(
+                IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setType(FindingType.forNumber(0))
+            .setCategory(FindingCategory.forNumber(0))
+            .setSeverity(FindingSeverity.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTargetResource("targetResource-1933150017")
+            .addAllAssociatedResources(new ArrayList<String>())
+            .setObservationPeriod(Interval.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    IntelligenceFindingName name =
+        IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+
+    IntelligenceFinding actualResponse = client.getIntelligenceFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIntelligenceFindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IntelligenceFindingName name =
+          IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+      client.getIntelligenceFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingTest2() throws Exception {
+    IntelligenceFinding expectedResponse =
+        IntelligenceFinding.newBuilder()
+            .setName(
+                IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setType(FindingType.forNumber(0))
+            .setCategory(FindingCategory.forNumber(0))
+            .setSeverity(FindingSeverity.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTargetResource("targetResource-1933150017")
+            .addAllAssociatedResources(new ArrayList<String>())
+            .setObservationPeriod(Interval.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4423/locations/location-4423/intelligenceFindings/intelligenceFinding-4423";
+
+    IntelligenceFinding actualResponse = client.getIntelligenceFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIntelligenceFindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4423/locations/location-4423/intelligenceFindings/intelligenceFinding-4423";
+      client.getIntelligenceFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingsTest() throws Exception {
+    IntelligenceFinding responsesElement = IntelligenceFinding.newBuilder().build();
+    ListIntelligenceFindingsResponse expectedResponse =
+        ListIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListIntelligenceFindingsPagedResponse pagedListResponse =
+        client.listIntelligenceFindings(parent);
+
+    List<IntelligenceFinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntelligenceFindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listIntelligenceFindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingsTest2() throws Exception {
+    IntelligenceFinding responsesElement = IntelligenceFinding.newBuilder().build();
+    ListIntelligenceFindingsResponse expectedResponse =
+        ListIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListIntelligenceFindingsPagedResponse pagedListResponse =
+        client.listIntelligenceFindings(parent);
+
+    List<IntelligenceFinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntelligenceFindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listIntelligenceFindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void summarizeIntelligenceFindingsTest() throws Exception {
+    FindingSummary responsesElement = FindingSummary.newBuilder().build();
+    SummarizeIntelligenceFindingsResponse expectedResponse =
+        SummarizeIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFindingSummaries(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    SummarizeIntelligenceFindingsPagedResponse pagedListResponse =
+        client.summarizeIntelligenceFindings(parent);
+
+    List<FindingSummary> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFindingSummariesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void summarizeIntelligenceFindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.summarizeIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionTest() throws Exception {
+    IntelligenceFindingRevision expectedResponse =
+        IntelligenceFindingRevision.newBuilder()
+            .setName(
+                IntelligenceFindingRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+                    .toString())
+            .setSnapshot(IntelligenceFinding.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    IntelligenceFindingRevisionName name =
+        IntelligenceFindingRevisionName.of(
+            "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]");
+
+    IntelligenceFindingRevision actualResponse = client.getIntelligenceFindingRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IntelligenceFindingRevisionName name =
+          IntelligenceFindingRevisionName.of(
+              "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]");
+      client.getIntelligenceFindingRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionTest2() throws Exception {
+    IntelligenceFindingRevision expectedResponse =
+        IntelligenceFindingRevision.newBuilder()
+            .setName(
+                IntelligenceFindingRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+                    .toString())
+            .setSnapshot(IntelligenceFinding.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3187/locations/location-3187/intelligenceFindings/intelligenceFinding-3187/revisions/revision-3187";
+
+    IntelligenceFindingRevision actualResponse = client.getIntelligenceFindingRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3187/locations/location-3187/intelligenceFindings/intelligenceFinding-3187/revisions/revision-3187";
+      client.getIntelligenceFindingRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsTest() throws Exception {
+    IntelligenceFindingRevision responsesElement = IntelligenceFindingRevision.newBuilder().build();
+    ListIntelligenceFindingRevisionsResponse expectedResponse =
+        ListIntelligenceFindingRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindingRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    IntelligenceFindingName parent =
+        IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+
+    ListIntelligenceFindingRevisionsPagedResponse pagedListResponse =
+        client.listIntelligenceFindingRevisions(parent);
+
+    List<IntelligenceFindingRevision> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getIntelligenceFindingRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IntelligenceFindingName parent =
+          IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+      client.listIntelligenceFindingRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsTest2() throws Exception {
+    IntelligenceFindingRevision responsesElement = IntelligenceFindingRevision.newBuilder().build();
+    ListIntelligenceFindingRevisionsResponse expectedResponse =
+        ListIntelligenceFindingRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindingRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2922/locations/location-2922/intelligenceFindings/intelligenceFinding-2922";
+
+    ListIntelligenceFindingRevisionsPagedResponse pagedListResponse =
+        client.listIntelligenceFindingRevisions(parent);
+
+    List<IntelligenceFindingRevision> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getIntelligenceFindingRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2922/locations/location-2922/intelligenceFindings/intelligenceFinding-2922";
+      client.listIntelligenceFindingRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 }

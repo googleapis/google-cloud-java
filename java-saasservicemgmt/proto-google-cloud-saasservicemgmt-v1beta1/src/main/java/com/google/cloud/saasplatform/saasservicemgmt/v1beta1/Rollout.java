@@ -61,6 +61,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     rolloutOrchestrationStrategy_ = "";
     unitFilter_ = "";
     rolloutKind_ = "";
+    effectiveUnitFilter_ = "";
     uid_ = "";
     etag_ = "";
   }
@@ -969,8 +970,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The strategy used for executing this Rollout.
    * This strategy will override whatever strategy is specified in the
-   * RolloutType. If not specified on creation, the
-   * strategy from RolloutType will be used.
+   * RolloutKind. If not specified on creation, the
+   * strategy from RolloutKind will be used.
    *
    * There are two supported values strategies which are used to control
    * - "Google.Cloud.Simple.AllAtOnce"
@@ -1004,8 +1005,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The strategy used for executing this Rollout.
    * This strategy will override whatever strategy is specified in the
-   * RolloutType. If not specified on creation, the
-   * strategy from RolloutType will be used.
+   * RolloutKind. If not specified on creation, the
+   * strategy from RolloutKind will be used.
    *
    * There are two supported values strategies which are used to control
    * - "Google.Cloud.Simple.AllAtOnce"
@@ -1045,7 +1046,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
    * against Unit. The filter will be applied to determine the eligible unit
    * population. This filter can only reduce, but not expand the scope of the
-   * rollout. If not provided, the unit_filter from the RolloutType will be
+   * rollout. If not provided, the unit_filter from the RolloutKind will be
    * used.
    * </pre>
    *
@@ -1073,7 +1074,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
    * against Unit. The filter will be applied to determine the eligible unit
    * population. This filter can only reduce, but not expand the scope of the
-   * rollout. If not provided, the unit_filter from the RolloutType will be
+   * rollout. If not provided, the unit_filter from the RolloutKind will be
    * used.
    * </pre>
    *
@@ -1103,12 +1104,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+   * Required. Immutable. Name of the RolloutKind this rollout is stemming from
    * and adhering to.
    * </pre>
    *
    * <code>
-   * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The rolloutKind.
@@ -1130,12 +1131,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+   * Required. Immutable. Name of the RolloutKind this rollout is stemming from
    * and adhering to.
    * </pre>
    *
    * <code>
-   * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for rolloutKind.
@@ -1286,6 +1287,75 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     return control_ == null
         ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutControl.getDefaultInstance()
         : control_;
+  }
+
+  public static final int EFFECTIVE_UNIT_FILTER_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object effectiveUnitFilter_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Output only snapshot of the effective unit filter at
+   * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+   * expression consisting of a conjunction of Rollout.unit_filter and
+   * RolloutKind.unit_filter. This field captures the filter applied by the
+   * Rollout to determine the Unit population. If the associated RolloutKind's
+   * unit_filter is modified after the rollout is started, it will not be
+   * updated here.
+   * </pre>
+   *
+   * <code>
+   * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveUnitFilter.
+   */
+  @java.lang.Override
+  public java.lang.String getEffectiveUnitFilter() {
+    java.lang.Object ref = effectiveUnitFilter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      effectiveUnitFilter_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Output only snapshot of the effective unit filter at
+   * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+   * expression consisting of a conjunction of Rollout.unit_filter and
+   * RolloutKind.unit_filter. This field captures the filter applied by the
+   * Rollout to determine the Unit population. If the associated RolloutKind's
+   * unit_filter is modified after the rollout is started, it will not be
+   * updated here.
+   * </pre>
+   *
+   * <code>
+   * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveUnitFilter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEffectiveUnitFilterBytes() {
+    java.lang.Object ref = effectiveUnitFilter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      effectiveUnitFilter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LABELS_FIELD_NUMBER = 10401;
@@ -1773,6 +1843,64 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int DELETE_TIME_FIELD_NUMBER = 10305;
+  private com.google.protobuf.Timestamp deleteTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteTime() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDeleteTime() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1832,6 +1960,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(25, getControl());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveUnitFilter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 26, effectiveUnitFilter_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10201, uid_);
     }
@@ -1843,6 +1974,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(10304, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(10305, getDeleteTime());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10401);
@@ -1904,6 +2038,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getControl());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveUnitFilter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(26, effectiveUnitFilter_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10201, uid_);
     }
@@ -1915,6 +2052,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10304, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10305, getDeleteTime());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -1982,6 +2122,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (hasControl()) {
       if (!getControl().equals(other.getControl())) return false;
     }
+    if (!getEffectiveUnitFilter().equals(other.getEffectiveUnitFilter())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
@@ -1993,6 +2134,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasDeleteTime() != other.hasDeleteTime()) return false;
+    if (hasDeleteTime()) {
+      if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2043,6 +2188,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CONTROL_FIELD_NUMBER;
       hash = (53 * hash) + getControl().hashCode();
     }
+    hash = (37 * hash) + EFFECTIVE_UNIT_FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getEffectiveUnitFilter().hashCode();
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -2062,6 +2209,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasDeleteTime()) {
+      hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2238,6 +2389,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         internalGetControlFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetDeleteTimeFieldBuilder();
       }
     }
 
@@ -2279,6 +2431,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         controlBuilder_.dispose();
         controlBuilder_ = null;
       }
+      effectiveUnitFilter_ = "";
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       uid_ = "";
@@ -2292,6 +2445,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
       }
       return this;
     }
@@ -2383,26 +2541,33 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.effectiveUnitFilter_ = effectiveUnitFilter_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2479,18 +2644,23 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       if (other.hasControl()) {
         mergeControl(other.getControl());
       }
+      if (!other.getEffectiveUnitFilter().isEmpty()) {
+        effectiveUnitFilter_ = other.effectiveUnitFilter_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00004000;
-      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00008000;
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00010000;
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2498,6 +2668,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasDeleteTime()) {
+        mergeDeleteTime(other.getDeleteTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2611,32 +2784,45 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 202
+            case 210:
+              {
+                effectiveUnitFilter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 210
             case 81610:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 81610
             case 81618:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 81618
             case 82426:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 82426
             case 82434:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 82434
+            case 82442:
+              {
+                input.readMessage(
+                    internalGetDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 82442
             case 83210:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -2646,7 +2832,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 83210
             case 83218:
@@ -2658,7 +2844,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 83218
             default:
@@ -4120,8 +4306,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The strategy used for executing this Rollout.
      * This strategy will override whatever strategy is specified in the
-     * RolloutType. If not specified on creation, the
-     * strategy from RolloutType will be used.
+     * RolloutKind. If not specified on creation, the
+     * strategy from RolloutKind will be used.
      *
      * There are two supported values strategies which are used to control
      * - "Google.Cloud.Simple.AllAtOnce"
@@ -4154,8 +4340,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The strategy used for executing this Rollout.
      * This strategy will override whatever strategy is specified in the
-     * RolloutType. If not specified on creation, the
-     * strategy from RolloutType will be used.
+     * RolloutKind. If not specified on creation, the
+     * strategy from RolloutKind will be used.
      *
      * There are two supported values strategies which are used to control
      * - "Google.Cloud.Simple.AllAtOnce"
@@ -4188,8 +4374,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The strategy used for executing this Rollout.
      * This strategy will override whatever strategy is specified in the
-     * RolloutType. If not specified on creation, the
-     * strategy from RolloutType will be used.
+     * RolloutKind. If not specified on creation, the
+     * strategy from RolloutKind will be used.
      *
      * There are two supported values strategies which are used to control
      * - "Google.Cloud.Simple.AllAtOnce"
@@ -4221,8 +4407,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The strategy used for executing this Rollout.
      * This strategy will override whatever strategy is specified in the
-     * RolloutType. If not specified on creation, the
-     * strategy from RolloutType will be used.
+     * RolloutKind. If not specified on creation, the
+     * strategy from RolloutKind will be used.
      *
      * There are two supported values strategies which are used to control
      * - "Google.Cloud.Simple.AllAtOnce"
@@ -4250,8 +4436,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The strategy used for executing this Rollout.
      * This strategy will override whatever strategy is specified in the
-     * RolloutType. If not specified on creation, the
-     * strategy from RolloutType will be used.
+     * RolloutKind. If not specified on creation, the
+     * strategy from RolloutKind will be used.
      *
      * There are two supported values strategies which are used to control
      * - "Google.Cloud.Simple.AllAtOnce"
@@ -4287,7 +4473,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
      * against Unit. The filter will be applied to determine the eligible unit
      * population. This filter can only reduce, but not expand the scope of the
-     * rollout. If not provided, the unit_filter from the RolloutType will be
+     * rollout. If not provided, the unit_filter from the RolloutKind will be
      * used.
      * </pre>
      *
@@ -4314,7 +4500,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
      * against Unit. The filter will be applied to determine the eligible unit
      * population. This filter can only reduce, but not expand the scope of the
-     * rollout. If not provided, the unit_filter from the RolloutType will be
+     * rollout. If not provided, the unit_filter from the RolloutKind will be
      * used.
      * </pre>
      *
@@ -4341,7 +4527,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
      * against Unit. The filter will be applied to determine the eligible unit
      * population. This filter can only reduce, but not expand the scope of the
-     * rollout. If not provided, the unit_filter from the RolloutType will be
+     * rollout. If not provided, the unit_filter from the RolloutKind will be
      * used.
      * </pre>
      *
@@ -4367,7 +4553,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
      * against Unit. The filter will be applied to determine the eligible unit
      * population. This filter can only reduce, but not expand the scope of the
-     * rollout. If not provided, the unit_filter from the RolloutType will be
+     * rollout. If not provided, the unit_filter from the RolloutKind will be
      * used.
      * </pre>
      *
@@ -4389,7 +4575,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
      * against Unit. The filter will be applied to determine the eligible unit
      * population. This filter can only reduce, but not expand the scope of the
-     * rollout. If not provided, the unit_filter from the RolloutType will be
+     * rollout. If not provided, the unit_filter from the RolloutKind will be
      * used.
      * </pre>
      *
@@ -4415,12 +4601,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+     * Required. Immutable. Name of the RolloutKind this rollout is stemming from
      * and adhering to.
      * </pre>
      *
      * <code>
-     * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The rolloutKind.
@@ -4441,12 +4627,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+     * Required. Immutable. Name of the RolloutKind this rollout is stemming from
      * and adhering to.
      * </pre>
      *
      * <code>
-     * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for rolloutKind.
@@ -4467,12 +4653,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+     * Required. Immutable. Name of the RolloutKind this rollout is stemming from
      * and adhering to.
      * </pre>
      *
      * <code>
-     * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The rolloutKind to set.
@@ -4492,12 +4678,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+     * Required. Immutable. Name of the RolloutKind this rollout is stemming from
      * and adhering to.
      * </pre>
      *
      * <code>
-     * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4513,12 +4699,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+     * Required. Immutable. Name of the RolloutKind this rollout is stemming from
      * and adhering to.
      * </pre>
      *
      * <code>
-     * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for rolloutKind to set.
@@ -5024,6 +5210,157 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       return controlBuilder_;
     }
 
+    private java.lang.Object effectiveUnitFilter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Output only snapshot of the effective unit filter at
+     * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+     * expression consisting of a conjunction of Rollout.unit_filter and
+     * RolloutKind.unit_filter. This field captures the filter applied by the
+     * Rollout to determine the Unit population. If the associated RolloutKind's
+     * unit_filter is modified after the rollout is started, it will not be
+     * updated here.
+     * </pre>
+     *
+     * <code>
+     * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveUnitFilter.
+     */
+    public java.lang.String getEffectiveUnitFilter() {
+      java.lang.Object ref = effectiveUnitFilter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveUnitFilter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Output only snapshot of the effective unit filter at
+     * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+     * expression consisting of a conjunction of Rollout.unit_filter and
+     * RolloutKind.unit_filter. This field captures the filter applied by the
+     * Rollout to determine the Unit population. If the associated RolloutKind's
+     * unit_filter is modified after the rollout is started, it will not be
+     * updated here.
+     * </pre>
+     *
+     * <code>
+     * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for effectiveUnitFilter.
+     */
+    public com.google.protobuf.ByteString getEffectiveUnitFilterBytes() {
+      java.lang.Object ref = effectiveUnitFilter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveUnitFilter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Output only snapshot of the effective unit filter at
+     * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+     * expression consisting of a conjunction of Rollout.unit_filter and
+     * RolloutKind.unit_filter. This field captures the filter applied by the
+     * Rollout to determine the Unit population. If the associated RolloutKind's
+     * unit_filter is modified after the rollout is started, it will not be
+     * updated here.
+     * </pre>
+     *
+     * <code>
+     * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The effectiveUnitFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveUnitFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      effectiveUnitFilter_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Output only snapshot of the effective unit filter at
+     * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+     * expression consisting of a conjunction of Rollout.unit_filter and
+     * RolloutKind.unit_filter. This field captures the filter applied by the
+     * Rollout to determine the Unit population. If the associated RolloutKind's
+     * unit_filter is modified after the rollout is started, it will not be
+     * updated here.
+     * </pre>
+     *
+     * <code>
+     * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveUnitFilter() {
+      effectiveUnitFilter_ = getDefaultInstance().getEffectiveUnitFilter();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Output only snapshot of the effective unit filter at
+     * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+     * expression consisting of a conjunction of Rollout.unit_filter and
+     * RolloutKind.unit_filter. This field captures the filter applied by the
+     * Rollout to determine the Unit population. If the associated RolloutKind's
+     * unit_filter is modified after the rollout is started, it will not be
+     * updated here.
+     * </pre>
+     *
+     * <code>
+     * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for effectiveUnitFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveUnitFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      effectiveUnitFilter_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -5041,7 +5378,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return labels_;
     }
@@ -5139,7 +5476,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5166,7 +5503,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -5189,7 +5526,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -5206,7 +5543,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -5230,7 +5567,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return annotations_;
     }
@@ -5348,7 +5685,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -5380,7 +5717,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -5408,7 +5745,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -5430,7 +5767,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       return this;
     }
 
@@ -5517,7 +5854,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5541,7 +5878,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5570,7 +5907,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5646,7 +5983,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5666,7 +6003,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5691,7 +6028,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5717,7 +6054,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5763,7 +6100,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5785,7 +6122,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5803,7 +6140,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5814,7 +6151,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -5832,7 +6169,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5854,7 +6191,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5931,7 +6268,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5981,7 +6318,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6005,7 +6342,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6025,7 +6362,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -6036,7 +6373,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6056,7 +6393,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -6080,7 +6417,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -6136,6 +6473,227 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp deleteTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        deleteTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the deleteTime field is set.
+     */
+    public boolean hasDeleteTime() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deleteTime.
+     */
+    public com.google.protobuf.Timestamp getDeleteTime() {
+      if (deleteTimeBuilder_ == null) {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      } else {
+        return deleteTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deleteTime_ = value;
+      } else {
+        deleteTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (deleteTimeBuilder_ == null) {
+        deleteTime_ = builderForValue.build();
+      } else {
+        deleteTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
+        } else {
+          deleteTime_ = value;
+        }
+      } else {
+        deleteTimeBuilder_.mergeFrom(value);
+      }
+      if (deleteTime_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDeleteTime() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetDeleteTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+      if (deleteTimeBuilder_ != null) {
+        return deleteTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetDeleteTimeFieldBuilder() {
+      if (deleteTimeBuilder_ == null) {
+        deleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDeleteTime(), getParentForChildren(), isClean());
+        deleteTime_ = null;
+      }
+      return deleteTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout)

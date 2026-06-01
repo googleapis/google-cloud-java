@@ -18,7 +18,10 @@ package com.google.storage.control.v2;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -306,6 +309,47 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((StorageControlStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIntelligenceFinding. */
+  public UnaryCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).getIntelligenceFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIntelligenceFindings. */
+  public PagedCallSettings<
+          ListIntelligenceFindingsRequest,
+          ListIntelligenceFindingsResponse,
+          ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).listIntelligenceFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to summarizeIntelligenceFindings. */
+  public PagedCallSettings<
+          SummarizeIntelligenceFindingsRequest,
+          SummarizeIntelligenceFindingsResponse,
+          SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).summarizeIntelligenceFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIntelligenceFindingRevision. */
+  public UnaryCallSettings<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionSettings() {
+    return ((StorageControlStubSettings) getStubSettings())
+        .getIntelligenceFindingRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listIntelligenceFindingRevisions. */
+  public PagedCallSettings<
+          ListIntelligenceFindingRevisionsRequest,
+          ListIntelligenceFindingRevisionsResponse,
+          ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsSettings() {
+    return ((StorageControlStubSettings) getStubSettings())
+        .listIntelligenceFindingRevisionsSettings();
   }
 
   public static final StorageControlSettings create(StorageControlStubSettings stub)
@@ -607,6 +651,46 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIntelligenceFinding. */
+    public UnaryCallSettings.Builder<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingSettings() {
+      return getStubSettingsBuilder().getIntelligenceFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIntelligenceFindings. */
+    public PagedCallSettings.Builder<
+            ListIntelligenceFindingsRequest,
+            ListIntelligenceFindingsResponse,
+            ListIntelligenceFindingsPagedResponse>
+        listIntelligenceFindingsSettings() {
+      return getStubSettingsBuilder().listIntelligenceFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to summarizeIntelligenceFindings. */
+    public PagedCallSettings.Builder<
+            SummarizeIntelligenceFindingsRequest,
+            SummarizeIntelligenceFindingsResponse,
+            SummarizeIntelligenceFindingsPagedResponse>
+        summarizeIntelligenceFindingsSettings() {
+      return getStubSettingsBuilder().summarizeIntelligenceFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIntelligenceFindingRevision. */
+    public UnaryCallSettings.Builder<
+            GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionSettings() {
+      return getStubSettingsBuilder().getIntelligenceFindingRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listIntelligenceFindingRevisions. */
+    public PagedCallSettings.Builder<
+            ListIntelligenceFindingRevisionsRequest,
+            ListIntelligenceFindingRevisionsResponse,
+            ListIntelligenceFindingRevisionsPagedResponse>
+        listIntelligenceFindingRevisionsSettings() {
+      return getStubSettingsBuilder().listIntelligenceFindingRevisionsSettings();
     }
 
     @Override

@@ -68,6 +68,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
             com.google.devicesandservices.health.v4.DistanceRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MILLIMETERS_SUM_FIELD_NUMBER = 1;
   private long millimetersSum_ = 0L;
 
@@ -78,7 +79,23 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
    * Sum of the distance in millimeters.
    * </pre>
    *
-   * <code>int64 millimeters_sum = 1;</code>
+   * <code>optional int64 millimeters_sum = 1;</code>
+   *
+   * @return Whether the millimetersSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasMillimetersSum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the distance in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 millimeters_sum = 1;</code>
    *
    * @return The millimetersSum.
    */
@@ -101,7 +118,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (millimetersSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, millimetersSum_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (millimetersSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, millimetersSum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,7 +149,10 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
     com.google.devicesandservices.health.v4.DistanceRollupValue other =
         (com.google.devicesandservices.health.v4.DistanceRollupValue) obj;
 
-    if (getMillimetersSum() != other.getMillimetersSum()) return false;
+    if (hasMillimetersSum() != other.hasMillimetersSum()) return false;
+    if (hasMillimetersSum()) {
+      if (getMillimetersSum() != other.getMillimetersSum()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,8 +164,10 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MILLIMETERS_SUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMillimetersSum());
+    if (hasMillimetersSum()) {
+      hash = (37 * hash) + MILLIMETERS_SUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMillimetersSum());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,9 +346,12 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.devicesandservices.health.v4.DistanceRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.millimetersSum_ = millimetersSum_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -342,7 +367,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.devicesandservices.health.v4.DistanceRollupValue other) {
       if (other == com.google.devicesandservices.health.v4.DistanceRollupValue.getDefaultInstance())
         return this;
-      if (other.getMillimetersSum() != 0L) {
+      if (other.hasMillimetersSum()) {
         setMillimetersSum(other.getMillimetersSum());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -405,7 +430,23 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the distance in millimeters.
      * </pre>
      *
-     * <code>int64 millimeters_sum = 1;</code>
+     * <code>optional int64 millimeters_sum = 1;</code>
+     *
+     * @return Whether the millimetersSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasMillimetersSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sum of the distance in millimeters.
+     * </pre>
+     *
+     * <code>optional int64 millimeters_sum = 1;</code>
      *
      * @return The millimetersSum.
      */
@@ -421,7 +462,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the distance in millimeters.
      * </pre>
      *
-     * <code>int64 millimeters_sum = 1;</code>
+     * <code>optional int64 millimeters_sum = 1;</code>
      *
      * @param value The millimetersSum to set.
      * @return This builder for chaining.
@@ -441,7 +482,7 @@ public final class DistanceRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the distance in millimeters.
      * </pre>
      *
-     * <code>int64 millimeters_sum = 1;</code>
+     * <code>optional int64 millimeters_sum = 1;</code>
      *
      * @return This builder for chaining.
      */

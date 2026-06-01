@@ -290,7 +290,7 @@ public final class BusinessGlossaryProto extends com.google.protobuf.GeneratedFi
           + "\031ListGlossaryTermsResponse\0225\n"
           + "\005terms\030\001 \003(\0132&.google.cloud.dataplex.v1.GlossaryTerm\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\035\n"
-          + "\025unreachable_locations\030\003 \003(\t2\326\030\n"
+          + "\025unreachable_locations\030\003 \003(\t2\367\031\n"
           + "\027BusinessGlossaryService\022\340\001\n"
           + "\016CreateGlossary\022/.google.cloud.dataplex.v1.CreateGloss"
           + "aryRequest\032\035.google.longrunning.Operation\"~\312A\035\n"
@@ -352,10 +352,13 @@ public final class BusinessGlossaryProto extends com.google.protobuf.GeneratedFi
           + "\021ListGlossaryTerms\0222.google.cloud.data"
           + "plex.v1.ListGlossaryTermsRequest\0323.google.cloud.dataplex.v1.ListGlossaryTermsRes"
           + "ponse\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=proj"
-          + "ects/*/locations/*/glossaries/*}/terms\032K"
-          + "\312A\027dataplex.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBq\n"
-          + "\034com.google.cloud.dataplex.v1B\025BusinessGlo"
-          + "ssaryProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "ects/*/locations/*/glossaries/*}/terms\032\353"
+          + "\001\312A\027dataplex.googleapis.com\322A\315\001https://w"
+          + "ww.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-plat"
+          + "form.read-only,https://www.googleapis.co"
+          + "m/auth/dataplex.read-write,https://www.googleapis.com/auth/dataplex.readonlyBq\n"
+          + "\034com.google.cloud.dataplex.v1B\025BusinessGl"
+          + "ossaryProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

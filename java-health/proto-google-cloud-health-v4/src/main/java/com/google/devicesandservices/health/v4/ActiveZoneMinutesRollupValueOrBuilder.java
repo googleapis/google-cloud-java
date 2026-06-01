@@ -33,7 +33,20 @@ public interface ActiveZoneMinutesRollupValueOrBuilder
    * Active zone minutes in `HeartRateZone.CARDIO`.
    * </pre>
    *
-   * <code>int64 sum_in_cardio_heart_zone = 1;</code>
+   * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
+   *
+   * @return Whether the sumInCardioHeartZone field is set.
+   */
+  boolean hasSumInCardioHeartZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.CARDIO`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
    *
    * @return The sumInCardioHeartZone.
    */
@@ -46,7 +59,20 @@ public interface ActiveZoneMinutesRollupValueOrBuilder
    * Active zone minutes in `HeartRateZone.PEAK`.
    * </pre>
    *
-   * <code>int64 sum_in_peak_heart_zone = 2;</code>
+   * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
+   *
+   * @return Whether the sumInPeakHeartZone field is set.
+   */
+  boolean hasSumInPeakHeartZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.PEAK`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
    *
    * @return The sumInPeakHeartZone.
    */
@@ -59,7 +85,20 @@ public interface ActiveZoneMinutesRollupValueOrBuilder
    * Active zone minutes in `HeartRateZone.FAT_BURN`.
    * </pre>
    *
-   * <code>int64 sum_in_fat_burn_heart_zone = 3;</code>
+   * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
+   *
+   * @return Whether the sumInFatBurnHeartZone field is set.
+   */
+  boolean hasSumInFatBurnHeartZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.FAT_BURN`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
    *
    * @return The sumInFatBurnHeartZone.
    */
