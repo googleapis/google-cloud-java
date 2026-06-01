@@ -28,6 +28,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
 import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
@@ -56,8 +57,6 @@ import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
-import java.util.Collections;
-import java.util.EnumMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
@@ -212,19 +211,11 @@ abstract class AbstractReadContext
       // of a channel hint. GAX will automatically choose a hint when used
       // with a multiplexed session to perform a round-robin channel selection. We are
       // passing a hint here to prefer random channel selection instead of doing GAX round-robin.
-      // Also signal unbind so the grpc-gcp affinity map entry is cleaned up once the call
-      // completes. The unbind flag is preserved on retries via prepareRetryOnDifferentGrpcChannel.
       this.channelHint =
           getChannelHintOptions(
               session.getOptions(),
               ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
               session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
-      if (this.channelHint != null) {
-        Map<SpannerRpc.Option, Object> mutable = new EnumMap<>(SpannerRpc.Option.class);
-        mutable.putAll(this.channelHint);
-        mutable.put(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
-        this.channelHint = Collections.unmodifiableMap(mutable);
-      }
     }
 
     @Override
@@ -259,12 +250,10 @@ abstract class AbstractReadContext
 
     @Override
     boolean prepareRetryOnDifferentGrpcChannel() {
-      if (session.getIsMultiplexed() && channelHint.get(Option.CHANNEL_HINT) != null) {
-        long channelHintForTransaction = Option.CHANNEL_HINT.getLong(channelHint) + 1L;
-        channelHint =
-            optionMap(
-                SessionOption.channelHint(channelHintForTransaction),
-                SessionOption.unbindChannelHint());
+      ChannelAffinityRef channelAffinityRef =
+          Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(channelHint);
+      if (session.getIsMultiplexed() && channelAffinityRef != null) {
+        channelAffinityRef.useDifferentChannelOnNextCall();
         return true;
       }
       return super.prepareRetryOnDifferentGrpcChannel();
@@ -674,10 +663,6 @@ abstract class AbstractReadContext
         }
       } finally {
         txnLock.unlock();
-      }
-      ByteString id = getTransactionId();
-      if (id != null && !id.isEmpty()) {
-        rpc.clearTransactionAndChannelAffinity(id, Option.CHANNEL_HINT.getLong(channelHint));
       }
       super.close();
     }
@@ -1169,11 +1154,12 @@ abstract class AbstractReadContext
   static Map<SpannerRpc.Option, ?> getChannelHintOptions(
       Map<SpannerRpc.Option, ?> channelHintForSession,
       Long channelHintForTransaction,
-      boolean useTransactionHint) {
+      boolean grpcGcpEnabled) {
     // grpc-gcp uses a per-operation/per-transaction random hint instead of reusing the session
-    // hint so requests distribute independently from session affinity.
-    if (useTransactionHint && channelHintForTransaction != null) {
-      return optionMap(SessionOption.channelHint(channelHintForTransaction));
+    // hint so requests distribute independently from session affinity. Use direct channel-ref
+    // affinity so grpc-gcp does not need affinity-key map entries for Spanner operations.
+    if (grpcGcpEnabled && channelHintForTransaction != null) {
+      return optionMap(SessionOption.channelAffinityRef(new ChannelAffinityRef()));
     }
     if (channelHintForSession != null) {
       return channelHintForSession;
