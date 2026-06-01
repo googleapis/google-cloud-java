@@ -581,6 +581,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/chronicle/v1
+  - proto_path: backstory
   requires_billing: true
 - api_shortname: cloudapiregistry
   name_pretty: Cloud API Registry API
