@@ -109,7 +109,8 @@ public interface CreateDataScanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. DataScan identifier.
+   * Optional. DataScan identifier. If not provided, a unique ID will be
+   * generated with the prefix "data-scan-".
    *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
@@ -118,7 +119,7 @@ public interface CreateDataScanRequestOrBuilder
    * * Must be unique within the customer project / location.
    * </pre>
    *
-   * <code>string data_scan_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string data_scan_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dataScanId.
    */
@@ -128,7 +129,8 @@ public interface CreateDataScanRequestOrBuilder
    *
    *
    * <pre>
-   * Required. DataScan identifier.
+   * Optional. DataScan identifier. If not provided, a unique ID will be
+   * generated with the prefix "data-scan-".
    *
    * * Must contain only lowercase letters, numbers and hyphens.
    * * Must start with a letter.
@@ -137,7 +139,7 @@ public interface CreateDataScanRequestOrBuilder
    * * Must be unique within the customer project / location.
    * </pre>
    *
-   * <code>string data_scan_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string data_scan_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dataScanId.
    */

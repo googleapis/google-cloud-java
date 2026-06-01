@@ -77,6 +77,7 @@ public final class UnitVariable extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Enumeration of variable types.
+   * `STRUCT` and `LIST` values should be JSON-encoded strings.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariable.Type}
@@ -122,6 +123,26 @@ public final class UnitVariable extends com.google.protobuf.GeneratedMessage
      * <code>BOOL = 3;</code>
      */
     BOOL(3),
+    /**
+     *
+     *
+     * <pre>
+     * Variable type is struct.
+     * </pre>
+     *
+     * <code>STRUCT = 4;</code>
+     */
+    STRUCT(4),
+    /**
+     *
+     *
+     * <pre>
+     * Variable type is list.
+     * </pre>
+     *
+     * <code>LIST = 5;</code>
+     */
+    LIST(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -179,6 +200,28 @@ public final class UnitVariable extends com.google.protobuf.GeneratedMessage
      */
     public static final int BOOL_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Variable type is struct.
+     * </pre>
+     *
+     * <code>STRUCT = 4;</code>
+     */
+    public static final int STRUCT_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Variable type is list.
+     * </pre>
+     *
+     * <code>LIST = 5;</code>
+     */
+    public static final int LIST_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -211,6 +254,10 @@ public final class UnitVariable extends com.google.protobuf.GeneratedMessage
           return INT;
         case 3:
           return BOOL;
+        case 4:
+          return STRUCT;
+        case 5:
+          return LIST;
         default:
           return null;
       }

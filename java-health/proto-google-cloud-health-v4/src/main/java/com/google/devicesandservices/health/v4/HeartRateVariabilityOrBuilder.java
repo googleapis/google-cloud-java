@@ -74,11 +74,29 @@ public interface HeartRateVariabilityOrBuilder
    *
    * <pre>
    * Optional. The root mean square of successive differences between normal
-   * heartbeats. This is a measure of heart rate variability used by Fitbit.
+   * heartbeats. This is a measure of heart rate variability used by Google
+   * Health.
    * </pre>
    *
    * <code>
-   * double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rootMeanSquareOfSuccessiveDifferencesMilliseconds field is set.
+   */
+  boolean hasRootMeanSquareOfSuccessiveDifferencesMilliseconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root mean square of successive differences between normal
+   * heartbeats. This is a measure of heart rate variability used by Google
+   * Health.
+   * </pre>
+   *
+   * <code>
+   * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The rootMeanSquareOfSuccessiveDifferencesMilliseconds.
@@ -92,7 +110,23 @@ public interface HeartRateVariabilityOrBuilder
    * Optional. The standard deviation of the heart rate variability measurement.
    * </pre>
    *
-   * <code>double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the standardDeviationMilliseconds field is set.
+   */
+  boolean hasStandardDeviationMilliseconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard deviation of the heart rate variability measurement.
+   * </pre>
+   *
+   * <code>
+   * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardDeviationMilliseconds.

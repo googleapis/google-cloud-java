@@ -266,6 +266,150 @@ public final class HealthProfileServiceGrpc {
     return getGetIdentityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.GetIrnProfileRequest,
+          com.google.devicesandservices.health.v4.IrnProfile>
+      getGetIrnProfileMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIrnProfile",
+      requestType = com.google.devicesandservices.health.v4.GetIrnProfileRequest.class,
+      responseType = com.google.devicesandservices.health.v4.IrnProfile.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.GetIrnProfileRequest,
+          com.google.devicesandservices.health.v4.IrnProfile>
+      getGetIrnProfileMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.GetIrnProfileRequest,
+            com.google.devicesandservices.health.v4.IrnProfile>
+        getGetIrnProfileMethod;
+    if ((getGetIrnProfileMethod = HealthProfileServiceGrpc.getGetIrnProfileMethod) == null) {
+      synchronized (HealthProfileServiceGrpc.class) {
+        if ((getGetIrnProfileMethod = HealthProfileServiceGrpc.getGetIrnProfileMethod) == null) {
+          HealthProfileServiceGrpc.getGetIrnProfileMethod =
+              getGetIrnProfileMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.GetIrnProfileRequest,
+                          com.google.devicesandservices.health.v4.IrnProfile>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIrnProfile"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.GetIrnProfileRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.IrnProfile
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HealthProfileServiceMethodDescriptorSupplier("GetIrnProfile"))
+                      .build();
+        }
+      }
+    }
+    return getGetIrnProfileMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.GetPairedDeviceRequest,
+          com.google.devicesandservices.health.v4.PairedDevice>
+      getGetPairedDeviceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPairedDevice",
+      requestType = com.google.devicesandservices.health.v4.GetPairedDeviceRequest.class,
+      responseType = com.google.devicesandservices.health.v4.PairedDevice.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.GetPairedDeviceRequest,
+          com.google.devicesandservices.health.v4.PairedDevice>
+      getGetPairedDeviceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.GetPairedDeviceRequest,
+            com.google.devicesandservices.health.v4.PairedDevice>
+        getGetPairedDeviceMethod;
+    if ((getGetPairedDeviceMethod = HealthProfileServiceGrpc.getGetPairedDeviceMethod) == null) {
+      synchronized (HealthProfileServiceGrpc.class) {
+        if ((getGetPairedDeviceMethod = HealthProfileServiceGrpc.getGetPairedDeviceMethod)
+            == null) {
+          HealthProfileServiceGrpc.getGetPairedDeviceMethod =
+              getGetPairedDeviceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.GetPairedDeviceRequest,
+                          com.google.devicesandservices.health.v4.PairedDevice>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPairedDevice"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.GetPairedDeviceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.PairedDevice
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HealthProfileServiceMethodDescriptorSupplier("GetPairedDevice"))
+                      .build();
+        }
+      }
+    }
+    return getGetPairedDeviceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.ListPairedDevicesRequest,
+          com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+      getListPairedDevicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPairedDevices",
+      requestType = com.google.devicesandservices.health.v4.ListPairedDevicesRequest.class,
+      responseType = com.google.devicesandservices.health.v4.ListPairedDevicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devicesandservices.health.v4.ListPairedDevicesRequest,
+          com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+      getListPairedDevicesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devicesandservices.health.v4.ListPairedDevicesRequest,
+            com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+        getListPairedDevicesMethod;
+    if ((getListPairedDevicesMethod = HealthProfileServiceGrpc.getListPairedDevicesMethod)
+        == null) {
+      synchronized (HealthProfileServiceGrpc.class) {
+        if ((getListPairedDevicesMethod = HealthProfileServiceGrpc.getListPairedDevicesMethod)
+            == null) {
+          HealthProfileServiceGrpc.getListPairedDevicesMethod =
+              getListPairedDevicesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devicesandservices.health.v4.ListPairedDevicesRequest,
+                          com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPairedDevices"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.ListPairedDevicesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devicesandservices.health.v4.ListPairedDevicesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HealthProfileServiceMethodDescriptorSupplier("ListPairedDevices"))
+                      .build();
+        }
+      }
+    }
+    return getListPairedDevicesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static HealthProfileServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<HealthProfileServiceStub> factory =
@@ -404,6 +548,52 @@ public final class HealthProfileServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetIdentityMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's IRN Profile details.
+     * </pre>
+     */
+    default void getIrnProfile(
+        com.google.devicesandservices.health.v4.GetIrnProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.IrnProfile>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIrnProfileMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's Device.
+     * </pre>
+     */
+    default void getPairedDevice(
+        com.google.devicesandservices.health.v4.GetPairedDeviceRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.PairedDevice>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPairedDeviceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the user's list of paired 1P trackers and smartwatches.
+     * </pre>
+     */
+    default void listPairedDevices(
+        com.google.devicesandservices.health.v4.ListPairedDevicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPairedDevicesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -525,6 +715,58 @@ public final class HealthProfileServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's IRN Profile details.
+     * </pre>
+     */
+    public void getIrnProfile(
+        com.google.devicesandservices.health.v4.GetIrnProfileRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.IrnProfile>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIrnProfileMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's Device.
+     * </pre>
+     */
+    public void getPairedDevice(
+        com.google.devicesandservices.health.v4.GetPairedDeviceRequest request,
+        io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.PairedDevice>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPairedDeviceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the user's list of paired 1P trackers and smartwatches.
+     * </pre>
+     */
+    public void listPairedDevices(
+        com.google.devicesandservices.health.v4.ListPairedDevicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPairedDevicesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -618,6 +860,48 @@ public final class HealthProfileServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIdentityMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's IRN Profile details.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.IrnProfile getIrnProfile(
+        com.google.devicesandservices.health.v4.GetIrnProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIrnProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's Device.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.PairedDevice getPairedDevice(
+        com.google.devicesandservices.health.v4.GetPairedDeviceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPairedDeviceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the user's list of paired 1P trackers and smartwatches.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.ListPairedDevicesResponse listPairedDevices(
+        com.google.devicesandservices.health.v4.ListPairedDevicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListPairedDevicesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -705,6 +989,45 @@ public final class HealthProfileServiceGrpc {
         com.google.devicesandservices.health.v4.GetIdentityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetIdentityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's IRN Profile details.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.IrnProfile getIrnProfile(
+        com.google.devicesandservices.health.v4.GetIrnProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIrnProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's Device.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.PairedDevice getPairedDevice(
+        com.google.devicesandservices.health.v4.GetPairedDeviceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPairedDeviceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the user's list of paired 1P trackers and smartwatches.
+     * </pre>
+     */
+    public com.google.devicesandservices.health.v4.ListPairedDevicesResponse listPairedDevices(
+        com.google.devicesandservices.health.v4.ListPairedDevicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPairedDevicesMethod(), getCallOptions(), request);
     }
   }
 
@@ -799,6 +1122,49 @@ public final class HealthProfileServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetIdentityMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's IRN Profile details.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.IrnProfile>
+        getIrnProfile(com.google.devicesandservices.health.v4.GetIrnProfileRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIrnProfileMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns user's Device.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.PairedDevice>
+        getPairedDevice(com.google.devicesandservices.health.v4.GetPairedDeviceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPairedDeviceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the user's list of paired 1P trackers and smartwatches.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.devicesandservices.health.v4.ListPairedDevicesResponse>
+        listPairedDevices(
+            com.google.devicesandservices.health.v4.ListPairedDevicesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPairedDevicesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PROFILE = 0;
@@ -806,6 +1172,9 @@ public final class HealthProfileServiceGrpc {
   private static final int METHODID_GET_SETTINGS = 2;
   private static final int METHODID_UPDATE_SETTINGS = 3;
   private static final int METHODID_GET_IDENTITY = 4;
+  private static final int METHODID_GET_IRN_PROFILE = 5;
+  private static final int METHODID_GET_PAIRED_DEVICE = 6;
+  private static final int METHODID_LIST_PAIRED_DEVICES = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -852,6 +1221,25 @@ public final class HealthProfileServiceGrpc {
           serviceImpl.getIdentity(
               (com.google.devicesandservices.health.v4.GetIdentityRequest) request,
               (io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.Identity>)
+                  responseObserver);
+          break;
+        case METHODID_GET_IRN_PROFILE:
+          serviceImpl.getIrnProfile(
+              (com.google.devicesandservices.health.v4.GetIrnProfileRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.IrnProfile>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PAIRED_DEVICE:
+          serviceImpl.getPairedDevice(
+              (com.google.devicesandservices.health.v4.GetPairedDeviceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.devicesandservices.health.v4.PairedDevice>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PAIRED_DEVICES:
+          serviceImpl.listPairedDevices(
+              (com.google.devicesandservices.health.v4.ListPairedDevicesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.devicesandservices.health.v4.ListPairedDevicesResponse>)
                   responseObserver);
           break;
         default:
@@ -907,6 +1295,27 @@ public final class HealthProfileServiceGrpc {
                     com.google.devicesandservices.health.v4.GetIdentityRequest,
                     com.google.devicesandservices.health.v4.Identity>(
                     service, METHODID_GET_IDENTITY)))
+        .addMethod(
+            getGetIrnProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.GetIrnProfileRequest,
+                    com.google.devicesandservices.health.v4.IrnProfile>(
+                    service, METHODID_GET_IRN_PROFILE)))
+        .addMethod(
+            getGetPairedDeviceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.GetPairedDeviceRequest,
+                    com.google.devicesandservices.health.v4.PairedDevice>(
+                    service, METHODID_GET_PAIRED_DEVICE)))
+        .addMethod(
+            getListPairedDevicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devicesandservices.health.v4.ListPairedDevicesRequest,
+                    com.google.devicesandservices.health.v4.ListPairedDevicesResponse>(
+                    service, METHODID_LIST_PAIRED_DEVICES)))
         .build();
   }
 
@@ -963,6 +1372,9 @@ public final class HealthProfileServiceGrpc {
                       .addMethod(getGetSettingsMethod())
                       .addMethod(getUpdateSettingsMethod())
                       .addMethod(getGetIdentityMethod())
+                      .addMethod(getGetIrnProfileMethod())
+                      .addMethod(getGetPairedDeviceMethod())
+                      .addMethod(getListPairedDevicesMethod())
                       .build();
         }
       }

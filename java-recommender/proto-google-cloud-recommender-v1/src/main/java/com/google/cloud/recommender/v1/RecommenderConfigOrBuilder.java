@@ -30,12 +30,12 @@ public interface RecommenderConfigOrBuilder
    *
    *
    * <pre>
-   * Name of recommender config.
+   * Identifier. Name of recommender config.
    * Eg,
    * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface RecommenderConfigOrBuilder
    *
    *
    * <pre>
-   * Name of recommender config.
+   * Identifier. Name of recommender config.
    * Eg,
    * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

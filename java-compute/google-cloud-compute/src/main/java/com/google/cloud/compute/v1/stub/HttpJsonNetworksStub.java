@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
+import com.google.cloud.compute.v1.CancelRequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
@@ -115,6 +116,63 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       .build())
               .setOperationSnapshotFactory(
                   (AddPeeringNetworkRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringMethodDescriptor =
+          ApiMethodDescriptor.<CancelRequestRemovePeeringNetworkRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Networks/CancelRequestRemovePeering")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CancelRequestRemovePeeringNetworkRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/networks/{network}/cancelRequestRemovePeering",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelRequestRemovePeeringNetworkRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "network", request.getNetwork());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelRequestRemovePeeringNetworkRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "networksCancelRequestRemovePeeringRequestResource",
+                                      request
+                                          .getNetworksCancelRequestRemovePeeringRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CancelRequestRemovePeeringNetworkRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     return HttpJsonOperationSnapshot.newBuilder()
@@ -677,6 +735,10 @@ public class HttpJsonNetworksStub extends NetworksStub {
   private final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable;
   private final OperationCallable<AddPeeringNetworkRequest, Operation, Operation>
       addPeeringOperationCallable;
+  private final UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable;
+  private final OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable;
   private final UnaryCallable<DeleteNetworkRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteNetworkRequest, Operation, Operation>
       deleteOperationCallable;
@@ -715,6 +777,8 @@ public class HttpJsonNetworksStub extends NetworksStub {
   private final HttpJsonStubCallableFactory callableFactory;
 
   private static final PathTemplate ADD_PEERING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate CANCEL_REQUEST_REMOVE_PEERING_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/networks/{network}");
   private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/networks/{network}");
@@ -797,6 +861,27 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   return ADD_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<CancelRequestRemovePeeringNetworkRequest, Operation>
+        cancelRequestRemovePeeringTransportSettings =
+            HttpJsonCallSettings.<CancelRequestRemovePeeringNetworkRequest, Operation>newBuilder()
+                .setMethodDescriptor(cancelRequestRemovePeeringMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("network", String.valueOf(request.getNetwork()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return CANCEL_REQUEST_REMOVE_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<DeleteNetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -1023,6 +1108,17 @@ public class HttpJsonNetworksStub extends NetworksStub {
             settings.addPeeringOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.cancelRequestRemovePeeringCallable =
+        callableFactory.createUnaryCallable(
+            cancelRequestRemovePeeringTransportSettings,
+            settings.cancelRequestRemovePeeringSettings(),
+            clientContext);
+    this.cancelRequestRemovePeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelRequestRemovePeeringTransportSettings,
+            settings.cancelRequestRemovePeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -1123,6 +1219,7 @@ public class HttpJsonNetworksStub extends NetworksStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addPeeringMethodDescriptor);
+    methodDescriptors.add(cancelRequestRemovePeeringMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getEffectiveFirewallsMethodDescriptor);
@@ -1146,6 +1243,18 @@ public class HttpJsonNetworksStub extends NetworksStub {
   public OperationCallable<AddPeeringNetworkRequest, Operation, Operation>
       addPeeringOperationCallable() {
     return addPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable() {
+    return cancelRequestRemovePeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable() {
+    return cancelRequestRemovePeeringOperationCallable;
   }
 
   @Override

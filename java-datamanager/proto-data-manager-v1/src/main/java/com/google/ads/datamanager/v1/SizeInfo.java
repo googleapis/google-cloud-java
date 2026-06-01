@@ -111,6 +111,44 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
     return searchNetworkMembersCount_;
   }
 
+  public static final int YOUTUBE_MEMBERS_COUNT_FIELD_NUMBER = 3;
+  private long youtubeMembersCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated number of members in this user list on YouTube.
+   * </pre>
+   *
+   * <code>int64 youtube_members_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The youtubeMembersCount.
+   */
+  @java.lang.Override
+  public long getYoutubeMembersCount() {
+    return youtubeMembersCount_;
+  }
+
+  public static final int GMAIL_MEMBERS_COUNT_FIELD_NUMBER = 4;
+  private long gmailMembersCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated number of members in this user list on Gmail.
+   * </pre>
+   *
+   * <code>int64 gmail_members_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gmailMembersCount.
+   */
+  @java.lang.Override
+  public long getGmailMembersCount() {
+    return gmailMembersCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -131,6 +169,12 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
     if (searchNetworkMembersCount_ != 0L) {
       output.writeInt64(2, searchNetworkMembersCount_);
     }
+    if (youtubeMembersCount_ != 0L) {
+      output.writeInt64(3, youtubeMembersCount_);
+    }
+    if (gmailMembersCount_ != 0L) {
+      output.writeInt64(4, gmailMembersCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +190,12 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
     }
     if (searchNetworkMembersCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, searchNetworkMembersCount_);
+    }
+    if (youtubeMembersCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, youtubeMembersCount_);
+    }
+    if (gmailMembersCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, gmailMembersCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +214,8 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
 
     if (getDisplayNetworkMembersCount() != other.getDisplayNetworkMembersCount()) return false;
     if (getSearchNetworkMembersCount() != other.getSearchNetworkMembersCount()) return false;
+    if (getYoutubeMembersCount() != other.getYoutubeMembersCount()) return false;
+    if (getGmailMembersCount() != other.getGmailMembersCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +231,10 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDisplayNetworkMembersCount());
     hash = (37 * hash) + SEARCH_NETWORK_MEMBERS_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSearchNetworkMembersCount());
+    hash = (37 * hash) + YOUTUBE_MEMBERS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getYoutubeMembersCount());
+    hash = (37 * hash) + GMAIL_MEMBERS_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGmailMembersCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +377,8 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       displayNetworkMembersCount_ = 0L;
       searchNetworkMembersCount_ = 0L;
+      youtubeMembersCount_ = 0L;
+      gmailMembersCount_ = 0L;
       return this;
     }
 
@@ -363,6 +421,12 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.searchNetworkMembersCount_ = searchNetworkMembersCount_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.youtubeMembersCount_ = youtubeMembersCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gmailMembersCount_ = gmailMembersCount_;
+      }
     }
 
     @java.lang.Override
@@ -382,6 +446,12 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
       }
       if (other.getSearchNetworkMembersCount() != 0L) {
         setSearchNetworkMembersCount(other.getSearchNetworkMembersCount());
+      }
+      if (other.getYoutubeMembersCount() != 0L) {
+        setYoutubeMembersCount(other.getYoutubeMembersCount());
+      }
+      if (other.getGmailMembersCount() != 0L) {
+        setGmailMembersCount(other.getGmailMembersCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -421,6 +491,18 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                youtubeMembersCount_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 32:
+              {
+                gmailMembersCount_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -563,6 +645,118 @@ public final class SizeInfo extends com.google.protobuf.GeneratedMessage
     public Builder clearSearchNetworkMembersCount() {
       bitField0_ = (bitField0_ & ~0x00000002);
       searchNetworkMembersCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long youtubeMembersCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on YouTube.
+     * </pre>
+     *
+     * <code>int64 youtube_members_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The youtubeMembersCount.
+     */
+    @java.lang.Override
+    public long getYoutubeMembersCount() {
+      return youtubeMembersCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on YouTube.
+     * </pre>
+     *
+     * <code>int64 youtube_members_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The youtubeMembersCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setYoutubeMembersCount(long value) {
+
+      youtubeMembersCount_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on YouTube.
+     * </pre>
+     *
+     * <code>int64 youtube_members_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearYoutubeMembersCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      youtubeMembersCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long gmailMembersCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on Gmail.
+     * </pre>
+     *
+     * <code>int64 gmail_members_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The gmailMembersCount.
+     */
+    @java.lang.Override
+    public long getGmailMembersCount() {
+      return gmailMembersCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on Gmail.
+     * </pre>
+     *
+     * <code>int64 gmail_members_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The gmailMembersCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGmailMembersCount(long value) {
+
+      gmailMembersCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated number of members in this user list on Gmail.
+     * </pre>
+     *
+     * <code>int64 gmail_members_count = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGmailMembersCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      gmailMembersCount_ = 0L;
       onChanged();
       return this;
     }

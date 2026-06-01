@@ -77,7 +77,21 @@ public interface BasalEnergyBurnedOrBuilder
    * kilocalories over the observed interval.
    * </pre>
    *
-   * <code>double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the kcal field is set.
+   */
+  boolean hasKcal();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of calories burned due to basal metabolic rate in
+   * kilocalories over the observed interval.
+   * </pre>
+   *
+   * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The kcal.
    */
