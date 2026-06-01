@@ -130,22 +130,19 @@ public class BigQueryDriver implements Driver {
         // strip 'jdbc:' from the URL, add any extra properties
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(url.substring(5), this.toString(), info);
-        DataSource ds;
-        try {
-          ds = DataSource.fromUrl(connectionUri);
-        } catch (BigQueryJdbcRuntimeException e) {
-          throw new BigQueryJdbcException("Failed to parse connection URL", e);
-        }
-
         // LogLevel
-        String logLevelStr = ds.getLogLevel();
+        String logLevelStr =
+            BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                connectionUri, BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME);
         if (logLevelStr == null) {
           logLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
         }
         Level logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
 
         // LogPath
-        String logPath = ds.getLogPath();
+        String logPath =
+            BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                connectionUri, BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME);
         if (logPath == null) {
           logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
         }
@@ -154,6 +151,14 @@ public class BigQueryDriver implements Driver {
         }
 
         BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
+
+        DataSource ds;
+        try {
+          ds = DataSource.fromUrl(connectionUri);
+        } catch (BigQueryJdbcRuntimeException e) {
+          LOG.severe("Failed to parse connection URL", e);
+          throw new BigQueryJdbcException("Failed to parse connection URL", e);
+        }
 
         // Logging starts from here.
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
