@@ -151,6 +151,7 @@ public class BigQueryDriver implements Driver {
         }
 
         BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
+
         // Logging starts from here.
         DataSource ds;
         try {
