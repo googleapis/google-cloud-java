@@ -138,27 +138,12 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return precision.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
-    switch (type) {
-      case BOOL:
-        return 1; // 1 digit
-      case INT64:
-        return 19; // Maximum digits for a signed 64-bit integer
-      case FLOAT64:
-        return 15; // Approximate decimal precision of a double-precision float
-      case NUMERIC:
-        return 38; // Standard BigQuery NUMERIC precision
-      case BIGNUMERIC:
-        return 77; // Standard BigQuery BIGNUMERIC precision
-      case DATE:
-        return 10; // Character length of "YYYY-MM-DD"
-      case TIME:
-        return 15; // Character length of "HH:MM:SS.ffffff" (microsecond resolution)
-      case TIMESTAMP:
-      case DATETIME:
-        return 26; // Character length of "YYYY-MM-DD HH:MM:SS.ffffff" (microsecond resolution)
-      default:
-        return 0;
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    if (typeInfo != null && typeInfo.columnSize != null) {
+      return typeInfo.columnSize;
     }
+    return 0;
   }
 
   @Override
@@ -168,18 +153,12 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return scale.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
-    switch (type) {
-      case NUMERIC:
-        return 9; // Standard BigQuery NUMERIC scale
-      case BIGNUMERIC:
-        return 38; // Standard BigQuery BIGNUMERIC scale
-      case TIME:
-      case TIMESTAMP:
-      case DATETIME:
-        return 6; // Microsecond resolution
-      default:
-        return 0;
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    if (typeInfo != null && typeInfo.decimalDigits != null) {
+      return typeInfo.decimalDigits;
     }
+    return 0;
   }
 
   @Override
