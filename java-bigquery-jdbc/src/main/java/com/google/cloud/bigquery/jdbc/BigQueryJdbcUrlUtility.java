@@ -663,6 +663,30 @@ final class BigQueryJdbcUrlUtility {
   }
 
   /**
+   * Parses a URI property from the given URI without validating any other properties.
+   *
+   * @param uri The URI to parse.
+   * @param property The name of the property to parse.
+   * @return The String value of the property, or null if the property is not found.
+   */
+  static String parseUriPropertyWithoutValidation(String uri, String property) {
+    if (uri == null) {
+      return null;
+    }
+    String searchKey = ";" + property.toUpperCase() + "=";
+    String upperUri = uri.toUpperCase();
+    int index = upperUri.indexOf(searchKey);
+    if (index == -1) {
+      return null;
+    }
+    int valueStart = index + searchKey.length();
+    int valueEnd = uri.indexOf(';', valueStart);
+    String value =
+        (valueEnd == -1) ? uri.substring(valueStart) : uri.substring(valueStart, valueEnd);
+    return CharEscapers.decodeUriPath(value.replace("+", "%2B"));
+  }
+
+  /**
    * Parses the URL into a map of key-value pairs, validating that all keys are known properties.
    *
    * @param url The URL to parse.
