@@ -40,17 +40,17 @@ jobs:
         cd google-http-java-client
         mvn clean install -DskipTests=true -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip
 
-    # 5. Build and Install sdk-platform-java core libraries first (establishes JCA dependencies in local Maven cache)
+    # 5. Build and Install sdk-platform-java core libraries first (excluding circular pqc-test)
     - name: Build and Install sdk-platform-java Core
       run: |
         cd google-cloud-java-pqc/sdk-platform-java
-        mvn clean install -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+        mvn clean install -pl '!pqc-test' -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
 
-    # 6. Build and Install snapshot bigquery, java-translate, and pqc-test targets
+    # 6. Build and Install snapshot bigquery, java-translate, and pqc-test targets (specifying actual sub-modules)
     - name: Build and Install Client Snapshot Libraries and Test Modules
       run: |
         cd google-cloud-java-pqc
-        mvn clean install -pl java-bigquery,java-translate,sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+        mvn clean install -pl java-bigquery/google-cloud-bigquery,java-translate/google-cloud-translate,sdk-platform-java/pqc-test/pqc-test-snapshot,sdk-platform-java/pqc-test/pqc-test-release -am -T 1.5C -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
 
     # 7. Run Snapshot PQC Tests (EXPECT PASS)
     - name: Run Snapshot PQC Connectivity Tests (Expect PASS)
@@ -58,16 +58,8 @@ jobs:
         cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-snapshot
         mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
 
-    # 8. Run Release PQC Tests (EXPECT FAIL)
-    - name: Run Release PQC Connectivity Tests (Expect FAIL)
-      # We expect this step to fail. If it passes, it means release libraries are negotiating PQC (which is incorrect).
-      # Thus we run it and assert that the maven command fails (exit code != 0).
+    # 8. Run Release PQC Tests (Expect PASS because tests assert negative behavior and pass)
+    - name: Run Release PQC Connectivity Tests
       run: |
         cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-release
-        if mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest; then
-          echo "Error: Release tests passed but they were expected to fail!"
-          exit 1
-        else
-          echo "Success: Release tests failed-fast as expected."
-          exit 0
-        fi
+        mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
