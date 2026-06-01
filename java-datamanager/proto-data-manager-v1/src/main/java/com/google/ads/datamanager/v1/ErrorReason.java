@@ -544,12 +544,22 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The field value is too long.
+   * Length of the field value is too long.
    * </pre>
    *
    * <code>FIELD_VALUE_TOO_LONG = 50;</code>
    */
   FIELD_VALUE_TOO_LONG(50),
+  /**
+   *
+   *
+   * <pre>
+   * Length of the field value is too short.
+   * </pre>
+   *
+   * <code>FIELD_VALUE_TOO_SHORT = 106;</code>
+   */
+  FIELD_VALUE_TOO_SHORT(106),
   /**
    *
    *
@@ -560,6 +570,16 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOO_MANY_ELEMENTS = 51;</code>
    */
   TOO_MANY_ELEMENTS(51),
+  /**
+   *
+   *
+   * <pre>
+   * Too few elements in a list in the request.
+   * </pre>
+   *
+   * <code>TOO_FEW_ELEMENTS = 105;</code>
+   */
+  TOO_FEW_ELEMENTS(105),
   /**
    *
    *
@@ -1067,6 +1087,201 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED = 101;</code>
    */
   EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED(101),
+  /**
+   *
+   *
+   * <pre>
+   * Account is not eligible for Store Sales.
+   * </pre>
+   *
+   * <code>ACCOUNT_INELIGIBLE_FOR_STORE_SALES = 102;</code>
+   */
+  ACCOUNT_INELIGIBLE_FOR_STORE_SALES(102),
+  /**
+   *
+   *
+   * <pre>
+   * The merchant feed language code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_MERCHANT_FEED_LANGUAGE_CODE = 103;</code>
+   */
+  INVALID_MERCHANT_FEED_LANGUAGE_CODE(103),
+  /**
+   *
+   *
+   * <pre>
+   * The region code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_REGION_CODE = 104;</code>
+   */
+  INVALID_REGION_CODE(104),
+  /**
+   *
+   *
+   * <pre>
+   * The subdivision code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_SUBDIVISION_CODE = 107;</code>
+   */
+  INVALID_SUBDIVISION_CODE(107),
+  /**
+   *
+   *
+   * <pre>
+   * The subcontinent code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_SUBCONTINENT_CODE = 108;</code>
+   */
+  INVALID_SUBCONTINENT_CODE(108),
+  /**
+   *
+   *
+   * <pre>
+   * The continent code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_CONTINENT_CODE = 109;</code>
+   */
+  INVALID_CONTINENT_CODE(109),
+  /**
+   *
+   *
+   * <pre>
+   * The device category is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DEVICE_CATEGORY = 110;</code>
+   */
+  INVALID_DEVICE_CATEGORY(110),
+  /**
+   *
+   *
+   * <pre>
+   * Both app_instance_id and client_id are set.
+   * </pre>
+   *
+   * <code>BOTH_CLIENT_ID_AND_APP_INSTANCE_ID_NOT_ALLOWED = 111;</code>
+   */
+  BOTH_CLIENT_ID_AND_APP_INSTANCE_ID_NOT_ALLOWED(111),
+  /**
+   *
+   *
+   * <pre>
+   * The Google Analytics property is a subproperty or rollup property.
+   * </pre>
+   *
+   * <code>GOOGLE_ANALYTICS_SUBPROPERTY_OR_ROLLUP_PROPERTY_NOT_ALLOWED = 112;</code>
+   */
+  GOOGLE_ANALYTICS_SUBPROPERTY_OR_ROLLUP_PROPERTY_NOT_ALLOWED(112),
+  /**
+   *
+   *
+   * <pre>
+   * Third party user data can only be set by data partners.
+   * </pre>
+   *
+   * <code>THIRD_PARTY_USER_DATA_NOT_ALLOWED = 113;</code>
+   */
+  THIRD_PARTY_USER_DATA_NOT_ALLOWED(113),
+  /**
+   *
+   *
+   * <pre>
+   * The coupon code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_COUPON_CODE = 114;</code>
+   */
+  INVALID_COUPON_CODE(114),
+  /**
+   *
+   *
+   * <pre>
+   * The event source type does not match the destination type.
+   * </pre>
+   *
+   * <code>EVENT_SOURCE_AND_DESTINATION_MISMATCH = 115;</code>
+   */
+  EVENT_SOURCE_AND_DESTINATION_MISMATCH(115),
+  /**
+   *
+   *
+   * <pre>
+   * The destination account type does not match the specified account id.
+   * </pre>
+   *
+   * <code>DESTINATION_ACCOUNT_TYPE_MISMATCH = 116;</code>
+   */
+  DESTINATION_ACCOUNT_TYPE_MISMATCH(116),
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable value contains personally identifiable information
+   * (PII).
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_VALUE_CONTAINS_PII = 117;</code>
+   */
+  CUSTOM_VARIABLE_VALUE_CONTAINS_PII(117),
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable is not enabled.
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_NOT_ENABLED = 118;</code>
+   */
+  CUSTOM_VARIABLE_NOT_ENABLED(118),
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable's value is invalid.
+   * </pre>
+   *
+   * <code>INVALID_CUSTOM_VARIABLE_VALUE = 119;</code>
+   */
+  INVALID_CUSTOM_VARIABLE_VALUE(119),
+  /**
+   *
+   *
+   * <pre>
+   * The destination does not have a custom variable with a name that matches
+   * the specified `variable`.
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_NOT_FOUND = 120;</code>
+   */
+  CUSTOM_VARIABLE_NOT_FOUND(120),
+  /**
+   *
+   *
+   * <pre>
+   * The
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * field of the request was set to `true`, but auto detection of baseline
+   * location failed.
+   * </pre>
+   *
+   * <code>BASELINE_LOCATION_AUTO_DETECTION_FAILED = 122;</code>
+   */
+  BASELINE_LOCATION_AUTO_DETECTION_FAILED(122),
+  /**
+   *
+   *
+   * <pre>
+   * Insights missing for this dimension.
+   * </pre>
+   *
+   * <code>INSIGHTS_MISSING_FOR_DIMENSION = 123;</code>
+   */
+  INSIGHTS_MISSING_FOR_DIMENSION(123),
   UNRECOGNIZED(-1),
   ;
 
@@ -1641,12 +1856,23 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The field value is too long.
+   * Length of the field value is too long.
    * </pre>
    *
    * <code>FIELD_VALUE_TOO_LONG = 50;</code>
    */
   public static final int FIELD_VALUE_TOO_LONG_VALUE = 50;
+
+  /**
+   *
+   *
+   * <pre>
+   * Length of the field value is too short.
+   * </pre>
+   *
+   * <code>FIELD_VALUE_TOO_SHORT = 106;</code>
+   */
+  public static final int FIELD_VALUE_TOO_SHORT_VALUE = 106;
 
   /**
    *
@@ -1658,6 +1884,17 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TOO_MANY_ELEMENTS = 51;</code>
    */
   public static final int TOO_MANY_ELEMENTS_VALUE = 51;
+
+  /**
+   *
+   *
+   * <pre>
+   * Too few elements in a list in the request.
+   * </pre>
+   *
+   * <code>TOO_FEW_ELEMENTS = 105;</code>
+   */
+  public static final int TOO_FEW_ELEMENTS_VALUE = 105;
 
   /**
    *
@@ -2216,6 +2453,220 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED_VALUE = 101;
 
+  /**
+   *
+   *
+   * <pre>
+   * Account is not eligible for Store Sales.
+   * </pre>
+   *
+   * <code>ACCOUNT_INELIGIBLE_FOR_STORE_SALES = 102;</code>
+   */
+  public static final int ACCOUNT_INELIGIBLE_FOR_STORE_SALES_VALUE = 102;
+
+  /**
+   *
+   *
+   * <pre>
+   * The merchant feed language code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_MERCHANT_FEED_LANGUAGE_CODE = 103;</code>
+   */
+  public static final int INVALID_MERCHANT_FEED_LANGUAGE_CODE_VALUE = 103;
+
+  /**
+   *
+   *
+   * <pre>
+   * The region code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_REGION_CODE = 104;</code>
+   */
+  public static final int INVALID_REGION_CODE_VALUE = 104;
+
+  /**
+   *
+   *
+   * <pre>
+   * The subdivision code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_SUBDIVISION_CODE = 107;</code>
+   */
+  public static final int INVALID_SUBDIVISION_CODE_VALUE = 107;
+
+  /**
+   *
+   *
+   * <pre>
+   * The subcontinent code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_SUBCONTINENT_CODE = 108;</code>
+   */
+  public static final int INVALID_SUBCONTINENT_CODE_VALUE = 108;
+
+  /**
+   *
+   *
+   * <pre>
+   * The continent code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_CONTINENT_CODE = 109;</code>
+   */
+  public static final int INVALID_CONTINENT_CODE_VALUE = 109;
+
+  /**
+   *
+   *
+   * <pre>
+   * The device category is not valid.
+   * </pre>
+   *
+   * <code>INVALID_DEVICE_CATEGORY = 110;</code>
+   */
+  public static final int INVALID_DEVICE_CATEGORY_VALUE = 110;
+
+  /**
+   *
+   *
+   * <pre>
+   * Both app_instance_id and client_id are set.
+   * </pre>
+   *
+   * <code>BOTH_CLIENT_ID_AND_APP_INSTANCE_ID_NOT_ALLOWED = 111;</code>
+   */
+  public static final int BOTH_CLIENT_ID_AND_APP_INSTANCE_ID_NOT_ALLOWED_VALUE = 111;
+
+  /**
+   *
+   *
+   * <pre>
+   * The Google Analytics property is a subproperty or rollup property.
+   * </pre>
+   *
+   * <code>GOOGLE_ANALYTICS_SUBPROPERTY_OR_ROLLUP_PROPERTY_NOT_ALLOWED = 112;</code>
+   */
+  public static final int GOOGLE_ANALYTICS_SUBPROPERTY_OR_ROLLUP_PROPERTY_NOT_ALLOWED_VALUE = 112;
+
+  /**
+   *
+   *
+   * <pre>
+   * Third party user data can only be set by data partners.
+   * </pre>
+   *
+   * <code>THIRD_PARTY_USER_DATA_NOT_ALLOWED = 113;</code>
+   */
+  public static final int THIRD_PARTY_USER_DATA_NOT_ALLOWED_VALUE = 113;
+
+  /**
+   *
+   *
+   * <pre>
+   * The coupon code is not valid.
+   * </pre>
+   *
+   * <code>INVALID_COUPON_CODE = 114;</code>
+   */
+  public static final int INVALID_COUPON_CODE_VALUE = 114;
+
+  /**
+   *
+   *
+   * <pre>
+   * The event source type does not match the destination type.
+   * </pre>
+   *
+   * <code>EVENT_SOURCE_AND_DESTINATION_MISMATCH = 115;</code>
+   */
+  public static final int EVENT_SOURCE_AND_DESTINATION_MISMATCH_VALUE = 115;
+
+  /**
+   *
+   *
+   * <pre>
+   * The destination account type does not match the specified account id.
+   * </pre>
+   *
+   * <code>DESTINATION_ACCOUNT_TYPE_MISMATCH = 116;</code>
+   */
+  public static final int DESTINATION_ACCOUNT_TYPE_MISMATCH_VALUE = 116;
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable value contains personally identifiable information
+   * (PII).
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_VALUE_CONTAINS_PII = 117;</code>
+   */
+  public static final int CUSTOM_VARIABLE_VALUE_CONTAINS_PII_VALUE = 117;
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable is not enabled.
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_NOT_ENABLED = 118;</code>
+   */
+  public static final int CUSTOM_VARIABLE_NOT_ENABLED_VALUE = 118;
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom variable's value is invalid.
+   * </pre>
+   *
+   * <code>INVALID_CUSTOM_VARIABLE_VALUE = 119;</code>
+   */
+  public static final int INVALID_CUSTOM_VARIABLE_VALUE_VALUE = 119;
+
+  /**
+   *
+   *
+   * <pre>
+   * The destination does not have a custom variable with a name that matches
+   * the specified `variable`.
+   * </pre>
+   *
+   * <code>CUSTOM_VARIABLE_NOT_FOUND = 120;</code>
+   */
+  public static final int CUSTOM_VARIABLE_NOT_FOUND_VALUE = 120;
+
+  /**
+   *
+   *
+   * <pre>
+   * The
+   * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
+   * field of the request was set to `true`, but auto detection of baseline
+   * location failed.
+   * </pre>
+   *
+   * <code>BASELINE_LOCATION_AUTO_DETECTION_FAILED = 122;</code>
+   */
+  public static final int BASELINE_LOCATION_AUTO_DETECTION_FAILED_VALUE = 122;
+
+  /**
+   *
+   *
+   * <pre>
+   * Insights missing for this dimension.
+   * </pre>
+   *
+   * <code>INSIGHTS_MISSING_FOR_DIMENSION = 123;</code>
+   */
+  public static final int INSIGHTS_MISSING_FOR_DIMENSION_VALUE = 123;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2342,8 +2793,12 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return MULTIPLE_DESTINATIONS_FOR_GOOGLE_ANALYTICS_EVENT;
       case 50:
         return FIELD_VALUE_TOO_LONG;
+      case 106:
+        return FIELD_VALUE_TOO_SHORT;
       case 51:
         return TOO_MANY_ELEMENTS;
+      case 105:
+        return TOO_FEW_ELEMENTS;
       case 52:
         return ALREADY_EXISTS;
       case 53:
@@ -2444,6 +2899,44 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return INVALID_MERCHANT_ID;
       case 101:
         return EU_POLITICAL_ADVERTISING_DECLARATION_REQUIRED;
+      case 102:
+        return ACCOUNT_INELIGIBLE_FOR_STORE_SALES;
+      case 103:
+        return INVALID_MERCHANT_FEED_LANGUAGE_CODE;
+      case 104:
+        return INVALID_REGION_CODE;
+      case 107:
+        return INVALID_SUBDIVISION_CODE;
+      case 108:
+        return INVALID_SUBCONTINENT_CODE;
+      case 109:
+        return INVALID_CONTINENT_CODE;
+      case 110:
+        return INVALID_DEVICE_CATEGORY;
+      case 111:
+        return BOTH_CLIENT_ID_AND_APP_INSTANCE_ID_NOT_ALLOWED;
+      case 112:
+        return GOOGLE_ANALYTICS_SUBPROPERTY_OR_ROLLUP_PROPERTY_NOT_ALLOWED;
+      case 113:
+        return THIRD_PARTY_USER_DATA_NOT_ALLOWED;
+      case 114:
+        return INVALID_COUPON_CODE;
+      case 115:
+        return EVENT_SOURCE_AND_DESTINATION_MISMATCH;
+      case 116:
+        return DESTINATION_ACCOUNT_TYPE_MISMATCH;
+      case 117:
+        return CUSTOM_VARIABLE_VALUE_CONTAINS_PII;
+      case 118:
+        return CUSTOM_VARIABLE_NOT_ENABLED;
+      case 119:
+        return INVALID_CUSTOM_VARIABLE_VALUE;
+      case 120:
+        return CUSTOM_VARIABLE_NOT_FOUND;
+      case 122:
+        return BASELINE_LOCATION_AUTO_DETECTION_FAILED;
+      case 123:
+        return INSIGHTS_MISSING_FOR_DIMENSION;
       default:
         return null;
     }

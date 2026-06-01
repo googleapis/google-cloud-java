@@ -76,7 +76,20 @@ public interface DistanceOrBuilder
    * Required. Distance in millimeters over the observed interval.
    * </pre>
    *
-   * <code>int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the millimeters field is set.
+   */
+  boolean hasMillimeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Distance in millimeters over the observed interval.
+   * </pre>
+   *
+   * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The millimeters.
    */

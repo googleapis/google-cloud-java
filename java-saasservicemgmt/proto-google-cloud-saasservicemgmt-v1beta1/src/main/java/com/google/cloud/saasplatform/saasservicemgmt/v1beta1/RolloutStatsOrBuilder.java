@@ -30,10 +30,10 @@ public interface RolloutStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -46,7 +46,7 @@ public interface RolloutStatsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate>
@@ -56,10 +56,10 @@ public interface RolloutStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -72,7 +72,7 @@ public interface RolloutStatsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate getOperationsByState(int index);
@@ -81,10 +81,10 @@ public interface RolloutStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -97,7 +97,7 @@ public interface RolloutStatsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   int getOperationsByStateCount();
@@ -106,10 +106,10 @@ public interface RolloutStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -122,7 +122,7 @@ public interface RolloutStatsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   java.util.List<? extends com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AggregateOrBuilder>
@@ -132,10 +132,10 @@ public interface RolloutStatsOrBuilder
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -148,9 +148,41 @@ public interface RolloutStatsOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AggregateOrBuilder
       getOperationsByStateOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Estimated number of units based. The estimation is
+   * computed upon creation of the rollout.
+   * </pre>
+   *
+   * <code>
+   * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the estimatedTotalUnitCount field is set.
+   */
+  boolean hasEstimatedTotalUnitCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Estimated number of units based. The estimation is
+   * computed upon creation of the rollout.
+   * </pre>
+   *
+   * <code>
+   * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The estimatedTotalUnitCount.
+   */
+  long getEstimatedTotalUnitCount();
 }

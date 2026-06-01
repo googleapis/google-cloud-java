@@ -300,6 +300,11 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).lookupEntrySettings();
   }
 
+  /** Returns the object with the settings used for calls to modifyEntry. */
+  public UnaryCallSettings<ModifyEntryRequest, Entry> modifyEntrySettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).modifyEntrySettings();
+  }
+
   /** Returns the object with the settings used for calls to searchEntries. */
   public PagedCallSettings<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings() {
@@ -721,6 +726,11 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to lookupEntry. */
     public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
       return getStubSettingsBuilder().lookupEntrySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to modifyEntry. */
+    public UnaryCallSettings.Builder<ModifyEntryRequest, Entry> modifyEntrySettings() {
+      return getStubSettingsBuilder().modifyEntrySettings();
     }
 
     /** Returns the builder for the settings used for calls to searchEntries. */

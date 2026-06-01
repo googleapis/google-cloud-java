@@ -23,6 +23,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
@@ -52,7 +53,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nullable;
 
 /**
@@ -333,8 +333,7 @@ class SessionImpl implements Session {
     if (!spanner.getOptions().isGrpcGcpExtensionEnabled()) {
       return getOptions();
     }
-    return optionMap(
-        SessionOption.channelHint(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)));
+    return optionMap(SessionOption.channelAffinityRef(new ChannelAffinityRef()));
   }
 
   @Override

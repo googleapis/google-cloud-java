@@ -111,7 +111,20 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
      * The amount of kilocalories burned in the specified heart rate zone.
      * </pre>
      *
-     * <code>double kcal = 2;</code>
+     * <code>optional double kcal = 2;</code>
+     *
+     * @return Whether the kcal field is set.
+     */
+    boolean hasKcal();
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of kilocalories burned in the specified heart rate zone.
+     * </pre>
+     *
+     * <code>optional double kcal = 2;</code>
      *
      * @return The kcal.
      */
@@ -171,6 +184,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
                   .CaloriesInHeartRateZoneValue.Builder.class);
     }
 
+    private int bitField0_;
     public static final int HEART_RATE_ZONE_FIELD_NUMBER = 1;
     private int heartRateZone_ = 0;
 
@@ -220,7 +234,23 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
      * The amount of kilocalories burned in the specified heart rate zone.
      * </pre>
      *
-     * <code>double kcal = 2;</code>
+     * <code>optional double kcal = 2;</code>
+     *
+     * @return Whether the kcal field is set.
+     */
+    @java.lang.Override
+    public boolean hasKcal() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of kilocalories burned in the specified heart rate zone.
+     * </pre>
+     *
+     * <code>optional double kcal = 2;</code>
      *
      * @return The kcal.
      */
@@ -249,7 +279,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
               .getNumber()) {
         output.writeEnum(1, heartRateZone_);
       }
-      if (java.lang.Double.doubleToRawLongBits(kcal_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeDouble(2, kcal_);
       }
       getUnknownFields().writeTo(output);
@@ -267,7 +297,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, heartRateZone_);
       }
-      if (java.lang.Double.doubleToRawLongBits(kcal_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, kcal_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -294,8 +324,11 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
                   obj;
 
       if (heartRateZone_ != other.heartRateZone_) return false;
-      if (java.lang.Double.doubleToLongBits(getKcal())
-          != java.lang.Double.doubleToLongBits(other.getKcal())) return false;
+      if (hasKcal() != other.hasKcal()) return false;
+      if (hasKcal()) {
+        if (java.lang.Double.doubleToLongBits(getKcal())
+            != java.lang.Double.doubleToLongBits(other.getKcal())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -309,10 +342,13 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + HEART_RATE_ZONE_FIELD_NUMBER;
       hash = (53 * hash) + heartRateZone_;
-      hash = (37 * hash) + KCAL_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getKcal()));
+      if (hasKcal()) {
+        hash = (37 * hash) + KCAL_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getKcal()));
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -535,9 +571,12 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.heartRateZone_ = heartRateZone_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.kcal_ = kcal_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -566,7 +605,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
         if (other.heartRateZone_ != 0) {
           setHeartRateZoneValue(other.getHeartRateZoneValue());
         }
-        if (java.lang.Double.doubleToRawLongBits(other.getKcal()) != 0) {
+        if (other.hasKcal()) {
           setKcal(other.getKcal());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -733,7 +772,23 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
        * The amount of kilocalories burned in the specified heart rate zone.
        * </pre>
        *
-       * <code>double kcal = 2;</code>
+       * <code>optional double kcal = 2;</code>
+       *
+       * @return Whether the kcal field is set.
+       */
+      @java.lang.Override
+      public boolean hasKcal() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of kilocalories burned in the specified heart rate zone.
+       * </pre>
+       *
+       * <code>optional double kcal = 2;</code>
        *
        * @return The kcal.
        */
@@ -749,7 +804,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
        * The amount of kilocalories burned in the specified heart rate zone.
        * </pre>
        *
-       * <code>double kcal = 2;</code>
+       * <code>optional double kcal = 2;</code>
        *
        * @param value The kcal to set.
        * @return This builder for chaining.
@@ -769,7 +824,7 @@ public final class CaloriesInHeartRateZoneRollupValue extends com.google.protobu
        * The amount of kilocalories burned in the specified heart rate zone.
        * </pre>
        *
-       * <code>double kcal = 2;</code>
+       * <code>optional double kcal = 2;</code>
        *
        * @return This builder for chaining.
        */

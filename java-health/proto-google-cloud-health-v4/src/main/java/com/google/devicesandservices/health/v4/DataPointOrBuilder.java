@@ -982,6 +982,147 @@ public interface DataPointOrBuilder
    *
    *
    * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nutritionLog field is set.
+   */
+  boolean hasNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nutritionLog.
+   */
+  com.google.devicesandservices.health.v4.NutritionLog getNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `nutrition-log` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.NutritionLog nutrition_log = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.NutritionLogOrBuilder getNutritionLogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the irregularRhythmNotification field is set.
+   */
+  boolean hasIrregularRhythmNotification();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The irregularRhythmNotification.
+   */
+  com.google.devicesandservices.health.v4.IrregularRhythmNotification
+      getIrregularRhythmNotification();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `irregular-rhythm-notification` session
+   * data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.IrregularRhythmNotification irregular_rhythm_notification = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.IrregularRhythmNotificationOrBuilder
+      getIrregularRhythmNotificationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the electrocardiogram field is set.
+   */
+  boolean hasElectrocardiogram();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The electrocardiogram.
+   */
+  com.google.devicesandservices.health.v4.Electrocardiogram getElectrocardiogram();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `electrocardiogram` session data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Electrocardiogram electrocardiogram = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.ElectrocardiogramOrBuilder
+      getElectrocardiogramOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Data for points in the `daily-heart-rate-zones` daily data type
    * collection.
    * </pre>
@@ -1070,6 +1211,49 @@ public interface DataPointOrBuilder
    * </code>
    */
   com.google.devicesandservices.health.v4.HydrationLogOrBuilder getHydrationLogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the food field is set.
+   */
+  boolean hasFood();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The food.
+   */
+  com.google.devicesandservices.health.v4.Food getFood();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Food food = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.FoodOrBuilder getFoodOrBuilder();
 
   /**
    *
@@ -1394,6 +1578,190 @@ public interface DataPointOrBuilder
    */
   com.google.devicesandservices.health.v4.BasalEnergyBurnedOrBuilder
       getBasalEnergyBurnedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the coreBodyTemperature field is set.
+   */
+  boolean hasCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The coreBodyTemperature.
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperature getCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder
+      getCoreBodyTemperatureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the activeEnergyBurned field is set.
+   */
+  boolean hasActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The activeEnergyBurned.
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurned getActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `active-energy-burned` interval data
+   * type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder
+      getActiveEnergyBurnedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the foodMeasurementUnit field is set.
+   */
+  boolean hasFoodMeasurementUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The foodMeasurementUnit.
+   */
+  com.google.devicesandservices.health.v4.FoodMeasurementUnit getFoodMeasurementUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The food measurement unit details.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.FoodMeasurementUnit food_measurement_unit = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.FoodMeasurementUnitOrBuilder
+      getFoodMeasurementUnitOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bloodGlucose field is set.
+   */
+  boolean hasBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bloodGlucose.
+   */
+  com.google.devicesandservices.health.v4.BloodGlucose getBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `blood-glucose` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder getBloodGlucoseOrBuilder();
 
   /**
    *

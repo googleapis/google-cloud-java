@@ -662,6 +662,25 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                       eq(expectUseDirectGcp)));
         }
       }
+
+  @Test
+  public void testWrapperMethods() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertTrue(connection.isWrapperFor(java.sql.Connection.class));
+      assertTrue(connection.isWrapperFor(BigQueryConnection.class));
+      assertFalse(connection.isWrapperFor(java.sql.Statement.class));
+      assertFalse(connection.isWrapperFor(null));
+
+      Object unwrappedConn = connection.unwrap(java.sql.Connection.class);
+      assertSame(unwrappedConn, connection);
+
+      Object unwrappedImpl = connection.unwrap(BigQueryConnection.class);
+      assertSame(unwrappedImpl, connection);
+
+      BigQueryJdbcException e =
+          assertThrows(
+              BigQueryJdbcException.class, () -> connection.unwrap(java.sql.Statement.class));
+      assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
     }
   }
 }

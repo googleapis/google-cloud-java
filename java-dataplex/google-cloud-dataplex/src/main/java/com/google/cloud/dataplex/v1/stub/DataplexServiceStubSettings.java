@@ -199,7 +199,12 @@ import javax.annotation.Generated;
 public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateLakeRequest, Operation> createLakeSettings;
   private final OperationCallSettings<CreateLakeRequest, Lake, OperationMetadata>

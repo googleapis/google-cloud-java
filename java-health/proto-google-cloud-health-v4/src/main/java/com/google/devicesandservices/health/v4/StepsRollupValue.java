@@ -68,6 +68,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
             com.google.devicesandservices.health.v4.StepsRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int COUNT_SUM_FIELD_NUMBER = 1;
   private long countSum_ = 0L;
 
@@ -78,7 +79,23 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
    * Total number of steps in the interval.
    * </pre>
    *
-   * <code>int64 count_sum = 1;</code>
+   * <code>optional int64 count_sum = 1;</code>
+   *
+   * @return Whether the countSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasCountSum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of steps in the interval.
+   * </pre>
+   *
+   * <code>optional int64 count_sum = 1;</code>
    *
    * @return The countSum.
    */
@@ -101,7 +118,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (countSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, countSum_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (countSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, countSum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,7 +149,10 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
     com.google.devicesandservices.health.v4.StepsRollupValue other =
         (com.google.devicesandservices.health.v4.StepsRollupValue) obj;
 
-    if (getCountSum() != other.getCountSum()) return false;
+    if (hasCountSum() != other.hasCountSum()) return false;
+    if (hasCountSum()) {
+      if (getCountSum() != other.getCountSum()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,8 +164,10 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + COUNT_SUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCountSum());
+    if (hasCountSum()) {
+      hash = (37 * hash) + COUNT_SUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCountSum());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,9 +346,12 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.devicesandservices.health.v4.StepsRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.countSum_ = countSum_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -342,7 +367,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.devicesandservices.health.v4.StepsRollupValue other) {
       if (other == com.google.devicesandservices.health.v4.StepsRollupValue.getDefaultInstance())
         return this;
-      if (other.getCountSum() != 0L) {
+      if (other.hasCountSum()) {
         setCountSum(other.getCountSum());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -405,7 +430,23 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
      * Total number of steps in the interval.
      * </pre>
      *
-     * <code>int64 count_sum = 1;</code>
+     * <code>optional int64 count_sum = 1;</code>
+     *
+     * @return Whether the countSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasCountSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Total number of steps in the interval.
+     * </pre>
+     *
+     * <code>optional int64 count_sum = 1;</code>
      *
      * @return The countSum.
      */
@@ -421,7 +462,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
      * Total number of steps in the interval.
      * </pre>
      *
-     * <code>int64 count_sum = 1;</code>
+     * <code>optional int64 count_sum = 1;</code>
      *
      * @param value The countSum to set.
      * @return This builder for chaining.
@@ -441,7 +482,7 @@ public final class StepsRollupValue extends com.google.protobuf.GeneratedMessage
      * Total number of steps in the interval.
      * </pre>
      *
-     * <code>int64 count_sum = 1;</code>
+     * <code>optional int64 count_sum = 1;</code>
      *
      * @return This builder for chaining.
      */

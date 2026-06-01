@@ -40,6 +40,7 @@ import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import io.opentelemetry.sdk.trace.data.SpanData;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -3396,8 +3397,9 @@ public class BigQueryDatabaseMetaDataTest {
     assertSame(dbMetadata, dbMetadata.unwrap(DatabaseMetaData.class));
     assertSame(dbMetadata, dbMetadata.unwrap(BigQueryDatabaseMetaData.class));
 
-    SQLException e =
-        assertThrows(SQLException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
+    BigQueryJdbcException e =
+        assertThrows(
+            BigQueryJdbcException.class, () -> dbMetadata.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 
