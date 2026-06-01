@@ -662,6 +662,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                       eq(expectUseDirectGcp)));
         }
       }
+    }
+  }
 
   @Test
   public void testWrapperMethods() throws Exception {

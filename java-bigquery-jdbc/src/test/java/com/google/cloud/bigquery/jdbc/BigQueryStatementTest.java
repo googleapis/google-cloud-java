@@ -900,7 +900,7 @@ public class BigQueryStatementTest {
     verify(bigquery)
         .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
   }
-  
+
   @Test
   public void testWrapperMethods() throws SQLException {
     assertTrue(bigQueryStatement.isWrapperFor(java.sql.Statement.class));
