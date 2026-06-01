@@ -513,8 +513,9 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       Object unwrappedImpl = connection.unwrap(BigQueryConnection.class);
       assertSame(unwrappedImpl, connection);
 
-      SQLException e =
-          assertThrows(SQLException.class, () -> connection.unwrap(java.sql.Statement.class));
+      BigQueryJdbcException e =
+          assertThrows(
+              BigQueryJdbcException.class, () -> connection.unwrap(java.sql.Statement.class));
       assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
     }
   }

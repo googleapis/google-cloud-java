@@ -684,9 +684,9 @@ public class BigQueryStatementTest {
     Object unwrappedImpl = bigQueryStatement.unwrap(BigQueryStatement.class);
     org.junit.jupiter.api.Assertions.assertSame(unwrappedImpl, bigQueryStatement);
 
-    SQLException e =
+    BigQueryJdbcException e =
         org.junit.jupiter.api.Assertions.assertThrows(
-            SQLException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
+            BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
   }
 }

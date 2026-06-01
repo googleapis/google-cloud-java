@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
@@ -680,7 +681,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     if (iface.isInstance(this)) {
       return iface.cast(this);
     }
-    throw new SQLException("Cannot unwrap to " + iface.getName());
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override

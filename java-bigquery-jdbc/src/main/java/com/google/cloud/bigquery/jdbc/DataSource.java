@@ -1372,7 +1372,7 @@ public class DataSource implements javax.sql.DataSource {
     if (iface.isInstance(this)) {
       return iface.cast(this);
     }
-    throw new SQLException("Cannot unwrap to " + iface.getName());
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override

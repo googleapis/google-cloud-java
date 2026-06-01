@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.lang.reflect.Field;
 import java.sql.SQLException;
 import org.junit.jupiter.api.BeforeEach;
@@ -119,8 +120,8 @@ public class BigQueryBaseResultSetTest {
     Object unwrappedImpl = resultSet.unwrap(BigQueryBaseResultSet.class);
     assertSame(unwrappedImpl, resultSet);
 
-    SQLException e =
-        assertThrows(SQLException.class, () -> resultSet.unwrap(java.sql.Statement.class));
+    BigQueryJdbcException e =
+        assertThrows(BigQueryJdbcException.class, () -> resultSet.unwrap(java.sql.Statement.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
   }
 }

@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
 
@@ -40,8 +41,9 @@ public class DataSourceTest {
     Object unwrappedImpl = dataSource.unwrap(DataSource.class);
     assertSame(unwrappedImpl, dataSource);
 
-    SQLException e =
-        assertThrows(SQLException.class, () -> dataSource.unwrap(java.sql.Connection.class));
+    BigQueryJdbcException e =
+        assertThrows(
+            BigQueryJdbcException.class, () -> dataSource.unwrap(java.sql.Connection.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
   }
 }
