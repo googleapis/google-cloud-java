@@ -22,7 +22,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.paging.Page;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.DataSource;
@@ -30,6 +32,7 @@ import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.trace.v1.TraceServiceClient;
+import com.google.cloud.trace.v1.TraceServiceSettings;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
 import com.google.gson.JsonObject;
@@ -47,10 +50,7 @@ import org.junit.jupiter.api.Test;
 public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  private static final String CONNECTION_URL =
-      String.format(
-          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;",
-          PROJECT_ID);
+  private static final String CONNECTION_URL = connectionUrl;
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
@@ -250,8 +250,14 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   private String verifyAndFetchLogs(String connectionUuid) throws Exception {
+    GoogleCredentials credentials = getCredentials();
+
     try (Logging logging =
-        LoggingOptions.newBuilder().setProjectId(PROJECT_ID).build().getService()) {
+        LoggingOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(credentials)
+            .build()
+            .getService()) {
       String filter =
           "logName:\"projects/"
               + PROJECT_ID
@@ -284,7 +290,14 @@ public class ITOpenTelemetryTest extends ITBase {
       hexTraceId = traceId.substring(traceId.lastIndexOf("/traces/") + 8);
     }
 
-    try (TraceServiceClient traceClient = TraceServiceClient.create()) {
+    GoogleCredentials credentials = getCredentials();
+
+    TraceServiceSettings settings =
+        TraceServiceSettings.newBuilder()
+            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
+            .build();
+
+    try (TraceServiceClient traceClient = TraceServiceClient.create(settings)) {
       Trace trace = fetchTraceWithRetry(traceClient, PROJECT_ID, hexTraceId);
       assertNotNull(trace, "Trace must be found in Cloud Trace API: " + hexTraceId);
       return trace;
