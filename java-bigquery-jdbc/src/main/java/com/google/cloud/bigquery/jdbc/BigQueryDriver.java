@@ -127,7 +127,6 @@ public class BigQueryDriver implements Driver {
     LOG.finest("++enter++");
     try {
       if (acceptsURL(url)) {
-        // strip 'jdbc:' from the URL, add any extra properties
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(url.substring(5), this.toString(), info);
         // LogLevel
@@ -151,12 +150,13 @@ public class BigQueryDriver implements Driver {
         }
 
         BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
+
         // Logging starts from here.
         DataSource ds;
         try {
           ds = DataSource.fromUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
-          LOG.severe("Failed to parse connection URL", e);
+          LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
 

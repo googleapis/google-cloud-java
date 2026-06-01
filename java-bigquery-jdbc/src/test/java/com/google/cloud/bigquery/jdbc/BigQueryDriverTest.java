@@ -129,21 +129,21 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testMalformedUrlExceptionIsLogged() {
-    try {
-      bigQueryDriver.connect(
-          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-              + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;"
-              + "MalformedPropertyWithoutEquals",
-          new Properties());
-      Assertions.fail("Should have thrown BigQueryJdbcException");
-    } catch (SQLException e) {
-      boolean foundSevere =
-          capturedLogs.stream()
-              .anyMatch(
-                  r ->
-                      r.getLevel() == Level.SEVERE
-                          && r.getMessage().contains("Failed to parse connection URL"));
-      assertThat(foundSevere).isTrue();
-    }
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;"
+                    + "MalformedPropertyWithoutEquals",
+                new Properties()));
+
+    boolean foundSevere =
+        capturedLogs.stream()
+            .anyMatch(
+                r ->
+                    r.getLevel() == Level.SEVERE
+                        && r.getMessage().contains("Failed to parse connection URL"));
+    assertThat(foundSevere).isTrue();
   }
 }
