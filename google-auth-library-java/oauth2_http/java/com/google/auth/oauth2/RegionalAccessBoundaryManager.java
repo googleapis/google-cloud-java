@@ -196,6 +196,10 @@ final class RegionalAccessBoundaryManager {
           () -> {
             try {
               String url = provider.getRegionalAccessBoundaryUrl();
+              if (url == null) {
+                future.set(null);
+                return;
+              }
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
                       transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);

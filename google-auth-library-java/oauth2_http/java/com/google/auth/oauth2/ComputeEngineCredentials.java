@@ -800,8 +800,15 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @InternalApi
   @Override
   public String getRegionalAccessBoundaryUrl() throws IOException {
+    String account = getAccount();
+    // In GKE environments, the default service account might return a non-email placeholder.
+    // Since RAB lookup requires a valid email-based service account, we skip RAB lookup
+    // in non-email scenarios by returning null.
+    if (account == null || !account.contains("@")) {
+      return null;
+    }
     return String.format(
-        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
+        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, account);
   }
 
   /**

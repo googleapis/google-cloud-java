@@ -1242,6 +1242,37 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
   }
 
+  @org.junit.jupiter.api.Test
+  void refresh_regionalAccessBoundaryNonEmail() throws IOException, InterruptedException {
+
+    String nonEmailAccount = "non-email-account-value";
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    RegionalAccessBoundary regionalAccessBoundary =
+        new RegionalAccessBoundary(
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
+            null);
+    transportFactory.transport.setRegionalAccessBoundary(regionalAccessBoundary);
+    transportFactory.transport.setServiceAccountEmail(nonEmailAccount);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    // First call: should NOT initiate async refresh (or should skip it gracefully).
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    // Wait a brief time to make sure no background tasks execute and set it.
+    Thread.sleep(500);
+
+    // It should still be null.
+    assertNull(credentials.getRegionalAccessBoundary());
+
+    // And header should still be missing on second call.
+    headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+  }
+
   private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
       throws InterruptedException {
     long deadline = System.currentTimeMillis() + 5000;
