@@ -27,7 +27,6 @@ import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.common.collect.ImmutableList;
 import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
