@@ -34,13 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig;
-import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
-import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
-import io.grpc.netty.shaded.io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import java.io.InputStream;
-import java.security.KeyStore;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -50,7 +44,6 @@ public abstract class PqcConnectivityTest {
   private static Process serverProcess;
   protected static int grpcPqcPort;
   protected static int grpcClassicalPort;
-  private static KeyStore ks;
 
   protected boolean clientSupportsPqc() {
     return true;
@@ -60,14 +53,6 @@ public abstract class PqcConnectivityTest {
 
   @BeforeAll
   public static void setup() throws Exception {
-
-    ks = KeyStore.getInstance("PKCS12");
-    try (InputStream is = PqcConnectivityTest.class.getResourceAsStream("/pqctest.p12")) {
-      if (is == null) {
-        throw new RuntimeException("pqctest.p12 not found in classpath");
-      }
-      ks.load(is, "password".toCharArray());
-    }
 
     // 6. Spawn PqcTestServer in a separate background process to ensure physical
     // JVM runtime isolation!
@@ -152,19 +137,6 @@ public abstract class PqcConnectivityTest {
             .setEndpoint("localhost:" + port)
             .setHeaderProvider(() -> java.util.Collections.emptyMap());
 
-    channelProviderBuilder.setChannelConfigurator(
-        new com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>() {
-          @Override
-          public io.grpc.ManagedChannelBuilder apply(io.grpc.ManagedChannelBuilder builder) {
-            builder.overrideAuthority("localhost");
-            if (port == grpcPqcPort) {
-              configureGrpcChannelForPqc(builder);
-            } else {
-              configureGrpcChannelForClassical(builder);
-            }
-            return builder;
-          }
-        });
 
     com.google.api.gax.grpc.InstantiatingGrpcChannelProvider channelProvider = channelProviderBuilder.build();
     com.google.api.gax.rpc.TransportChannel transportChannel = channelProvider.getTransportChannel();
@@ -222,67 +194,5 @@ public abstract class PqcConnectivityTest {
         throw new RuntimeException(e);
       }
     }
-  }
-  private static void configureGrpcChannelForPqc(io.grpc.ManagedChannelBuilder<?> builder) {
-    if (!(builder instanceof NettyChannelBuilder)) {
-      throw new IllegalArgumentException(
-          "Unsupported channel builder type: " + builder.getClass().getName());
-    }
-    NettyChannelBuilder nettyBuilder = (NettyChannelBuilder) builder;
-
-    // Ensures HTTP/2 is used as it's required by gRPC
-    ApplicationProtocolConfig apn =
-        new ApplicationProtocolConfig(
-            ApplicationProtocolConfig.Protocol.ALPN,
-            ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
-            ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
-            "h2");
-
-    try {
-      java.security.Provider bcProvider = new org.bouncycastle.jce.provider.BouncyCastleProvider();
-      java.security.Provider bcJsseProvider =
-          new org.bouncycastle.jsse.provider.BouncyCastleJsseProvider(bcProvider);
-
-      SslContext shadedSslContext =
-          SslContextBuilder.forClient()
-              .sslProvider(io.grpc.netty.shaded.io.netty.handler.ssl.SslProvider.JDK)
-              .sslContextProvider(bcJsseProvider)
-              .protocols("TLSv1.3")
-              .applicationProtocolConfig(apn)
-              .trustManager(InsecureTrustManagerFactory.INSTANCE)
-              .build();
-
-      nettyBuilder.sslContext(shadedSslContext);
-    } catch (Exception e) {
-      throw new RuntimeException("Failed to configure shaded gRPC Netty channel for PQC", e);
-    }
-  }
-
-  private static void configureGrpcChannelForClassical(io.grpc.ManagedChannelBuilder<?> builder) {
-    if (!(builder instanceof NettyChannelBuilder)) {
-      throw new IllegalArgumentException(
-          "Unsupported channel builder type: " + builder.getClass().getName());
-    }
-    NettyChannelBuilder nettyBuilder = (NettyChannelBuilder) builder;
-
-    ApplicationProtocolConfig apn =
-        new ApplicationProtocolConfig(
-            ApplicationProtocolConfig.Protocol.ALPN,
-            ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
-            ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
-            "h2");
-
-    try {
-      SslContext shadedSslContext =
-          SslContextBuilder.forClient()
-              .applicationProtocolConfig(apn)
-              .trustManager(InsecureTrustManagerFactory.INSTANCE)
-              .build();
-
-      nettyBuilder.sslContext(shadedSslContext);
-    } catch (Exception e) {
-      throw new RuntimeException("Failed to configure shaded gRPC Netty channel for Classical", e);
-    }
-  }
+	}
 }
-
