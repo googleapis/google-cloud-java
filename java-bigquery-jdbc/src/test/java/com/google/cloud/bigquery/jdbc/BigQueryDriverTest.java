@@ -146,4 +146,23 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
                         && r.getMessage().contains("Failed to parse connection URL"));
     assertThat(foundSevere).isTrue();
   }
+
+  @Test
+  public void testInvalidLogLevelExceptionIsLogged() {
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=invalidInt;",
+                new Properties()));
+
+    boolean foundSevere =
+        capturedLogs.stream()
+            .anyMatch(
+                r ->
+                    r.getLevel() == Level.SEVERE
+                        && r.getMessage().contains("Failed to parse connection URL properties"));
+    assertThat(foundSevere).isTrue();
+  }
 }
