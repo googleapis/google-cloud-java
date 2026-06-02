@@ -45,20 +45,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-geminidataanalytics</artifactId>
-  <version>0.20.0</version>
+  <version>0.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-geminidataanalytics:0.20.0'
+implementation 'com.google.cloud:google-cloud-geminidataanalytics:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-geminidataanalytics" % "0.20.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-geminidataanalytics" % "0.0.0"
 ```
 
 ## Authentication
@@ -87,7 +87,9 @@ to add `google-cloud-geminidataanalytics` as a dependency in your code.
 ## About Data Analytics API with Gemini
 
 
-[Data Analytics API with Gemini][product-docs] Use Conversational Analytics API to build an artificial intelligence (AI)-powered chat interface, or data agent, that answers questions about structured data using natural language.
+[Data Analytics API with Gemini][product-docs] The Gemini Data Analytics API enables developers to build intelligent data
+analytics applications. Leverage AI-powered chat interfaces to allow users
+to interact with and analyze structured data using natural language.
 
 See the [Data Analytics API with Gemini client library docs][javadocs] to learn how to
 use this Data Analytics API with Gemini Client Library.
@@ -177,11 +179,11 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
+[product-docs]: https://cloud.google.com/gemini/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-geminidataanalytics.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-geminidataanalytics/0.20.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-geminidataanalytics/0.0.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

@@ -1,8 +1,8 @@
 {
   "api_shortname": "geminidataanalytics",
   "name_pretty": "Data Analytics API with Gemini",
-  "product_documentation": "https://cloud.google.com/gemini/docs/conversational-analytics-api/overview",
-  "api_description": "Use Conversational Analytics API to build an artificial intelligence (AI)-powered chat interface, or data agent, that answers questions about structured data using natural language.",
+  "product_documentation": "https://cloud.google.com/gemini/",
+  "api_description": "The Gemini Data Analytics API enables developers to build intelligent data\nanalytics applications. Leverage AI-powered chat interfaces to allow users\nto interact with and analyze structured data using natural language.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview",
   "release_level": "preview",
   "transport": "both",
@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-geminidataanalytics",
   "api_id": "geminidataanalytics.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
-  "rpc_documentation": "https://cloud.google.com/gemini/docs/conversational-analytics-api/reference"
+  "requires_billing": true
 }
