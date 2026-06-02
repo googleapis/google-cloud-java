@@ -44,7 +44,7 @@ jobs:
     - name: Build and Install sdk-platform-java Core
       run: |
         cd google-cloud-java-pqc
-        mvn clean install -pl :gax,:gax-grpc,:gax-httpjson,:google-cloud-shared-dependencies -am -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
+        mvn clean install -pl :gax,:gax-grpc,:gax-httpjson,:google-cloud-shared-dependencies,:first-party-dependencies,:third-party-dependencies -am -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -DskipTests=true
 
     # 6. Build and Install snapshot bigquery, java-translate, and pqc-test targets (specifying actual sub-modules)
     - name: Build and Install Client Snapshot Libraries and Test Modules
