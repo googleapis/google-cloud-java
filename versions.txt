@@ -1058,3 +1058,4 @@ grpc-google-cloud-geminidataanalytics-v1:0.20.0:0.21.0-SNAPSHOT
 google-cloud-developer-knowledge:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-backstory:0.0.0:0.0.1-SNAPSHOT
