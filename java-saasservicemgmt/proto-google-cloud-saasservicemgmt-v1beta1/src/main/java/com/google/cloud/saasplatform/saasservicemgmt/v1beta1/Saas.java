@@ -54,6 +54,9 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
   private Saas() {
     name_ = "";
     locations_ = java.util.Collections.emptyList();
+    blueprintRepo_ = "";
+    state_ = 0;
+    conditions_ = java.util.Collections.emptyList();
     uid_ = "";
     etag_ = "";
   }
@@ -85,6 +88,276 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.class,
             com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * State of the Saas.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * State type is unspecified.
+     * </pre>
+     *
+     * <code>STATE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    STATE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The Saas is ready
+     * </pre>
+     *
+     * <code>STATE_ACTIVE = 1;</code>
+     */
+    STATE_ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * In the process of importing, synchronizing or replicating
+     * ApplicationTemplates
+     * </pre>
+     *
+     * <code>STATE_RUNNING = 2;</code>
+     */
+    STATE_RUNNING(2),
+    /**
+     *
+     *
+     * <pre>
+     * Failure during process of importing, synchronizing or replicating
+     * ApplicationTemplate processing
+     * </pre>
+     *
+     * <code>STATE_FAILED = 3;</code>
+     */
+    STATE_FAILED(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "State");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>ACTIVE = 1 [deprecated = true];</code>
+     */
+    public static final State ACTIVE = STATE_ACTIVE;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_RUNNING.
+     * </pre>
+     *
+     * <code>RUNNING = 2 [deprecated = true];</code>
+     */
+    public static final State RUNNING = STATE_RUNNING;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_FAILED.
+     * </pre>
+     *
+     * <code>FAILED = 3 [deprecated = true];</code>
+     */
+    public static final State FAILED = STATE_FAILED;
+
+    /**
+     *
+     *
+     * <pre>
+     * State type is unspecified.
+     * </pre>
+     *
+     * <code>STATE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Saas is ready
+     * </pre>
+     *
+     * <code>STATE_ACTIVE = 1;</code>
+     */
+    public static final int STATE_ACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * In the process of importing, synchronizing or replicating
+     * ApplicationTemplates
+     * </pre>
+     *
+     * <code>STATE_RUNNING = 2;</code>
+     */
+    public static final int STATE_RUNNING_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Failure during process of importing, synchronizing or replicating
+     * ApplicationTemplate processing
+     * </pre>
+     *
+     * <code>STATE_FAILED = 3;</code>
+     */
+    public static final int STATE_FAILED_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_ACTIVE.
+     * </pre>
+     *
+     * <code>ACTIVE = 1 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int ACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_RUNNING.
+     * </pre>
+     *
+     * <code>RUNNING = 2 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int RUNNING_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use STATE_FAILED.
+     * </pre>
+     *
+     * <code>FAILED = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int FAILED_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_TYPE_UNSPECIFIED;
+        case 1:
+          return STATE_ACTIVE;
+        case 2:
+          return STATE_RUNNING;
+        case 3:
+          return STATE_FAILED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final State[] VALUES = getStaticValuesArray();
+
+    private static State[] getStaticValuesArray() {
+      return new State[] {
+        STATE_TYPE_UNSPECIFIED, STATE_ACTIVE, STATE_RUNNING, STATE_FAILED, ACTIVE, RUNNING, FAILED,
+      };
+    }
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State)
   }
 
   private int bitField0_;
@@ -239,6 +512,327 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.LocationOrBuilder
       getLocationsOrBuilder(int index) {
     return locations_.get(index);
+  }
+
+  public static final int APPLICATION_TEMPLATE_FIELD_NUMBER = 5;
+  private com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef applicationTemplate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   *
+   * @return Whether the applicationTemplate field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationTemplate() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   *
+   * @return The applicationTemplate.
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef
+      getApplicationTemplate() {
+    return applicationTemplate_ == null
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.getDefaultInstance()
+        : applicationTemplate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder
+      getApplicationTemplateOrBuilder() {
+    return applicationTemplate_ == null
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.getDefaultInstance()
+        : applicationTemplate_;
+  }
+
+  public static final int BLUEPRINT_REPO_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object blueprintRepo_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of repository in Artifact Registry for system-generated
+   * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+   * </pre>
+   *
+   * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The blueprintRepo.
+   */
+  @java.lang.Override
+  public java.lang.String getBlueprintRepo() {
+    java.lang.Object ref = blueprintRepo_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      blueprintRepo_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of repository in Artifact Registry for system-generated
+   * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+   * </pre>
+   *
+   * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for blueprintRepo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBlueprintRepoBytes() {
+    java.lang.Object ref = blueprintRepo_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      blueprintRepo_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_FIELD_NUMBER = 7;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the Saas.
+   * It is always in ACTIVE state if the application_template is empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the Saas.
+   * It is always in ACTIVE state if the application_template is empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State getState() {
+    com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State result =
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.forNumber(state_);
+    return result == null
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CONDITIONS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+      conditions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+      getConditionsList() {
+    return conditions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>
+      getConditionsOrBuilderList() {
+    return conditions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getConditionsCount() {
+    return conditions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition getConditions(
+      int index) {
+    return conditions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder
+      getConditionsOrBuilder(int index) {
+    return conditions_.get(index);
+  }
+
+  public static final int ERROR_FIELD_NUMBER = 9;
+  private com.google.rpc.Status error_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  @java.lang.Override
+  public boolean hasError() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getError() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 10401;
@@ -628,7 +1222,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -685,7 +1279,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -746,16 +1340,33 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < locations_.size(); i++) {
       output.writeMessage(4, locations_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getApplicationTemplate());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(blueprintRepo_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, blueprintRepo_);
+    }
+    if (state_
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.STATE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(7, state_);
+    }
+    for (int i = 0; i < conditions_.size(); i++) {
+      output.writeMessage(8, conditions_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getError());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10201, uid_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10202, etag_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10303, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10304, getUpdateTime());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -777,16 +1388,33 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < locations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, locations_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getApplicationTemplate());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(blueprintRepo_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, blueprintRepo_);
+    }
+    if (state_
+        != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.STATE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
+    }
+    for (int i = 0; i < conditions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, conditions_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getError());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10201, uid_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10202, etag_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10303, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10304, getUpdateTime());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -827,6 +1455,17 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getLocationsList().equals(other.getLocationsList())) return false;
+    if (hasApplicationTemplate() != other.hasApplicationTemplate()) return false;
+    if (hasApplicationTemplate()) {
+      if (!getApplicationTemplate().equals(other.getApplicationTemplate())) return false;
+    }
+    if (!getBlueprintRepo().equals(other.getBlueprintRepo())) return false;
+    if (state_ != other.state_) return false;
+    if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (hasError() != other.hasError()) return false;
+    if (hasError()) {
+      if (!getError().equals(other.getError())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
@@ -855,6 +1494,22 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     if (getLocationsCount() > 0) {
       hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLocationsList().hashCode();
+    }
+    if (hasApplicationTemplate()) {
+      hash = (37 * hash) + APPLICATION_TEMPLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationTemplate().hashCode();
+    }
+    hash = (37 * hash) + BLUEPRINT_REPO_FIELD_NUMBER;
+    hash = (53 * hash) + getBlueprintRepo().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    if (getConditionsCount() > 0) {
+      hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getConditionsList().hashCode();
+    }
+    if (hasError()) {
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -1045,6 +1700,9 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetLocationsFieldBuilder();
+        internalGetApplicationTemplateFieldBuilder();
+        internalGetConditionsFieldBuilder();
+        internalGetErrorFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
       }
@@ -1062,6 +1720,25 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         locationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      applicationTemplate_ = null;
+      if (applicationTemplateBuilder_ != null) {
+        applicationTemplateBuilder_.dispose();
+        applicationTemplateBuilder_ = null;
+      }
+      blueprintRepo_ = "";
+      state_ = 0;
+      if (conditionsBuilder_ == null) {
+        conditions_ = java.util.Collections.emptyList();
+      } else {
+        conditions_ = null;
+        conditionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
+        errorBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       uid_ = "";
@@ -1122,6 +1799,15 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       } else {
         result.locations_ = locationsBuilder_.build();
       }
+      if (conditionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          conditions_ = java.util.Collections.unmodifiableList(conditions_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.conditions_ = conditions_;
+      } else {
+        result.conditions_ = conditionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas result) {
@@ -1129,28 +1815,45 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.applicationTemplate_ =
+            applicationTemplateBuilder_ == null
+                ? applicationTemplate_
+                : applicationTemplateBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.blueprintRepo_ = blueprintRepo_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.etag_ = etag_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1200,18 +1903,59 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasApplicationTemplate()) {
+        mergeApplicationTemplate(other.getApplicationTemplate());
+      }
+      if (!other.getBlueprintRepo().isEmpty()) {
+        blueprintRepo_ = other.blueprintRepo_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (conditionsBuilder_ == null) {
+        if (!other.conditions_.isEmpty()) {
+          if (conditions_.isEmpty()) {
+            conditions_ = other.conditions_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureConditionsIsMutable();
+            conditions_.addAll(other.conditions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.conditions_.isEmpty()) {
+          if (conditionsBuilder_.isEmpty()) {
+            conditionsBuilder_.dispose();
+            conditionsBuilder_ = null;
+            conditions_ = other.conditions_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            conditionsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetConditionsFieldBuilder()
+                    : null;
+          } else {
+            conditionsBuilder_.addAllMessages(other.conditions_);
+          }
+        }
+      }
+      if (other.hasError()) {
+        mergeError(other.getError());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1266,30 +2010,70 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetApplicationTemplateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+            case 50:
+              {
+                blueprintRepo_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 56:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
+            case 66:
+              {
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition m =
+                    input.readMessage(
+                        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
+                            .parser(),
+                        extensionRegistry);
+                if (conditionsBuilder_ == null) {
+                  ensureConditionsIsMutable();
+                  conditions_.add(m);
+                } else {
+                  conditionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
             case 81610:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 81610
             case 81618:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 81618
             case 82426:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82426
             case 82434:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82434
             case 83210:
@@ -1301,7 +2085,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 83210
             case 83218:
@@ -1313,7 +2097,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 83218
             default:
@@ -1899,6 +2683,1143 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       return locationsBuilder_;
     }
 
+    private com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef applicationTemplate_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder>
+        applicationTemplateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     *
+     * @return Whether the applicationTemplate field is set.
+     */
+    public boolean hasApplicationTemplate() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     *
+     * @return The applicationTemplate.
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef
+        getApplicationTemplate() {
+      if (applicationTemplateBuilder_ == null) {
+        return applicationTemplate_ == null
+            ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef
+                .getDefaultInstance()
+            : applicationTemplate_;
+      } else {
+        return applicationTemplateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public Builder setApplicationTemplate(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef value) {
+      if (applicationTemplateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        applicationTemplate_ = value;
+      } else {
+        applicationTemplateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public Builder setApplicationTemplate(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.Builder
+            builderForValue) {
+      if (applicationTemplateBuilder_ == null) {
+        applicationTemplate_ = builderForValue.build();
+      } else {
+        applicationTemplateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public Builder mergeApplicationTemplate(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef value) {
+      if (applicationTemplateBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && applicationTemplate_ != null
+            && applicationTemplate_
+                != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef
+                    .getDefaultInstance()) {
+          getApplicationTemplateBuilder().mergeFrom(value);
+        } else {
+          applicationTemplate_ = value;
+        }
+      } else {
+        applicationTemplateBuilder_.mergeFrom(value);
+      }
+      if (applicationTemplate_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public Builder clearApplicationTemplate() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      applicationTemplate_ = null;
+      if (applicationTemplateBuilder_ != null) {
+        applicationTemplateBuilder_.dispose();
+        applicationTemplateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.Builder
+        getApplicationTemplateBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetApplicationTemplateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder
+        getApplicationTemplateOrBuilder() {
+      if (applicationTemplateBuilder_ != null) {
+        return applicationTemplateBuilder_.getMessageOrBuilder();
+      } else {
+        return applicationTemplate_ == null
+            ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef
+                .getDefaultInstance()
+            : applicationTemplate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to composite ApplicationTemplate.
+     * When specified, the template components will be imported into their
+     * equivalent UnitKind, Release and Blueprint resources.
+     * Deleted references will not delete imported resources.
+     * Should only be specified on source regions, and be unspecified on replica
+     * regions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder>
+        internalGetApplicationTemplateFieldBuilder() {
+      if (applicationTemplateBuilder_ == null) {
+        applicationTemplateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef.Builder,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder>(
+                getApplicationTemplate(), getParentForChildren(), isClean());
+        applicationTemplate_ = null;
+      }
+      return applicationTemplateBuilder_;
+    }
+
+    private java.lang.Object blueprintRepo_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of repository in Artifact Registry for system-generated
+     * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+     * </pre>
+     *
+     * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The blueprintRepo.
+     */
+    public java.lang.String getBlueprintRepo() {
+      java.lang.Object ref = blueprintRepo_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        blueprintRepo_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of repository in Artifact Registry for system-generated
+     * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+     * </pre>
+     *
+     * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for blueprintRepo.
+     */
+    public com.google.protobuf.ByteString getBlueprintRepoBytes() {
+      java.lang.Object ref = blueprintRepo_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        blueprintRepo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of repository in Artifact Registry for system-generated
+     * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+     * </pre>
+     *
+     * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The blueprintRepo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlueprintRepo(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      blueprintRepo_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of repository in Artifact Registry for system-generated
+     * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+     * </pre>
+     *
+     * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBlueprintRepo() {
+      blueprintRepo_ = getDefaultInstance().getBlueprintRepo();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of repository in Artifact Registry for system-generated
+     * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+     * </pre>
+     *
+     * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for blueprintRepo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBlueprintRepoBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      blueprintRepo_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the Saas.
+     * It is always in ACTIVE state if the application_template is empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the Saas.
+     * It is always in ACTIVE state if the application_template is empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the Saas.
+     * It is always in ACTIVE state if the application_template is empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State getState() {
+      com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State result =
+          com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the Saas.
+     * It is always in ACTIVE state if the application_template is empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the Saas.
+     * It is always in ACTIVE state if the application_template is empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+        conditions_ = java.util.Collections.emptyList();
+
+    private void ensureConditionsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        conditions_ =
+            new java.util.ArrayList<
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>(conditions_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>
+        conditionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+        getConditionsList() {
+      if (conditionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(conditions_);
+      } else {
+        return conditionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getConditionsCount() {
+      if (conditionsBuilder_ == null) {
+        return conditions_.size();
+      } else {
+        return conditionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition getConditions(
+        int index) {
+      if (conditionsBuilder_ == null) {
+        return conditions_.get(index);
+      } else {
+        return conditionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConditions(
+        int index, com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.set(index, value);
+        onChanged();
+      } else {
+        conditionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setConditions(
+        int index,
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+            builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addConditions(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.add(value);
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addConditions(
+        int index, com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition value) {
+      if (conditionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConditionsIsMutable();
+        conditions_.add(index, value);
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addConditions(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+            builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addConditions(
+        int index,
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+            builderForValue) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        conditionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllConditions(
+        java.lang.Iterable<
+                ? extends com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+            values) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, conditions_);
+        onChanged();
+      } else {
+        conditionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearConditions() {
+      if (conditionsBuilder_ == null) {
+        conditions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        conditionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeConditions(int index) {
+      if (conditionsBuilder_ == null) {
+        ensureConditionsIsMutable();
+        conditions_.remove(index);
+        onChanged();
+      } else {
+        conditionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+        getConditionsBuilder(int index) {
+      return internalGetConditionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder
+        getConditionsOrBuilder(int index) {
+      if (conditionsBuilder_ == null) {
+        return conditions_.get(index);
+      } else {
+        return conditionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>
+        getConditionsOrBuilderList() {
+      if (conditionsBuilder_ != null) {
+        return conditionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(conditions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+        addConditionsBuilder() {
+      return internalGetConditionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder
+        addConditionsBuilder(int index) {
+      return internalGetConditionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of conditions which indicate the various conditions this
+     * resource can have.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder>
+        getConditionsBuilderList() {
+      return internalGetConditionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>
+        internalGetConditionsFieldBuilder() {
+      if (conditionsBuilder_ == null) {
+        conditionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition.Builder,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>(
+                conditions_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        conditions_ = null;
+      }
+      return conditionsBuilder_;
+    }
+
+    private com.google.rpc.Status error_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    public com.google.rpc.Status getError() {
+      if (errorBuilder_ == null) {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      } else {
+        return errorBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        error_ = value;
+      } else {
+        errorBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+      if (errorBuilder_ == null) {
+        error_ = builderForValue.build();
+      } else {
+        errorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeError(com.google.rpc.Status value) {
+      if (errorBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
+        } else {
+          error_ = value;
+        }
+      } else {
+        errorBuilder_.mergeFrom(value);
+      }
+      if (error_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearError() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
+        errorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.Status.Builder getErrorBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetErrorFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      if (errorBuilder_ != null) {
+        return errorBuilder_.getMessageOrBuilder();
+      } else {
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the state is FAILED, the corresponding error code and
+     * message. Defaults to code=OK for all other states.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        internalGetErrorFieldBuilder() {
+      if (errorBuilder_ == null) {
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+        error_ = null;
+      }
+      return errorBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -1916,7 +3837,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -2014,7 +3935,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2041,7 +3962,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -2064,7 +3985,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2081,7 +4002,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2105,7 +4026,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       onChanged();
       return annotations_;
     }
@@ -2223,7 +4144,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -2255,7 +4176,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -2283,7 +4204,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2305,7 +4226,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2392,7 +4313,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2416,7 +4337,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2445,7 +4366,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2521,7 +4442,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2541,7 +4462,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2566,7 +4487,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2592,7 +4513,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2638,7 +4559,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2660,7 +4581,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2678,7 +4599,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2689,7 +4610,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2707,7 +4628,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000800);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2729,7 +4650,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2806,7 +4727,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -2856,7 +4777,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2880,7 +4801,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2900,7 +4821,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2911,7 +4832,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -2931,7 +4852,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2955,7 +4876,7 @@ public final class Saas extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }

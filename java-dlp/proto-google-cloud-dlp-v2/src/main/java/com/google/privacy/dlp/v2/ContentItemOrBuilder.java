@@ -149,6 +149,49 @@ public interface ContentItemOrBuilder
    *
    *
    * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   *
+   * @return Whether the conversation field is set.
+   */
+  boolean hasConversation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   *
+   * @return The conversation.
+   */
+  com.google.privacy.dlp.v2.Conversation getConversation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a conversation (either complete or a slice).
+   * It is assumed that all included messages are contiguous and ordered in
+   * chronological order.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Conversation conversation = 7;</code>
+   */
+  com.google.privacy.dlp.v2.ConversationOrBuilder getConversationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * User provided metadata for the content.
    * </pre>
    *

@@ -429,6 +429,60 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     return targetTypes_.getByteString(index);
   }
 
+  public static final int SUGGESTION_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.bigquery.migration.v2.SuggestionConfig suggestionConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   *
+   * @return Whether the suggestionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestionConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   *
+   * @return The suggestionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.SuggestionConfig getSuggestionConfig() {
+    return suggestionConfig_ == null
+        ? com.google.cloud.bigquery.migration.v2.SuggestionConfig.getDefaultInstance()
+        : suggestionConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder
+      getSuggestionConfigOrBuilder() {
+    return suggestionConfig_ == null
+        ? com.google.cloud.bigquery.migration.v2.SuggestionConfig.getDefaultInstance()
+        : suggestionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -457,6 +511,9 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < targetTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, targetTypes_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getSuggestionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -493,6 +550,9 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getTargetTypesList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSuggestionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -517,6 +577,10 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     }
     if (!getTargetReturnLiteralsList().equals(other.getTargetReturnLiteralsList())) return false;
     if (!getTargetTypesList().equals(other.getTargetTypesList())) return false;
+    if (hasSuggestionConfig() != other.hasSuggestionConfig()) return false;
+    if (hasSuggestionConfig()) {
+      if (!getSuggestionConfig().equals(other.getSuggestionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -545,6 +609,10 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
     if (getTargetTypesCount() > 0) {
       hash = (37 * hash) + TARGET_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getTargetTypesList().hashCode();
+    }
+    if (hasSuggestionConfig()) {
+      hash = (37 * hash) + SUGGESTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSuggestionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -691,6 +759,7 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetSourceTargetMappingFieldBuilder();
         internalGetSourceEnvironmentFieldBuilder();
+        internalGetSuggestionConfigFieldBuilder();
       }
     }
 
@@ -713,6 +782,11 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       }
       targetReturnLiterals_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      suggestionConfig_ = null;
+      if (suggestionConfigBuilder_ != null) {
+        suggestionConfigBuilder_.dispose();
+        suggestionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -781,6 +855,11 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000010) != 0)) {
         targetTypes_.makeImmutable();
         result.targetTypes_ = targetTypes_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.suggestionConfig_ =
+            suggestionConfigBuilder_ == null ? suggestionConfig_ : suggestionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -853,6 +932,9 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
         }
         onChanged();
       }
+      if (other.hasSuggestionConfig()) {
+        mergeSuggestionConfig(other.getSuggestionConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -920,6 +1002,13 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
                 targetTypes_.add(s);
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetSuggestionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2083,6 +2172,206 @@ public final class TranslationDetails extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.bigquery.migration.v2.SuggestionConfig suggestionConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.migration.v2.SuggestionConfig,
+            com.google.cloud.bigquery.migration.v2.SuggestionConfig.Builder,
+            com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder>
+        suggestionConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     *
+     * @return Whether the suggestionConfig field is set.
+     */
+    public boolean hasSuggestionConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     *
+     * @return The suggestionConfig.
+     */
+    public com.google.cloud.bigquery.migration.v2.SuggestionConfig getSuggestionConfig() {
+      if (suggestionConfigBuilder_ == null) {
+        return suggestionConfig_ == null
+            ? com.google.cloud.bigquery.migration.v2.SuggestionConfig.getDefaultInstance()
+            : suggestionConfig_;
+      } else {
+        return suggestionConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public Builder setSuggestionConfig(
+        com.google.cloud.bigquery.migration.v2.SuggestionConfig value) {
+      if (suggestionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        suggestionConfig_ = value;
+      } else {
+        suggestionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public Builder setSuggestionConfig(
+        com.google.cloud.bigquery.migration.v2.SuggestionConfig.Builder builderForValue) {
+      if (suggestionConfigBuilder_ == null) {
+        suggestionConfig_ = builderForValue.build();
+      } else {
+        suggestionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public Builder mergeSuggestionConfig(
+        com.google.cloud.bigquery.migration.v2.SuggestionConfig value) {
+      if (suggestionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && suggestionConfig_ != null
+            && suggestionConfig_
+                != com.google.cloud.bigquery.migration.v2.SuggestionConfig.getDefaultInstance()) {
+          getSuggestionConfigBuilder().mergeFrom(value);
+        } else {
+          suggestionConfig_ = value;
+        }
+      } else {
+        suggestionConfigBuilder_.mergeFrom(value);
+      }
+      if (suggestionConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public Builder clearSuggestionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      suggestionConfig_ = null;
+      if (suggestionConfigBuilder_ != null) {
+        suggestionConfigBuilder_.dispose();
+        suggestionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.SuggestionConfig.Builder
+        getSuggestionConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetSuggestionConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder
+        getSuggestionConfigOrBuilder() {
+      if (suggestionConfigBuilder_ != null) {
+        return suggestionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return suggestionConfig_ == null
+            ? com.google.cloud.bigquery.migration.v2.SuggestionConfig.getDefaultInstance()
+            : suggestionConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the suggestion if requested as a target type.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.migration.v2.SuggestionConfig,
+            com.google.cloud.bigquery.migration.v2.SuggestionConfig.Builder,
+            com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder>
+        internalGetSuggestionConfigFieldBuilder() {
+      if (suggestionConfigBuilder_ == null) {
+        suggestionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.bigquery.migration.v2.SuggestionConfig,
+                com.google.cloud.bigquery.migration.v2.SuggestionConfig.Builder,
+                com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder>(
+                getSuggestionConfig(), getParentForChildren(), isClean());
+        suggestionConfig_ = null;
+      }
+      return suggestionConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.migration.v2.TranslationDetails)

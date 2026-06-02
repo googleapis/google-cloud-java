@@ -33,7 +33,20 @@ public interface StepsRollupValueOrBuilder
    * Total number of steps in the interval.
    * </pre>
    *
-   * <code>int64 count_sum = 1;</code>
+   * <code>optional int64 count_sum = 1;</code>
+   *
+   * @return Whether the countSum field is set.
+   */
+  boolean hasCountSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Total number of steps in the interval.
+   * </pre>
+   *
+   * <code>optional int64 count_sum = 1;</code>
    *
    * @return The countSum.
    */

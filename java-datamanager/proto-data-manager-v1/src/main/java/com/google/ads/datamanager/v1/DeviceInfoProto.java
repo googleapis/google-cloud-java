@@ -53,16 +53,28 @@ public final class DeviceInfoProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n+google/ads/datamanager/v1/device_info."
-          + "proto\022\031google.ads.datamanager.v1\032\037google"
-          + "/api/field_behavior.proto\">\n\nDeviceInfo\022"
-          + "\027\n\nuser_agent\030\001 \001(\tB\003\340A\001\022\027\n\nip_address\030\002"
-          + " \001(\tB\003\340A\001B\314\001\n\035com.google.ads.datamanager"
-          + ".v1B\017DeviceInfoProtoP\001ZAcloud.google.com"
-          + "/go/datamanager/apiv1/datamanagerpb;data"
-          + "managerpb\252\002\031Google.Ads.DataManager.V1\312\002\031"
-          + "Google\\Ads\\DataManager\\V1\352\002\034Google::Ads:"
-          + ":DataManager::V1b\006proto3"
+      "\n"
+          + "+google/ads/datamanager/v1/device_info."
+          + "proto\022\031google.ads.datamanager.v1\032\037google/api/field_behavior.proto\"\312\002\n\n"
+          + "DeviceInfo\022\027\n\n"
+          + "user_agent\030\001 \001(\tB\003\340A\001\022\027\n\n"
+          + "ip_address\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010category\030\003 \001(\tB\003\340A\001\022\032\n\r"
+          + "language_code\030\004 \001(\tB\003\340A\001\022\032\n\r"
+          + "screen_height\030\005 \001(\005B\003\340A\001\022\031\n"
+          + "\014screen_width\030\006 \001(\005B\003\340A\001\022\035\n"
+          + "\020operating_system\030\007 \001(\tB\003\340A\001\022%\n"
+          + "\030operating_system_version\030\010 \001(\tB\003\340A\001\022\022\n"
+          + "\005model\030\t \001(\tB\003\340A\001\022\022\n"
+          + "\005brand\030\n"
+          + " \001(\tB\003\340A\001\022\024\n"
+          + "\007browser\030\013 \001(\tB\003\340A\001\022\034\n"
+          + "\017browser_version\030\014 \001(\tB\003\340A\001B\314\001\n"
+          + "\035com.google.ads.datamanager.v1B\017Device"
+          + "InfoProtoP\001ZAcloud.google.com/go/dataman"
+          + "ager/apiv1/datamanagerpb;datamanagerpb\252\002"
+          + "\031Google.Ads.DataManager.V1\312\002\031Google\\Ads\\"
+          + "DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -76,7 +88,18 @@ public final class DeviceInfoProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_DeviceInfo_descriptor,
             new java.lang.String[] {
-              "UserAgent", "IpAddress",
+              "UserAgent",
+              "IpAddress",
+              "Category",
+              "LanguageCode",
+              "ScreenHeight",
+              "ScreenWidth",
+              "OperatingSystem",
+              "OperatingSystemVersion",
+              "Model",
+              "Brand",
+              "Browser",
+              "BrowserVersion",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -70,6 +70,10 @@ public class PartitionedDmlTransactionTest {
 
   @Mock private SessionImpl session;
 
+  @Mock private SpannerImpl spanner;
+
+  @Mock private SpannerOptions spannerOptions;
+
   @Mock private Ticker ticker;
 
   private PartitionedDmlTransaction tx;
@@ -99,7 +103,9 @@ public class PartitionedDmlTransactionTest {
     when(session.getName()).thenReturn(sessionId);
     when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
     when(session.getOptions()).thenReturn(Collections.EMPTY_MAP);
-    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(false);
     when(rpc.beginTransaction(any(BeginTransactionRequest.class), anyMap(), eq(true)))
         .thenReturn(Transaction.newBuilder().setId(txId).build());
 

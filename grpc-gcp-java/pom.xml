@@ -73,7 +73,7 @@
     <jsr305.version>3.0.2</jsr305.version>
     <junit.version>4.13.2</junit.version>
     <opencensus.version>0.31.1</opencensus.version>
-    <opentelemetry.version>1.57.0</opentelemetry.version>
+    <opentelemetry.version>1.62.0</opentelemetry.version>
     <spanner.version>6.118.0-SNAPSHOT</spanner.version><!-- {x-version-update:google-cloud-spanner:current} -->
     <truth.version>1.4.5</truth.version>
     <mockito.version>4.11.0</mockito.version>

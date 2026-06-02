@@ -967,6 +967,55 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     return map.get(key);
   }
 
+  public static final int STABILIZATION_PERIOD_SEC_FIELD_NUMBER = 420200243;
+  private int stabilizationPeriodSec_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that autoscaler waits for load stabilization before
+   * making scale-in decisions. This is referred to as the
+   * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+   * This might appear as a delay in scaling in but it is an important mechanism
+   * for your application to not have fluctuating size due to short term load
+   * fluctuations.
+   *
+   * The default stabilization period is 600 seconds.
+   * </pre>
+   *
+   * <code>optional int32 stabilization_period_sec = 420200243;</code>
+   *
+   * @return Whether the stabilizationPeriodSec field is set.
+   */
+  @java.lang.Override
+  public boolean hasStabilizationPeriodSec() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of seconds that autoscaler waits for load stabilization before
+   * making scale-in decisions. This is referred to as the
+   * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+   * This might appear as a delay in scaling in but it is an important mechanism
+   * for your application to not have fluctuating size due to short term load
+   * fluctuations.
+   *
+   * The default stabilization period is 600 seconds.
+   * </pre>
+   *
+   * <code>optional int32 stabilization_period_sec = 420200243;</code>
+   *
+   * @return The stabilizationPeriodSec.
+   */
+  @java.lang.Override
+  public int getStabilizationPeriodSec() {
+    return stabilizationPeriodSec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1000,6 +1049,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         355416580);
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(381211147, getCpuUtilization());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt32(420200243, stabilizationPeriodSec_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(429746403, getLoadBalancingUtilization());
@@ -1050,6 +1102,11 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(381211147, getCpuUtilization());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              420200243, stabilizationPeriodSec_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -1110,6 +1167,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       if (!getScaleInControl().equals(other.getScaleInControl())) return false;
     }
     if (!internalGetScalingSchedules().equals(other.internalGetScalingSchedules())) return false;
+    if (hasStabilizationPeriodSec() != other.hasStabilizationPeriodSec()) return false;
+    if (hasStabilizationPeriodSec()) {
+      if (getStabilizationPeriodSec() != other.getStabilizationPeriodSec()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1156,6 +1217,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     if (!internalGetScalingSchedules().getMap().isEmpty()) {
       hash = (37 * hash) + SCALING_SCHEDULES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetScalingSchedules().hashCode();
+    }
+    if (hasStabilizationPeriodSec()) {
+      hash = (37 * hash) + STABILIZATION_PERIOD_SEC_FIELD_NUMBER;
+      hash = (53 * hash) + getStabilizationPeriodSec();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1358,6 +1423,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         scaleInControlBuilder_ = null;
       }
       internalGetMutableScalingSchedules().clear();
+      stabilizationPeriodSec_ = 0;
       return this;
     }
 
@@ -1446,6 +1512,10 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         result.scalingSchedules_ =
             internalGetScalingSchedules().build(ScalingSchedulesDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stabilizationPeriodSec_ = stabilizationPeriodSec_;
+        to_bitField0_ |= 0x00000080;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1513,6 +1583,9 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
       internalGetMutableScalingSchedules().mergeFrom(other.internalGetScalingSchedules());
       bitField0_ |= 0x00000100;
+      if (other.hasStabilizationPeriodSec()) {
+        setStabilizationPeriodSec(other.getStabilizationPeriodSec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1594,6 +1667,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case -1245278118
+            case -933365352:
+              {
+                stabilizationPeriodSec_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -933365352
             case -856996070:
               {
                 input.readMessage(
@@ -3467,6 +3546,106 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
         builderMap.put(key, entry);
       }
       return (com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule.Builder) entry;
+    }
+
+    private int stabilizationPeriodSec_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that autoscaler waits for load stabilization before
+     * making scale-in decisions. This is referred to as the
+     * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+     * This might appear as a delay in scaling in but it is an important mechanism
+     * for your application to not have fluctuating size due to short term load
+     * fluctuations.
+     *
+     * The default stabilization period is 600 seconds.
+     * </pre>
+     *
+     * <code>optional int32 stabilization_period_sec = 420200243;</code>
+     *
+     * @return Whether the stabilizationPeriodSec field is set.
+     */
+    @java.lang.Override
+    public boolean hasStabilizationPeriodSec() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that autoscaler waits for load stabilization before
+     * making scale-in decisions. This is referred to as the
+     * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+     * This might appear as a delay in scaling in but it is an important mechanism
+     * for your application to not have fluctuating size due to short term load
+     * fluctuations.
+     *
+     * The default stabilization period is 600 seconds.
+     * </pre>
+     *
+     * <code>optional int32 stabilization_period_sec = 420200243;</code>
+     *
+     * @return The stabilizationPeriodSec.
+     */
+    @java.lang.Override
+    public int getStabilizationPeriodSec() {
+      return stabilizationPeriodSec_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that autoscaler waits for load stabilization before
+     * making scale-in decisions. This is referred to as the
+     * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+     * This might appear as a delay in scaling in but it is an important mechanism
+     * for your application to not have fluctuating size due to short term load
+     * fluctuations.
+     *
+     * The default stabilization period is 600 seconds.
+     * </pre>
+     *
+     * <code>optional int32 stabilization_period_sec = 420200243;</code>
+     *
+     * @param value The stabilizationPeriodSec to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStabilizationPeriodSec(int value) {
+
+      stabilizationPeriodSec_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of seconds that autoscaler waits for load stabilization before
+     * making scale-in decisions. This is referred to as the
+     * [stabilization period](/compute/docs/autoscaler#stabilization_period).
+     * This might appear as a delay in scaling in but it is an important mechanism
+     * for your application to not have fluctuating size due to short term load
+     * fluctuations.
+     *
+     * The default stabilization period is 600 seconds.
+     * </pre>
+     *
+     * <code>optional int32 stabilization_period_sec = 420200243;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStabilizationPeriodSec() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      stabilizationPeriodSec_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.AutoscalingPolicy)

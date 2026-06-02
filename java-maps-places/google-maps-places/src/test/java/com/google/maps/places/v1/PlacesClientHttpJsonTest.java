@@ -400,6 +400,7 @@ public class PlacesClientHttpJsonTest {
             .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
             .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -519,6 +520,7 @@ public class PlacesClientHttpJsonTest {
             .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
             .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

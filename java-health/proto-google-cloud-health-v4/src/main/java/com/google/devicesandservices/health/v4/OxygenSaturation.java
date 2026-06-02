@@ -139,7 +139,23 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
    * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
    * </pre>
    *
-   * <code>double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the percentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPercentage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
+   * </pre>
+   *
+   * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The percentage.
    */
@@ -165,7 +181,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(percentage_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, percentage_);
     }
     getUnknownFields().writeTo(output);
@@ -180,7 +196,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(percentage_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, percentage_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -203,8 +219,11 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getPercentage())
-        != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    if (hasPercentage() != other.hasPercentage()) return false;
+    if (hasPercentage()) {
+      if (java.lang.Double.doubleToLongBits(getPercentage())
+          != java.lang.Double.doubleToLongBits(other.getPercentage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -220,11 +239,13 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getPercentage()));
+    if (hasPercentage()) {
+      hash = (37 * hash) + PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getPercentage()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -424,6 +445,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.percentage_ = percentage_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -444,7 +466,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getPercentage()) != 0) {
+      if (other.hasPercentage()) {
         setPercentage(other.getPercentage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -733,7 +755,23 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
      * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
      * </pre>
      *
-     * <code>double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the percentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasPercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
+     * </pre>
+     *
+     * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The percentage.
      */
@@ -749,7 +787,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
      * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
      * </pre>
      *
-     * <code>double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The percentage to set.
      * @return This builder for chaining.
@@ -769,7 +807,7 @@ public final class OxygenSaturation extends com.google.protobuf.GeneratedMessage
      * Required. The oxygen saturation percentage. Valid values are from 0 to 100.
      * </pre>
      *
-     * <code>double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

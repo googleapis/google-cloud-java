@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.ServiceRpc;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.BackupId;
 import com.google.cloud.spanner.Restore;
 import com.google.cloud.spanner.SpannerException;
@@ -39,7 +40,6 @@ import com.google.iam.v1.GetPolicyOptions;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.spanner.admin.database.v1.Backup;
@@ -82,7 +82,7 @@ public interface SpannerRpc extends ServiceRpc {
   /** Options passed in {@link SpannerRpc} methods to control how an RPC is issued. */
   enum Option {
     CHANNEL_HINT("Channel Hint"),
-    UNBIND_CHANNEL_HINT("Unbind Channel Hint");
+    CHANNEL_ID_AFFINITY("Channel ID Affinity");
 
     private final String value;
 
@@ -100,6 +100,11 @@ public interface SpannerRpc extends ServiceRpc {
 
     @InternalApi
     public Long getLong(@Nullable Map<Option, ?> options) {
+      return get(options);
+    }
+
+    @InternalApi
+    public ChannelAffinityRef getChannelAffinityRef(@Nullable Map<Option, ?> options) {
       return get(options);
     }
 
@@ -194,18 +199,6 @@ public interface SpannerRpc extends ServiceRpc {
 
   default RequestIdCreator getRequestIdCreator() {
     throw new UnsupportedOperationException("Not implemented");
-  }
-
-  /** Clears any client-side affinity associated with the given transaction id. */
-  default void clearTransactionAffinity(ByteString transactionId) {}
-
-  /**
-   * Clears any client-side transaction affinity and transport-level channel affinity associated
-   * with the given transaction.
-   */
-  default void clearTransactionAndChannelAffinity(
-      ByteString transactionId, @Nullable Long channelHint) {
-    clearTransactionAffinity(transactionId);
   }
 
   // Instance admin APIs.

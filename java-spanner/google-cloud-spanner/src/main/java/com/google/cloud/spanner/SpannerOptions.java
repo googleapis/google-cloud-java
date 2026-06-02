@@ -110,7 +110,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -330,8 +329,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   private static final Object lock = new Object();
 
-  @GuardedBy("lock")
-  private static TracingFramework activeTracingFramework;
+  private static volatile TracingFramework activeTracingFramework;
 
   /** Interface that can be used to provide {@link CallCredentials} to {@link SpannerOptions}. */
   public interface CallCredentialsProvider {
@@ -2360,12 +2358,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   public static TracingFramework getActiveTracingFramework() {
-    synchronized (lock) {
-      if (activeTracingFramework == null) {
-        return TracingFramework.OPEN_CENSUS;
-      }
-      return activeTracingFramework;
-    }
+    TracingFramework framework = activeTracingFramework;
+    return framework == null ? TracingFramework.OPEN_CENSUS : framework;
   }
 
   /** Disables OpenCensus metrics. Disable OpenCensus metrics before creating Spanner client. */

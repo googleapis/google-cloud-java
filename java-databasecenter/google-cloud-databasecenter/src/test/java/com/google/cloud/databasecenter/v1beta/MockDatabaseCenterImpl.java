@@ -146,6 +146,28 @@ public class MockDatabaseCenterImpl extends DatabaseCenterImplBase {
   }
 
   @Override
+  public void aggregateQueryStats(
+      AggregateQueryStatsRequest request,
+      StreamObserver<AggregateQueryStatsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AggregateQueryStatsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AggregateQueryStatsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AggregateQueryStats, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AggregateQueryStatsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void queryIssues(
       QueryIssuesRequest request, StreamObserver<QueryIssuesResponse> responseObserver) {
     Object response = responses.poll();
