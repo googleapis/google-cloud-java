@@ -88,7 +88,7 @@ jobs:
         changed_files=$(git diff --cached --name-only)
         if [[ "${changed_files}" == "" ]]; then
           echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "No changes in librarian.yaml"
+          echo "No changes in libraries"
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
