@@ -68,7 +68,7 @@ public final class BigQueryJdbcVersionUtility {
     return parsedDriverMinorVersion.get() != null ? parsedDriverMinorVersion.get() : 0;
   }
 
-  private static void ensureLoaded() {
+  private static synchronized void ensureLoaded() {
     if (parsedDriverVersion.get() != null) {
       return;
     }
@@ -108,9 +108,7 @@ public final class BigQueryJdbcVersionUtility {
           "Error reading dependencies.properties. Driver version information is"
               + " unavailable. Error: "
               + e.getMessage();
-      IllegalStateException ex = new IllegalStateException(errorMessage, e);
-      LOG.severe(errorMessage, ex);
-      throw ex;
+      LOG.severe(errorMessage, e);
     }
   }
 }
