@@ -68,6 +68,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
             com.google.devicesandservices.health.v4.AltitudeRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int GAIN_MILLIMETERS_SUM_FIELD_NUMBER = 1;
   private long gainMillimetersSum_ = 0L;
 
@@ -78,7 +79,23 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
    * Sum of the altitude gain in millimeters.
    * </pre>
    *
-   * <code>int64 gain_millimeters_sum = 1;</code>
+   * <code>optional int64 gain_millimeters_sum = 1;</code>
+   *
+   * @return Whether the gainMillimetersSum field is set.
+   */
+  @java.lang.Override
+  public boolean hasGainMillimetersSum() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the altitude gain in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 gain_millimeters_sum = 1;</code>
    *
    * @return The gainMillimetersSum.
    */
@@ -101,7 +118,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (gainMillimetersSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, gainMillimetersSum_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (gainMillimetersSum_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, gainMillimetersSum_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,7 +149,10 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
     com.google.devicesandservices.health.v4.AltitudeRollupValue other =
         (com.google.devicesandservices.health.v4.AltitudeRollupValue) obj;
 
-    if (getGainMillimetersSum() != other.getGainMillimetersSum()) return false;
+    if (hasGainMillimetersSum() != other.hasGainMillimetersSum()) return false;
+    if (hasGainMillimetersSum()) {
+      if (getGainMillimetersSum() != other.getGainMillimetersSum()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -144,8 +164,10 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GAIN_MILLIMETERS_SUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGainMillimetersSum());
+    if (hasGainMillimetersSum()) {
+      hash = (37 * hash) + GAIN_MILLIMETERS_SUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGainMillimetersSum());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -324,9 +346,12 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.devicesandservices.health.v4.AltitudeRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.gainMillimetersSum_ = gainMillimetersSum_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -342,7 +367,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.devicesandservices.health.v4.AltitudeRollupValue other) {
       if (other == com.google.devicesandservices.health.v4.AltitudeRollupValue.getDefaultInstance())
         return this;
-      if (other.getGainMillimetersSum() != 0L) {
+      if (other.hasGainMillimetersSum()) {
         setGainMillimetersSum(other.getGainMillimetersSum());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -405,7 +430,23 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the altitude gain in millimeters.
      * </pre>
      *
-     * <code>int64 gain_millimeters_sum = 1;</code>
+     * <code>optional int64 gain_millimeters_sum = 1;</code>
+     *
+     * @return Whether the gainMillimetersSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasGainMillimetersSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sum of the altitude gain in millimeters.
+     * </pre>
+     *
+     * <code>optional int64 gain_millimeters_sum = 1;</code>
      *
      * @return The gainMillimetersSum.
      */
@@ -421,7 +462,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the altitude gain in millimeters.
      * </pre>
      *
-     * <code>int64 gain_millimeters_sum = 1;</code>
+     * <code>optional int64 gain_millimeters_sum = 1;</code>
      *
      * @param value The gainMillimetersSum to set.
      * @return This builder for chaining.
@@ -441,7 +482,7 @@ public final class AltitudeRollupValue extends com.google.protobuf.GeneratedMess
      * Sum of the altitude gain in millimeters.
      * </pre>
      *
-     * <code>int64 gain_millimeters_sum = 1;</code>
+     * <code>optional int64 gain_millimeters_sum = 1;</code>
      *
      * @return This builder for chaining.
      */

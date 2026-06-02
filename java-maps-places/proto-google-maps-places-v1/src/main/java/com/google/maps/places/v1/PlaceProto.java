@@ -142,9 +142,10 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "ing.proto\032(google/maps/places/v1/fuel_options.proto\032!google/maps/places/v1/photo"
           + ".proto\032\'google/maps/places/v1/price_rang"
           + "e.proto\032\"google/maps/places/v1/review.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\032\026go"
-          + "ogle/type/date.proto\032\032google/type/datetime.proto\032\030google/type/latlng.proto\032"
-          + " google/type/localized_text.proto\032 google/type/postal_address.proto\"\373<\n"
+          + "oto\032#google/maps/places/v1/transit.proto"
+          + "\032\037google/protobuf/timestamp.proto\032\026googl"
+          + "e/type/date.proto\032\032google/type/datetime.proto\032\030google/type/latlng.proto\032"
+          + " google/type/localized_text.proto\032 google/type/postal_address.proto\"\273=\n"
           + "\005Place\022\014\n"
           + "\004name\030\001 \001(\t\022\n\n"
           + "\002id\030\002 \001(\t\0220\n"
@@ -168,8 +169,8 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "\017google_maps_uri\030\017 \001(\t\022\023\n"
           + "\013website_uri\030\020 \001(\t\022.\n"
           + "\007reviews\0305 \003(\0132\035.google.maps.places.v1.Review\022H\n"
-          + "\025regular_opening_hours\030\025"
-          + " \001(\0132).google.maps.places.v1.Place.OpeningHours\022\037\n"
+          + "\025regular_opening_hours\030\025 \001"
+          + "(\0132).google.maps.places.v1.Place.OpeningHours\022\037\n"
           + "\022utc_offset_minutes\030\026 \001(\005H\000\210\001\001\022(\n"
           + "\ttime_zone\030X \001(\0132\025.google.type.TimeZone\022,\n"
           + "\006photos\0306 \003(\0132\034.google.maps.places.v1.Photo\022\032\n"
@@ -196,12 +197,12 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "serves_brunch\030, \001(\010H\014\210\001\001\022#\n"
           + "\026serves_vegetarian_food\030- \001(\010H\r"
           + "\210\001\001\022H\n"
-          + "\025current_opening_hours\030. \001(\0132).go"
-          + "ogle.maps.places.v1.Place.OpeningHours\022R\n"
-          + "\037current_secondary_opening_hours\030/ \003(\0132"
-          + ").google.maps.places.v1.Place.OpeningHours\022R\n"
-          + "\037regular_secondary_opening_hours\0301 "
-          + "\003(\0132).google.maps.places.v1.Place.OpeningHours\0225\n"
+          + "\025current_opening_hours\030."
+          + " \001(\0132).google.maps.places.v1.Place.OpeningHours\022R\n"
+          + "\037current_secondary_opening_hours\030/ \003(\0132).g"
+          + "oogle.maps.places.v1.Place.OpeningHours\022R\n"
+          + "\037regular_secondary_opening_hours\0301 \003(\013"
+          + "2).google.maps.places.v1.Place.OpeningHours\0225\n"
           + "\021editorial_summary\0304 \001(\0132\032.google.type.LocalizedText\022\034\n"
           + "\017outdoor_seating\0307 \001(\010H\016\210\001\001\022\027\n\n"
           + "live_music\0308 \001(\010H\017\210\001\001\022\036\n"
@@ -218,14 +219,14 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "\017parking_options\030F \001(\0132+.google.maps.places.v1.Place.ParkingOptions\022E\n"
           + "\020sub_destinations\030G"
           + " \003(\0132+.google.maps.places.v1.Place.SubDestination\022U\n"
-          + "\025accessibility_options\030H \001(\01321.google.ma"
-          + "ps.places.v1.Place.AccessibilityOptionsH\031\210\001\001\0228\n"
+          + "\025accessibility_options\030H \001(\01321.google.maps."
+          + "places.v1.Place.AccessibilityOptionsH\031\210\001\001\0228\n"
           + "\014fuel_options\030N \001(\0132\".google.maps.places.v1.FuelOptions\022A\n"
           + "\021ev_charge_options\030O \001(\0132&.google.maps.places.v1.EVChargeOptions\022J\n"
-          + "\022generative_summary\030P \001(\0132.."
-          + "google.maps.places.v1.Place.GenerativeSummary\022G\n"
-          + "\021containing_places\030R \003(\0132,.googl"
-          + "e.maps.places.v1.Place.ContainingPlace\022\'\n"
+          + "\022generative_summary\030P \001(\0132..goo"
+          + "gle.maps.places.v1.Place.GenerativeSummary\022G\n"
+          + "\021containing_places\030R"
+          + " \003(\0132,.google.maps.places.v1.Place.ContainingPlace\022\'\n"
           + "\032pure_service_area_business\030S \001(\010H\032\210\001\001\022D\n"
           + "\022address_descriptor\030T \001(\0132(.google.maps.places.v1.AddressDescriptor\022G\n"
           + "\021google_maps_links\030U"
@@ -239,7 +240,8 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "\016consumer_alert\030\\ \001(\0132*.google.maps.places.v1.Place.ConsumerAlert\0225\n"
           + "\013moved_place\030] \001(\tB \372A\035\n"
           + "\033places.googleapis.com/Place\022\026\n"
-          + "\016moved_place_id\030^ \001(\t\032_\n"
+          + "\016moved_place_id\030^ \001(\t\022>\n"
+          + "\017transit_station\030b \001(\0132%.google.maps.places.v1.TransitStation\032_\n"
           + "\020AddressComponent\022\021\n"
           + "\tlong_text\030\001 \001(\t\022\022\n\n"
           + "short_text\030\002 \001(\t\022\r\n"
@@ -250,20 +252,20 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "compound_code\030\002 \001(\t\032\375\007\n"
           + "\014OpeningHours\022\025\n"
           + "\010open_now\030\001 \001(\010H\000\210\001\001\022A\n"
-          + "\007periods\030\002 \003(\01320.google"
-          + ".maps.places.v1.Place.OpeningHours.Period\022\034\n"
+          + "\007periods\030\002"
+          + " \003(\01320.google.maps.places.v1.Place.OpeningHours.Period\022\034\n"
           + "\024weekday_descriptions\030\003 \003(\t\022Z\n"
-          + "\024secondary_hours_type\030\004 \001(\0162<.google.maps.plac"
-          + "es.v1.Place.OpeningHours.SecondaryHoursType\022J\n"
-          + "\014special_days\030\005 \003(\01324.google.maps."
-          + "places.v1.Place.OpeningHours.SpecialDay\0222\n"
+          + "\024secondary_hours_type\030\004 \001"
+          + "(\0162<.google.maps.places.v1.Place.OpeningHours.SecondaryHoursType\022J\n"
+          + "\014special_days\030\005"
+          + " \003(\01324.google.maps.places.v1.Place.OpeningHours.SpecialDay\0222\n"
           + "\016next_open_time\030\006 \001(\0132\032.google.protobuf.Timestamp\0223\n"
           + "\017next_close_time\030\007 \001(\0132\032.google.protobuf.Timestamp\032\251\002\n"
           + "\006Period\022D\n"
-          + "\004open\030\001"
-          + " \001(\01326.google.maps.places.v1.Place.OpeningHours.Period.Point\022E\n"
-          + "\005close\030\002 \001(\013"
-          + "26.google.maps.places.v1.Place.OpeningHours.Period.Point\032\221\001\n"
+          + "\004open\030\001 \001(\01326.google."
+          + "maps.places.v1.Place.OpeningHours.Period.Point\022E\n"
+          + "\005close\030\002 \001(\01326.google.maps.plac"
+          + "es.v1.Place.OpeningHours.Period.Point\032\221\001\n"
           + "\005Point\022\020\n"
           + "\003day\030\001 \001(\005H\000\210\001\001\022\021\n"
           + "\004hour\030\002 \001(\005H\001\210\001\001\022\023\n"
@@ -367,14 +369,13 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "ConsumerAlert\022\020\n"
           + "\010overview\030\001 \001(\t\022C\n"
           + "\007details\030\002"
-          + " \001(\01322.google.maps.places.v1.Place.ConsumerAlert.Details\022\025\n"
-          + "\r"
+          + " \001(\01322.google.maps.places.v1.Place.ConsumerAlert.Details\022\025\n\r"
           + "language_code\030\003 \001(\t\032\236\001\n"
           + "\007Details\022\r\n"
           + "\005title\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\022K\n\n"
-          + "about_link\030\003"
-          + " \001(\01327.google.maps.places.v1.Place.ConsumerAlert.Details.Link\032\"\n"
+          + "about_link\030\003 \001(\01327.google.m"
+          + "aps.places.v1.Place.ConsumerAlert.Details.Link\032\"\n"
           + "\004Link\022\r\n"
           + "\005title\030\001 \001(\t\022\013\n"
           + "\003uri\030\002 \001(\t\"\206\001\n"
@@ -420,9 +421,9 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
           + "\025PRICE_LEVEL_EXPENSIVE\020\004\022\036\n"
           + "\032PRICE_LEVEL_VERY_EXPENSIVE\020\005B\233\001\n"
           + "\031com.google.maps.places.v1B\n"
-          + "PlaceProtoP\001Z7cloud.google.com/go/maps/p"
-          + "laces/apiv1/placespb;placespb\242\002\006GMPSV1\252\002"
-          + "\025Google.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + "PlaceProtoP\001Z7cloud.google.com/go/maps/places/apiv1/placesp"
+          + "b;placespb\242\002\006GMPSV1\252\002\025Google.Maps.Places"
+          + ".V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -437,6 +438,7 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
               com.google.maps.places.v1.PhotoProto.getDescriptor(),
               com.google.maps.places.v1.PriceRangeProto.getDescriptor(),
               com.google.maps.places.v1.ReviewProto.getDescriptor(),
+              com.google.maps.places.v1.TransitProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
               com.google.type.DateTimeProto.getDescriptor(),
@@ -526,6 +528,7 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
               "ConsumerAlert",
               "MovedPlace",
               "MovedPlaceId",
+              "TransitStation",
             });
     internal_static_google_maps_places_v1_Place_AddressComponent_descriptor =
         internal_static_google_maps_places_v1_Place_descriptor.getNestedType(0);
@@ -713,6 +716,7 @@ public final class PlaceProto extends com.google.protobuf.GeneratedFile {
     com.google.maps.places.v1.PhotoProto.getDescriptor();
     com.google.maps.places.v1.PriceRangeProto.getDescriptor();
     com.google.maps.places.v1.ReviewProto.getDescriptor();
+    com.google.maps.places.v1.TransitProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();

@@ -129,7 +129,23 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
    * Required. The average number of breaths taken per minute.
    * </pre>
    *
-   * <code>double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the breathsPerMinute field is set.
+   */
+  @java.lang.Override
+  public boolean hasBreathsPerMinute() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The average number of breaths taken per minute.
+   * </pre>
+   *
+   * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The breathsPerMinute.
    */
@@ -155,7 +171,7 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(breathsPerMinute_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, breathsPerMinute_);
     }
     getUnknownFields().writeTo(output);
@@ -170,7 +186,7 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDate());
     }
-    if (java.lang.Double.doubleToRawLongBits(breathsPerMinute_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, breathsPerMinute_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -193,8 +209,11 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
     if (hasDate()) {
       if (!getDate().equals(other.getDate())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getBreathsPerMinute())
-        != java.lang.Double.doubleToLongBits(other.getBreathsPerMinute())) return false;
+    if (hasBreathsPerMinute() != other.hasBreathsPerMinute()) return false;
+    if (hasBreathsPerMinute()) {
+      if (java.lang.Double.doubleToLongBits(getBreathsPerMinute())
+          != java.lang.Double.doubleToLongBits(other.getBreathsPerMinute())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -210,11 +229,13 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
     }
-    hash = (37 * hash) + BREATHS_PER_MINUTE_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getBreathsPerMinute()));
+    if (hasBreathsPerMinute()) {
+      hash = (37 * hash) + BREATHS_PER_MINUTE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getBreathsPerMinute()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -417,6 +438,7 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.breathsPerMinute_ = breathsPerMinute_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -438,7 +460,7 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
       if (other.hasDate()) {
         mergeDate(other.getDate());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getBreathsPerMinute()) != 0) {
+      if (other.hasBreathsPerMinute()) {
         setBreathsPerMinute(other.getBreathsPerMinute());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -691,7 +713,25 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
      * Required. The average number of breaths taken per minute.
      * </pre>
      *
-     * <code>double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the breathsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasBreathsPerMinute() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The average number of breaths taken per minute.
+     * </pre>
+     *
+     * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The breathsPerMinute.
      */
@@ -707,7 +747,8 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
      * Required. The average number of breaths taken per minute.
      * </pre>
      *
-     * <code>double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The breathsPerMinute to set.
      * @return This builder for chaining.
@@ -727,7 +768,8 @@ public final class DailyRespiratoryRate extends com.google.protobuf.GeneratedMes
      * Required. The average number of breaths taken per minute.
      * </pre>
      *
-     * <code>double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double breaths_per_minute = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */

@@ -232,6 +232,17 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a Cloud Run Job.
+     * A CloudRunJobInfo is populated with starting Job information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_RUN_JOB = 50;</code>
+     */
+    START_FROM_CLOUD_RUN_JOB(50),
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a Storage Bucket. Used only for
      * return traces.
      * The storage_bucket information is populated.
@@ -755,6 +766,18 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a Cloud Run Job.
+     * A CloudRunJobInfo is populated with starting Job information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_RUN_JOB = 50;</code>
+     */
+    public static final int START_FROM_CLOUD_RUN_JOB_VALUE = 50;
+
+    /**
+     *
+     *
+     * <pre>
      * Initial state: packet originating from a Storage Bucket. Used only for
      * return traces.
      * The storage_bucket information is populated.
@@ -1185,6 +1208,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return START_FROM_APP_ENGINE_VERSION;
         case 26:
           return START_FROM_CLOUD_RUN_REVISION;
+        case 50:
+          return START_FROM_CLOUD_RUN_JOB;
         case 29:
           return START_FROM_STORAGE_BUCKET;
         case 30:
@@ -1344,6 +1369,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     CLOUD_FUNCTION(20),
     APP_ENGINE_VERSION(22),
     CLOUD_RUN_REVISION(23),
+    CLOUD_RUN_JOB(45),
     NAT(25),
     PROXY_CONNECTION(26),
     LOAD_BALANCER_BACKEND_INFO(27),
@@ -1429,6 +1455,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return APP_ENGINE_VERSION;
         case 23:
           return CLOUD_RUN_REVISION;
+        case 45:
+          return CLOUD_RUN_JOB;
         case 25:
           return NAT;
         case 26:
@@ -2600,7 +2628,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=319
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2622,7 +2650,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=319
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -3349,6 +3377,61 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo.getDefaultInstance();
   }
 
+  public static final int CLOUD_RUN_JOB_FIELD_NUMBER = 45;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+   *
+   * @return Whether the cloudRunJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudRunJob() {
+    return stepInfoCase_ == 45;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+   *
+   * @return The cloudRunJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo getCloudRunJob() {
+    if (stepInfoCase_ == 45) {
+      return (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run job.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfoOrBuilder
+      getCloudRunJobOrBuilder() {
+    if (stepInfoCase_ == 45) {
+      return (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+  }
+
   public static final int NAT_FIELD_NUMBER = 25;
 
   /**
@@ -3854,6 +3937,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           42, (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 45) {
+      output.writeMessage(
+          45, (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4061,6 +4148,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42, (com.google.cloud.networkmanagement.v1beta1.NgfwPacketInspectionInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 45) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              45, (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4174,6 +4266,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         break;
       case 23:
         if (!getCloudRunRevision().equals(other.getCloudRunRevision())) return false;
+        break;
+      case 45:
+        if (!getCloudRunJob().equals(other.getCloudRunJob())) return false;
         break;
       case 25:
         if (!getNat().equals(other.getNat())) return false;
@@ -4335,6 +4430,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       case 23:
         hash = (37 * hash) + CLOUD_RUN_REVISION_FIELD_NUMBER;
         hash = (53 * hash) + getCloudRunRevision().hashCode();
+        break;
+      case 45:
+        hash = (37 * hash) + CLOUD_RUN_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudRunJob().hashCode();
         break;
       case 25:
         hash = (37 * hash) + NAT_FIELD_NUMBER;
@@ -4599,6 +4698,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       if (cloudRunRevisionBuilder_ != null) {
         cloudRunRevisionBuilder_.clear();
       }
+      if (cloudRunJobBuilder_ != null) {
+        cloudRunJobBuilder_.clear();
+      }
       if (natBuilder_ != null) {
         natBuilder_.clear();
       }
@@ -4769,6 +4871,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       }
       if (stepInfoCase_ == 23 && cloudRunRevisionBuilder_ != null) {
         result.stepInfo_ = cloudRunRevisionBuilder_.build();
+      }
+      if (stepInfoCase_ == 45 && cloudRunJobBuilder_ != null) {
+        result.stepInfo_ = cloudRunJobBuilder_.build();
       }
       if (stepInfoCase_ == 25 && natBuilder_ != null) {
         result.stepInfo_ = natBuilder_.build();
@@ -4968,6 +5073,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         case CLOUD_RUN_REVISION:
           {
             mergeCloudRunRevision(other.getCloudRunRevision());
+            break;
+          }
+        case CLOUD_RUN_JOB:
+          {
+            mergeCloudRunJob(other.getCloudRunJob());
             break;
           }
         case NAT:
@@ -5304,6 +5414,13 @@ public final class Step extends com.google.protobuf.GeneratedMessage
                 stepInfoCase_ = 42;
                 break;
               } // case 338
+            case 362:
+              {
+                input.readMessage(
+                    internalGetCloudRunJobFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 45;
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9612,7 +9729,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=319
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -9634,7 +9751,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=315
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=319
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -12642,6 +12759,231 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       stepInfoCase_ = 23;
       onChanged();
       return cloudRunRevisionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo,
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfoOrBuilder>
+        cloudRunJobBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     *
+     * @return Whether the cloudRunJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudRunJob() {
+      return stepInfoCase_ == 45;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     *
+     * @return The cloudRunJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo getCloudRunJob() {
+      if (cloudRunJobBuilder_ == null) {
+        if (stepInfoCase_ == 45) {
+          return (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 45) {
+          return cloudRunJobBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    public Builder setCloudRunJob(
+        com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo value) {
+      if (cloudRunJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        cloudRunJobBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    public Builder setCloudRunJob(
+        com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.Builder builderForValue) {
+      if (cloudRunJobBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudRunJobBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    public Builder mergeCloudRunJob(
+        com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo value) {
+      if (cloudRunJobBuilder_ == null) {
+        if (stepInfoCase_ == 45
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 45) {
+          cloudRunJobBuilder_.mergeFrom(value);
+        } else {
+          cloudRunJobBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 45;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    public Builder clearCloudRunJob() {
+      if (cloudRunJobBuilder_ == null) {
+        if (stepInfoCase_ == 45) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 45) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        cloudRunJobBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.Builder
+        getCloudRunJobBuilder() {
+      return internalGetCloudRunJobFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfoOrBuilder
+        getCloudRunJobOrBuilder() {
+      if ((stepInfoCase_ == 45) && (cloudRunJobBuilder_ != null)) {
+        return cloudRunJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 45) {
+          return (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud Run job.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo cloud_run_job = 45;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo,
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfoOrBuilder>
+        internalGetCloudRunJobFieldBuilder() {
+      if (cloudRunJobBuilder_ == null) {
+        if (!(stepInfoCase_ == 45)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.getDefaultInstance();
+        }
+        cloudRunJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo,
+                com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.CloudRunJobInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 45;
+      onChanged();
+      return cloudRunJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<

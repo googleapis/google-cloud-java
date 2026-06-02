@@ -116,8 +116,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions currently applied to the resource. The key is the component
-   * name and the value is the version.
+   * A mapping of components to their currently-applied versions or other
+   * appropriate identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -141,8 +141,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions currently applied to the resource. The key is the component
-   * name and the value is the version.
+   * A mapping of components to their currently-applied versions or other
+   * appropriate identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -156,8 +156,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions currently applied to the resource. The key is the component
-   * name and the value is the version.
+   * A mapping of components to their currently-applied versions or other
+   * appropriate identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -179,8 +179,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions currently applied to the resource. The key is the component
-   * name and the value is the version.
+   * A mapping of components to their currently-applied versions or other
+   * appropriate identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -231,8 +231,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions scheduled for the next maintenance. The key is the
-   * component name and the value is the version.
+   * A mapping of components to their target versions or other appropriate
+   * identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -256,8 +256,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions scheduled for the next maintenance. The key is the
-   * component name and the value is the version.
+   * A mapping of components to their target versions or other appropriate
+   * identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -271,8 +271,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions scheduled for the next maintenance. The key is the
-   * component name and the value is the version.
+   * A mapping of components to their target versions or other appropriate
+   * identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -294,8 +294,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
    *
    *
    * <pre>
-   * SBOM versions scheduled for the next maintenance. The key is the
-   * component name and the value is the version.
+   * A mapping of components to their target versions or other appropriate
+   * identifiers.
    * </pre>
    *
    * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -755,8 +755,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -780,8 +780,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -795,8 +795,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -818,8 +818,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -847,8 +847,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -872,8 +872,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -894,8 +894,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions currently applied to the resource. The key is the component
-     * name and the value is the version.
+     * A mapping of components to their currently-applied versions or other
+     * appropriate identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; current_component_versions = 273325091;</code>
@@ -942,8 +942,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -967,8 +967,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -982,8 +982,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -1005,8 +1005,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -1034,8 +1034,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -1059,8 +1059,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>
@@ -1081,8 +1081,8 @@ public final class GetVersionOperationMetadataSbomInfo extends com.google.protob
      *
      *
      * <pre>
-     * SBOM versions scheduled for the next maintenance. The key is the
-     * component name and the value is the version.
+     * A mapping of components to their target versions or other appropriate
+     * identifiers.
      * </pre>
      *
      * <code>map&lt;string, string&gt; target_component_versions = 345997579;</code>

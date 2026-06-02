@@ -141,7 +141,24 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
    * kilocalories over the observed interval.
    * </pre>
    *
-   * <code>double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the kcal field is set.
+   */
+  @java.lang.Override
+  public boolean hasKcal() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of calories burned due to basal metabolic rate in
+   * kilocalories over the observed interval.
+   * </pre>
+   *
+   * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The kcal.
    */
@@ -167,7 +184,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getInterval());
     }
-    if (java.lang.Double.doubleToRawLongBits(kcal_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, kcal_);
     }
     getUnknownFields().writeTo(output);
@@ -182,7 +199,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInterval());
     }
-    if (java.lang.Double.doubleToRawLongBits(kcal_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, kcal_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -205,8 +222,11 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
     if (hasInterval()) {
       if (!getInterval().equals(other.getInterval())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getKcal())
-        != java.lang.Double.doubleToLongBits(other.getKcal())) return false;
+    if (hasKcal() != other.hasKcal()) return false;
+    if (hasKcal()) {
+      if (java.lang.Double.doubleToLongBits(getKcal())
+          != java.lang.Double.doubleToLongBits(other.getKcal())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -222,10 +242,12 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getInterval().hashCode();
     }
-    hash = (37 * hash) + KCAL_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getKcal()));
+    if (hasKcal()) {
+      hash = (37 * hash) + KCAL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getKcal()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,6 +448,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.kcal_ = kcal_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -446,7 +469,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
       if (other.hasInterval()) {
         mergeInterval(other.getInterval());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getKcal()) != 0) {
+      if (other.hasKcal()) {
         setKcal(other.getKcal());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -736,7 +759,24 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
      * kilocalories over the observed interval.
      * </pre>
      *
-     * <code>double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the kcal field is set.
+     */
+    @java.lang.Override
+    public boolean hasKcal() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of calories burned due to basal metabolic rate in
+     * kilocalories over the observed interval.
+     * </pre>
+     *
+     * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The kcal.
      */
@@ -753,7 +793,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
      * kilocalories over the observed interval.
      * </pre>
      *
-     * <code>double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The kcal to set.
      * @return This builder for chaining.
@@ -774,7 +814,7 @@ public final class BasalEnergyBurned extends com.google.protobuf.GeneratedMessag
      * kilocalories over the observed interval.
      * </pre>
      *
-     * <code>double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

@@ -116,7 +116,6 @@
   <modules>
     <module>google-cloud-bigquery</module>
     <module>google-cloud-bigquery-bom</module>
-    <module>google-cloud-bigquery-jdbc</module>
   </modules>
 
   <build>

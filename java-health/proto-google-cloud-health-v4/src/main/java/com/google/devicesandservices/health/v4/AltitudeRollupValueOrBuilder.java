@@ -33,7 +33,20 @@ public interface AltitudeRollupValueOrBuilder
    * Sum of the altitude gain in millimeters.
    * </pre>
    *
-   * <code>int64 gain_millimeters_sum = 1;</code>
+   * <code>optional int64 gain_millimeters_sum = 1;</code>
+   *
+   * @return Whether the gainMillimetersSum field is set.
+   */
+  boolean hasGainMillimetersSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sum of the altitude gain in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 gain_millimeters_sum = 1;</code>
    *
    * @return The gainMillimetersSum.
    */

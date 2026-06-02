@@ -87,6 +87,5 @@ monorepo
 
 .jqwik-database
 
-**/Agentic_Identities/**
-**/*.patch
-
+# Python build artifacts for library_generation tool
+sdk-platform-java/hermetic_build/library_generation/build/

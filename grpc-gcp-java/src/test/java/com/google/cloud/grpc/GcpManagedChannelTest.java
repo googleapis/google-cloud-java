@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
@@ -53,6 +54,8 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import java.io.File;
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -294,6 +297,130 @@ public final class GcpManagedChannelTest {
             ConnectivityState.CONNECTING,
             ConnectivityState.READY,
             ConnectivityState.TRANSIENT_FAILURE);
+  }
+
+  @Test
+  public void testChannelAffinityRefSticksToSameChannelRef() {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      gcpChannel = createPoolWithFakeReadyChannels(executorService, 3);
+      ChannelAffinityRef affinityRef = new ChannelAffinityRef();
+
+      ChannelRef first = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      first.activeStreamsCountIncr();
+      ChannelRef second = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+
+      assertThat(second).isSameInstanceAs(first);
+      assertThat(second.getId()).isEqualTo(first.getId());
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testChannelAffinityRefUseDifferentChannelOnNextCallThenSticks() {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      gcpChannel = createPoolWithFakeReadyChannels(executorService, 2);
+      ChannelAffinityRef affinityRef = new ChannelAffinityRef();
+
+      ChannelRef first = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      affinityRef.useDifferentChannelOnNextCall();
+
+      ChannelRef second = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      ChannelRef third = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+
+      assertThat(second).isNotSameInstanceAs(first);
+      assertThat(second.getId()).isNotEqualTo(first.getId());
+      assertThat(third).isSameInstanceAs(second);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testChannelAffinityRefInvalidChannelIdPicksAvailableChannel() throws Exception {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      gcpChannel = createPoolWithFakeReadyChannels(executorService, 2);
+      ChannelAffinityRef affinityRef = new ChannelAffinityRef();
+
+      setChannelAffinityRefState(affinityRef, 1000);
+
+      ChannelRef selected = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      ChannelRef next = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+
+      assertThat(selected).isIn(gcpChannel.channelRefs);
+      assertThat(selected.isActive()).isTrue();
+      assertThat(next).isSameInstanceAs(selected);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testChannelAffinityRefRemovedChannelPicksAvailableChannel() throws Exception {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      gcpChannel = createPoolWithFakeReadyChannels(executorService, 2);
+      ChannelAffinityRef affinityRef = new ChannelAffinityRef();
+
+      ChannelRef removed = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      gcpChannel.channelRefs.remove(removed);
+      deactivateChannelRef(removed);
+
+      ChannelRef selected = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      ChannelRef next = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+
+      assertThat(selected).isNotSameInstanceAs(removed);
+      assertThat(selected).isIn(gcpChannel.channelRefs);
+      assertThat(selected.isActive()).isTrue();
+      assertThat(next).isSameInstanceAs(selected);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  private GcpManagedChannel createPoolWithFakeReadyChannels(
+      ExecutorService executorService, int channelCount) {
+    List<FakeManagedChannel> channels = new ArrayList<>();
+    for (int i = 0; i < channelCount; i++) {
+      FakeManagedChannel channel = new FakeManagedChannel(executorService);
+      channel.setState(ConnectivityState.READY);
+      channels.add(channel);
+    }
+
+    GcpChannelPoolOptions poolOptions =
+        GcpChannelPoolOptions.newBuilder()
+            .setMinSize(channelCount)
+            .setMaxSize(channelCount)
+            .build();
+    return (GcpManagedChannel)
+        GcpManagedChannelBuilder.forDelegateBuilder(new FakeManagedChannelBuilder(channels))
+            .withOptions(
+                GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(poolOptions).build())
+            .build();
+  }
+
+  private void setChannelAffinityRefState(ChannelAffinityRef affinityRef, int state)
+      throws Exception {
+    Field stateField = ChannelAffinityRef.class.getDeclaredField("state");
+    stateField.setAccessible(true);
+    ((AtomicInteger) stateField.get(affinityRef)).set(state);
+  }
+
+  private void deactivateChannelRef(ChannelRef channelRef) throws Exception {
+    Method deactivate = ChannelRef.class.getDeclaredMethod("deactivate");
+    deactivate.setAccessible(true);
+    deactivate.invoke(channelRef);
   }
 
   @Test

@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
+import com.google.cloud.compute.v1.CancelRequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
@@ -57,6 +58,18 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: addPeeringCallable()");
+  }
+
+  public OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringCallable()");
   }
 
   public OperationCallable<DeleteNetworkRequest, Operation, Operation> deleteOperationCallable() {

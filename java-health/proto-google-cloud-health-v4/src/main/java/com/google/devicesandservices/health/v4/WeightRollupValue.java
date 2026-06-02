@@ -68,6 +68,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
             com.google.devicesandservices.health.v4.WeightRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int WEIGHT_GRAMS_AVG_FIELD_NUMBER = 1;
   private double weightGramsAvg_ = 0D;
 
@@ -78,7 +79,23 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
    * Average weight in grams.
    * </pre>
    *
-   * <code>double weight_grams_avg = 1;</code>
+   * <code>optional double weight_grams_avg = 1;</code>
+   *
+   * @return Whether the weightGramsAvg field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeightGramsAvg() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Average weight in grams.
+   * </pre>
+   *
+   * <code>optional double weight_grams_avg = 1;</code>
    *
    * @return The weightGramsAvg.
    */
@@ -101,7 +118,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(weightGramsAvg_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(1, weightGramsAvg_);
     }
     getUnknownFields().writeTo(output);
@@ -113,7 +130,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(weightGramsAvg_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, weightGramsAvg_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -132,8 +149,11 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
     com.google.devicesandservices.health.v4.WeightRollupValue other =
         (com.google.devicesandservices.health.v4.WeightRollupValue) obj;
 
-    if (java.lang.Double.doubleToLongBits(getWeightGramsAvg())
-        != java.lang.Double.doubleToLongBits(other.getWeightGramsAvg())) return false;
+    if (hasWeightGramsAvg() != other.hasWeightGramsAvg()) return false;
+    if (hasWeightGramsAvg()) {
+      if (java.lang.Double.doubleToLongBits(getWeightGramsAvg())
+          != java.lang.Double.doubleToLongBits(other.getWeightGramsAvg())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -145,11 +165,13 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + WEIGHT_GRAMS_AVG_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getWeightGramsAvg()));
+    if (hasWeightGramsAvg()) {
+      hash = (37 * hash) + WEIGHT_GRAMS_AVG_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getWeightGramsAvg()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,9 +350,12 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.devicesandservices.health.v4.WeightRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.weightGramsAvg_ = weightGramsAvg_;
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -346,7 +371,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.devicesandservices.health.v4.WeightRollupValue other) {
       if (other == com.google.devicesandservices.health.v4.WeightRollupValue.getDefaultInstance())
         return this;
-      if (java.lang.Double.doubleToRawLongBits(other.getWeightGramsAvg()) != 0) {
+      if (other.hasWeightGramsAvg()) {
         setWeightGramsAvg(other.getWeightGramsAvg());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -409,7 +434,23 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
      * Average weight in grams.
      * </pre>
      *
-     * <code>double weight_grams_avg = 1;</code>
+     * <code>optional double weight_grams_avg = 1;</code>
+     *
+     * @return Whether the weightGramsAvg field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeightGramsAvg() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Average weight in grams.
+     * </pre>
+     *
+     * <code>optional double weight_grams_avg = 1;</code>
      *
      * @return The weightGramsAvg.
      */
@@ -425,7 +466,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
      * Average weight in grams.
      * </pre>
      *
-     * <code>double weight_grams_avg = 1;</code>
+     * <code>optional double weight_grams_avg = 1;</code>
      *
      * @param value The weightGramsAvg to set.
      * @return This builder for chaining.
@@ -445,7 +486,7 @@ public final class WeightRollupValue extends com.google.protobuf.GeneratedMessag
      * Average weight in grams.
      * </pre>
      *
-     * <code>double weight_grams_avg = 1;</code>
+     * <code>optional double weight_grams_avg = 1;</code>
      *
      * @return This builder for chaining.
      */

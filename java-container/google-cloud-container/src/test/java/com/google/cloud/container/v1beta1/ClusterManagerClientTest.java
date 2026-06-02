@@ -548,6 +548,8 @@ public class ClusterManagerClientTest {
             .setNodePoolId("nodePoolId1121557241")
             .setNodeVersion("nodeVersion1155309686")
             .setImageType("imageType-878147787")
+            .setImage("image100313435")
+            .setImageProject("imageProject288951614")
             .addAllLocations(new ArrayList<String>())
             .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
             .setName("name3373707")
@@ -595,6 +597,8 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getNodePoolId(), actualRequest.getNodePoolId());
     Assert.assertEquals(request.getNodeVersion(), actualRequest.getNodeVersion());
     Assert.assertEquals(request.getImageType(), actualRequest.getImageType());
+    Assert.assertEquals(request.getImage(), actualRequest.getImage());
+    Assert.assertEquals(request.getImageProject(), actualRequest.getImageProject());
     Assert.assertEquals(request.getLocationsList(), actualRequest.getLocationsList());
     Assert.assertEquals(
         request.getWorkloadMetadataConfig(), actualRequest.getWorkloadMetadataConfig());
@@ -648,6 +652,8 @@ public class ClusterManagerClientTest {
               .setNodePoolId("nodePoolId1121557241")
               .setNodeVersion("nodeVersion1155309686")
               .setImageType("imageType-878147787")
+              .setImage("image100313435")
+              .setImageProject("imageProject288951614")
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setName("name3373707")

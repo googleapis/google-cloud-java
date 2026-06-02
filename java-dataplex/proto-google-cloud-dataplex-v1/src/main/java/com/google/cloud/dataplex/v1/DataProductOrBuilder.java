@@ -598,4 +598,48 @@ public interface DataProductOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataProduct.AccessGroup getAccessGroupsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessApprovalConfig field is set.
+   */
+  boolean hasAccessApprovalConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessApprovalConfig.
+   */
+  com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig getAccessApprovalConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder
+      getAccessApprovalConfigOrBuilder();
 }

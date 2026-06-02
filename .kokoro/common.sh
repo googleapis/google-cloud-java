@@ -21,6 +21,7 @@ excluded_modules=(
   'java-vertexai'
   'java-logging'
   'java-bigquery'
+  'java-bigquery-jdbc'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'

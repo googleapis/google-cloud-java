@@ -1485,13 +1485,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -1506,13 +1509,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -1527,13 +1533,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -1541,6 +1550,31 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.protobuf.DurationOrBuilder getBackdateDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, allows requesters to specify the
+     * [requested_not_before_time][google.cloud.security.privateca.v1.Certificate.requested_not_before_time]
+     * field when creating a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * Certificates requested with this option enabled will have a
+     * 'not_before_time' equal to the value specified in the request. The
+     * 'not_after_time' will be adjusted to preserve the requested lifetime. The
+     * maximum time that a certificate can be backdated with these options is 48
+     * hours in the past. This option cannot be set if
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * is set.
+     * </pre>
+     *
+     * <code>
+     * bool allow_requester_specified_not_before_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowRequesterSpecifiedNotBeforeTime.
+     */
+    boolean getAllowRequesterSpecifiedNotBeforeTime();
 
     /**
      *
@@ -5713,13 +5747,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -5737,13 +5774,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -5763,13 +5803,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The duration to backdate all certificates issued from this
-     * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-     * certificates will be issued with a not_before_time of the issuance time
-     * (i.e. the current time). If set, the certificates will be issued with a
-     * not_before_time of the issuance time minus the backdate_duration. The
-     * not_after_time will be adjusted to preserve the requested lifetime. The
-     * backdate_duration must be less than or equal to 48 hours.
+     * Optional. If set, all certificates issued from this
+     * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+     * this duration. The 'not_before_time' will be the issuance time minus this
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+     * and the 'not_after_time' will be adjusted to preserve the requested
+     * lifetime. The maximum duration that a certificate can be backdated with
+     * these options is 48 hours in the past.
+     * This option cannot be set if
+     * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+     * is set.
      * </pre>
      *
      * <code>
@@ -5781,6 +5824,37 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       return backdateDuration_ == null
           ? com.google.protobuf.Duration.getDefaultInstance()
           : backdateDuration_;
+    }
+
+    public static final int ALLOW_REQUESTER_SPECIFIED_NOT_BEFORE_TIME_FIELD_NUMBER = 8;
+    private boolean allowRequesterSpecifiedNotBeforeTime_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, allows requesters to specify the
+     * [requested_not_before_time][google.cloud.security.privateca.v1.Certificate.requested_not_before_time]
+     * field when creating a
+     * [Certificate][google.cloud.security.privateca.v1.Certificate].
+     * Certificates requested with this option enabled will have a
+     * 'not_before_time' equal to the value specified in the request. The
+     * 'not_after_time' will be adjusted to preserve the requested lifetime. The
+     * maximum time that a certificate can be backdated with these options is 48
+     * hours in the past. This option cannot be set if
+     * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+     * is set.
+     * </pre>
+     *
+     * <code>
+     * bool allow_requester_specified_not_before_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowRequesterSpecifiedNotBeforeTime.
+     */
+    @java.lang.Override
+    public boolean getAllowRequesterSpecifiedNotBeforeTime() {
+      return allowRequesterSpecifiedNotBeforeTime_;
     }
 
     public static final int MAXIMUM_LIFETIME_FIELD_NUMBER = 2;
@@ -6240,6 +6314,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(7, getBackdateDuration());
       }
+      if (allowRequesterSpecifiedNotBeforeTime_ != false) {
+        output.writeBool(8, allowRequesterSpecifiedNotBeforeTime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6274,6 +6351,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getBackdateDuration());
       }
+      if (allowRequesterSpecifiedNotBeforeTime_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                8, allowRequesterSpecifiedNotBeforeTime_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6295,6 +6377,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (hasBackdateDuration()) {
         if (!getBackdateDuration().equals(other.getBackdateDuration())) return false;
       }
+      if (getAllowRequesterSpecifiedNotBeforeTime()
+          != other.getAllowRequesterSpecifiedNotBeforeTime()) return false;
       if (hasMaximumLifetime() != other.hasMaximumLifetime()) return false;
       if (hasMaximumLifetime()) {
         if (!getMaximumLifetime().equals(other.getMaximumLifetime())) return false;
@@ -6334,6 +6418,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + BACKDATE_DURATION_FIELD_NUMBER;
         hash = (53 * hash) + getBackdateDuration().hashCode();
       }
+      hash = (37 * hash) + ALLOW_REQUESTER_SPECIFIED_NOT_BEFORE_TIME_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getAllowRequesterSpecifiedNotBeforeTime());
       if (hasMaximumLifetime()) {
         hash = (37 * hash) + MAXIMUM_LIFETIME_FIELD_NUMBER;
         hash = (53 * hash) + getMaximumLifetime().hashCode();
@@ -6523,6 +6611,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           backdateDurationBuilder_.dispose();
           backdateDurationBuilder_ = null;
         }
+        allowRequesterSpecifiedNotBeforeTime_ = false;
         maximumLifetime_ = null;
         if (maximumLifetimeBuilder_ != null) {
           maximumLifetimeBuilder_.dispose();
@@ -6609,30 +6698,33 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allowRequesterSpecifiedNotBeforeTime_ = allowRequesterSpecifiedNotBeforeTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.maximumLifetime_ =
               maximumLifetimeBuilder_ == null ? maximumLifetime_ : maximumLifetimeBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.allowedIssuanceModes_ =
               allowedIssuanceModesBuilder_ == null
                   ? allowedIssuanceModes_
                   : allowedIssuanceModesBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.baselineValues_ =
               baselineValuesBuilder_ == null ? baselineValues_ : baselineValuesBuilder_.build();
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.identityConstraints_ =
               identityConstraintsBuilder_ == null
                   ? identityConstraints_
                   : identityConstraintsBuilder_.build();
           to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.passthroughExtensions_ =
               passthroughExtensionsBuilder_ == null
                   ? passthroughExtensions_
@@ -6685,6 +6777,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasBackdateDuration()) {
           mergeBackdateDuration(other.getBackdateDuration());
+        }
+        if (other.getAllowRequesterSpecifiedNotBeforeTime() != false) {
+          setAllowRequesterSpecifiedNotBeforeTime(other.getAllowRequesterSpecifiedNotBeforeTime());
         }
         if (other.hasMaximumLifetime()) {
           mergeMaximumLifetime(other.getMaximumLifetime());
@@ -6746,7 +6841,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetMaximumLifetimeFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 18
               case 26:
@@ -6754,21 +6849,21 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetAllowedIssuanceModesFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       internalGetBaselineValuesFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       internalGetIdentityConstraintsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 42
               case 50:
@@ -6776,7 +6871,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetPassthroughExtensionsFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 50
               case 58:
@@ -6786,6 +6881,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 58
+              case 64:
+                {
+                  allowRequesterSpecifiedNotBeforeTime_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7311,13 +7412,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7334,13 +7438,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7363,13 +7470,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7394,13 +7504,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7422,13 +7535,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7458,13 +7574,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7486,13 +7605,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7509,13 +7631,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7536,13 +7661,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The duration to backdate all certificates issued from this
-       * [CaPool][google.cloud.security.privateca.v1.CaPool]. If not set, the
-       * certificates will be issued with a not_before_time of the issuance time
-       * (i.e. the current time). If set, the certificates will be issued with a
-       * not_before_time of the issuance time minus the backdate_duration. The
-       * not_after_time will be adjusted to preserve the requested lifetime. The
-       * backdate_duration must be less than or equal to 48 hours.
+       * Optional. If set, all certificates issued from this
+       * [CaPool][google.cloud.security.privateca.v1.CaPool] will be backdated by
+       * this duration. The 'not_before_time' will be the issuance time minus this
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration],
+       * and the 'not_after_time' will be adjusted to preserve the requested
+       * lifetime. The maximum duration that a certificate can be backdated with
+       * these options is 48 hours in the past.
+       * This option cannot be set if
+       * [allow_requester_specified_not_before_time][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.allow_requester_specified_not_before_time]
+       * is set.
        * </pre>
        *
        * <code>
@@ -7564,6 +7692,98 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           backdateDuration_ = null;
         }
         return backdateDurationBuilder_;
+      }
+
+      private boolean allowRequesterSpecifiedNotBeforeTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, allows requesters to specify the
+       * [requested_not_before_time][google.cloud.security.privateca.v1.Certificate.requested_not_before_time]
+       * field when creating a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * Certificates requested with this option enabled will have a
+       * 'not_before_time' equal to the value specified in the request. The
+       * 'not_after_time' will be adjusted to preserve the requested lifetime. The
+       * maximum time that a certificate can be backdated with these options is 48
+       * hours in the past. This option cannot be set if
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+       * is set.
+       * </pre>
+       *
+       * <code>
+       * bool allow_requester_specified_not_before_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The allowRequesterSpecifiedNotBeforeTime.
+       */
+      @java.lang.Override
+      public boolean getAllowRequesterSpecifiedNotBeforeTime() {
+        return allowRequesterSpecifiedNotBeforeTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, allows requesters to specify the
+       * [requested_not_before_time][google.cloud.security.privateca.v1.Certificate.requested_not_before_time]
+       * field when creating a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * Certificates requested with this option enabled will have a
+       * 'not_before_time' equal to the value specified in the request. The
+       * 'not_after_time' will be adjusted to preserve the requested lifetime. The
+       * maximum time that a certificate can be backdated with these options is 48
+       * hours in the past. This option cannot be set if
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+       * is set.
+       * </pre>
+       *
+       * <code>
+       * bool allow_requester_specified_not_before_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The allowRequesterSpecifiedNotBeforeTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowRequesterSpecifiedNotBeforeTime(boolean value) {
+
+        allowRequesterSpecifiedNotBeforeTime_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, allows requesters to specify the
+       * [requested_not_before_time][google.cloud.security.privateca.v1.Certificate.requested_not_before_time]
+       * field when creating a
+       * [Certificate][google.cloud.security.privateca.v1.Certificate].
+       * Certificates requested with this option enabled will have a
+       * 'not_before_time' equal to the value specified in the request. The
+       * 'not_after_time' will be adjusted to preserve the requested lifetime. The
+       * maximum time that a certificate can be backdated with these options is 48
+       * hours in the past. This option cannot be set if
+       * [backdate_duration][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.backdate_duration]
+       * is set.
+       * </pre>
+       *
+       * <code>
+       * bool allow_requester_specified_not_before_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowRequesterSpecifiedNotBeforeTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allowRequesterSpecifiedNotBeforeTime_ = false;
+        onChanged();
+        return this;
       }
 
       private com.google.protobuf.Duration maximumLifetime_;
@@ -7594,7 +7814,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * @return Whether the maximumLifetime field is set.
        */
       public boolean hasMaximumLifetime() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
 
       /**
@@ -7654,7 +7874,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           maximumLifetimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7683,7 +7903,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           maximumLifetimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7708,7 +7928,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeMaximumLifetime(com.google.protobuf.Duration value) {
         if (maximumLifetimeBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && maximumLifetime_ != null
               && maximumLifetime_ != com.google.protobuf.Duration.getDefaultInstance()) {
             getMaximumLifetimeBuilder().mergeFrom(value);
@@ -7719,7 +7939,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           maximumLifetimeBuilder_.mergeFrom(value);
         }
         if (maximumLifetime_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -7744,7 +7964,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearMaximumLifetime() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         maximumLifetime_ = null;
         if (maximumLifetimeBuilder_ != null) {
           maximumLifetimeBuilder_.dispose();
@@ -7773,7 +7993,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMaximumLifetimeBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return internalGetMaximumLifetimeFieldBuilder().getBuilder();
       }
@@ -7866,7 +8086,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * @return Whether the allowedIssuanceModes field is set.
        */
       public boolean hasAllowedIssuanceModes() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
 
       /**
@@ -7921,7 +8141,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           allowedIssuanceModesBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -7948,7 +8168,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           allowedIssuanceModesBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -7970,7 +8190,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       public Builder mergeAllowedIssuanceModes(
           com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes value) {
         if (allowedIssuanceModesBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && allowedIssuanceModes_ != null
               && allowedIssuanceModes_
                   != com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes
@@ -7983,7 +8203,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           allowedIssuanceModesBuilder_.mergeFrom(value);
         }
         if (allowedIssuanceModes_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -8004,7 +8224,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearAllowedIssuanceModes() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         allowedIssuanceModes_ = null;
         if (allowedIssuanceModesBuilder_ != null) {
           allowedIssuanceModesBuilder_.dispose();
@@ -8030,7 +8250,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        */
       public com.google.cloud.security.privateca.v1.CaPool.IssuancePolicy.IssuanceModes.Builder
           getAllowedIssuanceModesBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return internalGetAllowedIssuanceModesFieldBuilder().getBuilder();
       }
@@ -8123,7 +8343,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * @return Whether the baselineValues field is set.
        */
       public boolean hasBaselineValues() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
 
       /**
@@ -8186,7 +8406,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           baselineValuesBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -8217,7 +8437,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           baselineValuesBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -8244,7 +8464,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       public Builder mergeBaselineValues(
           com.google.cloud.security.privateca.v1.X509Parameters value) {
         if (baselineValuesBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && baselineValues_ != null
               && baselineValues_
                   != com.google.cloud.security.privateca.v1.X509Parameters.getDefaultInstance()) {
@@ -8256,7 +8476,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           baselineValuesBuilder_.mergeFrom(value);
         }
         if (baselineValues_ != null) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         return this;
@@ -8282,7 +8502,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearBaselineValues() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         baselineValues_ = null;
         if (baselineValuesBuilder_ != null) {
           baselineValuesBuilder_.dispose();
@@ -8313,7 +8533,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        */
       public com.google.cloud.security.privateca.v1.X509Parameters.Builder
           getBaselineValuesBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return internalGetBaselineValuesFieldBuilder().getBuilder();
       }
@@ -8410,7 +8630,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * @return Whether the identityConstraints field is set.
        */
       public boolean hasIdentityConstraints() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
 
       /**
@@ -8467,7 +8687,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           identityConstraintsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -8495,7 +8715,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           identityConstraintsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -8518,7 +8738,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       public Builder mergeIdentityConstraints(
           com.google.cloud.security.privateca.v1.CertificateIdentityConstraints value) {
         if (identityConstraintsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && identityConstraints_ != null
               && identityConstraints_
                   != com.google.cloud.security.privateca.v1.CertificateIdentityConstraints
@@ -8531,7 +8751,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           identityConstraintsBuilder_.mergeFrom(value);
         }
         if (identityConstraints_ != null) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         return this;
@@ -8553,7 +8773,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearIdentityConstraints() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         identityConstraints_ = null;
         if (identityConstraintsBuilder_ != null) {
           identityConstraintsBuilder_.dispose();
@@ -8580,7 +8800,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        */
       public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints.Builder
           getIdentityConstraintsBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return internalGetIdentityConstraintsFieldBuilder().getBuilder();
       }
@@ -8681,7 +8901,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * @return Whether the passthroughExtensions field is set.
        */
       public boolean hasPassthroughExtensions() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
 
       /**
@@ -8760,7 +8980,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           passthroughExtensionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -8799,7 +9019,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         } else {
           passthroughExtensionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -8833,7 +9053,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       public Builder mergePassthroughExtensions(
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints value) {
         if (passthroughExtensionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000080) != 0)
               && passthroughExtensions_ != null
               && passthroughExtensions_
                   != com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
@@ -8846,7 +9066,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
           passthroughExtensionsBuilder_.mergeFrom(value);
         }
         if (passthroughExtensions_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
@@ -8879,7 +9099,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearPassthroughExtensions() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         passthroughExtensions_ = null;
         if (passthroughExtensionsBuilder_ != null) {
           passthroughExtensionsBuilder_.dispose();
@@ -8917,7 +9137,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
        */
       public com.google.cloud.security.privateca.v1.CertificateExtensionConstraints.Builder
           getPassthroughExtensionsBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return internalGetPassthroughExtensionsFieldBuilder().getBuilder();
       }
@@ -9310,6 +9530,78 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         : publishingOptions_;
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 8;
+  private com.google.cloud.security.privateca.v1.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.security.privateca.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder
+      getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.security.privateca.v1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   public static final int LABELS_FIELD_NUMBER = 5;
 
   private static final class LabelsDefaultEntryHolder {
@@ -9445,6 +9737,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 5);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getEncryptionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -9476,6 +9771,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, labels__);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9502,6 +9800,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
     if (hasPublishingOptions()) {
       if (!getPublishingOptions().equals(other.getPublishingOptions())) return false;
     }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -9525,6 +9827,10 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
     if (hasPublishingOptions()) {
       hash = (37 * hash) + PUBLISHING_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getPublishingOptions().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -9701,6 +10007,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetIssuancePolicyFieldBuilder();
         internalGetPublishingOptionsFieldBuilder();
+        internalGetEncryptionSpecFieldBuilder();
       }
     }
 
@@ -9719,6 +10026,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (publishingOptionsBuilder_ != null) {
         publishingOptionsBuilder_.dispose();
         publishingOptionsBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       return this;
@@ -9777,6 +10089,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
@@ -9809,8 +10126,11 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (other.hasPublishingOptions()) {
         mergePublishingOptions(other.getPublishingOptions());
       }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -9872,9 +10192,16 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 66:
+              {
+                input.readMessage(
+                    internalGetEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10651,6 +10978,259 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       return publishingOptionsBuilder_;
     }
 
+    private com.google.cloud.security.privateca.v1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.security.privateca.v1.EncryptionSpec,
+            com.google.cloud.security.privateca.v1.EncryptionSpec.Builder,
+            com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.security.privateca.v1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.security.privateca.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.security.privateca.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.security.privateca.v1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(
+        com.google.cloud.security.privateca.v1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.security.privateca.v1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.EncryptionSpec.Builder
+        getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.security.privateca.v1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When
+     * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+     * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+     * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+     * the PEM-encoded certificate fields will be encrypted at rest.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.security.privateca.v1.EncryptionSpec,
+            com.google.cloud.security.privateca.v1.EncryptionSpec.Builder,
+            com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder>
+        internalGetEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.security.privateca.v1.EncryptionSpec,
+                com.google.cloud.security.privateca.v1.EncryptionSpec.Builder,
+                com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -10668,7 +11248,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return labels_;
     }
@@ -10758,7 +11338,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -10783,7 +11363,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -10804,7 +11384,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -10819,7 +11399,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 

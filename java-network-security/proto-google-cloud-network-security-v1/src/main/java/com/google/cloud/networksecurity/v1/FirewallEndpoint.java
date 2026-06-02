@@ -2144,10 +2144,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. List of networks that are associated with this endpoint in the
-   * local zone. This is a projection of the FirewallEndpointAssociations
-   * pointing at this endpoint. A network will only appear in this list after
-   * traffic routing is fully configured. Format:
+   * Output only. Deprecated: List of networks that are associated with this
+   * endpoint in the local zone. This is a projection of the
+   * FirewallEndpointAssociations pointing at this endpoint. A network will only
+   * appear in this list after traffic routing is fully configured. Format:
    * projects/{project}/global/networks/{name}.
    * </pre>
    *
@@ -2156,7 +2156,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is deprecated.
-   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
    * @return A list containing the associatedNetworks.
    */
   @java.lang.Deprecated
@@ -2168,10 +2168,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. List of networks that are associated with this endpoint in the
-   * local zone. This is a projection of the FirewallEndpointAssociations
-   * pointing at this endpoint. A network will only appear in this list after
-   * traffic routing is fully configured. Format:
+   * Output only. Deprecated: List of networks that are associated with this
+   * endpoint in the local zone. This is a projection of the
+   * FirewallEndpointAssociations pointing at this endpoint. A network will only
+   * appear in this list after traffic routing is fully configured. Format:
    * projects/{project}/global/networks/{name}.
    * </pre>
    *
@@ -2180,7 +2180,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is deprecated.
-   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
    * @return The count of associatedNetworks.
    */
   @java.lang.Deprecated
@@ -2192,10 +2192,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. List of networks that are associated with this endpoint in the
-   * local zone. This is a projection of the FirewallEndpointAssociations
-   * pointing at this endpoint. A network will only appear in this list after
-   * traffic routing is fully configured. Format:
+   * Output only. Deprecated: List of networks that are associated with this
+   * endpoint in the local zone. This is a projection of the
+   * FirewallEndpointAssociations pointing at this endpoint. A network will only
+   * appear in this list after traffic routing is fully configured. Format:
    * projects/{project}/global/networks/{name}.
    * </pre>
    *
@@ -2204,7 +2204,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is deprecated.
-   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
    * @param index The index of the element to return.
    * @return The associatedNetworks at the given index.
    */
@@ -2217,10 +2217,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. List of networks that are associated with this endpoint in the
-   * local zone. This is a projection of the FirewallEndpointAssociations
-   * pointing at this endpoint. A network will only appear in this list after
-   * traffic routing is fully configured. Format:
+   * Output only. Deprecated: List of networks that are associated with this
+   * endpoint in the local zone. This is a projection of the
+   * FirewallEndpointAssociations pointing at this endpoint. A network will only
+   * appear in this list after traffic routing is fully configured. Format:
    * projects/{project}/global/networks/{name}.
    * </pre>
    *
@@ -2229,7 +2229,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is deprecated.
-   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+   *     See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
    * @param index The index of the value to return.
    * @return The bytes of the associatedNetworks at the given index.
    */
@@ -4287,10 +4287,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4299,7 +4299,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @return A list containing the associatedNetworks.
      */
     @java.lang.Deprecated
@@ -4312,10 +4312,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4324,7 +4324,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @return The count of associatedNetworks.
      */
     @java.lang.Deprecated
@@ -4336,10 +4336,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4348,7 +4348,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param index The index of the element to return.
      * @return The associatedNetworks at the given index.
      */
@@ -4361,10 +4361,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4373,7 +4373,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param index The index of the value to return.
      * @return The bytes of the associatedNetworks at the given index.
      */
@@ -4386,10 +4386,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4398,7 +4398,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param index The index to set the value at.
      * @param value The associatedNetworks to set.
      * @return This builder for chaining.
@@ -4419,10 +4419,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4431,7 +4431,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param value The associatedNetworks to add.
      * @return This builder for chaining.
      */
@@ -4451,10 +4451,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4463,7 +4463,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param values The associatedNetworks to add.
      * @return This builder for chaining.
      */
@@ -4480,10 +4480,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4492,7 +4492,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4508,10 +4508,10 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. List of networks that are associated with this endpoint in the
-     * local zone. This is a projection of the FirewallEndpointAssociations
-     * pointing at this endpoint. A network will only appear in this list after
-     * traffic routing is fully configured. Format:
+     * Output only. Deprecated: List of networks that are associated with this
+     * endpoint in the local zone. This is a projection of the
+     * FirewallEndpointAssociations pointing at this endpoint. A network will only
+     * appear in this list after traffic routing is fully configured. Format:
      * projects/{project}/global/networks/{name}.
      * </pre>
      *
@@ -4520,7 +4520,7 @@ public final class FirewallEndpoint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networksecurity.v1.FirewallEndpoint.associated_networks is
-     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=265
+     *     deprecated. See google/cloud/networksecurity/v1/firewall_activation.proto;l=325
      * @param value The bytes of the associatedNetworks to add.
      * @return This builder for chaining.
      */

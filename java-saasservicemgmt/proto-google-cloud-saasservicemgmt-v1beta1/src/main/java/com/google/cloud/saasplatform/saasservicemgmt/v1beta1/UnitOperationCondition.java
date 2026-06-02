@@ -353,6 +353,20 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
      */
     TYPE_APP_COMPONENTS_REGISTERED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the UnitOperation's core workload execution completed
+     * successfully.
+     * The workload is the core execution operation performed for a
+     * UnitOperation (e.g., provisioning, updating, or deprovisioning
+     * resources) excluding post-operation checks.
+     * </pre>
+     *
+     * <code>TYPE_WORKLOAD_SUCCEEDED = 8;</code>
+     */
+    TYPE_WORKLOAD_SUCCEEDED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -443,6 +457,21 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
      */
     public static final int TYPE_APP_COMPONENTS_REGISTERED_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if the UnitOperation's core workload execution completed
+     * successfully.
+     * The workload is the core execution operation performed for a
+     * UnitOperation (e.g., provisioning, updating, or deprovisioning
+     * resources) excluding post-operation checks.
+     * </pre>
+     *
+     * <code>TYPE_WORKLOAD_SUCCEEDED = 8;</code>
+     */
+    public static final int TYPE_WORKLOAD_SUCCEEDED_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -481,6 +510,8 @@ public final class UnitOperationCondition extends com.google.protobuf.GeneratedM
           return TYPE_APP_CREATED;
         case 7:
           return TYPE_APP_COMPONENTS_REGISTERED;
+        case 8:
+          return TYPE_WORKLOAD_SUCCEEDED;
         default:
           return null;
       }

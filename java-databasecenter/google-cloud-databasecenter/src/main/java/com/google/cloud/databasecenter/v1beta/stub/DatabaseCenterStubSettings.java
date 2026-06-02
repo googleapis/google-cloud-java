@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -53,6 +54,8 @@ import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRow;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsResponse;
 import com.google.cloud.databasecenter.v1beta.DatabaseResourceGroup;
 import com.google.cloud.databasecenter.v1beta.DatabaseResourceIssue;
 import com.google.cloud.databasecenter.v1beta.Product;
@@ -62,6 +65,7 @@ import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
 import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
+import com.google.cloud.databasecenter.v1beta.QueryStatsInfo;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -142,6 +146,9 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       queryDatabaseResourceGroupsSettings;
   private final UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsSettings;
+  private final PagedCallSettings<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsSettings;
   private final PagedCallSettings<QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
       queryIssuesSettings;
 
@@ -264,6 +271,44 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           };
 
   private static final PagedListDescriptor<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+      AGGREGATE_QUERY_STATS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregateQueryStatsRequest injectToken(
+                AggregateQueryStatsRequest payload, String token) {
+              return AggregateQueryStatsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public AggregateQueryStatsRequest injectPageSize(
+                AggregateQueryStatsRequest payload, int pageSize) {
+              return AggregateQueryStatsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregateQueryStatsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AggregateQueryStatsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<QueryStatsInfo> extractResources(AggregateQueryStatsResponse payload) {
+              return payload.getQueryStatsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
       QUERY_ISSUES_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -364,6 +409,27 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
           };
 
   private static final PagedListResponseFactory<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, AggregateQueryStatsPagedResponse>
+      AGGREGATE_QUERY_STATS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregateQueryStatsRequest,
+              AggregateQueryStatsResponse,
+              AggregateQueryStatsPagedResponse>() {
+            @Override
+            public ApiFuture<AggregateQueryStatsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsResponse> callable,
+                AggregateQueryStatsRequest request,
+                ApiCallContext context,
+                ApiFuture<AggregateQueryStatsResponse> futureResponse) {
+              PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+                  pageContext =
+                      PageContext.create(
+                          callable, AGGREGATE_QUERY_STATS_PAGE_STR_DESC, request, context);
+              return AggregateQueryStatsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
       QUERY_ISSUES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -407,6 +473,13 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
   public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsSettings() {
     return aggregateIssueStatsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregateQueryStats. */
+  public PagedCallSettings<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsSettings() {
+    return aggregateQueryStatsSettings;
   }
 
   /** Returns the object with the settings used for calls to queryIssues. */
@@ -531,6 +604,7 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     queryDatabaseResourceGroupsSettings =
         settingsBuilder.queryDatabaseResourceGroupsSettings().build();
     aggregateIssueStatsSettings = settingsBuilder.aggregateIssueStatsSettings().build();
+    aggregateQueryStatsSettings = settingsBuilder.aggregateQueryStatsSettings().build();
     queryIssuesSettings = settingsBuilder.queryIssuesSettings().build();
   }
 
@@ -559,6 +633,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
         queryDatabaseResourceGroupsSettings;
     private final UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
         aggregateIssueStatsSettings;
+    private final PagedCallSettings.Builder<
+            AggregateQueryStatsRequest,
+            AggregateQueryStatsResponse,
+            AggregateQueryStatsPagedResponse>
+        aggregateQueryStatsSettings;
     private final PagedCallSettings.Builder<
             QueryIssuesRequest, QueryIssuesResponse, QueryIssuesPagedResponse>
         queryIssuesSettings;
@@ -594,6 +673,8 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       queryDatabaseResourceGroupsSettings =
           PagedCallSettings.newBuilder(QUERY_DATABASE_RESOURCE_GROUPS_PAGE_STR_FACT);
       aggregateIssueStatsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      aggregateQueryStatsSettings =
+          PagedCallSettings.newBuilder(AGGREGATE_QUERY_STATS_PAGE_STR_FACT);
       queryIssuesSettings = PagedCallSettings.newBuilder(QUERY_ISSUES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
@@ -602,6 +683,7 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
               aggregateFleetSettings,
               queryDatabaseResourceGroupsSettings,
               aggregateIssueStatsSettings,
+              aggregateQueryStatsSettings,
               queryIssuesSettings);
       initDefaults(this);
     }
@@ -614,6 +696,7 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
       queryDatabaseResourceGroupsSettings =
           settings.queryDatabaseResourceGroupsSettings.toBuilder();
       aggregateIssueStatsSettings = settings.aggregateIssueStatsSettings.toBuilder();
+      aggregateQueryStatsSettings = settings.aggregateQueryStatsSettings.toBuilder();
       queryIssuesSettings = settings.queryIssuesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -622,6 +705,7 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
               aggregateFleetSettings,
               queryDatabaseResourceGroupsSettings,
               aggregateIssueStatsSettings,
+              aggregateQueryStatsSettings,
               queryIssuesSettings);
     }
 
@@ -667,6 +751,11 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
 
       builder
           .aggregateIssueStatsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .aggregateQueryStatsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -720,6 +809,15 @@ public class DatabaseCenterStubSettings extends StubSettings<DatabaseCenterStubS
     public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
         aggregateIssueStatsSettings() {
       return aggregateIssueStatsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateQueryStats. */
+    public PagedCallSettings.Builder<
+            AggregateQueryStatsRequest,
+            AggregateQueryStatsResponse,
+            AggregateQueryStatsPagedResponse>
+        aggregateQueryStatsSettings() {
+      return aggregateQueryStatsSettings;
     }
 
     /** Returns the builder for the settings used for calls to queryIssues. */
