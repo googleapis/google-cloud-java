@@ -74,6 +74,7 @@ def generate_composed_library(
         # does not affect library generation but instead used only for
         # generating postprocessing files such as README.
         has_version = remove_version_from(gapic.proto_path) != gapic.proto_path
+        proto_only = gapic_inputs.proto_only == "true"
         util.generate_postprocessing_prerequisite_files(
             config=config,
             library=library,
@@ -81,6 +82,7 @@ def generate_composed_library(
             library_path=library_path,
             transport=library.get_transport(gapic_inputs),
             has_version=has_version,
+            proto_only=proto_only,
         )
         temp_destination_path = f"java-{gapic.proto_path.replace('/','-')}"
         effective_arguments = _construct_effective_arg(
