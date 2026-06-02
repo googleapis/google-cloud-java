@@ -35,7 +35,6 @@ import com.google.api.gax.retrying.RetryingContext;
 /* Package-private for internal use. */
 class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
-  /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */
   @Override
   public boolean shouldRetry(Throwable previousThrowable, ResponseT previousResponse) {
     return (previousThrowable instanceof ApiException)
@@ -51,6 +50,9 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   @Override
   public boolean shouldRetry(
       RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+    if (previousThrowable instanceof UnauthenticatedException) {
+      return ((UnauthenticatedException) previousThrowable).isRetryable();
+    }
     if (context.getRetryableCodes() != null) {
       // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list
       // of codes that should be retried.

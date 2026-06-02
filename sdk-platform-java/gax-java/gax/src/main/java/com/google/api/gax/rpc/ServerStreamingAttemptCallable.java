@@ -219,6 +219,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
         .getTracer()
         .attemptStarted(request, outerRetryingFuture.getAttemptSettings().getOverallAttemptCount());
 
+    final ApiCallContext finalContext = attemptContext;
     innerCallable.call(
         request,
         new StateCheckingResponseObserver<ResponseT>() {
@@ -234,6 +235,28 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
 
           @Override
           public void onErrorImpl(Throwable t) {
+            Throwable cause = t;
+            if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
+              cause = cause.getCause();
+            }
+            if (cause instanceof UnauthenticatedException) {
+              TransportChannel transportChannel = finalContext.getTransportChannel();
+              if (transportChannel != null && transportChannel.shouldRefresh()) {
+                transportChannel.refresh();
+                UnauthenticatedException causeEx = (UnauthenticatedException) cause;
+                cause = new UnauthenticatedException(
+                    causeEx.getMessage(),
+                    causeEx.getCause(),
+                    causeEx.getStatusCode(),
+                    true, // isRetryable = true
+                    causeEx.getErrorDetails());
+                
+                t = new com.google.api.gax.retrying.ServerStreamingAttemptException(
+                    cause,
+                    true, // canResume = true
+                    seenSuccessSinceLastError);
+              }
+            }
             onAttemptError(t);
           }
 

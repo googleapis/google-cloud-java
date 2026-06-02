@@ -198,19 +198,23 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
-    HttpTransport httpTransportToUse = httpTransport;
-    if (httpTransportToUse == null) {
-      httpTransportToUse = createHttpTransport();
-    }
-
-    // Pass the executor to the ManagedChannel. If no executor was provided (or null),
-    // the channel will use a default executor for the calls.
-    ManagedHttpJsonChannel channel =
-        ManagedHttpJsonChannel.newBuilder()
+    java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory = () -> {
+      try {
+        HttpTransport httpTransportToUse = httpTransport;
+        if (httpTransportToUse == null) {
+          httpTransportToUse = createHttpTransport();
+        }
+        return ManagedHttpJsonChannel.newBuilder()
             .setEndpoint(endpoint)
             .setExecutor(executor)
             .setHttpTransport(httpTransportToUse)
             .build();
+      } catch (Exception e) {
+        throw new java.lang.RuntimeException("Failed to create fresh ManagedHttpJsonChannel", e);
+      }
+    };
+
+    ManagedHttpJsonChannel channel = new RefreshingHttpJsonChannel(channelFactory);
 
     HttpJsonClientInterceptor headerInterceptor =
         new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
