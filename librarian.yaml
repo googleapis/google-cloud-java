@@ -1828,6 +1828,10 @@ libraries:
   - name: geminidataanalytics
     version: 0.21.0-SNAPSHOT
     apis:
+      - path: google/cloud/geminidataanalytics/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
       - path: google/cloud/geminidataanalytics/v1beta
         java:
           additional_protos:
