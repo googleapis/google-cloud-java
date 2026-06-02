@@ -28,6 +28,11 @@
         <artifactId>google-cloud-backstory</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
       </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-backstory</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>
