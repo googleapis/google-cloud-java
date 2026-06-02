@@ -35,11 +35,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.cloud.NoCredentials;
-import com.google.cloud.bigquery.*;
-import com.google.cloud.translate.v3.*;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
@@ -272,51 +267,38 @@ public abstract class PqcConnectivityTest {
   }
 
   private void runGrpcTest(int port, boolean shouldSucceed) throws Exception {
-    TranslationServiceSettings.Builder settingsBuilder =
-        TranslationServiceSettings.newBuilder()
-            .setEndpoint("localhost:" + port)
-            .setCredentialsProvider(NoCredentialsProvider.create());
-
     com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
-        ((com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
-                settingsBuilder.getTransportChannelProvider())
-            .toBuilder();
-    channelProviderBuilder.setChannelConfigurator(
-        new com.google.api.core.ApiFunction<
-            io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>() {
-          @Override
-          public io.grpc.ManagedChannelBuilder apply(io.grpc.ManagedChannelBuilder builder) {
-            if (clientSupportsPqc()) {
-              configureGrpcChannelForPqc(builder);
-            } else {
-              configureGrpcChannelForClassical(builder);
-            }
-            return builder;
-          }
-        });
-    settingsBuilder.setTransportChannelProvider(channelProviderBuilder.build());
+        com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.newBuilder()
+            .setEndpoint("localhost:" + port)
+            .setHeaderProvider(() -> java.util.Collections.emptyMap());
 
-    TranslationServiceSettings settings = settingsBuilder.build();
 
-    try (TranslationServiceClient client = TranslationServiceClient.create(settings)) {
-      List<String> contents = new ArrayList<>();
-      contents.add("house");
-      TranslateTextRequest request =
-          TranslateTextRequest.newBuilder()
-              .setParent("projects/test-project")
-              .addAllContents(contents)
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider channelProvider = channelProviderBuilder.build();
+    com.google.api.gax.rpc.TransportChannel transportChannel = channelProvider.getTransportChannel();
+    io.grpc.Channel channel = ((com.google.api.gax.grpc.GrpcTransportChannel) transportChannel).getChannel();
+
+    try {
+      io.grpc.MethodDescriptor<byte[], byte[]> method =
+          io.grpc.MethodDescriptor.<byte[], byte[]>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("Greeter/SayHello")
+              .setRequestMarshaller(new ByteMarshaller())
+              .setResponseMarshaller(new ByteMarshaller())
               .build();
 
-      try {
-        TranslateTextResponse response = client.translateText(request);
-        if (!shouldSucceed) {
-          fail("Expected gRPC call to fail!");
-        }
-        assertNotNull(response);
-      } catch (ApiException e) {
-        if (shouldSucceed) {
-          fail("Expected gRPC call to succeed, but failed: " + e.getMessage(), e);
-        }
+      byte[] response = io.grpc.stub.ClientCalls.blockingUnaryCall(channel, method, io.grpc.CallOptions.DEFAULT, "request".getBytes());
+      if (!shouldSucceed) {
+        fail("Expected gRPC call to fail!");
+      }
+      assertNotNull(response);
+      assertEquals("PQC gRPC OK", new String(response));
+    } catch (Exception e) {
+      if (shouldSucceed) {
+        fail("Expected gRPC call to succeed, but failed: " + e.getMessage(), e);
+      }
+    } finally {
+      if (channel instanceof io.grpc.ManagedChannel) {
+        ((io.grpc.ManagedChannel) channel).shutdownNow();
       }
     }
   }
@@ -393,6 +375,22 @@ public abstract class PqcConnectivityTest {
       nettyBuilder.sslContext(shadedSslContext);
     } catch (Exception e) {
       throw new RuntimeException("Failed to configure shaded gRPC Netty channel for Classical", e);
+    }
+  }
+
+  private static class ByteMarshaller implements io.grpc.MethodDescriptor.Marshaller<byte[]> {
+    @Override
+    public InputStream stream(byte[] value) {
+      return new java.io.ByteArrayInputStream(value);
+    }
+
+    @Override
+    public byte[] parse(InputStream stream) {
+      try {
+        return com.google.common.io.ByteStreams.toByteArray(stream);
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(e);
+      }
     }
   }
 }

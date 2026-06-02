@@ -42,7 +42,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.security.KeyStore;
-import java.security.Security;
 import java.util.List;
 import java.util.function.BiFunction;
 import javax.net.ssl.KeyManagerFactory;
@@ -228,8 +227,6 @@ public class PqcTestServer {
     if (httpServerClassical != null) httpServerClassical.stop(0);
     if (grpcServerPqc != null) grpcServerPqc.shutdown();
     if (grpcServerClassical != null) grpcServerClassical.shutdown();
-    Security.removeProvider("BC");
-    Security.removeProvider("BCJSSE");
   }
 
   public int getHttpPqcPort() {
