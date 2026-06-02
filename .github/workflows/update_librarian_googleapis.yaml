@@ -79,6 +79,36 @@ jobs:
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
+    - name: Install protoc
+      run: |
+        set -e
+        VERSION="33.2"
+        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+        cd /usr/local
+        sudo unzip -o /tmp/protoc.zip
+        protoc --version
+    - uses: actions/setup-java@v4
+      with:
+        java-version: "17"
+        distribution: "temurin"
+        cache: "maven"
+    - name: Verify Java and Maven installation
+      run: |
+        java -version
+        if ! command -v mvn &> /dev/null; then
+          sudo apt-get update && sudo apt-get install -y maven
+        fi
+        mvn -version
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+    - name: Run librarian install
+      run: |
+        go run github.com/googleapis/librarian/cmd/librarian@latest install
+        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+      env:
+        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
     - name: Generate Libraries
       if: steps.detect_librarian.outputs.has_changes == 'true'
       id: generate
