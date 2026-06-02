@@ -1277,6 +1277,7 @@ libraries:
   group_id: com.google.cloud
   cloud_api: true
   GAPICs:
+  - proto_path: google/cloud/geminidataanalytics/v1
   - proto_path: google/cloud/geminidataanalytics/v1beta
   requires_billing: true
   rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
