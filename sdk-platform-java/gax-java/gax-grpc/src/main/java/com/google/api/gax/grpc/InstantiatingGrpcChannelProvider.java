@@ -817,11 +817,11 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     if (interceptorProvider != null) {
       builder.intercept(interceptorProvider.getInterceptors());
     }
+    configurePqc(builder);
+
     if (channelConfigurator != null) {
       builder = channelConfigurator.apply(builder);
     }
-
-    configurePqc(builder);
 
     return builder;
   }
@@ -846,9 +846,14 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
               ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
               "h2");
 
+      java.security.Provider bcProvider = new org.bouncycastle.jce.provider.BouncyCastleProvider();
+      java.security.Provider bcJsseProvider =
+          new org.bouncycastle.jsse.provider.BouncyCastleJsseProvider(bcProvider);
+
       SslContext shadedSslContext =
           SslContextBuilder.forClient()
               .sslProvider(SslProvider.JDK)
+              .sslContextProvider(bcJsseProvider)
               .protocols("TLSv1.3")
               .applicationProtocolConfig(apn)
               .build();
