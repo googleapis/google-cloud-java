@@ -45,7 +45,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import com.google.common.collect.ImmutableMap;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
@@ -62,7 +61,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
@@ -74,7 +72,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
@@ -144,6 +141,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   BigQueryConnection connection;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
+
   BigQueryDatabaseMetaData(BigQueryConnection connection) {
     this.URL = connection.getConnectionUrl();
     this.connection = connection;
@@ -5281,5 +5279,4 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     return String.format(sql, (Object[]) params);
   }
-
 }

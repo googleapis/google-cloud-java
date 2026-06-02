@@ -77,12 +77,14 @@ public class BigQueryDriverTest {
 
   @Test
   public void testGetMajorVersionMatchesDriverMajorVersion() {
-    assertThat(bigQueryDriver.getMajorVersion()).isEqualTo(BigQueryJdbcVersionUtility.getDriverMajorVersion());
+    assertThat(bigQueryDriver.getMajorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMajorVersion());
   }
 
   @Test
   public void testGetMinorVersionMatchesDriverMinorVersion() {
-    assertThat(bigQueryDriver.getMinorVersion()).isEqualTo(BigQueryJdbcVersionUtility.getDriverMinorVersion());
+    assertThat(bigQueryDriver.getMinorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMinorVersion());
   }
 
   @Test
