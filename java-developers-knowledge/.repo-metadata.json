@@ -1,0 +1,16 @@
+{
+  "api_shortname": "developerknowledge",
+  "name_pretty": "Developer Knowledge",
+  "product_documentation": "https://developers.google.com/knowledge",
+  "api_description": "The Developer Knowledge API provides access to Google's developer knowledge.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-developers-knowledge/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-developers-knowledge",
+  "distribution_name": "com.google.cloud:google-developers-knowledge",
+  "api_id": "developerknowledge.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

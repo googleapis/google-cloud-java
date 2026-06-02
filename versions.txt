@@ -1053,3 +1053,8 @@ grpc-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-bundle-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-developers-knowledge-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-developers-knowledge-v1:0.0.0:0.1.0-SNAPSHOT
+google-developers-knowledge:0.0.0:0.1.0-SNAPSHOT
+google-developers-knowledge-bom:0.0.0:0.1.0-SNAPSHOT
+google-developers-knowledge-parent:0.0.0:0.1.0-SNAPSHOT
