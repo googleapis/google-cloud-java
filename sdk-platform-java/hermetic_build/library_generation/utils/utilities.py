@@ -206,6 +206,7 @@ def generate_postprocessing_prerequisite_files(
     library_path: str,
     language: str = "java",
     has_version: bool = True,
+    proto_only: bool = False,
 ) -> None:
     """
     Generates the postprocessing prerequisite files for a library.
@@ -301,6 +302,7 @@ def generate_postprocessing_prerequisite_files(
         else f"{library_path}/.github/{owlbot_yaml_file}"
     )
     if not os.path.exists(path_to_owlbot_yaml_file):
+        unversioned_dir = remove_version_from(proto_path).split("/")[-1]
         render(
             template_name="owlbot.yaml.monorepo.j2",
             output_name=path_to_owlbot_yaml_file,
@@ -309,6 +311,8 @@ def generate_postprocessing_prerequisite_files(
             module_name=repo_metadata["repo_short"],
             api_shortname=library.api_shortname,
             has_version=has_version,
+            proto_only=proto_only,
+            unversioned_dir=unversioned_dir,
         )
 
     # generate owlbot.py

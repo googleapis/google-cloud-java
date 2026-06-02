@@ -33,14 +33,19 @@ deep-copy-regex:
 - source: "/{{ proto_path }}/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/{{ module_name }}/$1/samples/snippets/generated"
 {%- else %}
+{%- if proto_only %}
 - source: "/{{ proto_path }}/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/{{ module_name }}/proto-{{ artifact_id }}/src"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ unversioned_dir }}/{{ artifact_id }}/src"
+{%- else %}
+- source: "/{{ proto_path }}/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ unversioned_dir }}/proto-{{ artifact_id }}/src"
 - source: "/{{ proto_path }}/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/{{ module_name }}/grpc-{{ artifact_id }}/src"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ unversioned_dir }}/grpc-{{ artifact_id }}/src"
 - source: "/{{ proto_path }}/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/{{ module_name }}/{{ artifact_id }}/src"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ unversioned_dir }}/{{ artifact_id }}/src"
 - source: "/{{ proto_path }}/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/{{ module_name }}/samples/snippets/generated"
+  dest: "/owl-bot-staging/{{ module_name }}/{{ unversioned_dir }}/samples/snippets/generated"
+{%- endif %}
 {%- endif %}
 {%- endif %}
 
