@@ -214,6 +214,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   }
 
   @Override
+  protected boolean useSelfSignedJwt() {
+    return false;
+  }
+
+  @Override
   protected Set<String> getScopes() {
     return SCOPES;
   }

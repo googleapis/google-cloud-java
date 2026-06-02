@@ -650,7 +650,15 @@ public abstract class ServiceOptions<
         && ((GoogleCredentials) credentials).createScopedRequired()) {
       credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
     }
+    if (useSelfSignedJwt() && credentialsToReturn instanceof ServiceAccountCredentials) {
+      credentialsToReturn =
+          ((ServiceAccountCredentials) credentialsToReturn).createWithUseJwtAccessWithScope(true);
+    }
     return credentialsToReturn;
+  }
+
+  protected boolean useSelfSignedJwt() {
+    return true;
   }
 
   /** Returns configuration parameters for request retries. */
