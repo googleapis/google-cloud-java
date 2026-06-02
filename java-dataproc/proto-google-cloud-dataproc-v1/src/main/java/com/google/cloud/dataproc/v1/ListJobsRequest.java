@@ -548,15 +548,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
    *
    * [field = value] AND [field [= value]] ...
    *
-   * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-   * key. **value** can be `*` to match all values.
+   * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+   * `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-   * Only the logical `AND` operator is supported; space-separated items are
-   * treated as having an implicit `AND` operator.
+   * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+   * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+   * supported; space-separated items are treated as having an implicit `AND`
+   * operator.
    *
    * Example filter:
    *
-   * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+   * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+   * insertTime &lt;= "2025-01-01T00:00:00Z"
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -585,15 +588,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
    *
    * [field = value] AND [field [= value]] ...
    *
-   * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-   * key. **value** can be `*` to match all values.
+   * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+   * `[KEY]` is a label key. **value** can be `*` to match all values.
    * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-   * Only the logical `AND` operator is supported; space-separated items are
-   * treated as having an implicit `AND` operator.
+   * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+   * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+   * supported; space-separated items are treated as having an implicit `AND`
+   * operator.
    *
    * Example filter:
    *
-   * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+   * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+   * insertTime &lt;= "2025-01-01T00:00:00Z"
    * </pre>
    *
    * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1713,15 +1719,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
      *
      * [field = value] AND [field [= value]] ...
      *
-     * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-     * key. **value** can be `*` to match all values.
+     * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+     * `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-     * Only the logical `AND` operator is supported; space-separated items are
-     * treated as having an implicit `AND` operator.
+     * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+     * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+     * supported; space-separated items are treated as having an implicit `AND`
+     * operator.
      *
      * Example filter:
      *
-     * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+     * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+     * insertTime &lt;= "2025-01-01T00:00:00Z"
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1749,15 +1758,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
      *
      * [field = value] AND [field [= value]] ...
      *
-     * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-     * key. **value** can be `*` to match all values.
+     * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+     * `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-     * Only the logical `AND` operator is supported; space-separated items are
-     * treated as having an implicit `AND` operator.
+     * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+     * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+     * supported; space-separated items are treated as having an implicit `AND`
+     * operator.
      *
      * Example filter:
      *
-     * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+     * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+     * insertTime &lt;= "2025-01-01T00:00:00Z"
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1785,15 +1797,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
      *
      * [field = value] AND [field [= value]] ...
      *
-     * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-     * key. **value** can be `*` to match all values.
+     * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+     * `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-     * Only the logical `AND` operator is supported; space-separated items are
-     * treated as having an implicit `AND` operator.
+     * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+     * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+     * supported; space-separated items are treated as having an implicit `AND`
+     * operator.
      *
      * Example filter:
      *
-     * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+     * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+     * insertTime &lt;= "2025-01-01T00:00:00Z"
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1820,15 +1835,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
      *
      * [field = value] AND [field [= value]] ...
      *
-     * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-     * key. **value** can be `*` to match all values.
+     * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+     * `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-     * Only the logical `AND` operator is supported; space-separated items are
-     * treated as having an implicit `AND` operator.
+     * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+     * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+     * supported; space-separated items are treated as having an implicit `AND`
+     * operator.
      *
      * Example filter:
      *
-     * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+     * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+     * insertTime &lt;= "2025-01-01T00:00:00Z"
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1851,15 +1869,18 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessage
      *
      * [field = value] AND [field [= value]] ...
      *
-     * where **field** is `status.state` or `labels.[KEY]`, and `[KEY]` is a label
-     * key. **value** can be `*` to match all values.
+     * where **field** is `status.state` or `insertTime`, or `labels.[KEY]`, and
+     * `[KEY]` is a label key. **value** can be `*` to match all values.
      * `status.state` can be either `ACTIVE` or `NON_ACTIVE`.
-     * Only the logical `AND` operator is supported; space-separated items are
-     * treated as having an implicit `AND` operator.
+     * Allows `insertTime` to be a timestamp in RFC 3339 format in double quotes,
+     * such as `2025-01-01T00:00:00Z`. Only the logical `AND` operator is
+     * supported; space-separated items are treated as having an implicit `AND`
+     * operator.
      *
      * Example filter:
      *
-     * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
+     * status.state = ACTIVE AND labels.env = staging AND labels.starred = * AND
+     * insertTime &lt;= "2025-01-01T00:00:00Z"
      * </pre>
      *
      * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
