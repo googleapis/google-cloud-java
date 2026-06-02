@@ -55,11 +55,11 @@ jobs:
     # 7. Run Snapshot PQC Tests (EXPECT PASS)
     - name: Run Snapshot PQC Connectivity Tests (Expect PASS)
       run: |
-        cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-snapshot
-        mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
+        cd google-cloud-java-pqc
+        mvn install -pl sdk-platform-java/pqc-test/pqc-test-snapshot -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
 
     # 8. Run Release PQC Tests (Expect PASS because tests assert negative behavior and pass)
     - name: Run Release PQC Connectivity Tests
       run: |
-        cd google-cloud-java-pqc/sdk-platform-java/pqc-test/pqc-test-release
-        mvn install -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
+        cd google-cloud-java-pqc
+        mvn install -pl sdk-platform-java/pqc-test/pqc-test-release -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -Dtest=RunPqcTest
