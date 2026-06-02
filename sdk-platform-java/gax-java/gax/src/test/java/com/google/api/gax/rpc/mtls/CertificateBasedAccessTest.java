@@ -71,7 +71,7 @@ class CertificateBasedAccessTest {
   private CertificateBasedAccess createCba(TestEnv env, TestFileSystem fs) {
     return new CertificateBasedAccess(
         env::get,
-        fs.exists::getOrDefault,
+        path -> fs.exists.getOrDefault(path, false),
         path -> {
           if (!fs.content.containsKey(path)) {
             throw new IOException("File not found: " + path);

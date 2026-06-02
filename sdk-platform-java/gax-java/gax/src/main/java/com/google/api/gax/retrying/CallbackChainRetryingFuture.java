@@ -32,6 +32,9 @@ package com.google.api.gax.retrying;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.UnauthenticatedException;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -53,6 +56,7 @@ import java.util.concurrent.Future;
  */
 class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<ResponseT> {
   private final ScheduledRetryingExecutor<ResponseT> retryingExecutor;
+  private final RetryingContext context;
   private volatile AttemptCompletionListener attemptFutureCompletionListener;
 
   CallbackChainRetryingFuture(
@@ -62,6 +66,7 @@ class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<Respons
       RetryingContext context) {
     super(callable, retryAlgorithm, context);
     this.retryingExecutor = checkNotNull(retryingExecutor);
+    this.context = checkNotNull(context);
   }
 
   @Override
@@ -114,7 +119,23 @@ class CallbackChainRetryingFuture<ResponseT> extends BasicRetryingFuture<Respons
         ResponseT response = attemptFuture.get();
         handle(null, response);
       } catch (ExecutionException e) {
-        handle(e.getCause(), null);
+        Throwable cause = e.getCause();
+        if (cause instanceof UnauthenticatedException) {
+          if (context instanceof ApiCallContext) {
+            TransportChannel transportChannel = ((ApiCallContext) context).getTransportChannel();
+            if (transportChannel != null && transportChannel.shouldRefresh()) {
+              transportChannel.refresh();
+              UnauthenticatedException causeEx = (UnauthenticatedException) cause;
+              cause = new UnauthenticatedException(
+                  causeEx.getMessage(),
+                  causeEx.getCause(),
+                  causeEx.getStatusCode(),
+                  true, // isRetryable = true
+                  causeEx.getErrorDetails());
+            }
+          }
+        }
+        handle(cause, null);
       } catch (Throwable e) {
         handle(e, null);
       }

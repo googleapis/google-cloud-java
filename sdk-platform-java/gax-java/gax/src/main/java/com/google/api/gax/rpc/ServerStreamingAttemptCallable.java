@@ -243,6 +243,18 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
               TransportChannel transportChannel = finalContext.getTransportChannel();
               if (transportChannel != null && transportChannel.shouldRefresh()) {
                 transportChannel.refresh();
+                UnauthenticatedException causeEx = (UnauthenticatedException) cause;
+                cause = new UnauthenticatedException(
+                    causeEx.getMessage(),
+                    causeEx.getCause(),
+                    causeEx.getStatusCode(),
+                    true, // isRetryable = true
+                    causeEx.getErrorDetails());
+                
+                t = new com.google.api.gax.retrying.ServerStreamingAttemptException(
+                    cause,
+                    true, // canResume = true
+                    seenSuccessSinceLastError);
               }
             }
             onAttemptError(t);
