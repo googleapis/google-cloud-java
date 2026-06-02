@@ -248,7 +248,7 @@ public class BigQueryJdbcOpenTelemetry {
     } catch (IOException e) {
       // We log the warning and return an empty map, allowing the exporter to fail gracefully
       // with a standard OTLP response code (e.g., 401 Unauthorized) handled by OTel.
-      LOG.warning("Failed to get auth headers: %s", e.getMessage());
+      LOG.warning(e, "Failed to get auth headers");
       return new HashMap<>();
     }
   }
@@ -331,15 +331,25 @@ public class BigQueryJdbcOpenTelemetry {
                   .addSpanExporterCustomizer(
                       (spanExporter, configProperties) -> {
                         if (gcpTelemetryCredentials != null) {
-                          Credentials credentials =
-                              resolveCredentialsFromString(gcpTelemetryCredentials);
-                          if (spanExporter instanceof OtlpHttpSpanExporter) {
-                            return ((OtlpHttpSpanExporter) spanExporter)
-                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
-                          }
-                          if (spanExporter instanceof OtlpGrpcSpanExporter) {
-                            return ((OtlpGrpcSpanExporter) spanExporter)
-                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
+                          try {
+                            Credentials credentials =
+                                resolveCredentialsFromString(gcpTelemetryCredentials);
+                            if (spanExporter instanceof OtlpHttpSpanExporter) {
+                              return ((OtlpHttpSpanExporter) spanExporter)
+                                  .toBuilder()
+                                      .setHeaders(() -> getAuthHeaders(credentials))
+                                      .build();
+                            }
+                            if (spanExporter instanceof OtlpGrpcSpanExporter) {
+                              return ((OtlpGrpcSpanExporter) spanExporter)
+                                  .toBuilder()
+                                      .setHeaders(() -> getAuthHeaders(credentials))
+                                      .build();
+                            }
+                          } catch (Exception e) {
+                            LOG.warning(
+                                e,
+                                "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
                           }
                         }
                         return spanExporter;
