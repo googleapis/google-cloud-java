@@ -61,10 +61,10 @@ def main(ctx):
     required=True,
     type=str,
     default=None,
-    help="Path to proto file from the root of the googleapis repository to the"
-    "directory that contains the proto files (without the version)."
+    help="Path to proto file from the root of the googleapis repository to the "
+    "directory that contains the proto files (including the version). "
     "For example, to generate the library for 'google/maps/routing/v2', "
-    "then you specify this value as 'google/maps/routing'",
+    "then you specify this value as 'google/maps/routing/v2'",
 )
 @click.option(
     "--product-docs",
@@ -221,9 +221,10 @@ def add_new_library(
     version_re = re.compile(r"v\d[\w\d]*")
     is_library_version = lambda p: version_re.match(p.split("/")[-1]) is not None
     if not is_library_version(proto_path):
-        raise ValueError(
-            "Only versioned proto_paths are supported. "
-            "For example `google/datastore/v1` instead of `google/datastore`."
+        print(
+            f"WARNING: proto_path '{proto_path}' does not end with a version (e.g., v1). "
+            "Please ensure this is intentional and that this represents a non-versioned "
+            "or custom proto path."
         )
 
     new_library = {

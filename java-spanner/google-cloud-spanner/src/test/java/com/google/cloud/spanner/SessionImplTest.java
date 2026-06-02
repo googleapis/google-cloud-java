@@ -332,7 +332,7 @@ public class SessionImplTest {
 
   @SuppressWarnings("unchecked")
   @Test
-  public void singleUseReadUsesRandomChannelHintWhenGrpcGcpEnabled() {
+  public void singleUseReadUsesChannelIdAffinityWhenGrpcGcpEnabled() {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
         ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
@@ -358,13 +358,12 @@ public class SessionImplTest {
 
     Map<SpannerRpc.Option, Object> readOptions = readOptionsCaptor.getValue();
     assertThat(readOptions).isNotSameInstanceAs(options);
-    assertThat(readOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
-    assertThat(readOptions.get(SpannerRpc.Option.UNBIND_CHANNEL_HINT)).isEqualTo(Boolean.TRUE);
+    assertThat(readOptions).containsKey(SpannerRpc.Option.CHANNEL_ID_AFFINITY);
   }
 
   @SuppressWarnings("unchecked")
   @Test
-  public void multiUseReadOnlyTransactionUsesRandomChannelHintWhenGrpcGcpEnabled()
+  public void multiUseReadOnlyTransactionUsesChannelIdAffinityWhenGrpcGcpEnabled()
       throws ParseException {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
@@ -387,13 +386,14 @@ public class SessionImplTest {
 
     Map<SpannerRpc.Option, Object> beginOptions = beginOptionsCaptor.getValue();
     assertThat(beginOptions).isNotSameInstanceAs(options);
-    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_ID_AFFINITY);
   }
 
   @SuppressWarnings("unchecked")
   @Test
-  public void multiUseReadOnlyTransactionCloseClearsGrpcGcpAffinityWhenEnabled()
-      throws ParseException {
+  public void
+      multiUseReadOnlyTransactionCloseDoesNotClearGrpcGcpAffinityWhenUsingChannelIdAffinity()
+          throws ParseException {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
         ArgumentCaptor.forClass((Class) Map.class);
@@ -413,14 +413,12 @@ public class SessionImplTest {
     txn.readRow("Dummy", Key.of(), Collections.singletonList("C"));
     txn.close();
 
-    Long channelHint = SpannerRpc.Option.CHANNEL_HINT.getLong(beginOptionsCaptor.getValue());
-    Mockito.verify(rpc)
-        .clearTransactionAndChannelAffinity(ByteString.copyFromUtf8("x"), channelHint);
+    assertThat(beginOptionsCaptor.getValue()).containsKey(SpannerRpc.Option.CHANNEL_ID_AFFINITY);
   }
 
   @SuppressWarnings("unchecked")
   @Test
-  public void readWriteTransactionUsesRandomChannelHintWhenGrpcGcpEnabled() {
+  public void readWriteTransactionUsesChannelIdAffinityWhenGrpcGcpEnabled() {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
         ArgumentCaptor.forClass((Class) Map.class);
@@ -441,12 +439,12 @@ public class SessionImplTest {
 
     Map<SpannerRpc.Option, Object> beginOptions = beginOptionsCaptor.getValue();
     assertThat(beginOptions).isNotSameInstanceAs(options);
-    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_ID_AFFINITY);
   }
 
   @SuppressWarnings("unchecked")
   @Test
-  public void writeAtLeastOnceUsesRandomChannelHintWhenGrpcGcpEnabled() throws ParseException {
+  public void writeAtLeastOnceUsesChannelIdAffinityWhenGrpcGcpEnabled() throws ParseException {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> commitOptionsCaptor =
         ArgumentCaptor.forClass((Class) Map.class);
@@ -461,7 +459,7 @@ public class SessionImplTest {
 
     Map<SpannerRpc.Option, Object> commitOptions = commitOptionsCaptor.getValue();
     assertThat(commitOptions).isNotSameInstanceAs(options);
-    assertThat(commitOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+    assertThat(commitOptions).containsKey(SpannerRpc.Option.CHANNEL_ID_AFFINITY);
   }
 
   private static long utcTimeSeconds(int year, int month, int day, int hour, int min, int secs) {
