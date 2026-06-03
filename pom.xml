@@ -40,6 +40,7 @@
     <module>java-assured-workloads</module>
     <module>java-auditmanager</module>
     <module>java-automl</module>
+    <module>java-backstory</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
     <module>java-batch</module>
@@ -99,6 +100,7 @@
     <module>java-datastream</module>
     <module>java-deploy</module>
     <module>java-developerconnect</module>
+    <module>java-developerknowledge</module>
     <module>java-devicestreaming</module>
     <module>java-dialogflow</module>
     <module>java-dialogflow-cx</module>

@@ -970,7 +970,7 @@ grpc-google-cloud-ces-v1beta:0.8.0:0.9.0-SNAPSHOT
 proto-google-cloud-vectorsearch-v1:0.14.0:0.15.0-SNAPSHOT
 grpc-google-cloud-vectorsearch-v1:0.14.0:0.15.0-SNAPSHOT
 google-cloud-bigquery:2.66.0:2.67.0-SNAPSHOT
-google-cloud-bigquery-jdbc:0.10.0:0.11.0-SNAPSHOT
+google-cloud-bigquery-jdbc:0.10.0:1.0.0-SNAPSHOT
 proto-google-cloud-networkconnectivity-v1beta:1.91.0:1.92.0-SNAPSHOT
 grpc-google-cloud-networkconnectivity-v1beta:1.91.0:1.92.0-SNAPSHOT
 proto-google-cloud-hypercomputecluster-v1:0.12.0:0.13.0-SNAPSHOT
@@ -1053,3 +1053,9 @@ grpc-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-admin-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-v1:3.42.0:3.42.1-SNAPSHOT
 proto-google-cloud-firestore-bundle-v1:3.42.0:3.42.1-SNAPSHOT
+proto-google-cloud-geminidataanalytics-v1:0.20.0:0.21.0-SNAPSHOT
+grpc-google-cloud-geminidataanalytics-v1:0.20.0:0.21.0-SNAPSHOT
+google-cloud-developer-knowledge:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-backstory:0.0.0:0.0.1-SNAPSHOT

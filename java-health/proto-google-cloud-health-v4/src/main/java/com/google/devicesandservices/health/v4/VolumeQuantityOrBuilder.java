@@ -33,7 +33,20 @@ public interface VolumeQuantityOrBuilder
    * Required. Value representing the volume in milliliters.
    * </pre>
    *
-   * <code>double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the milliliters field is set.
+   */
+  boolean hasMilliliters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Value representing the volume in milliliters.
+   * </pre>
+   *
+   * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The milliliters.
    */
@@ -43,7 +56,9 @@ public interface VolumeQuantityOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the user provided unit.
+   * Optional. Value representing the user provided unit, used only for
+   * user-facing input and display purposes. In the API format, all volume
+   * quantities are converted to milliliters.
    * </pre>
    *
    * <code>
@@ -58,7 +73,9 @@ public interface VolumeQuantityOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the user provided unit.
+   * Optional. Value representing the user provided unit, used only for
+   * user-facing input and display purposes. In the API format, all volume
+   * quantities are converted to milliliters.
    * </pre>
    *
    * <code>

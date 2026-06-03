@@ -16,6 +16,8 @@
 
 package com.google.devicesandservices.health.v4.stub;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -24,9 +26,15 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.GetIdentityRequest;
+import com.google.devicesandservices.health.v4.GetIrnProfileRequest;
+import com.google.devicesandservices.health.v4.GetPairedDeviceRequest;
 import com.google.devicesandservices.health.v4.GetProfileRequest;
 import com.google.devicesandservices.health.v4.GetSettingsRequest;
 import com.google.devicesandservices.health.v4.Identity;
+import com.google.devicesandservices.health.v4.IrnProfile;
+import com.google.devicesandservices.health.v4.ListPairedDevicesRequest;
+import com.google.devicesandservices.health.v4.ListPairedDevicesResponse;
+import com.google.devicesandservices.health.v4.PairedDevice;
 import com.google.devicesandservices.health.v4.Profile;
 import com.google.devicesandservices.health.v4.Settings;
 import com.google.devicesandservices.health.v4.UpdateProfileRequest;
@@ -97,11 +105,54 @@ public class GrpcHealthProfileServiceStub extends HealthProfileServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<GetIrnProfileRequest, IrnProfile>
+      getIrnProfileMethodDescriptor =
+          MethodDescriptor.<GetIrnProfileRequest, IrnProfile>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/GetIrnProfile")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetIrnProfileRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(IrnProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetPairedDeviceRequest, PairedDevice>
+      getPairedDeviceMethodDescriptor =
+          MethodDescriptor.<GetPairedDeviceRequest, PairedDevice>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/GetPairedDevice")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPairedDeviceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PairedDevice.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesMethodDescriptor =
+          MethodDescriptor.<ListPairedDevicesRequest, ListPairedDevicesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/ListPairedDevices")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPairedDevicesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPairedDevicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetProfileRequest, Profile> getProfileCallable;
   private final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
   private final UnaryCallable<GetIdentityRequest, Identity> getIdentityCallable;
+  private final UnaryCallable<GetIrnProfileRequest, IrnProfile> getIrnProfileCallable;
+  private final UnaryCallable<GetPairedDeviceRequest, PairedDevice> getPairedDeviceCallable;
+  private final UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesCallable;
+  private final UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesPagedResponse>
+      listPairedDevicesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -200,6 +251,40 @@ public class GrpcHealthProfileServiceStub extends HealthProfileServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GetIrnProfileRequest, IrnProfile> getIrnProfileTransportSettings =
+        GrpcCallSettings.<GetIrnProfileRequest, IrnProfile>newBuilder()
+            .setMethodDescriptor(getIrnProfileMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetPairedDeviceRequest, PairedDevice> getPairedDeviceTransportSettings =
+        GrpcCallSettings.<GetPairedDeviceRequest, PairedDevice>newBuilder()
+            .setMethodDescriptor(getPairedDeviceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListPairedDevicesRequest, ListPairedDevicesResponse>
+        listPairedDevicesTransportSettings =
+            GrpcCallSettings.<ListPairedDevicesRequest, ListPairedDevicesResponse>newBuilder()
+                .setMethodDescriptor(listPairedDevicesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getProfileCallable =
         callableFactory.createUnaryCallable(
@@ -216,6 +301,22 @@ public class GrpcHealthProfileServiceStub extends HealthProfileServiceStub {
     this.getIdentityCallable =
         callableFactory.createUnaryCallable(
             getIdentityTransportSettings, settings.getIdentitySettings(), clientContext);
+    this.getIrnProfileCallable =
+        callableFactory.createUnaryCallable(
+            getIrnProfileTransportSettings, settings.getIrnProfileSettings(), clientContext);
+    this.getPairedDeviceCallable =
+        callableFactory.createUnaryCallable(
+            getPairedDeviceTransportSettings, settings.getPairedDeviceSettings(), clientContext);
+    this.listPairedDevicesCallable =
+        callableFactory.createUnaryCallable(
+            listPairedDevicesTransportSettings,
+            settings.listPairedDevicesSettings(),
+            clientContext);
+    this.listPairedDevicesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPairedDevicesTransportSettings,
+            settings.listPairedDevicesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -248,6 +349,28 @@ public class GrpcHealthProfileServiceStub extends HealthProfileServiceStub {
   @Override
   public UnaryCallable<GetIdentityRequest, Identity> getIdentityCallable() {
     return getIdentityCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIrnProfileRequest, IrnProfile> getIrnProfileCallable() {
+    return getIrnProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPairedDeviceRequest, PairedDevice> getPairedDeviceCallable() {
+    return getPairedDeviceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesCallable() {
+    return listPairedDevicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesPagedResponse>
+      listPairedDevicesPagedCallable() {
+    return listPairedDevicesPagedCallable;
   }
 
   @Override

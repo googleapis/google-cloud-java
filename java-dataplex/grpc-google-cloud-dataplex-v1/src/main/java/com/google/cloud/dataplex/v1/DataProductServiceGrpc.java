@@ -260,6 +260,59 @@ public final class DataProductServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.RequestDataProductAccessRequest,
+          com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+      getRequestDataProductAccessMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RequestDataProductAccess",
+      requestType = com.google.cloud.dataplex.v1.RequestDataProductAccessRequest.class,
+      responseType = com.google.cloud.dataplex.v1.RequestDataProductAccessResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.RequestDataProductAccessRequest,
+          com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+      getRequestDataProductAccessMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.RequestDataProductAccessRequest,
+            com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+        getRequestDataProductAccessMethod;
+    if ((getRequestDataProductAccessMethod =
+            DataProductServiceGrpc.getRequestDataProductAccessMethod)
+        == null) {
+      synchronized (DataProductServiceGrpc.class) {
+        if ((getRequestDataProductAccessMethod =
+                DataProductServiceGrpc.getRequestDataProductAccessMethod)
+            == null) {
+          DataProductServiceGrpc.getRequestDataProductAccessMethod =
+              getRequestDataProductAccessMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.RequestDataProductAccessRequest,
+                          com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RequestDataProductAccess"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.RequestDataProductAccessRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.RequestDataProductAccessResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataProductServiceMethodDescriptorSupplier(
+                              "RequestDataProductAccess"))
+                      .build();
+        }
+      }
+    }
+    return getRequestDataProductAccessMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.CreateDataAssetRequest, com.google.longrunning.Operation>
       getCreateDataAssetMethod;
 
@@ -619,6 +672,23 @@ public final class DataProductServiceGrpc {
      *
      *
      * <pre>
+     * Requests access to a data product. This will trigger an access approval
+     * workflow, and the requester will need to wait for the approval to be
+     * granted before they will be able to access the data product assets.
+     * </pre>
+     */
+    default void requestDataProductAccess(
+        com.google.cloud.dataplex.v1.RequestDataProductAccessRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRequestDataProductAccessMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a data asset.
      * </pre>
      */
@@ -810,6 +880,25 @@ public final class DataProductServiceGrpc {
      *
      *
      * <pre>
+     * Requests access to a data product. This will trigger an access approval
+     * workflow, and the requester will need to wait for the approval to be
+     * granted before they will be able to access the data product assets.
+     * </pre>
+     */
+    public void requestDataProductAccess(
+        com.google.cloud.dataplex.v1.RequestDataProductAccessRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRequestDataProductAccessMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a data asset.
      * </pre>
      */
@@ -983,6 +1072,22 @@ public final class DataProductServiceGrpc {
      *
      *
      * <pre>
+     * Requests access to a data product. This will trigger an access approval
+     * workflow, and the requester will need to wait for the approval to be
+     * granted before they will be able to access the data product assets.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.RequestDataProductAccessResponse requestDataProductAccess(
+        com.google.cloud.dataplex.v1.RequestDataProductAccessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRequestDataProductAccessMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a data asset.
      * </pre>
      */
@@ -1133,6 +1238,21 @@ public final class DataProductServiceGrpc {
         com.google.cloud.dataplex.v1.UpdateDataProductRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDataProductMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Requests access to a data product. This will trigger an access approval
+     * workflow, and the requester will need to wait for the approval to be
+     * granted before they will be able to access the data product assets.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.RequestDataProductAccessResponse requestDataProductAccess(
+        com.google.cloud.dataplex.v1.RequestDataProductAccessRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRequestDataProductAccessMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1293,6 +1413,23 @@ public final class DataProductServiceGrpc {
      *
      *
      * <pre>
+     * Requests access to a data product. This will trigger an access approval
+     * workflow, and the requester will need to wait for the approval to be
+     * granted before they will be able to access the data product assets.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>
+        requestDataProductAccess(
+            com.google.cloud.dataplex.v1.RequestDataProductAccessRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRequestDataProductAccessMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a data asset.
      * </pre>
      */
@@ -1362,11 +1499,12 @@ public final class DataProductServiceGrpc {
   private static final int METHODID_GET_DATA_PRODUCT = 2;
   private static final int METHODID_LIST_DATA_PRODUCTS = 3;
   private static final int METHODID_UPDATE_DATA_PRODUCT = 4;
-  private static final int METHODID_CREATE_DATA_ASSET = 5;
-  private static final int METHODID_UPDATE_DATA_ASSET = 6;
-  private static final int METHODID_DELETE_DATA_ASSET = 7;
-  private static final int METHODID_GET_DATA_ASSET = 8;
-  private static final int METHODID_LIST_DATA_ASSETS = 9;
+  private static final int METHODID_REQUEST_DATA_PRODUCT_ACCESS = 5;
+  private static final int METHODID_CREATE_DATA_ASSET = 6;
+  private static final int METHODID_UPDATE_DATA_ASSET = 7;
+  private static final int METHODID_DELETE_DATA_ASSET = 8;
+  private static final int METHODID_GET_DATA_ASSET = 9;
+  private static final int METHODID_LIST_DATA_ASSETS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1411,6 +1549,13 @@ public final class DataProductServiceGrpc {
           serviceImpl.updateDataProduct(
               (com.google.cloud.dataplex.v1.UpdateDataProductRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REQUEST_DATA_PRODUCT_ACCESS:
+          serviceImpl.requestDataProductAccess(
+              (com.google.cloud.dataplex.v1.RequestDataProductAccessRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_DATA_ASSET:
           serviceImpl.createDataAsset(
@@ -1488,6 +1633,13 @@ public final class DataProductServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataplex.v1.UpdateDataProductRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_DATA_PRODUCT)))
+        .addMethod(
+            getRequestDataProductAccessMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.RequestDataProductAccessRequest,
+                    com.google.cloud.dataplex.v1.RequestDataProductAccessResponse>(
+                    service, METHODID_REQUEST_DATA_PRODUCT_ACCESS)))
         .addMethod(
             getCreateDataAssetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1575,6 +1727,7 @@ public final class DataProductServiceGrpc {
                       .addMethod(getGetDataProductMethod())
                       .addMethod(getListDataProductsMethod())
                       .addMethod(getUpdateDataProductMethod())
+                      .addMethod(getRequestDataProductAccessMethod())
                       .addMethod(getCreateDataAssetMethod())
                       .addMethod(getUpdateDataAssetMethod())
                       .addMethod(getDeleteDataAssetMethod())

@@ -611,6 +611,50 @@ public interface RollupDataPointOrBuilder
    *
    * <pre>
    * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 19;</code>
+   *
+   * @return Whether the nutritionLog field is set.
+   */
+  boolean hasNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 19;</code>
+   *
+   * @return The nutritionLog.
+   */
+  com.google.devicesandservices.health.v4.NutritionLogRollupValue getNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `nutrition-log` data type, or when requested explicitly using the
+   * `nutrition-log` rollup type identifier.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLogRollupValue nutrition_log = 19;</code>
+   */
+  com.google.devicesandservices.health.v4.NutritionLogRollupValueOrBuilder
+      getNutritionLogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
    * `hydration-log` data type, or when requested explicitly using the
    * `hydration-log` rollup type identifier.
    * </pre>
@@ -790,6 +834,144 @@ public interface RollupDataPointOrBuilder
    */
   com.google.devicesandservices.health.v4.SwimLengthsDataRollupValueOrBuilder
       getSwimLengthsDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 24;
+   * </code>
+   *
+   * @return Whether the coreBodyTemperature field is set.
+   */
+  boolean hasCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 24;
+   * </code>
+   *
+   * @return The coreBodyTemperature.
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue getCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `core-body-temperature` data type, or when requested explicitly using
+   * the `core-body-temperature` rollup type identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.CoreBodyTemperatureRollupValue core_body_temperature = 24;
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperatureRollupValueOrBuilder
+      getCoreBodyTemperatureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 25;
+   * </code>
+   *
+   * @return Whether the activeEnergyBurned field is set.
+   */
+  boolean hasActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 25;
+   * </code>
+   *
+   * @return The activeEnergyBurned.
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue getActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `active-energy-burned` data type.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValue active_energy_burned = 25;
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurnedRollupValueOrBuilder
+      getActiveEnergyBurnedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 26;</code>
+   *
+   * @return Whether the bloodGlucose field is set.
+   */
+  boolean hasBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 26;</code>
+   *
+   * @return The bloodGlucose.
+   */
+  com.google.devicesandservices.health.v4.BloodGlucoseRollupValue getBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returned by default when rolling up data points from the
+   * `blood-glucose` data type.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucoseRollupValue blood_glucose = 26;</code>
+   */
+  com.google.devicesandservices.health.v4.BloodGlucoseRollupValueOrBuilder
+      getBloodGlucoseOrBuilder();
 
   /**
    *

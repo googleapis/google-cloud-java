@@ -462,6 +462,66 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return Whether the postQuantumKeyExchange field is set.
+   */
+  boolean hasPostQuantumKeyExchange();
+
+  /**
+   *
+   *
+   * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return The postQuantumKeyExchange.
+   */
+  java.lang.String getPostQuantumKeyExchange();
+
+  /**
+   *
+   *
+   * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return The bytes for postQuantumKeyExchange.
+   */
+  com.google.protobuf.ByteString getPostQuantumKeyExchangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Profile specifies the set of SSL features that can be used by the load
    * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in
    * the customFeatures field. If using FIPS_202205,

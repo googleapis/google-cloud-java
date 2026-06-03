@@ -144,6 +144,7 @@ public class BuiltInMetricsConstant {
       ImmutableList.of(EEF_FALLBACK_COUNT_NAME, EEF_CALL_STATUS_NAME);
 
   public static final String SPANNER_RESOURCE_TYPE = "spanner_instance_client";
+  public static final String UNDEFINED_PROJECT_ID = "undefined-project";
 
   public static final AttributeKey<String> PROJECT_ID_KEY = AttributeKey.stringKey("project_id");
   public static final AttributeKey<String> INSTANCE_ID_KEY = AttributeKey.stringKey("instance_id");

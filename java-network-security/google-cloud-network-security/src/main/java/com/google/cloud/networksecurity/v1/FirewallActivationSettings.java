@@ -19,6 +19,7 @@ package com.google.cloud.networksecurity.v1;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointAssociationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListLocationsPagedResponse;
+import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListProjectFirewallEndpointsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -137,10 +138,27 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
     return ((FirewallActivationStubSettings) getStubSettings()).listFirewallEndpointsSettings();
   }
 
+  /** Returns the object with the settings used for calls to listProjectFirewallEndpoints. */
+  public PagedCallSettings<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .listProjectFirewallEndpointsSettings();
+  }
+
   /** Returns the object with the settings used for calls to getFirewallEndpoint. */
   public UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointSettings() {
     return ((FirewallActivationStubSettings) getStubSettings()).getFirewallEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProjectFirewallEndpoint. */
+  public UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .getProjectFirewallEndpointSettings();
   }
 
   /** Returns the object with the settings used for calls to createFirewallEndpoint. */
@@ -156,6 +174,20 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
         .createFirewallEndpointOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to createProjectFirewallEndpoint. */
+  public UnaryCallSettings<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .createProjectFirewallEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createProjectFirewallEndpoint. */
+  public OperationCallSettings<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .createProjectFirewallEndpointOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteFirewallEndpoint. */
   public UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
       deleteFirewallEndpointSettings() {
@@ -169,6 +201,20 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
         .deleteFirewallEndpointOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteProjectFirewallEndpoint. */
+  public UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .deleteProjectFirewallEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteProjectFirewallEndpoint. */
+  public OperationCallSettings<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .deleteProjectFirewallEndpointOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateFirewallEndpoint. */
   public UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointSettings() {
@@ -180,6 +226,20 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
       updateFirewallEndpointOperationSettings() {
     return ((FirewallActivationStubSettings) getStubSettings())
         .updateFirewallEndpointOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectFirewallEndpoint. */
+  public UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .updateProjectFirewallEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectFirewallEndpoint. */
+  public OperationCallSettings<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationSettings() {
+    return ((FirewallActivationStubSettings) getStubSettings())
+        .updateProjectFirewallEndpointOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listFirewallEndpointAssociations. */
@@ -375,10 +435,25 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
       return getStubSettingsBuilder().listFirewallEndpointsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listProjectFirewallEndpoints. */
+    public PagedCallSettings.Builder<
+            ListFirewallEndpointsRequest,
+            ListFirewallEndpointsResponse,
+            ListProjectFirewallEndpointsPagedResponse>
+        listProjectFirewallEndpointsSettings() {
+      return getStubSettingsBuilder().listProjectFirewallEndpointsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getFirewallEndpoint. */
     public UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
         getFirewallEndpointSettings() {
       return getStubSettingsBuilder().getFirewallEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
+        getProjectFirewallEndpointSettings() {
+      return getStubSettingsBuilder().getProjectFirewallEndpointSettings();
     }
 
     /** Returns the builder for the settings used for calls to createFirewallEndpoint. */
@@ -394,6 +469,19 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
       return getStubSettingsBuilder().createFirewallEndpointOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<CreateFirewallEndpointRequest, Operation>
+        createProjectFirewallEndpointSettings() {
+      return getStubSettingsBuilder().createProjectFirewallEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<
+            CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        createProjectFirewallEndpointOperationSettings() {
+      return getStubSettingsBuilder().createProjectFirewallEndpointOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteFirewallEndpoint. */
     public UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
         deleteFirewallEndpointSettings() {
@@ -404,6 +492,18 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
     public OperationCallSettings.Builder<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
         deleteFirewallEndpointOperationSettings() {
       return getStubSettingsBuilder().deleteFirewallEndpointOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
+        deleteProjectFirewallEndpointSettings() {
+      return getStubSettingsBuilder().deleteProjectFirewallEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+        deleteProjectFirewallEndpointOperationSettings() {
+      return getStubSettingsBuilder().deleteProjectFirewallEndpointOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateFirewallEndpoint. */
@@ -417,6 +517,19 @@ public class FirewallActivationSettings extends ClientSettings<FirewallActivatio
             UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
         updateFirewallEndpointOperationSettings() {
       return getStubSettingsBuilder().updateFirewallEndpointOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<UpdateFirewallEndpointRequest, Operation>
+        updateProjectFirewallEndpointSettings() {
+      return getStubSettingsBuilder().updateProjectFirewallEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<
+            UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        updateProjectFirewallEndpointOperationSettings() {
+      return getStubSettingsBuilder().updateProjectFirewallEndpointOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listFirewallEndpointAssociations. */

@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
@@ -89,8 +90,8 @@ class SessionClient implements AutoCloseable {
       return new SessionOption(SpannerRpc.Option.CHANNEL_HINT, hint);
     }
 
-    static SessionOption unbindChannelHint() {
-      return new SessionOption(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+    static SessionOption channelAffinityRef(ChannelAffinityRef channelAffinityRef) {
+      return new SessionOption(SpannerRpc.Option.CHANNEL_ID_AFFINITY, channelAffinityRef);
     }
 
     SpannerRpc.Option rpcOption() {

@@ -177,6 +177,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-backstory-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-backupdr-bom</artifactId>
         <version>0.52.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
         <type>pom</type>
@@ -557,6 +564,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-deploy-bom</artifactId>
         <version>1.91.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-deploy:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-developer-knowledge-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

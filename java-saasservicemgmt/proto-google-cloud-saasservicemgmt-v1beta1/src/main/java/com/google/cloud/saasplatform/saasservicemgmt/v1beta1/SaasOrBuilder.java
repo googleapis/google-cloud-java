@@ -134,6 +134,236 @@ public interface SaasOrBuilder
    *
    *
    * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   *
+   * @return Whether the applicationTemplate field is set.
+   */
+  boolean hasApplicationTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   *
+   * @return The applicationTemplate.
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef getApplicationTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to composite ApplicationTemplate.
+   * When specified, the template components will be imported into their
+   * equivalent UnitKind, Release and Blueprint resources.
+   * Deleted references will not delete imported resources.
+   * Should only be specified on source regions, and be unspecified on replica
+   * regions.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef application_template = 5;
+   * </code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRefOrBuilder
+      getApplicationTemplateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of repository in Artifact Registry for system-generated
+   * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+   * </pre>
+   *
+   * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The blueprintRepo.
+   */
+  java.lang.String getBlueprintRepo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of repository in Artifact Registry for system-generated
+   * Blueprints, eg. Blueprints of imported ApplicationTemplates.
+   * </pre>
+   *
+   * <code>string blueprint_repo = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for blueprintRepo.
+   */
+  com.google.protobuf.ByteString getBlueprintRepoBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the Saas.
+   * It is always in ACTIVE state if the application_template is empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the Saas.
+   * It is always in ACTIVE state if the application_template is empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State state = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition>
+      getConditionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition getConditions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getConditionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder>
+      getConditionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of conditions which indicate the various conditions this
+   * resource can have.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasCondition conditions = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionOrBuilder
+      getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the error field is set.
+   */
+  boolean hasError();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The error.
+   */
+  com.google.rpc.Status getError();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the state is FAILED, the corresponding error code and
+   * message. Defaults to code=OK for all other states.
+   * </pre>
+   *
+   * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels on the resource, which can be used for categorization.
    * similar to Kubernetes resource labels.
    * </pre>

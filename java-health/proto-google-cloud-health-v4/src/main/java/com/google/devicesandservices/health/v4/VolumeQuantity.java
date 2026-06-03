@@ -70,6 +70,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
             com.google.devicesandservices.health.v4.VolumeQuantity.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MILLILITERS_FIELD_NUMBER = 1;
   private double milliliters_ = 0D;
 
@@ -80,7 +81,23 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
    * Required. Value representing the volume in milliliters.
    * </pre>
    *
-   * <code>double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the milliliters field is set.
+   */
+  @java.lang.Override
+  public boolean hasMilliliters() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Value representing the volume in milliliters.
+   * </pre>
+   *
+   * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The milliliters.
    */
@@ -96,7 +113,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the user provided unit.
+   * Optional. Value representing the user provided unit, used only for
+   * user-facing input and display purposes. In the API format, all volume
+   * quantities are converted to milliliters.
    * </pre>
    *
    * <code>
@@ -114,7 +133,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the user provided unit.
+   * Optional. Value representing the user provided unit, used only for
+   * user-facing input and display purposes. In the API format, all volume
+   * quantities are converted to milliliters.
    * </pre>
    *
    * <code>
@@ -146,7 +167,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (java.lang.Double.doubleToRawLongBits(milliliters_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeDouble(1, milliliters_);
     }
     if (userProvidedUnit_
@@ -162,7 +183,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (java.lang.Double.doubleToRawLongBits(milliliters_) != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, milliliters_);
     }
     if (userProvidedUnit_
@@ -185,8 +206,11 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
     com.google.devicesandservices.health.v4.VolumeQuantity other =
         (com.google.devicesandservices.health.v4.VolumeQuantity) obj;
 
-    if (java.lang.Double.doubleToLongBits(getMilliliters())
-        != java.lang.Double.doubleToLongBits(other.getMilliliters())) return false;
+    if (hasMilliliters() != other.hasMilliliters()) return false;
+    if (hasMilliliters()) {
+      if (java.lang.Double.doubleToLongBits(getMilliliters())
+          != java.lang.Double.doubleToLongBits(other.getMilliliters())) return false;
+    }
     if (userProvidedUnit_ != other.userProvidedUnit_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -199,11 +223,13 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MILLILITERS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getMilliliters()));
+    if (hasMilliliters()) {
+      hash = (37 * hash) + MILLILITERS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getMilliliters()));
+    }
     hash = (37 * hash) + USER_PROVIDED_UNIT_FIELD_NUMBER;
     hash = (53 * hash) + userProvidedUnit_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -385,12 +411,15 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.devicesandservices.health.v4.VolumeQuantity result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.milliliters_ = milliliters_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.userProvidedUnit_ = userProvidedUnit_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -406,7 +435,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
     public Builder mergeFrom(com.google.devicesandservices.health.v4.VolumeQuantity other) {
       if (other == com.google.devicesandservices.health.v4.VolumeQuantity.getDefaultInstance())
         return this;
-      if (java.lang.Double.doubleToRawLongBits(other.getMilliliters()) != 0) {
+      if (other.hasMilliliters()) {
         setMilliliters(other.getMilliliters());
       }
       if (other.userProvidedUnit_ != 0) {
@@ -478,7 +507,23 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      * Required. Value representing the volume in milliliters.
      * </pre>
      *
-     * <code>double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the milliliters field is set.
+     */
+    @java.lang.Override
+    public boolean hasMilliliters() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Value representing the volume in milliliters.
+     * </pre>
+     *
+     * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The milliliters.
      */
@@ -494,7 +539,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      * Required. Value representing the volume in milliliters.
      * </pre>
      *
-     * <code>double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The milliliters to set.
      * @return This builder for chaining.
@@ -514,7 +559,7 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      * Required. Value representing the volume in milliliters.
      * </pre>
      *
-     * <code>double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double milliliters = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -531,7 +576,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the user provided unit.
+     * Optional. Value representing the user provided unit, used only for
+     * user-facing input and display purposes. In the API format, all volume
+     * quantities are converted to milliliters.
      * </pre>
      *
      * <code>
@@ -549,7 +596,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the user provided unit.
+     * Optional. Value representing the user provided unit, used only for
+     * user-facing input and display purposes. In the API format, all volume
+     * quantities are converted to milliliters.
      * </pre>
      *
      * <code>
@@ -570,7 +619,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the user provided unit.
+     * Optional. Value representing the user provided unit, used only for
+     * user-facing input and display purposes. In the API format, all volume
+     * quantities are converted to milliliters.
      * </pre>
      *
      * <code>
@@ -592,7 +643,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the user provided unit.
+     * Optional. Value representing the user provided unit, used only for
+     * user-facing input and display purposes. In the API format, all volume
+     * quantities are converted to milliliters.
      * </pre>
      *
      * <code>
@@ -616,7 +669,9 @@ public final class VolumeQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the user provided unit.
+     * Optional. Value representing the user provided unit, used only for
+     * user-facing input and display purposes. In the API format, all volume
+     * quantities are converted to milliliters.
      * </pre>
      *
      * <code>

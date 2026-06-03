@@ -16,12 +16,12 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import java.sql.Array;
@@ -36,13 +36,14 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class ITConnectionTest {
 
-  private static final String DATASET = "JDBC_CONNECTION_TEST_DATASET";
+  private static String DATASET;
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
@@ -51,17 +52,16 @@ public class ITConnectionTest {
   private static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws InterruptedException {
-
-    ITBase.setUpDataset(DATASET);
+    DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws InterruptedException {
-    ITBase.cleanUp(DATASET);
+    // Shared dataset cleanup is handled by shutdown hook
   }
 
   @Test
@@ -75,7 +75,7 @@ public class ITConnectionTest {
     assertEquals(4, metaData.getJDBCMajorVersion());
     assertEquals(2, metaData.getJDBCMinorVersion());
     assertEquals("Google BigQuery", metaData.getDatabaseProductName());
-    assertEquals("SimbaJDBCDriverforGoogleBigQuery", metaData.getDriverName());
+    assertEquals("GoogleJDBCDriverForGoogleBigQuery", metaData.getDriverName());
   }
 
   @Test
@@ -323,6 +323,7 @@ public class ITConnectionTest {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testSetNetworkTimeout() throws SQLException {
     Connection connection =

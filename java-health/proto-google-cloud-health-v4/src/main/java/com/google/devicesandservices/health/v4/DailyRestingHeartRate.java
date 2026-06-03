@@ -992,7 +992,23 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
    * Required. The resting heart rate value in beats per minute.
    * </pre>
    *
-   * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the beatsPerMinute field is set.
+   */
+  @java.lang.Override
+  public boolean hasBeatsPerMinute() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resting heart rate value in beats per minute.
+   * </pre>
+   *
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The beatsPerMinute.
    */
@@ -1021,7 +1037,7 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasDailyRestingHeartRateMetadata() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -1084,10 +1100,10 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getDate());
     }
-    if (beatsPerMinute_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(4, beatsPerMinute_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getDailyRestingHeartRateMetadata());
     }
     getUnknownFields().writeTo(output);
@@ -1102,10 +1118,10 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDate());
     }
-    if (beatsPerMinute_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, beatsPerMinute_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, getDailyRestingHeartRateMetadata());
@@ -1130,7 +1146,10 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
     if (hasDate()) {
       if (!getDate().equals(other.getDate())) return false;
     }
-    if (getBeatsPerMinute() != other.getBeatsPerMinute()) return false;
+    if (hasBeatsPerMinute() != other.hasBeatsPerMinute()) return false;
+    if (hasBeatsPerMinute()) {
+      if (getBeatsPerMinute() != other.getBeatsPerMinute()) return false;
+    }
     if (hasDailyRestingHeartRateMetadata() != other.hasDailyRestingHeartRateMetadata())
       return false;
     if (hasDailyRestingHeartRateMetadata()) {
@@ -1152,8 +1171,10 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate().hashCode();
     }
-    hash = (37 * hash) + BEATS_PER_MINUTE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBeatsPerMinute());
+    if (hasBeatsPerMinute()) {
+      hash = (37 * hash) + BEATS_PER_MINUTE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBeatsPerMinute());
+    }
     if (hasDailyRestingHeartRateMetadata()) {
       hash = (37 * hash) + DAILY_RESTING_HEART_RATE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getDailyRestingHeartRateMetadata().hashCode();
@@ -1366,13 +1387,14 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.beatsPerMinute_ = beatsPerMinute_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.dailyRestingHeartRateMetadata_ =
             dailyRestingHeartRateMetadataBuilder_ == null
                 ? dailyRestingHeartRateMetadata_
                 : dailyRestingHeartRateMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1394,7 +1416,7 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
       if (other.hasDate()) {
         mergeDate(other.getDate());
       }
-      if (other.getBeatsPerMinute() != 0L) {
+      if (other.hasBeatsPerMinute()) {
         setBeatsPerMinute(other.getBeatsPerMinute());
       }
       if (other.hasDailyRestingHeartRateMetadata()) {
@@ -1667,7 +1689,23 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
      * Required. The resting heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the beatsPerMinute field is set.
+     */
+    @java.lang.Override
+    public boolean hasBeatsPerMinute() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resting heart rate value in beats per minute.
+     * </pre>
+     *
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The beatsPerMinute.
      */
@@ -1683,7 +1721,7 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
      * Required. The resting heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The beatsPerMinute to set.
      * @return This builder for chaining.
@@ -1703,7 +1741,7 @@ public final class DailyRestingHeartRate extends com.google.protobuf.GeneratedMe
      * Required. The resting heart rate value in beats per minute.
      * </pre>
      *
-     * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

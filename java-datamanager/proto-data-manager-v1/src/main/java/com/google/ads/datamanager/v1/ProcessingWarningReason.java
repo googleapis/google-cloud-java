@@ -107,7 +107,7 @@ public enum ProcessingWarningReason implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Failed to decrypt th
+   * Failed to decrypt the
    * [UserIdentifier][google.ads.datamanager.v1.UserIdentifier] data using the
    * DEK.
    * </pre>
@@ -231,7 +231,7 @@ public enum ProcessingWarningReason implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * Failed to decrypt th
+   * Failed to decrypt the
    * [UserIdentifier][google.ads.datamanager.v1.UserIdentifier] data using the
    * DEK.
    * </pre>

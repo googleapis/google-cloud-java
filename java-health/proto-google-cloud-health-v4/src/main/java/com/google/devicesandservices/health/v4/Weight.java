@@ -141,7 +141,23 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
    * Required. Weight of a user in grams.
    * </pre>
    *
-   * <code>double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the weightGrams field is set.
+   */
+  @java.lang.Override
+  public boolean hasWeightGrams() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Weight of a user in grams.
+   * </pre>
+   *
+   * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The weightGrams.
    */
@@ -220,7 +236,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(weightGrams_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(3, weightGrams_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(notes_)) {
@@ -238,7 +254,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(weightGrams_) != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, weightGrams_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(notes_)) {
@@ -264,8 +280,11 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getWeightGrams())
-        != java.lang.Double.doubleToLongBits(other.getWeightGrams())) return false;
+    if (hasWeightGrams() != other.hasWeightGrams()) return false;
+    if (hasWeightGrams()) {
+      if (java.lang.Double.doubleToLongBits(getWeightGrams())
+          != java.lang.Double.doubleToLongBits(other.getWeightGrams())) return false;
+    }
     if (!getNotes().equals(other.getNotes())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -282,11 +301,13 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + WEIGHT_GRAMS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getWeightGrams()));
+    if (hasWeightGrams()) {
+      hash = (37 * hash) + WEIGHT_GRAMS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getWeightGrams()));
+    }
     hash = (37 * hash) + NOTES_FIELD_NUMBER;
     hash = (53 * hash) + getNotes().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -488,6 +509,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.weightGrams_ = weightGrams_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.notes_ = notes_;
@@ -510,7 +532,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getWeightGrams()) != 0) {
+      if (other.hasWeightGrams()) {
         setWeightGrams(other.getWeightGrams());
       }
       if (!other.getNotes().isEmpty()) {
@@ -810,7 +832,23 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      * Required. Weight of a user in grams.
      * </pre>
      *
-     * <code>double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the weightGrams field is set.
+     */
+    @java.lang.Override
+    public boolean hasWeightGrams() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Weight of a user in grams.
+     * </pre>
+     *
+     * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The weightGrams.
      */
@@ -826,7 +864,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      * Required. Weight of a user in grams.
      * </pre>
      *
-     * <code>double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The weightGrams to set.
      * @return This builder for chaining.
@@ -846,7 +884,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      * Required. Weight of a user in grams.
      * </pre>
      *
-     * <code>double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

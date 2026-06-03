@@ -53,7 +53,7 @@ public class ITCallableStatementTest extends ITBase {
           + PROJECT_ID
           + ";OAUTHTYPE=3";
   private static final Random random = new Random();
-  private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
+  private static String DATASET;
   private static final String CALLABLE_STMT_PROC_NAME = "IT_CALLABLE_STMT_PROC_TEST";
   private static final String CALLABLE_STMT_TABLE_NAME = "IT_CALLABLE_STMT_PROC_TABLE";
   private static final String CALLABLE_STMT_PARAM_KEY = "CALL_STMT_PARAM_KEY";
@@ -71,6 +71,7 @@ public class ITCallableStatementTest extends ITBase {
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
+    DATASET = ITBase.getSharedDataset();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
     bigQuery = BigQueryOptions.newBuilder().build().getService();

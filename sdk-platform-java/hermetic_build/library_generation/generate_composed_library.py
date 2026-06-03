@@ -32,6 +32,7 @@ import os
 from pathlib import Path
 from typing import List
 import library_generation.utils.utilities as util
+from library_generation.utils.proto_path_utils import remove_version_from
 from common.model.generation_config import GenerationConfig
 from common.model.gapic_config import GapicConfig
 from common.model.gapic_inputs import GapicInputs
@@ -72,12 +73,14 @@ def generate_composed_library(
         # overridden by the config object if specified. Note that this override
         # does not affect library generation but instead used only for
         # generating postprocessing files such as README.
+        has_version = remove_version_from(gapic.proto_path) != gapic.proto_path
         util.generate_postprocessing_prerequisite_files(
             config=config,
             library=library,
             proto_path=util.remove_version_from(gapic.proto_path),
             library_path=library_path,
             transport=library.get_transport(gapic_inputs),
+            has_version=has_version,
         )
         temp_destination_path = f"java-{gapic.proto_path.replace('/','-')}"
         effective_arguments = _construct_effective_arg(

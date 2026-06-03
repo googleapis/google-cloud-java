@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta.stub;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -32,11 +33,14 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateFleetResponse;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsRequest;
 import com.google.cloud.databasecenter.v1beta.AggregateIssueStatsResponse;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsRequest;
+import com.google.cloud.databasecenter.v1beta.AggregateQueryStatsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryDatabaseResourceGroupsResponse;
 import com.google.cloud.databasecenter.v1beta.QueryIssuesRequest;
@@ -218,6 +222,47 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+      aggregateQueryStatsMethodDescriptor =
+          ApiMethodDescriptor.<AggregateQueryStatsRequest, AggregateQueryStatsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.databasecenter.v1beta.DatabaseCenter/AggregateQueryStats")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregateQueryStatsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=organizations/*}:aggregateQueryStats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateQueryStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{parent=folders/*}:aggregateQueryStats",
+                          "/v1beta/{parent=projects/*}:aggregateQueryStats")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregateQueryStatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AggregateQueryStatsResponse>newBuilder()
+                      .setDefaultInstance(AggregateQueryStatsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<QueryIssuesRequest, QueryIssuesResponse>
       queryIssuesMethodDescriptor =
           ApiMethodDescriptor.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
@@ -268,6 +313,10 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
       queryDatabaseResourceGroupsPagedCallable;
   private final UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable;
+  private final UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+      aggregateQueryStatsCallable;
+  private final UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsPagedCallable;
   private final UnaryCallable<QueryIssuesRequest, QueryIssuesResponse> queryIssuesCallable;
   private final UnaryCallable<QueryIssuesRequest, QueryIssuesPagedResponse>
       queryIssuesPagedCallable;
@@ -341,6 +390,19 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
                 .setMethodDescriptor(aggregateIssueStatsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+        aggregateQueryStatsTransportSettings =
+            HttpJsonCallSettings
+                .<AggregateQueryStatsRequest, AggregateQueryStatsResponse>newBuilder()
+                .setMethodDescriptor(aggregateQueryStatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<QueryIssuesRequest, QueryIssuesResponse> queryIssuesTransportSettings =
         HttpJsonCallSettings.<QueryIssuesRequest, QueryIssuesResponse>newBuilder()
             .setMethodDescriptor(queryIssuesMethodDescriptor)
@@ -374,6 +436,16 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
             aggregateIssueStatsTransportSettings,
             settings.aggregateIssueStatsSettings(),
             clientContext);
+    this.aggregateQueryStatsCallable =
+        callableFactory.createUnaryCallable(
+            aggregateQueryStatsTransportSettings,
+            settings.aggregateQueryStatsSettings(),
+            clientContext);
+    this.aggregateQueryStatsPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregateQueryStatsTransportSettings,
+            settings.aggregateQueryStatsSettings(),
+            clientContext);
     this.queryIssuesCallable =
         callableFactory.createUnaryCallable(
             queryIssuesTransportSettings, settings.queryIssuesSettings(), clientContext);
@@ -392,6 +464,7 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
     methodDescriptors.add(aggregateFleetMethodDescriptor);
     methodDescriptors.add(queryDatabaseResourceGroupsMethodDescriptor);
     methodDescriptors.add(aggregateIssueStatsMethodDescriptor);
+    methodDescriptors.add(aggregateQueryStatsMethodDescriptor);
     methodDescriptors.add(queryIssuesMethodDescriptor);
     return methodDescriptors;
   }
@@ -434,6 +507,18 @@ public class HttpJsonDatabaseCenterStub extends DatabaseCenterStub {
   public UnaryCallable<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsCallable() {
     return aggregateIssueStatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsResponse>
+      aggregateQueryStatsCallable() {
+    return aggregateQueryStatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregateQueryStatsRequest, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsPagedCallable() {
+    return aggregateQueryStatsPagedCallable;
   }
 
   @Override
