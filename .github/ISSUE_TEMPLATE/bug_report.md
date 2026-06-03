@@ -34,7 +34,7 @@ Provide the relevant details about your environment:
   - Java Version and JDK Vendor:
   - (If using GraalVM) GraalVM Version:
 
-If deployed on GCP, provide the relevant details about your GCP deployment environment (Optional):
+(Optional) If deployed on GCP, provide the relevant details about your GCP deployment environment:
 
   - Project ID:
   - Cloud Services:
@@ -64,7 +64,6 @@ maven-dependency-plugin:tree
     - Auth (google-auth-library-oauth2-http / google-auth-library-credentials):
     - Any other relevant Java SDK dependencies:
       - Google-Http-Java-Client ([com.google.http-client:google-http-client](https://central.sonatype.com/artifact/com.google.http-client/google-http-client)):
-    - Any Java Frameworks being used:
 
 ## Reproducer
 
