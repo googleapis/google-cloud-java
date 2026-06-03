@@ -34,7 +34,6 @@ import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporter;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
-import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
@@ -67,6 +66,7 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String OTEL_METRICS_EXPORTER = "otel.metrics.exporter";
   private static final String GOOGLE_CLOUD_PROJECT = "google.cloud.project";
   private static final String OTLP_ENDPOINT_VALUE = "https://telemetry.googleapis.com:443";
+  private static final URI OTLP_ENDPOINT_URI = URI.create(OTLP_ENDPOINT_VALUE);
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
   private static final String OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT =
@@ -235,8 +235,7 @@ public class BigQueryJdbcOpenTelemetry {
 
   private static Map<String, String> getAuthHeaders(Credentials credentials) {
     try {
-      Map<String, List<String>> metadata =
-          credentials.getRequestMetadata(URI.create(OTLP_ENDPOINT_VALUE));
+      Map<String, List<String>> metadata = credentials.getRequestMetadata(OTLP_ENDPOINT_URI);
       Map<String, String> headers = new HashMap<>();
       metadata.forEach(
           (headerKey, headerValues) -> {
@@ -245,7 +244,7 @@ public class BigQueryJdbcOpenTelemetry {
             }
           });
       return headers;
-    } catch (IOException e) {
+    } catch (Exception e) {
       // We log the warning and return an empty map, allowing the exporter to fail gracefully
       // with a standard OTLP response code (e.g., 401 Unauthorized) handled by OTel.
       LOG.warning(e, "Failed to get auth headers");
