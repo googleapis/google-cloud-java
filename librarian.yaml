@@ -1451,18 +1451,13 @@ libraries:
       name_pretty_override: Developer Connect API
       product_documentation_override: https://cloud.google.com/developer-connect/docs/overview
   - name: developerknowledge
-    version: 0.0.1-SNAPSHOT
+    version: 0.1.0-SNAPSHOT
     apis:
       - path: google/developers/knowledge/v1
     java:
-      api_id_override: developerknowledge.googleapis.com
-      api_description_override: The Developer Knowledge API provides access to Google's developer knowledge
-      artifact_id: google-cloud-developer-knowledge
-      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
+      artifact_id: google-developers-knowledge
+      group_id: com.google.cloud
       released_version: 0.0.0
-      library_type_override: GAPIC_AUTO
-      name_pretty_override: Developer Knowledge API
-      product_documentation_override: https://developers.google.com/knowledge
   - name: devicestreaming
     version: 0.33.0-SNAPSHOT
     apis:

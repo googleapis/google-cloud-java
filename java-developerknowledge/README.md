@@ -1,6 +1,6 @@
-# Google Developer Knowledge API Client for Java
+# Google Developer Knowledge Client for Java
 
-Java idiomatic client for [Developer Knowledge API][product-docs].
+Java idiomatic client for [Developer Knowledge][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -33,7 +33,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-developer-knowledge</artifactId>
+    <artifactId>google-developers-knowledge</artifactId>
   </dependency>
 </dependencies>
 ```
@@ -44,7 +44,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-developer-knowledge</artifactId>
+  <artifactId>google-developers-knowledge</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
@@ -52,13 +52,13 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-developer-knowledge:0.0.0'
+implementation 'com.google.cloud:google-developers-knowledge:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-developer-knowledge" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-developers-knowledge" % "0.0.0"
 ```
 
 ## Authentication
@@ -67,30 +67,30 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Developer Knowledge API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Developer Knowledge API API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Developer Knowledge APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Developer Knowledge API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Developer Knowledge API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Developer Knowledge API.
+You will need a [Google Cloud Platform Console][developer-console] project with the Developer Knowledge [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Developer Knowledge.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-developer-knowledge` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-developer-knowledge` as a dependency in your code.
+You'll need to obtain the `google-developers-knowledge` library.  See the [Quickstart](#quickstart) section
+to add `google-developers-knowledge` as a dependency in your code.
 
-## About Developer Knowledge API
+## About Developer Knowledge
 
 
-[Developer Knowledge API][product-docs] The Developer Knowledge API provides access to Google's developer knowledge
+[Developer Knowledge][product-docs] The Developer Knowledge API provides access to Google's developer knowledge.
 
-See the [Developer Knowledge API client library docs][javadocs] to learn how to
-use this Developer Knowledge API Client Library.
+See the [Developer Knowledge client library docs][javadocs] to learn how to
+use this Developer Knowledge Client Library.
 
 
 
@@ -103,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Developer Knowledge API uses both gRPC and HTTP/JSON for the transport layer.
+Developer Knowledge uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -178,10 +178,10 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://developers.google.com/knowledge
-[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
+[javadocs]: https://cloud.google.com/java/docs/reference/google-developers-knowledge/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-developer-knowledge.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-developer-knowledge/0.0.0
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-developers-knowledge.svg
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-developers-knowledge/0.0.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
