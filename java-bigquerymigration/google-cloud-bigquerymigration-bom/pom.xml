@@ -24,7 +24,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerymigration</artifactId>
@@ -50,7 +49,6 @@
         <artifactId>proto-google-cloud-bigquerymigration-v2</artifactId>
         <version>0.96.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

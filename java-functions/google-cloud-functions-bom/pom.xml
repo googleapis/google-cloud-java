@@ -24,7 +24,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-functions</artifactId>
@@ -70,7 +69,6 @@
         <artifactId>proto-google-cloud-functions-v2</artifactId>
         <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-functions-v2:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

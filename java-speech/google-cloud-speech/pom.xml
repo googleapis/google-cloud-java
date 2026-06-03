@@ -18,7 +18,6 @@
     <site.installationModule>google-cloud-speech</site.installationModule>
   </properties>
   <dependencies>
-    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1p1beta1</artifactId>
@@ -31,7 +30,6 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-speech-v1</artifactId>
     </dependency>
-    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
@@ -83,7 +81,6 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1p1beta1</artifactId>
@@ -99,7 +96,6 @@
       <artifactId>grpc-google-cloud-speech-v1</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>

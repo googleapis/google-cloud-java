@@ -41,10 +41,13 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
-    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -53,11 +56,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v1beta1</artifactId>
-    </dependency>
-    <!-- {x-generated-proto-dependencies-end} -->
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -87,7 +85,6 @@
       <artifactId>google-cloud-core</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-notebooks-v1beta1</artifactId>
@@ -103,7 +100,6 @@
       <artifactId>grpc-google-cloud-notebooks-v1</artifactId>
       <scope>test</scope>
     </dependency>
-    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>

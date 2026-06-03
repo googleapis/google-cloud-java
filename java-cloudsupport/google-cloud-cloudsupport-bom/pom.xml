@@ -24,7 +24,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-cloudsupport</artifactId>
@@ -50,7 +49,6 @@
         <artifactId>proto-google-cloud-cloudsupport-v2beta</artifactId>
         <version>0.77.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-cloudsupport-v2beta:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

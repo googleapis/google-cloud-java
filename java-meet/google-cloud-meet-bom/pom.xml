@@ -24,7 +24,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-meet</artifactId>
@@ -50,7 +49,6 @@
         <artifactId>proto-google-cloud-meet-v2</artifactId>
         <version>0.60.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-meet-v2:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

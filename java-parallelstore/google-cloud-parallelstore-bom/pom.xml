@@ -23,7 +23,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-parallelstore</artifactId>
@@ -49,7 +48,6 @@
         <artifactId>proto-google-cloud-parallelstore-v1</artifactId>
         <version>0.56.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-parallelstore-v1:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -20,7 +20,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recommendations-ai</artifactId>
@@ -36,7 +35,6 @@
         <artifactId>proto-google-cloud-recommendations-ai-v1beta1</artifactId>
         <version>0.100.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -23,7 +23,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vectorsearch</artifactId>
@@ -49,7 +48,6 @@
         <artifactId>proto-google-cloud-vectorsearch-v1</artifactId>
         <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vectorsearch-v1:current} -->
       </dependency>
-      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>
