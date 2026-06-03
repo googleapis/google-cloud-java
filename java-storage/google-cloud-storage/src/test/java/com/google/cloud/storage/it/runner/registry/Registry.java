@@ -74,15 +74,17 @@ public final class Registry extends RunListener {
               new ThreadFactoryBuilder().setDaemon(true).setNameFormat("test-run-%d").build()));
 
   private final TestRunScopedInstance<TestBench> testBench =
-      TestRunScopedInstance.of("fixture/TEST_BENCH", () -> {
-        int httpPort = findFreePort();
-        int grpcPort = findFreePort();
-        return TestBench.newBuilder()
-            .setBaseUri("http://localhost:" + httpPort)
-            .setGRPCBaseUri("http://localhost:" + grpcPort)
-            .setContainerName("fork-" + httpPort)
-            .build();
-      });
+      TestRunScopedInstance.of(
+          "fixture/TEST_BENCH",
+          () -> {
+            int httpPort = findFreePort();
+            int grpcPort = findFreePort();
+            return TestBench.newBuilder()
+                .setBaseUri("http://localhost:" + httpPort)
+                .setGRPCBaseUri("http://localhost:" + grpcPort)
+                .setContainerName("fork-" + httpPort)
+                .build();
+          });
 
   private final TestRunScopedInstance<Generator> generator =
       TestRunScopedInstance.of("fixture/GENERATOR", Generator::new);

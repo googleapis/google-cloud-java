@@ -732,8 +732,18 @@ public final class ITGapicBidiUnbufferedWritableByteChannelTest {
     BidiWriteObjectResponse resp1 =
         BidiWriteObjectResponse.newBuilder().setPersistedSize(_256KiB).build();
 
+    BidiWriteObjectRequest req2 =
+        BidiWriteObjectRequest.newBuilder().setWriteOffset(_256KiB).setFinishWrite(true).build();
+    BidiWriteObjectResponse resp2 =
+        BidiWriteObjectResponse.newBuilder()
+            .setResource(Object.newBuilder().setName("obj").setSize(_256KiB).build())
+            .build();
+
     ImmutableMap<List<BidiWriteObjectRequest>, BidiWriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1);
+        ImmutableMap.of(
+            ImmutableList.of(req1), resp1,
+            ImmutableList.of(req2), resp2,
+            ImmutableList.of(req1, req2), resp2);
     BidiWriteService service1 = new BidiWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);
@@ -782,8 +792,18 @@ public final class ITGapicBidiUnbufferedWritableByteChannelTest {
     BidiWriteObjectResponse resp1 =
         BidiWriteObjectResponse.newBuilder().setPersistedSize(_256KiB).build();
 
+    BidiWriteObjectRequest req2 =
+        BidiWriteObjectRequest.newBuilder().setWriteOffset(_256KiB).setFinishWrite(true).build();
+    BidiWriteObjectResponse resp2 =
+        BidiWriteObjectResponse.newBuilder()
+            .setResource(Object.newBuilder().setName("obj").setSize(_256KiB).build())
+            .build();
+
     ImmutableMap<List<BidiWriteObjectRequest>, BidiWriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1);
+        ImmutableMap.of(
+            ImmutableList.of(req1), resp1,
+            ImmutableList.of(req2), resp2,
+            ImmutableList.of(req1, req2), resp2);
     BidiWriteService service1 = new BidiWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);

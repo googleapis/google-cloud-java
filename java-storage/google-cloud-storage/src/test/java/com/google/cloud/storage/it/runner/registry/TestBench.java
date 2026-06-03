@@ -42,9 +42,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -383,13 +381,21 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   private void dumpServerLogs(Path outFile, Path errFile) throws IOException {
-    LOGGER.warn("TestBench container failed or timeout occurred. Server stdout: {}, stderr: {}",
-        outFile.toAbsolutePath(), errFile.toAbsolutePath());
+    LOGGER.warn(
+        "TestBench container failed or timeout occurred. Server stdout: {}, stderr: {}",
+        outFile.toAbsolutePath(),
+        errFile.toAbsolutePath());
     try {
       Path targetLogsDir = java.nio.file.Paths.get("target/testbench-logs");
       java.nio.file.Files.createDirectories(targetLogsDir);
-      java.nio.file.Files.copy(outFile, targetLogsDir.resolve(outFile.getFileName()), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-      java.nio.file.Files.copy(errFile, targetLogsDir.resolve(errFile.getFileName()), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      java.nio.file.Files.copy(
+          outFile,
+          targetLogsDir.resolve(outFile.getFileName()),
+          java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      java.nio.file.Files.copy(
+          errFile,
+          targetLogsDir.resolve(errFile.getFileName()),
+          java.nio.file.StandardCopyOption.REPLACE_EXISTING);
       LOGGER.warn("Copied Testbench logs to target directory: {}", targetLogsDir.toAbsolutePath());
     } catch (Exception e) {
       // ignore failures to copy

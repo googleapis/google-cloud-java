@@ -693,8 +693,10 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
           () -> assertThat(se2).hasMessageThat().contains("Checksum mismatch"),
           () -> {
             assertThat(se2).hasCauseThat().isInstanceOf(ParallelCompositeUploadException.class);
-            ParallelCompositeUploadException pcue = (ParallelCompositeUploadException) se2.getCause();
-            // since we fail client side with a checksum validation, we expect the object to have been
+            ParallelCompositeUploadException pcue =
+                (ParallelCompositeUploadException) se2.getCause();
+            // since we fail client side with a checksum validation, we expect the object to have
+            // been
             // created
             assertThat(pcue.getCreatedObjects().get()).containsExactly(p1, expectedId);
           },

@@ -50,7 +50,6 @@ import java.net.InetSocketAddress;
 import java.net.URI;
 import java.time.Duration;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,7 +60,6 @@ final class FakeHttpServer implements AutoCloseable {
   private final Channel channel;
   private final Runnable shutdown;
   private final HttpStorageOptions httpStorageOptions;
-
 
   private FakeHttpServer(
       URI endpoint, Channel channel, Runnable shutdown, HttpStorageOptions httpStorageOptions) {
