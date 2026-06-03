@@ -260,4 +260,23 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     String url2 = "jdbc:bigquery://;MalformedProperty";
     assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
   }
+
+  @Test
+  public void testParseEnableProjectDiscovery() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableProjectDiscovery=true";
+
+    String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableProjectDiscovery");
+    assertThat(result).isEqualTo("true");
+
+    String url2 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableProjectDiscovery=false";
+
+    String result2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EnableProjectDiscovery");
+    assertThat(result2).isEqualTo("false");
+  }
 }

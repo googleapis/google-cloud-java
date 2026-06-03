@@ -3652,44 +3652,51 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             return;
           }
 
+          ExecutorService apiExecutor = null;
           try {
+            apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
+            List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
             for (String currentProjectToScan : projectsToScanList) {
               if (Thread.currentThread().isInterrupted()) {
-                LOG.warning(
-                    "Schema fetcher interrupted during project iteration for project: "
-                        + currentProjectToScan);
                 break;
               }
-              LOG.info("Fetching schemas for project: " + currentProjectToScan);
-              List<Dataset> datasetsInProject =
-                  findMatchingBigQueryObjects(
-                      "Dataset",
-                      () ->
-                          bigquery.listDatasets(
-                              currentProjectToScan,
-                              BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                      (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
-                      (ds) -> ds.getDatasetId().getDataset(),
-                      schemaPattern,
-                      schemaRegex,
-                      LOG);
+              Callable<List<Dataset>> apiCallable =
+                  () ->
+                      findMatchingBigQueryObjects(
+                          "Dataset",
+                          () ->
+                              bigquery.listDatasets(
+                                  currentProjectToScan,
+                                  BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                          (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
+                          (ds) -> ds.getDatasetId().getDataset(),
+                          schemaPattern,
+                          schemaRegex,
+                          LOG);
+              apiFutures.add(apiExecutor.submit(apiCallable));
+            }
+            apiExecutor.shutdown();
 
-              if (datasetsInProject.isEmpty() || Thread.currentThread().isInterrupted()) {
-                LOG.info(
-                    "Fetcher thread found no matching datasets in project: "
-                        + currentProjectToScan);
-                continue;
+            for (Future<List<Dataset>> apiFuture : apiFutures) {
+              if (Thread.currentThread().isInterrupted()) {
+                break;
               }
-
-              LOG.fine("Processing found datasets for project: " + currentProjectToScan);
-              for (Dataset dataset : datasetsInProject) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning(
-                      "Schema fetcher interrupted during dataset iteration for project: "
-                          + currentProjectToScan);
-                  break;
+              try {
+                List<Dataset> datasetsInProject = apiFuture.get();
+                if (datasetsInProject != null) {
+                  for (Dataset dataset : datasetsInProject) {
+                    if (Thread.currentThread().isInterrupted()) break;
+                    processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
+                  }
                 }
-                processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
+              } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                LOG.warning("Fetcher thread interrupted while waiting for API future result.");
+                break;
+              } catch (ExecutionException e) {
+                LOG.warning("Error executing findMatchingDatasets task: " + e.getMessage());
+              } catch (CancellationException e) {
+                LOG.warning("A findMatchingDatasets task was cancelled.");
               }
             }
 
@@ -3706,6 +3713,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
           } finally {
+            shutdownExecutor(apiExecutor);
             signalEndOfData(queue, localResultSchemaFields);
             LOG.info("Schema fetcher thread finished.");
           }
@@ -5195,6 +5203,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           accessibleCatalogs.add(project);
         }
       }
+    }
+
+    if (this.connection.isEnableProjectDiscovery()) {
+      accessibleCatalogs.addAll(this.connection.getDiscoveredProjects());
     }
 
     List<String> sortedCatalogs = new ArrayList<>(accessibleCatalogs);

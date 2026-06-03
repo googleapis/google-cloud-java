@@ -23,6 +23,9 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.services.bigquery.Bigquery;
+import com.google.api.services.bigquery.model.ProjectList;
+import com.google.api.services.bigquery.model.ProjectList.Projects;
 import com.google.auth.Credentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -36,14 +39,17 @@ import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -120,6 +126,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME,
@@ -169,6 +176,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
+  boolean enableProjectDiscovery;
+  private List<String> discoveredProjectsCache;
   boolean unsupportedHTAPIFallback;
   boolean useQueryCache;
   String queryDialect;
@@ -335,6 +344,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.additionalProjects = ds.getAdditionalProjects();
 
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
+      this.enableProjectDiscovery = ds.getEnableProjectDiscovery();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
       this.requestReason = ds.getRequestReason();
@@ -1219,6 +1229,42 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;
+  }
+
+  public boolean isEnableProjectDiscovery() {
+    return this.enableProjectDiscovery;
+  }
+
+  public synchronized List<String> getDiscoveredProjects() {
+    if (this.discoveredProjectsCache != null) {
+      return this.discoveredProjectsCache;
+    }
+
+    try {
+      BigQueryOptions options = (BigQueryOptions) getBigQuery().getOptions();
+      BigQueryRpc rpc = (BigQueryRpc) options.getRpc();
+      Field bqField = rpc.getClass().getDeclaredField("bigquery");
+      bqField.setAccessible(true);
+      Bigquery lowLevelBq = (Bigquery) bqField.get(rpc);
+
+      List<String> projects = new ArrayList<>();
+      String pageToken = null;
+      do {
+        ProjectList projectList = lowLevelBq.projects().list().setPageToken(pageToken).execute();
+        if (projectList.getProjects() != null) {
+          for (Projects p : projectList.getProjects()) {
+            projects.add(p.getProjectReference().getProjectId());
+          }
+        }
+        pageToken = projectList.getNextPageToken();
+      } while (pageToken != null);
+
+      this.discoveredProjectsCache = ImmutableList.copyOf(projects);
+    } catch (Exception e) {
+      LOG.warning(e, "Failed to list all accessible projects, falling back to connection default.");
+      this.discoveredProjectsCache = ImmutableList.of();
+    }
+    return this.discoveredProjectsCache;
   }
 
   @Override
