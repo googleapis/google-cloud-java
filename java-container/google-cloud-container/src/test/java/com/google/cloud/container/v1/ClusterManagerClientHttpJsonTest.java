@@ -796,6 +796,8 @@ public class ClusterManagerClientHttpJsonTest {
             .setImageType("imageType-878147787")
             .setName(
                 "projects/project-6330/locations/location-6330/clusters/cluster-6330/nodePools/nodePool-6330")
+            .setImage("image100313435")
+            .setImageProject("imageProject288951614")
             .addAllLocations(new ArrayList<String>())
             .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
@@ -865,6 +867,8 @@ public class ClusterManagerClientHttpJsonTest {
               .setImageType("imageType-878147787")
               .setName(
                   "projects/project-6330/locations/location-6330/clusters/cluster-6330/nodePools/nodePool-6330")
+              .setImage("image100313435")
+              .setImageProject("imageProject288951614")
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())

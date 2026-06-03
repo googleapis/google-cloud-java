@@ -558,6 +558,46 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int VCORE_SECONDS_FIELD_NUMBER = 5;
+  private long vcoreSeconds_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cumulative CPU time consumed by the application for a job,
+   * measured in vcore-seconds.
+   * </pre>
+   *
+   * <code>int64 vcore_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The vcoreSeconds.
+   */
+  @java.lang.Override
+  public long getVcoreSeconds() {
+    return vcoreSeconds_;
+  }
+
+  public static final int MEMORY_MB_SECONDS_FIELD_NUMBER = 6;
+  private long memoryMbSeconds_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cumulative memory usage of the application for a job,
+   * measured in mb-seconds.
+   * </pre>
+   *
+   * <code>int64 memory_mb_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryMbSeconds.
+   */
+  @java.lang.Override
+  public long getMemoryMbSeconds() {
+    return memoryMbSeconds_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -585,6 +625,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trackingUrl_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, trackingUrl_);
     }
+    if (vcoreSeconds_ != 0L) {
+      output.writeInt64(5, vcoreSeconds_);
+    }
+    if (memoryMbSeconds_ != 0L) {
+      output.writeInt64(6, memoryMbSeconds_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -607,6 +653,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trackingUrl_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, trackingUrl_);
     }
+    if (vcoreSeconds_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, vcoreSeconds_);
+    }
+    if (memoryMbSeconds_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, memoryMbSeconds_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -628,6 +680,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
     if (java.lang.Float.floatToIntBits(getProgress())
         != java.lang.Float.floatToIntBits(other.getProgress())) return false;
     if (!getTrackingUrl().equals(other.getTrackingUrl())) return false;
+    if (getVcoreSeconds() != other.getVcoreSeconds()) return false;
+    if (getMemoryMbSeconds() != other.getMemoryMbSeconds()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -647,6 +701,10 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getProgress());
     hash = (37 * hash) + TRACKING_URL_FIELD_NUMBER;
     hash = (53 * hash) + getTrackingUrl().hashCode();
+    hash = (37 * hash) + VCORE_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVcoreSeconds());
+    hash = (37 * hash) + MEMORY_MB_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMemoryMbSeconds());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -795,6 +853,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
       state_ = 0;
       progress_ = 0F;
       trackingUrl_ = "";
+      vcoreSeconds_ = 0L;
+      memoryMbSeconds_ = 0L;
       return this;
     }
 
@@ -843,6 +903,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.trackingUrl_ = trackingUrl_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vcoreSeconds_ = vcoreSeconds_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.memoryMbSeconds_ = memoryMbSeconds_;
+      }
     }
 
     @java.lang.Override
@@ -872,6 +938,12 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
         trackingUrl_ = other.trackingUrl_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getVcoreSeconds() != 0L) {
+        setVcoreSeconds(other.getVcoreSeconds());
+      }
+      if (other.getMemoryMbSeconds() != 0L) {
+        setMemoryMbSeconds(other.getMemoryMbSeconds());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -923,6 +995,18 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                vcoreSeconds_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                memoryMbSeconds_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1338,6 +1422,124 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       trackingUrl_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private long vcoreSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative CPU time consumed by the application for a job,
+     * measured in vcore-seconds.
+     * </pre>
+     *
+     * <code>int64 vcore_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vcoreSeconds.
+     */
+    @java.lang.Override
+    public long getVcoreSeconds() {
+      return vcoreSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative CPU time consumed by the application for a job,
+     * measured in vcore-seconds.
+     * </pre>
+     *
+     * <code>int64 vcore_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The vcoreSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVcoreSeconds(long value) {
+
+      vcoreSeconds_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative CPU time consumed by the application for a job,
+     * measured in vcore-seconds.
+     * </pre>
+     *
+     * <code>int64 vcore_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVcoreSeconds() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      vcoreSeconds_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long memoryMbSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative memory usage of the application for a job,
+     * measured in mb-seconds.
+     * </pre>
+     *
+     * <code>int64 memory_mb_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The memoryMbSeconds.
+     */
+    @java.lang.Override
+    public long getMemoryMbSeconds() {
+      return memoryMbSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative memory usage of the application for a job,
+     * measured in mb-seconds.
+     * </pre>
+     *
+     * <code>int64 memory_mb_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The memoryMbSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryMbSeconds(long value) {
+
+      memoryMbSeconds_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The cumulative memory usage of the application for a job,
+     * measured in mb-seconds.
+     * </pre>
+     *
+     * <code>int64 memory_mb_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMemoryMbSeconds() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      memoryMbSeconds_ = 0L;
       onChanged();
       return this;
     }
