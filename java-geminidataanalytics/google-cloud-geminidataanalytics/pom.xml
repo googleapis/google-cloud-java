@@ -44,6 +44,10 @@
     <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-geminidataanalytics-v1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-geminidataanalytics-v1beta</artifactId>
     </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
@@ -90,6 +94,11 @@
     </dependency>
 
     <!-- {x-generated-grpc-dependencies-start} -->
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-geminidataanalytics-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-geminidataanalytics-v1beta</artifactId>
