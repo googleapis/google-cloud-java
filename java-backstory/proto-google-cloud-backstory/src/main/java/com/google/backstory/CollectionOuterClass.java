@@ -179,10 +179,10 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
           + "source_system\030\004 \001(\t\022\017\n"
           + "\007product\030\005 \001(\t\022\037\n"
           + "\027source_system_ticket_id\030\006 \001(\t\022\031\n"
-          + "\021source_system_uri\030\007 \001(\tB\215\001\n"
-          + "\024com.google.backstoryP\001Z9google.golang.org/genproto/googleapis/backstory"
-          + ";backstory\252\002\020Google.Backstory\312\002\020Google\\B"
-          + "ackstory\352\002\021Google::Backstoryb\006proto3"
+          + "\021source_system_uri\030\007 \001(\tB\211\001\n"
+          + "\024com.google.backstoryP\001Z5cloud.google.com/go/backstory/backstorypb;backs"
+          + "torypb\252\002\020Google.Backstory\312\002\020Google\\Backs"
+          + "tory\352\002\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -80,11 +80,11 @@ public final class EntityRiskProto extends com.google.protobuf.GeneratedFile {
           + "revious_range_end_time\030\001 \001(\0132\032.google.pr"
           + "otobuf.Timestamp\022\030\n\020risk_score_delta\030\002 \001"
           + "(\005\022\033\n\023previous_risk_score\030\003 \001(\005\022 \n\030risk_"
-          + "score_numeric_delta\030\004 \001(\005B\236\001\n\024com.google"
-          + ".backstoryB\017EntityRiskProtoP\001Z9google.go"
-          + "lang.org/genproto/googleapis/backstory;b"
-          + "ackstory\252\002\020Google.Backstory\312\002\020Google\\Bac"
-          + "kstory\352\002\021Google::Backstoryb\006proto3"
+          + "score_numeric_delta\030\004 \001(\005B\232\001\n\024com.google"
+          + ".backstoryB\017EntityRiskProtoP\001Z5cloud.goo"
+          + "gle.com/go/backstory/backstorypb;backsto"
+          + "rypb\252\002\020Google.Backstory\312\002\020Google\\Backsto"
+          + "ry\352\002\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

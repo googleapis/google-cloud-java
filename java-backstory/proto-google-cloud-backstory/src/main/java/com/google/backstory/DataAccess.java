@@ -64,11 +64,11 @@ public final class DataAccess extends com.google.protobuf.GeneratedFile {
           + "els\030\002 \003(\tB\002\030\001\022\022\n\nnamespaces\030\003 \003(\t\022\025\n\rcus"
           + "tom_labels\030\004 \003(\t\022G\n\023ingestion_kv_labels\030"
           + "\005 \003(\0132*.google.backstory.DataAccessInges"
-          + "tionLabel\022\033\n\023allow_scoped_access\030\006 \001(\010B\215"
-          + "\001\n\024com.google.backstoryP\001Z9google.golang"
-          + ".org/genproto/googleapis/backstory;backs"
-          + "tory\252\002\020Google.Backstory\312\002\020Google\\Backsto"
-          + "ry\352\002\021Google::Backstoryb\006proto3"
+          + "tionLabel\022\033\n\023allow_scoped_access\030\006 \001(\010B\211"
+          + "\001\n\024com.google.backstoryP\001Z5cloud.google."
+          + "com/go/backstory/backstorypb;backstorypb"
+          + "\252\002\020Google.Backstory\312\002\020Google\\Backstory\352\002"
+          + "\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
