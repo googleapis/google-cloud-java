@@ -205,6 +205,7 @@ def generate_postprocessing_prerequisite_files(
     transport: str,
     library_path: str,
     language: str = "java",
+    has_version: bool = True,
 ) -> None:
     """
     Generates the postprocessing prerequisite files for a library.
@@ -307,6 +308,7 @@ def generate_postprocessing_prerequisite_files(
             proto_path=remove_version_from(proto_path),
             module_name=repo_metadata["repo_short"],
             api_shortname=library.api_shortname,
+            has_version=has_version,
         )
 
     # generate owlbot.py
