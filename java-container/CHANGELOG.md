@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.96.0 (2026-06-03)
+
+### ⚠ BREAKING CHANGES
+
+* remove image_family from
+
+### Features
+
+* add confidential instance type and hyperdisk support ([39e93fe](https://github.com/googleapis/google-cloud-java/commit/39e93fe980d2fcb936b89c499b1ac2365a883734))
+* add confidential instance type and hyperdisk support ([39e93fe](https://github.com/googleapis/google-cloud-java/commit/39e93fe980d2fcb936b89c499b1ac2365a883734))
+* add custom node image configuration ([9c90001](https://github.com/googleapis/google-cloud-java/commit/9c900019d7f1872e6b10737b2bd5b9cd314ada9e))
+
+### Bug Fixes
+
+* remove image_family from ([9c90001](https://github.com/googleapis/google-cloud-java/commit/9c900019d7f1872e6b10737b2bd5b9cd314ada9e))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.62.0 ([#2379](https://github.com/googleapis/google-cloud-java/issues/2379)) ([e9ec6e0](https://github.com/googleapis/google-cloud-java/commit/e9ec6e091e91481af25981a223b37f094c5bfcad))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.62.0 ([#2729](https://github.com/googleapis/google-cloud-java/issues/2729)) ([af4893b](https://github.com/googleapis/google-cloud-java/commit/af4893b83cd4cc1fd3ac7aeca1924e739d67f1ff))
+
+
 ## 2.91.0 (None)
 
 * No change
