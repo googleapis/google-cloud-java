@@ -204,7 +204,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2225
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -228,7 +228,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2225
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -1173,6 +1173,65 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
         : sliceControllerConfig_;
   }
 
+  public static final int AGENT_SANDBOX_CONFIG_FIELD_NUMBER = 28;
+  private com.google.container.v1.AgentSandboxConfig agentSandboxConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentSandboxConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentSandboxConfig() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentSandboxConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.AgentSandboxConfig getAgentSandboxConfig() {
+    return agentSandboxConfig_ == null
+        ? com.google.container.v1.AgentSandboxConfig.getDefaultInstance()
+        : agentSandboxConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.AgentSandboxConfigOrBuilder getAgentSandboxConfigOrBuilder() {
+    return agentSandboxConfig_ == null
+        ? com.google.container.v1.AgentSandboxConfig.getDefaultInstance()
+        : agentSandboxConfig_;
+  }
+
   public static final int NODE_READINESS_CONFIG_FIELD_NUMBER = 29;
   private com.google.container.v1.NodeReadinessConfig nodeReadinessConfig_;
 
@@ -1191,7 +1250,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeReadinessConfig() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -1304,6 +1363,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       output.writeMessage(26, getSliceControllerConfig());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(28, getAgentSandboxConfig());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(29, getNodeReadinessConfig());
     }
     getUnknownFields().writeTo(output);
@@ -1389,6 +1451,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSliceControllerConfig());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getAgentSandboxConfig());
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNodeReadinessConfig());
     }
@@ -1488,6 +1553,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
     if (hasSliceControllerConfig()) {
       if (!getSliceControllerConfig().equals(other.getSliceControllerConfig())) return false;
     }
+    if (hasAgentSandboxConfig() != other.hasAgentSandboxConfig()) return false;
+    if (hasAgentSandboxConfig()) {
+      if (!getAgentSandboxConfig().equals(other.getAgentSandboxConfig())) return false;
+    }
     if (hasNodeReadinessConfig() != other.hasNodeReadinessConfig()) return false;
     if (hasNodeReadinessConfig()) {
       if (!getNodeReadinessConfig().equals(other.getNodeReadinessConfig())) return false;
@@ -1578,6 +1647,10 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
     if (hasSliceControllerConfig()) {
       hash = (37 * hash) + SLICE_CONTROLLER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSliceControllerConfig().hashCode();
+    }
+    if (hasAgentSandboxConfig()) {
+      hash = (37 * hash) + AGENT_SANDBOX_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentSandboxConfig().hashCode();
     }
     if (hasNodeReadinessConfig()) {
       hash = (37 * hash) + NODE_READINESS_CONFIG_FIELD_NUMBER;
@@ -1743,6 +1816,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
         internalGetPodSnapshotConfigFieldBuilder();
         internalGetSlurmOperatorConfigFieldBuilder();
         internalGetSliceControllerConfigFieldBuilder();
+        internalGetAgentSandboxConfigFieldBuilder();
         internalGetNodeReadinessConfigFieldBuilder();
       }
     }
@@ -1845,6 +1919,11 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       if (sliceControllerConfigBuilder_ != null) {
         sliceControllerConfigBuilder_.dispose();
         sliceControllerConfigBuilder_ = null;
+      }
+      agentSandboxConfig_ = null;
+      if (agentSandboxConfigBuilder_ != null) {
+        agentSandboxConfigBuilder_.dispose();
+        agentSandboxConfigBuilder_ = null;
       }
       nodeReadinessConfig_ = null;
       if (nodeReadinessConfigBuilder_ != null) {
@@ -2015,11 +2094,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.agentSandboxConfig_ =
+            agentSandboxConfigBuilder_ == null
+                ? agentSandboxConfig_
+                : agentSandboxConfigBuilder_.build();
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.nodeReadinessConfig_ =
             nodeReadinessConfigBuilder_ == null
                 ? nodeReadinessConfig_
                 : nodeReadinessConfigBuilder_.build();
-        to_bitField0_ |= 0x00080000;
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2092,6 +2178,9 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSliceControllerConfig()) {
         mergeSliceControllerConfig(other.getSliceControllerConfig());
+      }
+      if (other.hasAgentSandboxConfig()) {
+        mergeAgentSandboxConfig(other.getAgentSandboxConfig());
       }
       if (other.hasNodeReadinessConfig()) {
         mergeNodeReadinessConfig(other.getNodeReadinessConfig());
@@ -2261,11 +2350,18 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00040000;
                 break;
               } // case 210
+            case 226:
+              {
+                input.readMessage(
+                    internalGetAgentSandboxConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 226
             case 234:
               {
                 input.readMessage(
                     internalGetNodeReadinessConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 234
             default:
@@ -2732,7 +2828,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2225
+     *     google/container/v1/cluster_service.proto;l=2243
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2755,7 +2851,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2225
+     *     google/container/v1/cluster_service.proto;l=2243
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -6283,6 +6379,220 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       return sliceControllerConfigBuilder_;
     }
 
+    private com.google.container.v1.AgentSandboxConfig agentSandboxConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.AgentSandboxConfig,
+            com.google.container.v1.AgentSandboxConfig.Builder,
+            com.google.container.v1.AgentSandboxConfigOrBuilder>
+        agentSandboxConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentSandboxConfig field is set.
+     */
+    public boolean hasAgentSandboxConfig() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentSandboxConfig.
+     */
+    public com.google.container.v1.AgentSandboxConfig getAgentSandboxConfig() {
+      if (agentSandboxConfigBuilder_ == null) {
+        return agentSandboxConfig_ == null
+            ? com.google.container.v1.AgentSandboxConfig.getDefaultInstance()
+            : agentSandboxConfig_;
+      } else {
+        return agentSandboxConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentSandboxConfig(com.google.container.v1.AgentSandboxConfig value) {
+      if (agentSandboxConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentSandboxConfig_ = value;
+      } else {
+        agentSandboxConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentSandboxConfig(
+        com.google.container.v1.AgentSandboxConfig.Builder builderForValue) {
+      if (agentSandboxConfigBuilder_ == null) {
+        agentSandboxConfig_ = builderForValue.build();
+      } else {
+        agentSandboxConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentSandboxConfig(com.google.container.v1.AgentSandboxConfig value) {
+      if (agentSandboxConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && agentSandboxConfig_ != null
+            && agentSandboxConfig_
+                != com.google.container.v1.AgentSandboxConfig.getDefaultInstance()) {
+          getAgentSandboxConfigBuilder().mergeFrom(value);
+        } else {
+          agentSandboxConfig_ = value;
+        }
+      } else {
+        agentSandboxConfigBuilder_.mergeFrom(value);
+      }
+      if (agentSandboxConfig_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentSandboxConfig() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      agentSandboxConfig_ = null;
+      if (agentSandboxConfigBuilder_ != null) {
+        agentSandboxConfigBuilder_.dispose();
+        agentSandboxConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.AgentSandboxConfig.Builder getAgentSandboxConfigBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetAgentSandboxConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.AgentSandboxConfigOrBuilder getAgentSandboxConfigOrBuilder() {
+      if (agentSandboxConfigBuilder_ != null) {
+        return agentSandboxConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return agentSandboxConfig_ == null
+            ? com.google.container.v1.AgentSandboxConfig.getDefaultInstance()
+            : agentSandboxConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for the AgentSandbox addon.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.AgentSandboxConfig,
+            com.google.container.v1.AgentSandboxConfig.Builder,
+            com.google.container.v1.AgentSandboxConfigOrBuilder>
+        internalGetAgentSandboxConfigFieldBuilder() {
+      if (agentSandboxConfigBuilder_ == null) {
+        agentSandboxConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.AgentSandboxConfig,
+                com.google.container.v1.AgentSandboxConfig.Builder,
+                com.google.container.v1.AgentSandboxConfigOrBuilder>(
+                getAgentSandboxConfig(), getParentForChildren(), isClean());
+        agentSandboxConfig_ = null;
+      }
+      return agentSandboxConfigBuilder_;
+    }
+
     private com.google.container.v1.NodeReadinessConfig nodeReadinessConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.container.v1.NodeReadinessConfig,
@@ -6304,7 +6614,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeReadinessConfig field is set.
      */
     public boolean hasNodeReadinessConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6350,7 +6660,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         nodeReadinessConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6373,7 +6683,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
       } else {
         nodeReadinessConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6391,7 +6701,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNodeReadinessConfig(com.google.container.v1.NodeReadinessConfig value) {
       if (nodeReadinessConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && nodeReadinessConfig_ != null
             && nodeReadinessConfig_
                 != com.google.container.v1.NodeReadinessConfig.getDefaultInstance()) {
@@ -6403,7 +6713,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
         nodeReadinessConfigBuilder_.mergeFrom(value);
       }
       if (nodeReadinessConfig_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6421,7 +6731,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNodeReadinessConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       nodeReadinessConfig_ = null;
       if (nodeReadinessConfigBuilder_ != null) {
         nodeReadinessConfigBuilder_.dispose();
@@ -6443,7 +6753,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.container.v1.NodeReadinessConfig.Builder getNodeReadinessConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetNodeReadinessConfigFieldBuilder().getBuilder();
     }
