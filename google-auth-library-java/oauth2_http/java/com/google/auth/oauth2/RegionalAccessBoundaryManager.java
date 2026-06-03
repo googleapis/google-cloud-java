@@ -42,6 +42,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
@@ -84,6 +85,8 @@ final class RegionalAccessBoundaryManager {
 
   private final AtomicReference<CooldownState> cooldownState =
       new AtomicReference<>(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
+
+  private final AtomicBoolean skipRAB = new AtomicBoolean(false);
 
   // Unbounded thread creation is discouraged in library code to avoid resource
   // exhaustion. A shared, bounded executor service ensures a hard limit (5)
@@ -178,7 +181,7 @@ final class RegionalAccessBoundaryManager {
       final HttpTransportFactory transportFactory,
       final RegionalAccessBoundaryProvider provider,
       final AccessToken accessToken) {
-    if (isCooldownActive()) {
+    if (skipRAB.get() || isCooldownActive()) {
       return;
     }
 
@@ -197,6 +200,7 @@ final class RegionalAccessBoundaryManager {
             try {
               String url = provider.getRegionalAccessBoundaryUrl();
               if (url == null) {
+                skipRAB.set(true);
                 future.set(null);
                 return;
               }
@@ -281,6 +285,11 @@ final class RegionalAccessBoundaryManager {
   @VisibleForTesting
   long getCurrentCooldownMillis() {
     return cooldownState.get().durationMillis;
+  }
+
+  @VisibleForTesting
+  boolean isSkipRAB() {
+    return skipRAB.get();
   }
 
   private static class CooldownState {

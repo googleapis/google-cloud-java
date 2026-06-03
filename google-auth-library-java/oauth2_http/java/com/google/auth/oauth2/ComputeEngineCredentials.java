@@ -805,6 +805,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
     // Since RAB lookup requires a valid email-based service account, we skip RAB lookup
     // in non-email scenarios by returning null.
     if (account == null || !account.contains("@")) {
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.INFO,
+          Collections.emptyMap(),
+          "Regional Access Boundary lookup is skipped for this instance because it is a non-email instance.");
       return null;
     }
     return String.format(

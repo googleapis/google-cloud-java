@@ -1243,8 +1243,8 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @org.junit.jupiter.api.Test
-  void refresh_regionalAccessBoundaryNonEmail() throws IOException, InterruptedException {
-
+  void refresh_regionalAccessBoundaryNonEmail_skipsRABLookup()
+      throws IOException, InterruptedException {
     String nonEmailAccount = "non-email-account-value";
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     RegionalAccessBoundary regionalAccessBoundary =
@@ -1258,17 +1258,28 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
 
-    // First call: should NOT initiate async refresh (or should skip it gracefully).
+    // Before any call, skipRAB flag should be false
+    assertFalse(credentials.regionalAccessBoundaryManager.isSkipRAB());
+
+    // First call: triggers lookup which determines non-email, returns null, and sets skipRAB to
+    // true
     Map<String, List<String>> headers = credentials.getRequestMetadata();
     assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
 
-    // Wait a brief time to make sure no background tasks execute and set it.
-    Thread.sleep(500);
+    // Since the task is scheduled asynchronously on the shared executor, wait for it to complete
+    long deadline = System.currentTimeMillis() + 5000;
+    while (!credentials.regionalAccessBoundaryManager.isSkipRAB()
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(50);
+    }
 
-    // It should still be null.
+    // Verify skipRAB flag has been set to true
+    assertTrue(credentials.regionalAccessBoundaryManager.isSkipRAB());
+
+    // Verify RAB is still null
     assertNull(credentials.getRegionalAccessBoundary());
 
-    // And header should still be missing on second call.
+    // Second call: should bypass triggerAsyncRefresh completely and remain null
     headers = credentials.getRequestMetadata();
     assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
   }
