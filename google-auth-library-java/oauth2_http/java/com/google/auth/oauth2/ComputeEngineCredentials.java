@@ -72,6 +72,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
@@ -117,6 +118,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private static final String PARSE_ERROR_PREFIX = "Error parsing token refresh response. ";
   private static final String PARSE_ERROR_ACCOUNT = "Error parsing service account response. ";
+  private static final Pattern EMAIL_PATTERN = Pattern.compile("^[^@]+@[^@]+\\.[^@]+$");
   private static final long serialVersionUID = -4113476462526554235L;
 
   private final String transportFactoryClassName;
@@ -804,7 +806,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
     // In GKE environments, the default service account might return a non-email placeholder.
     // Since RAB lookup requires a valid email-based service account, we skip RAB lookup
     // in non-email scenarios by returning null.
-    if (account == null || !account.contains("@")) {
+    if (account == null || !EMAIL_PATTERN.matcher(account).matches()) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
           Level.INFO,
