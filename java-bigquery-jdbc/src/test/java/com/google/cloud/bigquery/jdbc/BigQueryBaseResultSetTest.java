@@ -89,12 +89,6 @@ public class BigQueryBaseResultSetTest {
   }
 
   @Test
-  public void testGetQueryStatistics() {
-    resultSet.setJobId(JobId.of("jobId"));
-    assertThat(resultSet.getQueryStatistics()).isInstanceOf(QueryStatistics.class);
-  }
-
-  @Test
   public void testGetQueryStatisticsCaching() {
     resultSet.setJobId(JobId.of("jobId"));
     assertThat(resultSet.getQueryStatistics()).isInstanceOf(QueryStatistics.class);
@@ -104,26 +98,17 @@ public class BigQueryBaseResultSetTest {
   }
 
   @Test
-  public void testGetQueryStatistics_no_client() {
-    resultSet = mock(BigQueryBaseResultSet.class, CALLS_REAL_METHODS);
-    try {
-      Field fetchSizeField = BigQueryBaseResultSet.class.getDeclaredField("fetchSize");
-      fetchSizeField.setAccessible(true);
-      fetchSizeField.set(resultSet, -1);
-    } catch (Exception e) {
-      assertFalse(true);
-    }
-    assertThat(resultSet.getQueryStatistics()).isNull();
-  }
+  public void testGetQueryStatisticsReturnsNullWhenJobCannotBeLoaded() {
+    // Case 1: bigQuery client is null
+    BigQueryBaseResultSet noClientRs = mock(BigQueryBaseResultSet.class, CALLS_REAL_METHODS);
+    assertThat(noClientRs.getQueryStatistics()).isNull();
 
-  @Test
-  public void testGetQueryStatistics_no_job_id() {
+    // Case 2: jobId is null
     assertThat(resultSet.getQueryStatistics()).isNull();
-  }
 
-  @Test
-  public void testGetQueryStatistics_no_job() {
-    doReturn(job).when(bigQuery).getJob(any(JobId.class));
+    // Case 3: bigQuery.getJob(jobId) returns null
+    resultSet.setJobId(JobId.of("jobId"));
+    doReturn(null).when(bigQuery).getJob(any(JobId.class));
     assertThat(resultSet.getQueryStatistics()).isNull();
   }
 
@@ -309,5 +294,16 @@ public class BigQueryBaseResultSetTest {
 
     // verify that getWarnings() wraps the BigQueryException into a SQLException
     assertThrows(SQLException.class, () -> resultSet.getWarnings());
+  }
+
+  @Test
+  public void testSetJobUpdatesJobId() {
+    Job newJob = mock(Job.class);
+    JobId newJobId = JobId.of("new_project", "new_job_id");
+    doReturn(newJobId).when(newJob).getJobId();
+
+    resultSet.setJob(newJob);
+
+    assertThat(resultSet.getJobId()).isEqualTo(newJobId);
   }
 }

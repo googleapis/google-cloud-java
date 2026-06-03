@@ -103,6 +103,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public void setJob(Job job) {
     this.job = job;
+    if (job != null) {
+      this.jobId = job.getJobId();
+    }
     this.queryStatistics = null;
     this.warnings = null;
     this.warningsLoaded = false;
