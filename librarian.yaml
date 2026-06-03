@@ -414,7 +414,16 @@ libraries:
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
   - name: backstory
     version: 0.0.1-SNAPSHOT
+    apis:
+      - path: backstory
+        java:
+          generate_gapic: false
+          generate_grpc: false
+          generate_resource_names: false
+          proto_artifact_id_override: proto-google-cloud-backstory
     java:
+      artifact_id: google-cloud-backstory
+      group_id: com.google.cloud
       api_id_override: backstory.googleapis.com
       api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
