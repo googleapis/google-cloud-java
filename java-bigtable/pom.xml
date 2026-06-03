@@ -152,6 +152,7 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- {x-generated-dependencies-start} -->
             <dependency>
                 <groupId>com.google.api.grpc</groupId>
                 <artifactId>proto-google-cloud-bigtable-v2</artifactId>
@@ -177,6 +178,7 @@
                 <artifactId>google-cloud-bigtable</artifactId>
                 <version>2.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
             </dependency>
+            <!-- {x-generated-dependencies-end} -->
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>google-cloud-conformance-tests</artifactId>
@@ -350,11 +352,13 @@
     </profiles>
 
     <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-bigtable</module>
     <module>grpc-google-cloud-bigtable-admin-v2</module>
     <module>grpc-google-cloud-bigtable-v2</module>
     <module>proto-google-cloud-bigtable-admin-v2</module>
     <module>proto-google-cloud-bigtable-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-bigtable-emulator-core</module>
     <module>google-cloud-bigtable-emulator</module>
     <module>google-cloud-bigtable-bom</module>
