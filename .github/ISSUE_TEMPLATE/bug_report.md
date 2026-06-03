@@ -6,7 +6,7 @@ about: Create a report to help us improve
 
 Thanks for stopping by to let us know something could be better!
 
-**PLEASE READ**: If you have a support contract with Google, please create an issue in the [support console](https://cloud.google.com/support/) instead of filing on GitHub. This will ensure a timely response. We try to review github issues on a regular basis, however we cannot guarantee an SLO.
+**PLEASE READ**: If you have a support contract with Google, please create an issue in the [support console](https://cloud.google.com/support/) instead of filing on GitHub. This will ensure a timely response. We try to review GitHub issues on a regular basis, however we cannot guarantee an SLO.
 
 Before creating this issue, please run down the following list and make sure you've tried the usual "quick fixes":
 
@@ -26,7 +26,7 @@ I am seeing {ISSUE} when running X, Y... after doing Z. This behavior started af
 
 ## Environment
 
-Required: Provide details about your environment. If relevant, please also provide details about your GCP environment details. The environment details MUST be filled out.
+Required: Provide details about your environment. If relevant, please also provide details about your GCP environment. The environment details MUST be filled out.
 
 Provide the relevant details about your environment:
 
@@ -69,7 +69,7 @@ maven-dependency-plugin:tree
 
 Required: Provide a reproducer and the steps needed to reproduce this issue locally. If unable to provide a reproducer, please provide code snippets to help reproduce the issue. One of the two sections below MUST be filled out.
 
-1. A reproducer is the quickest method to resolving this issue. It could be a test case or a sample application. It is easier for us to troubleshoot the problem and to verify the solution.
+1. A reproducer is the quickest method to resolve this issue. It could be a test case or a sample application. It is easier for us to troubleshoot the problem and to verify the solution.
 
 Steps to reproduce:
 
@@ -96,7 +96,7 @@ Required: Provide logs that showcase the error. This will help show the flow of 
 
 The Java SDK has a troubleshooting [guide](https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md) for enabling logs. This contains information regarding client-server communication, request and response details, and logging in dependency libraries. If using this guide, please obfuscate any private information (bearer tokens, request and response params, etc).
 
-Additionally, please provide a stack trace of error seen:
+Additionally, please provide a stack trace of the error seen:
 
 ### Example
 ```
