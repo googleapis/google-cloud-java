@@ -28,10 +28,12 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
@@ -137,11 +139,13 @@
       <scope>test</scope>
       <type>test-jar</type>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-resourcemanager-v3</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>

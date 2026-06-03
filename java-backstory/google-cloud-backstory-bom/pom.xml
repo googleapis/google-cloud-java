@@ -23,11 +23,13 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-backstory</artifactId>
         <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-backstory:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-backstory</artifactId>

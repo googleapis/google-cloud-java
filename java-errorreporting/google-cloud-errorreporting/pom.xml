@@ -41,14 +41,18 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
 
     <dependency>
       <groupId>com.google.guava</groupId>
