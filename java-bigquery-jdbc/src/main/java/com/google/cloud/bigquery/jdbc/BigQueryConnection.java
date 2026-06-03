@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
@@ -1251,7 +1252,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       HttpTransport transport = transportOptions.getHttpTransportFactory().create();
       HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
       Bigquery lowLevelBq =
-          new Bigquery.Builder(transport, new GsonFactory(), initializer)
+          new Bigquery.Builder(transport, GsonFactory.getDefaultInstance(), initializer)
               .setRootUrl(options.getResolvedApiaryHost(BIGQUERY_SERVICE_NAME))
               .setApplicationName(DEFAULT_JDBC_TOKEN_VALUE)
               .build();
@@ -1276,9 +1277,17 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       } while (pageToken != null);
 
       this.discoveredProjectsCache = ImmutableList.copyOf(projects);
+    } catch (GoogleJsonResponseException e) {
+      LOG.warning(e, "Failed to list all accessible projects due to Google API error.");
+      int statusCode = e.getStatusCode();
+      // Only cache empty list for non-transient auth/permission errors (400, 401, 403)
+      if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+        this.discoveredProjectsCache = ImmutableList.of();
+      }
+      return ImmutableList.of();
     } catch (Exception e) {
       LOG.warning(e, "Failed to list all accessible projects, falling back to connection default.");
-      this.discoveredProjectsCache = ImmutableList.of();
+      return ImmutableList.of();
     }
     return this.discoveredProjectsCache;
   }

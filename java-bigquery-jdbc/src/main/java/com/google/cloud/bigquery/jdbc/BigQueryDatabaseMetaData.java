@@ -3688,7 +3688,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 Thread.currentThread().interrupt();
                 checkInterrupted(apiFutures);
               } catch (ExecutionException e) {
-                LOG.warning("Error executing findMatchingDatasets task: " + e.getMessage());
+                LOG.warning(e, "Error executing findMatchingDatasets task.");
               } catch (CancellationException e) {
                 LOG.warning("A findMatchingDatasets task was cancelled.");
               }
