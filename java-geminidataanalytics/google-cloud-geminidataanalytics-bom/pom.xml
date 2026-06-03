@@ -35,18 +35,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-geminidataanalytics-v1</artifactId>
-        <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-geminidataanalytics-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-geminidataanalytics-v1beta</artifactId>
         <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-geminidataanalytics-v1beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-geminidataanalytics-v1</artifactId>
-        <version>0.21.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-geminidataanalytics-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
