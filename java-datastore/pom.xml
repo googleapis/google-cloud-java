@@ -147,7 +147,7 @@
 <!--    Error Prone Core version is not managed by shared-deps. Keep this version in sync with upstream shared-deps -->
 <!--    Related: https://github.com/googleapis/java-datastore/issues/1889 -->
 <!--    As of v2.42.0, the min JDK version needed is JDK 17+ -->
-    <error-prone.version>2.42.0</error-prone.version>
+    <error-prone.version>2.45.0</error-prone.version>
   </properties>
 
   <dependencyManagement>

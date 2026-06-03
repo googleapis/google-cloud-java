@@ -146,7 +146,7 @@
         <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
 
         <!-- Utility -->
-        <error-prone.version>2.38.0</error-prone.version>
+        <error-prone.version>2.45.0</error-prone.version>
     </properties>
 
     <dependencyManagement>
