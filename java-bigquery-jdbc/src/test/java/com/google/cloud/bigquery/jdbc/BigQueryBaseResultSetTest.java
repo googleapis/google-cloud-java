@@ -24,12 +24,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
@@ -254,5 +256,58 @@ public class BigQueryBaseResultSetTest {
 
     // Verify that bigQuery.getJob() was never called since the Job was pre-cached!
     verify(bigQuery, never()).getJob(any(JobId.class));
+  }
+
+  @Test
+  public void testSetJobResetsCachedState() throws SQLException {
+    resultSet.setJob(job);
+
+    // Fetch warnings and statistics once
+    JobStatus jobStatus = mock(JobStatus.class);
+    BigQueryError error = new BigQueryError("reason1", "location1", "message1");
+    doReturn(jobStatus).when(job).getStatus();
+    doReturn(Arrays.asList(error)).when(jobStatus).getExecutionErrors();
+
+    SQLWarning warning1 = resultSet.getWarnings();
+    assertThat((Object) warning1).isNotNull();
+    assertThat(warning1.getMessage()).isEqualTo("message1");
+
+    QueryStatistics stats1 = resultSet.getQueryStatistics();
+    assertThat(stats1).isSameInstanceAs(statistics);
+
+    // Now, set a new mock Job
+    Job newJob = mock(Job.class);
+    JobStatus newJobStatus = mock(JobStatus.class);
+    BigQueryError newError = new BigQueryError("reason2", "location2", "message2");
+    doReturn(newJobStatus).when(newJob).getStatus();
+    doReturn(Arrays.asList(newError)).when(newJobStatus).getExecutionErrors();
+
+    QueryStatistics newStatistics = mock(QueryStatistics.class);
+    doReturn(newStatistics).when(newJob).getStatistics();
+
+    resultSet.setJob(newJob);
+
+    // Verify that the cached values are updated and not using the old ones!
+    SQLWarning warning2 = resultSet.getWarnings();
+    assertThat((Object) warning2).isNotNull();
+    assertThat(warning2.getMessage()).isEqualTo("message2");
+
+    QueryStatistics stats2 = resultSet.getQueryStatistics();
+    assertThat(stats2).isSameInstanceAs(newStatistics);
+  }
+
+  @Test
+  public void testGetWarningsWrapsBigQueryException() {
+    // Make sure we have a JobId set but no pre-cached Job, so getWarnings() tries to load it
+    resultSet.setJobId(JobId.of("project", "job"));
+    resultSet.setJob(null);
+
+    // Mock bigQuery.getJob(jobId) to throw a BigQueryException
+    doThrow(new BigQueryException(500, "Internal Server Error"))
+        .when(bigQuery)
+        .getJob(any(JobId.class));
+
+    // verify that getWarnings() wraps the BigQueryException into a SQLException
+    assertThrows(SQLException.class, () -> resultSet.getWarnings());
   }
 }

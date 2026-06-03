@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Job;
@@ -102,6 +103,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public void setJob(Job job) {
     this.job = job;
+    this.queryStatistics = null;
+    this.warnings = null;
+    this.warningsLoaded = false;
   }
 
   public Job getJob() {
@@ -760,23 +764,30 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
     Job activeJob = this.job;
     if (activeJob == null && jobId != null && bigQuery != null) {
-      this.job = bigQuery.getJob(jobId);
-      activeJob = this.job;
+      try {
+        this.job = bigQuery.getJob(jobId);
+        activeJob = this.job;
+      } catch (BigQueryException e) {
+        throw new BigQueryJdbcException("Failed to retrieve job for warnings", e);
+      }
     }
     if (activeJob != null
         && activeJob.getStatus() != null
         && activeJob.getStatus().getExecutionErrors() != null) {
       List<BigQueryError> errors = activeJob.getStatus().getExecutionErrors();
-      SQLWarning chain = null;
+      SQLWarning head = null;
+      SQLWarning tail = null;
       for (BigQueryError error : errors) {
         SQLWarning warning = new SQLWarning(error.getMessage(), error.getReason());
-        if (chain == null) {
-          chain = warning;
+        if (head == null) {
+          head = warning;
+          tail = warning;
         } else {
-          chain.setNextWarning(warning);
+          tail.setNextWarning(warning);
+          tail = warning;
         }
       }
-      this.warnings = chain;
+      this.warnings = head;
     }
     this.warningsLoaded = true;
     return warnings;
