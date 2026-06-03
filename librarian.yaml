@@ -16,8 +16,8 @@ version: v0.16.1-0.20260602193207-5917f20190fa
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: dae2a496666e372c1ebf56ceb54fe7f467a2c10e
-    sha256: 867490e3ce7818a2011475a888ce5d77c68cb7a13764f47d9aec8cf3038320e0
+    commit: 5481332007e57ad3d9cb81e83ff6bf9c449476b6
+    sha256: 57d732d5167385cf7111a523314f073bf5843d0b76e2adfa0c93a330138e03bd
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -412,6 +412,16 @@ libraries:
       product_documentation_override: https://cloud.google.com/automl/docs/
       rest_documentation: https://cloud.google.com/automl/docs/reference/rest
       rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
+  - name: backstory
+    version: 0.0.1-SNAPSHOT
+    java:
+      api_id_override: backstory.googleapis.com
+      api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+      released_version: 0.0.0
+      library_type_override: GAPIC_AUTO
+      name_pretty_override: Malachite Common Protos
+      product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: backupdr
     version: 0.52.0-SNAPSHOT
     apis:
