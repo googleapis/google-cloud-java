@@ -33,7 +33,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-developers-knowledge</artifactId>
+    <artifactId>google-cloud-developer-knowledge</artifactId>
   </dependency>
 </dependencies>
 ```
@@ -44,7 +44,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-developers-knowledge</artifactId>
+  <artifactId>google-cloud-developer-knowledge</artifactId>
   <version>0.0.0</version>
 </dependency>
 ```
@@ -52,13 +52,13 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-developers-knowledge:0.0.0'
+implementation 'com.google.cloud:google-cloud-developer-knowledge:0.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-developers-knowledge" % "0.0.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-developer-knowledge" % "0.0.0"
 ```
 
 ## Authentication
@@ -81,8 +81,8 @@ You will need to [enable billing][enable-billing] to use Google Developer Knowle
 
 ### Installation and setup
 
-You'll need to obtain the `google-developers-knowledge` library.  See the [Quickstart](#quickstart) section
-to add `google-developers-knowledge` as a dependency in your code.
+You'll need to obtain the `google-cloud-developer-knowledge` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-developer-knowledge` as a dependency in your code.
 
 ## About Developer Knowledge
 
@@ -178,10 +178,10 @@ Apache 2.0 - See [LICENSE][license] for more information.
 Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://developers.google.com/knowledge
-[javadocs]: https://cloud.google.com/java/docs/reference/google-developers-knowledge/latest/overview
+[javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-developers-knowledge.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-developers-knowledge/0.0.0
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-developer-knowledge.svg
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-developer-knowledge/0.0.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

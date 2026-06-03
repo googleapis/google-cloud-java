@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-developer-knowledge-bom</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
+  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -12,9 +12,9 @@
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
-  <name>Google Developer Knowledge API BOM</name>
+  <name>Google Developer Knowledge BOM</name>
   <description>
-    BOM for Developer Knowledge API
+    BOM for Developer Knowledge
   </description>
 
   <properties>
@@ -23,21 +23,23 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-developer-knowledge</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-developer-knowledge-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-developer-knowledge-v1:current} -->
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-developer-knowledge-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-developer-knowledge-v1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-developer-knowledge-v1:current} -->
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-developer-knowledge-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -1059,3 +1059,8 @@ google-cloud-developer-knowledge:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-developer-knowledge-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-backstory:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-developer-knowledge-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-developer-knowledge-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-developer-knowledge:0.0.0:0.1.0-SNAPSHOT
+google-cloud-developer-knowledge-bom:0.0.0:0.1.0-SNAPSHOT
+google-cloud-developer-knowledge-parent:0.0.0:0.1.0-SNAPSHOT
