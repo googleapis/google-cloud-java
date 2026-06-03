@@ -25,14 +25,21 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.lang.reflect.Field;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -55,9 +62,13 @@ public class BigQueryBaseResultSetTest {
 
     resultSet = mock(BigQueryBaseResultSet.class, CALLS_REAL_METHODS);
     try {
-      Field field = BigQueryBaseResultSet.class.getDeclaredField("bigQuery");
-      field.setAccessible(true);
-      field.set(resultSet, bigQuery);
+      Field bigQueryField = BigQueryBaseResultSet.class.getDeclaredField("bigQuery");
+      bigQueryField.setAccessible(true);
+      bigQueryField.set(resultSet, bigQuery);
+
+      Field fetchSizeField = BigQueryBaseResultSet.class.getDeclaredField("fetchSize");
+      fetchSizeField.setAccessible(true);
+      fetchSizeField.set(resultSet, -1);
     } catch (Exception e) {
       assertFalse(true);
     }
@@ -93,6 +104,13 @@ public class BigQueryBaseResultSetTest {
   @Test
   public void testGetQueryStatistics_no_client() {
     resultSet = mock(BigQueryBaseResultSet.class, CALLS_REAL_METHODS);
+    try {
+      Field fetchSizeField = BigQueryBaseResultSet.class.getDeclaredField("fetchSize");
+      fetchSizeField.setAccessible(true);
+      fetchSizeField.set(resultSet, -1);
+    } catch (Exception e) {
+      assertFalse(true);
+    }
     assertThat(resultSet.getQueryStatistics()).isNull();
   }
 
@@ -123,5 +141,118 @@ public class BigQueryBaseResultSetTest {
     BigQueryJdbcException e =
         assertThrows(BigQueryJdbcException.class, () -> resultSet.unwrap(java.sql.Statement.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
+  }
+
+  @Test
+  public void testGetFetchSizeDefaultWithoutStatement() throws SQLException {
+    assertThat(resultSet.getFetchSize()).isEqualTo(20000);
+  }
+
+  @Test
+  public void testGetFetchSizeWithStatement() throws SQLException, Exception {
+    BigQueryStatement statement = mock(BigQueryStatement.class);
+    doReturn(1000).when(statement).getFetchSize();
+
+    Field field = BigQueryBaseResultSet.class.getDeclaredField("statement");
+    field.setAccessible(true);
+    field.set(resultSet, statement);
+
+    assertThat(resultSet.getFetchSize()).isEqualTo(1000);
+  }
+
+  @Test
+  public void testSetAndGetFetchSize() throws SQLException {
+    resultSet.setFetchSize(5000);
+    assertThat(resultSet.getFetchSize()).isEqualTo(5000);
+  }
+
+  @Test
+  public void testSetFetchSizeNegativeThrows() {
+    assertThrows(SQLException.class, () -> resultSet.setFetchSize(-5));
+  }
+
+  @Test
+  public void testFetchDirection() throws SQLException {
+    assertThat(resultSet.getFetchDirection()).isEqualTo(ResultSet.FETCH_FORWARD);
+    resultSet.setFetchDirection(ResultSet.FETCH_FORWARD); // no-op
+
+    assertThrows(SQLException.class, () -> resultSet.setFetchDirection(ResultSet.FETCH_REVERSE));
+  }
+
+  @Test
+  public void testWarnings() throws SQLException, Exception {
+    // Set jobId on the resultSet
+    JobId jobId = JobId.of("my-job-id");
+    resultSet.setJobId(jobId);
+
+    // Mock JobStatus and BigQueryError warnings list
+    JobStatus jobStatus = mock(JobStatus.class);
+    BigQueryError error1 = new BigQueryError("reason1", "location1", "message1");
+    BigQueryError error2 = new BigQueryError("reason2", "location2", "message2");
+    doReturn(jobStatus).when(job).getStatus();
+    doReturn(Arrays.asList(error1, error2)).when(jobStatus).getExecutionErrors();
+
+    // First call should load warnings from mock Job
+    SQLWarning warning1 = resultSet.getWarnings();
+    assertThat((Object) warning1).isNotNull();
+    assertThat(warning1.getMessage()).isEqualTo("message1");
+    assertThat(warning1.getSQLState()).isEqualTo("reason1");
+
+    SQLWarning warning2 = warning1.getNextWarning();
+    assertThat((Object) warning2).isNotNull();
+    assertThat(warning2.getMessage()).isEqualTo("message2");
+    assertThat(warning2.getSQLState()).isEqualTo("reason2");
+
+    // Verify lazy caching (repeated calls do not query getJob again)
+    SQLWarning warning1Cached = resultSet.getWarnings();
+    assertSame(warning1, warning1Cached);
+
+    // Test clearWarnings
+    resultSet.clearWarnings();
+    assertThat((Object) resultSet.getWarnings()).isNull();
+  }
+
+  @Test
+  public void testClosedResultSetThrowsOnFetchAndWarnings() throws SQLException, Exception {
+    Field field = BigQueryBaseResultSet.class.getDeclaredField("isClosed");
+    field.setAccessible(true);
+    field.set(resultSet, true);
+
+    assertThrows(SQLException.class, () -> resultSet.getFetchDirection());
+    assertThrows(SQLException.class, () -> resultSet.setFetchDirection(ResultSet.FETCH_FORWARD));
+    assertThrows(SQLException.class, () -> resultSet.setFetchSize(100));
+    assertThrows(SQLException.class, () -> resultSet.getFetchSize());
+    assertThrows(SQLException.class, () -> resultSet.getWarnings());
+    assertThrows(SQLException.class, () -> resultSet.clearWarnings());
+  }
+
+  @Test
+  public void testWarningsWithPreCachedJob() throws SQLException {
+    resultSet.setJob(job);
+
+    JobStatus jobStatus = mock(JobStatus.class);
+    BigQueryError error = new BigQueryError("reason1", "location1", "message1");
+    doReturn(jobStatus).when(job).getStatus();
+    doReturn(Arrays.asList(error)).when(jobStatus).getExecutionErrors();
+
+    // Invoking getWarnings
+    SQLWarning warning = resultSet.getWarnings();
+    assertThat((Object) warning).isNotNull();
+    assertThat(warning.getMessage()).isEqualTo("message1");
+
+    // Verify that bigQuery.getJob() was never called since the Job was pre-cached!
+    verify(bigQuery, never()).getJob(any(JobId.class));
+  }
+
+  @Test
+  public void testQueryStatisticsWithPreCachedJob() {
+    resultSet.setJob(job);
+
+    // Invoking getQueryStatistics
+    QueryStatistics stats = resultSet.getQueryStatistics();
+    assertThat(stats).isSameInstanceAs(statistics);
+
+    // Verify that bigQuery.getJob() was never called since the Job was pre-cached!
+    verify(bigQuery, never()).getJob(any(JobId.class));
   }
 }

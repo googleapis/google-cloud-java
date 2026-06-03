@@ -614,7 +614,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               ? getStatementType(jobConfiguration)
               : ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
       SqlType queryType = getQueryType(jobConfiguration, statementType);
-      handleQueryResult(query, executeResult.tableResult, queryType);
+      handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
@@ -678,14 +678,22 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   void handleQueryResult(String query, TableResult results, SqlType queryType)
       throws SQLException, InterruptedException {
+    handleQueryResult(query, results, queryType, null);
+  }
+
+  void handleQueryResult(String query, TableResult results, SqlType queryType, Job job)
+      throws SQLException, InterruptedException {
     LOG.finer("++enter++");
     switch (queryType) {
       case SELECT:
         processQueryResponse(query, results);
+        if (this.currentResultSet instanceof BigQueryBaseResultSet) {
+          ((BigQueryBaseResultSet) this.currentResultSet).setJob(job);
+        }
         break;
       case DML:
       case DML_EXTRA:
-        QueryStatistics dmlStats = getQueryStatisticsFromJob(results);
+        QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
         Long dmlRowCount =
             (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
                 ? dmlStats.getNumDmlAffectedRows()
@@ -717,13 +725,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           StatementType statementType =
               ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
           SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-          handleQueryResult(query, currentJob.getQueryResults(), sqlType);
+          handleQueryResult(query, currentJob.getQueryResults(), sqlType, currentJob);
         } catch (NullPointerException ex) {
           throw new BigQueryJdbcException(ex);
         }
         break;
       case EXPORT:
-        QueryStatistics exportStats = getQueryStatisticsFromJob(results);
+        QueryStatistics exportStats = getQueryStatisticsFromJob(results, job);
         Long exportRowCount = 0L;
         if (exportStats != null) {
           QueryStatistics.ExportDataStats dataStats = exportStats.getExportDataStats();
@@ -745,10 +753,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private QueryStatistics getQueryStatisticsFromJob(TableResult results) throws SQLException {
+  private QueryStatistics getQueryStatisticsFromJob(TableResult results, Job job)
+      throws SQLException {
     try {
-      Job job = this.bigQuery.getJob(results.getJobId());
-      Job completedJob = (job != null) ? job.waitFor() : null;
+      Job activeJob = job;
+      if (activeJob == null) {
+        activeJob = this.bigQuery.getJob(results.getJobId());
+      }
+      Job completedJob = (activeJob != null) ? activeJob.waitFor() : null;
       JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
       if (stats instanceof QueryStatistics) {
         return (QueryStatistics) stats;
@@ -794,7 +806,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return readSession.getArrowSchema();
   }
 
-  /** Uses Bigquery Storage Read API and returns the stream as ResultSet */
   @InternalApi
   ResultSet processArrowResultSet(TableResult results) throws SQLException {
     LOG.finer("++enter++");
@@ -844,6 +855,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
       arrowResultSet.setJobId(currentJobId);
+      arrowResultSet.setQueryId(results.getQueryId());
       return arrowResultSet;
 
     } catch (Exception ex) {
@@ -1561,7 +1573,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         StatementType statementType =
             ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
         SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType);
+        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType, currentJob);
 
         return sqlType == SqlType.SELECT;
       } else {

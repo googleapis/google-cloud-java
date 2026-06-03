@@ -8,3 +8,6 @@ tools/**/*.class
 tools/**/drivers/**
 tools/**/logs/**
 tools/**/*.jfr
+
+# Gemini/Jetski agent custom skills
+.agents/
