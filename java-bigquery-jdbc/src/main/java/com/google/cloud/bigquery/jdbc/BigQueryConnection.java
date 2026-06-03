@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -39,7 +42,6 @@ import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
-import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -49,7 +51,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Field;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -83,6 +84,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
+  private static final String BIGQUERY_SERVICE_NAME = "bigquery";
+  private static final long MAX_PROJECTS_PER_PAGE = 10000L;
+  private static final String PROJECT_LIST_FIELDS =
+      "projects/projectReference/projectId,nextPageToken";
   private static final Set<String> SAFE_TO_LOG_PROPERTIES =
       ImmutableSortedSet.orderedBy(String.CASE_INSENSITIVE_ORDER)
           .add(
@@ -1242,15 +1247,26 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     try {
       BigQueryOptions options = (BigQueryOptions) getBigQuery().getOptions();
-      BigQueryRpc rpc = (BigQueryRpc) options.getRpc();
-      Field bqField = rpc.getClass().getDeclaredField("bigquery");
-      bqField.setAccessible(true);
-      Bigquery lowLevelBq = (Bigquery) bqField.get(rpc);
+      HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
+      HttpTransport transport = transportOptions.getHttpTransportFactory().create();
+      HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
+      Bigquery lowLevelBq =
+          new Bigquery.Builder(transport, new GsonFactory(), initializer)
+              .setRootUrl(options.getResolvedApiaryHost(BIGQUERY_SERVICE_NAME))
+              .setApplicationName(DEFAULT_JDBC_TOKEN_VALUE)
+              .build();
 
       List<String> projects = new ArrayList<>();
       String pageToken = null;
       do {
-        ProjectList projectList = lowLevelBq.projects().list().setPageToken(pageToken).execute();
+        ProjectList projectList =
+            lowLevelBq
+                .projects()
+                .list()
+                .setPageToken(pageToken)
+                .setMaxResults(MAX_PROJECTS_PER_PAGE)
+                .setFields(PROJECT_LIST_FIELDS)
+                .execute();
         if (projectList.getProjects() != null) {
           for (Projects p : projectList.getProjects()) {
             projects.add(p.getProjectReference().getProjectId());

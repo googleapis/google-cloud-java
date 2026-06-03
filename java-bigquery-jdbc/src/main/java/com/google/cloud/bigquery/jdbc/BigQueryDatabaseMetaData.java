@@ -3653,13 +3653,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
 
           ExecutorService apiExecutor = null;
+          final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
           try {
             apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
-            List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
             for (String currentProjectToScan : projectsToScanList) {
-              if (Thread.currentThread().isInterrupted()) {
-                break;
-              }
+              checkInterrupted(apiFutures);
               Callable<List<Dataset>> apiCallable =
                   () ->
                       findMatchingBigQueryObjects(
@@ -3678,21 +3676,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             apiExecutor.shutdown();
 
             for (Future<List<Dataset>> apiFuture : apiFutures) {
-              if (Thread.currentThread().isInterrupted()) {
-                break;
-              }
+              checkInterrupted(apiFutures);
               try {
                 List<Dataset> datasetsInProject = apiFuture.get();
                 if (datasetsInProject != null) {
                   for (Dataset dataset : datasetsInProject) {
-                    if (Thread.currentThread().isInterrupted()) break;
                     processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
                   }
                 }
               } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                LOG.warning("Fetcher thread interrupted while waiting for API future result.");
-                break;
+                checkInterrupted(apiFutures);
               } catch (ExecutionException e) {
                 LOG.warning("Error executing findMatchingDatasets task: " + e.getMessage());
               } catch (CancellationException e) {
@@ -3700,18 +3694,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               }
             }
 
-            if (!Thread.currentThread().isInterrupted()) {
-              Comparator<FieldValueList> comparator =
-                  defineGetSchemasComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getSchemas", LOG);
-            }
+            checkInterrupted(apiFutures);
+            Comparator<FieldValueList> comparator =
+                defineGetSchemasComparator(localResultSchemaFields);
+            sortResults(collectedResults, comparator, "getSchemas", LOG);
+            populateQueue(collectedResults, queue, localResultSchemaFields);
 
-            if (!Thread.currentThread().isInterrupted()) {
-              populateQueue(collectedResults, queue, localResultSchemaFields);
-            }
-
+          } catch (CancellationException e) {
+            LOG.warning("Schema fetcher task was cancelled/interrupted.");
           } catch (Throwable t) {
             LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
+            apiFutures.forEach(f -> f.cancel(true));
           } finally {
             shutdownExecutor(apiExecutor);
             signalEndOfData(queue, localResultSchemaFields);
@@ -5152,6 +5145,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.warning("Interrupted while sending end signal to queue.");
     } catch (Exception e) {
       LOG.severe("Exception while sending end signal to queue: " + e.getMessage());
+    }
+  }
+
+  private void checkInterrupted(List<? extends Future<?>> futures) {
+    if (Thread.currentThread().isInterrupted()) {
+      futures.forEach(f -> f.cancel(true));
+      throw new CancellationException("Fetcher thread was interrupted.");
     }
   }
 
