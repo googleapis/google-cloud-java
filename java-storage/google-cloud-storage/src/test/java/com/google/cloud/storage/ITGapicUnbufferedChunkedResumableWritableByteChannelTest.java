@@ -718,7 +718,10 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
             .build();
 
     ImmutableMap<List<WriteObjectRequest>, WriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1, ImmutableList.of(req2), resp2);
+        ImmutableMap.of(
+            ImmutableList.of(req1), resp1,
+            ImmutableList.of(req2), resp2,
+            ImmutableList.of(req1, req2), resp2);
     DirectWriteService service1 = new DirectWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);
@@ -775,7 +778,10 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
             .build();
 
     ImmutableMap<List<WriteObjectRequest>, WriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1, ImmutableList.of(req2), resp2);
+        ImmutableMap.of(
+            ImmutableList.of(req1), resp1,
+            ImmutableList.of(req2), resp2,
+            ImmutableList.of(req1, req2), resp2);
     DirectWriteService service1 = new DirectWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);

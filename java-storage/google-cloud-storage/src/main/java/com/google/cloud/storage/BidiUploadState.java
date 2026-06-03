@@ -726,6 +726,9 @@ abstract class BidiUploadState {
     final void sendVia(Consumer<BidiWriteObjectRequest> consumer) {
       lock.lock();
       try {
+        if (state == State.TERMINAL_SUCCESS || state == State.TERMINAL_ERROR) {
+          return;
+        }
         validateCurrentStateIsOneOf(
             State.INITIALIZING, State.RUNNING, State.RETRYING, State.TAKEOVER);
         BidiWriteObjectRequest prev = null;

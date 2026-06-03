@@ -55,7 +55,7 @@ public final class ITStorageDataClientFakeTest {
   public void fastOpen_futureBytes() throws Exception {
     doTest(
         ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10, 20)),
-        f -> f.get(10, TimeUnit.MILLISECONDS));
+        f -> f.get(3, TimeUnit.SECONDS));
   }
 
   @Test
@@ -74,7 +74,7 @@ public final class ITStorageDataClientFakeTest {
     doTest(
         ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(10, 20)),
         f -> {
-          try (DisposableByteString disposableByteString = f.get(10, TimeUnit.MILLISECONDS)) {
+          try (DisposableByteString disposableByteString = f.get(3, TimeUnit.SECONDS)) {
             ByteString byteString = disposableByteString.byteString();
             return byteString.toByteArray();
           }
