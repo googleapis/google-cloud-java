@@ -12,6 +12,8 @@ Before creating this issue, please run down the following list and make sure you
 
   - Search the issues already opened: https://github.com/googleapis/google-cloud-java/issues
   - Check for answers on StackOverflow: http://stackoverflow.com/questions/tagged/google-cloud-platform
+  - Refer to the [Google Cloud Java Getting Started guides](https://docs.cloud.google.com/java/getting-started) for common usage patterns and troubleshooting.
+  - Verify you are using the latest versions of the Java SDK. If not, is it possible to upgrade? We recommend using the [Libraries-Bom](https://cloud.google.com/java/docs/bom) to manage dependency versions.
 
 To help expedite the resolution of the issue, please fill out as much information as possible. If unable to provide information, please note down why the information is unable to be provided.
 
@@ -32,9 +34,9 @@ Provide the relevant details about your environment:
   - Java Version and JDK Vendor:
   - (If using GraalVM) GraalVM Version:
 
-If deployed on GCP, provide the relevant details about your GCP deployment environment:
+If deployed on GCP, provide the relevant details about your GCP deployment environment (Optional):
 
-  - Project ID (Optional):
+  - Project ID:
   - Cloud Services:
   - Deployment Environment (Compute, GKE, Run, etc):
 
@@ -63,11 +65,6 @@ maven-dependency-plugin:tree
     - Any other relevant Java SDK dependencies:
       - Google-Http-Java-Client ([com.google.http-client:google-http-client](https://central.sonatype.com/artifact/com.google.http-client/google-http-client)):
     - Any Java Frameworks being used:
-      - If using Spring Cloud GCP ([com.google.cloud:spring-cloud-gcp](https://central.sonatype.com/artifact/com.google.cloud:spring-cloud-gcp)), version of Spring Cloud GCP and associated ‘starter’ dependencies
-
-Are you using the latest versions of the Java SDK? If not, is it possible to upgrade to use the latest versions?
-
-- Recommendation is to use [Libraries-Bom](https://cloud.google.com/java/docs/bom) to manage dependencies
 
 ## Reproducer
 
