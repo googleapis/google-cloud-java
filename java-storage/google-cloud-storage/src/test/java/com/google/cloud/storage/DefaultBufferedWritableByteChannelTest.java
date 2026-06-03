@@ -556,7 +556,6 @@ public final class DefaultBufferedWritableByteChannelTest {
     ChecksummedTestContent all = ChecksummedTestContent.gen(11);
     IllegalStateException ise =
         assertThrows(IllegalStateException.class, () -> c.write(all.slice(0, 4).asByteBuffer()));
-    ise.printStackTrace(System.out);
   }
 
   @Example
@@ -568,7 +567,6 @@ public final class DefaultBufferedWritableByteChannelTest {
     ChecksummedTestContent all = ChecksummedTestContent.gen(11);
     IllegalStateException ise =
         assertThrows(IllegalStateException.class, () -> c.write(all.slice(0, 5).asByteBuffer()));
-    ise.printStackTrace(System.out);
   }
 
   @Example
@@ -587,7 +585,6 @@ public final class DefaultBufferedWritableByteChannelTest {
               c.write(all.slice(3, 3).asByteBuffer());
               fail("should have errored in previous write call");
             });
-    ise.printStackTrace(System.out);
   }
 
   @Example

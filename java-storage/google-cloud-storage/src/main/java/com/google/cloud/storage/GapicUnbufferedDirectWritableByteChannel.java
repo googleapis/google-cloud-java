@@ -134,6 +134,10 @@ final class GapicUnbufferedDirectWritableByteChannel implements UnbufferedWritab
 
   @Override
   public void close() throws IOException {
+    if (!open) {
+      return;
+    }
+    open = false;
     ApiStreamObserver<WriteObjectRequest> openedStream = openedStream();
     if (!finished) {
       WriteObjectRequest message = finishMessage();
@@ -154,7 +158,6 @@ final class GapicUnbufferedDirectWritableByteChannel implements UnbufferedWritab
         throw e;
       }
     }
-    open = false;
     responseObserver.await();
   }
 

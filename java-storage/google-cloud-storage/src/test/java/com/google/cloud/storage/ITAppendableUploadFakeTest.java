@@ -271,10 +271,10 @@ public class ITAppendableUploadFakeTest {
           assertThrows(
               IOException.class,
               () -> {
-                AppendableUploadWriteableByteChannel channel = b.open();
-                ByteBuffer wrap = ByteBuffer.wrap(content.getBytes());
-                Buffers.emptyTo(wrap, channel);
-                channel.close();
+                try (AppendableUploadWriteableByteChannel channel = b.open()) {
+                  ByteBuffer wrap = ByteBuffer.wrap(content.getBytes());
+                  Buffers.emptyTo(wrap, channel);
+                }
               });
 
       assertAll(
@@ -466,7 +466,7 @@ public class ITAppendableUploadFakeTest {
         GrpcStorageImpl storage =
             (GrpcStorageImpl) fakeServer.getGrpcStorageOptions().toBuilder().build().getService()) {
       SettableApiFuture<BidiWriteObjectResponse> done = SettableApiFuture.create();
-      BidiAppendableUnbufferedWritableByteChannel channel =
+      try (BidiAppendableUnbufferedWritableByteChannel channel =
           new BidiAppendableUnbufferedWritableByteChannel(
               new BidiUploadStreamingStream(
                   BidiUploadState.appendableNew(
@@ -490,11 +490,11 @@ public class ITAppendableUploadFakeTest {
                   storage.storageDataClient.retryContextProvider.create()),
               smallSegmenter,
               3,
-              0);
-      ChecksummedTestContent content = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 0, 10);
-      StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
-      channel.nextWriteShouldFinalize();
-      channel.close();
+              0)) {
+        ChecksummedTestContent content = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 0, 10);
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
+        channel.nextWriteShouldFinalize();
+      }
       assertThat(done.get(777, TimeUnit.MILLISECONDS).getResource().getSize()).isEqualTo(10);
 
       assertThat(map.get(req1)).isEqualTo(1);
@@ -616,7 +616,7 @@ public class ITAppendableUploadFakeTest {
         GrpcStorageImpl storage =
             (GrpcStorageImpl) fakeServer.getGrpcStorageOptions().toBuilder().build().getService()) {
       SettableApiFuture<BidiWriteObjectResponse> done = SettableApiFuture.create();
-      BidiAppendableUnbufferedWritableByteChannel channel =
+      try (BidiAppendableUnbufferedWritableByteChannel channel =
           new BidiAppendableUnbufferedWritableByteChannel(
               new BidiUploadStreamingStream(
                   BidiUploadState.appendableNew(
@@ -640,13 +640,13 @@ public class ITAppendableUploadFakeTest {
                   storage.storageDataClient.retryContextProvider.create()),
               smallSegmenter,
               3,
-              0);
-      ChecksummedTestContent content1 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 0, 10);
-      ChecksummedTestContent content2 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 10);
-      StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content1.getBytes()), channel);
-      StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content2.getBytes()), channel);
-      channel.nextWriteShouldFinalize();
-      channel.close();
+              0)) {
+        ChecksummedTestContent content1 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 0, 10);
+        ChecksummedTestContent content2 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 10);
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content1.getBytes()), channel);
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content2.getBytes()), channel);
+        channel.nextWriteShouldFinalize();
+      }
       assertThat(done.get(777, TimeUnit.MILLISECONDS).getResource().getSize()).isEqualTo(20);
 
       assertThat(map.get(reconnect)).isEqualTo(1);
@@ -792,12 +792,12 @@ public class ITAppendableUploadFakeTest {
               storage.storageClient.bidiWriteObjectCallable(),
               3,
               storage.storageDataClient.retryContextProvider.create());
-      BidiAppendableUnbufferedWritableByteChannel channel =
-          new BidiAppendableUnbufferedWritableByteChannel(stream, smallSegmenter, 3, 0);
       ChecksummedTestContent content = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 0, 10);
-      StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
-      channel.nextWriteShouldFinalize();
-      channel.close();
+      try (BidiAppendableUnbufferedWritableByteChannel channel =
+          new BidiAppendableUnbufferedWritableByteChannel(stream, smallSegmenter, 3, 0)) {
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
+        channel.nextWriteShouldFinalize();
+      }
       assertThat(stream.getResultFuture().get(777, TimeUnit.MILLISECONDS).getResource().getSize())
           .isEqualTo(10);
 
@@ -1116,11 +1116,11 @@ public class ITAppendableUploadFakeTest {
               storage.storageClient.bidiWriteObjectCallable(),
               3,
               storage.storageDataClient.retryContextProvider.create());
-      BidiAppendableUnbufferedWritableByteChannel channel =
-          new BidiAppendableUnbufferedWritableByteChannel(stream, smallSegmenter, 32, 0);
-      StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
-      channel.nextWriteShouldFinalize();
-      channel.close();
+      try (BidiAppendableUnbufferedWritableByteChannel channel =
+          new BidiAppendableUnbufferedWritableByteChannel(stream, smallSegmenter, 32, 0)) {
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(content.getBytes()), channel);
+        channel.nextWriteShouldFinalize();
+      }
       BidiWriteObjectResponse response = stream.getResultFuture().get(777, TimeUnit.MILLISECONDS);
       assertThat(response.getResource().getSize()).isEqualTo(10);
       assertThat(response.getResource().getChecksums().getCrc32C()).isEqualTo(content.getCrc32c());

@@ -117,17 +117,16 @@ public final class ITGapicUnbufferedDirectWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_512KiB);
       writeCtx.getConfirmedBytes().set(0);
 
-      //noinspection resource
-      GapicUnbufferedDirectWritableByteChannel channel =
+      try (GapicUnbufferedDirectWritableByteChannel channel =
           new GapicUnbufferedDirectWritableByteChannel(
-              done, CHUNK_SEGMENTER, storageClient.writeObjectCallable(), writeCtx);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
-          () -> assertThat(channel.isOpen()).isFalse());
+              done, CHUNK_SEGMENTER, storageClient.writeObjectCallable(), writeCtx)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -160,17 +159,16 @@ public final class ITGapicUnbufferedDirectWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_512KiB);
       writeCtx.getConfirmedBytes().set(0);
 
-      //noinspection resource
-      GapicUnbufferedDirectWritableByteChannel channel =
+      try (GapicUnbufferedDirectWritableByteChannel channel =
           new GapicUnbufferedDirectWritableByteChannel(
-              done, CHUNK_SEGMENTER, storageClient.writeObjectCallable(), writeCtx);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
-          () -> assertThat(channel.isOpen()).isFalse());
+              done, CHUNK_SEGMENTER, storageClient.writeObjectCallable(), writeCtx)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 }

@@ -319,14 +319,14 @@ public final class ITGapicUnbufferedReadableByteChannelTest {
                       retrier,
                       retryOnly(DataLossException.class)));
       byte[] actualBytes = new byte[41];
-      //noinspection resource
-      UnbufferedReadableByteChannel c = session.open();
-      ByteBuffer buf = ByteBuffer.wrap(actualBytes);
-      int read1 = c.read(buf);
-      assertThat(read1).isAtLeast(1);
-      int read2 = c.read(buf);
-      assertThat(read2).isEqualTo(-1);
-      assertThrows(ClosedChannelException.class, () -> c.read(buf));
+      try (UnbufferedReadableByteChannel c = session.open()) {
+        ByteBuffer buf = ByteBuffer.wrap(actualBytes);
+        int read1 = c.read(buf);
+        assertThat(read1).isAtLeast(1);
+        int read2 = c.read(buf);
+        assertThat(read2).isEqualTo(-1);
+        assertThrows(ClosedChannelException.class, () -> c.read(buf));
+      }
     }
   }
 

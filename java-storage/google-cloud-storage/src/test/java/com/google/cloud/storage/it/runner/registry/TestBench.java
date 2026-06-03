@@ -383,21 +383,16 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   private void dumpServerLogs(Path outFile, Path errFile) throws IOException {
+    LOGGER.warn("TestBench container failed or timeout occurred. Server stdout: {}, stderr: {}",
+        outFile.toAbsolutePath(), errFile.toAbsolutePath());
     try {
-      LOGGER.warn("Dumping contents of stdout");
-      dumpServerLog("stdout", outFile.toFile());
-    } finally {
-      LOGGER.warn("Dumping contents of stderr");
-      dumpServerLog("stderr", errFile.toFile());
-    }
-  }
-
-  private void dumpServerLog(String prefix, File out) throws IOException {
-    try (BufferedReader reader = new BufferedReader(new FileReader(out))) {
-      String line;
-      while ((line = reader.readLine()) != null) {
-        LOGGER.warn("<{}> {}", prefix, line);
-      }
+      Path targetLogsDir = java.nio.file.Paths.get("target/testbench-logs");
+      java.nio.file.Files.createDirectories(targetLogsDir);
+      java.nio.file.Files.copy(outFile, targetLogsDir.resolve(outFile.getFileName()), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      java.nio.file.Files.copy(errFile, targetLogsDir.resolve(errFile.getFileName()), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+      LOGGER.warn("Copied Testbench logs to target directory: {}", targetLogsDir.toAbsolutePath());
+    } catch (Exception e) {
+      // ignore failures to copy
     }
   }
 

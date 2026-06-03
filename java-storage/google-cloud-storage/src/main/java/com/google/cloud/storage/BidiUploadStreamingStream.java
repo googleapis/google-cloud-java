@@ -209,6 +209,11 @@ final class BidiUploadStreamingStream {
       if (tmp != null) {
         tmp.closeSend();
       }
+      if (pendingReconciliation != null) {
+        pendingReconciliation.cancel(true);
+        pendingReconciliation = null;
+      }
+      retryContext.reset();
     } finally {
       lock.unlock();
     }

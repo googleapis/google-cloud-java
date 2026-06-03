@@ -251,6 +251,12 @@ final class GapicBidiUnbufferedWritableByteChannel implements UnbufferedWritable
             responseObserver.await();
             return null;
           } catch (Throwable t) {
+            if (stream != null) {
+              try {
+                stream.onError(io.grpc.Status.CANCELLED.withCause(t).asRuntimeException());
+              } catch (Exception ignored) {
+              }
+            }
             stream = null;
             first = true;
             t.addSuppressed(new AsyncStorageTaskException());

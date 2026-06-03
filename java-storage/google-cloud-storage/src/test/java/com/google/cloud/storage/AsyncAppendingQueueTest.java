@@ -106,17 +106,18 @@ public final class AsyncAppendingQueueTest {
   @Test
   public void closingWithoutAppending_throwNoSuchElementException() {
     Executor exec = MoreExecutors.newDirectExecutorService();
-    //noinspection resource
-    AsyncAppendingQueue<String> q = AsyncAppendingQueue.of(exec, 3, AsyncAppendingQueueTest::agg);
+    try (AsyncAppendingQueue<String> q =
+        AsyncAppendingQueue.of(exec, 3, AsyncAppendingQueueTest::agg)) {
+      ApiFuture<String> result = q.getResult();
+      NoSuchElementException nse1 = assertThrows(NoSuchElementException.class, q::close);
+      NoSuchElementException nse2 =
+          assertThrows(
+              NoSuchElementException.class,
+              () -> ApiExceptions.callAndTranslateApiException(result));
 
-    ApiFuture<String> result = q.getResult();
-    NoSuchElementException nse1 = assertThrows(NoSuchElementException.class, q::close);
-    NoSuchElementException nse2 =
-        assertThrows(
-            NoSuchElementException.class, () -> ApiExceptions.callAndTranslateApiException(result));
-
-    assertThat(nse1).hasMessageThat().contains("Never appended to");
-    assertThat(nse2).hasMessageThat().contains("Never appended to");
+      assertThat(nse1).hasMessageThat().contains("Never appended to");
+      assertThat(nse2).hasMessageThat().contains("Never appended to");
+    }
   }
 
   @SuppressWarnings("resource")

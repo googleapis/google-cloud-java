@@ -435,8 +435,7 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
   @Test
   public void creatingAnEmptyObjectWhichFailsIsSetAsResultFailureAndThrowFromClose()
       throws Exception {
-    //noinspection resource
-    ParallelCompositeUploadWritableByteChannel pcu =
+    try (ParallelCompositeUploadWritableByteChannel pcu =
         new ParallelCompositeUploadWritableByteChannel(
             bufferHandlePool,
             MoreExecutors.directExecutor(),
@@ -455,22 +454,22 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
               }
             },
             info,
-            opts);
-    StorageException se1 = assertThrows(StorageException.class, pcu::close);
-    StorageException se2 =
-        assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
+            opts)) {
+      StorageException se1 = assertThrows(StorageException.class, pcu::close);
+      StorageException se2 =
+          assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
 
-    assertAll(
-        () -> assertThat(se1).hasMessageThat().isEqualTo("Error: PERMISSION_DENIED"),
-        () -> assertThat(se2).hasMessageThat().isEqualTo("Error: PERMISSION_DENIED"),
-        () -> assertThat(se1.getCode()).isEqualTo(403),
-        () -> assertThat(se2.getCode()).isEqualTo(403));
+      assertAll(
+          () -> assertThat(se1).hasMessageThat().isEqualTo("Error: PERMISSION_DENIED"),
+          () -> assertThat(se2).hasMessageThat().isEqualTo("Error: PERMISSION_DENIED"),
+          () -> assertThat(se1.getCode()).isEqualTo(403),
+          () -> assertThat(se2.getCode()).isEqualTo(403));
+    }
   }
 
   @Test
   public void badServerCrc32cResultsInException() throws Exception {
-    //noinspection resource
-    ParallelCompositeUploadWritableByteChannel pcu =
+    try (ParallelCompositeUploadWritableByteChannel pcu =
         new ParallelCompositeUploadWritableByteChannel(
             bufferHandlePool,
             MoreExecutors.directExecutor(),
@@ -488,18 +487,19 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
               }
             },
             info,
-            opts);
-    pcu.write(DataGenerator.base64Characters().genByteBuffer(3));
+            opts)) {
+      pcu.write(DataGenerator.base64Characters().genByteBuffer(3));
 
-    AsynchronousCloseException se1 = assertThrows(AsynchronousCloseException.class, pcu::close);
-    StorageException se2 =
-        assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
+      AsynchronousCloseException se1 = assertThrows(AsynchronousCloseException.class, pcu::close);
+      StorageException se2 =
+          assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
 
-    assertAll(
-        () -> assertThat(se1).hasCauseThat().isInstanceOf(StorageException.class),
-        () -> assertThat(se1).hasCauseThat().hasMessageThat().contains("Checksum mismatch"),
-        () -> assertThat(se2).hasMessageThat().contains("Checksum mismatch"),
-        () -> assertThat(se2.getCode()).isEqualTo(400));
+      assertAll(
+          () -> assertThat(se1).hasCauseThat().isInstanceOf(StorageException.class),
+          () -> assertThat(se1).hasCauseThat().hasMessageThat().contains("Checksum mismatch"),
+          () -> assertThat(se2).hasMessageThat().contains("Checksum mismatch"),
+          () -> assertThat(se2.getCode()).isEqualTo(400));
+    }
   }
 
   @Test
@@ -656,8 +656,7 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
 
   @Test
   public void errorContextIsPopulated() throws Exception {
-    //noinspection resource
-    ParallelCompositeUploadWritableByteChannel pcu =
+    try (ParallelCompositeUploadWritableByteChannel pcu =
         new ParallelCompositeUploadWritableByteChannel(
             bufferHandlePool,
             MoreExecutors.directExecutor(),
@@ -675,31 +674,32 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
               }
             },
             info,
-            opts);
-    pcu.write(DataGenerator.base64Characters().genByteBuffer(3));
+            opts)) {
+      pcu.write(DataGenerator.base64Characters().genByteBuffer(3));
 
-    AsynchronousCloseException se1 = assertThrows(AsynchronousCloseException.class, pcu::close);
-    StorageException se2 =
-        assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
+      AsynchronousCloseException se1 = assertThrows(AsynchronousCloseException.class, pcu::close);
+      StorageException se2 =
+          assertThrows(StorageException.class, () -> ApiFutureUtils.await(finalObject));
 
-    String name = info.getName();
-    // parts 1-4
-    BlobId p1 = id(partNamingStrategy.fmtName(name, PartRange.of(1)), 1L);
-    // ultimate object
-    BlobId expectedId = id(name, 2L);
+      String name = info.getName();
+      // parts 1-4
+      BlobId p1 = id(partNamingStrategy.fmtName(name, PartRange.of(1)), 1L);
+      // ultimate object
+      BlobId expectedId = id(name, 2L);
 
-    assertAll(
-        () -> assertThat(se1).hasCauseThat().isInstanceOf(StorageException.class),
-        () -> assertThat(se1).hasCauseThat().hasMessageThat().contains("Checksum mismatch"),
-        () -> assertThat(se2).hasMessageThat().contains("Checksum mismatch"),
-        () -> {
-          assertThat(se2).hasCauseThat().isInstanceOf(ParallelCompositeUploadException.class);
-          ParallelCompositeUploadException pcue = (ParallelCompositeUploadException) se2.getCause();
-          // since we fail client side with a checksum validation, we expect the object to have been
-          // created
-          assertThat(pcue.getCreatedObjects().get()).containsExactly(p1, expectedId);
-        },
-        () -> assertThat(se2.getCode()).isEqualTo(400));
+      assertAll(
+          () -> assertThat(se1).hasCauseThat().isInstanceOf(StorageException.class),
+          () -> assertThat(se1).hasCauseThat().hasMessageThat().contains("Checksum mismatch"),
+          () -> assertThat(se2).hasMessageThat().contains("Checksum mismatch"),
+          () -> {
+            assertThat(se2).hasCauseThat().isInstanceOf(ParallelCompositeUploadException.class);
+            ParallelCompositeUploadException pcue = (ParallelCompositeUploadException) se2.getCause();
+            // since we fail client side with a checksum validation, we expect the object to have been
+            // created
+            assertThat(pcue.getCreatedObjects().get()).containsExactly(p1, expectedId);
+          },
+          () -> assertThat(se2.getCode()).isEqualTo(400));
+    }
   }
 
   @Test

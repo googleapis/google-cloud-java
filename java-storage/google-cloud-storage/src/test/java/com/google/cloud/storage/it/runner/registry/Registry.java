@@ -74,7 +74,15 @@ public final class Registry extends RunListener {
               new ThreadFactoryBuilder().setDaemon(true).setNameFormat("test-run-%d").build()));
 
   private final TestRunScopedInstance<TestBench> testBench =
-      TestRunScopedInstance.of("fixture/TEST_BENCH", () -> TestBench.newBuilder().build());
+      TestRunScopedInstance.of("fixture/TEST_BENCH", () -> {
+        int httpPort = findFreePort();
+        int grpcPort = findFreePort();
+        return TestBench.newBuilder()
+            .setBaseUri("http://localhost:" + httpPort)
+            .setGRPCBaseUri("http://localhost:" + grpcPort)
+            .setContainerName("fork-" + httpPort)
+            .build();
+      });
 
   private final TestRunScopedInstance<Generator> generator =
       TestRunScopedInstance.of("fixture/GENERATOR", Generator::new);
@@ -324,5 +332,14 @@ public final class Registry extends RunListener {
                 return false;
               }
             });
+  }
+
+  private static int findFreePort() {
+    try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+      socket.setReuseAddress(true);
+      return socket.getLocalPort();
+    } catch (java.io.IOException e) {
+      throw new RuntimeException("Failed to allocate a free port", e);
+    }
   }
 }

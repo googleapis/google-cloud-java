@@ -51,12 +51,17 @@ import java.net.URI;
 import java.time.Duration;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 final class FakeHttpServer implements AutoCloseable {
+  private static final Logger LOGGER = LoggerFactory.getLogger(FakeHttpServer.class);
 
   private final URI endpoint;
   private final Channel channel;
   private final Runnable shutdown;
   private final HttpStorageOptions httpStorageOptions;
+
 
   private FakeHttpServer(
       URI endpoint, Channel channel, Runnable shutdown, HttpStorageOptions httpStorageOptions) {
@@ -195,7 +200,7 @@ final class FakeHttpServer implements AutoCloseable {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-      cause.printStackTrace();
+      LOGGER.warn("Exception caught in pipeline", cause);
       ctx.close();
     }
   }

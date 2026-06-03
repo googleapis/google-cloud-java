@@ -119,23 +119,22 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
 
       WriteCtx<ResumableWrite> writeCtx = WriteCtx.of(resumableWrite, HASHER);
       SettableApiFuture<WriteObjectResponse> done = SettableApiFuture.create();
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      ByteBuffer bb = DataGenerator.base64Characters().genByteBuffer(_256KiB);
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      ByteBuffer bb = DataGenerator.base64Characters().genByteBuffer(_256KiB);
-      StorageException se = assertThrows(StorageException.class, () -> channel.write(bb));
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("invalid"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, () -> channel.write(bb));
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("invalid"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -201,22 +200,21 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_256KiB);
       writeCtx.getConfirmedBytes().set(_256KiB);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("invalid"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("invalid"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -282,22 +280,21 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_512KiB);
       writeCtx.getConfirmedBytes().set(_512KiB);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -447,22 +444,21 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_512KiB);
       writeCtx.getConfirmedBytes().set(_512KiB);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -531,22 +527,21 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_512KiB);
       writeCtx.getConfirmedBytes().set(_512KiB);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      StorageException se = assertThrows(StorageException.class, channel::close);
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, channel::close);
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_512KiB),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -621,23 +616,22 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       writeCtx.getTotalSentBytes().set(_256KiB);
       writeCtx.getConfirmedBytes().set(_256KiB);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      ByteBuffer bb = DataGenerator.base64Characters().genByteBuffer(_256KiB);
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      ByteBuffer bb = DataGenerator.base64Characters().genByteBuffer(_256KiB);
-      StorageException se = assertThrows(StorageException.class, () -> channel.write(bb));
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, () -> channel.write(bb));
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
@@ -680,40 +674,51 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       ResumableWrite resumableWrite = getResumableWrite(uploadId);
       WriteCtx<ResumableWrite> writeCtx = WriteCtx.of(resumableWrite, HASHER);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_256KiB);
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_256KiB);
-      StorageException se = assertThrows(StorageException.class, () -> channel.write(buf));
-      assertAll(
-          () -> assertThat(se.getCode()).isEqualTo(0),
-          () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
-          () -> assertThat(channel.isOpen()).isFalse());
+              GrpcCallContext::createDefault)) {
+        StorageException se = assertThrows(StorageException.class, () -> channel.write(buf));
+        assertAll(
+            () -> assertThat(se.getCode()).isEqualTo(0),
+            () -> assertThat(se.getReason()).isEqualTo("dataLoss"),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(0),
+            () -> assertThat(channel.isOpen()).isFalse());
+      }
     }
   }
 
   @Test
   public void incremental_success() throws Exception {
     String uploadId = "uploadId";
+    byte[] data = DataGenerator.base64Characters().genBytes(_256KiB);
+    long crc32c = HASHER.hash(ByteBuffer.wrap(data)).getValue();
     WriteObjectRequest req1 =
         WriteObjectRequest.newBuilder()
             .setUploadId(uploadId)
-            .setChecksummedData(
-                ChecksummedTestContent.of(DataGenerator.base64Characters().genBytes(_256KiB))
-                    .asChecksummedData())
+            .setChecksummedData(ChecksummedTestContent.of(data).asChecksummedData())
             .build();
     WriteObjectResponse resp1 = WriteObjectResponse.newBuilder().setPersistedSize(_256KiB).build();
 
+    WriteObjectRequest req2 =
+        WriteObjectRequest.newBuilder()
+            .setUploadId(uploadId)
+            .setWriteOffset(_256KiB)
+            .setFinishWrite(true)
+            .setObjectChecksums(ObjectChecksums.newBuilder().setCrc32C((int) crc32c).build())
+            .build();
+    WriteObjectResponse resp2 =
+        WriteObjectResponse.newBuilder()
+            .setResource(Object.newBuilder().setName("obj").setSize(_256KiB).build())
+            .build();
+
     ImmutableMap<List<WriteObjectRequest>, WriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1);
+        ImmutableMap.of(ImmutableList.of(req1), resp1, ImmutableList.of(req2), resp2);
     DirectWriteService service1 = new DirectWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);
@@ -725,23 +730,22 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
       ResumableWrite resumableWrite = getResumableWrite(uploadId);
       WriteCtx<ResumableWrite> writeCtx = WriteCtx.of(resumableWrite, HASHER);
 
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               CHUNK_SEGMENTER,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_256KiB);
-      int written = channel.write(buf);
-      assertAll(
-          () -> assertThat(buf.remaining()).isEqualTo(0),
-          () -> assertThat(written).isEqualTo(_256KiB),
-          () -> assertThat(writeCtx.getTotalSentBytes().get()).isEqualTo(_256KiB),
-          () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB));
+              GrpcCallContext::createDefault)) {
+        ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_256KiB);
+        int written = channel.write(buf);
+        assertAll(
+            () -> assertThat(buf.remaining()).isEqualTo(0),
+            () -> assertThat(written).isEqualTo(_256KiB),
+            () -> assertThat(writeCtx.getTotalSentBytes().get()).isEqualTo(_256KiB),
+            () -> assertThat(writeCtx.getConfirmedBytes().get()).isEqualTo(_256KiB));
+      }
     }
   }
 
@@ -759,8 +763,19 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
             .build();
     WriteObjectResponse resp1 = WriteObjectResponse.newBuilder().setPersistedSize(_256KiB).build();
 
+    WriteObjectRequest req2 =
+        WriteObjectRequest.newBuilder()
+            .setUploadId(uploadId)
+            .setWriteOffset(_256KiB)
+            .setFinishWrite(true)
+            .build();
+    WriteObjectResponse resp2 =
+        WriteObjectResponse.newBuilder()
+            .setResource(Object.newBuilder().setName("obj").setSize(_256KiB).build())
+            .build();
+
     ImmutableMap<List<WriteObjectRequest>, WriteObjectResponse> map =
-        ImmutableMap.of(ImmutableList.of(req1), resp1);
+        ImmutableMap.of(ImmutableList.of(req1), resp1, ImmutableList.of(req2), resp2);
     DirectWriteService service1 = new DirectWriteService(map);
 
     try (FakeServer fakeServer = FakeServer.of(service1);
@@ -774,29 +789,28 @@ public final class ITGapicUnbufferedChunkedResumableWritableByteChannelTest {
 
       ChunkSegmenter chunkSegmenter =
           new ChunkSegmenter(Hasher.noop(), ByteStringStrategy.copy(), _512KiB, _256KiB);
-      //noinspection resource
-      GapicUnbufferedChunkedResumableWritableByteChannel channel =
+      try (GapicUnbufferedChunkedResumableWritableByteChannel channel =
           new GapicUnbufferedChunkedResumableWritableByteChannel(
               done,
               chunkSegmenter,
               storageClient.writeObjectCallable(),
               writeCtx,
               RetrierWithAlg.attemptOnce(),
-              GrpcCallContext::createDefault);
-
-      ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_512KiB);
-      int written = channel.write(buf);
-      assertAll(
-          () -> assertThat(buf.remaining()).isEqualTo(_256KiB),
-          () -> assertThat(written).isEqualTo(_256KiB),
-          () ->
-              assertWithMessage("totalSentBytes")
-                  .that(writeCtx.getTotalSentBytes().get())
-                  .isEqualTo(_256KiB),
-          () ->
-              assertWithMessage("confirmedBytes")
-                  .that(writeCtx.getConfirmedBytes().get())
-                  .isEqualTo(_256KiB));
+              GrpcCallContext::createDefault)) {
+        ByteBuffer buf = DataGenerator.base64Characters().genByteBuffer(_512KiB);
+        int written = channel.write(buf);
+        assertAll(
+            () -> assertThat(buf.remaining()).isEqualTo(_256KiB),
+            () -> assertThat(written).isEqualTo(_256KiB),
+            () ->
+                assertWithMessage("totalSentBytes")
+                    .that(writeCtx.getTotalSentBytes().get())
+                    .isEqualTo(_256KiB),
+            () ->
+                assertWithMessage("confirmedBytes")
+                    .that(writeCtx.getConfirmedBytes().get())
+                    .isEqualTo(_256KiB));
+      }
     }
   }
 
