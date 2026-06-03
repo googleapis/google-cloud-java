@@ -84,58 +84,31 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
           .attemptStarted(request, externalFuture.getAttemptSettings().getOverallAttemptCount());
 
       ApiFuture<ResponseT> internalFuture = callable.futureCall(request, callContext);
-      ApiFuture<ResponseT> mappedFuture = new ExceptionMappingFuture<>(internalFuture, callContext);
+      final ApiCallContext finalContext = callContext;
+      ApiFuture<ResponseT> mappedFuture =
+          ApiFutures.catchingAsync(
+              internalFuture,
+              UnauthenticatedException.class,
+              unauthenticatedException -> {
+                TransportChannel transportChannel = finalContext.getTransportChannel();
+                if (transportChannel != null && transportChannel.shouldRefresh()) {
+                  transportChannel.refresh();
+                  return ApiFutures.immediateFailedFuture(
+                      new UnauthenticatedException(
+                          unauthenticatedException.getMessage(),
+                          unauthenticatedException.getCause(),
+                          unauthenticatedException.getStatusCode(),
+                          true, // isRetryable = true
+                          unauthenticatedException.getErrorDetails()));
+                }
+                return ApiFutures.immediateFailedFuture(unauthenticatedException);
+              },
+              com.google.common.util.concurrent.MoreExecutors.directExecutor());
       externalFuture.setAttemptFuture(mappedFuture);
     } catch (Throwable e) {
       externalFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
     }
 
     return null;
-  }
-
-  private static class ExceptionMappingFuture<ResponseT>
-      extends com.google.api.core.ForwardingApiFuture<ResponseT> {
-    private final ApiCallContext context;
-
-    ExceptionMappingFuture(ApiFuture<ResponseT> delegate, ApiCallContext context) {
-      super(delegate);
-      this.context = context;
-    }
-
-    @Override
-    public ResponseT get() throws InterruptedException, java.util.concurrent.ExecutionException {
-      try {
-        return super.get();
-      } catch (java.util.concurrent.ExecutionException e) {
-        throw new java.util.concurrent.ExecutionException(mapException(e.getCause()));
-      }
-    }
-
-    @Override
-    public ResponseT get(long timeout, java.util.concurrent.TimeUnit unit)
-        throws InterruptedException, java.util.concurrent.ExecutionException, java.util.concurrent.TimeoutException {
-      try {
-        return super.get(timeout, unit);
-      } catch (java.util.concurrent.ExecutionException e) {
-        throw new java.util.concurrent.ExecutionException(mapException(e.getCause()));
-      }
-    }
-
-    private Throwable mapException(Throwable cause) {
-      if (cause instanceof UnauthenticatedException) {
-        TransportChannel transportChannel = context.getTransportChannel();
-        if (transportChannel != null && transportChannel.shouldRefresh()) {
-          transportChannel.refresh();
-          UnauthenticatedException causeEx = (UnauthenticatedException) cause;
-          return new UnauthenticatedException(
-              causeEx.getMessage(),
-              causeEx.getCause(),
-              causeEx.getStatusCode(),
-              true, // isRetryable = true
-              causeEx.getErrorDetails());
-        }
-      }
-      return cause;
-    }
   }
 }
