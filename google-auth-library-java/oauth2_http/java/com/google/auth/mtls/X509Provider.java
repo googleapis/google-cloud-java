@@ -101,20 +101,18 @@ public class X509Provider implements MtlsProvider {
    *
    * <ul>
    *   <li>The certificate config override path, if set.
-   *   <li>The path pointed to by the "GOOGLE_API_CERTIFICATE_CONFIG" environment variable
+   *   <li>The path pointed to by the "GOOGLE_API_CERTIFICATE_CONFIG" environment variable.
    *   <li>The well known gcloud location for the certificate configuration file.
    * </ul>
+   *
+   * <p>If none of the above are available, it will attempt to discover and load certificates from
+   * SPIFFE credentials located under "/var/run/secrets/workload-spiffe-credentials/".
    *
    * @return a KeyStore containing the X.509 certificate specified by the certificate configuration.
    * @throws CertificateSourceUnavailableException if the certificate source is unavailable (ex.
    *     missing configuration file)
    * @throws IOException if a general I/O error occurs while creating the KeyStore
    */
-  @Override
-  public boolean isAvailable() throws IOException {
-    return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
-  }
-
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
     // Attempt to load from resolved Config File
@@ -176,5 +174,10 @@ public class X509Provider implements MtlsProvider {
     }
 
     throw new CertificateSourceUnavailableException("No certificate source was resolved.");
+  }
+
+  @Override
+  public boolean isAvailable() throws IOException {
+    return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
   }
 }
