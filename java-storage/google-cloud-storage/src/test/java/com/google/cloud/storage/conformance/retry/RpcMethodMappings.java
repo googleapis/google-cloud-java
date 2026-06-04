@@ -1372,8 +1372,7 @@ final class RpcMethodMappings {
                                     (tmpOutFile) -> {
                                       state.getBlob().downloadTo(tmpOutFile);
                                       byte[] downloadedBytes = Files.readAllBytes(tmpOutFile);
-                                      assertThat(downloadedBytes)
-                                          .isEqualTo(c.getHelloWorldUtf8Bytes());
+                                      org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                                     })))
                 .build());
         a.add(
@@ -1391,8 +1390,7 @@ final class RpcMethodMappings {
                                           .downloadTo(
                                               tmpOutFile, Blob.BlobSourceOption.generationMatch());
                                       byte[] downloadedBytes = Files.readAllBytes(tmpOutFile);
-                                      assertThat(downloadedBytes)
-                                          .isEqualTo(c.getHelloWorldUtf8Bytes());
+                                      org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                                     })))
                 .build());
         a.add(
@@ -1404,7 +1402,7 @@ final class RpcMethodMappings {
                               ByteArrayOutputStream baos = new ByteArrayOutputStream();
                               state.getBlob().downloadTo(baos);
                               byte[] downloadedBytes = baos.toByteArray();
-                              assertThat(downloadedBytes).isEqualTo(c.getHelloWorldUtf8Bytes());
+                              org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                             }))
                 .build());
         a.add(
@@ -1418,7 +1416,7 @@ final class RpcMethodMappings {
                                   .getBlob()
                                   .downloadTo(baos, Blob.BlobSourceOption.generationMatch());
                               byte[] downloadedBytes = baos.toByteArray();
-                              assertThat(downloadedBytes).isEqualTo(c.getHelloWorldUtf8Bytes());
+                              org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                             }))
                 .build());
         a.add(
@@ -1428,7 +1426,7 @@ final class RpcMethodMappings {
                         ctx.peek(
                             state -> {
                               byte[] downloadedBytes = state.getBlob().getContent();
-                              assertThat(downloadedBytes).isEqualTo(c.getHelloWorldUtf8Bytes());
+                              org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                             }))
                 .build());
         a.add(
@@ -1441,7 +1439,7 @@ final class RpcMethodMappings {
                                   state
                                       .getBlob()
                                       .getContent(Blob.BlobSourceOption.metagenerationMatch());
-                              assertThat(downloadedBytes).isEqualTo(c.getHelloWorldUtf8Bytes());
+                              org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                             }))
                 .build());
         a.add(
@@ -1480,8 +1478,7 @@ final class RpcMethodMappings {
                                     (tmpOutFile) -> {
                                       ctx.getStorage().downloadTo(state.getBlobId(), tmpOutFile);
                                       byte[] downloadedBytes = Files.readAllBytes(tmpOutFile);
-                                      assertThat(downloadedBytes)
-                                          .isEqualTo(c.getHelloWorldUtf8Bytes());
+                                      org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                                     })))
                 .build());
         a.add(
@@ -1498,8 +1495,7 @@ final class RpcMethodMappings {
                                           new FileOutputStream(tmpOutFile.toFile());
                                       ctx.getStorage().downloadTo(state.getBlobId(), fos);
                                       byte[] downloadedBytes = Files.readAllBytes(tmpOutFile);
-                                      assertThat(downloadedBytes)
-                                          .isEqualTo(c.getHelloWorldUtf8Bytes());
+                                      org.junit.Assert.assertArrayEquals(c.getHelloWorldUtf8Bytes(), downloadedBytes);
                                     })))
                 .build());
       }
