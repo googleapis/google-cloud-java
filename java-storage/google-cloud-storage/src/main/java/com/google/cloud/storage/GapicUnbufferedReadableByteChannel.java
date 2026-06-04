@@ -394,12 +394,13 @@ final class GapicUnbufferedReadableByteChannel
       }
       if (!open.isDone()) {
         open.setException(t);
-      }
-      try {
-        queue.offer(t);
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        throw Code.ABORTED.toStatus().withCause(e).asRuntimeException();
+      } else {
+        try {
+          queue.offer(t);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw Code.ABORTED.toStatus().withCause(e).asRuntimeException();
+        }
       }
     }
 
