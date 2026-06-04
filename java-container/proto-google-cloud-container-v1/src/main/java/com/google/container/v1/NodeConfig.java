@@ -1019,6 +1019,62 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int NODE_IMAGE_CONFIG_FIELD_NUMBER = 90;
+  private com.google.container.v1.CustomImageConfig nodeImageConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return Whether the nodeImageConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeImageConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return The nodeImageConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.CustomImageConfig getNodeImageConfig() {
+    return nodeImageConfig_ == null
+        ? com.google.container.v1.CustomImageConfig.getDefaultInstance()
+        : nodeImageConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.CustomImageConfigOrBuilder getNodeImageConfigOrBuilder() {
+    return nodeImageConfig_ == null
+        ? com.google.container.v1.CustomImageConfig.getDefaultInstance()
+        : nodeImageConfig_;
+  }
+
   public static final int LABELS_FIELD_NUMBER = 6;
 
   private static final class LabelsDefaultEntryHolder {
@@ -1546,7 +1602,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasWorkloadMetadataConfig() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -1691,7 +1747,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSandboxConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -1806,7 +1862,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasReservationAffinity() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -1865,7 +1921,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasShieldedInstanceConfig() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -1919,7 +1975,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLinuxNodeConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1972,7 +2028,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKubeletConfig() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -2090,7 +2146,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGcfsConfig() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -2143,7 +2199,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdvancedMachineFeatures() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -2197,7 +2253,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGvnic() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -2267,7 +2323,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConfidentialNodes() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -2322,7 +2378,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFastSocket() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -2488,7 +2544,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLoggingConfig() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -2541,7 +2597,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasWindowsNodeConfig() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -2594,7 +2650,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLocalNvmeSsdBlockConfig() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -2651,7 +2707,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEphemeralStorageLocalSsdConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -2712,7 +2768,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSoleTenantConfig() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2765,7 +2821,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasContainerdConfig() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -2818,7 +2874,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasResourceManagerTags() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -3037,7 +3093,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSecondaryBootDiskUpdateStrategy() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -3096,7 +3152,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGpuDirectConfig() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -3150,7 +3206,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxRunDuration() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -3208,7 +3264,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLocalSsdEncryptionMode() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -3319,7 +3375,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFlexStart() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -3354,7 +3410,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBootDisk() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -3405,7 +3461,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConsolidationDelay() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3464,7 +3520,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTaintConfig() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -3556,72 +3612,72 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(minCpuPlatform_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 13, minCpuPlatform_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(14, getWorkloadMetadataConfig());
     }
     for (int i = 0; i < taints_.size(); i++) {
       output.writeMessage(15, taints_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(17, getSandboxConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nodeGroup_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, nodeGroup_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(19, getReservationAffinity());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(20, getShieldedInstanceConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(21, getLinuxNodeConfig());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(22, getKubeletConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bootDiskKmsKey_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 23, bootDiskKmsKey_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(25, getGcfsConfig());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(26, getAdvancedMachineFeatures());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(29, getGvnic());
     }
     if (spot_ != false) {
       output.writeBool(32, spot_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(35, getConfidentialNodes());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(36, getFastSocket());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 37);
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(38, getLoggingConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(39, getWindowsNodeConfig());
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(40, getLocalNvmeSsdBlockConfig());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(41, getEphemeralStorageLocalSsdConfig());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(42, getSoleTenantConfig());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(43, getContainerdConfig());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(45, getResourceManagerTags());
     }
     if (enableConfidentialStorage_ != false) {
@@ -3633,16 +3689,16 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < storagePools_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 49, storagePools_.getRaw(i));
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(50, getSecondaryBootDiskUpdateStrategy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(51, getGpuDirectConfig());
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeMessage(53, getMaxRunDuration());
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeEnum(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
@@ -3650,17 +3706,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(55, effectiveCgroupMode_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeBool(56, flexStart_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeMessage(57, getBootDisk());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(60, getConsolidationDelay());
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeMessage(62, getTaintConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(90, getNodeImageConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3734,54 +3793,54 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(minCpuPlatform_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(13, minCpuPlatform_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, getWorkloadMetadataConfig());
     }
     for (int i = 0; i < taints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, taints_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getSandboxConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nodeGroup_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, nodeGroup_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(19, getReservationAffinity());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(20, getShieldedInstanceConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getLinuxNodeConfig());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getKubeletConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(bootDiskKmsKey_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(23, bootDiskKmsKey_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getGcfsConfig());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, getAdvancedMachineFeatures());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
     }
     if (spot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, spot_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getFastSocket());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -3794,29 +3853,29 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, resourceLabels__);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getLoggingConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getWindowsNodeConfig());
-    }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              40, getLocalNvmeSsdBlockConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getWindowsNodeConfig());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              41, getEphemeralStorageLocalSsdConfig());
+              40, getLocalNvmeSsdBlockConfig());
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSoleTenantConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              41, getEphemeralStorageLocalSsdConfig());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getContainerdConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getSoleTenantConfig());
     }
     if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getContainerdConfig());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(45, getResourceManagerTags());
     }
@@ -3835,18 +3894,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getStoragePoolsList().size();
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               50, getSecondaryBootDiskUpdateStrategy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getGpuDirectConfig());
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getMaxRunDuration());
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(54, localSsdEncryptionMode_);
     }
     if (effectiveCgroupMode_
@@ -3854,17 +3913,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(55, effectiveCgroupMode_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(56, flexStart_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, getBootDisk());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(60, getConsolidationDelay());
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(62, getTaintConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(90, getNodeImageConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3887,6 +3949,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getImageType().equals(other.getImageType())) return false;
+    if (hasNodeImageConfig() != other.hasNodeImageConfig()) return false;
+    if (hasNodeImageConfig()) {
+      if (!getNodeImageConfig().equals(other.getNodeImageConfig())) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getLocalSsdCount() != other.getLocalSsdCount()) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
@@ -4038,6 +4104,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IMAGE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getImageType().hashCode();
+    if (hasNodeImageConfig()) {
+      hash = (37 * hash) + NODE_IMAGE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeImageConfig().hashCode();
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -4363,6 +4433,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetNodeImageConfigFieldBuilder();
         internalGetAcceleratorsFieldBuilder();
         internalGetWorkloadMetadataConfigFieldBuilder();
         internalGetTaintsFieldBuilder();
@@ -4404,6 +4475,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       serviceAccount_ = "";
       internalGetMutableMetadata().clear();
       imageType_ = "";
+      nodeImageConfig_ = null;
+      if (nodeImageConfigBuilder_ != null) {
+        nodeImageConfigBuilder_.dispose();
+        nodeImageConfigBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       localSsdCount_ = 0;
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -4414,7 +4490,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         accelerators_ = null;
         acceleratorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       diskType_ = "";
       minCpuPlatform_ = "";
       workloadMetadataConfig_ = null;
@@ -4428,7 +4504,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         taints_ = null;
         taintsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       sandboxConfig_ = null;
       if (sandboxConfigBuilder_ != null) {
         sandboxConfigBuilder_.dispose();
@@ -4525,7 +4601,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         secondaryBootDisks_ = null;
         secondaryBootDisksBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000040);
       storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
@@ -4599,27 +4675,27 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.container.v1.NodeConfig result) {
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.accelerators_ = accelerators_;
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
       if (taintsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           taints_ = java.util.Collections.unmodifiableList(taints_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.taints_ = taints_;
       } else {
         result.taints_ = taintsBuilder_.build();
       }
       if (secondaryBootDisksBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)) {
+        if (((bitField1_ & 0x00000040) != 0)) {
           secondaryBootDisks_ = java.util.Collections.unmodifiableList(secondaryBootDisks_);
-          bitField1_ = (bitField1_ & ~0x00000020);
+          bitField1_ = (bitField1_ & ~0x00000040);
         }
         result.secondaryBootDisks_ = secondaryBootDisks_;
       } else {
@@ -4649,119 +4725,117 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.imageType_ = imageType_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.nodeImageConfig_ =
+            nodeImageConfigBuilder_ == null ? nodeImageConfig_ : nodeImageConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.localSsdCount_ = localSsdCount_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.preemptible_ = preemptible_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.diskType_ = diskType_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.minCpuPlatform_ = minCpuPlatform_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.workloadMetadataConfig_ =
             workloadMetadataConfigBuilder_ == null
                 ? workloadMetadataConfig_
                 : workloadMetadataConfigBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.sandboxConfig_ =
-            sandboxConfigBuilder_ == null ? sandboxConfig_ : sandboxConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.nodeGroup_ = nodeGroup_;
+        result.sandboxConfig_ =
+            sandboxConfigBuilder_ == null ? sandboxConfig_ : sandboxConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.nodeGroup_ = nodeGroup_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.reservationAffinity_ =
             reservationAffinityBuilder_ == null
                 ? reservationAffinity_
                 : reservationAffinityBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.shieldedInstanceConfig_ =
             shieldedInstanceConfigBuilder_ == null
                 ? shieldedInstanceConfig_
                 : shieldedInstanceConfigBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.linuxNodeConfig_ =
-            linuxNodeConfigBuilder_ == null ? linuxNodeConfig_ : linuxNodeConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.kubeletConfig_ =
-            kubeletConfigBuilder_ == null ? kubeletConfig_ : kubeletConfigBuilder_.build();
+        result.linuxNodeConfig_ =
+            linuxNodeConfigBuilder_ == null ? linuxNodeConfig_ : linuxNodeConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.bootDiskKmsKey_ = bootDiskKmsKey_;
-      }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.gcfsConfig_ = gcfsConfigBuilder_ == null ? gcfsConfig_ : gcfsConfigBuilder_.build();
+        result.kubeletConfig_ =
+            kubeletConfigBuilder_ == null ? kubeletConfig_ : kubeletConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.bootDiskKmsKey_ = bootDiskKmsKey_;
+      }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.gcfsConfig_ = gcfsConfigBuilder_ == null ? gcfsConfig_ : gcfsConfigBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.advancedMachineFeatures_ =
             advancedMachineFeaturesBuilder_ == null
                 ? advancedMachineFeatures_
                 : advancedMachineFeaturesBuilder_.build();
-        to_bitField0_ |= 0x00000080;
-      }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.gvnic_ = gvnicBuilder_ == null ? gvnic_ : gvnicBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.spot_ = spot_;
+        result.gvnic_ = gvnicBuilder_ == null ? gvnic_ : gvnicBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.spot_ = spot_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.confidentialNodes_ =
             confidentialNodesBuilder_ == null
                 ? confidentialNodes_
                 : confidentialNodesBuilder_.build();
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.fastSocket_ = fastSocketBuilder_ == null ? fastSocket_ : fastSocketBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.fastSocket_ = fastSocketBuilder_ == null ? fastSocket_ : fastSocketBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.resourceLabels_ = internalGetResourceLabels();
         result.resourceLabels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.loggingConfig_ =
             loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000800;
+        to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.windowsNodeConfig_ =
             windowsNodeConfigBuilder_ == null
                 ? windowsNodeConfig_
                 : windowsNodeConfigBuilder_.build();
-        to_bitField0_ |= 0x00001000;
-      }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.localNvmeSsdBlockConfig_ =
-            localNvmeSsdBlockConfigBuilder_ == null
-                ? localNvmeSsdBlockConfig_
-                : localNvmeSsdBlockConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4771,79 +4845,86 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.localNvmeSsdBlockConfig_ =
+            localNvmeSsdBlockConfigBuilder_ == null
+                ? localNvmeSsdBlockConfig_
+                : localNvmeSsdBlockConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.ephemeralStorageLocalSsdConfig_ =
             ephemeralStorageLocalSsdConfigBuilder_ == null
                 ? ephemeralStorageLocalSsdConfig_
                 : ephemeralStorageLocalSsdConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
-      }
-      if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.soleTenantConfig_ =
-            soleTenantConfigBuilder_ == null ? soleTenantConfig_ : soleTenantConfigBuilder_.build();
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.containerdConfig_ =
-            containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
+        result.soleTenantConfig_ =
+            soleTenantConfigBuilder_ == null ? soleTenantConfig_ : soleTenantConfigBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.containerdConfig_ =
+            containerdConfigBuilder_ == null ? containerdConfig_ : containerdConfigBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.resourceManagerTags_ =
             resourceManagerTagsBuilder_ == null
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
-        to_bitField0_ |= 0x00020000;
+        to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
-      if (((from_bitField1_ & 0x00000040) != 0)) {
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         storagePools_.makeImmutable();
         result.storagePools_ = storagePools_;
       }
-      if (((from_bitField1_ & 0x00000080) != 0)) {
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.secondaryBootDiskUpdateStrategy_ =
             secondaryBootDiskUpdateStrategyBuilder_ == null
                 ? secondaryBootDiskUpdateStrategy_
                 : secondaryBootDiskUpdateStrategyBuilder_.build();
-        to_bitField0_ |= 0x00040000;
-      }
-      if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.gpuDirectConfig_ =
-            gpuDirectConfigBuilder_ == null ? gpuDirectConfig_ : gpuDirectConfigBuilder_.build();
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.maxRunDuration_ =
-            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
+        result.gpuDirectConfig_ =
+            gpuDirectConfigBuilder_ == null ? gpuDirectConfig_ : gpuDirectConfigBuilder_.build();
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
-        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
+        result.maxRunDuration_ =
+            maxRunDurationBuilder_ == null ? maxRunDuration_ : maxRunDurationBuilder_.build();
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField1_ & 0x00000800) != 0)) {
-        result.effectiveCgroupMode_ = effectiveCgroupMode_;
-      }
-      if (((from_bitField1_ & 0x00001000) != 0)) {
-        result.flexStart_ = flexStart_;
+        result.localSsdEncryptionMode_ = localSsdEncryptionMode_;
         to_bitField0_ |= 0x00400000;
       }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
+        result.effectiveCgroupMode_ = effectiveCgroupMode_;
+      }
       if (((from_bitField1_ & 0x00002000) != 0)) {
-        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        result.flexStart_ = flexStart_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         result.consolidationDelay_ =
             consolidationDelayBuilder_ == null
                 ? consolidationDelay_
                 : consolidationDelayBuilder_.build();
-        to_bitField0_ |= 0x01000000;
+        to_bitField0_ |= 0x02000000;
       }
-      if (((from_bitField1_ & 0x00008000) != 0)) {
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.taintConfig_ =
             taintConfigBuilder_ == null ? taintConfig_ : taintConfigBuilder_.build();
-        to_bitField0_ |= 0x02000000;
+        to_bitField0_ |= 0x04000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4890,15 +4971,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasNodeImageConfig()) {
+        mergeNodeImageConfig(other.getNodeImageConfig());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.getLocalSsdCount() != 0) {
         setLocalSsdCount(other.getLocalSsdCount());
       }
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -4912,7 +4996,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -4925,7 +5009,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetAcceleratorsFieldBuilder()
@@ -4937,12 +5021,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getDiskType().isEmpty()) {
         diskType_ = other.diskType_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasWorkloadMetadataConfig()) {
@@ -4952,7 +5036,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         if (!other.taints_.isEmpty()) {
           if (taints_.isEmpty()) {
             taints_ = other.taints_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureTaintsIsMutable();
             taints_.addAll(other.taints_);
@@ -4965,7 +5049,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             taintsBuilder_.dispose();
             taintsBuilder_ = null;
             taints_ = other.taints_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             taintsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTaintsFieldBuilder()
@@ -4980,7 +5064,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getNodeGroup().isEmpty()) {
         nodeGroup_ = other.nodeGroup_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasReservationAffinity()) {
@@ -4997,7 +5081,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getBootDiskKmsKey().isEmpty()) {
         bootDiskKmsKey_ = other.bootDiskKmsKey_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasGcfsConfig()) {
@@ -5019,7 +5103,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         mergeFastSocket(other.getFastSocket());
       }
       internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
@@ -5048,7 +5132,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         if (!other.secondaryBootDisks_.isEmpty()) {
           if (secondaryBootDisks_.isEmpty()) {
             secondaryBootDisks_ = other.secondaryBootDisks_;
-            bitField1_ = (bitField1_ & ~0x00000020);
+            bitField1_ = (bitField1_ & ~0x00000040);
           } else {
             ensureSecondaryBootDisksIsMutable();
             secondaryBootDisks_.addAll(other.secondaryBootDisks_);
@@ -5061,7 +5145,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             secondaryBootDisksBuilder_.dispose();
             secondaryBootDisksBuilder_ = null;
             secondaryBootDisks_ = other.secondaryBootDisks_;
-            bitField1_ = (bitField1_ & ~0x00000020);
+            bitField1_ = (bitField1_ & ~0x00000040);
             secondaryBootDisksBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSecondaryBootDisksFieldBuilder()
@@ -5074,7 +5158,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (!other.storagePools_.isEmpty()) {
         if (storagePools_.isEmpty()) {
           storagePools_ = other.storagePools_;
-          bitField1_ |= 0x00000040;
+          bitField1_ |= 0x00000080;
         } else {
           ensureStoragePoolsIsMutable();
           storagePools_.addAll(other.storagePools_);
@@ -5180,13 +5264,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 localSsdCount_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 66:
@@ -5205,7 +5289,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             case 80:
               {
                 preemptible_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
             case 90:
@@ -5224,13 +5308,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
             case 98:
               {
                 diskType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 minCpuPlatform_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
@@ -5238,7 +5322,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetWorkloadMetadataConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
@@ -5258,20 +5342,20 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetSandboxConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 nodeGroup_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     internalGetReservationAffinityFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 162:
@@ -5279,34 +5363,34 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetShieldedInstanceConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
             case 170:
               {
                 input.readMessage(
                     internalGetLinuxNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 170
             case 178:
               {
                 input.readMessage(
                     internalGetKubeletConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 186:
               {
                 bootDiskKmsKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 186
             case 202:
               {
                 input.readMessage(
                     internalGetGcfsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 202
             case 210:
@@ -5314,33 +5398,33 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetAdvancedMachineFeaturesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 210
             case 234:
               {
                 input.readMessage(internalGetGvnicFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 234
             case 256:
               {
                 spot_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 256
             case 282:
               {
                 input.readMessage(
                     internalGetConfidentialNodesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 282
             case 290:
               {
                 input.readMessage(
                     internalGetFastSocketFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 290
             case 298:
@@ -5352,21 +5436,21 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 internalGetMutableResourceLabels()
                     .getMutableMap()
                     .put(resourceLabels__.getKey(), resourceLabels__.getValue());
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 298
             case 306:
               {
                 input.readMessage(
                     internalGetLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 306
             case 314:
               {
                 input.readMessage(
                     internalGetWindowsNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 314
             case 322:
@@ -5374,7 +5458,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetLocalNvmeSsdBlockConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 322
             case 330:
@@ -5382,34 +5466,34 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetEphemeralStorageLocalSsdConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 330
             case 338:
               {
                 input.readMessage(
                     internalGetSoleTenantConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 338
             case 346:
               {
                 input.readMessage(
                     internalGetContainerdConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 346
             case 362:
               {
                 input.readMessage(
                     internalGetResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 362
             case 368:
               {
                 enableConfidentialStorage_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 368
             case 386:
@@ -5437,62 +5521,69 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 402
             case 410:
               {
                 input.readMessage(
                     internalGetGpuDirectConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 410
             case 426:
               {
                 input.readMessage(
                     internalGetMaxRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 426
             case 432:
               {
                 localSsdEncryptionMode_ = input.readEnum();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 432
             case 440:
               {
                 effectiveCgroupMode_ = input.readEnum();
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 440
             case 448:
               {
                 flexStart_ = input.readBool();
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 448
             case 458:
               {
                 input.readMessage(
                     internalGetBootDiskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 458
             case 482:
               {
                 input.readMessage(
                     internalGetConsolidationDelayFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00004000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 482
             case 498:
               {
                 input.readMessage(
                     internalGetTaintConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 498
+            case 722:
+              {
+                input.readMessage(
+                    internalGetNodeImageConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 722
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6641,6 +6732,210 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.container.v1.CustomImageConfig nodeImageConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.CustomImageConfig,
+            com.google.container.v1.CustomImageConfig.Builder,
+            com.google.container.v1.CustomImageConfigOrBuilder>
+        nodeImageConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     *
+     * @return Whether the nodeImageConfig field is set.
+     */
+    public boolean hasNodeImageConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     *
+     * @return The nodeImageConfig.
+     */
+    public com.google.container.v1.CustomImageConfig getNodeImageConfig() {
+      if (nodeImageConfigBuilder_ == null) {
+        return nodeImageConfig_ == null
+            ? com.google.container.v1.CustomImageConfig.getDefaultInstance()
+            : nodeImageConfig_;
+      } else {
+        return nodeImageConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public Builder setNodeImageConfig(com.google.container.v1.CustomImageConfig value) {
+      if (nodeImageConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeImageConfig_ = value;
+      } else {
+        nodeImageConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public Builder setNodeImageConfig(
+        com.google.container.v1.CustomImageConfig.Builder builderForValue) {
+      if (nodeImageConfigBuilder_ == null) {
+        nodeImageConfig_ = builderForValue.build();
+      } else {
+        nodeImageConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public Builder mergeNodeImageConfig(com.google.container.v1.CustomImageConfig value) {
+      if (nodeImageConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && nodeImageConfig_ != null
+            && nodeImageConfig_ != com.google.container.v1.CustomImageConfig.getDefaultInstance()) {
+          getNodeImageConfigBuilder().mergeFrom(value);
+        } else {
+          nodeImageConfig_ = value;
+        }
+      } else {
+        nodeImageConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeImageConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public Builder clearNodeImageConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      nodeImageConfig_ = null;
+      if (nodeImageConfigBuilder_ != null) {
+        nodeImageConfigBuilder_.dispose();
+        nodeImageConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public com.google.container.v1.CustomImageConfig.Builder getNodeImageConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetNodeImageConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    public com.google.container.v1.CustomImageConfigOrBuilder getNodeImageConfigOrBuilder() {
+      if (nodeImageConfigBuilder_ != null) {
+        return nodeImageConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeImageConfig_ == null
+            ? com.google.container.v1.CustomImageConfig.getDefaultInstance()
+            : nodeImageConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The node image configuration to use for this node pool.  Note that this is
+     * only applicable for node pools using image_type=CUSTOM.
+     * </pre>
+     *
+     * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.CustomImageConfig,
+            com.google.container.v1.CustomImageConfig.Builder,
+            com.google.container.v1.CustomImageConfigOrBuilder>
+        internalGetNodeImageConfigFieldBuilder() {
+      if (nodeImageConfigBuilder_ == null) {
+        nodeImageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.CustomImageConfig,
+                com.google.container.v1.CustomImageConfig.Builder,
+                com.google.container.v1.CustomImageConfigOrBuilder>(
+                getNodeImageConfig(), getParentForChildren(), isClean());
+        nodeImageConfig_ = null;
+      }
+      return nodeImageConfigBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -6658,7 +6953,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -6812,7 +7107,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6853,7 +7148,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -6890,7 +7185,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -6921,7 +7216,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -6968,7 +7263,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder setLocalSsdCount(int value) {
 
       localSsdCount_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6990,7 +7285,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdCount() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       localSsdCount_ = 0;
       onChanged();
       return this;
@@ -7003,7 +7298,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -7103,7 +7398,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7129,7 +7424,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7152,7 +7447,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7173,7 +7468,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTags() {
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -7201,7 +7496,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7243,7 +7538,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder setPreemptible(boolean value) {
 
       preemptible_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7262,7 +7557,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       preemptible_ = false;
       onChanged();
       return this;
@@ -7272,10 +7567,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.container.v1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -7534,7 +7829,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -7684,7 +7979,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.AcceleratorConfig,
                 com.google.container.v1.AcceleratorConfig.Builder,
                 com.google.container.v1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -7764,7 +8059,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       diskType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7785,7 +8080,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDiskType() {
       diskType_ = getDefaultInstance().getDiskType();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -7811,7 +8106,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       diskType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7899,7 +8194,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       minCpuPlatform_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7923,7 +8218,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMinCpuPlatform() {
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -7952,7 +8247,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       minCpuPlatform_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7976,7 +8271,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the workloadMetadataConfig field is set.
      */
     public boolean hasWorkloadMetadataConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -8018,7 +8313,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         workloadMetadataConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8039,7 +8334,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         workloadMetadataConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8056,7 +8351,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeWorkloadMetadataConfig(
         com.google.container.v1.WorkloadMetadataConfig value) {
       if (workloadMetadataConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && workloadMetadataConfig_ != null
             && workloadMetadataConfig_
                 != com.google.container.v1.WorkloadMetadataConfig.getDefaultInstance()) {
@@ -8068,7 +8363,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         workloadMetadataConfigBuilder_.mergeFrom(value);
       }
       if (workloadMetadataConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -8084,7 +8379,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.WorkloadMetadataConfig workload_metadata_config = 14;</code>
      */
     public Builder clearWorkloadMetadataConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       workloadMetadataConfig_ = null;
       if (workloadMetadataConfigBuilder_ != null) {
         workloadMetadataConfigBuilder_.dispose();
@@ -8105,7 +8400,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.WorkloadMetadataConfig.Builder
         getWorkloadMetadataConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetWorkloadMetadataConfigFieldBuilder().getBuilder();
     }
@@ -8160,9 +8455,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureTaintsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         taints_ = new java.util.ArrayList<com.google.container.v1.NodeTaint>(taints_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -8418,7 +8713,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearTaints() {
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         taintsBuilder_.clear();
@@ -8567,7 +8862,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.NodeTaint,
                 com.google.container.v1.NodeTaint.Builder,
                 com.google.container.v1.NodeTaintOrBuilder>(
-                taints_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                taints_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         taints_ = null;
       }
       return taintsBuilder_;
@@ -8592,7 +8887,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the sandboxConfig field is set.
      */
     public boolean hasSandboxConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -8634,7 +8929,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         sandboxConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -8654,7 +8949,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         sandboxConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -8670,7 +8965,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSandboxConfig(com.google.container.v1.SandboxConfig value) {
       if (sandboxConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && sandboxConfig_ != null
             && sandboxConfig_ != com.google.container.v1.SandboxConfig.getDefaultInstance()) {
           getSandboxConfigBuilder().mergeFrom(value);
@@ -8681,7 +8976,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         sandboxConfigBuilder_.mergeFrom(value);
       }
       if (sandboxConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -8697,7 +8992,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
      */
     public Builder clearSandboxConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       sandboxConfig_ = null;
       if (sandboxConfigBuilder_ != null) {
         sandboxConfigBuilder_.dispose();
@@ -8717,7 +9012,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.SandboxConfig sandbox_config = 17;</code>
      */
     public com.google.container.v1.SandboxConfig.Builder getSandboxConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetSandboxConfigFieldBuilder().getBuilder();
     }
@@ -8841,7 +9136,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       nodeGroup_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8862,7 +9157,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNodeGroup() {
       nodeGroup_ = getDefaultInstance().getNodeGroup();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -8888,7 +9183,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       nodeGroup_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8915,7 +9210,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the reservationAffinity field is set.
      */
     public boolean hasReservationAffinity() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -8963,7 +9258,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         reservationAffinityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -8987,7 +9282,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         reservationAffinityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9006,7 +9301,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeReservationAffinity(com.google.container.v1.ReservationAffinity value) {
       if (reservationAffinityBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && reservationAffinity_ != null
             && reservationAffinity_
                 != com.google.container.v1.ReservationAffinity.getDefaultInstance()) {
@@ -9018,7 +9313,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         reservationAffinityBuilder_.mergeFrom(value);
       }
       if (reservationAffinity_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -9037,7 +9332,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
      */
     public Builder clearReservationAffinity() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
         reservationAffinityBuilder_.dispose();
@@ -9060,7 +9355,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ReservationAffinity reservation_affinity = 19;</code>
      */
     public com.google.container.v1.ReservationAffinity.Builder getReservationAffinityBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetReservationAffinityFieldBuilder().getBuilder();
     }
@@ -9135,7 +9430,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the shieldedInstanceConfig field is set.
      */
     public boolean hasShieldedInstanceConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -9177,7 +9472,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         shieldedInstanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9198,7 +9493,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9215,7 +9510,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeShieldedInstanceConfig(
         com.google.container.v1.ShieldedInstanceConfig value) {
       if (shieldedInstanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && shieldedInstanceConfig_ != null
             && shieldedInstanceConfig_
                 != com.google.container.v1.ShieldedInstanceConfig.getDefaultInstance()) {
@@ -9227,7 +9522,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         shieldedInstanceConfigBuilder_.mergeFrom(value);
       }
       if (shieldedInstanceConfig_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -9243,7 +9538,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ShieldedInstanceConfig shielded_instance_config = 20;</code>
      */
     public Builder clearShieldedInstanceConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       shieldedInstanceConfig_ = null;
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
@@ -9264,7 +9559,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.ShieldedInstanceConfig.Builder
         getShieldedInstanceConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetShieldedInstanceConfigFieldBuilder().getBuilder();
     }
@@ -9334,7 +9629,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the linuxNodeConfig field is set.
      */
     public boolean hasLinuxNodeConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -9376,7 +9671,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         linuxNodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9397,7 +9692,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         linuxNodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9413,7 +9708,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLinuxNodeConfig(com.google.container.v1.LinuxNodeConfig value) {
       if (linuxNodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && linuxNodeConfig_ != null
             && linuxNodeConfig_ != com.google.container.v1.LinuxNodeConfig.getDefaultInstance()) {
           getLinuxNodeConfigBuilder().mergeFrom(value);
@@ -9424,7 +9719,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         linuxNodeConfigBuilder_.mergeFrom(value);
       }
       if (linuxNodeConfig_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -9440,7 +9735,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 21;</code>
      */
     public Builder clearLinuxNodeConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       linuxNodeConfig_ = null;
       if (linuxNodeConfigBuilder_ != null) {
         linuxNodeConfigBuilder_.dispose();
@@ -9460,7 +9755,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.LinuxNodeConfig linux_node_config = 21;</code>
      */
     public com.google.container.v1.LinuxNodeConfig.Builder getLinuxNodeConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetLinuxNodeConfigFieldBuilder().getBuilder();
     }
@@ -9529,7 +9824,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the kubeletConfig field is set.
      */
     public boolean hasKubeletConfig() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -9571,7 +9866,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         kubeletConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9592,7 +9887,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         kubeletConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9608,7 +9903,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeKubeletConfig(com.google.container.v1.NodeKubeletConfig value) {
       if (kubeletConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && kubeletConfig_ != null
             && kubeletConfig_ != com.google.container.v1.NodeKubeletConfig.getDefaultInstance()) {
           getKubeletConfigBuilder().mergeFrom(value);
@@ -9619,7 +9914,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         kubeletConfigBuilder_.mergeFrom(value);
       }
       if (kubeletConfig_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -9635,7 +9930,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 22;</code>
      */
     public Builder clearKubeletConfig() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       kubeletConfig_ = null;
       if (kubeletConfigBuilder_ != null) {
         kubeletConfigBuilder_.dispose();
@@ -9655,7 +9950,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.NodeKubeletConfig kubelet_config = 22;</code>
      */
     public com.google.container.v1.NodeKubeletConfig.Builder getKubeletConfigBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return internalGetKubeletConfigFieldBuilder().getBuilder();
     }
@@ -9788,7 +10083,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       bootDiskKmsKey_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9812,7 +10107,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearBootDiskKmsKey() {
       bootDiskKmsKey_ = getDefaultInstance().getBootDiskKmsKey();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -9841,7 +10136,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       bootDiskKmsKey_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9865,7 +10160,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the gcfsConfig field is set.
      */
     public boolean hasGcfsConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -9907,7 +10202,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gcfsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9927,7 +10222,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gcfsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9943,7 +10238,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGcfsConfig(com.google.container.v1.GcfsConfig value) {
       if (gcfsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && gcfsConfig_ != null
             && gcfsConfig_ != com.google.container.v1.GcfsConfig.getDefaultInstance()) {
           getGcfsConfigBuilder().mergeFrom(value);
@@ -9954,7 +10249,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         gcfsConfigBuilder_.mergeFrom(value);
       }
       if (gcfsConfig_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -9970,7 +10265,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.GcfsConfig gcfs_config = 25;</code>
      */
     public Builder clearGcfsConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       gcfsConfig_ = null;
       if (gcfsConfigBuilder_ != null) {
         gcfsConfigBuilder_.dispose();
@@ -9990,7 +10285,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.GcfsConfig gcfs_config = 25;</code>
      */
     public com.google.container.v1.GcfsConfig.Builder getGcfsConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetGcfsConfigFieldBuilder().getBuilder();
     }
@@ -10059,7 +10354,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the advancedMachineFeatures field is set.
      */
     public boolean hasAdvancedMachineFeatures() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -10102,7 +10397,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         advancedMachineFeaturesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -10123,7 +10418,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         advancedMachineFeaturesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -10140,7 +10435,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeAdvancedMachineFeatures(
         com.google.container.v1.AdvancedMachineFeatures value) {
       if (advancedMachineFeaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && advancedMachineFeatures_ != null
             && advancedMachineFeatures_
                 != com.google.container.v1.AdvancedMachineFeatures.getDefaultInstance()) {
@@ -10152,7 +10447,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         advancedMachineFeaturesBuilder_.mergeFrom(value);
       }
       if (advancedMachineFeatures_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -10168,7 +10463,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.AdvancedMachineFeatures advanced_machine_features = 26;</code>
      */
     public Builder clearAdvancedMachineFeatures() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       advancedMachineFeatures_ = null;
       if (advancedMachineFeaturesBuilder_ != null) {
         advancedMachineFeaturesBuilder_.dispose();
@@ -10189,7 +10484,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.AdvancedMachineFeatures.Builder
         getAdvancedMachineFeaturesBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetAdvancedMachineFeaturesFieldBuilder().getBuilder();
     }
@@ -10259,7 +10554,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the gvnic field is set.
      */
     public boolean hasGvnic() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -10299,7 +10594,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gvnicBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10319,7 +10614,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gvnicBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10335,7 +10630,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGvnic(com.google.container.v1.VirtualNIC value) {
       if (gvnicBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && gvnic_ != null
             && gvnic_ != com.google.container.v1.VirtualNIC.getDefaultInstance()) {
           getGvnicBuilder().mergeFrom(value);
@@ -10346,7 +10641,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         gvnicBuilder_.mergeFrom(value);
       }
       if (gvnic_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -10362,7 +10657,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
      */
     public Builder clearGvnic() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       gvnic_ = null;
       if (gvnicBuilder_ != null) {
         gvnicBuilder_.dispose();
@@ -10382,7 +10677,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
      */
     public com.google.container.v1.VirtualNIC.Builder getGvnicBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return internalGetGvnicFieldBuilder().getBuilder();
     }
@@ -10465,7 +10760,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder setSpot(boolean value) {
 
       spot_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -10483,7 +10778,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSpot() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       spot_ = false;
       onChanged();
       return this;
@@ -10509,7 +10804,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the confidentialNodes field is set.
      */
     public boolean hasConfidentialNodes() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -10553,7 +10848,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         confidentialNodesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10575,7 +10870,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         confidentialNodesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10592,7 +10887,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConfidentialNodes(com.google.container.v1.ConfidentialNodes value) {
       if (confidentialNodesBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && confidentialNodes_ != null
             && confidentialNodes_
                 != com.google.container.v1.ConfidentialNodes.getDefaultInstance()) {
@@ -10604,7 +10899,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         confidentialNodesBuilder_.mergeFrom(value);
       }
       if (confidentialNodes_ != null) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -10621,7 +10916,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
      */
     public Builder clearConfidentialNodes() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       confidentialNodes_ = null;
       if (confidentialNodesBuilder_ != null) {
         confidentialNodesBuilder_.dispose();
@@ -10642,7 +10937,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
      */
     public com.google.container.v1.ConfidentialNodes.Builder getConfidentialNodesBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return internalGetConfidentialNodesFieldBuilder().getBuilder();
     }
@@ -10713,7 +11008,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the fastSocket field is set.
      */
     public boolean hasFastSocket() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -10755,7 +11050,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         fastSocketBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10775,7 +11070,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         fastSocketBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10791,7 +11086,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeFastSocket(com.google.container.v1.FastSocket value) {
       if (fastSocketBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && fastSocket_ != null
             && fastSocket_ != com.google.container.v1.FastSocket.getDefaultInstance()) {
           getFastSocketBuilder().mergeFrom(value);
@@ -10802,7 +11097,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         fastSocketBuilder_.mergeFrom(value);
       }
       if (fastSocket_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -10818,7 +11113,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
      */
     public Builder clearFastSocket() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       fastSocket_ = null;
       if (fastSocketBuilder_ != null) {
         fastSocketBuilder_.dispose();
@@ -10838,7 +11133,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.container.v1.FastSocket fast_socket = 36;</code>
      */
     public com.google.container.v1.FastSocket.Builder getFastSocketBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return internalGetFastSocketFieldBuilder().getBuilder();
     }
@@ -10908,7 +11203,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (!resourceLabels_.isMutable()) {
         resourceLabels_ = resourceLabels_.copy();
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return resourceLabels_;
     }
@@ -11002,7 +11297,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearResourceLabels() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
@@ -11028,7 +11323,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return internalGetMutableResourceLabels().getMutableMap();
     }
 
@@ -11050,7 +11345,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableResourceLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
 
@@ -11066,7 +11361,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       return this;
     }
 
@@ -11089,7 +11384,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -11131,7 +11426,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -11152,7 +11447,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -11168,7 +11463,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLoggingConfig(com.google.container.v1.NodePoolLoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && loggingConfig_ != null
             && loggingConfig_
                 != com.google.container.v1.NodePoolLoggingConfig.getDefaultInstance()) {
@@ -11180,7 +11475,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         loggingConfigBuilder_.mergeFrom(value);
       }
       if (loggingConfig_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -11196,7 +11491,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
      */
     public Builder clearLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       loggingConfig_ = null;
       if (loggingConfigBuilder_ != null) {
         loggingConfigBuilder_.dispose();
@@ -11216,7 +11511,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
      */
     public com.google.container.v1.NodePoolLoggingConfig.Builder getLoggingConfigBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return internalGetLoggingConfigFieldBuilder().getBuilder();
     }
@@ -11285,7 +11580,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the windowsNodeConfig field is set.
      */
     public boolean hasWindowsNodeConfig() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -11327,7 +11622,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         windowsNodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11348,7 +11643,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         windowsNodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11364,7 +11659,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeWindowsNodeConfig(com.google.container.v1.WindowsNodeConfig value) {
       if (windowsNodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && windowsNodeConfig_ != null
             && windowsNodeConfig_
                 != com.google.container.v1.WindowsNodeConfig.getDefaultInstance()) {
@@ -11376,7 +11671,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         windowsNodeConfigBuilder_.mergeFrom(value);
       }
       if (windowsNodeConfig_ != null) {
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -11392,7 +11687,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 39;</code>
      */
     public Builder clearWindowsNodeConfig() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       windowsNodeConfig_ = null;
       if (windowsNodeConfigBuilder_ != null) {
         windowsNodeConfigBuilder_.dispose();
@@ -11412,7 +11707,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 39;</code>
      */
     public com.google.container.v1.WindowsNodeConfig.Builder getWindowsNodeConfigBuilder() {
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return internalGetWindowsNodeConfigFieldBuilder().getBuilder();
     }
@@ -11481,7 +11776,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the localNvmeSsdBlockConfig field is set.
      */
     public boolean hasLocalNvmeSsdBlockConfig() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -11524,7 +11819,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         localNvmeSsdBlockConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11545,7 +11840,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         localNvmeSsdBlockConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11562,7 +11857,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeLocalNvmeSsdBlockConfig(
         com.google.container.v1.LocalNvmeSsdBlockConfig value) {
       if (localNvmeSsdBlockConfigBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && localNvmeSsdBlockConfig_ != null
             && localNvmeSsdBlockConfig_
                 != com.google.container.v1.LocalNvmeSsdBlockConfig.getDefaultInstance()) {
@@ -11574,7 +11869,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         localNvmeSsdBlockConfigBuilder_.mergeFrom(value);
       }
       if (localNvmeSsdBlockConfig_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -11590,7 +11885,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;</code>
      */
     public Builder clearLocalNvmeSsdBlockConfig() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       localNvmeSsdBlockConfig_ = null;
       if (localNvmeSsdBlockConfigBuilder_ != null) {
         localNvmeSsdBlockConfigBuilder_.dispose();
@@ -11611,7 +11906,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.LocalNvmeSsdBlockConfig.Builder
         getLocalNvmeSsdBlockConfigBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetLocalNvmeSsdBlockConfigFieldBuilder().getBuilder();
     }
@@ -11684,7 +11979,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the ephemeralStorageLocalSsdConfig field is set.
      */
     public boolean hasEphemeralStorageLocalSsdConfig() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -11734,7 +12029,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         ephemeralStorageLocalSsdConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11758,7 +12053,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         ephemeralStorageLocalSsdConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11778,7 +12073,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeEphemeralStorageLocalSsdConfig(
         com.google.container.v1.EphemeralStorageLocalSsdConfig value) {
       if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && ephemeralStorageLocalSsdConfig_ != null
             && ephemeralStorageLocalSsdConfig_
                 != com.google.container.v1.EphemeralStorageLocalSsdConfig.getDefaultInstance()) {
@@ -11790,7 +12085,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         ephemeralStorageLocalSsdConfigBuilder_.mergeFrom(value);
       }
       if (ephemeralStorageLocalSsdConfig_ != null) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -11809,7 +12104,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEphemeralStorageLocalSsdConfig() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       ephemeralStorageLocalSsdConfig_ = null;
       if (ephemeralStorageLocalSsdConfigBuilder_ != null) {
         ephemeralStorageLocalSsdConfigBuilder_.dispose();
@@ -11833,7 +12128,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.EphemeralStorageLocalSsdConfig.Builder
         getEphemeralStorageLocalSsdConfigBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return internalGetEphemeralStorageLocalSsdConfigFieldBuilder().getBuilder();
     }
@@ -11909,7 +12204,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the soleTenantConfig field is set.
      */
     public boolean hasSoleTenantConfig() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -11951,7 +12246,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         soleTenantConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -11972,7 +12267,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         soleTenantConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -11988,7 +12283,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSoleTenantConfig(com.google.container.v1.SoleTenantConfig value) {
       if (soleTenantConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x00000004) != 0)
             && soleTenantConfig_ != null
             && soleTenantConfig_ != com.google.container.v1.SoleTenantConfig.getDefaultInstance()) {
           getSoleTenantConfigBuilder().mergeFrom(value);
@@ -11999,7 +12294,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         soleTenantConfigBuilder_.mergeFrom(value);
       }
       if (soleTenantConfig_ != null) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -12015,7 +12310,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
      */
     public Builder clearSoleTenantConfig() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       soleTenantConfig_ = null;
       if (soleTenantConfigBuilder_ != null) {
         soleTenantConfigBuilder_.dispose();
@@ -12035,7 +12330,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
      */
     public com.google.container.v1.SoleTenantConfig.Builder getSoleTenantConfigBuilder() {
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return internalGetSoleTenantConfigFieldBuilder().getBuilder();
     }
@@ -12104,7 +12399,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the containerdConfig field is set.
      */
     public boolean hasContainerdConfig() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -12146,7 +12441,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         containerdConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12167,7 +12462,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         containerdConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12183,7 +12478,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContainerdConfig(com.google.container.v1.ContainerdConfig value) {
       if (containerdConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && containerdConfig_ != null
             && containerdConfig_ != com.google.container.v1.ContainerdConfig.getDefaultInstance()) {
           getContainerdConfigBuilder().mergeFrom(value);
@@ -12194,7 +12489,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         containerdConfigBuilder_.mergeFrom(value);
       }
       if (containerdConfig_ != null) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -12210,7 +12505,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
      */
     public Builder clearContainerdConfig() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       containerdConfig_ = null;
       if (containerdConfigBuilder_ != null) {
         containerdConfigBuilder_.dispose();
@@ -12230,7 +12525,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ContainerdConfig containerd_config = 43;</code>
      */
     public com.google.container.v1.ContainerdConfig.Builder getContainerdConfigBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return internalGetContainerdConfigFieldBuilder().getBuilder();
     }
@@ -12299,7 +12594,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the resourceManagerTags field is set.
      */
     public boolean hasResourceManagerTags() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -12341,7 +12636,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         resourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12362,7 +12657,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         resourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12378,7 +12673,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeResourceManagerTags(com.google.container.v1.ResourceManagerTags value) {
       if (resourceManagerTagsBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && resourceManagerTags_ != null
             && resourceManagerTags_
                 != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
@@ -12390,7 +12685,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         resourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (resourceManagerTags_ != null) {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -12406,7 +12701,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
      */
     public Builder clearResourceManagerTags() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       resourceManagerTags_ = null;
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
@@ -12426,7 +12721,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
      */
     public com.google.container.v1.ResourceManagerTags.Builder getResourceManagerTagsBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return internalGetResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -12509,7 +12804,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder setEnableConfidentialStorage(boolean value) {
 
       enableConfidentialStorage_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12526,7 +12821,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableConfidentialStorage() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       enableConfidentialStorage_ = false;
       onChanged();
       return this;
@@ -12536,10 +12831,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureSecondaryBootDisksIsMutable() {
-      if (!((bitField1_ & 0x00000020) != 0)) {
+      if (!((bitField1_ & 0x00000040) != 0)) {
         secondaryBootDisks_ =
             new java.util.ArrayList<com.google.container.v1.SecondaryBootDisk>(secondaryBootDisks_);
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000040;
       }
     }
 
@@ -12767,7 +13062,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearSecondaryBootDisks() {
       if (secondaryBootDisksBuilder_ == null) {
         secondaryBootDisks_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000020);
+        bitField1_ = (bitField1_ & ~0x00000040);
         onChanged();
       } else {
         secondaryBootDisksBuilder_.clear();
@@ -12900,7 +13195,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
                 com.google.container.v1.SecondaryBootDisk.Builder,
                 com.google.container.v1.SecondaryBootDiskOrBuilder>(
                 secondaryBootDisks_,
-                ((bitField1_ & 0x00000020) != 0),
+                ((bitField1_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryBootDisks_ = null;
@@ -12915,7 +13210,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (!storagePools_.isModifiable()) {
         storagePools_ = new com.google.protobuf.LazyStringArrayList(storagePools_);
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
     }
 
     /**
@@ -13000,7 +13295,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureStoragePoolsIsMutable();
       storagePools_.set(index, value);
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13023,7 +13318,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureStoragePoolsIsMutable();
       storagePools_.add(value);
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13043,7 +13338,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllStoragePools(java.lang.Iterable<java.lang.String> values) {
       ensureStoragePoolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storagePools_);
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13061,7 +13356,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStoragePools() {
       storagePools_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       ;
       onChanged();
       return this;
@@ -13086,7 +13381,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureStoragePoolsIsMutable();
       storagePools_.add(value);
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13113,7 +13408,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the secondaryBootDiskUpdateStrategy field is set.
      */
     public boolean hasSecondaryBootDiskUpdateStrategy() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
 
     /**
@@ -13161,7 +13456,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13184,7 +13479,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         secondaryBootDiskUpdateStrategyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13203,7 +13498,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeSecondaryBootDiskUpdateStrategy(
         com.google.container.v1.SecondaryBootDiskUpdateStrategy value) {
       if (secondaryBootDiskUpdateStrategyBuilder_ == null) {
-        if (((bitField1_ & 0x00000080) != 0)
+        if (((bitField1_ & 0x00000100) != 0)
             && secondaryBootDiskUpdateStrategy_ != null
             && secondaryBootDiskUpdateStrategy_
                 != com.google.container.v1.SecondaryBootDiskUpdateStrategy.getDefaultInstance()) {
@@ -13215,7 +13510,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         secondaryBootDiskUpdateStrategyBuilder_.mergeFrom(value);
       }
       if (secondaryBootDiskUpdateStrategy_ != null) {
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -13233,7 +13528,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSecondaryBootDiskUpdateStrategy() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000100);
       secondaryBootDiskUpdateStrategy_ = null;
       if (secondaryBootDiskUpdateStrategyBuilder_ != null) {
         secondaryBootDiskUpdateStrategyBuilder_.dispose();
@@ -13256,7 +13551,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.SecondaryBootDiskUpdateStrategy.Builder
         getSecondaryBootDiskUpdateStrategyBuilder() {
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return internalGetSecondaryBootDiskUpdateStrategyFieldBuilder().getBuilder();
     }
@@ -13330,7 +13625,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the gpuDirectConfig field is set.
      */
     public boolean hasGpuDirectConfig() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -13372,7 +13667,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gpuDirectConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13393,7 +13688,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         gpuDirectConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13409,7 +13704,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGpuDirectConfig(com.google.container.v1.GPUDirectConfig value) {
       if (gpuDirectConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000100) != 0)
+        if (((bitField1_ & 0x00000200) != 0)
             && gpuDirectConfig_ != null
             && gpuDirectConfig_ != com.google.container.v1.GPUDirectConfig.getDefaultInstance()) {
           getGpuDirectConfigBuilder().mergeFrom(value);
@@ -13420,7 +13715,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         gpuDirectConfigBuilder_.mergeFrom(value);
       }
       if (gpuDirectConfig_ != null) {
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -13436,7 +13731,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
      */
     public Builder clearGpuDirectConfig() {
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       gpuDirectConfig_ = null;
       if (gpuDirectConfigBuilder_ != null) {
         gpuDirectConfigBuilder_.dispose();
@@ -13456,7 +13751,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.container.v1.GPUDirectConfig gpu_direct_config = 51;</code>
      */
     public com.google.container.v1.GPUDirectConfig.Builder getGpuDirectConfigBuilder() {
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000200;
       onChanged();
       return internalGetGpuDirectConfigFieldBuilder().getBuilder();
     }
@@ -13526,7 +13821,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the maxRunDuration field is set.
      */
     public boolean hasMaxRunDuration() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -13570,7 +13865,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         maxRunDurationBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13591,7 +13886,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         maxRunDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13608,7 +13903,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMaxRunDuration(com.google.protobuf.Duration value) {
       if (maxRunDurationBuilder_ == null) {
-        if (((bitField1_ & 0x00000200) != 0)
+        if (((bitField1_ & 0x00000400) != 0)
             && maxRunDuration_ != null
             && maxRunDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getMaxRunDurationBuilder().mergeFrom(value);
@@ -13619,7 +13914,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         maxRunDurationBuilder_.mergeFrom(value);
       }
       if (maxRunDuration_ != null) {
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -13636,7 +13931,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration max_run_duration = 53;</code>
      */
     public Builder clearMaxRunDuration() {
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       maxRunDuration_ = null;
       if (maxRunDurationBuilder_ != null) {
         maxRunDurationBuilder_.dispose();
@@ -13657,7 +13952,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration max_run_duration = 53;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRunDurationBuilder() {
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000400;
       onChanged();
       return internalGetMaxRunDurationFieldBuilder().getBuilder();
     }
@@ -13727,7 +14022,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasLocalSsdEncryptionMode() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
 
     /**
@@ -13766,7 +14061,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setLocalSsdEncryptionModeValue(int value) {
       localSsdEncryptionMode_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13815,7 +14110,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       localSsdEncryptionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -13836,7 +14131,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLocalSsdEncryptionMode() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       localSsdEncryptionMode_ = 0;
       onChanged();
       return this;
@@ -13884,7 +14179,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEffectiveCgroupModeValue(int value) {
       effectiveCgroupMode_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13936,7 +14231,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00001000;
       effectiveCgroupMode_ = value.getNumber();
       onChanged();
       return this;
@@ -13959,7 +14254,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEffectiveCgroupMode() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00001000);
       effectiveCgroupMode_ = 0;
       onChanged();
       return this;
@@ -13980,7 +14275,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasFlexStart() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
 
     /**
@@ -14014,7 +14309,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder setFlexStart(boolean value) {
 
       flexStart_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -14031,7 +14326,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFlexStart() {
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00002000);
       flexStart_ = false;
       onChanged();
       return this;
@@ -14056,7 +14351,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the bootDisk field is set.
      */
     public boolean hasBootDisk() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
 
     /**
@@ -14098,7 +14393,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         bootDiskBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -14118,7 +14413,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         bootDiskBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -14134,7 +14429,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBootDisk(com.google.container.v1.BootDisk value) {
       if (bootDiskBuilder_ == null) {
-        if (((bitField1_ & 0x00002000) != 0)
+        if (((bitField1_ & 0x00004000) != 0)
             && bootDisk_ != null
             && bootDisk_ != com.google.container.v1.BootDisk.getDefaultInstance()) {
           getBootDiskBuilder().mergeFrom(value);
@@ -14145,7 +14440,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         bootDiskBuilder_.mergeFrom(value);
       }
       if (bootDisk_ != null) {
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -14161,7 +14456,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
      */
     public Builder clearBootDisk() {
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       bootDisk_ = null;
       if (bootDiskBuilder_ != null) {
         bootDiskBuilder_.dispose();
@@ -14181,7 +14476,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.container.v1.BootDisk boot_disk = 57;</code>
      */
     public com.google.container.v1.BootDisk.Builder getBootDiskBuilder() {
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return internalGetBootDiskFieldBuilder().getBuilder();
     }
@@ -14252,7 +14547,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the consolidationDelay field is set.
      */
     public boolean hasConsolidationDelay() {
-      return ((bitField1_ & 0x00004000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
 
     /**
@@ -14298,7 +14593,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         consolidationDelayBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -14320,7 +14615,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         consolidationDelayBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -14338,7 +14633,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConsolidationDelay(com.google.protobuf.Duration value) {
       if (consolidationDelayBuilder_ == null) {
-        if (((bitField1_ & 0x00004000) != 0)
+        if (((bitField1_ & 0x00008000) != 0)
             && consolidationDelay_ != null
             && consolidationDelay_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getConsolidationDelayBuilder().mergeFrom(value);
@@ -14349,7 +14644,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         consolidationDelayBuilder_.mergeFrom(value);
       }
       if (consolidationDelay_ != null) {
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -14367,7 +14662,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
      */
     public Builder clearConsolidationDelay() {
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       consolidationDelay_ = null;
       if (consolidationDelayBuilder_ != null) {
         consolidationDelayBuilder_.dispose();
@@ -14389,7 +14684,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
      */
     public com.google.protobuf.Duration.Builder getConsolidationDelayBuilder() {
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return internalGetConsolidationDelayFieldBuilder().getBuilder();
     }
@@ -14464,7 +14759,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the taintConfig field is set.
      */
     public boolean hasTaintConfig() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
 
     /**
@@ -14510,7 +14805,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         taintConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -14532,7 +14827,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         taintConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -14550,7 +14845,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTaintConfig(com.google.container.v1.TaintConfig value) {
       if (taintConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00008000) != 0)
+        if (((bitField1_ & 0x00010000) != 0)
             && taintConfig_ != null
             && taintConfig_ != com.google.container.v1.TaintConfig.getDefaultInstance()) {
           getTaintConfigBuilder().mergeFrom(value);
@@ -14561,7 +14856,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
         taintConfigBuilder_.mergeFrom(value);
       }
       if (taintConfig_ != null) {
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -14579,7 +14874,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTaintConfig() {
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       taintConfig_ = null;
       if (taintConfigBuilder_ != null) {
         taintConfigBuilder_.dispose();
@@ -14601,7 +14896,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.container.v1.TaintConfig.Builder getTaintConfigBuilder() {
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return internalGetTaintConfigFieldBuilder().getBuilder();
     }
