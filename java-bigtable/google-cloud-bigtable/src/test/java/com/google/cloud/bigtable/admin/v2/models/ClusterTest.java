@@ -47,7 +47,7 @@ public class ClusterTest {
     assertThat(result.getState()).isEqualTo(Cluster.State.READY);
     assertThat(result.getServeNodes()).isEqualTo(30);
     assertThat(result.getStorageType()).isEqualTo(StorageType.SSD);
-    assertThat(result.getKmsKeyName()).isEqualTo(null);
+    assertThat(result.getKmsKeyName()).isNull();
   }
 
   @Test

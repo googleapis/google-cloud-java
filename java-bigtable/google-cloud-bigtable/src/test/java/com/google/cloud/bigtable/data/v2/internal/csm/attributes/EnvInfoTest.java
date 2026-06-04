@@ -33,7 +33,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class EnvInfoTest {
-  private static final Supplier<String> NULL_HOST = Suppliers.ofInstance(null);
+  private static final Supplier<String> NULL_HOST = () -> null;
 
   @SuppressWarnings("UnnecessaryLambda")
   private static final Function<String, String> NULL_ENV = (ignored) -> null;
