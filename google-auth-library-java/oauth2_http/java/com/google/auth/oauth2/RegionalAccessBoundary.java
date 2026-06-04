@@ -190,7 +190,10 @@ final class RegionalAccessBoundary implements Serializable {
     }
 
     if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory) {
-      url = url.replace("https://iamcredentials.googleapis.com/", "https://iamcredentials.mtls.googleapis.com/");
+      url =
+          url.replace(
+              "https://iamcredentials.googleapis.com/",
+              "https://iamcredentials.mtls.googleapis.com/");
     }
 
     HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();

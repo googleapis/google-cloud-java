@@ -53,6 +53,7 @@ public class MtlsUtils {
 
   @com.google.common.annotations.VisibleForTesting
   static String spiffeDirectory = "/var/run/secrets/workload-spiffe-credentials/";
+
   static final String SPIFFE_CREDENTIAL_BUNDLE_FILE = "credentialbundle.pem";
   static final String SPIFFE_CERTIFICATE_FILE = "certificates.pem";
   static final String SPIFFE_PRIVATE_KEY_FILE = "private_key.pem";
@@ -151,11 +152,13 @@ public class MtlsUtils {
    * @param propProvider the property provider to use for resolving system properties
    * @param certConfigPathOverride optional override path for the configuration file
    * @return true if mTLS should be enabled, false otherwise
-   * @throws IOException if the configuration file is present but contains missing or malformed files
+   * @throws IOException if the configuration file is present but contains missing or malformed
+   *     files
    */
   public static boolean canMtlsBeEnabled(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride) throws IOException {
-    
+      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      throws IOException {
+
     // Check if client certificate usage is allowed
     String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
     if ("false".equalsIgnoreCase(useClientCertificate)) {
@@ -165,7 +168,8 @@ public class MtlsUtils {
     // Locate and process the certificate configuration file
     String envPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
     if (certConfigPathOverride != null || !Strings.isNullOrEmpty(envPath)) {
-      File certConfigFile = new File(certConfigPathOverride != null ? certConfigPathOverride : envPath);
+      File certConfigFile =
+          new File(certConfigPathOverride != null ? certConfigPathOverride : envPath);
       if (!certConfigFile.isFile()) {
         throw new CertificateSourceUnavailableException(
             "Certificate configuration file does not exist or is not a file: "
@@ -175,7 +179,8 @@ public class MtlsUtils {
 
     WorkloadCertificateConfiguration workloadCertConfig = null;
     try {
-      workloadCertConfig = getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
+      workloadCertConfig =
+          getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
     } catch (CertificateSourceUnavailableException e) {
       // Config file is simply not present. This is fine, fallback to SPIFFE.
     } catch (IOException e) {

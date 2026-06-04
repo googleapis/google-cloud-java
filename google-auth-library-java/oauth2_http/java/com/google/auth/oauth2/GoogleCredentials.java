@@ -39,6 +39,9 @@ import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
+import com.google.auth.mtls.MtlsUtils;
+import com.google.auth.mtls.X509Provider;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -51,6 +54,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
 import java.time.Duration;
 import java.util.Collection;
 import java.util.Collections;
@@ -59,11 +63,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nullable;
-import com.google.auth.mtls.MtlsHttpTransportFactory;
-import com.google.auth.mtls.MtlsUtils;
-import com.google.auth.mtls.X509Provider;
-import java.security.KeyStore;
-
 
 /** Base type for credentials for authorizing calls to Google APIs using OAuth2. */
 public class GoogleCredentials extends OAuth2Credentials implements QuotaProjectIdProvider {
@@ -404,13 +403,12 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
     try {
       if (MtlsUtils.canMtlsBeEnabled(
-          SystemEnvironmentProvider.getInstance(),
-          SystemPropertyProvider.getInstance(),
-          null)) {
-        X509Provider x509Provider = new X509Provider(
-            SystemEnvironmentProvider.getInstance(),
-            SystemPropertyProvider.getInstance(),
-            null);
+          SystemEnvironmentProvider.getInstance(), SystemPropertyProvider.getInstance(), null)) {
+        X509Provider x509Provider =
+            new X509Provider(
+                SystemEnvironmentProvider.getInstance(),
+                SystemPropertyProvider.getInstance(),
+                null);
         KeyStore mtlsKeyStore = x509Provider.getKeyStore();
         if (mtlsKeyStore != null) {
           transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);

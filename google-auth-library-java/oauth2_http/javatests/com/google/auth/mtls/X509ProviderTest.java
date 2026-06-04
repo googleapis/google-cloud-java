@@ -241,9 +241,10 @@ class X509ProviderTest {
   void x509Provider_loadSpiffeSeparateFiles_succeeds() throws Exception {
     Path spiffeDir = Files.createTempDirectory("spiffe_separate");
     spiffeDir.toFile().deleteOnExit();
-    
+
     Files.copy(new File(TEST_CERT_PATH).toPath(), spiffeDir.resolve("certificates.pem"));
-    Files.copy(new File("testresources/mtls/test_key.pem").toPath(), spiffeDir.resolve("private_key.pem"));
+    Files.copy(
+        new File("testresources/mtls/test_key.pem").toPath(), spiffeDir.resolve("private_key.pem"));
 
     String originalSpiffeDir = MtlsUtils.spiffeDirectory;
     MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
@@ -260,11 +261,11 @@ class X509ProviderTest {
   // Failure Path: mTLS disabled (allowance = false) throws CertificateSourceUnavailableException
   @Test
   void x509Provider_allowanceDisabled_throws() throws Exception {
-    X509Provider provider = new X509Provider(
-        name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "false" : null,
-        (name, def) -> def,
-        null
-    );
+    X509Provider provider =
+        new X509Provider(
+            name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "false" : null,
+            (name, def) -> def,
+            null);
     assertThrows(CertificateSourceUnavailableException.class, provider::getKeyStore);
   }
 }
