@@ -744,12 +744,15 @@ public class JobControllerClient implements BackgroundResource {
    * @param filter Optional. A filter constraining the jobs to list. Filters are case-sensitive and
    *     have the following syntax:
    *     <p>[field = value] AND [field [= value]] ...
-   *     <p>where &#42;&#42;field&#42;&#42; is `status.state` or `labels.[KEY]`, and `[KEY]` is a
-   *     label key. &#42;&#42;value&#42;&#42; can be `&#42;` to match all values. `status.state` can
-   *     be either `ACTIVE` or `NON_ACTIVE`. Only the logical `AND` operator is supported;
-   *     space-separated items are treated as having an implicit `AND` operator.
+   *     <p>where &#42;&#42;field&#42;&#42; is `status.state` or `insertTime`, or `labels.[KEY]`,
+   *     and `[KEY]` is a label key. &#42;&#42;value&#42;&#42; can be `&#42;` to match all values.
+   *     `status.state` can be either `ACTIVE` or `NON_ACTIVE`. Allows `insertTime` to be a
+   *     timestamp in RFC 3339 format in double quotes, such as `2025-01-01T00:00:00Z`. Only the
+   *     logical `AND` operator is supported; space-separated items are treated as having an
+   *     implicit `AND` operator.
    *     <p>Example filter:
-   *     <p>status.state = ACTIVE AND labels.env = staging AND labels.starred = &#42;
+   *     <p>status.state = ACTIVE AND labels.env = staging AND labels.starred = &#42; AND insertTime
+   *     &lt;= "2025-01-01T00:00:00Z"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String projectId, String region, String filter) {

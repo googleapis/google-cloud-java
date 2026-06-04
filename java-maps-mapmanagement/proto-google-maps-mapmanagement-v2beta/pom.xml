@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>proto-google-maps-mapmanagement-v2beta</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-mapmanagement-v2beta:current} -->
+  <version>0.2.0</version><!-- {x-version-update:proto-google-maps-mapmanagement-v2beta:current} -->
   <name>proto-google-maps-mapmanagement-v2beta</name>
   <description>Proto library for google-maps-mapmanagement</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-mapmanagement-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-maps-mapmanagement:current} -->
   </parent>
   <dependencies>
     <dependency>

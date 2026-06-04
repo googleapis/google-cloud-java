@@ -208,7 +208,10 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ExportExerciseTcx</td>
  *      <td><p> Exports exercise data in TCX format.
- * <p>  Note: While the Authorization section below states that any one of the listed scopes is accepted, this specific method requires the user to provide both one of the `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in their access token to succeed.</td>
+ * <p>  &#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to download the raw TCX file.
+ * <p>  Example: `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+ * <p>  Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which is intended primarily for gRPC clients.
+ * <p>  &#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the listed scopes is accepted, this specific method requires the user to provide both one of the `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in their access token to succeed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1315,8 +1318,17 @@ public class DataPointsServiceClient implements BackgroundResource {
   /**
    * Exports exercise data in TCX format.
    *
-   * <p>Note: While the Authorization section below states that any one of the listed scopes is
-   * accepted, this specific method requires the user to provide both one of the
+   * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
+   * download the raw TCX file.
+   *
+   * <p>Example:
+   * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
+   * is intended primarily for gRPC clients.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the
+   * listed scopes is accepted, this specific method requires the user to provide both one of the
    * `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes
    * (`normal` or `readonly`) in their access token to succeed.
    *
@@ -1353,8 +1365,17 @@ public class DataPointsServiceClient implements BackgroundResource {
   /**
    * Exports exercise data in TCX format.
    *
-   * <p>Note: While the Authorization section below states that any one of the listed scopes is
-   * accepted, this specific method requires the user to provide both one of the
+   * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
+   * download the raw TCX file.
+   *
+   * <p>Example:
+   * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
+   * is intended primarily for gRPC clients.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the
+   * listed scopes is accepted, this specific method requires the user to provide both one of the
    * `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes
    * (`normal` or `readonly`) in their access token to succeed.
    *
@@ -1388,8 +1409,17 @@ public class DataPointsServiceClient implements BackgroundResource {
   /**
    * Exports exercise data in TCX format.
    *
-   * <p>Note: While the Authorization section below states that any one of the listed scopes is
-   * accepted, this specific method requires the user to provide both one of the
+   * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
+   * download the raw TCX file.
+   *
+   * <p>Example:
+   * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
+   * is intended primarily for gRPC clients.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the
+   * listed scopes is accepted, this specific method requires the user to provide both one of the
    * `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes
    * (`normal` or `readonly`) in their access token to succeed.
    *
@@ -1422,8 +1452,17 @@ public class DataPointsServiceClient implements BackgroundResource {
   /**
    * Exports exercise data in TCX format.
    *
-   * <p>Note: While the Authorization section below states that any one of the listed scopes is
-   * accepted, this specific method requires the user to provide both one of the
+   * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
+   * download the raw TCX file.
+   *
+   * <p>Example:
+   * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
+   * is intended primarily for gRPC clients.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the
+   * listed scopes is accepted, this specific method requires the user to provide both one of the
    * `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes
    * (`normal` or `readonly`) in their access token to succeed.
    *

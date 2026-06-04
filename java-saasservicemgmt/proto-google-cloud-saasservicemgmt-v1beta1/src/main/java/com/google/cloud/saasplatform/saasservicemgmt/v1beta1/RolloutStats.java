@@ -70,6 +70,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
             com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutStats.Builder.class);
   }
 
+  private int bitField0_;
   public static final int OPERATIONS_BY_STATE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -80,10 +81,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -96,7 +97,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   @java.lang.Override
@@ -109,10 +110,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -125,7 +126,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   @java.lang.Override
@@ -139,10 +140,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -155,7 +156,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   @java.lang.Override
@@ -167,10 +168,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -183,7 +184,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   @java.lang.Override
@@ -196,10 +197,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A breakdown of the progress of operations triggered by the
-   * rollout. Provides a count of Operations by their state. This can be used to
-   * determine the number of units which have been updated, or are scheduled to
-   * be updated.
+   * Optional. Output only. Unordered list. A breakdown of the progress of
+   * operations triggered by the rollout. Provides a count of Operations by
+   * their state. This can be used to determine the number of units which have
+   * been updated, or are scheduled to be updated.
    *
    * There will be at most one entry per group.
    * Possible values for operation groups are:
@@ -212,13 +213,54 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AggregateOrBuilder
       getOperationsByStateOrBuilder(int index) {
     return operationsByState_.get(index);
+  }
+
+  public static final int ESTIMATED_TOTAL_UNIT_COUNT_FIELD_NUMBER = 3;
+  private long estimatedTotalUnitCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Estimated number of units based. The estimation is
+   * computed upon creation of the rollout.
+   * </pre>
+   *
+   * <code>
+   * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the estimatedTotalUnitCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasEstimatedTotalUnitCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Estimated number of units based. The estimation is
+   * computed upon creation of the rollout.
+   * </pre>
+   *
+   * <code>
+   * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The estimatedTotalUnitCount.
+   */
+  @java.lang.Override
+  public long getEstimatedTotalUnitCount() {
+    return estimatedTotalUnitCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,6 +280,9 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < operationsByState_.size(); i++) {
       output.writeMessage(2, operationsByState_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(3, estimatedTotalUnitCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -250,6 +295,9 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < operationsByState_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, operationsByState_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, estimatedTotalUnitCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -268,6 +316,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutStats) obj;
 
     if (!getOperationsByStateList().equals(other.getOperationsByStateList())) return false;
+    if (hasEstimatedTotalUnitCount() != other.hasEstimatedTotalUnitCount()) return false;
+    if (hasEstimatedTotalUnitCount()) {
+      if (getEstimatedTotalUnitCount() != other.getEstimatedTotalUnitCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -282,6 +334,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
     if (getOperationsByStateCount() > 0) {
       hash = (37 * hash) + OPERATIONS_BY_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getOperationsByStateList().hashCode();
+    }
+    if (hasEstimatedTotalUnitCount()) {
+      hash = (37 * hash) + ESTIMATED_TOTAL_UNIT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEstimatedTotalUnitCount());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -433,6 +489,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
         operationsByStateBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      estimatedTotalUnitCount_ = 0L;
       return this;
     }
 
@@ -486,6 +543,12 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(
         com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutStats result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.estimatedTotalUnitCount_ = estimatedTotalUnitCount_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -531,6 +594,9 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasEstimatedTotalUnitCount()) {
+        setEstimatedTotalUnitCount(other.getEstimatedTotalUnitCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -571,6 +637,12 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 18
+            case 24:
+              {
+                estimatedTotalUnitCount_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -613,10 +685,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -629,7 +701,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate>
@@ -645,10 +717,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -661,7 +733,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public int getOperationsByStateCount() {
@@ -676,10 +748,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -692,7 +764,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate getOperationsByState(
@@ -708,10 +780,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -724,7 +796,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder setOperationsByState(
@@ -746,10 +818,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -762,7 +834,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder setOperationsByState(
@@ -782,10 +854,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -798,7 +870,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder addOperationsByState(
@@ -820,10 +892,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -836,7 +908,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder addOperationsByState(
@@ -858,10 +930,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -874,7 +946,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder addOperationsByState(
@@ -893,10 +965,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -909,7 +981,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder addOperationsByState(
@@ -929,10 +1001,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -945,7 +1017,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder addAllOperationsByState(
@@ -966,10 +1038,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -982,7 +1054,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder clearOperationsByState() {
@@ -1000,10 +1072,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1016,7 +1088,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public Builder removeOperationsByState(int index) {
@@ -1034,10 +1106,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1050,7 +1122,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate.Builder
@@ -1062,10 +1134,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1078,7 +1150,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AggregateOrBuilder
@@ -1094,10 +1166,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1110,7 +1182,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public java.util.List<
@@ -1127,10 +1199,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1143,7 +1215,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate.Builder
@@ -1157,10 +1229,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1173,7 +1245,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate.Builder
@@ -1188,10 +1260,10 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A breakdown of the progress of operations triggered by the
-     * rollout. Provides a count of Operations by their state. This can be used to
-     * determine the number of units which have been updated, or are scheduled to
-     * be updated.
+     * Optional. Output only. Unordered list. A breakdown of the progress of
+     * operations triggered by the rollout. Provides a count of Operations by
+     * their state. This can be used to determine the number of units which have
+     * been updated, or are scheduled to be updated.
      *
      * There will be at most one entry per group.
      * Possible values for operation groups are:
@@ -1204,7 +1276,7 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate operations_by_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
      * </code>
      */
     public java.util.List<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Aggregate.Builder>
@@ -1230,6 +1302,90 @@ public final class RolloutStats extends com.google.protobuf.GeneratedMessage
         operationsByState_ = null;
       }
       return operationsByStateBuilder_;
+    }
+
+    private long estimatedTotalUnitCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Estimated number of units based. The estimation is
+     * computed upon creation of the rollout.
+     * </pre>
+     *
+     * <code>
+     * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the estimatedTotalUnitCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasEstimatedTotalUnitCount() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Estimated number of units based. The estimation is
+     * computed upon creation of the rollout.
+     * </pre>
+     *
+     * <code>
+     * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The estimatedTotalUnitCount.
+     */
+    @java.lang.Override
+    public long getEstimatedTotalUnitCount() {
+      return estimatedTotalUnitCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Estimated number of units based. The estimation is
+     * computed upon creation of the rollout.
+     * </pre>
+     *
+     * <code>
+     * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The estimatedTotalUnitCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEstimatedTotalUnitCount(long value) {
+
+      estimatedTotalUnitCount_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Estimated number of units based. The estimation is
+     * computed upon creation of the rollout.
+     * </pre>
+     *
+     * <code>
+     * optional int64 estimated_total_unit_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEstimatedTotalUnitCount() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      estimatedTotalUnitCount_ = 0L;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutStats)

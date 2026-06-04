@@ -38,7 +38,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6464
+   *     google/container/v1beta1/cluster_service.proto;l=6498
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6464
+   *     google/container/v1beta1/cluster_service.proto;l=6498
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -75,7 +75,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6470
+   *     google/container/v1beta1/cluster_service.proto;l=6504
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -94,7 +94,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6470
+   *     google/container/v1beta1/cluster_service.proto;l=6504
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6474
+   *     google/container/v1beta1/cluster_service.proto;l=6508
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -128,7 +128,7 @@ public interface StartIPRotationRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=6474
+   *     google/container/v1beta1/cluster_service.proto;l=6508
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

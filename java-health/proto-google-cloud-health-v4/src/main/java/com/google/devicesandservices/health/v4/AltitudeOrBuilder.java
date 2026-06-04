@@ -76,7 +76,20 @@ public interface AltitudeOrBuilder
    * Required. Altitude gain in millimeters over the observed interval.
    * </pre>
    *
-   * <code>int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the gainMillimeters field is set.
+   */
+  boolean hasGainMillimeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Altitude gain in millimeters over the observed interval.
+   * </pre>
+   *
+   * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The gainMillimeters.
    */

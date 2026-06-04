@@ -76,7 +76,20 @@ public interface WeightOrBuilder
    * Required. Weight of a user in grams.
    * </pre>
    *
-   * <code>double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the weightGrams field is set.
+   */
+  boolean hasWeightGrams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Weight of a user in grams.
+   * </pre>
+   *
+   * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The weightGrams.
    */

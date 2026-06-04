@@ -6803,7 +6803,20 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        * Output only. Total duration in minutes of a sleep stage.
        * </pre>
        *
-       * <code>int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the minutes field is set.
+       */
+      boolean hasMinutes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total duration in minutes of a sleep stage.
+       * </pre>
+       *
+       * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The minutes.
        */
@@ -6816,7 +6829,20 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        * Output only. Number of sleep stages segments.
        * </pre>
        *
-       * <code>int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the count field is set.
+       */
+      boolean hasCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of sleep stages segments.
+       * </pre>
+       *
+       * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The count.
        */
@@ -6873,6 +6899,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
                     .class);
       }
 
+      private int bitField0_;
       public static final int TYPE_FIELD_NUMBER = 1;
       private int type_ = 0;
 
@@ -6926,7 +6953,23 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        * Output only. Total duration in minutes of a sleep stage.
        * </pre>
        *
-       * <code>int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the minutes field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinutes() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total duration in minutes of a sleep stage.
+       * </pre>
+       *
+       * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The minutes.
        */
@@ -6945,7 +6988,23 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        * Output only. Number of sleep stages segments.
        * </pre>
        *
-       * <code>int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the count field is set.
+       */
+      @java.lang.Override
+      public boolean hasCount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of sleep stages segments.
+       * </pre>
+       *
+       * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The count.
        */
@@ -6974,10 +7033,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
                 .getNumber()) {
           output.writeEnum(1, type_);
         }
-        if (minutes_ != 0L) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           output.writeInt64(2, minutes_);
         }
-        if (count_ != 0L) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           output.writeInt64(3, count_);
         }
         getUnknownFields().writeTo(output);
@@ -6995,10 +7054,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
         }
-        if (minutes_ != 0L) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, minutes_);
         }
-        if (count_ != 0L) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, count_);
         }
         size += getUnknownFields().getSerializedSize();
@@ -7019,8 +7078,14 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
             (com.google.devicesandservices.health.v4.Sleep.SleepSummary.StageSummary) obj;
 
         if (type_ != other.type_) return false;
-        if (getMinutes() != other.getMinutes()) return false;
-        if (getCount() != other.getCount()) return false;
+        if (hasMinutes() != other.hasMinutes()) return false;
+        if (hasMinutes()) {
+          if (getMinutes() != other.getMinutes()) return false;
+        }
+        if (hasCount() != other.hasCount()) return false;
+        if (hasCount()) {
+          if (getCount() != other.getCount()) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -7034,10 +7099,14 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
-        hash = (37 * hash) + MINUTES_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinutes());
-        hash = (37 * hash) + COUNT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+        if (hasMinutes()) {
+          hash = (37 * hash) + MINUTES_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinutes());
+        }
+        if (hasCount()) {
+          hash = (37 * hash) + COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7238,12 +7307,16 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.type_ = type_;
           }
+          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.minutes_ = minutes_;
+            to_bitField0_ |= 0x00000001;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.count_ = count_;
+            to_bitField0_ |= 0x00000002;
           }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -7266,10 +7339,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
           if (other.type_ != 0) {
             setTypeValue(other.getTypeValue());
           }
-          if (other.getMinutes() != 0L) {
+          if (other.hasMinutes()) {
             setMinutes(other.getMinutes());
           }
-          if (other.getCount() != 0L) {
+          if (other.hasCount()) {
             setCount(other.getCount());
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -7451,7 +7524,23 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Total duration in minutes of a sleep stage.
          * </pre>
          *
-         * <code>int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return Whether the minutes field is set.
+         */
+        @java.lang.Override
+        public boolean hasMinutes() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Total duration in minutes of a sleep stage.
+         * </pre>
+         *
+         * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The minutes.
          */
@@ -7467,7 +7556,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Total duration in minutes of a sleep stage.
          * </pre>
          *
-         * <code>int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The minutes to set.
          * @return This builder for chaining.
@@ -7487,7 +7576,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Total duration in minutes of a sleep stage.
          * </pre>
          *
-         * <code>int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 minutes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -7507,7 +7596,23 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Number of sleep stages segments.
          * </pre>
          *
-         * <code>int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return Whether the count field is set.
+         */
+        @java.lang.Override
+        public boolean hasCount() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Number of sleep stages segments.
+         * </pre>
+         *
+         * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The count.
          */
@@ -7523,7 +7628,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Number of sleep stages segments.
          * </pre>
          *
-         * <code>int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The count to set.
          * @return This builder for chaining.
@@ -7543,7 +7648,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
          * Output only. Number of sleep stages segments.
          * </pre>
          *
-         * <code>int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         * <code>optional int64 count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */

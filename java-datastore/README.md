@@ -30,7 +30,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore</artifactId>
-    <version>3.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
+    <version>3.1.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </dependency>
 
 ```
@@ -50,7 +50,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.82.0')
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
 
 implementation 'com.google.cloud:google-cloud-datastore'
 ```
