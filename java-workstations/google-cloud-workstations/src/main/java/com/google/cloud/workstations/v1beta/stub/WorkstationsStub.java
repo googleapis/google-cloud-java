@@ -48,6 +48,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -270,6 +272,15 @@ public abstract class WorkstationsStub implements BackgroundResource {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAccessTokenCallable()");
+  }
+
+  public OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: pushCredentialsOperationCallable()");
+  }
+
+  public UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    throw new UnsupportedOperationException("Not implemented: pushCredentialsCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

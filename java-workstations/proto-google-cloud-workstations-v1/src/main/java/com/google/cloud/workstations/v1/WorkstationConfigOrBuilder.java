@@ -30,10 +30,10 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation configuration.
+   * Identifier. Full name of this workstation configuration.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation configuration.
+   * Identifier. Full name of this workstation configuration.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -86,7 +86,9 @@ public interface WorkstationConfigOrBuilder
    * configuration.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -100,7 +102,9 @@ public interface WorkstationConfigOrBuilder
    * configuration.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -590,6 +594,32 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Maximum number of workstations under this configuration a user
+   * can have `workstations.workstation.use` permission on.
+   *
+   * Only enforced on CreateWorkstation API calls on the user issuing the API
+   * request. Can be overridden by:
+   *
+   * - granting a user
+   * workstations.workstationConfigs.exemptMaxUsableWorkstationLimit permission,
+   * or
+   * - having a user with that permission create a workstation and
+   * granting another user `workstations.workstation.use` permission on
+   * that workstation.
+   *
+   * If not specified, defaults to `0`, which indicates unlimited.
+   * </pre>
+   *
+   * <code>int32 max_usable_workstations = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxUsableWorkstations.
+   */
+  int getMaxUsableWorkstations();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Runtime host for the workstation.
    * </pre>
    *
@@ -698,6 +728,81 @@ public interface WorkstationConfigOrBuilder
    */
   com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectoryOrBuilder
       getPersistentDirectoriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory>
+      getEphemeralDirectoriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory getEphemeralDirectories(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getEphemeralDirectoriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectoryOrBuilder>
+      getEphemeralDirectoriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Ephemeral directories which won't persist across workstation
+   * sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectory ephemeral_directories = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.WorkstationConfig.EphemeralDirectoryOrBuilder
+      getEphemeralDirectoriesOrBuilder(int index);
 
   /**
    *
@@ -1009,10 +1114,10 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether this resource is degraded, in which case it may
-   * require user action to restore full functionality. See also the
+   * Output only. Whether this workstation configuration is in degraded mode, in
+   * which case it may require user action to restore full functionality. The
    * [conditions][google.cloud.workstations.v1.WorkstationConfig.conditions]
-   * field.
+   * field contains detailed information about the status of the configuration.
    * </pre>
    *
    * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1025,7 +1130,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation configuration's
+   * current state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1037,7 +1143,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation configuration's
+   * current state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1049,7 +1156,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation configuration's
+   * current state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1061,7 +1169,8 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation configuration's
+   * current state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1073,11 +1182,166 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation configuration's
+   * current state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.rpc.StatusOrBuilder getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to enable Linux `auditd` logging on the workstation. When
+   * enabled, a
+   * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account]
+   * must also be specified that has `roles/logging.logWriter` and
+   * `roles/monitoring.metricWriter` on the project. Operating system audit
+   * logging is distinct from [Cloud Audit
+   * Logs](https://cloud.google.com/workstations/docs/audit-logging) and
+   * [Container output
+   * logging](https://cloud.google.com/workstations/docs/container-output-logging#overview).
+   * Operating system audit logs are available in the
+   * [Cloud Logging](https://cloud.google.com/logging/docs) console by querying:
+   *
+   * resource.type="gce_instance"
+   * log_name:"/logs/linux-auditd"
+   * </pre>
+   *
+   * <code>bool enable_audit_agent = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAuditAgent.
+   */
+  boolean getEnableAuditAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables support for plain TCP connections in the workstation.
+   * By default the service supports TCP connections through a websocket relay.
+   * Setting this option to true disables that relay, which prevents the usage
+   * of services that require plain TCP connections, such as SSH.
+   * When enabled, all communication must occur over HTTPS or WSS.
+   * </pre>
+   *
+   * <code>bool disable_tcp_connections = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disableTcpConnections.
+   */
+  boolean getDisableTcpConnections();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [PortRange][google.cloud.workstations.v1.WorkstationConfig.PortRange]s
+   * specifying single ports or ranges of ports that are externally accessible
+   * in the workstation. Allowed ports must be one of 22, 80, or within range
+   * 1024-65535. If not specified defaults to ports 22, 80, and ports
+   * 1024-65535.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PortRange allowed_ports = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.PortRange>
+      getAllowedPortsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [PortRange][google.cloud.workstations.v1.WorkstationConfig.PortRange]s
+   * specifying single ports or ranges of ports that are externally accessible
+   * in the workstation. Allowed ports must be one of 22, 80, or within range
+   * 1024-65535. If not specified defaults to ports 22, 80, and ports
+   * 1024-65535.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PortRange allowed_ports = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.WorkstationConfig.PortRange getAllowedPorts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [PortRange][google.cloud.workstations.v1.WorkstationConfig.PortRange]s
+   * specifying single ports or ranges of ports that are externally accessible
+   * in the workstation. Allowed ports must be one of 22, 80, or within range
+   * 1024-65535. If not specified defaults to ports 22, 80, and ports
+   * 1024-65535.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PortRange allowed_ports = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAllowedPortsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [PortRange][google.cloud.workstations.v1.WorkstationConfig.PortRange]s
+   * specifying single ports or ranges of ports that are externally accessible
+   * in the workstation. Allowed ports must be one of 22, 80, or within range
+   * 1024-65535. If not specified defaults to ports 22, 80, and ports
+   * 1024-65535.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PortRange allowed_ports = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.workstations.v1.WorkstationConfig.PortRangeOrBuilder>
+      getAllowedPortsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [PortRange][google.cloud.workstations.v1.WorkstationConfig.PortRange]s
+   * specifying single ports or ranges of ports that are externally accessible
+   * in the workstation. Allowed ports must be one of 22, 80, or within range
+   * 1024-65535. If not specified defaults to ports 22, 80, and ports
+   * 1024-65535.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PortRange allowed_ports = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.WorkstationConfig.PortRangeOrBuilder getAllowedPortsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Grant creator of a workstation `roles/workstations.policyAdmin`
+   * role along with `roles/workstations.user` role on the workstation created
+   * by them. This allows workstation users to share access to either their
+   * entire workstation, or individual ports. Defaults to false.
+   * </pre>
+   *
+   * <code>
+   * bool grant_workstation_admin_role_on_create = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The grantWorkstationAdminRoleOnCreate.
+   */
+  boolean getGrantWorkstationAdminRoleOnCreate();
 }
