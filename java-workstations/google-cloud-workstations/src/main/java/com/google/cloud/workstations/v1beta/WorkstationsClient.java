@@ -449,7 +449,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateAccessToken</td>
- *      <td><p> Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation.</td>
+ *      <td><p> Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation. Once generated this token cannot be revoked and is good for the lifetime of the token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -463,6 +463,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> generateAccessTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PushCredentials</td>
+ *      <td><p> Pushes credentials to a running workstation on behalf of a user. Once complete, supported credential types (application_default_credentials) are made available to processes running in the user container.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> pushCredentialsAsync(PushCredentialsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> pushCredentialsAsync(WorkstationName workstation)
+ *           <li><p> pushCredentialsAsync(String workstation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> pushCredentialsOperationCallable()
+ *           <li><p> pushCredentialsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -838,6 +858,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (WorkstationCluster element :
    *       workstationsClient.listWorkstationClusters(request).iterateAll()) {
@@ -872,6 +893,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<WorkstationCluster> future =
    *       workstationsClient.listWorkstationClustersPagedCallable().futureCall(request);
@@ -905,6 +927,7 @@ public class WorkstationsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationClustersResponse response =
@@ -1612,6 +1635,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (WorkstationConfig element :
    *       workstationsClient.listWorkstationConfigs(request).iterateAll()) {
@@ -1648,6 +1672,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<WorkstationConfig> future =
    *       workstationsClient.listWorkstationConfigsPagedCallable().futureCall(request);
@@ -1683,6 +1708,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationConfigsResponse response =
@@ -1916,7 +1942,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstationConfig Required. Config to create.
+   * @param workstationConfig Required. Workstation configuration to create.
    * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1958,7 +1984,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstationConfig Required. Config to create.
+   * @param workstationConfig Required. Workstation configuration to create.
    * @param workstationConfigId Required. ID to use for the workstation configuration.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2096,7 +2122,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param workstationConfig Required. Config to update.
+   * @param workstationConfig Required. Workstation configuration to update.
    * @param updateMask Required. Mask specifying which fields in the workstation configuration
    *     should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2611,6 +2637,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Workstation element : workstationsClient.listWorkstations(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2649,6 +2676,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Workstation> future =
    *       workstationsClient.listWorkstationsPagedCallable().futureCall(request);
@@ -2688,6 +2716,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListWorkstationsResponse response =
@@ -2929,7 +2958,11 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstation Required. Workstation to create.
+   * @param workstation Required. Workstation to create. If source_workstation is specified, the
+   *     user must have `workstations.workstations.use` permission on the source workstation, and
+   *     the Cloud Workstations Service Agent for the project where you are creating the new
+   *     workstation must have compute.disks.createSnapshot and compute.snapshots.useReadOnly on the
+   *     source project.
    * @param workstationId Required. ID to use for the workstation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2969,7 +3002,11 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent resource name.
-   * @param workstation Required. Workstation to create.
+   * @param workstation Required. Workstation to create. If source_workstation is specified, the
+   *     user must have `workstations.workstations.use` permission on the source workstation, and
+   *     the Cloud Workstations Service Agent for the project where you are creating the new
+   *     workstation must have compute.disks.createSnapshot and compute.snapshots.useReadOnly on the
+   *     source project.
    * @param workstationId Required. ID to use for the workstation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3118,8 +3155,7 @@ public class WorkstationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param workstation Required. Workstation to update.
-   * @param updateMask Required. Mask specifying which fields in the workstation configuration
-   *     should be updated.
+   * @param updateMask Required. Mask specifying which fields in the workstation should be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workstation, OperationMetadata> updateWorkstationAsync(
@@ -3501,6 +3537,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   Workstation response = workstationsClient.startWorkstationAsync(request).get();
    * }
@@ -3539,6 +3576,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   OperationFuture<Workstation, OperationMetadata> future =
    *       workstationsClient.startWorkstationOperationCallable().futureCall(request);
@@ -3577,6 +3615,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                   .toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setBoostConfig("boostConfig1345260741")
    *           .build();
    *   ApiFuture<Operation> future =
    *       workstationsClient.startWorkstationCallable().futureCall(request);
@@ -3772,7 +3811,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3809,7 +3849,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3845,7 +3886,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3866,6 +3908,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                       "[WORKSTATION_CONFIG]",
    *                       "[WORKSTATION]")
    *                   .toString())
+   *           .setPort(3446913)
    *           .build();
    *   GenerateAccessTokenResponse response = workstationsClient.generateAccessToken(request);
    * }
@@ -3881,7 +3924,8 @@ public class WorkstationsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a short-lived credential that can be used to send authenticated and authorized traffic
-   * to a workstation.
+   * to a workstation. Once generated this token cannot be revoked and is good for the lifetime of
+   * the token.
    *
    * <p>Sample code:
    *
@@ -3902,6 +3946,7 @@ public class WorkstationsClient implements BackgroundResource {
    *                       "[WORKSTATION_CONFIG]",
    *                       "[WORKSTATION]")
    *                   .toString())
+   *           .setPort(3446913)
    *           .build();
    *   ApiFuture<GenerateAccessTokenResponse> future =
    *       workstationsClient.generateAccessTokenCallable().futureCall(request);
@@ -3913,6 +3958,202 @@ public class WorkstationsClient implements BackgroundResource {
   public final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return stub.generateAccessTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pushes credentials to a running workstation on behalf of a user. Once complete, supported
+   * credential types (application_default_credentials) are made available to processes running in
+   * the user container.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
+   *   WorkstationName workstation =
+   *       WorkstationName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[WORKSTATION_CLUSTER]",
+   *           "[WORKSTATION_CONFIG]",
+   *           "[WORKSTATION]");
+   *   Workstation response = workstationsClient.pushCredentialsAsync(workstation).get();
+   * }
+   * }</pre>
+   *
+   * @param workstation Required. Name of the workstation for which the credentials should be
+   *     pushed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workstation, PushCredentialsMetadata> pushCredentialsAsync(
+      WorkstationName workstation) {
+    PushCredentialsRequest request =
+        PushCredentialsRequest.newBuilder()
+            .setWorkstation(workstation == null ? null : workstation.toString())
+            .build();
+    return pushCredentialsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pushes credentials to a running workstation on behalf of a user. Once complete, supported
+   * credential types (application_default_credentials) are made available to processes running in
+   * the user container.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
+   *   String workstation =
+   *       WorkstationName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[WORKSTATION_CLUSTER]",
+   *               "[WORKSTATION_CONFIG]",
+   *               "[WORKSTATION]")
+   *           .toString();
+   *   Workstation response = workstationsClient.pushCredentialsAsync(workstation).get();
+   * }
+   * }</pre>
+   *
+   * @param workstation Required. Name of the workstation for which the credentials should be
+   *     pushed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workstation, PushCredentialsMetadata> pushCredentialsAsync(
+      String workstation) {
+    PushCredentialsRequest request =
+        PushCredentialsRequest.newBuilder().setWorkstation(workstation).build();
+    return pushCredentialsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pushes credentials to a running workstation on behalf of a user. Once complete, supported
+   * credential types (application_default_credentials) are made available to processes running in
+   * the user container.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
+   *   PushCredentialsRequest request =
+   *       PushCredentialsRequest.newBuilder()
+   *           .setWorkstation(
+   *               WorkstationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKSTATION_CLUSTER]",
+   *                       "[WORKSTATION_CONFIG]",
+   *                       "[WORKSTATION]")
+   *                   .toString())
+   *           .setApplicationDefaultCredentials(
+   *               PushCredentialsRequest.OAuthToken.newBuilder().build())
+   *           .build();
+   *   Workstation response = workstationsClient.pushCredentialsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Workstation, PushCredentialsMetadata> pushCredentialsAsync(
+      PushCredentialsRequest request) {
+    return pushCredentialsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pushes credentials to a running workstation on behalf of a user. Once complete, supported
+   * credential types (application_default_credentials) are made available to processes running in
+   * the user container.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
+   *   PushCredentialsRequest request =
+   *       PushCredentialsRequest.newBuilder()
+   *           .setWorkstation(
+   *               WorkstationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKSTATION_CLUSTER]",
+   *                       "[WORKSTATION_CONFIG]",
+   *                       "[WORKSTATION]")
+   *                   .toString())
+   *           .setApplicationDefaultCredentials(
+   *               PushCredentialsRequest.OAuthToken.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Workstation, PushCredentialsMetadata> future =
+   *       workstationsClient.pushCredentialsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Workstation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    return stub.pushCredentialsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pushes credentials to a running workstation on behalf of a user. Once complete, supported
+   * credential types (application_default_credentials) are made available to processes running in
+   * the user container.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (WorkstationsClient workstationsClient = WorkstationsClient.create()) {
+   *   PushCredentialsRequest request =
+   *       PushCredentialsRequest.newBuilder()
+   *           .setWorkstation(
+   *               WorkstationName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[WORKSTATION_CLUSTER]",
+   *                       "[WORKSTATION_CONFIG]",
+   *                       "[WORKSTATION]")
+   *                   .toString())
+   *           .setApplicationDefaultCredentials(
+   *               PushCredentialsRequest.OAuthToken.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       workstationsClient.pushCredentialsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    return stub.pushCredentialsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

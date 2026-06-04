@@ -291,4 +291,94 @@ public interface LookerQueryOrBuilder
    * @return The bytes for limit.
    */
   com.google.protobuf.ByteString getLimitBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the queryId field is set.
+   */
+  boolean hasQueryId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The queryId.
+   */
+  java.lang.String getQueryId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary identifier for the query resource in Looker, used for
+   * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
+   * resource.
+   * </pre>
+   *
+   * <code>optional string query_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for queryId.
+   */
+  com.google.protobuf.ByteString getQueryIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the clientId field is set.
+   */
+  boolean hasClientId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientId.
+   */
+  java.lang.String getClientId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The short alphanumeric identifier for the query, used for share
+   * links and Explore URLs (e.g., in the `qid` parameter). Maps to `client_id`
+   * in the Looker API `Query` resource.
+   * </pre>
+   *
+   * <code>optional string client_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientId.
+   */
+  com.google.protobuf.ByteString getClientIdBytes();
 }

@@ -295,43 +295,53 @@ public interface SystemMessageOrBuilder
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
    * @return Whether the clarification field is set.
    */
+  @java.lang.Deprecated
   boolean hasClarification();
 
   /**
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
    * @return The clarification.
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification();
 
   /**
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
       getClarificationOrBuilder();
 
@@ -364,6 +374,49 @@ public interface SystemMessageOrBuilder
    * @return The groupId.
    */
   int getGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the citation field is set.
+   */
+  boolean hasCitation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The citation.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.Citation getCitation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder getCitationOrBuilder();
 
   com.google.cloud.geminidataanalytics.v1beta.SystemMessage.KindCase getKindCase();
 }

@@ -147,5 +147,22 @@ public interface GenerateAccessTokenRequestOrBuilder
    */
   com.google.protobuf.ByteString getWorkstationBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Port for which the access token should be generated. If
+   * specified, the generated access token grants access only to the
+   * specified port of the workstation. If specified, values must be within the
+   * range [1 - 65535]. If not specified, the generated access token grants
+   * access to all ports of the workstation.
+   * </pre>
+   *
+   * <code>int32 port = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The port.
+   */
+  int getPort();
+
   com.google.cloud.workstations.v1.GenerateAccessTokenRequest.ExpirationCase getExpirationCase();
 }

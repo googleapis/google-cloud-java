@@ -19,6 +19,7 @@ package com.google.cloud.geminidataanalytics.v1beta.samples;
 // [START geminidataanalytics_v1beta_generated_DataChatService_Chat_async]
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.geminidataanalytics.v1beta.ChatRequest;
+import com.google.cloud.geminidataanalytics.v1beta.Credentials;
 import com.google.cloud.geminidataanalytics.v1beta.DataChatServiceClient;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
 import com.google.cloud.geminidataanalytics.v1beta.ProjectName;
@@ -42,6 +43,7 @@ public class AsyncChat {
               .setProject(ProjectName.of("[PROJECT]").toString())
               .setParent("parent-995424086")
               .addAllMessages(new ArrayList<Message>())
+              .setCredentials(Credentials.newBuilder().build())
               .build();
       ServerStream<Message> stream = dataChatServiceClient.chatCallable().call(request);
       for (Message response : stream) {
