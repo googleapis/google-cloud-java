@@ -22,6 +22,7 @@
   <properties>
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
+    <error-prone.version>2.48.0</error-prone.version>
   </properties>
 
   <developers>
