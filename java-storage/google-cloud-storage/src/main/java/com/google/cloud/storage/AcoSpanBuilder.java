@@ -74,9 +74,12 @@ final class AcoSpanBuilder implements SpanBuilder {
   @Override
   public Span startSpan() {
     if (bucketName != null && parent != null) {
-      checkCacheAndTriggerFetch(
-          parent.delegate, parent.bucketMetadataCache, parent.getCacheExecutor(), bucketName);
-      return new AcoSpan(delegate.startSpan(), bucketName, parent);
+      BucketMetadataCache cache = parent.acoContext.getCache();
+      ExecutorService cacheExecutor = parent.acoContext.getCacheExecutor();
+      if (cache != null && cacheExecutor != null) {
+        checkCacheAndTriggerFetch(parent.delegate, cache, cacheExecutor, bucketName);
+        return new AcoSpan(delegate.startSpan(), bucketName, parent);
+      }
     }
     return delegate.startSpan();
   }

@@ -51,6 +51,10 @@ import org.junit.runner.RunWith;
     transports = {Transport.HTTP})
 public final class ITOpenTelemetryMPUTest {
 
+  static {
+    OtelStorageDecorator.acoEnabled = true;
+  }
+
   @Inject public Storage storage;
 
   @Inject public BucketInfo bucket;
@@ -176,7 +180,8 @@ public final class ITOpenTelemetryMPUTest {
   private static void pollUntilMetadataResolved(OtelStorageDecorator osd, String bucketName)
       throws Exception {
     for (int i = 0; i < 100; i++) {
-      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get(bucketName);
+      BucketMetadataCache cache = osd.acoContext.getCache();
+      BucketMetadataCache.BucketMetadata meta = cache != null ? cache.get(bucketName) : null;
       if (meta != null && !meta.fetchPending) {
         return;
       }

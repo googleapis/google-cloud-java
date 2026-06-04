@@ -58,7 +58,6 @@ import java.nio.channels.WritableByteChannel;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.UnaryOperator;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -76,16 +75,20 @@ final class OtelStorageDecorator implements Storage {
   private final OpenTelemetry otel;
   private final Attributes baseAttributes;
   private final Tracer tracer;
-  final BucketMetadataCache bucketMetadataCache;
-  private volatile ExecutorService cacheExecutor;
+  final AcoContext acoContext;
+
+  @VisibleForTesting
+  static boolean acoEnabled =
+      Boolean.parseBoolean(
+          System.getProperty("com.google.cloud.storage.otel.bucketAttributes.enabled", "true"));
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
     this.otel = otel;
     this.baseAttributes = baseAttributes;
+    this.acoContext = AcoContext.create(acoEnabled);
     this.tracer =
         TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
-    this.bucketMetadataCache = BucketMetadataCache.getBucketMetadataCache();
   }
 
   @Override
@@ -1428,13 +1431,7 @@ final class OtelStorageDecorator implements Storage {
   @Override
   public void close() throws Exception {
     try {
-      bucketMetadataCache.clear();
-      synchronized (this) {
-        if (cacheExecutor != null) {
-          cacheExecutor.shutdownNow();
-          cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
-        }
-      }
+      acoContext.close();
     } finally {
       delegate.close();
     }
@@ -1617,7 +1614,9 @@ final class OtelStorageDecorator implements Storage {
       if (parentContextOverride != null) {
         spanBuilder.setParent(parentContextOverride);
       }
-      return new AcoSpanBuilder(spanBuilder, parentDecorator);
+      return parentDecorator != null
+          ? parentDecorator.acoContext.wrap(spanBuilder, parentDecorator)
+          : spanBuilder;
     }
   }
 
@@ -2298,18 +2297,5 @@ final class OtelStorageDecorator implements Storage {
         return delegate.isOpen();
       }
     }
-  }
-
-  ExecutorService getCacheExecutor() {
-    ExecutorService result = cacheExecutor;
-    if (result == null) {
-      synchronized (this) {
-        result = cacheExecutor;
-        if (result == null) {
-          cacheExecutor = result = AcoSpanBuilder.newCacheExecutor();
-        }
-      }
-    }
-    return result;
   }
 }

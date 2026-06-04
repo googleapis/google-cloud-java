@@ -36,10 +36,13 @@ final class AcoSpan implements Span {
 
   private void applyCacheAttributes() {
     if (bucketName != null && parent != null) {
-      BucketMetadataCache.BucketMetadata md = parent.bucketMetadataCache.get(bucketName);
-      if (md != null && !md.fetchPending) {
-        delegate.setAttribute("gcp.resource.destination.id", md.resource);
-        delegate.setAttribute("gcp.resource.destination.location", md.location);
+      BucketMetadataCache cache = parent.acoContext.getCache();
+      if (cache != null) {
+        BucketMetadataCache.BucketMetadata md = cache.get(bucketName);
+        if (md != null && !md.fetchPending) {
+          delegate.setAttribute("gcp.resource.destination.id", md.resource);
+          delegate.setAttribute("gcp.resource.destination.location", md.location);
+        }
       }
     }
   }
@@ -76,7 +79,10 @@ final class AcoSpan implements Span {
       if (se.getCode() == 404 && se.getMessage() != null) {
         String msg = se.getMessage().toLowerCase(java.util.Locale.US);
         if (msg.contains("bucket not found") || msg.contains("bucket does not exist")) {
-          parent.bucketMetadataCache.remove(bucketName);
+          BucketMetadataCache cache = parent.acoContext.getCache();
+          if (cache != null) {
+            cache.remove(bucketName);
+          }
         }
       }
     }

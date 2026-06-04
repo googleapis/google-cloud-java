@@ -34,6 +34,10 @@ import org.mockito.Mockito;
 
 public class OtelStorageDecoratorAcoUnitTest {
 
+  static {
+    OtelStorageDecorator.acoEnabled = true;
+  }
+
   private OpenTelemetry mockOtel;
 
   @Before
@@ -66,13 +70,16 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "success-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "success-bucket");
 
       // Wait for background task to finish cleanly
-      osd.getCacheExecutor().shutdown();
-      osd.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
+      osd.acoContext.getCacheExecutor().shutdown();
+      osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
-      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("success-bucket");
+      BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("success-bucket");
       assertNotNull(meta);
       assertEquals("projects/12345/buckets/success-bucket", meta.resource);
       assertEquals("us-east1", meta.location);
@@ -92,14 +99,17 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "nonexistent-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "nonexistent-bucket");
 
       // Wait for background task to finish
-      osd.getCacheExecutor().shutdown();
-      osd.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
+      osd.acoContext.getCacheExecutor().shutdown();
+      osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
       // Verified not found -> Entry must be cleanly evicted (null)
-      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("nonexistent-bucket");
+      BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("nonexistent-bucket");
       assertNull(meta);
     }
   }
@@ -115,14 +125,17 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "nonexistent-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "nonexistent-bucket");
 
       // Wait for background task to finish
-      osd.getCacheExecutor().shutdown();
-      osd.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
+      osd.acoContext.getCacheExecutor().shutdown();
+      osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
       // Verified not found -> Entry must be cleanly evicted (null)
-      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("nonexistent-bucket");
+      BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("nonexistent-bucket");
       assertNull(meta);
     }
   }
@@ -139,14 +152,17 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "forbidden-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "forbidden-bucket");
 
       // Wait for background task to finish
-      osd.getCacheExecutor().shutdown();
-      osd.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
+      osd.acoContext.getCacheExecutor().shutdown();
+      osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
       // Forbidden -> Fallback values retained with pending = false (Do Not Retry)
-      BucketMetadataCache.BucketMetadata meta = osd.bucketMetadataCache.get("forbidden-bucket");
+      BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("forbidden-bucket");
       assertNotNull(meta);
       assertEquals("projects/_/buckets/forbidden-bucket", meta.resource);
       assertEquals("global", meta.location);
@@ -171,13 +187,19 @@ public class OtelStorageDecoratorAcoUnitTest {
 
       // Trigger twice concurrently
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "concurrent-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "concurrent-bucket");
       AcoSpanBuilder.checkCacheAndTriggerFetch(
-          osd.delegate, osd.bucketMetadataCache, osd.getCacheExecutor(), "concurrent-bucket");
+          osd.delegate,
+          osd.acoContext.getCache(),
+          osd.acoContext.getCacheExecutor(),
+          "concurrent-bucket");
 
       // Wait for background tasks
-      osd.getCacheExecutor().shutdown();
-      osd.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
+      osd.acoContext.getCacheExecutor().shutdown();
+      osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
       // Verify get was called exactly once (no duplicate fetches)
       Mockito.verify(mockStorage, Mockito.times(1)).get("concurrent-bucket");
@@ -193,8 +215,9 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       // Manually put a pending placeholder entry
-      osd.bucketMetadataCache.put(
-          "pending-bucket", "projects/_/buckets/pending-bucket", "global", true);
+      osd.acoContext
+          .getCache()
+          .put("pending-bucket", "projects/_/buckets/pending-bucket", "global", true);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "pending-bucket", osd);
@@ -217,8 +240,9 @@ public class OtelStorageDecoratorAcoUnitTest {
       OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
 
       // Manually put a resolved non-pending entry
-      osd.bucketMetadataCache.put(
-          "resolved-bucket", "projects/123/buckets/resolved-bucket", "us-east1", false);
+      osd.acoContext
+          .getCache()
+          .put("resolved-bucket", "projects/123/buckets/resolved-bucket", "us-east1", false);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "resolved-bucket", osd);
@@ -229,6 +253,31 @@ public class OtelStorageDecoratorAcoUnitTest {
       Mockito.verify(mockSpan)
           .setAttribute("gcp.resource.destination.id", "projects/123/buckets/resolved-bucket");
       Mockito.verify(mockSpan).setAttribute("gcp.resource.destination.location", "us-east1");
+    }
+  }
+
+  @Test
+  public void testDisabledAcoBehavior() throws Exception {
+    OtelStorageDecorator.acoEnabled = false;
+    try {
+      Storage mockStorage = mock(Storage.class);
+      try (Storage decoratedStorage =
+          OtelStorageDecorator.decorate(
+              mockStorage, mockOtel, TransportCompatibility.Transport.HTTP)) {
+        OtelStorageDecorator osd = (OtelStorageDecorator) decoratedStorage;
+
+        // Verify acoContext is a DisabledAcoContext
+        assertNotNull(osd.acoContext);
+        assertNull(osd.acoContext.getCache());
+        assertNull(osd.acoContext.getCacheExecutor());
+
+        // Verify that span builder wrapping behaves as a no-op
+        SpanBuilder mockSpanBuilder = mock(SpanBuilder.class);
+        SpanBuilder wrapped = osd.acoContext.wrap(mockSpanBuilder, osd);
+        assertEquals(mockSpanBuilder, wrapped); // Should return the exact same instance, unwrapped
+      }
+    } finally {
+      OtelStorageDecorator.acoEnabled = true;
     }
   }
 }
