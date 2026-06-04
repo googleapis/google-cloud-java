@@ -326,6 +326,17 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
     return ((WorkstationsStubSettings) getStubSettings()).generateAccessTokenSettings();
   }
 
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public UnaryCallSettings<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+    return ((WorkstationsStubSettings) getStubSettings()).pushCredentialsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public OperationCallSettings<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationSettings() {
+    return ((WorkstationsStubSettings) getStubSettings()).pushCredentialsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return ((WorkstationsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -655,6 +666,18 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
     public UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings() {
       return getStubSettingsBuilder().generateAccessTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public UnaryCallSettings.Builder<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+      return getStubSettingsBuilder().pushCredentialsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public OperationCallSettings.Builder<
+            PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+        pushCredentialsOperationSettings() {
+      return getStubSettingsBuilder().pushCredentialsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

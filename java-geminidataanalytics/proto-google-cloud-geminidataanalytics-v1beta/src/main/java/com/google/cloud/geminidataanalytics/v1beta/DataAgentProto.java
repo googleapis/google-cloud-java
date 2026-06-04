@@ -62,7 +62,7 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
           + "ataanalytics.v1beta\032\037google/api/field_be"
           + "havior.proto\032\031google/api/resource.proto\032"
           + "Bgoogle/cloud/geminidataanalytics/v1beta"
-          + "/data_analytics_agent.proto\032\037google/protobuf/timestamp.proto\"\243\005\n"
+          + "/data_analytics_agent.proto\032\037google/protobuf/timestamp.proto\"\360\005\n"
           + "\tDataAgent\022[\n"
           + "\024data_analytics_agent\030e \001(\0132;.google.cloud."
           + "geminidataanalytics.v1beta.DataAnalyticsAgentH\000\022\024\n"
@@ -76,19 +76,22 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
           + "\013delete_time\030\014"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
           + "purge_time\030\r"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
+          + "\007kms_key\030\016 \001(\tB)\340A\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\001\210\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\212\001\352A\206\001\n"
-          + ",geminidataanalytics.googleapis.com/DataAge"
-          + "nt\022?projects/{project}/locations/{location}/dataAgents/{data_agent}*\n"
+          + ",geminidataanalytics.googleapis.com/DataAgent\022?projects/{p"
+          + "roject}/locations/{location}/dataAgents/{data_agent}*\n"
           + "dataAgents2\tdataAgentB\006\n"
-          + "\004typeB\237\002\n"
-          + "+com.google.cloud.geminidataanalytics.v1betaB\016DataAgentPro"
-          + "toP\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;ge"
-          + "minidataanalyticspb\252\002\'Google.Cloud.Gemin"
-          + "iDataAnalytics.V1Beta\312\002\'Google\\Cloud\\Gem"
-          + "iniDataAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
+          + "\004typeB\n\n"
+          + "\010_kms_keyB\237\002\n"
+          + "+com.google.cloud.geminidataanalytics.v1betaB\016DataAgentProtoP"
+          + "\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;gemin"
+          + "idataanalyticspb\252\002\'Google.Cloud.GeminiDa"
+          + "taAnalytics.V1Beta\312\002\'Google\\Cloud\\Gemini"
+          + "DataAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -114,6 +117,7 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
               "UpdateTime",
               "DeleteTime",
               "PurgeTime",
+              "KmsKey",
               "Type",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_DataAgent_LabelsEntry_descriptor =
@@ -134,6 +138,7 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }
