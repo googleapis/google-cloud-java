@@ -40,8 +40,11 @@ import java.nio.channels.ReadableByteChannel;
 import java.security.SecureRandom;
 import java.util.concurrent.ExecutionException;
 import org.junit.ClassRule;
+import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
+import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 
 @RunWith(Enclosed.class)
@@ -56,87 +59,78 @@ public class ITGzipReadableByteChannelTest {
 
   private static final byte[] dataUncompressed = DataGenerator.rand(rand).genBytes(_3KiB);
   private static final byte[] dataCompressed = TestUtils.gzipBytes(dataUncompressed);
-  private static final ByteString contentUncompressed1 =
-      ByteString.copyFrom(dataUncompressed, 0, _2KiB);
-  private static final ByteString contentUncompressed2 =
-      ByteString.copyFrom(dataUncompressed, _2KiB, _1KiB);
-  private static final ByteString contentCompressed1 =
-      ByteString.copyFrom(dataCompressed, 0, _2KiB);
-  private static final ByteString contentCompressed2 =
-      ByteString.copyFrom(dataCompressed, _2KiB, dataCompressed.length - _2KiB);
-  private static final ReadObjectRequest reqUncompressed =
-      ReadObjectRequest.newBuilder()
-          .setBucket("projects/_/buckets/buck")
-          .setObject("obj-uncompressed")
-          .build();
-  private static final ReadObjectRequest reqCompressed =
-      ReadObjectRequest.newBuilder()
-          .setBucket("projects/_/buckets/buck")
-          .setObject("obj-compressed")
-          .build();
+  private static final ByteString contentUncompressed1 = ByteString.copyFrom(dataUncompressed, 0, _2KiB);
+  private static final ByteString contentUncompressed2 = ByteString.copyFrom(dataUncompressed, _2KiB, _1KiB);
+  private static final ByteString contentCompressed1 = ByteString.copyFrom(dataCompressed, 0, _2KiB);
+  private static final ByteString contentCompressed2 = ByteString.copyFrom(dataCompressed, _2KiB,
+      dataCompressed.length - _2KiB);
+  private static final ReadObjectRequest reqUncompressed = ReadObjectRequest.newBuilder()
+      .setBucket("projects/_/buckets/buck")
+      .setObject("obj-uncompressed")
+      .build();
+  private static final ReadObjectRequest reqCompressed = ReadObjectRequest.newBuilder()
+      .setBucket("projects/_/buckets/buck")
+      .setObject("obj-compressed")
+      .build();
 
-  private static final ReadObjectResponse respUncompressed1 =
-      ReadObjectResponse.newBuilder()
-          .setMetadata(Object.newBuilder().setContentEncoding("identity").build())
-          .setChecksummedData(getChecksummedData(contentUncompressed1))
-          .build();
-  private static final ReadObjectResponse respUncompressed2 =
-      ReadObjectResponse.newBuilder()
-          .setChecksummedData(getChecksummedData(contentUncompressed2))
-          .build();
+  private static final ReadObjectResponse respUncompressed1 = ReadObjectResponse.newBuilder()
+      .setMetadata(Object.newBuilder().setContentEncoding("identity").build())
+      .setChecksummedData(getChecksummedData(contentUncompressed1))
+      .build();
+  private static final ReadObjectResponse respUncompressed2 = ReadObjectResponse.newBuilder()
+      .setChecksummedData(getChecksummedData(contentUncompressed2))
+      .build();
 
-  private static final ReadObjectResponse respCompressed1 =
-      ReadObjectResponse.newBuilder()
-          .setMetadata(Object.newBuilder().setContentEncoding("gzip").build())
-          .setChecksummedData(getChecksummedData(contentCompressed1))
-          .build();
-  private static final ReadObjectResponse respCompressed2 =
-      ReadObjectResponse.newBuilder()
-          .setChecksummedData(getChecksummedData(contentCompressed2))
-          .build();
+  private static final ReadObjectResponse respCompressed1 = ReadObjectResponse.newBuilder()
+      .setMetadata(Object.newBuilder().setContentEncoding("gzip").build())
+      .setChecksummedData(getChecksummedData(contentCompressed1))
+      .build();
+  private static final ReadObjectResponse respCompressed2 = ReadObjectResponse.newBuilder()
+      .setChecksummedData(getChecksummedData(contentCompressed2))
+      .build();
 
   public static final class Uncompressed {
-    private static final StorageGrpc.StorageImplBase fakeStorage =
-        new StorageGrpc.StorageImplBase() {
-          @Override
-          public void readObject(
-              ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
-            if (request.equals(reqUncompressed)) {
-              responseObserver.onNext(respUncompressed1);
-              responseObserver.onNext(respUncompressed2);
-              responseObserver.onCompleted();
-            } else {
-              responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
-            }
-          }
-        };
+    @Rule
+    public final Timeout globalTimeout = Timeout.seconds(10);
+
+    private static final StorageGrpc.StorageImplBase fakeStorage = new StorageGrpc.StorageImplBase() {
+      @Override
+      public void readObject(
+          ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+        if (request.equals(reqUncompressed)) {
+          responseObserver.onNext(respUncompressed1);
+          responseObserver.onNext(respUncompressed2);
+          responseObserver.onCompleted();
+        } else {
+          responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
+        }
+      }
+    };
 
     @ClassRule(order = 1)
-    public static final AutoClosableFixture<FakeServer> fakeServer =
-        AutoClosableFixture.of(() -> FakeServer.of(fakeStorage));
+    public static final AutoClosableFixture<FakeServer> fakeServer = AutoClosableFixture
+        .of(() -> FakeServer.of(fakeStorage));
 
     @ClassRule(order = 2)
-    public static final AutoClosableFixture<StorageClient> storageClient =
-        AutoClosableFixture.of(
-            () -> StorageClient.create(fakeServer.getInstance().storageSettings()));
+    public static final AutoClosableFixture<StorageClient> storageClient = AutoClosableFixture.of(
+        () -> StorageClient.create(fakeServer.getInstance().storageSettings()));
 
     @Test
     public void autoGzipDecompress_true() throws IOException {
-      UnbufferedReadableByteChannelSession<Object> session =
-          ResumableMedia.gapic()
-              .read()
-              .byteChannel(
-                  new ZeroCopyServerStreamingCallable<>(
-                      storageClient.getInstance().readObjectCallable(),
-                      ResponseContentLifecycleManager.noop()),
-                  TestUtils.retrierFromStorageOptions(
-                      fakeServer.getInstance().getGrpcStorageOptions()),
-                  StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-              .setHasher(Hasher.noop())
-              .setAutoGzipDecompression(true)
-              .unbuffered()
-              .setReadObjectRequest(reqUncompressed)
-              .build();
+      UnbufferedReadableByteChannelSession<Object> session = ResumableMedia.gapic()
+          .read()
+          .byteChannel(
+              new ZeroCopyServerStreamingCallable<>(
+                  storageClient.getInstance().readObjectCallable(),
+                  ResponseContentLifecycleManager.noop()),
+              TestUtils.retrierFromStorageOptions(
+                  fakeServer.getInstance().getGrpcStorageOptions()),
+              StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+          .setHasher(Hasher.noop())
+          .setAutoGzipDecompression(true)
+          .unbuffered()
+          .setReadObjectRequest(reqUncompressed)
+          .build();
 
       byte[] actualBytes = new byte[dataUncompressed.length];
       try (UnbufferedReadableByteChannel c = session.open()) {
@@ -147,21 +141,20 @@ public class ITGzipReadableByteChannelTest {
 
     @Test
     public void autoGzipDecompress_false() throws IOException {
-      UnbufferedReadableByteChannelSession<Object> session =
-          ResumableMedia.gapic()
-              .read()
-              .byteChannel(
-                  new ZeroCopyServerStreamingCallable<>(
-                      storageClient.getInstance().readObjectCallable(),
-                      ResponseContentLifecycleManager.noop()),
-                  TestUtils.retrierFromStorageOptions(
-                      fakeServer.getInstance().getGrpcStorageOptions()),
-                  StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-              .setHasher(Hasher.noop())
-              .setAutoGzipDecompression(false)
-              .unbuffered()
-              .setReadObjectRequest(reqUncompressed)
-              .build();
+      UnbufferedReadableByteChannelSession<Object> session = ResumableMedia.gapic()
+          .read()
+          .byteChannel(
+              new ZeroCopyServerStreamingCallable<>(
+                  storageClient.getInstance().readObjectCallable(),
+                  ResponseContentLifecycleManager.noop()),
+              TestUtils.retrierFromStorageOptions(
+                  fakeServer.getInstance().getGrpcStorageOptions()),
+              StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+          .setHasher(Hasher.noop())
+          .setAutoGzipDecompression(false)
+          .unbuffered()
+          .setReadObjectRequest(reqUncompressed)
+          .build();
 
       byte[] actualBytes = new byte[dataUncompressed.length];
       try (UnbufferedReadableByteChannel c = session.open()) {
@@ -172,52 +165,51 @@ public class ITGzipReadableByteChannelTest {
   }
 
   public static final class Compressed {
+    @Rule
+    public final Timeout globalTimeout = Timeout.seconds(10);
 
-    private static final StorageGrpc.StorageImplBase fakeStorage =
-        new StorageGrpc.StorageImplBase() {
-          @Override
-          public void readObject(
-              ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
-            if (request.equals(reqCompressed)) {
-              responseObserver.onNext(respCompressed1);
-              responseObserver.onNext(respCompressed2);
-              responseObserver.onCompleted();
-            } else {
-              responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
-            }
-          }
-        };
+    private static final StorageGrpc.StorageImplBase fakeStorage = new StorageGrpc.StorageImplBase() {
+      @Override
+      public void readObject(
+          ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+        if (request.equals(reqCompressed)) {
+          responseObserver.onNext(respCompressed1);
+          responseObserver.onNext(respCompressed2);
+          responseObserver.onCompleted();
+        } else {
+          responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
+        }
+      }
+    };
 
     @ClassRule(order = 1)
-    public static final AutoClosableFixture<FakeServer> fakeServer =
-        AutoClosableFixture.of(() -> FakeServer.of(fakeStorage));
+    public static final AutoClosableFixture<FakeServer> fakeServer = AutoClosableFixture
+        .of(() -> FakeServer.of(fakeStorage));
 
     @ClassRule(order = 2)
-    public static final AutoClosableFixture<StorageClient> storageClient =
-        AutoClosableFixture.of(
-            () -> StorageClient.create(fakeServer.getInstance().storageSettings()));
+    public static final AutoClosableFixture<StorageClient> storageClient = AutoClosableFixture.of(
+        () -> StorageClient.create(fakeServer.getInstance().storageSettings()));
 
     @ClassRule(order = 3)
-    public static final AutoClosableFixture<Storage> storageFixture =
-        AutoClosableFixture.of(() -> fakeServer.getInstance().getGrpcStorageOptions().getService());
+    public static final AutoClosableFixture<Storage> storageFixture = AutoClosableFixture
+        .of(() -> fakeServer.getInstance().getGrpcStorageOptions().getService());
 
     @Test
     public void autoGzipDecompress_true() throws IOException {
-      UnbufferedReadableByteChannelSession<Object> session =
-          ResumableMedia.gapic()
-              .read()
-              .byteChannel(
-                  new ZeroCopyServerStreamingCallable<>(
-                      storageClient.getInstance().readObjectCallable(),
-                      ResponseContentLifecycleManager.noop()),
-                  TestUtils.retrierFromStorageOptions(
-                      fakeServer.getInstance().getGrpcStorageOptions()),
-                  StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-              .setHasher(Hasher.noop())
-              .setAutoGzipDecompression(true)
-              .unbuffered()
-              .setReadObjectRequest(reqCompressed)
-              .build();
+      UnbufferedReadableByteChannelSession<Object> session = ResumableMedia.gapic()
+          .read()
+          .byteChannel(
+              new ZeroCopyServerStreamingCallable<>(
+                  storageClient.getInstance().readObjectCallable(),
+                  ResponseContentLifecycleManager.noop()),
+              TestUtils.retrierFromStorageOptions(
+                  fakeServer.getInstance().getGrpcStorageOptions()),
+              StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+          .setHasher(Hasher.noop())
+          .setAutoGzipDecompression(true)
+          .unbuffered()
+          .setReadObjectRequest(reqCompressed)
+          .build();
 
       byte[] actualBytes = new byte[dataUncompressed.length];
       try (UnbufferedReadableByteChannel c = session.open()) {
@@ -228,21 +220,20 @@ public class ITGzipReadableByteChannelTest {
 
     @Test
     public void autoGzipDecompress_false() throws IOException {
-      UnbufferedReadableByteChannelSession<Object> session =
-          ResumableMedia.gapic()
-              .read()
-              .byteChannel(
-                  new ZeroCopyServerStreamingCallable<>(
-                      storageClient.getInstance().readObjectCallable(),
-                      ResponseContentLifecycleManager.noop()),
-                  TestUtils.retrierFromStorageOptions(
-                      fakeServer.getInstance().getGrpcStorageOptions()),
-                  StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-              .setHasher(Hasher.noop())
-              .setAutoGzipDecompression(false)
-              .unbuffered()
-              .setReadObjectRequest(reqCompressed)
-              .build();
+      UnbufferedReadableByteChannelSession<Object> session = ResumableMedia.gapic()
+          .read()
+          .byteChannel(
+              new ZeroCopyServerStreamingCallable<>(
+                  storageClient.getInstance().readObjectCallable(),
+                  ResponseContentLifecycleManager.noop()),
+              TestUtils.retrierFromStorageOptions(
+                  fakeServer.getInstance().getGrpcStorageOptions()),
+              StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+          .setHasher(Hasher.noop())
+          .setAutoGzipDecompression(false)
+          .unbuffered()
+          .setReadObjectRequest(reqCompressed)
+          .build();
 
       byte[] actualBytes = new byte[dataCompressed.length];
       try (UnbufferedReadableByteChannel c = session.open()) {
@@ -253,20 +244,19 @@ public class ITGzipReadableByteChannelTest {
 
     @Test
     public void autoGzipDecompress_default_disabled() throws IOException {
-      UnbufferedReadableByteChannelSession<Object> session =
-          ResumableMedia.gapic()
-              .read()
-              .byteChannel(
-                  new ZeroCopyServerStreamingCallable<>(
-                      storageClient.getInstance().readObjectCallable(),
-                      ResponseContentLifecycleManager.noop()),
-                  TestUtils.retrierFromStorageOptions(
-                      fakeServer.getInstance().getGrpcStorageOptions()),
-                  StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-              .setHasher(Hasher.noop())
-              .unbuffered()
-              .setReadObjectRequest(reqCompressed)
-              .build();
+      UnbufferedReadableByteChannelSession<Object> session = ResumableMedia.gapic()
+          .read()
+          .byteChannel(
+              new ZeroCopyServerStreamingCallable<>(
+                  storageClient.getInstance().readObjectCallable(),
+                  ResponseContentLifecycleManager.noop()),
+              TestUtils.retrierFromStorageOptions(
+                  fakeServer.getInstance().getGrpcStorageOptions()),
+              StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+          .setHasher(Hasher.noop())
+          .unbuffered()
+          .setReadObjectRequest(reqCompressed)
+          .build();
 
       byte[] actualBytes = new byte[dataCompressed.length];
       try (UnbufferedReadableByteChannel c = session.open()) {
@@ -285,10 +275,9 @@ public class ITGzipReadableByteChannelTest {
     @Test
     public void storage_readAllBytes_returnRawInputStream_true() {
       Storage s = storageFixture.getInstance();
-      byte[] actual =
-          s.readAllBytes(
-              BlobId.of("buck", "obj-compressed"),
-              BlobSourceOption.shouldReturnRawInputStream(true));
+      byte[] actual = s.readAllBytes(
+          BlobId.of("buck", "obj-compressed"),
+          BlobSourceOption.shouldReturnRawInputStream(true));
       assertThat(actual).isEqualTo(dataCompressed);
     }
 
@@ -306,10 +295,9 @@ public class ITGzipReadableByteChannelTest {
     public void storage_reader_returnRawInputStream_true() throws Exception {
       Storage s = storageFixture.getInstance();
       byte[] actual = new byte[dataCompressed.length];
-      try (ReadChannel c =
-          s.reader(
-              BlobId.of("buck", "obj-compressed"),
-              BlobSourceOption.shouldReturnRawInputStream(true))) {
+      try (ReadChannel c = s.reader(
+          BlobId.of("buck", "obj-compressed"),
+          BlobSourceOption.shouldReturnRawInputStream(true))) {
         c.read(ByteBuffer.wrap(actual));
       }
       assertThat(actual).isEqualTo(dataCompressed);
@@ -317,46 +305,46 @@ public class ITGzipReadableByteChannelTest {
   }
 
   public static final class Behavior {
+    @Rule
+    public final Timeout globalTimeout = Timeout.seconds(10);
 
     @Test
     public void properlyTracksEOF() throws IOException, InterruptedException, ExecutionException {
-      final StorageGrpc.StorageImplBase fakeStorage =
-          new StorageGrpc.StorageImplBase() {
-            int count = 0;
+      final StorageGrpc.StorageImplBase fakeStorage = new StorageGrpc.StorageImplBase() {
+        int count = 0;
 
-            @Override
-            public void readObject(
-                ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
-              if (count++ == 0) {
-                responseObserver.onNext(
-                    ReadObjectResponse.newBuilder()
-                        .setMetadata(Object.newBuilder().setSize(1).build())
-                        .setChecksummedData(getChecksummedData(ByteString.copyFromUtf8("a")))
-                        .build());
-                responseObserver.onCompleted();
-              } else {
-                responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
-              }
-            }
-          };
+        @Override
+        public void readObject(
+            ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+          if (count++ == 0) {
+            responseObserver.onNext(
+                ReadObjectResponse.newBuilder()
+                    .setMetadata(Object.newBuilder().setSize(1).build())
+                    .setChecksummedData(getChecksummedData(ByteString.copyFromUtf8("a")))
+                    .build());
+            responseObserver.onCompleted();
+          } else {
+            responseObserver.onError(TestUtils.apiException(Status.Code.UNIMPLEMENTED));
+          }
+        }
+      };
 
       try (FakeServer fakeServer = FakeServer.of(fakeStorage);
           StorageClient sc = StorageClient.create(fakeServer.storageSettings())) {
-        ReadableByteChannelSession<?, Object> session =
-            ResumableMedia.gapic()
-                .read()
-                .byteChannel(
-                    new ZeroCopyServerStreamingCallable<>(
-                        sc.readObjectCallable(), ResponseContentLifecycleManager.noop()),
-                    TestUtils.retrierFromStorageOptions(fakeServer.getGrpcStorageOptions()),
-                    StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
-                .setHasher(Hasher.noop())
-                .setAutoGzipDecompression(true)
-                .unbuffered()
-                .setReadObjectRequest(reqUncompressed)
-                .build();
+        ReadableByteChannelSession<?, Object> session = ResumableMedia.gapic()
+            .read()
+            .byteChannel(
+                new ZeroCopyServerStreamingCallable<>(
+                    sc.readObjectCallable(), ResponseContentLifecycleManager.noop()),
+                TestUtils.retrierFromStorageOptions(fakeServer.getGrpcStorageOptions()),
+                StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+            .setHasher(Hasher.noop())
+            .setAutoGzipDecompression(true)
+            .unbuffered()
+            .setReadObjectRequest(reqUncompressed)
+            .build();
 
-        byte[] expected = new byte[] {(byte) 'a'};
+        byte[] expected = new byte[] { (byte) 'a' };
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         try (ReadableByteChannel c = session.open()) {
           ByteStreams.copy(c, Channels.newChannel(baos));
