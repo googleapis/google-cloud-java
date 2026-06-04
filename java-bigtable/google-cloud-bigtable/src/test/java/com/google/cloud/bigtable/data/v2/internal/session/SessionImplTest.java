@@ -672,6 +672,149 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(Status.class)).isOk();
   }
 
+  // region uncaught-exception abort behaviors
+
+  @Test
+  void abortFiresWhenListenerOnReadyThrows() throws Exception {
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
+    java.util.concurrent.atomic.AtomicReference<Status> capturedStatus =
+        new java.util.concurrent.atomic.AtomicReference<>();
+
+    Session.Listener throwingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            throw new RuntimeException("simulated onReady failure");
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            capturedStatus.set(status);
+            onCloseLatch.countDown();
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        throwingListener);
+
+    // The abort path must drive the session to CLOSED and notify the listener via onClose, even
+    // though the original onReady threw.
+    assertWithMessage("listener.onClose must be invoked after onReady throws")
+        .that(onCloseLatch.await(5, TimeUnit.SECONDS))
+        .isTrue();
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+    assertThat(capturedStatus.get().getCode()).isEqualTo(Status.Code.INTERNAL);
+  }
+
+  @Test
+  void abortDoesNotHangWhenListenerOnCloseThrows() throws Exception {
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    java.util.concurrent.CountDownLatch onReadyLatch = new java.util.concurrent.CountDownLatch(1);
+    java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
+
+    Session.Listener throwingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            onReadyLatch.countDown();
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            onCloseLatch.countDown();
+            throw new RuntimeException("simulated onClose failure");
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        throwingListener);
+
+    assertThat(onReadyLatch.await(5, TimeUnit.SECONDS)).isTrue();
+
+    // Close normally. The listener's onClose throws — the local guard inside notifyTerminalClose
+    // must swallow it so the SyncContext drain doesn't recurse infinitely or hang.
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test")
+            .build());
+
+    assertWithMessage("listener.onClose should be invoked exactly once during normal close")
+        .that(onCloseLatch.await(5, TimeUnit.SECONDS))
+        .isTrue();
+
+    // The session should reach CLOSED state cleanly within the test timeout.
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getState() != Session.SessionState.CLOSED && sw.elapsed().getSeconds() < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  @Test
+  void abortDoesNotInfiniteLoopWhenRecoveryListenerAlsoThrows() throws Exception {
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    java.util.concurrent.CountDownLatch onCloseInvoked =
+        new java.util.concurrent.CountDownLatch(1);
+
+    Session.Listener doublyThrowingListener =
+        new Session.Listener() {
+          @Override
+          public void onReady(OpenSessionResponse msg) {
+            throw new RuntimeException("simulated onReady failure");
+          }
+
+          @Override
+          public void onGoAway(GoAwayResponse msg) {}
+
+          @Override
+          public void onClose(Session.SessionState prevState, Status status, Metadata trailers) {
+            onCloseInvoked.countDown();
+            throw new RuntimeException("simulated onClose failure during abort");
+          }
+        };
+
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build(),
+        new Metadata(),
+        doublyThrowingListener);
+
+    // onReady throws → abort fires → abort calls onClose, which also throws → Guard 4 swallows
+    // and isAborting prevents the handler from re-driving abort. The session must reach CLOSED
+    // without hanging (the @Timeout(30) on the class is the safety net for infinite loops).
+    assertThat(onCloseInvoked.await(5, TimeUnit.SECONDS)).isTrue();
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getState() != Session.SessionState.CLOSED && sw.elapsed().getSeconds() < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
+  }
+
+  // endregion
+
   // Wraps a real BigtableTimer and counts newTimeout / cancel calls. Used to assert that the
   // heartbeat tick is only armed while a vRPC is in flight.
   private static final class CountingBigtableTimer implements BigtableTimer {

@@ -126,11 +126,13 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private Instant nextHeartbeat;
 
-  // Handle for the in-flight heartbeat tick (one outstanding at a time). Set under lock when the
-  // session enters READY (handleOpenSessionResponse) and again from checkHeartbeat to chain the
-  // next tick. Cancelled under lock from updateState when the session transitions past READY.
-  @Nullable
-  private BigtableTimer.Timeout heartbeatTimeout;
+  // Handle for the in-flight heartbeat tick (one outstanding at a time). Cancelled on terminal
+  // transitions so the wheel doesn't carry a no-op entry until the next fire.
+  @Nullable private BigtableTimer.Timeout heartbeatTimeout;
+
+  // Set by the global SyncContext handler when an uncaught exception triggers an abort. Read on
+  // re-entry to break out instead of looping. Only accessed inside sessionSyncContext.
+  private boolean isAborting = false;
 
   public SessionImpl(
       Metrics metrics,
@@ -156,14 +158,77 @@ public class SessionImpl implements Session, VRpcSessionApi {
     this.debugTagTracer = metrics.getDebugTagTracer();
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
     this.openParamsUpdated = false;
+    // On uncaught exception, drive the session through a clean terminal-close path so the pool
+    // and the in-flight vRpc are always notified. notifyTerminalClose has local guards, and
+    // isAborting prevents recursion if the abort path itself throws.
     this.sessionSyncContext =
-        new SynchronizationContext(
-            (thread, e) ->
-                logger.log(
-                    Level.WARNING,
-                    String.format(
-                        "Uncaught exception in session SyncContext for %s", info.getLogName()),
-                    e));
+        new SynchronizationContext((thread, e) -> abortFromUncaughtException(e));
+  }
+
+  private void abortFromUncaughtException(Throwable e) {
+    if (isAborting) {
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "Session error: %s Secondary uncaught exception during abort, ignoring",
+              info.getLogName()),
+          e);
+      return;
+    }
+    isAborting = true;
+
+    logger.log(
+        Level.SEVERE,
+        String.format(
+            "Session error: %s Uncaught exception in session SyncContext in state %s, PeerInfo:"
+                + " %s — aborting session",
+            info.getLogName(), state, formatPeerInfo(safeGetPeerInfo())),
+        e);
+
+    if (state == SessionState.CLOSED) {
+      return;
+    }
+
+    // Always overwrite closeReason: the abort is what actually happened, not whatever clean close
+    // we may have been attempting. Fold the prior reason into the description for forensics so
+    // downstream metrics (which bucket by reason) attribute this to ERROR rather than the
+    // interrupted close.
+    String prevDesc =
+        (closeReason != null)
+            ? " (was closing for: "
+                + closeReason.getReason()
+                + " — "
+                + closeReason.getDescription()
+                + ")"
+            : "";
+    closeReason =
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+            .setDescription("Uncaught exception in session SyncContext: " + e + prevDesc)
+            .build();
+
+    VRpcImpl<?, ?, ?> localRpc = currentRpc;
+    currentRpc = null;
+    SessionState prevState = state;
+    updateState(SessionState.CLOSED);
+
+    // Defensively tell the transport we're done. Safe on un-started streams via the try/catch.
+    try {
+      stream.forceClose("Session aborted due to uncaught exception", e);
+    } catch (Throwable t) {
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "Session error: %s Exception while force-closing stream during abort",
+              info.getLogName()),
+          t);
+    }
+
+    notifyTerminalClose(
+        Status.INTERNAL.withDescription("Session aborted").withCause(e),
+        new Metadata(),
+        localRpc,
+        prevState);
   }
 
   @Override
@@ -681,13 +746,45 @@ public class SessionImpl implements Session, VRpcSessionApi {
     }
 
     VRpcImpl<?, ?, ?> localVRpc = currentRpc;
-    PeerInfo localPeerInfo = stream.getPeerInfo();
     currentRpc = null;
     updateState(SessionState.CLOSED);
 
-    if (localVRpc != null) {
+    notifyTerminalClose(status, trailers, localVRpc, prevState);
+  }
+
+  /**
+   * Fan out terminal notifications to the in-flight vRpc, tracer, and session listener with local
+   * guards so a throw in one notification does not suppress the others.
+   *
+   * <p>Caller contract: must have already transitioned to {@link SessionState#CLOSED} and captured
+   * and cleared {@code currentRpc}. Callers should also set {@code closeReason}; if missing we
+   * synthesize a fallback here rather than throw, since throwing from this fan-out aborts the
+   * remaining notifications and (because the state is already CLOSED) defeats the
+   * sessionSyncContext uncaught handler's cleanup.
+   */
+  private void notifyTerminalClose(
+      Status status,
+      Metadata trailers,
+      @Nullable VRpcImpl<?, ?, ?> localRpc,
+      SessionState prevState) {
+    // Should never happen — matches the synthesizer in startGracefulClose.
+    if (closeReason == null) {
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_close_no_reason");
+      logger.log(
+          Level.WARNING,
+          String.format(
+              "%s notifyTerminalClose reached without a closeReason; status=%s",
+              info.getLogName(), status),
+          new IllegalStateException("notifyTerminalClose without closeReason"));
+      closeReason =
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+              .setDescription("notifyTerminalClose reached without closeReason; status=" + status)
+              .build();
+    }
+    if (localRpc != null) {
       try {
-        localVRpc.handleSessionClose(VRpcResult.createRemoteTransportError(status, trailers));
+        localRpc.handleSessionClose(VRpcResult.createRemoteTransportError(status, trailers));
       } catch (Throwable t) {
         logger.log(
             Level.WARNING,
@@ -697,10 +794,44 @@ public class SessionImpl implements Session, VRpcSessionApi {
                 info.getLogName(), status),
             t);
       }
-      tracer.onVRpcClose(Status.UNAVAILABLE.getCode());
+      try {
+        tracer.onVRpcClose(Status.UNAVAILABLE.getCode());
+      } catch (Throwable t) {
+        logger.log(
+            Level.WARNING,
+            String.format(
+                "Session error: %s Unhandled exception in tracer.onVRpcClose", info.getLogName()),
+            t);
+      }
     }
-    tracer.onClose(localPeerInfo, closeReason.getReason(), status);
-    sessionListener.onClose(prevState, status, trailers);
+    try {
+      tracer.onClose(safeGetPeerInfo(), closeReason.getReason(), status);
+    } catch (Throwable t) {
+      logger.log(
+          Level.WARNING,
+          String.format("Session error: %s Unhandled exception in tracer.onClose", info.getLogName()),
+          t);
+    }
+    if (sessionListener != null) {
+      try {
+        sessionListener.onClose(prevState, status, trailers);
+      } catch (Throwable t) {
+        logger.log(
+            Level.WARNING,
+            String.format(
+                "Session error: %s Unhandled exception in sessionListener.onClose",
+                info.getLogName()),
+            t);
+      }
+    }
+  }
+
+  private PeerInfo safeGetPeerInfo() {
+    try {
+      return stream.getPeerInfo();
+    } catch (Throwable t) {
+      return SessionStream.DISCONNECTED_PEER_INFO;
+    }
   }
 
   private void updateState(SessionState newState) {
