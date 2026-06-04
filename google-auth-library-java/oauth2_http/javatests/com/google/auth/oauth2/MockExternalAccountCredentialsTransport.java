@@ -202,7 +202,8 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   .setContent(response.toPrettyString());
             }
 
-            if (url.contains(IAM_ENDPOINT)) {
+            if (url.contains("iamcredentials.googleapis.com")
+                || url.contains("iamcredentials.mtls.googleapis.com")) {
 
               if (url.endsWith(REGIONAL_ACCESS_BOUNDARY_URL_END)) {
                 RegionalAccessBoundary rab = regionalAccessBoundaries.get(url);

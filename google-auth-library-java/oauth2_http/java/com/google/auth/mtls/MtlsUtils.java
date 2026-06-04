@@ -58,6 +58,12 @@ public class MtlsUtils {
   static final String SPIFFE_CERTIFICATE_FILE = "certificates.pem";
   static final String SPIFFE_PRIVATE_KEY_FILE = "private_key.pem";
 
+  public enum MtlsEndpointUsagePolicy {
+    ALWAYS,
+    NEVER,
+    AUTO
+  }
+
   private MtlsUtils() {
     // Prevent instantiation for Utility class
   }
@@ -165,6 +171,10 @@ public class MtlsUtils {
       return false;
     }
 
+    if (getMtlsEndpointUsagePolicy(envProvider) == MtlsEndpointUsagePolicy.NEVER) {
+      return false;
+    }
+
     // Locate and process the certificate configuration file
     String envPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
     if (certConfigPathOverride != null || !Strings.isNullOrEmpty(envPath)) {
@@ -216,5 +226,22 @@ public class MtlsUtils {
     }
 
     return false;
+  }
+
+  /**
+   * Returns the current mutual TLS endpoint usage policy.
+   *
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @return the MtlsEndpointUsagePolicy enum value
+   */
+  public static MtlsEndpointUsagePolicy getMtlsEndpointUsagePolicy(
+      EnvironmentProvider envProvider) {
+    String mtlsEndpointUsagePolicy = envProvider.getEnv("GOOGLE_API_USE_MTLS_ENDPOINT");
+    if ("never".equals(mtlsEndpointUsagePolicy)) {
+      return MtlsEndpointUsagePolicy.NEVER;
+    } else if ("always".equals(mtlsEndpointUsagePolicy)) {
+      return MtlsEndpointUsagePolicy.ALWAYS;
+    }
+    return MtlsEndpointUsagePolicy.AUTO;
   }
 }

@@ -402,13 +402,10 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     }
 
     try {
-      if (MtlsUtils.canMtlsBeEnabled(
-          SystemEnvironmentProvider.getInstance(), SystemPropertyProvider.getInstance(), null)) {
+      if (!(transportFactory instanceof MtlsHttpTransportFactory)
+          && MtlsUtils.canMtlsBeEnabled(getEnvironmentProvider(), getPropertyProvider(), null)) {
         X509Provider x509Provider =
-            new X509Provider(
-                SystemEnvironmentProvider.getInstance(),
-                SystemPropertyProvider.getInstance(),
-                null);
+            new X509Provider(getEnvironmentProvider(), getPropertyProvider(), null);
         KeyStore mtlsKeyStore = x509Provider.getKeyStore();
         if (mtlsKeyStore != null) {
           transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
@@ -862,6 +859,14 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   @Nullable
   HttpTransportFactory getTransportFactory() {
     return null;
+  }
+
+  EnvironmentProvider getEnvironmentProvider() {
+    return SystemEnvironmentProvider.getInstance();
+  }
+
+  PropertyProvider getPropertyProvider() {
+    return SystemPropertyProvider.getInstance();
   }
 
   public static class Builder extends OAuth2Credentials.Builder {

@@ -112,17 +112,12 @@ public class X509Provider implements MtlsProvider {
    */
   @Override
   public boolean isAvailable() throws IOException {
-    try {
-      return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
-    } catch (IOException e) {
-      // Broken configuration state defaults to throwing a failure
-      throw e;
-    }
+    return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
   }
 
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    // 1. Attempt to load from resolved Config File
+    // Attempt to load from resolved Config File
     WorkloadCertificateConfiguration workloadCertConfig = null;
     try {
       workloadCertConfig =
@@ -153,7 +148,7 @@ public class X509Provider implements MtlsProvider {
       }
     }
 
-    // 2. Fallback: Load from SPIFFE Credentials
+    // Fallback: Load from SPIFFE Credentials
     File spiffeDir = new File(MtlsUtils.spiffeDirectory);
     if (spiffeDir.isDirectory()) {
       File credentialBundle = new File(spiffeDir, MtlsUtils.SPIFFE_CREDENTIAL_BUNDLE_FILE);
@@ -180,7 +175,6 @@ public class X509Provider implements MtlsProvider {
       }
     }
 
-    throw new CertificateSourceUnavailableException(
-        "mTLS is enabled, but no certificate source was resolved.");
+    throw new CertificateSourceUnavailableException("No certificate source was resolved.");
   }
 }

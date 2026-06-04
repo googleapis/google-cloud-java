@@ -31,25 +31,34 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
+import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public class RegionalAccessBoundaryTest {
 
@@ -333,5 +342,52 @@ public class RegionalAccessBoundaryTest {
     public boolean isDisconnected() {
       return disconnected;
     }
+  }
+
+  @Test
+  public void
+      regionalAccessBoundary_withMtlsEnabled_shouldCallAllowedLocationsUsingMtlsTransportFactory()
+          throws IOException, InterruptedException {
+
+    MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+
+    // Configure the environment provider to enable mTLS.
+    // X509Provider will use certificate_config.json to load keys.
+    TestEnvironmentProvider testEnvProvider = new TestEnvironmentProvider();
+    testEnvProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    testEnvProvider.setEnv(
+        "GOOGLE_API_CERTIFICATE_CONFIG",
+        new File("testresources/mtls/certificate_config.json").getAbsolutePath());
+
+    // Mock MtlsHttpTransportFactory to return our mock transport
+    MtlsHttpTransportFactory mockMtlsFactory = Mockito.mock(MtlsHttpTransportFactory.class);
+    Mockito.doReturn(transport).when(mockMtlsFactory).create();
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mockMtlsFactory)
+            .setEnvironmentProvider(testEnvProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+
+    // Verify that MtlsHttpTransportFactory.create() was called to retrieve the mTLS transport
+    Mockito.verify(mockMtlsFactory, Mockito.times(2)).create();
   }
 }

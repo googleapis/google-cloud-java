@@ -36,6 +36,7 @@ import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIO
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
 import static com.google.auth.oauth2.TestUtils.createDummyRab;
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -58,7 +59,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.util.*;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -1514,18 +1514,6 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     assertEquals(
         Arrays.asList("impersonated-encoded"),
         requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      Assertions.fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   private GenericJson buildJsonIdentityPoolCredential() {

@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -1356,18 +1357,6 @@ class GoogleCredentialsTest extends BaseSerializationTest {
         .setHttpTransportFactory(() -> transport)
         .setScopes(SCOPES)
         .build();
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      Assertions.fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   private void waitForCooldownActive(GoogleCredentials credentials) throws InterruptedException {
