@@ -34,10 +34,11 @@ import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSinkTest extends BaseSystemTest {
+
+  private static final String TEST_SINK_PREFIX = "test-";
 
   @BeforeClass
   public static void setUp() {
@@ -47,6 +48,9 @@ public class ITSinkTest extends BaseSystemTest {
     Iterator<Sink> iterator = sinkPage.iterateAll().iterator();
     while (iterator.hasNext()) {
       Sink sink = iterator.next();
+      if (!sink.getName().startsWith(TEST_SINK_PREFIX)) {
+        continue;
+      }
       try {
         sink.delete();
       } catch (Exception ex) {
@@ -56,7 +60,6 @@ public class ITSinkTest extends BaseSystemTest {
   }
 
   @Test
-  @Ignore
   public void testCreateGetUpdateAndDeleteSink() {
     String name = formatForTest("test-create-get-update-sink");
     SinkInfo sinkInfo =
@@ -65,19 +68,23 @@ public class ITSinkTest extends BaseSystemTest {
             .setVersionFormat(SinkInfo.VersionFormat.V2)
             .build();
     Sink sink = logging.create(sinkInfo);
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    SinkInfo.Destination.DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging.getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertEquals(sink, logging.getSink(name));
-    sink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity<=ERROR", sink.getFilter());
-    assertTrue(sink.delete());
-    assertFalse(sink.delete());
+    try {
+      assertEquals(name, sink.getName());
+      assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+      assertEquals("severity>=ERROR", sink.getFilter());
+      SinkInfo.Destination.DatasetDestination datasetDestination = sink.getDestination();
+      assertEquals(logging.getOptions().getProjectId(), datasetDestination.getProject());
+      assertEquals("dataset", datasetDestination.getDataset());
+      assertEquals(sink, logging.getSink(name));
+      sink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
+      assertEquals(name, sink.getName());
+      assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+      assertEquals("severity<=ERROR", sink.getFilter());
+      assertTrue(sink.delete());
+      assertFalse(sink.delete());
+    } finally {
+      logging.deleteSink(name);
+    }
   }
 
   @Test
