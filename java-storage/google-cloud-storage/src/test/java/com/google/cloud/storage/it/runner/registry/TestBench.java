@@ -92,8 +92,8 @@ public final class TestBench implements ManagedLifecycle {
   private static final Logger LOGGER = LoggerFactory.getLogger(TestBench.class);
 
   private final boolean ignorePullError;
-  private final String baseUri;
-  private final String gRPCBaseUri;
+  private volatile String baseUri;
+  private volatile String gRPCBaseUri;
   private final String dockerImageName;
   private final String dockerImageTag;
   private final String containerName;
@@ -203,13 +203,15 @@ public final class TestBench implements ManagedLifecycle {
 
   @Override
   public void start() {
-    try {
-      listRetryTests();
-      LOGGER.info("Using testbench running outside test suite.");
-      runningOutsideAlready = true;
-      return;
-    } catch (IOException ignore) {
-      // expected when the server isn't running already
+    if (baseUri != null) {
+      try {
+        listRetryTests();
+        LOGGER.info("Using testbench running outside test suite.");
+        runningOutsideAlready = true;
+        return;
+      } catch (IOException ignore) {
+        // expected when the server isn't running already
+      }
     }
     try {
       tempDirectory = Files.createTempDirectory(containerName);
@@ -248,8 +250,8 @@ public final class TestBench implements ManagedLifecycle {
                 Locale.US, "Timeout while attempting to pull docker image '%s'", dockerImage));
       }
 
-      int port = URI.create(baseUri).getPort();
-      int gRPCPort = URI.create(gRPCBaseUri).getPort();
+      int port = baseUri != null ? URI.create(baseUri).getPort() : 0;
+      int gRPCPort = gRPCBaseUri != null ? URI.create(gRPCBaseUri).getPort() : 0;
       final List<String> command =
           ImmutableList.of(
               "docker",
@@ -257,9 +259,9 @@ public final class TestBench implements ManagedLifecycle {
               "-d",
               "--rm",
               "--publish",
-              port + ":9000",
+              (port > 0 ? port + ":" : "") + "9000",
               "--publish",
-              gRPCPort + ":9090",
+              (gRPCPort > 0 ? gRPCPort + ":" : "") + "9090",
               String.format(Locale.US, "--name=%s", containerName),
               dockerImage,
               "gunicorn",
@@ -277,6 +279,25 @@ public final class TestBench implements ManagedLifecycle {
               .start();
       LOGGER.info(command.toString());
       try {
+        if (!process.waitFor(10, TimeUnit.SECONDS)) {
+          throw new IllegalStateException("docker run timed out");
+        }
+        if (process.exitValue() != 0) {
+          dumpServerLogs(outPath, errPath);
+          throw new IllegalStateException("docker run failed with exit code " + process.exitValue());
+        }
+
+        if (baseUri == null) {
+          int allocatedPort = getDockerPort(containerName, 9000);
+          this.baseUri = "http://localhost:" + allocatedPort;
+          LOGGER.info("Auto-allocated HTTP port: {}", allocatedPort);
+        }
+        if (gRPCBaseUri == null) {
+          int allocatedGrpcPort = getDockerPort(containerName, 9090);
+          this.gRPCBaseUri = "http://localhost:" + allocatedGrpcPort;
+          LOGGER.info("Auto-allocated gRPC port: {}", allocatedGrpcPort);
+        }
+
         // wait a small amount of time for the server to come up before probing
         Thread.sleep(500);
         // wait for the server to come up
@@ -302,7 +323,8 @@ public final class TestBench implements ManagedLifecycle {
               "Test Server already has retry tests in it, is it running outside the tests?");
         }
         // Start gRPC Service
-        if (!startGRPCServer(gRPCPort)) {
+        int actualGrpcPort = URI.create(gRPCBaseUri).getPort();
+        if (!startGRPCServer(actualGrpcPort)) {
           throw new IllegalStateException(
               "Failed to start server within a reasonable amount of time. Host url(gRPC): "
                   + gRPCBaseUri);
@@ -333,30 +355,6 @@ public final class TestBench implements ManagedLifecycle {
       int shutdownProcessExitValue = shutdownProcess.exitValue();
       LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
 
-      // wait for the server to shutdown
-      runWithRetries(
-          () -> {
-            try {
-              listRetryTests();
-            } catch (SocketException e) {
-              // desired result
-              return null;
-            }
-            throw new NotShutdownException();
-          },
-          RetrySettings.newBuilder()
-              .setTotalTimeoutDuration(Duration.ofSeconds(30))
-              .setInitialRetryDelayDuration(Duration.ofMillis(500))
-              .setRetryDelayMultiplier(1.5)
-              .setMaxRetryDelayDuration(Duration.ofSeconds(5))
-              .build(),
-          new BasicResultRetryAlgorithm<List<?>>() {
-            @Override
-            public boolean shouldRetry(Throwable previousThrowable, List<?> previousResponse) {
-              return previousThrowable instanceof NotShutdownException;
-            }
-          },
-          NanoClock.getDefaultClock());
       try {
         Files.delete(errPath);
         Files.delete(outPath);
@@ -366,6 +364,28 @@ public final class TestBench implements ManagedLifecycle {
       }
     } catch (InterruptedException | IOException e) {
       throw new RuntimeException(e);
+    }
+  }
+
+  private int getDockerPort(String containerName, int containerPort) throws IOException, InterruptedException {
+    Process p = new ProcessBuilder("docker", "port", containerName, String.valueOf(containerPort)).start();
+    if (!p.waitFor(5, TimeUnit.SECONDS)) {
+      throw new IllegalStateException("docker port timed out");
+    }
+    if (p.exitValue() != 0) {
+      throw new IllegalStateException("docker port failed");
+    }
+    try (BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {
+      String line = reader.readLine();
+      if (line == null) {
+        throw new IllegalStateException("No port mapping found");
+      }
+      // Line format is like "0.0.0.0:49153" or "[::]:49153"
+      int colonIndex = line.lastIndexOf(':');
+      if (colonIndex == -1) {
+        throw new IllegalStateException("Invalid port mapping: " + line);
+      }
+      return Integer.parseInt(line.substring(colonIndex + 1));
     }
   }
 
@@ -474,13 +494,7 @@ public final class TestBench implements ManagedLifecycle {
 
     private static final String DEFAULT_CONTAINER_NAME = "default";
 
-    private static int findFreePort() {
-      try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
-        return socket.getLocalPort();
-      } catch (IOException e) {
-        throw new RuntimeException("No free port available", e);
-      }
-    }
+
 
     private boolean ignorePullError;
     private String baseUri;
@@ -492,8 +506,8 @@ public final class TestBench implements ManagedLifecycle {
     private Builder() {
       this(
           false,
-          "http://localhost:" + findFreePort(),
-          "http://localhost:" + findFreePort(),
+          null,
+          null,
           DEFAULT_IMAGE_NAME,
           DEFAULT_IMAGE_TAG,
           DEFAULT_CONTAINER_NAME);

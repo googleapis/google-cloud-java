@@ -22,19 +22,22 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.it.BucketCleaner;
+import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.storage.control.v2.StorageControlClient;
 import java.util.Locale;
 
 /** Shim to lift a BucketInfo to be a managed bucket instance */
 final class BucketInfoShim implements ManagedLifecycle {
 
+  private final Backend backend;
   private final BucketInfo bucketInfo;
   private final Storage s;
   private final StorageControlClient ctrl;
 
   private BucketInfo createdBucket;
 
-  BucketInfoShim(BucketInfo bucketInfo, Storage s, StorageControlClient ctrl) {
+  BucketInfoShim(Backend backend, BucketInfo bucketInfo, Storage s, StorageControlClient ctrl) {
+    this.backend = backend;
     this.bucketInfo = bucketInfo;
     this.s = s;
     this.ctrl = ctrl;
@@ -67,6 +70,9 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    BucketCleaner.doCleanup(bucketInfo.getName(), s /*, ctrl*/);
+    if (backend != Backend.TEST_BENCH) {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s /*, ctrl*/);
+    }
   }
 }
+

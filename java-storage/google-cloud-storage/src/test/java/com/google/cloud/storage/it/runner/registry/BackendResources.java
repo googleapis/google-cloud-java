@@ -28,6 +28,7 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.BucketInfo.CustomPlacementConfig;
 import com.google.cloud.storage.BucketInfo.HierarchicalNamespace;
 import com.google.cloud.storage.BucketInfo.IamConfiguration;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.GrpcStorageOptions;
 import com.google.cloud.storage.HttpStorageOptions;
 import com.google.cloud.storage.Storage;
@@ -104,7 +105,12 @@ final class BackendResources implements ManagedLifecycle {
                       StorageOptions.http()
                           .setCredentials(NoCredentials.getInstance())
                           .setHost(Registry.getInstance().testBench().getBaseUri())
-                          .setProjectId("test-project-id");
+                          .setProjectId("test-project-id")
+                          .setTransportOptions(
+                              HttpTransportOptions.newBuilder()
+                                  .setConnectTimeout(10000)
+                                  .setReadTimeout(10000)
+                                  .build());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
@@ -194,6 +200,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .build(),
@@ -208,6 +215,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rp-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setRequesterPays(true)
@@ -223,6 +231,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-v-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setVersioningEnabled(true)
@@ -238,6 +247,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-hns-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setHierarchicalNamespace(
@@ -258,6 +268,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rapid-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setCustomPlacementConfig(
