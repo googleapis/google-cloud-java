@@ -217,14 +217,18 @@ final class ObjectReadSessionStream
 
   @VisibleForTesting
   void restart() {
-    Preconditions.checkState(
-        requestStream == null, "attempting to restart stream when stream is already active");
+    try {
+      Preconditions.checkState(
+          requestStream == null, "attempting to restart stream when stream is already active");
 
-    OpenArguments openArguments = state.getOpenArguments();
-    BidiReadObjectRequest req = openArguments.getReq();
-    if (!req.getReadRangesList().isEmpty() || !objectReadSessionResolveFuture.isDone()) {
-      ClientStream<BidiReadObjectRequest> requestStream1 = getRequestStream(openArguments.getCtx());
-      requestStream1.send(req);
+      OpenArguments openArguments = state.getOpenArguments();
+      BidiReadObjectRequest req = openArguments.getReq();
+      if (!req.getReadRangesList().isEmpty() || !objectReadSessionResolveFuture.isDone()) {
+        ClientStream<BidiReadObjectRequest> requestStream1 = getRequestStream(openArguments.getCtx());
+        requestStream1.send(req);
+      }
+    } catch (Throwable t) {
+      failAll(t);
     }
   }
 
