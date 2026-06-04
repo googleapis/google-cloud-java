@@ -22,7 +22,8 @@
   <properties>
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
-    <error-prone.version>2.48.0</error-prone.version>
+    <errorprone.version>2.48.0</errorprone.version>
+    <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
   </properties>
 
   <developers>
@@ -129,6 +130,26 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>jdk-old</id>
+      <activation>
+        <jdk>[1.8,17)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.38.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
+      </properties>
+    </profile>
+    <profile>
+      <id>jdk-mid</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.42.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
+      </properties>
     </profile>
   </profiles>
 
