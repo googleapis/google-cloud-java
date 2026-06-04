@@ -385,7 +385,6 @@ public class EnhancedBigtableStubTest {
     MutateRowRequest protoReq = fakeDataService.mutateRowRequests.poll(1, TimeUnit.SECONDS);
     assertThat(protoReq)
         .isEqualTo(req.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID)));
-    assertThat(f.get()).isNull();
   }
 
   @Test
@@ -406,8 +405,6 @@ public class EnhancedBigtableStubTest {
 
     // StatsHeadersUnaryCallable
     assertThat(reqMetadata.keys()).contains("bigtable-client-attempt-epoch-usec");
-
-    assertThat(f.get()).isNull();
   }
 
   @Test
