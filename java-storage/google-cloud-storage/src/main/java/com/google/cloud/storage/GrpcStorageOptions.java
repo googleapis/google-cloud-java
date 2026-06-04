@@ -1388,7 +1388,7 @@ public final class GrpcStorageOptions extends StorageOptions
     }
 
     public static boolean isReady() {
-      return isZeroCopyReady;
+      return false;
     }
   }
 
