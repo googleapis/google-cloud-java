@@ -234,14 +234,18 @@ public final class TestBench implements ManagedLifecycle {
                 .redirectOutput(outFile)
                 .redirectError(errFile)
                 .start();
-        p.waitFor(5, TimeUnit.MINUTES);
-        if (!ignorePullError && p.exitValue() != 0) {
-          dumpServerLogs(outPath, errPath);
-          throw new IllegalStateException(
-              String.format(
-                  Locale.US,
-                  "Non-zero status while attempting to pull docker image '%s'",
-                  dockerImage));
+        try {
+          p.waitFor(5, TimeUnit.MINUTES);
+          if (!ignorePullError && p.exitValue() != 0) {
+            dumpServerLogs(outPath, errPath);
+            throw new IllegalStateException(
+                String.format(
+                    Locale.US,
+                    "Non-zero status while attempting to pull docker image '%s'",
+                    dockerImage));
+          }
+        } finally {
+          p.destroyForcibly();
         }
       } catch (InterruptedException | IllegalThreadStateException e) {
         dumpServerLogs(outPath, errPath);
@@ -279,12 +283,16 @@ public final class TestBench implements ManagedLifecycle {
               .start();
       LOGGER.info(command.toString());
       try {
-        if (!process.waitFor(10, TimeUnit.SECONDS)) {
-          throw new IllegalStateException("docker run timed out");
-        }
-        if (process.exitValue() != 0) {
-          dumpServerLogs(outPath, errPath);
-          throw new IllegalStateException("docker run failed with exit code " + process.exitValue());
+        try {
+          if (!process.waitFor(10, TimeUnit.SECONDS)) {
+            throw new IllegalStateException("docker run timed out");
+          }
+          if (process.exitValue() != 0) {
+            dumpServerLogs(outPath, errPath);
+            throw new IllegalStateException("docker run failed with exit code " + process.exitValue());
+          }
+        } finally {
+          process.destroyForcibly();
         }
 
         if (baseUri == null) {
@@ -350,10 +358,18 @@ public final class TestBench implements ManagedLifecycle {
       LOGGER.warn("Stopping container: {}", containerName);
       ImmutableList<String> killCommand = ImmutableList.of("docker", "kill", containerName);
       LOGGER.warn(killCommand.toString());
-      Process shutdownProcess = new ProcessBuilder(killCommand).start();
-      shutdownProcess.waitFor(5, TimeUnit.SECONDS);
-      int shutdownProcessExitValue = shutdownProcess.exitValue();
-      LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
+      ProcessBuilder pb = new ProcessBuilder(killCommand);
+      File nullFile = new File(System.getProperty("os.name").startsWith("Windows") ? "NUL" : "/dev/null");
+      pb.redirectOutput(ProcessBuilder.Redirect.to(nullFile));
+      pb.redirectError(ProcessBuilder.Redirect.to(nullFile));
+      Process shutdownProcess = pb.start();
+      try {
+        shutdownProcess.waitFor(5, TimeUnit.SECONDS);
+        int shutdownProcessExitValue = shutdownProcess.exitValue();
+        LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
+      } finally {
+        shutdownProcess.destroyForcibly();
+      }
 
       try {
         Files.delete(errPath);
@@ -368,24 +384,31 @@ public final class TestBench implements ManagedLifecycle {
   }
 
   private int getDockerPort(String containerName, int containerPort) throws IOException, InterruptedException {
-    Process p = new ProcessBuilder("docker", "port", containerName, String.valueOf(containerPort)).start();
-    if (!p.waitFor(5, TimeUnit.SECONDS)) {
-      throw new IllegalStateException("docker port timed out");
-    }
-    if (p.exitValue() != 0) {
-      throw new IllegalStateException("docker port failed");
-    }
-    try (BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {
-      String line = reader.readLine();
-      if (line == null) {
-        throw new IllegalStateException("No port mapping found");
+    ProcessBuilder pb = new ProcessBuilder("docker", "port", containerName, String.valueOf(containerPort));
+    File nullFile = new File(System.getProperty("os.name").startsWith("Windows") ? "NUL" : "/dev/null");
+    pb.redirectError(ProcessBuilder.Redirect.to(nullFile));
+    Process p = pb.start();
+    try {
+      if (!p.waitFor(5, TimeUnit.SECONDS)) {
+        throw new IllegalStateException("docker port timed out");
       }
-      // Line format is like "0.0.0.0:49153" or "[::]:49153"
-      int colonIndex = line.lastIndexOf(':');
-      if (colonIndex == -1) {
-        throw new IllegalStateException("Invalid port mapping: " + line);
+      if (p.exitValue() != 0) {
+        throw new IllegalStateException("docker port failed");
       }
-      return Integer.parseInt(line.substring(colonIndex + 1));
+      try (BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream(), StandardCharsets.UTF_8))) {
+        String line = reader.readLine();
+        if (line == null) {
+          throw new IllegalStateException("No port mapping found");
+        }
+        // Line format is like "0.0.0.0:49153" or "[::]:49153"
+        int colonIndex = line.lastIndexOf(':');
+        if (colonIndex == -1) {
+          throw new IllegalStateException("Invalid port mapping: " + line);
+        }
+        return Integer.parseInt(line.substring(colonIndex + 1));
+      }
+    } finally {
+      p.destroyForcibly();
     }
   }
 

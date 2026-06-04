@@ -264,6 +264,10 @@ public final class Registry extends RunListener {
                   throw new RuntimeException(e);
                 }
               });
+      try {
+        exec.shutdownNow();
+      } catch (Exception ex) {
+      }
     } catch (Throwable t) {
       span.recordException(t);
       span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
