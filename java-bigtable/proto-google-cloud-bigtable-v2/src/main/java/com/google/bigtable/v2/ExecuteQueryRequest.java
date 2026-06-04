@@ -71,6 +71,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     switch (number) {
       case 7:
         return internalGetParams();
+      case 12:
+        return internalGetViewParameters();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -639,6 +641,148 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     return map.get(key);
   }
 
+  public static final int VIEW_PARAMETERS_FIELD_NUMBER = 12;
+
+  private static final class ViewParametersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.v2.Value>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.bigtable.v2.Value>newDefaultInstance(
+                    com.google.bigtable.v2.BigtableProto
+                        .internal_static_google_bigtable_v2_ExecuteQueryRequest_ViewParametersEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.bigtable.v2.Value.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.v2.Value>
+      viewParameters_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.v2.Value>
+      internalGetViewParameters() {
+    if (viewParameters_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ViewParametersDefaultEntryHolder.defaultEntry);
+    }
+    return viewParameters_;
+  }
+
+  public int getViewParametersCount() {
+    return internalGetViewParameters().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsViewParameters(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetViewParameters().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getViewParametersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParameters() {
+    return getViewParametersMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParametersMap() {
+    return internalGetViewParameters().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.bigtable.v2.Value getViewParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.bigtable.v2.Value defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.bigtable.v2.Value> map =
+        internalGetViewParameters().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.Value getViewParametersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.bigtable.v2.Value> map =
+        internalGetViewParameters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -673,6 +817,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     if (!preparedQuery_.isEmpty()) {
       output.writeBytes(9, preparedQuery_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetViewParameters(), ViewParametersDefaultEntryHolder.defaultEntry, 12);
     getUnknownFields().writeTo(output);
   }
 
@@ -712,6 +858,17 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     if (!preparedQuery_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(9, preparedQuery_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.bigtable.v2.Value> entry :
+        internalGetViewParameters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.v2.Value>
+          viewParameters__ =
+              ViewParametersDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, viewParameters__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -734,6 +891,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     if (!getPreparedQuery().equals(other.getPreparedQuery())) return false;
     if (!getResumeToken().equals(other.getResumeToken())) return false;
     if (!internalGetParams().equals(other.internalGetParams())) return false;
+    if (!internalGetViewParameters().equals(other.internalGetViewParameters())) return false;
     if (!getDataFormatCase().equals(other.getDataFormatCase())) return false;
     switch (dataFormatCase_) {
       case 4:
@@ -766,6 +924,10 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     if (!internalGetParams().getMap().isEmpty()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetParams().hashCode();
+    }
+    if (!internalGetViewParameters().getMap().isEmpty()) {
+      hash = (37 * hash) + VIEW_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetViewParameters().hashCode();
     }
     switch (dataFormatCase_) {
       case 4:
@@ -900,6 +1062,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 7:
           return internalGetParams();
+        case 12:
+          return internalGetViewParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -911,6 +1075,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       switch (number) {
         case 7:
           return internalGetMutableParams();
+        case 12:
+          return internalGetMutableViewParameters();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -946,6 +1112,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       }
       resumeToken_ = com.google.protobuf.ByteString.EMPTY;
       internalGetMutableParams().clear();
+      internalGetMutableViewParameters().clear();
       dataFormatCase_ = 0;
       dataFormat_ = null;
       return this;
@@ -1003,6 +1170,10 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.params_ = internalGetParams().build(ParamsDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.viewParameters_ =
+            internalGetViewParameters().build(ViewParametersDefaultEntryHolder.defaultEntry);
+      }
     }
 
     private void buildPartialOneofs(com.google.bigtable.v2.ExecuteQueryRequest result) {
@@ -1048,6 +1219,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
       bitField0_ |= 0x00000040;
+      internalGetMutableViewParameters().mergeFrom(other.internalGetViewParameters());
+      bitField0_ |= 0x00000080;
       switch (other.getDataFormatCase()) {
         case PROTO_FORMAT:
           {
@@ -1135,6 +1308,19 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 74
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.v2.Value>
+                    viewParameters__ =
+                        input.readMessage(
+                            ViewParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableViewParameters()
+                    .ensureBuilderMap()
+                    .put(viewParameters__.getKey(), viewParameters__.getValue());
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2369,6 +2555,302 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public com.google.bigtable.v2.Value.Builder putParamsBuilderIfAbsent(java.lang.String key) {
       java.util.Map<java.lang.String, com.google.bigtable.v2.ValueOrBuilder> builderMap =
           internalGetMutableParams().ensureBuilderMap();
+      com.google.bigtable.v2.ValueOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.bigtable.v2.Value.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.bigtable.v2.Value) {
+        entry = ((com.google.bigtable.v2.Value) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.bigtable.v2.Value.Builder) entry;
+    }
+
+    private static final class ViewParametersConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String, com.google.bigtable.v2.ValueOrBuilder, com.google.bigtable.v2.Value> {
+      @java.lang.Override
+      public com.google.bigtable.v2.Value build(com.google.bigtable.v2.ValueOrBuilder val) {
+        if (val instanceof com.google.bigtable.v2.Value) {
+          return (com.google.bigtable.v2.Value) val;
+        }
+        return ((com.google.bigtable.v2.Value.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.v2.Value>
+          defaultEntry() {
+        return ViewParametersDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ViewParametersConverter viewParametersConverter =
+        new ViewParametersConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.bigtable.v2.ValueOrBuilder,
+            com.google.bigtable.v2.Value,
+            com.google.bigtable.v2.Value.Builder>
+        viewParameters_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.bigtable.v2.ValueOrBuilder,
+            com.google.bigtable.v2.Value,
+            com.google.bigtable.v2.Value.Builder>
+        internalGetViewParameters() {
+      if (viewParameters_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(viewParametersConverter);
+      }
+      return viewParameters_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.bigtable.v2.ValueOrBuilder,
+            com.google.bigtable.v2.Value,
+            com.google.bigtable.v2.Value.Builder>
+        internalGetMutableViewParameters() {
+      if (viewParameters_ == null) {
+        viewParameters_ = new com.google.protobuf.MapFieldBuilder<>(viewParametersConverter);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return viewParameters_;
+    }
+
+    public int getViewParametersCount() {
+      return internalGetViewParameters().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsViewParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetViewParameters().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getViewParametersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParameters() {
+      return getViewParametersMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParametersMap() {
+      return internalGetViewParameters().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.bigtable.v2.Value getViewParametersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.bigtable.v2.Value defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.bigtable.v2.ValueOrBuilder> map =
+          internalGetMutableViewParameters().ensureBuilderMap();
+      return map.containsKey(key) ? viewParametersConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.Value getViewParametersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.bigtable.v2.ValueOrBuilder> map =
+          internalGetMutableViewParameters().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return viewParametersConverter.build(map.get(key));
+    }
+
+    public Builder clearViewParameters() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      internalGetMutableViewParameters().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeViewParameters(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableViewParameters().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.bigtable.v2.Value>
+        getMutableViewParameters() {
+      bitField0_ |= 0x00000080;
+      return internalGetMutableViewParameters().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putViewParameters(java.lang.String key, com.google.bigtable.v2.Value value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableViewParameters().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllViewParameters(
+        java.util.Map<java.lang.String, com.google.bigtable.v2.Value> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.bigtable.v2.Value> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableViewParameters().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This map provides the runtime values returned by the
+     * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+     * data based on identity.
+     *
+     * The key is the name of the view parameter e.g. `user_id`, and
+     * the value is the parameter value e.g. `alice&#64;example.com`.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.bigtable.v2.Value.Builder putViewParametersBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.bigtable.v2.ValueOrBuilder> builderMap =
+          internalGetMutableViewParameters().ensureBuilderMap();
       com.google.bigtable.v2.ValueOrBuilder entry = builderMap.get(key);
       if (entry == null) {
         entry = com.google.bigtable.v2.Value.newBuilder();

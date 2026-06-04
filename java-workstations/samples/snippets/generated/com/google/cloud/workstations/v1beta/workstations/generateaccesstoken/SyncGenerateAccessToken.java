@@ -45,6 +45,7 @@ public class SyncGenerateAccessToken {
                           "[WORKSTATION_CONFIG]",
                           "[WORKSTATION]")
                       .toString())
+              .setPort(3446913)
               .build();
       GenerateAccessTokenResponse response = workstationsClient.generateAccessToken(request);
     }

@@ -30,7 +30,7 @@ public interface UpdateWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface UpdateWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface UpdateWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -116,7 +116,7 @@ public interface UpdateWorkstationConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *

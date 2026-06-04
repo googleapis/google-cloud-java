@@ -25,7 +25,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  * <pre>
  * A message from the system in response to the user. This message can also be a
- * message from the user as historical context for multiturn conversations with
+ * message from the user as historical context for multi-turn conversations with
  * the system.
  * </pre>
  *
@@ -87,6 +87,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     CHART(5),
     ERROR(6),
     EXAMPLE_QUERIES(13),
+    @java.lang.Deprecated
     CLARIFICATION(14),
     KIND_NOT_SET(0);
     private final int value;
@@ -531,16 +532,20 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
    * @return Whether the clarification field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasClarification() {
     return kindCase_ == 14;
   }
@@ -549,16 +554,20 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
    * @return The clarification.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification() {
     if (kindCase_ == 14) {
       return (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_;
@@ -570,14 +579,16 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A message containing clarification questions.
+   * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+   * instead. A message containing clarification questions.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
       getClarificationOrBuilder() {
     if (kindCase_ == 14) {
@@ -625,6 +636,65 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     return groupId_;
   }
 
+  public static final int CITATION_FIELD_NUMBER = 15;
+  private com.google.cloud.geminidataanalytics.v1beta.Citation citation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the citation field is set.
+   */
+  @java.lang.Override
+  public boolean hasCitation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The citation.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.Citation getCitation() {
+    return citation_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Citation.getDefaultInstance()
+        : citation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Citation information for the system message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder getCitationOrBuilder() {
+    return citation_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Citation.getDefaultInstance()
+        : citation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -666,6 +736,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     if (kindCase_ == 14) {
       output.writeMessage(
           14, (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(15, getCitation());
     }
     getUnknownFields().writeTo(output);
   }
@@ -719,6 +792,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage) kind_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getCitation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -738,6 +814,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     if (hasGroupId() != other.hasGroupId()) return false;
     if (hasGroupId()) {
       if (getGroupId() != other.getGroupId()) return false;
+    }
+    if (hasCitation() != other.hasCitation()) return false;
+    if (hasCitation()) {
+      if (!getCitation().equals(other.getCitation())) return false;
     }
     if (!getKindCase().equals(other.getKindCase())) return false;
     switch (kindCase_) {
@@ -782,6 +862,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     if (hasGroupId()) {
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId();
+    }
+    if (hasCitation()) {
+      hash = (37 * hash) + CITATION_FIELD_NUMBER;
+      hash = (53 * hash) + getCitation().hashCode();
     }
     switch (kindCase_) {
       case 1:
@@ -926,7 +1010,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A message from the system in response to the user. This message can also be a
-   * message from the user as historical context for multiturn conversations with
+   * message from the user as historical context for multi-turn conversations with
    * the system.
    * </pre>
    *
@@ -952,10 +1036,19 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.geminidataanalytics.v1beta.SystemMessage.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCitationFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -987,6 +1080,11 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
         clarificationBuilder_.clear();
       }
       groupId_ = 0;
+      citation_ = null;
+      if (citationBuilder_ != null) {
+        citationBuilder_.dispose();
+        citationBuilder_ = null;
+      }
       kindCase_ = 0;
       kind_ = null;
       return this;
@@ -1030,6 +1128,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.groupId_ = groupId_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.citation_ = citationBuilder_ == null ? citation_ : citationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1079,6 +1181,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
         return this;
       if (other.hasGroupId()) {
         setGroupId(other.getGroupId());
+      }
+      if (other.hasCitation()) {
+        mergeCitation(other.getCitation());
       }
       switch (other.getKindCase()) {
         case TEXT:
@@ -1209,6 +1314,13 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
                 kindCase_ = 14;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    internalGetCitationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2812,16 +2924,20 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
      * @return Whether the clarification field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasClarification() {
       return kindCase_ == 14;
     }
@@ -2830,16 +2946,20 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
      * @return The clarification.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage getClarification() {
       if (clarificationBuilder_ == null) {
         if (kindCase_ == 14) {
@@ -2860,13 +2980,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setClarification(
         com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage value) {
       if (clarificationBuilder_ == null) {
@@ -2886,13 +3008,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setClarification(
         com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder builderForValue) {
       if (clarificationBuilder_ == null) {
@@ -2909,13 +3033,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeClarification(
         com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage value) {
       if (clarificationBuilder_ == null) {
@@ -2947,13 +3073,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearClarification() {
       if (clarificationBuilder_ == null) {
         if (kindCase_ == 14) {
@@ -2975,13 +3103,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessage.Builder
         getClarificationBuilder() {
       return internalGetClarificationFieldBuilder().getBuilder();
@@ -2991,14 +3121,16 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.ClarificationMessageOrBuilder
         getClarificationOrBuilder() {
       if ((kindCase_ == 14) && (clarificationBuilder_ != null)) {
@@ -3016,11 +3148,12 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A message containing clarification questions.
+     * Optional. Deprecated: Use TextMessage with TextType.FINAL_RESPONSE
+     * instead. A message containing clarification questions.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationMessage clarification = 14 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -3126,6 +3259,220 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessage
       groupId_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.Citation citation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.Citation,
+            com.google.cloud.geminidataanalytics.v1beta.Citation.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder>
+        citationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the citation field is set.
+     */
+    public boolean hasCitation() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The citation.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Citation getCitation() {
+      if (citationBuilder_ == null) {
+        return citation_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Citation.getDefaultInstance()
+            : citation_;
+      } else {
+        return citationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCitation(com.google.cloud.geminidataanalytics.v1beta.Citation value) {
+      if (citationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        citation_ = value;
+      } else {
+        citationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCitation(
+        com.google.cloud.geminidataanalytics.v1beta.Citation.Builder builderForValue) {
+      if (citationBuilder_ == null) {
+        citation_ = builderForValue.build();
+      } else {
+        citationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCitation(com.google.cloud.geminidataanalytics.v1beta.Citation value) {
+      if (citationBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && citation_ != null
+            && citation_
+                != com.google.cloud.geminidataanalytics.v1beta.Citation.getDefaultInstance()) {
+          getCitationBuilder().mergeFrom(value);
+        } else {
+          citation_ = value;
+        }
+      } else {
+        citationBuilder_.mergeFrom(value);
+      }
+      if (citation_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCitation() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      citation_ = null;
+      if (citationBuilder_ != null) {
+        citationBuilder_.dispose();
+        citationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Citation.Builder getCitationBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetCitationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder getCitationOrBuilder() {
+      if (citationBuilder_ != null) {
+        return citationBuilder_.getMessageOrBuilder();
+      } else {
+        return citation_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Citation.getDefaultInstance()
+            : citation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Citation information for the system message.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Citation citation = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.Citation,
+            com.google.cloud.geminidataanalytics.v1beta.Citation.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder>
+        internalGetCitationFieldBuilder() {
+      if (citationBuilder_ == null) {
+        citationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.Citation,
+                com.google.cloud.geminidataanalytics.v1beta.Citation.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.CitationOrBuilder>(
+                getCitation(), getParentForChildren(), isClean());
+        citation_ = null;
+      }
+      return citationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.SystemMessage)

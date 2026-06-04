@@ -274,6 +274,51 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   *
+   * @return Whether the bigqueryPropertyGraphReference field is set.
+   */
+  boolean hasBigqueryPropertyGraphReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   *
+   * @return The bigqueryPropertyGraphReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+      getBigqueryPropertyGraphReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+      getBigqueryPropertyGraphReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The schema of the datasource.
    * </pre>
    *

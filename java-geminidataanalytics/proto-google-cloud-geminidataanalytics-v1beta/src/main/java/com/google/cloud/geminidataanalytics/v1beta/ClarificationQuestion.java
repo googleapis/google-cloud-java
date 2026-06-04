@@ -24,12 +24,14 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
+ * Deprecated: Use TextMessage with TextType.FINAL_RESPONSE instead.
  * Represents a single question to the user to help clarify their query.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.ClarificationQuestion}
  */
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public final class ClarificationQuestion extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.geminidataanalytics.v1beta.ClarificationQuestion)
@@ -77,42 +79,50 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
+   * Deprecated: The parent message is deprecated.
    * The selection mode for the clarification question.
    * </pre>
    *
    * Protobuf enum {@code
    * google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode}
    */
+  @java.lang.Deprecated
   public enum SelectionMode implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * Unspecified selection mode.
      * </pre>
      *
-     * <code>SELECTION_MODE_UNSPECIFIED = 0;</code>
+     * <code>SELECTION_MODE_UNSPECIFIED = 0 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SELECTION_MODE_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The user can select only one option.
      * </pre>
      *
-     * <code>SINGLE_SELECT = 1;</code>
+     * <code>SINGLE_SELECT = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SINGLE_SELECT(1),
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The user can select multiple options.
      * </pre>
      *
-     * <code>MULTI_SELECT = 2;</code>
+     * <code>MULTI_SELECT = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     MULTI_SELECT(2),
     UNRECOGNIZED(-1),
     ;
@@ -131,34 +141,37 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * Unspecified selection mode.
      * </pre>
      *
-     * <code>SELECTION_MODE_UNSPECIFIED = 0;</code>
+     * <code>SELECTION_MODE_UNSPECIFIED = 0 [deprecated = true];</code>
      */
-    public static final int SELECTION_MODE_UNSPECIFIED_VALUE = 0;
+    @java.lang.Deprecated public static final int SELECTION_MODE_UNSPECIFIED_VALUE = 0;
 
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The user can select only one option.
      * </pre>
      *
-     * <code>SINGLE_SELECT = 1;</code>
+     * <code>SINGLE_SELECT = 1 [deprecated = true];</code>
      */
-    public static final int SINGLE_SELECT_VALUE = 1;
+    @java.lang.Deprecated public static final int SINGLE_SELECT_VALUE = 1;
 
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The user can select multiple options.
      * </pre>
      *
-     * <code>MULTI_SELECT = 2;</code>
+     * <code>MULTI_SELECT = 2 [deprecated = true];</code>
      */
-    public static final int MULTI_SELECT_VALUE = 2;
+    @java.lang.Deprecated public static final int MULTI_SELECT_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -249,6 +262,7 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
+   * Deprecated: The parent message is deprecated.
    * The type of clarification question.
    * This enum may be extended with new values in the future.
    * </pre>
@@ -256,38 +270,45 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    * Protobuf enum {@code
    * google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType}
    */
+  @java.lang.Deprecated
   public enum ClarificationQuestionType implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * Unspecified clarification question type.
      * </pre>
      *
-     * <code>CLARIFICATION_QUESTION_TYPE_UNSPECIFIED = 0;</code>
+     * <code>CLARIFICATION_QUESTION_TYPE_UNSPECIFIED = 0 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     CLARIFICATION_QUESTION_TYPE_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The clarification question is for filter values.
      * </pre>
      *
-     * <code>FILTER_VALUES = 1;</code>
+     * <code>FILTER_VALUES = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     FILTER_VALUES(1),
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The clarification question is for data fields. This is a generic term
      * encompassing SQL columns, Looker fields (dimensions/measures), or
      * nested data structure properties.
      * </pre>
      *
-     * <code>FIELDS = 2;</code>
+     * <code>FIELDS = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     FIELDS(2),
     UNRECOGNIZED(-1),
     ;
@@ -306,36 +327,39 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * Unspecified clarification question type.
      * </pre>
      *
-     * <code>CLARIFICATION_QUESTION_TYPE_UNSPECIFIED = 0;</code>
+     * <code>CLARIFICATION_QUESTION_TYPE_UNSPECIFIED = 0 [deprecated = true];</code>
      */
-    public static final int CLARIFICATION_QUESTION_TYPE_UNSPECIFIED_VALUE = 0;
+    @java.lang.Deprecated public static final int CLARIFICATION_QUESTION_TYPE_UNSPECIFIED_VALUE = 0;
 
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The clarification question is for filter values.
      * </pre>
      *
-     * <code>FILTER_VALUES = 1;</code>
+     * <code>FILTER_VALUES = 1 [deprecated = true];</code>
      */
-    public static final int FILTER_VALUES_VALUE = 1;
+    @java.lang.Deprecated public static final int FILTER_VALUES_VALUE = 1;
 
     /**
      *
      *
      * <pre>
+     * Deprecated: The parent message is deprecated.
      * The clarification question is for data fields. This is a generic term
      * encompassing SQL columns, Looker fields (dimensions/measures), or
      * nested data structure properties.
      * </pre>
      *
-     * <code>FIELDS = 2;</code>
+     * <code>FIELDS = 2 [deprecated = true];</code>
      */
-    public static final int FIELDS_VALUE = 2;
+    @java.lang.Deprecated public static final int FIELDS_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -434,14 +458,18 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The natural language question to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * The natural language question to ask the user.
    * </pre>
    *
-   * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
    * @return The question.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getQuestion() {
     java.lang.Object ref = question_;
     if (ref instanceof java.lang.String) {
@@ -458,14 +486,18 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The natural language question to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * The natural language question to ask the user.
    * </pre>
    *
-   * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
    * @return The bytes for question.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getQuestionBytes() {
     java.lang.Object ref = question_;
     if (ref instanceof java.lang.String) {
@@ -485,16 +517,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The selection mode for this question.
+   * Required. Deprecated: The parent message is deprecated.
+   * The selection mode for this question.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
    * @return The enum numeric value on the wire for selectionMode.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getSelectionModeValue() {
     return selectionMode_;
   }
@@ -503,16 +539,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The selection mode for this question.
+   * Required. Deprecated: The parent message is deprecated.
+   * The selection mode for this question.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
    * @return The selectionMode.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode
       getSelectionMode() {
     com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode result =
@@ -534,14 +574,19 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A list of distinct options for the user to choose from.
+   * Required. Deprecated: The parent message is deprecated.
+   * A list of distinct options for the user to choose from.
    * The number of options is limited to a maximum of 5.
    * </pre>
    *
-   * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
    * @return A list containing the options.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getOptionsList() {
     return options_;
   }
@@ -550,14 +595,19 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A list of distinct options for the user to choose from.
+   * Required. Deprecated: The parent message is deprecated.
+   * A list of distinct options for the user to choose from.
    * The number of options is limited to a maximum of 5.
    * </pre>
    *
-   * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
    * @return The count of options.
    */
+  @java.lang.Deprecated
   public int getOptionsCount() {
     return options_.size();
   }
@@ -566,15 +616,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A list of distinct options for the user to choose from.
+   * Required. Deprecated: The parent message is deprecated.
+   * A list of distinct options for the user to choose from.
    * The number of options is limited to a maximum of 5.
    * </pre>
    *
-   * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
    * @param index The index of the element to return.
    * @return The options at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getOptions(int index) {
     return options_.get(index);
   }
@@ -583,15 +638,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A list of distinct options for the user to choose from.
+   * Required. Deprecated: The parent message is deprecated.
+   * A list of distinct options for the user to choose from.
    * The number of options is limited to a maximum of 5.
    * </pre>
    *
-   * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
    * @param index The index of the value to return.
    * @return The bytes of the options at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getOptionsBytes(int index) {
     return options_.getByteString(index);
   }
@@ -603,16 +663,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The type of clarification question.
+   * Optional. Deprecated: The parent message is deprecated.
+   * The type of clarification question.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
    * @return The enum numeric value on the wire for clarificationQuestionType.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getClarificationQuestionTypeValue() {
     return clarificationQuestionType_;
   }
@@ -621,16 +686,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The type of clarification question.
+   * Optional. Deprecated: The parent message is deprecated.
+   * The type of clarification question.
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
    * @return The clarificationQuestionType.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType
       getClarificationQuestionType() {
     com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType
@@ -855,6 +925,7 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
+   * Deprecated: Use TextMessage with TextType.FINAL_RESPONSE instead.
    * Represents a single question to the user to help clarify their query.
    * </pre>
    *
@@ -1060,13 +1131,18 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The natural language question to ask the user.
+     * Required. Deprecated: The parent message is deprecated.
+     * The natural language question to ask the user.
      * </pre>
      *
-     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
      * @return The question.
      */
+    @java.lang.Deprecated
     public java.lang.String getQuestion() {
       java.lang.Object ref = question_;
       if (!(ref instanceof java.lang.String)) {
@@ -1083,13 +1159,18 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The natural language question to ask the user.
+     * Required. Deprecated: The parent message is deprecated.
+     * The natural language question to ask the user.
      * </pre>
      *
-     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
      * @return The bytes for question.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getQuestionBytes() {
       java.lang.Object ref = question_;
       if (ref instanceof String) {
@@ -1106,14 +1187,19 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The natural language question to ask the user.
+     * Required. Deprecated: The parent message is deprecated.
+     * The natural language question to ask the user.
      * </pre>
      *
-     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
      * @param value The question to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setQuestion(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1128,13 +1214,18 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The natural language question to ask the user.
+     * Required. Deprecated: The parent message is deprecated.
+     * The natural language question to ask the user.
      * </pre>
      *
-     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearQuestion() {
       question_ = getDefaultInstance().getQuestion();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1146,14 +1237,19 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The natural language question to ask the user.
+     * Required. Deprecated: The parent message is deprecated.
+     * The natural language question to ask the user.
      * </pre>
      *
-     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
      * @param value The bytes for question to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setQuestionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1171,16 +1267,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The selection mode for this question.
+     * Required. Deprecated: The parent message is deprecated.
+     * The selection mode for this question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
      * @return The enum numeric value on the wire for selectionMode.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getSelectionModeValue() {
       return selectionMode_;
     }
@@ -1189,16 +1289,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The selection mode for this question.
+     * Required. Deprecated: The parent message is deprecated.
+     * The selection mode for this question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
      * @param value The enum numeric value on the wire for selectionMode to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSelectionModeValue(int value) {
       selectionMode_ = value;
       bitField0_ |= 0x00000002;
@@ -1210,16 +1314,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The selection mode for this question.
+     * Required. Deprecated: The parent message is deprecated.
+     * The selection mode for this question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
      * @return The selectionMode.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode
         getSelectionMode() {
       com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode result =
@@ -1235,16 +1343,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The selection mode for this question.
+     * Required. Deprecated: The parent message is deprecated.
+     * The selection mode for this question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
      * @param value The selectionMode to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSelectionMode(
         com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode value) {
       if (value == null) {
@@ -1260,15 +1372,19 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The selection mode for this question.
+     * Required. Deprecated: The parent message is deprecated.
+     * The selection mode for this question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.SelectionMode selection_mode = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSelectionMode() {
       bitField0_ = (bitField0_ & ~0x00000002);
       selectionMode_ = 0;
@@ -1290,14 +1406,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @return A list containing the options.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getOptionsList() {
       options_.makeImmutable();
       return options_;
@@ -1307,14 +1429,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @return The count of options.
      */
+    @java.lang.Deprecated
     public int getOptionsCount() {
       return options_.size();
     }
@@ -1323,15 +1451,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param index The index of the element to return.
      * @return The options at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getOptions(int index) {
       return options_.get(index);
     }
@@ -1340,15 +1474,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param index The index of the value to return.
      * @return The bytes of the options at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getOptionsBytes(int index) {
       return options_.getByteString(index);
     }
@@ -1357,16 +1497,22 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param index The index to set the value at.
      * @param value The options to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setOptions(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1382,15 +1528,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param value The options to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addOptions(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1406,15 +1558,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param values The options to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllOptions(java.lang.Iterable<java.lang.String> values) {
       ensureOptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, options_);
@@ -1427,14 +1585,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearOptions() {
       options_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1447,15 +1611,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A list of distinct options for the user to choose from.
+     * Required. Deprecated: The parent message is deprecated.
+     * A list of distinct options for the user to choose from.
      * The number of options is limited to a maximum of 5.
      * </pre>
      *
-     * <code>repeated string options = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated string options = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
      * @param value The bytes of the options to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addOptionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1474,16 +1644,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The type of clarification question.
+     * Optional. Deprecated: The parent message is deprecated.
+     * The type of clarification question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+     *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
      * @return The enum numeric value on the wire for clarificationQuestionType.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getClarificationQuestionTypeValue() {
       return clarificationQuestionType_;
     }
@@ -1492,16 +1667,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The type of clarification question.
+     * Optional. Deprecated: The parent message is deprecated.
+     * The type of clarification question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+     *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
      * @param value The enum numeric value on the wire for clarificationQuestionType to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setClarificationQuestionTypeValue(int value) {
       clarificationQuestionType_ = value;
       bitField0_ |= 0x00000008;
@@ -1513,16 +1693,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The type of clarification question.
+     * Optional. Deprecated: The parent message is deprecated.
+     * The type of clarification question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+     *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
      * @return The clarificationQuestionType.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion
             .ClarificationQuestionType
         getClarificationQuestionType() {
@@ -1540,16 +1725,21 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The type of clarification question.
+     * Optional. Deprecated: The parent message is deprecated.
+     * The type of clarification question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+     *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
      * @param value The clarificationQuestionType to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setClarificationQuestionType(
         com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType
             value) {
@@ -1566,15 +1756,20 @@ public final class ClarificationQuestion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The type of clarification question.
+     * Optional. Deprecated: The parent message is deprecated.
+     * The type of clarification question.
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.ClarificationQuestionType clarification_question_type = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
+     *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearClarificationQuestionType() {
       bitField0_ = (bitField0_ & ~0x00000008);
       clarificationQuestionType_ = 0;
