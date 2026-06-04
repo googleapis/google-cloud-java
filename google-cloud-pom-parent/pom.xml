@@ -23,6 +23,8 @@
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
     <errorprone.version>2.48.0</errorprone.version>
+    <!-- Error Prone 2.43.0+ running on JDK 21+ requires this javac flag to
+         correctly handle type annotations in javac. -->
     <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
   </properties>
 
@@ -132,7 +134,11 @@
       </build>
     </profile>
     <profile>
-      <id>jdk-old</id>
+      <!-- Error Prone 2.43.0+ requires JDK 21+ to run.
+           For JDK < 17, we downgrade to Error Prone 2.38.0.
+           We also use a dummy '-g' javac arg because the default JDK 21+ arg
+           '-XDaddTypeAnnotationsToSymbol=true' is invalid on older JDKs. -->
+      <id>errorprone-jdk11</id>
       <activation>
         <jdk>[1.8,17)</jdk>
       </activation>
@@ -142,7 +148,11 @@
       </properties>
     </profile>
     <profile>
-      <id>jdk-mid</id>
+      <!-- Error Prone 2.43.0+ requires JDK 21+ to run.
+           For JDK 17, we downgrade to Error Prone 2.42.0 (latest version supporting JDK 17).
+           We also use a dummy '-g' javac arg because the default JDK 21+ arg
+           '-XDaddTypeAnnotationsToSymbol=true' is invalid on older JDKs. -->
+      <id>errorprone-jdk17</id>
       <activation>
         <jdk>[17,21)</jdk>
       </activation>
