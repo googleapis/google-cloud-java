@@ -91,7 +91,7 @@ public final class TestRunScopedInstance<T extends ManagedLifecycle> implements 
       synchronized (this) {
         instance = null;
       }
-      if (name.equals("OTEL_SDK")) {
+      if (name.endsWith("OTEL_SDK")) {
         tmp.stop();
       } else {
         Span span =
