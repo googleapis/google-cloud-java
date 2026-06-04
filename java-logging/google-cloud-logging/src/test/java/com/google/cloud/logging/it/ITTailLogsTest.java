@@ -74,7 +74,9 @@ public class ITTailLogsTest extends BaseSystemTest {
 
     final ArrayList<LogEntry> receivedEntries = new ArrayList<>();
     for (LogEntry log : stream) {
-      if (log.getLogName().equals(LOG_ID)) {
+      // Use endsWith() because getLogName() may return a fully qualified path
+      // (projects/{project_id}/logs/{LOG_ID}) rather than the simple identifier.
+      if (log.getLogName().endsWith(LOG_ID)) {
         receivedEntries.add(log);
         break;
       }
