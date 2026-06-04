@@ -16,7 +16,6 @@
 
 package com.google.cloud.logging.it;
 
-import static com.google.cloud.logging.testing.RemoteLoggingHelper.formatForTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -30,6 +29,7 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
+import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
@@ -39,6 +39,10 @@ import org.junit.Test;
 public class ITSinkTest extends BaseSystemTest {
 
   private static final String TEST_SINK_PREFIX = "test-";
+
+  private static String formatForTest(String name) {
+    return RemoteLoggingHelper.formatForTest(TEST_SINK_PREFIX + name);
+  }
 
   @BeforeClass
   public static void setUp() {
@@ -61,7 +65,7 @@ public class ITSinkTest extends BaseSystemTest {
 
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
-    String name = formatForTest("test-create-get-update-sink");
+    String name = formatForTest("create-get-update-sink");
     SinkInfo sinkInfo =
         SinkInfo.newBuilder(name, SinkInfo.Destination.DatasetDestination.of("dataset"))
             .setFilter("severity>=ERROR")
@@ -89,7 +93,7 @@ public class ITSinkTest extends BaseSystemTest {
 
   @Test
   public void testUpdateNonExistingSink() {
-    String name = formatForTest("test-update-non-existing-sink");
+    String name = formatForTest("update-non-existing-sink");
     SinkInfo sinkInfo =
         SinkInfo.newBuilder(name, SinkInfo.Destination.DatasetDestination.of("dataset"))
             .setFilter("severity>=ERROR")
@@ -106,8 +110,8 @@ public class ITSinkTest extends BaseSystemTest {
 
   @Test
   public void testListSinks() throws InterruptedException {
-    String firstName = formatForTest("test-list-sinks-1");
-    String secondName = formatForTest("test-list-sinks-2");
+    String firstName = formatForTest("list-sinks-1");
+    String secondName = formatForTest("list-sinks-2");
     Sink firstSink =
         logging.create(
             SinkInfo.of(firstName, SinkInfo.Destination.DatasetDestination.of("dataset")));
