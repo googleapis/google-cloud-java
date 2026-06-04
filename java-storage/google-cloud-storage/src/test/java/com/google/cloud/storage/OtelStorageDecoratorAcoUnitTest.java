@@ -59,7 +59,10 @@ public class OtelStorageDecoratorAcoUnitTest {
     Storage mockStorage = mock(Storage.class);
     Bucket mockBucket = mock(Bucket.class);
 
-    Mockito.when(mockStorage.get("success-bucket")).thenReturn(mockBucket);
+    Mockito.when(
+            mockStorage.get(
+                Mockito.eq("success-bucket"), Mockito.any(Storage.BucketGetOption[].class)))
+        .thenReturn(mockBucket);
     Mockito.when(mockBucket.getProject()).thenReturn(BigInteger.valueOf(12345));
     Mockito.when(mockBucket.getLocation()).thenReturn("us-east1");
     Mockito.when(mockBucket.getLocationType()).thenReturn("region");
@@ -91,7 +94,10 @@ public class OtelStorageDecoratorAcoUnitTest {
   public void testAco404NotFoundFlowWithException() throws Exception {
     Storage mockStorage = mock(Storage.class);
     StorageException ex = new StorageException(404, "Bucket not found");
-    Mockito.when(mockStorage.get("nonexistent-bucket")).thenThrow(ex);
+    Mockito.when(
+            mockStorage.get(
+                Mockito.eq("nonexistent-bucket"), Mockito.any(Storage.BucketGetOption[].class)))
+        .thenThrow(ex);
 
     try (Storage decoratedStorage =
         OtelStorageDecorator.decorate(
@@ -117,7 +123,10 @@ public class OtelStorageDecoratorAcoUnitTest {
   @Test
   public void testAco404NotFoundFlowWithNull() throws Exception {
     Storage mockStorage = mock(Storage.class);
-    Mockito.when(mockStorage.get("nonexistent-bucket")).thenReturn(null);
+    Mockito.when(
+            mockStorage.get(
+                Mockito.eq("nonexistent-bucket"), Mockito.any(Storage.BucketGetOption[].class)))
+        .thenReturn(null);
 
     try (Storage decoratedStorage =
         OtelStorageDecorator.decorate(
@@ -144,7 +153,10 @@ public class OtelStorageDecoratorAcoUnitTest {
   public void testAco403ForbiddenFlow() throws Exception {
     Storage mockStorage = mock(Storage.class);
     StorageException ex = new StorageException(403, "Access Denied");
-    Mockito.when(mockStorage.get("forbidden-bucket")).thenThrow(ex);
+    Mockito.when(
+            mockStorage.get(
+                Mockito.eq("forbidden-bucket"), Mockito.any(Storage.BucketGetOption[].class)))
+        .thenThrow(ex);
 
     try (Storage decoratedStorage =
         OtelStorageDecorator.decorate(
@@ -173,7 +185,9 @@ public class OtelStorageDecoratorAcoUnitTest {
   @Test
   public void testAcoThunderingHerdProtection() throws Exception {
     Storage mockStorage = mock(Storage.class);
-    Mockito.when(mockStorage.get("concurrent-bucket"))
+    Mockito.when(
+            mockStorage.get(
+                Mockito.eq("concurrent-bucket"), Mockito.any(Storage.BucketGetOption[].class)))
         .thenAnswer(
             invocation -> {
               Thread.sleep(100);
@@ -202,7 +216,8 @@ public class OtelStorageDecoratorAcoUnitTest {
       osd.acoContext.getCacheExecutor().awaitTermination(5, TimeUnit.SECONDS);
 
       // Verify get was called exactly once (no duplicate fetches)
-      Mockito.verify(mockStorage, Mockito.times(1)).get("concurrent-bucket");
+      Mockito.verify(mockStorage, Mockito.times(1))
+          .get(Mockito.eq("concurrent-bucket"), Mockito.any(Storage.BucketGetOption[].class));
     }
   }
 
