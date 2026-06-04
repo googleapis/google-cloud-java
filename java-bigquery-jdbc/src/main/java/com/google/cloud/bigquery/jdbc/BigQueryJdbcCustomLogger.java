@@ -42,28 +42,83 @@ public class BigQueryJdbcCustomLogger extends Logger {
       return;
     }
 
-    StackTraceElement[] stackTrace = new Throwable().getStackTrace();
-    String sourceClass = "unknown";
-    String sourceMethod = "unknown";
+    LogRecord record = new BigQueryJdbcLogRecord(level, msgSupplier.get());
+    record.setThrown(thrown);
+    log(record);
+  }
 
-    for (StackTraceElement element : stackTrace) {
-      String className = element.getClassName();
-      if (!className.equals(BigQueryJdbcCustomLogger.class.getName())
-          && !className.startsWith("com.google.cloud.bigquery.exception.")) {
+  static class BigQueryJdbcLogRecord extends LogRecord {
+    private boolean callerInferred = false;
+    private String sourceClass;
+    private String sourceMethod;
+
+    public BigQueryJdbcLogRecord(Level level, String msg) {
+      super(level, msg);
+    }
+
+    boolean isCallerInferred() {
+      return callerInferred;
+    }
+
+    @Override
+    public String getSourceClassName() {
+      inferCaller();
+      return sourceClass;
+    }
+
+    @Override
+    public void setSourceClassName(String sourceClassName) {
+      super.setSourceClassName(sourceClassName);
+      this.sourceClass = sourceClassName;
+      this.callerInferred = true;
+    }
+
+    @Override
+    public String getSourceMethodName() {
+      inferCaller();
+      return sourceMethod;
+    }
+
+    @Override
+    public void setSourceMethodName(String sourceMethodName) {
+      super.setSourceMethodName(sourceMethodName);
+      this.sourceMethod = sourceMethodName;
+      this.callerInferred = true;
+    }
+
+    private synchronized void inferCaller() {
+      if (callerInferred) {
+        return;
+      }
+      callerInferred = true;
+      StackTraceElement[] stackTrace = new Throwable().getStackTrace();
+      sourceClass = "unknown";
+      sourceMethod = "unknown";
+
+      for (StackTraceElement element : stackTrace) {
+        String className = element.getClassName();
+        if (shouldSkipClass(className)) {
+          continue;
+        }
         sourceClass = className;
         sourceMethod = element.getMethodName();
         break;
       }
+      super.setSourceClassName(sourceClass);
+      super.setSourceMethodName(sourceMethod);
     }
 
-    if (thrown == null) {
-      logp(level, sourceClass, sourceMethod, msgSupplier);
-    } else {
-      LogRecord record = new LogRecord(level, msgSupplier.get());
-      record.setSourceClassName(sourceClass);
-      record.setSourceMethodName(sourceMethod);
-      record.setThrown(thrown);
-      log(record);
+    private static boolean shouldSkipClass(String className) {
+      return className.equals("com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger")
+          || className.equals("com.google.cloud.bigquery.jdbc.BigQueryJdbcResultSetLogger")
+          || className.startsWith("com.google.cloud.bigquery.jdbc.BigQueryJdbcRootLogger")
+          || className.equals(BigQueryJdbcLogRecord.class.getName())
+          || className.startsWith("java.util.logging.")
+          || className.startsWith("sun.util.logging.")
+          || className.startsWith("com.google.cloud.bigquery.exception.")
+          || className.startsWith("org.slf4j.bridge.")
+          || className.startsWith("org.apache.logging.log4j.jul.")
+          || className.startsWith("org.apache.commons.logging.");
     }
   }
 

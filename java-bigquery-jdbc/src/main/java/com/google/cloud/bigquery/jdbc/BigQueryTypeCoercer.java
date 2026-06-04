@@ -67,8 +67,8 @@ import java.util.Map;
  */
 @InternalApi
 class BigQueryTypeCoercer {
-  private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryTypeCoercer.class.getName());
+  private static final BigQueryJdbcResultSetLogger LOG =
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryTypeCoercer.class);
 
   /** A {@link BigQueryTypeCoercer} instance with all the inbuilt {@link BigQueryCoercion}s */
   static BigQueryTypeCoercer INSTANCE;
@@ -108,8 +108,9 @@ class BigQueryTypeCoercer {
       return targetClass.cast(value);
     }
     BigQueryCoercion<Object, T> coercion = findCoercion(sourceClass, targetClass);
-    BigQueryJdbcCustomLogger effectiveLog = log != null ? log : LOG;
-    effectiveLog.finest("%s coercion for %s", coercion, value);
+    BigQueryJdbcResultSetLogger effectiveLog = log != null ? log : LOG;
+    effectiveLog.finestTrace(
+        "coerceTo", () -> String.format("%s coercion for %s", coercion, value));
     // Value is null case & no explicit coercion
     if (sourceClass == Void.class && coercion == null) {
       return null;
