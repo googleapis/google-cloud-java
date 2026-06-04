@@ -37,13 +37,13 @@ class DatastoreHelper {
   }
 
   static Entity get(Transaction reader, Key key) {
-    Iterator<Entity> limit = reader.get(new Key[] {key});
-    return limit.hasNext() ? limit.next() : null;
+    Iterator<Entity> results = reader.get(new Key[] {key});
+    return results.hasNext() ? results.next() : null;
   }
 
   static Entity get(Datastore reader, Key key, ReadOption... options) {
-    Iterator<Entity> limit = reader.get(Collections.singletonList(key), options);
-    return limit.hasNext() ? limit.next() : null;
+    Iterator<Entity> results = reader.get(Collections.singletonList(key), options);
+    return results.hasNext() ? results.next() : null;
   }
 
   static Entity add(DatastoreWriter writer, FullEntity<?> entity) {
