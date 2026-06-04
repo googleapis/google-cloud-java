@@ -170,7 +170,13 @@ final class AcoSpanBuilder implements SpanBuilder {
   }
 
   static Tuple<String, String> fetch(Storage delegate, String bucketName) {
-    Bucket bucket = delegate.get(bucketName);
+    Bucket bucket =
+        delegate.get(
+            bucketName,
+            Storage.BucketGetOption.fields(
+                Storage.BucketField.LOCATION,
+                Storage.BucketField.LOCATION_TYPE,
+                Storage.BucketField.PROJECT));
     if (bucket == null) {
       return null;
     }

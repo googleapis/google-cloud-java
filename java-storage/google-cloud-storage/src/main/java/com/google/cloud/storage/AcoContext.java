@@ -71,7 +71,7 @@ abstract class AcoContext implements AutoCloseable {
         if (cacheExecutor != null) {
           cacheExecutor.shutdownNow();
           try {
-            cacheExecutor.awaitTermination(5, TimeUnit.MINUTES);
+            cacheExecutor.awaitTermination(5, TimeUnit.SECONDS);
           } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
           }
