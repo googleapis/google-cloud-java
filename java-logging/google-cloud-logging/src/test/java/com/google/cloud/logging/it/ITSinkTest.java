@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging.it;
 
+import static com.google.cloud.logging.testing.RemoteLoggingHelper.formatForTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -29,7 +30,6 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
-import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
@@ -39,10 +39,6 @@ import org.junit.Test;
 public class ITSinkTest extends BaseSystemTest {
 
   private static final String TEST_SINK_PREFIX = "test-";
-
-  private static String formatForTest(String name) {
-    return RemoteLoggingHelper.formatForTest(TEST_SINK_PREFIX + name);
-  }
 
   @BeforeClass
   public static void setUp() {
