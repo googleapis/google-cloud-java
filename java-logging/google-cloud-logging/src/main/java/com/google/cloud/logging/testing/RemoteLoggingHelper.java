@@ -37,7 +37,7 @@ import java.util.logging.Logger;
 public class RemoteLoggingHelper {
 
   private static final Logger log = Logger.getLogger(RemoteLoggingHelper.class.getName());
-  private static final String TEST_SINK_PREFIX = "test-";
+  public static final String TEST_SINK_PREFIX = "test-";
   private final LoggingOptions options;
 
   private RemoteLoggingHelper(LoggingOptions options) {
