@@ -189,8 +189,7 @@ public final class ITAppendableUploadTest {
     assertThat(done1.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(c1.getCrc32c()));
 
     BlobAppendableUpload takeOver =
-        storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+        storage.blobAppendableUpload(done1, p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(c2.getBytes()), channel);
       assertThat(written).isEqualTo(c2.length());
@@ -198,7 +197,7 @@ public final class ITAppendableUploadTest {
     BlobInfo done2 = takeOver.getResult().get(5, TimeUnit.SECONDS);
 
     assertThat(done2.getSize()).isEqualTo(p.content.length());
-    assertThat(done2.getCrc32c()).isAnyOf(Utils.crc32cCodec.encode(p.content.getCrc32c()), null);
+    assertThat(done2.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(p.content.getCrc32c()));
   }
 
   @Test
@@ -251,15 +250,16 @@ public final class ITAppendableUploadTest {
     assertThat(done1.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(p.content.getCrc32c()));
 
     BlobAppendableUpload takeOver =
-        storage.blobAppendableUpload(
-            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+        storage.blobAppendableUpload(done1, p.uploadConfig);
     takeOver.open().finalizeAndClose();
 
     BlobInfo done2 = takeOver.getResult().get(5, TimeUnit.SECONDS);
     assertAll(
         () -> assertThat(done2).isNotNull(),
         () -> assertThat(done2.getSize()).isEqualTo(p.content.length()),
-        () -> assertThat(done2.getCrc32c()).isNotNull());
+        () ->
+            assertThat(done2.getCrc32c())
+                .isEqualTo(Utils.crc32cCodec.encode(p.content.getCrc32c())));
   }
 
   private void checkTestbenchIssue733() {

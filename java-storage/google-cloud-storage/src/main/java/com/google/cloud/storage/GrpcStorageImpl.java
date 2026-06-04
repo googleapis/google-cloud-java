@@ -1514,13 +1514,18 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             : getBidiWriteObjectRequest(info, opts, /* appendable= */ true);
     AppendableUploadState state;
     if (takeOver) {
+      Crc32cValue.Crc32cLengthKnown initialCrc32c = null;
+      if (info.getCrc32c() != null && info.getSize() != null) {
+        initialCrc32c =
+            Crc32cValue.of(Utils.crc32cCodec.decode(info.getCrc32c()), info.getSize());
+      }
       state =
           BidiUploadState.appendableTakeover(
               req,
               Retrying::newCallContext,
               maxPendingBytes,
               SettableApiFuture.create(),
-              /* initialCrc32c= */ null);
+              initialCrc32c);
     } else {
       state =
           BidiUploadState.appendableNew(

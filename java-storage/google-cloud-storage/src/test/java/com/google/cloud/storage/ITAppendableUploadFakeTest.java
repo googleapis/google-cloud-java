@@ -921,6 +921,85 @@ public class ITAppendableUploadFakeTest {
     }
   }
 
+  @Test
+  public void takeoverChecksumsWorks() throws Exception {
+    byte[] b = new byte[10];
+    DataGenerator.base64Characters().fill(b, 0, 3); // ABC
+    DataGenerator.base64Characters().fill(b, 3, 7); // DEFGHIJ
+    ChecksummedTestContent existing = ChecksummedTestContent.of(b, 0, 3);
+    ChecksummedTestContent appendData = ChecksummedTestContent.of(b, 3, 7);
+    ChecksummedTestContent all = ChecksummedTestContent.of(b);
+
+    BidiWriteObjectRequest takeoverInitialReq =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .build())
+            .setStateLookup(true)
+            .build();
+    BidiWriteObjectResponse takeoverResNoResource =
+        BidiWriteObjectResponse.newBuilder()
+            .setPersistedSize(3)
+            .build();
+
+    BidiWriteObjectRequest req1 =
+        BidiWriteObjectRequest.newBuilder()
+            .setWriteOffset(3)
+            .setChecksummedData(appendData.asChecksummedData())
+            .setFinishWrite(true)
+            .setObjectChecksums(ObjectChecksums.newBuilder().setCrc32C(all.getCrc32c()).build())
+            .build();
+    BidiWriteObjectResponse res1 =
+        BidiWriteObjectResponse.newBuilder()
+            .setResource(
+                Object.newBuilder()
+                    .setName(METADATA.getName())
+                    .setBucket(METADATA.getBucket())
+                    .setGeneration(METADATA.getGeneration())
+                    .setSize(10)
+                    .setFinalizeTime(timestampNow())
+                    .setChecksums(ObjectChecksums.newBuilder().setCrc32C(all.getCrc32c()).build())
+                    .build())
+            .build();
+
+    FakeStorage fake =
+        FakeStorage.of(
+            ImmutableMap.of(
+                takeoverInitialReq,
+                respond -> respond.onNext(takeoverResNoResource),
+                req1,
+                respond -> {
+                  respond.onNext(res1);
+                  respond.onCompleted();
+                }));
+    try (FakeServer fakeServer = FakeServer.of(fake);
+        Storage storage = fakeServer.getGrpcStorageOptions().toBuilder().build().getService()) {
+      BlobId id = BlobId.of("b", "o", METADATA.getGeneration());
+
+      BlobInfo done1 =
+          BlobInfo.newBuilder(id)
+              .setSize(3L)
+              .setCrc32c(Utils.crc32cCodec.encode(existing.getCrc32c()))
+              .build();
+
+      BlobAppendableUploadConfig config =
+          BlobAppendableUploadConfig.of()
+              .withFlushPolicy(FlushPolicy.maxFlushSize(10))
+              .withCloseAction(CloseAction.FINALIZE_WHEN_CLOSING);
+      BlobAppendableUpload upload =
+          storage.blobAppendableUpload(done1, config);
+      try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+        StorageChannelUtils.blockingEmptyTo(ByteBuffer.wrap(appendData.getBytes()), channel);
+      }
+      ApiFuture<BlobInfo> result = upload.getResult();
+      BlobInfo finalInfo = result.get(5, TimeUnit.SECONDS);
+      assertThat(finalInfo.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(all.getCrc32c()));
+    }
+  }
+
   /**
    * If a stream is held open for an extended period (i.e. longer than the configured retry timeout)
    * and the server returns an error, we want to make sure the currently pending request is able to
