@@ -560,11 +560,16 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
     @Override
     public ByteArrayAccumulatingRead withNewReadId(long newReadId) {
       this.tombstoned = true;
+      List<ChildRef> newChildRefs;
+      synchronized (childRefs) {
+        newChildRefs = java.util.Collections.synchronizedList(new java.util.ArrayList<>(childRefs));
+        childRefs.clear();
+      }
       return new ByteArrayAccumulatingRead(
           newReadId,
           rangeSpec,
           hasher,
-          childRefs,
+          newChildRefs,
           retryContext,
           readOffset,
           closed,
@@ -635,11 +640,16 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
     @Override
     public ZeroCopyByteStringAccumulatingRead withNewReadId(long newReadId) {
       this.tombstoned = true;
+      List<ChildRef> newChildRefs;
+      synchronized (childRefs) {
+        newChildRefs = java.util.Collections.synchronizedList(new java.util.ArrayList<>(childRefs));
+        childRefs.clear();
+      }
       return new ZeroCopyByteStringAccumulatingRead(
           newReadId,
           rangeSpec,
           hasher,
-          childRefs,
+          newChildRefs,
           readOffset,
           retryContext,
           closed,

@@ -118,7 +118,7 @@ final class GapicUnbufferedReadableByteChannel
         };
     // The reasoning for 2 elements below allow for a single response and the EOF/error signal
     // from onComplete or onError. Same thing com.google.api.gax.rpc.QueuingResponseObserver does.
-    this.queue = new SimpleBlockingQueue<>(2);
+    this.queue = new SimpleBlockingQueue<>(2, () -> open);
   }
 
   @Override
@@ -200,6 +200,9 @@ final class GapicUnbufferedReadableByteChannel
   @Override
   public void close() throws IOException {
     open = false;
+    if (!result.isDone()) {
+      result.set(Object.getDefaultInstance());
+    }
     try {
       if (leftovers != null) {
         leftovers.close();
@@ -365,7 +368,10 @@ final class GapicUnbufferedReadableByteChannel
             return;
           }
         }
-        queue.offer(ReadObjectResponseChildRef.from(handle));
+        ReadObjectResponseChildRef ref = ReadObjectResponseChildRef.from(handle);
+        if (!queue.offer(ref)) {
+          ref.close();
+        }
         fetchOffset.addAndGet(contentSize);
         if (response.hasMetadata() && !result.isDone()) {
           result.set(response.getMetadata());
@@ -380,6 +386,15 @@ final class GapicUnbufferedReadableByteChannel
 
     @Override
     protected void onErrorImpl(Throwable t) {
+      if (t instanceof OutOfRangeException) {
+        if (!result.isDone()) {
+          result.set(Object.getDefaultInstance());
+        }
+      } else {
+        if (!result.isDone()) {
+          result.setException(t);
+        }
+      }
       if (t instanceof OutOfRangeException) {
         try {
           queue.offer(EOF_MARKER);
@@ -406,6 +421,9 @@ final class GapicUnbufferedReadableByteChannel
 
     @Override
     protected void onCompleteImpl() {
+      if (!result.isDone()) {
+        result.set(Object.getDefaultInstance());
+      }
       try {
         cancellation.set(null);
         queue.offer(EOF_MARKER);
@@ -423,9 +441,11 @@ final class GapicUnbufferedReadableByteChannel
   static final class SimpleBlockingQueue<T> {
 
     private final ArrayBlockingQueue<T> queue;
+    private final java.util.function.BooleanSupplier isOpen;
 
-    SimpleBlockingQueue(int poolMaxSize) {
+    SimpleBlockingQueue(int poolMaxSize, java.util.function.BooleanSupplier isOpen) {
       this.queue = new ArrayBlockingQueue<>(poolMaxSize);
+      this.isOpen = isOpen;
     }
 
     public boolean nonEmpty() {
@@ -442,8 +462,13 @@ final class GapicUnbufferedReadableByteChannel
       return queue.take();
     }
 
-    public void offer(@NonNull T element) throws InterruptedException {
-      queue.put(element);
+    public boolean offer(@NonNull T element) throws InterruptedException {
+      while (isOpen.getAsBoolean()) {
+        if (queue.offer(element, 100, TimeUnit.MILLISECONDS)) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 
