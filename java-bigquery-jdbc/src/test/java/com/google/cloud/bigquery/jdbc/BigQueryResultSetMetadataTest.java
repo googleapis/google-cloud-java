@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -25,17 +26,19 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.common.collect.ImmutableList;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.List;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -72,37 +75,6 @@ public class BigQueryResultSetMetadataTest {
           Field.of("twelfth", LegacySQLTypeName.TIME),
           Field.of("thirteenth", LegacySQLTypeName.DATE));
 
-  private static final List fieldListSqlTypes =
-      ImmutableList.of(
-          Types.BOOLEAN,
-          Types.BIGINT,
-          Types.DOUBLE,
-          Types.NVARCHAR,
-          Types.TIMESTAMP,
-          Types.VARBINARY,
-          Types.NVARCHAR,
-          Types.ARRAY,
-          Types.STRUCT,
-          Types.NUMERIC,
-          Types.NUMERIC,
-          Types.TIME,
-          Types.DATE);
-
-  private static final List fieldListClassNames =
-      ImmutableList.of(
-          "java.lang.Boolean",
-          "java.lang.Long",
-          "java.lang.Double",
-          "java.lang.String",
-          "java.sql.Timestamp",
-          byte[].class.getName(),
-          "java.lang.String",
-          Array.class.getName(),
-          "java.sql.Struct",
-          "java.math.BigDecimal",
-          "java.math.BigDecimal",
-          "java.sql.Time",
-          "java.sql.Date");
   private static final Schema QUERY_SCHEMA = Schema.of(fieldList);
 
   private ResultSetMetaData resultSetMetaData;
@@ -131,39 +103,38 @@ public class BigQueryResultSetMetadataTest {
     resultSetMetaDataNested = bigQueryJsonResultSetNested.getMetaData();
   }
 
-  @Test
-  public void testGetColumnType() throws SQLException {
-    // match the mapping for all the types in the test dataset
-    for (int colIndex = 1; colIndex <= 13; colIndex++) {
-      assertThat(resultSetMetaData.getColumnType(colIndex))
-          .isEqualTo(fieldListSqlTypes.get(colIndex - 1));
-    }
+  @ParameterizedTest
+  @MethodSource("columnMetadataProvider")
+  public void testColumnMetadata(
+      int columnIndex,
+      int expectedSqlType,
+      String expectedColumnTypeName,
+      String expectedClassName,
+      int expectedPrecision,
+      int expectedScale)
+      throws SQLException {
+    assertThat(resultSetMetaData.getColumnType(columnIndex)).isEqualTo(expectedSqlType);
+    assertThat(resultSetMetaData.getColumnTypeName(columnIndex)).isEqualTo(expectedColumnTypeName);
+    assertThat(resultSetMetaData.getColumnClassName(columnIndex)).isEqualTo(expectedClassName);
+    assertThat(resultSetMetaData.getPrecision(columnIndex)).isEqualTo(expectedPrecision);
+    assertThat(resultSetMetaData.getScale(columnIndex)).isEqualTo(expectedScale);
   }
 
-  @Test
-  public void testGetColumnTypeName() throws SQLException {
-    assertThat(resultSetMetaData.getColumnTypeName(1)).isEqualTo("BOOL");
-    assertThat(resultSetMetaData.getColumnTypeName(2)).isEqualTo("INT64");
-    assertThat(resultSetMetaData.getColumnTypeName(3)).isEqualTo("FLOAT64");
-    assertThat(resultSetMetaData.getColumnTypeName(4)).isEqualTo("STRING");
-    assertThat(resultSetMetaData.getColumnTypeName(5)).isEqualTo("TIMESTAMP");
-    assertThat(resultSetMetaData.getColumnTypeName(6)).isEqualTo("BYTES");
-    assertThat(resultSetMetaData.getColumnTypeName(7)).isEqualTo("STRING");
-    assertThat(resultSetMetaData.getColumnTypeName(8)).isEqualTo("ARRAY");
-    assertThat(resultSetMetaData.getColumnTypeName(9)).isEqualTo("STRUCT");
-    assertThat(resultSetMetaData.getColumnTypeName(10)).isEqualTo("NUMERIC");
-    assertThat(resultSetMetaData.getColumnTypeName(11)).isEqualTo("BIGNUMERIC");
-    assertThat(resultSetMetaData.getColumnTypeName(12)).isEqualTo("TIME");
-    assertThat(resultSetMetaData.getColumnTypeName(13)).isEqualTo("DATE");
-  }
-
-  @Test
-  public void testColumnClassName()
-      throws SQLException { // match the mapping for all the types in the test dataset
-    for (int colIndex = 1; colIndex <= 13; colIndex++) {
-      assertThat(resultSetMetaData.getColumnClassName(colIndex))
-          .isEqualTo(fieldListClassNames.get(colIndex - 1));
-    }
+  private static Stream<Arguments> columnMetadataProvider() {
+    return Stream.of(
+        arguments(1, Types.BOOLEAN, "BOOL", "java.lang.Boolean", 1, 0),
+        arguments(2, Types.BIGINT, "INT64", "java.lang.Long", 19, 0),
+        arguments(3, Types.DOUBLE, "FLOAT64", "java.lang.Double", 15, 0),
+        arguments(4, Types.NVARCHAR, "STRING", "java.lang.String", 0, 0),
+        arguments(5, Types.TIMESTAMP, "TIMESTAMP", "java.sql.Timestamp", 26, 6),
+        arguments(6, Types.VARBINARY, "BYTES", byte[].class.getName(), 0, 0),
+        arguments(7, Types.NVARCHAR, "STRING", "java.lang.String", 0, 0),
+        arguments(8, Types.ARRAY, "ARRAY", Array.class.getName(), 0, 0),
+        arguments(9, Types.STRUCT, "STRUCT", "java.sql.Struct", 0, 0),
+        arguments(10, Types.NUMERIC, "NUMERIC", "java.math.BigDecimal", 12, 9),
+        arguments(11, Types.NUMERIC, "BIGNUMERIC", "java.math.BigDecimal", 77, 38),
+        arguments(12, Types.TIME, "TIME", "java.sql.Time", 15, 6),
+        arguments(13, Types.DATE, "DATE", "java.sql.Date", 10, 0));
   }
 
   @Test
@@ -177,13 +148,6 @@ public class BigQueryResultSetMetadataTest {
     assertThat(resultSetMetaData.isDefinitelyWritable(4)).isFalse();
     assertThat(resultSetMetaData.isWritable(4)).isTrue();
     assertThat(resultSetMetaData.isNullable(4)).isEqualTo(ResultSetMetaData.columnNullableUnknown);
-  }
-
-  @Test
-  public void testPrecision() throws SQLException {
-    assertThat(resultSetMetaData.getPrecision(10)).isEqualTo(12L);
-    assertThat(resultSetMetaData.getPrecision(1))
-        .isEqualTo(0); // schema doesn't have this info, should be defaulted to 0
   }
 
   @Test
@@ -209,8 +173,19 @@ public class BigQueryResultSetMetadataTest {
 
   @Test
   public void testScale() throws SQLException {
-    assertThat(resultSetMetaData.getScale(10)).isEqualTo(9L);
-    assertThat(resultSetMetaData.getScale(4)).isEqualTo(0L);
+    assertThat(resultSetMetaData.getScale(1)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(2)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(3)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(4)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(5)).isEqualTo(6);
+    assertThat(resultSetMetaData.getScale(6)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(7)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(8)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(9)).isEqualTo(0);
+    assertThat(resultSetMetaData.getScale(10)).isEqualTo(9);
+    assertThat(resultSetMetaData.getScale(11)).isEqualTo(38);
+    assertThat(resultSetMetaData.getScale(12)).isEqualTo(6);
+    assertThat(resultSetMetaData.getScale(13)).isEqualTo(0);
   }
 
   @Test
@@ -293,8 +268,9 @@ public class BigQueryResultSetMetadataTest {
     assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
     assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
 
-    SQLException e =
-        assertThrows(SQLException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
+    BigQueryJdbcException e =
+        assertThrows(
+            BigQueryJdbcException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
     assertThat((Throwable) e).hasMessageThat().contains("Cannot unwrap to java.sql.Connection");
   }
 
