@@ -56,31 +56,31 @@ public class BigQueryJdbcCustomLogger extends Logger {
       super(level, msg);
     }
 
-    boolean isCallerInferred() {
+    synchronized boolean isCallerInferred() {
       return callerInferred;
     }
 
     @Override
-    public String getSourceClassName() {
+    public synchronized String getSourceClassName() {
       inferCaller();
       return sourceClass;
     }
 
     @Override
-    public void setSourceClassName(String sourceClassName) {
+    public synchronized void setSourceClassName(String sourceClassName) {
       super.setSourceClassName(sourceClassName);
       this.sourceClass = sourceClassName;
       this.callerInferred = true;
     }
 
     @Override
-    public String getSourceMethodName() {
+    public synchronized String getSourceMethodName() {
       inferCaller();
       return sourceMethod;
     }
 
     @Override
-    public void setSourceMethodName(String sourceMethodName) {
+    public synchronized void setSourceMethodName(String sourceMethodName) {
       super.setSourceMethodName(sourceMethodName);
       this.sourceMethod = sourceMethodName;
       this.callerInferred = true;
