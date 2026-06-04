@@ -76,21 +76,25 @@ public final class BufferHandleTest {
   public void lazyBufferHandle_initIsThreadSafe() throws ExecutionException, InterruptedException {
     int capacity = 10;
     ExecutorService exec = Executors.newFixedThreadPool(2);
-    AtomicBoolean alloc = new AtomicBoolean(false);
-    LazyBufferHandle handle =
-        new LazyBufferHandle(
-            capacity,
-            i -> {
-              alloc.compareAndSet(false, true);
-              return ByteBuffer.allocate(capacity);
-            });
+    try {
+      AtomicBoolean alloc = new AtomicBoolean(false);
+      LazyBufferHandle handle =
+          new LazyBufferHandle(
+              capacity,
+              i -> {
+                alloc.compareAndSet(false, true);
+                return ByteBuffer.allocate(capacity);
+              });
 
-    Future<ByteBuffer> f1 = exec.submit(handle::get);
-    Future<ByteBuffer> f2 = exec.submit(handle::get);
+      Future<ByteBuffer> f1 = exec.submit(handle::get);
+      Future<ByteBuffer> f2 = exec.submit(handle::get);
 
-    assertThat(f1.get()).isSameInstanceAs(f2.get());
+      assertThat(f1.get()).isSameInstanceAs(f2.get());
 
-    assertThat(handle.get().capacity()).isEqualTo(capacity);
+      assertThat(handle.get().capacity()).isEqualTo(capacity);
+    } finally {
+      exec.shutdownNow();
+    }
   }
 
   @Test

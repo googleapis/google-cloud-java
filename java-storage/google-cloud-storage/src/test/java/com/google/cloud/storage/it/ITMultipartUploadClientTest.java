@@ -402,41 +402,44 @@ public final class ITMultipartUploadClientTest {
       throws ExecutionException, InterruptedException {
     int numThreads = Runtime.getRuntime().availableProcessors();
     ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-    List<Future<CompletedPart>> futures = new ArrayList<>();
+    try {
+      List<Future<CompletedPart>> futures = new ArrayList<>();
 
-    long numParts = (objectSize + partSize - 1) / partSize;
+      long numParts = (objectSize + partSize - 1) / partSize;
 
-    for (int i = 0; i < numParts; i++) {
-      final int partNumber = i + 1;
-      final long offset = (long) i * partSize;
-      final long len = Math.min(partSize, objectSize - offset);
+      for (int i = 0; i < numParts; i++) {
+        final int partNumber = i + 1;
+        final long offset = (long) i * partSize;
+        final long len = Math.min(partSize, objectSize - offset);
 
-      Callable<CompletedPart> uploadTask =
-          () -> {
-            ByteBuffer partBuffer = ByteBuffer.allocate((int) len);
-            try (FileChannel fileChannel = FileChannel.open(localFile, StandardOpenOption.READ)) {
-              fileChannel.read(partBuffer, offset);
-            }
-            partBuffer.flip();
-            RequestBody partBody = RequestBody.of(partBuffer);
-            UploadPartResponse uploadPartResponse =
-                uploadPart(info, uploadId, partNumber, partBody);
-            return CompletedPart.builder()
-                .partNumber(partNumber)
-                .eTag(uploadPartResponse.eTag())
-                .build();
-          };
-      futures.add(executor.submit(uploadTask));
+        Callable<CompletedPart> uploadTask =
+            () -> {
+              ByteBuffer partBuffer = ByteBuffer.allocate((int) len);
+              try (FileChannel fileChannel = FileChannel.open(localFile, StandardOpenOption.READ)) {
+                fileChannel.read(partBuffer, offset);
+              }
+              partBuffer.flip();
+              RequestBody partBody = RequestBody.of(partBuffer);
+              UploadPartResponse uploadPartResponse =
+                  uploadPart(info, uploadId, partNumber, partBody);
+              return CompletedPart.builder()
+                  .partNumber(partNumber)
+                  .eTag(uploadPartResponse.eTag())
+                  .build();
+            };
+        futures.add(executor.submit(uploadTask));
+      }
+
+      List<CompletedPart> completedParts = new ArrayList<>();
+      for (Future<CompletedPart> future : futures) {
+        completedParts.add(future.get());
+      }
+
+      completedParts.sort(Comparator.comparingInt(CompletedPart::partNumber));
+      return completedParts;
+    } finally {
+      executor.shutdownNow();
     }
-
-    List<CompletedPart> completedParts = new ArrayList<>();
-    for (Future<CompletedPart> future : futures) {
-      completedParts.add(future.get());
-    }
-    executor.shutdown();
-
-    completedParts.sort(Comparator.comparingInt(CompletedPart::partNumber));
-    return completedParts;
   }
 
   private void verifyContents(BlobInfo info, Path expectedFile) throws IOException {

@@ -41,81 +41,86 @@ public final class BidiAppendableUnbufferedWritableByteChannelTest {
   @Test
   public void appendAndFinalizeOnlyPerformedIfAllBytesConsumed() throws IOException {
     ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-    ChecksummedTestContent ctc = ChecksummedTestContent.gen(27);
-    AppendableUploadState state =
-        BidiUploadState.appendableNew(
-            BidiUploadTest.appendRequestNew,
-            GrpcCallContext::createDefault,
-            16,
-            SettableApiFuture.create(),
-            Crc32cValue.zero());
-    AtomicLong finishWriteOffset = new AtomicLong(-1);
-    BidiUploadStreamingStream stream =
-        new BidiUploadStreamingStream(
-            state,
-            executor,
-            BidiUploadTestUtils.adaptOnlySend(
-                respond ->
-                    request -> {
-                      if (request.getFinishWrite()) {
-                        finishWriteOffset.set(
-                            request.getWriteOffset()
-                                + request.getChecksummedData().getContent().size());
-                      }
-                      executor.submit(
-                          () -> {
-                            switch ((int) request.getWriteOffset()) {
-                              case 0:
-                                respond.onResponse(BidiUploadTest.resourceWithSize(0));
-                                break;
-                              case 4:
-                              case 8:
-                                // do not ack any bytes until we receive 16, this simulates
-                                // latency on the bytes being ack'd.
-                                break;
-                              case 12:
-                                respond.onResponse(BidiUploadTestUtils.incremental(8));
-                                break;
-                              case 16:
-                                respond.onResponse(BidiUploadTestUtils.incremental(12));
-                                break;
-                              case 20:
-                                respond.onResponse(BidiUploadTestUtils.incremental(16));
-                                break;
-                              case 24:
-                                BidiWriteObjectResponse.Builder b =
-                                    BidiUploadTest.resourceFor(ctc).toBuilder();
-                                b.getResourceBuilder()
-                                    .setFinalizeTime(
-                                        Conversions.grpc()
-                                            .timestampCodec
-                                            .encode(OffsetDateTime.now()));
-                                respond.onResponse(b.build());
-                                break;
-                              default:
-                                respond.onError(
-                                    FakeStorage.unexpectedRequest(request, ImmutableList.of()));
-                                break;
-                            }
-                          });
-                    }),
-            3,
-            RetryContext.neverRetry());
-    ChunkSegmenter chunkSegmenter =
-        new ChunkSegmenter(Hasher.enabled(), ByteStringStrategy.copy(), 4, 2);
-    BidiAppendableUnbufferedWritableByteChannel channel =
-        new BidiAppendableUnbufferedWritableByteChannel(stream, chunkSegmenter, 4, 0);
+    try {
+      ChecksummedTestContent ctc = ChecksummedTestContent.gen(27);
+      AppendableUploadState state =
+          BidiUploadState.appendableNew(
+              BidiUploadTest.appendRequestNew,
+              GrpcCallContext::createDefault,
+              16,
+              SettableApiFuture.create(),
+              Crc32cValue.zero());
+      AtomicLong finishWriteOffset = new AtomicLong(-1);
+      BidiUploadStreamingStream stream =
+          new BidiUploadStreamingStream(
+              state,
+              executor,
+              BidiUploadTestUtils.adaptOnlySend(
+                  respond ->
+                      request -> {
+                        if (request.getFinishWrite()) {
+                          finishWriteOffset.set(
+                              request.getWriteOffset()
+                                  + request.getChecksummedData().getContent().size());
+                        }
+                        executor.submit(
+                            () -> {
+                              switch ((int) request.getWriteOffset()) {
+                                case 0:
+                                  respond.onResponse(BidiUploadTest.resourceWithSize(0));
+                                  break;
+                                case 4:
+                                case 8:
+                                  // do not ack any bytes until we receive 16, this simulates
+                                  // latency on the bytes being ack'd.
+                                  break;
+                                case 12:
+                                  respond.onResponse(BidiUploadTestUtils.incremental(8));
+                                  break;
+                                case 16:
+                                  respond.onResponse(BidiUploadTestUtils.incremental(12));
+                                  break;
+                                case 20:
+                                  respond.onResponse(BidiUploadTestUtils.incremental(16));
+                                  break;
+                                case 24:
+                                  BidiWriteObjectResponse.Builder b =
+                                      BidiUploadTest.resourceFor(ctc).toBuilder();
+                                  b.getResourceBuilder()
+                                      .setFinalizeTime(
+                                          Conversions.grpc()
+                                              .timestampCodec
+                                              .encode(OffsetDateTime.now()));
+                                  respond.onResponse(b.build());
+                                  break;
+                                default:
+                                  respond.onError(
+                                      FakeStorage.unexpectedRequest(request, ImmutableList.of()));
+                                  break;
+                              }
+                            });
+                      }),
+              3,
+              RetryContext.neverRetry());
+      ChunkSegmenter chunkSegmenter =
+          new ChunkSegmenter(Hasher.enabled(), ByteStringStrategy.copy(), 4, 2);
+      BidiAppendableUnbufferedWritableByteChannel channel =
+          new BidiAppendableUnbufferedWritableByteChannel(stream, chunkSegmenter, 4, 0);
 
-    ByteBuffer buf = ctc.asByteBuffer();
-    int written1 = channel.write(buf);
-    // fill up the outbound queue
-    assertThat(written1).isEqualTo(16);
+      ByteBuffer buf = ctc.asByteBuffer();
+      int written1 = channel.write(buf);
+      // fill up the outbound queue
+      assertThat(written1).isEqualTo(16);
 
-    // asynchronously bytes will be ack'd 4 at a time, eventually there will be enough space in the
-    // outbound queue to allow writeAndClose to start consuming bytes.
-    channel.nextWriteShouldFinalize();
-    int written2 = channel.writeAndClose(buf);
-    assertThat(written2).isEqualTo(11);
-    assertThat(finishWriteOffset.get()).isEqualTo(ctc.length());
+      // asynchronously bytes will be ack'd 4 at a time, eventually there will be enough space in
+      // the
+      // outbound queue to allow writeAndClose to start consuming bytes.
+      channel.nextWriteShouldFinalize();
+      int written2 = channel.writeAndClose(buf);
+      assertThat(written2).isEqualTo(11);
+      assertThat(finishWriteOffset.get()).isEqualTo(ctc.length());
+    } finally {
+      executor.shutdownNow();
+    }
   }
 }
