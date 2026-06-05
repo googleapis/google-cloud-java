@@ -30,7 +30,6 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
 import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.stub.AwaitConsistencyCallableV2;
@@ -169,7 +168,12 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     // encapsulates
     // its own channel. The initial RPC is never called through this OperationCallable.
     MethodDescriptor<Void, Operation> fakeDescriptor =
-        BigtableTableAdminGrpc.getRestoreTableMethod().toBuilder(
+        MethodDescriptor.<Void, Operation>newBuilder()
+            .setType(MethodDescriptor.MethodType.UNARY)
+            .setFullMethodName(
+                MethodDescriptor.generateFullMethodName(
+                    "google.bigtable.admin.v2.BigtableTableAdmin", "RestoreTable"))
+            .setRequestMarshaller(
                 new Marshaller<Void>() {
                   @Override
                   public InputStream stream(Void value) {
@@ -180,8 +184,9 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
                   public Void parse(InputStream stream) {
                     throw new UnsupportedOperationException();
                   }
-                },
-                BigtableTableAdminGrpc.getRestoreTableMethod().getResponseMarshaller())
+                })
+            .setResponseMarshaller(
+                io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()))
             .build();
 
     GrpcCallSettings<Void, Operation> unusedInitialCallSettings =
