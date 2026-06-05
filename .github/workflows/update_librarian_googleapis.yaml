@@ -71,11 +71,8 @@ jobs:
     # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
     - name: Update generation_config.yaml
       run: |
-        echo "Before update:"
-        grep "^googleapis_commitish" generation_config.yaml
         sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
-        echo "After update:"
-        grep "^googleapis_commitish" generation_config.yaml
+        git diff generation_config.yaml
     - name: Detect Changes To Librarian.yaml
       id: detect_librarian
       run: |
