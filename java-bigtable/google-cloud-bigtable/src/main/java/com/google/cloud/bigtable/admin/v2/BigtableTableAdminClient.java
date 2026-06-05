@@ -171,7 +171,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private final EnhancedBigtableTableAdminStub stub;
   private final String projectId;
   private final String instanceId;
-  private BigtableTableAdminClientV2 baseClient;
+  private BigtableTableAdminClientV2 v2Client;
 
   /** Constructs an instance of BigtableTableAdminClient with the given project and instance IDs. */
   public static BigtableTableAdminClient create(
@@ -228,7 +228,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * methods.
    */
   public synchronized BigtableTableAdminClientV2 getBaseClient() {
-    if (baseClient == null) {
+    if (v2Client == null) {
       ScheduledExecutorService backgroundExecutor =
           stub.getSettings().getBackgroundExecutorProvider().getExecutor();
       boolean shouldAutoClose =
@@ -238,7 +238,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
           BigtableTableAdminClientV2.createAwaitConsistencyCallable(
               stub, stub.getSettings(), stub.getClientContext().getClock(), backgroundExecutor);
 
-      baseClient =
+      v2Client =
           new BigtableTableAdminClientV2(
               stub,
               backgroundExecutor,
@@ -246,7 +246,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
               awaitConsistencyCallable,
               stub.awaitOptimizeRestoredTableCallable());
     }
-    return baseClient;
+    return v2Client;
   }
 
   @Override

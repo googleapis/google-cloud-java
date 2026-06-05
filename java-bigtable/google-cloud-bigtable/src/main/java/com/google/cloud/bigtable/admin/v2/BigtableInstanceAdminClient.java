@@ -125,7 +125,7 @@ import javax.annotation.Nonnull;
 public final class BigtableInstanceAdminClient implements AutoCloseable {
   private final String projectId;
   private final BigtableInstanceAdminStub stub;
-  private final BigtableInstanceAdminClientV2 baseClient;
+  private final BigtableInstanceAdminClientV2 v2Client;
 
   /** Constructs an instance of BigtableInstanceAdminClient with the given project ID. */
   public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
@@ -148,7 +148,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
       @Nonnull String projectId, @Nonnull BigtableInstanceAdminStub stub) {
     this.projectId = projectId;
     this.stub = stub;
-    this.baseClient = BigtableInstanceAdminClientV2.create(stub);
+    this.v2Client = new BigtableInstanceAdminClientV2(stub);
   }
 
   /** Gets the project ID this client is associated with. */
@@ -161,7 +161,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * methods.
    */
   public BigtableInstanceAdminClientV2 getBaseClient() {
-    return baseClient;
+    return v2Client;
   }
 
   /** Closes the client and frees all resources associated with it (like thread pools). */
