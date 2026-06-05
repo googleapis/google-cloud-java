@@ -97,28 +97,26 @@ public class BigQueryJdbcCustomLogger extends Logger {
 
       for (StackTraceElement element : stackTrace) {
         String className = element.getClassName();
-        if (shouldSkipClass(className)) {
-          continue;
+        if (isDriverClass(className) && !isLoggerClass(className)) {
+          sourceClass = className;
+          sourceMethod = element.getMethodName();
+          break;
         }
-        sourceClass = className;
-        sourceMethod = element.getMethodName();
-        break;
       }
       super.setSourceClassName(sourceClass);
       super.setSourceMethodName(sourceMethod);
     }
 
-    private static boolean shouldSkipClass(String className) {
+    private static boolean isDriverClass(String className) {
+      return className.startsWith("com.google.cloud.bigquery.jdbc.")
+          || className.startsWith("com.google.cloud.bigquery.exception.");
+    }
+
+    private static boolean isLoggerClass(String className) {
       return className.equals("com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger")
           || className.equals("com.google.cloud.bigquery.jdbc.BigQueryJdbcResultSetLogger")
           || className.startsWith("com.google.cloud.bigquery.jdbc.BigQueryJdbcRootLogger")
-          || className.equals(BigQueryJdbcLogRecord.class.getName())
-          || className.startsWith("java.util.logging.")
-          || className.startsWith("sun.util.logging.")
-          || className.startsWith("com.google.cloud.bigquery.exception.")
-          || className.startsWith("org.slf4j.bridge.")
-          || className.startsWith("org.apache.logging.log4j.jul.")
-          || className.startsWith("org.apache.commons.logging.");
+          || className.equals(BigQueryJdbcLogRecord.class.getName());
     }
   }
 
