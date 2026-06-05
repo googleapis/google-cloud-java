@@ -92,7 +92,7 @@ before starting.
 Before sending a pull request, make sure it includes tests if there are logic
 changes, copyright headers in every file, and a commit message following the
 conventions in the
-[Commit messages](https://github.com/googleapis/librarian/blob/main/CONTRIBUTING.md#commit-messages)
+[Commit messages](#commit-messages)
 section below.
 
 ### Open pull requests from a personal fork
