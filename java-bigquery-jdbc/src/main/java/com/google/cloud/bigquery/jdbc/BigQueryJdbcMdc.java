@@ -82,7 +82,10 @@ class BigQueryJdbcMdc {
 
     @Override
     public void execute(Runnable command) {
-      if (command instanceof RunnableFuture) {
+      if (command == null) {
+        throw new NullPointerException();
+      }
+      if (command instanceof MdcFutureTask) {
         super.execute(command);
       } else {
         super.execute(wrap(command));

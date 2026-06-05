@@ -18,11 +18,14 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
@@ -185,6 +188,41 @@ public class BigQueryJdbcMdcTest {
       // and the previous task's close() call cleaned the ThreadLocal.
       assertNull(cleanThreadMdcVal.get());
 
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testExecutorThrowsNpeOnNullCommand() {
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    try {
+      assertThrows(
+          NullPointerException.class,
+          () -> executor.execute(null));
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testExecutorWrapsCustomRunnableFuture() throws Exception {
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-CustomFuture-Test");
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    try {
+      CountDownLatch latch = new CountDownLatch(1);
+      AtomicReference<String> mdcVal = new AtomicReference<>();
+      RunnableFuture<Void> customFuture =
+          new FutureTask<>(
+              () -> {
+                mdcVal.set(BigQueryJdbcMdc.getConnectionId());
+                latch.countDown();
+              },
+              null);
+
+      executor.execute(customFuture);
+      assertTrue(latch.await(5, TimeUnit.SECONDS));
+      assertEquals("JdbcConnection-CustomFuture-Test", mdcVal.get());
     } finally {
       executor.shutdownNow();
     }
