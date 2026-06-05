@@ -233,7 +233,7 @@ public class BigQueryStatementTest {
 
     doReturn(bigQueryJsonResultSet)
         .when(bigQueryStatementSpy)
-        .processJsonResultSet(any(TableResult.class));
+        .processJsonResultSet(any(TableResult.class), any());
 
     bigQueryStatementSpy.runQuery(query, queryJobConfiguration);
     // verify the statement's state
@@ -308,7 +308,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
     ArgumentCaptor<QueryJobConfiguration> captor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
@@ -408,7 +408,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
-        .processJsonResultSet(tableResultJobfulMock);
+        .processJsonResultSet(eq(tableResultJobfulMock), any());
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 

@@ -686,10 +686,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
     switch (queryType) {
       case SELECT:
-        processQueryResponse(query, results);
-        if (this.currentResultSet instanceof BigQueryBaseResultSet) {
-          ((BigQueryBaseResultSet) this.currentResultSet).setJob(job);
-        }
+        processQueryResponse(query, results, job);
         break;
       case DML:
       case DML_EXTRA:
@@ -808,6 +805,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @InternalApi
   ResultSet processArrowResultSet(TableResult results) throws SQLException {
+    return processArrowResultSet(results, null);
+  }
+
+  @InternalApi
+  ResultSet processArrowResultSet(TableResult results, Job job) throws SQLException {
     LOG.finer("++enter++");
 
     // set the resultset
@@ -850,7 +852,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               this,
               this.arrowBatchWrapperBlockingQueue,
               populateBufferWorker,
-              this.bigQuery);
+              this.bigQuery,
+              job);
       arrowResultSetFinalizers.add(
           new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
@@ -960,6 +963,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
+    processQueryResponse(query, results, null);
+  }
+
+  void processQueryResponse(String query, TableResult results, Job job) throws SQLException {
     JobId jobId = results.getJobId();
     String queryId = results.getQueryId();
     LOG.info(
@@ -971,7 +978,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet = processArrowResultSet(results);
+        resultSet = (job != null) ? processArrowResultSet(results, job) : processArrowResultSet(results);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -982,7 +989,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
-      resultSet = processJsonResultSet(results);
+      resultSet = (job != null) ? processJsonResultSet(results, job) : processJsonResultSet(results);
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
@@ -1036,6 +1043,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   BigQueryJsonResultSet processJsonResultSet(TableResult results) {
+    return processJsonResultSet(results, null);
+  }
+
+  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) {
     List<Thread> threadList = new ArrayList<Thread>();
 
     Schema schema = results.getSchema();
@@ -1081,7 +1092,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             this.bigQueryFieldValueListWrapperBlockingQueue,
             this,
             jsonWorkers,
-            this.bigQuery);
+            this.bigQuery,
+            job);
     jsonResultSet.setJobId(jobId);
     jsonResultSet.setQueryId(results.getQueryId());
     jsonResultSetFinalizers.add(

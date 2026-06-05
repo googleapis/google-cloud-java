@@ -1,0 +1,1 @@
+2026-06-05 14:55:48.063 [e21034e6-82ef-4634-8699-b658c62de7ed] INFO    1428070 --- [     main      ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility           getPreGeneratedAccessTokenCredentials: Connection established. Auth Method: Pre-generated Access Token.

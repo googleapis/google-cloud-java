@@ -70,11 +70,20 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested) {
+    this(bigQuery, statement, schema, isNested, null);
+  }
+
+  protected BigQueryBaseResultSet(
+      BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested, Job job) {
     this.bigQuery = bigQuery;
     this.statement = statement;
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
+    this.job = job;
+    if (job != null) {
+      this.jobId = job.getJobId();
+    }
     this.LOG =
         BigQueryJdbcResultSetLogger.getLogger(
             this.getClass(), statement != null ? statement.connectionId : null);

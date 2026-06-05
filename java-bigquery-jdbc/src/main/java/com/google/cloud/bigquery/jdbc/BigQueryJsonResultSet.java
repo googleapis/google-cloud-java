@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryBaseStruct.isStruct;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Schema;
@@ -54,8 +55,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       int fromIndex,
       int toIndexExclusive,
       Thread[] ownedThreads,
-      BigQuery bigQuery) {
-    super(bigQuery, statement, schema, isNested);
+      BigQuery bigQuery,
+      Job job) {
+    super(bigQuery, statement, schema, isNested, job);
     this.totalRows = totalRows;
     this.buffer = buffer;
     this.cursor = cursor;
@@ -79,8 +81,20 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       Thread[] ownedThreads,
       BigQuery bigQuery) {
 
+    return of(schema, totalRows, buffer, statement, ownedThreads, bigQuery, null);
+  }
+
+  static BigQueryJsonResultSet of(
+      Schema schema,
+      long totalRows,
+      BlockingQueue<BigQueryFieldValueListWrapper> buffer,
+      BigQueryStatement statement,
+      Thread[] ownedThreads,
+      BigQuery bigQuery,
+      Job job) {
+
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, bigQuery);
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, bigQuery, job);
   }
 
   static BigQueryJsonResultSet of(
@@ -91,7 +105,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       Thread[] ownedThreads) {
 
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, null);
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, null, null);
   }
 
   BigQueryJsonResultSet() {
@@ -126,6 +140,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         cursor,
         fromIndex,
         toIndexExclusive,
+        null,
         null,
         null);
   }
