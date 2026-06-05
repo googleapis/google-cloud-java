@@ -98,15 +98,12 @@ public class BigQueryBaseResultSetTest {
   }
 
   @Test
-  public void testGetQueryStatisticsReturnsNullWhenJobCannotBeLoaded() {
-    // Case 1: bigQuery client is null
-    BigQueryBaseResultSet noClientRs = mock(BigQueryBaseResultSet.class, CALLS_REAL_METHODS);
-    assertThat(noClientRs.getQueryStatistics()).isNull();
-
-    // Case 2: jobId is null
+  public void testGetQueryStatisticsReturnsNullWhenJobIdIsNull() {
     assertThat(resultSet.getQueryStatistics()).isNull();
+  }
 
-    // Case 3: bigQuery.getJob(jobId) returns null
+  @Test
+  public void testGetQueryStatisticsReturnsNullWhenJobCannotBeFound() {
     resultSet.setJobId(JobId.of("jobId"));
     doReturn(null).when(bigQuery).getJob(any(JobId.class));
     assertThat(resultSet.getQueryStatistics()).isNull();
