@@ -49,7 +49,7 @@ ensure alignment. You can either
 
 A pull request (PR) that does not go through this coordination process may be
 closed to avoid wasted effort.  Make sure your code follows the
-[style guidelines](https://github.com/googleapis/librarian/blob/main/doc/howwewritego.md).
+[style guidelines](https://google.github.io/styleguide/javaguide.html).
 
 ## Using the issue tracker
 
