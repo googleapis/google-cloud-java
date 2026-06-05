@@ -248,7 +248,7 @@ feel free to follow up over chat. We encourage it!
 When reviewing a pull request:
 - Start by reading the PR description to understand the purpose and context. If
   the commit message doesn’t follow the
-  [commit message guidelines](https://github.com/googleapis/google-cloud-node/blob/main/CONTRIBUTING.md#commit-messages),
+  [commit message guidelines](#commit-messages),
   request changes.
 - Use Approve or Request changes explicitly. Avoid leaving ambiguous feedback.
 - Focus on what is in scope. If unrelated issues arise, suggest filing a
