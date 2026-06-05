@@ -35,6 +35,8 @@ import java.util.Map;
 // query path to the end users. IMP: revisit the set of params to be exposed via BigQuerySettings
 class BigQuerySettings {
 
+  static final int DEFAULT_NUM_BUFFERED_ROWS = 10000;
+
   private final boolean useReadAPI;
   private final int highThroughputActivationRatio;
   private final int highThroughputMinTableSize;
@@ -550,7 +552,7 @@ class BigQuerySettings {
     Builder withDefaultValues() {
       return setUseReadAPI(false) // Read API is disabled by default;
           .setQueryDialect(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
-          .setNumBufferedRows(10000) // 10K records will be kept in the buffer (Blocking Queue);
+          .setNumBufferedRows(DEFAULT_NUM_BUFFERED_ROWS) // 10K records will be kept in the buffer (Blocking Queue);
           .setMaxResultPerPage(BigQueryJdbcUrlUtility.DEFAULT_MAX_RESULTS_VALUE);
     }
 

@@ -95,6 +95,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected static ExecutorService queryTaskExecutor =
       Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  public static final int DEFAULT_BUFFER_SIZE = BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS * 2;
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
   private static final String JDBC_JOB_PREFIX = "google-jdbc-";
@@ -1323,8 +1324,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private int getBufferSize() {
     return (this.querySettings == null
             || this.querySettings.getNumBufferedRows() == null
-            || this.querySettings.getNumBufferedRows() < 10000
-        ? 20000
+            || this.querySettings.getNumBufferedRows() < BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS
+        ? DEFAULT_BUFFER_SIZE
         : Math.min(this.querySettings.getNumBufferedRows() * 2, 100000));
   }
 
