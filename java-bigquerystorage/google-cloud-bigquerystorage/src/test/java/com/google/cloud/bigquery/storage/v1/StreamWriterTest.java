@@ -1440,8 +1440,25 @@ class StreamWriterTest {
               () -> futures.get(finalI).get().getAppendResult().getOffset().getValue());
       if (i == 0) {
         assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+        assertThat(ex.getCause()).hasMessageThat().contains("requestReceivedTime:");
+        assertThat(ex.getCause()).hasMessageThat().contains("placedInWaitingQueueTime:");
+        assertThat(ex.getCause()).hasMessageThat().contains("placedInInflightQueueTime:");
+        assertThat(ex.getCause()).hasMessageThat().contains("dispatchTimes:");
         assertThat(ex.getCause())
             .isInstanceOf(Exceptions.MaximumRequestCallbackWaitTimeExceededException.class);
+        Exceptions.MaximumRequestCallbackWaitTimeExceededException mace =
+            (Exceptions.MaximumRequestCallbackWaitTimeExceededException) ex.getCause();
+        assertThat(mace.getRequestReceivedTime()).isNotNull();
+        assertThat(mace.getPlacedInWaitingQueueTime()).isNotNull();
+        assertThat(mace.getPlacedInInflightQueueTime()).isNotNull();
+        assertThat(mace.getDispatchTimes()).isNotNull();
+        assertThat(mace.getDispatchTimes()).isNotEmpty();
+        assertThat(mace.getRequestReceivedTime().isAfter(mace.getPlacedInWaitingQueueTime()))
+            .isFalse();
+        assertThat(mace.getPlacedInWaitingQueueTime().isAfter(mace.getPlacedInInflightQueueTime()))
+            .isFalse();
+        assertThat(mace.getPlacedInInflightQueueTime().isAfter(mace.getDispatchTimes().get(0)))
+            .isFalse();
       } else {
         assertThat(ex.getCause())
             .hasMessageThat()
