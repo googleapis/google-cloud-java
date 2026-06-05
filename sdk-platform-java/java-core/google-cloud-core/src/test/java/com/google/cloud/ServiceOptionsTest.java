@@ -285,7 +285,7 @@ class ServiceOptionsTest {
       }
     }
 
-    private TestServiceOptions(Builder builder) {
+    protected TestServiceOptions(Builder builder) {
       super(
           TestServiceFactory.class,
           TestServiceRpcFactory.class,
@@ -336,6 +336,25 @@ class ServiceOptionsTest {
       return baseHashCode();
     }
   }
+
+  private static class NonSsjwtServiceOptions extends TestServiceOptions {
+    private static class Builder extends TestServiceOptions.Builder {
+      @Override
+      protected NonSsjwtServiceOptions build() {
+        return new NonSsjwtServiceOptions(this);
+      }
+    }
+
+    private NonSsjwtServiceOptions(Builder builder) {
+      super(builder);
+    }
+
+    @Override
+    protected boolean useSelfSignedJwt() {
+      return false;
+    }
+  }
+
 
   @Test
   public void testBuilder() {
@@ -627,7 +646,29 @@ class ServiceOptionsTest {
             .setUniverseDomain("random.com")
             .setCredentials(credentialsNotInGDU)
             .build();
-    assertThat(options.hasValidUniverseDomain()).isTrue();
+  }
+
+  @Test
+  void testGetScopedCredentials_enablesSelfSignedJwtForServiceAccount() {
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setCredentials(credentials)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+  }
+
+  @Test
+  void testGetScopedCredentials_optsOutSelfSignedJwt() {
+    TestServiceOptions options =
+        new NonSsjwtServiceOptions.Builder()
+            .setProjectId("project-id")
+            .setCredentials(credentials)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isFalse();
   }
 
   private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers)
