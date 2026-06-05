@@ -68,6 +68,11 @@ jobs:
         new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
+    # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
+    - name: Update generation_config.yaml
+      run: |
+        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
+        git diff generation_config.yaml
     - name: Detect Changes To Librarian.yaml
       id: detect_librarian
       run: |
@@ -127,7 +132,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
-        PR_BODY: "Updated googleapis commitish in librarian.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
+        PR_BODY: "Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
       run: |
         set -x
         
