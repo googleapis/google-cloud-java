@@ -203,7 +203,7 @@ To revert a pull request:
 - Click the Revert button. This action automatically creates a new branch and a
   pull request containing the revert commit.
 - Edit the pull request title and description to comply with the
-  [commit message guidelines](https://github.com/googleapis/google-cloud-node/blob/main/CONTRIBUTING.md#commit-messages).
+  [commit message guidelines](#commit-messages).
 - The newly created revert pull request should be reviewed and merged following
   the same process as any other pull request.
 
