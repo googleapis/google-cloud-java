@@ -68,14 +68,21 @@ jobs:
         new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
-    - name: Detect Changes To Librarian.yaml
-      id: detect_librarian
+    - name: Update generation_config.yaml
       run: |
-        git add librarian.yaml
+        echo "Before update:"
+        grep "^googleapis_commitish" generation_config.yaml
+        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
+        echo "After update:"
+        grep "^googleapis_commitish" generation_config.yaml
+    - name: Detect Changes To Configs
+      id: detect_config
+      run: |
+        git add librarian.yaml generation_config.yaml
         changed_files=$(git diff --cached --name-only)
         if [[ "${changed_files}" == "" ]]; then
           echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "No changes in librarian.yaml"
+          echo "No changes in librarian.yaml or generation_config.yaml"
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
@@ -110,7 +117,7 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
     - name: Generate Libraries
-      if: steps.detect_librarian.outputs.has_changes == 'true'
+      if: steps.detect_config.outputs.has_changes == 'true'
       id: generate
       run: |
         go run github.com/googleapis/librarian/cmd/librarian@latest generate --all
@@ -123,11 +130,11 @@ jobs:
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
     - name: Commit and Create PR
-      if: steps.detect_librarian.outputs.has_changes == 'true' || steps.generate.outputs.has_changes == 'true'
+      if: steps.detect_config.outputs.has_changes == 'true' || steps.generate.outputs.has_changes == 'true'
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
-        PR_BODY: "Updated googleapis commitish in librarian.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
+        PR_BODY: "Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
       run: |
         set -x
         
