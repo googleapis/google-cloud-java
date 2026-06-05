@@ -134,7 +134,9 @@
       </build>
     </profile>
     <profile>
-      <!-- For JDK < 17 (JDK 8 and 11), downgrade to Error Prone 2.38.0. -->
+      <!-- Error Prone 2.43.0+ drops execution support for JDK 11 and 17 (requires a JDK 21+ runtime).
+           Because our SDK client libraries actively support building and running on Java 8+,
+           we must downgrade to legacy Error Prone 2.38.0 when compiling under JDK < 17. -->
       <id>errorprone-jdk11</id>
       <activation>
         <jdk>[1.8,17)</jdk>
@@ -145,7 +147,8 @@
       </properties>
     </profile>
     <profile>
-      <!-- For JDK 17, downgrade to Error Prone 2.42.0 (latest supporting JDK 17). -->
+      <!-- Error Prone 2.43.0+ drops execution support for JDK 11 and 17 (requires a JDK 21+ runtime).
+           When compiling under JDK 17, we downgrade to Error Prone 2.42.0 (the final release supporting JDK 17). -->
       <id>errorprone-jdk17</id>
       <activation>
         <jdk>[17,21)</jdk>
@@ -156,9 +159,13 @@
       </properties>
     </profile>
     <profile>
-      <!-- Error Prone 2.43.0+ requires JDK 21+ to run (older JDKs unsupported).
-           On JDK 21 specifically, we require '-XDaddTypeAnnotationsToSymbol=true'.
-           On JDK 22+ (including 25 and 26), the fix is enabled by default in javac. -->
+      <!-- On JDK 21 specifically (21.0.8+), we require '-XDaddTypeAnnotationsToSymbol=true'
+           to force Javac to eagerly attach JSR-308 type-use annotations to AST compiler symbols across
+           compilation boundaries, avoiding internal NullPointerExceptions in Error Prone plugin evaluations.
+           Ref: https://github.com/google/error-prone/issues/5426
+
+           On JDK 22+ (including 25 and 26), OpenJDK enables this cross-boundary symbol attribution fix
+           natively by default in standard javac executions. Therefore, the flag is omitted. -->
       <id>errorprone-jdk21</id>
       <activation>
         <jdk>21</jdk>
