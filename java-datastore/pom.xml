@@ -144,8 +144,6 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-datastore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-<!--    Error Prone Core version is not managed by shared-deps. Keep this version in sync with upstream shared-deps -->
-<!--    Related: https://github.com/googleapis/java-datastore/issues/1889 -->
   </properties>
 
   <dependencyManagement>
