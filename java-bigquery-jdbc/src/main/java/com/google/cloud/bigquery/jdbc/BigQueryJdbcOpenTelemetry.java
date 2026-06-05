@@ -30,12 +30,16 @@ import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
+import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporter;
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -61,9 +65,8 @@ public class BigQueryJdbcOpenTelemetry {
   private static final String OTEL_LOGS_EXPORTER = "otel.logs.exporter";
   private static final String OTEL_METRICS_EXPORTER = "otel.metrics.exporter";
   private static final String GOOGLE_CLOUD_PROJECT = "google.cloud.project";
-  private static final String CREDENTIALS_JSON = "google.cloud.credentials.json";
-  private static final String CREDENTIALS_PATH = "google.cloud.credentials.path";
   private static final String OTLP_ENDPOINT_VALUE = "https://telemetry.googleapis.com:443";
+  private static final URI OTLP_ENDPOINT_URI = URI.create(OTLP_ENDPOINT_VALUE);
   private static final String EXPORTER_NONE = "none";
   private static final String EXPORTER_OTLP = "otlp";
   private static final String OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT =
@@ -230,6 +233,25 @@ public class BigQueryJdbcOpenTelemetry {
     return connectionConfigs.values();
   }
 
+  private static Map<String, String> getAuthHeaders(Credentials credentials) {
+    try {
+      Map<String, List<String>> metadata = credentials.getRequestMetadata(OTLP_ENDPOINT_URI);
+      Map<String, String> headers = new HashMap<>();
+      metadata.forEach(
+          (headerKey, headerValues) -> {
+            if (!headerValues.isEmpty()) {
+              headers.put(headerKey, headerValues.get(0));
+            }
+          });
+      return headers;
+    } catch (Exception e) {
+      // We log the warning and return an empty map, allowing the exporter to fail gracefully
+      // with a standard OTLP response code (e.g., 401 Unauthorized) handled by OTel.
+      LOG.warning(e, "Failed to get auth headers");
+      return new HashMap<>();
+    }
+  }
+
   private static String getCredentialsIdentifier(String credentials) {
     if (credentials == null) {
       return "";
@@ -261,8 +283,6 @@ public class BigQueryJdbcOpenTelemetry {
       return GlobalOpenTelemetry.get();
     }
 
-    // NOTE: Currently, tracing only fully supports Application Default Credentials (ADC).
-    // Once b/503721589 is completed, Service Account (SA) will work as well.
     if (!enableGcpTraceExporter && !enableGcpLogExporter) {
       return OpenTelemetry.noop();
     }
@@ -276,14 +296,6 @@ public class BigQueryJdbcOpenTelemetry {
         key,
         k -> {
           Map<String, String> props = new HashMap<>();
-          if (gcpTelemetryCredentials != null) {
-            byte[] credsBytes = gcpTelemetryCredentials.getBytes(StandardCharsets.UTF_8);
-            if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
-              props.put(CREDENTIALS_JSON, gcpTelemetryCredentials);
-            } else {
-              props.put(CREDENTIALS_PATH, gcpTelemetryCredentials);
-            }
-          }
 
           if (enableGcpTraceExporter) {
             props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
@@ -313,7 +325,32 @@ public class BigQueryJdbcOpenTelemetry {
           }
 
           AutoConfiguredOpenTelemetrySdk autoConfigured =
-              AutoConfiguredOpenTelemetrySdk.builder().addPropertiesSupplier(() -> props).build();
+              AutoConfiguredOpenTelemetrySdk.builder()
+                  .addPropertiesSupplier(() -> props)
+                  .addSpanExporterCustomizer(
+                      (spanExporter, configProperties) -> {
+                        if (gcpTelemetryCredentials == null) {
+                          return spanExporter;
+                        }
+                        try {
+                          Credentials credentials =
+                              resolveCredentialsFromString(gcpTelemetryCredentials);
+                          if (spanExporter instanceof OtlpHttpSpanExporter) {
+                            return ((OtlpHttpSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
+                          }
+                          if (spanExporter instanceof OtlpGrpcSpanExporter) {
+                            return ((OtlpGrpcSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
+                          }
+                        } catch (Exception e) {
+                          LOG.warning(
+                              e,
+                              "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
+                        }
+                        return spanExporter;
+                      })
+                  .build();
 
           OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
 
