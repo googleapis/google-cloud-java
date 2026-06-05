@@ -42,7 +42,7 @@ class CloudClient:
   def __lt__(self, other):
     if self.release_level == other.release_level:
       if self.title == other.title:
-        return self.artifact_id < other.artifact_id
+        return (self.artifact_id or "") < (other.artifact_id or "")
       return self.title < other.title
 
     return other.release_level < self.release_level
