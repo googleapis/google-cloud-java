@@ -979,7 +979,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet = (job != null) ? processArrowResultSet(results, job) : processArrowResultSet(results);
+        resultSet =
+            (job != null) ? processArrowResultSet(results, job) : processArrowResultSet(results);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -990,7 +991,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
-      resultSet = (job != null) ? processJsonResultSet(results, job) : processJsonResultSet(results);
+      resultSet =
+          (job != null) ? processJsonResultSet(results, job) : processJsonResultSet(results);
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
@@ -1414,7 +1416,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @Override
-  public void setFetchSize(int rows) {
+  public void setFetchSize(int rows) throws SQLException {
+    if (rows < 0) {
+      throw new SQLException("Fetch size must be >= 0");
+    }
     this.fetchSize = rows;
   }
 

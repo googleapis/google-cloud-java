@@ -21,9 +21,9 @@ import static com.google.cloud.bigquery.jdbc.BigQueryBaseStruct.isStruct;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
-import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.ResultSet;

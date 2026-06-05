@@ -753,8 +753,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public int getFetchSize() throws SQLException {
     checkClosed();
     // Returns the fetch size set on this ResultSet, or falls back to the statement's
-    // fetch size, defaulting to the internal row buffer size of BigQueryStatement.DEFAULT_BUFFER_SIZE.
-    if (this.fetchSize != -1) {
+    // fetch size, defaulting to the internal row buffer size of
+    // BigQueryStatement.DEFAULT_BUFFER_SIZE.
+    if (this.fetchSize > 0) {
       return this.fetchSize;
     }
     if (statement != null) {

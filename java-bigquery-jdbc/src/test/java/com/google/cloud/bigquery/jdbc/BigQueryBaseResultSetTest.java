@@ -156,6 +156,25 @@ public class BigQueryBaseResultSetTest {
   }
 
   @Test
+  public void testGetFetchSizeZeroIgnored() throws SQLException {
+    resultSet.setFetchSize(0);
+    assertThat(resultSet.getFetchSize()).isEqualTo(20000);
+  }
+
+  @Test
+  public void testGetFetchSizeZeroFallsBackToStatement() throws Exception {
+    resultSet.setFetchSize(0);
+    BigQueryStatement statement = mock(BigQueryStatement.class);
+    doReturn(1000).when(statement).getFetchSize();
+
+    Field field = BigQueryBaseResultSet.class.getDeclaredField("statement");
+    field.setAccessible(true);
+    field.set(resultSet, statement);
+
+    assertThat(resultSet.getFetchSize()).isEqualTo(1000);
+  }
+
+  @Test
   public void testFetchDirection() throws SQLException {
     assertThat(resultSet.getFetchDirection()).isEqualTo(ResultSet.FETCH_FORWARD);
     resultSet.setFetchDirection(ResultSet.FETCH_FORWARD); // no-op

@@ -689,4 +689,16 @@ public class BigQueryStatementTest {
             BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
   }
+
+  @Test
+  public void testSetFetchSizeNegativeThrows() {
+    org.junit.jupiter.api.Assertions.assertThrows(
+        SQLException.class, () -> bigQueryStatement.setFetchSize(-1));
+  }
+
+  @Test
+  public void testSetAndGetFetchSize() throws SQLException {
+    bigQueryStatement.setFetchSize(100);
+    assertEquals(100, bigQueryStatement.getFetchSize());
+  }
 }
