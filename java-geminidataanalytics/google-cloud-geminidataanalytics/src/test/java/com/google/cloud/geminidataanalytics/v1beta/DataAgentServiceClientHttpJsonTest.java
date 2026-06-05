@@ -308,6 +308,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -359,6 +360,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,6 +412,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -470,6 +473,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -530,6 +534,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -585,6 +590,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -640,6 +646,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -659,6 +666,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -698,6 +706,7 @@ public class DataAgentServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setDeleteTime(Timestamp.newBuilder().build())
               .setPurgeTime(Timestamp.newBuilder().build())
+              .setKmsKey("kmsKey-1127483058")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataAgentAsync(dataAgent, updateMask).get();
@@ -718,6 +727,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -731,6 +741,7 @@ public class DataAgentServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -770,6 +781,7 @@ public class DataAgentServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setDeleteTime(Timestamp.newBuilder().build())
               .setPurgeTime(Timestamp.newBuilder().build())
+              .setKmsKey("kmsKey-1127483058")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataAgentSync(dataAgent, updateMask);

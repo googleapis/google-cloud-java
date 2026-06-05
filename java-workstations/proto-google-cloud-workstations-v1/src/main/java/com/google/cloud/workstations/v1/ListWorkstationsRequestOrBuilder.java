@@ -96,4 +96,32 @@ public interface ListWorkstationsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter the Workstations to be listed. Possible filters are
+   * described in https://google.aip.dev/160.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter the Workstations to be listed. Possible filters are
+   * described in https://google.aip.dev/160.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

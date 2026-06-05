@@ -129,7 +129,7 @@ public interface CreateWorkstationClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
