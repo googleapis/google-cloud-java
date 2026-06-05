@@ -49,8 +49,9 @@ public final class VRpcResultSubject extends Subject {
     RetryInfo retryInfo = actual.getRetryInfo();
     Duration delay = null;
     if (retryInfo != null) {
-      com.google.protobuf.Duration d = retryInfo.getRetryDelay();
-      delay = Duration.ofSeconds(d.getSeconds()).plus(Duration.ofNanos(d.getNanos()));
+      delay =
+          Duration.ofSeconds(retryInfo.getRetryDelay().getSeconds())
+              .plus(Duration.ofNanos(retryInfo.getRetryDelay().getNanos()));
     }
     return check("retryInfo.delay").that(delay);
   }
