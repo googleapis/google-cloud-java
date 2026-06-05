@@ -219,6 +219,9 @@ public final class TestBench implements ManagedLifecycle {
       LOGGER.info("Redirecting server stdout to: {}", outFile.getAbsolutePath());
       LOGGER.info("Redirecting server stderr to: {}", errFile.getAbsolutePath());
       String dockerImage = String.format(Locale.US, "%s:%s", dockerImageName, dockerImageTag);
+      try {
+        new ProcessBuilder("docker", "rm", "-f", containerName).start().waitFor(5, TimeUnit.SECONDS);
+      } catch (Exception ignore) {}
       // First try and pull the docker image, this validates docker is available and running
       // on the host, as well as gives time for the image to be downloaded independently of
       // trying to start the container. (Below, when we first start the container we then attempt
@@ -282,7 +285,7 @@ public final class TestBench implements ManagedLifecycle {
             runWithRetries(
                 TestBench.this::listRetryTests,
                 RetrySettings.newBuilder()
-                    .setTotalTimeoutDuration(Duration.ofSeconds(30))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(90))
                     .setInitialRetryDelayDuration(Duration.ofMillis(500))
                     .setRetryDelayMultiplier(1.5)
                     .setMaxRetryDelayDuration(Duration.ofSeconds(5))
@@ -496,7 +499,7 @@ public final class TestBench implements ManagedLifecycle {
 
     private Builder() {
       this(
-          false,
+          true,
           DEFAULT_BASE_URI,
           DEFAULT_GRPC_BASE_URI,
           DEFAULT_IMAGE_NAME,

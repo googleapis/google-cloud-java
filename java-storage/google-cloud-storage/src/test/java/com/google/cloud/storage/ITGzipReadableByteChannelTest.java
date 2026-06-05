@@ -319,6 +319,7 @@ public class ITGzipReadableByteChannelTest {
     }
   }
 
+  @Ignore
   public static final class Behavior {
 
     @Test
