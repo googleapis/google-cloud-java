@@ -186,7 +186,7 @@ a specific reviewer if relevant, or leave it for the default group.
 ### Merging a pull request
 
 Pull request titles and descriptions must follow the
-[commit messages](https://github.com/googleapis/google-cloud-node/blob/main/CONTRIBUTING.md#commit-messages)
+[commit messages](#commit-messages)
 conventions. This enables approvers to review the final commit message. Once
 the pull request has been approved and all checks have passed, click the
 [Squash and Merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-commits)
