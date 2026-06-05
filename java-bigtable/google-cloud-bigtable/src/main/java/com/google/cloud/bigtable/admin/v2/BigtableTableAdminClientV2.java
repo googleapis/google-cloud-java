@@ -133,7 +133,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     this.optimizeRestoredTableOperationBaseCallable = optimizeRestoredTableOperationBaseCallable;
   }
 
-  private static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
+  static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
       GrpcBigtableTableAdminStub stub,
       BigtableTableAdminStubSettings settings,
       ApiClock clock,
