@@ -76,7 +76,7 @@ matter how small the task.
 Use the format:
 
 ```
-// TODO(https://github.com/googleapis/google-cloud-node/issues/<number>): explain what needs to be done
+// TODO(https://github.com/googleapis/google-cloud-java/issues/<number>): explain what needs to be done
 ```
 
 This helps provide context for future readers and keeps the TODO relevant and
