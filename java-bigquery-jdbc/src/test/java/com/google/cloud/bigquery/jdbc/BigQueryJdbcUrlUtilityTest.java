@@ -305,4 +305,22 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     assertThat(ds.getProxyHost()).isEqualTo("proxy.example.com");
     assertThat(ds.getProxyPort()).isEqualTo("8080");
   }
+
+  @Test
+  public void testParseAuthorityProxyIpv6() {
+    String url = "jdbc:bigquery://[::1]:8080;ProjectId=MyProject";
+    String proxyHost = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyHost");
+    String proxyPort = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyPort");
+    assertThat(proxyHost).isEqualTo("[::1]");
+    assertThat(proxyPort).isEqualTo("8080");
+  }
+
+  @Test
+  public void testParseAuthorityProxyIpv6NoPort() {
+    String url = "jdbc:bigquery://[::1];ProjectId=MyProject";
+    String proxyHost = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyHost");
+    String proxyPort = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyPort");
+    assertThat(proxyHost).isEqualTo("[::1]");
+    assertThat(proxyPort).isNull();
+  }
 }

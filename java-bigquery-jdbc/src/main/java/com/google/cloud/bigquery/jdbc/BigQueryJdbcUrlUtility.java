@@ -898,6 +898,22 @@ final class BigQueryJdbcUrlUtility {
       return;
     }
 
+    if (authority.startsWith("[")) {
+      int closingBracketIndex = authority.indexOf(']');
+      if (closingBracketIndex != -1) {
+        String host = authority.substring(0, closingBracketIndex + 1).trim();
+        String rest = authority.substring(closingBracketIndex + 1).trim();
+        map.put(PROXY_HOST_PROPERTY_NAME, host);
+        if (rest.startsWith(":")) {
+          String port = rest.substring(1).trim();
+          if (!port.isEmpty()) {
+            map.put(PROXY_PORT_PROPERTY_NAME, port);
+          }
+        }
+        return;
+      }
+    }
+
     int colonIndex = authority.indexOf(':');
     if (colonIndex == -1) {
       map.put(PROXY_HOST_PROPERTY_NAME, authority);
