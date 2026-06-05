@@ -76,14 +76,14 @@ jobs:
         sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
         echo "After update:"
         grep "^googleapis_commitish" generation_config.yaml
-    - name: Detect Changes To Configs
-      id: detect_config
+    - name: Detect Changes To Librarian.yaml
+      id: detect_librarian
       run: |
-        git add librarian.yaml generation_config.yaml
+        git add librarian.yaml
         changed_files=$(git diff --cached --name-only)
         if [[ "${changed_files}" == "" ]]; then
           echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "No changes in librarian.yaml or generation_config.yaml"
+          echo "No changes in librarian.yaml"
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
@@ -118,7 +118,7 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
     - name: Generate Libraries
-      if: steps.detect_config.outputs.has_changes == 'true'
+      if: steps.detect_librarian.outputs.has_changes == 'true'
       id: generate
       run: |
         go run github.com/googleapis/librarian/cmd/librarian@latest generate --all
@@ -131,7 +131,7 @@ jobs:
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
     - name: Commit and Create PR
-      if: steps.detect_config.outputs.has_changes == 'true' || steps.generate.outputs.has_changes == 'true'
+      if: steps.detect_librarian.outputs.has_changes == 'true' || steps.generate.outputs.has_changes == 'true'
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
