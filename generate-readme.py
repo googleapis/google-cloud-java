@@ -41,6 +41,8 @@ class CloudClient:
   # For sorting, we want to sort by release level, then API pretty_name
   def __lt__(self, other):
     if self.release_level == other.release_level:
+      if self.title == other.title:
+        return self.artifact_id < other.artifact_id
       return self.title < other.title
 
     return other.release_level < self.release_level
@@ -138,7 +140,7 @@ def all_clients() -> List[CloudClient]:
     client = client_for_repo(repo)
     if client:
       clients.append(client)
-  for module in LIBRARIES_IN_MONOREPO:
+  for module in sorted(LIBRARIES_IN_MONOREPO):
     if module not in REPO_EXCLUSION:
       client = client_for_module(module)
       if client:
