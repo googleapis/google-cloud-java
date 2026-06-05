@@ -48,6 +48,8 @@ import io.grpc.MethodDescriptor.Marshaller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
 /**
@@ -62,7 +64,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   private final AwaitConsistencyCallableV2 awaitConsistencyCallable;
   private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       optimizeRestoredTableOperationBaseCallable;
-  private final java.util.concurrent.ScheduledExecutorService backgroundExecutor;
+  private final ScheduledExecutorService backgroundExecutor;
   private final boolean shouldAutoClose;
 
   private static final RetrySettings AWAIT_CONSISTENCY_POLLING_SETTINGS_BASE =
@@ -92,7 +94,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     GrpcBigtableTableAdminStub stub =
         (GrpcBigtableTableAdminStub)
             ((BigtableTableAdminStubSettings) settings.getStubSettings()).createStub();
-    java.util.concurrent.ScheduledExecutorService backgroundExecutor =
+    ScheduledExecutorService backgroundExecutor =
         settings.getStubSettings().getBackgroundExecutorProvider().getExecutor();
     boolean shouldAutoClose =
         settings.getStubSettings().getBackgroundExecutorProvider().shouldAutoClose();
@@ -118,7 +120,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
   protected BigtableTableAdminClientV2(
       GrpcBigtableTableAdminStub stub,
-      @Nullable java.util.concurrent.ScheduledExecutorService backgroundExecutor,
+      @Nullable ScheduledExecutorService backgroundExecutor,
       boolean shouldAutoClose,
       @Nullable AwaitConsistencyCallableV2 awaitConsistencyCallable,
       @Nullable
@@ -135,7 +137,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
       GrpcBigtableTableAdminStub stub,
       BigtableTableAdminStubSettings settings,
       com.google.api.core.ApiClock clock,
-      java.util.concurrent.ScheduledExecutorService executor) {
+      ScheduledExecutorService executor) {
     // TODO(igorbernstein2): expose polling settings
     RetrySettings pollingSettings =
         AWAIT_CONSISTENCY_POLLING_SETTINGS_BASE.toBuilder()
@@ -155,7 +157,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
       createOptimizeRestoredTableOperationBaseCallable(
           GrpcBigtableTableAdminStub stub,
           BaseBigtableTableAdminSettings settings,
-          java.util.concurrent.ScheduledExecutorService backgroundExecutor)
+          ScheduledExecutorService backgroundExecutor)
           throws IOException {
 
     // Reusing getRestoreTableMethod() as a placeholder descriptor for LRO optimization tracking.
@@ -218,6 +220,11 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
                 OperationTimedPollAlgorithm.create(OPTIMIZE_RESTORED_TABLE_POLLING_SETTINGS))
             .build();
 
+    // Note: The clientContext created here only contains the basic clock and executor settings
+    // required by the polling algorithm to schedule polling attempts. We do not need to populate
+    // the channel or call context details here because the operations stub (stub.getOperationsStub())
+    // already encapsulates the fully-configured default call context (including channels, credentials,
+    // and headers) for executing the polling RPCs.
     com.google.api.gax.rpc.ClientContext clientContext =
         com.google.api.gax.rpc.ClientContext.newBuilder()
             .setClock(settings.getStubSettings().getClock())
@@ -408,7 +415,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   }
 
   @Override
-  public boolean awaitTermination(long duration, java.util.concurrent.TimeUnit unit)
+  public boolean awaitTermination(long duration, TimeUnit unit)
       throws InterruptedException {
     long startNanos = System.nanoTime();
     boolean terminated = true;
@@ -420,6 +427,6 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     }
     long remainingNanos = unit.toNanos(duration) - (System.nanoTime() - startNanos);
     return super.awaitTermination(
-        Math.max(0, remainingNanos), java.util.concurrent.TimeUnit.NANOSECONDS);
+        Math.max(0, remainingNanos), TimeUnit.NANOSECONDS);
   }
 }
