@@ -23,9 +23,9 @@
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
     <errorprone.version>2.48.0</errorprone.version>
-    <!-- Error Prone 2.43.0+ running on JDK 21+ requires this javac flag to
-         correctly handle type annotations in javac. -->
-    <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
+    <!-- By default, no special internal javac flag is needed on JDK 22+.
+         For JDK 21 specifically, profile errorprone-jdk21 activates the required flag. -->
+    <errorprone.javac.args>-g</errorprone.javac.args>
   </properties>
 
   <developers>
@@ -134,31 +134,15 @@
       </build>
     </profile>
     <profile>
-      <!-- Error Prone 2.43.0+ requires JDK 21+ to run.
-           For JDK < 17, we downgrade to Error Prone 2.38.0.
-           We also use a dummy '-g' javac arg because the default JDK 21+ arg
-           '-XDaddTypeAnnotationsToSymbol=true' is invalid on older JDKs. -->
-      <id>errorprone-jdk11</id>
+      <!-- Error Prone 2.43.0+ requires JDK 21+ to run (older JDKs unsupported).
+           On JDK 21 specifically, we require '-XDaddTypeAnnotationsToSymbol=true'.
+           On JDK 22+ (including 25 and 26), the fix is enabled by default in javac. -->
+      <id>errorprone-jdk21</id>
       <activation>
-        <jdk>[1.8,17)</jdk>
+        <jdk>21</jdk>
       </activation>
       <properties>
-        <errorprone.version>2.38.0</errorprone.version>
-        <errorprone.javac.args>-g</errorprone.javac.args>
-      </properties>
-    </profile>
-    <profile>
-      <!-- Error Prone 2.43.0+ requires JDK 21+ to run.
-           For JDK 17, we downgrade to Error Prone 2.42.0 (latest version supporting JDK 17).
-           We also use a dummy '-g' javac arg because the default JDK 21+ arg
-           '-XDaddTypeAnnotationsToSymbol=true' is invalid on older JDKs. -->
-      <id>errorprone-jdk17</id>
-      <activation>
-        <jdk>[17,21)</jdk>
-      </activation>
-      <properties>
-        <errorprone.version>2.42.0</errorprone.version>
-        <errorprone.javac.args>-g</errorprone.javac.args>
+        <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
       </properties>
     </profile>
   </profiles>
