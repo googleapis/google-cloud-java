@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.bigtable.admin.v2.OptimizeRestoredTableMetadata;
@@ -174,7 +175,7 @@ public class BigtableTableAdminClientV2Test {
   public void testCreateClientWithSettings() throws Exception {
     BaseBigtableTableAdminSettings settings =
         BaseBigtableTableAdminSettings.newBuilder()
-            .setCredentialsProvider(com.google.api.gax.core.NoCredentialsProvider.create())
+            .setCredentialsProvider(NoCredentialsProvider.create())
             .setEndpoint("localhost:8080")
             .build();
     try (BigtableTableAdminClientV2 settingsClient = BigtableTableAdminClientV2.create(settings)) {

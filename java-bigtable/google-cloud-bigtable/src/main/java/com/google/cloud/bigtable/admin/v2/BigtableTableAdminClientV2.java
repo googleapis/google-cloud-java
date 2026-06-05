@@ -15,9 +15,11 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.ProtoOperationTransformers.MetadataTransformer;
@@ -26,6 +28,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -132,7 +135,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   private static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
       GrpcBigtableTableAdminStub stub,
       BigtableTableAdminStubSettings settings,
-      com.google.api.core.ApiClock clock,
+      ApiClock clock,
       ScheduledExecutorService executor) {
     // TODO(igorbernstein2): expose polling settings
     RetrySettings pollingSettings =
@@ -195,8 +198,8 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     final MetadataTransformer<OptimizeRestoredTableMetadata> protoMetadataTransformer =
         MetadataTransformer.create(OptimizeRestoredTableMetadata.class);
 
-    final ResponseTransformer<com.google.protobuf.Empty> protoResponseTransformer =
-        ResponseTransformer.create(com.google.protobuf.Empty.class);
+    final ResponseTransformer<Empty> protoResponseTransformer =
+        ResponseTransformer.create(Empty.class);
 
     OperationCallSettings<Void, Empty, OptimizeRestoredTableMetadata> operationCallSettings =
         OperationCallSettings.<Void, Empty, OptimizeRestoredTableMetadata>newBuilder()
@@ -229,11 +232,11 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     // already encapsulates the fully-configured default call context (including channels,
     // credentials,
     // and headers) for executing the polling RPCs.
-    com.google.api.gax.rpc.ClientContext clientContext =
-        com.google.api.gax.rpc.ClientContext.newBuilder()
+    ClientContext clientContext =
+        ClientContext.newBuilder()
             .setClock(settings.getStubSettings().getClock())
             .setExecutor(backgroundExecutor)
-            .setDefaultCallContext(com.google.api.gax.grpc.GrpcCallContext.createDefault())
+            .setDefaultCallContext(GrpcCallContext.createDefault())
             .build();
 
     return GrpcCallableFactory.createOperationCallable(

@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.PollException;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -87,7 +88,7 @@ public class AwaitConsistencyCallableV2Test {
         AwaitConsistencyCallableV2.create(
             mockGenerateConsistencyTokenCallable,
             mockCheckConsistencyCallable,
-            com.google.api.core.NanoClock.getDefaultClock(),
+            NanoClock.getDefaultClock(),
             java.util.concurrent.Executors.newSingleThreadScheduledExecutor(),
             retrySettings);
   }
