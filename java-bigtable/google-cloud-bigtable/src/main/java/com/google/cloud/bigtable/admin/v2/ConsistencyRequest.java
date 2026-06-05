@@ -57,9 +57,7 @@ public abstract class ConsistencyRequest {
     Preconditions.checkNotNull(consistencyToken, "consistencyToken must not be null");
 
     return new AutoValue_ConsistencyRequest(
-        tableName,
-        CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES,
-        consistencyToken);
+        tableName, CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES, consistencyToken);
   }
 
   private CheckConsistencyRequest.Builder buildBaseRequest(String name, String token) {
@@ -74,17 +72,13 @@ public abstract class ConsistencyRequest {
     return builder.setName(name).setConsistencyToken(token);
   }
 
-  /**
-   * Creates a CheckConsistencyRequest proto.
-   */
+  /** Creates a CheckConsistencyRequest proto. */
   @InternalApi
   public CheckConsistencyRequest toCheckConsistencyProto(String token) {
     return buildBaseRequest(getTableName(), token).build();
   }
 
-  /**
-   * Creates a GenerateConsistencyTokenRequest proto.
-   */
+  /** Creates a GenerateConsistencyTokenRequest proto. */
   @InternalApi
   public GenerateConsistencyTokenRequest toGenerateTokenProto() {
     GenerateConsistencyTokenRequest.Builder builder = GenerateConsistencyTokenRequest.newBuilder();

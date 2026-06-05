@@ -219,8 +219,10 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
     // Note: The clientContext created here only contains the basic clock and executor settings
     // required by the polling algorithm to schedule polling attempts. We do not need to populate
-    // the channel or call context details here because the operations stub (stub.getOperationsStub())
-    // already encapsulates the fully-configured default call context (including channels, credentials,
+    // the channel or call context details here because the operations stub
+    // (stub.getOperationsStub())
+    // already encapsulates the fully-configured default call context (including channels,
+    // credentials,
     // and headers) for executing the polling RPCs.
     com.google.api.gax.rpc.ClientContext clientContext =
         com.google.api.gax.rpc.ClientContext.newBuilder()
@@ -412,8 +414,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   }
 
   @Override
-  public boolean awaitTermination(long duration, TimeUnit unit)
-      throws InterruptedException {
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     long startNanos = System.nanoTime();
     boolean terminated = true;
     if (backgroundExecutor != null && shouldAutoClose) {
@@ -423,7 +424,6 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
       return false;
     }
     long remainingNanos = unit.toNanos(duration) - (System.nanoTime() - startNanos);
-    return super.awaitTermination(
-        Math.max(0, remainingNanos), TimeUnit.NANOSECONDS);
+    return super.awaitTermination(Math.max(0, remainingNanos), TimeUnit.NANOSECONDS);
   }
 }
