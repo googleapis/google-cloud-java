@@ -138,10 +138,13 @@ def all_clients() -> List[CloudClient]:
     client = client_for_repo(repo)
     if client:
       clients.append(client)
-  clients.extend([client_for_module(module) for module in LIBRARIES_IN_MONOREPO if
-                  module not in REPO_EXCLUSION])
+  for module in LIBRARIES_IN_MONOREPO:
+    if module not in REPO_EXCLUSION:
+      client = client_for_module(module)
+      if client:
+        clients.append(client)
 
-  return [client for client in clients if client]
+  return clients
 
 
 clients = sorted(all_clients())
