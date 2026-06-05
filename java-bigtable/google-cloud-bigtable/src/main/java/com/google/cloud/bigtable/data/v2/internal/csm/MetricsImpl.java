@@ -321,6 +321,8 @@ public class MetricsImpl implements Metrics, Closeable {
             new BigtableFilteringExporter(
                 exporter,
                 input -> {
+                  // filter out custom metrics and keep everything else that's registered on metric
+                  // registry
                   String name = input.getName();
                   return metricRegistry.getMetric(name) != null
                       && !name.startsWith(CUSTOM_METRIC_PREFIX);
