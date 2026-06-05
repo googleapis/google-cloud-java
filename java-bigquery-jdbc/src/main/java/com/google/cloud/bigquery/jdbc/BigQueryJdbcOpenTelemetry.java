@@ -329,27 +329,24 @@ public class BigQueryJdbcOpenTelemetry {
                   .addPropertiesSupplier(() -> props)
                   .addSpanExporterCustomizer(
                       (spanExporter, configProperties) -> {
-                        if (gcpTelemetryCredentials != null) {
-                          try {
-                            Credentials credentials =
-                                resolveCredentialsFromString(gcpTelemetryCredentials);
-                            if (spanExporter instanceof OtlpHttpSpanExporter) {
-                              return ((OtlpHttpSpanExporter) spanExporter)
-                                  .toBuilder()
-                                      .setHeaders(() -> getAuthHeaders(credentials))
-                                      .build();
-                            }
-                            if (spanExporter instanceof OtlpGrpcSpanExporter) {
-                              return ((OtlpGrpcSpanExporter) spanExporter)
-                                  .toBuilder()
-                                      .setHeaders(() -> getAuthHeaders(credentials))
-                                      .build();
-                            }
-                          } catch (Exception e) {
-                            LOG.warning(
-                                e,
-                                "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
+                        if (gcpTelemetryCredentials == null) {
+                          return spanExporter;
+                        }
+                        try {
+                          Credentials credentials =
+                              resolveCredentialsFromString(gcpTelemetryCredentials);
+                          if (spanExporter instanceof OtlpHttpSpanExporter) {
+                            return ((OtlpHttpSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
                           }
+                          if (spanExporter instanceof OtlpGrpcSpanExporter) {
+                            return ((OtlpGrpcSpanExporter) spanExporter)
+                                .toBuilder().setHeaders(() -> getAuthHeaders(credentials)).build();
+                          }
+                        } catch (Exception e) {
+                          LOG.warning(
+                              e,
+                              "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
                         }
                         return spanExporter;
                       })
