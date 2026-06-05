@@ -68,6 +68,7 @@ jobs:
         new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
+    # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
     - name: Update generation_config.yaml
       run: |
         echo "Before update:"
