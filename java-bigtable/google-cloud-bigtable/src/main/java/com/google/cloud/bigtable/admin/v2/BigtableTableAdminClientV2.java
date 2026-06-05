@@ -44,6 +44,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.MethodDescriptor.Marshaller;
+import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
@@ -161,15 +162,12 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
     // Reusing getRestoreTableMethod() as a placeholder descriptor for LRO optimization tracking.
     // Since there is no dedicated gRPC LRO method descriptor generated for OptimizeRestoredTable
-    // LRO,
-    // we reuse getRestoreTableMethod() (which is an LRO and returns a google.longrunning.Operation)
-    // and attach a throwing Marshaller for Void to satisfy the OperationCallable constructor
-    // requirements.
-    // Note: We do not plumb the gRPC ManagedChannel into the ClientContext below because this
-    // callable
-    // is only used for resumeFutureCall() (polling existing LROs via OperationsStub), which already
-    // encapsulates
-    // its own channel. The initial RPC is never called through this OperationCallable.
+    // LRO, we reuse getRestoreTableMethod() (which is an LRO and returns a
+    // google.longrunning.Operation) and attach a throwing Marshaller for Void to satisfy the
+    // OperationCallable constructor requirements. Note: We do not plumb the gRPC ManagedChannel
+    // into the ClientContext below because this callable is only used for resumeFutureCall()
+    // (polling existing LROs via OperationsStub), which already encapsulates its own channel.
+    // The initial RPC is never called through this OperationCallable.
     MethodDescriptor<Void, Operation> fakeDescriptor =
         MethodDescriptor.<Void, Operation>newBuilder()
             .setType(MethodDescriptor.MethodType.UNARY)
@@ -188,8 +186,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
                     throw new UnsupportedOperationException();
                   }
                 })
-            .setResponseMarshaller(
-                io.grpc.protobuf.ProtoUtils.marshaller(Operation.getDefaultInstance()))
+            .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
             .build();
 
     GrpcCallSettings<Void, Operation> unusedInitialCallSettings =
@@ -228,10 +225,8 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     // Note: The clientContext created here only contains the basic clock and executor settings
     // required by the polling algorithm to schedule polling attempts. We do not need to populate
     // the channel or call context details here because the operations stub
-    // (stub.getOperationsStub())
-    // already encapsulates the fully-configured default call context (including channels,
-    // credentials,
-    // and headers) for executing the polling RPCs.
+    // (stub.getOperationsStub()) already encapsulates the fully-configured default call context
+    // (including channels, credentials, and headers) for executing the polling RPCs.
     ClientContext clientContext =
         ClientContext.newBuilder()
             .setClock(settings.getStubSettings().getClock())
