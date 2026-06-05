@@ -294,8 +294,8 @@ public final class TestBench implements ManagedLifecycle {
               "gunicorn",
               "--bind=0.0.0.0:9000",
               "--worker-class=sync",
-              "--threads=10",
-              "--access-logfile=-",
+              "--threads=15",
+                  "--access-logfile=-",
               "--keep-alive=0",
               "testbench:run()");
       process =
@@ -361,8 +361,14 @@ public final class TestBench implements ManagedLifecycle {
         int processExitValue = process.exitValue();
         if (processExitValue != 0) {
           attemptForceStopContainer = true;
+          LOGGER.warn("Container exit value = {}", processExitValue);
+          try {
+            dumpServerLogs(outPath, errPath);
+          } catch (Exception ignore) {
+          }
+        } else {
+          LOGGER.warn("Container exit value = {}", processExitValue);
         }
-        LOGGER.warn("Container exit value = {}", processExitValue);
       } catch (IllegalThreadStateException e) {
         attemptForceStopContainer = true;
       }
