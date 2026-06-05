@@ -498,6 +498,41 @@ public final class TestBench implements ManagedLifecycle {
 
     private static final String DEFAULT_CONTAINER_NAME = "default";
 
+    private static int getForkNumber() {
+      String forkStr = System.getProperty("surefire.forkNumber");
+      if (forkStr != null) {
+        try {
+          return Integer.parseInt(forkStr.trim());
+        } catch (NumberFormatException ignore) {
+        }
+      }
+      return 0;
+    }
+
+    private static String getDefaultBaseUri() {
+      int fork = getForkNumber();
+      if (fork > 1) {
+        return "http://localhost:" + (9000 + (fork - 1) * 10);
+      }
+      return DEFAULT_BASE_URI;
+    }
+
+    private static String getDefaultGrpcBaseUri() {
+      int fork = getForkNumber();
+      if (fork > 1) {
+        return "http://localhost:" + (9005 + (fork - 1) * 10);
+      }
+      return DEFAULT_GRPC_BASE_URI;
+    }
+
+    private static String getDefaultContainerName() {
+      int fork = getForkNumber();
+      if (fork > 1) {
+        return DEFAULT_CONTAINER_NAME + "_" + fork;
+      }
+      return DEFAULT_CONTAINER_NAME;
+    }
+
     private boolean ignorePullError;
     private String baseUri;
     private String gRPCBaseUri;
@@ -508,11 +543,11 @@ public final class TestBench implements ManagedLifecycle {
     private Builder() {
       this(
           true,
-          DEFAULT_BASE_URI,
-          DEFAULT_GRPC_BASE_URI,
+          getDefaultBaseUri(),
+          getDefaultGrpcBaseUri(),
           DEFAULT_IMAGE_NAME,
           DEFAULT_IMAGE_TAG,
-          DEFAULT_CONTAINER_NAME);
+          getDefaultContainerName());
     }
 
     private Builder(
