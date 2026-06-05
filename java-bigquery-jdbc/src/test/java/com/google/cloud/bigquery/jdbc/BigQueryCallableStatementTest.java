@@ -33,6 +33,7 @@ import java.sql.*;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -45,6 +46,8 @@ public class BigQueryCallableStatementTest {
   @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
+    ExecutorService mockExecutorService = mock(ExecutorService.class);
+    doReturn(mockExecutorService).when(bigQueryConnection).getExecutorService();
   }
 
   @Test

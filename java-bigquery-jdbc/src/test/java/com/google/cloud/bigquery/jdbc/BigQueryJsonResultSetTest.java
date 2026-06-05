@@ -168,9 +168,9 @@ public class BigQueryJsonResultSetTest {
     statement = mock(BigQueryStatement.class);
     buffer.add(BigQueryFieldValueListWrapper.of(fieldList, fieldValues));
     buffer.add(BigQueryFieldValueListWrapper.of(null, null, true)); // last marker
-    Thread[] workerThreads = {new Thread()};
+    java.util.concurrent.Future<?>[] workerFutures = {mock(java.util.concurrent.Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerFutures);
 
     // Buffer with 2 rows.
     bufferWithTwoRows = new LinkedBlockingDeque<>(3);
@@ -196,9 +196,9 @@ public class BigQueryJsonResultSetTest {
 
   private boolean resetResultSet()
       throws SQLException { // re-initialises the resultset and moves the cursor to the first row
-    Thread[] workerThreads = {new Thread()};
+    java.util.concurrent.Future<?>[] workerFutures = {mock(java.util.concurrent.Future.class)};
     bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerFutures);
     return bigQueryJsonResultSet.next(); // move to the first row
   }
 
@@ -214,15 +214,15 @@ public class BigQueryJsonResultSetTest {
 
   @Test
   public void testRowCount() throws SQLException {
-    Thread[] workerThreads = {new Thread()};
+    java.util.concurrent.Future<?>[] workerFutures = {mock(java.util.concurrent.Future.class)};
     // ResultSet with 1 row buffer and 1 total rows.
     BigQueryJsonResultSet bigQueryJsonResultSet2 =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, statement, workerFutures);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
     // ResultSet with 2 rows buffer and 1 total rows.
     bigQueryJsonResultSet2 =
         BigQueryJsonResultSet.of(
-            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerThreads);
+            QUERY_SCHEMA, 1L, bufferWithTwoRows, statementForTwoRows, workerFutures);
     assertThat(resultSetRowCount(bigQueryJsonResultSet2)).isEqualTo(1);
   }
 

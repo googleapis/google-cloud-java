@@ -62,6 +62,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -209,6 +210,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
+  private final ExecutorService executorService;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -344,6 +346,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+      this.executorService = BigQueryJdbcMdc.newFixedThreadPool(this.metadataFetchThreadCount);
     }
   }
 
@@ -954,6 +957,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         statement.close();
       }
       this.openStatements.clear();
+
+      if (this.executorService != null) {
+        this.executorService.shutdown();
+        this.executorService.awaitTermination(10, TimeUnit.SECONDS);
+        this.executorService.shutdownNow();
+      }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
@@ -963,6 +972,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
     this.isClosed = true;
+  }
+
+  ExecutorService getExecutorService() {
+    return this.executorService;
   }
 
   @Override

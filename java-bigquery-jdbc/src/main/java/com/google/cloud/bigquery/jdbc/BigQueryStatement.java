@@ -76,7 +76,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
@@ -90,10 +90,7 @@ import java.util.logging.Level;
  */
 public class BigQueryStatement extends BigQueryNoOpsStatement {
 
-  // TODO (obada): Update this after benchmarking
-  private static final int MAX_PROCESS_QUERY_THREADS_CNT = 50;
-  protected static ExecutorService queryTaskExecutor =
-      Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
+  protected final ExecutorService queryTaskExecutor;
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
@@ -156,6 +153,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
     this.querySettings = generateBigQuerySettings();
+    this.queryTaskExecutor = connection.getExecutorService();
   }
 
   private void resetStatementFields() {
@@ -827,7 +825,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       ReadSession readSession = getReadSession(builder.build());
       this.arrowBatchWrapperBlockingQueue = new LinkedBlockingDeque<>(getBufferSize());
       // deserialize and populate the buffer async, so that the client isn't blocked
-      Thread populateBufferWorker =
+      Future<?> populateBufferWorker =
           populateArrowBufferedQueue(
               readSession, this.arrowBatchWrapperBlockingQueue, this.bigQueryReadClient);
 
@@ -853,7 +851,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Asynchronously reads results and populates an arrow record queue */
   @InternalApi
-  Thread populateArrowBufferedQueue(
+  Future<?> populateArrowBufferedQueue(
       ReadSession readSession,
       BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
       BigQueryReadClient bqReadClient) {
@@ -941,8 +939,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           }
         };
 
-    Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(arrowStreamProcessor);
-    populateBufferWorker.start();
+    Future<?> populateBufferWorker = queryTaskExecutor.submit(arrowStreamProcessor);
     return populateBufferWorker;
   }
 
@@ -1024,7 +1021,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   BigQueryJsonResultSet processJsonResultSet(TableResult results) {
-    List<Thread> threadList = new ArrayList<Thread>();
+    List<Future<?>> threadList = new ArrayList<>();
 
     Schema schema = results.getSchema();
     long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
@@ -1035,7 +1032,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     JobId jobId = results.getJobId();
     if (jobId != null) {
       // Thread to make rpc calls to fetch data from the server
-      Thread nextPageWorker =
+      Future<?> nextPageWorker =
           runNextPageTaskAsync(
               results,
               results.getNextPageToken(),
@@ -1055,12 +1052,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     // Thread to parse data received from the server to client library objects
-    Thread populateBufferWorker =
+    Future<?> populateBufferWorker =
         parseAndPopulateRpcDataAsync(
             schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
     threadList.add(populateBufferWorker);
 
-    Thread[] jsonWorkers = threadList.toArray(new Thread[0]);
+    Future<?>[] jsonWorkers = threadList.toArray(new Future<?>[0]);
 
     BigQueryJsonResultSet jsonResultSet =
         BigQueryJsonResultSet.of(
@@ -1102,7 +1099,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @VisibleForTesting
-  Thread runNextPageTaskAsync(
+  Future<?> runNextPageTaskAsync(
       TableResult result,
       String firstPageToken,
       JobId jobId,
@@ -1161,8 +1158,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           // have finished processing the records and even that will be interrupted
         };
 
-    Thread nextPageWorker = JDBC_THREAD_FACTORY.newThread(nextPageTask);
-    nextPageWorker.start();
+    Future<?> nextPageWorker = queryTaskExecutor.submit(nextPageTask);
     return nextPageWorker;
   }
 
@@ -1171,7 +1167,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * bigQueryFieldValueListWrapperBlockingQueue with FieldValueList
    */
   @VisibleForTesting
-  Thread parseAndPopulateRpcDataAsync(
+  Future<?> parseAndPopulateRpcDataAsync(
       Schema schema,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue) {
@@ -1246,8 +1242,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           }
         };
 
-    Thread populateBufferWorker = JDBC_THREAD_FACTORY.newThread(populateBufferRunnable);
-    populateBufferWorker.start();
+    Future<?> populateBufferWorker = queryTaskExecutor.submit(populateBufferRunnable);
     return populateBufferWorker;
   }
 

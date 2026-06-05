@@ -26,6 +26,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
@@ -250,5 +251,56 @@ public class BigQueryJdbcMdcTest {
     } finally {
       executor.shutdownNow();
     }
+  }
+
+  @Test
+  public void testConnectionScopedExecutorLifecycle() throws Exception {
+    String url1 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=Proj1;"
+            + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
+            + "metadataFetchThreadCount=5;";
+    String url2 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=Proj2;"
+            + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
+            + "metadataFetchThreadCount=10;";
+
+    BigQueryConnection conn1 = new BigQueryConnection(url1);
+    BigQueryConnection conn2 = new BigQueryConnection(url2);
+
+    try {
+      ExecutorService exec1 = conn1.getExecutorService();
+      ExecutorService exec2 = conn2.getExecutorService();
+
+      assertTrue(exec1 != exec2);
+      assertTrue(exec1 instanceof ThreadPoolExecutor);
+      assertTrue(exec2 instanceof ThreadPoolExecutor);
+
+      assertEquals(5, ((ThreadPoolExecutor) exec1).getCorePoolSize());
+      assertEquals(10, ((ThreadPoolExecutor) exec2).getCorePoolSize());
+
+      BigQueryStatement stmt1 = new BigQueryStatement(conn1);
+      assertTrue(stmt1.queryTaskExecutor == exec1);
+
+      try (BigQueryJdbcMdc.MdcCloseable mdc =
+          BigQueryJdbcMdc.registerInstance(conn1.getConnectionId())) {
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference<String> workerMdc = new AtomicReference<>();
+        exec1.execute(
+            () -> {
+              workerMdc.set(BigQueryJdbcMdc.getConnectionId());
+              latch.countDown();
+            });
+        assertTrue(latch.await(5, TimeUnit.SECONDS));
+        assertEquals(conn1.getConnectionId(), workerMdc.get());
+      }
+    } finally {
+      conn1.close();
+      conn2.close();
+    }
+
+    assertTrue(conn1.getExecutorService().isShutdown());
+    assertTrue(conn2.getExecutorService().isShutdown());
   }
 }

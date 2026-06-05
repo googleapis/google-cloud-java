@@ -18,50 +18,30 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.util.concurrent.CompletableFuture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryResultSetFinalizersTest {
-  Thread arrowWorker;
-  Thread[] jsonWorkers;
+  CompletableFuture<Void> arrowFuture;
+  CompletableFuture<?>[] jsonFutures;
 
   @BeforeEach
   public void setUp() {
-    // create and start the demon threads
-    arrowWorker =
-        new Thread(
-            () -> {
-              while (true) {
-                if (Thread.currentThread().isInterrupted()) {
-                  break;
-                }
-              }
-            });
-    arrowWorker.setDaemon(true);
-    Thread jsonWorker =
-        new Thread(
-            () -> {
-              while (true) {
-                if (Thread.currentThread().isInterrupted()) {
-                  break;
-                }
-              }
-            });
-    jsonWorker.setDaemon(true);
-    jsonWorkers = new Thread[] {jsonWorker};
-    arrowWorker.start();
-    jsonWorker.start();
+    arrowFuture = new CompletableFuture<>();
+    CompletableFuture<Void> jsonFuture = new CompletableFuture<>();
+    jsonFutures = new CompletableFuture<?>[] {jsonFuture};
   }
 
   @Test
   public void testFinalizeResources() {
     BigQueryResultSetFinalizers.ArrowResultSetFinalizer arrowResultSetFinalizer =
-        new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(null, null, arrowWorker);
+        new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(null, null, arrowFuture);
     arrowResultSetFinalizer.finalizeResources();
-    assertThat(arrowWorker.isInterrupted()).isTrue();
+    assertThat(arrowFuture.isCancelled()).isTrue();
     BigQueryResultSetFinalizers.JsonResultSetFinalizer jsonResultSetFinalizer =
-        new BigQueryResultSetFinalizers.JsonResultSetFinalizer(null, null, jsonWorkers);
+        new BigQueryResultSetFinalizers.JsonResultSetFinalizer(null, null, jsonFutures);
     jsonResultSetFinalizer.finalizeResources();
-    assertThat(jsonWorkers[0].isInterrupted()).isTrue();
+    assertThat(jsonFutures[0].isCancelled()).isTrue();
   }
 }

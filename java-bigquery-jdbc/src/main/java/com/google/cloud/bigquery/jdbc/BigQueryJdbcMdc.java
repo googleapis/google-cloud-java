@@ -29,6 +29,9 @@ import java.util.concurrent.TimeUnit;
 
 /** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcMdc.class.getName());
+
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
@@ -106,6 +109,13 @@ class BigQueryJdbcMdc {
     public void execute(Runnable command) {
       if (command == null) {
         throw new NullPointerException();
+      }
+      int queueSize = getQueue().size();
+      if (queueSize > 0 && queueSize % 10 == 0) {
+        LOG.warning(
+            "Thread pool queue size reached "
+                + queueSize
+                + ". Tasks are waiting for threads to free up.");
       }
       if (command instanceof MdcFutureTask) {
         super.execute(command);

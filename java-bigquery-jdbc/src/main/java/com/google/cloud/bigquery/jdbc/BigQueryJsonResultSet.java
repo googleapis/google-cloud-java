@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 
 /** {@link ResultSet} Implementation for JSON datasource (Using REST APIs) */
 class BigQueryJsonResultSet extends BigQueryBaseResultSet {
@@ -42,7 +43,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   private boolean afterLast = false;
   private final int fromIndex;
   private final int toIndexExclusive;
-  private final Thread[] ownedThreads;
+  private final Future<?>[] ownedFutures;
 
   private BigQueryJsonResultSet(
       Schema schema,
@@ -53,7 +54,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       BigQueryFieldValueListWrapper cursor,
       int fromIndex,
       int toIndexExclusive,
-      Thread[] ownedThreads,
+      Future<?>[] ownedFutures,
       BigQuery bigQuery) {
     super(bigQuery, statement, schema, isNested);
     this.totalRows = totalRows;
@@ -62,7 +63,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
-    this.ownedThreads = ownedThreads;
+    this.ownedFutures = ownedFutures;
   }
 
   /**
@@ -76,11 +77,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BlockingQueue<BigQueryFieldValueListWrapper> buffer,
       BigQueryStatement statement,
-      Thread[] ownedThreads,
+      Future<?>[] ownedFutures,
       BigQuery bigQuery) {
 
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, bigQuery);
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedFutures, bigQuery);
   }
 
   static BigQueryJsonResultSet of(
@@ -88,10 +89,10 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BlockingQueue<BigQueryFieldValueListWrapper> buffer,
       BigQueryStatement statement,
-      Thread[] ownedThreads) {
+      Future<?>[] ownedFutures) {
 
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedThreads, null);
+        schema, totalRows, buffer, statement, false, null, -1, -1, ownedFutures, null);
   }
 
   BigQueryJsonResultSet() {
@@ -99,7 +100,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     totalRows = 0;
     buffer = null;
     fromIndex = 0;
-    ownedThreads = new Thread[0];
+    ownedFutures = new Future<?>[0];
     toIndexExclusive = 0;
   }
 
@@ -276,10 +277,10 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   public void close() {
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
-    if (ownedThreads != null) {
-      for (Thread ownedThread : ownedThreads) {
-        if (!ownedThread.isInterrupted()) {
-          ownedThread.interrupt();
+    if (ownedFutures != null) {
+      for (Future<?> ownedFuture : ownedFutures) {
+        if (ownedFuture != null) {
+          ownedFuture.cancel(true);
         }
       }
     }

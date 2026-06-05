@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.core.InternalApi;
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
+import java.util.concurrent.Future;
 
 @InternalApi
 class BigQueryResultSetFinalizers {
@@ -27,44 +28,44 @@ class BigQueryResultSetFinalizers {
 
   @InternalApi
   static class ArrowResultSetFinalizer extends PhantomReference<BigQueryArrowResultSet> {
-    Thread ownedThread;
+    Future<?> ownedFuture;
 
     public ArrowResultSetFinalizer(
         BigQueryArrowResultSet referent,
         ReferenceQueue<? super BigQueryArrowResultSet> q,
-        Thread ownedThread) {
+        Future<?> ownedFuture) {
       super(referent, q);
-      this.ownedThread = ownedThread;
+      this.ownedFuture = ownedFuture;
     }
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
       LOG.finestTrace("finalizeResources");
-      if (ownedThread != null && !ownedThread.isInterrupted()) {
-        ownedThread.interrupt();
+      if (ownedFuture != null) {
+        ownedFuture.cancel(true);
       }
     }
   }
 
   @InternalApi
   static class JsonResultSetFinalizer extends PhantomReference<BigQueryJsonResultSet> {
-    Thread[] ownedThreads;
+    Future<?>[] ownedFutures;
 
     public JsonResultSetFinalizer(
         BigQueryJsonResultSet referent,
         ReferenceQueue<? super BigQueryJsonResultSet> q,
-        Thread[] ownedThreads) {
+        Future<?>[] ownedFutures) {
       super(referent, q);
-      this.ownedThreads = ownedThreads;
+      this.ownedFutures = ownedFutures;
     }
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
       LOG.finestTrace("finalizeResources");
-      if (ownedThreads != null) {
-        for (Thread ownedThread : ownedThreads) {
-          if (!ownedThread.isInterrupted()) {
-            ownedThread.interrupt();
+      if (ownedFutures != null) {
+        for (Future<?> ownedFuture : ownedFutures) {
+          if (ownedFuture != null) {
+            ownedFuture.cancel(true);
           }
         }
       }

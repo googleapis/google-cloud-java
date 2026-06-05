@@ -84,9 +84,9 @@ public class BigQueryResultSetMetadataTest {
   @BeforeEach
   public void setUp() throws SQLException {
     statement = mock(BigQueryStatement.class);
-    Thread[] workerThreads = {new Thread()};
+    java.util.concurrent.Future<?>[] workerFutures = {mock(java.util.concurrent.Future.class)};
     BigQueryJsonResultSet bigQueryJsonResultSet =
-        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, null, statement, workerThreads);
+        BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, null, statement, workerFutures);
     // values for nested types
     resultSetMetaData = bigQueryJsonResultSet.getMetaData();
 
@@ -290,7 +290,11 @@ public class BigQueryResultSetMetadataTest {
     FieldList schemaFields = FieldList.of(field);
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(
-            Schema.of(schemaFields), 1L, null, statement, new Thread[] {new Thread()});
+            Schema.of(schemaFields),
+            1L,
+            null,
+            statement,
+            new java.util.concurrent.Future<?>[] {mock(java.util.concurrent.Future.class)});
     ResultSetMetaData metaData = resultSet.getMetaData();
     assertThat(metaData.isSearchable(1)).isTrue();
   }
