@@ -86,7 +86,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String BIGQUERY_SERVICE_NAME = "bigquery";
-  private static final long MAX_PROJECTS_PER_PAGE = 10000L;
   private static final String PROJECT_LIST_FIELDS =
       "projects/projectReference/projectId,nextPageToken";
   private static final Set<String> SAFE_TO_LOG_PROPERTIES =
@@ -1254,7 +1253,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       Bigquery lowLevelBq =
           new Bigquery.Builder(transport, GsonFactory.getDefaultInstance(), initializer)
               .setRootUrl(options.getResolvedApiaryHost(BIGQUERY_SERVICE_NAME))
-              .setApplicationName(DEFAULT_JDBC_TOKEN_VALUE)
+              .setApplicationName(
+                  options.getApplicationName() != null
+                      ? options.getApplicationName()
+                      : DEFAULT_JDBC_TOKEN_VALUE)
               .build();
 
       List<String> projects = new ArrayList<>();
@@ -1265,7 +1267,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
                 .projects()
                 .list()
                 .setPageToken(pageToken)
-                .setMaxResults(MAX_PROJECTS_PER_PAGE)
+                .setMaxResults(getMaxResults())
                 .setFields(PROJECT_LIST_FIELDS)
                 .execute();
         if (projectList.getProjects() != null) {
