@@ -44,8 +44,8 @@ This project follows
 
 Before doing any significant work, open an issue to propose your idea and
 ensure alignment. You can either
-[file a new issue](https://github.com/googleapis/librarian/issues/new/choose), or comment on an
-[existing one](https://github.com/googleapis/librarian/issues).
+[file a new issue](https://github.com/googleapis/google-cloud-java/issues/new/choose), or comment on an
+[existing one](https://github.com/googleapis/google-cloud-java/issues).
 
 A pull request (PR) that does not go through this coordination process may be
 closed to avoid wasted effort.  Make sure your code follows the
