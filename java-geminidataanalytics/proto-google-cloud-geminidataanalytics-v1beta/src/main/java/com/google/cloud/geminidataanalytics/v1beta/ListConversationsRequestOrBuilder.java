@@ -63,8 +63,9 @@ public interface ListConversationsRequestOrBuilder
    *
    * <pre>
    * Optional. Requested page size. Server may return fewer items than
-   * requested. The max page size is 100. All larger page sizes will be coerced
-   * to 100. If unspecified, server will pick 50 as an approperiate default.
+   * requested. The max page size is `100`. All larger page sizes will be
+   * coerced to `100`. If unspecified, server will pick `50` as an appropriate
+   * default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

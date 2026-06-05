@@ -160,6 +160,22 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
       internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Dependency_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Dependency_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_CompositeRef_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_CompositeRef_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_ComponentRef_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_ComponentRef_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_Scope_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_Scope_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -173,18 +189,26 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "Mgoogle/cloud/saasplatform/saasservicemgmt/v1beta1/deployments_resources.proto\022"
           + "1google.cloud.saasplatform.saasservicemgmt.v1beta1\032\037google/api/field_behavior.pr"
           + "oto\032\033google/api/field_info.proto\032\031google"
-          + "/api/resource.proto\032>google/cloud/saaspl"
-          + "atform/saasservicemgmt/v1beta1/common.proto\032\037google/protobuf/timestamp.proto\"\035\n"
+          + "/api/resource.proto\032>google/cloud/saasplatform/saasservicemgmt/v1beta1/common.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\035\n"
           + "\010Location\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\001\"\231\005\n"
+          + "\004name\030\001 \001(\tB\003\340A\001\"\375\010\n"
           + "\004Saas\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022S\n"
-          + "\tlocations\030\004 \003(\0132;.goo"
-          + "gle.cloud.saasplatform.saasservicemgmt.v1beta1.LocationB\003\340A\001\022Y\n"
-          + "\006labels\030\241Q \003(\0132C."
-          + "google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.LabelsEntryB\003\340A\001\022c\n"
-          + "\013annotations\030\242Q \003(\0132H.google.cloud.saasplatfor"
-          + "m.saasservicemgmt.v1beta1.Saas.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "\tlocations\030\004 \003(\0132;.google.cloud.saasp"
+          + "latform.saasservicemgmt.v1beta1.LocationB\003\340A\001\022]\n"
+          + "\024application_template\030\005 \001(\0132?.go"
+          + "ogle.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef\022\033\n"
+          + "\016blueprint_repo\030\006 \001(\tB\003\340A\003\022Q\n"
+          + "\005state\030\007 \001(\0162=.google.cloud."
+          + "saasplatform.saasservicemgmt.v1beta1.Saas.StateB\003\340A\003\022Y\n\n"
+          + "conditions\030\010 \003(\0132@.googl"
+          + "e.cloud.saasplatform.saasservicemgmt.v1beta1.SaasConditionB\003\340A\003\022&\n"
+          + "\005error\030\t \001(\0132\022.google.rpc.StatusB\003\340A\003\022Y\n"
+          + "\006labels\030\241Q \003(\013"
+          + "2C.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas.LabelsEntryB\003\340A\001\022c\n"
+          + "\013annotations\030\242Q \003(\0132H.google.cloud.saasplat"
+          + "form.saasservicemgmt.v1beta1.Saas.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
@@ -194,18 +218,26 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:i\352Af\n"
-          + "#saasservicemgmt.googleapis.com/Saas\0223projects"
-          + "/{project}/locations/{location}/saas/{saas}*\004saas2\004saas\"\267\005\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\217\001\n"
+          + "\005State\022\032\n"
+          + "\026STATE_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014STATE_ACTIVE\020\001\022\021\n\r"
+          + "STATE_RUNNING\020\002\022\020\n"
+          + "\014STATE_FAILED\020\003\022\016\n"
+          + "\006ACTIVE\020\001\032\002\010\001\022\017\n"
+          + "\007RUNNING\020\002\032\002\010\001\022\016\n"
+          + "\006FAILED\020\003\032\002\010\001\032\002\020\001:i\352Af\n"
+          + "#saasservicemgmt.googleapis.com/Saas\0223projects/{project}/"
+          + "locations/{location}/saas/{saas}*\004saas2\004saas\"\267\005\n"
           + "\006Tenant\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022!\n"
           + "\021consumer_resource\030\002 \001(\tB\006\340A\001\340A\005\022<\n"
           + "\004saas\030\003 \001(\tB.\340A\002\340A\005\372A%\n"
           + "#saasservicemgmt.googleapis.com/Saas\022[\n"
-          + "\006labels\030\241Q \003(\0132"
-          + "E.google.cloud.saasplatform.saasservicemgmt.v1beta1.Tenant.LabelsEntryB\003\340A\001\022e\n"
-          + "\013annotations\030\242Q \003(\0132J.google.cloud.saaspla"
-          + "tform.saasservicemgmt.v1beta1.Tenant.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "\006labels\030\241Q \003(\0132E.google.cl"
+          + "oud.saasplatform.saasservicemgmt.v1beta1.Tenant.LabelsEntryB\003\340A\001\022e\n"
+          + "\013annotations\030\242Q \003(\0132J.google.cloud.saasplatform.saass"
+          + "ervicemgmt.v1beta1.Tenant.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
@@ -216,24 +248,29 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:u\352Ar\n"
-          + "%saasservicemgmt.googleapis.com/Tenant\0228"
-          + "projects/{project}/locations/{location}/tenants/{tenant}*\007tenants2\006tenant\"\237\010\n"
+          + "%saasservicemgmt.googleapis.com/Tenant\0228projects/{p"
+          + "roject}/locations/{location}/tenants/{tenant}*\007tenants2\006tenant\"\337\t\n"
           + "\010UnitKind\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022G\n"
           + "\017default_release\030\002 \001(\tB.\340A\001\372A(\n"
           + "&saasservicemgmt.googleapis.com/Release\022[\n"
-          + "\014dependencies\030\004 \003(\013"
-          + "2=.google.cloud.saasplatform.saasservicemgmt.v1beta1.DependencyB\006\340A\001\340A\005\022h\n"
-          + "\027input_variable_mappings\030\005 \003(\0132B.google.cloud."
-          + "saasplatform.saasservicemgmt.v1beta1.VariableMappingB\003\340A\001\022i\n"
-          + "\030output_variable_mappings\030\006 \003(\0132B.google.cloud.saasplatform."
-          + "saasservicemgmt.v1beta1.VariableMappingB\003\340A\001\022<\n"
+          + "\014dependencies\030\004 \003(\0132=.google.c"
+          + "loud.saasplatform.saasservicemgmt.v1beta1.DependencyB\006\340A\001\340A\005\022h\n"
+          + "\027input_variable_mappings\030\005 \003(\0132B.google.cloud.saasplatfor"
+          + "m.saasservicemgmt.v1beta1.VariableMappingB\003\340A\001\022i\n"
+          + "\030output_variable_mappings\030\006 \003(\013"
+          + "2B.google.cloud.saasplatform.saasservicemgmt.v1beta1.VariableMappingB\003\340A\001\022<\n"
           + "\004saas\030\010 \001(\tB.\340A\002\340A\005\372A%\n"
-          + "#saasservicemgmt.googleapis.com/Saas\022]\n"
-          + "\006labels\030\241Q \003(\0132G.google.cloud.saasplatform.saasserv"
-          + "icemgmt.v1beta1.UnitKind.LabelsEntryB\003\340A\001\022g\n"
-          + "\013annotations\030\242Q \003(\0132L.google.cloud.s"
-          + "aasplatform.saasservicemgmt.v1beta1.UnitKind.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "#saasservicemgmt.googleapis.com/Saas\022l\n"
+          + "\036application_template_component\030\n"
+          + " \001(\0132?.google.cloud.saasplatf"
+          + "orm.saasservicemgmt.v1beta1.ComponentRefB\003\340A\003\022P\n\n"
+          + "app_params\030\013 \001(\0132<.google.cloud"
+          + ".saasplatform.saasservicemgmt.v1beta1.AppParams\022]\n"
+          + "\006labels\030\241Q \003(\0132G.google.cloud."
+          + "saasplatform.saasservicemgmt.v1beta1.UnitKind.LabelsEntryB\003\340A\001\022g\n"
+          + "\013annotations\030\242Q \003(\0132L.google.cloud.saasplatform.saasser"
+          + "vicemgmt.v1beta1.UnitKind.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
@@ -244,9 +281,9 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\177\352A|\n"
-          + "\'saasservicemgmt.googleapis.com/"
-          + "UnitKind\022<projects/{project}/locations/{location}/unitKinds/{unitKind}*"
-          + "\tunitKinds2\010unitKind\"\375\023\n"
+          + "\'saasservicemgmt.googleapis.com/UnitKind\022<projects/"
+          + "{project}/locations/{location}/unitKinds/{unitKind}*"
+          + "\tunitKinds2\010unitKind\"\367\024\n"
           + "\004Unit\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022B\n"
           + "\tunit_kind\030\002 \001(\tB/\340A\001\372A)\n"
@@ -262,36 +299,40 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + ",saasservicemgmt.googleapis.com/UnitOperation\022U\n"
           + "\024scheduled_operations\030\030 \003(\tB7\340A\001\340A\003\372A.\n"
           + ",saasservicemgmt.googleapis.com/UnitOperation\022]\n\n"
-          + "dependents\030\007 \003(\0132A.go"
-          + "ogle.cloud.saasplatform.saasservicemgmt.v1beta1.UnitDependencyB\006\340A\001\340A\003\022_\n"
-          + "\014dependencies\030\010 \003(\0132A.google.cloud.saasplatform"
-          + ".saasservicemgmt.v1beta1.UnitDependencyB\006\340A\001\340A\003\022`\n"
-          + "\017input_variables\030\t \003(\0132?.googl"
-          + "e.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022a\n"
+          + "dependents\030\007 \003(\0132A.google.cloud.saasplat"
+          + "form.saasservicemgmt.v1beta1.UnitDependencyB\006\340A\001\340A\003\022_\n"
+          + "\014dependencies\030\010 \003(\0132A.goog"
+          + "le.cloud.saasplatform.saasservicemgmt.v1beta1.UnitDependencyB\006\340A\001\340A\003\022`\n"
+          + "\017input_variables\030\t \003(\0132?.google.cloud.saasplatfor"
+          + "m.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022a\n"
           + "\020output_variables\030\n"
-          + " \003(\0132?.google.cloud.saasplatform."
-          + "saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022e\n"
-          + "\013maintenance\030\016 \001(\0132K.google.cloud"
-          + ".saasplatform.saasservicemgmt.v1beta1.Unit.MaintenanceSettingsB\003\340A\001\022X\n"
-          + "\005state\030\020 \001"
-          + "(\0162A.google.cloud.saasplatform.saasservicemgmt.v1beta1.Unit.UnitStateB\006\340A\001\340A\003\022\\\n"
-          + "\n"
-          + "conditions\030\024 \003(\0132@.google.cloud.saaspla"
-          + "tform.saasservicemgmt.v1beta1.UnitConditionB\006\340A\001\340A\003\022g\n"
-          + "\017management_mode\030\026 \001(\0162F.g"
-          + "oogle.cloud.saasplatform.saasservicemgmt.v1beta1.Unit.ManagementModeB\006\340A\001\340A\005\022p\n"
-          + "\024system_managed_state\030\031 \001(\0162J.google.clou"
-          + "d.saasplatform.saasservicemgmt.v1beta1.Unit.SystemManagedStateB\006\340A\001\340A\003\022=\n"
+          + " \003(\0132?.googl"
+          + "e.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022e\n"
+          + "\013maintenance\030\016 \001(\0132K.google.cloud.saasplatform.saass"
+          + "ervicemgmt.v1beta1.Unit.MaintenanceSettingsB\003\340A\001\022X\n"
+          + "\005state\030\020 \001(\0162A.google.cloud.s"
+          + "aasplatform.saasservicemgmt.v1beta1.Unit.UnitStateB\006\340A\001\340A\003\022\\\n\n"
+          + "conditions\030\024 \003(\0132@"
+          + ".google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitConditionB\006\340A\001\340A\003\022g\n"
+          + "\017management_mode\030\026 \001(\0162F.google.cloud.saaspla"
+          + "tform.saasservicemgmt.v1beta1.Unit.ManagementModeB\006\340A\001\340A\005\022p\n"
+          + "\024system_managed_state\030\031 \001(\0162J.google.cloud.saasplatform.saas"
+          + "servicemgmt.v1beta1.Unit.SystemManagedStateB\006\340A\001\340A\003\022=\n"
           + "\021system_cleanup_at\030\032"
-          + " \001(\0132\032.google.protobuf.TimestampB\006\340A\001\340A\003\022Y\n"
-          + "\006labels\030\241Q \003(\0132C.google."
-          + "cloud.saasplatform.saasservicemgmt.v1beta1.Unit.LabelsEntryB\003\340A\001\022c\n"
-          + "\013annotations\030\242Q \003(\0132H.google.cloud.saasplatform.saass"
-          + "ervicemgmt.v1beta1.Unit.AnnotationsEntryB\003\340A\001\022\031\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\006\340A\001\340A\003\022>\n"
+          + "\013application\030\035 \001(\tB)\340A\001\372A#\n"
+          + "!apphub.googleapis.com/Application\022Y\n"
+          + "\006labels\030\241Q \003(\0132C.go"
+          + "ogle.cloud.saasplatform.saasservicemgmt.v1beta1.Unit.LabelsEntryB\003\340A\001\022c\n"
+          + "\013annotations\030\242Q \003(\0132H.google.cloud.saasplatform."
+          + "saasservicemgmt.v1beta1.Unit.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
-          + "\013update_time\030\300P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032Q\n"
+          + "\013update_time\030\300P"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n\r"
+          + "satisfies_pzs\030\301P \001(\010B\003\340A\003\022\033\n\r"
+          + "satisfies_pzi\030\302P \001(\010B\003\340A\003\032Q\n"
           + "\023MaintenanceSettings\022:\n"
           + "\021pinned_until_time\030\001"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\032-\n"
@@ -318,20 +359,20 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\033SYSTEM_MANAGED_STATE_ACTIVE\020\001\022!\n"
           + "\035SYSTEM_MANAGED_STATE_INACTIVE\020\002\022\'\n"
           + "#SYSTEM_MANAGED_STATE_DECOMMISSIONED\020\003:k\352Ah\n"
-          + "#saasservicemgmt.googleapis.com/Unit\0224projects/{proj"
-          + "ect}/locations/{location}/units/{unit}*\005units2\004unit\"_\n"
+          + "#saasservicemgmt.googleapis.c"
+          + "om/Unit\0224projects/{project}/locations/{location}/units/{unit}*\005units2\004unit\"_\n"
           + "\016UnitDependency\022\022\n"
           + "\005alias\030\001 \001(\tB\003\340A\003\0229\n"
           + "\004unit\030\002 \001(\tB+\340A\003\372A%\n"
-          + "#saasservicemgmt.googleapis.com/Unit\"\326\016\n\r"
+          + "#saasservicemgmt.googleapis.com/Unit\"\215\017\n\r"
           + "UnitOperation\022V\n"
-          + "\tprovision\030\010 \001(\0132<.google.cloud"
-          + ".saasplatform.saasservicemgmt.v1beta1.ProvisionB\003\340A\001H\000\022R\n"
-          + "\007upgrade\030\t \001(\0132:.google"
-          + ".cloud.saasplatform.saasservicemgmt.v1beta1.UpgradeB\003\340A\001H\000\022Z\n"
+          + "\tprovision\030\010"
+          + " \001(\0132<.google.cloud.saasplatform.saasservicemgmt.v1beta1.ProvisionB\003\340A\001H\000\022R\n"
+          + "\007upgrade\030\t \001(\0132:.google.cloud.saasplatfo"
+          + "rm.saasservicemgmt.v1beta1.UpgradeB\003\340A\001H\000\022Z\n"
           + "\013deprovision\030\n"
-          + " \001(\0132"
-          + ">.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeprovisionB\003\340A\001H\000\022\021\n"
+          + " \001(\0132>.google.cloud.sa"
+          + "asplatform.saasservicemgmt.v1beta1.DeprovisionB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022<\n"
           + "\004unit\030\002 \001(\tB.\340A\002\340A\005\372A%\n"
           + "#saasservicemgmt.googleapis.com/Unit\022S\n"
@@ -340,23 +381,24 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\007rollout\030\004 \001(\tB.\340A\001\372A(\n"
           + "&saasservicemgmt.googleapis.com/Rollout\022\023\n"
           + "\006cancel\030\005 \001(\010B\003\340A\001\022j\n"
-          + "\005state\030\006 \001(\0162S.google.cloud.saaspla"
-          + "tform.saasservicemgmt.v1beta1.UnitOperation.UnitOperationStateB\006\340A\001\340A\003\022e\n\n"
-          + "conditions\030\007 \003(\0132I.google.cloud.saasplatform.s"
-          + "aasservicemgmt.v1beta1.UnitOperationConditionB\006\340A\001\340A\003\022R\n"
-          + "\010schedule\030\014 \001(\0132;.google"
-          + ".cloud.saasplatform.saasservicemgmt.v1beta1.ScheduleB\003\340A\001\022\034\n"
+          + "\005state\030\006 \001(\0162S.google.cloud.saasplatform.saasservice"
+          + "mgmt.v1beta1.UnitOperation.UnitOperationStateB\006\340A\001\340A\003\022e\n\n"
+          + "conditions\030\007 \003(\0132I.goog"
+          + "le.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperationConditionB\006\340A\001\340A\003\022R\n"
+          + "\010schedule\030\014 \001(\0132;.google.cloud.saasplatfo"
+          + "rm.saasservicemgmt.v1beta1.ScheduleB\003\340A\001\022\034\n"
           + "\014engine_state\030\016 \001(\tB\006\340A\001\340A\003\022m\n"
-          + "\016error_category\030\017 \001(\0162M.google.cloud.saasplatform.saasservicemgmt.v1be"
-          + "ta1.UnitOperationErrorCategoryB\006\340A\001\340A\003\022b\n"
-          + "\006labels\030\241Q \003(\0132L.google.cloud.saasplatf"
-          + "orm.saasservicemgmt.v1beta1.UnitOperation.LabelsEntryB\003\340A\001\022l\n"
-          + "\013annotations\030\242Q \003(\0132Q.google.cloud.saasplatform.saasservice"
-          + "mgmt.v1beta1.UnitOperation.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "\016error_category\030\017 \001(\0162M.google.cloud.saasplatfo"
+          + "rm.saasservicemgmt.v1beta1.UnitOperationErrorCategoryB\006\340A\001\340A\003\022b\n"
+          + "\006labels\030\241Q \003(\0132L.google.cloud.saasplatform.saasservicemg"
+          + "mt.v1beta1.UnitOperation.LabelsEntryB\003\340A\001\022l\n"
+          + "\013annotations\030\242Q \003(\0132Q.google.cloud.s"
+          + "aasplatform.saasservicemgmt.v1beta1.UnitOperation.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
-          + "\013update_time\030\300P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + "\013update_time\030\300P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
+          + "\013delete_time\030\301P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
@@ -371,42 +413,43 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\036UNIT_OPERATION_STATE_SUCCEEDED\020\005\022\037\n"
           + "\033UNIT_OPERATION_STATE_FAILED\020\006\022\"\n"
           + "\036UNIT_OPERATION_STATE_CANCELLED\020\007:\231\001\352A\225\001\n"
-          + ",saasservicemgmt.googleapis.com/UnitOperation\022Fprojects/{proje"
-          + "ct}/locations/{location}/unitOperations/{unitOperation}*\016unitOperations2\r"
+          + ",saasservicemgmt.googleapis.com/UnitOperation\022Fprojects/{project"
+          + "}/locations/{location}/unitOperations/{unitOperation}*\016unitOperations2\r"
           + "unitOperationB\025\n"
           + "\023unit_operation_type\"\253\001\n"
           + "\tProvision\022?\n"
           + "\007release\030\001 \001(\tB.\340A\001\372A(\n"
           + "&saasservicemgmt.googleapis.com/Release\022]\n"
-          + "\017input_variables\030\003 \003(\0132?.google.cloud.saasplatfor"
-          + "m.saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\"\r\n"
+          + "\017input_variables\030\003 \003(\0132?.google.cloud.saasplatform."
+          + "saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\"\r\n"
           + "\013Deprovision\"\251\001\n"
           + "\007Upgrade\022?\n"
           + "\007release\030\001 \001(\tB.\340A\001\372A(\n"
           + "&saasservicemgmt.googleapis.com/Release\022]\n"
-          + "\017input_variables\030\002 \003(\013"
-          + "2?.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\"?\n"
+          + "\017input_variables\030\002 \003(\0132?"
+          + ".google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\"?\n"
           + "\010Schedule\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\204\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"\362\n\n"
           + "\007Release\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022E\n"
           + "\tunit_kind\030\002 \001(\tB2\340A\002\340A\005\372A)\n"
           + "\'saasservicemgmt.googleapis.com/UnitKind\022T\n"
-          + "\tblueprint\030\003 \001(\0132<.google.cloud.saasplat"
-          + "form.saasservicemgmt.v1beta1.BlueprintB\003\340A\001\022q\n"
-          + "\024release_requirements\030\004 \001(\0132N.goog"
-          + "le.cloud.saasplatform.saasservicemgmt.v1"
-          + "beta1.Release.ReleaseRequirementsB\003\340A\001\022`\n"
-          + "\017input_variables\030\005 \003(\0132?.google.cloud.s"
-          + "aasplatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022a\n"
-          + "\020output_variables\030\006 \003"
-          + "(\0132?.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022e\n"
-          + "\027input_variable_defaults\030\007 \003(\0132?.google.cl"
-          + "oud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\022\\\n"
-          + "\006labels\030\241Q \003(\0132F.go"
-          + "ogle.cloud.saasplatform.saasservicemgmt.v1beta1.Release.LabelsEntryB\003\340A\001\022f\n"
-          + "\013annotations\030\242Q \003(\0132K.google.cloud.saasplatfo"
-          + "rm.saasservicemgmt.v1beta1.Release.AnnotationsEntryB\003\340A\001\022\031\n"
+          + "\tblueprint\030\003 \001(\0132<.google.cloud.saasplatfo"
+          + "rm.saasservicemgmt.v1beta1.BlueprintB\003\340A\001\022q\n"
+          + "\024release_requirements\030\004 \001(\0132N.google"
+          + ".cloud.saasplatform.saasservicemgmt.v1beta1.Release.ReleaseRequirementsB\003\340A\001\022`\n"
+          + "\017input_variables\030\005 \003(\0132?.google.cloud.saa"
+          + "splatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022a\n"
+          + "\020output_variables\030\006 \003(\013"
+          + "2?.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\006\340A\001\340A\003\022e\n"
+          + "\027input_variable_defaults\030\007 \003(\0132?.google.clou"
+          + "d.saasplatform.saasservicemgmt.v1beta1.UnitVariableB\003\340A\001\022l\n"
+          + "\036application_template_component\030\t \001(\0132?.google.cloud.saasplat"
+          + "form.saasservicemgmt.v1beta1.ComponentRefB\003\340A\003\022\\\n"
+          + "\006labels\030\241Q \003(\0132F.google.cloud.s"
+          + "aasplatform.saasservicemgmt.v1beta1.Release.LabelsEntryB\003\340A\001\022f\n"
+          + "\013annotations\030\242Q \003(\0132K.google.cloud.saasplatform.saasservi"
+          + "cemgmt.v1beta1.Release.AnnotationsEntryB\003\340A\001\022\031\n"
           + "\003uid\030\331O \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\022\n"
           + "\004etag\030\332O \001(\tB\003\340A\003\0225\n"
           + "\013create_time\030\277P \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
@@ -420,13 +463,13 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:z\352Aw\n"
-          + "&saasservicemgmt.googleapis.com/Release\022:projects/{proje"
-          + "ct}/locations/{location}/releases/{release}*\010releases2\007release\"\336\001\n"
+          + "&saasservicemgmt.googleapis.com/Release\022:projects/{project}/location"
+          + "s/{location}/releases/{release}*\010releases2\007release\"\336\001\n"
           + "\017VariableMapping\022S\n"
-          + "\004from\030\002 \001(\0132>.google.cloud.saasplat"
-          + "form.saasservicemgmt.v1beta1.FromMappingB\003\340A\001H\000\022O\n"
-          + "\002to\030\003 \001(\0132<.google.cloud.saasp"
-          + "latform.saasservicemgmt.v1beta1.ToMappingB\003\340A\001H\000\022\025\n"
+          + "\004from\030\002"
+          + " \001(\0132>.google.cloud.saasplatform.saasservicemgmt.v1beta1.FromMappingB\003\340A\001H\000\022O\n"
+          + "\002to\030\003"
+          + " \001(\0132<.google.cloud.saasplatform.saasservicemgmt.v1beta1.ToMappingB\003\340A\001H\000\022\025\n"
           + "\010variable\030\001 \001(\tB\003\340A\002B\016\n"
           + "\014mapping_type\"D\n"
           + "\013FromMapping\022\027\n\n"
@@ -439,13 +482,47 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
           + "Dependency\022E\n"
           + "\tunit_kind\030\001 \001(\tB2\340A\002\340A\005\372A)\n"
           + "\'saasservicemgmt.googleapis.com/UnitKind\022\022\n"
-          + "\005alias\030\002 \001(\tB\003\340A\002B\331\002\n"
-          + "5com.google.cloud.saasplatform.saasservicemgmt.v1beta1B\035SaasDeploymentsReso"
-          + "urcesProtoP\001Z_cloud.google.com/go/saasplatform/saasservicemgmt/apiv1beta1/saasse"
-          + "rvicemgmtpb;saasservicemgmtpb\252\0021Google.Cloud.SaasPlatform.SaasServiceMgmt.V1Beta"
-          + "1\312\0021Google\\Cloud\\SaasPlatform\\SaasServic"
-          + "eMgmt\\V1beta1\352\0025Google::Cloud::SaasPlatf"
-          + "orm::SaasServiceMgmt::V1beta1b\006proto3"
+          + "\005alias\030\002 \001(\tB\003\340A\002\"\322\001\n"
+          + "\014CompositeRef\022U\n"
+          + "\024application_template\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/designcenter.googleapis.com/ApplicationTemplate\022N\n"
+          + "\010revision\030\002 \001(\tB<\372A9\n"
+          + "7designcenter.googleapis.com/ApplicationTemplateRevision\022\033\n"
+          + "\016sync_operation\030\003 \001(\tB\003\340A\003\"\213\001\n"
+          + "\014ComponentRef\022V\n\r"
+          + "composite_ref\030\001 \001"
+          + "(\0132?.google.cloud.saasplatform.saasservicemgmt.v1beta1.CompositeRef\022\021\n"
+          + "\tcomponent\030\002 \001(\t\022\020\n"
+          + "\010revision\030\003 \001(\t\"\273\002\n"
+          + "\tAppParams\022\r"
+          + "\n"
+          + "\005group\030\001 \001(\t\022Q\n"
+          + "\005scope\030\002 \001(\0132B.google.cl"
+          + "oud.saasplatform.saasservicemgmt.v1beta1.AppParams.Scope\032\313\001\n"
+          + "\005Scope\022Z\n"
+          + "\004type\030\001 \001(\0162G.google.cloud.saasplatform.saasservice"
+          + "mgmt.v1beta1.AppParams.Scope.TypeB\003\340A\002\"f\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "TYPE_REGIONAL\020\001\022\017\n"
+          + "\013TYPE_GLOBAL\020\002\022\020\n"
+          + "\010REGIONAL\020\001\032\002\010\001\022\016\n"
+          + "\006GLOBAL\020\002\032\002\010\001\032\002\020\001B\374\006\n"
+          + "5com.google.cloud.saasplatform.saasservicemgmt.v1beta1"
+          + "B\035SaasDeploymentsResourcesProtoP\001Z_cloud.google.com/go/saasplatform/saasservicem"
+          + "gmt/apiv1beta1/saasservicemgmtpb;saasservicemgmtpb\252\0021Google.Cloud.SaasPlatform.S"
+          + "aasServiceMgmt.V1Beta1\312\0021Google\\Cloud\\Sa"
+          + "asPlatform\\SaasServiceMgmt\\V1beta1\352\0025Goo"
+          + "gle::Cloud::SaasPlatform::SaasServiceMgmt::V1beta1\352Ag\n"
+          + "!apphub.googleapis.com/Application\022Bprojects/{project}/locations/{"
+          + "location}/applications/{application}\352A\377\001\n"
+          + "/designcenter.googleapis.com/ApplicationTemplate\022aprojects/{project}/locations/"
+          + "{location}/spaces/{space}/applicationTemplates/{applicationTemplate}\022iprojects/{"
+          + "project}/locations/{location}/workspaces"
+          + "/{workspace}/applicationTemplates/{applicationTemplate}\352A\262\001\n"
+          + "7designcenter.googleapis.com/ApplicationTemplateRevision\022wpr"
+          + "ojects/{project}/locations/{location}/spaces/{space}/applicationTemplates/{appli"
+          + "cation_template}/revisions/{revision}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -456,6 +533,7 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Location_descriptor =
         getDescriptor().getMessageType(0);
@@ -473,6 +551,11 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
             new java.lang.String[] {
               "Name",
               "Locations",
+              "ApplicationTemplate",
+              "BlueprintRepo",
+              "State",
+              "Conditions",
+              "Error",
               "Labels",
               "Annotations",
               "Uid",
@@ -544,6 +627,8 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
               "InputVariableMappings",
               "OutputVariableMappings",
               "Saas",
+              "ApplicationTemplateComponent",
+              "AppParams",
               "Labels",
               "Annotations",
               "Uid",
@@ -592,12 +677,15 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
               "ManagementMode",
               "SystemManagedState",
               "SystemCleanupAt",
+              "Application",
               "Labels",
               "Annotations",
               "Uid",
               "Etag",
               "CreateTime",
               "UpdateTime",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Unit_MaintenanceSettings_descriptor =
         internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_Unit_descriptor
@@ -659,6 +747,7 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
               "Etag",
               "CreateTime",
               "UpdateTime",
+              "DeleteTime",
               "UnitOperationType",
             });
     internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_UnitOperation_LabelsEntry_descriptor =
@@ -722,6 +811,7 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
               "InputVariables",
               "OutputVariables",
               "InputVariableDefaults",
+              "ApplicationTemplateComponent",
               "Labels",
               "Annotations",
               "Uid",
@@ -788,17 +878,52 @@ public final class SaasDeploymentsResourcesProto extends com.google.protobuf.Gen
             new java.lang.String[] {
               "UnitKind", "Alias",
             });
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_CompositeRef_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_CompositeRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_CompositeRef_descriptor,
+            new java.lang.String[] {
+              "ApplicationTemplate", "Revision", "SyncOperation",
+            });
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_ComponentRef_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_ComponentRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_ComponentRef_descriptor,
+            new java.lang.String[] {
+              "CompositeRef", "Component", "Revision",
+            });
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_descriptor,
+            new java.lang.String[] {
+              "Group", "Scope",
+            });
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_Scope_descriptor =
+        internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_Scope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_saasplatform_saasservicemgmt_v1beta1_AppParams_Scope_descriptor,
+            new java.lang.String[] {
+              "Type",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

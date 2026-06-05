@@ -76,7 +76,20 @@ public interface HeartRateOrBuilder
    * Required. The heart rate value in beats per minute.
    * </pre>
    *
-   * <code>int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the beatsPerMinute field is set.
+   */
+  boolean hasBeatsPerMinute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The heart rate value in beats per minute.
+   * </pre>
+   *
+   * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The beatsPerMinute.
    */

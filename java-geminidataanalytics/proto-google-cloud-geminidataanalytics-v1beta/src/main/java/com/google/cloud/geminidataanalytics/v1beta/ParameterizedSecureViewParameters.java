@@ -54,23 +54,13 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
     super(builder);
   }
 
-  private ParameterizedSecureViewParameters() {}
+  private ParameterizedSecureViewParameters() {
+    parameters_ = java.util.Collections.emptyList();
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
         .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_descriptor;
-  }
-
-  @SuppressWarnings({"rawtypes"})
-  @java.lang.Override
-  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-      int number) {
-    switch (number) {
-      case 1:
-        return internalGetParameters();
-      default:
-        throw new RuntimeException("Invalid map field number: " + number);
-    }
   }
 
   @java.lang.Override
@@ -84,31 +74,946 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
                 .class);
   }
 
-  public static final int PARAMETERS_FIELD_NUMBER = 1;
+  public interface ParameterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter)
+      com.google.protobuf.MessageOrBuilder {
 
-  private static final class ParametersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
-                .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_ParametersEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter key (e.g., `"user_id"`).
+     * </pre>
+     *
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The key.
+     */
+    java.lang.String getKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter key (e.g., `"user_id"`).
+     * </pre>
+     *
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for key.
+     */
+    com.google.protobuf.ByteString getKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter value (e.g., `"123"`).
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
+     */
+    java.lang.String getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter value (e.g., `"123"`).
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString getValueBytes();
   }
 
-  @SuppressWarnings("serial")
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Represents a single parameter for Parameterized Secure Views.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter}
+   */
+  public static final class Parameter extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter)
+      ParameterOrBuilder {
+    private static final long serialVersionUID = 0L;
 
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParameters() {
-    if (parameters_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(ParametersDefaultEntryHolder.defaultEntry);
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Parameter");
     }
+
+    // Use Parameter.newBuilder() to construct.
+    private Parameter(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Parameter() {
+      key_ = "";
+      value_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
+          .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_Parameter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
+          .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_Parameter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .Parameter.class,
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .Parameter.Builder.class);
+    }
+
+    public static final int KEY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter key (e.g., `"user_id"`).
+     * </pre>
+     *
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The key.
+     */
+    @java.lang.Override
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter key (e.g., `"user_id"`).
+     * </pre>
+     *
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for key.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter value (e.g., `"123"`).
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The parameter value (e.g., `"123"`).
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+              .Parameter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+          other =
+              (com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                      .Parameter)
+                  obj;
+
+      if (!getKey().equals(other.getKey())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a single parameter for Parameterized Secure Views.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter)
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .ParameterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_Parameter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_Parameter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter.class,
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        key_ = "";
+        value_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.geminidataanalytics.v1beta.DataChatServiceProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_Parameter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+          getDefaultInstanceForType() {
+        return com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+          build() {
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+          buildPartial() {
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            result =
+                new com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .Parameter) {
+          return mergeFrom(
+              (com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                      .Parameter)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+              other) {
+        if (other
+            == com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .Parameter.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  key_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  value_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object key_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter key (e.g., `"user_id"`).
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The key.
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter key (e.g., `"user_id"`).
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for key.
+       */
+      public com.google.protobuf.ByteString getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter key (e.g., `"user_id"`).
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        key_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter key (e.g., `"user_id"`).
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter key (e.g., `"user_id"`).
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        key_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter value (e.g., `"123"`).
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter value (e.g., `"123"`).
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter value (e.g., `"123"`).
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter value (e.g., `"123"`).
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The parameter value (e.g., `"123"`).
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter)
+    private static final com.google.cloud.geminidataanalytics.v1beta
+            .ParameterizedSecureViewParameters.Parameter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+              .Parameter();
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .Parameter
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Parameter> PARSER =
+        new com.google.protobuf.AbstractParser<Parameter>() {
+          @java.lang.Override
+          public Parameter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Parameter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Parameter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public static final int PARAMETERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter>
+      parameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Named parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter>
+      getParametersList() {
     return parameters_;
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Named parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .ParameterOrBuilder>
+      getParametersOrBuilderList() {
+    return parameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Named parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
   public int getParametersCount() {
-    return internalGetParameters().getMap().size();
+    return parameters_.size();
   }
 
   /**
@@ -116,26 +1021,16 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
    *
    * <pre>
    * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public boolean containsParameters(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    return internalGetParameters().getMap().containsKey(key);
-  }
-
-  /** Use {@link #getParametersMap()} instead. */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.String> getParameters() {
-    return getParametersMap();
+  public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+      getParameters(int index) {
+    return parameters_.get(index);
   }
 
   /**
@@ -143,64 +1038,17 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
    *
    * <pre>
    * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
-    return internalGetParameters().getMap();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public /* nullable */ java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      /* nullable */
-      java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.lang.String getParametersOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
+  public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+          .ParameterOrBuilder
+      getParametersOrBuilder(int index) {
+    return parameters_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -217,8 +1065,9 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
-        output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 1);
+    for (int i = 0; i < parameters_.size(); i++) {
+      output.writeMessage(1, parameters_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -228,15 +1077,8 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetParameters().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
-          ParametersDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, parameters__);
+    for (int i = 0; i < parameters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, parameters_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -255,7 +1097,7 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
     com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters other =
         (com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters) obj;
 
-    if (!internalGetParameters().equals(other.internalGetParameters())) return false;
+    if (!getParametersList().equals(other.getParametersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -267,9 +1109,9 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (!internalGetParameters().getMap().isEmpty()) {
+    if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetParameters().hashCode();
+      hash = (53 * hash) + getParametersList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -399,28 +1241,6 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
           .internal_static_google_cloud_geminidataanalytics_v1beta_ParameterizedSecureViewParameters_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetParameters();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetMutableParameters();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -444,7 +1264,13 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      internalGetMutableParameters().clear();
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+      } else {
+        parameters_ = null;
+        parametersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -476,6 +1302,7 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
         buildPartial() {
       com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters result =
           new com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -483,13 +1310,22 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters result) {
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.parameters_ = parameters_;
+      } else {
+        result.parameters_ = parametersBuilder_.build();
+      }
+    }
+
     private void buildPartial0(
         com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.parameters_ = internalGetParameters();
-        result.parameters_.makeImmutable();
-      }
     }
 
     @java.lang.Override
@@ -510,8 +1346,33 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
       if (other
           == com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
               .getDefaultInstance()) return this;
-      internalGetMutableParameters().mergeFrom(other.internalGetParameters());
-      bitField0_ |= 0x00000001;
+      if (parametersBuilder_ == null) {
+        if (!other.parameters_.isEmpty()) {
+          if (parameters_.isEmpty()) {
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureParametersIsMutable();
+            parameters_.addAll(other.parameters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parameters_.isEmpty()) {
+          if (parametersBuilder_.isEmpty()) {
+            parametersBuilder_.dispose();
+            parametersBuilder_ = null;
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            parametersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetParametersFieldBuilder()
+                    : null;
+          } else {
+            parametersBuilder_.addAllMessages(other.parameters_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -540,14 +1401,19 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
               break;
             case 10:
               {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
-                    input.readMessage(
-                        ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
-                        extensionRegistry);
-                internalGetMutableParameters()
-                    .getMutableMap()
-                    .put(parameters__.getKey(), parameters__.getValue());
-                bitField0_ |= 0x00000001;
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                        .Parameter
+                    m =
+                        input.readMessage(
+                            com.google.cloud.geminidataanalytics.v1beta
+                                .ParameterizedSecureViewParameters.Parameter.parser(),
+                            extensionRegistry);
+                if (parametersBuilder_ == null) {
+                  ensureParametersIsMutable();
+                  parameters_.add(m);
+                } else {
+                  parametersBuilder_.addMessage(m);
+                }
                 break;
               } // case 10
             default:
@@ -569,33 +1435,66 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
 
     private int bitField0_;
 
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
+    private java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter>
+        parameters_ = java.util.Collections.emptyList();
 
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetParameters() {
-      if (parameters_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
-      }
-      return parameters_;
-    }
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableParameters() {
-      if (parameters_ == null) {
+    private void ensureParametersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         parameters_ =
-            com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
+            new java.util.ArrayList<
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter>(parameters_);
+        bitField0_ |= 0x00000001;
       }
-      if (!parameters_.isMutable()) {
-        parameters_ = parameters_.copy();
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return parameters_;
     }
 
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .ParameterOrBuilder>
+        parametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter>
+        getParametersList() {
+      if (parametersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parameters_);
+      } else {
+        return parametersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public int getParametersCount() {
-      return internalGetParameters().getMap().size();
+      if (parametersBuilder_ == null) {
+        return parameters_.size();
+      } else {
+        return parametersBuilder_.getCount();
+      }
     }
 
     /**
@@ -603,26 +1502,19 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Override
-    public boolean containsParameters(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+        getParameters(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessage(index);
       }
-      return internalGetParameters().getMap().containsKey(key);
-    }
-
-    /** Use {@link #getParametersMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getParameters() {
-      return getParametersMap();
     }
 
     /**
@@ -630,16 +1522,27 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
-      return internalGetParameters().getMap();
+    public Builder setParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.set(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, value);
+      }
+      return this;
     }
 
     /**
@@ -647,23 +1550,25 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Override
-    public /* nullable */ java.lang.String getParametersOrDefault(
-        java.lang.String key,
-        /* nullable */
-        java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
+    public Builder setParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder
+            builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, builderForValue.build());
       }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
+      return this;
     }
 
     /**
@@ -671,28 +1576,153 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Override
-    public java.lang.String getParametersOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
+    public Builder addParameters(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(value);
       }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+      return this;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder
+            builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder
+            builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllParameters(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                        .Parameter>
+            values) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
+        onChanged();
+      } else {
+        parametersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
     public Builder clearParameters() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      internalGetMutableParameters().getMutableMap().clear();
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        parametersBuilder_.clear();
+      }
       return this;
     }
 
@@ -701,49 +1731,20 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder removeParameters(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
+    public Builder removeParameters(int index) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.remove(index);
+        onChanged();
+      } else {
+        parametersBuilder_.remove(index);
       }
-      internalGetMutableParameters().getMutableMap().remove(key);
-      return this;
-    }
-
-    /** Use alternate mutation accessors instead. */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
-      bitField0_ |= 0x00000001;
-      return internalGetMutableParameters().getMutableMap();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder putParameters(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      if (value == null) {
-        throw new NullPointerException("map value");
-      }
-      internalGetMutableParameters().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -752,17 +1753,141 @@ public final class ParameterizedSecureViewParameters extends com.google.protobuf
      *
      * <pre>
      * Optional. Named parameters for Parameterized Secure Views (PSV).
-     * The map keys are parameter names (e.g., `"user_id"`), and values are the
-     * corresponding parameter values (e.g., `"123"`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableParameters().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000001;
-      return this;
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            .Builder
+        getParametersBuilder(int index) {
+      return internalGetParametersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+            .ParameterOrBuilder
+        getParametersOrBuilder(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .ParameterOrBuilder>
+        getParametersOrBuilderList() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parameters_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            .Builder
+        addParametersBuilder() {
+      return internalGetParametersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .Parameter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+            .Builder
+        addParametersBuilder(int index) {
+      return internalGetParametersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .Parameter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Named parameters for Parameterized Secure Views (PSV).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder>
+        getParametersBuilderList() {
+      return internalGetParametersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+                .Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                .ParameterOrBuilder>
+        internalGetParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter,
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .Parameter.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                    .ParameterOrBuilder>(
+                parameters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters)

@@ -53,6 +53,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -331,6 +333,17 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<PushCredentialsRequest, Operation>
+      pushCredentialsMethodDescriptor =
+          MethodDescriptor.<PushCredentialsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.workstations.v1beta.Workstations/PushCredentials")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PushCredentialsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
       MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -435,6 +448,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
       stopWorkstationOperationCallable;
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
+  private final UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable;
+  private final OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -723,6 +739,17 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                     })
                 .setResourceNameExtractor(request -> request.getWorkstation())
                 .build();
+    GrpcCallSettings<PushCredentialsRequest, Operation> pushCredentialsTransportSettings =
+        GrpcCallSettings.<PushCredentialsRequest, Operation>newBuilder()
+            .setMethodDescriptor(pushCredentialsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workstation", String.valueOf(request.getWorkstation()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getWorkstation())
+            .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
@@ -939,6 +966,15 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             generateAccessTokenTransportSettings,
             settings.generateAccessTokenSettings(),
             clientContext);
+    this.pushCredentialsCallable =
+        callableFactory.createUnaryCallable(
+            pushCredentialsTransportSettings, settings.pushCredentialsSettings(), clientContext);
+    this.pushCredentialsOperationCallable =
+        callableFactory.createOperationCallable(
+            pushCredentialsTransportSettings,
+            settings.pushCredentialsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -1168,6 +1204,17 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    return pushCredentialsCallable;
+  }
+
+  @Override
+  public OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    return pushCredentialsOperationCallable;
   }
 
   @Override

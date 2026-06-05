@@ -381,6 +381,98 @@ public interface AuthzPolicyOrBuilder
    *
    *
    * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule> getNetworkRulesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule getNetworkRules(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getNetworkRulesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>
+      getNetworkRulesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder getNetworkRulesOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`.
    *
    * When the action is `CUSTOM`, `customProvider` must be specified.

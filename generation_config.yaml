@@ -1,5 +1,5 @@
-googleapis_commitish: 3aa565f453bae9dcef06685a6f84b6e48ccdf335
-libraries_bom_version: 26.82.0
+googleapis_commitish: 0db4dc67dd805d20294c6dc34068c37f546d71da
+libraries_bom_version: 26.83.0
 is_monorepo: true
 libraries:
 - api_shortname: accessapproval
@@ -284,6 +284,21 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/automl/v1
   - proto_path: google/cloud/automl/v1beta1
+# - api_shortname: backstory
+#   name_pretty: Malachite Common Protos
+#   product_documentation: https://cloud.google.com/chronicle/docs/secops/secops-overview
+#   api_description: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
+#   client_documentation: 
+#     https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+#   release_level: preview
+#   distribution_name: com.google.cloud:google-cloud-backstory
+#   api_id: backstory.googleapis.com
+#   library_type: GAPIC_AUTO
+#   group_id: com.google.cloud
+#   cloud_api: true
+#   GAPICs:
+#   - proto_path: backstory
+#   requires_billing: true
 - api_shortname: backupdr
   name_pretty: Backup and DR Service API
   product_documentation: https://cloud.google.com/backup-disaster-recovery/docs/concepts/backup-dr
@@ -446,6 +461,25 @@ libraries:
   - proto_path: google/cloud/bigquery/storage/v1beta1
   - proto_path: google/cloud/bigquery/storage/v1beta2
   - proto_path: google/cloud/bigquery/storage/v1beta
+- api_shortname: bigtable
+  api_description: API for reading and writing the contents of Bigtables associated
+    with a cloud project.
+  name_pretty: Cloud Bigtable
+  product_documentation: https://cloud.google.com/bigtable
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/559777
+  release_level: stable
+  distribution_name: com.google.cloud:google-cloud-bigtable
+  codeowner_team: '@googleapis/bigtable-team'
+  api_id: bigtable.googleapis.com
+  library_type: GAPIC_COMBO
+  extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
+  excluded_poms: google-cloud-bigtable-bom
+  recommended_package: com.google.cloud.bigtable
+  GAPICs:
+  - proto_path: google/bigtable/v2
+  - proto_path: google/bigtable/admin/v2
 - api_shortname: cloudbilling
   name_pretty: Cloud Billing
   product_documentation: https://cloud.google.com/billing/docs
@@ -649,6 +683,31 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/support/v2
   - proto_path: google/cloud/support/v2beta
+- api_shortname: common-protos
+  name_pretty: Common Protos
+  product_documentation: https://github.com/googleapis/api-common-protos
+  api_description: Protobuf classes for Google's common protos.
+  release_level: stable
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
+  distribution_name: com.google.api.grpc:proto-google-common-protos
+  excluded_dependencies: 
+    grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
+  excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
+  library_type: OTHER
+  GAPICs:
+  - proto_path: google/api
+  - proto_path: google/apps/card/v1
+  - proto_path: google/cloud
+  - proto_path: google/cloud/audit
+  - proto_path: google/cloud/location
+  - proto_path: google/geo/type
+  - proto_path: google/logging/type
+  - proto_path: google/longrunning
+  - proto_path: google/rpc
+  - proto_path: google/rpc/context
+  - proto_path: google/shopping/type
+  - proto_path: google/type
 - api_shortname: compute
   name_pretty: Compute Engine
   product_documentation: https://cloud.google.com/compute/
@@ -946,6 +1005,22 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/developerconnect/v1
   requires_billing: true
+- api_shortname: developerknowledge
+  name_pretty: Developer Knowledge API
+  product_documentation: https://developers.google.com/knowledge
+  api_description: The Developer Knowledge API provides access to Google's developer
+    knowledge
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-developer-knowledge/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-developer-knowledge
+  api_id: developerknowledge.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/developers/knowledge/v1
+  requires_billing: true
 - api_shortname: devicestreaming
   name_pretty: Device Streaming API
   product_documentation: https://cloud.google.com/device-streaming/docs
@@ -1143,6 +1218,31 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/financialservices/v1
   requires_billing: true
+- api_shortname: firestore
+  name_pretty: Cloud Firestore
+  product_documentation: https://cloud.google.com/firestore
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/5337669
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-firestore
+  codeowner_team: '@googleapis/firestore-team'
+  api_id: firestore.googleapis.com
+  library_type: GAPIC_COMBO
+  api_description: is a fully-managed NoSQL document database for mobile, web, and
+    server development from Firebase and Google Cloud Platform.  It's backed by a
+    multi-region replicated database that ensures once data is committed, it's durable
+    even in the face of unexpected disasters. Not only that, but despite being a distributed
+    database, it's also strongly consistent and offers seamless integration with other
+    Firebase and Google Cloud Platform products, including Google Cloud Functions.
+  transport: grpc
+  excluded_poms: google-cloud-firestore,google-cloud-firestore-bom
+  recommended_package: com.google.cloud.firestore
+  GAPICs:
+  - proto_path: google/firestore/v1
+  - proto_path: google/firestore/admin/v1
+  - proto_path: google/firestore/bundle
 - api_shortname: cloudfunctions
   name_pretty: Cloud Functions
   product_documentation: https://cloud.google.com/functions
@@ -1192,6 +1292,7 @@ libraries:
   group_id: com.google.cloud
   cloud_api: true
   GAPICs:
+  - proto_path: google/cloud/geminidataanalytics/v1
   - proto_path: google/cloud/geminidataanalytics/v1beta
   requires_billing: true
   rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
@@ -1315,6 +1416,22 @@ libraries:
   - proto_path: google/cloud/hypercomputecluster/v1beta
   - proto_path: google/cloud/hypercomputecluster/v1
   requires_billing: true
+- api_shortname: iam
+  name_pretty: IAM
+  product_documentation: https://cloud.google.com/iam
+  api_description: Manages access control for Google Cloud Platform resources
+  release_level: stable
+  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
+  distribution_name: com.google.api.grpc:proto-google-iam-v1
+  excluded_dependencies: grpc-google-iam-v1
+  excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
+  library_type: OTHER
+  GAPICs:
+  - proto_path: google/iam/v1
+  - proto_path: google/iam/v2
+  - proto_path: google/iam/v2beta
+  - proto_path: google/iam/v3
+  - proto_path: google/iam/v3beta
 - api_shortname: iam-admin
   name_pretty: IAM Admin API
   product_documentation: https://cloud.google.com/iam/docs/apis
@@ -2140,6 +2257,27 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/security/publicca/v1beta1
   - proto_path: google/cloud/security/publicca/v1
+- api_shortname: pubsub
+  name_pretty: Cloud Pub/Sub
+  api_reference: https://cloud.google.com/pubsub/
+  product_documentation: https://cloud.google.com/pubsub/docs/
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
+  api_description: is designed to provide reliable, many-to-many, asynchronous messaging
+    between applications. Publisher applications can send messages to a topic and
+    other applications can subscribe to that topic to receive the messages. By decoupling
+    senders and receivers, Google Cloud Pub/Sub allows developers to communicate between
+    independently written applications.
+  issue_tracker: https://issuetracker.google.com/savedsearches/559741
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-pubsub
+  codeowner_team: '@googleapis/pubsub-team'
+  api_id: pubsub.googleapis.com
+  library_type: GAPIC_COMBO
+  requires_billing: true
+  recommended_package: com.google.cloud.pubsub.v1
+  GAPICs:
+  - proto_path: google/pubsub/v1
 - api_shortname: rapidmigrationassessment
   name_pretty: Rapid Migration Assessment API
   product_documentation: https://cloud.google.com/migration-center/docs
@@ -2596,6 +2734,15 @@ libraries:
   - proto_path: google/shopping/merchant/reviews/v1beta
   requires_billing: true
   library_name: shopping-merchant-reviews
+- api_shortname: showcase
+  excluded_poms: gapic-showcase-bom
+  name_pretty: Showcase
+  api_description: Showcase module
+  product_documentation: https://cloud.google.com/dummy
+  distribution_name: com.google.cloud:gapic-showcase
+  library_type: OTHER
+  GAPICs:
+  - proto_path: schema/google/showcase/v1beta1
 - api_shortname: spanner
   name_pretty: Cloud Spanner
   product_documentation: https://cloud.google.com/spanner/docs/
@@ -3046,114 +3193,3 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
-- api_shortname: common-protos
-  name_pretty: Common Protos
-  product_documentation: https://github.com/googleapis/api-common-protos
-  api_description: Protobuf classes for Google's common protos.
-  release_level: stable
-  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
-  distribution_name: com.google.api.grpc:proto-google-common-protos
-  excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
-  excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
-  library_type: OTHER
-  GAPICs:
-  - proto_path: google/api
-  - proto_path: google/apps/card/v1
-  - proto_path: google/cloud
-  - proto_path: google/cloud/audit
-  - proto_path: google/cloud/location
-  - proto_path: google/geo/type
-  - proto_path: google/logging/type
-  - proto_path: google/longrunning
-  - proto_path: google/rpc
-  - proto_path: google/rpc/context
-  - proto_path: google/shopping/type
-  - proto_path: google/type
-- api_shortname: showcase
-  excluded_poms: gapic-showcase-bom
-  name_pretty: Showcase
-  api_description: Showcase module
-  product_documentation: https://cloud.google.com/dummy
-  distribution_name: com.google.cloud:gapic-showcase
-  library_type: OTHER
-  GAPICs:
-  - proto_path: schema/google/showcase/v1beta1
-- api_shortname: iam
-  name_pretty: IAM
-  product_documentation: https://cloud.google.com/iam
-  api_description: Manages access control for Google Cloud Platform resources
-  release_level: stable
-  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
-  distribution_name: com.google.api.grpc:proto-google-iam-v1
-  excluded_dependencies: "grpc-google-iam-v1"
-  excluded_poms: "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1"
-  library_type: OTHER
-  GAPICs:
-  - proto_path: google/iam/v1
-  - proto_path: google/iam/v2
-  - proto_path: google/iam/v2beta
-  - proto_path: google/iam/v3
-  - proto_path: google/iam/v3beta
-- api_shortname: pubsub
-  name_pretty: Cloud Pub/Sub
-  api_reference: https://cloud.google.com/pubsub/
-  product_documentation: https://cloud.google.com/pubsub/docs/
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
-  api_description: is designed to provide reliable, many-to-many, asynchronous messaging
-    between applications. Publisher applications can send messages to a topic and
-    other applications can subscribe to that topic to receive the messages. By decoupling
-    senders and receivers, Google Cloud Pub/Sub allows developers to communicate between
-    independently written applications.
-  issue_tracker: https://issuetracker.google.com/savedsearches/559741
-  release_level: stable
-  language: java
-  distribution_name: com.google.cloud:google-cloud-pubsub
-  codeowner_team: '@googleapis/pubsub-team'
-  api_id: pubsub.googleapis.com
-  library_type: GAPIC_COMBO
-  requires_billing: true
-  recommended_package: com.google.cloud.pubsub.v1
-  GAPICs:
-  - proto_path: google/pubsub/v1
-- api_shortname: bigtable
-  api_description: API for reading and writing the contents of Bigtables associated
-    with a cloud project.
-  name_pretty: Cloud Bigtable
-  product_documentation: https://cloud.google.com/bigtable
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
-  issue_tracker: https://issuetracker.google.com/savedsearches/559777
-  release_level: stable
-  distribution_name: com.google.cloud:google-cloud-bigtable
-  codeowner_team: '@googleapis/bigtable-team'
-  api_id: bigtable.googleapis.com
-  library_type: GAPIC_COMBO
-  extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
-  excluded_poms: google-cloud-bigtable-bom
-  recommended_package: com.google.cloud.bigtable
-  GAPICs:
-  - proto_path: google/bigtable/v2
-  - proto_path: google/bigtable/admin/v2
-- api_shortname: firestore
-  name_pretty: Cloud Firestore
-  product_documentation: https://cloud.google.com/firestore
-  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
-  issue_tracker: https://issuetracker.google.com/savedsearches/5337669
-  release_level: stable
-  language: java
-  distribution_name: com.google.cloud:google-cloud-firestore
-  codeowner_team: '@googleapis/firestore-team'
-  api_id: firestore.googleapis.com
-  library_type: GAPIC_COMBO
-  api_description: is a fully-managed NoSQL document database for mobile, web, and
-    server development from Firebase and Google Cloud Platform.  It's backed by a
-    multi-region replicated database that ensures once data is committed, it's durable
-    even in the face of unexpected disasters. Not only that, but despite being a distributed
-    database, it's also strongly consistent and offers seamless integration with other
-    Firebase and Google Cloud Platform products, including Google Cloud Functions.
-  transport: grpc
-  excluded_poms: google-cloud-firestore,google-cloud-firestore-bom
-  recommended_package: com.google.cloud.firestore
-  GAPICs:
-  - proto_path: google/firestore/v1
-  - proto_path: google/firestore/admin/v1
-  - proto_path: google/firestore/bundle

@@ -158,4 +158,64 @@ class BigQueryJdbcTypeMappings {
   private static <K, V> SimpleEntry<K, V> entry(K key, V value) {
     return new SimpleEntry<>(key, value);
   }
+
+  static class ColumnTypeInfo {
+    final int jdbcType;
+    final String typeName;
+    final Integer columnSize;
+    final Integer decimalDigits;
+    final Integer numPrecRadix;
+
+    ColumnTypeInfo(
+        int jdbcType,
+        String typeName,
+        Integer columnSize,
+        Integer decimalDigits,
+        Integer numPrecRadix) {
+      this.jdbcType = jdbcType;
+      this.typeName = typeName;
+      this.columnSize = columnSize;
+      this.decimalDigits = decimalDigits;
+      this.numPrecRadix = numPrecRadix;
+    }
+  }
+
+  static final Map<StandardSQLTypeName, ColumnTypeInfo> STANDARD_TYPE_INFO =
+      ImmutableMap.<StandardSQLTypeName, ColumnTypeInfo>builder()
+          .put(StandardSQLTypeName.INT64, new ColumnTypeInfo(Types.BIGINT, "INT64", 19, 0, 10))
+          .put(StandardSQLTypeName.BOOL, new ColumnTypeInfo(Types.BOOLEAN, "BOOL", 1, null, null))
+          .put(
+              StandardSQLTypeName.FLOAT64,
+              new ColumnTypeInfo(Types.DOUBLE, "FLOAT64", 15, null, 10))
+          .put(StandardSQLTypeName.NUMERIC, new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 38, 9, 10))
+          .put(
+              StandardSQLTypeName.BIGNUMERIC,
+              new ColumnTypeInfo(Types.NUMERIC, "BIGNUMERIC", 77, 38, 10))
+          .put(
+              StandardSQLTypeName.STRING,
+              new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null))
+          .put(
+              StandardSQLTypeName.TIMESTAMP,
+              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 26, 6, null))
+          .put(
+              StandardSQLTypeName.DATETIME,
+              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 26, 6, null))
+          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, 0, null))
+          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, 6, null))
+          .put(
+              StandardSQLTypeName.GEOGRAPHY,
+              new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null))
+          .put(StandardSQLTypeName.JSON, new ColumnTypeInfo(Types.OTHER, "JSON", null, null, null))
+          .put(
+              StandardSQLTypeName.INTERVAL,
+              new ColumnTypeInfo(Types.OTHER, "INTERVAL", null, null, null))
+          .put(
+              StandardSQLTypeName.RANGE, new ColumnTypeInfo(Types.OTHER, "RANGE", null, null, null))
+          .put(
+              StandardSQLTypeName.BYTES,
+              new ColumnTypeInfo(Types.VARBINARY, "BYTES", null, null, null))
+          .put(
+              StandardSQLTypeName.STRUCT,
+              new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
+          .build();
 }

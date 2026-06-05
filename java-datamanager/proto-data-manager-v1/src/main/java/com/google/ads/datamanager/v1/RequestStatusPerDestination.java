@@ -94,7 +94,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request succeeded.
+     * Processing succeeded for all records without any errors. However, there
+     * may be warnings in the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field.
      * </pre>
      *
      * <code>SUCCESS = 1;</code>
@@ -114,7 +117,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request failed.
+     * Processing failed for all records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -124,7 +131,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request partially succeeded.
+     * Processing completed successfully without errors for some records, but
+     * failed with errors for other records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>PARTIAL_SUCCESS = 4;</code>
@@ -158,7 +170,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request succeeded.
+     * Processing succeeded for all records without any errors. However, there
+     * may be warnings in the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field.
      * </pre>
      *
      * <code>SUCCESS = 1;</code>
@@ -180,7 +195,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request failed.
+     * Processing failed for all records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -191,7 +210,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The request partially succeeded.
+     * Processing completed successfully without errors for some records, but
+     * failed with errors for other records. Check the
+     * [`error_info`][google.ads.datamanager.v1.RequestStatusPerDestination.error_info]
+     * field for error details, and check the
+     * [`warning_info`][google.ads.datamanager.v1.RequestStatusPerDestination.warning_info]
+     * field for warning details.
      * </pre>
      *
      * <code>PARTIAL_SUCCESS = 4;</code>
@@ -285,6 +309,223 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     }
 
     // @@protoc_insertion_point(enum_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of data.
+   * </pre>
+   *
+   * Protobuf enum {@code google.ads.datamanager.v1.RequestStatusPerDestination.DataType}
+   */
+  public enum DataType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The data type is unspecified.
+     * </pre>
+     *
+     * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
+     */
+    DATA_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The data is an email address.
+     * </pre>
+     *
+     * <code>EMAIL = 1;</code>
+     */
+    EMAIL(1),
+    /**
+     *
+     *
+     * <pre>
+     * The data is a phone number.
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 2;</code>
+     */
+    PHONE_NUMBER(2),
+    /**
+     *
+     *
+     * <pre>
+     * The data is a physical address.
+     * </pre>
+     *
+     * <code>ADDRESS = 3;</code>
+     */
+    ADDRESS(3),
+    /**
+     *
+     *
+     * <pre>
+     * The data is an IP address.
+     * </pre>
+     *
+     * <code>IP_ADDRESS = 4;</code>
+     */
+    IP_ADDRESS(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DataType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The data type is unspecified.
+     * </pre>
+     *
+     * <code>DATA_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATA_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The data is an email address.
+     * </pre>
+     *
+     * <code>EMAIL = 1;</code>
+     */
+    public static final int EMAIL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The data is a phone number.
+     * </pre>
+     *
+     * <code>PHONE_NUMBER = 2;</code>
+     */
+    public static final int PHONE_NUMBER_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The data is a physical address.
+     * </pre>
+     *
+     * <code>ADDRESS = 3;</code>
+     */
+    public static final int ADDRESS_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * The data is an IP address.
+     * </pre>
+     *
+     * <code>IP_ADDRESS = 4;</code>
+     */
+    public static final int IP_ADDRESS_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATA_TYPE_UNSPECIFIED;
+        case 1:
+          return EMAIL;
+        case 2:
+          return PHONE_NUMBER;
+        case 3:
+          return ADDRESS;
+        case 4:
+          return IP_ADDRESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
+          public DataType findValueByNumber(int number) {
+            return DataType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final DataType[] VALUES = values();
+
+    public static DataType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.ads.datamanager.v1.RequestStatusPerDestination.DataType)
   }
 
   public interface IngestAudienceMembersStatusOrBuilder
@@ -517,6 +758,51 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPpidDataStatusOrBuilder
         getPpidDataIngestionStatusOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     *
+     * @return Whether the compositeDataIngestionStatus field is set.
+     */
+    boolean hasCompositeDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     *
+     * @return The compositeDataIngestionStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+        getCompositeDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatusOrBuilder
+        getCompositeDataIngestionStatusOrBuilder();
+
     com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestAudienceMembersStatus.StatusCase
         getStatusCase();
   }
@@ -585,6 +871,7 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       PAIR_DATA_INGESTION_STATUS(3),
       USER_ID_DATA_INGESTION_STATUS(4),
       PPID_DATA_INGESTION_STATUS(5),
+      COMPOSITE_DATA_INGESTION_STATUS(6),
       STATUS_NOT_SET(0);
       private final int value;
 
@@ -614,6 +901,8 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
             return USER_ID_DATA_INGESTION_STATUS;
           case 5:
             return PPID_DATA_INGESTION_STATUS;
+          case 6:
+            return COMPOSITE_DATA_INGESTION_STATUS;
           case 0:
             return STATUS_NOT_SET;
           default:
@@ -960,6 +1249,73 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           .getDefaultInstance();
     }
 
+    public static final int COMPOSITE_DATA_INGESTION_STATUS_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     *
+     * @return Whether the compositeDataIngestionStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompositeDataIngestionStatus() {
+      return statusCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     *
+     * @return The compositeDataIngestionStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+        getCompositeDataIngestionStatus() {
+      if (statusCase_ == 6) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatusOrBuilder
+        getCompositeDataIngestionStatusOrBuilder() {
+      if (statusCase_ == 6) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1002,6 +1358,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         output.writeMessage(
             5,
             (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPpidDataStatus)
+                status_);
+      }
+      if (statusCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
                 status_);
       }
       getUnknownFields().writeTo(output);
@@ -1048,6 +1410,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                 (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPpidDataStatus)
                     status_);
       }
+      if (statusCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .IngestCompositeDataStatus)
+                    status_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1089,6 +1459,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           if (!getPpidDataIngestionStatus().equals(other.getPpidDataIngestionStatus()))
             return false;
           break;
+        case 6:
+          if (!getCompositeDataIngestionStatus().equals(other.getCompositeDataIngestionStatus()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -1123,6 +1497,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case 5:
           hash = (37 * hash) + PPID_DATA_INGESTION_STATUS_FIELD_NUMBER;
           hash = (53 * hash) + getPpidDataIngestionStatus().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + COMPOSITE_DATA_INGESTION_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getCompositeDataIngestionStatus().hashCode();
           break;
         case 0:
         default:
@@ -1307,6 +1685,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (ppidDataIngestionStatusBuilder_ != null) {
           ppidDataIngestionStatusBuilder_.clear();
         }
+        if (compositeDataIngestionStatusBuilder_ != null) {
+          compositeDataIngestionStatusBuilder_.clear();
+        }
         statusCase_ = 0;
         status_ = null;
         return this;
@@ -1377,6 +1758,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (statusCase_ == 5 && ppidDataIngestionStatusBuilder_ != null) {
           result.status_ = ppidDataIngestionStatusBuilder_.build();
         }
+        if (statusCase_ == 6 && compositeDataIngestionStatusBuilder_ != null) {
+          result.status_ = compositeDataIngestionStatusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1424,6 +1808,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           case PPID_DATA_INGESTION_STATUS:
             {
               mergePpidDataIngestionStatus(other.getPpidDataIngestionStatus());
+              break;
+            }
+          case COMPOSITE_DATA_INGESTION_STATUS:
+            {
+              mergeCompositeDataIngestionStatus(other.getCompositeDataIngestionStatus());
               break;
             }
           case STATUS_NOT_SET:
@@ -1497,6 +1886,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                   statusCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetCompositeDataIngestionStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2843,6 +3240,276 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         return ppidDataIngestionStatusBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestCompositeDataStatusOrBuilder>
+          compositeDataIngestionStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       *
+       * @return Whether the compositeDataIngestionStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasCompositeDataIngestionStatus() {
+        return statusCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       *
+       * @return The compositeDataIngestionStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          getCompositeDataIngestionStatus() {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 6) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestCompositeDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              .getDefaultInstance();
+        } else {
+          if (statusCase_ == 6) {
+            return compositeDataIngestionStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      public Builder setCompositeDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              value) {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          compositeDataIngestionStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      public Builder setCompositeDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                  .Builder
+              builderForValue) {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          compositeDataIngestionStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      public Builder mergeCompositeDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              value) {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 6
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestCompositeDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                    .newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .IngestCompositeDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 6) {
+            compositeDataIngestionStatusBuilder_.mergeFrom(value);
+          } else {
+            compositeDataIngestionStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      public Builder clearCompositeDataIngestionStatus() {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 6) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 6) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          compositeDataIngestionStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              .Builder
+          getCompositeDataIngestionStatusBuilder() {
+        return internalGetCompositeDataIngestionStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestCompositeDataStatusOrBuilder
+          getCompositeDataIngestionStatusOrBuilder() {
+        if ((statusCase_ == 6) && (compositeDataIngestionStatusBuilder_ != null)) {
+          return compositeDataIngestionStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 6) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestCompositeDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus composite_data_ingestion_status = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestCompositeDataStatusOrBuilder>
+          internalGetCompositeDataIngestionStatusFieldBuilder() {
+        if (compositeDataIngestionStatusBuilder_ == null) {
+          if (!(statusCase_ == 6)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                    .getDefaultInstance();
+          }
+          compositeDataIngestionStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestCompositeDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestCompositeDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestCompositeDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .IngestCompositeDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 6;
+        onChanged();
+        return compositeDataIngestionStatusBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestAudienceMembersStatus)
     }
 
@@ -3132,6 +3799,51 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePpidDataStatusOrBuilder
         getPpidDataRemovalStatusOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     *
+     * @return Whether the compositeDataRemovalStatus field is set.
+     */
+    boolean hasCompositeDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     *
+     * @return The compositeDataRemovalStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+        getCompositeDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatusOrBuilder
+        getCompositeDataRemovalStatusOrBuilder();
+
     com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatus.StatusCase
         getStatusCase();
   }
@@ -3200,6 +3912,7 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       PAIR_DATA_REMOVAL_STATUS(3),
       USER_ID_DATA_REMOVAL_STATUS(4),
       PPID_DATA_REMOVAL_STATUS(5),
+      COMPOSITE_DATA_REMOVAL_STATUS(6),
       STATUS_NOT_SET(0);
       private final int value;
 
@@ -3229,6 +3942,8 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
             return USER_ID_DATA_REMOVAL_STATUS;
           case 5:
             return PPID_DATA_REMOVAL_STATUS;
+          case 6:
+            return COMPOSITE_DATA_REMOVAL_STATUS;
           case 0:
             return STATUS_NOT_SET;
           default:
@@ -3575,6 +4290,73 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           .getDefaultInstance();
     }
 
+    public static final int COMPOSITE_DATA_REMOVAL_STATUS_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     *
+     * @return Whether the compositeDataRemovalStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompositeDataRemovalStatus() {
+      return statusCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     *
+     * @return The compositeDataRemovalStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+        getCompositeDataRemovalStatus() {
+      if (statusCase_ == 6) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatusOrBuilder
+        getCompositeDataRemovalStatusOrBuilder() {
+      if (statusCase_ == 6) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3617,6 +4399,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         output.writeMessage(
             5,
             (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePpidDataStatus)
+                status_);
+      }
+      if (statusCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
                 status_);
       }
       getUnknownFields().writeTo(output);
@@ -3663,6 +4451,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                 (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePpidDataStatus)
                     status_);
       }
+      if (statusCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .RemoveCompositeDataStatus)
+                    status_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3701,6 +4497,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case 5:
           if (!getPpidDataRemovalStatus().equals(other.getPpidDataRemovalStatus())) return false;
           break;
+        case 6:
+          if (!getCompositeDataRemovalStatus().equals(other.getCompositeDataRemovalStatus()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -3735,6 +4535,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case 5:
           hash = (37 * hash) + PPID_DATA_REMOVAL_STATUS_FIELD_NUMBER;
           hash = (53 * hash) + getPpidDataRemovalStatus().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + COMPOSITE_DATA_REMOVAL_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getCompositeDataRemovalStatus().hashCode();
           break;
         case 0:
         default:
@@ -3919,6 +4723,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (ppidDataRemovalStatusBuilder_ != null) {
           ppidDataRemovalStatusBuilder_.clear();
         }
+        if (compositeDataRemovalStatusBuilder_ != null) {
+          compositeDataRemovalStatusBuilder_.clear();
+        }
         statusCase_ = 0;
         status_ = null;
         return this;
@@ -3989,6 +4796,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (statusCase_ == 5 && ppidDataRemovalStatusBuilder_ != null) {
           result.status_ = ppidDataRemovalStatusBuilder_.build();
         }
+        if (statusCase_ == 6 && compositeDataRemovalStatusBuilder_ != null) {
+          result.status_ = compositeDataRemovalStatusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4036,6 +4846,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           case PPID_DATA_REMOVAL_STATUS:
             {
               mergePpidDataRemovalStatus(other.getPpidDataRemovalStatus());
+              break;
+            }
+          case COMPOSITE_DATA_REMOVAL_STATUS:
+            {
+              mergeCompositeDataRemovalStatus(other.getCompositeDataRemovalStatus());
               break;
             }
           case STATUS_NOT_SET:
@@ -4109,6 +4924,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                   statusCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetCompositeDataRemovalStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5453,6 +6276,276 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         statusCase_ = 5;
         onChanged();
         return ppidDataRemovalStatusBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveCompositeDataStatusOrBuilder>
+          compositeDataRemovalStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       *
+       * @return Whether the compositeDataRemovalStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasCompositeDataRemovalStatus() {
+        return statusCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       *
+       * @return The compositeDataRemovalStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          getCompositeDataRemovalStatus() {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 6) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveCompositeDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              .getDefaultInstance();
+        } else {
+          if (statusCase_ == 6) {
+            return compositeDataRemovalStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      public Builder setCompositeDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              value) {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          compositeDataRemovalStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      public Builder setCompositeDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                  .Builder
+              builderForValue) {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          compositeDataRemovalStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      public Builder mergeCompositeDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              value) {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 6
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveCompositeDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                    .newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .RemoveCompositeDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 6) {
+            compositeDataRemovalStatusBuilder_.mergeFrom(value);
+          } else {
+            compositeDataRemovalStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      public Builder clearCompositeDataRemovalStatus() {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 6) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 6) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          compositeDataRemovalStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              .Builder
+          getCompositeDataRemovalStatusBuilder() {
+        return internalGetCompositeDataRemovalStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveCompositeDataStatusOrBuilder
+          getCompositeDataRemovalStatusOrBuilder() {
+        if ((statusCase_ == 6) && (compositeDataRemovalStatusBuilder_ != null)) {
+          return compositeDataRemovalStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 6) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveCompositeDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the composite data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus composite_data_removal_status = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveCompositeDataStatusOrBuilder>
+          internalGetCompositeDataRemovalStatusFieldBuilder() {
+        if (compositeDataRemovalStatusBuilder_ == null) {
+          if (!(statusCase_ == 6)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                    .getDefaultInstance();
+          }
+          compositeDataRemovalStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveCompositeDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveCompositeDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveCompositeDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .RemoveCompositeDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 6;
+        onChanged();
+        return compositeDataRemovalStatusBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatus)
@@ -12895,6 +13988,3520 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     }
   }
 
+  public interface IngestCompositeDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        getDataTypeCountsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount getDataTypeCounts(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    int getDataTypeCountsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+        getDataTypeCountsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+        getDataTypeCountsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The match rate range of the upload.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+     *
+     * @return The enum numeric value on the wire for uploadMatchRateRange.
+     */
+    int getUploadMatchRateRangeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The match rate range of the upload.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+     *
+     * @return The uploadMatchRateRange.
+     */
+    com.google.ads.datamanager.v1.MatchRateRange getUploadMatchRateRange();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the composite data ingestion to the destination containing
+   * stats related to the ingestion.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus}
+   */
+  public static final class IngestCompositeDataStatus extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+      IngestCompositeDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "IngestCompositeDataStatus");
+    }
+
+    // Use IngestCompositeDataStatus.newBuilder() to construct.
+    private IngestCompositeDataStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IngestCompositeDataStatus() {
+      dataTypeCounts_ = java.util.Collections.emptyList();
+      uploadMatchRateRange_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                  .class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                  .Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int DATA_TYPE_COUNTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        dataTypeCounts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        getDataTypeCountsList() {
+      return dataTypeCounts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+        getDataTypeCountsOrBuilderList() {
+      return dataTypeCounts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getDataTypeCountsCount() {
+      return dataTypeCounts_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        getDataTypeCounts(int index) {
+      return dataTypeCounts_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the upload request for the
+     * destination, broken down by data type. Includes all data types in
+     * the request, regardless of whether they were successfully ingested or
+     * not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+        getDataTypeCountsOrBuilder(int index) {
+      return dataTypeCounts_.get(index);
+    }
+
+    public static final int UPLOAD_MATCH_RATE_RANGE_FIELD_NUMBER = 3;
+    private int uploadMatchRateRange_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The match rate range of the upload.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+     *
+     * @return The enum numeric value on the wire for uploadMatchRateRange.
+     */
+    @java.lang.Override
+    public int getUploadMatchRateRangeValue() {
+      return uploadMatchRateRange_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The match rate range of the upload.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+     *
+     * @return The uploadMatchRateRange.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.MatchRateRange getUploadMatchRateRange() {
+      com.google.ads.datamanager.v1.MatchRateRange result =
+          com.google.ads.datamanager.v1.MatchRateRange.forNumber(uploadMatchRateRange_);
+      return result == null ? com.google.ads.datamanager.v1.MatchRateRange.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      for (int i = 0; i < dataTypeCounts_.size(); i++) {
+        output.writeMessage(2, dataTypeCounts_.get(i));
+      }
+      if (uploadMatchRateRange_
+          != com.google.ads.datamanager.v1.MatchRateRange.MATCH_RATE_RANGE_UNKNOWN.getNumber()) {
+        output.writeEnum(3, uploadMatchRateRange_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      for (int i = 0; i < dataTypeCounts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, dataTypeCounts_.get(i));
+      }
+      if (uploadMatchRateRange_
+          != com.google.ads.datamanager.v1.MatchRateRange.MATCH_RATE_RANGE_UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, uploadMatchRateRange_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus other =
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus) obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (!getDataTypeCountsList().equals(other.getDataTypeCountsList())) return false;
+      if (uploadMatchRateRange_ != other.uploadMatchRateRange_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      if (getDataTypeCountsCount() > 0) {
+        hash = (37 * hash) + DATA_TYPE_COUNTS_FIELD_NUMBER;
+        hash = (53 * hash) + getDataTypeCountsList().hashCode();
+      }
+      hash = (37 * hash) + UPLOAD_MATCH_RATE_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + uploadMatchRateRange_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data ingestion to the destination containing
+     * stats related to the ingestion.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                    .class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCounts_ = java.util.Collections.emptyList();
+        } else {
+          dataTypeCounts_ = null;
+          dataTypeCountsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uploadMatchRateRange_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus result =
+            new com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus(
+                this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              result) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            dataTypeCounts_ = java.util.Collections.unmodifiableList(dataTypeCounts_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.dataTypeCounts_ = dataTypeCounts_;
+        } else {
+          result.dataTypeCounts_ = dataTypeCountsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.uploadMatchRateRange_ = uploadMatchRateRange_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+                .getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (dataTypeCountsBuilder_ == null) {
+          if (!other.dataTypeCounts_.isEmpty()) {
+            if (dataTypeCounts_.isEmpty()) {
+              dataTypeCounts_ = other.dataTypeCounts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureDataTypeCountsIsMutable();
+              dataTypeCounts_.addAll(other.dataTypeCounts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dataTypeCounts_.isEmpty()) {
+            if (dataTypeCountsBuilder_.isEmpty()) {
+              dataTypeCountsBuilder_.dispose();
+              dataTypeCountsBuilder_ = null;
+              dataTypeCounts_ = other.dataTypeCounts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              dataTypeCountsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetDataTypeCountsFieldBuilder()
+                      : null;
+            } else {
+              dataTypeCountsBuilder_.addAllMessages(other.dataTypeCounts_);
+            }
+          }
+        }
+        if (other.uploadMatchRateRange_ != 0) {
+          setUploadMatchRateRangeValue(other.getUploadMatchRateRangeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount m =
+                      input.readMessage(
+                          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                              .parser(),
+                          extensionRegistry);
+                  if (dataTypeCountsBuilder_ == null) {
+                    ensureDataTypeCountsIsMutable();
+                    dataTypeCounts_.add(m);
+                  } else {
+                    dataTypeCountsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              case 24:
+                {
+                  uploadMatchRateRange_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+          dataTypeCounts_ = java.util.Collections.emptyList();
+
+      private void ensureDataTypeCountsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          dataTypeCounts_ =
+              new java.util.ArrayList<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>(
+                  dataTypeCounts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          dataTypeCountsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+          getDataTypeCountsList() {
+        if (dataTypeCountsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dataTypeCounts_);
+        } else {
+          return dataTypeCountsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public int getDataTypeCountsCount() {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.size();
+        } else {
+          return dataTypeCountsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+          getDataTypeCounts(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.get(index);
+        } else {
+          return dataTypeCountsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder setDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.set(index, value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder setDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(index, value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addAllDataTypeCounts(
+          java.lang.Iterable<
+                  ? extends com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+              values) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataTypeCounts_);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder clearDataTypeCounts() {
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder removeDataTypeCounts(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.remove(index);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          getDataTypeCountsBuilder(int index) {
+        return internalGetDataTypeCountsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+          getDataTypeCountsOrBuilder(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.get(index);
+        } else {
+          return dataTypeCountsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          getDataTypeCountsOrBuilderList() {
+        if (dataTypeCountsBuilder_ != null) {
+          return dataTypeCountsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dataTypeCounts_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          addDataTypeCountsBuilder() {
+        return internalGetDataTypeCountsFieldBuilder()
+            .addBuilder(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          addDataTypeCountsBuilder(int index) {
+        return internalGetDataTypeCountsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the upload request for the
+       * destination, broken down by data type. Includes all data types in
+       * the request, regardless of whether they were successfully ingested or
+       * not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder>
+          getDataTypeCountsBuilderList() {
+        return internalGetDataTypeCountsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          internalGetDataTypeCountsFieldBuilder() {
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCountsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>(
+                  dataTypeCounts_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dataTypeCounts_ = null;
+        }
+        return dataTypeCountsBuilder_;
+      }
+
+      private int uploadMatchRateRange_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The match rate range of the upload.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+       *
+       * @return The enum numeric value on the wire for uploadMatchRateRange.
+       */
+      @java.lang.Override
+      public int getUploadMatchRateRangeValue() {
+        return uploadMatchRateRange_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The match rate range of the upload.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for uploadMatchRateRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUploadMatchRateRangeValue(int value) {
+        uploadMatchRateRange_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The match rate range of the upload.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+       *
+       * @return The uploadMatchRateRange.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.MatchRateRange getUploadMatchRateRange() {
+        com.google.ads.datamanager.v1.MatchRateRange result =
+            com.google.ads.datamanager.v1.MatchRateRange.forNumber(uploadMatchRateRange_);
+        return result == null ? com.google.ads.datamanager.v1.MatchRateRange.UNRECOGNIZED : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The match rate range of the upload.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+       *
+       * @param value The uploadMatchRateRange to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUploadMatchRateRange(com.google.ads.datamanager.v1.MatchRateRange value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        uploadMatchRateRange_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The match rate range of the upload.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.MatchRateRange upload_match_rate_range = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUploadMatchRateRange() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        uploadMatchRateRange_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestCompositeDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IngestCompositeDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<IngestCompositeDataStatus>() {
+          @java.lang.Override
+          public IngestCompositeDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IngestCompositeDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IngestCompositeDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RemoveCompositeDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        getDataTypeCountsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount getDataTypeCounts(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    int getDataTypeCountsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+        getDataTypeCountsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+        getDataTypeCountsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the composite data removal from the destination.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus}
+   */
+  public static final class RemoveCompositeDataStatus extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+      RemoveCompositeDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "RemoveCompositeDataStatus");
+    }
+
+    // Use RemoveCompositeDataStatus.newBuilder() to construct.
+    private RemoveCompositeDataStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemoveCompositeDataStatus() {
+      dataTypeCounts_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                  .class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                  .Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int DATA_TYPE_COUNTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        dataTypeCounts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+        getDataTypeCountsList() {
+      return dataTypeCounts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+        getDataTypeCountsOrBuilderList() {
+      return dataTypeCounts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getDataTypeCountsCount() {
+      return dataTypeCounts_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        getDataTypeCounts(int index) {
+      return dataTypeCounts_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of data types sent in the removal request, broken down
+     * by data type. Includes all data types in the request, regardless
+     * of whether they were successfully removed or not.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+        getDataTypeCountsOrBuilder(int index) {
+      return dataTypeCounts_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      for (int i = 0; i < dataTypeCounts_.size(); i++) {
+        output.writeMessage(2, dataTypeCounts_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      for (int i = 0; i < dataTypeCounts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, dataTypeCounts_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus other =
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus) obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (!getDataTypeCountsList().equals(other.getDataTypeCountsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      if (getDataTypeCountsCount() > 0) {
+        hash = (37 * hash) + DATA_TYPE_COUNTS_FIELD_NUMBER;
+        hash = (53 * hash) + getDataTypeCountsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the composite data removal from the destination.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                    .class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCounts_ = java.util.Collections.emptyList();
+        } else {
+          dataTypeCounts_ = null;
+          dataTypeCountsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus result =
+            new com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus(
+                this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              result) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            dataTypeCounts_ = java.util.Collections.unmodifiableList(dataTypeCounts_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.dataTypeCounts_ = dataTypeCounts_;
+        } else {
+          result.dataTypeCounts_ = dataTypeCountsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+                .getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (dataTypeCountsBuilder_ == null) {
+          if (!other.dataTypeCounts_.isEmpty()) {
+            if (dataTypeCounts_.isEmpty()) {
+              dataTypeCounts_ = other.dataTypeCounts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureDataTypeCountsIsMutable();
+              dataTypeCounts_.addAll(other.dataTypeCounts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dataTypeCounts_.isEmpty()) {
+            if (dataTypeCountsBuilder_.isEmpty()) {
+              dataTypeCountsBuilder_.dispose();
+              dataTypeCountsBuilder_ = null;
+              dataTypeCounts_ = other.dataTypeCounts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              dataTypeCountsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetDataTypeCountsFieldBuilder()
+                      : null;
+            } else {
+              dataTypeCountsBuilder_.addAllMessages(other.dataTypeCounts_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount m =
+                      input.readMessage(
+                          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                              .parser(),
+                          extensionRegistry);
+                  if (dataTypeCountsBuilder_ == null) {
+                    ensureDataTypeCountsIsMutable();
+                    dataTypeCounts_.add(m);
+                  } else {
+                    dataTypeCountsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+          dataTypeCounts_ = java.util.Collections.emptyList();
+
+      private void ensureDataTypeCountsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          dataTypeCounts_ =
+              new java.util.ArrayList<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>(
+                  dataTypeCounts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          dataTypeCountsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+          getDataTypeCountsList() {
+        if (dataTypeCountsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dataTypeCounts_);
+        } else {
+          return dataTypeCountsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public int getDataTypeCountsCount() {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.size();
+        } else {
+          return dataTypeCountsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+          getDataTypeCounts(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.get(index);
+        } else {
+          return dataTypeCountsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder setDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.set(index, value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder setDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount value) {
+        if (dataTypeCountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(index, value);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addDataTypeCounts(
+          int index,
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+              builderForValue) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder addAllDataTypeCounts(
+          java.lang.Iterable<
+                  ? extends com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount>
+              values) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataTypeCounts_);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder clearDataTypeCounts() {
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public Builder removeDataTypeCounts(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          ensureDataTypeCountsIsMutable();
+          dataTypeCounts_.remove(index);
+          onChanged();
+        } else {
+          dataTypeCountsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          getDataTypeCountsBuilder(int index) {
+        return internalGetDataTypeCountsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder
+          getDataTypeCountsOrBuilder(int index) {
+        if (dataTypeCountsBuilder_ == null) {
+          return dataTypeCounts_.get(index);
+        } else {
+          return dataTypeCountsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          getDataTypeCountsOrBuilderList() {
+        if (dataTypeCountsBuilder_ != null) {
+          return dataTypeCountsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dataTypeCounts_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          addDataTypeCountsBuilder() {
+        return internalGetDataTypeCountsFieldBuilder()
+            .addBuilder(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+          addDataTypeCountsBuilder(int index) {
+        return internalGetDataTypeCountsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of data types sent in the removal request, broken down
+       * by data type. Includes all data types in the request, regardless
+       * of whether they were successfully removed or not.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount data_type_counts = 2;
+       * </code>
+       */
+      public java.util.List<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder>
+          getDataTypeCountsBuilderList() {
+        return internalGetDataTypeCountsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>
+          internalGetDataTypeCountsFieldBuilder() {
+        if (dataTypeCountsBuilder_ == null) {
+          dataTypeCountsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder>(
+                  dataTypeCounts_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dataTypeCounts_ = null;
+        }
+        return dataTypeCountsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveCompositeDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveCompositeDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<RemoveCompositeDataStatus>() {
+          @java.lang.Override
+          public RemoveCompositeDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemoveCompositeDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveCompositeDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DataTypeCountOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+     *
+     * @return The type.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The count for this data type.
+     * </pre>
+     *
+     * <code>int64 count = 2;</code>
+     *
+     * @return The count.
+     */
+    long getCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The count for a specific data type.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount}
+   */
+  public static final class DataTypeCount extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
+      DataTypeCountOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DataTypeCount");
+    }
+
+    // Use DataTypeCount.newBuilder() to construct.
+    private DataTypeCount(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataTypeCount() {
+      type_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+                  .class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType getType() {
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType result =
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType.forNumber(type_);
+      return result == null
+          ? com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int COUNT_FIELD_NUMBER = 2;
+    private long count_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The count for this data type.
+     * </pre>
+     *
+     * <code>int64 count = 2;</code>
+     *
+     * @return The count.
+     */
+    @java.lang.Override
+    public long getCount() {
+      return count_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType
+              .DATA_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (count_ != 0L) {
+        output.writeInt64(2, count_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType
+              .DATA_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (count_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, count_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount other =
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount) obj;
+
+      if (type_ != other.type_) return false;
+      if (getCount() != other.getCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The count for a specific data type.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCountOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        count_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount result =
+            new com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.count_ = count_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+                .getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.getCount() != 0L) {
+          setCount(other.getCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  count_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType getType() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType result =
+            com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType.forNumber(type_);
+        return result == null
+            ? com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.DataType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data.
+       * </pre>
+       *
+       * <code>.google.ads.datamanager.v1.RequestStatusPerDestination.DataType type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long count_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The count for this data type.
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       *
+       * @return The count.
+       */
+      @java.lang.Override
+      public long getCount() {
+        return count_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The count for this data type.
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       *
+       * @param value The count to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCount(long value) {
+
+        count_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The count for this data type.
+       * </pre>
+       *
+       * <code>int64 count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        count_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataTypeCount> PARSER =
+        new com.google.protobuf.AbstractParser<DataTypeCount>() {
+          @java.lang.Override
+          public DataTypeCount parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataTypeCount> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataTypeCount> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int statusCase_ = 0;
 
@@ -13053,7 +17660,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13070,7 +17686,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13089,7 +17714,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -13109,7 +17743,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -13126,7 +17763,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -13145,7 +17785,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14258,7 +18901,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14274,7 +18926,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14296,7 +18957,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14320,7 +18990,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14341,7 +19020,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14370,7 +19058,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14391,7 +19088,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14407,7 +19113,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14427,7 +19142,16 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * An error info error containing the error reason and error counts related to
-     * the upload.
+     * the upload. Only populated if the
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * is
+     * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+     * or
+     * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+     * This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -14461,7 +19185,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14477,7 +19204,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14499,7 +19229,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14523,7 +19256,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14545,7 +19281,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14574,7 +19313,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14595,7 +19337,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14611,7 +19356,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -14631,7 +19379,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
      *
      * <pre>
      * A warning info containing the warning reason and warning counts related to
-     * the upload.
+     * the upload. This field isn't populated while the request has
+     * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+     * of
+     * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
      * </pre>
      *
      * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>

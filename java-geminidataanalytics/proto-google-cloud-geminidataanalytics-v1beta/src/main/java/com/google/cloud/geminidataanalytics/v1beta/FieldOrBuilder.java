@@ -351,8 +351,6 @@ public interface FieldOrBuilder
    *
    * <pre>
    * Optional. Field category, not required, currently only useful for Looker.
-   * We are using a string to avoid depending on an external package and keep
-   * this package self-contained.
    * </pre>
    *
    * <code>string category = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -366,8 +364,6 @@ public interface FieldOrBuilder
    *
    * <pre>
    * Optional. Field category, not required, currently only useful for Looker.
-   * We are using a string to avoid depending on an external package and keep
-   * this package self-contained.
    * </pre>
    *
    * <code>string category = 10 [(.google.api.field_behavior) = OPTIONAL];</code>

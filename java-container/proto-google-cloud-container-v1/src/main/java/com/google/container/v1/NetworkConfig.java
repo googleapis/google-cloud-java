@@ -1620,6 +1620,65 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
     return defaultEnablePrivateNodes_;
   }
 
+  public static final int DATAPLANE_V2_CONFIG_FIELD_NUMBER = 23;
+  private com.google.container.v1.DataplaneV2Config dataplaneV2Config_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataplaneV2Config field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataplaneV2Config() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataplaneV2Config.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DataplaneV2Config getDataplaneV2Config() {
+    return dataplaneV2Config_ == null
+        ? com.google.container.v1.DataplaneV2Config.getDefaultInstance()
+        : dataplaneV2Config_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DataplaneV2Config specifies the DPv2 configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DataplaneV2ConfigOrBuilder getDataplaneV2ConfigOrBuilder() {
+    return dataplaneV2Config_ == null
+        ? com.google.container.v1.DataplaneV2Config.getDefaultInstance()
+        : dataplaneV2Config_;
+  }
+
   public static final int DISABLE_L4_LB_FIREWALL_RECONCILIATION_FIELD_NUMBER = 24;
   private boolean disableL4LbFirewallReconciliation_ = false;
 
@@ -1636,7 +1695,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDisableL4LbFirewallReconciliation() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1721,6 +1780,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
       output.writeBool(22, defaultEnablePrivateNodes_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(23, getDataplaneV2Config());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(24, disableL4LbFirewallReconciliation_);
     }
     getUnknownFields().writeTo(output);
@@ -1790,6 +1852,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, defaultEnablePrivateNodes_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDataplaneV2Config());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               24, disableL4LbFirewallReconciliation_);
@@ -1853,6 +1918,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
     if (hasDefaultEnablePrivateNodes() != other.hasDefaultEnablePrivateNodes()) return false;
     if (hasDefaultEnablePrivateNodes()) {
       if (getDefaultEnablePrivateNodes() != other.getDefaultEnablePrivateNodes()) return false;
+    }
+    if (hasDataplaneV2Config() != other.hasDataplaneV2Config()) return false;
+    if (hasDataplaneV2Config()) {
+      if (!getDataplaneV2Config().equals(other.getDataplaneV2Config())) return false;
     }
     if (hasDisableL4LbFirewallReconciliation() != other.hasDisableL4LbFirewallReconciliation())
       return false;
@@ -1922,6 +1991,10 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
     if (hasDefaultEnablePrivateNodes()) {
       hash = (37 * hash) + DEFAULT_ENABLE_PRIVATE_NODES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDefaultEnablePrivateNodes());
+    }
+    if (hasDataplaneV2Config()) {
+      hash = (37 * hash) + DATAPLANE_V2_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDataplaneV2Config().hashCode();
     }
     if (hasDisableL4LbFirewallReconciliation()) {
       hash = (37 * hash) + DISABLE_L4_LB_FIREWALL_RECONCILIATION_FIELD_NUMBER;
@@ -2074,6 +2147,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
         internalGetServiceExternalIpsConfigFieldBuilder();
         internalGetGatewayApiConfigFieldBuilder();
         internalGetNetworkPerformanceConfigFieldBuilder();
+        internalGetDataplaneV2ConfigFieldBuilder();
       }
     }
 
@@ -2117,6 +2191,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
       inTransitEncryptionConfig_ = 0;
       enableCiliumClusterwideNetworkPolicy_ = false;
       defaultEnablePrivateNodes_ = false;
+      dataplaneV2Config_ = null;
+      if (dataplaneV2ConfigBuilder_ != null) {
+        dataplaneV2ConfigBuilder_.dispose();
+        dataplaneV2ConfigBuilder_ = null;
+      }
       disableL4LbFirewallReconciliation_ = false;
       return this;
     }
@@ -2223,8 +2302,15 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.disableL4LbFirewallReconciliation_ = disableL4LbFirewallReconciliation_;
+        result.dataplaneV2Config_ =
+            dataplaneV2ConfigBuilder_ == null
+                ? dataplaneV2Config_
+                : dataplaneV2ConfigBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.disableL4LbFirewallReconciliation_ = disableL4LbFirewallReconciliation_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2292,6 +2378,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDefaultEnablePrivateNodes()) {
         setDefaultEnablePrivateNodes(other.getDefaultEnablePrivateNodes());
+      }
+      if (other.hasDataplaneV2Config()) {
+        mergeDataplaneV2Config(other.getDataplaneV2Config());
       }
       if (other.hasDisableL4LbFirewallReconciliation()) {
         setDisableL4LbFirewallReconciliation(other.getDisableL4LbFirewallReconciliation());
@@ -2425,10 +2514,17 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 176
+            case 186:
+              {
+                input.readMessage(
+                    internalGetDataplaneV2ConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 186
             case 192:
               {
                 disableL4LbFirewallReconciliation_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 192
             default:
@@ -4497,6 +4593,220 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.container.v1.DataplaneV2Config dataplaneV2Config_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.DataplaneV2Config,
+            com.google.container.v1.DataplaneV2Config.Builder,
+            com.google.container.v1.DataplaneV2ConfigOrBuilder>
+        dataplaneV2ConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataplaneV2Config field is set.
+     */
+    public boolean hasDataplaneV2Config() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataplaneV2Config.
+     */
+    public com.google.container.v1.DataplaneV2Config getDataplaneV2Config() {
+      if (dataplaneV2ConfigBuilder_ == null) {
+        return dataplaneV2Config_ == null
+            ? com.google.container.v1.DataplaneV2Config.getDefaultInstance()
+            : dataplaneV2Config_;
+      } else {
+        return dataplaneV2ConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplaneV2Config(com.google.container.v1.DataplaneV2Config value) {
+      if (dataplaneV2ConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataplaneV2Config_ = value;
+      } else {
+        dataplaneV2ConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataplaneV2Config(
+        com.google.container.v1.DataplaneV2Config.Builder builderForValue) {
+      if (dataplaneV2ConfigBuilder_ == null) {
+        dataplaneV2Config_ = builderForValue.build();
+      } else {
+        dataplaneV2ConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataplaneV2Config(com.google.container.v1.DataplaneV2Config value) {
+      if (dataplaneV2ConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && dataplaneV2Config_ != null
+            && dataplaneV2Config_
+                != com.google.container.v1.DataplaneV2Config.getDefaultInstance()) {
+          getDataplaneV2ConfigBuilder().mergeFrom(value);
+        } else {
+          dataplaneV2Config_ = value;
+        }
+      } else {
+        dataplaneV2ConfigBuilder_.mergeFrom(value);
+      }
+      if (dataplaneV2Config_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataplaneV2Config() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      dataplaneV2Config_ = null;
+      if (dataplaneV2ConfigBuilder_ != null) {
+        dataplaneV2ConfigBuilder_.dispose();
+        dataplaneV2ConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.DataplaneV2Config.Builder getDataplaneV2ConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetDataplaneV2ConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.DataplaneV2ConfigOrBuilder getDataplaneV2ConfigOrBuilder() {
+      if (dataplaneV2ConfigBuilder_ != null) {
+        return dataplaneV2ConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return dataplaneV2Config_ == null
+            ? com.google.container.v1.DataplaneV2Config.getDefaultInstance()
+            : dataplaneV2Config_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DataplaneV2Config specifies the DPv2 configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1.DataplaneV2Config dataplane_v2_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.DataplaneV2Config,
+            com.google.container.v1.DataplaneV2Config.Builder,
+            com.google.container.v1.DataplaneV2ConfigOrBuilder>
+        internalGetDataplaneV2ConfigFieldBuilder() {
+      if (dataplaneV2ConfigBuilder_ == null) {
+        dataplaneV2ConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.DataplaneV2Config,
+                com.google.container.v1.DataplaneV2Config.Builder,
+                com.google.container.v1.DataplaneV2ConfigOrBuilder>(
+                getDataplaneV2Config(), getParentForChildren(), isClean());
+        dataplaneV2Config_ = null;
+      }
+      return dataplaneV2ConfigBuilder_;
+    }
+
     private boolean disableL4LbFirewallReconciliation_;
 
     /**
@@ -4512,7 +4822,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasDisableL4LbFirewallReconciliation() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4546,7 +4856,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
     public Builder setDisableL4LbFirewallReconciliation(boolean value) {
 
       disableL4LbFirewallReconciliation_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4563,7 +4873,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisableL4LbFirewallReconciliation() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       disableL4LbFirewallReconciliation_ = false;
       onChanged();
       return this;

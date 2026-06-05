@@ -80,6 +80,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Contains the exported TCX data.
+   *
+   * This field is intended for gRPC clients, as media download integration
+   * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+   * query parameter to download the raw binary TCX file.
    * </pre>
    *
    * <code>string tcx_data = 2;</code>
@@ -104,6 +108,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Contains the exported TCX data.
+   *
+   * This field is intended for gRPC clients, as media download integration
+   * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+   * query parameter to download the raw binary TCX file.
    * </pre>
    *
    * <code>string tcx_data = 2;</code>
@@ -447,6 +455,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Contains the exported TCX data.
+     *
+     * This field is intended for gRPC clients, as media download integration
+     * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+     * query parameter to download the raw binary TCX file.
      * </pre>
      *
      * <code>string tcx_data = 2;</code>
@@ -470,6 +482,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Contains the exported TCX data.
+     *
+     * This field is intended for gRPC clients, as media download integration
+     * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+     * query parameter to download the raw binary TCX file.
      * </pre>
      *
      * <code>string tcx_data = 2;</code>
@@ -493,6 +509,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Contains the exported TCX data.
+     *
+     * This field is intended for gRPC clients, as media download integration
+     * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+     * query parameter to download the raw binary TCX file.
      * </pre>
      *
      * <code>string tcx_data = 2;</code>
@@ -515,6 +535,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Contains the exported TCX data.
+     *
+     * This field is intended for gRPC clients, as media download integration
+     * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+     * query parameter to download the raw binary TCX file.
      * </pre>
      *
      * <code>string tcx_data = 2;</code>
@@ -533,6 +557,10 @@ public final class ExportExerciseTcxResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Contains the exported TCX data.
+     *
+     * This field is intended for gRPC clients, as media download integration
+     * is not supported for gRPC. HTTP clients should instead use the `alt=media`
+     * query parameter to download the raw binary TCX file.
      * </pre>
      *
      * <code>string tcx_data = 2;</code>

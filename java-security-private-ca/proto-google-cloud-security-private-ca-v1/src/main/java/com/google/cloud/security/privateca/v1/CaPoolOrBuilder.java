@@ -209,6 +209,61 @@ public interface CaPoolOrBuilder
    *
    *
    * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.security.privateca.v1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When
+   * [EncryptionSpec][google.cloud.security.privateca.v1.EncryptionSpec] is
+   * provided, the [Subject][google.cloud.security.privateca.v1.Subject],
+   * [SubjectAltNames][google.cloud.security.privateca.v1.SubjectAltNames], and
+   * the PEM-encoded certificate fields will be encrypted at rest.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.EncryptionSpec encryption_spec = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.security.privateca.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Labels with user-defined metadata.
    * </pre>
    *

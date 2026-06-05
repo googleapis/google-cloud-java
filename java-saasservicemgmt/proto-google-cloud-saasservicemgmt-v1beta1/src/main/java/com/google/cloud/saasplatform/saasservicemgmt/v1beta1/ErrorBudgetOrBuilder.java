@@ -34,7 +34,21 @@ public interface ErrorBudgetOrBuilder
    * pausing the rollout.
    * </pre>
    *
-   * <code>int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allowedCount field is set.
+   */
+  boolean hasAllowedCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum number of failed units allowed in a location without
+   * pausing the rollout.
+   * </pre>
+   *
+   * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowedCount.
    */
@@ -48,7 +62,21 @@ public interface ErrorBudgetOrBuilder
    * location without pausing the rollout.
    * </pre>
    *
-   * <code>int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allowedPercentage field is set.
+   */
+  boolean hasAllowedPercentage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum percentage of units allowed to fail (0, 100] within a
+   * location without pausing the rollout.
+   * </pre>
+   *
+   * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowedPercentage.
    */

@@ -464,6 +464,46 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return Whether the nodeImageConfig field is set.
+   */
+  boolean hasNodeImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return The nodeImageConfig.
+   */
+  com.google.container.v1.CustomImageConfig getNodeImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   */
+  com.google.container.v1.CustomImageConfigOrBuilder getNodeImageConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The Kubernetes labels (key/value pairs) to apply to each node. The values
    * in this field are added to the set of default labels Kubernetes applies to
    * nodes.

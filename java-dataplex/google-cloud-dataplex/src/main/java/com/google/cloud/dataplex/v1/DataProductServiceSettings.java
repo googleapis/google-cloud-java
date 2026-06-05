@@ -177,6 +177,12 @@ public class DataProductServiceSettings extends ClientSettings<DataProductServic
         .updateDataProductOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to requestDataProductAccess. */
+  public UnaryCallSettings<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessSettings() {
+    return ((DataProductServiceStubSettings) getStubSettings()).requestDataProductAccessSettings();
+  }
+
   /** Returns the object with the settings used for calls to createDataAsset. */
   public UnaryCallSettings<CreateDataAssetRequest, Operation> createDataAssetSettings() {
     return ((DataProductServiceStubSettings) getStubSettings()).createDataAssetSettings();
@@ -407,6 +413,13 @@ public class DataProductServiceSettings extends ClientSettings<DataProductServic
     public OperationCallSettings.Builder<UpdateDataProductRequest, DataProduct, OperationMetadata>
         updateDataProductOperationSettings() {
       return getStubSettingsBuilder().updateDataProductOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to requestDataProductAccess. */
+    public UnaryCallSettings.Builder<
+            RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+        requestDataProductAccessSettings() {
+      return getStubSettingsBuilder().requestDataProductAccessSettings();
     }
 
     /** Returns the builder for the settings used for calls to createDataAsset. */

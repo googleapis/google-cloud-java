@@ -174,7 +174,7 @@ public interface PartitionOrBuilder
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=513
+   *     google/cloud/dataplex/v1/metadata.proto;l=514
    * @return The etag.
    */
   @java.lang.Deprecated
@@ -190,7 +190,7 @@ public interface PartitionOrBuilder
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=513
+   *     google/cloud/dataplex/v1/metadata.proto;l=514
    * @return The bytes for etag.
    */
   @java.lang.Deprecated
