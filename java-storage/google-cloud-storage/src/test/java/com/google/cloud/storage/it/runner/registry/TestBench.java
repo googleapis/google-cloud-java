@@ -151,7 +151,7 @@ public final class TestBench implements ManagedLifecycle {
     HttpContent content =
         new ByteArrayContent("application/json", jsonString.getBytes(StandardCharsets.UTF_8));
     HttpRequest req = requestFactory.buildPostRequest(url, content);
-    HttpResponse resp = execWithRetries(req::execute);
+    HttpResponse resp = req.execute();
     RetryTestResource result = gson.fromJson(resp.parseAsString(), RetryTestResource.class);
     resp.disconnect();
     return result;
@@ -160,14 +160,14 @@ public final class TestBench implements ManagedLifecycle {
   public void deleteRetryTest(RetryTestResource retryTestResource) throws IOException {
     GenericUrl url = new GenericUrl(baseUri + "/retry_test/" + retryTestResource.id);
     HttpRequest req = requestFactory.buildDeleteRequest(url);
-    HttpResponse resp = execWithRetries(req::execute);
+    HttpResponse resp = req.execute();
     resp.disconnect();
   }
 
   public RetryTestResource getRetryTest(RetryTestResource retryTestResource) throws IOException {
     GenericUrl url = new GenericUrl(baseUri + "/retry_test/" + retryTestResource.id);
     HttpRequest req = requestFactory.buildGetRequest(url);
-    HttpResponse resp = execWithRetries(req::execute);
+    HttpResponse resp = req.execute();
     RetryTestResource result = gson.fromJson(resp.parseAsString(), RetryTestResource.class);
     resp.disconnect();
     return result;
@@ -176,7 +176,7 @@ public final class TestBench implements ManagedLifecycle {
   public List<RetryTestResource> listRetryTests() throws IOException {
     GenericUrl url = new GenericUrl(baseUri + "/retry_tests");
     HttpRequest req = requestFactory.buildGetRequest(url);
-    HttpResponse resp = execWithRetries(req::execute);
+    HttpResponse resp = req.execute();
     JsonObject result = gson.fromJson(resp.parseAsString(), JsonObject.class);
     JsonArray retryTest = (JsonArray) result.get("retry_test");
     ImmutableList.Builder<RetryTestResource> b = ImmutableList.builder();
@@ -187,32 +187,6 @@ public final class TestBench implements ManagedLifecycle {
     return b.build();
   }
 
-  private <T> T execWithRetries(Callable<T> callable) throws IOException {
-    try {
-      return runWithRetries(
-          callable,
-          RetrySettings.newBuilder()
-              .setTotalTimeoutDuration(Duration.ofSeconds(15))
-              .setInitialRetryDelayDuration(Duration.ofMillis(200))
-              .setRetryDelayMultiplier(1.5)
-              .setMaxRetryDelayDuration(Duration.ofSeconds(2))
-              .setMaxAttempts(5)
-              .build(),
-          new BasicResultRetryAlgorithm<T>() {
-            @Override
-            public boolean shouldRetry(Throwable previousThrowable, T previousResponse) {
-              return previousThrowable instanceof SocketException
-                  || previousThrowable instanceof IOException;
-            }
-          },
-          NanoClock.getDefaultClock());
-    } catch (RetryHelperException e) {
-      if (e.getCause() instanceof IOException) {
-        throw (IOException) e.getCause();
-      }
-      throw new IOException(e);
-    }
-  }
 
   private boolean startGRPCServer(int gRPCPort) throws IOException {
     GenericUrl url = new GenericUrl(baseUri + "/start_grpc?port=9090");
