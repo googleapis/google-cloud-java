@@ -192,6 +192,43 @@ public interface ContentItemOrBuilder
    *
    *
    * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   *
+   * @return Whether the batchContentItem field is set.
+   */
+  boolean hasBatchContentItem();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   *
+   * @return The batchContentItem.
+   */
+  com.google.privacy.dlp.v2.BatchContentItem getBatchContentItem();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a batch of items to inspect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentItem batch_content_item = 8;</code>
+   */
+  com.google.privacy.dlp.v2.BatchContentItemOrBuilder getBatchContentItemOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * User provided metadata for the content.
    * </pre>
    *
