@@ -197,9 +197,7 @@ public class BigQueryJdbcMdcTest {
   public void testExecutorThrowsNpeOnNullCommand() {
     ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
     try {
-      assertThrows(
-          NullPointerException.class,
-          () -> executor.execute(null));
+      assertThrows(NullPointerException.class, () -> executor.execute(null));
     } finally {
       executor.shutdownNow();
     }
