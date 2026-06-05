@@ -225,4 +225,30 @@ public class BigQueryJdbcMdcTest {
       executor.shutdownNow();
     }
   }
+
+  @Test
+  public void testPoolThreadInheritanceSevered() throws Exception {
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-ParentContext");
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    try {
+      CountDownLatch initLatch = new CountDownLatch(1);
+      executor.execute(initLatch::countDown);
+      assertTrue(initLatch.await(5, TimeUnit.SECONDS));
+
+      BigQueryJdbcMdc.clear();
+
+      CountDownLatch taskLatch = new CountDownLatch(1);
+      AtomicReference<String> workerMdcVal = new AtomicReference<>("initial-non-null");
+      executor.execute(
+          () -> {
+            workerMdcVal.set(BigQueryJdbcMdc.getConnectionId());
+            taskLatch.countDown();
+          });
+
+      assertTrue(taskLatch.await(5, TimeUnit.SECONDS));
+      assertNull(workerMdcVal.get());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
 }

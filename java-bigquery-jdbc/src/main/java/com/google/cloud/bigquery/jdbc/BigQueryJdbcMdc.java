@@ -57,7 +57,12 @@ class BigQueryJdbcMdc {
    */
   static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
     return new MdcThreadPoolExecutor(
-        nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>(), threadFactory);
+        nThreads,
+        nThreads,
+        0L,
+        TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<>(),
+        new MdcThreadFactory(threadFactory));
   }
 
   /**
@@ -66,6 +71,23 @@ class BigQueryJdbcMdc {
    */
   static ExecutorService newFixedThreadPool(int nThreads) {
     return newFixedThreadPool(nThreads, Executors.defaultThreadFactory());
+  }
+
+  private static class MdcThreadFactory implements ThreadFactory {
+    private final ThreadFactory delegate;
+
+    public MdcThreadFactory(ThreadFactory delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public Thread newThread(Runnable r) {
+      return delegate.newThread(
+          () -> {
+            clear();
+            r.run();
+          });
+    }
   }
 
   private static class MdcThreadPoolExecutor extends ThreadPoolExecutor {
