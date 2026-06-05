@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.UrlEscapers;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -711,8 +712,10 @@ final class BigQueryJdbcUrlUtility {
     }
 
     String[] urlParts = url.split(";", 2);
+    parseAuthority(urlParts[0], map);
+
     if (urlParts.length < 2) {
-      return map;
+      return Collections.unmodifiableMap(map);
     }
 
     String urlToParse = urlParts[1];
@@ -754,7 +757,13 @@ final class BigQueryJdbcUrlUtility {
       }
       String propertyName = PROPERTY_NAME_MAP.get(key);
       String value = CharEscapers.decodeUriPath(kv[1].replace("+", "%2B"));
-      map.put(propertyName, value);
+      if (propertyName.equals(ENDPOINT_OVERRIDES_PROPERTY_NAME)
+          && map.containsKey(ENDPOINT_OVERRIDES_PROPERTY_NAME)) {
+        String existing = map.get(ENDPOINT_OVERRIDES_PROPERTY_NAME);
+        map.put(propertyName, mergeEndpointOverrides(existing, value));
+      } else {
+        map.put(propertyName, value);
+      }
     }
     return Collections.unmodifiableMap(map);
   }
@@ -865,5 +874,66 @@ final class BigQueryJdbcUrlUtility {
       }
     }
     return propertiesMap;
+  }
+
+  private static void parseAuthority(String urlPart, Map<String, String> map) {
+    String authority = urlPart.trim();
+    if (authority.startsWith("jdbc:")) {
+      authority = authority.substring(5);
+    }
+    if (authority.startsWith("bigquery://")) {
+      authority = authority.substring(11);
+    } else if (authority.startsWith("bigquery:")) {
+      authority = authority.substring(9);
+    }
+    authority = authority.trim();
+    if (authority.isEmpty()) {
+      return;
+    }
+
+    if (authority.startsWith("http://") || authority.startsWith("https://")) {
+      map.put(
+          ENDPOINT_OVERRIDES_PROPERTY_NAME,
+          BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME + "=" + authority);
+      return;
+    }
+
+    int colonIndex = authority.indexOf(':');
+    if (colonIndex == -1) {
+      map.put(PROXY_HOST_PROPERTY_NAME, authority);
+      return;
+    }
+
+    String host = authority.substring(0, colonIndex).trim();
+    String port = authority.substring(colonIndex + 1).trim();
+    if (!host.isEmpty()) {
+      map.put(PROXY_HOST_PROPERTY_NAME, host);
+    }
+    if (!port.isEmpty()) {
+      map.put(PROXY_PORT_PROPERTY_NAME, port);
+    }
+  }
+
+  private static String mergeEndpointOverrides(String existing, String newValue) {
+    Map<String, String> merged = new LinkedHashMap<>();
+    parseOverridesIntoMap(existing, merged);
+    parseOverridesIntoMap(newValue, merged);
+    List<String> parts = new ArrayList<>();
+    for (Map.Entry<String, String> entry : merged.entrySet()) {
+      parts.add(entry.getKey() + "=" + entry.getValue());
+    }
+    return String.join(",", parts);
+  }
+
+  private static void parseOverridesIntoMap(String overrides, Map<String, String> targetMap) {
+    if (overrides == null || overrides.isEmpty()) {
+      return;
+    }
+    for (String part : overrides.split(",")) {
+      String[] kv = part.split("=", 2);
+      if (kv.length == 2) {
+        targetMap.put(kv[0].trim(), kv[1].trim());
+      }
+    }
   }
 }

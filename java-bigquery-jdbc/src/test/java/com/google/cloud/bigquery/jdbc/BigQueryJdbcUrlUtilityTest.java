@@ -30,12 +30,12 @@ import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
+  private static final String BASE_URL =
+      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;";
+
   @Test
   public void testParsePropertyWithNoDefault() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "OAuthAccessToken=RedactedToken";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;OAuthAccessToken=RedactedToken";
 
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "OAuthType");
     assertThat(result).isNull();
@@ -43,10 +43,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParseUrlWithUnknownProperty_no_exception() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "UnknownProperty=SomeValue";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;UnknownProperty=SomeValue";
 
     BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId");
     assertThat(assertLogContains("Wrong value or unknown setting")).isTrue();
@@ -54,10 +51,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParseUrlWithTypo_no_exception() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "ProjeectId=TypoValue";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;ProjeectId=TypoValue";
 
     assertDoesNotThrow(() -> BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId"));
     assertThat(assertLogContains("Wrong value or unknown setting")).isTrue();
@@ -65,10 +59,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParsePropertyWithDefault() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "OAuthAccessToken=RedactedToken";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;OAuthAccessToken=RedactedToken";
 
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "OAuthType");
     assertThat(result).isNull();
@@ -76,10 +67,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParsePropertyWithValue() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "OAuthAccessToken=RedactedToken";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;OAuthAccessToken=RedactedToken";
 
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId");
     assertThat(result).isEqualTo("MyBigQueryProject");
@@ -87,10 +75,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParsePropertyWithValueCaseInsensitive() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "PROJECTID=MyBigQueryProject;"
-            + "OAuthAccessToken=RedactedToken";
+    String url = BASE_URL + "PROJECTID=MyBigQueryProject;OAuthAccessToken=RedactedToken";
 
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId");
     assertThat(result).isEqualTo("MyBigQueryProject");
@@ -98,10 +83,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testAppendPropertiesToURL() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;"
-            + "OAuthAccessToken=RedactedToken";
+    String url = BASE_URL + "ProjectId=MyBigQueryProject;OAuthAccessToken=RedactedToken";
     Properties properties = new Properties();
     properties.setProperty("OAuthType", "3");
 
@@ -140,7 +122,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testParseUrl_longUnknownProperty_sanitized() {
     String longKey = String.join("", Collections.nCopies(50, "a"));
-    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;" + longKey + "=value";
+    String url = BASE_URL + longKey + "=value";
 
     assertDoesNotThrow(() -> BigQueryJdbcUrlUtility.parseUrl(url));
     String message = capturedLogs.get(0).getMessage();
@@ -153,42 +135,34 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testParsePartnerTokenProperty() {
     // Case with partner name and environment
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "PartnerToken=(GPN:partner_company; dev);ProjectId=MyBigQueryProject;";
+    String url = BASE_URL + "PartnerToken=(GPN:partner_company; dev);ProjectId=MyBigQueryProject;";
     String expected = " (GPN:partner_company; dev)";
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertThat(result).isEqualTo(expected);
 
     // Case with only partner name
-    url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "PartnerToken=(GPN:another_partner);ProjectId=MyBigQueryProject;";
+    url = BASE_URL + "PartnerToken=(GPN:another_partner);ProjectId=MyBigQueryProject;";
     expected = " (GPN:another_partner)";
     result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertThat(result).isEqualTo(expected);
 
     // Case when PartnerToken property is not present
-    url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=MyBigQueryProject;";
+    url = BASE_URL + "ProjectId=MyBigQueryProject;";
     result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertNull(result);
 
     // Case when PartnerToken property is present but empty
-    url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PartnerToken=();";
+    url = BASE_URL + "PartnerToken=();";
     result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertNull(result);
 
     // Case when PartnerToken property is present but without partner name
-    url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PartnerToken=(env);";
+    url = BASE_URL + "PartnerToken=(env);";
     result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertNull(result);
 
     // Case with extra spaces around the values
-    url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "PartnerToken= ( GPN: partner_name ; test_env ) ;";
+    url = BASE_URL + "PartnerToken= ( GPN: partner_name ; test_env ) ;";
     expected = " (GPN: partner_name ; test_env)";
     result = BigQueryJdbcUrlUtility.parseUriProperty(url, "PartnerToken");
     assertThat(result).isEqualTo(expected);
@@ -196,7 +170,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testAppendPropertiesToURL_propertyWithSemicolon_isEscaped() throws Exception {
-    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;";
+    String url = BASE_URL;
     Properties properties = new Properties();
     String complexValue = "value;ExtraProperty=injection";
     properties.setProperty("ProjectId", complexValue);
@@ -259,5 +233,76 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     // Malformed property (not key-value) should throw exception
     String url2 = "jdbc:bigquery://;MalformedProperty";
     assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(url2));
+  }
+
+  @Test
+  public void testParseAuthorityEndpointOverride() {
+    String url = "jdbc:bigquery://https://custom-endpoint.com:443;ProjectId=MyProject";
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
+    assertThat(endpointOverride).isEqualTo("BIGQUERY=https://custom-endpoint.com:443");
+  }
+
+  @Test
+  public void testParseAuthorityEndpointOverrideNoSemicolon() {
+    String url = "jdbc:bigquery://https://custom-endpoint.com:443";
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
+    assertThat(endpointOverride).isEqualTo("BIGQUERY=https://custom-endpoint.com:443");
+  }
+
+  @Test
+  public void testParseAuthorityProxy() {
+    String url = "jdbc:bigquery://proxy.example.com:8080;ProjectId=MyProject";
+    String proxyHost = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyHost");
+    String proxyPort = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyPort");
+    assertThat(proxyHost).isEqualTo("proxy.example.com");
+    assertThat(proxyPort).isEqualTo("8080");
+  }
+
+  @Test
+  public void testParseAuthorityProxyNoPort() {
+    String url = "jdbc:bigquery://proxy.example.com;ProjectId=MyProject";
+    String proxyHost = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyHost");
+    String proxyPort = BigQueryJdbcUrlUtility.parseUriProperty(url, "ProxyPort");
+    assertThat(proxyHost).isEqualTo("proxy.example.com");
+    assertThat(proxyPort).isNull();
+  }
+
+  @Test
+  public void testParseAuthorityAndMergeEndpointOverrides() {
+    String url =
+        BASE_URL
+            + "EndpointOverrides=READ_API=https://storage-endpoint.com:443;ProjectId=MyProject";
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
+    assertThat(endpointOverride)
+        .isEqualTo(
+            "BIGQUERY=https://www.googleapis.com/bigquery/v2:443,READ_API=https://storage-endpoint.com:443");
+  }
+
+  @Test
+  public void testParseAuthorityAndOverwriteEndpointOverrides() {
+    String url =
+        BASE_URL
+            + "EndpointOverrides=BIGQUERY=https://another-endpoint.com:443,READ_API=https://storage-endpoint.com:443;ProjectId=MyProject";
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
+    assertThat(endpointOverride)
+        .isEqualTo(
+            "BIGQUERY=https://another-endpoint.com:443,READ_API=https://storage-endpoint.com:443");
+  }
+
+  @Test
+  public void testDataSourceFromUrlAuthorityEndpoint() {
+    String url = BASE_URL + "ProjectId=MyProject";
+    DataSource ds = DataSource.fromUrl(url);
+    assertThat(ds.getProjectId()).isEqualTo("MyProject");
+    assertThat(ds.getOverrideProperties().get("BIGQUERY"))
+        .isEqualTo("https://www.googleapis.com/bigquery/v2:443");
+  }
+
+  @Test
+  public void testDataSourceFromUrlAuthorityProxy() {
+    String url = "jdbc:bigquery://proxy.example.com:8080;ProjectId=MyProject";
+    DataSource ds = DataSource.fromUrl(url);
+    assertThat(ds.getProxyHost()).isEqualTo("proxy.example.com");
+    assertThat(ds.getProxyPort()).isEqualTo("8080");
   }
 }
