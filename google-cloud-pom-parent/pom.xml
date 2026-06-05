@@ -134,6 +134,28 @@
       </build>
     </profile>
     <profile>
+      <!-- For JDK < 17 (JDK 8 and 11), downgrade to Error Prone 2.38.0. -->
+      <id>errorprone-jdk11</id>
+      <activation>
+        <jdk>[1.8,17)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.38.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
+      </properties>
+    </profile>
+    <profile>
+      <!-- For JDK 17, downgrade to Error Prone 2.42.0 (latest supporting JDK 17). -->
+      <id>errorprone-jdk17</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.42.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
+      </properties>
+    </profile>
+    <profile>
       <!-- Error Prone 2.43.0+ requires JDK 21+ to run (older JDKs unsupported).
            On JDK 21 specifically, we require '-XDaddTypeAnnotationsToSymbol=true'.
            On JDK 22+ (including 25 and 26), the fix is enabled by default in javac. -->
