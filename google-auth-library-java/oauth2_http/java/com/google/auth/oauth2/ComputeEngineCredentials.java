@@ -803,15 +803,14 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public String getRegionalAccessBoundaryUrl() throws IOException {
     String account = getAccount();
-    // In GKE environments, the default service account might return a non-email placeholder.
-    // Since RAB lookup requires a valid email-based service account, we skip RAB lookup
-    // in non-email scenarios by returning null.
+    // The MDS may return a non-email value for the account and we should skip RAB refresh in that
+    // scenario.
     if (account == null || !EMAIL_PATTERN.matcher(account).matches()) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
           Level.INFO,
           Collections.emptyMap(),
-          "Regional Access Boundary lookup is skipped for this instance because it is a non-email instance.");
+          "Unable to retrieve this instance's email and will skip the regional request routing. Proceeding with request");
       return null;
     }
     return String.format(
