@@ -122,30 +122,22 @@ REPO_EXCLUSION = [
 
 LIBRARIES_IN_MONOREPO = glob("java-*")
 
-def allowed_remote_repo(repo) -> bool:
-  return (repo['language'].lower() == 'java'
-          and repo['full_name'].startswith('googleapis/java-')
-          and repo['full_name'] not in
-          [ 'googleapis/%s' % repo for repo in (REPO_EXCLUSION + LIBRARIES_IN_MONOREPO)])
-
-def _fetch_repo_list(page):
-  url = "https://api.github.com/search/repositories"
-  response = requests.get(url, params = {
-    'q': 'org:googleapis is:public archived:false language:java',
-    'per_page': 100,
-    'page': page,
-  })
-  return response.json()['items']
+EXTERNAL_REPOS = [
+  "googleapis/java-bigtable-hbase",
+  "googleapis/java-pubsub-group-kafka-connector",
+  "googleapis/java-pubsublite",
+  "googleapis/java-pubsublite-kafka",
+  "googleapis/java-pubsublite-spark",
+  "googleapis/java-pubsublite-flink",
+  "googleapis/java-logging-servlet-initializer",
+]
 
 def all_clients() -> List[CloudClient]:
-  page = 1
   clients = []
-  while (True):
-    repos = _fetch_repo_list(page)
-    if not repos:
-      break
-    clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_remote_repo(repo)])
-    page += 1
+  for repo in EXTERNAL_REPOS:
+    client = client_for_repo(repo)
+    if client:
+      clients.append(client)
   clients.extend([client_for_module(module) for module in LIBRARIES_IN_MONOREPO if
                   module not in REPO_EXCLUSION])
 
