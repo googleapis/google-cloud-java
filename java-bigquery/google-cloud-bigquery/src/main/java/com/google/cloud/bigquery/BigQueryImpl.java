@@ -20,6 +20,7 @@ import static com.google.cloud.bigquery.PolicyHelper.convertToApiPolicy;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
@@ -1123,11 +1124,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               new Callable<com.google.api.services.bigquery.model.Table>() {
                 @Override
                 public com.google.api.services.bigquery.model.Table call() throws IOException {
-                  return bigQueryRpc.getTableSkipExceptionTranslation(
-                      completeTableId.getProject(),
-                      completeTableId.getDataset(),
-                      completeTableId.getTable(),
-                      optionsMap);
+                  try {
+                    return bigQueryRpc.getTableSkipExceptionTranslation(
+                        completeTableId.getProject(),
+                        completeTableId.getDataset(),
+                        completeTableId.getTable(),
+                        optionsMap);
+                  } catch (HttpResponseException e) {
+                    throw new BigQueryException(e);
+                  }
                 }
               },
               getOptions().getRetrySettings(),

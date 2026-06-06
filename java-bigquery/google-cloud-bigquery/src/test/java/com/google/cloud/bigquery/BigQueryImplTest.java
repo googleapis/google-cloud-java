@@ -36,6 +36,10 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -933,6 +937,37 @@ public class BigQueryImplTest {
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
     verify(bigqueryRpcMock)
         .getTableSkipExceptionTranslation(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  void testGetTableFailureShouldRetryServerErrors() throws IOException {
+    GoogleJsonError error = new GoogleJsonError();
+    error.setMessage("Visibility check was unavailable. Please retry the request");
+    error.setCode(503);
+    GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
+    errorInfo.setReason("backendError");
+    error.setErrors(ImmutableList.of(errorInfo));
+
+    when(bigqueryRpcMock.getTableSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .thenThrow(new GoogleJsonResponseException(serverErrorResponse(), error))
+        .thenReturn(TABLE_INFO_WITH_PROJECT.toPb());
+
+    bigquery =
+        options.toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+
+    Table table = bigquery.getTable(DATASET, TABLE);
+
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+    verify(bigqueryRpcMock, times(2))
+        .getTableSkipExceptionTranslation(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  private static HttpResponseException.Builder serverErrorResponse() {
+    return new HttpResponseException.Builder(503, "Service Unavailable", new HttpHeaders());
   }
 
   @Test
