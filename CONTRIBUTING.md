@@ -124,7 +124,7 @@ feat(storage): add new storage bucket feature
 
 A new feature is added to storage.
 
-Fixes \#238
+Fixes #238
 ```
 
 ### First line
