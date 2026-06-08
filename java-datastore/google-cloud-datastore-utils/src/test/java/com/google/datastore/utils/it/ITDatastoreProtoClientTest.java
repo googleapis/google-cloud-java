@@ -38,6 +38,7 @@ import java.time.Duration;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
+import java.util.concurrent.Callable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -99,7 +100,7 @@ public class ITDatastoreProtoClientTest {
   }
 
   /**
-   * A generic helper method that executes a {@link java.util.concurrent.Callable} with retries using
+   * A generic helper method that executes a {@link Callable} with retries using
    * the GAX retrying framework.
    *
    * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings}
@@ -112,7 +113,7 @@ public class ITDatastoreProtoClientTest {
    * @throws Exception if the execution fails after all retry attempts.
    */
   private static <V> V runWithRetry(
-      java.util.concurrent.Callable<V> callable,
+      Callable<V> callable,
       RetrySettings retrySettings,
       ResultRetryAlgorithmWithContext<V> resultRetryAlgorithm)
       throws Exception {
