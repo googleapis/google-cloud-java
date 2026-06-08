@@ -822,11 +822,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   private void configurePqc(ManagedChannelBuilder<?> builder) {
     try {
-      java.security.Provider bcProvider = new org.bouncycastle.jce.provider.BouncyCastleProvider();
-      java.security.Provider bcJsseProvider =
-          new org.bouncycastle.jsse.provider.BouncyCastleJsseProvider(bcProvider);
-
-      builder.preferJdkSslWithSecurityProvider(bcJsseProvider);
+      java.security.Provider conscryptProvider = org.conscrypt.Conscrypt.newProvider();
+      builder.preferJdkSslWithSecurityProvider(conscryptProvider);
     } catch (Exception e) {
       LOG.log(Level.WARNING, "Failed to configure gRPC channel for PQC", e);
     }
