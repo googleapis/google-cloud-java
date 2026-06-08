@@ -2146,7 +2146,7 @@ libraries:
         - google-iam-policy
         - proto-google-iam-v1
       released_version: 1.90.0
-      name_pretty_override: IAM
+      name_pretty_override: Cloud IAM Policy
       product_documentation_override: n/a
   - name: iamcredentials
     version: 2.94.0-SNAPSHOT
