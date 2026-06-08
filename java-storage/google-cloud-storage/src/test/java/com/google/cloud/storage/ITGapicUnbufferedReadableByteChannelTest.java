@@ -105,7 +105,12 @@ public final class ITGapicUnbufferedReadableByteChannelTest {
           if (request.equals(req1)) {
             responseObserver.onNext(resp1);
             responseObserver.onNext(resp2);
-            responseObserver.onError(apiException(Code.DATA_LOSS));
+            new Thread(() -> {
+              try {
+                Thread.sleep(200);
+              } catch (InterruptedException ignored) {}
+              responseObserver.onError(apiException(Code.DATA_LOSS));
+            }).start();
           } else if (request.equals(req2)) {
             responseObserver.onNext(resp3);
             responseObserver.onNext(resp4);
@@ -194,7 +199,12 @@ public final class ITGapicUnbufferedReadableByteChannelTest {
               if (count == 0) {
                 responseObserver.onNext(resp1);
                 responseObserver.onNext(resp2);
-                responseObserver.onError(apiException(Code.DATA_LOSS));
+                new Thread(() -> {
+                  try {
+                    Thread.sleep(200);
+                  } catch (InterruptedException ignored) {}
+                  responseObserver.onError(apiException(Code.DATA_LOSS));
+                }).start();
               }
             } else if (request.equals(req2)) {
               ReadObjectResponse.Builder builder = resp3.toBuilder();
