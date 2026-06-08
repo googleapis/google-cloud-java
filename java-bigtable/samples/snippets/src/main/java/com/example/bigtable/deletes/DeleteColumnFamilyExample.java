@@ -17,6 +17,7 @@
 package com.example.bigtable.deletes;
 
 // [START bigtable_delete_column_family]
+import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
@@ -28,11 +29,11 @@ public class DeleteColumnFamilyExample {
         BaseBigtableTableAdminSettings.newBuilder().build();
     try (BigtableTableAdminClientV2 tableAdminClient =
         BigtableTableAdminClientV2.create(adminSettings)) {
-      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest request =
-          com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder()
+      ModifyColumnFamiliesRequest request =
+          ModifyColumnFamiliesRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
               .addModifications(
-                  com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+                  ModifyColumnFamiliesRequest.Modification.newBuilder()
                       .setId(columnFamily)
                       .setDrop(true))
               .build();

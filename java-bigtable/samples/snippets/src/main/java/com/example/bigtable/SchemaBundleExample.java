@@ -17,6 +17,16 @@
 package com.example.bigtable;
 
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateSchemaBundleRequest;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListSchemaBundlesRequest;
+import com.google.bigtable.admin.v2.ProtoSchema;
+import com.google.bigtable.admin.v2.SchemaBundle;
+import com.google.bigtable.admin.v2.SchemaBundleName;
+import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.protobuf.ByteString;
@@ -85,9 +95,9 @@ public class SchemaBundleExample {
   private boolean exists(String tableId) {
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       return true;
     } catch (com.google.api.gax.rpc.NotFoundException e) {
@@ -114,18 +124,16 @@ public class SchemaBundleExample {
     // Checks if table exists, creates table if it does not exist.
     if (!exists(tableId)) {
       System.out.println("Table does not exist, creating table: " + tableId);
-      com.google.bigtable.admin.v2.CreateTableRequest request =
-          com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+      CreateTableRequest request =
+          CreateTableRequest.newBuilder()
               .setParent("projects/" + projectId + "/instances/" + instanceId)
               .setTableId(tableId)
               .setTable(
-                  com.google.bigtable.admin.v2.Table.newBuilder()
-                      .putColumnFamilies(
-                          COLUMN_FAMILY,
-                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                  Table.newBuilder()
+                      .putColumnFamilies(COLUMN_FAMILY, ColumnFamily.getDefaultInstance())
                       .build())
               .build();
-      com.google.bigtable.admin.v2.Table table = adminClient.createTable(request);
+      Table table = adminClient.createTable(request);
       System.out.printf("Table: %s created successfully%n", table.getName());
     }
   }
@@ -162,22 +170,19 @@ public class SchemaBundleExample {
         if (in == null) {
           throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
         }
-        com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
-            com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+        SchemaBundle schemaBundleObj =
+            SchemaBundle.newBuilder()
                 .setProtoSchema(
-                    com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
-                        .setProtoDescriptors(ByteString.readFrom(in))
-                        .build())
+                    ProtoSchema.newBuilder().setProtoDescriptors(ByteString.readFrom(in)).build())
                 .build();
-        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request =
-            com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+        CreateSchemaBundleRequest request =
+            CreateSchemaBundleRequest.newBuilder()
                 .setParent(
                     "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
                 .setSchemaBundleId(schemaBundleId)
                 .setSchemaBundle(schemaBundleObj)
                 .build();
-        com.google.bigtable.admin.v2.SchemaBundle schemaBundle =
-            adminClient.createSchemaBundleAsync(request).get();
+        SchemaBundle schemaBundle = adminClient.createSchemaBundleAsync(request).get();
         System.out.printf("Schema bundle: %s created successfully%n", schemaBundle.getName());
       } catch (Exception e) {
         System.err.println("Failed to create a schema bundle: " + e.getMessage());
@@ -194,8 +199,8 @@ public class SchemaBundleExample {
       if (in == null) {
         throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
       }
-      com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
-          com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+      SchemaBundle schemaBundleObj =
+          SchemaBundle.newBuilder()
               .setName(
                   "projects/"
                       + projectId
@@ -206,18 +211,15 @@ public class SchemaBundleExample {
                       + "/schemaBundles/"
                       + schemaBundleId)
               .setProtoSchema(
-                  com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
-                      .setProtoDescriptors(ByteString.readFrom(in))
-                      .build())
+                  ProtoSchema.newBuilder().setProtoDescriptors(ByteString.readFrom(in)).build())
               .build();
-      com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request =
-          com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+      UpdateSchemaBundleRequest request =
+          UpdateSchemaBundleRequest.newBuilder()
               .setSchemaBundle(schemaBundleObj)
               .setUpdateMask(
                   com.google.protobuf.FieldMask.newBuilder().addPaths("proto_schema").build())
               .build();
-      com.google.bigtable.admin.v2.SchemaBundle schemaBundle =
-          adminClient.updateSchemaBundleAsync(request).get();
+      SchemaBundle schemaBundle = adminClient.updateSchemaBundleAsync(request).get();
       System.out.printf("Schema bundle: %s updated successfully%n", schemaBundle.getName());
     } catch (Exception e) {
       System.err.println("Failed to modify schema bundle: " + e.getMessage());
@@ -226,10 +228,10 @@ public class SchemaBundleExample {
   }
 
   /** Demonstrates how to get a schema bundle's definition. */
-  public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
+  public SchemaBundle getSchemaBundle() {
     System.out.printf("%nGetting schema bundle %s in table %s%n", schemaBundleId, tableId);
     // [START bigtable_get_schema_bundle]
-    com.google.bigtable.admin.v2.SchemaBundle schemaBundle = null;
+    SchemaBundle schemaBundle = null;
     try {
       schemaBundle =
           adminClient.getSchemaBundle(
@@ -273,15 +275,13 @@ public class SchemaBundleExample {
     // [START bigtable_list_schema_bundles]
     List<String> schemaBundleIds = new ArrayList<>();
     try {
-      com.google.bigtable.admin.v2.ListSchemaBundlesRequest request =
-          com.google.bigtable.admin.v2.ListSchemaBundlesRequest.newBuilder()
+      ListSchemaBundlesRequest request =
+          ListSchemaBundlesRequest.newBuilder()
               .setParent(
                   "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
               .build();
-      for (com.google.bigtable.admin.v2.SchemaBundle bundle :
-          adminClient.listSchemaBundles(request).iterateAll()) {
-        String id =
-            com.google.bigtable.admin.v2.SchemaBundleName.parse(bundle.getName()).getSchemaBundle();
+      for (SchemaBundle bundle : adminClient.listSchemaBundles(request).iterateAll()) {
+        String id = SchemaBundleName.parse(bundle.getName()).getSchemaBundle();
         System.out.println(id);
         schemaBundleIds.add(id);
       }

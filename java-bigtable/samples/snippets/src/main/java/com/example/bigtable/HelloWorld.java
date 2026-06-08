@@ -22,6 +22,10 @@ import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
@@ -123,9 +127,9 @@ public class HelloWorld {
     boolean exists = false;
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       exists = true;
     } catch (NotFoundException e) {
@@ -134,15 +138,13 @@ public class HelloWorld {
     if (!exists) {
       System.out.println("Creating table: " + tableId);
       String parent = "projects/" + projectId + "/instances/" + instanceId;
-      com.google.bigtable.admin.v2.CreateTableRequest request =
-          com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+      CreateTableRequest request =
+          CreateTableRequest.newBuilder()
               .setParent(parent)
               .setTableId(tableId)
               .setTable(
-                  com.google.bigtable.admin.v2.Table.newBuilder()
-                      .putColumnFamilies(
-                          COLUMN_FAMILY,
-                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                  Table.newBuilder()
+                      .putColumnFamilies(COLUMN_FAMILY, ColumnFamily.getDefaultInstance())
                       .build())
               .build();
       adminClient.createTable(request);

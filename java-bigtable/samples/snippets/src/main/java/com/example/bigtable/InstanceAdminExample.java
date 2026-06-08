@@ -124,7 +124,7 @@ public class InstanceAdminExample {
     boolean exists = false;
     try {
       adminClient.getInstance(
-          com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder()
+          GetInstanceRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId)
               .build());
       exists = true;

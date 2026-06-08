@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.GcRule;
+import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Table;
@@ -119,9 +120,9 @@ public class TableAdminExample {
     boolean exists = false;
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       exists = true;
     } catch (NotFoundException e) {
