@@ -101,26 +101,19 @@ public class ITDatastoreProtoClientTest {
         });
   }
 
-  // This low-level Datastore client (proto-over-HTTP) does not have built-in retry logic
-  // (unlike the high-level google-cloud-datastore gRPC client). We must explicitly retry
-  // here to handle transient backend errors (such as Code.INTERNAL auth issues).
-  // We reuse GAX retrying utilities here in the test to implement this backoff/retry.
-  private static List<Query> getSplitsWithRetry(
-      Query query, PartitionId partition, int numSplits, Datastore datastore)
-      throws DatastoreException {
-    RetrySettings retrySettings = RetrySettings.newBuilder()
-        .setMaxAttempts(3)
-        .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-        .setRetryDelayMultiplier(2.0)
-        .setMaxRetryDelayDuration(Duration.ofSeconds(3))
-        .setTotalTimeoutDuration(Duration.ofSeconds(10))
-        .build();
+  @FunctionalInterface
+  private interface DatastoreCallable<V> {
+    V call() throws DatastoreException;
+  }
 
+  private static <V> V runWithRetry(
+      DatastoreCallable<V> callable, RetrySettings retrySettings)
+      throws DatastoreException {
     ApiClock clock = NanoClock.getDefaultClock();
-    RetryAlgorithm<List<Query>> retryAlgorithm = new RetryAlgorithm<>(
-        new BasicResultRetryAlgorithm<List<Query>>() {
+    RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(
+        new BasicResultRetryAlgorithm<V>() {
           @Override
-          public boolean shouldRetry(Throwable prevThrowable, List<Query> prevResult) {
+          public boolean shouldRetry(Throwable prevThrowable, V prevResult) {
             if (prevThrowable instanceof DatastoreException) {
               DatastoreException de = (DatastoreException) prevThrowable;
               return de.getCode() == com.google.rpc.Code.INTERNAL;
@@ -131,12 +124,10 @@ public class ITDatastoreProtoClientTest {
         new ExponentialRetryAlgorithm(retrySettings, clock)
     );
 
-    DirectRetryingExecutor<List<Query>> executor = new DirectRetryingExecutor<>(retryAlgorithm);
-    RetryingFuture<List<Query>> future = executor.createFuture(
-        () -> DatastoreHelper.getQuerySplitter().getSplits(query, partition, numSplits, datastore)
-    );
+    DirectRetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+    RetryingFuture<V> future = executor.createFuture(callable::call);
 
-    ApiFuture<List<Query>> submittedFuture = executor.submit(future);
+    ApiFuture<V> submittedFuture = executor.submit(future);
 
     try {
       return submittedFuture.get();
@@ -153,5 +144,25 @@ public class ITDatastoreProtoClientTest {
       Thread.currentThread().interrupt();
       throw new RuntimeException(e);
     }
+  }
+
+  // This low-level Datastore client (proto-over-HTTP) does not have built-in retry logic
+  // (unlike the high-level google-cloud-datastore gRPC client). We must explicitly retry
+  // here to handle transient backend errors (such as Code.INTERNAL auth issues).
+  // We reuse GAX retrying utilities here in the test to implement this backoff/retry.
+  private static List<Query> getSplitsWithRetry(
+      Query query, PartitionId partition, int numSplits, Datastore datastore)
+      throws DatastoreException {
+    RetrySettings retrySettings = RetrySettings.newBuilder()
+        .setMaxAttempts(3)
+        .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+        .setRetryDelayMultiplier(2.0)
+        .setMaxRetryDelayDuration(Duration.ofSeconds(3))
+        .setTotalTimeoutDuration(Duration.ofSeconds(10))
+        .build();
+    return runWithRetry(
+        () -> DatastoreHelper.getQuerySplitter().getSplits(query, partition, numSplits, datastore),
+        retrySettings
+    );
   }
 }
