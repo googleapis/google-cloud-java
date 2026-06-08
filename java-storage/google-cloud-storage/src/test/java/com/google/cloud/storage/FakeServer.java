@@ -84,7 +84,7 @@ final class FakeServer implements AutoCloseable {
     Server server = NettyServerBuilder.forAddress(address).addService(service).build();
     server.start();
     String endpoint = String.format(Locale.US, "%s:%d", address.getHostString(), server.getPort());
-    ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(0);
+    ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(4);
     executor.setKeepAliveTime(10, TimeUnit.SECONDS);
     executor.allowCoreThreadTimeOut(true);
 
