@@ -70,7 +70,6 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
-import com.google.cloud.bigtable.admin.v2.stub.AwaitConsistencyCallableV2;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.cloud.bigtable.data.v2.internal.TableAdminRequestContext;
 import com.google.common.base.Preconditions;
@@ -234,17 +233,17 @@ public final class BigtableTableAdminClient implements AutoCloseable {
       boolean shouldAutoClose =
           stub.getSettings().getBackgroundExecutorProvider().shouldAutoClose();
 
-      AwaitConsistencyCallableV2 awaitConsistencyCallable =
-          BigtableTableAdminClientV2.createAwaitConsistencyCallable(
-              stub, stub.getSettings(), stub.getClientContext().getClock(), backgroundExecutor);
-
-      v2Client =
-          new BigtableTableAdminClientV2(
-              stub,
-              backgroundExecutor,
-              shouldAutoClose,
-              awaitConsistencyCallable,
-              stub.awaitOptimizeRestoredTableCallable());
+      try {
+        v2Client =
+            BigtableTableAdminClientV2.create(
+                stub,
+                stub.getSettings(),
+                stub.getClientContext().getClock(),
+                backgroundExecutor,
+                shouldAutoClose);
+      } catch (IOException e) {
+        throw new IllegalStateException("Failed to initialize modern V2 table admin client", e);
+      }
     }
     return v2Client;
   }

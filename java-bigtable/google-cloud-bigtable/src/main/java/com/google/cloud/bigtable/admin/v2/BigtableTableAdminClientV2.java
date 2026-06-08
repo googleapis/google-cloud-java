@@ -108,8 +108,37 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
 
     OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
         optimizeRestoredTableOperationBaseCallable =
-            createOptimizeRestoredTableOperationBaseCallable(stub, settings, backgroundExecutor);
+            createOptimizeRestoredTableOperationBaseCallable(
+                stub, settings.getStubSettings().getClock(), backgroundExecutor);
 
+    return new BigtableTableAdminClientV2(
+        stub,
+        backgroundExecutor,
+        shouldAutoClose,
+        awaitConsistencyCallable,
+        optimizeRestoredTableOperationBaseCallable);
+  }
+
+  /**
+   * Package-private factory method to construct an instance of {@link BigtableTableAdminClientV2}
+   * by reusing an existing stub, settings, clock, and background executor.
+   *
+   * <p>This is used by the legacy {@code BigtableTableAdminClient}'s escape hatch ({@code
+   * getBaseClient()}) to wrap the legacy client's active stub, ensuring the underlying gRPC channel
+   * and resources are shared rather than recreated.
+   */
+  static BigtableTableAdminClientV2 create(
+      GrpcBigtableTableAdminStub stub,
+      BigtableTableAdminStubSettings settings,
+      ApiClock clock,
+      ScheduledExecutorService backgroundExecutor,
+      boolean shouldAutoClose)
+      throws IOException {
+    AwaitConsistencyCallableV2 awaitConsistencyCallable =
+        createAwaitConsistencyCallable(stub, settings, clock, backgroundExecutor);
+    OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
+        optimizeRestoredTableOperationBaseCallable =
+            createOptimizeRestoredTableOperationBaseCallable(stub, clock, backgroundExecutor);
     return new BigtableTableAdminClientV2(
         stub,
         backgroundExecutor,
@@ -133,7 +162,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     this.optimizeRestoredTableOperationBaseCallable = optimizeRestoredTableOperationBaseCallable;
   }
 
-  static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
+  private static AwaitConsistencyCallableV2 createAwaitConsistencyCallable(
       GrpcBigtableTableAdminStub stub,
       BigtableTableAdminStubSettings settings,
       ApiClock clock,
@@ -156,7 +185,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
   private static OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       createOptimizeRestoredTableOperationBaseCallable(
           GrpcBigtableTableAdminStub stub,
-          BaseBigtableTableAdminSettings settings,
+          ApiClock clock,
           ScheduledExecutorService backgroundExecutor)
           throws IOException {
 
@@ -229,7 +258,7 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
     // (including channels, credentials, and headers) for executing the polling RPCs.
     ClientContext clientContext =
         ClientContext.newBuilder()
-            .setClock(settings.getStubSettings().getClock())
+            .setClock(clock)
             .setExecutor(backgroundExecutor)
             .setDefaultCallContext(GrpcCallContext.createDefault())
             .build();
