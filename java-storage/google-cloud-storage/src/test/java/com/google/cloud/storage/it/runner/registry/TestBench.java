@@ -252,7 +252,7 @@ public final class TestBench implements ManagedLifecycle {
           ImmutableList.of(
               "docker",
               "run",
-              "-i",
+              "-d",
               "--rm",
               "--publish",
               port + ":9000",
@@ -318,14 +318,14 @@ public final class TestBench implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    if (runningOutsideAlready) {
-      // if the server was running outside the tests already simply return
+    if (runningOutsideAlready || Boolean.getBoolean("testbench.keepAlive")) {
+      // if the server was running outside the tests already, or we want to keep it alive, simply return
       return;
     }
     try {
       process.destroy();
       process.waitFor(2, TimeUnit.SECONDS);
-      boolean attemptForceStopContainer = false;
+      boolean attemptForceStopContainer = true;
       try {
         int processExitValue = process.exitValue();
         if (processExitValue != 0) {
