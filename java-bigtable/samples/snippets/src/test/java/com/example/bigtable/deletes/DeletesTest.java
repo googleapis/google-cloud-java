@@ -41,10 +41,11 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DeletesTest extends MobileTimeSeriesBaseTest {
   public static BigtableDataClient bigtableDataClient;
+  private static BigtableTableAdminClientV2 adminClient;
 
-  private static boolean exists(BigtableTableAdminClientV2 client, String tableId) {
+  private static boolean exists(String tableId) {
     try {
-      client.getTable(
+      adminClient.getTable(
           com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
               .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
@@ -62,11 +63,17 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
     writeStatsData();
     writePlanData();
     bigtableDataClient = BigtableDataClient.create(projectId, instanceId);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
   }
 
   @AfterClass
   public static void afterClass() throws IOException {
     cleanupTable();
+    if (adminClient != null) {
+      adminClient.close();
+    }
   }
 
   @Test
@@ -176,38 +183,28 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
   @Test
   public void test7_testDeleteColumnFamily() throws IOException {
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    try (BigtableTableAdminClientV2 tableAdminClient =
-        BigtableTableAdminClientV2.create(adminSettings)) {
-      com.google.bigtable.admin.v2.GetTableRequest request =
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
-              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
-              .build();
-      Truth.assertThat(tableAdminClient.getTable(request).getColumnFamiliesMap().keySet())
-          .contains(COLUMN_FAMILY_NAME_STATS);
+    com.google.bigtable.admin.v2.GetTableRequest request =
+        com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+            .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+            .build();
+    Truth.assertThat(adminClient.getTable(request).getColumnFamiliesMap().keySet())
+        .contains(COLUMN_FAMILY_NAME_STATS);
 
-      DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
-      deleteColumnFamilyExample.deleteColumnFamily(
-          projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
+    DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
+    deleteColumnFamilyExample.deleteColumnFamily(
+        projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
 
-      Truth.assertThat(tableAdminClient.getTable(request).getColumnFamiliesMap().keySet())
-          .doesNotContain(COLUMN_FAMILY_NAME_STATS);
-    }
+    Truth.assertThat(adminClient.getTable(request).getColumnFamiliesMap().keySet())
+        .doesNotContain(COLUMN_FAMILY_NAME_STATS);
   }
 
   @Test
   public void test8_testDeleteTable() throws IOException {
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    try (BigtableTableAdminClientV2 tableAdminClient =
-        BigtableTableAdminClientV2.create(adminSettings)) {
-      Truth.assertThat(exists(tableAdminClient, TABLE_ID)).isTrue();
+    Truth.assertThat(exists(TABLE_ID)).isTrue();
 
-      DeleteTableExample deleteTableExample = new DeleteTableExample();
-      deleteTableExample.deleteTable(projectId, instanceId, TABLE_ID);
+    DeleteTableExample deleteTableExample = new DeleteTableExample();
+    deleteTableExample.deleteTable(projectId, instanceId, TABLE_ID);
 
-      Truth.assertThat(exists(tableAdminClient, TABLE_ID)).isFalse();
-    }
+    Truth.assertThat(exists(TABLE_ID)).isFalse();
   }
 }
