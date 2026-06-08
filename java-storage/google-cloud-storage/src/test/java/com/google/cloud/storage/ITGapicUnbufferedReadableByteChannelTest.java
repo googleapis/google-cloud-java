@@ -53,8 +53,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Ignore;
 import org.junit.Test;
 
-// Permanently ignore streaming test to prevent CI/CD presubmit hanging
-@Ignore
 public final class ITGapicUnbufferedReadableByteChannelTest {
   private final byte[] bytes = DataGenerator.base64Characters().genBytes(40);
   private final ByteString data1 = ByteString.copyFrom(bytes, 0, 10);

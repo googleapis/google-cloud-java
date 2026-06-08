@@ -96,7 +96,6 @@ public class ITGzipReadableByteChannelTest {
           .setChecksummedData(getChecksummedData(contentCompressed2))
           .build();
 
-  @Ignore
   public static final class Uncompressed {
     private static final StorageGrpc.StorageImplBase fakeStorage =
         new StorageGrpc.StorageImplBase() {
@@ -173,7 +172,6 @@ public class ITGzipReadableByteChannelTest {
     }
   }
 
-  @Ignore
   public static final class Compressed {
 
     private static final StorageGrpc.StorageImplBase fakeStorage =
@@ -319,7 +317,6 @@ public class ITGzipReadableByteChannelTest {
     }
   }
 
-  @Ignore
   public static final class Behavior {
 
     @Test
