@@ -826,15 +826,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       java.security.Provider bcJsseProvider =
           new org.bouncycastle.jsse.provider.BouncyCastleJsseProvider(bcProvider);
 
-      javax.net.ssl.SSLContext sslContext =
-          javax.net.ssl.SSLContext.getInstance("TLSv1.3", bcJsseProvider);
-      sslContext.init(null, null, null);
-
-      builder.preferJdkSslProvider(sslContext);
+      builder.preferJdkSslWithSecurityProvider(bcJsseProvider);
     } catch (Exception e) {
       LOG.log(Level.WARNING, "Failed to configure gRPC channel for PQC", e);
     }
   }
+
 
   private ManagedChannel createSingleChannel() throws IOException {
     ManagedChannelBuilder<?> builder = createDecoratedChannelBuilder();
