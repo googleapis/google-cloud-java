@@ -97,11 +97,30 @@ public class ITDatastoreProtoClientTest {
         });
   }
 
+  /**
+   * A functional interface similar to {@link java.util.concurrent.Callable} but specialized
+   * to throw {@link DatastoreException}. This ensures type safety and avoids having to
+   * handle generic {@link Exception} in the retry helper.
+   */
   @FunctionalInterface
   private interface DatastoreCallable<V> {
     V call() throws DatastoreException;
   }
 
+  /**
+   * A generic helper method that executes a {@link DatastoreCallable} with retries using the GAX
+   * retrying framework.
+   *
+   * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings}
+   * and a {@link BasicResultRetryAlgorithm} that retries only on transient {@code Code.INTERNAL}
+   * {@link DatastoreException}s.
+   *
+   * @param callable the action to execute
+   * @param retrySettings the retry configuration (backoff, max attempts, timeouts)
+   * @return the result of the callable execution
+   * @throws DatastoreException if the execution fails after all retry attempts, or if a
+   *     non-retryable exception is encountered.
+   */
   private static <V> V runWithRetry(
       DatastoreCallable<V> callable, RetrySettings retrySettings)
       throws DatastoreException {
