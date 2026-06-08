@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Update librarian googleapis commitish
+name: Librarian - Update googleapis commitish and generate all
 on:
   schedule:
   - cron: '0 3 * * *' # Run once a day at 3:00 AM UTC
