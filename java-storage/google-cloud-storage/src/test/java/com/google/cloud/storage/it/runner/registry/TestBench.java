@@ -509,7 +509,20 @@ public final class TestBench implements ManagedLifecycle {
       return 0;
     }
 
+    private static int findFreePort() {
+      try (java.net.ServerSocket socket = new java.net.ServerSocket(0)) {
+        socket.setReuseAddress(true);
+        return socket.getLocalPort();
+      } catch (IOException e) {
+        return 0;
+      }
+    }
+
     private static String getDefaultBaseUri() {
+      int port = findFreePort();
+      if (port > 0) {
+        return "http://localhost:" + port;
+      }
       int fork = getForkNumber();
       if (fork > 1) {
         return "http://localhost:" + (9000 + (fork - 1) * 10);
@@ -518,6 +531,10 @@ public final class TestBench implements ManagedLifecycle {
     }
 
     private static String getDefaultGrpcBaseUri() {
+      int port = findFreePort();
+      if (port > 0) {
+        return "http://localhost:" + port;
+      }
       int fork = getForkNumber();
       if (fork > 1) {
         return "http://localhost:" + (9005 + (fork - 1) * 10);
@@ -527,10 +544,11 @@ public final class TestBench implements ManagedLifecycle {
 
     private static String getDefaultContainerName() {
       int fork = getForkNumber();
+      String suffix = java.util.UUID.randomUUID().toString().substring(0, 8);
       if (fork > 1) {
-        return DEFAULT_CONTAINER_NAME + "_" + fork;
+        return DEFAULT_CONTAINER_NAME + "_" + fork + "_" + suffix;
       }
-      return DEFAULT_CONTAINER_NAME;
+      return DEFAULT_CONTAINER_NAME + "_" + suffix;
     }
 
     private boolean ignorePullError;

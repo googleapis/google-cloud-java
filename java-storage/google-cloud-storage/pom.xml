@@ -460,15 +460,6 @@
           </dependency>
         </dependencies>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <systemPropertyVariables>
-            <surefire.forkNumber>${surefire.forkNumber}</surefire.forkNumber>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
