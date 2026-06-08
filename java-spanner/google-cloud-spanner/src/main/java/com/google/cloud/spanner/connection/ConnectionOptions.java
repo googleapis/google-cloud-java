@@ -148,6 +148,8 @@ public class ConnectionOptions {
       new LocalConnectionChecker();
   static final boolean DEFAULT_USE_PLAIN_TEXT = false;
   static final boolean DEFAULT_IS_EXPERIMENTAL_HOST = false;
+  static final String DEFAULT_USERNAME = "";
+  static final String DEFAULT_PASSWORD = "";
   static final boolean DEFAULT_AUTOCOMMIT = true;
   static final boolean DEFAULT_READONLY = false;
   static final boolean DEFAULT_RETRY_ABORTS_INTERNALLY = true;
@@ -207,6 +209,12 @@ public class ConnectionOptions {
 
   /** Connect to a Experimental Host * */
   static final String IS_EXPERIMENTAL_HOST_PROPERTY_NAME = "isExperimentalHost";
+
+  /** Username for OPAQUE login */
+  public static final String USERNAME_PROPERTY_NAME = "username";
+
+  /** Password for OPAQUE login */
+  public static final String PASSWORD_PROPERTY_NAME = "password";
 
   /** Client certificate path to establish mTLS */
   static final String CLIENT_CERTIFICATE_PROPERTY_NAME = "clientCertificate";
@@ -733,6 +741,8 @@ public class ConnectionOptions {
             System.getenv());
     GoogleCredentials defaultExperimentalHostCredentials =
         SpannerOptions.getDefaultExperimentalCredentialsFromSysEnv();
+    String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
+    String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
@@ -747,6 +757,18 @@ public class ConnectionOptions {
       this.credentials =
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
+    } else if ((isExperimentalHostPattern || isExperimentalHost())
+        && !com.google.common.base.Strings.isNullOrEmpty(username)
+        && !com.google.common.base.Strings.isNullOrEmpty(password)) {
+      String target = this.host.replaceFirst("^https?://", "");
+      byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+      com.google.crypto.tink.util.SecretBytes secretBytes =
+          com.google.crypto.tink.util.SecretBytes.copyFrom(
+              passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
+      java.util.Arrays.fill(passwordBytes, (byte) 0);
+      this.credentials =
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
+              username, secretBytes, target);
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && defaultExperimentalHostCredentials != null) {
       this.credentials = defaultExperimentalHostCredentials;

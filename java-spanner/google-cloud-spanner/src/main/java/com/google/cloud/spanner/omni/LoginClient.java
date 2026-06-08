@@ -18,28 +18,20 @@ package com.google.cloud.spanner.omni;
 
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
-import com.google.common.base.Preconditions;
+import com.google.cloud.spanner.omni.Login.*;
 import com.google.cloud.spanner.omni.opaque.OpaqueUtil;
+import com.google.common.base.Preconditions;
+import com.google.crypto.tink.InsecureSecretKeyAccess;
+import com.google.crypto.tink.util.SecretBytes;
 import com.google.protobuf.ByteString;
-import google.spanner.omni.v1.AccessToken;
-import google.spanner.omni.v1.FinalOpaqueLoginRequest;
-import google.spanner.omni.v1.InitialOpaqueLoginRequest;
-import google.spanner.omni.v1.InitialOpaqueLoginResponse;
-import google.spanner.omni.v1.LoginRequest;
-import google.spanner.omni.v1.LoginResponse;
-import google.spanner.omni.v1.LoginServiceGrpc;
-import google.spanner.omni.v1.OpaqueLoginRequest;
 import io.grpc.ManagedChannel;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
-import com.google.crypto.tink.util.SecretBytes;
-import com.google.crypto.tink.InsecureSecretKeyAccess;
-
 /**
- * Client for {@link google.spanner.omni.v1.LoginServiceGrpc}. This class is used to
- * authenticate to Spanner Omni using username/password.
+ * Client for {@link google.spanner.omni.v1.LoginServiceGrpc}. This class is used to authenticate to
+ * Spanner Omni using username/password.
  */
 public class LoginClient {
   private static final java.security.SecureRandom SECURE_RANDOM = new java.security.SecureRandom();
@@ -47,7 +39,9 @@ public class LoginClient {
   private final LoginServiceGrpc.LoginServiceStub stub;
 
   public LoginClient(ManagedChannel channel) {
-    this.stub = LoginServiceGrpc.newStub(channel).withDeadlineAfter(60, java.util.concurrent.TimeUnit.SECONDS);
+    this.stub =
+        LoginServiceGrpc.newStub(channel)
+            .withDeadlineAfter(60, java.util.concurrent.TimeUnit.SECONDS);
   }
 
   /**
@@ -65,7 +59,12 @@ public class LoginClient {
     try {
       passwordBytes = password.toByteArray(InsecureSecretKeyAccess.get());
       byte[] randomNonce = OpaqueUtil.nonce();
-      byte[][] keyPair = OpaqueUtil.generateKeyPair(OpaqueUtil.concat(randomNonce, OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+      byte[][] keyPair =
+          OpaqueUtil.generateKeyPair(
+              OpaqueUtil.concat(
+                  randomNonce,
+                  OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(
+                      java.nio.charset.StandardCharsets.UTF_8)));
       byte[] clientPrivateKeyshare = keyPair[0];
       byte[] clientPublicKeyshare = keyPair[1];
       byte[] clientNonce = OpaqueUtil.nonce();
@@ -74,6 +73,32 @@ public class LoginClient {
 
       byte[] blindedMessage = OpaqueUtil.blind(passwordBytes, blind);
 
+      LoginStreamIOCall call = new LoginStreamIOCall(stub);
+
+      // 1. Send Handshake Request
+      LoginRequest handshakeRequest =
+          LoginRequest.newBuilder()
+              .setUsername(username)
+              .setHandshakeRequest(AuthenticationHandshakeRequest.newBuilder())
+              .build();
+      call.send(handshakeRequest);
+      LoginResponse handshakeResponse = call.getResponse();
+
+      if (handshakeResponse == null || !handshakeResponse.hasHandshakeResponse()) {
+        throw SpannerExceptionFactory.newSpannerException(
+            com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
+            "Failed to receive handshake response from server.");
+      }
+
+      AuthenticationMethod method =
+          handshakeResponse.getHandshakeResponse().getAuthenticationMethod();
+      if (method != AuthenticationMethod.AUTHENTICATION_METHOD_OPAQUE) {
+        throw SpannerExceptionFactory.newSpannerException(
+            com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
+            "Unsupported authentication method: " + method);
+      }
+
+      // 2. Send Initial OPAQUE Request
       LoginRequest initialRequest =
           LoginRequest.newBuilder()
               .setUsername(username)
@@ -86,13 +111,12 @@ public class LoginClient {
                               .setClientPublicKeyshare(ByteString.copyFrom(clientPublicKeyshare))))
               .build();
 
-      LoginStreamIOCall call = new LoginStreamIOCall(stub);
       call.send(initialRequest);
       LoginResponse initialResponse = call.getResponse();
 
       InitialOpaqueLoginResponse initialOpaqueResponse =
           initialResponse.getOpaqueResponse().getInitialResponse();
-          
+
       byte[] clientMac =
           generateClientMac(
               username,
@@ -140,7 +164,10 @@ public class LoginClient {
     byte[] stretchedOprf = OpaqueUtil.stretch(oprf);
     byte[] randomizedPassword = OpaqueUtil.extract(OpaqueUtil.concat(oprf, stretchedOprf));
     byte[] maskingKey =
-        OpaqueUtil.expand(randomizedPassword, OpaqueUtil.MASKING_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8), 32);
+        OpaqueUtil.expand(
+            randomizedPassword,
+            OpaqueUtil.MASKING_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+            32);
     byte[] credentialResponsePad =
         OpaqueUtil.expand(
             maskingKey,
@@ -159,23 +186,33 @@ public class LoginClient {
     byte[] authKey =
         OpaqueUtil.expand(
             randomizedPassword,
-            OpaqueUtil.concat(envelopeNonce.toByteArray(), OpaqueUtil.AUTH_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+            OpaqueUtil.concat(
+                envelopeNonce.toByteArray(),
+                OpaqueUtil.AUTH_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
             32);
     byte[] seed =
         OpaqueUtil.expand(
             randomizedPassword,
-            OpaqueUtil.concat(envelopeNonce.toByteArray(), OpaqueUtil.PRIVATE_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+            OpaqueUtil.concat(
+                envelopeNonce.toByteArray(),
+                OpaqueUtil.PRIVATE_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
             32);
-    byte[][] clientKeyPair = OpaqueUtil.generateKeyPair(OpaqueUtil.concat(seed, OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+    byte[][] clientKeyPair =
+        OpaqueUtil.generateKeyPair(
+            OpaqueUtil.concat(
+                seed,
+                OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(
+                    java.nio.charset.StandardCharsets.UTF_8)));
     byte[] clientPrivateKey = clientKeyPair[0];
     byte[] clientPublicKey = clientKeyPair[1];
-
 
     byte[] expectedTag =
         OpaqueUtil.mac(
             authKey,
             OpaqueUtil.concat(
-                envelopeNonce.toByteArray(), serverPublicKey.toByteArray(), username.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+                envelopeNonce.toByteArray(),
+                serverPublicKey.toByteArray(),
+                username.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
     if (!ByteString.copyFrom(expectedTag).equals(authTag)) {
       throw new GeneralSecurityException("Auth tag mismatch");
     }
@@ -203,9 +240,22 @@ public class LoginClient {
     byte[] prk = OpaqueUtil.extract(inputKeyMaterial);
     byte[] preambleHash = OpaqueUtil.sha256(preamble);
     byte[] handshakeSecret =
-        OpaqueUtil.expand(prk, OpaqueUtil.concat("OPAQUE-HandshakeSecret".getBytes(java.nio.charset.StandardCharsets.UTF_8), preambleHash), 32);
-    byte[] km2 = OpaqueUtil.expand(handshakeSecret, "OPAQUE-ServerMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8), 32);
-    byte[] km3 = OpaqueUtil.expand(handshakeSecret, "OPAQUE-ClientMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8), 32);
+        OpaqueUtil.expand(
+            prk,
+            OpaqueUtil.concat(
+                "OPAQUE-HandshakeSecret".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+                preambleHash),
+            32);
+    byte[] km2 =
+        OpaqueUtil.expand(
+            handshakeSecret,
+            "OPAQUE-ServerMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+            32);
+    byte[] km3 =
+        OpaqueUtil.expand(
+            handshakeSecret,
+            "OPAQUE-ClientMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+            32);
 
     byte[] expectedServerMac = OpaqueUtil.mac(km2, OpaqueUtil.sha256(preamble));
     if (!ByteString.copyFrom(expectedServerMac).equals(initialOpaqueResponse.getServerMac())) {
@@ -216,7 +266,8 @@ public class LoginClient {
 
   static class LoginStreamIOCall {
     private final LoginServiceGrpc.LoginServiceStub stub;
-    private final java.util.concurrent.BlockingQueue<LoginResponse> responseQueue = new java.util.concurrent.LinkedBlockingQueue<>();
+    private final java.util.concurrent.BlockingQueue<LoginResponse> responseQueue =
+        new java.util.concurrent.LinkedBlockingQueue<>();
     private StreamObserver<LoginRequest> requestObserver;
     private Throwable error;
     private boolean completed = false;
@@ -257,7 +308,7 @@ public class LoginClient {
         throw SpannerExceptionFactory.newSpannerException(error);
       }
       if (response == LoginResponse.getDefaultInstance() && completed) {
-         return null;
+        return null;
       }
       return response;
     }
@@ -267,4 +318,3 @@ public class LoginClient {
     }
   }
 }
-

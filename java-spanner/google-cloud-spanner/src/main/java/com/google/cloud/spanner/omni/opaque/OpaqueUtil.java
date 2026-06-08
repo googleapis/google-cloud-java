@@ -18,6 +18,7 @@ package com.google.cloud.spanner.omni.opaque;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.crypto.tink.subtle.Hkdf;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -27,13 +28,12 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import com.google.crypto.tink.subtle.Hkdf;
 import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.crypto.ec.CustomNamedCurves;
-import org.bouncycastle.math.ec.ECCurve;
-import org.bouncycastle.math.ec.ECPoint;
 import org.bouncycastle.crypto.generators.Argon2BytesGenerator;
 import org.bouncycastle.crypto.params.Argon2Parameters;
+import org.bouncycastle.math.ec.ECCurve;
+import org.bouncycastle.math.ec.ECPoint;
 
 public class OpaqueUtil {
 
@@ -76,39 +76,43 @@ public class OpaqueUtil {
     return digest.digest(message);
   }
 
-  private static final BigInteger p = new BigInteger("115792089210356248762697446949407573530086143415290314195533631308867097853951");
+  private static final BigInteger p =
+      new BigInteger(
+          "115792089210356248762697446949407573530086143415290314195533631308867097853951");
   private static final BigInteger A = p.subtract(new BigInteger("3"));
-  private static final BigInteger B = new BigInteger("5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b", 16);
+  private static final BigInteger B =
+      new BigInteger("5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b", 16);
   private static final BigInteger Z = p.subtract(BigInteger.valueOf(10));
 
-  private static byte[] expandMessageXmd(byte[] msg, byte[] DST, int lenInBytes) throws GeneralSecurityException {
+  private static byte[] expandMessageXmd(byte[] msg, byte[] DST, int lenInBytes)
+      throws GeneralSecurityException {
     try {
       MessageDigest md = MessageDigest.getInstance("SHA-256");
       int bInBytes = 32;
       int ell = (lenInBytes + bInBytes - 1) / bInBytes;
-      
+
       byte[] dstPrime = new byte[DST.length + 1];
       System.arraycopy(DST, 0, dstPrime, 0, DST.length);
       dstPrime[DST.length] = (byte) DST.length;
-      
+
       byte[] zPad = new byte[64];
-      byte[] libStr = new byte[] { (byte) (lenInBytes >> 8), (byte) (lenInBytes & 0xFF) };
-      
+      byte[] libStr = new byte[] {(byte) (lenInBytes >> 8), (byte) (lenInBytes & 0xFF)};
+
       md.update(zPad);
       md.update(msg);
       md.update(libStr);
       md.update((byte) 0);
       md.update(dstPrime);
       byte[] b0 = md.digest();
-      
+
       byte[] bOut = new byte[ell * bInBytes];
-      
+
       md.update(b0);
       md.update((byte) 1);
       md.update(dstPrime);
       byte[] b1 = md.digest();
       System.arraycopy(b1, 0, bOut, 0, bInBytes);
-      
+
       byte[] bi = b1;
       for (int i = 2; i <= ell; i++) {
         byte[] bXor = new byte[bInBytes];
@@ -121,7 +125,7 @@ public class OpaqueUtil {
         bi = md.digest();
         System.arraycopy(bi, 0, bOut, (i - 1) * bInBytes, bInBytes);
       }
-      
+
       byte[] res = new byte[lenInBytes];
       System.arraycopy(bOut, 0, res, 0, lenInBytes);
       return res;
@@ -139,14 +143,14 @@ public class OpaqueUtil {
     BigInteger z_u2 = Z.multiply(u2).mod(p);
     BigInteger z2_u4 = z_u2.multiply(z_u2).mod(p);
     BigInteger den = z2_u4.add(z_u2).mod(p);
-    
+
     BigInteger tv1;
     if (den.equals(BigInteger.ZERO)) {
       tv1 = BigInteger.ZERO;
     } else {
       tv1 = den.modInverse(p);
     }
-    
+
     BigInteger x1;
     if (tv1.equals(BigInteger.ZERO)) {
       BigInteger za = Z.multiply(A).mod(p);
@@ -156,15 +160,15 @@ public class OpaqueUtil {
       BigInteger one_plus_tv1 = BigInteger.ONE.add(tv1).mod(p);
       x1 = negB_div_A.multiply(one_plus_tv1).mod(p);
     }
-    
+
     BigInteger gx1 = x1.pow(3).add(A.multiply(x1)).add(B).mod(p);
     BigInteger x2 = z_u2.multiply(x1).mod(p);
     BigInteger gx2 = x2.pow(3).add(A.multiply(x2)).add(B).mod(p);
-    
+
     BigInteger c1 = p.add(BigInteger.ONE).divide(BigInteger.valueOf(4));
     BigInteger root1 = gx1.modPow(c1, p);
     boolean isSquare = root1.multiply(root1).mod(p).equals(gx1);
-    
+
     BigInteger x, y;
     if (isSquare) {
       x = x1;
@@ -173,43 +177,44 @@ public class OpaqueUtil {
       x = x2;
       y = gx2.modPow(c1, p);
     }
-    
+
     if (sgn0(u) != sgn0(y)) {
       y = y.negate().mod(p);
     }
-    
+
     return curve.createPoint(x, y);
   }
 
-  public static byte[] getHashToCurve(byte[] message, byte[] domain) throws GeneralSecurityException {
+  public static byte[] getHashToCurve(byte[] message, byte[] domain)
+      throws GeneralSecurityException {
     byte[] uniformBytes = expandMessageXmd(message, domain, 96);
     byte[] u0Bytes = new byte[48];
     byte[] u1Bytes = new byte[48];
     System.arraycopy(uniformBytes, 0, u0Bytes, 0, 48);
     System.arraycopy(uniformBytes, 48, u1Bytes, 0, 48);
-    
+
     BigInteger u0 = new BigInteger(1, u0Bytes).mod(p);
     BigInteger u1 = new BigInteger(1, u1Bytes).mod(p);
-    
+
     X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
     ECCurve curve = params.getCurve();
-    
+
     ECPoint q0 = mapToCurveSSWU(u0, curve);
     ECPoint q1 = mapToCurveSSWU(u1, curve);
-    
+
     ECPoint r = q0.add(q1).normalize();
     return r.getEncoded(true);
   }
 
   public static byte[] blind(byte[] password, byte[] blindScalar) throws GeneralSecurityException {
     byte[] hashedPoint = getHashToCurve(password, LOGIN_DOMAIN_SEPARATION_TAG.getBytes(UTF_8));
-    
+
     X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
     ECCurve curve = params.getCurve();
-    
+
     ECPoint point = curve.decodePoint(hashedPoint);
     BigInteger scalar = new BigInteger(1, blindScalar);
-    
+
     return point.multiply(scalar).getEncoded(true);
   }
 
@@ -286,7 +291,8 @@ public class OpaqueUtil {
     return peerPublicPoint.multiply(priv).getEncoded(true);
   }
 
-  public static byte[] randomOracleSha256(byte[] x, BigInteger max) throws GeneralSecurityException {
+  public static byte[] randomOracleSha256(byte[] x, BigInteger max)
+      throws GeneralSecurityException {
     int hashOutputLength = 256;
     int outputBitLength = max.bitLength() + hashOutputLength;
     int iterCount = (int) Math.ceil((double) outputBitLength / hashOutputLength);
@@ -295,7 +301,7 @@ public class OpaqueUtil {
     }
     int excessBitCount = (iterCount * hashOutputLength) - outputBitLength;
     BigInteger hashOutput = BigInteger.ZERO;
-    
+
     for (int i = 1; i <= iterCount; i++) {
       hashOutput = hashOutput.shiftLeft(hashOutputLength);
       byte[] iBytes = BigInteger.valueOf(i).toByteArray();
@@ -305,7 +311,7 @@ public class OpaqueUtil {
         System.arraycopy(iBytes, 1, tmp, 0, tmp.length);
         iBytes = tmp;
       }
-      
+
       byte[] bignumBytes;
       try {
         bignumBytes = concat(iBytes, x);
@@ -313,27 +319,37 @@ public class OpaqueUtil {
         throw new GeneralSecurityException(e);
       }
       byte[] hashedString = sha256(bignumBytes);
-      
+
       // Ensure hashedString is treated as a positive integer (prepend 0x00)
       byte[] positiveHashedString = new byte[hashedString.length + 1];
       System.arraycopy(hashedString, 0, positiveHashedString, 1, hashedString.length);
       BigInteger newBigNum = new BigInteger(positiveHashedString);
-      
+
       hashOutput = hashOutput.add(newBigNum);
     }
-    
+
     hashOutput = hashOutput.shiftRight(excessBitCount);
     hashOutput = hashOutput.mod(max);
-    
+
     byte[] scalarBytes = new byte[hashOutputLength / 8];
     byte[] hashOutputBytes = hashOutput.toByteArray();
-    
+
     // Copy into 32 byte array
     if (hashOutputBytes.length <= scalarBytes.length) {
-      System.arraycopy(hashOutputBytes, 0, scalarBytes, scalarBytes.length - hashOutputBytes.length, hashOutputBytes.length);
+      System.arraycopy(
+          hashOutputBytes,
+          0,
+          scalarBytes,
+          scalarBytes.length - hashOutputBytes.length,
+          hashOutputBytes.length);
     } else {
       // If hashOutputBytes is 33 bytes due to sign bit
-      System.arraycopy(hashOutputBytes, hashOutputBytes.length - scalarBytes.length, scalarBytes, 0, scalarBytes.length);
+      System.arraycopy(
+          hashOutputBytes,
+          hashOutputBytes.length - scalarBytes.length,
+          scalarBytes,
+          0,
+          scalarBytes.length);
     }
     return scalarBytes;
   }
@@ -343,7 +359,7 @@ public class OpaqueUtil {
     BigInteger order = params.getN();
     byte[] privateKeyBytes = randomOracleSha256(deriveInput, order);
     BigInteger privateKey = new BigInteger(1, privateKeyBytes);
-    
+
     if (privateKey.equals(BigInteger.ZERO)) {
       privateKey = BigInteger.ONE;
       privateKeyBytes = new byte[32];

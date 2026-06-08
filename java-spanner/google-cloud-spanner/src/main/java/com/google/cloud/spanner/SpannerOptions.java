@@ -91,7 +91,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
@@ -1818,45 +1817,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
-
-        /**
-     * Authenticates to Spanner Omni using the provided username and password file, and configures
-     * the resulting token for use in subsequent Spanner API calls. The endpoint must be set on the
-     * builder before calling this method.
-     *
-     * @param username The username for login.
-     * @param passwordFile The path to a file containing the password.
-     * @return this builder
-     */
-    public Builder login(String username, String passwordFile) {
-      return login(username, passwordFile, true);
-    }
-
-    /**
-     * Authenticates to Spanner Omni using the provided username and password file, and configures
-     * the resulting token for use in subsequent Spanner API calls. The endpoint must be set on the
-     * builder before calling this method.
-     *
-     * @param username The username for login.
-     * @param passwordFile The path to a file containing the password.
-     * @param backgroundRefresh Whether to proactively refresh the token in a background thread before it expires. If false, GAX still triggers a synchronous inline refresh upon UNAUTHENTICATED error.
-     * @return this builder
-     */
-    public Builder login(String username, String passwordFile, boolean backgroundRefresh) {
-      try {
-        byte[] rawBytes = Files.readAllBytes(Paths.get(passwordFile));
-        int len = rawBytes.length;
-        while (len > 0 && (rawBytes[len - 1] == '\n' || rawBytes[len - 1] == '\r')) {
-          len--;
-        }
-        byte[] passwordBytes = java.util.Arrays.copyOf(rawBytes, len);
-        return loginWithPasswordBytes(username, passwordBytes, backgroundRefresh);
-      } catch (IOException e) {
-        throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.NOT_FOUND, "Could not read password file: " + passwordFile, e);
-      }
-    }
-
     /**
      * Authenticates to Spanner Omni using the provided username and password, and configures the
      * resulting token for use in subsequent Spanner API calls. The endpoint must be set on the
@@ -1866,33 +1826,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param password The password for login.
      * @return this builder
      */
-    public Builder loginWithPassword(String username, String password) {
-      return loginWithPassword(username, password, true);
-    }
-
-    /**
-     * Authenticates to Spanner Omni using the provided username and password, and configures the
-     * resulting token for use in subsequent Spanner API calls. The endpoint must be set on the
-     * builder before calling this method.
-     *
-     * @param username The username for login.
-     * @param password The password for login.
-     * @param backgroundRefresh Whether to proactively refresh the token in a background thread before it expires. If false, GAX still triggers a synchronous inline refresh upon UNAUTHENTICATED error.
-     * @return this builder
-     */
-    public Builder loginWithPassword(String username, String password, boolean backgroundRefresh) {
-      return loginWithPasswordBytes(username, password.getBytes(StandardCharsets.UTF_8), backgroundRefresh);
-    }
-
-    private Builder loginWithPasswordBytes(String username, byte[] password, boolean backgroundRefresh) {
+    public Builder login(String username, String password) {
       if (this.experimentalHost == null) {
         throw new IllegalStateException("Endpoint must be set before calling login.");
       }
       String target = this.experimentalHost.replaceFirst("^https?://", "");
-      com.google.crypto.tink.util.SecretBytes secretBytes = com.google.crypto.tink.util.SecretBytes.copyFrom(
-          password, com.google.crypto.tink.InsecureSecretKeyAccess.get());
-      java.util.Arrays.fill(password, (byte) 0);
-      super.setCredentials(new com.google.cloud.spanner.omni.SpannerOmniCredentials(username, secretBytes, target, backgroundRefresh));
+      byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+      com.google.crypto.tink.util.SecretBytes secretBytes =
+          com.google.crypto.tink.util.SecretBytes.copyFrom(
+              passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
+      java.util.Arrays.fill(passwordBytes, (byte) 0);
+      super.setCredentials(
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
+              username, secretBytes, target));
       return this;
     }
 
@@ -2214,6 +2160,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         this.setCredentials(NoCredentials.getInstance());
       } else if (experimentalHost != null && credentials == null) {
         credentials = environment.getDefaultExperimentalHostCredentials();
+      }
+      if (credentials instanceof com.google.cloud.spanner.omni.SpannerOmniCredentials) {
+        ((com.google.cloud.spanner.omni.SpannerOmniCredentials) credentials)
+            .initChannel(this.usePlainText, this.mTLSContext);
       }
       if (this.numChannels == null) {
         this.numChannels =
