@@ -275,7 +275,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
     assertThat(endpointOverride)
         .isEqualTo(
-            "BIGQUERY=https://www.googleapis.com/bigquery/v2:443,READ_API=https://storage-endpoint.com:443");
+            "BIGQUERY=https://www.googleapis.com:443,READ_API=https://storage-endpoint.com:443");
   }
 
   @Test
@@ -295,7 +295,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     DataSource ds = DataSource.fromUrl(url);
     assertThat(ds.getProjectId()).isEqualTo("MyProject");
     assertThat(ds.getOverrideProperties().get("BIGQUERY"))
-        .isEqualTo("https://www.googleapis.com/bigquery/v2:443");
+        .isEqualTo("https://www.googleapis.com:443");
   }
 
   @Test
@@ -304,6 +304,29 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     DataSource ds = DataSource.fromUrl(url);
     assertThat(ds.getProxyHost()).isEqualTo("proxy.example.com");
     assertThat(ds.getProxyPort()).isEqualTo("8080");
+  }
+
+  @Test
+  public void testEndpointNormalization() {
+    // Port after version path
+    String url = "jdbc:bigquery://https://custom-host.com/bigquery/v2:443;ProjectId=MyProject";
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
+    assertThat(endpointOverride).isEqualTo("BIGQUERY=https://custom-host.com:443");
+
+    // Version path without port
+    String url2 = "jdbc:bigquery://https://custom-host.com/bigquery/v2;ProjectId=MyProject";
+    String endpointOverride2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EndpointOverrides");
+    assertThat(endpointOverride2).isEqualTo("BIGQUERY=https://custom-host.com");
+
+    // Version path with port before path
+    String url3 = "jdbc:bigquery://https://custom-host.com:443/bigquery/v2;ProjectId=MyProject";
+    String endpointOverride3 = BigQueryJdbcUrlUtility.parseUriProperty(url3, "EndpointOverrides");
+    assertThat(endpointOverride3).isEqualTo("BIGQUERY=https://custom-host.com:443");
+
+    // No version path, port only
+    String url4 = "jdbc:bigquery://https://custom-host.com:443;ProjectId=MyProject";
+    String endpointOverride4 = BigQueryJdbcUrlUtility.parseUriProperty(url4, "EndpointOverrides");
+    assertThat(endpointOverride4).isEqualTo("BIGQUERY=https://custom-host.com:443");
   }
 
   @Test

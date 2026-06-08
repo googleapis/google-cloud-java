@@ -757,10 +757,14 @@ final class BigQueryJdbcUrlUtility {
       }
       String propertyName = PROPERTY_NAME_MAP.get(key);
       String value = CharEscapers.decodeUriPath(kv[1].replace("+", "%2B"));
-      if (propertyName.equals(ENDPOINT_OVERRIDES_PROPERTY_NAME)
-          && map.containsKey(ENDPOINT_OVERRIDES_PROPERTY_NAME)) {
-        String existing = map.get(ENDPOINT_OVERRIDES_PROPERTY_NAME);
-        map.put(propertyName, mergeEndpointOverrides(existing, value));
+      if (propertyName.equals(ENDPOINT_OVERRIDES_PROPERTY_NAME)) {
+        String normalizedValue = normalizeEndpointOverrides(value);
+        if (map.containsKey(ENDPOINT_OVERRIDES_PROPERTY_NAME)) {
+          String existing = map.get(ENDPOINT_OVERRIDES_PROPERTY_NAME);
+          map.put(propertyName, mergeEndpointOverrides(existing, normalizedValue));
+        } else {
+          map.put(propertyName, normalizedValue);
+        }
       } else {
         map.put(propertyName, value);
       }
@@ -894,7 +898,7 @@ final class BigQueryJdbcUrlUtility {
     if (authority.startsWith("http://") || authority.startsWith("https://")) {
       map.put(
           ENDPOINT_OVERRIDES_PROPERTY_NAME,
-          BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME + "=" + authority);
+          BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME + "=" + normalizeEndpoint(authority));
       return;
     }
 
@@ -948,8 +952,39 @@ final class BigQueryJdbcUrlUtility {
     for (String part : overrides.split(",")) {
       String[] kv = part.split("=", 2);
       if (kv.length == 2) {
-        targetMap.put(kv[0].trim(), kv[1].trim());
+        targetMap.put(kv[0].trim(), normalizeEndpoint(kv[1].trim()));
       }
     }
+  }
+
+  private static String normalizeEndpoint(String endpoint) {
+    if (endpoint == null) {
+      return null;
+    }
+    String normalized = endpoint.trim();
+    Pattern pattern = Pattern.compile("^(https?://[^/]+)(/bigquery/v2)?(:\\d+)?$");
+    Matcher matcher = pattern.matcher(normalized);
+    if (matcher.matches()) {
+      String base = matcher.group(1);
+      String port = matcher.group(3);
+      if (port != null) {
+        return base + port;
+      }
+      return base;
+    }
+    return normalized;
+  }
+
+  private static String normalizeEndpointOverrides(String overrides) {
+    if (overrides == null || overrides.isEmpty()) {
+      return overrides;
+    }
+    Map<String, String> map = new LinkedHashMap<>();
+    parseOverridesIntoMap(overrides, map);
+    List<String> parts = new ArrayList<>();
+    for (Map.Entry<String, String> entry : map.entrySet()) {
+      parts.add(entry.getKey() + "=" + entry.getValue());
+    }
+    return String.join(",", parts);
   }
 }
