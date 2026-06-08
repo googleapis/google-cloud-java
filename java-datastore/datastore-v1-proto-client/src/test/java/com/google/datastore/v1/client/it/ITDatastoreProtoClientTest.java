@@ -18,6 +18,16 @@ package com.google.datastore.v1.client.it;
 import static com.google.datastore.v1.client.DatastoreHelper.makeFilter;
 import static com.google.datastore.v1.client.DatastoreHelper.makeValue;
 
+import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.NanoClock;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.DirectRetryingExecutor;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.truth.Truth;
 import com.google.datastore.v1.Filter;
 import com.google.datastore.v1.KindExpression;
@@ -27,20 +37,10 @@ import com.google.datastore.v1.Query;
 import com.google.datastore.v1.client.Datastore;
 import com.google.datastore.v1.client.DatastoreException;
 import com.google.datastore.v1.client.DatastoreHelper;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.retrying.DirectRetryingExecutor;
-import com.google.api.gax.retrying.RetryAlgorithm;
-import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
-import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
-import com.google.api.gax.retrying.RetryingFuture;
-import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiClock;
-import com.google.api.core.NanoClock;
 import com.google.rpc.Code;
-import java.time.Duration;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -105,11 +105,11 @@ public class ITDatastoreProtoClientTest {
   }
 
   /**
-   * A generic helper method that executes a {@link Callable} with retries using
-   * the GAX retrying framework.
+   * A generic helper method that executes a {@link Callable} with retries using the GAX retrying
+   * framework.
    *
-   * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings}
-   * and the custom {@link ResultRetryAlgorithmWithContext}.
+   * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings} and
+   * the custom {@link ResultRetryAlgorithmWithContext}.
    *
    * @param callable the action to execute
    * @param retrySettings the retry configuration (backoff, max attempts, timeouts)
@@ -125,10 +125,9 @@ public class ITDatastoreProtoClientTest {
     ApiClock clock = NanoClock.getDefaultClock();
     // We must wrap the result algorithm and timed algorithm into a RetryAlgorithm
     // as required by DirectRetryingExecutor.
-    RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(
-        resultRetryAlgorithm,
-        new ExponentialRetryAlgorithm(retrySettings, clock)
-    );
+    RetryAlgorithm<V> retryAlgorithm =
+        new RetryAlgorithm<>(
+            resultRetryAlgorithm, new ExponentialRetryAlgorithm(retrySettings, clock));
 
     DirectRetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
     RetryingFuture<V> future = executor.createFuture(callable);
@@ -161,16 +160,16 @@ public class ITDatastoreProtoClientTest {
   // here to handle transient backend errors (such as Code.INTERNAL auth issues).
   // We reuse GAX retrying utilities here in the test to implement this backoff/retry.
   private static List<Query> getSplitsWithRetry(
-      Query query, PartitionId partition, int numSplits, Datastore datastore)
-      throws Exception {
+      Query query, PartitionId partition, int numSplits, Datastore datastore) throws Exception {
     // Fail fast configuration to avoid long wait times during test failures
-    RetrySettings retrySettings = RetrySettings.newBuilder()
-        .setMaxAttempts(3)
-        .setInitialRetryDelayDuration(Duration.ofMillis(200))
-        .setRetryDelayMultiplier(1.5)
-        .setMaxRetryDelayDuration(Duration.ofMillis(500))
-        .setTotalTimeoutDuration(Duration.ofSeconds(2))
-        .build();
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(3)
+            .setInitialRetryDelayDuration(Duration.ofMillis(200))
+            .setRetryDelayMultiplier(1.5)
+            .setMaxRetryDelayDuration(Duration.ofMillis(500))
+            .setTotalTimeoutDuration(Duration.ofSeconds(2))
+            .build();
     return runWithRetry(
         () -> DatastoreHelper.getQuerySplitter().getSplits(query, partition, numSplits, datastore),
         retrySettings,
@@ -183,7 +182,6 @@ public class ITDatastoreProtoClientTest {
             }
             return false;
           }
-        }
-    );
+        });
   }
 }
