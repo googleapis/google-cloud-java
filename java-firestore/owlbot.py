@@ -48,21 +48,19 @@ for library in s.get_staging_dirs():
     admin_version_path = "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/Version.java"
     if os.path.exists(admin_version_path):
         target_path = "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminVersion.java"
-        with open(admin_version_path, 'r') as f:
+        with open(admin_version_path, 'r', encoding='utf-8') as f:
             content = f.read()
         content = content.replace("class Version", "class FirestoreAdminVersion")
-        with open(target_path, 'w') as f:
+        with open(target_path, 'w', encoding='utf-8') as f:
             f.write(content)
         os.remove(admin_version_path)
 
-    # Replace Version.VERSION with FirestoreAdminVersion.VERSION in FirestoreAdminStubSettings.java
-    settings_path = "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminStubSettings.java"
-    if os.path.exists(settings_path):
-        with open(settings_path, 'r') as f:
-            content = f.read()
-        content = content.replace("Version.VERSION", "FirestoreAdminVersion.VERSION")
-        with open(settings_path, 'w') as f:
-            f.write(content)
+    # Replace Version.VERSION with FirestoreAdminVersion.VERSION in stub files
+    s.replace(
+        "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/**/*.java",
+        "Version.VERSION",
+        "FirestoreAdminVersion.VERSION",
+    )
 s.remove_staging_dirs()
 java.common_templates(
     monorepo=True,
