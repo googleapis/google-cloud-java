@@ -29,6 +29,7 @@ import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryingFuture;
+import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiClock;
 import com.google.api.core.NanoClock;
@@ -112,30 +113,25 @@ public class ITDatastoreProtoClientTest {
    * retrying framework.
    *
    * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings}
-   * and a {@link BasicResultRetryAlgorithm} that retries only on transient {@code Code.INTERNAL}
-   * {@link DatastoreException}s.
+   * and the custom {@link ResultRetryAlgorithmWithContext}.
    *
    * @param callable the action to execute
    * @param retrySettings the retry configuration (backoff, max attempts, timeouts)
+   * @param resultRetryAlgorithm the algorithm to determine if a failed attempt should be retried
    * @return the result of the callable execution
    * @throws DatastoreException if the execution fails after all retry attempts, or if a
    *     non-retryable exception is encountered.
    */
   private static <V> V runWithRetry(
-      DatastoreCallable<V> callable, RetrySettings retrySettings)
+      DatastoreCallable<V> callable,
+      RetrySettings retrySettings,
+      ResultRetryAlgorithmWithContext<V> resultRetryAlgorithm)
       throws DatastoreException {
     ApiClock clock = NanoClock.getDefaultClock();
+    // We must wrap the result algorithm and timed algorithm into a RetryAlgorithm
+    // as required by DirectRetryingExecutor.
     RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(
-        new BasicResultRetryAlgorithm<V>() {
-          @Override
-          public boolean shouldRetry(Throwable prevThrowable, V prevResult) {
-            if (prevThrowable instanceof DatastoreException) {
-              DatastoreException de = (DatastoreException) prevThrowable;
-              return de.getCode() == com.google.rpc.Code.INTERNAL;
-            }
-            return false;
-          }
-        },
+        resultRetryAlgorithm,
         new ExponentialRetryAlgorithm(retrySettings, clock)
     );
 
@@ -148,9 +144,13 @@ public class ITDatastoreProtoClientTest {
       return submittedFuture.get();
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
+      // submittedFuture.get() throws ExecutionException wrapping the actual exception.
+      // We must explicitly check the type of the cause and unwrap it:
+      // 1. Rethrow DatastoreException to preserve the method signature.
       if (cause instanceof DatastoreException) {
         throw (DatastoreException) cause;
       }
+      // 2. Rethrow RuntimeException to avoid wrapping it in another redundant RuntimeException.
       if (cause instanceof RuntimeException) {
         throw (RuntimeException) cause;
       }
@@ -168,16 +168,27 @@ public class ITDatastoreProtoClientTest {
   private static List<Query> getSplitsWithRetry(
       Query query, PartitionId partition, int numSplits, Datastore datastore)
       throws DatastoreException {
+    // Fail fast configuration to avoid long wait times during test failures
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setMaxAttempts(3)
-        .setInitialRetryDelayDuration(Duration.ofSeconds(1))
-        .setRetryDelayMultiplier(2.0)
-        .setMaxRetryDelayDuration(Duration.ofSeconds(3))
-        .setTotalTimeoutDuration(Duration.ofSeconds(10))
+        .setInitialRetryDelayDuration(Duration.ofMillis(200))
+        .setRetryDelayMultiplier(1.5)
+        .setMaxRetryDelayDuration(Duration.ofMillis(500))
+        .setTotalTimeoutDuration(Duration.ofSeconds(2))
         .build();
     return runWithRetry(
         () -> DatastoreHelper.getQuerySplitter().getSplits(query, partition, numSplits, datastore),
-        retrySettings
+        retrySettings,
+        new BasicResultRetryAlgorithm<List<Query>>() {
+          @Override
+          public boolean shouldRetry(Throwable prevThrowable, List<Query> prevResult) {
+            if (prevThrowable instanceof DatastoreException) {
+              DatastoreException de = (DatastoreException) prevThrowable;
+              return de.getCode() == com.google.rpc.Code.INTERNAL;
+            }
+            return false;
+          }
+        }
     );
   }
 }
