@@ -21,9 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.TableId;
@@ -44,7 +43,7 @@ public class HelloWorldTest extends BigtableBaseTest {
   private static final String TABLE_PREFIX = "table";
   private static String tableId;
   private static BigtableDataClient dataClient;
-  private static BigtableTableAdminClient adminClient;
+  private static BigtableTableAdminClientV2 adminClient;
   private HelloWorld helloWorld;
 
   @BeforeClass
@@ -53,12 +52,21 @@ public class HelloWorldTest extends BigtableBaseTest {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     dataClient = BigtableDataClient.create(settings);
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+  }
+
+  private static boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      return true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      return false;
+    }
   }
 
   @AfterClass
@@ -72,13 +80,24 @@ public class HelloWorldTest extends BigtableBaseTest {
   public void setup() throws IOException {
     tableId = generateTableId();
     helloWorld = new HelloWorld(projectId, instanceId, tableId);
-    adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
+    com.google.bigtable.admin.v2.CreateTableRequest request =
+        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .setTableId(tableId)
+            .setTable(
+                com.google.bigtable.admin.v2.Table.newBuilder()
+                    .putColumnFamilies(
+                        "cf1", com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                    .build())
+            .build();
+    adminClient.createTable(request);
   }
 
   @After
   public void teardown() {
-    if (adminClient.exists(tableId)) {
-      adminClient.deleteTable(tableId);
+    if (exists(tableId)) {
+      adminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
     }
     helloWorld.close();
   }
@@ -89,11 +108,11 @@ public class HelloWorldTest extends BigtableBaseTest {
     String testTable = generateTableId();
     HelloWorld testHelloWorld = new HelloWorld(projectId, instanceId, testTable);
     testHelloWorld.createTable();
-    assertTrue(adminClient.exists(testTable));
+    assertTrue(exists(testTable));
 
     // Deletes a table.
     testHelloWorld.deleteTable();
-    assertTrue(!adminClient.exists(testTable));
+    assertTrue(!exists(testTable));
     testHelloWorld.close();
   }
 
@@ -127,7 +146,12 @@ public class HelloWorldTest extends BigtableBaseTest {
 
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
-    for (String tableId : adminClient.listTables()) {
+    com.google.bigtable.admin.v2.ListTablesRequest request =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .build();
+    for (com.google.bigtable.admin.v2.Table table : adminClient.listTables(request).iterateAll()) {
+      String tableId = table.getName().substring(table.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {
         continue;
@@ -138,7 +162,7 @@ public class HelloWorldTest extends BigtableBaseTest {
         continue;
       }
       System.out.println("\nGarbage collecting orphaned table: " + tableId);
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(table.getName());
     }
   }
 }

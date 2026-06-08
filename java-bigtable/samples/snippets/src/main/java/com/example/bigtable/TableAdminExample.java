@@ -24,8 +24,8 @@ import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Table;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.admin.v2.models.GcRuleBuilder;
 import java.io.IOException;
 import java.time.Duration;
@@ -62,7 +62,7 @@ public class TableAdminExample {
   private final String projectId;
   private final String instanceId;
   private final String tableId;
-  private final BigtableTableAdminClient adminClient;
+  private final BigtableTableAdminClientV2 adminClient;
 
   public static void main(String[] args) throws IOException {
 
@@ -83,14 +83,11 @@ public class TableAdminExample {
     this.tableId = tableId;
 
     // Creates the settings to configure a bigtable table admin client.
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
 
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
   }
 
   public void run() {
@@ -119,7 +116,17 @@ public class TableAdminExample {
   public void createTable() {
     // [START bigtable_create_table]
     // Checks if table exists, creates table if does not exist.
-    if (!adminClient.exists(tableId)) {
+    boolean exists = false;
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      exists = true;
+    } catch (NotFoundException e) {
+      // ignore
+    }
+    if (!exists) {
       System.out.println("Table does not exist, creating table: " + tableId);
       String parent = "projects/" + projectId + "/instances/" + instanceId;
       CreateTableRequest createTableRequest =
@@ -131,7 +138,7 @@ public class TableAdminExample {
                       .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
                       .build())
               .build();
-      Table table = adminClient.getBaseClient().createTable(createTableRequest);
+      Table table = adminClient.createTable(createTableRequest);
       System.out.printf("Table: %s created successfully%n", table.getName());
     }
     // [END bigtable_create_table]
@@ -145,7 +152,7 @@ public class TableAdminExample {
     try {
       String parent = "projects/" + projectId + "/instances/" + instanceId;
       ListTablesRequest request = ListTablesRequest.newBuilder().setParent(parent).build();
-      for (Table table : adminClient.getBaseClient().listTables(request).iterateAll()) {
+      for (Table table : adminClient.listTables(request).iterateAll()) {
         System.out.println(table.getName());
       }
     } catch (NotFoundException e) {
@@ -162,7 +169,7 @@ public class TableAdminExample {
     try {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
-      Table table = adminClient.getBaseClient().getTable(tableName);
+      Table table = adminClient.getTable(tableName);
       System.out.println("Table: " + table.getName());
       for (java.util.Map.Entry<String, ColumnFamily> entry :
           table.getColumnFamiliesMap().entrySet()) {
@@ -198,7 +205,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_1)
                       .setCreate(ColumnFamily.newBuilder().setGcRule(maxAgeRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_1);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -229,7 +236,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_2)
                       .setCreate(ColumnFamily.newBuilder().setGcRule(versionRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_2);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -264,7 +271,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_3)
                       .setCreate(ColumnFamily.newBuilder().setGcRule(unionRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_3);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -298,7 +305,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_4)
                       .setCreate(ColumnFamily.newBuilder().setGcRule(intersectionRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_4);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -335,7 +342,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_5)
                       .setCreate(ColumnFamily.newBuilder().setGcRule(unionRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.println("Created column family: " + COLUMN_FAMILY_5);
     } catch (AlreadyExistsException e) {
       System.err.println(
@@ -352,7 +359,7 @@ public class TableAdminExample {
     try {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
-      Table table = adminClient.getBaseClient().getTable(tableName);
+      Table table = adminClient.getTable(tableName);
       for (java.util.Map.Entry<String, ColumnFamily> entry :
           table.getColumnFamiliesMap().entrySet()) {
         System.out.printf(
@@ -383,7 +390,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_1)
                       .setUpdate(ColumnFamily.newBuilder().setGcRule(versionRule)))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.printf("Column family %s GC rule updated%n", COLUMN_FAMILY_1);
     } catch (NotFoundException e) {
       System.err.println("Failed to modify a non-existent column family: " + e.getMessage());
@@ -398,7 +405,7 @@ public class TableAdminExample {
     try {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
-      Table table = adminClient.getBaseClient().getTable(tableName);
+      Table table = adminClient.getTable(tableName);
       if (table.containsColumnFamilies(COLUMN_FAMILY_1)) {
         System.out.printf(
             "Column family: %s%nGC Rule: %s%n",
@@ -426,7 +433,7 @@ public class TableAdminExample {
                       .setId(COLUMN_FAMILY_2)
                       .setDrop(true))
               .build();
-      adminClient.getBaseClient().modifyColumnFamilies(request);
+      adminClient.modifyColumnFamilies(request);
       System.out.printf("Column family %s deleted successfully%n", COLUMN_FAMILY_2);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent column family: " + e.getMessage());
@@ -442,7 +449,7 @@ public class TableAdminExample {
     try {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
-      adminClient.getBaseClient().deleteTable(tableName);
+      adminClient.deleteTable(tableName);
       System.out.printf("Table: %s deleted successfully%n", tableId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());

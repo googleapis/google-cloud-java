@@ -22,8 +22,8 @@ import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
@@ -63,7 +63,7 @@ public class HelloWorld {
   private final String instanceId;
   private final String tableId;
   private final BigtableDataClient dataClient;
-  private final BigtableTableAdminClient adminClient;
+  private final BigtableTableAdminClientV2 adminClient;
 
   public static void main(String[] args) throws Exception {
 
@@ -92,14 +92,11 @@ public class HelloWorld {
     dataClient = BigtableDataClient.create(settings);
 
     // Creates the settings to configure a bigtable table admin client.
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
 
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
     // [END bigtable_hw_connect]
   }
 
@@ -123,7 +120,17 @@ public class HelloWorld {
   public void createTable() {
     // [START bigtable_hw_create_table]
     // Checks if table exists, creates table if does not exist.
-    if (!adminClient.exists(tableId)) {
+    boolean exists = false;
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      exists = true;
+    } catch (NotFoundException e) {
+      // ignore
+    }
+    if (!exists) {
       System.out.println("Creating table: " + tableId);
       String parent = "projects/" + projectId + "/instances/" + instanceId;
       com.google.bigtable.admin.v2.CreateTableRequest request =
@@ -137,7 +144,7 @@ public class HelloWorld {
                           com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
                       .build())
               .build();
-      adminClient.getBaseClient().createTable(request);
+      adminClient.createTable(request);
       System.out.printf("Table %s created successfully%n", tableId);
     }
     // [END bigtable_hw_create_table]
@@ -270,7 +277,7 @@ public class HelloWorld {
     try {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
-      adminClient.getBaseClient().deleteTable(tableName);
+      adminClient.deleteTable(tableName);
       System.out.printf("Table %s deleted successfully%n", tableId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());

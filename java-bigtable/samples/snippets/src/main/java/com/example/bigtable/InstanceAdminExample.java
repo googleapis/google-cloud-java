@@ -29,8 +29,8 @@ import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.StorageType;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2;
 import java.io.IOException;
 import java.util.Map;
 
@@ -56,7 +56,7 @@ public class InstanceAdminExample {
   private final String projectId;
   private final String clusterId;
   private final String instanceId;
-  private final BigtableInstanceAdminClient adminClient;
+  private final BigtableInstanceAdminClientV2 adminClient;
 
   public static void main(String[] args) throws IOException {
 
@@ -85,11 +85,11 @@ public class InstanceAdminExample {
     this.clusterId = clusterId;
 
     // Creates the settings to configure a bigtable instance admin client.
-    BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build();
+    BaseBigtableInstanceAdminSettings instanceAdminSettings =
+        BaseBigtableInstanceAdminSettings.newBuilder().build();
 
     // Creates a bigtable instance admin client.
-    adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
+    adminClient = BigtableInstanceAdminClientV2.create(instanceAdminSettings);
   }
 
   public void run(boolean createWithTags) {
@@ -121,7 +121,17 @@ public class InstanceAdminExample {
    */
   public void createProdInstance(boolean createWithTags) {
     // Checks if instance exists, creates instance if does not exists.
-    if (!adminClient.exists(instanceId)) {
+    boolean exists = false;
+    try {
+      adminClient.getInstance(
+          com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId)
+              .build());
+      exists = true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      // ignore
+    }
+    if (!exists) {
       System.out.println("Instance does not exist, creating a PRODUCTION instance");
       // [START bigtable_create_prod_instance]
       // Creates a Production Instance with the ID "ssd-instance",
@@ -157,7 +167,7 @@ public class InstanceAdminExample {
               .build();
       // Creates a production instance with the given request.
       try {
-        Instance instance = adminClient.getBaseClient().createInstanceAsync(request).get();
+        Instance instance = adminClient.createInstanceAsync(request).get();
         System.out.printf("PRODUCTION type instance %s created successfully%n", instance.getName());
       } catch (Exception e) {
         System.err.println("Failed to create instance: " + e.getMessage());
@@ -174,7 +184,7 @@ public class InstanceAdminExample {
     try {
       String parent = "projects/" + projectId;
       ListInstancesRequest request = ListInstancesRequest.newBuilder().setParent(parent).build();
-      ListInstancesResponse response = adminClient.getBaseClient().listInstances(request);
+      ListInstancesResponse response = adminClient.listInstances(request);
       for (Instance instance : response.getInstancesList()) {
         System.out.println(instance.getName());
       }
@@ -192,7 +202,7 @@ public class InstanceAdminExample {
     try {
       String name = "projects/" + projectId + "/instances/" + instanceId;
       GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(name).build();
-      instance = adminClient.getBaseClient().getInstance(request);
+      instance = adminClient.getInstance(request);
       System.out.println("Instance ID: " + instance.getName());
       System.out.println("Display Name: " + instance.getDisplayName());
       System.out.print("Labels: ");
@@ -216,7 +226,7 @@ public class InstanceAdminExample {
     try {
       String parent = "projects/" + projectId + "/instances/" + instanceId;
       ListClustersRequest request = ListClustersRequest.newBuilder().setParent(parent).build();
-      ListClustersResponse response = adminClient.getBaseClient().listClusters(request);
+      ListClustersResponse response = adminClient.listClusters(request);
       for (Cluster cluster : response.getClustersList()) {
         System.out.println(cluster.getName());
       }
@@ -233,7 +243,7 @@ public class InstanceAdminExample {
     try {
       String name = "projects/" + projectId + "/instances/" + instanceId;
       DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder().setName(name).build();
-      adminClient.getBaseClient().deleteInstance(request);
+      adminClient.deleteInstance(request);
       System.out.println("Instance deleted: " + instanceId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete non-existent instance: " + e.getMessage());
@@ -259,7 +269,7 @@ public class InstanceAdminExample {
               .setClusterId(CLUSTER)
               .setCluster(clusterObj)
               .build();
-      adminClient.getBaseClient().createClusterAsync(request).get();
+      adminClient.createClusterAsync(request).get();
       System.out.printf("Cluster: %s created successfully%n", CLUSTER);
     } catch (Exception e) {
       System.err.println("Failed to add cluster: " + e.getMessage());
@@ -274,7 +284,7 @@ public class InstanceAdminExample {
     try {
       String name = "projects/" + projectId + "/instances/" + instanceId + "/clusters/" + CLUSTER;
       DeleteClusterRequest request = DeleteClusterRequest.newBuilder().setName(name).build();
-      adminClient.getBaseClient().deleteCluster(request);
+      adminClient.deleteCluster(request);
       System.out.printf("Cluster: %s deleted successfully%n", CLUSTER);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent cluster: " + e.getMessage());
