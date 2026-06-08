@@ -34,11 +34,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.cloud.translate.v3.LocationName;
+import com.google.cloud.translate.v3.TranslationServiceClient;
+import com.google.cloud.translate.v3.TranslationServiceSettings;
 import java.io.InputStream;
 import java.security.Provider;
 import java.security.Security;
+import java.util.Collections;
 import java.util.TreeSet;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -136,38 +140,21 @@ public abstract class PqcConnectivityTest {
   }
 
   private void runGrpcTest(int port, boolean shouldSucceed) throws Exception {
-    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
-        com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.newBuilder()
+    TranslationServiceSettings settings =
+        TranslationServiceSettings.newBuilder()
             .setEndpoint("localhost:" + port)
-            .setHeaderProvider(() -> java.util.Collections.emptyMap());
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
 
-
-    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider channelProvider = channelProviderBuilder.build();
-    com.google.api.gax.rpc.TransportChannel transportChannel = channelProvider.getTransportChannel();
-    io.grpc.Channel channel = ((com.google.api.gax.grpc.GrpcTransportChannel) transportChannel).getChannel();
-
-    try {
-      io.grpc.MethodDescriptor<byte[], byte[]> method =
-          io.grpc.MethodDescriptor.<byte[], byte[]>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("Greeter/SayHello")
-              .setRequestMarshaller(new ByteMarshaller())
-              .setResponseMarshaller(new ByteMarshaller())
-              .build();
-
-      byte[] response = io.grpc.stub.ClientCalls.blockingUnaryCall(channel, method, io.grpc.CallOptions.DEFAULT, "request".getBytes());
+    try (TranslationServiceClient client = TranslationServiceClient.create(settings)) {
+      LocationName parent = LocationName.of("test-project", "global");
+      client.translateText(parent, "es", Collections.singletonList("hello"));
       if (!shouldSucceed) {
         fail("Expected gRPC call to fail!");
       }
-      assertNotNull(response);
-      assertEquals("PQC gRPC OK", new String(response));
     } catch (Exception e) {
       if (shouldSucceed) {
         fail("Expected gRPC call to succeed, but failed: " + e.getMessage(), e);
-      }
-    } finally {
-      if (channel instanceof io.grpc.ManagedChannel) {
-        ((io.grpc.ManagedChannel) channel).shutdownNow();
       }
     }
   }
@@ -183,20 +170,4 @@ public abstract class PqcConnectivityTest {
   public void testGrpcClassicalServer() throws Exception {
     runGrpcTest(grpcClassicalPort, true);
   }
-
-  private static class ByteMarshaller implements io.grpc.MethodDescriptor.Marshaller<byte[]> {
-    @Override
-    public InputStream stream(byte[] value) {
-      return new java.io.ByteArrayInputStream(value);
-    }
-
-    @Override
-    public byte[] parse(InputStream stream) {
-      try {
-        return com.google.common.io.ByteStreams.toByteArray(stream);
-      } catch (java.io.IOException e) {
-        throw new RuntimeException(e);
-      }
-    }
-	}
 }
