@@ -346,7 +346,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The identifier of the participant,
-   * for example, 'test-user' or 'gemini'.
+   * for example 'test-user' or 'gemini'.
    * The participant ID can contain lowercase letters, numbers, and hyphens;
    * that is, it must match the regular expression:
    * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -375,7 +375,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The identifier of the participant,
-   * for example, 'test-user' or 'gemini'.
+   * for example 'test-user' or 'gemini'.
    * The participant ID can contain lowercase letters, numbers, and hyphens;
    * that is, it must match the regular expression:
    * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -973,7 +973,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The identifier of the participant,
-     * for example, 'test-user' or 'gemini'.
+     * for example 'test-user' or 'gemini'.
      * The participant ID can contain lowercase letters, numbers, and hyphens;
      * that is, it must match the regular expression:
      * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -1001,7 +1001,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The identifier of the participant,
-     * for example, 'test-user' or 'gemini'.
+     * for example 'test-user' or 'gemini'.
      * The participant ID can contain lowercase letters, numbers, and hyphens;
      * that is, it must match the regular expression:
      * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -1029,7 +1029,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The identifier of the participant,
-     * for example, 'test-user' or 'gemini'.
+     * for example 'test-user' or 'gemini'.
      * The participant ID can contain lowercase letters, numbers, and hyphens;
      * that is, it must match the regular expression:
      * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -1056,7 +1056,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The identifier of the participant,
-     * for example, 'test-user' or 'gemini'.
+     * for example 'test-user' or 'gemini'.
      * The participant ID can contain lowercase letters, numbers, and hyphens;
      * that is, it must match the regular expression:
      * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
@@ -1079,7 +1079,7 @@ public final class ConversationMessage extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The identifier of the participant,
-     * for example, 'test-user' or 'gemini'.
+     * for example 'test-user' or 'gemini'.
      * The participant ID can contain lowercase letters, numbers, and hyphens;
      * that is, it must match the regular expression:
      * `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
