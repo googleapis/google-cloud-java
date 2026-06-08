@@ -835,12 +835,9 @@ public final class ITGapicBidiUnbufferedWritableByteChannelTest {
     private final BiConsumer<StreamObserver<BidiWriteObjectResponse>, List<BidiWriteObjectRequest>>
         c;
 
-    private ImmutableList.Builder<BidiWriteObjectRequest> requests;
-
     BidiWriteService(
         BiConsumer<StreamObserver<BidiWriteObjectResponse>, List<BidiWriteObjectRequest>> c) {
       this.c = c;
-      this.requests = new ImmutableList.Builder<>();
     }
 
     BidiWriteService(ImmutableMap<List<BidiWriteObjectRequest>, BidiWriteObjectResponse> writes) {
@@ -880,12 +877,16 @@ public final class ITGapicBidiUnbufferedWritableByteChannelTest {
                   .collect(joining),
               build.stream().map(StorageV2ProtoUtils::fmtProto).collect(oneLine));
       LOGGER.warn(msg);
+      System.err.println(msg);
     }
 
     @Override
     public StreamObserver<BidiWriteObjectRequest> bidiWriteObject(
         StreamObserver<BidiWriteObjectResponse> obs) {
       return new Adapter() {
+        private ImmutableList.Builder<BidiWriteObjectRequest> requests =
+            new ImmutableList.Builder<>();
+
         @Override
         public void onNext(BidiWriteObjectRequest value) {
           requests.add(value);

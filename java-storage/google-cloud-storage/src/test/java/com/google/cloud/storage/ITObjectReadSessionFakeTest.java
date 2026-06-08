@@ -467,6 +467,7 @@ public final class ITObjectReadSessionFakeTest {
         assertThat(actual).hasLength(5);
         assertThat(xxd(actual)).isEqualTo(xxd(content3.getBytes()));
       }
+      Thread.sleep(50);
     }
   }
 
@@ -746,6 +747,7 @@ public final class ITObjectReadSessionFakeTest {
                     .contains("position = 10, readRange.read_offset = 11"),
             () -> assertThat(suppressedMessages).contains("Asynchronous task failed"));
       }
+      Thread.sleep(50);
     }
   }
 
@@ -795,6 +797,7 @@ public final class ITObjectReadSessionFakeTest {
         ObjectReadSessionStreamRead<?> outstandingRead = orsi.state.getOutstandingRead(1L);
         assertThat(outstandingRead).isNull();
       }
+      Thread.sleep(50);
     }
   }
 
@@ -938,6 +941,7 @@ public final class ITObjectReadSessionFakeTest {
             assert503(f2),
             assert503(f3));
       }
+      Thread.sleep(50);
     }
   }
 
