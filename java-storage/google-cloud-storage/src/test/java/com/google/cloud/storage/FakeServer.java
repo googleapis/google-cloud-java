@@ -54,7 +54,7 @@ final class FakeServer implements AutoCloseable {
   }
 
   static FakeServer of(StorageGrpc.StorageImplBase service) throws IOException {
-    InetSocketAddress address = new InetSocketAddress("localhost", 0);
+    InetSocketAddress address = new InetSocketAddress("127.0.0.1", 0);
     Server server = NettyServerBuilder.forAddress(address).addService(service).build();
     server.start();
     String endpoint = String.format(Locale.US, "%s:%d", address.getHostString(), server.getPort());
