@@ -280,7 +280,8 @@ public class SchemaBundleExample {
               .build();
       for (com.google.bigtable.admin.v2.SchemaBundle bundle :
           adminClient.listSchemaBundles(request).iterateAll()) {
-        String id = bundle.getName().substring(bundle.getName().lastIndexOf("/") + 1);
+        String id =
+            com.google.bigtable.admin.v2.SchemaBundleName.parse(bundle.getName()).getSchemaBundle();
         System.out.println(id);
         schemaBundleIds.add(id);
       }

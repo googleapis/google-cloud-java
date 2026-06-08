@@ -69,10 +69,25 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
   }
 
   @AfterClass
-  public static void afterClass() throws IOException {
-    cleanupTable();
-    if (adminClient != null) {
-      adminClient.close();
+  public static void afterClass() {
+    try {
+      cleanupTable();
+    } catch (Exception e) {
+      System.err.println("Failed to cleanup table: " + e.getMessage());
+    }
+    try {
+      if (bigtableDataClient != null) {
+        bigtableDataClient.close();
+      }
+    } catch (Exception e) {
+      System.err.println("Failed to close bigtableDataClient: " + e.getMessage());
+    }
+    try {
+      if (adminClient != null) {
+        adminClient.close();
+      }
+    } catch (Exception e) {
+      System.err.println("Failed to close adminClient: " + e.getMessage());
     }
   }
 

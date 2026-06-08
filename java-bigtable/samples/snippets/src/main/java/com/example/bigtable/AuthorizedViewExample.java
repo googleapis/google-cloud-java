@@ -299,7 +299,9 @@ public class AuthorizedViewExample {
               .build();
       for (com.google.bigtable.admin.v2.AuthorizedView view :
           adminClient.listAuthorizedViews(request).iterateAll()) {
-        String id = view.getName().substring(view.getName().lastIndexOf("/") + 1);
+        String id =
+            com.google.bigtable.admin.v2.AuthorizedViewName.parse(view.getName())
+                .getAuthorizedView();
         System.out.println(id);
         authorizedViewIds.add(id);
       }
