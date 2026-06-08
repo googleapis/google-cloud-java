@@ -111,6 +111,16 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>native</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

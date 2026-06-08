@@ -1,4 +1,4 @@
-googleapis_commitish: 0ff3c706a5e0964c6430529c406208f2ff57cf65
+googleapis_commitish: ff15be54722218705740b9fc6223d264c4cdb6dd
 libraries_bom_version: 26.83.0
 is_monorepo: true
 libraries:

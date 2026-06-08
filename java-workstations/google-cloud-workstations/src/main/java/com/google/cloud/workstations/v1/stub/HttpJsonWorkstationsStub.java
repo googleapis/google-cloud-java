@@ -159,6 +159,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationClustersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -369,6 +370,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationConfigsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -617,6 +619,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
