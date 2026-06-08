@@ -33,8 +33,8 @@ import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiClock;
 import com.google.api.core.NanoClock;
+import com.google.rpc.Code;
 import java.time.Duration;
-import java.util.concurrent.ExecutionException;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
@@ -56,7 +56,7 @@ public class ITDatastoreProtoClientTest {
   }
 
   @Test
-  public void testQuerySplitterWithDefaultDb() throws DatastoreException {
+  public void testQuerySplitterWithDefaultDb() throws Exception {
     Filter propertyFilter =
         makeFilter("foo", PropertyFilter.Operator.EQUAL, makeValue("value")).build();
     Query query =
@@ -77,7 +77,7 @@ public class ITDatastoreProtoClientTest {
   }
 
   @Test
-  public void testQuerySplitterWithDb() throws DatastoreException {
+  public void testQuerySplitterWithDb() throws Exception {
     Filter propertyFilter =
         makeFilter("foo", PropertyFilter.Operator.EQUAL, makeValue("value")).build();
     Query query =
@@ -99,18 +99,8 @@ public class ITDatastoreProtoClientTest {
   }
 
   /**
-   * A functional interface similar to {@link java.util.concurrent.Callable} but specialized
-   * to throw {@link DatastoreException}. This ensures type safety and avoids having to
-   * handle generic {@link Exception} in the retry helper.
-   */
-  @FunctionalInterface
-  private interface DatastoreCallable<V> {
-    V call() throws DatastoreException;
-  }
-
-  /**
-   * A generic helper method that executes a {@link DatastoreCallable} with retries using the GAX
-   * retrying framework.
+   * A generic helper method that executes a {@link java.util.concurrent.Callable} with retries using
+   * the GAX retrying framework.
    *
    * <p>It configures a {@link DirectRetryingExecutor} with the provided {@link RetrySettings}
    * and the custom {@link ResultRetryAlgorithmWithContext}.
@@ -119,14 +109,13 @@ public class ITDatastoreProtoClientTest {
    * @param retrySettings the retry configuration (backoff, max attempts, timeouts)
    * @param resultRetryAlgorithm the algorithm to determine if a failed attempt should be retried
    * @return the result of the callable execution
-   * @throws DatastoreException if the execution fails after all retry attempts, or if a
-   *     non-retryable exception is encountered.
+   * @throws Exception if the execution fails after all retry attempts.
    */
   private static <V> V runWithRetry(
-      DatastoreCallable<V> callable,
+      java.util.concurrent.Callable<V> callable,
       RetrySettings retrySettings,
       ResultRetryAlgorithmWithContext<V> resultRetryAlgorithm)
-      throws DatastoreException {
+      throws Exception {
     ApiClock clock = NanoClock.getDefaultClock();
     // We must wrap the result algorithm and timed algorithm into a RetryAlgorithm
     // as required by DirectRetryingExecutor.
@@ -136,29 +125,11 @@ public class ITDatastoreProtoClientTest {
     );
 
     DirectRetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
-    RetryingFuture<V> future = executor.createFuture(callable::call);
+    RetryingFuture<V> future = executor.createFuture(callable);
 
     ApiFuture<V> submittedFuture = executor.submit(future);
 
-    try {
-      return submittedFuture.get();
-    } catch (ExecutionException e) {
-      Throwable cause = e.getCause();
-      // submittedFuture.get() throws ExecutionException wrapping the actual exception.
-      // We must explicitly check the type of the cause and unwrap it:
-      // 1. Rethrow DatastoreException to preserve the method signature.
-      if (cause instanceof DatastoreException) {
-        throw (DatastoreException) cause;
-      }
-      // 2. Rethrow RuntimeException to avoid wrapping it in another redundant RuntimeException.
-      if (cause instanceof RuntimeException) {
-        throw (RuntimeException) cause;
-      }
-      throw new RuntimeException(e);
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      throw new RuntimeException(e);
-    }
+    return submittedFuture.get();
   }
 
   // This low-level Datastore client (proto-over-HTTP) does not have built-in retry logic
@@ -167,7 +138,7 @@ public class ITDatastoreProtoClientTest {
   // We reuse GAX retrying utilities here in the test to implement this backoff/retry.
   private static List<Query> getSplitsWithRetry(
       Query query, PartitionId partition, int numSplits, Datastore datastore)
-      throws DatastoreException {
+      throws Exception {
     // Fail fast configuration to avoid long wait times during test failures
     RetrySettings retrySettings = RetrySettings.newBuilder()
         .setMaxAttempts(3)
@@ -184,7 +155,7 @@ public class ITDatastoreProtoClientTest {
           public boolean shouldRetry(Throwable prevThrowable, List<Query> prevResult) {
             if (prevThrowable instanceof DatastoreException) {
               DatastoreException de = (DatastoreException) prevThrowable;
-              return de.getCode() == com.google.rpc.Code.INTERNAL;
+              return de.getCode() == Code.INTERNAL;
             }
             return false;
           }
