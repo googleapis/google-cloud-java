@@ -318,67 +318,55 @@ public final class TestBench implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    if (runningOutsideAlready || Boolean.getBoolean("testbench.keepAlive")) {
-      // if the server was running outside the tests already, or we want to keep it alive, simply return
+    if (runningOutsideAlready) {
+      // if the server was running outside the tests already simply return
       return;
     }
     try {
-      process.destroy();
-      process.waitFor(2, TimeUnit.SECONDS);
-      boolean attemptForceStopContainer = true;
-      try {
-        int processExitValue = process.exitValue();
-        if (processExitValue != 0) {
-          attemptForceStopContainer = true;
-        }
-        LOGGER.warn("Container exit value = {}", processExitValue);
-      } catch (IllegalThreadStateException e) {
-        attemptForceStopContainer = true;
-      }
-
-      if (attemptForceStopContainer) {
-        LOGGER.warn("Container did not gracefully exit, attempting to explicitly stop it.");
+      if (!Boolean.getBoolean("testbench.keepAlive")) {
+        LOGGER.warn("Attempting to explicitly stop container: {}", containerName);
         ImmutableList<String> command = ImmutableList.of("docker", "kill", containerName);
         LOGGER.warn(command.toString());
         Process shutdownProcess = new ProcessBuilder(command).start();
         shutdownProcess.waitFor(5, TimeUnit.SECONDS);
         int shutdownProcessExitValue = shutdownProcess.exitValue();
-        LOGGER.warn("Container exit value = {}", shutdownProcessExitValue);
-      }
+        LOGGER.warn("Container stop exit value = {}", shutdownProcessExitValue);
 
-      // wait for the server to shutdown
-      runWithRetries(
-          () -> {
-            try {
-              listRetryTests();
-            } catch (SocketException e) {
-              // desired result
-              return null;
-            }
-            throw new NotShutdownException();
-          },
-          RetrySettings.newBuilder()
-              .setTotalTimeoutDuration(Duration.ofSeconds(30))
-              .setInitialRetryDelayDuration(Duration.ofMillis(500))
-              .setRetryDelayMultiplier(1.5)
-              .setMaxRetryDelayDuration(Duration.ofSeconds(5))
-              .build(),
-          new BasicResultRetryAlgorithm<List<?>>() {
-            @Override
-            public boolean shouldRetry(Throwable previousThrowable, List<?> previousResponse) {
-              return previousThrowable instanceof NotShutdownException;
-            }
-          },
-          NanoClock.getDefaultClock());
-      try {
-        Files.delete(errPath);
-        Files.delete(outPath);
-        Files.delete(tempDirectory);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
+        // wait for the server to shutdown
+        runWithRetries(
+            () -> {
+              try {
+                listRetryTests();
+              } catch (SocketException e) {
+                // desired result
+                return null;
+              }
+              throw new NotShutdownException();
+            },
+            RetrySettings.newBuilder()
+                .setTotalTimeoutDuration(Duration.ofSeconds(30))
+                .setInitialRetryDelayDuration(Duration.ofMillis(500))
+                .setRetryDelayMultiplier(1.5)
+                .setMaxRetryDelayDuration(Duration.ofSeconds(5))
+                .build(),
+            new BasicResultRetryAlgorithm<List<?>>() {
+              @Override
+              public boolean shouldRetry(Throwable previousThrowable, List<?> previousResponse) {
+                return previousThrowable instanceof NotShutdownException;
+              }
+            },
+            NanoClock.getDefaultClock());
       }
     } catch (InterruptedException | IOException e) {
       throw new RuntimeException(e);
+    } finally {
+      try {
+        Files.deleteIfExists(errPath);
+        Files.deleteIfExists(outPath);
+        Files.deleteIfExists(tempDirectory);
+      } catch (IOException e) {
+        LOGGER.warn("Failed to delete temporary files", e);
+      }
     }
   }
 
