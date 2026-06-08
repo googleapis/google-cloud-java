@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -130,7 +131,21 @@ public class ITDatastoreProtoClientTest {
 
     ApiFuture<V> submittedFuture = executor.submit(future);
 
-    return submittedFuture.get();
+    try {
+      return submittedFuture.get();
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof Exception) {
+        throw (Exception) cause;
+      }
+      if (cause instanceof Error) {
+        throw (Error) cause;
+      }
+      throw e;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw e;
+    }
   }
 
   // This low-level Datastore client (proto-over-HTTP) does not have built-in retry logic
