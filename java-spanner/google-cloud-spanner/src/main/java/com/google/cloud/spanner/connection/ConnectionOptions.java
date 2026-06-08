@@ -767,8 +767,7 @@ public class ConnectionOptions {
               passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
       java.util.Arrays.fill(passwordBytes, (byte) 0);
       this.credentials =
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
-              username, secretBytes, target);
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(username, secretBytes, target);
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && defaultExperimentalHostCredentials != null) {
       this.credentials = defaultExperimentalHostCredentials;

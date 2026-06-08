@@ -1837,8 +1837,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
               passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
       java.util.Arrays.fill(passwordBytes, (byte) 0);
       super.setCredentials(
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
-              username, secretBytes, target));
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(username, secretBytes, target));
       return this;
     }
 

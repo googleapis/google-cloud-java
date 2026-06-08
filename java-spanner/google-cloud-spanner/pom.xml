@@ -159,19 +159,14 @@
         <version>0.6.1</version>
         <configuration>
           <protocArtifact>com.google.protobuf:protoc:4.33.2:exe:${os.detected.classifier}</protocArtifact>
-          <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.64.0:exe:${os.detected.classifier}</pluginArtifact>
           <additionalProtoPathElements>
             <additionalProtoPathElement>${project.basedir}/../proto-google-cloud-spanner-v1/src/main/proto</additionalProtoPathElement>
-            <additionalProtoPathElement>${project.basedir}/../google-cloud-spanner/src/main/proto</additionalProtoPathElement>  
           </additionalProtoPathElements>
         </configuration>
         <executions>
           <execution>
-            <id>compile</id>
+            <id>test-compile</id>
             <goals>
-              <goal>compile</goal>
-              <goal>compile-custom</goal>
               <goal>test-compile</goal>
             </goals>
           </execution>
@@ -537,6 +532,16 @@
       <version>2.91.0</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk18on</artifactId>
+      <version>1.78</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.crypto.tink</groupId>
+      <artifactId>tink</artifactId>
+      <version>1.13.0</version>
+    </dependency>
   </dependencies>
   <profiles>
     <profile>
@@ -549,16 +554,6 @@
           <groupId>javax.annotation</groupId>
           <artifactId>javax.annotation-api</artifactId>
         </dependency>
-    <dependency>
-      <groupId>org.bouncycastle</groupId>
-      <artifactId>bcprov-jdk18on</artifactId>
-      <version>1.78</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.crypto.tink</groupId>
-      <artifactId>tink</artifactId>
-      <version>1.13.0</version>
-    </dependency>
       </dependencies>
     </profile>
     <profile>
