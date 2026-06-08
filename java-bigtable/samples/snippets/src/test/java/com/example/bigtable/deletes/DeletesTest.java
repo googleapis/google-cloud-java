@@ -18,14 +18,13 @@ package com.example.bigtable.deletes;
 
 import com.example.bigtable.MobileTimeSeriesBaseTest;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.TableId;
-import com.google.common.truth.Correspondence;
 import com.google.common.truth.Truth;
 import java.io.IOException;
 import java.util.List;
@@ -41,9 +40,19 @@ import org.junit.runners.MethodSorters;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DeletesTest extends MobileTimeSeriesBaseTest {
-  private static final Correspondence<ColumnFamily, String> COLUMN_FAMILY_ID_CORRESPONDENCE =
-      Correspondence.transforming(ColumnFamily::getId, "ColumnFamily id");
   public static BigtableDataClient bigtableDataClient;
+
+  private static boolean exists(BigtableTableAdminClientV2 client, String tableId) {
+    try {
+      client.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      return true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      return false;
+    }
+  }
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -166,32 +175,38 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
   @Test
   public void test7_testDeleteColumnFamily() throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
-          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 tableAdminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      com.google.bigtable.admin.v2.GetTableRequest request =
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+              .build();
+      Truth.assertThat(tableAdminClient.getTable(request).getColumnFamiliesMap().keySet())
           .contains(COLUMN_FAMILY_NAME_STATS);
 
       DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
       deleteColumnFamilyExample.deleteColumnFamily(
           projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
 
-      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies())
-          .comparingElementsUsing(COLUMN_FAMILY_ID_CORRESPONDENCE)
+      Truth.assertThat(tableAdminClient.getTable(request).getColumnFamiliesMap().keySet())
           .doesNotContain(COLUMN_FAMILY_NAME_STATS);
     }
   }
 
   @Test
   public void test8_testDeleteTable() throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      Truth.assertThat(tableAdminClient.exists(TABLE_ID)).isTrue();
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 tableAdminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      Truth.assertThat(exists(tableAdminClient, TABLE_ID)).isTrue();
 
       DeleteTableExample deleteTableExample = new DeleteTableExample();
       deleteTableExample.deleteTable(projectId, instanceId, TABLE_ID);
 
-      Truth.assertThat(tableAdminClient.exists(TABLE_ID)).isFalse();
+      Truth.assertThat(exists(tableAdminClient, TABLE_ID)).isFalse();
     }
   }
 }

@@ -21,15 +21,8 @@ import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
-import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.FamilySubsets;
-import com.google.cloud.bigtable.admin.v2.models.SubsetView;
-import com.google.cloud.bigtable.admin.v2.models.Table;
-import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
@@ -50,9 +43,11 @@ public class AuthorizedViewExample {
   private static final String COLUMN_QUALIFIER_GREETING = "greeting";
   private static final String COLUMN_QUALIFIER_NAME = "name";
   private static final String ROW_KEY_PREFIX = "rowKey";
+  private final String projectId;
+  private final String instanceId;
   private final String tableId;
   private final String authorizedViewId;
-  private final BigtableTableAdminClient adminClient;
+  private final BigtableTableAdminClientV2 adminClient;
   private final BigtableDataClient dataClient;
 
   public static void main(String[] args) throws IOException {
@@ -72,6 +67,8 @@ public class AuthorizedViewExample {
   public AuthorizedViewExample(
       String projectId, String instanceId, String tableId, String authorizedViewId)
       throws IOException {
+    this.projectId = projectId;
+    this.instanceId = instanceId;
     this.tableId = tableId;
     this.authorizedViewId = authorizedViewId;
 
@@ -83,14 +80,23 @@ public class AuthorizedViewExample {
     dataClient = BigtableDataClient.create(settings);
 
     // Creates the settings to configure a bigtable table admin client.
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
 
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+  }
+
+  private boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      return true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      return false;
+    }
   }
 
   public void close() {
@@ -114,12 +120,21 @@ public class AuthorizedViewExample {
 
   public void createTable() {
     // Checks if table exists, creates table if it does not exist.
-    if (!adminClient.exists(tableId)) {
+    if (!exists(tableId)) {
       System.out.println("Table does not exist, creating table: " + tableId);
-      CreateTableRequest createTableRequest =
-          CreateTableRequest.of(tableId).addFamily(COLUMN_FAMILY);
-      Table table = adminClient.createTable(createTableRequest);
-      System.out.printf("Table: %s created successfully%n", table.getId());
+      com.google.bigtable.admin.v2.CreateTableRequest request =
+          com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+              .setParent("projects/" + projectId + "/instances/" + instanceId)
+              .setTableId(tableId)
+              .setTable(
+                  com.google.bigtable.admin.v2.Table.newBuilder()
+                      .putColumnFamilies(
+                          COLUMN_FAMILY,
+                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                      .build())
+              .build();
+      com.google.bigtable.admin.v2.Table table = adminClient.createTable(request);
+      System.out.printf("Table: %s created successfully%n", table.getName());
     }
   }
 
@@ -127,7 +142,8 @@ public class AuthorizedViewExample {
     // Deletes the entire table.
     System.out.println("\nDelete table: " + tableId);
     try {
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
       System.out.printf("Table: %s deleted successfully%n", tableId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());
@@ -140,24 +156,45 @@ public class AuthorizedViewExample {
   public void createAuthorizedView() {
     // Checks if the authorized view exists, creates it if it does not exist.
     try {
-      adminClient.getAuthorizedView(tableId, authorizedViewId);
+      adminClient.getAuthorizedView(
+          "projects/"
+              + projectId
+              + "/instances/"
+              + instanceId
+              + "/tables/"
+              + tableId
+              + "/authorizedViews/"
+              + authorizedViewId);
     } catch (NotFoundException exception) {
       System.out.printf("%nCreating authorized view %s in table %s%n", authorizedViewId, tableId);
       // [START bigtable_create_authorized_view]
       try {
-        CreateAuthorizedViewRequest request =
-            CreateAuthorizedViewRequest.of(tableId, authorizedViewId)
-                .setAuthorizedViewType(
-                    SubsetView.create()
-                        .addRowPrefix("")
-                        .setFamilySubsets(
-                            COLUMN_FAMILY,
-                            FamilySubsets.create().addQualifierPrefix(COLUMN_QUALIFIER_NAME)));
-        AuthorizedView authorizedView = adminClient.createAuthorizedView(request);
-        System.out.printf("AuthorizedView: %s created successfully%n", authorizedView.getId());
-      } catch (NotFoundException e) {
-        System.err.println(
-            "Failed to create an authorized view from a non-existent table: " + e.getMessage());
+        com.google.bigtable.admin.v2.AuthorizedView.SubsetView subsetView =
+            com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                .addRowPrefixes(com.google.protobuf.ByteString.EMPTY)
+                .putFamilySubsets(
+                    COLUMN_FAMILY,
+                    com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets.newBuilder()
+                        .addQualifierPrefixes(
+                            com.google.protobuf.ByteString.copyFromUtf8(COLUMN_QUALIFIER_NAME))
+                        .build())
+                .build();
+        com.google.bigtable.admin.v2.AuthorizedView authorizedViewObj =
+            com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+                .setSubsetView(subsetView)
+                .build();
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request =
+            com.google.bigtable.admin.v2.CreateAuthorizedViewRequest.newBuilder()
+                .setParent(
+                    "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+                .setAuthorizedViewId(authorizedViewId)
+                .setAuthorizedView(authorizedViewObj)
+                .build();
+        com.google.bigtable.admin.v2.AuthorizedView authorizedView =
+            adminClient.createAuthorizedViewAsync(request).get();
+        System.out.printf("AuthorizedView: %s created successfully%n", authorizedView.getName());
+      } catch (Exception e) {
+        System.err.println("Failed to create an authorized view: " + e.getMessage());
       }
       // [END bigtable_create_authorized_view]
     }
@@ -169,40 +206,73 @@ public class AuthorizedViewExample {
     // [START bigtable_update_authorized_view]
     try {
       // Update to an authorized view permitting everything.
-      UpdateAuthorizedViewRequest request =
-          UpdateAuthorizedViewRequest.of(tableId, authorizedViewId)
-              .setAuthorizedViewType(
-                  SubsetView.create()
-                      .addRowPrefix("")
-                      .setFamilySubsets(
-                          COLUMN_FAMILY, FamilySubsets.create().addQualifierPrefix("")));
-      AuthorizedView authorizedView = adminClient.updateAuthorizedView(request);
-      System.out.printf("AuthorizedView: %s updated successfully%n", authorizedView.getId());
-    } catch (NotFoundException e) {
-      System.err.println("Failed to modify a non-existent authorized view: " + e.getMessage());
+      com.google.bigtable.admin.v2.AuthorizedView.SubsetView subsetView =
+          com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+              .addRowPrefixes(com.google.protobuf.ByteString.EMPTY)
+              .putFamilySubsets(
+                  COLUMN_FAMILY,
+                  com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets.newBuilder()
+                      .addQualifierPrefixes(com.google.protobuf.ByteString.EMPTY)
+                      .build())
+              .build();
+      com.google.bigtable.admin.v2.AuthorizedView authorizedViewObj =
+          com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+              .setSubsetView(subsetView)
+              .setName(
+                  "projects/"
+                      + projectId
+                      + "/instances/"
+                      + instanceId
+                      + "/tables/"
+                      + tableId
+                      + "/authorizedViews/"
+                      + authorizedViewId)
+              .build();
+      com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request =
+          com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.newBuilder()
+              .setAuthorizedView(authorizedViewObj)
+              .setUpdateMask(
+                  com.google.protobuf.FieldMask.newBuilder().addPaths("subset_view").build())
+              .build();
+      com.google.bigtable.admin.v2.AuthorizedView authorizedView =
+          adminClient.updateAuthorizedViewAsync(request).get();
+      System.out.printf("AuthorizedView: %s updated successfully%n", authorizedView.getName());
+    } catch (Exception e) {
+      System.err.println("Failed to modify authorized view: " + e.getMessage());
     }
     // [END bigtable_update_authorized_view]
   }
 
   /** Demonstrates how to get an authorized view's metadata. */
-  public AuthorizedView getAuthorizedView() {
+  public com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView() {
     System.out.printf("%nGetting authorized view %s in table %s%n", authorizedViewId, tableId);
     // [START bigtable_get_authorized_view]
-    AuthorizedView authorizedView = null;
+    com.google.bigtable.admin.v2.AuthorizedView authorizedView = null;
     try {
-      authorizedView = adminClient.getAuthorizedView(tableId, authorizedViewId);
-      SubsetView subsetView = (SubsetView) authorizedView.getAuthorizedViewType();
+      authorizedView =
+          adminClient.getAuthorizedView(
+              "projects/"
+                  + projectId
+                  + "/instances/"
+                  + instanceId
+                  + "/tables/"
+                  + tableId
+                  + "/authorizedViews/"
+                  + authorizedViewId);
+      com.google.bigtable.admin.v2.AuthorizedView.SubsetView subsetView =
+          authorizedView.getSubsetView();
 
-      for (ByteString rowPrefix : subsetView.getRowPrefixes()) {
+      for (ByteString rowPrefix : subsetView.getRowPrefixesList()) {
         System.out.printf("Row Prefix: %s%n", rowPrefix.toStringUtf8());
       }
-      for (Map.Entry<String, FamilySubsets> entry : subsetView.getFamilySubsets().entrySet()) {
-        for (ByteString qualifierPrefix : entry.getValue().getQualifierPrefixes()) {
+      for (Map.Entry<String, com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets> entry :
+          subsetView.getFamilySubsetsMap().entrySet()) {
+        for (ByteString qualifierPrefix : entry.getValue().getQualifierPrefixesList()) {
           System.out.printf(
               "Column Family: %s, Qualifier Prefix: %s%n",
               entry.getKey(), qualifierPrefix.toStringUtf8());
         }
-        for (ByteString qualifier : entry.getValue().getQualifiers()) {
+        for (ByteString qualifier : entry.getValue().getQualifiersList()) {
           System.out.printf(
               "Column Family: %s, Qualifier: %s%n", entry.getKey(), qualifier.toStringUtf8());
         }
@@ -221,9 +291,16 @@ public class AuthorizedViewExample {
     // [START bigtable_list_authorized_views]
     List<String> authorizedViewIds = new ArrayList<>();
     try {
-      authorizedViewIds = adminClient.listAuthorizedViews(tableId);
-      for (String authorizedViewId : authorizedViewIds) {
-        System.out.println(authorizedViewId);
+      com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request =
+          com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.newBuilder()
+              .setParent(
+                  "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build();
+      for (com.google.bigtable.admin.v2.AuthorizedView view :
+          adminClient.listAuthorizedViews(request).iterateAll()) {
+        String id = view.getName().substring(view.getName().lastIndexOf("/") + 1);
+        System.out.println(id);
+        authorizedViewIds.add(id);
       }
     } catch (NotFoundException e) {
       System.err.println(
@@ -238,7 +315,15 @@ public class AuthorizedViewExample {
     System.out.printf("%nDeleting authorized view %s in table %s%n", authorizedViewId, tableId);
     // [START bigtable_delete_authorized_view]
     try {
-      adminClient.deleteAuthorizedView(tableId, authorizedViewId);
+      adminClient.deleteAuthorizedView(
+          "projects/"
+              + projectId
+              + "/instances/"
+              + instanceId
+              + "/tables/"
+              + tableId
+              + "/authorizedViews/"
+              + authorizedViewId);
       System.out.printf("AuthorizedView: %s deleted successfully%n", authorizedViewId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent authorized view: " + e.getMessage());

@@ -16,9 +16,8 @@
 
 package com.example.bigtable;
 
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.Type;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -40,14 +39,48 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
       CURRENT_TIME.minus(1, ChronoUnit.HOURS).toEpochMilli() * 1000;
 
   public static void createTable() throws IOException {
-    try (BigtableTableAdminClient adminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      CreateTableRequest createTableRequest =
-          CreateTableRequest.of(TABLE_ID)
-              .addFamily(COLUMN_FAMILY_NAME_STATS)
-              .addFamily(COLUMN_FAMILY_NAME_PLAN)
-              .addFamily(COLUMN_FAMILY_NAME_VIEW_COUNT, Type.int64Sum());
-      adminClient.createTable(createTableRequest);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 adminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      com.google.bigtable.admin.v2.Type int64Type =
+          com.google.bigtable.admin.v2.Type.newBuilder()
+              .setInt64Type(
+                  com.google.bigtable.admin.v2.Type.Int64.newBuilder()
+                      .setEncoding(
+                          com.google.bigtable.admin.v2.Type.Int64.Encoding.newBuilder()
+                              .setBigEndianBytes(
+                                  com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes
+                                      .getDefaultInstance())))
+              .build();
+      com.google.bigtable.admin.v2.Type int64SumType =
+          com.google.bigtable.admin.v2.Type.newBuilder()
+              .setAggregateType(
+                  com.google.bigtable.admin.v2.Type.Aggregate.newBuilder()
+                      .setInputType(int64Type)
+                      .setSum(com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance()))
+              .build();
+
+      com.google.bigtable.admin.v2.CreateTableRequest request =
+          com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+              .setParent("projects/" + projectId + "/instances/" + instanceId)
+              .setTableId(TABLE_ID)
+              .setTable(
+                  com.google.bigtable.admin.v2.Table.newBuilder()
+                      .putColumnFamilies(
+                          COLUMN_FAMILY_NAME_STATS,
+                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                      .putColumnFamilies(
+                          COLUMN_FAMILY_NAME_PLAN,
+                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                      .putColumnFamilies(
+                          COLUMN_FAMILY_NAME_VIEW_COUNT,
+                          com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
+                              .setValueType(int64SumType)
+                              .build())
+                      .build())
+              .build();
+      adminClient.createTable(request);
     } catch (IOException e) {
       System.out.println("Error during createTable: \n" + e.toString());
       throw (e);
@@ -172,10 +205,23 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   }
 
   public static void cleanupTable() throws IOException {
-    try (BigtableTableAdminClient adminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      if (adminClient.exists(TABLE_ID)) {
-        adminClient.deleteTable(TABLE_ID);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 adminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      boolean exists = true;
+      try {
+        adminClient.getTable(
+            com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+                .setName(
+                    "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+                .build());
+      } catch (com.google.api.gax.rpc.NotFoundException e) {
+        exists = false;
+      }
+      if (exists) {
+        adminClient.deleteTable(
+            "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID);
       }
     } catch (Exception e) {
       System.out.println("Error during afterClass: \n" + e.toString());

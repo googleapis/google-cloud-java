@@ -22,10 +22,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.SchemaBundle;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -44,18 +42,27 @@ public class SchemaBundleExampleTest extends BigtableBaseTest {
   private static final String COLUMN_FAMILY = "cf";
   private String tableId;
   private String schemaBundleId;
-  private static BigtableTableAdminClient adminClient;
+  private static BigtableTableAdminClientV2 adminClient;
   private SchemaBundleExample schemaBundleExample;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
     initializeVariables();
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+  }
+
+  private static boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      return true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      return false;
+    }
   }
 
   @AfterClass
@@ -69,13 +76,25 @@ public class SchemaBundleExampleTest extends BigtableBaseTest {
     tableId = generateResourceId(TABLE_PREFIX);
     schemaBundleId = generateResourceId(SCHEMA_BUNDLE_PREFIX);
     schemaBundleExample = new SchemaBundleExample(projectId, instanceId, tableId, schemaBundleId);
-    adminClient.createTable(CreateTableRequest.of(tableId).addFamily(COLUMN_FAMILY));
+    com.google.bigtable.admin.v2.CreateTableRequest request =
+        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .setTableId(tableId)
+            .setTable(
+                com.google.bigtable.admin.v2.Table.newBuilder()
+                    .putColumnFamilies(
+                        COLUMN_FAMILY,
+                        com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                    .build())
+            .build();
+    adminClient.createTable(request);
   }
 
   @After
   public void after() {
-    if (adminClient.exists(tableId)) {
-      adminClient.deleteTable(tableId);
+    if (exists(tableId)) {
+      adminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
     }
     schemaBundleExample.close();
   }
@@ -89,26 +108,56 @@ public class SchemaBundleExampleTest extends BigtableBaseTest {
   public void testSchemaBundleCreateUpdateDelete() throws IOException {
     // Creates a schema bundle.
     schemaBundleExample.createSchemaBundle();
-    SchemaBundle schemaBundle = adminClient.getSchemaBundle(tableId, schemaBundleId);
-    assertEquals(schemaBundle.getId(), schemaBundleId);
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundle =
+        adminClient.getSchemaBundle(
+            "projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/tables/"
+                + tableId
+                + "/schemaBundles/"
+                + schemaBundleId);
+    String id = schemaBundle.getName().substring(schemaBundle.getName().lastIndexOf("/") + 1);
+    assertEquals(id, schemaBundleId);
 
     // Updates the schema bundle.
     schemaBundleExample.updateSchemaBundle();
-    SchemaBundle updatedSchemaBundle = adminClient.getSchemaBundle(tableId, schemaBundleId);
+    com.google.bigtable.admin.v2.SchemaBundle updatedSchemaBundle =
+        adminClient.getSchemaBundle(
+            "projects/"
+                + projectId
+                + "/instances/"
+                + instanceId
+                + "/tables/"
+                + tableId
+                + "/schemaBundles/"
+                + schemaBundleId);
     assertNotEquals(schemaBundle, updatedSchemaBundle);
 
     // Deletes the schema bundle.
     schemaBundleExample.deleteSchemaBundle();
     assertThrows(
-        NotFoundException.class, () -> adminClient.getSchemaBundle(tableId, schemaBundleId));
+        NotFoundException.class,
+        () ->
+            adminClient.getSchemaBundle(
+                "projects/"
+                    + projectId
+                    + "/instances/"
+                    + instanceId
+                    + "/tables/"
+                    + tableId
+                    + "/schemaBundles/"
+                    + schemaBundleId));
   }
 
   @Test
   public void testGetSchemaBundle() {
     schemaBundleExample.createSchemaBundle();
-    SchemaBundle schemaBundle = schemaBundleExample.getSchemaBundle();
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundle = schemaBundleExample.getSchemaBundle();
     assertNotNull(schemaBundle);
-    assertEquals(schemaBundle.getId(), schemaBundleId);
+    String id = schemaBundle.getName().substring(schemaBundle.getName().lastIndexOf("/") + 1);
+    assertEquals(id, schemaBundleId);
   }
 
   @Test
@@ -121,7 +170,12 @@ public class SchemaBundleExampleTest extends BigtableBaseTest {
 
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
-    for (String tableId : adminClient.listTables()) {
+    com.google.bigtable.admin.v2.ListTablesRequest request =
+        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+            .setParent("projects/" + projectId + "/instances/" + instanceId)
+            .build();
+    for (com.google.bigtable.admin.v2.Table table : adminClient.listTables(request).iterateAll()) {
+      String tableId = table.getName().substring(table.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {
         continue;
@@ -132,7 +186,7 @@ public class SchemaBundleExampleTest extends BigtableBaseTest {
         continue;
       }
       System.out.println("\nGarbage collecting orphaned table: " + tableId);
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(table.getName());
     }
   }
 }

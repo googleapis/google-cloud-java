@@ -17,14 +17,22 @@
 package com.example.bigtable.deletes;
 
 // [START bigtable_drop_row_range]
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
 
 public class DropRowRangeExample {
   public void dropRowRange(String projectId, String instanceId, String tableId) throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      tableAdminClient.dropRowRange(tableId, "phone#4c410523");
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 tableAdminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      com.google.bigtable.admin.v2.DropRowRangeRequest request =
+          com.google.bigtable.admin.v2.DropRowRangeRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setRowKeyPrefix(com.google.protobuf.ByteString.copyFromUtf8("phone#4c410523"))
+              .build();
+      tableAdminClient.dropRowRange(request);
     }
   }
 }

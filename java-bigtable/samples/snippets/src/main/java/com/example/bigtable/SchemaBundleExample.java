@@ -17,13 +17,8 @@
 package com.example.bigtable;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.SchemaBundle;
-import com.google.cloud.bigtable.admin.v2.models.Table;
-import com.google.cloud.bigtable.admin.v2.models.UpdateSchemaBundleRequest;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -52,9 +47,11 @@ public class SchemaBundleExample {
 
   private static final String COLUMN_FAMILY = "cf";
   private static final String PROTO_FILE_PATH = "com/example/bigtable/descriptors.pb";
+  private final String projectId;
+  private final String instanceId;
   private final String tableId;
   private final String schemaBundleId;
-  private final BigtableTableAdminClient adminClient;
+  private final BigtableTableAdminClientV2 adminClient;
 
   public static void main(String[] args) throws IOException {
     if (args.length != 2) {
@@ -72,18 +69,29 @@ public class SchemaBundleExample {
   public SchemaBundleExample(
       String projectId, String instanceId, String tableId, String schemaBundleId)
       throws IOException {
+    this.projectId = projectId;
+    this.instanceId = instanceId;
     this.tableId = tableId;
     this.schemaBundleId = schemaBundleId;
 
     // Creates the settings to configure a bigtable table admin client.
-    BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .setInstanceId(instanceId)
-            .build();
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
 
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClient.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+  }
+
+  private boolean exists(String tableId) {
+    try {
+      adminClient.getTable(
+          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build());
+      return true;
+    } catch (com.google.api.gax.rpc.NotFoundException e) {
+      return false;
+    }
   }
 
   public void close() {
@@ -103,12 +111,21 @@ public class SchemaBundleExample {
 
   public void createTable() {
     // Checks if table exists, creates table if it does not exist.
-    if (!adminClient.exists(tableId)) {
+    if (!exists(tableId)) {
       System.out.println("Table does not exist, creating table: " + tableId);
-      CreateTableRequest createTableRequest =
-          CreateTableRequest.of(tableId).addFamily(COLUMN_FAMILY);
-      Table table = adminClient.createTable(createTableRequest);
-      System.out.printf("Table: %s created successfully%n", table.getId());
+      com.google.bigtable.admin.v2.CreateTableRequest request =
+          com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+              .setParent("projects/" + projectId + "/instances/" + instanceId)
+              .setTableId(tableId)
+              .setTable(
+                  com.google.bigtable.admin.v2.Table.newBuilder()
+                      .putColumnFamilies(
+                          COLUMN_FAMILY,
+                          com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                      .build())
+              .build();
+      com.google.bigtable.admin.v2.Table table = adminClient.createTable(request);
+      System.out.printf("Table: %s created successfully%n", table.getName());
     }
   }
 
@@ -116,7 +133,8 @@ public class SchemaBundleExample {
     // Deletes the entire table.
     System.out.println("\nDelete table: " + tableId);
     try {
-      adminClient.deleteTable(tableId);
+      adminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
       System.out.printf("Table: %s deleted successfully%n", tableId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());
@@ -127,22 +145,39 @@ public class SchemaBundleExample {
   public void createSchemaBundle() {
     // Checks if the schema bundle exists, creates it if it does not exist.
     try {
-      adminClient.getSchemaBundle(tableId, schemaBundleId);
+      adminClient.getSchemaBundle(
+          "projects/"
+              + projectId
+              + "/instances/"
+              + instanceId
+              + "/tables/"
+              + tableId
+              + "/schemaBundles/"
+              + schemaBundleId);
     } catch (NotFoundException exception) {
       System.out.printf("%nCreating schema bundle %s in table %s%n", schemaBundleId, tableId);
       // [START bigtable_create_schema_bundle]
       try {
         InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH);
-        CreateSchemaBundleRequest request =
-            CreateSchemaBundleRequest.of(tableId, schemaBundleId)
-                .setProtoSchema(ByteString.readFrom(in));
-        SchemaBundle schemaBundle = adminClient.createSchemaBundle(request);
-        System.out.printf("Schema bundle: %s created successfully%n", schemaBundle.getId());
-      } catch (NotFoundException e) {
-        System.err.println(
-            "Failed to create a schema bundle from a non-existent table: " + e.getMessage());
-      } catch (IOException e) {
-        throw new RuntimeException(e);
+        com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
+            com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                .setProtoSchema(
+                    com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                        .setProtoDescriptors(ByteString.readFrom(in))
+                        .build())
+                .build();
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest request =
+            com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+                .setParent(
+                    "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+                .setSchemaBundleId(schemaBundleId)
+                .setSchemaBundle(schemaBundleObj)
+                .build();
+        com.google.bigtable.admin.v2.SchemaBundle schemaBundle =
+            adminClient.createSchemaBundleAsync(request).get();
+        System.out.printf("Schema bundle: %s created successfully%n", schemaBundle.getName());
+      } catch (Exception e) {
+        System.err.println("Failed to create a schema bundle: " + e.getMessage());
       }
       // [END bigtable_create_schema_bundle]
     }
@@ -154,29 +189,57 @@ public class SchemaBundleExample {
     // [START bigtable_update_schema_bundle]
     try {
       InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH);
-      UpdateSchemaBundleRequest request =
-          UpdateSchemaBundleRequest.of(tableId, schemaBundleId)
-              .setProtoSchema(ByteString.readFrom(in));
-      SchemaBundle schemaBundle = adminClient.updateSchemaBundle(request);
-      System.out.printf("Schema bundle: %s updated successfully%n", schemaBundle.getId());
-    } catch (NotFoundException e) {
-      System.err.println("Failed to modify a non-existent schema bundle: " + e.getMessage());
-    } catch (IOException e) {
-      throw new RuntimeException(e);
+      com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
+          com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+              .setName(
+                  "projects/"
+                      + projectId
+                      + "/instances/"
+                      + instanceId
+                      + "/tables/"
+                      + tableId
+                      + "/schemaBundles/"
+                      + schemaBundleId)
+              .setProtoSchema(
+                  com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                      .setProtoDescriptors(ByteString.readFrom(in))
+                      .build())
+              .build();
+      com.google.bigtable.admin.v2.UpdateSchemaBundleRequest request =
+          com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+              .setSchemaBundle(schemaBundleObj)
+              .setUpdateMask(
+                  com.google.protobuf.FieldMask.newBuilder().addPaths("proto_schema").build())
+              .build();
+      com.google.bigtable.admin.v2.SchemaBundle schemaBundle =
+          adminClient.updateSchemaBundleAsync(request).get();
+      System.out.printf("Schema bundle: %s updated successfully%n", schemaBundle.getName());
+    } catch (Exception e) {
+      System.err.println("Failed to modify schema bundle: " + e.getMessage());
     }
     // [END bigtable_update_schema_bundle]
   }
 
   /** Demonstrates how to get a schema bundle's definition. */
-  public SchemaBundle getSchemaBundle() {
+  public com.google.bigtable.admin.v2.SchemaBundle getSchemaBundle() {
     System.out.printf("%nGetting schema bundle %s in table %s%n", schemaBundleId, tableId);
     // [START bigtable_get_schema_bundle]
-    SchemaBundle schemaBundle = null;
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundle = null;
     try {
-      schemaBundle = adminClient.getSchemaBundle(tableId, schemaBundleId);
+      schemaBundle =
+          adminClient.getSchemaBundle(
+              "projects/"
+                  + projectId
+                  + "/instances/"
+                  + instanceId
+                  + "/tables/"
+                  + tableId
+                  + "/schemaBundles/"
+                  + schemaBundleId);
       // Deserialize and print the FileDescriptorSet
       DescriptorProtos.FileDescriptorSet fileDescriptorSet =
-          DescriptorProtos.FileDescriptorSet.parseFrom(schemaBundle.getProtoSchema());
+          DescriptorProtos.FileDescriptorSet.parseFrom(
+              schemaBundle.getProtoSchema().getProtoDescriptors());
 
       System.out.println("--------- Deserialized FileDescriptorSet ---------");
       for (DescriptorProtos.FileDescriptorProto fileDescriptorProto :
@@ -205,9 +268,16 @@ public class SchemaBundleExample {
     // [START bigtable_list_schema_bundles]
     List<String> schemaBundleIds = new ArrayList<>();
     try {
-      schemaBundleIds = adminClient.listSchemaBundles(tableId);
-      for (String schemaBundleId : schemaBundleIds) {
-        System.out.println(schemaBundleId);
+      com.google.bigtable.admin.v2.ListSchemaBundlesRequest request =
+          com.google.bigtable.admin.v2.ListSchemaBundlesRequest.newBuilder()
+              .setParent(
+                  "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .build();
+      for (com.google.bigtable.admin.v2.SchemaBundle bundle :
+          adminClient.listSchemaBundles(request).iterateAll()) {
+        String id = bundle.getName().substring(bundle.getName().lastIndexOf("/") + 1);
+        System.out.println(id);
+        schemaBundleIds.add(id);
       }
     } catch (NotFoundException e) {
       System.err.println(
@@ -222,7 +292,15 @@ public class SchemaBundleExample {
     System.out.printf("%nDeleting schema bundle %s in table %s%n", schemaBundleId, tableId);
     // [START bigtable_delete_schema_bundle]
     try {
-      adminClient.deleteSchemaBundle(tableId, schemaBundleId);
+      adminClient.deleteSchemaBundle(
+          "projects/"
+              + projectId
+              + "/instances/"
+              + instanceId
+              + "/tables/"
+              + tableId
+              + "/schemaBundles/"
+              + schemaBundleId);
       System.out.printf("SchemaBundle: %s deleted successfully%n", schemaBundleId);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent schema bundle: " + e.getMessage());

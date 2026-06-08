@@ -17,18 +17,26 @@
 package com.example.bigtable.deletes;
 
 // [START bigtable_delete_column_family]
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
 
 public class DeleteColumnFamilyExample {
   public void deleteColumnFamily(
       String projectId, String instanceId, String tableId, String columnFamily) throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      ModifyColumnFamiliesRequest modifyColumnFamiliesRequest =
-          ModifyColumnFamiliesRequest.of(tableId).dropFamily(columnFamily);
-      tableAdminClient.modifyFamilies(modifyColumnFamiliesRequest);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 tableAdminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest request =
+          com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .addModifications(
+                  com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+                      .setId(columnFamily)
+                      .setDrop(true))
+              .build();
+      tableAdminClient.modifyColumnFamilies(request);
     }
   }
 }
