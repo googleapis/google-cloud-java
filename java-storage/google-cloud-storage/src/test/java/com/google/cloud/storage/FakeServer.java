@@ -111,10 +111,6 @@ final class FakeServer implements AutoCloseable {
 
         java.lang.reflect.Field clientField = GrpcStorageImpl.class.getDeclaredField("storageClient");
         clientField.setAccessible(true);
-        StorageClient oldClient = (StorageClient) clientField.get(impl);
-        if (oldClient != null) {
-          oldClient.close();
-        }
         clientField.set(impl, isolatedClient);
       } catch (Exception e) {
         throw new RuntimeException("Failed to inject isolated StorageClient", e);
