@@ -37,11 +37,11 @@ import com.google.api.client.util.Clock;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.SettableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
@@ -75,15 +75,15 @@ final class RegionalAccessBoundaryManager {
   private final AtomicReference<RegionalAccessBoundary> cachedRAB = new AtomicReference<>();
 
   /**
-   * refreshFuture acts as an atomic gate for request de-duplication. If a future is present, it
-   * indicates a background refresh is already in progress. It also provides a handle for
-   * observability and unit testing to track the background task's lifecycle.
+   * isRefreshing acts as an atomic gate for request de-duplication. If true, it indicates a
+   * background refresh is already in progress.
    */
-  private final AtomicReference<SettableFuture<RegionalAccessBoundary>> refreshFuture =
-      new AtomicReference<>();
+  private final AtomicBoolean isRefreshing = new AtomicBoolean(false);
 
   private final AtomicReference<CooldownState> cooldownState =
       new AtomicReference<>(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
+
+  private final AtomicBoolean skipRAB = new AtomicBoolean(false);
 
   // Unbounded thread creation is discouraged in library code to avoid resource
   // exhaustion. A shared, bounded executor service ensures a hard limit (5)
@@ -178,7 +178,7 @@ final class RegionalAccessBoundaryManager {
       final HttpTransportFactory transportFactory,
       final RegionalAccessBoundaryProvider provider,
       final AccessToken accessToken) {
-    if (isCooldownActive()) {
+    if (skipRAB.get() || isCooldownActive()) {
       return;
     }
 
@@ -187,28 +187,28 @@ final class RegionalAccessBoundaryManager {
       return;
     }
 
-    SettableFuture<RegionalAccessBoundary> future = SettableFuture.create();
     // Atomically check if a refresh is already running. If compareAndSet returns true,
     // this thread "won the race" and is responsible for starting the background task.
     // All other concurrent threads will return false and exit immediately.
-    if (refreshFuture.compareAndSet(null, future)) {
+    if (isRefreshing.compareAndSet(false, true)) {
       Runnable refreshTask =
           () -> {
             try {
               String url = provider.getRegionalAccessBoundaryUrl();
+              if (url == null) {
+                skipRAB.set(true);
+                return;
+              }
               RegionalAccessBoundary newRAB =
                   RegionalAccessBoundary.refresh(
                       transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
               cachedRAB.set(newRAB);
               resetCooldown();
-              // Complete the future so monitors (like unit tests) know we are done.
-              future.set(newRAB);
             } catch (Exception e) {
               handleRefreshFailure(e);
-              future.setException(e);
             } finally {
               // Open the gate again for future refresh requests.
-              refreshFuture.set(null);
+              isRefreshing.set(false);
             }
           };
 
@@ -224,8 +224,7 @@ final class RegionalAccessBoundaryManager {
             "Could not submit background refresh task for Regional Access Boundary. "
                 + "This is non-blocking and the library will attempt to refresh on the next access. Error: "
                 + e.getMessage());
-        future.setException(e);
-        refreshFuture.set(null);
+        isRefreshing.set(false);
       }
     }
   }
@@ -277,6 +276,11 @@ final class RegionalAccessBoundaryManager {
   @VisibleForTesting
   long getCurrentCooldownMillis() {
     return cooldownState.get().durationMillis;
+  }
+
+  @VisibleForTesting
+  boolean isSkipRAB() {
+    return skipRAB.get();
   }
 
   private static class CooldownState {

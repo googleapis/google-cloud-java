@@ -1213,7 +1213,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertEquals(0, transportFactory.transport.getRequestCount());
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
 
     String defaultAccountEmail = "default@email.com";
@@ -1240,6 +1240,76 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertEquals(
         headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
         Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  @Test
+  void refresh_regionalAccessBoundaryNonEmail_skipsRABLookup()
+      throws IOException, InterruptedException {
+    String nonEmailAccount = "non-email-account-value";
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    RegionalAccessBoundary regionalAccessBoundary =
+        new RegionalAccessBoundary(
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
+            null);
+    transportFactory.transport.setRegionalAccessBoundary(regionalAccessBoundary);
+    transportFactory.transport.setServiceAccountEmail(nonEmailAccount);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    // Before any call, skipRAB flag should be false
+    assertFalse(credentials.regionalAccessBoundaryManager.isSkipRAB());
+
+    // First call: triggers lookup which determines non-email, returns null, and sets skipRAB to
+    // true
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    // Since the task is scheduled asynchronously on the shared executor, wait for it to complete
+    long deadline = System.currentTimeMillis() + 5000;
+    while (!credentials.regionalAccessBoundaryManager.isSkipRAB()
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(50);
+    }
+
+    // Verify skipRAB flag has been set to true
+    assertTrue(credentials.regionalAccessBoundaryManager.isSkipRAB());
+
+    // Verify RAB is still null
+    assertNull(credentials.getRegionalAccessBoundary());
+
+    // Second call: should bypass triggerAsyncRefresh completely and remain null
+    headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+  }
+
+  @Test
+  void getRegionalAccessBoundaryUrl_validEmail_returnsUrl() throws IOException {
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    String defaultAccountEmail = "mail@mail.com";
+
+    transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    String expectedUrl =
+        String.format(
+            OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT,
+            defaultAccountEmail);
+    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
+  }
+
+  @Test
+  void getRegionalAccessBoundaryUrl_invalidEmail_returnsNull() throws IOException {
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    String defaultAccountEmail = "default"; // non-email account format
+
+    transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    assertNull(credentials.getRegionalAccessBoundaryUrl());
   }
 
   private void waitForRegionalAccessBoundary(GoogleCredentials credentials)

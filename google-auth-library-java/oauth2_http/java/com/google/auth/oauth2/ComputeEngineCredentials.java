@@ -72,6 +72,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
@@ -117,6 +118,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private static final String PARSE_ERROR_PREFIX = "Error parsing token refresh response. ";
   private static final String PARSE_ERROR_ACCOUNT = "Error parsing service account response. ";
+  private static final Pattern EMAIL_PATTERN = Pattern.compile("^[^@]+@[^@]+\\.[^@]+$");
   private static final long serialVersionUID = -4113476462526554235L;
 
   private final String transportFactoryClassName;
@@ -800,8 +802,19 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @InternalApi
   @Override
   public String getRegionalAccessBoundaryUrl() throws IOException {
+    String account = getAccount();
+    // The MDS may return a non-email value for the account and we should skip RAB refresh in that
+    // scenario.
+    if (account == null || !EMAIL_PATTERN.matcher(account).matches()) {
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.INFO,
+          Collections.emptyMap(),
+          "Unable to retrieve this instance's email and will skip the regional request routing. Proceeding with request");
+      return null;
+    }
     return String.format(
-        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
+        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, account);
   }
 
   /**
