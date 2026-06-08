@@ -593,6 +593,7 @@ public class PublisherImplTest {
     shutdownTestPublisher(publisher);
   }
 
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
   @Test
   public void testPublishThrowExceptionForUnsubmittedOrderingKeyMessage() throws Exception {
     Publisher publisher =
