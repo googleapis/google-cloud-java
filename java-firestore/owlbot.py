@@ -52,15 +52,14 @@ for library in s.get_staging_dirs():
             "class Version",
             "class FirestoreAdminVersion"
         )
+        # Replace Version.VERSION with FirestoreAdminVersion.VERSION in stub files
+        s.replace(
+            "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/**/*.java",
+            "Version.VERSION",
+            "FirestoreAdminVersion.VERSION",
+        )
     else:
         s.move(library)
-
-    # Replace Version.VERSION with FirestoreAdminVersion.VERSION in stub files
-    s.replace(
-        "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/**/*.java",
-        "Version.VERSION",
-        "FirestoreAdminVersion.VERSION",
-    )
 s.remove_staging_dirs()
 java.common_templates(
     monorepo=True,
