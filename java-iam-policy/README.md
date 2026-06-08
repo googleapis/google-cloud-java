@@ -1,6 +1,6 @@
-# Google Google Cloud IAM Policy Client for Java
+# Google Cloud IAM Policy Client for Java
 
-Java idiomatic client for [Google Cloud IAM Policy][product-docs].
+Java idiomatic client for [Cloud IAM Policy][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -64,14 +64,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Google Cloud IAM Policy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Google Cloud IAM Policy API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud IAM Policy APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud IAM Policy API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud IAM Policy [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud IAM Policy.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud IAM Policy [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud IAM Policy.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -81,13 +81,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud IAM
 You'll need to obtain the `google-iam-policy` library.  See the [Quickstart](#quickstart) section
 to add `google-iam-policy` as a dependency in your code.
 
-## About Google Cloud IAM Policy
+## About Cloud IAM Policy
 
 
-[Google Cloud IAM Policy][product-docs] n/a
+[Cloud IAM Policy][product-docs] n/a
 
-See the [Google Cloud IAM Policy client library docs][javadocs] to learn how to
-use this Google Cloud IAM Policy Client Library.
+See the [Cloud IAM Policy client library docs][javadocs] to learn how to
+use this Cloud IAM Policy Client Library.
 
 
 
@@ -100,7 +100,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud IAM Policy uses both gRPC and HTTP/JSON for the transport layer.
+Cloud IAM Policy uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
