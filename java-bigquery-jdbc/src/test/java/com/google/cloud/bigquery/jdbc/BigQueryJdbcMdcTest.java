@@ -18,9 +18,14 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
@@ -130,5 +135,120 @@ public class BigQueryJdbcMdcTest {
       assertEquals("JdbcConnection-789", BigQueryJdbcMdc.getConnectionId());
     }
     assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
+
+  @Test
+  public void testExecutorPropagatesMdc() throws Exception {
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-Executor-Test");
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+
+    try {
+      // Test Runnable submission
+      CountDownLatch runnableLatch = new CountDownLatch(1);
+      AtomicReference<String> runnableMdcVal = new AtomicReference<>();
+      executor.execute(
+          () -> {
+            runnableMdcVal.set(BigQueryJdbcMdc.getConnectionId());
+            runnableLatch.countDown();
+          });
+      assertTrue(runnableLatch.await(5, TimeUnit.SECONDS));
+      assertEquals("JdbcConnection-Executor-Test", runnableMdcVal.get());
+
+      // Test Callable submission
+      Future<String> callableFuture =
+          executor.submit(
+              () -> {
+                return BigQueryJdbcMdc.getConnectionId();
+              });
+      assertEquals("JdbcConnection-Executor-Test", callableFuture.get(5, TimeUnit.SECONDS));
+
+      // Test context is cleared on worker thread after task completion
+      CountDownLatch cleanupLatch = new CountDownLatch(1);
+      AtomicReference<String> postTaskMdcVal = new AtomicReference<>("initial-non-null");
+      executor.execute(
+          () -> {
+            // Run a task on a potentially reused thread
+            postTaskMdcVal.set(BigQueryJdbcMdc.getConnectionId());
+            cleanupLatch.countDown();
+          });
+      assertTrue(cleanupLatch.await(5, TimeUnit.SECONDS));
+      // Since the main thread has context set, the second task will also capture and set it.
+      // Let's clear the context on the main thread, and submit a task to check if the thread-local
+      // is clean for a thread that has previously executed tasks.
+      BigQueryJdbcMdc.clear();
+      CountDownLatch cleanMainLatch = new CountDownLatch(1);
+      AtomicReference<String> cleanThreadMdcVal = new AtomicReference<>("initial-non-null");
+      executor.execute(
+          () -> {
+            cleanThreadMdcVal.set(BigQueryJdbcMdc.getConnectionId());
+            cleanMainLatch.countDown();
+          });
+      assertTrue(cleanMainLatch.await(5, TimeUnit.SECONDS));
+      // It should be null because the submitting thread had no context set,
+      // and the previous task's close() call cleaned the ThreadLocal.
+      assertNull(cleanThreadMdcVal.get());
+
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testExecutorThrowsNpeOnNullCommand() {
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    try {
+      assertThrows(NullPointerException.class, () -> executor.execute(null));
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testExecutorWrapsCustomRunnableFuture() throws Exception {
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-CustomFuture-Test");
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    try {
+      CountDownLatch latch = new CountDownLatch(1);
+      AtomicReference<String> mdcVal = new AtomicReference<>();
+      RunnableFuture<Void> customFuture =
+          new FutureTask<>(
+              () -> {
+                mdcVal.set(BigQueryJdbcMdc.getConnectionId());
+                latch.countDown();
+              },
+              null);
+
+      executor.execute(customFuture);
+      assertTrue(latch.await(5, TimeUnit.SECONDS));
+      assertEquals("JdbcConnection-CustomFuture-Test", mdcVal.get());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testPoolThreadInheritanceSevered() throws Exception {
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-ParentContext");
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    try {
+      CountDownLatch initLatch = new CountDownLatch(1);
+      executor.execute(initLatch::countDown);
+      assertTrue(initLatch.await(5, TimeUnit.SECONDS));
+
+      BigQueryJdbcMdc.clear();
+
+      CountDownLatch taskLatch = new CountDownLatch(1);
+      AtomicReference<String> workerMdcVal = new AtomicReference<>("initial-non-null");
+      executor.execute(
+          () -> {
+            workerMdcVal.set(BigQueryJdbcMdc.getConnectionId());
+            taskLatch.countDown();
+          });
+
+      assertTrue(taskLatch.await(5, TimeUnit.SECONDS));
+      assertNull(workerMdcVal.get());
+    } finally {
+      executor.shutdownNow();
+    }
   }
 }

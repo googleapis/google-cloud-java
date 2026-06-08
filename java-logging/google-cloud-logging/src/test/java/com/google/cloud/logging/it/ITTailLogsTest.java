@@ -25,8 +25,8 @@ import com.google.cloud.logging.*;
 import com.google.cloud.logging.Logging.TailOption;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.AfterClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITTailLogsTest extends BaseSystemTest {
@@ -40,8 +40,7 @@ public class ITTailLogsTest extends BaseSystemTest {
     assertTrue(cleanupLog(LOG_ID));
   }
 
-  @Ignore
-  @Test(timeout = 120_000) // Note: the test should not take longer than 2 min
+  @Test(timeout = 30_000) // Note: resilient periodic write should succeed in < 30 sec
   public void testTailLogEntries() throws InterruptedException {
     LogEntry testLogEntry =
         LogEntry.newBuilder(Payload.StringPayload.of("stringPayload1"))
@@ -54,26 +53,36 @@ public class ITTailLogsTest extends BaseSystemTest {
     String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + LOG_ID;
     LogEntryServerStream stream = logging.tailLogEntries(TailOption.filter(filter));
 
+    AtomicBoolean isFinished = new AtomicBoolean(false);
     Runnable task =
         () -> {
           // it may take awhile for tailing session to startup on the backend
-          // wait 10 sec before sending log entries
-          try {
-            Thread.sleep(10000);
-          } catch (InterruptedException t) {
+          // send log entries periodically until stream intercepts them or test completes
+          while (!isFinished.get()) {
+            try {
+              Thread.sleep(1000);
+            } catch (InterruptedException t) {
+              break;
+            }
+            if (!isFinished.get()) {
+              logging.write(ImmutableList.of(testLogEntry));
+            }
           }
-          logging.write(ImmutableList.of(testLogEntry));
         };
     Thread thread = new Thread(task);
     thread.start();
 
     final ArrayList<LogEntry> receivedEntries = new ArrayList<>();
     for (LogEntry log : stream) {
-      receivedEntries.add(log);
-      if (receivedEntries.size() > 0) {
+      // Use endsWith() because getLogName() may return a fully qualified path
+      // (projects/{project_id}/logs/{LOG_ID}) rather than the simple identifier.
+      if (log.getLogName().endsWith(LOG_ID)) {
+        receivedEntries.add(log);
         break;
       }
     }
+    isFinished.set(true);
+    thread.interrupt();
     stream.cancel();
 
     LogEntry resultEntry = receivedEntries.get(0);
