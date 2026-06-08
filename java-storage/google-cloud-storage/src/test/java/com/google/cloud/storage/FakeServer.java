@@ -16,6 +16,9 @@
 
 package com.google.cloud.storage;
 
+import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.FixedExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
@@ -28,16 +31,19 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.time.Duration;
 import java.util.Locale;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 final class FakeServer implements AutoCloseable {
 
   private final Server server;
   private final GrpcStorageOptions grpcStorageOptions;
+  private final ScheduledThreadPoolExecutor executor;
 
-  FakeServer(Server server, GrpcStorageOptions grpcStorageOptions) {
+  FakeServer(Server server, GrpcStorageOptions grpcStorageOptions, ScheduledThreadPoolExecutor executor) {
     this.server = server;
     this.grpcStorageOptions = grpcStorageOptions;
+    this.executor = executor;
   }
 
   GrpcStorageOptions getGrpcStorageOptions() {
@@ -45,12 +51,32 @@ final class FakeServer implements AutoCloseable {
   }
 
   StorageSettings storageSettings() throws IOException {
-    return grpcStorageOptions.getStorageSettings();
+    StorageSettings settings = grpcStorageOptions.getStorageSettings();
+    if (executor != null) {
+      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
+      StorageSettings.Builder builder = settings.toBuilder()
+          .setBackgroundExecutorProvider(executorProvider);
+      if (builder.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider) {
+        builder.setTransportChannelProvider(
+            ((InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider())
+                .toBuilder()
+                .setExecutorProvider(executorProvider)
+                .build());
+      }
+      return builder.build();
+    }
+    return settings;
   }
 
   @Override
   public void close() throws InterruptedException {
-    server.shutdownNow().awaitTermination(10, TimeUnit.SECONDS);
+    try {
+      server.shutdownNow().awaitTermination(10, TimeUnit.SECONDS);
+    } finally {
+      if (executor != null) {
+        executor.shutdownNow();
+      }
+    }
   }
 
   static FakeServer of(StorageGrpc.StorageImplBase service) throws IOException {
@@ -58,6 +84,10 @@ final class FakeServer implements AutoCloseable {
     Server server = NettyServerBuilder.forAddress(address).addService(service).build();
     server.start();
     String endpoint = String.format(Locale.US, "%s:%d", address.getHostString(), server.getPort());
+    ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(0);
+    executor.setKeepAliveTime(10, TimeUnit.SECONDS);
+    executor.allowCoreThreadTimeOut(true);
+
     GrpcStorageOptions grpcStorageOptions =
         StorageOptions.grpc()
             .setHost("http://" + endpoint)
@@ -80,6 +110,6 @@ final class FakeServer implements AutoCloseable {
                     .setMaxRpcTimeoutDuration(Duration.ofSeconds(25))
                     .build())
             .build();
-    return new FakeServer(server, grpcStorageOptions);
+    return new FakeServer(server, grpcStorageOptions, executor);
   }
 }
