@@ -21,8 +21,10 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceFactory;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
 import com.google.cloud.storage.it.runner.registry.Registry;
+import com.google.storage.v2.StorageClient;
 import com.google.storage.v2.StorageGrpc;
 import com.google.storage.v2.StorageSettings;
 import io.grpc.Server;
@@ -79,6 +81,47 @@ final class FakeServer implements AutoCloseable {
     }
   }
 
+  static void injectIsolatedClient(Storage storage, ScheduledThreadPoolExecutor executor) {
+    Storage delegate = storage;
+    if (storage instanceof OtelStorageDecorator) {
+      try {
+        java.lang.reflect.Field delegateField = OtelStorageDecorator.class.getDeclaredField("delegate");
+        delegateField.setAccessible(true);
+        delegate = (Storage) delegateField.get(storage);
+      } catch (Exception e) {
+        throw new RuntimeException("Failed to unwrap OtelStorageDecorator", e);
+      }
+    }
+    if (delegate instanceof GrpcStorageImpl) {
+      GrpcStorageImpl impl = (GrpcStorageImpl) delegate;
+      try {
+        StorageSettings settings = impl.getOptions().getStorageSettings();
+        ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
+        StorageSettings.Builder settingsBuilder = settings.toBuilder()
+            .setBackgroundExecutorProvider(executorProvider);
+        if (settingsBuilder.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider) {
+          settingsBuilder.setTransportChannelProvider(
+              ((InstantiatingGrpcChannelProvider) settingsBuilder.getTransportChannelProvider())
+                  .toBuilder()
+                  .setExecutorProvider(executorProvider)
+                  .build());
+        }
+        StorageSettings isolatedSettings = settingsBuilder.build();
+        StorageClient isolatedClient = StorageClient.create(isolatedSettings);
+
+        java.lang.reflect.Field clientField = GrpcStorageImpl.class.getDeclaredField("storageClient");
+        clientField.setAccessible(true);
+        StorageClient oldClient = (StorageClient) clientField.get(impl);
+        if (oldClient != null) {
+          oldClient.close();
+        }
+        clientField.set(impl, isolatedClient);
+      } catch (Exception e) {
+        throw new RuntimeException("Failed to inject isolated StorageClient", e);
+      }
+    }
+  }
+
   static FakeServer of(StorageGrpc.StorageImplBase service) throws IOException {
     InetSocketAddress address = new InetSocketAddress("127.0.0.1", 0);
     Server server = NettyServerBuilder.forAddress(address).addService(service).build();
@@ -97,6 +140,16 @@ final class FakeServer implements AutoCloseable {
             .setEnableGrpcClientMetrics(false)
             .setAttemptDirectPath(false)
             .setOpenTelemetry(Registry.getInstance().otelSdk.get().get())
+            .setServiceFactory(
+                new ServiceFactory<Storage, StorageOptions>() {
+                  @Override
+                  @SuppressWarnings("deprecation")
+                  public Storage create(StorageOptions opts) {
+                    Storage storage = new GrpcStorageOptions.GrpcStorageFactory().create(opts);
+                    injectIsolatedClient(storage, executor);
+                    return storage;
+                  }
+                })
             // cut most retry settings by half. we're hitting an in process server.
             .setRetrySettings(
                 RetrySettings.newBuilder()
