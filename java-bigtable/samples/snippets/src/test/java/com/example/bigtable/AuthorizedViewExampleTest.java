@@ -70,6 +70,7 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
       adminClient.getTable(
           com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
               .build());
       return true;
     } catch (com.google.api.gax.rpc.NotFoundException e) {

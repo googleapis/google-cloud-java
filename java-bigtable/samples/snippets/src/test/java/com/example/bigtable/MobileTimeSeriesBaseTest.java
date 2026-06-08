@@ -215,6 +215,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
             com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
                 .setName(
                     "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+                .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
                 .build());
       } catch (com.google.api.gax.rpc.NotFoundException e) {
         exists = false;

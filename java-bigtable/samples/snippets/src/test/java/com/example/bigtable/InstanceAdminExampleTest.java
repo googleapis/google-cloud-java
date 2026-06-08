@@ -18,6 +18,7 @@ package com.example.bigtable;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
@@ -131,7 +132,7 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
     assertNotNull(instance);
   }
 
-  @Test(expected = NotFoundException.class)
+  @Test
   public void testAddAndDeleteCluster() {
     // Adds a cluster.
     instanceAdmin.addCluster();
@@ -142,8 +143,11 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
 
     // Deletes a cluster.
     instanceAdmin.deleteCluster();
-    adminClient.getCluster(
-        "projects/" + projectId + "/instances/" + instanceId + "/clusters/" + CLUSTER);
+    assertThrows(
+        NotFoundException.class,
+        () ->
+            adminClient.getCluster(
+                "projects/" + projectId + "/instances/" + instanceId + "/clusters/" + CLUSTER));
   }
 
   // TODO: add test for instanceAdmin.listInstances()

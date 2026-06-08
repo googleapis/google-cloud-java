@@ -125,6 +125,7 @@ public class HelloWorld {
       adminClient.getTable(
           com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
               .build());
       exists = true;
     } catch (NotFoundException e) {

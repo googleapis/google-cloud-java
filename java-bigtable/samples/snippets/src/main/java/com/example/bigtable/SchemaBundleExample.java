@@ -87,6 +87,7 @@ public class SchemaBundleExample {
       adminClient.getTable(
           com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
               .build());
       return true;
     } catch (com.google.api.gax.rpc.NotFoundException e) {
@@ -157,8 +158,10 @@ public class SchemaBundleExample {
     } catch (NotFoundException exception) {
       System.out.printf("%nCreating schema bundle %s in table %s%n", schemaBundleId, tableId);
       // [START bigtable_create_schema_bundle]
-      try {
-        InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH);
+      try (InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH)) {
+        if (in == null) {
+          throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
+        }
         com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
             com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
                 .setProtoSchema(
@@ -187,8 +190,10 @@ public class SchemaBundleExample {
   public void updateSchemaBundle() {
     System.out.printf("%nUpdating schema bundle %s in table %s%n", schemaBundleId, tableId);
     // [START bigtable_update_schema_bundle]
-    try {
-      InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH);
+    try (InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH)) {
+      if (in == null) {
+        throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
+      }
       com.google.bigtable.admin.v2.SchemaBundle schemaBundleObj =
           com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
               .setName(

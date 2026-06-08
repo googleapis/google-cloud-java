@@ -58,6 +58,7 @@ public class TableAdminExampleTest extends BigtableBaseTest {
       adminClient.getTable(
           com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
               .build());
       return true;
     } catch (com.google.api.gax.rpc.NotFoundException e) {
@@ -137,17 +138,11 @@ public class TableAdminExampleTest extends BigtableBaseTest {
 
     // Deletes cf2.
     tableAdmin.deleteColumnFamily();
-    boolean found = true;
     com.google.bigtable.admin.v2.GetTableRequest request =
         com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
             .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
             .build();
-    for (String familyName : adminClient.getTable(request).getColumnFamiliesMap().keySet()) {
-      if (familyName.equals("cf2")) {
-        found = false;
-        break;
-      }
-    }
+    boolean found = !adminClient.getTable(request).getColumnFamiliesMap().containsKey("cf2");
     assertTrue(found);
   }
 
