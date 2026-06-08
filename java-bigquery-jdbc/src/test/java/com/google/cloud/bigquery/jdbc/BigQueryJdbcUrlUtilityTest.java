@@ -309,24 +309,48 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testEndpointNormalization() {
     // Port after version path
-    String url = "jdbc:bigquery://https://custom-host.com/bigquery/v2:443;ProjectId=MyProject";
-    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(url, "EndpointOverrides");
-    assertThat(endpointOverride).isEqualTo("BIGQUERY=https://custom-host.com:443");
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com/bigquery/v2:443;ProjectId=MyProject",
+        "https://custom-host.com:443");
 
     // Version path without port
-    String url2 = "jdbc:bigquery://https://custom-host.com/bigquery/v2;ProjectId=MyProject";
-    String endpointOverride2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EndpointOverrides");
-    assertThat(endpointOverride2).isEqualTo("BIGQUERY=https://custom-host.com");
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com/bigquery/v2;ProjectId=MyProject",
+        "https://custom-host.com");
 
     // Version path with port before path
-    String url3 = "jdbc:bigquery://https://custom-host.com:443/bigquery/v2;ProjectId=MyProject";
-    String endpointOverride3 = BigQueryJdbcUrlUtility.parseUriProperty(url3, "EndpointOverrides");
-    assertThat(endpointOverride3).isEqualTo("BIGQUERY=https://custom-host.com:443");
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com:443/bigquery/v2;ProjectId=MyProject",
+        "https://custom-host.com:443");
 
     // No version path, port only
-    String url4 = "jdbc:bigquery://https://custom-host.com:443;ProjectId=MyProject";
-    String endpointOverride4 = BigQueryJdbcUrlUtility.parseUriProperty(url4, "EndpointOverrides");
-    assertThat(endpointOverride4).isEqualTo("BIGQUERY=https://custom-host.com:443");
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com:443;ProjectId=MyProject",
+        "https://custom-host.com:443");
+
+    // Trailing slash after version path
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com/bigquery/v2/;ProjectId=MyProject",
+        "https://custom-host.com");
+
+    // Trailing slash with port before path
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com:443/bigquery/v2/;ProjectId=MyProject",
+        "https://custom-host.com:443");
+
+    // Trailing slash with only host
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com/;ProjectId=MyProject", "https://custom-host.com");
+
+    // Version path with slash before colon
+    verifyEndpointNormalization(
+        "jdbc:bigquery://https://custom-host.com/bigquery/v2/:443;ProjectId=MyProject",
+        "https://custom-host.com:443");
+  }
+
+  private void verifyEndpointNormalization(String rawUrl, String expectedEndpoint) {
+    String endpointOverride = BigQueryJdbcUrlUtility.parseUriProperty(rawUrl, "EndpointOverrides");
+    assertThat(endpointOverride).isEqualTo("BIGQUERY=" + expectedEndpoint);
   }
 
   @Test
