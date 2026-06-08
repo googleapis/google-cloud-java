@@ -53,6 +53,10 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataProduct_AccessGroup_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_fieldAccessorTable;
@@ -101,6 +105,14 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_UpdateDataProductRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_RequestDataProductAccessRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_RequestDataProductAccessRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_RequestDataProductAccessResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_RequestDataProductAccessResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_fieldAccessorTable;
@@ -139,9 +151,10 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + "/api/annotations.proto\032\027google/api/clien"
           + "t.proto\032\037google/api/field_behavior.proto"
           + "\032\033google/api/field_info.proto\032\031google/ap"
-          + "i/resource.proto\032&google/cloud/dataplex/v1/service.proto\032#google/longrunning/ope"
-          + "rations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\307\007\n"
+          + "i/resource.proto\0320google/cloud/dataplex/v1/approval_workflow.proto\032&google/cloud"
+          + "/dataplex/v1/service.proto\032#google/longr"
+          + "unning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\265\t\n"
           + "\013DataProduct\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
           + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\031\n"
@@ -150,35 +163,41 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\006 \001(\tB\003\340A\001\022F\n"
-          + "\006labels\030\007"
-          + " \003(\01321.google.cloud.dataplex.v1.DataProduct.LabelsEntryB\003\340A\001\022\030\n"
+          + "\006labels\030\007 \003(\01321.google."
+          + "cloud.dataplex.v1.DataProduct.LabelsEntryB\003\340A\001\022\030\n"
           + "\013description\030\010 \001(\tB\003\340A\001\022\021\n"
           + "\004icon\030\n"
           + " \001(\014B\003\340A\001\022\031\n"
           + "\014owner_emails\030\013 \003(\tB\003\340A\002\022\030\n"
           + "\013asset_count\030\r"
           + " \001(\005B\003\340A\003\022S\n\r"
-          + "access_groups\030\016 \003(\01327."
-          + "google.cloud.dataplex.v1.DataProduct.AccessGroupsEntryB\003\340A\001\0320\n"
+          + "access_groups\030\016"
+          + " \003(\01327.google.cloud.dataplex.v1.DataProduct.AccessGroupsEntryB\003\340A\001\022d\n"
+          + "\026access_approval_config\030\017 \001(\0132:.google.cloud.dat"
+          + "aplex.v1.DataProduct.AccessApprovalConfigB\003\340A\001H\000\210\001\001\032g\n"
           + "\tPrincipal\022\033\n"
-          + "\014google_group\030\001 \001(\tB\003\340A\001H\000B\006\n"
-          + "\004type\032\234\001\n"
+          + "\014google_group\030\001 \001(\tB\003\340A\001H\000\022!\n"
+          + "\017service_account\030\002 \001(\tB\003\340A\001H\001\210\001\001B\006\n"
+          + "\004typeB\022\n"
+          + "\020_service_account\032\234\001\n"
           + "\013AccessGroup\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\002\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022G\n"
           + "\tprincipal\030\004"
-          + " \001(\0132/.google.cloud.dataplex.v1.DataProduct.PrincipalB\003\340A\002\032-\n"
+          + " \001(\0132/.google.cloud.dataplex.v1.DataProduct.PrincipalB\003\340A\002\0324\n"
+          + "\024AccessApprovalConfig\022\034\n"
+          + "\017approver_emails\030\002 \003(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032f\n"
           + "\021AccessGroupsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022@\n"
-          + "\005value\030\002"
-          + " \001(\01321.google.cloud.dataplex.v1.DataProduct.AccessGroup:\0028\001:\211\001\352A\205\001\n"
-          + "#dataplex.googleapis.com/DataProduct\022Cprojects/{proje"
-          + "ct}/locations/{location}/dataProducts/{d"
-          + "ata_product}*\014dataProducts2\013dataProduct\"\343\005\n"
+          + "\005value\030\002 \001(\01321.google.cloud"
+          + ".dataplex.v1.DataProduct.AccessGroup:\0028\001:\211\001\352A\205\001\n"
+          + "#dataplex.googleapis.com/DataProduct\022Cprojects/{project}/locations/{loca"
+          + "tion}/dataProducts/{data_product}*\014dataProducts2\013dataProductB\031\n"
+          + "\027_access_approval_config\"\343\005\n"
           + "\tDataAsset\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
           + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\0224\n"
@@ -186,11 +205,11 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\005 \001(\tB\003\340A\001\022D\n"
-          + "\006labels\030\006 \003("
-          + "\0132/.google.cloud.dataplex.v1.DataAsset.LabelsEntryB\003\340A\001\022\030\n"
+          + "\006labels\030\006"
+          + " \003(\0132/.google.cloud.dataplex.v1.DataAsset.LabelsEntryB\003\340A\001\022\030\n"
           + "\010resource\030\007 \001(\tB\006\340A\005\340A\002\022^\n"
-          + "\024access_group_configs\030\t \003(\0132;.google"
-          + ".cloud.dataplex.v1.DataAsset.AccessGroupConfigsEntryB\003\340A\001\032+\n"
+          + "\024access_group_configs\030\t \003(\0132"
+          + ";.google.cloud.dataplex.v1.DataAsset.AccessGroupConfigsEntryB\003\340A\001\032+\n"
           + "\021AccessGroupConfig\022\026\n"
           + "\tiam_roles\030\001 \003(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -200,15 +219,15 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + "\003key\030\001 \001(\t\022D\n"
           + "\005value\030\002"
           + " \001(\01325.google.cloud.dataplex.v1.DataAsset.AccessGroupConfig:\0028\001:\233\001\352A\227\001\n"
-          + "!dataplex.googleapis.com/DataAsset\022[projects/{pro"
-          + "ject}/locations/{location}/dataProducts/{data_product}/dataAssets/{data_asset}*\n"
+          + "!dataplex.googleapis.com/DataAsset\022[projects/{project}/locations/{location}/dataP"
+          + "roducts/{data_product}/dataAssets/{data_asset}*\n"
           + "dataAssets2\tdataAsset\"\321\001\n"
           + "\030CreateDataProductRequest\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\034\n"
           + "\017data_product_id\030\002 \001(\tB\003\340A\001\022@\n"
-          + "\014data_product\030\003 \001("
-          + "\0132%.google.cloud.dataplex.v1.DataProductB\003\340A\002\022\032\n\r"
+          + "\014data_product\030\003"
+          + " \001(\0132%.google.cloud.dataplex.v1.DataProductB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\204\001\n"
           + "\030DeleteDataProductRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
@@ -234,13 +253,22 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132%.google.cloud.dataplex.v1.DataProductB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\r"
-          + "validate_only\030\003 \001(\010B\003\340A\001\"\313\001\n"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"\300\001\n"
+          + "\037RequestDataProductAccessRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#dataplex.googleapis.com/DataProduct\022D\n"
+          + "\016change_request\030\002 \001(\013"
+          + "2\'.google.cloud.dataplex.v1.ChangeRequestB\003\340A\002\022\032\n\r"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"k\n"
+          + " RequestDataProductAccessResponse\022G\n"
+          + "\023change_request_name\030\001 \001(\tB*\372A\'\n"
+          + "%dataplex.googleapis.com/ChangeRequest\"\313\001\n"
           + "\026CreateDataAssetRequest\022;\n"
           + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
           + "#dataplex.googleapis.com/DataProduct\022\032\n\r"
           + "data_asset_id\030\002 \001(\tB\003\340A\001\022<\n\n"
-          + "data_asset\030\003"
-          + " \001(\0132#.google.cloud.dataplex.v1.DataAssetB\003\340A\002\022\032\n\r"
+          + "data_asset\030\003 \001(\0132"
+          + "#.google.cloud.dataplex.v1.DataAssetB\003\340A\002\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\250\001\n"
           + "\026UpdateDataAssetRequest\022<\n\n"
           + "data_asset\030\001 \001(\0132#.google.cloud.dataplex.v1.DataAssetB\003\340A\002\0224\n"
@@ -264,59 +292,65 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
           + "page_token\030\005 \001(\tB\003\340A\001\"k\n"
           + "\026ListDataAssetsResponse\0228\n"
           + "\013data_assets\030\001 \003(\0132#.google.cloud.dataplex.v1.DataAsset\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\356\021\n"
+          + "\017next_page_token\030\002 \001(\t2\210\025\n"
           + "\022DataProductService\022\370\001\n"
-          + "\021CreateDataProduct\0222.google.cloud.dataplex.v1.CreateDataProductRe"
-          + "quest\032\035.google.longrunning.Operation\"\217\001\312A \n"
-          + "\013DataProduct\022\021OperationMetadata\332A#par"
-          + "ent,data_product,data_product_id\202\323\344\223\002@\"0"
-          + "/v1/{parent=projects/*/locations/*}/dataProducts:\014data_product\022\324\001\n"
-          + "\021DeleteDataProduct\0222.google.cloud.dataplex.v1.DeleteDa"
-          + "taProductRequest\032\035.google.longrunning.Operation\"l\312A*\n"
-          + "\025google.protobuf.Empty\022\021Ope"
-          + "rationMetadata\332A\004name\202\323\344\223\0022*0/v1/{name=p"
-          + "rojects/*/locations/*/dataProducts/*}\022\251\001\n"
-          + "\016GetDataProduct\022/.google.cloud.dataplex"
-          + ".v1.GetDataProductRequest\032%.google.cloud"
-          + ".dataplex.v1.DataProduct\"?\332A\004name\202\323\344\223\0022\022"
-          + "0/v1/{name=projects/*/locations/*/dataProducts/*}\022\274\001\n"
-          + "\020ListDataProducts\0221.google.cloud.dataplex.v1.ListDataProductsReques"
-          + "t\0322.google.cloud.dataplex.v1.ListDataPro"
-          + "ductsResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{par"
-          + "ent=projects/*/locations/*}/dataProducts\022\372\001\n"
-          + "\021UpdateDataProduct\0222.google.cloud.da"
-          + "taplex.v1.UpdateDataProductRequest\032\035.google.longrunning.Operation\"\221\001\312A"
+          + "\021CreateDataProduct\0222.google.cloud"
+          + ".dataplex.v1.CreateDataProductRequest\032\035.google.longrunning.Operation\"\217\001\312A"
           + " \n"
-          + "\013DataProduct\022\021OperationMetadata\332A\030data_product,u"
-          + "pdate_mask\202\323\344\223\002M2=/v1/{data_product.name"
-          + "=projects/*/locations/*/dataProducts/*}:\014data_product\022\371\001\n"
-          + "\017CreateDataAsset\0220.google.cloud.dataplex.v1.CreateDataAssetRequ"
-          + "est\032\035.google.longrunning.Operation\"\224\001\312A\036\n"
-          + "\tDataAsset\022\021OperationMetadata\332A\037parent,"
-          + "data_asset,data_asset_id\202\323\344\223\002K\"=/v1/{par"
-          + "ent=projects/*/locations/*/dataProducts/*}/dataAssets:\n"
+          + "\013DataProduct\022\021OperationMetadata\332A#parent,data"
+          + "_product,data_product_id\202\323\344\223\002@\"0/v1/{par"
+          + "ent=projects/*/locations/*}/dataProducts:\014data_product\022\324\001\n"
+          + "\021DeleteDataProduct\0222.google.cloud.dataplex.v1.DeleteDataProduc"
+          + "tRequest\032\035.google.longrunning.Operation\"l\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMe"
+          + "tadata\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/dataProducts/*}\022\251\001\n"
+          + "\016GetDataProduct\022/.google.cloud.dataplex.v1.GetD"
+          + "ataProductRequest\032%.google.cloud.dataple"
+          + "x.v1.DataProduct\"?\332A\004name\202\323\344\223\0022\0220/v1/{na"
+          + "me=projects/*/locations/*/dataProducts/*}\022\274\001\n"
+          + "\020ListDataProducts\0221.google.cloud.dataplex.v1.ListDataProductsRequest\0322.goog"
+          + "le.cloud.dataplex.v1.ListDataProductsRes"
+          + "ponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/locations/*}/dataProducts\022\372\001\n"
+          + "\021UpdateDataProduct\0222.google.cloud.dataplex.v"
+          + "1.UpdateDataProductRequest\032\035.google.longrunning.Operation\"\221\001\312A \n"
+          + "\013DataProduct\022\021OperationMetadata\332A\030data_product,update_ma"
+          + "sk\202\323\344\223\002M2=/v1/{data_product.name=project"
+          + "s/*/locations/*/dataProducts/*}:\014data_product\022\366\001\n"
+          + "\030RequestDataProductAccess\0229.google.cloud.dataplex.v1.RequestDataProduct"
+          + "AccessRequest\032:.google.cloud.dataplex.v1"
+          + ".RequestDataProductAccessResponse\"c\332A\025pa"
+          + "rent,change_request\202\323\344\223\002E\"@/v1/{parent=p"
+          + "rojects/*/locations/*/dataProducts/*}:requestAccess:\001*\022\371\001\n"
+          + "\017CreateDataAsset\0220.google.cloud.dataplex.v1.CreateDataAssetReq"
+          + "uest\032\035.google.longrunning.Operation\"\224\001\312A\036\n"
+          + "\tDataAsset\022\021OperationMetadata\332A\037parent"
+          + ",data_asset,data_asset_id\202\323\344\223\002K\"=/v1/{pa"
+          + "rent=projects/*/locations/*/dataProducts/*}/dataAssets:\n"
           + "data_asset\022\373\001\n"
-          + "\017UpdateDataAsset\0220.google.cloud.dataplex.v1.UpdateD"
-          + "ataAssetRequest\032\035.google.longrunning.Operation\"\226\001\312A\036\n"
-          + "\tDataAsset\022\021OperationMetada"
-          + "ta\332A\026data_asset,update_mask\202\323\344\223\002V2H/v1/{"
-          + "data_asset.name=projects/*/locations/*/dataProducts/*/dataAssets/*}:\n"
+          + "\017UpdateDataAsset\0220.google.cloud.dataplex.v1.Update"
+          + "DataAssetRequest\032\035.google.longrunning.Operation\"\226\001\312A\036\n"
+          + "\tDataAsset\022\021OperationMetad"
+          + "ata\332A\026data_asset,update_mask\202\323\344\223\002V2H/v1/"
+          + "{data_asset.name=projects/*/locations/*/dataProducts/*/dataAssets/*}:\n"
           + "data_asset\022\335\001\n"
-          + "\017DeleteDataAsset\0220.google.cloud.datap"
-          + "lex.v1.DeleteDataAssetRequest\032\035.google.longrunning.Operation\"y\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002?"
-          + "*=/v1/{name=projects/*/locations/*/dataProducts/*/dataAssets/*}\022\260\001\n"
-          + "\014GetDataAsset\022-.google.cloud.dataplex.v1.GetDataAsset"
-          + "Request\032#.google.cloud.dataplex.v1.DataA"
-          + "sset\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=projects/"
-          + "*/locations/*/dataProducts/*/dataAssets/*}\022\303\001\n"
-          + "\016ListDataAssets\022/.google.cloud.dataplex.v1.ListDataAssetsRequest\0320.google."
-          + "cloud.dataplex.v1.ListDataAssetsResponse"
-          + "\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects/"
-          + "*/locations/*/dataProducts/*}/dataAssets"
-          + "\032K\312A\027dataplex.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBm\n"
-          + "\034com.google.cloud.dataplex.v1B\021DataProdu"
-          + "ctsProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "\017DeleteDataAsset\0220.google.cloud.data"
+          + "plex.v1.DeleteDataAssetRequest\032\035.google.longrunning.Operation\"y\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "?*=/v1/{name=projects/*/locations/*/dataProducts/*/dataAssets/*}\022\260\001\n"
+          + "\014GetDataAsset\022-.google.cloud.dataplex.v1.GetDataAsse"
+          + "tRequest\032#.google.cloud.dataplex.v1.Data"
+          + "Asset\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=projects"
+          + "/*/locations/*/dataProducts/*/dataAssets/*}\022\303\001\n"
+          + "\016ListDataAssets\022/.google.cloud.dataplex.v1.ListDataAssetsRequest\0320.google"
+          + ".cloud.dataplex.v1.ListDataAssetsRespons"
+          + "e\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects"
+          + "/*/locations/*/dataProducts/*}/dataAsset"
+          + "s\032\353\001\312A\027dataplex.googleapis.com\322A\315\001https:"
+          + "//www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-p"
+          + "latform.read-only,https://www.googleapis.com/auth/dataplex.read-write,https://ww"
+          + "w.googleapis.com/auth/dataplex.readonlyBm\n"
+          + "\034com.google.cloud.dataplex.v1B\021DataPro"
+          + "ductsProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -327,6 +361,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dataplex.v1.ApprovalWorkflowProto.getDescriptor(),
               com.google.cloud.dataplex.v1.ServiceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -351,6 +386,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "OwnerEmails",
               "AssetCount",
               "AccessGroups",
+              "AccessApprovalConfig",
             });
     internal_static_google_cloud_dataplex_v1_DataProduct_Principal_descriptor =
         internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(0);
@@ -358,7 +394,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProduct_Principal_descriptor,
             new java.lang.String[] {
-              "GoogleGroup", "Type",
+              "GoogleGroup", "ServiceAccount", "Type",
             });
     internal_static_google_cloud_dataplex_v1_DataProduct_AccessGroup_descriptor =
         internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(1);
@@ -368,8 +404,16 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Id", "DisplayName", "Description", "Principal",
             });
-    internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_descriptor =
+    internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor =
         internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(2);
+    internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor,
+            new java.lang.String[] {
+              "ApproverEmails",
+            });
+    internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(3);
     internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProduct_LabelsEntry_descriptor,
@@ -377,7 +421,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_dataplex_v1_DataProduct_AccessGroupsEntry_descriptor =
-        internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(3);
+        internal_static_google_cloud_dataplex_v1_DataProduct_descriptor.getNestedType(4);
     internal_static_google_cloud_dataplex_v1_DataProduct_AccessGroupsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProduct_AccessGroupsEntry_descriptor,
@@ -471,8 +515,24 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "DataProduct", "UpdateMask", "ValidateOnly",
             });
-    internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_descriptor =
+    internal_static_google_cloud_dataplex_v1_RequestDataProductAccessRequest_descriptor =
         getDescriptor().getMessageType(8);
+    internal_static_google_cloud_dataplex_v1_RequestDataProductAccessRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_RequestDataProductAccessRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ChangeRequest", "ValidateOnly",
+            });
+    internal_static_google_cloud_dataplex_v1_RequestDataProductAccessResponse_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_dataplex_v1_RequestDataProductAccessResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_RequestDataProductAccessResponse_descriptor,
+            new java.lang.String[] {
+              "ChangeRequestName",
+            });
+    internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_descriptor =
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CreateDataAssetRequest_descriptor,
@@ -480,7 +540,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "Parent", "DataAssetId", "DataAsset", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_UpdateDataAssetRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_dataplex_v1_UpdateDataAssetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_UpdateDataAssetRequest_descriptor,
@@ -488,7 +548,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "DataAsset", "UpdateMask", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_DeleteDataAssetRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_dataplex_v1_DeleteDataAssetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DeleteDataAssetRequest_descriptor,
@@ -496,7 +556,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "Name", "Etag", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_GetDataAssetRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_dataplex_v1_GetDataAssetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_GetDataAssetRequest_descriptor,
@@ -504,7 +564,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_ListDataAssetsRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_dataplex_v1_ListDataAssetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListDataAssetsRequest_descriptor,
@@ -512,7 +572,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Filter", "OrderBy", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dataplex_v1_ListDataAssetsResponse_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_dataplex_v1_ListDataAssetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListDataAssetsResponse_descriptor,
@@ -525,6 +585,7 @@ public final class DataProductsProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dataplex.v1.ApprovalWorkflowProto.getDescriptor();
     com.google.cloud.dataplex.v1.ServiceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

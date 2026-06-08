@@ -474,4 +474,42 @@ public interface SettingsOrBuilder
    * @return The waterUnit.
    */
   com.google.devicesandservices.health.v4.Settings.WaterUnit getWaterUnit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The food language code derived from the user's food database.
+   * Possible values: `'en-US'`, `'en-GB'`, `'de-DE'`, `'es-ES'`, `'fr-FR'`,
+   * `'zh-CN'`, `'zh-TW'`, `'ja-JP'`, `'en-AU'`, `'en-CA'`, `'it-IT'`,
+   * `'ko-KR'`,
+   * `'es-MX'`, `'en-IN'`, `'en-SG'`, `'en-PH'`, `'en-IE'`, `'fr-CA'`.
+   *
+   * Updates to this field are currently not supported.
+   * </pre>
+   *
+   * <code>string food_language_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The foodLanguageCode.
+   */
+  java.lang.String getFoodLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The food language code derived from the user's food database.
+   * Possible values: `'en-US'`, `'en-GB'`, `'de-DE'`, `'es-ES'`, `'fr-FR'`,
+   * `'zh-CN'`, `'zh-TW'`, `'ja-JP'`, `'en-AU'`, `'en-CA'`, `'it-IT'`,
+   * `'ko-KR'`,
+   * `'es-MX'`, `'en-IN'`, `'en-SG'`, `'en-PH'`, `'en-IE'`, `'fr-CA'`.
+   *
+   * Updates to this field are currently not supported.
+   * </pre>
+   *
+   * <code>string food_language_code = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for foodLanguageCode.
+   */
+  com.google.protobuf.ByteString getFoodLanguageCodeBytes();
 }

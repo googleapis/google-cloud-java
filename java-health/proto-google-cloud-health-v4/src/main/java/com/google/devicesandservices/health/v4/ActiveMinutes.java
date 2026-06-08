@@ -306,7 +306,20 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
      * Required. Number of whole minutes spent in activity.
      * </pre>
      *
-     * <code>int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the activeMinutes field is set.
+     */
+    boolean hasActiveMinutes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of whole minutes spent in activity.
+     * </pre>
+     *
+     * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The activeMinutes.
      */
@@ -366,6 +379,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
                   .Builder.class);
     }
 
+    private int bitField0_;
     public static final int ACTIVITY_LEVEL_FIELD_NUMBER = 1;
     private int activityLevel_ = 0;
 
@@ -420,7 +434,23 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
      * Required. Number of whole minutes spent in activity.
      * </pre>
      *
-     * <code>int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the activeMinutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasActiveMinutes() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of whole minutes spent in activity.
+     * </pre>
+     *
+     * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The activeMinutes.
      */
@@ -449,7 +479,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         output.writeEnum(1, activityLevel_);
       }
-      if (activeMinutes_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(2, activeMinutes_);
       }
       getUnknownFields().writeTo(output);
@@ -467,7 +497,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, activityLevel_);
       }
-      if (activeMinutes_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, activeMinutes_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -489,7 +519,10 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
           (com.google.devicesandservices.health.v4.ActiveMinutes.ActiveMinutesByActivityLevel) obj;
 
       if (activityLevel_ != other.activityLevel_) return false;
-      if (getActiveMinutes() != other.getActiveMinutes()) return false;
+      if (hasActiveMinutes() != other.hasActiveMinutes()) return false;
+      if (hasActiveMinutes()) {
+        if (getActiveMinutes() != other.getActiveMinutes()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -503,8 +536,10 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ACTIVITY_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + activityLevel_;
-      hash = (37 * hash) + ACTIVE_MINUTES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveMinutes());
+      if (hasActiveMinutes()) {
+        hash = (37 * hash) + ACTIVE_MINUTES_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveMinutes());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -707,9 +742,12 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.activityLevel_ = activityLevel_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.activeMinutes_ = activeMinutes_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -735,7 +773,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
         if (other.activityLevel_ != 0) {
           setActivityLevelValue(other.getActivityLevelValue());
         }
-        if (other.getActiveMinutes() != 0L) {
+        if (other.hasActiveMinutes()) {
           setActiveMinutes(other.getActiveMinutes());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -914,7 +952,23 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
        * Required. Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the activeMinutes field is set.
+       */
+      @java.lang.Override
+      public boolean hasActiveMinutes() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Number of whole minutes spent in activity.
+       * </pre>
+       *
+       * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The activeMinutes.
        */
@@ -930,7 +984,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
        * Required. Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The activeMinutes to set.
        * @return This builder for chaining.
@@ -950,7 +1004,7 @@ public final class ActiveMinutes extends com.google.protobuf.GeneratedMessage
        * Required. Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional int64 active_minutes = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */

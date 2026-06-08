@@ -18,7 +18,10 @@ package com.google.storage.control.v2;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -45,6 +48,7 @@ import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.type.Interval;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2091,7 +2095,7 @@ public class StorageControlClientTest {
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
-    ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2113,7 +2117,7 @@ public class StorageControlClientTest {
     mockStorageControl.addException(exception);
 
     try {
-      ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2173,7 +2177,7 @@ public class StorageControlClientTest {
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
-    ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -2197,7 +2201,7 @@ public class StorageControlClientTest {
     mockStorageControl.addException(exception);
 
     try {
-      ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -2256,7 +2260,7 @@ public class StorageControlClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockStorageControl.addResponse(expectedResponse);
 
-    ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+    ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -2280,7 +2284,7 @@ public class StorageControlClientTest {
     mockStorageControl.addException(exception);
 
     try {
-      ResourceName resource = AnywhereCacheName.of("[PROJECT]", "[BUCKET]", "[ANYWHERE_CACHE]");
+      ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -2322,6 +2326,436 @@ public class StorageControlClientTest {
       String resource = "resource-341064690";
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingTest() throws Exception {
+    IntelligenceFinding expectedResponse =
+        IntelligenceFinding.newBuilder()
+            .setName(
+                IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setType(FindingType.forNumber(0))
+            .setCategory(FindingCategory.forNumber(0))
+            .setSeverity(FindingSeverity.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTargetResource("targetResource-1933150017")
+            .addAllAssociatedResources(new ArrayList<String>())
+            .setObservationPeriod(Interval.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    IntelligenceFindingName name =
+        IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+
+    IntelligenceFinding actualResponse = client.getIntelligenceFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntelligenceFindingRequest actualRequest =
+        ((GetIntelligenceFindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntelligenceFindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      IntelligenceFindingName name =
+          IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+      client.getIntelligenceFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingTest2() throws Exception {
+    IntelligenceFinding expectedResponse =
+        IntelligenceFinding.newBuilder()
+            .setName(
+                IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setType(FindingType.forNumber(0))
+            .setCategory(FindingCategory.forNumber(0))
+            .setSeverity(FindingSeverity.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setTargetResource("targetResource-1933150017")
+            .addAllAssociatedResources(new ArrayList<String>())
+            .setObservationPeriod(Interval.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    IntelligenceFinding actualResponse = client.getIntelligenceFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntelligenceFindingRequest actualRequest =
+        ((GetIntelligenceFindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntelligenceFindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getIntelligenceFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingsTest() throws Exception {
+    IntelligenceFinding responsesElement = IntelligenceFinding.newBuilder().build();
+    ListIntelligenceFindingsResponse expectedResponse =
+        ListIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindings(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListIntelligenceFindingsPagedResponse pagedListResponse =
+        client.listIntelligenceFindings(parent);
+
+    List<IntelligenceFinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntelligenceFindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntelligenceFindingsRequest actualRequest =
+        ((ListIntelligenceFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntelligenceFindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingsTest2() throws Exception {
+    IntelligenceFinding responsesElement = IntelligenceFinding.newBuilder().build();
+    ListIntelligenceFindingsResponse expectedResponse =
+        ListIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindings(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListIntelligenceFindingsPagedResponse pagedListResponse =
+        client.listIntelligenceFindings(parent);
+
+    List<IntelligenceFinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntelligenceFindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntelligenceFindingsRequest actualRequest =
+        ((ListIntelligenceFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntelligenceFindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void summarizeIntelligenceFindingsTest() throws Exception {
+    FindingSummary responsesElement = FindingSummary.newBuilder().build();
+    SummarizeIntelligenceFindingsResponse expectedResponse =
+        SummarizeIntelligenceFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFindingSummaries(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    SummarizeIntelligenceFindingsPagedResponse pagedListResponse =
+        client.summarizeIntelligenceFindings(parent);
+
+    List<FindingSummary> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFindingSummariesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SummarizeIntelligenceFindingsRequest actualRequest =
+        ((SummarizeIntelligenceFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void summarizeIntelligenceFindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.summarizeIntelligenceFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionTest() throws Exception {
+    IntelligenceFindingRevision expectedResponse =
+        IntelligenceFindingRevision.newBuilder()
+            .setName(
+                IntelligenceFindingRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+                    .toString())
+            .setSnapshot(IntelligenceFinding.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    IntelligenceFindingRevisionName name =
+        IntelligenceFindingRevisionName.of(
+            "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]");
+
+    IntelligenceFindingRevision actualResponse = client.getIntelligenceFindingRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntelligenceFindingRevisionRequest actualRequest =
+        ((GetIntelligenceFindingRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      IntelligenceFindingRevisionName name =
+          IntelligenceFindingRevisionName.of(
+              "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]");
+      client.getIntelligenceFindingRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionTest2() throws Exception {
+    IntelligenceFindingRevision expectedResponse =
+        IntelligenceFindingRevision.newBuilder()
+            .setName(
+                IntelligenceFindingRevisionName.of(
+                        "[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]", "[REVISION]")
+                    .toString())
+            .setSnapshot(IntelligenceFinding.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    IntelligenceFindingRevision actualResponse = client.getIntelligenceFindingRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntelligenceFindingRevisionRequest actualRequest =
+        ((GetIntelligenceFindingRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntelligenceFindingRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getIntelligenceFindingRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsTest() throws Exception {
+    IntelligenceFindingRevision responsesElement = IntelligenceFindingRevision.newBuilder().build();
+    ListIntelligenceFindingRevisionsResponse expectedResponse =
+        ListIntelligenceFindingRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindingRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    IntelligenceFindingName parent =
+        IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+
+    ListIntelligenceFindingRevisionsPagedResponse pagedListResponse =
+        client.listIntelligenceFindingRevisions(parent);
+
+    List<IntelligenceFindingRevision> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getIntelligenceFindingRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntelligenceFindingRevisionsRequest actualRequest =
+        ((ListIntelligenceFindingRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      IntelligenceFindingName parent =
+          IntelligenceFindingName.of("[PROJECT]", "[LOCATION]", "[INTELLIGENCE_FINDING]");
+      client.listIntelligenceFindingRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsTest2() throws Exception {
+    IntelligenceFindingRevision responsesElement = IntelligenceFindingRevision.newBuilder().build();
+    ListIntelligenceFindingRevisionsResponse expectedResponse =
+        ListIntelligenceFindingRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntelligenceFindingRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListIntelligenceFindingRevisionsPagedResponse pagedListResponse =
+        client.listIntelligenceFindingRevisions(parent);
+
+    List<IntelligenceFindingRevision> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getIntelligenceFindingRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntelligenceFindingRevisionsRequest actualRequest =
+        ((ListIntelligenceFindingRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntelligenceFindingRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listIntelligenceFindingRevisions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

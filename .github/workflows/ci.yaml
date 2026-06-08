@@ -29,15 +29,25 @@ jobs:
     outputs:
       src: ${{ steps.filter.outputs.src }}
       ci: ${{ steps.filter.outputs.ci }}
+      # runnable is true if there are changes outside the .github/workflows directory OR if ci.yaml itself (or kokoro scripts) is modified.
+      runnable: ${{ fromJSON(steps.filter.outputs.all_count) > fromJSON(steps.filter.outputs.workflows_count) || fromJSON(steps.filter.outputs.ci_count) > 0 }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
+      # Use this action, rather than a file filter so that we can make this
+      # mandatory.
+      # See https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-including-branches
+      # for more details.
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
         filters: |
+          all:
+            - '**'
+          workflows:
+            - '.github/workflows/**'
           src:
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -53,20 +63,25 @@ jobs:
     steps:
     - name: Get current week within the year
       id: date
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/cache@v4
       id: mvn-cache
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
@@ -77,42 +92,50 @@ jobs:
     steps:
     - name: Get current week within the year
       id: date
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         java-version: 8
         distribution: temurin
     - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
       # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
       # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
       shell: bash    
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         java-version: 11
         distribution: temurin
         cache: maven
     - uses: actions/cache@v4
       id: mvn-cache
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       shell: bash      
       env:
         JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
   # detect which libraries have changed
   changes:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
@@ -302,7 +325,7 @@ jobs:
       env:
         BUILD_SUBDIR: ${{matrix.package}}
   required:
-    needs: [ changes, split-units, split-clirr, split-dependencies ]
+    needs: [ bulk-filter, changes, split-units, split-clirr, split-dependencies ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04
@@ -313,6 +336,8 @@ jobs:
       - name: Success otherwise
         run: echo "Success!"
   windows:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: windows-latest
     steps:
     - name: Support longpaths
@@ -329,6 +354,8 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: windows-units
   lint:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -345,6 +372,8 @@ jobs:
         HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - name: Get current week within the year
@@ -364,6 +393,8 @@ jobs:
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -381,6 +412,8 @@ jobs:
       with:
         bom-path: gapic-libraries-bom/pom.xml
   generation-config-check:
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4

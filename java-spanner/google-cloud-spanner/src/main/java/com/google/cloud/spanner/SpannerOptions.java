@@ -96,6 +96,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -109,7 +110,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -126,7 +126,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
-  private static final String EXPERIMENTAL_HOST_PROJECT_ID = "default";
+  public static final String SPANNER_OMNI_PROJECT_ID = "default";
+  public static final String DEFAULT_SPANNER_OMNI_INSTANCE_ID = "default";
 
   static final ImmutableSet<String> SCOPES =
       ImmutableSet.of(
@@ -308,16 +309,27 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
   private final RequestOptions.ClientContext clientContext;
+  private final boolean autoTaggingEnabled;
+  private final List<String> autoTaggingPackages;
+  private final int autoTaggingTracerLimit;
 
   enum TracingFramework {
     OPEN_CENSUS,
     OPEN_TELEMETRY
   }
 
+  /**
+   * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+   * mandatory when connecting to a Spanner Omni instance.
+   */
+  public enum InstanceType {
+    CLOUD,
+    OMNI
+  }
+
   private static final Object lock = new Object();
 
-  @GuardedBy("lock")
-  private static TracingFramework activeTracingFramework;
+  private static volatile TracingFramework activeTracingFramework;
 
   /** Interface that can be used to provide {@link CallCredentials} to {@link SpannerOptions}. */
   public interface CallCredentialsProvider {
@@ -867,14 +879,20 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
+    super(
+        SpannerFactory.class,
+        SpannerRpcFactory.class,
+        Builder.prepareBuilder(builder),
+        new SpannerDefaults());
     numChannels = builder.numChannels == null ? DEFAULT_CHANNELS : builder.numChannels;
     Preconditions.checkArgument(
         numChannels >= 1 && numChannels <= MAX_CHANNELS,
         "Number of channels must fall in the range [1, %s], found: %s",
         MAX_CHANNELS,
         numChannels);
-
+    Preconditions.checkArgument(
+        builder.instanceType != InstanceType.OMNI || !Strings.isNullOrEmpty(builder.host),
+        "Host must be set for connecting to Spanner Omni instances");
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
@@ -924,16 +942,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     // Dynamic channel pooling is disabled by default.
     // It is only enabled when:
-    // 1. enableDynamicChannelPool() was explicitly called (or experimentalHost is set and DCP was
+    // 1. enableDynamicChannelPool() was explicitly called (or instance is set to OMNI and DCP was
     //    not explicitly disabled), AND
     // 2. grpc-gcp extension is enabled, AND
     // 3. numChannels was not explicitly set
     boolean dcpRequested =
         builder.dynamicChannelPoolEnabled != null
             ? builder.dynamicChannelPoolEnabled
-            : builder.experimentalHost != null;
+            : builder.instanceType == InstanceType.OMNI;
     if (dcpRequested) {
-      // DCP was enabled (explicitly or via experimentalHost), but respect numChannels if set
+      // DCP was enabled (explicitly or via instance type being OMNI), but respect numChannels if
+      // set
       dynamicChannelPoolEnabled = grpcGcpExtensionEnabled && !builder.numChannelsExplicitlySet;
     } else {
       // DCP is disabled by default, or was explicitly disabled
@@ -976,14 +995,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     openTelemetry = builder.openTelemetry;
     enableApiTracing = builder.enableApiTracing;
     enableExtendedTracing = builder.enableExtendedTracing;
-    if (builder.experimentalHost != null) {
+    if (builder.instanceType == InstanceType.OMNI) {
       enableBuiltInMetrics = false;
     } else {
       enableBuiltInMetrics = builder.enableBuiltInMetrics;
     }
-    // Enable location API when experimental host is set, unless explicitly disabled
+    // Enable location API when InstanceType is OMNI, unless explicitly disabled
     // via GOOGLE_SPANNER_EXPERIMENTAL_LOCATION_API=false.
-    if (builder.experimentalHost != null) {
+    if (builder.instanceType == InstanceType.OMNI) {
       String locationApiEnvValue = System.getenv(EXPERIMENTAL_LOCATION_API_ENV_VAR);
       enableLocationApi = locationApiEnvValue == null || Boolean.parseBoolean(locationApiEnvValue);
     } else {
@@ -993,6 +1012,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;
     clientContext = builder.clientContext;
+    if (environment.isAutoTaggingDisabled()) {
+      autoTaggingEnabled = false;
+    } else {
+      autoTaggingEnabled = builder.autoTaggingEnabled || environment.isAutoTaggingEnabled();
+    }
+    autoTaggingPackages = builder.autoTaggingPackages;
+    autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
 
   private String getResolvedUniverseDomain() {
@@ -1064,6 +1090,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return false;
     }
 
+    default boolean isAutoTaggingDisabled() {
+      return false;
+    }
+
+    default boolean isAutoTaggingEnabled() {
+      return false;
+    }
+
     @Deprecated
     @ObsoleteApi(
         "This will be removed in an upcoming version without a major version bump. You should use"
@@ -1072,13 +1106,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return null;
     }
 
-    default GoogleCredentials getDefaultExperimentalHostCredentials() {
+    default GoogleCredentials getDefaultSpannerOmniCredentials() {
       return null;
     }
   }
 
-  static final String DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS =
-      "SPANNER_EXPERIMENTAL_HOST_AUTH_TOKEN";
+  static final String DEFAULT_SPANNER_OMNI_CREDENTIALS = "SPANNER_OMNI_AUTH_TOKEN";
 
   /**
    * Default implementation of {@link SpannerEnvironment}. Reads all configuration from environment
@@ -1169,19 +1202,50 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     @Override
+    public boolean isAutoTaggingDisabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_DISABLE_AUTO_TAGGING"))
+          || Boolean.parseBoolean(System.getProperty("spanner.disable_auto_tagging"));
+    }
+
+    @Override
+    public boolean isAutoTaggingEnabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_ENABLE_AUTO_TAGGING"))
+          || Boolean.getBoolean("spanner.enable_auto_tagging");
+    }
+
+    @Override
     public String getMonitoringHost() {
       return System.getenv(SPANNER_MONITORING_HOST);
     }
 
     @Override
-    public GoogleCredentials getDefaultExperimentalHostCredentials() {
-      return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS));
+    public GoogleCredentials getDefaultSpannerOmniCredentials() {
+      return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_OMNI_CREDENTIALS));
     }
   }
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
+    private static Builder prepareBuilder(Builder builder) {
+      if (builder.instanceType == InstanceType.OMNI) {
+        builder.enableBuiltInMetrics = false;
+        builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
+        builder.configureOmniHost();
+        if (builder.sessionPoolOptions == null) {
+          builder.sessionPoolOptions =
+              SessionPoolOptions.newBuilder().setExperimentalHost().build();
+        } else {
+          builder.sessionPoolOptions =
+              builder.sessionPoolOptions.toBuilder().setExperimentalHost().build();
+        }
+        if (builder.credentials == null) {
+          builder.setCredentials(environment.getDefaultSpannerOmniCredentials());
+        }
+      }
+      return builder;
+    }
+
     static final int DEFAULT_PREFETCH_CHUNKS = 4;
     static final QueryOptions DEFAULT_QUERY_OPTIONS = QueryOptions.getDefaultInstance();
     static final DecodeMode DEFAULT_DECODE_MODE = DecodeMode.DIRECT;
@@ -1252,10 +1316,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
     private SslContext mTLSContext = null;
-    private String experimentalHost = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
+    private InstanceType instanceType = InstanceType.CLOUD;
+    private String host = null;
+    private boolean autoTaggingEnabled = false;
+    private List<String> autoTaggingPackages = Collections.emptyList();
+    private int autoTaggingTracerLimit = 50;
 
     private static String createCustomClientLibToken(String token) {
       return token + " " + ServiceOptions.getGoogApiClientLibName();
@@ -1362,6 +1430,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.monitoringHost = options.monitoringHost;
       this.defaultTransactionOptions = options.defaultTransactionOptions;
       this.clientContext = options.clientContext;
+      this.autoTaggingEnabled = options.autoTaggingEnabled;
+      this.autoTaggingPackages = options.autoTaggingPackages;
+      this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
     }
 
     @Override
@@ -1792,29 +1863,50 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    private void configureOmniHost() {
+      if (this.instanceType == InstanceType.OMNI
+          && !Strings.isNullOrEmpty(this.host)
+          && this.usePlainText) {
+        Preconditions.checkArgument(
+            !this.host.startsWith("https:"),
+            "Please remove the 'https:' protocol prefix from the host string when using plain text"
+                + " communication");
+        if (!this.host.startsWith("http")) {
+          this.host = "http://" + this.host;
+        }
+      }
+    }
+
     @Override
     public Builder setHost(String host) {
-      super.setHost(host);
+      this.host = host;
+      configureOmniHost();
+      super.setHost(this.host);
       // Setting a host should override any SPANNER_EMULATOR_HOST setting.
       setEmulatorHost(null);
       return this;
     }
 
+    /**
+     * @deprecated Use {@link #setType(InstanceType)} instead.
+     */
+    @Deprecated
+    @ObsoleteApi("Use setHost(String).setType(InstanceType.OMNI) instead")
     @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3676")
     public Builder setExperimentalHost(String host) {
-      if (this.usePlainText) {
-        Preconditions.checkArgument(
-            !host.startsWith("https:"),
-            "Please remove the 'https:' protocol prefix from the host string when using plain text"
-                + " communication");
-        if (!host.startsWith("http")) {
-          host = "http://" + host;
-        }
+      if (!Strings.isNullOrEmpty(host)) {
+        setType(InstanceType.OMNI);
       }
-      super.setHost(host);
-      super.setProjectId(EXPERIMENTAL_HOST_PROJECT_ID);
-      setSessionPoolOption(SessionPoolOptions.newBuilder().setExperimentalHost().build());
-      this.experimentalHost = host;
+      setHost(host);
+      return this;
+    }
+
+    /**
+     * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+     * mandatory when connecting to a Spanner Omni instance.
+     */
+    public Builder setType(InstanceType instanceType) {
+      this.instanceType = instanceType;
       return this;
     }
 
@@ -1916,14 +2008,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Configures mTLS authentication using the provided client certificate and key files. mTLS is
-     * only supported for experimental spanner hosts.
+     * Configures mTLS authentication using the provided client certificate and key files. mTLS via
+     * useClientCert is only supported for Spanner Omni instances.
      *
      * @param clientCertificate Path to the client certificate file.
      * @param clientCertificateKey Path to the client private key file.
      * @throws SpannerException If an error occurs while configuring the mTLS context
      */
-    @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3574")
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
       try {
         this.mTLSContext =
@@ -1941,14 +2032,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * credentials to {@link com.google.cloud.NoCredentials} to avoid sending authentication over an
      * unsecured channel.
      */
-    @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/4264")
     public Builder usePlainText() {
       this.usePlainText = true;
       this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
           .setCredentials(NoCredentials.getInstance());
-      if (this.experimentalHost != null) {
+      if (this.instanceType == InstanceType.OMNI) {
         // Re-apply host settings to ensure http:// is prepended.
-        setExperimentalHost(this.experimentalHost);
+        configureOmniHost();
+        super.setHost(this.host);
       }
       return this;
     }
@@ -2120,11 +2211,41 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    public Builder enableAutoTagging() {
+      this.autoTaggingEnabled = true;
+      return this;
+    }
+
+    public Builder disableAutoTagging() {
+      this.autoTaggingEnabled = false;
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(String... autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(
+                  java.util.Arrays.asList(Preconditions.checkNotNull(autoTaggingPackages))));
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(List<String> autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(Preconditions.checkNotNull(autoTaggingPackages)));
+      return this;
+    }
+
+    public Builder setAutoTaggingTracerLimit(int autoTaggingTracerLimit) {
+      this.autoTaggingTracerLimit = autoTaggingTracerLimit;
+      return this;
+    }
+
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
       // Set the host of emulator has been set.
-      if (emulatorHost != null && experimentalHost == null) {
+      if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {
           emulatorHost = "http://" + emulatorHost;
         }
@@ -2134,8 +2255,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
         // As we are using plain text, we should never send any credentials.
         this.setCredentials(NoCredentials.getInstance());
-      } else if (experimentalHost != null && credentials == null) {
-        credentials = environment.getDefaultExperimentalHostCredentials();
       }
       if (this.numChannels == null) {
         this.numChannels =
@@ -2177,8 +2296,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   @InternalApi
-  public static GoogleCredentials getDefaultExperimentalCredentialsFromSysEnv() {
-    return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS));
+  public static GoogleCredentials getDefaultSpannerOmniCredentialsFromSysEnv() {
+    return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_OMNI_CREDENTIALS));
   }
 
   private static @Nullable GoogleCredentials getOAuthTokenFromFile(@Nullable String file) {
@@ -2239,12 +2358,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   public static TracingFramework getActiveTracingFramework() {
-    synchronized (lock) {
-      if (activeTracingFramework == null) {
-        return TracingFramework.OPEN_CENSUS;
-      }
-      return activeTracingFramework;
-    }
+    TracingFramework framework = activeTracingFramework;
+    return framework == null ? TracingFramework.OPEN_CENSUS : framework;
   }
 
   /** Disables OpenCensus metrics. Disable OpenCensus metrics before creating Spanner client. */
@@ -2457,6 +2572,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
   }
 
+  void initializeBuiltInMetrics(DatabaseId databaseId) {
+    if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
+      this.builtInMetricsProvider.setProjectIdIfAbsent(databaseId.getInstanceId().getProject());
+    }
+  }
+
   public ApiTracerFactory getApiTracerFactory(boolean isAdminClient, boolean isEmulatorEnabled) {
     return createApiTracerFactory(isAdminClient, isEmulatorEnabled);
   }
@@ -2545,6 +2666,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public TransactionOptions getDefaultTransactionOptions() {
     return defaultTransactionOptions;
+  }
+
+  public boolean isAutoTaggingEnabled() {
+    return autoTaggingEnabled;
+  }
+
+  public List<String> getAutoTaggingPackages() {
+    return autoTaggingPackages;
+  }
+
+  public int getAutoTaggingTracerLimit() {
+    return autoTaggingTracerLimit;
   }
 
   @BetaApi

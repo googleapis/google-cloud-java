@@ -795,6 +795,8 @@ public class HttpBigQueryRpcTest {
           "{\"kind\":\"bigquery#job\",\"id\":\""
               + PROJECT_ID
               + ":"
+              + LOCATION
+              + ":"
               + JOB_ID
               + "\",\"status\":{\"state\":\"DONE\"}}");
 
@@ -804,7 +806,7 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs");
       Map<String, String> attributes = new HashMap<>();
-      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
+      attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + LOCATION + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
           "com.google.cloud.bigquery.BigQueryRpc.createJob",

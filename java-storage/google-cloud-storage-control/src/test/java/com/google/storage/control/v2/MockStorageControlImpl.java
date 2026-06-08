@@ -643,4 +643,118 @@ public class MockStorageControlImpl extends StorageControlImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getIntelligenceFinding(
+      GetIntelligenceFindingRequest request, StreamObserver<IntelligenceFinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IntelligenceFinding) {
+      requests.add(request);
+      responseObserver.onNext(((IntelligenceFinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIntelligenceFinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IntelligenceFinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listIntelligenceFindings(
+      ListIntelligenceFindingsRequest request,
+      StreamObserver<ListIntelligenceFindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListIntelligenceFindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListIntelligenceFindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIntelligenceFindings, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListIntelligenceFindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void summarizeIntelligenceFindings(
+      SummarizeIntelligenceFindingsRequest request,
+      StreamObserver<SummarizeIntelligenceFindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SummarizeIntelligenceFindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SummarizeIntelligenceFindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SummarizeIntelligenceFindings, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SummarizeIntelligenceFindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getIntelligenceFindingRevision(
+      GetIntelligenceFindingRevisionRequest request,
+      StreamObserver<IntelligenceFindingRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IntelligenceFindingRevision) {
+      requests.add(request);
+      responseObserver.onNext(((IntelligenceFindingRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIntelligenceFindingRevision,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IntelligenceFindingRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listIntelligenceFindingRevisions(
+      ListIntelligenceFindingRevisionsRequest request,
+      StreamObserver<ListIntelligenceFindingRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListIntelligenceFindingRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListIntelligenceFindingRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIntelligenceFindingRevisions,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListIntelligenceFindingRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

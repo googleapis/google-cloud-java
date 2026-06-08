@@ -113,12 +113,34 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
+     * The local network admin requested to cancel their delete request
+     * after DELETE_ACKNOWLEDGED.
+     * </pre>
+     *
+     * <code>LOCAL_CANCEL_REQUESTED = 169545277;</code>
+     */
+    LOCAL_CANCEL_REQUESTED(169545277),
+    /**
+     *
+     *
+     * <pre>
      * Network admin has requested deletion of this peering connection.
      * </pre>
      *
      * <code>LOCAL_DELETE_REQUESTED = 227335214;</code>
      */
     LOCAL_DELETE_REQUESTED(227335214),
+    /**
+     *
+     *
+     * <pre>
+     * The peer network admin requested to cancel their delete request after
+     * DELETE_ACKNOWLEDGED.
+     * </pre>
+     *
+     * <code>PEER_CANCEL_REQUESTED = 140057862;</code>
+     */
+    PEER_CANCEL_REQUESTED(140057862),
     /**
      *
      *
@@ -173,12 +195,36 @@ public final class NetworkPeeringConnectionStatusConsensusState
      *
      *
      * <pre>
+     * The local network admin requested to cancel their delete request
+     * after DELETE_ACKNOWLEDGED.
+     * </pre>
+     *
+     * <code>LOCAL_CANCEL_REQUESTED = 169545277;</code>
+     */
+    public static final int LOCAL_CANCEL_REQUESTED_VALUE = 169545277;
+
+    /**
+     *
+     *
+     * <pre>
      * Network admin has requested deletion of this peering connection.
      * </pre>
      *
      * <code>LOCAL_DELETE_REQUESTED = 227335214;</code>
      */
     public static final int LOCAL_DELETE_REQUESTED_VALUE = 227335214;
+
+    /**
+     *
+     *
+     * <pre>
+     * The peer network admin requested to cancel their delete request after
+     * DELETE_ACKNOWLEDGED.
+     * </pre>
+     *
+     * <code>PEER_CANCEL_REQUESTED = 140057862;</code>
+     */
+    public static final int PEER_CANCEL_REQUESTED_VALUE = 140057862;
 
     /**
      *
@@ -222,8 +268,12 @@ public final class NetworkPeeringConnectionStatusConsensusState
           return DELETE_ACKNOWLEDGED;
         case 395396446:
           return DELETE_STATUS_UNSPECIFIED;
+        case 169545277:
+          return LOCAL_CANCEL_REQUESTED;
         case 227335214:
           return LOCAL_DELETE_REQUESTED;
+        case 140057862:
+          return PEER_CANCEL_REQUESTED;
         case 197847799:
           return PEER_DELETE_REQUESTED;
         default:

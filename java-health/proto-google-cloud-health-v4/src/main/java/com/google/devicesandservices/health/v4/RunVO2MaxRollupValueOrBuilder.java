@@ -33,7 +33,20 @@ public interface RunVO2MaxRollupValueOrBuilder
    * Minimum value of run VO2 max in the interval..
    * </pre>
    *
-   * <code>double rate_min = 1;</code>
+   * <code>optional double rate_min = 1;</code>
+   *
+   * @return Whether the rateMin field is set.
+   */
+  boolean hasRateMin();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum value of run VO2 max in the interval..
+   * </pre>
+   *
+   * <code>optional double rate_min = 1;</code>
    *
    * @return The rateMin.
    */
@@ -46,7 +59,20 @@ public interface RunVO2MaxRollupValueOrBuilder
    * Maximum value of run VO2 max in the interval.
    * </pre>
    *
-   * <code>double rate_max = 2;</code>
+   * <code>optional double rate_max = 2;</code>
+   *
+   * @return Whether the rateMax field is set.
+   */
+  boolean hasRateMax();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum value of run VO2 max in the interval.
+   * </pre>
+   *
+   * <code>optional double rate_max = 2;</code>
    *
    * @return The rateMax.
    */
@@ -59,7 +85,20 @@ public interface RunVO2MaxRollupValueOrBuilder
    * Average value of run VO2 max in the interval.
    * </pre>
    *
-   * <code>double rate_avg = 3;</code>
+   * <code>optional double rate_avg = 3;</code>
+   *
+   * @return Whether the rateAvg field is set.
+   */
+  boolean hasRateAvg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Average value of run VO2 max in the interval.
+   * </pre>
+   *
+   * <code>optional double rate_avg = 3;</code>
    *
    * @return The rateAvg.
    */

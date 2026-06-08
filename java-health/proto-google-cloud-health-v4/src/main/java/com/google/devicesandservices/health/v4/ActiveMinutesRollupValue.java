@@ -110,7 +110,20 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
      * Number of whole minutes spent in activity.
      * </pre>
      *
-     * <code>int64 active_minutes_sum = 2;</code>
+     * <code>optional int64 active_minutes_sum = 2;</code>
+     *
+     * @return Whether the activeMinutesSum field is set.
+     */
+    boolean hasActiveMinutesSum();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of whole minutes spent in activity.
+     * </pre>
+     *
+     * <code>optional int64 active_minutes_sum = 2;</code>
      *
      * @return The activeMinutesSum.
      */
@@ -171,6 +184,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
                   .ActiveMinutesRollupByActivityLevel.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ACTIVITY_LEVEL_FIELD_NUMBER = 1;
     private int activityLevel_ = 0;
 
@@ -223,7 +237,23 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
      * Number of whole minutes spent in activity.
      * </pre>
      *
-     * <code>int64 active_minutes_sum = 2;</code>
+     * <code>optional int64 active_minutes_sum = 2;</code>
+     *
+     * @return Whether the activeMinutesSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasActiveMinutesSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of whole minutes spent in activity.
+     * </pre>
+     *
+     * <code>optional int64 active_minutes_sum = 2;</code>
      *
      * @return The activeMinutesSum.
      */
@@ -252,7 +282,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
               .getNumber()) {
         output.writeEnum(1, activityLevel_);
       }
-      if (activeMinutesSum_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt64(2, activeMinutesSum_);
       }
       getUnknownFields().writeTo(output);
@@ -270,7 +300,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, activityLevel_);
       }
-      if (activeMinutesSum_ != 0L) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, activeMinutesSum_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -297,7 +327,10 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
                   obj;
 
       if (activityLevel_ != other.activityLevel_) return false;
-      if (getActiveMinutesSum() != other.getActiveMinutesSum()) return false;
+      if (hasActiveMinutesSum() != other.hasActiveMinutesSum()) return false;
+      if (hasActiveMinutesSum()) {
+        if (getActiveMinutesSum() != other.getActiveMinutesSum()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -311,8 +344,10 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ACTIVITY_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + activityLevel_;
-      hash = (37 * hash) + ACTIVE_MINUTES_SUM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveMinutesSum());
+      if (hasActiveMinutesSum()) {
+        hash = (37 * hash) + ACTIVE_MINUTES_SUM_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getActiveMinutesSum());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -535,9 +570,12 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.activityLevel_ = activityLevel_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.activeMinutesSum_ = activeMinutesSum_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -566,7 +604,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
         if (other.activityLevel_ != 0) {
           setActivityLevelValue(other.getActivityLevelValue());
         }
-        if (other.getActiveMinutesSum() != 0L) {
+        if (other.hasActiveMinutesSum()) {
           setActiveMinutesSum(other.getActiveMinutesSum());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -740,7 +778,23 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
        * Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes_sum = 2;</code>
+       * <code>optional int64 active_minutes_sum = 2;</code>
+       *
+       * @return Whether the activeMinutesSum field is set.
+       */
+      @java.lang.Override
+      public boolean hasActiveMinutesSum() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Number of whole minutes spent in activity.
+       * </pre>
+       *
+       * <code>optional int64 active_minutes_sum = 2;</code>
        *
        * @return The activeMinutesSum.
        */
@@ -756,7 +810,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
        * Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes_sum = 2;</code>
+       * <code>optional int64 active_minutes_sum = 2;</code>
        *
        * @param value The activeMinutesSum to set.
        * @return This builder for chaining.
@@ -776,7 +830,7 @@ public final class ActiveMinutesRollupValue extends com.google.protobuf.Generate
        * Number of whole minutes spent in activity.
        * </pre>
        *
-       * <code>int64 active_minutes_sum = 2;</code>
+       * <code>optional int64 active_minutes_sum = 2;</code>
        *
        * @return This builder for chaining.
        */

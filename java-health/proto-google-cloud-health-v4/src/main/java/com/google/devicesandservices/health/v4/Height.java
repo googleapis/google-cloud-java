@@ -139,7 +139,23 @@ public final class Height extends com.google.protobuf.GeneratedMessage
    * Required. Height of the user in millimeters.
    * </pre>
    *
-   * <code>int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the heightMillimeters field is set.
+   */
+  @java.lang.Override
+  public boolean hasHeightMillimeters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Height of the user in millimeters.
+   * </pre>
+   *
+   * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The heightMillimeters.
    */
@@ -165,7 +181,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getSampleTime());
     }
-    if (heightMillimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(2, heightMillimeters_);
     }
     getUnknownFields().writeTo(output);
@@ -180,7 +196,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSampleTime());
     }
-    if (heightMillimeters_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, heightMillimeters_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -203,7 +219,10 @@ public final class Height extends com.google.protobuf.GeneratedMessage
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (getHeightMillimeters() != other.getHeightMillimeters()) return false;
+    if (hasHeightMillimeters() != other.hasHeightMillimeters()) return false;
+    if (hasHeightMillimeters()) {
+      if (getHeightMillimeters() != other.getHeightMillimeters()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -219,8 +238,10 @@ public final class Height extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + HEIGHT_MILLIMETERS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHeightMillimeters());
+    if (hasHeightMillimeters()) {
+      hash = (37 * hash) + HEIGHT_MILLIMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHeightMillimeters());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -419,6 +440,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.heightMillimeters_ = heightMillimeters_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -438,7 +460,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (other.getHeightMillimeters() != 0L) {
+      if (other.hasHeightMillimeters()) {
         setHeightMillimeters(other.getHeightMillimeters());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -727,7 +749,23 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      * Required. Height of the user in millimeters.
      * </pre>
      *
-     * <code>int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the heightMillimeters field is set.
+     */
+    @java.lang.Override
+    public boolean hasHeightMillimeters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Height of the user in millimeters.
+     * </pre>
+     *
+     * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The heightMillimeters.
      */
@@ -743,7 +781,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      * Required. Height of the user in millimeters.
      * </pre>
      *
-     * <code>int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The heightMillimeters to set.
      * @return This builder for chaining.
@@ -763,7 +801,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      * Required. Height of the user in millimeters.
      * </pre>
      *
-     * <code>int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

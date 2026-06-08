@@ -370,6 +370,91 @@ public interface UnitKindOrBuilder
    *
    *
    * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationTemplateComponent field is set.
+   */
+  boolean hasApplicationTemplateComponent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationTemplateComponent.
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+      getApplicationTemplateComponent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder
+      getApplicationTemplateComponentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * AppParams contains the parameters for creating an AppHub Application.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.AppParams app_params = 11;</code>
+   *
+   * @return Whether the appParams field is set.
+   */
+  boolean hasAppParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * AppParams contains the parameters for creating an AppHub Application.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.AppParams app_params = 11;</code>
+   *
+   * @return The appParams.
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AppParams getAppParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * AppParams contains the parameters for creating an AppHub Application.
+   * </pre>
+   *
+   * <code>.google.cloud.saasplatform.saasservicemgmt.v1beta1.AppParams app_params = 11;</code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.AppParamsOrBuilder getAppParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels on the resource, which can be used for categorization.
    * similar to Kubernetes resource labels.
    * </pre>

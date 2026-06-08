@@ -64,6 +64,18 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 507:
+        return internalGetAttributes();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -6792,6 +6804,7146 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface TemplateReferenceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.TemplateReference)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The template entry name. Entry must be of EntryType
+     * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+     * and contains top-level aspect of AspectType
+     * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+     * The format is:
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The template entry name. Entry must be of EntryType
+     * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+     * and contains top-level aspect of AspectType
+     * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+     * The format is:
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getValuesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsValues(java.lang.String key);
+
+    /** Use {@link #getValuesMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        getValues();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        getValuesMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+        getValuesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue getValuesOrThrow(
+        java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resolved SQL statement generated from the template with
+     * parameters substituted. It is only populated in the result.
+     * </pre>
+     *
+     * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resolvedSql.
+     */
+    java.lang.String getResolvedSql();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resolved SQL statement generated from the template with
+     * parameters substituted. It is only populated in the result.
+     * </pre>
+     *
+     * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resolvedSql.
+     */
+    com.google.protobuf.ByteString getResolvedSqlBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ruleTemplate field is set.
+     */
+    boolean hasRuleTemplate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ruleTemplate.
+     */
+    com.google.cloud.dataplex.v1.DataQualityRuleTemplate getRuleTemplate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder getRuleTemplateOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A rule that constructs a SQL statement to evaluate using a rule template
+   * and parameter values. If the constructed statement returns any rows, this
+   * rule fails
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.TemplateReference}
+   */
+  public static final class TemplateReference extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.TemplateReference)
+      TemplateReferenceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TemplateReference");
+    }
+
+    // Use TemplateReference.newBuilder() to construct.
+    private TemplateReference(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TemplateReference() {
+      name_ = "";
+      resolvedSql_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetValues();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.class,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder.class);
+    }
+
+    public interface ParameterValueOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the string value of the parameter.
+       * </pre>
+       *
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The value.
+       */
+      java.lang.String getValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the string value of the parameter.
+       * </pre>
+       *
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for value.
+       */
+      com.google.protobuf.ByteString getValueBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a parameter value.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue}
+     */
+    public static final class ParameterValue extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+        ParameterValueOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "ParameterValue");
+      }
+
+      // Use ParameterValue.newBuilder() to construct.
+      private ParameterValue(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ParameterValue() {
+        value_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                    .Builder.class);
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object value_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the string value of the parameter.
+       * </pre>
+       *
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the string value of the parameter.
+       * </pre>
+       *
+       * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, value_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, value_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue other =
+            (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue) obj;
+
+        if (!getValue().equals(other.getValue())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents a parameter value.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValueOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                      .class,
+                  com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          value_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+            build() {
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue result =
+              new com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.value_ = value_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                  .getDefaultInstance()) return this;
+          if (!other.getValue().isEmpty()) {
+            value_ = other.value_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    value_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object value_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Represents the string value of the parameter.
+         * </pre>
+         *
+         * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The value.
+         */
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Represents the string value of the parameter.
+         * </pre>
+         *
+         * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for value.
+         */
+        public com.google.protobuf.ByteString getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Represents the string value of the parameter.
+         * </pre>
+         *
+         * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Represents the string value of the parameter.
+         * </pre>
+         *
+         * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValue() {
+          value_ = getDefaultInstance().getValue();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Represents the string value of the parameter.
+         * </pre>
+         *
+         * <code>string value = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          value_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+      private static final com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+              .ParameterValue
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ParameterValue> PARSER =
+          new com.google.protobuf.AbstractParser<ParameterValue>() {
+            @java.lang.Override
+            public ParameterValue parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ParameterValue> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ParameterValue> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The template entry name. Entry must be of EntryType
+     * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+     * and contains top-level aspect of AspectType
+     * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+     * The format is:
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The template entry name. Entry must be of EntryType
+     * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+     * and contains top-level aspect of AspectType
+     * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+     * The format is:
+     * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     * </pre>
+     *
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 5;
+
+    private static final class ValuesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String,
+                      com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+                      newDefaultInstance(
+                          com.google.cloud.dataplex.v1.DataQualityProto
+                              .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                              .ParameterValue.getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        values_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        internalGetValues() {
+      if (values_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ValuesDefaultEntryHolder.defaultEntry);
+      }
+      return values_;
+    }
+
+    public int getValuesCount() {
+      return internalGetValues().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsValues(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetValues().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getValuesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        getValues() {
+      return getValuesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+        getValuesMap() {
+      return internalGetValues().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+            .ParameterValue
+        getValuesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          map = internalGetValues().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides the map of parameter name and value.
+     * The maximum size of the field is 120KB (encoded as UTF-8).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+        getValuesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          map = internalGetValues().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int RESOLVED_SQL_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resolvedSql_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resolved SQL statement generated from the template with
+     * parameters substituted. It is only populated in the result.
+     * </pre>
+     *
+     * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resolvedSql.
+     */
+    @java.lang.Override
+    public java.lang.String getResolvedSql() {
+      java.lang.Object ref = resolvedSql_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedSql_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resolved SQL statement generated from the template with
+     * parameters substituted. It is only populated in the result.
+     * </pre>
+     *
+     * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resolvedSql.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResolvedSqlBytes() {
+      java.lang.Object ref = resolvedSql_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resolvedSql_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RULE_TEMPLATE_FIELD_NUMBER = 4;
+    private com.google.cloud.dataplex.v1.DataQualityRuleTemplate ruleTemplate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ruleTemplate field is set.
+     */
+    @java.lang.Override
+    public boolean hasRuleTemplate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ruleTemplate.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRuleTemplate getRuleTemplate() {
+      return ruleTemplate_ == null
+          ? com.google.cloud.dataplex.v1.DataQualityRuleTemplate.getDefaultInstance()
+          : ruleTemplate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The rule template used to resolve the rule. It is only
+     * populated in the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder
+        getRuleTemplateOrBuilder() {
+      return ruleTemplate_ == null
+          ? com.google.cloud.dataplex.v1.DataQualityRuleTemplate.getDefaultInstance()
+          : ruleTemplate_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedSql_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, resolvedSql_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getRuleTemplate());
+      }
+      com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+          output, internalGetValues(), ValuesDefaultEntryHolder.defaultEntry, 5);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedSql_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, resolvedSql_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRuleTemplate());
+      }
+      for (java.util.Map.Entry<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          entry : internalGetValues().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+            values__ =
+                ValuesDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, values__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference other =
+          (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!internalGetValues().equals(other.internalGetValues())) return false;
+      if (!getResolvedSql().equals(other.getResolvedSql())) return false;
+      if (hasRuleTemplate() != other.hasRuleTemplate()) return false;
+      if (hasRuleTemplate()) {
+        if (!getRuleTemplate().equals(other.getRuleTemplate())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (!internalGetValues().getMap().isEmpty()) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetValues().hashCode();
+      }
+      hash = (37 * hash) + RESOLVED_SQL_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedSql().hashCode();
+      if (hasRuleTemplate()) {
+        hash = (37 * hash) + RULE_TEMPLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getRuleTemplate().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A rule that constructs a SQL statement to evaluate using a rule template
+     * and parameter values. If the constructed statement returns any rows, this
+     * rule fails
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.TemplateReference}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.TemplateReference)
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetValues();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableValues();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetRuleTemplateFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        internalGetMutableValues().clear();
+        resolvedSql_ = "";
+        ruleTemplate_ = null;
+        if (ruleTemplateBuilder_ != null) {
+          ruleTemplateBuilder_.dispose();
+          ruleTemplateBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference build() {
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference buildPartial() {
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference result =
+            new com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.values_ = internalGetValues().build(ValuesDefaultEntryHolder.defaultEntry);
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.resolvedSql_ = resolvedSql_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.ruleTemplate_ =
+              ruleTemplateBuilder_ == null ? ruleTemplate_ : ruleTemplateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance())
+          return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableValues().mergeFrom(other.internalGetValues());
+        bitField0_ |= 0x00000002;
+        if (!other.getResolvedSql().isEmpty()) {
+          resolvedSql_ = other.resolvedSql_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasRuleTemplate()) {
+          mergeRuleTemplate(other.getRuleTemplate());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 26:
+                {
+                  resolvedSql_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetRuleTemplateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String,
+                          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                              .ParameterValue>
+                      values__ =
+                          input.readMessage(
+                              ValuesDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableValues()
+                      .ensureBuilderMap()
+                      .put(values__.getKey(), values__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The template entry name. Entry must be of EntryType
+       * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+       * and contains top-level aspect of AspectType
+       * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+       * The format is:
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The template entry name. Entry must be of EntryType
+       * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+       * and contains top-level aspect of AspectType
+       * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+       * The format is:
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The template entry name. Entry must be of EntryType
+       * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+       * and contains top-level aspect of AspectType
+       * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+       * The format is:
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The template entry name. Entry must be of EntryType
+       * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+       * and contains top-level aspect of AspectType
+       * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+       * The format is:
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The template entry name. Entry must be of EntryType
+       * `projects/dataplex-types/locations/global/entryTypes/data-quality-rule-template`
+       * and contains top-level aspect of AspectType
+       * `projects/dataplex-types/locations/global/aspectTypes/data-quality-rule-template`.
+       * The format is:
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private static final class ValuesConverter
+          implements com.google.protobuf.MapFieldBuilder.Converter<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                  .ParameterValueOrBuilder,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue> {
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue build(
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValueOrBuilder
+                val) {
+          if (val
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue) {
+            return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+                val;
+          }
+          return ((com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                      .Builder)
+                  val)
+              .build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+            defaultEntry() {
+          return ValuesDefaultEntryHolder.defaultEntry;
+        }
+      }
+      ;
+
+      private static final ValuesConverter valuesConverter = new ValuesConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                  .ParameterValueOrBuilder,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.Builder>
+          values_;
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                  .ParameterValueOrBuilder,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.Builder>
+          internalGetValues() {
+        if (values_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(valuesConverter);
+        }
+        return values_;
+      }
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                  .ParameterValueOrBuilder,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.Builder>
+          internalGetMutableValues() {
+        if (values_ == null) {
+          values_ = new com.google.protobuf.MapFieldBuilder<>(valuesConverter);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return values_;
+      }
+
+      public int getValuesCount() {
+        return internalGetValues().ensureBuilderMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsValues(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetValues().ensureBuilderMap().containsKey(key);
+      }
+
+      /** Use {@link #getValuesMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          getValues() {
+        return getValuesMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          getValuesMap() {
+        return internalGetValues().getImmutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+              .ParameterValue
+          getValuesOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                  defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                    .ParameterValueOrBuilder>
+            map = internalGetMutableValues().ensureBuilderMap();
+        return map.containsKey(key) ? valuesConverter.build(map.get(key)) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+          getValuesOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                    .ParameterValueOrBuilder>
+            map = internalGetMutableValues().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return valuesConverter.build(map.get(key));
+      }
+
+      public Builder clearValues() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableValues().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeValues(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableValues().ensureBuilderMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<
+              java.lang.String,
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+          getMutableValues() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableValues().ensureMessageMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putValues(
+          java.lang.String key,
+          com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableValues().ensureBuilderMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllValues(
+          java.util.Map<
+                  java.lang.String,
+                  com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+              values) {
+        for (java.util.Map.Entry<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue>
+            e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableValues().ensureBuilderMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Provides the map of parameter name and value.
+       * The maximum size of the field is 120KB (encoded as UTF-8).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, .google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue&gt; values = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue.Builder
+          putValuesBuilderIfAbsent(java.lang.String key) {
+        java.util.Map<
+                java.lang.String,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                    .ParameterValueOrBuilder>
+            builderMap = internalGetMutableValues().ensureBuilderMap();
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValueOrBuilder
+            entry = builderMap.get(key);
+        if (entry == null) {
+          entry =
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                  .newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue) {
+          entry =
+              ((com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue)
+                      entry)
+                  .toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ParameterValue
+                .Builder)
+            entry;
+      }
+
+      private java.lang.Object resolvedSql_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resolved SQL statement generated from the template with
+       * parameters substituted. It is only populated in the result.
+       * </pre>
+       *
+       * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The resolvedSql.
+       */
+      public java.lang.String getResolvedSql() {
+        java.lang.Object ref = resolvedSql_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resolvedSql_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resolved SQL statement generated from the template with
+       * parameters substituted. It is only populated in the result.
+       * </pre>
+       *
+       * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for resolvedSql.
+       */
+      public com.google.protobuf.ByteString getResolvedSqlBytes() {
+        java.lang.Object ref = resolvedSql_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resolvedSql_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resolved SQL statement generated from the template with
+       * parameters substituted. It is only populated in the result.
+       * </pre>
+       *
+       * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The resolvedSql to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResolvedSql(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resolvedSql_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resolved SQL statement generated from the template with
+       * parameters substituted. It is only populated in the result.
+       * </pre>
+       *
+       * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResolvedSql() {
+        resolvedSql_ = getDefaultInstance().getResolvedSql();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The resolved SQL statement generated from the template with
+       * parameters substituted. It is only populated in the result.
+       * </pre>
+       *
+       * <code>string resolved_sql = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for resolvedSql to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResolvedSqlBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        resolvedSql_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.dataplex.v1.DataQualityRuleTemplate ruleTemplate_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplate,
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplate.Builder,
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder>
+          ruleTemplateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the ruleTemplate field is set.
+       */
+      public boolean hasRuleTemplate() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The ruleTemplate.
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRuleTemplate getRuleTemplate() {
+        if (ruleTemplateBuilder_ == null) {
+          return ruleTemplate_ == null
+              ? com.google.cloud.dataplex.v1.DataQualityRuleTemplate.getDefaultInstance()
+              : ruleTemplate_;
+        } else {
+          return ruleTemplateBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRuleTemplate(com.google.cloud.dataplex.v1.DataQualityRuleTemplate value) {
+        if (ruleTemplateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ruleTemplate_ = value;
+        } else {
+          ruleTemplateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRuleTemplate(
+          com.google.cloud.dataplex.v1.DataQualityRuleTemplate.Builder builderForValue) {
+        if (ruleTemplateBuilder_ == null) {
+          ruleTemplate_ = builderForValue.build();
+        } else {
+          ruleTemplateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeRuleTemplate(com.google.cloud.dataplex.v1.DataQualityRuleTemplate value) {
+        if (ruleTemplateBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && ruleTemplate_ != null
+              && ruleTemplate_
+                  != com.google.cloud.dataplex.v1.DataQualityRuleTemplate.getDefaultInstance()) {
+            getRuleTemplateBuilder().mergeFrom(value);
+          } else {
+            ruleTemplate_ = value;
+          }
+        } else {
+          ruleTemplateBuilder_.mergeFrom(value);
+        }
+        if (ruleTemplate_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRuleTemplate() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ruleTemplate_ = null;
+        if (ruleTemplateBuilder_ != null) {
+          ruleTemplateBuilder_.dispose();
+          ruleTemplateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRuleTemplate.Builder getRuleTemplateBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetRuleTemplateFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder
+          getRuleTemplateOrBuilder() {
+        if (ruleTemplateBuilder_ != null) {
+          return ruleTemplateBuilder_.getMessageOrBuilder();
+        } else {
+          return ruleTemplate_ == null
+              ? com.google.cloud.dataplex.v1.DataQualityRuleTemplate.getDefaultInstance()
+              : ruleTemplate_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rule template used to resolve the rule. It is only
+       * populated in the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRuleTemplate rule_template = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplate,
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplate.Builder,
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder>
+          internalGetRuleTemplateFieldBuilder() {
+        if (ruleTemplateBuilder_ == null) {
+          ruleTemplateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataQualityRuleTemplate,
+                  com.google.cloud.dataplex.v1.DataQualityRuleTemplate.Builder,
+                  com.google.cloud.dataplex.v1.DataQualityRuleTemplateOrBuilder>(
+                  getRuleTemplate(), getParentForChildren(), isClean());
+          ruleTemplate_ = null;
+        }
+        return ruleTemplateBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.TemplateReference)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.TemplateReference)
+    private static final com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TemplateReference> PARSER =
+        new com.google.protobuf.AbstractParser<TemplateReference>() {
+          @java.lang.Override
+          public TemplateReference parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TemplateReference> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TemplateReference> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RuleSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.RuleSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+        getRulePathElementsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement getRulePathElements(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getRulePathElementsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>
+        getRulePathElementsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder
+        getRulePathElementsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the rule source information from Catalog.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.RuleSource}
+   */
+  public static final class RuleSource extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource)
+      RuleSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "RuleSource");
+    }
+
+    // Use RuleSource.newBuilder() to construct.
+    private RuleSource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RuleSource() {
+      rulePathElements_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataQualityProto
+          .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.class,
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder.class);
+    }
+
+    public interface RulePathElementOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the entrySource field is set.
+       */
+      boolean hasEntrySource();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The entrySource.
+       */
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+          getEntrySource();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySourceOrBuilder
+          getEntrySourceOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the entryLinkSource field is set.
+       */
+      boolean hasEntryLinkSource();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The entryLinkSource.
+       */
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+          getEntryLinkSource();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+              .EntryLinkSourceOrBuilder
+          getEntryLinkSourceOrBuilder();
+
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.SourceTypeCase
+          getSourceTypeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Path Element represents the direct relationship between the rule origin
+     * (aspects) to the BigQuery Entry. Ordering of the rule relationship will
+     * be maintained such that the first entry in the list is the closest
+     * ancestor (BigQuery table itself). A blank source denotes that the rule is
+     * derived directly from the DataScan itself.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement}
+     */
+    public static final class RulePathElement extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)
+        RulePathElementOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "RulePathElement");
+      }
+
+      // Use RulePathElement.newBuilder() to construct.
+      private RulePathElement(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RulePathElement() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+                    .class);
+      }
+
+      public interface EntrySourceOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry type to represent the current characteristics
+         * of the entry in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+         * </pre>
+         *
+         * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryType.
+         */
+        java.lang.String getEntryType();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry type to represent the current characteristics
+         * of the entry in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+         * </pre>
+         *
+         * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryType.
+         */
+        com.google.protobuf.ByteString getEntryTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+         * </pre>
+         *
+         * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entry.
+         */
+        java.lang.String getEntry();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+         * </pre>
+         *
+         * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entry.
+         */
+        com.google.protobuf.ByteString getEntryBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The display name of the entry.
+         * </pre>
+         *
+         * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The displayName.
+         */
+        java.lang.String getDisplayName();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The display name of the entry.
+         * </pre>
+         *
+         * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for displayName.
+         */
+        com.google.protobuf.ByteString getDisplayNameBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Entry source represents information about the related source entry.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource}
+       */
+      public static final class EntrySource extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+          EntrySourceOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "EntrySource");
+        }
+
+        // Use EntrySource.newBuilder() to construct.
+        private EntrySource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private EntrySource() {
+          entryType_ = "";
+          entry_ = "";
+          displayName_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource.class,
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource.Builder.class);
+        }
+
+        public static final int ENTRY_TYPE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object entryType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry type to represent the current characteristics
+         * of the entry in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+         * </pre>
+         *
+         * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryType.
+         */
+        @java.lang.Override
+        public java.lang.String getEntryType() {
+          java.lang.Object ref = entryType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entryType_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry type to represent the current characteristics
+         * of the entry in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+         * </pre>
+         *
+         * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getEntryTypeBytes() {
+          java.lang.Object ref = entryType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entryType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int ENTRY_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object entry_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+         * </pre>
+         *
+         * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entry.
+         */
+        @java.lang.Override
+        public java.lang.String getEntry() {
+          java.lang.Object ref = entry_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entry_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+         * </pre>
+         *
+         * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entry.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getEntryBytes() {
+          java.lang.Object ref = entry_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entry_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object displayName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The display name of the entry.
+         * </pre>
+         *
+         * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The displayName.
+         */
+        @java.lang.Override
+        public java.lang.String getDisplayName() {
+          java.lang.Object ref = displayName_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            displayName_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The display name of the entry.
+         * </pre>
+         *
+         * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for displayName.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDisplayNameBytes() {
+          java.lang.Object ref = displayName_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            displayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryType_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, entryType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entry_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, entry_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 3, displayName_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryType_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, entryType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entry_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, entry_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayName_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntrySource)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+              other =
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntrySource)
+                      obj;
+
+          if (!getEntryType().equals(other.getEntryType())) return false;
+          if (!getEntry().equals(other.getEntry())) return false;
+          if (!getDisplayName().equals(other.getDisplayName())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ENTRY_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryType().hashCode();
+          hash = (37 * hash) + ENTRY_FIELD_NUMBER;
+          hash = (53 * hash) + getEntry().hashCode();
+          hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getDisplayName().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Entry source represents information about the related source entry.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySourceOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource.class,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            entryType_ = "";
+            entry_ = "";
+            displayName_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+              getDefaultInstanceForType() {
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+              build() {
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+              buildPartial() {
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                result =
+                    new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.entryType_ = entryType_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.entry_ = entry_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.displayName_ = displayName_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntrySource) {
+              return mergeFrom(
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntrySource)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                  other) {
+            if (other
+                == com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntrySource.getDefaultInstance()) return this;
+            if (!other.getEntryType().isEmpty()) {
+              entryType_ = other.entryType_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getEntry().isEmpty()) {
+              entry_ = other.entry_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (!other.getDisplayName().isEmpty()) {
+              displayName_ = other.displayName_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      entryType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      entry_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      displayName_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object entryType_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry type to represent the current characteristics
+           * of the entry in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+           * </pre>
+           *
+           * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The entryType.
+           */
+          public java.lang.String getEntryType() {
+            java.lang.Object ref = entryType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              entryType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry type to represent the current characteristics
+           * of the entry in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+           * </pre>
+           *
+           * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for entryType.
+           */
+          public com.google.protobuf.ByteString getEntryTypeBytes() {
+            java.lang.Object ref = entryType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              entryType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry type to represent the current characteristics
+           * of the entry in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+           * </pre>
+           *
+           * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The entryType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            entryType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry type to represent the current characteristics
+           * of the entry in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+           * </pre>
+           *
+           * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEntryType() {
+            entryType_ = getDefaultInstance().getEntryType();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry type to represent the current characteristics
+           * of the entry in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry-type-id}`.
+           * </pre>
+           *
+           * <code>string entry_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for entryType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            entryType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object entry_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+           * </pre>
+           *
+           * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The entry.
+           */
+          public java.lang.String getEntry() {
+            java.lang.Object ref = entry_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              entry_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+           * </pre>
+           *
+           * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for entry.
+           */
+          public com.google.protobuf.ByteString getEntryBytes() {
+            java.lang.Object ref = entry_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              entry_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+           * </pre>
+           *
+           * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The entry to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntry(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            entry_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+           * </pre>
+           *
+           * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEntry() {
+            entry_ = getDefaultInstance().getEntry();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
+           * </pre>
+           *
+           * <code>string entry = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for entry to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            entry_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object displayName_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The display name of the entry.
+           * </pre>
+           *
+           * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The displayName.
+           */
+          public java.lang.String getDisplayName() {
+            java.lang.Object ref = displayName_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              displayName_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The display name of the entry.
+           * </pre>
+           *
+           * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for displayName.
+           */
+          public com.google.protobuf.ByteString getDisplayNameBytes() {
+            java.lang.Object ref = displayName_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              displayName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The display name of the entry.
+           * </pre>
+           *
+           * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The displayName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDisplayName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            displayName_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The display name of the entry.
+           * </pre>
+           *
+           * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearDisplayName() {
+            displayName_ = getDefaultInstance().getDisplayName();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The display name of the entry.
+           * </pre>
+           *
+           * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for displayName to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            displayName_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+        private static final com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntrySource();
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<EntrySource> PARSER =
+            new com.google.protobuf.AbstractParser<EntrySource>() {
+              @java.lang.Override
+              public EntrySource parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<EntrySource> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<EntrySource> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface EntryLinkSourceOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link type to represent the current
+         * relationship between the entry and the next entry in the path.
+         * In the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+         * </pre>
+         *
+         * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryLinkType.
+         */
+        java.lang.String getEntryLinkType();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link type to represent the current
+         * relationship between the entry and the next entry in the path.
+         * In the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+         * </pre>
+         *
+         * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryLinkType.
+         */
+        com.google.protobuf.ByteString getEntryLinkTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+         * </pre>
+         *
+         * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryLink.
+         */
+        java.lang.String getEntryLink();
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+         * </pre>
+         *
+         * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryLink.
+         */
+        com.google.protobuf.ByteString getEntryLinkBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Entry link source represents information about the entry link.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource}
+       */
+      public static final class EntryLinkSource extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource)
+          EntryLinkSourceOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "EntryLinkSource");
+        }
+
+        // Use EntryLinkSource.newBuilder() to construct.
+        private EntryLinkSource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private EntryLinkSource() {
+          entryLinkType_ = "";
+          entryLink_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource.class,
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource.Builder.class);
+        }
+
+        public static final int ENTRY_LINK_TYPE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object entryLinkType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link type to represent the current
+         * relationship between the entry and the next entry in the path.
+         * In the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+         * </pre>
+         *
+         * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryLinkType.
+         */
+        @java.lang.Override
+        public java.lang.String getEntryLinkType() {
+          java.lang.Object ref = entryLinkType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entryLinkType_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link type to represent the current
+         * relationship between the entry and the next entry in the path.
+         * In the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+         * </pre>
+         *
+         * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryLinkType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getEntryLinkTypeBytes() {
+          java.lang.Object ref = entryLinkType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entryLinkType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int ENTRY_LINK_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object entryLink_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+         * </pre>
+         *
+         * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The entryLink.
+         */
+        @java.lang.Override
+        public java.lang.String getEntryLink() {
+          java.lang.Object ref = entryLink_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entryLink_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The entry link name in the form of:
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+         * </pre>
+         *
+         * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for entryLink.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getEntryLinkBytes() {
+          java.lang.Object ref = entryLink_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entryLink_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryLinkType_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, entryLinkType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryLink_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, entryLink_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryLinkType_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, entryLinkType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entryLink_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, entryLink_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+              other =
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntryLinkSource)
+                      obj;
+
+          if (!getEntryLinkType().equals(other.getEntryLinkType())) return false;
+          if (!getEntryLink().equals(other.getEntryLink())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ENTRY_LINK_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryLinkType().hashCode();
+          hash = (37 * hash) + ENTRY_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getEntryLink().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Entry link source represents information about the entry link.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource)
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSourceOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource.class,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            entryLinkType_ = "";
+            entryLink_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource
+              getDefaultInstanceForType() {
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource
+              build() {
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource
+              buildPartial() {
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                result =
+                    new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.entryLinkType_ = entryLinkType_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.entryLink_ = entryLink_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource) {
+              return mergeFrom(
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntryLinkSource)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource
+                  other) {
+            if (other
+                == com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource.getDefaultInstance()) return this;
+            if (!other.getEntryLinkType().isEmpty()) {
+              entryLinkType_ = other.entryLinkType_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getEntryLink().isEmpty()) {
+              entryLink_ = other.entryLink_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      entryLinkType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      entryLink_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object entryLinkType_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link type to represent the current
+           * relationship between the entry and the next entry in the path.
+           * In the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+           * </pre>
+           *
+           * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The entryLinkType.
+           */
+          public java.lang.String getEntryLinkType() {
+            java.lang.Object ref = entryLinkType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              entryLinkType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link type to represent the current
+           * relationship between the entry and the next entry in the path.
+           * In the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+           * </pre>
+           *
+           * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for entryLinkType.
+           */
+          public com.google.protobuf.ByteString getEntryLinkTypeBytes() {
+            java.lang.Object ref = entryLinkType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              entryLinkType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link type to represent the current
+           * relationship between the entry and the next entry in the path.
+           * In the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+           * </pre>
+           *
+           * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The entryLinkType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryLinkType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            entryLinkType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link type to represent the current
+           * relationship between the entry and the next entry in the path.
+           * In the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+           * </pre>
+           *
+           * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEntryLinkType() {
+            entryLinkType_ = getDefaultInstance().getEntryLinkType();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link type to represent the current
+           * relationship between the entry and the next entry in the path.
+           * In the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryLinkTypes/{entry_link_type_id}`
+           * </pre>
+           *
+           * <code>string entry_link_type = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for entryLinkType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryLinkTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            entryLinkType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object entryLink_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+           * </pre>
+           *
+           * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The entryLink.
+           */
+          public java.lang.String getEntryLink() {
+            java.lang.Object ref = entryLink_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              entryLink_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+           * </pre>
+           *
+           * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return The bytes for entryLink.
+           */
+          public com.google.protobuf.ByteString getEntryLinkBytes() {
+            java.lang.Object ref = entryLink_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              entryLink_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+           * </pre>
+           *
+           * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The entryLink to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryLink(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            entryLink_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+           * </pre>
+           *
+           * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearEntryLink() {
+            entryLink_ = getDefaultInstance().getEntryLink();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Output only. The entry link name in the form of:
+           * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`
+           * </pre>
+           *
+           * <code>string entry_link = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+           *
+           * @param value The bytes for entryLink to set.
+           * @return This builder for chaining.
+           */
+          public Builder setEntryLinkBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            entryLink_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource)
+        private static final com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource();
+        }
+
+        public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<EntryLinkSource> PARSER =
+            new com.google.protobuf.AbstractParser<EntryLinkSource>() {
+              @java.lang.Override
+              public EntryLinkSource parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<EntryLinkSource> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<EntryLinkSource> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int sourceTypeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object sourceType_;
+
+      public enum SourceTypeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        ENTRY_SOURCE(1),
+        ENTRY_LINK_SOURCE(2),
+        SOURCETYPE_NOT_SET(0);
+        private final int value;
+
+        private SourceTypeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static SourceTypeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static SourceTypeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return ENTRY_SOURCE;
+            case 2:
+              return ENTRY_LINK_SOURCE;
+            case 0:
+              return SOURCETYPE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public SourceTypeCase getSourceTypeCase() {
+        return SourceTypeCase.forNumber(sourceTypeCase_);
+      }
+
+      public static final int ENTRY_SOURCE_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the entrySource field is set.
+       */
+      @java.lang.Override
+      public boolean hasEntrySource() {
+        return sourceTypeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The entrySource.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+          getEntrySource() {
+        if (sourceTypeCase_ == 1) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntrySource)
+              sourceType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+            .getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry source represents information about the related
+       * source entry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+              .EntrySourceOrBuilder
+          getEntrySourceOrBuilder() {
+        if (sourceTypeCase_ == 1) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntrySource)
+              sourceType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+            .getDefaultInstance();
+      }
+
+      public static final int ENTRY_LINK_SOURCE_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the entryLinkSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasEntryLinkSource() {
+        return sourceTypeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The entryLinkSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+          getEntryLinkSource() {
+        if (sourceTypeCase_ == 2) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource)
+              sourceType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+            .EntryLinkSource.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Entry link source represents information about the entry
+       * link.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+              .EntryLinkSourceOrBuilder
+          getEntryLinkSourceOrBuilder() {
+        if (sourceTypeCase_ == 2) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .EntryLinkSource)
+              sourceType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+            .EntryLinkSource.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (sourceTypeCase_ == 1) {
+          output.writeMessage(
+              1,
+              (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource)
+                  sourceType_);
+        }
+        if (sourceTypeCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource)
+                  sourceType_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (sourceTypeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1,
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntrySource)
+                      sourceType_);
+        }
+        if (sourceTypeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                          .EntryLinkSource)
+                      sourceType_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement other =
+            (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement) obj;
+
+        if (!getSourceTypeCase().equals(other.getSourceTypeCase())) return false;
+        switch (sourceTypeCase_) {
+          case 1:
+            if (!getEntrySource().equals(other.getEntrySource())) return false;
+            break;
+          case 2:
+            if (!getEntryLinkSource().equals(other.getEntryLinkSource())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (sourceTypeCase_) {
+          case 1:
+            hash = (37 * hash) + ENTRY_SOURCE_FIELD_NUMBER;
+            hash = (53 * hash) + getEntrySource().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + ENTRY_LINK_SOURCE_FIELD_NUMBER;
+            hash = (53 * hash) + getEntryLinkSource().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Path Element represents the direct relationship between the rule origin
+       * (aspects) to the BigQuery Entry. Ordering of the rule relationship will
+       * be maintained such that the first entry in the list is the closest
+       * ancestor (BigQuery table itself). A blank source denotes that the rule is
+       * derived directly from the DataScan itself.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.class,
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (entrySourceBuilder_ != null) {
+            entrySourceBuilder_.clear();
+          }
+          if (entryLinkSourceBuilder_ != null) {
+            entryLinkSourceBuilder_.clear();
+          }
+          sourceTypeCase_ = 0;
+          sourceType_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement build() {
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement result =
+              new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement result) {
+          result.sourceTypeCase_ = sourceTypeCase_;
+          result.sourceType_ = this.sourceType_;
+          if (sourceTypeCase_ == 1 && entrySourceBuilder_ != null) {
+            result.sourceType_ = entrySourceBuilder_.build();
+          }
+          if (sourceTypeCase_ == 2 && entryLinkSourceBuilder_ != null) {
+            result.sourceType_ = entryLinkSourceBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                  .getDefaultInstance()) return this;
+          switch (other.getSourceTypeCase()) {
+            case ENTRY_SOURCE:
+              {
+                mergeEntrySource(other.getEntrySource());
+                break;
+              }
+            case ENTRY_LINK_SOURCE:
+              {
+                mergeEntryLinkSource(other.getEntryLinkSource());
+                break;
+              }
+            case SOURCETYPE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetEntrySourceFieldBuilder().getBuilder(), extensionRegistry);
+                    sourceTypeCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetEntryLinkSourceFieldBuilder().getBuilder(), extensionRegistry);
+                    sourceTypeCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int sourceTypeCase_ = 0;
+        private java.lang.Object sourceType_;
+
+        public SourceTypeCase getSourceTypeCase() {
+          return SourceTypeCase.forNumber(sourceTypeCase_);
+        }
+
+        public Builder clearSourceType() {
+          sourceTypeCase_ = 0;
+          sourceType_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntrySourceOrBuilder>
+            entrySourceBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the entrySource field is set.
+         */
+        @java.lang.Override
+        public boolean hasEntrySource() {
+          return sourceTypeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The entrySource.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+            getEntrySource() {
+          if (entrySourceBuilder_ == null) {
+            if (sourceTypeCase_ == 1) {
+              return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource)
+                  sourceType_;
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource.getDefaultInstance();
+          } else {
+            if (sourceTypeCase_ == 1) {
+              return entrySourceBuilder_.getMessage();
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEntrySource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                value) {
+          if (entrySourceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            sourceType_ = value;
+            onChanged();
+          } else {
+            entrySourceBuilder_.setMessage(value);
+          }
+          sourceTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEntrySource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                    .Builder
+                builderForValue) {
+          if (entrySourceBuilder_ == null) {
+            sourceType_ = builderForValue.build();
+            onChanged();
+          } else {
+            entrySourceBuilder_.setMessage(builderForValue.build());
+          }
+          sourceTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeEntrySource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                value) {
+          if (entrySourceBuilder_ == null) {
+            if (sourceTypeCase_ == 1
+                && sourceType_
+                    != com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource.getDefaultInstance()) {
+              sourceType_ =
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource.newBuilder(
+                          (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                                  .EntrySource)
+                              sourceType_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              sourceType_ = value;
+            }
+            onChanged();
+          } else {
+            if (sourceTypeCase_ == 1) {
+              entrySourceBuilder_.mergeFrom(value);
+            } else {
+              entrySourceBuilder_.setMessage(value);
+            }
+          }
+          sourceTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearEntrySource() {
+          if (entrySourceBuilder_ == null) {
+            if (sourceTypeCase_ == 1) {
+              sourceTypeCase_ = 0;
+              sourceType_ = null;
+              onChanged();
+            }
+          } else {
+            if (sourceTypeCase_ == 1) {
+              sourceTypeCase_ = 0;
+              sourceType_ = null;
+            }
+            entrySourceBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                .Builder
+            getEntrySourceBuilder() {
+          return internalGetEntrySourceFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySourceOrBuilder
+            getEntrySourceOrBuilder() {
+          if ((sourceTypeCase_ == 1) && (entrySourceBuilder_ != null)) {
+            return entrySourceBuilder_.getMessageOrBuilder();
+          } else {
+            if (sourceTypeCase_ == 1) {
+              return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource)
+                  sourceType_;
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntrySource.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry source represents information about the related
+         * source entry.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource entry_source = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySource
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntrySourceOrBuilder>
+            internalGetEntrySourceFieldBuilder() {
+          if (entrySourceBuilder_ == null) {
+            if (!(sourceTypeCase_ == 1)) {
+              sourceType_ =
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntrySource.getDefaultInstance();
+            }
+            entrySourceBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySource.Builder,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntrySourceOrBuilder>(
+                    (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                            .EntrySource)
+                        sourceType_,
+                    getParentForChildren(),
+                    isClean());
+            sourceType_ = null;
+          }
+          sourceTypeCase_ = 1;
+          onChanged();
+          return entrySourceBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSourceOrBuilder>
+            entryLinkSourceBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the entryLinkSource field is set.
+         */
+        @java.lang.Override
+        public boolean hasEntryLinkSource() {
+          return sourceTypeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The entryLinkSource.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource
+            getEntryLinkSource() {
+          if (entryLinkSourceBuilder_ == null) {
+            if (sourceTypeCase_ == 2) {
+              return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource)
+                  sourceType_;
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource.getDefaultInstance();
+          } else {
+            if (sourceTypeCase_ == 2) {
+              return entryLinkSourceBuilder_.getMessage();
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEntryLinkSource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                value) {
+          if (entryLinkSourceBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            sourceType_ = value;
+            onChanged();
+          } else {
+            entryLinkSourceBuilder_.setMessage(value);
+          }
+          sourceTypeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEntryLinkSource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                    .Builder
+                builderForValue) {
+          if (entryLinkSourceBuilder_ == null) {
+            sourceType_ = builderForValue.build();
+            onChanged();
+          } else {
+            entryLinkSourceBuilder_.setMessage(builderForValue.build());
+          }
+          sourceTypeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeEntryLinkSource(
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource
+                value) {
+          if (entryLinkSourceBuilder_ == null) {
+            if (sourceTypeCase_ == 2
+                && sourceType_
+                    != com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource.getDefaultInstance()) {
+              sourceType_ =
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource.newBuilder(
+                          (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                                  .EntryLinkSource)
+                              sourceType_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              sourceType_ = value;
+            }
+            onChanged();
+          } else {
+            if (sourceTypeCase_ == 2) {
+              entryLinkSourceBuilder_.mergeFrom(value);
+            } else {
+              entryLinkSourceBuilder_.setMessage(value);
+            }
+          }
+          sourceTypeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearEntryLinkSource() {
+          if (entryLinkSourceBuilder_ == null) {
+            if (sourceTypeCase_ == 2) {
+              sourceTypeCase_ = 0;
+              sourceType_ = null;
+              onChanged();
+            }
+          } else {
+            if (sourceTypeCase_ == 2) {
+              sourceTypeCase_ = 0;
+              sourceType_ = null;
+            }
+            entryLinkSourceBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource.Builder
+            getEntryLinkSourceBuilder() {
+          return internalGetEntryLinkSourceFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSourceOrBuilder
+            getEntryLinkSourceOrBuilder() {
+          if ((sourceTypeCase_ == 2) && (entryLinkSourceBuilder_ != null)) {
+            return entryLinkSourceBuilder_.getMessageOrBuilder();
+          } else {
+            if (sourceTypeCase_ == 2) {
+              return (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource)
+                  sourceType_;
+            }
+            return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                .EntryLinkSource.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Entry link source represents information about the entry
+         * link.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSource entry_link_source = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSource.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .EntryLinkSourceOrBuilder>
+            internalGetEntryLinkSourceFieldBuilder() {
+          if (entryLinkSourceBuilder_ == null) {
+            if (!(sourceTypeCase_ == 2)) {
+              sourceType_ =
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                      .EntryLinkSource.getDefaultInstance();
+            }
+            entryLinkSourceBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSource.Builder,
+                    com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                        .EntryLinkSourceOrBuilder>(
+                    (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                            .EntryLinkSource)
+                        sourceType_,
+                    getParentForChildren(),
+                    isClean());
+            sourceType_ = null;
+          }
+          sourceTypeCase_ = 2;
+          onChanged();
+          return entryLinkSourceBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement)
+      private static final com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RulePathElement> PARSER =
+          new com.google.protobuf.AbstractParser<RulePathElement>() {
+            @java.lang.Override
+            public RulePathElement parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RulePathElement> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RulePathElement> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int RULE_PATH_ELEMENTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+        rulePathElements_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+        getRulePathElementsList() {
+      return rulePathElements_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>
+        getRulePathElementsOrBuilderList() {
+      return rulePathElements_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getRulePathElementsCount() {
+      return rulePathElements_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+        getRulePathElements(int index) {
+      return rulePathElements_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Rule path elements represent information about the
+     * individual items in the relationship path between the scan resource and
+     * rule origin in that order.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder
+        getRulePathElementsOrBuilder(int index) {
+      return rulePathElements_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < rulePathElements_.size(); i++) {
+        output.writeMessage(1, rulePathElements_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < rulePathElements_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, rulePathElements_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataQualityRule.RuleSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataQualityRule.RuleSource other =
+          (com.google.cloud.dataplex.v1.DataQualityRule.RuleSource) obj;
+
+      if (!getRulePathElementsList().equals(other.getRulePathElementsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRulePathElementsCount() > 0) {
+        hash = (37 * hash) + RULE_PATH_ELEMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getRulePathElementsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the rule source information from Catalog.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualityRule.RuleSource}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualityRule.RuleSource)
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.class,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (rulePathElementsBuilder_ == null) {
+          rulePathElements_ = java.util.Collections.emptyList();
+        } else {
+          rulePathElements_ = null;
+          rulePathElementsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource build() {
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource buildPartial() {
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSource result =
+            new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource result) {
+        if (rulePathElementsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            rulePathElements_ = java.util.Collections.unmodifiableList(rulePathElements_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rulePathElements_ = rulePathElements_;
+        } else {
+          result.rulePathElements_ = rulePathElementsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule.RuleSource result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataQualityRule.RuleSource) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataQualityRule.RuleSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.dataplex.v1.DataQualityRule.RuleSource other) {
+        if (other == com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance())
+          return this;
+        if (rulePathElementsBuilder_ == null) {
+          if (!other.rulePathElements_.isEmpty()) {
+            if (rulePathElements_.isEmpty()) {
+              rulePathElements_ = other.rulePathElements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRulePathElementsIsMutable();
+              rulePathElements_.addAll(other.rulePathElements_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rulePathElements_.isEmpty()) {
+            if (rulePathElementsBuilder_.isEmpty()) {
+              rulePathElementsBuilder_.dispose();
+              rulePathElementsBuilder_ = null;
+              rulePathElements_ = other.rulePathElements_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rulePathElementsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetRulePathElementsFieldBuilder()
+                      : null;
+            } else {
+              rulePathElementsBuilder_.addAllMessages(other.rulePathElements_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement m =
+                      input.readMessage(
+                          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                              .parser(),
+                          extensionRegistry);
+                  if (rulePathElementsBuilder_ == null) {
+                    ensureRulePathElementsIsMutable();
+                    rulePathElements_.add(m);
+                  } else {
+                    rulePathElementsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+          rulePathElements_ = java.util.Collections.emptyList();
+
+      private void ensureRulePathElementsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          rulePathElements_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>(
+                  rulePathElements_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement,
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder,
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>
+          rulePathElementsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+          getRulePathElementsList() {
+        if (rulePathElementsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rulePathElements_);
+        } else {
+          return rulePathElementsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getRulePathElementsCount() {
+        if (rulePathElementsBuilder_ == null) {
+          return rulePathElements_.size();
+        } else {
+          return rulePathElementsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+          getRulePathElements(int index) {
+        if (rulePathElementsBuilder_ == null) {
+          return rulePathElements_.get(index);
+        } else {
+          return rulePathElementsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRulePathElements(
+          int index,
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement value) {
+        if (rulePathElementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.set(index, value);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRulePathElements(
+          int index,
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+              builderForValue) {
+        if (rulePathElementsBuilder_ == null) {
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addRulePathElements(
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement value) {
+        if (rulePathElementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.add(value);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addRulePathElements(
+          int index,
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement value) {
+        if (rulePathElementsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.add(index, value);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addRulePathElements(
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+              builderForValue) {
+        if (rulePathElementsBuilder_ == null) {
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addRulePathElements(
+          int index,
+          com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+              builderForValue) {
+        if (rulePathElementsBuilder_ == null) {
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllRulePathElements(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement>
+              values) {
+        if (rulePathElementsBuilder_ == null) {
+          ensureRulePathElementsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rulePathElements_);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRulePathElements() {
+        if (rulePathElementsBuilder_ == null) {
+          rulePathElements_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeRulePathElements(int index) {
+        if (rulePathElementsBuilder_ == null) {
+          ensureRulePathElementsIsMutable();
+          rulePathElements_.remove(index);
+          onChanged();
+        } else {
+          rulePathElementsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+          getRulePathElementsBuilder(int index) {
+        return internalGetRulePathElementsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder
+          getRulePathElementsOrBuilder(int index) {
+        if (rulePathElementsBuilder_ == null) {
+          return rulePathElements_.get(index);
+        } else {
+          return rulePathElementsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>
+          getRulePathElementsOrBuilderList() {
+        if (rulePathElementsBuilder_ != null) {
+          return rulePathElementsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rulePathElements_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+          addRulePathElementsBuilder() {
+        return internalGetRulePathElementsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder
+          addRulePathElementsBuilder(int index) {
+        return internalGetRulePathElementsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Rule path elements represent information about the
+       * individual items in the relationship path between the scan resource and
+       * rule origin in that order.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement rule_path_elements = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder>
+          getRulePathElementsBuilderList() {
+        return internalGetRulePathElementsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement,
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder,
+              com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>
+          internalGetRulePathElementsFieldBuilder() {
+        if (rulePathElementsBuilder_ == null) {
+          rulePathElementsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement,
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElement.Builder,
+                  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.RulePathElementOrBuilder>(
+                  rulePathElements_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rulePathElements_ = null;
+        }
+        return rulePathElementsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualityRule.RuleSource)
+    private static final com.google.cloud.dataplex.v1.DataQualityRule.RuleSource DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataQualityRule.RuleSource();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RuleSource> PARSER =
+        new com.google.protobuf.AbstractParser<RuleSource>() {
+          @java.lang.Override
+          public RuleSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RuleSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RuleSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DebugQueryOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualityRule.DebugQuery)
@@ -7671,6 +14823,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  private int bitField0_;
   private int ruleTypeCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -7689,6 +14842,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     ROW_CONDITION_EXPECTATION(200),
     TABLE_CONDITION_EXPECTATION(201),
     SQL_ASSERTION(202),
+    TEMPLATE_REFERENCE(5),
     RULETYPE_NOT_SET(0);
     private final int value;
 
@@ -7726,6 +14880,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
           return TABLE_CONDITION_EXPECTATION;
         case 202:
           return SQL_ASSERTION;
+        case 5:
+          return TEMPLATE_REFERENCE;
         case 0:
           return RULETYPE_NOT_SET;
         default:
@@ -8295,6 +15451,70 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.dataplex.v1.DataQualityRule.SqlAssertion.getDefaultInstance();
   }
 
+  public static final int TEMPLATE_REFERENCE_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   *
+   * @return Whether the templateReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasTemplateReference() {
+    return ruleTypeCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   *
+   * @return The templateReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference getTemplateReference() {
+    if (ruleTypeCase_ == 5) {
+      return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_;
+    }
+    return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder
+      getTemplateReferenceOrBuilder() {
+    if (ruleTypeCase_ == 5) {
+      return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_;
+    }
+    return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+  }
+
   public static final int COLUMN_FIELD_NUMBER = 500;
 
   @SuppressWarnings("serial")
@@ -8599,6 +15819,187 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     return suspended_;
   }
 
+  public static final int ATTRIBUTES_FIELD_NUMBER = 507;
+
+  private static final class AttributesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataplex.v1.DataQualityProto
+                .internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAttributes() {
+    if (attributes_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(AttributesDefaultEntryHolder.defaultEntry);
+    }
+    return attributes_;
+  }
+
+  public int getAttributesCount() {
+    return internalGetAttributes().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAttributes(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAttributes().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getAttributesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
+    return getAttributesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
+    return internalGetAttributes().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAttributesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int RULE_SOURCE_FIELD_NUMBER = 508;
+  private com.google.cloud.dataplex.v1.DataQualityRule.RuleSource ruleSource_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ruleSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasRuleSource() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ruleSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getRuleSource() {
+    return ruleSource_ == null
+        ? com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance()
+        : ruleSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder getRuleSourceOrBuilder() {
+    return ruleSource_ == null
+        ? com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance()
+        : ruleSource_;
+  }
+
   public static final int DEBUG_QUERIES_FIELD_NUMBER = 510;
 
   @SuppressWarnings("serial")
@@ -8727,6 +16128,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           4, (com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation) ruleType_);
     }
+    if (ruleTypeCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_);
+    }
     if (ruleTypeCase_ == 100) {
       output.writeMessage(
           100, (com.google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation) ruleType_);
@@ -8768,6 +16173,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     if (suspended_ != false) {
       output.writeBool(506, suspended_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 507);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(508, getRuleSource());
+    }
     for (int i = 0; i < debugQueries_.size(); i++) {
       output.writeMessage(510, debugQueries_.get(i));
     }
@@ -8799,6 +16209,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.dataplex.v1.DataQualityRule.RegexExpectation) ruleType_);
+    }
+    if (ruleTypeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_);
     }
     if (ruleTypeCase_ == 100) {
       size +=
@@ -8849,6 +16264,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     if (suspended_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(506, suspended_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAttributes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
+          AttributesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(507, attributes__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(508, getRuleSource());
+    }
     for (int i = 0; i < debugQueries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(510, debugQueries_.get(i));
     }
@@ -8876,6 +16304,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getSuspended() != other.getSuspended()) return false;
+    if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
+    if (hasRuleSource() != other.hasRuleSource()) return false;
+    if (hasRuleSource()) {
+      if (!getRuleSource().equals(other.getRuleSource())) return false;
+    }
     if (!getDebugQueriesList().equals(other.getDebugQueriesList())) return false;
     if (!getRuleTypeCase().equals(other.getRuleTypeCase())) return false;
     switch (ruleTypeCase_) {
@@ -8908,6 +16341,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       case 202:
         if (!getSqlAssertion().equals(other.getSqlAssertion())) return false;
         break;
+      case 5:
+        if (!getTemplateReference().equals(other.getTemplateReference())) return false;
+        break;
       case 0:
       default:
     }
@@ -8939,6 +16375,14 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + SUSPENDED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSuspended());
+    if (!internalGetAttributes().getMap().isEmpty()) {
+      hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAttributes().hashCode();
+    }
+    if (hasRuleSource()) {
+      hash = (37 * hash) + RULE_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleSource().hashCode();
+    }
     if (getDebugQueriesCount() > 0) {
       hash = (37 * hash) + DEBUG_QUERIES_FIELD_NUMBER;
       hash = (53 * hash) + getDebugQueriesList().hashCode();
@@ -8979,6 +16423,10 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       case 202:
         hash = (37 * hash) + SQL_ASSERTION_FIELD_NUMBER;
         hash = (53 * hash) + getSqlAssertion().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + TEMPLATE_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getTemplateReference().hashCode();
         break;
       case 0:
       default:
@@ -9102,6 +16550,28 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 507:
+          return internalGetAttributes();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 507:
+          return internalGetMutableAttributes();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -9113,10 +16583,20 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dataplex.v1.DataQualityRule.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRuleSourceFieldBuilder();
+        internalGetDebugQueriesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -9150,6 +16630,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       if (sqlAssertionBuilder_ != null) {
         sqlAssertionBuilder_.clear();
       }
+      if (templateReferenceBuilder_ != null) {
+        templateReferenceBuilder_.clear();
+      }
       column_ = "";
       ignoreNull_ = false;
       dimension_ = "";
@@ -9157,13 +16640,19 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       name_ = "";
       description_ = "";
       suspended_ = false;
+      internalGetMutableAttributes().clear();
+      ruleSource_ = null;
+      if (ruleSourceBuilder_ != null) {
+        ruleSourceBuilder_.dispose();
+        ruleSourceBuilder_ = null;
+      }
       if (debugQueriesBuilder_ == null) {
         debugQueries_ = java.util.Collections.emptyList();
       } else {
         debugQueries_ = null;
         debugQueriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       ruleTypeCase_ = 0;
       ruleType_ = null;
       return this;
@@ -9204,9 +16693,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.DataQualityRule result) {
       if (debugQueriesBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           debugQueries_ = java.util.Collections.unmodifiableList(debugQueries_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.debugQueries_ = debugQueries_;
       } else {
@@ -9216,27 +16705,37 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityRule result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.column_ = column_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.ignoreNull_ = ignoreNull_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.dimension_ = dimension_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.threshold_ = threshold_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.suspended_ = suspended_;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.attributes_ = internalGetAttributes();
+        result.attributes_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.ruleSource_ = ruleSourceBuilder_ == null ? ruleSource_ : ruleSourceBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.dataplex.v1.DataQualityRule result) {
@@ -9269,6 +16768,9 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       if (ruleTypeCase_ == 202 && sqlAssertionBuilder_ != null) {
         result.ruleType_ = sqlAssertionBuilder_.build();
       }
+      if (ruleTypeCase_ == 5 && templateReferenceBuilder_ != null) {
+        result.ruleType_ = templateReferenceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -9285,7 +16787,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dataplex.v1.DataQualityRule.getDefaultInstance()) return this;
       if (!other.getColumn().isEmpty()) {
         column_ = other.column_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getIgnoreNull() != false) {
@@ -9293,7 +16795,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getDimension().isEmpty()) {
         dimension_ = other.dimension_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (java.lang.Double.doubleToRawLongBits(other.getThreshold()) != 0) {
@@ -9301,22 +16803,27 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.getSuspended() != false) {
         setSuspended(other.getSuspended());
       }
+      internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      bitField0_ |= 0x00020000;
+      if (other.hasRuleSource()) {
+        mergeRuleSource(other.getRuleSource());
+      }
       if (debugQueriesBuilder_ == null) {
         if (!other.debugQueries_.isEmpty()) {
           if (debugQueries_.isEmpty()) {
             debugQueries_ = other.debugQueries_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureDebugQueriesIsMutable();
             debugQueries_.addAll(other.debugQueries_);
@@ -9329,7 +16836,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
             debugQueriesBuilder_.dispose();
             debugQueriesBuilder_ = null;
             debugQueries_ = other.debugQueries_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             debugQueriesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetDebugQueriesFieldBuilder()
@@ -9383,6 +16890,11 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         case SQL_ASSERTION:
           {
             mergeSqlAssertion(other.getSqlAssertion());
+            break;
+          }
+        case TEMPLATE_REFERENCE:
+          {
+            mergeTemplateReference(other.getTemplateReference());
             break;
           }
         case RULETYPE_NOT_SET:
@@ -9444,6 +16956,13 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
                 ruleTypeCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetTemplateReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                ruleTypeCase_ = 5;
+                break;
+              } // case 42
             case 802:
               {
                 input.readMessage(
@@ -9485,45 +17004,64 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
             case 4002:
               {
                 column_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 4002
             case 4008:
               {
                 ignoreNull_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 4008
             case 4018:
               {
                 dimension_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 4018
             case 4025:
               {
                 threshold_ = input.readDouble();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 4025
             case 4034:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 4034
             case 4042:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 4042
             case 4048:
               {
                 suspended_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 4048
+            case 4058:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
+                    input.readMessage(
+                        AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableAttributes()
+                    .getMutableMap()
+                    .put(attributes__.getKey(), attributes__.getValue());
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 4058
+            case 4066:
+              {
+                input.readMessage(
+                    internalGetRuleSourceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 4066
             case 4082:
               {
                 com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery m =
@@ -11785,6 +19323,258 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       return sqlAssertionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder>
+        templateReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     *
+     * @return Whether the templateReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasTemplateReference() {
+      return ruleTypeCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     *
+     * @return The templateReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference getTemplateReference() {
+      if (templateReferenceBuilder_ == null) {
+        if (ruleTypeCase_ == 5) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+      } else {
+        if (ruleTypeCase_ == 5) {
+          return templateReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    public Builder setTemplateReference(
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference value) {
+      if (templateReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ruleType_ = value;
+        onChanged();
+      } else {
+        templateReferenceBuilder_.setMessage(value);
+      }
+      ruleTypeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    public Builder setTemplateReference(
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder builderForValue) {
+      if (templateReferenceBuilder_ == null) {
+        ruleType_ = builderForValue.build();
+        onChanged();
+      } else {
+        templateReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      ruleTypeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    public Builder mergeTemplateReference(
+        com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference value) {
+      if (templateReferenceBuilder_ == null) {
+        if (ruleTypeCase_ == 5
+            && ruleType_
+                != com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference
+                    .getDefaultInstance()) {
+          ruleType_ =
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ruleType_ = value;
+        }
+        onChanged();
+      } else {
+        if (ruleTypeCase_ == 5) {
+          templateReferenceBuilder_.mergeFrom(value);
+        } else {
+          templateReferenceBuilder_.setMessage(value);
+        }
+      }
+      ruleTypeCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    public Builder clearTemplateReference() {
+      if (templateReferenceBuilder_ == null) {
+        if (ruleTypeCase_ == 5) {
+          ruleTypeCase_ = 0;
+          ruleType_ = null;
+          onChanged();
+        }
+      } else {
+        if (ruleTypeCase_ == 5) {
+          ruleTypeCase_ = 0;
+          ruleType_ = null;
+        }
+        templateReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder
+        getTemplateReferenceBuilder() {
+      return internalGetTemplateReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder
+        getTemplateReferenceOrBuilder() {
+      if ((ruleTypeCase_ == 5) && (templateReferenceBuilder_ != null)) {
+        return templateReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (ruleTypeCase_ == 5) {
+          return (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_;
+        }
+        return com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Aggregate rule which references a rule template and provides the
+     * parameters to be substituted in the template. If any rows are returned,
+     * this rule fails.
+     * </pre>
+     *
+     * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder>
+        internalGetTemplateReferenceFieldBuilder() {
+      if (templateReferenceBuilder_ == null) {
+        if (!(ruleTypeCase_ == 5)) {
+          ruleType_ =
+              com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.getDefaultInstance();
+        }
+        templateReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference) ruleType_,
+                getParentForChildren(),
+                isClean());
+        ruleType_ = null;
+      }
+      ruleTypeCase_ = 5;
+      onChanged();
+      return templateReferenceBuilder_;
+    }
+
     private java.lang.Object column_ = "";
 
     /**
@@ -11850,7 +19640,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       column_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11868,7 +19658,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearColumn() {
       column_ = getDefaultInstance().getColumn();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -11891,7 +19681,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       column_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11947,7 +19737,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     public Builder setIgnoreNull(boolean value) {
 
       ignoreNull_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11973,7 +19763,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIgnoreNull() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ignoreNull_ = false;
       onChanged();
       return this;
@@ -12050,7 +19840,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       dimension_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -12070,7 +19860,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDimension() {
       dimension_ = getDefaultInstance().getDimension();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -12095,7 +19885,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       dimension_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -12143,7 +19933,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     public Builder setThreshold(double value) {
 
       threshold_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -12165,7 +19955,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearThreshold() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       threshold_ = 0D;
       onChanged();
       return this;
@@ -12254,7 +20044,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -12278,7 +20068,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -12307,7 +20097,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -12383,7 +20173,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -12403,7 +20193,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -12428,7 +20218,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -12468,7 +20258,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     public Builder setSuspended(boolean value) {
 
       suspended_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -12486,21 +20276,441 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSuspended() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       suspended_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAttributes() {
+      if (attributes_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AttributesDefaultEntryHolder.defaultEntry);
+      }
+      return attributes_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAttributes() {
+      if (attributes_ == null) {
+        attributes_ =
+            com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
+      }
+      if (!attributes_.isMutable()) {
+        attributes_ = attributes_.copy();
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return attributes_;
+    }
+
+    public int getAttributesCount() {
+      return internalGetAttributes().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAttributes().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getAttributesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
+      return getAttributesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
+      return internalGetAttributes().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAttributesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAttributesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      internalGetMutableAttributes().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAttributes().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
+      bitField0_ |= 0x00020000;
+      return internalGetMutableAttributes().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAttributes(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of attribute name and value linked to the rule. The rules to
+     * evaluate can be filtered based on attributes provided here and a filter
+     * expression provided in the DataQualitySpec.filter field.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00020000;
+      return this;
+    }
+
+    private com.google.cloud.dataplex.v1.DataQualityRule.RuleSource ruleSource_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource,
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder>
+        ruleSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ruleSource field is set.
+     */
+    public boolean hasRuleSource() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ruleSource.
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getRuleSource() {
+      if (ruleSourceBuilder_ == null) {
+        return ruleSource_ == null
+            ? com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance()
+            : ruleSource_;
+      } else {
+        return ruleSourceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRuleSource(com.google.cloud.dataplex.v1.DataQualityRule.RuleSource value) {
+      if (ruleSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ruleSource_ = value;
+      } else {
+        ruleSourceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRuleSource(
+        com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder builderForValue) {
+      if (ruleSourceBuilder_ == null) {
+        ruleSource_ = builderForValue.build();
+      } else {
+        ruleSourceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRuleSource(com.google.cloud.dataplex.v1.DataQualityRule.RuleSource value) {
+      if (ruleSourceBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && ruleSource_ != null
+            && ruleSource_
+                != com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance()) {
+          getRuleSourceBuilder().mergeFrom(value);
+        } else {
+          ruleSource_ = value;
+        }
+      } else {
+        ruleSourceBuilder_.mergeFrom(value);
+      }
+      if (ruleSource_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRuleSource() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      ruleSource_ = null;
+      if (ruleSourceBuilder_ != null) {
+        ruleSourceBuilder_.dispose();
+        ruleSourceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder getRuleSourceBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return internalGetRuleSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder
+        getRuleSourceOrBuilder() {
+      if (ruleSourceBuilder_ != null) {
+        return ruleSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return ruleSource_ == null
+            ? com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.getDefaultInstance()
+            : ruleSource_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains information about the source of the rule and its
+     * relationship with the BigQuery table, where applicable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource,
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder,
+            com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder>
+        internalGetRuleSourceFieldBuilder() {
+      if (ruleSourceBuilder_ == null) {
+        ruleSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSource.Builder,
+                com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder>(
+                getRuleSource(), getParentForChildren(), isClean());
+        ruleSource_ = null;
+      }
+      return ruleSourceBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery> debugQueries_ =
         java.util.Collections.emptyList();
 
     private void ensureDebugQueriesIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         debugQueries_ =
             new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery>(
                 debugQueries_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -12776,7 +20986,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
     public Builder clearDebugQueries() {
       if (debugQueriesBuilder_ == null) {
         debugQueries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         debugQueriesBuilder_.clear();
@@ -12939,7 +21149,7 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery,
                 com.google.cloud.dataplex.v1.DataQualityRule.DebugQuery.Builder,
                 com.google.cloud.dataplex.v1.DataQualityRule.DebugQueryOrBuilder>(
-                debugQueries_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
+                debugQueries_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
         debugQueries_ = null;
       }
       return debugQueriesBuilder_;

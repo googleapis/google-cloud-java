@@ -31210,6 +31210,59 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TRANSIT_STATION_FIELD_NUMBER = 98;
+  private com.google.maps.places.v1.TransitStation transitStation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   *
+   * @return Whether the transitStation field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransitStation() {
+    return ((bitField1_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   *
+   * @return The transitStation.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.TransitStation getTransitStation() {
+    return transitStation_ == null
+        ? com.google.maps.places.v1.TransitStation.getDefaultInstance()
+        : transitStation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.TransitStationOrBuilder getTransitStationOrBuilder() {
+    return transitStation_ == null
+        ? com.google.maps.places.v1.TransitStation.getDefaultInstance()
+        : transitStation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -31455,6 +31508,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(96, getGoogleMapsTypeLabel());
+    }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      output.writeMessage(98, getTransitStation());
     }
     getUnknownFields().writeTo(output);
   }
@@ -31715,6 +31771,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(96, getGoogleMapsTypeLabel());
     }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(98, getTransitStation());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -31963,6 +32022,10 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     }
     if (!getMovedPlace().equals(other.getMovedPlace())) return false;
     if (!getMovedPlaceId().equals(other.getMovedPlaceId())) return false;
+    if (hasTransitStation() != other.hasTransitStation()) return false;
+    if (hasTransitStation()) {
+      if (!getTransitStation().equals(other.getTransitStation())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -32250,6 +32313,10 @@ public final class Place extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getMovedPlace().hashCode();
     hash = (37 * hash) + MOVED_PLACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getMovedPlaceId().hashCode();
+    if (hasTransitStation()) {
+      hash = (37 * hash) + TRANSIT_STATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTransitStation().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -32422,6 +32489,7 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         internalGetEvChargeAmenitySummaryFieldBuilder();
         internalGetNeighborhoodSummaryFieldBuilder();
         internalGetConsumerAlertFieldBuilder();
+        internalGetTransitStationFieldBuilder();
       }
     }
 
@@ -32656,6 +32724,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       movedPlace_ = "";
       movedPlaceId_ = "";
+      transitStation_ = null;
+      if (transitStationBuilder_ != null) {
+        transitStationBuilder_.dispose();
+        transitStationBuilder_ = null;
+      }
       return this;
     }
 
@@ -33086,6 +33159,11 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField2_ & 0x00001000) != 0)) {
         result.movedPlaceId_ = movedPlaceId_;
+      }
+      if (((from_bitField2_ & 0x00002000) != 0)) {
+        result.transitStation_ =
+            transitStationBuilder_ == null ? transitStation_ : transitStationBuilder_.build();
+        to_bitField1_ |= 0x00080000;
       }
       result.bitField1_ |= to_bitField1_;
     }
@@ -33561,6 +33639,9 @@ public final class Place extends com.google.protobuf.GeneratedMessage
         movedPlaceId_ = other.movedPlaceId_;
         bitField2_ |= 0x00001000;
         onChanged();
+      }
+      if (other.hasTransitStation()) {
+        mergeTransitStation(other.getTransitStation());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -34134,6 +34215,13 @@ public final class Place extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 770
+            case 786:
+              {
+                input.readMessage(
+                    internalGetTransitStationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00002000;
+                break;
+              } // case 786
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -46888,6 +46976,201 @@ public final class Place extends com.google.protobuf.GeneratedMessage
       bitField2_ |= 0x00001000;
       onChanged();
       return this;
+    }
+
+    private com.google.maps.places.v1.TransitStation transitStation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.places.v1.TransitStation,
+            com.google.maps.places.v1.TransitStation.Builder,
+            com.google.maps.places.v1.TransitStationOrBuilder>
+        transitStationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     *
+     * @return Whether the transitStation field is set.
+     */
+    public boolean hasTransitStation() {
+      return ((bitField2_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     *
+     * @return The transitStation.
+     */
+    public com.google.maps.places.v1.TransitStation getTransitStation() {
+      if (transitStationBuilder_ == null) {
+        return transitStation_ == null
+            ? com.google.maps.places.v1.TransitStation.getDefaultInstance()
+            : transitStation_;
+      } else {
+        return transitStationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public Builder setTransitStation(com.google.maps.places.v1.TransitStation value) {
+      if (transitStationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transitStation_ = value;
+      } else {
+        transitStationBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public Builder setTransitStation(
+        com.google.maps.places.v1.TransitStation.Builder builderForValue) {
+      if (transitStationBuilder_ == null) {
+        transitStation_ = builderForValue.build();
+      } else {
+        transitStationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public Builder mergeTransitStation(com.google.maps.places.v1.TransitStation value) {
+      if (transitStationBuilder_ == null) {
+        if (((bitField2_ & 0x00002000) != 0)
+            && transitStation_ != null
+            && transitStation_ != com.google.maps.places.v1.TransitStation.getDefaultInstance()) {
+          getTransitStationBuilder().mergeFrom(value);
+        } else {
+          transitStation_ = value;
+        }
+      } else {
+        transitStationBuilder_.mergeFrom(value);
+      }
+      if (transitStation_ != null) {
+        bitField2_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public Builder clearTransitStation() {
+      bitField2_ = (bitField2_ & ~0x00002000);
+      transitStation_ = null;
+      if (transitStationBuilder_ != null) {
+        transitStationBuilder_.dispose();
+        transitStationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public com.google.maps.places.v1.TransitStation.Builder getTransitStationBuilder() {
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return internalGetTransitStationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    public com.google.maps.places.v1.TransitStationOrBuilder getTransitStationOrBuilder() {
+      if (transitStationBuilder_ != null) {
+        return transitStationBuilder_.getMessageOrBuilder();
+      } else {
+        return transitStation_ == null
+            ? com.google.maps.places.v1.TransitStation.getDefaultInstance()
+            : transitStation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The transit station information for the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.places.v1.TransitStation,
+            com.google.maps.places.v1.TransitStation.Builder,
+            com.google.maps.places.v1.TransitStationOrBuilder>
+        internalGetTransitStationFieldBuilder() {
+      if (transitStationBuilder_ == null) {
+        transitStationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.maps.places.v1.TransitStation,
+                com.google.maps.places.v1.TransitStation.Builder,
+                com.google.maps.places.v1.TransitStationOrBuilder>(
+                getTransitStation(), getParentForChildren(), isClean());
+        transitStation_ = null;
+      }
+      return transitStationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place)

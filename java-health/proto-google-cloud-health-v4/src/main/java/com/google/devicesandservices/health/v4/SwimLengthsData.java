@@ -403,7 +403,23 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
    * Required. Number of strokes in the lap.
    * </pre>
    *
-   * <code>int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the strokeCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasStrokeCount() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of strokes in the lap.
+   * </pre>
+   *
+   * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The strokeCount.
    */
@@ -435,7 +451,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(2, swimStrokeType_);
     }
-    if (strokeCount_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(3, strokeCount_);
     }
     getUnknownFields().writeTo(output);
@@ -456,7 +472,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, swimStrokeType_);
     }
-    if (strokeCount_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, strokeCount_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -480,7 +496,10 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
       if (!getInterval().equals(other.getInterval())) return false;
     }
     if (swimStrokeType_ != other.swimStrokeType_) return false;
-    if (getStrokeCount() != other.getStrokeCount()) return false;
+    if (hasStrokeCount() != other.hasStrokeCount()) return false;
+    if (hasStrokeCount()) {
+      if (getStrokeCount() != other.getStrokeCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -498,8 +517,10 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + SWIM_STROKE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + swimStrokeType_;
-    hash = (37 * hash) + STROKE_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStrokeCount());
+    if (hasStrokeCount()) {
+      hash = (37 * hash) + STROKE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getStrokeCount());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -703,6 +724,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.strokeCount_ = strokeCount_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -726,7 +748,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
       if (other.swimStrokeType_ != 0) {
         setSwimStrokeTypeValue(other.getSwimStrokeTypeValue());
       }
-      if (other.getStrokeCount() != 0L) {
+      if (other.hasStrokeCount()) {
         setStrokeCount(other.getStrokeCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1131,7 +1153,23 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
      * Required. Number of strokes in the lap.
      * </pre>
      *
-     * <code>int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the strokeCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasStrokeCount() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Number of strokes in the lap.
+     * </pre>
+     *
+     * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The strokeCount.
      */
@@ -1147,7 +1185,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
      * Required. Number of strokes in the lap.
      * </pre>
      *
-     * <code>int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The strokeCount to set.
      * @return This builder for chaining.
@@ -1167,7 +1205,7 @@ public final class SwimLengthsData extends com.google.protobuf.GeneratedMessage
      * Required. Number of strokes in the lap.
      * </pre>
      *
-     * <code>int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional int64 stroke_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

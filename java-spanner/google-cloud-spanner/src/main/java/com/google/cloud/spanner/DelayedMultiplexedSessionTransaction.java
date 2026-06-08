@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DelayedReadContext.DelayedReadOnlyTransaction;
 import com.google.cloud.spanner.MultiplexedSessionDatabaseClient.MultiplexedSessionTransaction;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -109,25 +110,30 @@ class DelayedMultiplexedSessionTransaction extends AbstractMultiplexedSessionDat
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    return new DelayedReadOnlyTransaction(
-        ApiFutures.transform(
-            this.sessionFuture,
-            sessionReference ->
-                new MultiplexedSessionTransaction(
-                        client, span, sessionReference, NO_CHANNEL_HINT, /* singleUse= */ false)
-                    .readOnlyTransaction(),
-            MoreExecutors.directExecutor()));
+    return readOnlyTransaction(TimestampBound.strong());
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
+    return readOnlyTransaction(
+        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
     return new DelayedReadOnlyTransaction(
         ApiFutures.transform(
             this.sessionFuture,
             sessionReference ->
                 new MultiplexedSessionTransaction(
                         client, span, sessionReference, NO_CHANNEL_HINT, /* singleUse= */ false)
-                    .readOnlyTransaction(bound),
+                    .readOnlyTransaction(bound, options),
             MoreExecutors.directExecutor()));
   }
 

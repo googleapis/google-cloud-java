@@ -139,11 +139,32 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The root mean square of successive differences between normal
-   * heartbeats. This is a measure of heart rate variability used by Fitbit.
+   * heartbeats. This is a measure of heart rate variability used by Google
+   * Health.
    * </pre>
    *
    * <code>
-   * double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rootMeanSquareOfSuccessiveDifferencesMilliseconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasRootMeanSquareOfSuccessiveDifferencesMilliseconds() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root mean square of successive differences between normal
+   * heartbeats. This is a measure of heart rate variability used by Google
+   * Health.
+   * </pre>
+   *
+   * <code>
+   * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The rootMeanSquareOfSuccessiveDifferencesMilliseconds.
@@ -163,7 +184,26 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
    * Optional. The standard deviation of the heart rate variability measurement.
    * </pre>
    *
-   * <code>double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the standardDeviationMilliseconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasStandardDeviationMilliseconds() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard deviation of the heart rate variability measurement.
+   * </pre>
+   *
+   * <code>
+   * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The standardDeviationMilliseconds.
@@ -190,11 +230,10 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(rootMeanSquareOfSuccessiveDifferencesMilliseconds_)
-        != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, rootMeanSquareOfSuccessiveDifferencesMilliseconds_);
     }
-    if (java.lang.Double.doubleToRawLongBits(standardDeviationMilliseconds_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(3, standardDeviationMilliseconds_);
     }
     getUnknownFields().writeTo(output);
@@ -209,13 +248,12 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSampleTime());
     }
-    if (java.lang.Double.doubleToRawLongBits(rootMeanSquareOfSuccessiveDifferencesMilliseconds_)
-        != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               2, rootMeanSquareOfSuccessiveDifferencesMilliseconds_);
     }
-    if (java.lang.Double.doubleToRawLongBits(standardDeviationMilliseconds_) != 0) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               3, standardDeviationMilliseconds_);
@@ -240,12 +278,20 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
     if (hasSampleTime()) {
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
-    if (java.lang.Double.doubleToLongBits(getRootMeanSquareOfSuccessiveDifferencesMilliseconds())
-        != java.lang.Double.doubleToLongBits(
-            other.getRootMeanSquareOfSuccessiveDifferencesMilliseconds())) return false;
-    if (java.lang.Double.doubleToLongBits(getStandardDeviationMilliseconds())
-        != java.lang.Double.doubleToLongBits(other.getStandardDeviationMilliseconds()))
+    if (hasRootMeanSquareOfSuccessiveDifferencesMilliseconds()
+        != other.hasRootMeanSquareOfSuccessiveDifferencesMilliseconds()) return false;
+    if (hasRootMeanSquareOfSuccessiveDifferencesMilliseconds()) {
+      if (java.lang.Double.doubleToLongBits(getRootMeanSquareOfSuccessiveDifferencesMilliseconds())
+          != java.lang.Double.doubleToLongBits(
+              other.getRootMeanSquareOfSuccessiveDifferencesMilliseconds())) return false;
+    }
+    if (hasStandardDeviationMilliseconds() != other.hasStandardDeviationMilliseconds())
       return false;
+    if (hasStandardDeviationMilliseconds()) {
+      if (java.lang.Double.doubleToLongBits(getStandardDeviationMilliseconds())
+          != java.lang.Double.doubleToLongBits(other.getStandardDeviationMilliseconds()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -261,17 +307,21 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + SAMPLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSampleTime().hashCode();
     }
-    hash = (37 * hash) + ROOT_MEAN_SQUARE_OF_SUCCESSIVE_DIFFERENCES_MILLISECONDS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(
-                    getRootMeanSquareOfSuccessiveDifferencesMilliseconds()));
-    hash = (37 * hash) + STANDARD_DEVIATION_MILLISECONDS_FIELD_NUMBER;
-    hash =
-        (53 * hash)
-            + com.google.protobuf.Internal.hashLong(
-                java.lang.Double.doubleToLongBits(getStandardDeviationMilliseconds()));
+    if (hasRootMeanSquareOfSuccessiveDifferencesMilliseconds()) {
+      hash = (37 * hash) + ROOT_MEAN_SQUARE_OF_SUCCESSIVE_DIFFERENCES_MILLISECONDS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(
+                      getRootMeanSquareOfSuccessiveDifferencesMilliseconds()));
+    }
+    if (hasStandardDeviationMilliseconds()) {
+      hash = (37 * hash) + STANDARD_DEVIATION_MILLISECONDS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getStandardDeviationMilliseconds()));
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -477,9 +527,11 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.rootMeanSquareOfSuccessiveDifferencesMilliseconds_ =
             rootMeanSquareOfSuccessiveDifferencesMilliseconds_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.standardDeviationMilliseconds_ = standardDeviationMilliseconds_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -501,13 +553,11 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
       if (other.hasSampleTime()) {
         mergeSampleTime(other.getSampleTime());
       }
-      if (java.lang.Double.doubleToRawLongBits(
-              other.getRootMeanSquareOfSuccessiveDifferencesMilliseconds())
-          != 0) {
+      if (other.hasRootMeanSquareOfSuccessiveDifferencesMilliseconds()) {
         setRootMeanSquareOfSuccessiveDifferencesMilliseconds(
             other.getRootMeanSquareOfSuccessiveDifferencesMilliseconds());
       }
-      if (java.lang.Double.doubleToRawLongBits(other.getStandardDeviationMilliseconds()) != 0) {
+      if (other.hasStandardDeviationMilliseconds()) {
         setStandardDeviationMilliseconds(other.getStandardDeviationMilliseconds());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -800,11 +850,32 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The root mean square of successive differences between normal
-     * heartbeats. This is a measure of heart rate variability used by Fitbit.
+     * heartbeats. This is a measure of heart rate variability used by Google
+     * Health.
      * </pre>
      *
      * <code>
-     * double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rootMeanSquareOfSuccessiveDifferencesMilliseconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasRootMeanSquareOfSuccessiveDifferencesMilliseconds() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root mean square of successive differences between normal
+     * heartbeats. This is a measure of heart rate variability used by Google
+     * Health.
+     * </pre>
+     *
+     * <code>
+     * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The rootMeanSquareOfSuccessiveDifferencesMilliseconds.
@@ -819,11 +890,12 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The root mean square of successive differences between normal
-     * heartbeats. This is a measure of heart rate variability used by Fitbit.
+     * heartbeats. This is a measure of heart rate variability used by Google
+     * Health.
      * </pre>
      *
      * <code>
-     * double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The rootMeanSquareOfSuccessiveDifferencesMilliseconds to set.
@@ -842,11 +914,12 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The root mean square of successive differences between normal
-     * heartbeats. This is a measure of heart rate variability used by Fitbit.
+     * heartbeats. This is a measure of heart rate variability used by Google
+     * Health.
      * </pre>
      *
      * <code>
-     * double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * optional double root_mean_square_of_successive_differences_milliseconds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -867,7 +940,26 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      * Optional. The standard deviation of the heart rate variability measurement.
      * </pre>
      *
-     * <code>double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the standardDeviationMilliseconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardDeviationMilliseconds() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The standard deviation of the heart rate variability measurement.
+     * </pre>
+     *
+     * <code>
+     * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The standardDeviationMilliseconds.
@@ -884,7 +976,8 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      * Optional. The standard deviation of the heart rate variability measurement.
      * </pre>
      *
-     * <code>double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The standardDeviationMilliseconds to set.
@@ -905,7 +998,8 @@ public final class HeartRateVariability extends com.google.protobuf.GeneratedMes
      * Optional. The standard deviation of the heart rate variability measurement.
      * </pre>
      *
-     * <code>double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * optional double standard_deviation_milliseconds = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

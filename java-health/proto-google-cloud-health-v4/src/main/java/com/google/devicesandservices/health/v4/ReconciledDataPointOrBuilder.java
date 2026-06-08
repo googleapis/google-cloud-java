@@ -853,6 +853,43 @@ public interface ReconciledDataPointOrBuilder
    *
    *
    * <pre>
+   * Data for points in the `nutrition-log` session data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLog nutrition_log = 29;</code>
+   *
+   * @return Whether the nutritionLog field is set.
+   */
+  boolean hasNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `nutrition-log` session data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLog nutrition_log = 29;</code>
+   *
+   * @return The nutritionLog.
+   */
+  com.google.devicesandservices.health.v4.NutritionLog getNutritionLog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `nutrition-log` session data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.NutritionLog nutrition_log = 29;</code>
+   */
+  com.google.devicesandservices.health.v4.NutritionLogOrBuilder getNutritionLogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Data for points in the `daily-heart-rate-zones` daily data type
    * collection.
    * </pre>
@@ -1217,6 +1254,128 @@ public interface ReconciledDataPointOrBuilder
    */
   com.google.devicesandservices.health.v4.BasalEnergyBurnedOrBuilder
       getBasalEnergyBurnedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42;
+   * </code>
+   *
+   * @return Whether the coreBodyTemperature field is set.
+   */
+  boolean hasCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42;
+   * </code>
+   *
+   * @return The coreBodyTemperature.
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperature getCoreBodyTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `core-body-temperature` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.CoreBodyTemperature core_body_temperature = 42;
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.CoreBodyTemperatureOrBuilder
+      getCoreBodyTemperatureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `active-energy-burned` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44;</code>
+   *
+   * @return Whether the activeEnergyBurned field is set.
+   */
+  boolean hasActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `active-energy-burned` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44;</code>
+   *
+   * @return The activeEnergyBurned.
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurned getActiveEnergyBurned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `active-energy-burned` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.ActiveEnergyBurned active_energy_burned = 44;</code>
+   */
+  com.google.devicesandservices.health.v4.ActiveEnergyBurnedOrBuilder
+      getActiveEnergyBurnedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `blood-glucose` sample data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46;</code>
+   *
+   * @return Whether the bloodGlucose field is set.
+   */
+  boolean hasBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `blood-glucose` sample data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46;</code>
+   *
+   * @return The bloodGlucose.
+   */
+  com.google.devicesandservices.health.v4.BloodGlucose getBloodGlucose();
+
+  /**
+   *
+   *
+   * <pre>
+   * Data for points in the `blood-glucose` sample data type collection.
+   * </pre>
+   *
+   * <code>.google.devicesandservices.health.v4.BloodGlucose blood_glucose = 46;</code>
+   */
+  com.google.devicesandservices.health.v4.BloodGlucoseOrBuilder getBloodGlucoseOrBuilder();
 
   /**
    *

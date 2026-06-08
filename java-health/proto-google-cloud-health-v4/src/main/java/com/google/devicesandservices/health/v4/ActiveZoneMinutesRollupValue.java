@@ -68,6 +68,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
             com.google.devicesandservices.health.v4.ActiveZoneMinutesRollupValue.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SUM_IN_CARDIO_HEART_ZONE_FIELD_NUMBER = 1;
   private long sumInCardioHeartZone_ = 0L;
 
@@ -78,7 +79,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
    * Active zone minutes in `HeartRateZone.CARDIO`.
    * </pre>
    *
-   * <code>int64 sum_in_cardio_heart_zone = 1;</code>
+   * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
+   *
+   * @return Whether the sumInCardioHeartZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasSumInCardioHeartZone() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.CARDIO`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
    *
    * @return The sumInCardioHeartZone.
    */
@@ -97,7 +114,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
    * Active zone minutes in `HeartRateZone.PEAK`.
    * </pre>
    *
-   * <code>int64 sum_in_peak_heart_zone = 2;</code>
+   * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
+   *
+   * @return Whether the sumInPeakHeartZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasSumInPeakHeartZone() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.PEAK`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
    *
    * @return The sumInPeakHeartZone.
    */
@@ -116,7 +149,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
    * Active zone minutes in `HeartRateZone.FAT_BURN`.
    * </pre>
    *
-   * <code>int64 sum_in_fat_burn_heart_zone = 3;</code>
+   * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
+   *
+   * @return Whether the sumInFatBurnHeartZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasSumInFatBurnHeartZone() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Active zone minutes in `HeartRateZone.FAT_BURN`.
+   * </pre>
+   *
+   * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
    *
    * @return The sumInFatBurnHeartZone.
    */
@@ -139,13 +188,13 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (sumInCardioHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(1, sumInCardioHeartZone_);
     }
-    if (sumInPeakHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(2, sumInPeakHeartZone_);
     }
-    if (sumInFatBurnHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt64(3, sumInFatBurnHeartZone_);
     }
     getUnknownFields().writeTo(output);
@@ -157,13 +206,13 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (sumInCardioHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, sumInCardioHeartZone_);
     }
-    if (sumInPeakHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, sumInPeakHeartZone_);
     }
-    if (sumInFatBurnHeartZone_ != 0L) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, sumInFatBurnHeartZone_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -182,9 +231,18 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
     com.google.devicesandservices.health.v4.ActiveZoneMinutesRollupValue other =
         (com.google.devicesandservices.health.v4.ActiveZoneMinutesRollupValue) obj;
 
-    if (getSumInCardioHeartZone() != other.getSumInCardioHeartZone()) return false;
-    if (getSumInPeakHeartZone() != other.getSumInPeakHeartZone()) return false;
-    if (getSumInFatBurnHeartZone() != other.getSumInFatBurnHeartZone()) return false;
+    if (hasSumInCardioHeartZone() != other.hasSumInCardioHeartZone()) return false;
+    if (hasSumInCardioHeartZone()) {
+      if (getSumInCardioHeartZone() != other.getSumInCardioHeartZone()) return false;
+    }
+    if (hasSumInPeakHeartZone() != other.hasSumInPeakHeartZone()) return false;
+    if (hasSumInPeakHeartZone()) {
+      if (getSumInPeakHeartZone() != other.getSumInPeakHeartZone()) return false;
+    }
+    if (hasSumInFatBurnHeartZone() != other.hasSumInFatBurnHeartZone()) return false;
+    if (hasSumInFatBurnHeartZone()) {
+      if (getSumInFatBurnHeartZone() != other.getSumInFatBurnHeartZone()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,12 +254,18 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + SUM_IN_CARDIO_HEART_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInCardioHeartZone());
-    hash = (37 * hash) + SUM_IN_PEAK_HEART_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInPeakHeartZone());
-    hash = (37 * hash) + SUM_IN_FAT_BURN_HEART_ZONE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInFatBurnHeartZone());
+    if (hasSumInCardioHeartZone()) {
+      hash = (37 * hash) + SUM_IN_CARDIO_HEART_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInCardioHeartZone());
+    }
+    if (hasSumInPeakHeartZone()) {
+      hash = (37 * hash) + SUM_IN_PEAK_HEART_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInPeakHeartZone());
+    }
+    if (hasSumInFatBurnHeartZone()) {
+      hash = (37 * hash) + SUM_IN_FAT_BURN_HEART_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSumInFatBurnHeartZone());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,15 +451,20 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
     private void buildPartial0(
         com.google.devicesandservices.health.v4.ActiveZoneMinutesRollupValue result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sumInCardioHeartZone_ = sumInCardioHeartZone_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.sumInPeakHeartZone_ = sumInPeakHeartZone_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.sumInFatBurnHeartZone_ = sumInFatBurnHeartZone_;
+        to_bitField0_ |= 0x00000004;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -414,13 +483,13 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
       if (other
           == com.google.devicesandservices.health.v4.ActiveZoneMinutesRollupValue
               .getDefaultInstance()) return this;
-      if (other.getSumInCardioHeartZone() != 0L) {
+      if (other.hasSumInCardioHeartZone()) {
         setSumInCardioHeartZone(other.getSumInCardioHeartZone());
       }
-      if (other.getSumInPeakHeartZone() != 0L) {
+      if (other.hasSumInPeakHeartZone()) {
         setSumInPeakHeartZone(other.getSumInPeakHeartZone());
       }
-      if (other.getSumInFatBurnHeartZone() != 0L) {
+      if (other.hasSumInFatBurnHeartZone()) {
         setSumInFatBurnHeartZone(other.getSumInFatBurnHeartZone());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,7 +564,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.CARDIO`.
      * </pre>
      *
-     * <code>int64 sum_in_cardio_heart_zone = 1;</code>
+     * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
+     *
+     * @return Whether the sumInCardioHeartZone field is set.
+     */
+    @java.lang.Override
+    public boolean hasSumInCardioHeartZone() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Active zone minutes in `HeartRateZone.CARDIO`.
+     * </pre>
+     *
+     * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
      *
      * @return The sumInCardioHeartZone.
      */
@@ -511,7 +596,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.CARDIO`.
      * </pre>
      *
-     * <code>int64 sum_in_cardio_heart_zone = 1;</code>
+     * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
      *
      * @param value The sumInCardioHeartZone to set.
      * @return This builder for chaining.
@@ -531,7 +616,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.CARDIO`.
      * </pre>
      *
-     * <code>int64 sum_in_cardio_heart_zone = 1;</code>
+     * <code>optional int64 sum_in_cardio_heart_zone = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -551,7 +636,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.PEAK`.
      * </pre>
      *
-     * <code>int64 sum_in_peak_heart_zone = 2;</code>
+     * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
+     *
+     * @return Whether the sumInPeakHeartZone field is set.
+     */
+    @java.lang.Override
+    public boolean hasSumInPeakHeartZone() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Active zone minutes in `HeartRateZone.PEAK`.
+     * </pre>
+     *
+     * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
      *
      * @return The sumInPeakHeartZone.
      */
@@ -567,7 +668,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.PEAK`.
      * </pre>
      *
-     * <code>int64 sum_in_peak_heart_zone = 2;</code>
+     * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
      *
      * @param value The sumInPeakHeartZone to set.
      * @return This builder for chaining.
@@ -587,7 +688,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.PEAK`.
      * </pre>
      *
-     * <code>int64 sum_in_peak_heart_zone = 2;</code>
+     * <code>optional int64 sum_in_peak_heart_zone = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -607,7 +708,23 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.FAT_BURN`.
      * </pre>
      *
-     * <code>int64 sum_in_fat_burn_heart_zone = 3;</code>
+     * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
+     *
+     * @return Whether the sumInFatBurnHeartZone field is set.
+     */
+    @java.lang.Override
+    public boolean hasSumInFatBurnHeartZone() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Active zone minutes in `HeartRateZone.FAT_BURN`.
+     * </pre>
+     *
+     * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
      *
      * @return The sumInFatBurnHeartZone.
      */
@@ -623,7 +740,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.FAT_BURN`.
      * </pre>
      *
-     * <code>int64 sum_in_fat_burn_heart_zone = 3;</code>
+     * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
      *
      * @param value The sumInFatBurnHeartZone to set.
      * @return This builder for chaining.
@@ -643,7 +760,7 @@ public final class ActiveZoneMinutesRollupValue extends com.google.protobuf.Gene
      * Active zone minutes in `HeartRateZone.FAT_BURN`.
      * </pre>
      *
-     * <code>int64 sum_in_fat_burn_heart_zone = 3;</code>
+     * <code>optional int64 sum_in_fat_burn_heart_zone = 3;</code>
      *
      * @return This builder for chaining.
      */

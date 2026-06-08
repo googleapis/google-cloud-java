@@ -1190,10 +1190,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of the insight.
+   * Identifier. Name of the insight.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1214,10 +1214,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of the insight.
+   * Identifier. Name of the insight.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -2546,10 +2546,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the insight.
+     * Identifier. Name of the insight.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2569,10 +2569,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the insight.
+     * Identifier. Name of the insight.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2592,10 +2592,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the insight.
+     * Identifier. Name of the insight.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2614,10 +2614,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the insight.
+     * Identifier. Name of the insight.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2632,10 +2632,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the insight.
+     * Identifier. Name of the insight.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

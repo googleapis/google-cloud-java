@@ -30,10 +30,10 @@ public interface RecommendationOrBuilder
    *
    *
    * <pre>
-   * Name of recommendation.
+   * Identifier. Name of recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface RecommendationOrBuilder
    *
    *
    * <pre>
-   * Name of recommendation.
+   * Identifier. Name of recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -495,4 +495,58 @@ public interface RecommendationOrBuilder
    * @return The bytes for xorGroupId.
    */
   com.google.protobuf.ByteString getXorGroupIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @return A list containing the targetResources.
+   */
+  java.util.List<java.lang.String> getTargetResourcesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @return The count of targetResources.
+   */
+  int getTargetResourcesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetResources at the given index.
+   */
+  java.lang.String getTargetResources(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetResources at the given index.
+   */
+  com.google.protobuf.ByteString getTargetResourcesBytes(int index);
 }
