@@ -45,9 +45,9 @@ import io.grpc.Deadline;
 import io.grpc.Server;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -257,8 +257,8 @@ public class ClientTest {
   }
 
   class FakeBigtableService extends BigtableGrpc.BigtableImplBase {
-    private final List<SessionRequest> openSessionRequests = new ArrayList<>();
-    private final List<SessionRequest> vrpcRequests = new ArrayList<>();
+    private final List<SessionRequest> openSessionRequests = new CopyOnWriteArrayList<>();
+    private final List<SessionRequest> vrpcRequests = new CopyOnWriteArrayList<>();
 
     @Override
     public void getClientConfiguration(
