@@ -17,7 +17,6 @@
 from typing import List, Optional
 from glob import glob
 import json
-import requests
 
 class CloudClient:
   repo: str = None
@@ -90,16 +89,6 @@ def generate_table_contents(clients: List[CloudClient]) -> List[str]:
   return content_rows + [client_row(client) for client in clients]
 
 
-REPO_METADATA_URL_FORMAT = "https://raw.githubusercontent.com/{repo_slug}/main/.repo-metadata.json"
-
-def client_for_repo(repo_slug) -> Optional[CloudClient]:
-  url = REPO_METADATA_URL_FORMAT.format(repo_slug=repo_slug)
-  response = requests.get(url)
-  if response.status_code != requests.codes.ok:
-    return
-
-  return CloudClient(response.json())
-
 def client_for_module(module) -> Optional[CloudClient]:
   with open ('%s/.repo-metadata.json' % module, "r") as metadata_file:
     data = json.load(metadata_file)
@@ -119,27 +108,14 @@ REPO_EXCLUSION = [
   'java-shared-config',
   'java-shared-dependencies',
   'java-samples',
+  'java-showcase',
   'java-vertexai'
 ]
 
 LIBRARIES_IN_MONOREPO = glob("java-*")
 
-EXTERNAL_REPOS = [
-  "googleapis/java-bigtable-hbase",
-  "googleapis/java-pubsub-group-kafka-connector",
-  "googleapis/java-pubsublite",
-  "googleapis/java-pubsublite-kafka",
-  "googleapis/java-pubsublite-spark",
-  "googleapis/java-pubsublite-flink",
-  "googleapis/java-logging-servlet-initializer",
-]
-
 def all_clients() -> List[CloudClient]:
   clients = []
-  for repo in EXTERNAL_REPOS:
-    client = client_for_repo(repo)
-    if client:
-      clients.append(client)
   for module in sorted(LIBRARIES_IN_MONOREPO):
     if module not in REPO_EXCLUSION:
       client = client_for_module(module)
