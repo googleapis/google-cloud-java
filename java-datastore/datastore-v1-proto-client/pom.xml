@@ -107,6 +107,11 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
