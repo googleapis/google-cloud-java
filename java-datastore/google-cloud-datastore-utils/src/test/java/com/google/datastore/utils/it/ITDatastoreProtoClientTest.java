@@ -135,6 +135,9 @@ public class ITDatastoreProtoClientTest {
       return submittedFuture.get();
     } catch (ExecutionException e) {
       Throwable cause = e.getCause();
+      // submittedFuture.get() wraps any exception thrown during execution in an ExecutionException.
+      // We unwrap and rethrow the actual cause (Exception or Error) directly so that test failures
+      // report the root cause (e.g., DatastoreException or AssertionError) instead of the wrapper.
       if (cause instanceof Exception) {
         throw (Exception) cause;
       }
@@ -143,6 +146,7 @@ public class ITDatastoreProtoClientTest {
       }
       throw e;
     } catch (InterruptedException e) {
+      // Restore the interrupted status before rethrowing, as per Java concurrency best practices.
       Thread.currentThread().interrupt();
       throw e;
     }
