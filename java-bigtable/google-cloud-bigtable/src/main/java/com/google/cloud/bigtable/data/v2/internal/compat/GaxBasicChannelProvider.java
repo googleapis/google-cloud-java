@@ -48,10 +48,7 @@ public class GaxBasicChannelProvider implements ChannelProvider {
 
   @Override
   public FeatureFlags updateFeatureFlags(FeatureFlags featureFlags) {
-    return featureFlags.toBuilder()
-        .setTrafficDirectorEnabled(false)
-        .setDirectAccessRequested(false)
-        .build();
+    return featureFlags;
   }
 
   @Override
