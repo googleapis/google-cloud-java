@@ -64,6 +64,7 @@ import java.util.concurrent.TimeUnit;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -512,6 +513,7 @@ public class PublisherImplTest {
    *   <li>publish with key orderA, which should now succeed
    * </ol>
    */
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13394")
   @Test
   public void testResumePublish() throws Exception {
     Publisher publisher =
