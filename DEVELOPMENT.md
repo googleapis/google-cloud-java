@@ -1,6 +1,6 @@
 # Monorepo Scoped Development Guide
 
-This document outlines development workflows, build strategies, and **code generation processes** when working with or managing client libraries in the `google-cloud-java` monorepo.
+This document outlines development workflows, build strategies, and code generation processes when working with or managing client libraries in the `google-cloud-java` monorepo.
 
 ---
 
