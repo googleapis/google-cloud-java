@@ -36,6 +36,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,11 +109,11 @@ public class AuthorizedViewExampleTest extends BigtableBaseTest {
 
     AuthorizedView.SubsetView subsetView =
         AuthorizedView.SubsetView.newBuilder()
-            .addRowPrefixes(com.google.protobuf.ByteString.EMPTY)
+            .addRowPrefixes(ByteString.EMPTY)
             .putFamilySubsets(
                 COLUMN_FAMILY,
                 AuthorizedView.FamilySubsets.newBuilder()
-                    .addQualifierPrefixes(com.google.protobuf.ByteString.EMPTY)
+                    .addQualifierPrefixes(ByteString.EMPTY)
                     .build())
             .build();
     AuthorizedView authorizedViewObj =

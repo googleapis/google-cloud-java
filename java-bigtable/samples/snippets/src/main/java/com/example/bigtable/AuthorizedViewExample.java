@@ -174,12 +174,11 @@ public class AuthorizedViewExample {
       try {
         AuthorizedView.SubsetView subsetView =
             AuthorizedView.SubsetView.newBuilder()
-                .addRowPrefixes(com.google.protobuf.ByteString.EMPTY)
+                .addRowPrefixes(ByteString.EMPTY)
                 .putFamilySubsets(
                     COLUMN_FAMILY,
                     AuthorizedView.FamilySubsets.newBuilder()
-                        .addQualifierPrefixes(
-                            com.google.protobuf.ByteString.copyFromUtf8(COLUMN_QUALIFIER_NAME))
+                        .addQualifierPrefixes(ByteString.copyFromUtf8(COLUMN_QUALIFIER_NAME))
                         .build())
                 .build();
         AuthorizedView authorizedViewObj =
@@ -208,11 +207,11 @@ public class AuthorizedViewExample {
       // Update to an authorized view permitting everything.
       AuthorizedView.SubsetView subsetView =
           AuthorizedView.SubsetView.newBuilder()
-              .addRowPrefixes(com.google.protobuf.ByteString.EMPTY)
+              .addRowPrefixes(ByteString.EMPTY)
               .putFamilySubsets(
                   COLUMN_FAMILY,
                   AuthorizedView.FamilySubsets.newBuilder()
-                      .addQualifierPrefixes(com.google.protobuf.ByteString.EMPTY)
+                      .addQualifierPrefixes(ByteString.EMPTY)
                       .build())
               .build();
       AuthorizedView authorizedViewObj =
