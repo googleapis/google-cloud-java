@@ -1826,19 +1826,30 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param password The password for login.
      * @return this builder
      */
-    public Builder login(String username, String password) {
+    public Builder login(String username, char[] password) {
       if (this.experimentalHost == null) {
         throw new IllegalStateException("Endpoint must be set before calling login.");
       }
       Preconditions.checkArgument(
           username != null && !username.isEmpty(), "username cannot be null or empty");
       Preconditions.checkArgument(
-          password != null && !password.isEmpty(), "password cannot be null or empty");
-      byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+          password != null && password.length > 0, "password cannot be null or empty");
+
+      java.nio.ByteBuffer byteBuffer =
+          java.nio.charset.StandardCharsets.UTF_8.encode(java.nio.CharBuffer.wrap(password));
+      byte[] passwordBytes = new byte[byteBuffer.remaining()];
+      byteBuffer.get(passwordBytes);
+      if (byteBuffer.hasArray()) {
+        java.util.Arrays.fill(byteBuffer.array(), (byte) 0);
+      }
+
       com.google.crypto.tink.util.SecretBytes secretBytes =
           com.google.crypto.tink.util.SecretBytes.copyFrom(
               passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
+
       java.util.Arrays.fill(passwordBytes, (byte) 0);
+      java.util.Arrays.fill(password, '\0');
+
       super.setCredentials(
           new com.google.cloud.spanner.omni.SpannerOmniCredentials(
               username, secretBytes, this.experimentalHost));

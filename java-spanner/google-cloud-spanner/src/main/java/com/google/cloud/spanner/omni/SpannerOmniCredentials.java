@@ -88,20 +88,15 @@ public class SpannerOmniCredentials extends GoogleCredentials {
           loginClient.login(username, password);
       String tokenValue = Base64.getEncoder().encodeToString(protoToken.toByteArray());
 
-      long createTimeMillis =
-          protoToken.getCreationTime().getSeconds() * 1000
-              + protoToken.getCreationTime().getNanos() / 1000000;
       long expireTimeMillis =
           protoToken.getExpirationTime().getSeconds() * 1000
               + protoToken.getExpirationTime().getNanos() / 1000000;
 
-      long tokenLifetimeMillis = expireTimeMillis - createTimeMillis;
-      if (tokenLifetimeMillis <= 0) {
-        tokenLifetimeMillis = TimeUnit.MINUTES.toMillis(60);
+      if (expireTimeMillis <= System.currentTimeMillis()) {
+        expireTimeMillis = System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(60);
       }
 
-      return new AccessToken(
-          tokenValue, new Date(System.currentTimeMillis() + tokenLifetimeMillis));
+      return new AccessToken(tokenValue, new Date(expireTimeMillis));
     } catch (Exception e) {
       if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
         Thread.currentThread().interrupt();

@@ -68,7 +68,7 @@ public class ExperimentalHostHelper {
     String username = System.getProperty(USERNAME, "");
     String password = System.getProperty(PASSWORD, "");
     if (!Strings.isNullOrEmpty(username)) {
-      builder.login(username, password);
+      builder.login(username, password.toCharArray());
     }
     if (usePlainText) {
       builder.usePlainText();

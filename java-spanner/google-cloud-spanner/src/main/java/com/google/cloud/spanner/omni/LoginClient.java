@@ -120,7 +120,6 @@ public class LoginClient {
       byte[] clientMac =
           generateClientMac(
               username,
-              passwordBytes,
               blind,
               clientNonce,
               clientPublicKeyshare,
@@ -155,7 +154,6 @@ public class LoginClient {
 
   private byte[] generateClientMac(
       String username,
-      byte[] password,
       byte[] blind,
       byte[] clientNonce,
       byte[] clientPublicKeyshare,
@@ -307,11 +305,13 @@ public class LoginClient {
 
     LoginResponse getResponse() throws InterruptedException {
       LoginResponse response = responseQueue.take();
-      if (error != null) {
-        throw SpannerExceptionFactory.newSpannerException(error);
-      }
-      if (response == LoginResponse.getDefaultInstance() && completed) {
-        return null;
+      if (response == LoginResponse.getDefaultInstance()) {
+        if (error != null) {
+          throw SpannerExceptionFactory.newSpannerException(error);
+        }
+        if (completed) {
+          return null;
+        }
       }
       return response;
     }
