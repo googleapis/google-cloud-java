@@ -84,19 +84,24 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.crypto.tink.InsecureSecretKeyAccess;
+import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -758,16 +763,16 @@ public class ConnectionOptions {
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
     } else if ((isExperimentalHostPattern || isExperimentalHost())
-        && !com.google.common.base.Strings.isNullOrEmpty(username)
-        && !com.google.common.base.Strings.isNullOrEmpty(password)) {
-      byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
-      com.google.crypto.tink.util.SecretBytes secretBytes =
-          com.google.crypto.tink.util.SecretBytes.copyFrom(
-              passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
-      java.util.Arrays.fill(passwordBytes, (byte) 0);
-      this.credentials =
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
-              username, secretBytes, this.host);
+        && !Strings.isNullOrEmpty(username)
+        && !Strings.isNullOrEmpty(password)) {
+      byte[] passwordBytes = password.getBytes(StandardCharsets.UTF_8);
+      SecretBytes secretBytes;
+      try {
+        secretBytes = SecretBytes.copyFrom(passwordBytes, InsecureSecretKeyAccess.get());
+      } finally {
+        Arrays.fill(passwordBytes, (byte) 0);
+      }
+      this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && defaultExperimentalHostCredentials != null) {
       this.credentials = defaultExperimentalHostCredentials;

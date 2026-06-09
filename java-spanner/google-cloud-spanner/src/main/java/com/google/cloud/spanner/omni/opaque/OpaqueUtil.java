@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import org.bouncycastle.asn1.x9.X9ECParameters;
@@ -222,19 +223,26 @@ public class OpaqueUtil {
   }
 
   public static byte[] stretch(byte[] input) throws GeneralSecurityException {
-    byte[] salt = expand(input, "Stretch".getBytes(UTF_8), ARGON2_SALT_LENGTH);
-    Argon2Parameters params =
-        new Argon2Parameters.Builder(Argon2Parameters.ARGON2_id)
-            .withSalt(salt)
-            .withParallelism(ARGON2_THREADS)
-            .withMemoryAsKB(ARGON2_MEMORY_LIMIT)
-            .withIterations(ARGON2_ITERATION_COUNT)
-            .build();
-    Argon2BytesGenerator generator = new Argon2BytesGenerator();
-    generator.init(params);
-    byte[] result = new byte[STRETCH_OUTPUT_LENGTH];
-    generator.generateBytes(input, result);
-    return result;
+    byte[] salt = null;
+    try {
+      salt = expand(input, "Stretch".getBytes(UTF_8), ARGON2_SALT_LENGTH);
+      Argon2Parameters params =
+          new Argon2Parameters.Builder(Argon2Parameters.ARGON2_id)
+              .withSalt(salt)
+              .withParallelism(ARGON2_THREADS)
+              .withMemoryAsKB(ARGON2_MEMORY_LIMIT)
+              .withIterations(ARGON2_ITERATION_COUNT)
+              .build();
+      Argon2BytesGenerator generator = new Argon2BytesGenerator();
+      generator.init(params);
+      byte[] result = new byte[STRETCH_OUTPUT_LENGTH];
+      generator.generateBytes(input, result);
+      return result;
+    } finally {
+      if (salt != null) {
+        Arrays.fill(salt, (byte) 0);
+      }
+    }
   }
 
   public static byte[] extract(byte[] inputKeyMaterial) throws GeneralSecurityException {

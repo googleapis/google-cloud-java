@@ -53,6 +53,7 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -66,6 +67,8 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.crypto.tink.InsecureSecretKeyAccess;
+import com.google.crypto.tink.util.SecretBytes;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
@@ -91,10 +94,15 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -1835,28 +1843,30 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       Preconditions.checkArgument(
           password != null && password.length > 0, "password cannot be null or empty");
 
-      java.nio.charset.CharsetEncoder encoder =
-          java.nio.charset.StandardCharsets.UTF_8.newEncoder();
-      java.nio.CharBuffer charBuffer = java.nio.CharBuffer.wrap(password);
-      java.nio.ByteBuffer byteBuffer =
-          java.nio.ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
-      encoder.encode(charBuffer, byteBuffer, true);
-      encoder.flush(byteBuffer);
-      byteBuffer.flip();
-      byte[] passwordBytes = new byte[byteBuffer.remaining()];
-      byteBuffer.get(passwordBytes);
-      java.util.Arrays.fill(byteBuffer.array(), (byte) 0);
+      byte[] passwordBytes = null;
+      SecretBytes secretBytes;
+      try {
+        CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
+        CharBuffer charBuffer = CharBuffer.wrap(password);
+        ByteBuffer byteBuffer =
+            ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
+        encoder.encode(charBuffer, byteBuffer, true);
+        encoder.flush(byteBuffer);
+        byteBuffer.flip();
+        passwordBytes = new byte[byteBuffer.remaining()];
+        byteBuffer.get(passwordBytes);
+        Arrays.fill(byteBuffer.array(), (byte) 0);
 
-      com.google.crypto.tink.util.SecretBytes secretBytes =
-          com.google.crypto.tink.util.SecretBytes.copyFrom(
-              passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
-
-      java.util.Arrays.fill(passwordBytes, (byte) 0);
-      java.util.Arrays.fill(password, '\0');
+        secretBytes = SecretBytes.copyFrom(passwordBytes, InsecureSecretKeyAccess.get());
+      } finally {
+        if (passwordBytes != null) {
+          Arrays.fill(passwordBytes, (byte) 0);
+        }
+        Arrays.fill(password, '\0');
+      }
 
       super.setCredentials(
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
-              username, secretBytes, this.experimentalHost));
+          new SpannerOmniCredentials(username, secretBytes, this.experimentalHost));
       return this;
     }
 

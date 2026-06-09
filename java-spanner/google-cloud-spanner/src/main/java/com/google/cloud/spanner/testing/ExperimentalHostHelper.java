@@ -42,10 +42,10 @@ public class ExperimentalHostHelper {
     uri.append(";isExperimentalHost=true");
     String username = System.getProperty(USERNAME, "");
     String password = System.getProperty(PASSWORD, "");
-    if (!com.google.common.base.Strings.isNullOrEmpty(username)) {
+    if (!Strings.isNullOrEmpty(username)) {
       uri.append(";username=").append(username);
     }
-    if (!com.google.common.base.Strings.isNullOrEmpty(password)) {
+    if (!Strings.isNullOrEmpty(password)) {
       uri.append(";password=").append(password);
     }
     if (isMtlsSetup()) {

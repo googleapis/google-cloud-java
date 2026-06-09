@@ -19,6 +19,7 @@ package com.google.cloud.spanner.omni;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.base.Preconditions;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
@@ -43,9 +44,9 @@ public class SpannerOmniCredentials extends GoogleCredentials {
   private SslContext sslContext = null;
 
   public SpannerOmniCredentials(String username, SecretBytes password, String target) {
-    this.username = com.google.common.base.Preconditions.checkNotNull(username);
-    this.password = com.google.common.base.Preconditions.checkNotNull(password);
-    com.google.common.base.Preconditions.checkNotNull(target);
+    this.username = Preconditions.checkNotNull(username);
+    this.password = Preconditions.checkNotNull(password);
+    Preconditions.checkNotNull(target);
 
     // Parse target and initialize settings. If target starts with http://, use plaintext.
     if (target.startsWith("http://")) {
@@ -84,8 +85,7 @@ public class SpannerOmniCredentials extends GoogleCredentials {
       loginChannel = builder.build();
 
       LoginClient loginClient = new LoginClient(loginChannel);
-      com.google.cloud.spanner.omni.Login.AccessToken protoToken =
-          loginClient.login(username, password);
+      Login.AccessToken protoToken = loginClient.login(username, password);
       String tokenValue = Base64.getEncoder().encodeToString(protoToken.toByteArray());
 
       long expireTimeMillis =
