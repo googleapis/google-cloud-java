@@ -9,7 +9,6 @@ installs them into ~/.m2 in dependency order.
 Prerequisites:
     git clone --sparse git@github.com:googleapis/google-cloud-java.git
     cd google-cloud-java
-    git sparse-checkout init --cone
     git sparse-checkout set <seed-module>
 
 Usage (from repo root):
@@ -196,13 +195,20 @@ def find_needed_modules(
         # Follow <parent> chain
         parent = get_parent(root)
         if parent:
+            resolved = None
             if parent.relative_path:
                 # normpath collapses '..' without making the path absolute
                 local_parent = Path(os.path.normpath(pom_path.parent / parent.relative_path))
+                # <relativePath> may point to a directory; Maven appends pom.xml in that case
+                if local_parent.name != 'pom.xml':
+                    local_parent = local_parent / 'pom.xml'
                 if local_parent in pom_contents:
-                    enqueue(local_parent, required_by=pom_path)
-            elif parent.coord in coord_to_pom:
-                enqueue(coord_to_pom[parent.coord], required_by=pom_path)
+                    resolved = local_parent
+            # fall back to coordinate lookup if relativePath missing or not found locally
+            if resolved is None and parent.coord in coord_to_pom:
+                resolved = coord_to_pom[parent.coord]
+            if resolved is not None:
+                enqueue(resolved, required_by=pom_path)
 
         # Follow BOM imports
         for coord in get_bom_imports(root):
@@ -258,10 +264,12 @@ def make_install_commands(sorted_poms: list[Path]) -> list[InstallCommand]:
     for project in project_order:
         sub_modules = [m for m in by_project[project] if m != '.']
         cmd = ['mvn', 'install', '-T', '1C', '-DskipTests', '-P', 'quick-build']
-        for m in sub_modules:
-            cmd += ['-pl', m]
         if sub_modules:
+            for m in sub_modules:
+                cmd += ['-pl', m]
             cmd.append('-am')
+        else:
+            cmd.append('-N')  # root pom only — skip recursive submodule build
         commands.append(InstallCommand(cwd=project, cmd=cmd))
     return commands
 
@@ -305,7 +313,8 @@ def main() -> None:
     needed_poms, dep_edges = find_needed_modules(seed_dir, pom_contents, coord_to_pom)
     sorted_poms = topo_sort(needed_poms, dep_edges)
 
-    top_dirs = sorted({p.parts[0] for p in needed_poms})
+    # root-level files are always present in cone mode — only add subdirectories
+    top_dirs = sorted({p.parts[0] for p in needed_poms if len(p.parts) > 1})
     print(f'\nTop-level directories needed:')
     for d in top_dirs:
         print(f'  {d}')
