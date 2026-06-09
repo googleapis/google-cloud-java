@@ -19,7 +19,7 @@ package com.google.cloud.firestore.v1.stub;
 import com.google.api.core.InternalApi;
 
 @InternalApi("For internal use only")
-final class Version {
+final class FirestoreAdminVersion {
   // {x-version-update-start:google-cloud-firestore:current}
   static final String VERSION = "3.43.1";
   // {x-version-update-end}
