@@ -50,9 +50,13 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public final class ITGapicUnbufferedReadableByteChannelTest {
+  @Rule public Timeout globalTimeout = Timeout.seconds(45);
+
   private final byte[] bytes = DataGenerator.base64Characters().genBytes(40);
   private final ByteString data1 = ByteString.copyFrom(bytes, 0, 10);
   private final ByteString data2 = ByteString.copyFrom(bytes, 10, 10);
@@ -196,16 +200,14 @@ public final class ITGapicUnbufferedReadableByteChannelTest {
               ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
             int count = invocationCount.getAndIncrement();
             if (request.equals(req1)) {
-              if (count == 0) {
-                responseObserver.onNext(resp1);
-                responseObserver.onNext(resp2);
-                new Thread(() -> {
-                  try {
-                    Thread.sleep(200);
-                  } catch (InterruptedException ignored) {}
-                  responseObserver.onError(apiException(Code.DATA_LOSS));
-                }).start();
-              }
+              responseObserver.onNext(resp1);
+              responseObserver.onNext(resp2);
+              new Thread(() -> {
+                try {
+                  Thread.sleep(200);
+                } catch (InterruptedException ignored) {}
+                responseObserver.onError(apiException(Code.DATA_LOSS));
+              }).start();
             } else if (request.equals(req2)) {
               ReadObjectResponse.Builder builder = resp3.toBuilder();
               // increment the generation, as if it had been updated between initial read and retry

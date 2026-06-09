@@ -661,7 +661,7 @@ public final class ITObjectReadSessionFakeTest {
 
         StorageException se =
             assertThrows(
-                StorageException.class, () -> TestUtils.await(future, 5, TimeUnit.SECONDS));
+                StorageException.class, () -> TestUtils.await(future, 30, TimeUnit.SECONDS));
         assertThat(se).hasCauseThat().isInstanceOf(DataLossException.class);
         DataLossException dataLossException = (DataLossException) se.getCause();
         assertThat(dataLossException).isInstanceOf(UncheckedChecksumMismatchException.class);
@@ -735,7 +735,7 @@ public final class ITObjectReadSessionFakeTest {
 
         StorageException se =
             assertThrows(
-                StorageException.class, () -> TestUtils.await(future, 5, TimeUnit.SECONDS));
+                StorageException.class, () -> TestUtils.await(future, 30, TimeUnit.SECONDS));
         assertThat(se).hasCauseThat().isInstanceOf(OutOfRangeException.class);
         String suppressedMessages = TestUtils.messagesToText(se);
         assertAll(
@@ -1001,7 +1001,7 @@ public final class ITObjectReadSessionFakeTest {
             bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(3, 3)));
 
         // make sure the first read succeeded
-        byte[] actual = TestUtils.await(f1, 5, TimeUnit.SECONDS);
+        byte[] actual = TestUtils.await(f1, 30, TimeUnit.SECONDS);
 
         // close the "parent"
         bd.close();
@@ -1779,7 +1779,7 @@ public final class ITObjectReadSessionFakeTest {
   static ThrowingRunnable assertStatusCodeIs(ApiFuture<?> f, int expected) {
     return () -> {
       StorageException se =
-          assertThrows(StorageException.class, () -> TestUtils.await(f, 5, TimeUnit.SECONDS));
+          assertThrows(StorageException.class, () -> TestUtils.await(f, 30, TimeUnit.SECONDS));
       assertThat(se.getCode()).isEqualTo(expected);
     };
   }

@@ -40,7 +40,9 @@ import java.nio.channels.ReadableByteChannel;
 import java.security.SecureRandom;
 import java.util.concurrent.ExecutionException;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 
@@ -96,6 +98,7 @@ public class ITGzipReadableByteChannelTest {
           .build();
 
   public static final class Uncompressed {
+    @Rule public Timeout globalTimeout = Timeout.seconds(45);
     private static final StorageGrpc.StorageImplBase fakeStorage =
         new StorageGrpc.StorageImplBase() {
           @Override
@@ -172,6 +175,7 @@ public class ITGzipReadableByteChannelTest {
   }
 
   public static final class Compressed {
+    @Rule public Timeout globalTimeout = Timeout.seconds(45);
 
     private static final StorageGrpc.StorageImplBase fakeStorage =
         new StorageGrpc.StorageImplBase() {
@@ -317,6 +321,7 @@ public class ITGzipReadableByteChannelTest {
   }
 
   public static final class Behavior {
+    @Rule public Timeout globalTimeout = Timeout.seconds(45);
 
     @Test
     public void properlyTracksEOF() throws IOException, InterruptedException, ExecutionException {

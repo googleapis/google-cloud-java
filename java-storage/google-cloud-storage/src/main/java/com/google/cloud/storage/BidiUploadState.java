@@ -974,6 +974,9 @@ abstract class BidiUploadState {
     @Nullable StorageException onResponse(BidiWriteObjectResponse response) {
       lock.lock();
       try {
+        if (state == State.TERMINAL_SUCCESS || state == State.TERMINAL_ERROR) {
+          return null;
+        }
         validateCurrentStateIsOneOf(State.allNonTerminal);
 
         if (response.hasWriteHandle()) {
