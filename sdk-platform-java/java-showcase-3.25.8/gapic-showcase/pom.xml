@@ -19,7 +19,7 @@
   <properties>
     <gapic-showcase.version>0.36.2</gapic-showcase.version>
     <!-- This is the last version supporting slf4j 1.x, do not upgrade -->
-    <slf4j1-logback.version>1.2.13</slf4j1-logback.version>
+    <slf4j1-logback.version>1.5.25</slf4j1-logback.version>
     <slf4j2-logback.version>1.5.25</slf4j2-logback.version>
   </properties>
 
