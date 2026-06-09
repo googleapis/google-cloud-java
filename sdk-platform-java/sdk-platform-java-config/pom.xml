@@ -21,5 +21,8 @@
         <google-cloud-shared-dependencies.version>3.63.0</google-cloud-shared-dependencies.version> <!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <!--  skipping clirr check for protobuf 4.x upgrade for downstream libraries -->
         <clirr.skip>true</clirr.skip>
+        <skipUnitTests>false</skipUnitTests>
+        <checkstyle.header.file>java.header</checkstyle.header.file>
+        <errorprone.version>2.48.0</errorprone.version>
     </properties>
 </project>
