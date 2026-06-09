@@ -133,6 +133,10 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_ClientCertificateSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_VpcScSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_VpcScSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_fieldAccessorTable;
@@ -178,9 +182,10 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "gle.cloud.ces.v1beta\032\037google/api/field_b"
           + "ehavior.proto\032\031google/api/resource.proto"
           + "\032-google/cloud/ces/v1beta/bigquery_export.proto\032$google/cloud/ces/v1beta/common."
-          + "proto\032#google/cloud/ces/v1beta/fakes.proto\032(google/cloud/ces/v1beta/golden_run.p"
-          + "roto\032$google/cloud/ces/v1beta/schema.pro"
-          + "to\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\234\020\n"
+          + "proto\0327google/cloud/ces/v1beta/evaluation_metrics_config.proto\032#google/cloud/ces"
+          + "/v1beta/fakes.proto\032(google/cloud/ces/v1beta/golden_run.proto\032$google/cloud/ces/"
+          + "v1beta/schema.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\037google/protobuf/timestamp.proto\"\202\021\n"
           + "\003App\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
@@ -200,14 +205,14 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132..google.cloud.ces.v1beta.ErrorHandlingSettingsB\003\340A\001\022C\n"
           + "\016model_settings\030\r"
           + " \001(\0132&.google.cloud.ces.v1beta.ModelSettingsB\003\340A\001\022P\n"
-          + "\023tool_execution_mode\030  \001(\0162..g"
-          + "oogle.cloud.ces.v1beta.App.ToolExecutionModeB\003\340A\001\022`\n"
-          + "\035evaluation_metrics_thresholds\030\030"
-          + " \001(\01324.google.cloud.ces.v1beta.EvaluationMetricsThresholdsB\003\340A\001\022T\n"
-          + "\025variable_declarations\030\016"
-          + " \003(\01320.google.cloud.ces.v1beta.App.VariableDeclarationB\003\340A\001\022_\n"
-          + " predefined_variable_declarations\030\034 \003(\01320.go"
-          + "ogle.cloud.ces.v1beta.App.VariableDeclarationB\003\340A\003\022\037\n"
+          + "\023tool_execution_mode\030 "
+          + " \001(\0162..google.cloud.ces.v1beta.App.ToolExecutionModeB\003\340A\001\022`\n"
+          + "\035evaluation_metrics_thresholds\030\030 \001(\01324.google.cloud"
+          + ".ces.v1beta.EvaluationMetricsThresholdsB\003\340A\001\022T\n"
+          + "\025variable_declarations\030\016 \003(\01320.go"
+          + "ogle.cloud.ces.v1beta.App.VariableDeclarationB\003\340A\001\022_\n"
+          + " predefined_variable_declarations\030\034"
+          + " \003(\01320.google.cloud.ces.v1beta.App.VariableDeclarationB\003\340A\003\022\037\n"
           + "\022global_instruction\030\021 \001(\tB\003\340A\001\0228\n\n"
           + "guardrails\030\n"
           + " \003(\tB$\340A\001\372A\036\n"
@@ -216,34 +221,38 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132*.google.cloud.ces.v1beta.DataStoreSettingsB\003\340A\001\022M\n"
           + "\027default_channel_profile\030\026"
           + " \001(\0132\'.google.cloud.ces.v1beta.ChannelProfileB\003\340A\001\022A\n"
-          + "\010metadata\030\013 \003(\0132*.g"
-          + "oogle.cloud.ces.v1beta.App.MetadataEntryB\003\340A\001\0224\n"
+          + "\010metadata\030\013"
+          + " \003(\0132*.google.cloud.ces.v1beta.App.MetadataEntryB\003\340A\001\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\014 \001(\tB\003\340A\003\022\035\n"
           + "\020deployment_count\030\027 \001(\005B\003\340A\003\022\\\n"
-          + "\033client_certificate_settings\030\031 \001(\013"
-          + "22.google.cloud.ces.v1beta.ClientCertificateSettingsB\003\340A\001\022\023\n"
+          + "\033client_certificate_settings\030\031"
+          + " \001(\01322.google.cloud.ces.v1beta.ClientCertificateSettingsB\003\340A\001\022D\n"
+          + "\017vpc_sc_settings\030\032"
+          + " \001(\0132&.google.cloud.ces.v1beta.VpcScSettingsB\003\340A\001\022\023\n"
           + "\006locked\030\035 \001(\010B\003\340A\001\022L\n"
-          + "\023evaluation_personas\030\036"
-          + " \003(\0132*.google.cloud.ces.v1beta.EvaluationPersonaB\003\340A\001\022M\n"
-          + "\023evaluation_settings\030!"
-          + " \001(\0132+.google.cloud.ces.v1beta.EvaluationSettingsB\003\340A\001\032x\n"
+          + "\023evaluation_personas\030\036 \003(\0132*.goo"
+          + "gle.cloud.ces.v1beta.EvaluationPersonaB\003\340A\001\022M\n"
+          + "\023evaluation_settings\030! \001(\0132+.googl"
+          + "e.cloud.ces.v1beta.EvaluationSettingsB\003\340A\001\022\036\n"
+          + "\021validation_errors\030\' \003(\tB\003\340A\003\032x\n"
           + "\023VariableDeclaration\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\002\0224\n"
-          + "\006schema\030\003 \001(\0132\037.google.cloud.ces.v1beta.SchemaB\003\340A\002\032/\n"
-          + "\r"
+          + "\006schema\030\003"
+          + " \001(\0132\037.google.cloud.ces.v1beta.SchemaB\003\340A\002\032/\n\r"
           + "MetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"V\n"
           + "\021ToolExecutionMode\022#\n"
           + "\037TOOL_EXECUTION_MODE_UNSPECIFIED\020\000\022\014\n"
-          + "\010PARALLEL\020\001\022\016\n\n"
+          + "\010PARALLEL\020\001\022\016\n"
+          + "\n"
           + "SEQUENTIAL\020\002:Z\352AW\n"
-          + "\026ces.googleapis.com/"
-          + "App\0222projects/{project}/locations/{location}/apps/{app}*\004apps2\003app\"*\n"
+          + "\026ces.googleapis.com/A"
+          + "pp\0222projects/{project}/locations/{location}/apps/{app}*\004apps2\003app\"*\n"
           + "\020TimeZoneSettings\022\026\n"
           + "\ttime_zone\030\001 \001(\tB\003\340A\001\"\247\001\n"
           + "\020LanguageSettings\022\"\n"
@@ -252,8 +261,8 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\033enable_multilingual_support\030\003 \001(\010B\003\340A\001\022\036\n"
           + "\017fallback_action\030\004 \001(\tB\005\030\001\340A\001\"\317\003\n"
           + "\025AudioProcessingConfig\022s\n"
-          + "\031synthesize_speech_configs\030\001 \003(\0132K.google.cloud.ces"
-          + ".v1beta.AudioProcessingConfig.SynthesizeSpeechConfigsEntryB\003\340A\001\022D\n"
+          + "\031synthesize_speech_configs\030\001 \003(\0132K.google.cloud.ces."
+          + "v1beta.AudioProcessingConfig.SynthesizeSpeechConfigsEntryB\003\340A\001\022D\n"
           + "\017barge_in_config\030\003"
           + " \001(\0132&.google.cloud.ces.v1beta.BargeInConfigB\003\340A\001\022:\n"
           + "\022inactivity_timeout\030\004"
@@ -265,8 +274,8 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\005value\030\002"
           + " \001(\0132/.google.cloud.ces.v1beta.SynthesizeSpeechConfig:\0028\001\"\331\002\n"
           + "\022AmbientSoundConfig\022i\n"
-          + "\026prebuilt_ambient_noise\030\001 \001("
-          + "\0162@.google.cloud.ces.v1beta.AmbientSoundConfig.PrebuiltAmbientNoiseB\005\030\001\340A\001H\000\022\026\n"
+          + "\026prebuilt_ambient_noise\030\001 \001(\016"
+          + "2@.google.cloud.ces.v1beta.AmbientSoundConfig.PrebuiltAmbientNoiseB\005\030\001\340A\001H\000\022\026\n"
           + "\007gcs_uri\030\002 \001(\tB\003\340A\001H\000\022%\n"
           + "\026prebuilt_ambient_sound\030\004 \001(\tB\003\340A\001H\000\022\033\n"
           + "\016volume_gain_db\030\003 \001(\001B\003\340A\001\"r\n"
@@ -283,33 +292,34 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\005voice\030\001 \001(\tB\003\340A\001\022\032\n\r"
           + "speaking_rate\030\002 \001(\001B\003\340A\001\"<\n"
           + "\026MetricAnalysisSettings\022\"\n"
-          + "\025llm_metrics_opted_out\030\001 \001(\010B\003\340A\001\"\363\004\n"
+          + "\025llm_metrics_opted_out\030\001 \001(\010B\003\340A\001\"\322\005\n"
           + "\017LoggingSettings\022G\n"
-          + "\020redaction_config\030\001 \001(\0132"
-          + "(.google.cloud.ces.v1beta.RedactionConfigB\003\340A\001\022R\n"
-          + "\026audio_recording_config\030\002 \001(\0132-"
-          + ".google.cloud.ces.v1beta.AudioRecordingConfigB\003\340A\001\022V\n"
+          + "\020redaction_config\030\001 \001(\0132("
+          + ".google.cloud.ces.v1beta.RedactionConfigB\003\340A\001\022R\n"
+          + "\026audio_recording_config\030\002 \001(\0132-."
+          + "google.cloud.ces.v1beta.AudioRecordingConfigB\003\340A\001\022]\n"
+          + "!unredacted_audio_recording_config\030\010"
+          + " \001(\0132-.google.cloud.ces.v1beta.AudioRecordingConfigB\003\340A\001\022V\n"
           + "\030bigquery_export_settings\030\003"
           + " \001(\0132/.google.cloud.ces.v1beta.BigQueryExportSettingsB\003\340A\001\022R\n"
           + "\026cloud_logging_settings\030\004"
           + " \001(\0132-.google.cloud.ces.v1beta.CloudLoggingSettingsB\003\340A\001\022`\n"
-          + "\035conversation_logging_settings\030\005 \001(\01324.google.cloud.ces"
-          + ".v1beta.ConversationLoggingSettingsB\003\340A\001\022]\n"
-          + "!evaluation_audio_recording_config\030\006 "
-          + "\001(\0132-.google.cloud.ces.v1beta.AudioRecordingConfigB\003\340A\001\022V\n"
-          + "\030metric_analysis_settings\030\007"
-          + " \001(\0132/.google.cloud.ces.v1beta.MetricAnalysisSettingsB\003\340A\001\"\235\006\n"
+          + "\035conversation_logging_settings\030\005 \001(\01324.go"
+          + "ogle.cloud.ces.v1beta.ConversationLoggingSettingsB\003\340A\001\022]\n"
+          + "!evaluation_audio_recording_config\030\006"
+          + " \001(\0132-.google.cloud.ces.v1beta.AudioRecordingConfigB\003\340A\001\022V\n"
+          + "\030metric_analysis_settings\030\007 \001(\0132/.google.cloud.c"
+          + "es.v1beta.MetricAnalysisSettingsB\003\340A\001\"\235\006\n"
           + "\025ErrorHandlingSettings\022j\n"
-          + "\027error_handling_strategy\030\001 \001"
-          + "(\0162D.google.cloud.ces.v1beta.ErrorHandlingSettings.ErrorHandlingStrategyB\003\340A\001\022l\n"
-          + "\030fallback_response_config\030\002 \001(\0132E.google"
-          + ".cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigB\003\340A\001\022`\n"
-          + "\022end_session_config\030\003 \001(\0132?.google.cloud.ces.v1bet"
-          + "a.ErrorHandlingSettings.EndSessionConfigB\003\340A\001\032\206\002\n"
+          + "\027error_handling_strategy\030\001 \001(\0162D.google.cloud.ces.v1be"
+          + "ta.ErrorHandlingSettings.ErrorHandlingStrategyB\003\340A\001\022l\n"
+          + "\030fallback_response_config\030\002 \001(\0132E.google.cloud.ces.v1beta.ErrorHan"
+          + "dlingSettings.FallbackResponseConfigB\003\340A\001\022`\n"
+          + "\022end_session_config\030\003 \001(\0132?.google.c"
+          + "loud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigB\003\340A\001\032\206\002\n"
           + "\026FallbackResponseConfig\022\210\001\n"
-          + "\030custom_fallback_messages\030\001 \003(\0132a.google.clo"
-          + "ud.ces.v1beta.ErrorHandlingSettings.Fall"
-          + "backResponseConfig.CustomFallbackMessagesEntryB\003\340A\001\022\"\n"
+          + "\030custom_fallback_messages\030\001 \003(\0132a.google.cloud.ces.v1beta.ErrorHandlin"
+          + "gSettings.FallbackResponseConfig.CustomFallbackMessagesEntryB\003\340A\001\022\"\n"
           + "\025max_fallback_attempts\030\002 \001(\005B\003\340A\001\032=\n"
           + "\033CustomFallbackMessagesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -323,34 +333,34 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\021FALLBACK_RESPONSE\020\002\022\017\n"
           + "\013END_SESSION\020\003\"\250\020\n"
           + "\033EvaluationMetricsThresholds\022\211\001\n"
-          + "$golden_evaluation_metrics_thresholds\030\001 \001(\0132V.google.cloud.ce"
-          + "s.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholdsB\003\340A\001\022~\n"
-          + "\035hallucination_metric_behavior\030\003 \001(\0162P.goo"
-          + "gle.cloud.ces.v1beta.EvaluationMetricsTh"
-          + "resholds.HallucinationMetricBehaviorB\005\030\001\340A\001\022\203\001\n"
-          + "$golden_hallucination_metric_behavior\030\005 \001(\0162P.google.cloud.ces.v1beta.Eva"
-          + "luationMetricsThresholds.HallucinationMetricBehaviorB\003\340A\001\022\205\001\n"
-          + "&scenario_hallucination_metric_behavior\030\004 \001(\0162P.google.clou"
-          + "d.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehaviorB\003\340A\001\032\213"
-          + "\t\n"
+          + "$golden_evaluation_metrics_thresholds\030\001 \001(\0132V.g"
+          + "oogle.cloud.ces.v1beta.EvaluationMetrics"
+          + "Thresholds.GoldenEvaluationMetricsThresholdsB\003\340A\001\022~\n"
+          + "\035hallucination_metric_behavior\030\003 \001(\0162P.google.cloud.ces.v1beta.Evalu"
+          + "ationMetricsThresholds.HallucinationMetricBehaviorB\005\030\001\340A\001\022\203\001\n"
+          + "$golden_hallucination_metric_behavior\030\005 \001(\0162P.google.cloud."
+          + "ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehaviorB\003\340A\001\022\205\001\n"
+          + "&scenario_hallucination_metric_behavior\030\004 \001(\016"
+          + "2P.google.cloud.ces.v1beta.EvaluationMet"
+          + "ricsThresholds.HallucinationMetricBehaviorB\003\340A\001\032\213\t\n"
           + "!GoldenEvaluationMetricsThresholds\022\235\001\n"
-          + "\035turn_level_metrics_thresholds\030\001 \001(\0132q.google"
-          + ".cloud.ces.v1beta.EvaluationMetricsThres"
-          + "holds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholdsB\003\340A\001\022\253\001\n"
-          + "$expectation_level_metrics_thresholds\030\002 \001(\0132x"
-          + ".google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThre"
-          + "sholds.ExpectationLevelMetricsThresholdsB\003\340A\001\022n\n"
-          + "\026tool_matching_settings\030\003 \001(\0132I."
-          + "google.cloud.ces.v1beta.EvaluationMetric"
-          + "sThresholds.ToolMatchingSettingsB\003\340A\001\032\212\004\n"
+          + "\035turn_level_metrics_thresholds\030\001 \001(\0132q.google.cloud.ces.v1beta.Evaluati"
+          + "onMetricsThresholds.GoldenEvaluationMetr"
+          + "icsThresholds.TurnLevelMetricsThresholdsB\003\340A\001\022\253\001\n"
+          + "$expectation_level_metrics_thresholds\030\002 \001(\0132x.google.cloud.ces.v1beta.E"
+          + "valuationMetricsThresholds.GoldenEvaluat"
+          + "ionMetricsThresholds.ExpectationLevelMetricsThresholdsB\003\340A\001\022n\n"
+          + "\026tool_matching_settings\030\003 \001(\0132I.google.cloud.ces.v1beta.Ev"
+          + "aluationMetricsThresholds.ToolMatchingSettingsB\003\340A\001\032\212\004\n"
           + "\032TurnLevelMetricsThresholds\0227\n"
           + "%semantic_similarity_success_threshold\030\001"
           + " \001(\005B\003\340A\001H\000\210\001\001\022?\n"
           + "-overall_tool_invocation_correctness_threshold\030\002"
           + " \001(\002B\003\340A\001H\001\210\001\001\022\266\001\n"
-          + "\033semantic_similarity_channel\030\003 \001(\0162\213\001.google.c"
-          + "loud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.Tu"
-          + "rnLevelMetricsThresholds.SemanticSimilarityChannelB\003\340A\001\"]\n"
+          + "\033semantic_similarity_channel\030\003 \001"
+          + "(\0162\213\001.google.cloud.ces.v1beta.Evaluation"
+          + "MetricsThresholds.GoldenEvaluationMetric"
+          + "sThresholds.TurnLevelMetricsThresholds.SemanticSimilarityChannelB\003\340A\001\"]\n"
           + "\031SemanticSimilarityChannel\022+\n"
           + "\'SEMANTIC_SIMILARITY_CHANNEL_UNSPECIFIED\020\000\022\010\n"
           + "\004TEXT\020\001\022\t\n"
@@ -362,9 +372,9 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + " \001(\002B\003\340A\001H\000\210\001\001B2\n"
           + "0_tool_invocation_parameter_correctness_threshold\032\367\001\n"
           + "\024ToolMatchingSettings\022\206\001\n"
-          + "\030extra_tool_call_behavior\030\001 \001(\0162_.google.cloud.ces.v"
-          + "1beta.EvaluationMetricsThresholds.ToolMa"
-          + "tchingSettings.ExtraToolCallBehaviorB\003\340A\001\"V\n"
+          + "\030extra_tool_call_behavior\030\001 \001(\0162_.goog"
+          + "le.cloud.ces.v1beta.EvaluationMetricsThr"
+          + "esholds.ToolMatchingSettings.ExtraToolCallBehaviorB\003\340A\001\"V\n"
           + "\025ExtraToolCallBehavior\022(\n"
           + "$EXTRA_TOOL_CALL_BEHAVIOR_UNSPECIFIED\020\000\022\010\n"
           + "\004FAIL\020\001\022\t\n"
@@ -372,25 +382,35 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\033HallucinationMetricBehavior\022-\n"
           + ")HALLUCINATION_METRIC_BEHAVIOR_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\013\n"
-          + "\007ENABLED\020\002\"\224\004\n"
+          + "\007ENABLED\020\002\"\272\006\n"
           + "\022EvaluationSettings\022w\n"
-          + "\037scenario_conversation_initiator\030\001 \001(\0162I.google.cloud.ces.v1"
-          + "beta.EvaluationSettings.ScenarioConversationInitiatorB\003\340A\001\022H\n"
+          + "\037scenario_conversation_initiator\030\001 \001(\0162I.googl"
+          + "e.cloud.ces.v1beta.EvaluationSettings.ScenarioConversationInitiatorB\003\340A\001\022H\n"
           + "\021golden_run_method\030\004"
           + " \001(\0162(.google.cloud.ces.v1beta.GoldenRunMethodB\003\340A\001\022h\n"
-          + "%golden_evaluation_tool_call_behaviour\030\002 \001(\01624.google.cloud.ces.v"
-          + "1beta.EvaluationToolCallBehaviourB\003\340A\001\022j\n"
-          + "\'scenario_evaluation_tool_call_behaviour\030\003"
-          + " \001(\01624.google.cloud.ces.v1beta.EvaluationToolCallBehaviourB\003\340A\001\"e\n"
+          + "%golden_evaluation_tool_call_behaviour\030\002 \001(\01624.goog"
+          + "le.cloud.ces.v1beta.EvaluationToolCallBehaviourB\003\340A\001\022j\n"
+          + "\'scenario_evaluation_tool_call_behaviour\030\003 \001(\01624.google.cloud.ces"
+          + ".v1beta.EvaluationToolCallBehaviourB\003\340A\001\022M\n"
+          + "\016metrics_config\030\005 \001(\01320.google.cloud."
+          + "ces.v1beta.EvaluationMetricsConfigB\003\340A\001\022g\n"
+          + "\027scenario_execution_mode\030\006 \001(\0162A.googl"
+          + "e.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionModeB\003\340A\001\"e\n"
           + "\035ScenarioConversationInitiator\022/\n"
           + "+SCENARIO_CONVERSATION_INITIATOR_UNSPECIFIED\020\000\022\010\n"
           + "\004USER\020\001\022\t\n"
-          + "\005AGENT\020\002\"\233\001\n"
+          + "\005AGENT\020\002\"l\n"
+          + "\025ScenarioExecutionMode\022\'\n"
+          + "#SCENARIO_EXECUTION_MODE_UNSPECIFIED\020\000\022\025\n"
+          + "\021QUALITY_OPTIMIZED\020\001\022\023\n"
+          + "\017SPEED_OPTIMIZED\020\002\"\233\001\n"
           + "\031ClientCertificateSettings\022\034\n"
           + "\017tls_certificate\030\001 \001(\tB\003\340A\002\022G\n"
           + "\013private_key\030\002 \001(\tB2\340A\002\372A,\n"
           + "*secretmanager.googleapis.com/SecretVersion\022\027\n\n"
-          + "passphrase\030\003 \001(\tB\003\340A\001\"\202\001\n"
+          + "passphrase\030\003 \001(\tB\003\340A\001\"-\n\r"
+          + "VpcScSettings\022\034\n"
+          + "\017allowed_origins\030\001 \003(\tB\003\340A\001\"\202\001\n"
           + "\033ConversationLoggingSettings\022)\n"
           + "\034disable_conversation_logging\030\001 \001(\010B\003\340A\001\0228\n"
           + "\020retention_window\030\002"
@@ -407,8 +427,8 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\023deidentify_template\030\003 \001(\tB-\340A\001\372A\'\n"
           + "%dlp.googleapis.com/DeidentifyTemplate\"\273\002\n"
           + "\021DataStoreSettings\022G\n"
-          + "\007engines\030\003 \003(\01321.goo"
-          + "gle.cloud.ces.v1beta.DataStoreSettings.EngineB\003\340A\003\032\334\001\n"
+          + "\007engines\030\003 \003(\01321.google.c"
+          + "loud.ces.v1beta.DataStoreSettings.EngineB\003\340A\003\032\334\001\n"
           + "\006Engine\022;\n"
           + "\004name\030\001 \001(\tB-\340A\003\372A\'\n"
           + "%discoveryengine.googleapis.com/Engine\022I\n"
@@ -423,12 +443,12 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\013description\030\002 \001(\tB\003\340A\001\022\031\n"
           + "\014display_name\030\003 \001(\tB\003\340A\002\022\030\n"
           + "\013personality\030\004 \001(\tB\003\340A\002\022S\n\r"
-          + "speech_config\030\005 \001(\01327.google.cloud.ces.v1be"
-          + "ta.EvaluationPersona.SpeechConfigB\003\340A\001\032\243\002\n"
+          + "speech_config\030\005"
+          + " \001(\01327.google.cloud.ces.v1beta.EvaluationPersona.SpeechConfigB\003\340A\001\032\243\002\n"
           + "\014SpeechConfig\022\032\n\r"
           + "speaking_rate\030\001 \001(\001B\003\340A\001\022g\n"
-          + "\013environment\030\002 \001(\0162M.google.cloud."
-          + "ces.v1beta.EvaluationPersona.SpeechConfig.BackgroundEnvironmentB\003\340A\001\022\025\n"
+          + "\013environment\030\002 \001(\0162M.google.cloud.ces.v"
+          + "1beta.EvaluationPersona.SpeechConfig.BackgroundEnvironmentB\003\340A\001\022\025\n"
           + "\010voice_id\030\003 \001(\tB\003\340A\001\"w\n"
           + "\025BackgroundEnvironment\022&\n"
           + "\"BACKGROUND_ENVIRONMENT_UNSPECIFIED\020\000\022\017\n"
@@ -436,17 +456,17 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
           + "\007TRAFFIC\020\004\022\016\n\n"
           + "KIDS_NOISE\020\005\022\010\n"
           + "\004CAFE\020\006B\374\004\n"
-          + "\033com.google.cloud.ces.v1"
-          + "betaB\010AppProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A\310\001\n"
-          + "\"dlp.googleapis.com/InspectTemplate\022Uorganizations/{"
-          + "organization}/locations/{location}/inspectTemplates/{inspect_template}\022Kprojects"
-          + "/{project}/locations/{location}/inspectTemplates/{inspect_template}\352A\327\001\n"
-          + "%dlp.googleapis.com/DeidentifyTemplate\022[organiza"
-          + "tions/{organization}/locations/{location}/deidentifyTemplates/{deidentify_templa"
-          + "te}\022Qprojects/{project}/locations/{locat"
-          + "ion}/deidentifyTemplates/{deidentify_template}\352Az\n"
-          + "%discoveryengine.googleapis.com/Engine\022Qprojects/{project}/locations/{"
-          + "location}/collections/{collection}/engines/{engine}b\006proto3"
+          + "\033com.google.cloud.ces.v1betaB"
+          + "\010AppProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A\310\001\n"
+          + "\"dlp.googleapis.com/InspectTemplate\022Uorganizations/{organ"
+          + "ization}/locations/{location}/inspectTemplates/{inspect_template}\022Kprojects/{pro"
+          + "ject}/locations/{location}/inspectTemplates/{inspect_template}\352A\327\001\n"
+          + "%dlp.googleapis.com/DeidentifyTemplate\022[organizations"
+          + "/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}\022Q"
+          + "projects/{project}/locations/{location}/"
+          + "deidentifyTemplates/{deidentify_template}\352Az\n"
+          + "%discoveryengine.googleapis.com/Engine\022Qprojects/{project}/locations/{locat"
+          + "ion}/collections/{collection}/engines/{engine}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -456,6 +476,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.ces.v1beta.BigQueryExportProto.getDescriptor(),
               com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfigProto.getDescriptor(),
               com.google.cloud.ces.v1beta.FakesProto.getDescriptor(),
               com.google.cloud.ces.v1beta.GoldenRunProto.getDescriptor(),
               com.google.cloud.ces.v1beta.SchemaProto.getDescriptor(),
@@ -492,9 +513,11 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "Etag",
               "DeploymentCount",
               "ClientCertificateSettings",
+              "VpcScSettings",
               "Locked",
               "EvaluationPersonas",
               "EvaluationSettings",
+              "ValidationErrors",
             });
     internal_static_google_cloud_ces_v1beta_App_VariableDeclaration_descriptor =
         internal_static_google_cloud_ces_v1beta_App_descriptor.getNestedType(0);
@@ -587,6 +610,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "RedactionConfig",
               "AudioRecordingConfig",
+              "UnredactedAudioRecordingConfig",
               "BigqueryExportSettings",
               "CloudLoggingSettings",
               "ConversationLoggingSettings",
@@ -687,6 +711,8 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "GoldenRunMethod",
               "GoldenEvaluationToolCallBehaviour",
               "ScenarioEvaluationToolCallBehaviour",
+              "MetricsConfig",
+              "ScenarioExecutionMode",
             });
     internal_static_google_cloud_ces_v1beta_ClientCertificateSettings_descriptor =
         getDescriptor().getMessageType(12);
@@ -696,8 +722,16 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "TlsCertificate", "PrivateKey", "Passphrase",
             });
-    internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_descriptor =
+    internal_static_google_cloud_ces_v1beta_VpcScSettings_descriptor =
         getDescriptor().getMessageType(13);
+    internal_static_google_cloud_ces_v1beta_VpcScSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_VpcScSettings_descriptor,
+            new java.lang.String[] {
+              "AllowedOrigins",
+            });
+    internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_descriptor =
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ConversationLoggingSettings_descriptor,
@@ -705,7 +739,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "DisableConversationLogging", "RetentionWindow",
             });
     internal_static_google_cloud_ces_v1beta_CloudLoggingSettings_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_ces_v1beta_CloudLoggingSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_CloudLoggingSettings_descriptor,
@@ -713,7 +747,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "EnableCloudLogging",
             });
     internal_static_google_cloud_ces_v1beta_AudioRecordingConfig_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_ces_v1beta_AudioRecordingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_AudioRecordingConfig_descriptor,
@@ -721,7 +755,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "GcsBucket", "GcsPathPrefix",
             });
     internal_static_google_cloud_ces_v1beta_RedactionConfig_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_ces_v1beta_RedactionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_RedactionConfig_descriptor,
@@ -729,7 +763,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "EnableRedaction", "InspectTemplate", "DeidentifyTemplate",
             });
     internal_static_google_cloud_ces_v1beta_DataStoreSettings_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_ces_v1beta_DataStoreSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_DataStoreSettings_descriptor,
@@ -745,7 +779,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
               "Name", "Type",
             });
     internal_static_google_cloud_ces_v1beta_EvaluationPersona_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_ces_v1beta_EvaluationPersona_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_EvaluationPersona_descriptor,
@@ -765,6 +799,7 @@ public final class AppProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.ces.v1beta.BigQueryExportProto.getDescriptor();
     com.google.cloud.ces.v1beta.CommonProto.getDescriptor();
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfigProto.getDescriptor();
     com.google.cloud.ces.v1beta.FakesProto.getDescriptor();
     com.google.cloud.ces.v1beta.GoldenRunProto.getDescriptor();
     com.google.cloud.ces.v1beta.SchemaProto.getDescriptor();

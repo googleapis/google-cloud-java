@@ -518,7 +518,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is text.
+     * Text input.
      * </pre>
      *
      * <code>INPUT_TYPE_TEXT = 1;</code>
@@ -528,7 +528,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is audio.
+     * Event input.
+     * </pre>
+     *
+     * <code>INPUT_TYPE_EVENT = 7;</code>
+     */
+    INPUT_TYPE_EVENT(7),
+    /**
+     *
+     *
+     * <pre>
+     * Audio input.
      * </pre>
      *
      * <code>INPUT_TYPE_AUDIO = 2;</code>
@@ -538,7 +548,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is image.
+     * Image input.
      * </pre>
      *
      * <code>INPUT_TYPE_IMAGE = 3;</code>
@@ -548,7 +558,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is blob file.
+     * Blob input.
      * </pre>
      *
      * <code>INPUT_TYPE_BLOB = 4;</code>
@@ -558,7 +568,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is client function tool response.
+     * Client function tool response input.
      * </pre>
      *
      * <code>INPUT_TYPE_TOOL_RESPONSE = 5;</code>
@@ -568,7 +578,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message are variables.
+     * Variables input.
      * </pre>
      *
      * <code>INPUT_TYPE_VARIABLES = 6;</code>
@@ -602,7 +612,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is text.
+     * Text input.
      * </pre>
      *
      * <code>INPUT_TYPE_TEXT = 1;</code>
@@ -613,7 +623,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is audio.
+     * Event input.
+     * </pre>
+     *
+     * <code>INPUT_TYPE_EVENT = 7;</code>
+     */
+    public static final int INPUT_TYPE_EVENT_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Audio input.
      * </pre>
      *
      * <code>INPUT_TYPE_AUDIO = 2;</code>
@@ -624,7 +645,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is image.
+     * Image input.
      * </pre>
      *
      * <code>INPUT_TYPE_IMAGE = 3;</code>
@@ -635,7 +656,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is blob file.
+     * Blob input.
      * </pre>
      *
      * <code>INPUT_TYPE_BLOB = 4;</code>
@@ -646,7 +667,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message is client function tool response.
+     * Client function tool response input.
      * </pre>
      *
      * <code>INPUT_TYPE_TOOL_RESPONSE = 5;</code>
@@ -657,7 +678,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The input message are variables.
+     * Variables input.
      * </pre>
      *
      * <code>INPUT_TYPE_VARIABLES = 6;</code>
@@ -692,6 +713,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           return INPUT_TYPE_UNSPECIFIED;
         case 1:
           return INPUT_TYPE_TEXT;
+        case 7:
+          return INPUT_TYPE_EVENT;
         case 2:
           return INPUT_TYPE_AUDIO;
         case 3:
@@ -2433,7 +2456,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=130
+   *     google/cloud/ces/v1beta/conversation.proto;l=133
    * @return The enum numeric value on the wire for channelType.
    */
   @java.lang.Override
@@ -2454,7 +2477,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=130
+   *     google/cloud/ces/v1beta/conversation.proto;l=133
    * @return The channelType.
    */
   @java.lang.Override
@@ -4681,7 +4704,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=130
+     *     google/cloud/ces/v1beta/conversation.proto;l=133
      * @return The enum numeric value on the wire for channelType.
      */
     @java.lang.Override
@@ -4702,7 +4725,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=130
+     *     google/cloud/ces/v1beta/conversation.proto;l=133
      * @param value The enum numeric value on the wire for channelType to set.
      * @return This builder for chaining.
      */
@@ -4726,7 +4749,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=130
+     *     google/cloud/ces/v1beta/conversation.proto;l=133
      * @return The channelType.
      */
     @java.lang.Override
@@ -4751,7 +4774,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=130
+     *     google/cloud/ces/v1beta/conversation.proto;l=133
      * @param value The channelType to set.
      * @return This builder for chaining.
      */
@@ -4778,7 +4801,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=130
+     *     google/cloud/ces/v1beta/conversation.proto;l=133
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

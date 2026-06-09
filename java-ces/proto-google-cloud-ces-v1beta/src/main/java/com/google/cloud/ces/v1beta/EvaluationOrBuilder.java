@@ -721,5 +721,93 @@ public interface EvaluationOrBuilder
    */
   com.google.cloud.ces.v1beta.EvaluationResultOrBuilder getLastTenResultsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationMetricsThresholdOverride field is set.
+   */
+  boolean hasEvaluationMetricsThresholdOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationMetricsThresholdOverride.
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds getEvaluationMetricsThresholdOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder
+      getEvaluationMetricsThresholdOverrideOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationMetricsConfigOverride field is set.
+   */
+  boolean hasEvaluationMetricsConfigOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationMetricsConfigOverride.
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsConfig getEvaluationMetricsConfigOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder
+      getEvaluationMetricsConfigOverrideOrBuilder();
+
   com.google.cloud.ces.v1beta.Evaluation.InputsCase getInputsCase();
 }
