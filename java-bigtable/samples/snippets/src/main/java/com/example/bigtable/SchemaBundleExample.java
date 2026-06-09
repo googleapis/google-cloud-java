@@ -30,7 +30,9 @@ import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.InvalidProtocolBufferException;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -163,7 +165,7 @@ public class SchemaBundleExample {
       // [START bigtable_create_schema_bundle]
       try (InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH)) {
         if (in == null) {
-          throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
+          throw new FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
         }
         SchemaBundle schemaBundleObj =
             SchemaBundle.newBuilder()
@@ -192,7 +194,7 @@ public class SchemaBundleExample {
     // [START bigtable_update_schema_bundle]
     try (InputStream in = getClass().getClassLoader().getResourceAsStream(PROTO_FILE_PATH)) {
       if (in == null) {
-        throw new java.io.FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
+        throw new FileNotFoundException("Resource not found: " + PROTO_FILE_PATH);
       }
       SchemaBundle schemaBundleObj =
           SchemaBundle.newBuilder()
@@ -211,8 +213,7 @@ public class SchemaBundleExample {
       UpdateSchemaBundleRequest request =
           UpdateSchemaBundleRequest.newBuilder()
               .setSchemaBundle(schemaBundleObj)
-              .setUpdateMask(
-                  com.google.protobuf.FieldMask.newBuilder().addPaths("proto_schema").build())
+              .setUpdateMask(FieldMask.newBuilder().addPaths("proto_schema").build())
               .build();
       SchemaBundle schemaBundle = adminClient.updateSchemaBundleAsync(request).get();
       System.out.printf("Schema bundle: %s updated successfully%n", schemaBundle.getName());

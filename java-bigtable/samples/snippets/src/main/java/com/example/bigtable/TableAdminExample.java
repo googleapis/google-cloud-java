@@ -29,6 +29,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.admin.v2.models.GcRuleBuilder;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Map;
 
 /**
  * An example of using Google Cloud Bigtable.
@@ -168,8 +169,7 @@ public class TableAdminExample {
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
       Table table = adminClient.getTable(tableName);
       System.out.println("Table: " + table.getName());
-      for (java.util.Map.Entry<String, ColumnFamily> entry :
-          table.getColumnFamiliesMap().entrySet()) {
+      for (Map.Entry<String, ColumnFamily> entry : table.getColumnFamiliesMap().entrySet()) {
         System.out.printf(
             "Column family: %s%nGC Rule: %s%n", entry.getKey(), entry.getValue().getGcRule());
       }
@@ -357,8 +357,7 @@ public class TableAdminExample {
       String tableName =
           "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
       Table table = adminClient.getTable(tableName);
-      for (java.util.Map.Entry<String, ColumnFamily> entry :
-          table.getColumnFamiliesMap().entrySet()) {
+      for (Map.Entry<String, ColumnFamily> entry : table.getColumnFamiliesMap().entrySet()) {
         System.out.printf(
             "Column family: %s%nGC Rule: %s%n", entry.getKey(), entry.getValue().getGcRule());
       }

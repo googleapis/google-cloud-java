@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -230,8 +231,7 @@ public class AuthorizedViewExample {
       UpdateAuthorizedViewRequest request =
           UpdateAuthorizedViewRequest.newBuilder()
               .setAuthorizedView(authorizedViewObj)
-              .setUpdateMask(
-                  com.google.protobuf.FieldMask.newBuilder().addPaths("subset_view").build())
+              .setUpdateMask(FieldMask.newBuilder().addPaths("subset_view").build())
               .build();
       AuthorizedView authorizedView = adminClient.updateAuthorizedViewAsync(request).get();
       System.out.printf("AuthorizedView: %s updated successfully%n", authorizedView.getName());
