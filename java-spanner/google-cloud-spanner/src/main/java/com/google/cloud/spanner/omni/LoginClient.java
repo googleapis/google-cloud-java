@@ -193,7 +193,12 @@ public class LoginClient {
     try {
       oprf = OpaqueUtil.finalize(blind, initialOpaqueResponse.getEvaluatedMessage().toByteArray());
       stretchedOprf = OpaqueUtil.stretch(oprf);
-      randomizedPassword = OpaqueUtil.extract(OpaqueUtil.concat(oprf, stretchedOprf));
+      byte[] oprfConcat = OpaqueUtil.concat(oprf, stretchedOprf);
+      try {
+        randomizedPassword = OpaqueUtil.extract(oprfConcat);
+      } finally {
+        Arrays.fill(oprfConcat, (byte) 0);
+      }
       maskingKey =
           OpaqueUtil.expand(
               randomizedPassword, OpaqueUtil.MASKING_KEY_INFO.getBytes(StandardCharsets.UTF_8), 32);
@@ -226,10 +231,15 @@ public class LoginClient {
                   envelopeNonce.toByteArray(),
                   OpaqueUtil.PRIVATE_KEY_INFO.getBytes(StandardCharsets.UTF_8)),
               32);
-      byte[][] clientKeyPair =
-          OpaqueUtil.generateKeyPair(
-              OpaqueUtil.concat(
-                  seed, OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(StandardCharsets.UTF_8)));
+      byte[] seedConcat =
+          OpaqueUtil.concat(
+              seed, OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(StandardCharsets.UTF_8));
+      byte[][] clientKeyPair;
+      try {
+        clientKeyPair = OpaqueUtil.generateKeyPair(seedConcat);
+      } finally {
+        Arrays.fill(seedConcat, (byte) 0);
+      }
       clientPrivateKey = clientKeyPair[0];
       byte[] clientPublicKey = clientKeyPair[1];
 

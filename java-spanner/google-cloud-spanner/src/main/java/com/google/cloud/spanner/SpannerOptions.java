@@ -2189,9 +2189,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       } else if (experimentalHost != null && credentials == null) {
         credentials = environment.getDefaultExperimentalHostCredentials();
       }
-      if (credentials instanceof com.google.cloud.spanner.omni.SpannerOmniCredentials) {
-        ((com.google.cloud.spanner.omni.SpannerOmniCredentials) credentials)
-            .initChannel(this.usePlainText, this.mTLSContext);
+      if (credentials instanceof SpannerOmniCredentials) {
+        ((SpannerOmniCredentials) credentials).initChannel(this.usePlainText, this.mTLSContext);
       }
       if (this.numChannels == null) {
         this.numChannels =

@@ -327,7 +327,12 @@ public class OpaqueUtil {
       byte[] iBytes = new byte[] {(byte) i};
 
       byte[] bignumBytes = concat(iBytes, x);
-      byte[] hashedString = sha256(bignumBytes);
+      byte[] hashedString;
+      try {
+        hashedString = sha256(bignumBytes);
+      } finally {
+        Arrays.fill(bignumBytes, (byte) 0);
+      }
 
       // Ensure hashedString is treated as a positive integer
       BigInteger newBigNum = new BigInteger(1, hashedString);

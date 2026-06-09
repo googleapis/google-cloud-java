@@ -98,6 +98,9 @@ import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharsetEncoder;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -765,12 +768,26 @@ public class ConnectionOptions {
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && !Strings.isNullOrEmpty(username)
         && !Strings.isNullOrEmpty(password)) {
-      byte[] passwordBytes = password.getBytes(StandardCharsets.UTF_8);
+      char[] passwordChars = password.toCharArray();
+      byte[] passwordBytes = null;
       SecretBytes secretBytes;
       try {
+        CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
+        CharBuffer charBuffer = CharBuffer.wrap(passwordChars);
+        ByteBuffer byteBuffer =
+            ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
+        encoder.encode(charBuffer, byteBuffer, true);
+        encoder.flush(byteBuffer);
+        byteBuffer.flip();
+        passwordBytes = new byte[byteBuffer.remaining()];
+        byteBuffer.get(passwordBytes);
+        Arrays.fill(byteBuffer.array(), (byte) 0);
         secretBytes = SecretBytes.copyFrom(passwordBytes, InsecureSecretKeyAccess.get());
       } finally {
-        Arrays.fill(passwordBytes, (byte) 0);
+        if (passwordBytes != null) {
+          Arrays.fill(passwordBytes, (byte) 0);
+        }
+        Arrays.fill(passwordChars, '\0');
       }
       this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
     } else if ((isExperimentalHostPattern || isExperimentalHost())
