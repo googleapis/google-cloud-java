@@ -39,23 +39,22 @@ public class SpannerOmniCredentials extends GoogleCredentials {
   private final String username;
   private final SecretBytes password;
   private String target;
-  private ManagedChannel loginChannel;
+  private boolean usePlainText = false;
+  private SslContext sslContext = null;
 
   public SpannerOmniCredentials(String username, SecretBytes password, String target) {
     this.username = com.google.common.base.Preconditions.checkNotNull(username);
     this.password = com.google.common.base.Preconditions.checkNotNull(password);
     com.google.common.base.Preconditions.checkNotNull(target);
 
-    // Parse target and initialize channel. If target starts with http://, use plaintext.
+    // Parse target and initialize settings. If target starts with http://, use plaintext.
     if (target.startsWith("http://")) {
       this.target = target.substring(7);
-      this.loginChannel = NettyChannelBuilder.forTarget(this.target).usePlaintext().build();
+      this.usePlainText = true;
     } else if (target.startsWith("https://")) {
       this.target = target.substring(8);
-      this.loginChannel = NettyChannelBuilder.forTarget(this.target).build();
     } else {
       this.target = target;
-      this.loginChannel = NettyChannelBuilder.forTarget(this.target).build();
     }
   }
 
@@ -68,22 +67,23 @@ public class SpannerOmniCredentials extends GoogleCredentials {
             + (sslContext != null ? "non-null" : "null")
             + ", target="
             + target);
-    if (this.loginChannel != null) {
-      this.loginChannel.shutdown();
-    }
-    NettyChannelBuilder builder = NettyChannelBuilder.forTarget(this.target);
-    if (usePlainText) {
-      builder.usePlaintext();
-    } else if (sslContext != null) {
-      builder.sslContext(sslContext);
-    }
-    this.loginChannel = builder.build();
+    this.usePlainText = usePlainText;
+    this.sslContext = sslContext;
   }
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    ManagedChannel loginChannel = null;
     try {
-      LoginClient loginClient = new LoginClient(this.loginChannel);
+      NettyChannelBuilder builder = NettyChannelBuilder.forTarget(this.target);
+      if (this.usePlainText) {
+        builder.usePlaintext();
+      } else if (this.sslContext != null) {
+        builder.sslContext(this.sslContext);
+      }
+      loginChannel = builder.build();
+
+      LoginClient loginClient = new LoginClient(loginChannel);
       com.google.cloud.spanner.omni.Login.AccessToken protoToken =
           loginClient.login(username, password);
       String tokenValue = Base64.getEncoder().encodeToString(protoToken.toByteArray());
@@ -107,6 +107,15 @@ public class SpannerOmniCredentials extends GoogleCredentials {
         Thread.currentThread().interrupt();
       }
       throw new IOException("Failed to login to Spanner Omni", e);
+    } finally {
+      if (loginChannel != null) {
+        loginChannel.shutdownNow();
+        try {
+          loginChannel.awaitTermination(5, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+        }
+      }
     }
   }
 }

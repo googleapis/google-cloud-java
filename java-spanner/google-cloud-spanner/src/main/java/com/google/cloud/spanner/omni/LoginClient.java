@@ -272,8 +272,8 @@ public class LoginClient {
     private final java.util.concurrent.BlockingQueue<LoginResponse> responseQueue =
         new java.util.concurrent.LinkedBlockingQueue<>();
     private StreamObserver<LoginRequest> requestObserver;
-    private Throwable error;
-    private boolean completed = false;
+    private volatile Throwable error;
+    private volatile boolean completed = false;
 
     LoginStreamIOCall(LoginServiceGrpc.LoginServiceStub stub) {
       this.stub = stub;
