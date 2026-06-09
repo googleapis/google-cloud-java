@@ -226,6 +226,9 @@ public class LoginClient {
           OpaqueUtil.xorBytes(
               initialOpaqueResponse.getMaskedResponse().toByteArray(), credentialResponsePad);
       ByteString envelope = ByteString.copyFrom(serializedEnvelope);
+      if (envelope.size() < 65) {
+        throw new GeneralSecurityException("Invalid envelope size: " + envelope.size());
+      }
       ByteString serverPublicKey = envelope.substring(0, 33);
       ByteString envelopeNonce = envelope.substring(33, 33 + 16);
       ByteString authTag = envelope.substring(33 + 16, 33 + 16 + 16);
