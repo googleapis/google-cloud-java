@@ -470,6 +470,65 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int EXPERIMENT_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.ces.v1beta.ExperimentConfig experimentConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the experimentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasExperimentConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The experimentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ExperimentConfig getExperimentConfig() {
+    return experimentConfig_ == null
+        ? com.google.cloud.ces.v1beta.ExperimentConfig.getDefaultInstance()
+        : experimentConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder getExperimentConfigOrBuilder() {
+    return experimentConfig_ == null
+        ? com.google.cloud.ces.v1beta.ExperimentConfig.getDefaultInstance()
+        : experimentConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -505,6 +564,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, displayName_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getExperimentConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -534,6 +596,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, displayName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExperimentConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -566,6 +631,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasExperimentConfig() != other.hasExperimentConfig()) return false;
+    if (hasExperimentConfig()) {
+      if (!getExperimentConfig().equals(other.getExperimentConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -597,6 +666,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasExperimentConfig()) {
+      hash = (37 * hash) + EXPERIMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getExperimentConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -742,6 +815,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         internalGetChannelProfileFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetExperimentConfigFieldBuilder();
       }
     }
 
@@ -768,6 +842,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       etag_ = "";
+      experimentConfig_ = null;
+      if (experimentConfigBuilder_ != null) {
+        experimentConfigBuilder_.dispose();
+        experimentConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -830,6 +909,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.experimentConfig_ =
+            experimentConfigBuilder_ == null ? experimentConfig_ : experimentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -873,6 +957,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         etag_ = other.etag_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasExperimentConfig()) {
+        mergeExperimentConfig(other.getExperimentConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -945,6 +1032,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetExperimentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2093,6 +2187,220 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1beta.ExperimentConfig experimentConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ExperimentConfig,
+            com.google.cloud.ces.v1beta.ExperimentConfig.Builder,
+            com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder>
+        experimentConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the experimentConfig field is set.
+     */
+    public boolean hasExperimentConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The experimentConfig.
+     */
+    public com.google.cloud.ces.v1beta.ExperimentConfig getExperimentConfig() {
+      if (experimentConfigBuilder_ == null) {
+        return experimentConfig_ == null
+            ? com.google.cloud.ces.v1beta.ExperimentConfig.getDefaultInstance()
+            : experimentConfig_;
+      } else {
+        return experimentConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExperimentConfig(com.google.cloud.ces.v1beta.ExperimentConfig value) {
+      if (experimentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        experimentConfig_ = value;
+      } else {
+        experimentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExperimentConfig(
+        com.google.cloud.ces.v1beta.ExperimentConfig.Builder builderForValue) {
+      if (experimentConfigBuilder_ == null) {
+        experimentConfig_ = builderForValue.build();
+      } else {
+        experimentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExperimentConfig(com.google.cloud.ces.v1beta.ExperimentConfig value) {
+      if (experimentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && experimentConfig_ != null
+            && experimentConfig_
+                != com.google.cloud.ces.v1beta.ExperimentConfig.getDefaultInstance()) {
+          getExperimentConfigBuilder().mergeFrom(value);
+        } else {
+          experimentConfig_ = value;
+        }
+      } else {
+        experimentConfigBuilder_.mergeFrom(value);
+      }
+      if (experimentConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExperimentConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      experimentConfig_ = null;
+      if (experimentConfigBuilder_ != null) {
+        experimentConfigBuilder_.dispose();
+        experimentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ExperimentConfig.Builder getExperimentConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetExperimentConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder getExperimentConfigOrBuilder() {
+      if (experimentConfigBuilder_ != null) {
+        return experimentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return experimentConfig_ == null
+            ? com.google.cloud.ces.v1beta.ExperimentConfig.getDefaultInstance()
+            : experimentConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ExperimentConfig,
+            com.google.cloud.ces.v1beta.ExperimentConfig.Builder,
+            com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder>
+        internalGetExperimentConfigFieldBuilder() {
+      if (experimentConfigBuilder_ == null) {
+        experimentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ExperimentConfig,
+                com.google.cloud.ces.v1beta.ExperimentConfig.Builder,
+                com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder>(
+                getExperimentConfig(), getParentForChildren(), isClean());
+        experimentConfig_ = null;
+      }
+      return experimentConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Deployment)
