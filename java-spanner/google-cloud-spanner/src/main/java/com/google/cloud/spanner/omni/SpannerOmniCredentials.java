@@ -19,13 +19,17 @@ package com.google.cloud.spanner.omni;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.base.Preconditions;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -43,6 +47,29 @@ public class SpannerOmniCredentials extends GoogleCredentials {
   private String target;
   private boolean usePlainText = false;
   private SslContext sslContext = null;
+
+  public static SecretBytes convertToSecretBytes(char[] passwordChars) {
+    byte[] passwordBytes = null;
+    try {
+      CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
+      CharBuffer charBuffer = CharBuffer.wrap(passwordChars);
+      ByteBuffer byteBuffer =
+          ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
+      encoder.encode(charBuffer, byteBuffer, true);
+      encoder.flush(byteBuffer);
+      byteBuffer.flip();
+      passwordBytes = new byte[byteBuffer.remaining()];
+      byteBuffer.get(passwordBytes);
+      Arrays.fill(byteBuffer.array(), (byte) 0);
+      return SecretBytes.copyFrom(
+          passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
+    } finally {
+      if (passwordBytes != null) {
+        Arrays.fill(passwordBytes, (byte) 0);
+      }
+      Arrays.fill(passwordChars, '\0');
+    }
+  }
 
   public SpannerOmniCredentials(String username, SecretBytes password, String target) {
     this.username = Preconditions.checkNotNull(username);
@@ -93,11 +120,12 @@ public class SpannerOmniCredentials extends GoogleCredentials {
       Login.AccessToken protoToken = loginClient.login(username, password);
       String tokenValue = Base64.getEncoder().encodeToString(protoToken.toByteArray());
 
-      long expireTimeMillis =
-          protoToken.getExpirationTime().getSeconds() * 1000
-              + protoToken.getExpirationTime().getNanos() / 1000000;
-
-      if (expireTimeMillis <= System.currentTimeMillis()) {
+      long expireTimeMillis;
+      if (protoToken.hasExpirationTime()) {
+        expireTimeMillis =
+            protoToken.getExpirationTime().getSeconds() * 1000
+                + protoToken.getExpirationTime().getNanos() / 1000000;
+      } else {
         expireTimeMillis = System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(60);
       }
 
@@ -119,7 +147,6 @@ public class SpannerOmniCredentials extends GoogleCredentials {
         } catch (InterruptedException e) {
           loginChannel.shutdownNow();
           Thread.currentThread().interrupt();
-          throw SpannerExceptionFactory.newSpannerException(e);
         }
       }
     }

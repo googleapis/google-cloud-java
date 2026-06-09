@@ -147,10 +147,10 @@ public class LoginClient {
         call.send(finalRequest);
         call.halfClose();
         LoginResponse finalResponse = call.getResponse();
-        if (finalResponse == null) {
+        if (!finalResponse.hasAccessToken()) {
           throw SpannerExceptionFactory.newSpannerException(
               com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
-              "Server closed the stream without returning an access token.");
+              "Server failed to return an access token.");
         }
         return finalResponse.getAccessToken();
       }

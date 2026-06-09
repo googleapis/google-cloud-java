@@ -67,7 +67,6 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import com.google.crypto.tink.InsecureSecretKeyAccess;
 import com.google.crypto.tink.util.SecretBytes;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
@@ -94,15 +93,10 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
@@ -1830,6 +1824,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * resulting token for use in subsequent Spanner API calls. The endpoint must be set on the
      * builder before calling this method.
      *
+     * <p>Note: The provided {@code password} array will be cleared (zeroed out) by this method for
+     * security purposes.
+     *
      * @param username The username for login.
      * @param password The password for login.
      * @return this builder
@@ -1843,27 +1840,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       Preconditions.checkArgument(
           password != null && password.length > 0, "password cannot be null or empty");
 
-      byte[] passwordBytes = null;
-      SecretBytes secretBytes;
-      try {
-        CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
-        CharBuffer charBuffer = CharBuffer.wrap(password);
-        ByteBuffer byteBuffer =
-            ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
-        encoder.encode(charBuffer, byteBuffer, true);
-        encoder.flush(byteBuffer);
-        byteBuffer.flip();
-        passwordBytes = new byte[byteBuffer.remaining()];
-        byteBuffer.get(passwordBytes);
-        Arrays.fill(byteBuffer.array(), (byte) 0);
-
-        secretBytes = SecretBytes.copyFrom(passwordBytes, InsecureSecretKeyAccess.get());
-      } finally {
-        if (passwordBytes != null) {
-          Arrays.fill(passwordBytes, (byte) 0);
-        }
-        Arrays.fill(password, '\0');
-      }
+      SecretBytes secretBytes = SpannerOmniCredentials.convertToSecretBytes(password);
 
       super.setCredentials(
           new SpannerOmniCredentials(username, secretBytes, this.experimentalHost));
