@@ -95,7 +95,7 @@ public class SchemaBundleExample {
               .setView(Table.View.NAME_ONLY)
               .build());
       return true;
-    } catch (com.google.api.gax.rpc.NotFoundException e) {
+    } catch (NotFoundException e) {
       return false;
     }
   }

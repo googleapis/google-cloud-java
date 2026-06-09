@@ -123,7 +123,7 @@ public class InstanceAdminExample {
               .setName("projects/" + projectId + "/instances/" + instanceId)
               .build());
       exists = true;
-    } catch (com.google.api.gax.rpc.NotFoundException e) {
+    } catch (NotFoundException e) {
       // ignore
     }
     if (!exists) {
