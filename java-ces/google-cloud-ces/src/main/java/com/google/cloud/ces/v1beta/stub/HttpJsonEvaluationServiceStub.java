@@ -57,6 +57,12 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsResponse;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsResponse;
 import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
@@ -86,6 +92,9 @@ import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsOperationMetadata;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsResponse;
 import com.google.cloud.ces.v1beta.ScheduledEvaluationRun;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceRequest;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceResponse;
@@ -122,15 +131,21 @@ import javax.annotation.Generated;
 public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
-          .add(Empty.getDescriptor())
-          .add(GenerateEvaluationOperationMetadata.getDescriptor())
+          .add(ExportEvaluationRunsOperationMetadata.getDescriptor())
+          .add(ExportEvaluationRunsResponse.getDescriptor())
+          .add(ExportEvaluationResultsOperationMetadata.getDescriptor())
           .add(RunEvaluationOperationMetadata.getDescriptor())
           .add(ImportEvaluationsOperationMetadata.getDescriptor())
-          .add(DeleteEvaluationRunOperationMetadata.getDescriptor())
           .add(ExportEvaluationsResponse.getDescriptor())
+          .add(ImportEvaluationsResponse.getDescriptor())
+          .add(Empty.getDescriptor())
+          .add(RunEvaluationResultMetricsOperationMetadata.getDescriptor())
+          .add(GenerateEvaluationOperationMetadata.getDescriptor())
+          .add(RunEvaluationResultMetricsResponse.getDescriptor())
+          .add(ExportEvaluationResultsResponse.getDescriptor())
+          .add(DeleteEvaluationRunOperationMetadata.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Evaluation.getDescriptor())
-          .add(ImportEvaluationsResponse.getDescriptor())
           .add(RunEvaluationResponse.getDescriptor())
           .build();
 
@@ -1387,6 +1402,132 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportEvaluationRunsRequest, Operation>
+      exportEvaluationRunsMethodDescriptor =
+          ApiMethodDescriptor.<ExportEvaluationRunsRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.EvaluationService/ExportEvaluationRuns")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportEvaluationRunsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/apps/*}/evaluationRuns:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportEvaluationRunsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsMethodDescriptor =
+          ApiMethodDescriptor.<ExportEvaluationResultsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.EvaluationService/ExportEvaluationResults")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportEvaluationResultsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/apps/*/evaluations/*}/results:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationResultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportEvaluationResultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportEvaluationResultsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsMethodDescriptor =
+          ApiMethodDescriptor.<RunEvaluationResultMetricsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.EvaluationService/RunEvaluationResultMetrics")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunEvaluationResultMetricsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{evaluationResultId=projects/*/locations/*/apps/*/evaluations/*/results/*}:runEvaluationResultMetrics",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunEvaluationResultMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "evaluationResultId", request.getEvaluationResultId());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunEvaluationResultMetricsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearEvaluationResultId().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RunEvaluationResultMetricsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1538,6 +1679,26 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
   private final OperationCallable<
           ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
       exportEvaluationsOperationCallable;
+  private final UnaryCallable<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsCallable;
+  private final OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable;
+  private final UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable;
+  private final OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable;
+  private final UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable;
+  private final OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2034,6 +2195,46 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<ExportEvaluationRunsRequest, Operation>
+        exportEvaluationRunsTransportSettings =
+            HttpJsonCallSettings.<ExportEvaluationRunsRequest, Operation>newBuilder()
+                .setMethodDescriptor(exportEvaluationRunsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ExportEvaluationResultsRequest, Operation>
+        exportEvaluationResultsTransportSettings =
+            HttpJsonCallSettings.<ExportEvaluationResultsRequest, Operation>newBuilder()
+                .setMethodDescriptor(exportEvaluationResultsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<RunEvaluationResultMetricsRequest, Operation>
+        runEvaluationResultMetricsTransportSettings =
+            HttpJsonCallSettings.<RunEvaluationResultMetricsRequest, Operation>newBuilder()
+                .setMethodDescriptor(runEvaluationResultMetricsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "evaluation_result_id", String.valueOf(request.getEvaluationResultId()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getEvaluationResultId())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2260,6 +2461,39 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
             settings.exportEvaluationsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportEvaluationRunsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationRunsTransportSettings,
+            settings.exportEvaluationRunsSettings(),
+            clientContext);
+    this.exportEvaluationRunsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationRunsTransportSettings,
+            settings.exportEvaluationRunsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.exportEvaluationResultsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationResultsTransportSettings,
+            settings.exportEvaluationResultsSettings(),
+            clientContext);
+    this.exportEvaluationResultsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationResultsTransportSettings,
+            settings.exportEvaluationResultsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.runEvaluationResultMetricsCallable =
+        callableFactory.createUnaryCallable(
+            runEvaluationResultMetricsTransportSettings,
+            settings.runEvaluationResultMetricsSettings(),
+            clientContext);
+    this.runEvaluationResultMetricsOperationCallable =
+        callableFactory.createOperationCallable(
+            runEvaluationResultMetricsTransportSettings,
+            settings.runEvaluationResultMetricsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2309,6 +2543,9 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
     methodDescriptors.add(deleteScheduledEvaluationRunMethodDescriptor);
     methodDescriptors.add(testPersonaVoiceMethodDescriptor);
     methodDescriptors.add(exportEvaluationsMethodDescriptor);
+    methodDescriptors.add(exportEvaluationRunsMethodDescriptor);
+    methodDescriptors.add(exportEvaluationResultsMethodDescriptor);
+    methodDescriptors.add(runEvaluationResultMetricsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2563,6 +2800,50 @@ public class HttpJsonEvaluationServiceStub extends EvaluationServiceStub {
   public OperationCallable<ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
       exportEvaluationsOperationCallable() {
     return exportEvaluationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsCallable() {
+    return exportEvaluationRunsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable() {
+    return exportEvaluationRunsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable() {
+    return exportEvaluationResultsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable() {
+    return exportEvaluationResultsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable() {
+    return runEvaluationResultMetricsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable() {
+    return runEvaluationResultMetricsOperationCallable;
   }
 
   @Override
