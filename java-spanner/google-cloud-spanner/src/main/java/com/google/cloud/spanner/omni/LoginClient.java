@@ -56,6 +56,7 @@ public class LoginClient {
     Preconditions.checkNotNull(username);
     Preconditions.checkNotNull(password);
     byte[] passwordBytes = null;
+    byte[] clientPrivateKeyshare = null;
     try {
       passwordBytes = password.toByteArray(InsecureSecretKeyAccess.get());
       byte[] randomNonce = OpaqueUtil.nonce();
@@ -65,7 +66,7 @@ public class LoginClient {
                   randomNonce,
                   OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(
                       java.nio.charset.StandardCharsets.UTF_8)));
-      byte[] clientPrivateKeyshare = keyPair[0];
+      clientPrivateKeyshare = keyPair[0];
       byte[] clientPublicKeyshare = keyPair[1];
       byte[] clientNonce = OpaqueUtil.nonce();
       byte[] blind = new byte[32];
@@ -149,6 +150,9 @@ public class LoginClient {
       if (passwordBytes != null) {
         java.util.Arrays.fill(passwordBytes, (byte) 0);
       }
+      if (clientPrivateKeyshare != null) {
+        java.util.Arrays.fill(clientPrivateKeyshare, (byte) 0);
+      }
     }
   }
 
@@ -160,109 +164,141 @@ public class LoginClient {
       byte[] clientPrivateKeyshare,
       InitialOpaqueLoginResponse initialOpaqueResponse)
       throws GeneralSecurityException, IOException {
-    byte[] oprf =
-        OpaqueUtil.finalize(blind, initialOpaqueResponse.getEvaluatedMessage().toByteArray());
-    byte[] stretchedOprf = OpaqueUtil.stretch(oprf);
-    byte[] randomizedPassword = OpaqueUtil.extract(OpaqueUtil.concat(oprf, stretchedOprf));
-    byte[] maskingKey =
-        OpaqueUtil.expand(
-            randomizedPassword,
-            OpaqueUtil.MASKING_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8),
-            32);
-    byte[] credentialResponsePad =
-        OpaqueUtil.expand(
-            maskingKey,
-            OpaqueUtil.concat(
-                initialOpaqueResponse.getMaskingNonce().toByteArray(),
-                "CredentialResponsePad".getBytes(java.nio.charset.StandardCharsets.UTF_8)),
-            16 + 33 + 16);
-    byte[] serializedEnvelope =
-        OpaqueUtil.xorBytes(
-            initialOpaqueResponse.getMaskedResponse().toByteArray(), credentialResponsePad);
-    ByteString envelope = ByteString.copyFrom(serializedEnvelope);
-    ByteString serverPublicKey = envelope.substring(0, 33);
-    ByteString envelopeNonce = envelope.substring(33, 33 + 16);
-    ByteString authTag = envelope.substring(33 + 16, 33 + 16 + 16);
+    byte[] oprf = null;
+    byte[] stretchedOprf = null;
+    byte[] randomizedPassword = null;
+    byte[] maskingKey = null;
+    byte[] authKey = null;
+    byte[] seed = null;
+    byte[] dh1 = null;
+    byte[] dh2 = null;
+    byte[] dh3 = null;
+    byte[] inputKeyMaterial = null;
+    byte[] handshakeSecret = null;
+    byte[] km2 = null;
+    byte[] km3 = null;
+    byte[] clientPrivateKey = null;
 
-    byte[] authKey =
-        OpaqueUtil.expand(
-            randomizedPassword,
-            OpaqueUtil.concat(
-                envelopeNonce.toByteArray(),
-                OpaqueUtil.AUTH_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
-            32);
-    byte[] seed =
-        OpaqueUtil.expand(
-            randomizedPassword,
-            OpaqueUtil.concat(
-                envelopeNonce.toByteArray(),
-                OpaqueUtil.PRIVATE_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
-            32);
-    byte[][] clientKeyPair =
-        OpaqueUtil.generateKeyPair(
-            OpaqueUtil.concat(
-                seed,
-                OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(
-                    java.nio.charset.StandardCharsets.UTF_8)));
-    byte[] clientPrivateKey = clientKeyPair[0];
-    byte[] clientPublicKey = clientKeyPair[1];
+    try {
+      oprf = OpaqueUtil.finalize(blind, initialOpaqueResponse.getEvaluatedMessage().toByteArray());
+      stretchedOprf = OpaqueUtil.stretch(oprf);
+      randomizedPassword = OpaqueUtil.extract(OpaqueUtil.concat(oprf, stretchedOprf));
+      maskingKey =
+          OpaqueUtil.expand(
+              randomizedPassword,
+              OpaqueUtil.MASKING_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+              32);
+      byte[] credentialResponsePad =
+          OpaqueUtil.expand(
+              maskingKey,
+              OpaqueUtil.concat(
+                  initialOpaqueResponse.getMaskingNonce().toByteArray(),
+                  "CredentialResponsePad".getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+              16 + 33 + 16);
+      byte[] serializedEnvelope =
+          OpaqueUtil.xorBytes(
+              initialOpaqueResponse.getMaskedResponse().toByteArray(), credentialResponsePad);
+      ByteString envelope = ByteString.copyFrom(serializedEnvelope);
+      ByteString serverPublicKey = envelope.substring(0, 33);
+      ByteString envelopeNonce = envelope.substring(33, 33 + 16);
+      ByteString authTag = envelope.substring(33 + 16, 33 + 16 + 16);
 
-    byte[] expectedTag =
-        OpaqueUtil.mac(
-            authKey,
-            OpaqueUtil.concat(
-                envelopeNonce.toByteArray(),
-                serverPublicKey.toByteArray(),
-                username.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
-    if (!ByteString.copyFrom(expectedTag).equals(authTag)) {
-      throw new GeneralSecurityException("Auth tag mismatch");
+      authKey =
+          OpaqueUtil.expand(
+              randomizedPassword,
+              OpaqueUtil.concat(
+                  envelopeNonce.toByteArray(),
+                  OpaqueUtil.AUTH_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+              32);
+      seed =
+          OpaqueUtil.expand(
+              randomizedPassword,
+              OpaqueUtil.concat(
+                  envelopeNonce.toByteArray(),
+                  OpaqueUtil.PRIVATE_KEY_INFO.getBytes(java.nio.charset.StandardCharsets.UTF_8)),
+              32);
+      byte[][] clientKeyPair =
+          OpaqueUtil.generateKeyPair(
+              OpaqueUtil.concat(
+                  seed,
+                  OpaqueUtil.DIFFIE_HELLMAN_KEY_INFO.getBytes(
+                      java.nio.charset.StandardCharsets.UTF_8)));
+      clientPrivateKey = clientKeyPair[0];
+      byte[] clientPublicKey = clientKeyPair[1];
+
+      byte[] expectedTag =
+          OpaqueUtil.mac(
+              authKey,
+              OpaqueUtil.concat(
+                  envelopeNonce.toByteArray(),
+                  serverPublicKey.toByteArray(),
+                  username.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+      if (!java.security.MessageDigest.isEqual(expectedTag, authTag.toByteArray())) {
+        throw new GeneralSecurityException("Auth tag mismatch");
+      }
+
+      dh1 =
+          OpaqueUtil.diffieHellman(
+              clientPrivateKeyshare, initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
+      dh2 = OpaqueUtil.diffieHellman(clientPrivateKeyshare, serverPublicKey.toByteArray());
+      dh3 =
+          OpaqueUtil.diffieHellman(
+              clientPrivateKey, initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
+
+      inputKeyMaterial = OpaqueUtil.concat(dh1, dh2, dh3);
+
+      byte[] preamble =
+          OpaqueUtil.concat(
+              "OPAQUEv1-".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+              username.getBytes(java.nio.charset.StandardCharsets.UTF_8),
+              clientNonce,
+              clientPublicKeyshare,
+              serverPublicKey.toByteArray(),
+              initialOpaqueResponse.getEvaluatedMessage().toByteArray(),
+              initialOpaqueResponse.getServerNonce().toByteArray(),
+              initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
+      byte[] prk = OpaqueUtil.extract(inputKeyMaterial);
+      byte[] preambleHash = OpaqueUtil.sha256(preamble);
+      handshakeSecret =
+          OpaqueUtil.expand(
+              prk,
+              OpaqueUtil.concat(
+                  "OPAQUE-HandshakeSecret".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+                  preambleHash),
+              32);
+      km2 =
+          OpaqueUtil.expand(
+              handshakeSecret,
+              "OPAQUE-ServerMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+              32);
+      km3 =
+          OpaqueUtil.expand(
+              handshakeSecret,
+              "OPAQUE-ClientMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
+              32);
+
+      byte[] expectedServerMac = OpaqueUtil.mac(km2, OpaqueUtil.sha256(preamble));
+      if (!java.security.MessageDigest.isEqual(
+          expectedServerMac, initialOpaqueResponse.getServerMac().toByteArray())) {
+        throw new GeneralSecurityException("Server MAC mismatch");
+      }
+      return OpaqueUtil.mac(km3, OpaqueUtil.sha256(OpaqueUtil.concat(preamble, expectedServerMac)));
+    } finally {
+      if (oprf != null) java.util.Arrays.fill(oprf, (byte) 0);
+      if (stretchedOprf != null) java.util.Arrays.fill(stretchedOprf, (byte) 0);
+      if (randomizedPassword != null) java.util.Arrays.fill(randomizedPassword, (byte) 0);
+      if (maskingKey != null) java.util.Arrays.fill(maskingKey, (byte) 0);
+      if (authKey != null) java.util.Arrays.fill(authKey, (byte) 0);
+      if (seed != null) java.util.Arrays.fill(seed, (byte) 0);
+      if (dh1 != null) java.util.Arrays.fill(dh1, (byte) 0);
+      if (dh2 != null) java.util.Arrays.fill(dh2, (byte) 0);
+      if (dh3 != null) java.util.Arrays.fill(dh3, (byte) 0);
+      if (inputKeyMaterial != null) java.util.Arrays.fill(inputKeyMaterial, (byte) 0);
+      if (handshakeSecret != null) java.util.Arrays.fill(handshakeSecret, (byte) 0);
+      if (km2 != null) java.util.Arrays.fill(km2, (byte) 0);
+      if (km3 != null) java.util.Arrays.fill(km3, (byte) 0);
+      if (clientPrivateKey != null) java.util.Arrays.fill(clientPrivateKey, (byte) 0);
     }
-
-    byte[] dh1 =
-        OpaqueUtil.diffieHellman(
-            clientPrivateKeyshare, initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
-    byte[] dh2 = OpaqueUtil.diffieHellman(clientPrivateKeyshare, serverPublicKey.toByteArray());
-    byte[] dh3 =
-        OpaqueUtil.diffieHellman(
-            clientPrivateKey, initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
-
-    byte[] inputKeyMaterial = OpaqueUtil.concat(dh1, dh2, dh3);
-
-    byte[] preamble =
-        OpaqueUtil.concat(
-            "OPAQUEv1-".getBytes(java.nio.charset.StandardCharsets.UTF_8),
-            username.getBytes(java.nio.charset.StandardCharsets.UTF_8),
-            clientNonce,
-            clientPublicKeyshare,
-            serverPublicKey.toByteArray(),
-            initialOpaqueResponse.getEvaluatedMessage().toByteArray(),
-            initialOpaqueResponse.getServerNonce().toByteArray(),
-            initialOpaqueResponse.getServerPublicKeyshare().toByteArray());
-    byte[] prk = OpaqueUtil.extract(inputKeyMaterial);
-    byte[] preambleHash = OpaqueUtil.sha256(preamble);
-    byte[] handshakeSecret =
-        OpaqueUtil.expand(
-            prk,
-            OpaqueUtil.concat(
-                "OPAQUE-HandshakeSecret".getBytes(java.nio.charset.StandardCharsets.UTF_8),
-                preambleHash),
-            32);
-    byte[] km2 =
-        OpaqueUtil.expand(
-            handshakeSecret,
-            "OPAQUE-ServerMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
-            32);
-    byte[] km3 =
-        OpaqueUtil.expand(
-            handshakeSecret,
-            "OPAQUE-ClientMAC".getBytes(java.nio.charset.StandardCharsets.UTF_8),
-            32);
-
-    byte[] expectedServerMac = OpaqueUtil.mac(km2, OpaqueUtil.sha256(preamble));
-    if (!ByteString.copyFrom(expectedServerMac).equals(initialOpaqueResponse.getServerMac())) {
-      throw new GeneralSecurityException("Server MAC mismatch");
-    }
-    return OpaqueUtil.mac(km3, OpaqueUtil.sha256(OpaqueUtil.concat(preamble, expectedServerMac)));
   }
 
   static class LoginStreamIOCall {

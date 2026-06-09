@@ -1835,13 +1835,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       Preconditions.checkArgument(
           password != null && password.length > 0, "password cannot be null or empty");
 
+      java.nio.charset.CharsetEncoder encoder =
+          java.nio.charset.StandardCharsets.UTF_8.newEncoder();
+      java.nio.CharBuffer charBuffer = java.nio.CharBuffer.wrap(password);
       java.nio.ByteBuffer byteBuffer =
-          java.nio.charset.StandardCharsets.UTF_8.encode(java.nio.CharBuffer.wrap(password));
+          java.nio.ByteBuffer.allocate((int) (encoder.maxBytesPerChar() * charBuffer.remaining()));
+      encoder.encode(charBuffer, byteBuffer, true);
+      encoder.flush(byteBuffer);
+      byteBuffer.flip();
       byte[] passwordBytes = new byte[byteBuffer.remaining()];
       byteBuffer.get(passwordBytes);
-      if (byteBuffer.hasArray()) {
-        java.util.Arrays.fill(byteBuffer.array(), (byte) 0);
-      }
+      java.util.Arrays.fill(byteBuffer.array(), (byte) 0);
 
       com.google.crypto.tink.util.SecretBytes secretBytes =
           com.google.crypto.tink.util.SecretBytes.copyFrom(
