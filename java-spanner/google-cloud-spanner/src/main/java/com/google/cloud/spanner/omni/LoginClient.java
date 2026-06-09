@@ -62,6 +62,7 @@ public class LoginClient {
     Preconditions.checkNotNull(password);
     byte[] passwordBytes = null;
     byte[] clientPrivateKeyshare = null;
+    byte[] blind = null;
     try {
       passwordBytes = password.toByteArray(InsecureSecretKeyAccess.get());
       byte[] randomNonce = OpaqueUtil.nonce();
@@ -73,7 +74,7 @@ public class LoginClient {
       clientPrivateKeyshare = keyPair[0];
       byte[] clientPublicKeyshare = keyPair[1];
       byte[] clientNonce = OpaqueUtil.nonce();
-      byte[] blind = new byte[32];
+      blind = new byte[32];
       SECURE_RANDOM.nextBytes(blind);
 
       byte[] blindedMessage = OpaqueUtil.blind(passwordBytes, blind);
@@ -151,11 +152,16 @@ public class LoginClient {
       }
       throw SpannerExceptionFactory.newSpannerException(e);
     } finally {
+      // Securely zero out all intermediate sensitive buffers to prevent them
+      // from persisting in heap dumps or lingering in memory (memory scraping attacks).
       if (passwordBytes != null) {
         Arrays.fill(passwordBytes, (byte) 0);
       }
       if (clientPrivateKeyshare != null) {
         Arrays.fill(clientPrivateKeyshare, (byte) 0);
+      }
+      if (blind != null) {
+        Arrays.fill(blind, (byte) 0);
       }
     }
   }
@@ -234,6 +240,8 @@ public class LoginClient {
                   envelopeNonce.toByteArray(),
                   serverPublicKey.toByteArray(),
                   username.getBytes(StandardCharsets.UTF_8)));
+      // Use MessageDigest.isEqual for constant-time comparison to prevent timing attacks.
+      // A standard Arrays.equals or ByteString.equals fails fast and can reveal byte matches.
       if (!MessageDigest.isEqual(expectedTag, authTag.toByteArray())) {
         throw new GeneralSecurityException("Auth tag mismatch");
       }
@@ -280,6 +288,7 @@ public class LoginClient {
       }
       return OpaqueUtil.mac(km3, OpaqueUtil.sha256(OpaqueUtil.concat(preamble, expectedServerMac)));
     } finally {
+      // Zero out derived keys and diffie-hellman secrets to prevent credential scraping.
       if (oprf != null) Arrays.fill(oprf, (byte) 0);
       if (stretchedOprf != null) Arrays.fill(stretchedOprf, (byte) 0);
       if (randomizedPassword != null) Arrays.fill(randomizedPassword, (byte) 0);
@@ -299,11 +308,10 @@ public class LoginClient {
   }
 
   static class LoginStreamIOCall {
+    private static final Object COMPLETED_SENTINEL = new Object();
     private final LoginServiceGrpc.LoginServiceStub stub;
-    private final BlockingQueue<LoginResponse> responseQueue = new LinkedBlockingQueue<>();
+    private final BlockingQueue<Object> responseQueue = new LinkedBlockingQueue<>();
     private StreamObserver<LoginRequest> requestObserver;
-    private volatile Throwable error;
-    private volatile boolean completed = false;
 
     LoginStreamIOCall(LoginServiceGrpc.LoginServiceStub stub) {
       this.stub = stub;
@@ -317,16 +325,12 @@ public class LoginClient {
 
                 @Override
                 public void onError(Throwable t) {
-                  error = t;
-                  // Add a dummy response to unblock getResponse if it's waiting
-                  responseQueue.add(LoginResponse.getDefaultInstance());
+                  responseQueue.add(t);
                 }
 
                 @Override
                 public void onCompleted() {
-                  completed = true;
-                  // Add a dummy response to unblock getResponse if it's waiting
-                  responseQueue.add(LoginResponse.getDefaultInstance());
+                  responseQueue.add(COMPLETED_SENTINEL);
                 }
               });
     }
@@ -336,16 +340,14 @@ public class LoginClient {
     }
 
     LoginResponse getResponse() throws InterruptedException {
-      LoginResponse response = responseQueue.take();
-      if (response == LoginResponse.getDefaultInstance()) {
-        if (error != null) {
-          throw SpannerExceptionFactory.newSpannerException(error);
-        }
-        if (completed) {
-          return null;
-        }
+      Object response = responseQueue.take();
+      if (response instanceof Throwable) {
+        throw SpannerExceptionFactory.newSpannerException((Throwable) response);
       }
-      return response;
+      if (response == COMPLETED_SENTINEL) {
+        return null;
+      }
+      return (LoginResponse) response;
     }
 
     void halfClose() {

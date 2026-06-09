@@ -19,6 +19,7 @@ package com.google.cloud.spanner.omni;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.base.Preconditions;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.ManagedChannel;
@@ -74,6 +75,10 @@ public class SpannerOmniCredentials extends GoogleCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    // Create a new gRPC channel for every token refresh. We don't reuse a persistent channel
+    // because token refresh happens infrequently (e.g. once an hour) and keeping a long-lived
+    // connection open can lead to resource leaks (threads, TCP connections) if the credentials
+    // object is discarded without explicit shutdown.
     ManagedChannel loginChannel = null;
     try {
       NettyChannelBuilder builder = NettyChannelBuilder.forTarget(this.target);
@@ -103,12 +108,18 @@ public class SpannerOmniCredentials extends GoogleCredentials {
       }
       throw new IOException("Failed to login to Spanner Omni", e);
     } finally {
+      // Ensure the channel is shut down immediately after the token is fetched
+      // to avoid leaking any Netty threads or HTTP/2 connections.
       if (loginChannel != null) {
-        loginChannel.shutdownNow();
+        loginChannel.shutdown();
         try {
-          loginChannel.awaitTermination(5, TimeUnit.SECONDS);
+          if (!loginChannel.awaitTermination(5, TimeUnit.SECONDS)) {
+            loginChannel.shutdownNow();
+          }
         } catch (InterruptedException e) {
+          loginChannel.shutdownNow();
           Thread.currentThread().interrupt();
+          throw SpannerExceptionFactory.newSpannerException(e);
         }
       }
     }

@@ -186,6 +186,8 @@ public class OpaqueUtil {
 
   public static byte[] getHashToCurve(byte[] message, byte[] domain)
       throws GeneralSecurityException {
+    // Implements hash-to-curve using the Simplified SWU (SSWU) mapping.
+    // This securely and uniformly maps an arbitrary string (the password) onto the elliptic curve.
     byte[] uniformBytes = expandMessageXmd(message, domain, 96);
     byte[] u0Bytes = new byte[48];
     byte[] u1Bytes = new byte[48];
@@ -223,6 +225,8 @@ public class OpaqueUtil {
   }
 
   public static byte[] stretch(byte[] input) throws GeneralSecurityException {
+    // Stretches the OPRF evaluation using Argon2 (a memory-hard KDF).
+    // This is computationally expensive by design to protect against offline dictionary attacks.
     byte[] salt = null;
     try {
       salt = expand(input, "Stretch".getBytes(UTF_8), ARGON2_SALT_LENGTH);
@@ -305,6 +309,10 @@ public class OpaqueUtil {
 
   public static byte[] randomOracleSha256(byte[] x, BigInteger max)
       throws GeneralSecurityException {
+    // Implements a random oracle mapping using iterated SHA-256 blocks.
+    // Iteratively hashes the input and a block counter to generate a large uniformly distributed
+    // integer,
+    // which is then reduced modulo 'max'.
     int hashOutputLength = 256;
     int outputBitLength = max.bitLength() + hashOutputLength;
     int iterCount = (int) Math.ceil((double) outputBitLength / hashOutputLength);
