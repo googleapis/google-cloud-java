@@ -26,39 +26,25 @@ import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.Date;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Credentials implementation for Spanner Omni. Uses the OPAQUE protocol to authenticate and fetches
- * short-lived access tokens. Supports optional background auto-refreshing before token expiry.
+ * short-lived access tokens.
  */
 public class SpannerOmniCredentials extends GoogleCredentials {
   private static final Logger logger = Logger.getLogger(SpannerOmniCredentials.class.getName());
-
-  private static final ScheduledExecutorService SHARED_EXECUTOR =
-      Executors.newScheduledThreadPool(
-          1,
-          r -> {
-            Thread t = new Thread(r, "spanner-omni-refresh");
-            t.setDaemon(true);
-            return t;
-          });
 
   private final String username;
   private final SecretBytes password;
   private String target;
   private ManagedChannel loginChannel;
 
-  private ScheduledFuture<?> refreshTask;
-
   public SpannerOmniCredentials(String username, SecretBytes password, String target) {
-    this.username = username;
-    this.password = password;
+    this.username = com.google.common.base.Preconditions.checkNotNull(username);
+    this.password = com.google.common.base.Preconditions.checkNotNull(password);
+    com.google.common.base.Preconditions.checkNotNull(target);
 
     // Parse target and initialize channel. If target starts with http://, use plaintext.
     if (target.startsWith("http://")) {
@@ -114,52 +100,13 @@ public class SpannerOmniCredentials extends GoogleCredentials {
         tokenLifetimeMillis = TimeUnit.MINUTES.toMillis(60);
       }
 
-      AccessToken newAccessToken =
-          new AccessToken(tokenValue, new Date(System.currentTimeMillis() + tokenLifetimeMillis));
-
-      if (!SHARED_EXECUTOR.isShutdown()) {
-        scheduleRefresh(tokenLifetimeMillis);
-      }
-      return newAccessToken;
+      return new AccessToken(
+          tokenValue, new Date(System.currentTimeMillis() + tokenLifetimeMillis));
     } catch (Exception e) {
+      if (e instanceof InterruptedException || e.getCause() instanceof InterruptedException) {
+        Thread.currentThread().interrupt();
+      }
       throw new IOException("Failed to login to Spanner Omni", e);
     }
-  }
-
-  private void scheduleRefresh(long tokenLifetimeMillis) {
-    if (refreshTask != null && !refreshTask.isDone()) {
-      refreshTask.cancel(false);
-    }
-
-    // Refresh proactively at 3/4th of the token's lifetime!
-    long delayMillis = tokenLifetimeMillis * 3 / 4;
-
-    if (delayMillis < 0) {
-      delayMillis = 0;
-    }
-
-    java.lang.ref.WeakReference<SpannerOmniCredentials> weakThis =
-        new java.lang.ref.WeakReference<>(this);
-
-    Runnable refreshAction =
-        new Runnable() {
-          @Override
-          public void run() {
-            SpannerOmniCredentials creds = weakThis.get();
-            if (creds == null) {
-              return;
-            }
-            try {
-              creds.refresh();
-            } catch (IOException e) {
-              logger.log(Level.WARNING, "Failed to auto-refresh Spanner Omni credentials", e);
-              long retryDelay = Math.min(TimeUnit.SECONDS.toMillis(5), tokenLifetimeMillis / 4);
-              if (retryDelay <= 0) retryDelay = 1000;
-              creds.refreshTask = SHARED_EXECUTOR.schedule(this, retryDelay, TimeUnit.MILLISECONDS);
-            }
-          }
-        };
-
-    refreshTask = SHARED_EXECUTOR.schedule(refreshAction, delayMillis, TimeUnit.MILLISECONDS);
   }
 }

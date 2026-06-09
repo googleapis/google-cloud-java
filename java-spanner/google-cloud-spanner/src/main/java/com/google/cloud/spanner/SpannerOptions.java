@@ -1830,14 +1830,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       if (this.experimentalHost == null) {
         throw new IllegalStateException("Endpoint must be set before calling login.");
       }
-      String target = this.experimentalHost.replaceFirst("^https?://", "");
+      Preconditions.checkArgument(
+          username != null && !username.isEmpty(), "username cannot be null or empty");
+      Preconditions.checkArgument(
+          password != null && !password.isEmpty(), "password cannot be null or empty");
       byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
       com.google.crypto.tink.util.SecretBytes secretBytes =
           com.google.crypto.tink.util.SecretBytes.copyFrom(
               passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
       java.util.Arrays.fill(passwordBytes, (byte) 0);
       super.setCredentials(
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(username, secretBytes, target));
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
+              username, secretBytes, this.experimentalHost));
       return this;
     }
 

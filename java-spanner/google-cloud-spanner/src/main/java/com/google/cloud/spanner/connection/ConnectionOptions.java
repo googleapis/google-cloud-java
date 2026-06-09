@@ -760,14 +760,14 @@ public class ConnectionOptions {
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && !com.google.common.base.Strings.isNullOrEmpty(username)
         && !com.google.common.base.Strings.isNullOrEmpty(password)) {
-      String target = this.host.replaceFirst("^https?://", "");
       byte[] passwordBytes = password.getBytes(java.nio.charset.StandardCharsets.UTF_8);
       com.google.crypto.tink.util.SecretBytes secretBytes =
           com.google.crypto.tink.util.SecretBytes.copyFrom(
               passwordBytes, com.google.crypto.tink.InsecureSecretKeyAccess.get());
       java.util.Arrays.fill(passwordBytes, (byte) 0);
       this.credentials =
-          new com.google.cloud.spanner.omni.SpannerOmniCredentials(username, secretBytes, target);
+          new com.google.cloud.spanner.omni.SpannerOmniCredentials(
+              username, secretBytes, this.host);
     } else if ((isExperimentalHostPattern || isExperimentalHost())
         && defaultExperimentalHostCredentials != null) {
       this.credentials = defaultExperimentalHostCredentials;

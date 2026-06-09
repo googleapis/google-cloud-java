@@ -142,6 +142,9 @@ public class LoginClient {
       LoginResponse finalResponse = call.getResponse();
       return finalResponse.getAccessToken();
     } catch (GeneralSecurityException | IOException | InterruptedException e) {
+      if (e instanceof InterruptedException) {
+        Thread.currentThread().interrupt();
+      }
       throw SpannerExceptionFactory.newSpannerException(e);
     } finally {
       if (passwordBytes != null) {

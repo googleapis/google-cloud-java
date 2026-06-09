@@ -19,8 +19,6 @@ package com.google.cloud.spanner.omni.opaque;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.crypto.tink.subtle.Hkdf;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
@@ -254,12 +252,18 @@ public class OpaqueUtil {
     return result;
   }
 
-  public static byte[] concat(byte[]... arrays) throws IOException {
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
+  public static byte[] concat(byte[]... arrays) {
+    int totalLength = 0;
     for (byte[] array : arrays) {
-      out.write(array);
+      totalLength += array.length;
     }
-    return out.toByteArray();
+    byte[] result = new byte[totalLength];
+    int currentIndex = 0;
+    for (byte[] array : arrays) {
+      System.arraycopy(array, 0, result, currentIndex, array.length);
+      currentIndex += array.length;
+    }
+    return result;
   }
 
   public static byte[] mac(byte[] key, byte[] data) throws GeneralSecurityException {
@@ -312,12 +316,7 @@ public class OpaqueUtil {
         iBytes = tmp;
       }
 
-      byte[] bignumBytes;
-      try {
-        bignumBytes = concat(iBytes, x);
-      } catch (IOException e) {
-        throw new GeneralSecurityException(e);
-      }
+      byte[] bignumBytes = concat(iBytes, x);
       byte[] hashedString = sha256(bignumBytes);
 
       // Ensure hashedString is treated as a positive integer (prepend 0x00)
