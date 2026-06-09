@@ -154,4 +154,49 @@ public interface ConversationOptionsOrBuilder
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder getDatasourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the model field is set.
+   */
+  boolean hasModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for model.
+   */
+  int getModelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The model.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model getModel();
 }

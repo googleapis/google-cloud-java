@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Update librarian googleapis commitish
+name: Librarian - Update googleapis commitish and generate all
 on:
   schedule:
   - cron: '0 3 * * *' # Run once a day at 3:00 AM UTC
@@ -68,8 +68,13 @@ jobs:
         new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${version}" config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
-    - name: Detect Changes
-      id: detect
+    # TODO(https://github.com/googleapis/librarian/issues/6220): Remove this step.
+    - name: Update generation_config.yaml
+      run: |
+        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${{ steps.commit.outputs.new_commit }}/" generation_config.yaml
+        git diff generation_config.yaml
+    - name: Detect Changes To Librarian.yaml
+      id: detect_librarian
       run: |
         git add librarian.yaml
         changed_files=$(git diff --cached --name-only)
@@ -79,19 +84,58 @@ jobs:
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
+    - name: Install protoc
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      run: |
+        set -e
+        VERSION="33.2"
+        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+        cd /usr/local
+        sudo unzip -o /tmp/protoc.zip
+        protoc --version
+    - uses: actions/setup-java@v4
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      with:
+        java-version: "17"
+        distribution: "temurin"
+        cache: "maven"
+    - name: Verify Java and Maven installation
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      run: |
+        java -version
+        if ! command -v mvn &> /dev/null; then
+          sudo apt-get update && sudo apt-get install -y maven
+        fi
+        mvn -version
+    - uses: actions/setup-python@v5
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+    - name: Run librarian install
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      run: |
+        go run github.com/googleapis/librarian/cmd/librarian@latest install
+        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+      env:
+        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
+    - name: Generate Libraries
+      if: steps.detect_librarian.outputs.has_changes == 'true'
+      run: |
+        go run github.com/googleapis/librarian/cmd/librarian@latest generate --all
     - name: Commit and Create PR
-      if: steps.detect.outputs.has_changes == 'true'
+      if: steps.detect_librarian.outputs.has_changes == 'true'
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
-        PR_BODY: "Updated googleapis commitish in librarian.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
+        PR_BODY: "Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
       run: |
         set -x
         
         if [ "${{ github.event_name }}" = "pull_request" ]; then
           echo "=== PR Test: DRY RUN MODE ACTIVE ==="
           echo "Would have checked out branch: update-librarian-googleapis-main"
-          echo "Would have committed with title: $PR_TITLE"
+          echo "Would have committed configs with title: $PR_TITLE"
           echo "Would have pushed branch and created PR."
           exit 0
         fi
@@ -105,8 +149,22 @@ jobs:
         # Create and switch to the branch (force checkout -B to discard any local state on this branch name if it existed)
         git checkout -B "${current_branch}"
         
-        # Commit the changes (they are already staged by the Detect Changes step!)
-        git commit -m "${PR_TITLE}"
+        # 1. Commit Config Changes
+        # Ensure they are staged
+        git add librarian.yaml generation_config.yaml
+        if ! git diff --cached --quiet; then
+          git commit -m "${PR_TITLE}"
+        else
+          echo "No config changes to commit"
+        fi
+        
+        # 2. Commit Generated Code
+        git add .
+        if ! git diff --cached --quiet; then
+          git commit -m "chore: generate libraries"
+        else
+          echo "No generated code changes to commit"
+        fi
         
         # Push to remote (force push to overwrite any stale branch on remote)
         git remote add remote_repo https://cloud-java-bot:"${GH_TOKEN}@github.com/${{ github.repository }}.git" || git remote set-url remote_repo https://cloud-java-bot:"${GH_TOKEN}@github.com/${{ github.repository }}.git"

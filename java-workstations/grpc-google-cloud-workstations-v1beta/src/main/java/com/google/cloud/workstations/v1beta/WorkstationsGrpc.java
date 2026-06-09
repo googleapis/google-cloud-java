@@ -1002,6 +1002,52 @@ public final class WorkstationsGrpc {
     return getGenerateAccessTokenMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.workstations.v1beta.PushCredentialsRequest,
+          com.google.longrunning.Operation>
+      getPushCredentialsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PushCredentials",
+      requestType = com.google.cloud.workstations.v1beta.PushCredentialsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.workstations.v1beta.PushCredentialsRequest,
+          com.google.longrunning.Operation>
+      getPushCredentialsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.workstations.v1beta.PushCredentialsRequest,
+            com.google.longrunning.Operation>
+        getPushCredentialsMethod;
+    if ((getPushCredentialsMethod = WorkstationsGrpc.getPushCredentialsMethod) == null) {
+      synchronized (WorkstationsGrpc.class) {
+        if ((getPushCredentialsMethod = WorkstationsGrpc.getPushCredentialsMethod) == null) {
+          WorkstationsGrpc.getPushCredentialsMethod =
+              getPushCredentialsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.workstations.v1beta.PushCredentialsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PushCredentials"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.workstations.v1beta.PushCredentialsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new WorkstationsMethodDescriptorSupplier("PushCredentials"))
+                      .build();
+        }
+      }
+    }
+    return getPushCredentialsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static WorkstationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<WorkstationsStub> factory =
@@ -1351,6 +1397,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     default void generateAccessToken(
@@ -1360,6 +1408,22 @@ public final class WorkstationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateAccessTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pushes credentials to a running workstation on behalf of a user. Once
+     * complete, supported credential types (application_default_credentials) are
+     * made available to processes running in the user container.
+     * </pre>
+     */
+    default void pushCredentials(
+        com.google.cloud.workstations.v1beta.PushCredentialsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPushCredentialsMethod(), responseObserver);
     }
   }
 
@@ -1721,6 +1785,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public void generateAccessToken(
@@ -1730,6 +1796,24 @@ public final class WorkstationsGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pushes credentials to a running workstation on behalf of a user. Once
+     * complete, supported credential types (application_default_credentials) are
+     * made available to processes running in the user container.
+     * </pre>
+     */
+    public void pushCredentials(
+        com.google.cloud.workstations.v1beta.PushCredentialsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPushCredentialsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2032,6 +2116,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse generateAccessToken(
@@ -2039,6 +2125,22 @@ public final class WorkstationsGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pushes credentials to a running workstation on behalf of a user. Once
+     * complete, supported credential types (application_default_credentials) are
+     * made available to processes running in the user container.
+     * </pre>
+     */
+    public com.google.longrunning.Operation pushCredentials(
+        com.google.cloud.workstations.v1beta.PushCredentialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPushCredentialsMethod(), getCallOptions(), request);
     }
   }
 
@@ -2320,12 +2422,29 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse generateAccessToken(
         com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pushes credentials to a running workstation on behalf of a user. Once
+     * complete, supported credential types (application_default_credentials) are
+     * made available to processes running in the user container.
+     * </pre>
+     */
+    public com.google.longrunning.Operation pushCredentials(
+        com.google.cloud.workstations.v1beta.PushCredentialsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPushCredentialsMethod(), getCallOptions(), request);
     }
   }
 
@@ -2623,6 +2742,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2631,6 +2752,21 @@ public final class WorkstationsGrpc {
             com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pushes credentials to a running workstation on behalf of a user. Once
+     * complete, supported credential types (application_default_credentials) are
+     * made available to processes running in the user container.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        pushCredentials(com.google.cloud.workstations.v1beta.PushCredentialsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPushCredentialsMethod(), getCallOptions()), request);
     }
   }
 
@@ -2654,6 +2790,7 @@ public final class WorkstationsGrpc {
   private static final int METHODID_START_WORKSTATION = 17;
   private static final int METHODID_STOP_WORKSTATION = 18;
   private static final int METHODID_GENERATE_ACCESS_TOKEN = 19;
+  private static final int METHODID_PUSH_CREDENTIALS = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2786,6 +2923,11 @@ public final class WorkstationsGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse>)
                   responseObserver);
+          break;
+        case METHODID_PUSH_CREDENTIALS:
+          serviceImpl.pushCredentials(
+              (com.google.cloud.workstations.v1beta.PushCredentialsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2937,6 +3079,12 @@ public final class WorkstationsGrpc {
                     com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest,
                     com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse>(
                     service, METHODID_GENERATE_ACCESS_TOKEN)))
+        .addMethod(
+            getPushCredentialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.PushCredentialsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PUSH_CREDENTIALS)))
         .build();
   }
 
@@ -3008,6 +3156,7 @@ public final class WorkstationsGrpc {
                       .addMethod(getStartWorkstationMethod())
                       .addMethod(getStopWorkstationMethod())
                       .addMethod(getGenerateAccessTokenMethod())
+                      .addMethod(getPushCredentialsMethod())
                       .build();
         }
       }

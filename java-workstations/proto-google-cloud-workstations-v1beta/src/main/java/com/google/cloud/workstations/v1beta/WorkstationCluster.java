@@ -63,6 +63,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     subnetwork_ = "";
     controlPlaneIp_ = "";
     conditions_ = java.util.Collections.emptyList();
+    workstationAuthorizationUrl_ = "";
+    workstationLaunchUrl_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,6 +81,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         return internalGetAnnotations();
       case 15:
         return internalGetLabels();
+      case 20:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -151,7 +155,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
-     * service attachemnt is created when private endpoint is enabled. To access
+     * service attachment is created when private endpoint is enabled. To access
      * workstations in the workstation cluster, configure access to the managed
      * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -168,7 +172,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
-     * service attachemnt is created when private endpoint is enabled. To access
+     * service attachment is created when private endpoint is enabled. To access
      * workstations in the workstation cluster, configure access to the managed
      * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -385,7 +389,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
-     * service attachemnt is created when private endpoint is enabled. To access
+     * service attachment is created when private endpoint is enabled. To access
      * workstations in the workstation cluster, configure access to the managed
      * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -413,7 +417,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
-     * service attachemnt is created when private endpoint is enabled. To access
+     * service attachment is created when private endpoint is enabled. To access
      * workstations in the workstation cluster, configure access to the managed
      * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1122,7 +1126,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
-       * service attachemnt is created when private endpoint is enabled. To access
+       * service attachment is created when private endpoint is enabled. To access
        * workstations in the workstation cluster, configure access to the managed
        * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1150,7 +1154,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
-       * service attachemnt is created when private endpoint is enabled. To access
+       * service attachment is created when private endpoint is enabled. To access
        * workstations in the workstation cluster, configure access to the managed
        * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1178,7 +1182,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
-       * service attachemnt is created when private endpoint is enabled. To access
+       * service attachment is created when private endpoint is enabled. To access
        * workstations in the workstation cluster, configure access to the managed
        * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1205,7 +1209,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
-       * service attachemnt is created when private endpoint is enabled. To access
+       * service attachment is created when private endpoint is enabled. To access
        * workstations in the workstation cluster, configure access to the managed
        * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1228,7 +1232,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
-       * service attachemnt is created when private endpoint is enabled. To access
+       * service attachment is created when private endpoint is enabled. To access
        * workstations in the workstation cluster, configure access to the managed
        * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
@@ -1518,6 +1522,1148 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface DomainConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Domain used by Workstations for HTTP ingress.
+     * </pre>
+     *
+     * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The domain.
+     */
+    java.lang.String getDomain();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Domain used by Workstations for HTTP ingress.
+     * </pre>
+     *
+     * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for domain.
+     */
+    com.google.protobuf.ByteString getDomainBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for a custom domain.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig}
+   */
+  public static final class DomainConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)
+      DomainConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DomainConfig");
+    }
+
+    // Use DomainConfig.newBuilder() to construct.
+    private DomainConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DomainConfig() {
+      domain_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_DomainConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_DomainConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.class,
+              com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder.class);
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object domain_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Domain used by Workstations for HTTP ingress.
+     * </pre>
+     *
+     * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The domain.
+     */
+    @java.lang.Override
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Domain used by Workstations for HTTP ingress.
+     * </pre>
+     *
+     * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for domain.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(domain_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, domain_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(domain_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, domain_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig other =
+          (com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig) obj;
+
+      if (!getDomain().equals(other.getDomain())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for a custom domain.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_DomainConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_DomainConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.class,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        domain_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_DomainConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig build() {
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig buildPartial() {
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig result =
+            new com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.domain_ = domain_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig) {
+          return mergeFrom(
+              (com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig other) {
+        if (other
+            == com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+                .getDefaultInstance()) return this;
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  domain_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object domain_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Domain used by Workstations for HTTP ingress.
+       * </pre>
+       *
+       * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The domain.
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Domain used by Workstations for HTTP ingress.
+       * </pre>
+       *
+       * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for domain.
+       */
+      public com.google.protobuf.ByteString getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Domain used by Workstations for HTTP ingress.
+       * </pre>
+       *
+       * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomain(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        domain_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Domain used by Workstations for HTTP ingress.
+       * </pre>
+       *
+       * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDomain() {
+        domain_ = getDefaultInstance().getDomain();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. Domain used by Workstations for HTTP ingress.
+       * </pre>
+       *
+       * <code>string domain = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        domain_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig)
+    private static final com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig();
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DomainConfig> PARSER =
+        new com.google.protobuf.AbstractParser<DomainConfig>() {
+          @java.lang.Override
+          public DomainConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DomainConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DomainConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GatewayConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether HTTP/2 is enabled for this workstation cluster.
+     * Defaults to false.
+     * </pre>
+     *
+     * <code>bool http2_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The http2Enabled.
+     */
+    boolean getHttp2Enabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig}
+   */
+  public static final class GatewayConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)
+      GatewayConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "GatewayConfig");
+    }
+
+    // Use GatewayConfig.newBuilder() to construct.
+    private GatewayConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GatewayConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_GatewayConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1beta.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_GatewayConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.class,
+              com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder.class);
+    }
+
+    public static final int HTTP2_ENABLED_FIELD_NUMBER = 1;
+    private boolean http2Enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether HTTP/2 is enabled for this workstation cluster.
+     * Defaults to false.
+     * </pre>
+     *
+     * <code>bool http2_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The http2Enabled.
+     */
+    @java.lang.Override
+    public boolean getHttp2Enabled() {
+      return http2Enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (http2Enabled_ != false) {
+        output.writeBool(1, http2Enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (http2Enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, http2Enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig other =
+          (com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig) obj;
+
+      if (getHttp2Enabled() != other.getHttp2Enabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HTTP2_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHttp2Enabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_GatewayConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_GatewayConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.class,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        http2Enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_GatewayConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig build() {
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig buildPartial() {
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig result =
+            new com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.http2Enabled_ = http2Enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig) {
+          return mergeFrom(
+              (com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig other) {
+        if (other
+            == com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+                .getDefaultInstance()) return this;
+        if (other.getHttp2Enabled() != false) {
+          setHttp2Enabled(other.getHttp2Enabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  http2Enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean http2Enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether HTTP/2 is enabled for this workstation cluster.
+       * Defaults to false.
+       * </pre>
+       *
+       * <code>bool http2_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The http2Enabled.
+       */
+      @java.lang.Override
+      public boolean getHttp2Enabled() {
+        return http2Enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether HTTP/2 is enabled for this workstation cluster.
+       * Defaults to false.
+       * </pre>
+       *
+       * <code>bool http2_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The http2Enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHttp2Enabled(boolean value) {
+
+        http2Enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether HTTP/2 is enabled for this workstation cluster.
+       * Defaults to false.
+       * </pre>
+       *
+       * <code>bool http2_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHttp2Enabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        http2Enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig)
+    private static final com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig();
+    }
+
+    public static com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GatewayConfig> PARSER =
+        new com.google.protobuf.AbstractParser<GatewayConfig>() {
+          @java.lang.Override
+          public GatewayConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GatewayConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GatewayConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -1528,10 +2674,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Full name of this workstation cluster.
+   * Identifier. Full name of this workstation cluster.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1552,10 +2698,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Full name of this workstation cluster.
+   * Identifier. Full name of this workstation cluster.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1638,7 +2784,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    * cluster.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -1663,7 +2811,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    * cluster.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -2379,6 +3529,66 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         : privateClusterConfig_;
   }
 
+  public static final int DOMAIN_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domainConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the domainConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDomainConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The domainConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig getDomainConfig() {
+    return domainConfig_ == null
+        ? com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.getDefaultInstance()
+        : domainConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder
+      getDomainConfigOrBuilder() {
+    return domainConfig_ == null
+        ? com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.getDefaultInstance()
+        : domainConfig_;
+  }
+
   public static final int DEGRADED_FIELD_NUMBER = 13;
   private boolean degraded_ = false;
 
@@ -2387,9 +3597,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Whether this workstation cluster is in degraded mode, in which
-   * case it may require user action to restore full functionality. Details can
-   * be found in
-   * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
+   * case it may require user action to restore full functionality. The
+   * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions]
+   * field contains detailed information about the status of the cluster.
    * </pre>
    *
    * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2486,6 +3696,365 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     return conditions_.get(index);
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 18;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 19;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 20;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.workstations.v1beta.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1beta_WorkstationCluster_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int GATEWAY_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gatewayConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gatewayConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGatewayConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gatewayConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig getGatewayConfig() {
+    return gatewayConfig_ == null
+        ? com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.getDefaultInstance()
+        : gatewayConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder
+      getGatewayConfigOrBuilder() {
+    return gatewayConfig_ == null
+        ? com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.getDefaultInstance()
+        : gatewayConfig_;
+  }
+
+  public static final int WORKSTATION_AUTHORIZATION_URL_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workstationAuthorizationUrl_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the redirect URL for unauthorized requests received by
+   * workstation VMs in this cluster.
+   *
+   * Redirects to this endpoint will send a base64 encoded `state` query param
+   * containing the target workstation name and original request hostname. The
+   * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+   * and redirecting back to the original hostname with the token.
+   * </pre>
+   *
+   * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workstationAuthorizationUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkstationAuthorizationUrl() {
+    java.lang.Object ref = workstationAuthorizationUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workstationAuthorizationUrl_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the redirect URL for unauthorized requests received by
+   * workstation VMs in this cluster.
+   *
+   * Redirects to this endpoint will send a base64 encoded `state` query param
+   * containing the target workstation name and original request hostname. The
+   * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+   * and redirecting back to the original hostname with the token.
+   * </pre>
+   *
+   * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for workstationAuthorizationUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkstationAuthorizationUrlBytes() {
+    java.lang.Object ref = workstationAuthorizationUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workstationAuthorizationUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WORKSTATION_LAUNCH_URL_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workstationLaunchUrl_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the launch URL for workstations in this cluster.
+   * Requests sent to unstarted workstations will be redirected to this URL.
+   *
+   * Requests redirected to the launch endpoint will be sent with a
+   * `workstation` and `project` query parameter containing the full workstation
+   * resource name and project ID, respectively. The launch endpoint is
+   * responsible for starting the workstation, polling it until it reaches
+   * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+   * </pre>
+   *
+   * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The workstationLaunchUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkstationLaunchUrl() {
+    java.lang.Object ref = workstationLaunchUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workstationLaunchUrl_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the launch URL for workstations in this cluster.
+   * Requests sent to unstarted workstations will be redirected to this URL.
+   *
+   * Requests redirected to the launch endpoint will be sent with a
+   * `workstation` and `project` query parameter containing the full workstation
+   * resource name and project ID, respectively. The launch endpoint is
+   * responsible for starting the workstation, polling it until it reaches
+   * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+   * </pre>
+   *
+   * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for workstationLaunchUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkstationLaunchUrlBytes() {
+    java.lang.Object ref = workstationLaunchUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workstationLaunchUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2545,6 +4114,26 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 15);
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(controlPlaneIp_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 16, controlPlaneIp_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getDomainConfig());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(18, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(19, satisfiesPzi_);
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 20);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(21, getGatewayConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workstationAuthorizationUrl_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, workstationAuthorizationUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workstationLaunchUrl_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 23, workstationLaunchUrl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2618,6 +4207,35 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(controlPlaneIp_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(16, controlPlaneIp_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getDomainConfig());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzi_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, tags__);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getGatewayConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workstationAuthorizationUrl_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(22, workstationAuthorizationUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workstationLaunchUrl_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(23, workstationLaunchUrl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2660,8 +4278,22 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     if (hasPrivateClusterConfig()) {
       if (!getPrivateClusterConfig().equals(other.getPrivateClusterConfig())) return false;
     }
+    if (hasDomainConfig() != other.hasDomainConfig()) return false;
+    if (hasDomainConfig()) {
+      if (!getDomainConfig().equals(other.getDomainConfig())) return false;
+    }
     if (getDegraded() != other.getDegraded()) return false;
     if (!getConditionsList().equals(other.getConditionsList())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
+    if (hasGatewayConfig() != other.hasGatewayConfig()) return false;
+    if (hasGatewayConfig()) {
+      if (!getGatewayConfig().equals(other.getGatewayConfig())) return false;
+    }
+    if (!getWorkstationAuthorizationUrl().equals(other.getWorkstationAuthorizationUrl()))
+      return false;
+    if (!getWorkstationLaunchUrl().equals(other.getWorkstationLaunchUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2713,12 +4345,32 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateClusterConfig().hashCode();
     }
+    if (hasDomainConfig()) {
+      hash = (37 * hash) + DOMAIN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainConfig().hashCode();
+    }
     hash = (37 * hash) + DEGRADED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDegraded());
     if (getConditionsCount() > 0) {
       hash = (37 * hash) + CONDITIONS_FIELD_NUMBER;
       hash = (53 * hash) + getConditionsList().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
+    }
+    if (hasGatewayConfig()) {
+      hash = (37 * hash) + GATEWAY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayConfig().hashCode();
+    }
+    hash = (37 * hash) + WORKSTATION_AUTHORIZATION_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkstationAuthorizationUrl().hashCode();
+    hash = (37 * hash) + WORKSTATION_LAUNCH_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkstationLaunchUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2850,6 +4502,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
           return internalGetAnnotations();
         case 15:
           return internalGetLabels();
+        case 20:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2863,6 +4517,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
           return internalGetMutableAnnotations();
         case 15:
           return internalGetMutableLabels();
+        case 20:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2894,7 +4550,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         internalGetUpdateTimeFieldBuilder();
         internalGetDeleteTimeFieldBuilder();
         internalGetPrivateClusterConfigFieldBuilder();
+        internalGetDomainConfigFieldBuilder();
         internalGetConditionsFieldBuilder();
+        internalGetGatewayConfigFieldBuilder();
       }
     }
 
@@ -2932,6 +4590,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         privateClusterConfigBuilder_.dispose();
         privateClusterConfigBuilder_ = null;
       }
+      domainConfig_ = null;
+      if (domainConfigBuilder_ != null) {
+        domainConfigBuilder_.dispose();
+        domainConfigBuilder_ = null;
+      }
       degraded_ = false;
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
@@ -2939,7 +4602,17 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
+      internalGetMutableTags().clear();
+      gatewayConfig_ = null;
+      if (gatewayConfigBuilder_ != null) {
+        gatewayConfigBuilder_.dispose();
+        gatewayConfigBuilder_ = null;
+      }
+      workstationAuthorizationUrl_ = "";
+      workstationLaunchUrl_ = "";
       return this;
     }
 
@@ -2978,9 +4651,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     private void buildPartialRepeatedFields(
         com.google.cloud.workstations.v1beta.WorkstationCluster result) {
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.conditions_ = conditions_;
       } else {
@@ -3043,7 +4716,33 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.domainConfig_ =
+            domainConfigBuilder_ == null ? domainConfig_ : domainConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.degraded_ = degraded_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.gatewayConfig_ =
+            gatewayConfigBuilder_ == null ? gatewayConfig_ : gatewayConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.workstationAuthorizationUrl_ = workstationAuthorizationUrl_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.workstationLaunchUrl_ = workstationLaunchUrl_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3115,6 +4814,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       if (other.hasPrivateClusterConfig()) {
         mergePrivateClusterConfig(other.getPrivateClusterConfig());
       }
+      if (other.hasDomainConfig()) {
+        mergeDomainConfig(other.getDomainConfig());
+      }
       if (other.getDegraded() != false) {
         setDegraded(other.getDegraded());
       }
@@ -3122,7 +4824,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -3135,7 +4837,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetConditionsFieldBuilder()
@@ -3144,6 +4846,27 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
             conditionsBuilder_.addAllMessages(other.conditions_);
           }
         }
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00080000;
+      if (other.hasGatewayConfig()) {
+        mergeGatewayConfig(other.getGatewayConfig());
+      }
+      if (!other.getWorkstationAuthorizationUrl().isEmpty()) {
+        workstationAuthorizationUrl_ = other.workstationAuthorizationUrl_;
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      if (!other.getWorkstationLaunchUrl().isEmpty()) {
+        workstationLaunchUrl_ = other.workstationLaunchUrl_;
+        bitField0_ |= 0x00400000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3256,7 +4979,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
             case 104:
               {
                 degraded_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 104
             case 114:
@@ -3289,6 +5012,53 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00001000;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    internalGetDomainConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
+            case 144:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
+            case 152:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
+            case 162:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetGatewayConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
+            case 178:
+              {
+                workstationAuthorizationUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
+            case 186:
+              {
+                workstationLaunchUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3314,10 +5084,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this workstation cluster.
+     * Identifier. Full name of this workstation cluster.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3337,10 +5107,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this workstation cluster.
+     * Identifier. Full name of this workstation cluster.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3360,10 +5130,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this workstation cluster.
+     * Identifier. Full name of this workstation cluster.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3382,10 +5152,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this workstation cluster.
+     * Identifier. Full name of this workstation cluster.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3400,10 +5170,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this workstation cluster.
+     * Identifier. Full name of this workstation cluster.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3540,7 +5310,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * cluster.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -3564,7 +5336,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * cluster.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -3588,7 +5362,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * cluster.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -3611,7 +5387,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * cluster.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3630,7 +5408,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * cluster.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.
@@ -5426,6 +7206,228 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
       return privateClusterConfigBuilder_;
     }
 
+    private com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domainConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder>
+        domainConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the domainConfig field is set.
+     */
+    public boolean hasDomainConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The domainConfig.
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig getDomainConfig() {
+      if (domainConfigBuilder_ == null) {
+        return domainConfig_ == null
+            ? com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+                .getDefaultInstance()
+            : domainConfig_;
+      } else {
+        return domainConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDomainConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig value) {
+      if (domainConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        domainConfig_ = value;
+      } else {
+        domainConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDomainConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder
+            builderForValue) {
+      if (domainConfigBuilder_ == null) {
+        domainConfig_ = builderForValue.build();
+      } else {
+        domainConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDomainConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig value) {
+      if (domainConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && domainConfig_ != null
+            && domainConfig_
+                != com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+                    .getDefaultInstance()) {
+          getDomainConfigBuilder().mergeFrom(value);
+        } else {
+          domainConfig_ = value;
+        }
+      } else {
+        domainConfigBuilder_.mergeFrom(value);
+      }
+      if (domainConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDomainConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      domainConfig_ = null;
+      if (domainConfigBuilder_ != null) {
+        domainConfigBuilder_.dispose();
+        domainConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder
+        getDomainConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return internalGetDomainConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder
+        getDomainConfigOrBuilder() {
+      if (domainConfigBuilder_ != null) {
+        return domainConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return domainConfig_ == null
+            ? com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig
+                .getDefaultInstance()
+            : domainConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for a custom domain.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder>
+        internalGetDomainConfigFieldBuilder() {
+      if (domainConfigBuilder_ == null) {
+        domainConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig.Builder,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder>(
+                getDomainConfig(), getParentForChildren(), isClean());
+        domainConfig_ = null;
+      }
+      return domainConfigBuilder_;
+    }
+
     private boolean degraded_;
 
     /**
@@ -5433,9 +7435,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Whether this workstation cluster is in degraded mode, in which
-     * case it may require user action to restore full functionality. Details can
-     * be found in
-     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
+     * case it may require user action to restore full functionality. The
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions]
+     * field contains detailed information about the status of the cluster.
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5452,9 +7454,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Whether this workstation cluster is in degraded mode, in which
-     * case it may require user action to restore full functionality. Details can
-     * be found in
-     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
+     * case it may require user action to restore full functionality. The
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions]
+     * field contains detailed information about the status of the cluster.
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5465,7 +7467,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public Builder setDegraded(boolean value) {
 
       degraded_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5475,9 +7477,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Whether this workstation cluster is in degraded mode, in which
-     * case it may require user action to restore full functionality. Details can
-     * be found in
-     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
+     * case it may require user action to restore full functionality. The
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions]
+     * field contains detailed information about the status of the cluster.
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5485,7 +7487,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDegraded() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       degraded_ = false;
       onChanged();
       return this;
@@ -5494,9 +7496,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     private java.util.List<com.google.rpc.Status> conditions_ = java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.rpc.Status>(conditions_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -5749,7 +7751,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -5895,10 +7897,844 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
                 com.google.rpc.Status,
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
-                conditions_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00080000;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00080000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00080000;
+      return this;
+    }
+
+    private com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gatewayConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder>
+        gatewayConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gatewayConfig field is set.
+     */
+    public boolean hasGatewayConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gatewayConfig.
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+        getGatewayConfig() {
+      if (gatewayConfigBuilder_ == null) {
+        return gatewayConfig_ == null
+            ? com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+                .getDefaultInstance()
+            : gatewayConfig_;
+      } else {
+        return gatewayConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGatewayConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gatewayConfig_ = value;
+      } else {
+        gatewayConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGatewayConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder
+            builderForValue) {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = builderForValue.build();
+      } else {
+        gatewayConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGatewayConfig(
+        com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && gatewayConfig_ != null
+            && gatewayConfig_
+                != com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+                    .getDefaultInstance()) {
+          getGatewayConfigBuilder().mergeFrom(value);
+        } else {
+          gatewayConfig_ = value;
+        }
+      } else {
+        gatewayConfigBuilder_.mergeFrom(value);
+      }
+      if (gatewayConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGatewayConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      gatewayConfig_ = null;
+      if (gatewayConfigBuilder_ != null) {
+        gatewayConfigBuilder_.dispose();
+        gatewayConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder
+        getGatewayConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetGatewayConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder
+        getGatewayConfigOrBuilder() {
+      if (gatewayConfigBuilder_ != null) {
+        return gatewayConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gatewayConfig_ == null
+            ? com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig
+                .getDefaultInstance()
+            : gatewayConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for Cluster HTTP Gateway.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder,
+            com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder>
+        internalGetGatewayConfigFieldBuilder() {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig.Builder,
+                com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder>(
+                getGatewayConfig(), getParentForChildren(), isClean());
+        gatewayConfig_ = null;
+      }
+      return gatewayConfigBuilder_;
+    }
+
+    private java.lang.Object workstationAuthorizationUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the redirect URL for unauthorized requests received by
+     * workstation VMs in this cluster.
+     *
+     * Redirects to this endpoint will send a base64 encoded `state` query param
+     * containing the target workstation name and original request hostname. The
+     * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+     * and redirecting back to the original hostname with the token.
+     * </pre>
+     *
+     * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workstationAuthorizationUrl.
+     */
+    public java.lang.String getWorkstationAuthorizationUrl() {
+      java.lang.Object ref = workstationAuthorizationUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workstationAuthorizationUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the redirect URL for unauthorized requests received by
+     * workstation VMs in this cluster.
+     *
+     * Redirects to this endpoint will send a base64 encoded `state` query param
+     * containing the target workstation name and original request hostname. The
+     * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+     * and redirecting back to the original hostname with the token.
+     * </pre>
+     *
+     * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for workstationAuthorizationUrl.
+     */
+    public com.google.protobuf.ByteString getWorkstationAuthorizationUrlBytes() {
+      java.lang.Object ref = workstationAuthorizationUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workstationAuthorizationUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the redirect URL for unauthorized requests received by
+     * workstation VMs in this cluster.
+     *
+     * Redirects to this endpoint will send a base64 encoded `state` query param
+     * containing the target workstation name and original request hostname. The
+     * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+     * and redirecting back to the original hostname with the token.
+     * </pre>
+     *
+     * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The workstationAuthorizationUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstationAuthorizationUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      workstationAuthorizationUrl_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the redirect URL for unauthorized requests received by
+     * workstation VMs in this cluster.
+     *
+     * Redirects to this endpoint will send a base64 encoded `state` query param
+     * containing the target workstation name and original request hostname. The
+     * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+     * and redirecting back to the original hostname with the token.
+     * </pre>
+     *
+     * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkstationAuthorizationUrl() {
+      workstationAuthorizationUrl_ = getDefaultInstance().getWorkstationAuthorizationUrl();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the redirect URL for unauthorized requests received by
+     * workstation VMs in this cluster.
+     *
+     * Redirects to this endpoint will send a base64 encoded `state` query param
+     * containing the target workstation name and original request hostname. The
+     * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+     * and redirecting back to the original hostname with the token.
+     * </pre>
+     *
+     * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for workstationAuthorizationUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstationAuthorizationUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      workstationAuthorizationUrl_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object workstationLaunchUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the launch URL for workstations in this cluster.
+     * Requests sent to unstarted workstations will be redirected to this URL.
+     *
+     * Requests redirected to the launch endpoint will be sent with a
+     * `workstation` and `project` query parameter containing the full workstation
+     * resource name and project ID, respectively. The launch endpoint is
+     * responsible for starting the workstation, polling it until it reaches
+     * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+     * </pre>
+     *
+     * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The workstationLaunchUrl.
+     */
+    public java.lang.String getWorkstationLaunchUrl() {
+      java.lang.Object ref = workstationLaunchUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workstationLaunchUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the launch URL for workstations in this cluster.
+     * Requests sent to unstarted workstations will be redirected to this URL.
+     *
+     * Requests redirected to the launch endpoint will be sent with a
+     * `workstation` and `project` query parameter containing the full workstation
+     * resource name and project ID, respectively. The launch endpoint is
+     * responsible for starting the workstation, polling it until it reaches
+     * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+     * </pre>
+     *
+     * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for workstationLaunchUrl.
+     */
+    public com.google.protobuf.ByteString getWorkstationLaunchUrlBytes() {
+      java.lang.Object ref = workstationLaunchUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workstationLaunchUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the launch URL for workstations in this cluster.
+     * Requests sent to unstarted workstations will be redirected to this URL.
+     *
+     * Requests redirected to the launch endpoint will be sent with a
+     * `workstation` and `project` query parameter containing the full workstation
+     * resource name and project ID, respectively. The launch endpoint is
+     * responsible for starting the workstation, polling it until it reaches
+     * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+     * </pre>
+     *
+     * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The workstationLaunchUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstationLaunchUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      workstationLaunchUrl_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the launch URL for workstations in this cluster.
+     * Requests sent to unstarted workstations will be redirected to this URL.
+     *
+     * Requests redirected to the launch endpoint will be sent with a
+     * `workstation` and `project` query parameter containing the full workstation
+     * resource name and project ID, respectively. The launch endpoint is
+     * responsible for starting the workstation, polling it until it reaches
+     * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+     * </pre>
+     *
+     * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkstationLaunchUrl() {
+      workstationLaunchUrl_ = getDefaultInstance().getWorkstationLaunchUrl();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the launch URL for workstations in this cluster.
+     * Requests sent to unstarted workstations will be redirected to this URL.
+     *
+     * Requests redirected to the launch endpoint will be sent with a
+     * `workstation` and `project` query parameter containing the full workstation
+     * resource name and project ID, respectively. The launch endpoint is
+     * responsible for starting the workstation, polling it until it reaches
+     * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+     * </pre>
+     *
+     * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for workstationLaunchUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstationLaunchUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      workstationLaunchUrl_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1beta.WorkstationCluster)

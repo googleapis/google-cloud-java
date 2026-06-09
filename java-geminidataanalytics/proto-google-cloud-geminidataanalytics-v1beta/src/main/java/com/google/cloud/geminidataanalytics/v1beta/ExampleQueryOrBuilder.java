@@ -99,5 +99,87 @@ public interface ExampleQueryOrBuilder
    */
   com.google.protobuf.ByteString getNaturalLanguageQuestionBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter> getParametersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.QueryParameter getParameters(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getParametersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>
+      getParametersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder getParametersOrBuilder(
+      int index);
+
   com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.QueryCase getQueryCase();
 }
