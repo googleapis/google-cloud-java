@@ -97,37 +97,47 @@ public class OpaqueUtil {
       byte[] zPad = new byte[64];
       byte[] libStr = new byte[] {(byte) (lenInBytes >> 8), (byte) (lenInBytes & 0xFF)};
 
-      md.update(zPad);
-      md.update(msg);
-      md.update(libStr);
-      md.update((byte) 0);
-      md.update(dstPrime);
-      byte[] b0 = md.digest();
+      byte[] b0 = null;
+      byte[] bOut = null;
+      byte[] b1 = null;
 
-      byte[] bOut = new byte[ell * bInBytes];
-
-      md.update(b0);
-      md.update((byte) 1);
-      md.update(dstPrime);
-      byte[] b1 = md.digest();
-      System.arraycopy(b1, 0, bOut, 0, bInBytes);
-
-      byte[] bi = b1;
-      for (int i = 2; i <= ell; i++) {
-        byte[] bXor = new byte[bInBytes];
-        for (int j = 0; j < bInBytes; j++) {
-          bXor[j] = (byte) (b0[j] ^ bi[j]);
-        }
-        md.update(bXor);
-        md.update((byte) i);
+      try {
+        md.update(zPad);
+        md.update(msg);
+        md.update(libStr);
+        md.update((byte) 0);
         md.update(dstPrime);
-        bi = md.digest();
-        System.arraycopy(bi, 0, bOut, (i - 1) * bInBytes, bInBytes);
-      }
+        b0 = md.digest();
 
-      byte[] res = new byte[lenInBytes];
-      System.arraycopy(bOut, 0, res, 0, lenInBytes);
-      return res;
+        bOut = new byte[ell * bInBytes];
+
+        md.update(b0);
+        md.update((byte) 1);
+        md.update(dstPrime);
+        b1 = md.digest();
+        System.arraycopy(b1, 0, bOut, 0, bInBytes);
+
+        byte[] bi = b1;
+        for (int i = 2; i <= ell; i++) {
+          byte[] bXor = new byte[bInBytes];
+          for (int j = 0; j < bInBytes; j++) {
+            bXor[j] = (byte) (b0[j] ^ bi[j]);
+          }
+          md.update(bXor);
+          md.update((byte) i);
+          md.update(dstPrime);
+          bi = md.digest();
+          System.arraycopy(bi, 0, bOut, (i - 1) * bInBytes, bInBytes);
+        }
+
+        byte[] res = new byte[lenInBytes];
+        System.arraycopy(bOut, 0, res, 0, lenInBytes);
+        return res;
+      } finally {
+        if (b0 != null) Arrays.fill(b0, (byte) 0);
+        if (bOut != null) Arrays.fill(bOut, (byte) 0);
+        if (b1 != null) Arrays.fill(b1, (byte) 0);
+      }
     } catch (Exception e) {
       throw new GeneralSecurityException("Failed to expand message", e);
     }
@@ -188,23 +198,38 @@ public class OpaqueUtil {
       throws GeneralSecurityException {
     // Implements hash-to-curve using the Simplified SWU (SSWU) mapping.
     // This securely and uniformly maps an arbitrary string (the password) onto the elliptic curve.
-    byte[] uniformBytes = expandMessageXmd(message, domain, 96);
-    byte[] u0Bytes = new byte[48];
-    byte[] u1Bytes = new byte[48];
-    System.arraycopy(uniformBytes, 0, u0Bytes, 0, 48);
-    System.arraycopy(uniformBytes, 48, u1Bytes, 0, 48);
+    byte[] uniformBytes = null;
+    byte[] u0Bytes = null;
+    byte[] u1Bytes = null;
+    try {
+      uniformBytes = expandMessageXmd(message, domain, 96);
+      u0Bytes = new byte[48];
+      u1Bytes = new byte[48];
+      System.arraycopy(uniformBytes, 0, u0Bytes, 0, 48);
+      System.arraycopy(uniformBytes, 48, u1Bytes, 0, 48);
 
-    BigInteger u0 = new BigInteger(1, u0Bytes).mod(p);
-    BigInteger u1 = new BigInteger(1, u1Bytes).mod(p);
+      BigInteger u0 = new BigInteger(1, u0Bytes).mod(p);
+      BigInteger u1 = new BigInteger(1, u1Bytes).mod(p);
 
-    X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
-    ECCurve curve = params.getCurve();
+      X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
+      ECCurve curve = params.getCurve();
 
-    ECPoint q0 = mapToCurveSSWU(u0, curve);
-    ECPoint q1 = mapToCurveSSWU(u1, curve);
+      ECPoint q0 = mapToCurveSSWU(u0, curve);
+      ECPoint q1 = mapToCurveSSWU(u1, curve);
 
-    ECPoint r = q0.add(q1).normalize();
-    return r.getEncoded(true);
+      ECPoint r = q0.add(q1).normalize();
+      return r.getEncoded(true);
+    } finally {
+      if (uniformBytes != null) {
+        Arrays.fill(uniformBytes, (byte) 0);
+      }
+      if (u0Bytes != null) {
+        Arrays.fill(u0Bytes, (byte) 0);
+      }
+      if (u1Bytes != null) {
+        Arrays.fill(u1Bytes, (byte) 0);
+      }
+    }
   }
 
   public static byte[] blind(byte[] password, byte[] blindScalar) throws GeneralSecurityException {
@@ -336,6 +361,7 @@ public class OpaqueUtil {
 
       // Ensure hashedString is treated as a positive integer
       BigInteger newBigNum = new BigInteger(1, hashedString);
+      Arrays.fill(hashedString, (byte) 0);
 
       hashOutput = hashOutput.add(newBigNum);
     }
@@ -346,24 +372,28 @@ public class OpaqueUtil {
     byte[] scalarBytes = new byte[hashOutputLength / 8];
     byte[] hashOutputBytes = hashOutput.toByteArray();
 
-    // Copy into 32 byte array
-    if (hashOutputBytes.length <= scalarBytes.length) {
-      System.arraycopy(
-          hashOutputBytes,
-          0,
-          scalarBytes,
-          scalarBytes.length - hashOutputBytes.length,
-          hashOutputBytes.length);
-    } else {
-      // If hashOutputBytes is 33 bytes due to sign bit
-      System.arraycopy(
-          hashOutputBytes,
-          hashOutputBytes.length - scalarBytes.length,
-          scalarBytes,
-          0,
-          scalarBytes.length);
+    try {
+      // Copy into 32 byte array
+      if (hashOutputBytes.length <= scalarBytes.length) {
+        System.arraycopy(
+            hashOutputBytes,
+            0,
+            scalarBytes,
+            scalarBytes.length - hashOutputBytes.length,
+            hashOutputBytes.length);
+      } else {
+        // If hashOutputBytes is 33 bytes due to sign bit
+        System.arraycopy(
+            hashOutputBytes,
+            hashOutputBytes.length - scalarBytes.length,
+            scalarBytes,
+            0,
+            scalarBytes.length);
+      }
+      return scalarBytes;
+    } finally {
+      Arrays.fill(hashOutputBytes, (byte) 0);
     }
-    return scalarBytes;
   }
 
   public static byte[][] generateKeyPair(byte[] deriveInput) throws GeneralSecurityException {

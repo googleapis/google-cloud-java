@@ -63,6 +63,7 @@ public class LoginClient {
     byte[] passwordBytes = null;
     byte[] clientPrivateKeyshare = null;
     byte[] blind = null;
+    byte[] blindedMessage = null;
     try {
       passwordBytes = password.toByteArray(InsecureSecretKeyAccess.get());
       byte[] randomNonce = OpaqueUtil.nonce();
@@ -77,7 +78,7 @@ public class LoginClient {
       blind = new byte[32];
       SECURE_RANDOM.nextBytes(blind);
 
-      byte[] blindedMessage = OpaqueUtil.blind(passwordBytes, blind);
+      blindedMessage = OpaqueUtil.blind(passwordBytes, blind);
 
       try (LoginStreamIOCall call =
           new LoginStreamIOCall(stub.withDeadlineAfter(60, TimeUnit.SECONDS))) {
@@ -171,6 +172,9 @@ public class LoginClient {
       if (blind != null) {
         Arrays.fill(blind, (byte) 0);
       }
+      if (blindedMessage != null) {
+        Arrays.fill(blindedMessage, (byte) 0);
+      }
     }
   }
 
@@ -186,6 +190,7 @@ public class LoginClient {
     byte[] stretchedOprf = null;
     byte[] randomizedPassword = null;
     byte[] maskingKey = null;
+    byte[] credentialResponsePad = null;
     byte[] authKey = null;
     byte[] seed = null;
     byte[] dh1 = null;
@@ -210,7 +215,7 @@ public class LoginClient {
       maskingKey =
           OpaqueUtil.expand(
               randomizedPassword, OpaqueUtil.MASKING_KEY_INFO.getBytes(StandardCharsets.UTF_8), 32);
-      byte[] credentialResponsePad =
+      credentialResponsePad =
           OpaqueUtil.expand(
               maskingKey,
               OpaqueUtil.concat(
@@ -311,6 +316,7 @@ public class LoginClient {
       if (stretchedOprf != null) Arrays.fill(stretchedOprf, (byte) 0);
       if (randomizedPassword != null) Arrays.fill(randomizedPassword, (byte) 0);
       if (maskingKey != null) Arrays.fill(maskingKey, (byte) 0);
+      if (credentialResponsePad != null) Arrays.fill(credentialResponsePad, (byte) 0);
       if (authKey != null) Arrays.fill(authKey, (byte) 0);
       if (seed != null) Arrays.fill(seed, (byte) 0);
       if (dh1 != null) Arrays.fill(dh1, (byte) 0);
