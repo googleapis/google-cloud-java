@@ -475,6 +475,1255 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.WidgetTool.WidgetType)
   }
 
+  public interface TextResponseConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The strategy for providing the text response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The strategy for providing the text response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The static text response to return when type is STATIC.
+     * </pre>
+     *
+     * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The staticText.
+     */
+    java.lang.String getStaticText();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The static text response to return when type is STATIC.
+     * </pre>
+     *
+     * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for staticText.
+     */
+    com.google.protobuf.ByteString getStaticTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instruction for the LLM on how to generate the text response.
+     * Used as the description for the text response parameter if type is
+     * LLM_GENERATED.
+     * </pre>
+     *
+     * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The textResponseInstruction.
+     */
+    java.lang.String getTextResponseInstruction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instruction for the LLM on how to generate the text response.
+     * Used as the description for the text response parameter if type is
+     * LLM_GENERATED.
+     * </pre>
+     *
+     * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for textResponseInstruction.
+     */
+    com.google.protobuf.ByteString getTextResponseInstructionBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the text response returned with the widget.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.WidgetTool.TextResponseConfig}
+   */
+  public static final class TextResponseConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)
+      TextResponseConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TextResponseConfig");
+    }
+
+    // Use TextResponseConfig.newBuilder() to construct.
+    private TextResponseConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TextResponseConfig() {
+      type_ = 0;
+      staticText_ = "";
+      textResponseInstruction_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.WidgetToolProto
+          .internal_static_google_cloud_ces_v1beta_WidgetTool_TextResponseConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.WidgetToolProto
+          .internal_static_google_cloud_ces_v1beta_WidgetTool_TextResponseConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.class,
+              com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines how the text response is produced.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type}
+     */
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified type.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The LLM dynamically decides whether to generate a text response
+       * alongside the widget based on the conversation context.
+       * </pre>
+       *
+       * <code>NONE = 1;</code>
+       */
+      NONE(1),
+      /**
+       *
+       *
+       * <pre>
+       * The LLM is explicitly required to generate a text response.
+       * </pre>
+       *
+       * <code>LLM_GENERATED = 2;</code>
+       */
+      LLM_GENERATED(2),
+      /**
+       *
+       *
+       * <pre>
+       * A pre-defined static text response is always used.
+       * </pre>
+       *
+       * <code>STATIC = 3;</code>
+       */
+      STATIC(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Type");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified type.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The LLM dynamically decides whether to generate a text response
+       * alongside the widget based on the conversation context.
+       * </pre>
+       *
+       * <code>NONE = 1;</code>
+       */
+      public static final int NONE_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The LLM is explicitly required to generate a text response.
+       * </pre>
+       *
+       * <code>LLM_GENERATED = 2;</code>
+       */
+      public static final int LLM_GENERATED_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * A pre-defined static text response is always used.
+       * </pre>
+       *
+       * <code>STATIC = 3;</code>
+       */
+      public static final int STATIC_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TYPE_UNSPECIFIED;
+          case 1:
+            return NONE;
+          case 2:
+            return LLM_GENERATED;
+          case 3:
+            return STATIC;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type)
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The strategy for providing the text response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The strategy for providing the text response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type getType() {
+      com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type result =
+          com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int STATIC_TEXT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object staticText_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The static text response to return when type is STATIC.
+     * </pre>
+     *
+     * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The staticText.
+     */
+    @java.lang.Override
+    public java.lang.String getStaticText() {
+      java.lang.Object ref = staticText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        staticText_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The static text response to return when type is STATIC.
+     * </pre>
+     *
+     * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for staticText.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStaticTextBytes() {
+      java.lang.Object ref = staticText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        staticText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_RESPONSE_INSTRUCTION_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object textResponseInstruction_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instruction for the LLM on how to generate the text response.
+     * Used as the description for the text response parameter if type is
+     * LLM_GENERATED.
+     * </pre>
+     *
+     * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The textResponseInstruction.
+     */
+    @java.lang.Override
+    public java.lang.String getTextResponseInstruction() {
+      java.lang.Object ref = textResponseInstruction_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        textResponseInstruction_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instruction for the LLM on how to generate the text response.
+     * Used as the description for the text response parameter if type is
+     * LLM_GENERATED.
+     * </pre>
+     *
+     * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for textResponseInstruction.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextResponseInstructionBytes() {
+      java.lang.Object ref = textResponseInstruction_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        textResponseInstruction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(staticText_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, staticText_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textResponseInstruction_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, textResponseInstruction_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(staticText_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, staticText_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textResponseInstruction_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, textResponseInstruction_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig other =
+          (com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig) obj;
+
+      if (type_ != other.type_) return false;
+      if (!getStaticText().equals(other.getStaticText())) return false;
+      if (!getTextResponseInstruction().equals(other.getTextResponseInstruction())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + STATIC_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getStaticText().hashCode();
+      hash = (37 * hash) + TEXT_RESPONSE_INSTRUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getTextResponseInstruction().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the text response returned with the widget.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.WidgetTool.TextResponseConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_TextResponseConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_TextResponseConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.class,
+                com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        staticText_ = "";
+        textResponseInstruction_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.WidgetToolProto
+            .internal_static_google_cloud_ces_v1beta_WidgetTool_TextResponseConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig build() {
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig buildPartial() {
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig result =
+            new com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.staticText_ = staticText_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.textResponseInstruction_ = textResponseInstruction_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig) {
+          return mergeFrom((com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig other) {
+        if (other == com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance())
+          return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (!other.getStaticText().isEmpty()) {
+          staticText_ = other.staticText_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getTextResponseInstruction().isEmpty()) {
+          textResponseInstruction_ = other.textResponseInstruction_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  staticText_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  textResponseInstruction_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The strategy for providing the text response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The strategy for providing the text response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The strategy for providing the text response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type getType() {
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type result =
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.forNumber(type_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The strategy for providing the text response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The strategy for providing the text response.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object staticText_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The static text response to return when type is STATIC.
+       * </pre>
+       *
+       * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The staticText.
+       */
+      public java.lang.String getStaticText() {
+        java.lang.Object ref = staticText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          staticText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The static text response to return when type is STATIC.
+       * </pre>
+       *
+       * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for staticText.
+       */
+      public com.google.protobuf.ByteString getStaticTextBytes() {
+        java.lang.Object ref = staticText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          staticText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The static text response to return when type is STATIC.
+       * </pre>
+       *
+       * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The staticText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStaticText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        staticText_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The static text response to return when type is STATIC.
+       * </pre>
+       *
+       * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStaticText() {
+        staticText_ = getDefaultInstance().getStaticText();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The static text response to return when type is STATIC.
+       * </pre>
+       *
+       * <code>string static_text = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for staticText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStaticTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        staticText_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object textResponseInstruction_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instruction for the LLM on how to generate the text response.
+       * Used as the description for the text response parameter if type is
+       * LLM_GENERATED.
+       * </pre>
+       *
+       * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The textResponseInstruction.
+       */
+      public java.lang.String getTextResponseInstruction() {
+        java.lang.Object ref = textResponseInstruction_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          textResponseInstruction_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instruction for the LLM on how to generate the text response.
+       * Used as the description for the text response parameter if type is
+       * LLM_GENERATED.
+       * </pre>
+       *
+       * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for textResponseInstruction.
+       */
+      public com.google.protobuf.ByteString getTextResponseInstructionBytes() {
+        java.lang.Object ref = textResponseInstruction_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          textResponseInstruction_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instruction for the LLM on how to generate the text response.
+       * Used as the description for the text response parameter if type is
+       * LLM_GENERATED.
+       * </pre>
+       *
+       * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The textResponseInstruction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextResponseInstruction(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textResponseInstruction_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instruction for the LLM on how to generate the text response.
+       * Used as the description for the text response parameter if type is
+       * LLM_GENERATED.
+       * </pre>
+       *
+       * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTextResponseInstruction() {
+        textResponseInstruction_ = getDefaultInstance().getTextResponseInstruction();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instruction for the LLM on how to generate the text response.
+       * Used as the description for the text response parameter if type is
+       * LLM_GENERATED.
+       * </pre>
+       *
+       * <code>string text_response_instruction = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for textResponseInstruction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextResponseInstructionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        textResponseInstruction_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.WidgetTool.TextResponseConfig)
+    private static final com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig();
+    }
+
+    public static com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TextResponseConfig> PARSER =
+        new com.google.protobuf.AbstractParser<TextResponseConfig>() {
+          @java.lang.Override
+          public TextResponseConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TextResponseConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TextResponseConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DataMappingOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.WidgetTool.DataMapping)
@@ -669,7 +1918,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
      * <code>string python_script = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=97
      * @return The pythonScript.
      */
     @java.lang.Deprecated
@@ -685,7 +1934,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
      * <code>string python_script = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=97
      * @return The bytes for pythonScript.
      */
     @java.lang.Deprecated
@@ -1222,7 +2471,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
      * <code>string python_script = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=97
      * @return The pythonScript.
      */
     @java.lang.Override
@@ -1249,7 +2498,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
      * <code>string python_script = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-     *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+     *     google/cloud/ces/v1beta/widget_tool.proto;l=97
      * @return The bytes for pythonScript.
      */
     @java.lang.Override
@@ -2388,7 +3637,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
        * <code>string python_script = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=97
        * @return The pythonScript.
        */
       @java.lang.Deprecated
@@ -2414,7 +3663,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
        * <code>string python_script = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=97
        * @return The bytes for pythonScript.
        */
       @java.lang.Deprecated
@@ -2440,7 +3689,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
        * <code>string python_script = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=97
        * @param value The pythonScript to set.
        * @return This builder for chaining.
        */
@@ -2465,7 +3714,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
        * <code>string python_script = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=97
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -2486,7 +3735,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
        * <code>string python_script = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.ces.v1beta.WidgetTool.DataMapping.python_script is deprecated. See
-       *     google/cloud/ces/v1beta/widget_tool.proto;l=66
+       *     google/cloud/ces/v1beta/widget_tool.proto;l=97
        * @param value The bytes for pythonScript to set.
        * @return This builder for chaining.
        */
@@ -2919,6 +4168,66 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
         : dataMapping_;
   }
 
+  public static final int TEXT_RESPONSE_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig textResponseConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the textResponseConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTextResponseConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The textResponseConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig getTextResponseConfig() {
+    return textResponseConfig_ == null
+        ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance()
+        : textResponseConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for always-included text responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder
+      getTextResponseConfigOrBuilder() {
+    return textResponseConfig_ == null
+        ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance()
+        : textResponseConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2952,6 +4261,9 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getDataMapping());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getTextResponseConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2982,6 +4294,9 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDataMapping());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTextResponseConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3007,6 +4322,10 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (hasDataMapping() != other.hasDataMapping()) return false;
     if (hasDataMapping()) {
       if (!getDataMapping().equals(other.getDataMapping())) return false;
+    }
+    if (hasTextResponseConfig() != other.hasTextResponseConfig()) return false;
+    if (hasTextResponseConfig()) {
+      if (!getTextResponseConfig().equals(other.getTextResponseConfig())) return false;
     }
     if (!getInputCase().equals(other.getInputCase())) return false;
     switch (inputCase_) {
@@ -3040,6 +4359,10 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
     if (hasDataMapping()) {
       hash = (37 * hash) + DATA_MAPPING_FIELD_NUMBER;
       hash = (53 * hash) + getDataMapping().hashCode();
+    }
+    if (hasTextResponseConfig()) {
+      hash = (37 * hash) + TEXT_RESPONSE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTextResponseConfig().hashCode();
     }
     switch (inputCase_) {
       case 4:
@@ -3195,6 +4518,7 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetUiConfigFieldBuilder();
         internalGetDataMappingFieldBuilder();
+        internalGetTextResponseConfigFieldBuilder();
       }
     }
 
@@ -3217,6 +4541,11 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       if (dataMappingBuilder_ != null) {
         dataMappingBuilder_.dispose();
         dataMappingBuilder_ = null;
+      }
+      textResponseConfig_ = null;
+      if (textResponseConfigBuilder_ != null) {
+        textResponseConfigBuilder_.dispose();
+        textResponseConfigBuilder_ = null;
       }
       inputCase_ = 0;
       input_ = null;
@@ -3276,6 +4605,13 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
             dataMappingBuilder_ == null ? dataMapping_ : dataMappingBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.textResponseConfig_ =
+            textResponseConfigBuilder_ == null
+                ? textResponseConfig_
+                : textResponseConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3317,6 +4653,9 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDataMapping()) {
         mergeDataMapping(other.getDataMapping());
+      }
+      if (other.hasTextResponseConfig()) {
+        mergeTextResponseConfig(other.getTextResponseConfig());
       }
       switch (other.getInputCase()) {
         case PARAMETERS:
@@ -3394,6 +4733,13 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetTextResponseConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4404,6 +5750,224 @@ public final class WidgetTool extends com.google.protobuf.GeneratedMessage
         dataMapping_ = null;
       }
       return dataMappingBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig textResponseConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig,
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder,
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder>
+        textResponseConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the textResponseConfig field is set.
+     */
+    public boolean hasTextResponseConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The textResponseConfig.
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig getTextResponseConfig() {
+      if (textResponseConfigBuilder_ == null) {
+        return textResponseConfig_ == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance()
+            : textResponseConfig_;
+      } else {
+        return textResponseConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTextResponseConfig(
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig value) {
+      if (textResponseConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textResponseConfig_ = value;
+      } else {
+        textResponseConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTextResponseConfig(
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder builderForValue) {
+      if (textResponseConfigBuilder_ == null) {
+        textResponseConfig_ = builderForValue.build();
+      } else {
+        textResponseConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTextResponseConfig(
+        com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig value) {
+      if (textResponseConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && textResponseConfig_ != null
+            && textResponseConfig_
+                != com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance()) {
+          getTextResponseConfigBuilder().mergeFrom(value);
+        } else {
+          textResponseConfig_ = value;
+        }
+      } else {
+        textResponseConfigBuilder_.mergeFrom(value);
+      }
+      if (textResponseConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTextResponseConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      textResponseConfig_ = null;
+      if (textResponseConfigBuilder_ != null) {
+        textResponseConfigBuilder_.dispose();
+        textResponseConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder
+        getTextResponseConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetTextResponseConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder
+        getTextResponseConfigOrBuilder() {
+      if (textResponseConfigBuilder_ != null) {
+        return textResponseConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return textResponseConfig_ == null
+            ? com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.getDefaultInstance()
+            : textResponseConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for always-included text responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.WidgetTool.TextResponseConfig text_response_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig,
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder,
+            com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder>
+        internalGetTextResponseConfigFieldBuilder() {
+      if (textResponseConfigBuilder_ == null) {
+        textResponseConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig,
+                com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfig.Builder,
+                com.google.cloud.ces.v1beta.WidgetTool.TextResponseConfigOrBuilder>(
+                getTextResponseConfig(), getParentForChildren(), isClean());
+        textResponseConfig_ = null;
+      }
+      return textResponseConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.WidgetTool)

@@ -38,10 +38,28 @@ for library in s.get_staging_dirs():
     service = 'firestore'
     version = 'v1'
     s.replace(f'owl-bot-staging/v1/proto-google-cloud-{service}-{version}-java/src/**/*.java', protobuf_header, f'{license_header}{protobuf_header}')
-    service == 'firestore-admin'
+    service = 'firestore-admin'
     s.replace(f'owl-bot-staging/v1/grpc-google-cloud-{service}-{version}-java/src/**/*.java', bad_license_header, license_header)
     s.replace(f'owl-bot-staging/v1/proto-google-cloud-{service}-{version}-java/src/**/*.java', bad_license_header, license_header)
-    s.move(library)
+    if "firestore-admin" in str(library):
+        s.move(library, excludes=["**/Version.java"])
+        s.move(
+            f"{library}/src/main/java/com/google/cloud/firestore/v1/stub/Version.java",
+            "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminVersion.java"
+        )
+        s.replace(
+            "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminVersion.java",
+            "class Version",
+            "class FirestoreAdminVersion"
+        )
+        # Replace Version.VERSION with FirestoreAdminVersion.VERSION in stub files
+        s.replace(
+            "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/**/*.java",
+            "Version.VERSION",
+            "FirestoreAdminVersion.VERSION",
+        )
+    else:
+        s.move(library)
 s.remove_staging_dirs()
 java.common_templates(
     monorepo=True,
