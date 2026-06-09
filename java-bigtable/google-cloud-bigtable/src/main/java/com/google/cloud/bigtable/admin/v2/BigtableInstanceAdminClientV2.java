@@ -35,6 +35,11 @@ public class BigtableInstanceAdminClientV2 extends BaseBigtableInstanceAdminClie
     super(stub);
   }
 
+  /** Constructs an instance of BigtableInstanceAdminClientV2 with default settings. */
+  public static final BigtableInstanceAdminClientV2 create() throws IOException {
+    return create(BaseBigtableInstanceAdminSettings.newBuilder().build());
+  }
+
   /** Constructs an instance of BigtableInstanceAdminClientV2 with the given settings. */
   public static final BigtableInstanceAdminClientV2 create(
       BaseBigtableInstanceAdminSettings settings) throws IOException {

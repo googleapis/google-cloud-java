@@ -29,7 +29,6 @@ import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
 import com.google.bigtable.admin.v2.StorageType;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2;
 import java.io.IOException;
 import java.util.Map;
@@ -84,12 +83,8 @@ public class InstanceAdminExample {
     this.instanceId = instanceId;
     this.clusterId = clusterId;
 
-    // Creates the settings to configure a bigtable instance admin client.
-    BaseBigtableInstanceAdminSettings instanceAdminSettings =
-        BaseBigtableInstanceAdminSettings.newBuilder().build();
-
     // Creates a bigtable instance admin client.
-    adminClient = BigtableInstanceAdminClientV2.create(instanceAdminSettings);
+    adminClient = BigtableInstanceAdminClientV2.create();
   }
 
   public void run(boolean createWithTags) {

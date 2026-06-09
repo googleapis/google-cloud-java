@@ -20,7 +20,11 @@ import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
@@ -48,17 +52,15 @@ public class TableAdminExampleTest extends BigtableBaseTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     initializeVariables();
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   private static boolean exists(String tableId) {
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       return true;
     } catch (com.google.api.gax.rpc.NotFoundException e) {
@@ -76,14 +78,13 @@ public class TableAdminExampleTest extends BigtableBaseTest {
   public void setup() throws IOException {
     tableId = generateResourceId(TABLE_PREFIX);
     tableAdmin = new TableAdminExample(projectId, instanceId, tableId);
-    com.google.bigtable.admin.v2.CreateTableRequest request =
-        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+    CreateTableRequest request =
+        CreateTableRequest.newBuilder()
             .setParent("projects/" + projectId + "/instances/" + instanceId)
             .setTableId(tableId)
             .setTable(
-                com.google.bigtable.admin.v2.Table.newBuilder()
-                    .putColumnFamilies(
-                        "cf", com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                Table.newBuilder()
+                    .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
                     .build())
             .build();
     adminClient.createTable(request);
@@ -138,8 +139,8 @@ public class TableAdminExampleTest extends BigtableBaseTest {
 
     // Deletes cf2.
     tableAdmin.deleteColumnFamily();
-    com.google.bigtable.admin.v2.GetTableRequest request =
-        com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+    GetTableRequest request =
+        GetTableRequest.newBuilder()
             .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
             .build();
     boolean found = !adminClient.getTable(request).getColumnFamiliesMap().containsKey("cf2");
@@ -193,11 +194,11 @@ public class TableAdminExampleTest extends BigtableBaseTest {
 
   private boolean ruleCheck(GCRule condition) {
     boolean found = false;
-    com.google.bigtable.admin.v2.GetTableRequest request =
-        com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+    GetTableRequest request =
+        GetTableRequest.newBuilder()
             .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
             .build();
-    for (com.google.bigtable.admin.v2.ColumnFamily columnFamily :
+    for (ColumnFamily columnFamily :
         adminClient.getTable(request).getColumnFamiliesMap().values()) {
       if (columnFamily.getGcRule().equals(condition.toProto())) {
         found = true;
@@ -209,11 +210,11 @@ public class TableAdminExampleTest extends BigtableBaseTest {
 
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
-    com.google.bigtable.admin.v2.ListTablesRequest request =
-        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder()
             .setParent("projects/" + projectId + "/instances/" + instanceId)
             .build();
-    for (com.google.bigtable.admin.v2.Table table : adminClient.listTables(request).iterateAll()) {
+    for (Table table : adminClient.listTables(request).iterateAll()) {
       String tableId = table.getName().substring(table.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {

@@ -17,8 +17,10 @@
 package com.example.bigtable.deletes;
 
 import com.example.bigtable.MobileTimeSeriesBaseTest;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -46,12 +48,12 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
   private static boolean exists(String tableId) {
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       return true;
-    } catch (com.google.api.gax.rpc.NotFoundException e) {
+    } catch (NotFoundException e) {
       return false;
     }
   }
@@ -63,9 +65,7 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
     writeStatsData();
     writePlanData();
     bigtableDataClient = BigtableDataClient.create(projectId, instanceId);
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   @AfterClass
@@ -198,8 +198,8 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
   @Test
   public void test7_testDeleteColumnFamily() throws IOException {
-    com.google.bigtable.admin.v2.GetTableRequest request =
-        com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+    GetTableRequest request =
+        GetTableRequest.newBuilder()
             .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
             .build();
     Truth.assertThat(adminClient.getTable(request).getColumnFamiliesMap().keySet())

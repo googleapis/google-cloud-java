@@ -18,16 +18,12 @@ package com.example.bigtable.deletes;
 
 // [START bigtable_drop_row_range]
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
 
 public class DropRowRangeExample {
   public void dropRowRange(String projectId, String instanceId, String tableId) throws IOException {
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    try (BigtableTableAdminClientV2 tableAdminClient =
-        BigtableTableAdminClientV2.create(adminSettings)) {
+    try (BigtableTableAdminClientV2 tableAdminClient = BigtableTableAdminClientV2.create()) {
       DropRowRangeRequest request =
           DropRowRangeRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)

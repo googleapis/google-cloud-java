@@ -24,9 +24,10 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.Cluster;
 import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.Instance;
+import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.StorageType;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2;
 import java.io.IOException;
 import java.util.Random;
@@ -50,19 +51,17 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     initializeVariables();
-    BaseBigtableInstanceAdminSettings instanceAdminSettings =
-        BaseBigtableInstanceAdminSettings.newBuilder().build();
-    adminClient = BigtableInstanceAdminClientV2.create(instanceAdminSettings);
+    adminClient = BigtableInstanceAdminClientV2.create();
   }
 
   private static boolean exists(String instanceId) {
     try {
       adminClient.getInstance(
-          com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder()
+          GetInstanceRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId)
               .build());
       return true;
-    } catch (com.google.api.gax.rpc.NotFoundException e) {
+    } catch (NotFoundException e) {
       return false;
     }
   }
@@ -128,7 +127,7 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   @Test
   public void testGetInstance() {
     // Gets an instance.
-    com.google.bigtable.admin.v2.Instance instance = instanceAdmin.getInstance();
+    Instance instance = instanceAdmin.getInstance();
     assertNotNull(instance);
   }
 
@@ -165,10 +164,8 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(ID_PREFIX + "-([0-9a-f]+)");
     System.out.println();
-    com.google.bigtable.admin.v2.ListInstancesRequest request =
-        com.google.bigtable.admin.v2.ListInstancesRequest.newBuilder()
-            .setParent("projects/" + projectId)
-            .build();
+    ListInstancesRequest request =
+        ListInstancesRequest.newBuilder().setParent("projects/" + projectId).build();
     for (Instance instance : adminClient.listInstances(request).getInstancesList()) {
       String id = instance.getName().substring(instance.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(id);

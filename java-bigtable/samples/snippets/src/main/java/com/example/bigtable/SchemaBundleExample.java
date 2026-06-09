@@ -27,7 +27,6 @@ import com.google.bigtable.admin.v2.SchemaBundle;
 import com.google.bigtable.admin.v2.SchemaBundleName;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UpdateSchemaBundleRequest;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
@@ -84,12 +83,8 @@ public class SchemaBundleExample {
     this.tableId = tableId;
     this.schemaBundleId = schemaBundleId;
 
-    // Creates the settings to configure a bigtable table admin client.
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   private boolean exists(String tableId) {

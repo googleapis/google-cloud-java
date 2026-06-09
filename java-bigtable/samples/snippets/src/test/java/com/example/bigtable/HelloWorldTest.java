@@ -21,7 +21,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListTablesRequest;
+import com.google.bigtable.admin.v2.Table;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -47,25 +52,23 @@ public class HelloWorldTest extends BigtableBaseTest {
   private HelloWorld helloWorld;
 
   @BeforeClass
-  public static void beforeClass() throws IOException {
+  public static void beforeClass() throws Exception {
     initializeVariables();
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     dataClient = BigtableDataClient.create(settings);
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   private static boolean exists(String tableId) {
     try {
       adminClient.getTable(
-          com.google.bigtable.admin.v2.GetTableRequest.newBuilder()
+          GetTableRequest.newBuilder()
               .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
-              .setView(com.google.bigtable.admin.v2.Table.View.NAME_ONLY)
+              .setView(Table.View.NAME_ONLY)
               .build());
       return true;
-    } catch (com.google.api.gax.rpc.NotFoundException e) {
+    } catch (NotFoundException e) {
       return false;
     }
   }
@@ -81,14 +84,13 @@ public class HelloWorldTest extends BigtableBaseTest {
   public void setup() throws IOException {
     tableId = generateTableId();
     helloWorld = new HelloWorld(projectId, instanceId, tableId);
-    com.google.bigtable.admin.v2.CreateTableRequest request =
-        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+    CreateTableRequest request =
+        CreateTableRequest.newBuilder()
             .setParent("projects/" + projectId + "/instances/" + instanceId)
             .setTableId(tableId)
             .setTable(
-                com.google.bigtable.admin.v2.Table.newBuilder()
-                    .putColumnFamilies(
-                        "cf1", com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance())
+                Table.newBuilder()
+                    .putColumnFamilies("cf1", ColumnFamily.getDefaultInstance())
                     .build())
             .build();
     adminClient.createTable(request);
@@ -147,11 +149,11 @@ public class HelloWorldTest extends BigtableBaseTest {
 
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
-    com.google.bigtable.admin.v2.ListTablesRequest request =
-        com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder()
             .setParent("projects/" + projectId + "/instances/" + instanceId)
             .build();
-    for (com.google.bigtable.admin.v2.Table table : adminClient.listTables(request).iterateAll()) {
+    for (Table table : adminClient.listTables(request).iterateAll()) {
       String tableId = table.getName().substring(table.getName().lastIndexOf("/") + 1);
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {

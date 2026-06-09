@@ -25,7 +25,6 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest;
 import com.google.bigtable.admin.v2.Table;
-import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.admin.v2.models.GcRuleBuilder;
 import java.io.IOException;
@@ -83,12 +82,8 @@ public class TableAdminExample {
     this.instanceId = instanceId;
     this.tableId = tableId;
 
-    // Creates the settings to configure a bigtable table admin client.
-    BaseBigtableTableAdminSettings adminSettings =
-        BaseBigtableTableAdminSettings.newBuilder().build();
-
     // Creates a bigtable table admin client.
-    adminClient = BigtableTableAdminClientV2.create(adminSettings);
+    adminClient = BigtableTableAdminClientV2.create();
   }
 
   public void run() {
