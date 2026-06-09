@@ -46,7 +46,7 @@ public class LoginClient {
   private final LoginServiceGrpc.LoginServiceStub stub;
 
   public LoginClient(ManagedChannel channel) {
-    this.stub = LoginServiceGrpc.newStub(channel).withDeadlineAfter(60, TimeUnit.SECONDS);
+    this.stub = LoginServiceGrpc.newStub(channel);
   }
 
   /**
@@ -79,73 +79,81 @@ public class LoginClient {
 
       byte[] blindedMessage = OpaqueUtil.blind(passwordBytes, blind);
 
-      LoginStreamIOCall call = new LoginStreamIOCall(stub);
+      try (LoginStreamIOCall call =
+          new LoginStreamIOCall(stub.withDeadlineAfter(60, TimeUnit.SECONDS))) {
 
-      // 1. Send Handshake Request
-      LoginRequest handshakeRequest =
-          LoginRequest.newBuilder()
-              .setUsername(username)
-              .setHandshakeRequest(AuthenticationHandshakeRequest.newBuilder())
-              .build();
-      call.send(handshakeRequest);
-      LoginResponse handshakeResponse = call.getResponse();
+        // 1. Send Handshake Request
+        LoginRequest handshakeRequest =
+            LoginRequest.newBuilder()
+                .setUsername(username)
+                .setHandshakeRequest(AuthenticationHandshakeRequest.newBuilder())
+                .build();
+        call.send(handshakeRequest);
+        LoginResponse handshakeResponse = call.getResponse();
 
-      if (handshakeResponse == null || !handshakeResponse.hasHandshakeResponse()) {
-        throw SpannerExceptionFactory.newSpannerException(
-            com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
-            "Failed to receive handshake response from server.");
+        if (handshakeResponse == null || !handshakeResponse.hasHandshakeResponse()) {
+          throw SpannerExceptionFactory.newSpannerException(
+              com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
+              "Failed to receive handshake response from server.");
+        }
+
+        AuthenticationMethod method =
+            handshakeResponse.getHandshakeResponse().getAuthenticationMethod();
+        if (method != AuthenticationMethod.AUTHENTICATION_METHOD_OPAQUE) {
+          throw SpannerExceptionFactory.newSpannerException(
+              com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
+              "Unsupported authentication method: " + method);
+        }
+
+        // 2. Send Initial OPAQUE Request
+        LoginRequest initialRequest =
+            LoginRequest.newBuilder()
+                .setUsername(username)
+                .setOpaqueRequest(
+                    OpaqueLoginRequest.newBuilder()
+                        .setInitialRequest(
+                            InitialOpaqueLoginRequest.newBuilder()
+                                .setBlindedMessage(ByteString.copyFrom(blindedMessage))
+                                .setClientNonce(ByteString.copyFrom(clientNonce))
+                                .setClientPublicKeyshare(
+                                    ByteString.copyFrom(clientPublicKeyshare))))
+                .build();
+
+        call.send(initialRequest);
+        LoginResponse initialResponse = call.getResponse();
+
+        InitialOpaqueLoginResponse initialOpaqueResponse =
+            initialResponse.getOpaqueResponse().getInitialResponse();
+
+        byte[] clientMac =
+            generateClientMac(
+                username,
+                blind,
+                clientNonce,
+                clientPublicKeyshare,
+                clientPrivateKeyshare,
+                initialOpaqueResponse);
+
+        LoginRequest finalRequest =
+            LoginRequest.newBuilder()
+                .setUsername(username)
+                .setOpaqueRequest(
+                    OpaqueLoginRequest.newBuilder()
+                        .setFinalRequest(
+                            FinalOpaqueLoginRequest.newBuilder()
+                                .setClientMac(ByteString.copyFrom(clientMac))))
+                .build();
+
+        call.send(finalRequest);
+        call.halfClose();
+        LoginResponse finalResponse = call.getResponse();
+        if (finalResponse == null) {
+          throw SpannerExceptionFactory.newSpannerException(
+              com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
+              "Server closed the stream without returning an access token.");
+        }
+        return finalResponse.getAccessToken();
       }
-
-      AuthenticationMethod method =
-          handshakeResponse.getHandshakeResponse().getAuthenticationMethod();
-      if (method != AuthenticationMethod.AUTHENTICATION_METHOD_OPAQUE) {
-        throw SpannerExceptionFactory.newSpannerException(
-            com.google.cloud.spanner.ErrorCode.UNAUTHENTICATED,
-            "Unsupported authentication method: " + method);
-      }
-
-      // 2. Send Initial OPAQUE Request
-      LoginRequest initialRequest =
-          LoginRequest.newBuilder()
-              .setUsername(username)
-              .setOpaqueRequest(
-                  OpaqueLoginRequest.newBuilder()
-                      .setInitialRequest(
-                          InitialOpaqueLoginRequest.newBuilder()
-                              .setBlindedMessage(ByteString.copyFrom(blindedMessage))
-                              .setClientNonce(ByteString.copyFrom(clientNonce))
-                              .setClientPublicKeyshare(ByteString.copyFrom(clientPublicKeyshare))))
-              .build();
-
-      call.send(initialRequest);
-      LoginResponse initialResponse = call.getResponse();
-
-      InitialOpaqueLoginResponse initialOpaqueResponse =
-          initialResponse.getOpaqueResponse().getInitialResponse();
-
-      byte[] clientMac =
-          generateClientMac(
-              username,
-              blind,
-              clientNonce,
-              clientPublicKeyshare,
-              clientPrivateKeyshare,
-              initialOpaqueResponse);
-
-      LoginRequest finalRequest =
-          LoginRequest.newBuilder()
-              .setUsername(username)
-              .setOpaqueRequest(
-                  OpaqueLoginRequest.newBuilder()
-                      .setFinalRequest(
-                          FinalOpaqueLoginRequest.newBuilder()
-                              .setClientMac(ByteString.copyFrom(clientMac))))
-              .build();
-
-      call.send(finalRequest);
-      call.halfClose();
-      LoginResponse finalResponse = call.getResponse();
-      return finalResponse.getAccessToken();
     } catch (Exception e) {
       if (e instanceof InterruptedException) {
         Thread.currentThread().interrupt();
@@ -317,15 +325,16 @@ public class LoginClient {
     }
   }
 
-  static class LoginStreamIOCall {
+  static class LoginStreamIOCall implements AutoCloseable {
     private static final Object COMPLETED_SENTINEL = new Object();
     private final LoginServiceGrpc.LoginServiceStub stub;
     private final BlockingQueue<Object> responseQueue = new LinkedBlockingQueue<>();
-    private StreamObserver<LoginRequest> requestObserver;
+    private final StreamObserver<LoginRequest> requestObserver;
+    private boolean closed = false;
 
     LoginStreamIOCall(LoginServiceGrpc.LoginServiceStub stub) {
       this.stub = stub;
-      requestObserver =
+      this.requestObserver =
           stub.login(
               new StreamObserver<LoginResponse>() {
                 @Override
@@ -362,6 +371,19 @@ public class LoginClient {
 
     void halfClose() {
       requestObserver.onCompleted();
+      closed = true;
+    }
+
+    @Override
+    public void close() {
+      if (!closed) {
+        closed = true;
+        try {
+          requestObserver.onError(new RuntimeException("Client cancelled the login stream"));
+        } catch (Exception e) {
+          // Ignore
+        }
+      }
     }
   }
 }
