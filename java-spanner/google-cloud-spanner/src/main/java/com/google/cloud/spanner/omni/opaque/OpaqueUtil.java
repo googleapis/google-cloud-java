@@ -308,21 +308,13 @@ public class OpaqueUtil {
 
     for (int i = 1; i <= iterCount; i++) {
       hashOutput = hashOutput.shiftLeft(hashOutputLength);
-      byte[] iBytes = BigInteger.valueOf(i).toByteArray();
-      // Remove leading zero byte if present from two's complement representation
-      if (iBytes.length > 1 && iBytes[0] == 0) {
-        byte[] tmp = new byte[iBytes.length - 1];
-        System.arraycopy(iBytes, 1, tmp, 0, tmp.length);
-        iBytes = tmp;
-      }
+      byte[] iBytes = new byte[] {(byte) i};
 
       byte[] bignumBytes = concat(iBytes, x);
       byte[] hashedString = sha256(bignumBytes);
 
-      // Ensure hashedString is treated as a positive integer (prepend 0x00)
-      byte[] positiveHashedString = new byte[hashedString.length + 1];
-      System.arraycopy(hashedString, 0, positiveHashedString, 1, hashedString.length);
-      BigInteger newBigNum = new BigInteger(positiveHashedString);
+      // Ensure hashedString is treated as a positive integer
+      BigInteger newBigNum = new BigInteger(1, hashedString);
 
       hashOutput = hashOutput.add(newBigNum);
     }
