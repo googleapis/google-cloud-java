@@ -28,16 +28,19 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.time.Duration;
 import java.util.Locale;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 final class FakeServer implements AutoCloseable {
 
   private final Server server;
   private final GrpcStorageOptions grpcStorageOptions;
+  private final ScheduledThreadPoolExecutor executor;
 
-  FakeServer(Server server, GrpcStorageOptions grpcStorageOptions) {
+  FakeServer(Server server, GrpcStorageOptions grpcStorageOptions, ScheduledThreadPoolExecutor executor) {
     this.server = server;
     this.grpcStorageOptions = grpcStorageOptions;
+    this.executor = executor;
   }
 
   GrpcStorageOptions getGrpcStorageOptions() {
@@ -51,11 +54,16 @@ final class FakeServer implements AutoCloseable {
   @Override
   public void close() throws InterruptedException {
     server.shutdownNow().awaitTermination(10, TimeUnit.SECONDS);
+    executor.shutdownNow();
+    //noinspection ResultOfMethodCallIgnored
+    executor.awaitTermination(5, TimeUnit.SECONDS);
   }
 
   static FakeServer of(StorageGrpc.StorageImplBase service) throws IOException {
-    InetSocketAddress address = new InetSocketAddress("localhost", 0);
-    Server server = NettyServerBuilder.forAddress(address).addService(service).build();
+    InetSocketAddress address = new InetSocketAddress("127.0.0.1", 0);
+    ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(4);
+    Server server =
+        NettyServerBuilder.forAddress(address).addService(service).executor(executor).build();
     server.start();
     String endpoint = String.format(Locale.US, "%s:%d", address.getHostString(), server.getPort());
     GrpcStorageOptions grpcStorageOptions =
@@ -80,6 +88,6 @@ final class FakeServer implements AutoCloseable {
                     .setMaxRpcTimeoutDuration(Duration.ofSeconds(25))
                     .build())
             .build();
-    return new FakeServer(server, grpcStorageOptions);
+    return new FakeServer(server, grpcStorageOptions, executor);
   }
 }
