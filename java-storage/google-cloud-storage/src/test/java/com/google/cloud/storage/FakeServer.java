@@ -37,7 +37,8 @@ final class FakeServer implements AutoCloseable {
   private final GrpcStorageOptions grpcStorageOptions;
   private final ScheduledThreadPoolExecutor executor;
 
-  FakeServer(Server server, GrpcStorageOptions grpcStorageOptions, ScheduledThreadPoolExecutor executor) {
+  FakeServer(
+      Server server, GrpcStorageOptions grpcStorageOptions, ScheduledThreadPoolExecutor executor) {
     this.server = server;
     this.grpcStorageOptions = grpcStorageOptions;
     this.executor = executor;
