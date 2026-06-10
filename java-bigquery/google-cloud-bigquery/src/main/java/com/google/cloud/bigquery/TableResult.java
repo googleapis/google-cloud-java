@@ -101,10 +101,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   public TableResult getNextPage() {
     if (getPageNoSchema().hasNextPage()) {
       Page<FieldValueList> nextPageNoSchema = getPageNoSchema().getNextPage();
-      long nextRows =
-          nextPageNoSchema.getValues() != null
-              ? (long) Iterables.size(nextPageNoSchema.getValues())
-              : 0L;
+      long nextRows = (long) Iterables.size(nextPageNoSchema.getValues());
       return TableResult.newBuilder()
           .setSchema(getSchema())
           .setTotalRows(getTotalRows())

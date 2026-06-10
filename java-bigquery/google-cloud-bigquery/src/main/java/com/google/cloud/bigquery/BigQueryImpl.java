@@ -1685,7 +1685,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setSchema(schema)
           .setTotalRows(data.y())
           .setPageNoSchema(data.x())
-          .setRowsInPage(data.x() != null ? (long) Iterables.size(data.x().getValues()) : 0L)
+          .setRowsInPage((long) Iterables.size(data.x().getValues()))
           .build();
     } finally {
       if (tableDataList != null) {
