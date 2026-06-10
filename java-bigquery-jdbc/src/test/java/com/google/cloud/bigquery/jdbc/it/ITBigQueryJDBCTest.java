@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -106,7 +105,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
-    String connection_uri = ITBigQueryJDBCTest.connection_uri + "EnableHighThroughputAPI=1;HighThroughputActivationRatio=2;HighThroughputMinTableSize=1000;";
+    String connection_uri =
+        ITBigQueryJDBCTest.connection_uri
+            + "EnableHighThroughputAPI=1;HighThroughputActivationRatio=2;HighThroughputMinTableSize=1000;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -232,7 +233,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
-        ITBigQueryJDBCTest.connection_uri + "MaxResults=300;HighThroughputActivationRatio=2;"
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=300;HighThroughputActivationRatio=2;"
             + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
@@ -247,7 +249,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
-        ITBigQueryJDBCTest.connection_uri + "HighThroughputActivationRatio=4;"
+        ITBigQueryJDBCTest.connection_uri
+            + "HighThroughputActivationRatio=4;"
             + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
@@ -293,8 +296,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testDriver() throws SQLException {
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri;
+    String connection_uri = ITBigQueryJDBCTest.connection_uri;
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -309,8 +311,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testDefaultDataset() throws SQLException {
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=testDataset";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -321,8 +322,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DatasetId.of("testDataset"),
         connection.unwrap(BigQueryConnection.class).getDefaultDataset());
 
-    String connection_uri_null_default_dataset =
-        ITBigQueryJDBCTest.connection_uri;
+    String connection_uri_null_default_dataset = ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_default_dataset));
 
@@ -336,9 +336,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDefaultDatasetWithProject() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET="
-            + PROJECT_ID
-            + ".testDataset";
+        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ".testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -353,8 +351,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testLocation() throws SQLException {
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -370,8 +367,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet resultSet = statement.executeQuery(query);
     assertEquals(100, resultSetRowCount(resultSet));
 
-    String connection_uri_null_location =
-        ITBigQueryJDBCTest.connection_uri;
+    String connection_uri_null_location = ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_location));
 
@@ -384,8 +380,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testIncorrectLocation() throws SQLException {
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
 
@@ -1264,7 +1259,9 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testUnsupportedHTAPIFallbacksToStandardQueriesWithRange() throws SQLException {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
-    String connection_uri = ITBigQueryJDBCTest.connection_uri + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;UnsupportedHTAPIFallback=1;JobCreationMode=1;";
+    String connection_uri =
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;UnsupportedHTAPIFallback=1;JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1282,7 +1279,9 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testIntervalDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
-    String connection_uri = ITBigQueryJDBCTest.connection_uri + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
+    String connection_uri =
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1301,7 +1300,9 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testIntervalDataTypeWithJsonResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
-    String connection_uri = ITBigQueryJDBCTest.connection_uri + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=0;JobCreationMode=1;";
+    String connection_uri =
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=0;JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1633,7 +1634,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testValidDestinationTableSavesQueriesWithLegacySQL() throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test_legacy;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -1661,8 +1663,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri;
+    String connection_uri = ITBigQueryJDBCTest.connection_uri;
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
@@ -1695,7 +1696,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=SQL;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=SQL;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
     String selectLegacyQuery =
@@ -1724,7 +1726,8 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;"
             + "LargeResultDataset=FakeDataset;";
@@ -1771,7 +1774,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testDestinationTableWithMissingDestinationDatasetDefaults() throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;";
     String selectLegacyQuery =
@@ -1800,7 +1804,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -1822,7 +1827,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
             DATASET, TRANSACTION_TABLE);
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=SQL;"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryDialect=SQL;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
@@ -1900,7 +1906,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
 
-    String connection_uri = ITBigQueryJDBCTest.connection_uri + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
+    String connection_uri =
+        ITBigQueryJDBCTest.connection_uri
+            + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1946,7 +1954,8 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   public void testQueryPropertyDataSetProjectIdQueriesToCorrectDataset() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryProperties=dataset_project_id="
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=dataset_project_id="
             + PROJECT_ID
             + ";";
     String insertQuery =
@@ -1977,7 +1986,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyDataSetProjectIdQueriesToIncorrectDatasetThrows()
       throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryProperties=dataset_project_id=bigquerytestdefault"
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=dataset_project_id=bigquerytestdefault"
             + ";";
     String insertQuery =
         String.format(
@@ -2015,9 +2025,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException, InterruptedException {
     String sessionId = getSessionId();
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryProperties=session_id="
-            + sessionId
-            + ";";
+        ITBigQueryJDBCTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"
             + " name, age) VALUES (132, 'Batman', 531);";
@@ -2042,10 +2050,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "KMSKeyName="
-            + KMSKeyName
-            + ";";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery = "SELECT * FROM `JDBC_INTEGRATION_DATASET.KMS_Test_table`;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
@@ -2064,10 +2069,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testIncorrectKmsThrows() throws SQLException {
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
-    String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "KMSKeyName="
-            + KMSKeyName
-            + ";";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"
             + " name, age) VALUES (132, 'Batman', 531);";
@@ -2084,7 +2086,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyServiceAccountFollowsIamPermission() throws SQLException {
     final String SERVICE_ACCOUNT_EMAIL = requireEnvVar("SA_EMAIL");
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryProperties=service_account="
+        ITBigQueryJDBCTest.connection_uri
+            + "QueryProperties=service_account="
             + SERVICE_ACCOUNT_EMAIL
             + ";";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -2108,7 +2111,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "FROM\n"
             + "  [bigquery-public-data.github_repos.commits],\n"
             + "  [bigquery-public-data.github_repos.sample_commits] LIMIT 10";
-String connection_uri = ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;";
+    String connection_uri = ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;";
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
 

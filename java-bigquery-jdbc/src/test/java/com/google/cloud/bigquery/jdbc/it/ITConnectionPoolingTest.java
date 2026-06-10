@@ -100,8 +100,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionConnectionClosed() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -124,8 +123,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionClose() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -144,8 +142,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionConnectionError() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -173,8 +170,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerAddListener() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -189,8 +185,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerRemoveListener() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -208,8 +203,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerCloseConnection() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -231,8 +225,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerClosePooledConnection() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -249,8 +242,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerConnectionError() throws SQLException {
-    String connectionUrl =
-        ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -283,7 +275,8 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
-    String connectionURL = ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
+    String connectionURL =
+        ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
     assertConnectionPoolingResults(connectionURL, CUSTOM_CONN_POOL_SIZE);
   }
 

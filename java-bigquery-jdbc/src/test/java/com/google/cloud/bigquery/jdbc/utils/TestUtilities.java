@@ -150,7 +150,8 @@ public class TestUtilities {
   }
 
   public static String getBaseUrl() {
-    return getEnvOrProperty("BIGQUERY_BASE_URL", "bigquery.baseUrl", "https://www.googleapis.com/bigquery/v2:443");
+    return getEnvOrProperty(
+        "BIGQUERY_BASE_URL", "bigquery.baseUrl", "https://www.googleapis.com/bigquery/v2:443");
   }
 
   public static String getUrlFlags() {

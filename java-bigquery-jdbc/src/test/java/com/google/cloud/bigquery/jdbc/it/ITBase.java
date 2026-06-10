@@ -17,13 +17,13 @@
 package com.google.cloud.bigquery.jdbc.it;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -183,10 +183,8 @@ public class ITBase extends BigQueryJdbcBaseTest {
     return TestUtilities.getBaseConnectionUrl();
   }
 
-  public static String connectionUrl = getBaseConnectionUrl()
-      + "ProjectId="
-      + DEFAULT_CATALOG
-      + ";OAuthType=3;Timeout=3600;";
+  public static String connectionUrl =
+      getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
 
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";

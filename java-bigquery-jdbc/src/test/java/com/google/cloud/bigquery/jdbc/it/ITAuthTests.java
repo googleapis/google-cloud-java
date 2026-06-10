@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -105,11 +104,7 @@ public class ITAuthTests extends ITBase {
 
   @Test
   public void testServiceAccountAuthenticationMissingOAuthPvtKeyPath() throws SQLException {
-    String connection_uri =
-        getBaseConnectionUrl()
-            + "ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=0;";
+    String connection_uri = getBaseConnectionUrl() + "ProjectId=" + PROJECT_ID + ";OAuthType=0;";
 
     try {
       DriverManager.getConnection(connection_uri);
@@ -193,7 +188,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidGoogleUserAccountAuthentication() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + "PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAuthType=1;OAuthClientId=client_id;OAuthClientSecret=client_secret;";
 
@@ -214,7 +210,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthentication() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + "PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "BYOID_AudienceUri=//iam.googleapis.com/projects/<project>/locations/<location>/workloadIdentityPools/<pool>/providers/<provider>;"
@@ -238,7 +235,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationFromFile() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + "PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "OAuthPvtKeyPath=/path/to/file;";
@@ -260,7 +258,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationRawJson() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + "PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;OAuthPvtKey={\n"
             + "  \"universe_domain\": \"googleapis.com\",\n"
@@ -304,7 +303,8 @@ public class ITAuthTests extends ITBase {
     String accessToken = credentials.getAccessToken().getTokenValue();
 
     String connectionUri =
-        getBaseConnectionUrl() + "ProjectId="
+        getBaseConnectionUrl()
+            + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=2"
             + ";OAuthAccessToken="
@@ -320,7 +320,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidRefreshTokenAuthentication() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + "PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=2;OAuthRefreshToken=refresh_token;"
             + ";OAuthClientId=client;OAuthClientSecret=secret;";

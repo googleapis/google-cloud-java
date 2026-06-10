@@ -336,7 +336,9 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "QueryDialect=SQL;LargeResultTable=destination_table_test;LargeResultDataset=INTEGRATION_TESTS;EnableHighThroughputAPI=1;";
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "QueryDialect=SQL;LargeResultTable=destination_table_test;LargeResultDataset=INTEGRATION_TESTS;EnableHighThroughputAPI=1;";
     String selectLegacyQuery =
         "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -718,7 +720,9 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "QueryDialect=BIG_QUERY;LargeResultTable=destination_table_test;LargeResultDataset=INTEGRATION_TESTS;EnableHighThroughputAPI=1;";
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "QueryDialect=BIG_QUERY;LargeResultTable=destination_table_test;LargeResultDataset=INTEGRATION_TESTS;EnableHighThroughputAPI=1;";
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -1098,8 +1102,9 @@ public class ITNightlyBigQueryTest {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "EnableHighThroughputAPI=1;HighThroughputActivationRatio=2;HighThroughputMinTableSize=1000;";
-
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableHighThroughputAPI=1;HighThroughputActivationRatio=2;HighThroughputMinTableSize=1000;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1155,7 +1160,9 @@ public class ITNightlyBigQueryTest {
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
     String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
 
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "EnableWriteAPI=1;SWA_ActivationRowCount=5;SWA_AppendRowCount=500";
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;SWA_ActivationRowCount=5;SWA_AppendRowCount=500";
 
     try (Connection connection = DriverManager.getConnection(connection_uri)) {
       bigQueryStatement.execute(createQuery);
@@ -1200,7 +1207,9 @@ public class ITNightlyBigQueryTest {
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
     String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
 
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "EnableWriteAPI=0;SWA_ActivationRowCount=50;SWA_AppendRowCount=500";
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=0;SWA_ActivationRowCount=50;SWA_AppendRowCount=500";
 
     try (Connection connection = DriverManager.getConnection(connection_uri)) {
       bigQueryStatement.execute(createQuery);
@@ -1329,7 +1338,8 @@ public class ITNightlyBigQueryTest {
     bigQueryStatement.execute(createTransactionTable);
 
     // Run the transaction
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1613,7 +1623,9 @@ public class ITNightlyBigQueryTest {
 
   @Test
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
-        String connectionUri = ITNightlyBigQueryTest.connection_uri + "MaxResults=300;HighThroughputActivationRatio=2;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+    String connectionUri =
+        ITNightlyBigQueryTest.connection_uri
+            + "MaxResults=300;HighThroughputActivationRatio=2;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
 
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
@@ -1628,7 +1640,9 @@ public class ITNightlyBigQueryTest {
 
   @Test
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
-        String connectionUri = ITNightlyBigQueryTest.connection_uri + "HighThroughputActivationRatio=4;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+    String connectionUri =
+        ITNightlyBigQueryTest.connection_uri
+            + "HighThroughputActivationRatio=4;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
 
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();

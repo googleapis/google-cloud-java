@@ -1102,7 +1102,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
 
-    String urlWithAdditionalProjects = ITBase.connectionUrl + "AdditionalProjects=" + additionalProjectsValue;
+    String urlWithAdditionalProjects =
+        ITBase.connectionUrl + "AdditionalProjects=" + additionalProjectsValue;
 
     try (Connection conn = DriverManager.getConnection(urlWithAdditionalProjects)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();
@@ -1162,7 +1163,11 @@ public class ITDatabaseMetadataTest extends ITBase {
     String table1InSpecificDataset = "base_table";
     String table2InSpecificDataset = "external_table";
 
-    String connectionUrl = ITDatabaseMetadataTest.connectionUrl + "DefaultDataset=" + defaultDatasetValue + ";FilterTablesOnDefaultDataset=1";
+    String connectionUrl =
+        ITDatabaseMetadataTest.connectionUrl
+            + "DefaultDataset="
+            + defaultDatasetValue
+            + ";FilterTablesOnDefaultDataset=1";
     try (Connection conn = DriverManager.getConnection(connectionUrl)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();
 
@@ -1227,7 +1232,11 @@ public class ITDatabaseMetadataTest extends ITBase {
     String tableInSpecificDataset = "base_table";
     String[] columnsInSpecificTable = {"id", "name", "created_at"};
 
-    String connectionUrl = ITDatabaseMetadataTest.connectionUrl + "DefaultDataset=" + defaultDatasetValue + ";FilterTablesOnDefaultDataset=1";
+    String connectionUrl =
+        ITDatabaseMetadataTest.connectionUrl
+            + "DefaultDataset="
+            + defaultDatasetValue
+            + ";FilterTablesOnDefaultDataset=1";
 
     try (Connection conn = DriverManager.getConnection(connectionUrl)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();
