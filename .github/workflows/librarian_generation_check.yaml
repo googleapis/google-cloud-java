@@ -75,7 +75,7 @@ jobs:
           git status
           echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
           exit 1
-        fi 
+        fi
     - name: Create issue if previous step fails
       if: ${{ failure() && github.ref == 'refs/heads/main' }}
       uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
