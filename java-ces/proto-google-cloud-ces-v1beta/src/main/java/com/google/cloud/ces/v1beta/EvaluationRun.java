@@ -67,6 +67,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     personaRunConfigs_ = java.util.Collections.emptyList();
     scheduledEvaluationRun_ = "";
     goldenRunMethod_ = 0;
+    operation_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,6 +314,16 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Indicates the evaluation run is queued.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    QUEUED(5),
+    /**
+     *
+     *
+     * <pre>
      * Evaluation run is running.
      * </pre>
      *
@@ -339,6 +350,16 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      * <code>ERROR = 3;</code>
      */
     ERROR(3),
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation run was cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 4;</code>
+     */
+    CANCELLED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -362,6 +383,17 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      * <code>EVALUATION_RUN_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int EVALUATION_RUN_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the evaluation run is queued.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    public static final int QUEUED_VALUE = 5;
 
     /**
      *
@@ -396,6 +428,17 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      */
     public static final int ERROR_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation run was cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 4;</code>
+     */
+    public static final int CANCELLED_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -422,12 +465,16 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return EVALUATION_RUN_STATE_UNSPECIFIED;
+        case 5:
+          return QUEUED;
         case 1:
           return RUNNING;
         case 2:
           return COMPLETED;
         case 3:
           return ERROR;
+        case 4:
+          return CANCELLED;
         default:
           return null;
       }
@@ -559,6 +606,20 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      * @return The passedCount.
      */
     int getPassedCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of evaluation results that were cancelled.
+     * (EvaluationResult.execution_state is CANCELLED).
+     * </pre>
+     *
+     * <code>int32 cancelled_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The cancelledCount.
+     */
+    int getCancelledCount();
   }
 
   /**
@@ -709,6 +770,26 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       return passedCount_;
     }
 
+    public static final int CANCELLED_COUNT_FIELD_NUMBER = 6;
+    private int cancelledCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of evaluation results that were cancelled.
+     * (EvaluationResult.execution_state is CANCELLED).
+     * </pre>
+     *
+     * <code>int32 cancelled_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The cancelledCount.
+     */
+    @java.lang.Override
+    public int getCancelledCount() {
+      return cancelledCount_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -738,6 +819,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       if (passedCount_ != 0) {
         output.writeInt32(5, passedCount_);
       }
+      if (cancelledCount_ != 0) {
+        output.writeInt32(6, cancelledCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -762,6 +846,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       if (passedCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, passedCount_);
       }
+      if (cancelledCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, cancelledCount_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -783,6 +870,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       if (getErrorCount() != other.getErrorCount()) return false;
       if (getCompletedCount() != other.getCompletedCount()) return false;
       if (getPassedCount() != other.getPassedCount()) return false;
+      if (getCancelledCount() != other.getCancelledCount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -804,6 +892,8 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getCompletedCount();
       hash = (37 * hash) + PASSED_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getPassedCount();
+      hash = (37 * hash) + CANCELLED_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCancelledCount();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -949,6 +1039,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
         errorCount_ = 0;
         completedCount_ = 0;
         passedCount_ = 0;
+        cancelledCount_ = 0;
         return this;
       }
 
@@ -1000,6 +1091,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.passedCount_ = passedCount_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.cancelledCount_ = cancelledCount_;
+        }
       }
 
       @java.lang.Override
@@ -1029,6 +1123,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
         }
         if (other.getPassedCount() != 0) {
           setPassedCount(other.getPassedCount());
+        }
+        if (other.getCancelledCount() != 0) {
+          setCancelledCount(other.getCancelledCount());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1086,6 +1183,12 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 40
+              case 48:
+                {
+                  cancelledCount_ = input.readInt32();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1399,6 +1502,65 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       public Builder clearPassedCount() {
         bitField0_ = (bitField0_ & ~0x00000010);
         passedCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cancelledCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of evaluation results that were cancelled.
+       * (EvaluationResult.execution_state is CANCELLED).
+       * </pre>
+       *
+       * <code>int32 cancelled_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The cancelledCount.
+       */
+      @java.lang.Override
+      public int getCancelledCount() {
+        return cancelledCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of evaluation results that were cancelled.
+       * (EvaluationResult.execution_state is CANCELLED).
+       * </pre>
+       *
+       * <code>int32 cancelled_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The cancelledCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCancelledCount(int value) {
+
+        cancelledCount_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of evaluation results that were cancelled.
+       * (EvaluationResult.execution_state is CANCELLED).
+       * </pre>
+       *
+       * <code>int32 cancelled_count = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCancelledCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        cancelledCount_ = 0;
         onChanged();
         return this;
       }
@@ -3116,7 +3278,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1283
    * @return Whether the error field is set.
    */
   @java.lang.Override
@@ -3138,7 +3300,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1283
    * @return The error.
    */
   @java.lang.Override
@@ -3690,6 +3852,63 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.ces.v1beta.GoldenRunMethod.UNRECOGNIZED : result;
   }
 
+  public static final int OPERATION_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operation_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The operation that created this evaluation run.
+   * Format:
+   * `projects/{project}/locations/{location}/operations/{operation}`
+   * </pre>
+   *
+   * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The operation.
+   */
+  @java.lang.Override
+  public java.lang.String getOperation() {
+    java.lang.Object ref = operation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operation_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The operation that created this evaluation run.
+   * Format:
+   * `projects/{project}/locations/{location}/operations/{operation}`
+   * </pre>
+   *
+   * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for operation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOperationBytes() {
+    java.lang.Object ref = operation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      operation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3783,6 +4002,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(25, getLatencyReport());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operation_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 26, operation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3894,6 +4116,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getLatencyReport());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operation_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(26, operation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3959,6 +4184,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     }
     if (!getScheduledEvaluationRun().equals(other.getScheduledEvaluationRun())) return false;
     if (goldenRunMethod_ != other.goldenRunMethod_) return false;
+    if (!getOperation().equals(other.getOperation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4042,6 +4268,8 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getScheduledEvaluationRun().hashCode();
     hash = (37 * hash) + GOLDEN_RUN_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + goldenRunMethod_;
+    hash = (37 * hash) + OPERATION_FIELD_NUMBER;
+    hash = (53 * hash) + getOperation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4284,6 +4512,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       }
       scheduledEvaluationRun_ = "";
       goldenRunMethod_ = 0;
+      operation_ = "";
       return this;
     }
 
@@ -4421,6 +4650,9 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.goldenRunMethod_ = goldenRunMethod_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.operation_ = operation_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4562,6 +4794,11 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
       }
       if (other.goldenRunMethod_ != 0) {
         setGoldenRunMethodValue(other.getGoldenRunMethodValue());
+      }
+      if (!other.getOperation().isEmpty()) {
+        operation_ = other.operation_;
+        bitField0_ |= 0x01000000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4758,6 +4995,12 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00040000;
                 break;
               } // case 202
+            case 210:
+              {
+                operation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7191,7 +7434,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1283
      * @return Whether the error field is set.
      */
     @java.lang.Deprecated
@@ -7212,7 +7455,7 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationRun.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1209
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1283
      * @return The error.
      */
     @java.lang.Deprecated
@@ -9042,6 +9285,127 @@ public final class EvaluationRun extends com.google.protobuf.GeneratedMessage
     public Builder clearGoldenRunMethod() {
       bitField0_ = (bitField0_ & ~0x00800000);
       goldenRunMethod_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object operation_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The operation that created this evaluation run.
+     * Format:
+     * `projects/{project}/locations/{location}/operations/{operation}`
+     * </pre>
+     *
+     * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The operation.
+     */
+    public java.lang.String getOperation() {
+      java.lang.Object ref = operation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The operation that created this evaluation run.
+     * Format:
+     * `projects/{project}/locations/{location}/operations/{operation}`
+     * </pre>
+     *
+     * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for operation.
+     */
+    public com.google.protobuf.ByteString getOperationBytes() {
+      java.lang.Object ref = operation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        operation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The operation that created this evaluation run.
+     * Format:
+     * `projects/{project}/locations/{location}/operations/{operation}`
+     * </pre>
+     *
+     * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The operation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      operation_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The operation that created this evaluation run.
+     * Format:
+     * `projects/{project}/locations/{location}/operations/{operation}`
+     * </pre>
+     *
+     * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOperation() {
+      operation_ = getDefaultInstance().getOperation();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The operation that created this evaluation run.
+     * Format:
+     * `projects/{project}/locations/{location}/operations/{operation}`
+     * </pre>
+     *
+     * <code>string operation = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for operation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      operation_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }

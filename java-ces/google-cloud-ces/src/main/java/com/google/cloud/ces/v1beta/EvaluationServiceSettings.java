@@ -367,6 +367,53 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
     return ((EvaluationServiceStubSettings) getStubSettings()).exportEvaluationsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportEvaluationRuns. */
+  public UnaryCallSettings<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).exportEvaluationRunsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluationRuns. */
+  public OperationCallSettings<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings())
+        .exportEvaluationRunsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluationResults. */
+  public UnaryCallSettings<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).exportEvaluationResultsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluationResults. */
+  public OperationCallSettings<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings())
+        .exportEvaluationResultsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runEvaluationResultMetrics. */
+  public UnaryCallSettings<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).runEvaluationResultMetricsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to runEvaluationResultMetrics. */
+  public OperationCallSettings<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings())
+        .runEvaluationResultMetricsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -726,6 +773,51 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
             ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
         exportEvaluationsOperationSettings() {
       return getStubSettingsBuilder().exportEvaluationsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluationRuns. */
+    public UnaryCallSettings.Builder<ExportEvaluationRunsRequest, Operation>
+        exportEvaluationRunsSettings() {
+      return getStubSettingsBuilder().exportEvaluationRunsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluationRuns. */
+    public OperationCallSettings.Builder<
+            ExportEvaluationRunsRequest,
+            ExportEvaluationRunsResponse,
+            ExportEvaluationRunsOperationMetadata>
+        exportEvaluationRunsOperationSettings() {
+      return getStubSettingsBuilder().exportEvaluationRunsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluationResults. */
+    public UnaryCallSettings.Builder<ExportEvaluationResultsRequest, Operation>
+        exportEvaluationResultsSettings() {
+      return getStubSettingsBuilder().exportEvaluationResultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluationResults. */
+    public OperationCallSettings.Builder<
+            ExportEvaluationResultsRequest,
+            ExportEvaluationResultsResponse,
+            ExportEvaluationResultsOperationMetadata>
+        exportEvaluationResultsOperationSettings() {
+      return getStubSettingsBuilder().exportEvaluationResultsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runEvaluationResultMetrics. */
+    public UnaryCallSettings.Builder<RunEvaluationResultMetricsRequest, Operation>
+        runEvaluationResultMetricsSettings() {
+      return getStubSettingsBuilder().runEvaluationResultMetricsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runEvaluationResultMetrics. */
+    public OperationCallSettings.Builder<
+            RunEvaluationResultMetricsRequest,
+            RunEvaluationResultMetricsResponse,
+            RunEvaluationResultMetricsOperationMetadata>
+        runEvaluationResultMetricsOperationSettings() {
+      return getStubSettingsBuilder().runEvaluationResultMetricsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

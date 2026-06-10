@@ -44,6 +44,7 @@ public class AsyncListWorkstationConfigsPaged {
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       while (true) {
         ListWorkstationConfigsResponse response =

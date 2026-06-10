@@ -299,4 +299,90 @@ public interface ConversationOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether memory is paused for this conversation.
+   * </pre>
+   *
+   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the memoryPaused field is set.
+   */
+  boolean hasMemoryPaused();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether memory is paused for this conversation.
+   * </pre>
+   *
+   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryPaused.
+   */
+  boolean getMemoryPaused();
 }

@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2225
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -145,7 +145,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2225
+   *     google/container/v1/cluster_service.proto;l=2243
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -817,6 +817,49 @@ public interface AddonsConfigOrBuilder
    * </code>
    */
   com.google.container.v1.SliceControllerConfigOrBuilder getSliceControllerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentSandboxConfig field is set.
+   */
+  boolean hasAgentSandboxConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentSandboxConfig.
+   */
+  com.google.container.v1.AgentSandboxConfig getAgentSandboxConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the AgentSandbox addon.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AgentSandboxConfig agent_sandbox_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.AgentSandboxConfigOrBuilder getAgentSandboxConfigOrBuilder();
 
   /**
    *

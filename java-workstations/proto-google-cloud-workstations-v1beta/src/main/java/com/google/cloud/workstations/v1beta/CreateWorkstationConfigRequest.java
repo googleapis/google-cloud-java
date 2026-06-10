@@ -189,7 +189,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to create.
+   * Required. Workstation configuration to create.
    * </pre>
    *
    * <code>
@@ -207,7 +207,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to create.
+   * Required. Workstation configuration to create.
    * </pre>
    *
    * <code>
@@ -227,7 +227,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to create.
+   * Required. Workstation configuration to create.
    * </pre>
    *
    * <code>
@@ -249,7 +249,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -917,7 +917,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -934,7 +934,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -957,7 +957,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -983,7 +983,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1006,7 +1006,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1038,7 +1038,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1060,7 +1060,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1078,7 +1078,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1100,7 +1100,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to create.
+     * Required. Workstation configuration to create.
      * </pre>
      *
      * <code>
@@ -1130,7 +1130,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1147,7 +1147,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1168,7 +1168,7 @@ public final class CreateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *

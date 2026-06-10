@@ -56,8 +56,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     displayName_ = "";
     uid_ = "";
     etag_ = "";
+    persistentDirectories_ = java.util.Collections.emptyList();
     state_ = 0;
     host_ = "";
+    kmsKey_ = "";
+    sourceWorkstation_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,6 +77,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
         return internalGetAnnotations();
       case 13:
         return internalGetLabels();
+      case 12:
+        return internalGetEnv();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -308,6 +313,2754 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.workstations.v1.Workstation.State)
   }
 
+  public interface WorkstationPersistentDirectoryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mount path of the persistent directory.
+     * </pre>
+     *
+     * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mountPath.
+     */
+    java.lang.String getMountPath();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mount path of the persistent directory.
+     * </pre>
+     *
+     * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mountPath.
+     */
+    com.google.protobuf.ByteString getMountPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Size of the persistent directory in GB. If specified in an
+     * update request, this is the desired size of the directory.
+     * </pre>
+     *
+     * <code>int32 size_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sizeGb.
+     */
+    int getSizeGb();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A directory to persist across workstation sessions. Updates to this field
+   * will only take effect on this workstation after it is restarted.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory}
+   */
+  public static final class WorkstationPersistentDirectory
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)
+      WorkstationPersistentDirectoryOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "WorkstationPersistentDirectory");
+    }
+
+    // Use WorkstationPersistentDirectory.newBuilder() to construct.
+    private WorkstationPersistentDirectory(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WorkstationPersistentDirectory() {
+      mountPath_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.class,
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+                  .class);
+    }
+
+    public static final int MOUNT_PATH_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mountPath_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mount path of the persistent directory.
+     * </pre>
+     *
+     * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mountPath.
+     */
+    @java.lang.Override
+    public java.lang.String getMountPath() {
+      java.lang.Object ref = mountPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mountPath_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mount path of the persistent directory.
+     * </pre>
+     *
+     * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mountPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMountPathBytes() {
+      java.lang.Object ref = mountPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mountPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_GB_FIELD_NUMBER = 3;
+    private int sizeGb_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Size of the persistent directory in GB. If specified in an
+     * update request, this is the desired size of the directory.
+     * </pre>
+     *
+     * <code>int32 size_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sizeGb.
+     */
+    @java.lang.Override
+    public int getSizeGb() {
+      return sizeGb_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mountPath_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, mountPath_);
+      }
+      if (sizeGb_ != 0) {
+        output.writeInt32(3, sizeGb_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mountPath_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, mountPath_);
+      }
+      if (sizeGb_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, sizeGb_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory other =
+          (com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory) obj;
+
+      if (!getMountPath().equals(other.getMountPath())) return false;
+      if (getSizeGb() != other.getSizeGb()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MOUNT_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getMountPath().hashCode();
+      hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getSizeGb();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A directory to persist across workstation sessions. Updates to this field
+     * will only take effect on this workstation after it is restarted.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.class,
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        mountPath_ = "";
+        sizeGb_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_WorkstationPersistentDirectory_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+          getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory build() {
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+          buildPartial() {
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory result =
+            new com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mountPath_ = mountPath_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sizeGb_ = sizeGb_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory) {
+          return mergeFrom(
+              (com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory other) {
+        if (other
+            == com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+                .getDefaultInstance()) return this;
+        if (!other.getMountPath().isEmpty()) {
+          mountPath_ = other.mountPath_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getSizeGb() != 0) {
+          setSizeGb(other.getSizeGb());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  mountPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  sizeGb_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object mountPath_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mount path of the persistent directory.
+       * </pre>
+       *
+       * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The mountPath.
+       */
+      public java.lang.String getMountPath() {
+        java.lang.Object ref = mountPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mountPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mount path of the persistent directory.
+       * </pre>
+       *
+       * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for mountPath.
+       */
+      public com.google.protobuf.ByteString getMountPathBytes() {
+        java.lang.Object ref = mountPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mountPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mount path of the persistent directory.
+       * </pre>
+       *
+       * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The mountPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMountPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mountPath_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mount path of the persistent directory.
+       * </pre>
+       *
+       * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMountPath() {
+        mountPath_ = getDefaultInstance().getMountPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The mount path of the persistent directory.
+       * </pre>
+       *
+       * <code>string mount_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for mountPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMountPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        mountPath_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int sizeGb_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the persistent directory in GB. If specified in an
+       * update request, this is the desired size of the directory.
+       * </pre>
+       *
+       * <code>int32 size_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The sizeGb.
+       */
+      @java.lang.Override
+      public int getSizeGb() {
+        return sizeGb_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the persistent directory in GB. If specified in an
+       * update request, this is the desired size of the directory.
+       * </pre>
+       *
+       * <code>int32 size_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The sizeGb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSizeGb(int value) {
+
+        sizeGb_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the persistent directory in GB. If specified in an
+       * update request, this is the desired size of the directory.
+       * </pre>
+       *
+       * <code>int32 size_gb = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSizeGb() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sizeGb_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory)
+    private static final com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory();
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WorkstationPersistentDirectory> PARSER =
+        new com.google.protobuf.AbstractParser<WorkstationPersistentDirectory>() {
+          @java.lang.Override
+          public WorkstationPersistentDirectory parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<WorkstationPersistentDirectory> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WorkstationPersistentDirectory> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RuntimeHostOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1.Workstation.RuntimeHost)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     *
+     * @return Whether the gceInstanceHost field is set.
+     */
+    boolean hasGceInstanceHost();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     *
+     * @return The gceInstanceHost.
+     */
+    com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost getGceInstanceHost();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     */
+    com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder
+        getGceInstanceHostOrBuilder();
+
+    com.google.cloud.workstations.v1.Workstation.RuntimeHost.HostTypeCase getHostTypeCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Runtime host for the workstation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1.Workstation.RuntimeHost}
+   */
+  public static final class RuntimeHost extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.Workstation.RuntimeHost)
+      RuntimeHostOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "RuntimeHost");
+    }
+
+    // Use RuntimeHost.newBuilder() to construct.
+    private RuntimeHost(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RuntimeHost() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.class,
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder.class);
+    }
+
+    public interface GceInstanceHostOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The name of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The name.
+       */
+      java.lang.String getName();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The name of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for name.
+       */
+      com.google.protobuf.ByteString getNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The ID of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The id.
+       */
+      java.lang.String getId();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The ID of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for id.
+       */
+      com.google.protobuf.ByteString getIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The zone of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The zone.
+       */
+      java.lang.String getZone();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The zone of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for zone.
+       */
+      com.google.protobuf.ByteString getZoneBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Engine instance host.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost}
+     */
+    public static final class GceInstanceHost extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+        GceInstanceHostOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "GceInstanceHost");
+      }
+
+      // Use GceInstanceHost.newBuilder() to construct.
+      private GceInstanceHost(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private GceInstanceHost() {
+        name_ = "";
+        id_ = "";
+        zone_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.class,
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder
+                    .class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object name_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The name of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The name.
+       */
+      @java.lang.Override
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The name of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for name.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ID_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object id_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The ID of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The id.
+       */
+      @java.lang.Override
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The ID of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for id.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ZONE_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object zone_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The zone of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The zone.
+       */
+      @java.lang.Override
+      public java.lang.String getZone() {
+        java.lang.Object ref = zone_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          zone_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Output only. The zone of the Compute Engine instance.
+       * </pre>
+       *
+       * <code>
+       * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for zone.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getZoneBytes() {
+        java.lang.Object ref = zone_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          zone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, id_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, zone_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, id_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, zone_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost other =
+            (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) obj;
+
+        if (!getName().equals(other.getName())) return false;
+        if (!getId().equals(other.getId())) return false;
+        if (!getZone().equals(other.getZone())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+        hash = (37 * hash) + ZONE_FIELD_NUMBER;
+        hash = (53 * hash) + getZone().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Engine instance host.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.workstations.v1.WorkstationsProto
+              .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.workstations.v1.WorkstationsProto
+              .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.class,
+                  com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          name_ = "";
+          id_ = "";
+          zone_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.workstations.v1.WorkstationsProto
+              .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_GceInstanceHost_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+            getDefaultInstanceForType() {
+          return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost build() {
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+            buildPartial() {
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost result =
+              new com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.name_ = name_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.id_ = id_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.zone_ = zone_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) {
+            return mergeFrom(
+                (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost other) {
+          if (other
+              == com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+                  .getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getId().isEmpty()) {
+            id_ = other.id_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getZone().isEmpty()) {
+            zone_ = other.zone_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    name_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    id_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    zone_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object name_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The name of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The name.
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The name of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The name of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The name of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearName() {
+          name_ = getDefaultInstance().getName();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The name of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The bytes for name to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          name_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object id_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The ID of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The id.
+         */
+        public java.lang.String getId() {
+          java.lang.Object ref = id_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            id_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The ID of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The bytes for id.
+         */
+        public com.google.protobuf.ByteString getIdBytes() {
+          java.lang.Object ref = id_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            id_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The ID of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The id to set.
+         * @return This builder for chaining.
+         */
+        public Builder setId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The ID of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearId() {
+          id_ = getDefaultInstance().getId();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The ID of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string id = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The bytes for id to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          id_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object zone_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The zone of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The zone.
+         */
+        public java.lang.String getZone() {
+          java.lang.Object ref = zone_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            zone_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The zone of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The bytes for zone.
+         */
+        public com.google.protobuf.ByteString getZoneBytes() {
+          java.lang.Object ref = zone_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            zone_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The zone of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The zone to set.
+         * @return This builder for chaining.
+         */
+        public Builder setZone(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          zone_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The zone of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearZone() {
+          zone_ = getDefaultInstance().getZone();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Output only. The zone of the Compute Engine instance.
+         * </pre>
+         *
+         * <code>
+         * string zone = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The bytes for zone to set.
+         * @return This builder for chaining.
+         */
+        public Builder setZoneBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          zone_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+      private static final com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost();
+      }
+
+      public static com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GceInstanceHost> PARSER =
+          new com.google.protobuf.AbstractParser<GceInstanceHost>() {
+            @java.lang.Override
+            public GceInstanceHost parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<GceInstanceHost> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GceInstanceHost> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int hostTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object hostType_;
+
+    public enum HostTypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      GCE_INSTANCE_HOST(1),
+      HOSTTYPE_NOT_SET(0);
+      private final int value;
+
+      private HostTypeCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static HostTypeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static HostTypeCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return GCE_INSTANCE_HOST;
+          case 0:
+            return HOSTTYPE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public HostTypeCase getHostTypeCase() {
+      return HostTypeCase.forNumber(hostTypeCase_);
+    }
+
+    public static final int GCE_INSTANCE_HOST_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     *
+     * @return Whether the gceInstanceHost field is set.
+     */
+    @java.lang.Override
+    public boolean hasGceInstanceHost() {
+      return hostTypeCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     *
+     * @return The gceInstanceHost.
+     */
+    @java.lang.Override
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+        getGceInstanceHost() {
+      if (hostTypeCase_ == 1) {
+        return (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) hostType_;
+      }
+      return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a Compute Engine instance as the host.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder
+        getGceInstanceHostOrBuilder() {
+      if (hostTypeCase_ == 1) {
+        return (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) hostType_;
+      }
+      return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (hostTypeCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost) hostType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hostTypeCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+                    hostType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workstations.v1.Workstation.RuntimeHost)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1.Workstation.RuntimeHost other =
+          (com.google.cloud.workstations.v1.Workstation.RuntimeHost) obj;
+
+      if (!getHostTypeCase().equals(other.getHostTypeCase())) return false;
+      switch (hostTypeCase_) {
+        case 1:
+          if (!getGceInstanceHost().equals(other.getGceInstanceHost())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (hostTypeCase_) {
+        case 1:
+          hash = (37 * hash) + GCE_INSTANCE_HOST_FIELD_NUMBER;
+          hash = (53 * hash) + getGceInstanceHost().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runtime host for the workstation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1.Workstation.RuntimeHost}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1.Workstation.RuntimeHost)
+        com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.class,
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder.class);
+      }
+
+      // Construct using com.google.cloud.workstations.v1.Workstation.RuntimeHost.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (gceInstanceHostBuilder_ != null) {
+          gceInstanceHostBuilder_.clear();
+        }
+        hostTypeCase_ = 0;
+        hostType_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_Workstation_RuntimeHost_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost build() {
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost buildPartial() {
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost result =
+            new com.google.cloud.workstations.v1.Workstation.RuntimeHost(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.workstations.v1.Workstation.RuntimeHost result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost result) {
+        result.hostTypeCase_ = hostTypeCase_;
+        result.hostType_ = this.hostType_;
+        if (hostTypeCase_ == 1 && gceInstanceHostBuilder_ != null) {
+          result.hostType_ = gceInstanceHostBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workstations.v1.Workstation.RuntimeHost) {
+          return mergeFrom((com.google.cloud.workstations.v1.Workstation.RuntimeHost) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.workstations.v1.Workstation.RuntimeHost other) {
+        if (other == com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance())
+          return this;
+        switch (other.getHostTypeCase()) {
+          case GCE_INSTANCE_HOST:
+            {
+              mergeGceInstanceHost(other.getGceInstanceHost());
+              break;
+            }
+          case HOSTTYPE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetGceInstanceHostFieldBuilder().getBuilder(), extensionRegistry);
+                  hostTypeCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int hostTypeCase_ = 0;
+      private java.lang.Object hostType_;
+
+      public HostTypeCase getHostTypeCase() {
+        return HostTypeCase.forNumber(hostTypeCase_);
+      }
+
+      public Builder clearHostType() {
+        hostTypeCase_ = 0;
+        hostType_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost,
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder,
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder>
+          gceInstanceHostBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       *
+       * @return Whether the gceInstanceHost field is set.
+       */
+      @java.lang.Override
+      public boolean hasGceInstanceHost() {
+        return hostTypeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       *
+       * @return The gceInstanceHost.
+       */
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+          getGceInstanceHost() {
+        if (gceInstanceHostBuilder_ == null) {
+          if (hostTypeCase_ == 1) {
+            return (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+                hostType_;
+          }
+          return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+              .getDefaultInstance();
+        } else {
+          if (hostTypeCase_ == 1) {
+            return gceInstanceHostBuilder_.getMessage();
+          }
+          return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      public Builder setGceInstanceHost(
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost value) {
+        if (gceInstanceHostBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hostType_ = value;
+          onChanged();
+        } else {
+          gceInstanceHostBuilder_.setMessage(value);
+        }
+        hostTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      public Builder setGceInstanceHost(
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder
+              builderForValue) {
+        if (gceInstanceHostBuilder_ == null) {
+          hostType_ = builderForValue.build();
+          onChanged();
+        } else {
+          gceInstanceHostBuilder_.setMessage(builderForValue.build());
+        }
+        hostTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      public Builder mergeGceInstanceHost(
+          com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost value) {
+        if (gceInstanceHostBuilder_ == null) {
+          if (hostTypeCase_ == 1
+              && hostType_
+                  != com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+                      .getDefaultInstance()) {
+            hostType_ =
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.newBuilder(
+                        (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+                            hostType_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            hostType_ = value;
+          }
+          onChanged();
+        } else {
+          if (hostTypeCase_ == 1) {
+            gceInstanceHostBuilder_.mergeFrom(value);
+          } else {
+            gceInstanceHostBuilder_.setMessage(value);
+          }
+        }
+        hostTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      public Builder clearGceInstanceHost() {
+        if (gceInstanceHostBuilder_ == null) {
+          if (hostTypeCase_ == 1) {
+            hostTypeCase_ = 0;
+            hostType_ = null;
+            onChanged();
+          }
+        } else {
+          if (hostTypeCase_ == 1) {
+            hostTypeCase_ = 0;
+            hostType_ = null;
+          }
+          gceInstanceHostBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder
+          getGceInstanceHostBuilder() {
+        return internalGetGceInstanceHostFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder
+          getGceInstanceHostOrBuilder() {
+        if ((hostTypeCase_ == 1) && (gceInstanceHostBuilder_ != null)) {
+          return gceInstanceHostBuilder_.getMessageOrBuilder();
+        } else {
+          if (hostTypeCase_ == 1) {
+            return (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+                hostType_;
+          }
+          return com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies a Compute Engine instance as the host.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost gce_instance_host = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost,
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder,
+              com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHostOrBuilder>
+          internalGetGceInstanceHostFieldBuilder() {
+        if (gceInstanceHostBuilder_ == null) {
+          if (!(hostTypeCase_ == 1)) {
+            hostType_ =
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost
+                    .getDefaultInstance();
+          }
+          gceInstanceHostBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost,
+                  com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost.Builder,
+                  com.google.cloud.workstations.v1.Workstation.RuntimeHost
+                      .GceInstanceHostOrBuilder>(
+                  (com.google.cloud.workstations.v1.Workstation.RuntimeHost.GceInstanceHost)
+                      hostType_,
+                  getParentForChildren(),
+                  isClean());
+          hostType_ = null;
+        }
+        hostTypeCase_ = 1;
+        onChanged();
+        return gceInstanceHostBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1.Workstation.RuntimeHost)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1.Workstation.RuntimeHost)
+    private static final com.google.cloud.workstations.v1.Workstation.RuntimeHost DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workstations.v1.Workstation.RuntimeHost();
+    }
+
+    public static com.google.cloud.workstations.v1.Workstation.RuntimeHost getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RuntimeHost> PARSER =
+        new com.google.protobuf.AbstractParser<RuntimeHost>() {
+          @java.lang.Override
+          public RuntimeHost parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RuntimeHost> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RuntimeHost> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHost getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -318,10 +3071,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Full name of this workstation.
+   * Identifier. Full name of this workstation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -342,10 +3095,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Full name of this workstation.
+   * Identifier. Full name of this workstation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -427,7 +3180,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
    * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -451,7 +3206,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
    * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -987,6 +3744,99 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PERSISTENT_DIRECTORIES_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+      persistentDirectories_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+      getPersistentDirectoriesList() {
+    return persistentDirectories_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder>
+      getPersistentDirectoriesOrBuilderList() {
+    return persistentDirectories_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPersistentDirectoriesCount() {
+    return persistentDirectories_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+      getPersistentDirectories(int index) {
+    return persistentDirectories_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder
+      getPersistentDirectoriesOrBuilder(int index) {
+    return persistentDirectories_.get(index);
+  }
+
   public static final int STATE_FIELD_NUMBER = 10;
   private int state_ = 0;
 
@@ -1091,6 +3941,294 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ENV_FIELD_NUMBER = 12;
+
+  private static final class EnvDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.workstations.v1.WorkstationsProto
+                .internal_static_google_cloud_workstations_v1_Workstation_EnvEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+    if (env_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+    }
+    return env_;
+  }
+
+  public int getEnvCount() {
+    return internalGetEnv().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsEnv(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetEnv().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getEnvMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+    return getEnvMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+    return internalGetEnv().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getEnvOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getEnvOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int KMS_KEY_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Google Cloud KMS encryption key used to
+   * encrypt this workstation. The KMS key can only be configured in the
+   * WorkstationConfig. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Google Cloud KMS encryption key used to
+   * encrypt this workstation. The KMS key can only be configured in the
+   * WorkstationConfig. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_WORKSTATION_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceWorkstation_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source workstation from which this workstation's persistent
+   * directories were cloned on creation.
+   * </pre>
+   *
+   * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceWorkstation.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceWorkstation() {
+    java.lang.Object ref = sourceWorkstation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceWorkstation_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source workstation from which this workstation's persistent
+   * directories were cloned on creation.
+   * </pre>
+   *
+   * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceWorkstation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceWorkstationBytes() {
+    java.lang.Object ref = sourceWorkstation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceWorkstation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RUNTIME_HOST_FIELD_NUMBER = 21;
+  private com.google.cloud.workstations.v1.Workstation.RuntimeHost runtimeHost_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the runtimeHost field is set.
+   */
+  @java.lang.Override
+  public boolean hasRuntimeHost() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The runtimeHost.
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.Workstation.RuntimeHost getRuntimeHost() {
+    return runtimeHost_ == null
+        ? com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance()
+        : runtimeHost_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder
+      getRuntimeHostOrBuilder() {
+    return runtimeHost_ == null
+        ? com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance()
+        : runtimeHost_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1139,9 +4277,23 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 11, host_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetEnv(), EnvDefaultEntryHolder.defaultEntry, 12);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 13);
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(14, getStartTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKey_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, kmsKey_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceWorkstation_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, sourceWorkstation_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(21, getRuntimeHost());
+    }
+    for (int i = 0; i < persistentDirectories_.size(); i++) {
+      output.writeMessage(25, persistentDirectories_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1194,6 +4346,16 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, host_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetEnv().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+          EnvDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, env__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
           LabelsDefaultEntryHolder.defaultEntry
@@ -1205,6 +4367,20 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getStartTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKey_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, kmsKey_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceWorkstation_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, sourceWorkstation_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getRuntimeHost());
+    }
+    for (int i = 0; i < persistentDirectories_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, persistentDirectories_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1245,8 +4421,16 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getPersistentDirectoriesList().equals(other.getPersistentDirectoriesList())) return false;
     if (state_ != other.state_) return false;
     if (!getHost().equals(other.getHost())) return false;
+    if (!internalGetEnv().equals(other.internalGetEnv())) return false;
+    if (!getKmsKey().equals(other.getKmsKey())) return false;
+    if (!getSourceWorkstation().equals(other.getSourceWorkstation())) return false;
+    if (hasRuntimeHost() != other.hasRuntimeHost()) return false;
+    if (hasRuntimeHost()) {
+      if (!getRuntimeHost().equals(other.getRuntimeHost())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1292,10 +4476,26 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (getPersistentDirectoriesCount() > 0) {
+      hash = (37 * hash) + PERSISTENT_DIRECTORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getPersistentDirectoriesList().hashCode();
+    }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + HOST_FIELD_NUMBER;
     hash = (53 * hash) + getHost().hashCode();
+    if (!internalGetEnv().getMap().isEmpty()) {
+      hash = (37 * hash) + ENV_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetEnv().hashCode();
+    }
+    hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKey().hashCode();
+    hash = (37 * hash) + SOURCE_WORKSTATION_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceWorkstation().hashCode();
+    if (hasRuntimeHost()) {
+      hash = (37 * hash) + RUNTIME_HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getRuntimeHost().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1423,6 +4623,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
           return internalGetAnnotations();
         case 13:
           return internalGetLabels();
+        case 12:
+          return internalGetEnv();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1436,6 +4638,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
           return internalGetMutableAnnotations();
         case 13:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableEnv();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1467,6 +4671,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetStartTimeFieldBuilder();
         internalGetDeleteTimeFieldBuilder();
+        internalGetPersistentDirectoriesFieldBuilder();
+        internalGetRuntimeHostFieldBuilder();
       }
     }
 
@@ -1501,8 +4707,23 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
         deleteTimeBuilder_ = null;
       }
       etag_ = "";
+      if (persistentDirectoriesBuilder_ == null) {
+        persistentDirectories_ = java.util.Collections.emptyList();
+      } else {
+        persistentDirectories_ = null;
+        persistentDirectoriesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       state_ = 0;
       host_ = "";
+      internalGetMutableEnv().clear();
+      kmsKey_ = "";
+      sourceWorkstation_ = "";
+      runtimeHost_ = null;
+      if (runtimeHostBuilder_ != null) {
+        runtimeHostBuilder_.dispose();
+        runtimeHostBuilder_ = null;
+      }
       return this;
     }
 
@@ -1530,11 +4751,24 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.workstations.v1.Workstation buildPartial() {
       com.google.cloud.workstations.v1.Workstation result =
           new com.google.cloud.workstations.v1.Workstation(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.workstations.v1.Workstation result) {
+      if (persistentDirectoriesBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          persistentDirectories_ = java.util.Collections.unmodifiableList(persistentDirectories_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.persistentDirectories_ = persistentDirectories_;
+      } else {
+        result.persistentDirectories_ = persistentDirectoriesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.workstations.v1.Workstation result) {
@@ -1579,11 +4813,26 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.env_ = internalGetEnv();
+        result.env_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sourceWorkstation_ = sourceWorkstation_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.runtimeHost_ =
+            runtimeHostBuilder_ == null ? runtimeHost_ : runtimeHostBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1639,13 +4888,55 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (persistentDirectoriesBuilder_ == null) {
+        if (!other.persistentDirectories_.isEmpty()) {
+          if (persistentDirectories_.isEmpty()) {
+            persistentDirectories_ = other.persistentDirectories_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensurePersistentDirectoriesIsMutable();
+            persistentDirectories_.addAll(other.persistentDirectories_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.persistentDirectories_.isEmpty()) {
+          if (persistentDirectoriesBuilder_.isEmpty()) {
+            persistentDirectoriesBuilder_.dispose();
+            persistentDirectoriesBuilder_ = null;
+            persistentDirectories_ = other.persistentDirectories_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            persistentDirectoriesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetPersistentDirectoriesFieldBuilder()
+                    : null;
+          } else {
+            persistentDirectoriesBuilder_.addAllMessages(other.persistentDirectories_);
+          }
+        }
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
+      }
+      internalGetMutableEnv().mergeFrom(other.internalGetEnv());
+      bitField0_ |= 0x00004000;
+      if (!other.getKmsKey().isEmpty()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (!other.getSourceWorkstation().isEmpty()) {
+        sourceWorkstation_ = other.sourceWorkstation_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (other.hasRuntimeHost()) {
+        mergeRuntimeHost(other.getRuntimeHost());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1739,15 +5030,24 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
             case 80:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 80
             case 90:
               {
                 host_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> env__ =
+                    input.readMessage(
+                        EnvDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableEnv().getMutableMap().put(env__.getKey(), env__.getValue());
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 98
             case 106:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -1767,6 +5067,40 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 114
+            case 122:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 122
+            case 138:
+              {
+                sourceWorkstation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+            case 170:
+              {
+                input.readMessage(
+                    internalGetRuntimeHostFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 170
+            case 202:
+              {
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory m =
+                    input.readMessage(
+                        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+                            .parser(),
+                        extensionRegistry);
+                if (persistentDirectoriesBuilder_ == null) {
+                  ensurePersistentDirectoriesIsMutable();
+                  persistentDirectories_.add(m);
+                } else {
+                  persistentDirectoriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1792,10 +5126,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Full name of this workstation.
+     * Identifier. Full name of this workstation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1815,10 +5149,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Full name of this workstation.
+     * Identifier. Full name of this workstation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1838,10 +5172,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Full name of this workstation.
+     * Identifier. Full name of this workstation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1860,10 +5194,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Full name of this workstation.
+     * Identifier. Full name of this workstation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1878,10 +5212,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Full name of this workstation.
+     * Identifier. Full name of this workstation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2017,7 +5351,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The uid.
      */
@@ -2040,7 +5376,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for uid.
      */
@@ -2063,7 +5401,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The uid to set.
      * @return This builder for chaining.
@@ -2085,7 +5425,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2103,7 +5445,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
-     * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.
@@ -3527,6 +6871,446 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+        persistentDirectories_ = java.util.Collections.emptyList();
+
+    private void ensurePersistentDirectoriesIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        persistentDirectories_ =
+            new java.util.ArrayList<
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>(
+                persistentDirectories_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory,
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder,
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder>
+        persistentDirectoriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+        getPersistentDirectoriesList() {
+      if (persistentDirectoriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(persistentDirectories_);
+      } else {
+        return persistentDirectoriesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPersistentDirectoriesCount() {
+      if (persistentDirectoriesBuilder_ == null) {
+        return persistentDirectories_.size();
+      } else {
+        return persistentDirectoriesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+        getPersistentDirectories(int index) {
+      if (persistentDirectoriesBuilder_ == null) {
+        return persistentDirectories_.get(index);
+      } else {
+        return persistentDirectoriesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistentDirectories(
+        int index,
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory value) {
+      if (persistentDirectoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.set(index, value);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersistentDirectories(
+        int index,
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+            builderForValue) {
+      if (persistentDirectoriesBuilder_ == null) {
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPersistentDirectories(
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory value) {
+      if (persistentDirectoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.add(value);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPersistentDirectories(
+        int index,
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory value) {
+      if (persistentDirectoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.add(index, value);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPersistentDirectories(
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+            builderForValue) {
+      if (persistentDirectoriesBuilder_ == null) {
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.add(builderForValue.build());
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPersistentDirectories(
+        int index,
+        com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+            builderForValue) {
+      if (persistentDirectoriesBuilder_ == null) {
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPersistentDirectories(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+            values) {
+      if (persistentDirectoriesBuilder_ == null) {
+        ensurePersistentDirectoriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, persistentDirectories_);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPersistentDirectories() {
+      if (persistentDirectoriesBuilder_ == null) {
+        persistentDirectories_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePersistentDirectories(int index) {
+      if (persistentDirectoriesBuilder_ == null) {
+        ensurePersistentDirectoriesIsMutable();
+        persistentDirectories_.remove(index);
+        onChanged();
+      } else {
+        persistentDirectoriesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+        getPersistentDirectoriesBuilder(int index) {
+      return internalGetPersistentDirectoriesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder
+        getPersistentDirectoriesOrBuilder(int index) {
+      if (persistentDirectoriesBuilder_ == null) {
+        return persistentDirectories_.get(index);
+      } else {
+        return persistentDirectoriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.workstations.v1.Workstation
+                    .WorkstationPersistentDirectoryOrBuilder>
+        getPersistentDirectoriesOrBuilderList() {
+      if (persistentDirectoriesBuilder_ != null) {
+        return persistentDirectoriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(persistentDirectories_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+        addPersistentDirectoriesBuilder() {
+      return internalGetPersistentDirectoriesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder
+        addPersistentDirectoriesBuilder(int index) {
+      return internalGetPersistentDirectoriesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Directories to persist across workstation sessions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder>
+        getPersistentDirectoriesBuilderList() {
+      return internalGetPersistentDirectoriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory,
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder,
+            com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder>
+        internalGetPersistentDirectoriesFieldBuilder() {
+      if (persistentDirectoriesBuilder_ == null) {
+        persistentDirectoriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory,
+                com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory.Builder,
+                com.google.cloud.workstations.v1.Workstation
+                    .WorkstationPersistentDirectoryOrBuilder>(
+                persistentDirectories_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        persistentDirectories_ = null;
+      }
+      return persistentDirectoriesBuilder_;
+    }
+
     private int state_ = 0;
 
     /**
@@ -3563,7 +7347,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3608,7 +7392,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3628,7 +7412,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
       onChanged();
       return this;
@@ -3711,7 +7495,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       host_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3733,7 +7517,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearHost() {
       host_ = getDefaultInstance().getHost();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3760,9 +7544,656 @@ public final class Workstation extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       host_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> env_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetEnv() {
+      if (env_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(EnvDefaultEntryHolder.defaultEntry);
+      }
+      return env_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableEnv() {
+      if (env_ == null) {
+        env_ = com.google.protobuf.MapField.newMapField(EnvDefaultEntryHolder.defaultEntry);
+      }
+      if (!env_.isMutable()) {
+        env_ = env_.copy();
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return env_;
+    }
+
+    public int getEnvCount() {
+      return internalGetEnv().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsEnv(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetEnv().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getEnvMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getEnv() {
+      return getEnvMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
+      return internalGetEnv().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getEnvOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getEnvOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearEnv() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutableEnv().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeEnv(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableEnv().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
+      bitField0_ |= 0x00004000;
+      return internalGetMutableEnv().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putEnv(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableEnv().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllEnv(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableEnv().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Google Cloud KMS encryption key used to
+     * encrypt this workstation. The KMS key can only be configured in the
+     * WorkstationConfig. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Google Cloud KMS encryption key used to
+     * encrypt this workstation. The KMS key can only be configured in the
+     * WorkstationConfig. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Google Cloud KMS encryption key used to
+     * encrypt this workstation. The KMS key can only be configured in the
+     * WorkstationConfig. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Google Cloud KMS encryption key used to
+     * encrypt this workstation. The KMS key can only be configured in the
+     * WorkstationConfig. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Google Cloud KMS encryption key used to
+     * encrypt this workstation. The KMS key can only be configured in the
+     * WorkstationConfig. The expected format is
+     * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+     * </pre>
+     *
+     * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceWorkstation_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source workstation from which this workstation's persistent
+     * directories were cloned on creation.
+     * </pre>
+     *
+     * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceWorkstation.
+     */
+    public java.lang.String getSourceWorkstation() {
+      java.lang.Object ref = sourceWorkstation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceWorkstation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source workstation from which this workstation's persistent
+     * directories were cloned on creation.
+     * </pre>
+     *
+     * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceWorkstation.
+     */
+    public com.google.protobuf.ByteString getSourceWorkstationBytes() {
+      java.lang.Object ref = sourceWorkstation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceWorkstation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source workstation from which this workstation's persistent
+     * directories were cloned on creation.
+     * </pre>
+     *
+     * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sourceWorkstation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceWorkstation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceWorkstation_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source workstation from which this workstation's persistent
+     * directories were cloned on creation.
+     * </pre>
+     *
+     * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceWorkstation() {
+      sourceWorkstation_ = getDefaultInstance().getSourceWorkstation();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source workstation from which this workstation's persistent
+     * directories were cloned on creation.
+     * </pre>
+     *
+     * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for sourceWorkstation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceWorkstationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceWorkstation_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.workstations.v1.Workstation.RuntimeHost runtimeHost_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost,
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder,
+            com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder>
+        runtimeHostBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the runtimeHost field is set.
+     */
+    public boolean hasRuntimeHost() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The runtimeHost.
+     */
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHost getRuntimeHost() {
+      if (runtimeHostBuilder_ == null) {
+        return runtimeHost_ == null
+            ? com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance()
+            : runtimeHost_;
+      } else {
+        return runtimeHostBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRuntimeHost(com.google.cloud.workstations.v1.Workstation.RuntimeHost value) {
+      if (runtimeHostBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runtimeHost_ = value;
+      } else {
+        runtimeHostBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRuntimeHost(
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder builderForValue) {
+      if (runtimeHostBuilder_ == null) {
+        runtimeHost_ = builderForValue.build();
+      } else {
+        runtimeHostBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRuntimeHost(
+        com.google.cloud.workstations.v1.Workstation.RuntimeHost value) {
+      if (runtimeHostBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && runtimeHost_ != null
+            && runtimeHost_
+                != com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance()) {
+          getRuntimeHostBuilder().mergeFrom(value);
+        } else {
+          runtimeHost_ = value;
+        }
+      } else {
+        runtimeHostBuilder_.mergeFrom(value);
+      }
+      if (runtimeHost_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRuntimeHost() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      runtimeHost_ = null;
+      if (runtimeHostBuilder_ != null) {
+        runtimeHostBuilder_.dispose();
+        runtimeHostBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder
+        getRuntimeHostBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetRuntimeHostFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder
+        getRuntimeHostOrBuilder() {
+      if (runtimeHostBuilder_ != null) {
+        return runtimeHostBuilder_.getMessageOrBuilder();
+      } else {
+        return runtimeHost_ == null
+            ? com.google.cloud.workstations.v1.Workstation.RuntimeHost.getDefaultInstance()
+            : runtimeHost_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Runtime host for the workstation when in
+     * STATE_RUNNING.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost,
+            com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder,
+            com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder>
+        internalGetRuntimeHostFieldBuilder() {
+      if (runtimeHostBuilder_ == null) {
+        runtimeHostBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost,
+                com.google.cloud.workstations.v1.Workstation.RuntimeHost.Builder,
+                com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder>(
+                getRuntimeHost(), getParentForChildren(), isClean());
+        runtimeHost_ = null;
+      }
+      return runtimeHostBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1.Workstation)

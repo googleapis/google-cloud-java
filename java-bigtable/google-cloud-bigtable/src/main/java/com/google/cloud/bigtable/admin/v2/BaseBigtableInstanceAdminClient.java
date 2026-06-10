@@ -5249,7 +5249,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   }
 
   @Override
-  public final void close() {
+  public void close() {
     stub.close();
   }
 
