@@ -78,7 +78,7 @@ public final class AgentProto extends com.google.protobuf.GeneratedFile {
           + "oogle.cloud.ces.v1beta\032\037google/api/field"
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032-google/cloud/ces/v1beta/agent_transfers.proto\032$google/cloud/ces/v1beta/commo"
-          + "n.proto\032\037google/protobuf/timestamp.proto\"\320\017\n"
+          + "n.proto\032\037google/protobuf/timestamp.proto\"\225\020\n"
           + "\005Agent\022A\n"
           + "\tllm_agent\030\032"
           + " \001(\0132\'.google.cloud.ces.v1beta.Agent.LlmAgentB\003\340A\001H\000\022\\\n"
@@ -116,18 +116,22 @@ public final class AgentProto extends com.google.protobuf.GeneratedFile {
           + " \003(\0132+.google.cloud.ces.v1beta.Agent.AgentToolsetB\003\340A\001\022\036\n"
           + "\021generated_summary\030\035 \001(\tB\003\340A\003\022B\n"
           + "\016transfer_rules\030\036"
-          + " \003(\0132%.google.cloud.ces.v1beta.TransferRuleB\003\340A\001\032\n\n"
-          + "\010LlmAgent\032\250\004\n"
+          + " \003(\0132%.google.cloud.ces.v1beta.TransferRuleB\003\340A\001\022\036\n"
+          + "\021validation_errors\030  \003(\tB\003\340A\003\032\n\n"
+          + "\010LlmAgent\032\315\004\n"
           + "\025RemoteDialogflowAgent\022@\n"
           + "\005agent\030\001 \001(\tB1\340A\002\372A+\n"
           + ")dialogflow.googleapis.com/DialogflowAgent\022\024\n"
           + "\007flow_id\030\002 \001(\tB\003\340A\001\022\033\n"
           + "\016environment_id\030\003 \001(\tB\003\340A\001\022s\n"
-          + "\026input_variable_mapping\030\004 \003(\0132N.google.cloud.ces.v1beta.Agent.Rem"
-          + "oteDialogflowAgent.InputVariableMappingEntryB\003\340A\001\022u\n"
-          + "\027output_variable_mapping\030\005 \003(\0132O.google.cloud.ces.v1beta.Agent.Remot"
-          + "eDialogflowAgent.OutputVariableMappingEntryB\003\340A\001\0223\n"
-          + "&respect_response_interruption_settings\030\006 \001(\010B\003\340A\001\032;\n"
+          + "\026input_variable_mapping\030\004 \003(\0132N.g"
+          + "oogle.cloud.ces.v1beta.Agent.RemoteDialo"
+          + "gflowAgent.InputVariableMappingEntryB\003\340A\001\022u\n"
+          + "\027output_variable_mapping\030\005 \003(\0132O.goo"
+          + "gle.cloud.ces.v1beta.Agent.RemoteDialogf"
+          + "lowAgent.OutputVariableMappingEntryB\003\340A\001\0223\n"
+          + "&respect_response_interruption_settings\030\006 \001(\010B\003\340A\001\022#\n"
+          + "\026language_code_variable\030\007 \001(\tB\003\340A\001\032;\n"
           + "\031InputVariableMappingEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032<\n"
@@ -138,13 +142,13 @@ public final class AgentProto extends com.google.protobuf.GeneratedFile {
           + "\007toolset\030\001 \001(\tB\"\340A\002\372A\034\n"
           + "\032ces.googleapis.com/Toolset\022\025\n"
           + "\010tool_ids\030\004 \003(\tB\003\340A\001:o\352Al\n"
-          + "\030ces.googleapis.com/Agent\022Aprojects/{p"
-          + "roject}/locations/{location}/apps/{app}/agents/{agent}*\006agents2\005agentB\014\n\n"
+          + "\030ces.googleapis.com/Agent\022Aprojects/{project}/loc"
+          + "ations/{location}/apps/{app}/agents/{agent}*\006agents2\005agentB\014\n\n"
           + "agent_typeB\300\001\n"
           + "\033com.google.cloud.ces.v1betaB\n"
           + "AgentProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ac\n"
-          + ")dialogflow.googleapis.com/DialogflowAgent\0226projects/{projec"
-          + "t}/locations/{location}/agents/{agent}b\006proto3"
+          + ")dialogflow.googleapis.com/DialogflowAgent\0226projects/{project}/location"
+          + "s/{location}/agents/{agent}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -183,6 +187,7 @@ public final class AgentProto extends com.google.protobuf.GeneratedFile {
               "Toolsets",
               "GeneratedSummary",
               "TransferRules",
+              "ValidationErrors",
               "AgentType",
             });
     internal_static_google_cloud_ces_v1beta_Agent_LlmAgent_descriptor =
@@ -203,6 +208,7 @@ public final class AgentProto extends com.google.protobuf.GeneratedFile {
               "InputVariableMapping",
               "OutputVariableMapping",
               "RespectResponseInterruptionSettings",
+              "LanguageCodeVariable",
             });
     internal_static_google_cloud_ces_v1beta_Agent_RemoteDialogflowAgent_InputVariableMappingEntry_descriptor =
         internal_static_google_cloud_ces_v1beta_Agent_RemoteDialogflowAgent_descriptor
