@@ -2983,8 +2983,8 @@ class ITBigQueryTest {
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
     assertFalse(response.hasErrors());
@@ -3042,8 +3042,8 @@ class ITBigQueryTest {
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .setTemplateSuffix("_suffix")
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -3116,9 +3116,9 @@ class ITBigQueryTest {
     builder3.put("BytesField", BYTES_BASE64);
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
-            .addRow(builder3.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder3.build())
             .setSkipInvalidRows(true)
             .build();
     InsertAllResponse response = bigquery.insertAll(request);

@@ -16,8 +16,8 @@ version: v0.16.1-0.20260602193207-5917f20190fa
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 05c4b6d37258ab81054529451cdf804f2918441f
-    sha256: 4ddc45ca7bfc92cc723162ca9f6721c34c5c56003f2b0f6254350bf769593839
+    commit: 00bb3db8a8cc88f0755e872856462b902d6dd8c4
+    sha256: 6dcc61715c6f52390d3cfbc75e513d181ff805c5ad7a61657797d5d6fa552445
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -1755,6 +1755,7 @@ libraries:
     keep:
       - google-cloud-firestore/src/main/resources/META-INF/native-image/com.google.cloud/google-cloud-firestore/reflect-config.json
       - google-cloud-firestore/src/test/resources/META-INF/native-image/reflect-config.json
+      - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminVersion.java
       - proto-google-cloud-firestore-admin-v1/src/main/java/com/google/firestore/admin/v1/ParentName.java
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/AnyPathName.java
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/DatabaseRootName.java
