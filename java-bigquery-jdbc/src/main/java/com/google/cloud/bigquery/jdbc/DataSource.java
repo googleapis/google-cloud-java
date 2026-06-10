@@ -1413,6 +1413,11 @@ public class DataSource implements javax.sql.DataSource {
     }
   }
 
+  /**
+   * Validates that a property value is greater than or equal to a minimum threshold.
+   * For thread pools, a minimum of 2 is enforced to ensure there are enough threads
+   * to handle concurrent coordination and avoid deadlock or thread starvation.
+   */
   private static void validateMin(long val, long min, String propertyName) {
     if (val < min) {
       throw new BigQueryJdbcRuntimeException(

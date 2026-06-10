@@ -964,14 +964,38 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       if (this.metadataExecutor != null) {
         this.metadataExecutor.shutdown();
-        this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS);
-        this.metadataExecutor.shutdownNow();
+      }
+      if (this.queryExecutor != null) {
+        this.queryExecutor.shutdown();
+      }
+
+      boolean interrupted = false;
+
+      if (this.metadataExecutor != null) {
+        try {
+          if (!this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.metadataExecutor.shutdownNow();
+          }
+        } catch (InterruptedException e) {
+          this.metadataExecutor.shutdownNow();
+          interrupted = true;
+        }
       }
 
       if (this.queryExecutor != null) {
-        this.queryExecutor.shutdown();
-        this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS);
-        this.queryExecutor.shutdownNow();
+        try {
+          if (!this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+            this.queryExecutor.shutdownNow();
+          }
+        } catch (InterruptedException e) {
+          this.queryExecutor.shutdownNow();
+          interrupted = true;
+        }
+      }
+
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+        throw new InterruptedException("Interrupted awaiting executor termination");
       }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException("Concurrent modification during close", ex);
