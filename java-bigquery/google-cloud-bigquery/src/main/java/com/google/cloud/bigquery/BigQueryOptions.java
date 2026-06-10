@@ -77,7 +77,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     private Tracer openTelemetryTracer;
     private ResultRetryAlgorithm<?> resultRetryAlgorithm;
 
-    private Builder() {}
+    private Builder() {
+      setUseJwtAccessWithScope(false);
+    }
 
     private Builder(BigQueryOptions options) {
       super(options);
@@ -211,11 +213,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   public static HttpTransportOptions getDefaultHttpTransportOptions() {
     return HttpTransportOptions.newBuilder().setReadTimeout(DEFAULT_READ_API_TIME_OUT).build();
-  }
-
-  @Override
-  protected boolean useSelfSignedJwt() {
-    return false;
   }
 
   @Override

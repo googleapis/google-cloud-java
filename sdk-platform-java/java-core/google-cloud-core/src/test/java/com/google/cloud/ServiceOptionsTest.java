@@ -285,7 +285,7 @@ class ServiceOptionsTest {
       }
     }
 
-    protected TestServiceOptions(Builder builder) {
+    private TestServiceOptions(Builder builder) {
       super(
           TestServiceFactory.class,
           TestServiceRpcFactory.class,
@@ -336,25 +336,6 @@ class ServiceOptionsTest {
       return baseHashCode();
     }
   }
-
-  private static class NonSsjwtServiceOptions extends TestServiceOptions {
-    private static class Builder extends TestServiceOptions.Builder {
-      @Override
-      protected NonSsjwtServiceOptions build() {
-        return new NonSsjwtServiceOptions(this);
-      }
-    }
-
-    private NonSsjwtServiceOptions(Builder builder) {
-      super(builder);
-    }
-
-    @Override
-    protected boolean useSelfSignedJwt() {
-      return false;
-    }
-  }
-
 
   @Test
   public void testBuilder() {
@@ -646,6 +627,7 @@ class ServiceOptionsTest {
             .setUniverseDomain("random.com")
             .setCredentials(credentialsNotInGDU)
             .build();
+    assertThat(options.hasValidUniverseDomain()).isTrue();
   }
 
   @Test
@@ -657,14 +639,16 @@ class ServiceOptionsTest {
             .build();
     com.google.auth.Credentials scoped = options.getScopedCredentials();
     assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isTrue();
   }
 
   @Test
   void testGetScopedCredentials_optsOutSelfSignedJwt() {
     TestServiceOptions options =
-        new NonSsjwtServiceOptions.Builder()
+        new TestServiceOptions.Builder()
             .setProjectId("project-id")
             .setCredentials(credentials)
+            .setUseJwtAccessWithScope(false)
             .build();
     com.google.auth.Credentials scoped = options.getScopedCredentials();
     assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);

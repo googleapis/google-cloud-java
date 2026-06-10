@@ -106,6 +106,7 @@ public abstract class ServiceOptions<
   private final TransportOptions transportOptions;
   private final HeaderProvider headerProvider;
   private final String quotaProjectId;
+  private final boolean useJwtAccessWithScope;
 
   private transient ServiceRpcFactory<OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -140,6 +141,7 @@ public abstract class ServiceOptions<
     private HeaderProvider headerProvider;
     private String clientLibToken = ServiceOptions.getGoogApiClientLibName();
     private String quotaProjectId;
+    private boolean useJwtAccessWithScope = true;
 
     private ApiTracerFactory apiTracerFactory;
 
@@ -159,6 +161,7 @@ public abstract class ServiceOptions<
       transportOptions = options.transportOptions;
       clientLibToken = options.clientLibToken;
       quotaProjectId = options.quotaProjectId;
+      useJwtAccessWithScope = options.useJwtAccessWithScope;
       apiTracerFactory = options.apiTracerFactory;
     }
 
@@ -314,6 +317,18 @@ public abstract class ServiceOptions<
     }
 
     /**
+     * Sets the configuration determining whether self-signed JWT with scopes are used for service
+     * account credentials.
+     *
+     * @param useJwtAccessWithScope whether to use self-signed JWT with scopes
+     * @return the builder
+     */
+    public B setUseJwtAccessWithScope(final boolean useJwtAccessWithScope) {
+      this.useJwtAccessWithScope = useJwtAccessWithScope;
+      return self();
+    }
+
+    /**
      * Sets the {@link ApiTracerFactory}. It will be used to create an {@link ApiTracer} that is
      * annotated throughout the lifecycle of an RPC operation.
      */
@@ -365,6 +380,7 @@ public abstract class ServiceOptions<
         builder.quotaProjectId != null
             ? builder.quotaProjectId
             : getValueFromCredentialsFile(getCredentialsPath(), "quota_project_id");
+    useJwtAccessWithScope = builder.useJwtAccessWithScope;
     apiTracerFactory = builder.apiTracerFactory;
   }
 
@@ -650,15 +666,11 @@ public abstract class ServiceOptions<
         && ((GoogleCredentials) credentials).createScopedRequired()) {
       credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
     }
-    if (useSelfSignedJwt() && credentialsToReturn instanceof ServiceAccountCredentials) {
+    if (getUseJwtAccessWithScope() && credentialsToReturn instanceof ServiceAccountCredentials) {
       credentialsToReturn =
           ((ServiceAccountCredentials) credentialsToReturn).createWithUseJwtAccessWithScope(true);
     }
     return credentialsToReturn;
-  }
-
-  protected boolean useSelfSignedJwt() {
-    return true;
   }
 
   /** Returns configuration parameters for request retries. */
@@ -829,6 +841,15 @@ public abstract class ServiceOptions<
   /** Returns the quotaProjectId that specifies the project used for quota and billing purposes. */
   public String getQuotaProjectId() {
     return quotaProjectId;
+  }
+
+  /**
+   * Returns true when self-signed JWT with scopes are used for service account credentials.
+   *
+   * @return true when self-signed JWT with scopes are used
+   */
+  public boolean getUseJwtAccessWithScope() {
+    return useJwtAccessWithScope;
   }
 
   /**
