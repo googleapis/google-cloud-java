@@ -57,7 +57,7 @@ jobs:
     - name: Run librarian install
       run: |
         librarian install
-        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+        echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
     - name: Run librarian generate
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
