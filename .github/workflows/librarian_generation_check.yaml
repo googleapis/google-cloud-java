@@ -65,4 +65,8 @@ jobs:
         librarian generate --all
     - name: Check for generated code changes
       run: |
-        git diff --exit-code
+        if [ -n "$(git status --porcelain)" ]; then
+          git status
+          echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
+          exit 1
+        fi
