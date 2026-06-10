@@ -349,8 +349,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
-      this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(this.metadataFetchThreadCount);
-      this.queryExecutor = BigQueryJdbcMdc.newFixedThreadPool(this.queryExecutionThreadCount);
+      this.metadataExecutor = BigQueryJdbcMdc.newCachedThreadPool();
+      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
     }
   }
 
