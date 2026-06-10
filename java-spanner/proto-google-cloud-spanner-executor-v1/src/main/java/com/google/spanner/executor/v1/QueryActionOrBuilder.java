@@ -61,6 +61,7 @@ public interface QueryActionOrBuilder
    *
    * <code>repeated .google.spanner.executor.v1.QueryAction.Parameter params = 2;</code>
    */
+  java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContextMap();
   java.util.List<com.google.spanner.executor.v1.QueryAction.Parameter> getParamsList();
 
   /**

@@ -1380,7 +1380,8 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
    * <code>repeated .google.spanner.executor.v1.QueryAction.Parameter params = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<com.google.spanner.executor.v1.QueryAction.Parameter> getParamsList() {
+  public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContextMap() { return java.util.Collections.emptyMap(); }
+    public java.util.List<com.google.spanner.executor.v1.QueryAction.Parameter> getParamsList() {
     return params_;
   }
 
@@ -1960,6 +1961,7 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
      *
      * <code>repeated .google.spanner.executor.v1.QueryAction.Parameter params = 2;</code>
      */
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContextMap() { return java.util.Collections.emptyMap(); }
     public java.util.List<com.google.spanner.executor.v1.QueryAction.Parameter> getParamsList() {
       if (paramsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(params_);

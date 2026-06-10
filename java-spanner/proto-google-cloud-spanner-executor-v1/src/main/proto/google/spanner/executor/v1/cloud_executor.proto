@@ -178,6 +178,8 @@ message QueryAction {
 
   // Parameters for the SQL string.
   repeated Parameter params = 2;
+n  // Secure context parameters.
+  map<string, Value> secure_context = 3;
 }
 
 // A single DML statement.
