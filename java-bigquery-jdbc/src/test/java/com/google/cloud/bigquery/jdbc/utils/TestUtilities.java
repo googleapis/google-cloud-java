@@ -140,4 +140,29 @@ public class TestUtilities {
       return connectionErrorCount;
     }
   }
+
+  private static String getEnvOrProperty(String envVar, String sysProp, String defaultValue) {
+    String value = System.getenv(envVar);
+    if (value == null || value.isEmpty()) {
+      value = System.getProperty(sysProp, defaultValue);
+    }
+    return value;
+  }
+
+  public static String getBaseUrl() {
+    return getEnvOrProperty("BIGQUERY_BASE_URL", "bigquery.baseUrl", "https://www.googleapis.com/bigquery/v2:443");
+  }
+
+  public static String getUrlFlags() {
+    return getEnvOrProperty("BIGQUERY_URL_FLAGS", "bigquery.urlFlags", "");
+  }
+
+  public static String getBaseConnectionUrl() {
+    String baseUrl = getBaseUrl();
+    String flags = getUrlFlags();
+    if (!flags.isEmpty() && !flags.endsWith(";")) {
+      flags += ";";
+    }
+    return "jdbc:bigquery://" + baseUrl + ";" + flags;
+  }
 }

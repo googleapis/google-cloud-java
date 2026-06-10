@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc.it;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -177,10 +178,15 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
-  public static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-          + DEFAULT_CATALOG
-          + ";OAuthType=3;Timeout=3600;";
+
+  public static String getBaseConnectionUrl() {
+    return TestUtilities.getBaseConnectionUrl();
+  }
+
+  public static String connectionUrl = getBaseConnectionUrl()
+      + "ProjectId="
+      + DEFAULT_CATALOG
+      + ";OAuthType=3;Timeout=3600;";
 
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";

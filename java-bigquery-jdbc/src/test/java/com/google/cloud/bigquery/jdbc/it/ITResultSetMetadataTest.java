@@ -56,7 +56,7 @@ public class ITResultSetMetadataTest {
   public void testResultSetMetadata() throws SQLException {
     String selectData = "SELECT * FROM " + DATASET + "." + TABLE_NAME + ";";
     Connection connection =
-        DriverManager.getConnection(String.format(ITBase.connectionUrl, DEFAULT_CATALOG));
+        DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
     ResultSet resultSet = statement.executeQuery(selectData);
     metaData = resultSet.getMetaData();

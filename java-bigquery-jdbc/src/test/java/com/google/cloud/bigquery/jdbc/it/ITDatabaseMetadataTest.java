@@ -49,10 +49,7 @@ import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static final String connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3";
+  static final String connection_uri = ITBase.connectionUrl;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -65,8 +62,7 @@ public class ITDatabaseMetadataTest extends ITBase {
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static final String TABLE_NAME = "JDBC_DBMETADATA_TEST_TABLE" + randomNumber;
-  private static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
+  private static String connectionUrl = ITBase.connectionUrl;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
@@ -1106,12 +1102,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
 
-    String urlWithAdditionalProjects =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";AdditionalProjects="
-            + additionalProjectsValue;
+    String urlWithAdditionalProjects = ITBase.connectionUrl + "AdditionalProjects=" + additionalProjectsValue;
 
     try (Connection conn = DriverManager.getConnection(urlWithAdditionalProjects)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();
@@ -1171,13 +1162,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     String table1InSpecificDataset = "base_table";
     String table2InSpecificDataset = "external_table";
 
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";DefaultDataset="
-            + defaultDatasetValue
-            + ";FilterTablesOnDefaultDataset=1";
+    String connectionUrl = ITDatabaseMetadataTest.connectionUrl + "DefaultDataset=" + defaultDatasetValue + ";FilterTablesOnDefaultDataset=1";
     try (Connection conn = DriverManager.getConnection(connectionUrl)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();
 
@@ -1242,13 +1227,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     String tableInSpecificDataset = "base_table";
     String[] columnsInSpecificTable = {"id", "name", "created_at"};
 
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";DefaultDataset="
-            + defaultDatasetValue
-            + ";FilterTablesOnDefaultDataset=1";
+    String connectionUrl = ITDatabaseMetadataTest.connectionUrl + "DefaultDataset=" + defaultDatasetValue + ";FilterTablesOnDefaultDataset=1";
 
     try (Connection conn = DriverManager.getConnection(connectionUrl)) {
       DatabaseMetaData dbMetaData = conn.getMetaData();

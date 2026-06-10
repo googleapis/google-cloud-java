@@ -49,8 +49,7 @@ public class ITConnectionTest {
   static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_CONNECTION_TEST_TABLE" + randomNumber;
 
-  private static String connectionUrl =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
+  private static String connectionUrl = ITBase.connectionUrl;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
