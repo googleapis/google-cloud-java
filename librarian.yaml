@@ -1755,6 +1755,7 @@ libraries:
     keep:
       - google-cloud-firestore/src/main/resources/META-INF/native-image/com.google.cloud/google-cloud-firestore/reflect-config.json
       - google-cloud-firestore/src/test/resources/META-INF/native-image/reflect-config.json
+      - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminVersion.java
       - proto-google-cloud-firestore-admin-v1/src/main/java/com/google/firestore/admin/v1/ParentName.java
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/AnyPathName.java
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/DatabaseRootName.java
