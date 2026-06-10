@@ -16,6 +16,7 @@ on:
   push:
     branches:
     - main
+    - changePreToPost-2
   workflow_dispatch:
 
 jobs:
@@ -36,39 +37,43 @@ jobs:
         V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
         echo "Installing librarian version $V"
         go install github.com/googleapis/librarian/cmd/librarian@$V
-    - name: Install protoc
+    # - name: Install protoc
+    #   run: |
+    #     set -e
+    #     VERSION="33.2"
+    #     curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+    #     cd /usr/local
+    #     sudo unzip -o /tmp/protoc.zip
+    #     protoc --version
+    # - uses: actions/setup-java@v4
+    #   with:
+    #     java-version: "17"
+    #     distribution: "temurin"
+    #     cache: "maven"
+    # - name: Verify Java and Maven installation
+    #   run: |
+    #     java -version
+    #     if ! command -v mvn &> /dev/null; then
+    #       sudo apt-get update && sudo apt-get install -y maven
+    #     fi
+    #     mvn -version
+    # - uses: actions/setup-python@v5
+    #   with:
+    #     python-version: "3.12"
+    #     cache: 'pip'
+    # - name: Run librarian install
+    #   run: |
+    #     librarian install
+    #     echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+    # - name: Run librarian generate
+    #   env:
+    #     PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
+    #   run: |
+    #     librarian generate --all
+    - name: Force failure for testing
       run: |
-        set -e
-        VERSION="33.2"
-        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
-        cd /usr/local
-        sudo unzip -o /tmp/protoc.zip
-        protoc --version
-    - uses: actions/setup-java@v4
-      with:
-        java-version: "17"
-        distribution: "temurin"
-        cache: "maven"
-    - name: Verify Java and Maven installation
-      run: |
-        java -version
-        if ! command -v mvn &> /dev/null; then
-          sudo apt-get update && sudo apt-get install -y maven
-        fi
-        mvn -version
-    - uses: actions/setup-python@v5
-      with:
-        python-version: "3.12"
-        cache: 'pip'
-    - name: Run librarian install
-      run: |
-        librarian install
-        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
-    - name: Run librarian generate
-      env:
-        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
-      run: |
-        librarian generate --all
+        echo "Simulating failure for testing"
+        exit 1
     - name: Check for generated code changes
       run: |
         if [ -n "$(git status --porcelain)" ]; then
@@ -77,11 +82,11 @@ jobs:
           exit 1
         fi 
     - name: Create issue if previous step fails
-      if: ${{ failure() && github.ref == 'refs/heads/main' }}
+      if: ${{ failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/changePreToPost-2') }}
       uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
       with:
-        title: "Librarian generate diff check failed on main branch"
+        title: "TEMP: Librarian generate diff check failed on test branch"
         body: |
-          The librarian generate diff check failed on main branch.
+          This is a test issue to verify the 'create-issue-on-failure' action.
 
           Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
