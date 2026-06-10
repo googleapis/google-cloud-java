@@ -2981,6 +2981,8 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
             .addRow(UUID.randomUUID().toString(), builder1.build())
@@ -3040,6 +3042,8 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
             .addRow(UUID.randomUUID().toString(), builder1.build())
@@ -3114,6 +3118,8 @@ class ITBigQueryTest {
     builder3.put("IntegerArrayField", ImmutableList.of(0, 1));
     builder3.put("BooleanField", false);
     builder3.put("BytesField", BYTES_BASE64);
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
             .addRow(UUID.randomUUID().toString(), builder1.build())
