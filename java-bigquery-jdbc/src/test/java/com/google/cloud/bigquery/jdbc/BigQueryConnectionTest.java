@@ -376,6 +376,36 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testQueryExecutionThreadCountProperty() throws SQLException, IOException {
+    // Test Case 1: Should use the default value when the property is not specified.
+    String urlDefault =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=MyBigQueryProject;"
+            + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+            + "OAuthClientSecret=redactedToken;";
+    try (BigQueryConnection connectionDefault = new BigQueryConnection(urlDefault)) {
+      assertEquals(
+          BigQueryJdbcUrlUtility.DEFAULT_QUERY_EXECUTION_THREAD_COUNT_VALUE,
+          connectionDefault.getQueryExecutionThreadCount(),
+          "Should use the default value when the property is not set");
+    }
+
+    // Test Case 2: Should use the custom value when a valid integer is provided.
+    String urlCustom =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=MyBigQueryProject;"
+            + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+            + "OAuthClientSecret=redactedToken;"
+            + "QueryExecutionThreadCount=16;";
+    try (BigQueryConnection connectionCustom = new BigQueryConnection(urlCustom)) {
+      assertEquals(
+          16,
+          connectionCustom.getQueryExecutionThreadCount(),
+          "Should use the custom value when a valid integer is provided");
+    }
+  }
+
+  @Test
   public void testBigQueryReadClientKeepAliveSettings() throws SQLException, IOException {
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"

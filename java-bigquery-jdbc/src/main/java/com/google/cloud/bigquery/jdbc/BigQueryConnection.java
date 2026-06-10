@@ -706,6 +706,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.metadataFetchThreadCount;
   }
 
+  int getQueryExecutionThreadCount() {
+    return this.queryExecutionThreadCount;
+  }
+
   boolean isEnableWriteAPI() {
     return enableWriteAPI;
   }
