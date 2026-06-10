@@ -757,7 +757,7 @@ public class FirestoreAdminStubSettings extends StubSettings<FirestoreAdminStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-firestore")
         .setRepository("googleapis/google-cloud-java")
-        .setVersion(Version.VERSION)
+        .setVersion(FirestoreAdminVersion.VERSION)
         .build();
   }
 
