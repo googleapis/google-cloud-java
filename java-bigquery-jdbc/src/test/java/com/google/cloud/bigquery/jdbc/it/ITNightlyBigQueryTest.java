@@ -1329,7 +1329,7 @@ public class ITNightlyBigQueryTest {
     bigQueryStatement.execute(createTransactionTable);
 
     // Run the transaction
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "QueryProperties=session_id=sessionId";";
+    String connection_uri = ITNightlyBigQueryTest.connection_uri + "QueryProperties=session_id=" + sessionId + ";";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1571,7 +1571,7 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
-    String connection_uri = ITNightlyBigQueryTest.connection_uri + "";
+    String connection_uri = ITNightlyBigQueryTest.connection_uri;
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();

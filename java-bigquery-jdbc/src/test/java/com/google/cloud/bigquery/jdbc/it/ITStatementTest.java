@@ -250,11 +250,9 @@ public class ITStatementTest {
 
   @Test
   public void testStringColumnLength() throws SQLException {
-    String projectId = DEFAULT_CATALOG;
     String TABLE_NAME = "StringColumnLengthTable";
-    String oauthType = "3"; // Google Application Credentials
     int length = 10;
-    String connectionUrl = ITStatementTest.connectionUrl + "StringColumnLength=" + length + ";";;
+    String connectionUrl = ITStatementTest.connectionUrl + "StringColumnLength=" + length + ";";
     // + "EnableSession=1";
     Connection connection1 = DriverManager.getConnection(connectionUrl);
     Statement statement = connection1.createStatement();

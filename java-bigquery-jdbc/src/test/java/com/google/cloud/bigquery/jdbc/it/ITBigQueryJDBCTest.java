@@ -294,7 +294,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDriver() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "";
+        ITBigQueryJDBCTest.connection_uri;
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -322,7 +322,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         connection.unwrap(BigQueryConnection.class).getDefaultDataset());
 
     String connection_uri_null_default_dataset =
-        ITBigQueryJDBCTest.connection_uri + "";
+        ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_default_dataset));
 
@@ -371,7 +371,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(100, resultSetRowCount(resultSet));
 
     String connection_uri_null_location =
-        ITBigQueryJDBCTest.connection_uri + "";
+        ITBigQueryJDBCTest.connection_uri;
 
     assertTrue(driver.acceptsURL(connection_uri_null_location));
 
@@ -1322,7 +1322,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + ""
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east4-bigquery.googleapis.com;";
 
     // Read data via JDBC
@@ -1338,7 +1338,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_REGIONAL_TABLE_" + randomNumber;
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + ""
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east4-bigquery.googleapis.com:12312312;";
 
     // Read data via JDBC
@@ -1354,7 +1354,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + ""
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://us-east5-bigquery.googleapis.com;";
 
     // Attempting read data via JDBC
@@ -1370,7 +1370,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + ""
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://bigquery.us-east4.rep.googleapis.com;";
 
     // Read data via JDBC
@@ -1387,7 +1387,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "REGIONAL_TABLE";
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME;
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + ""
+        ITBigQueryJDBCTest.connection_uri
             + "EndpointOverrides=BIGQUERY=https://bigquery.us-east7.rep.googleapis.com;";
 
     // Attempting read data via JDBC
@@ -1463,7 +1463,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDataSource() throws SQLException {
     DataSource ds = new DataSource();
-    ds.setURL(getBaseConnectionUrl() + "");
+    ds.setURL(getBaseConnectionUrl());
     ds.setOAuthType(3);
 
     try (Connection connection = ds.getConnection()) {
@@ -1476,7 +1476,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     File tempFile = File.createTempFile("auth", ".json");
     tempFile.deleteOnExit();
     DataSource ds = new DataSource();
-    ds.setURL(getBaseConnectionUrl() + "");
+    ds.setURL(getBaseConnectionUrl());
     ds.setOAuthType(0);
     ds.setOAuthPvtKeyPath(tempFile.toPath().toString());
     assertEquals(0, ds.getOAuthType().intValue());
@@ -1662,7 +1662,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "";
+        ITBigQueryJDBCTest.connection_uri;
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());

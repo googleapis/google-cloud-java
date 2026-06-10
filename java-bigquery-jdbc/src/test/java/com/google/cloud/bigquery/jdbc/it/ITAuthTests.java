@@ -91,7 +91,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        getBaseConnectionUrl() + ""
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -106,7 +106,7 @@ public class ITAuthTests extends ITBase {
   @Test
   public void testServiceAccountAuthenticationMissingOAuthPvtKeyPath() throws SQLException {
     String connection_uri =
-        getBaseConnectionUrl() + ""
+        getBaseConnectionUrl()
             + "ProjectId="
             + PROJECT_ID
             + ";OAuthType=0;";
@@ -128,7 +128,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        getBaseConnectionUrl() + ""
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -145,7 +145,7 @@ public class ITAuthTests extends ITBase {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        getBaseConnectionUrl() + ""
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -163,7 +163,7 @@ public class ITAuthTests extends ITBase {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        getBaseConnectionUrl() + ""
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"

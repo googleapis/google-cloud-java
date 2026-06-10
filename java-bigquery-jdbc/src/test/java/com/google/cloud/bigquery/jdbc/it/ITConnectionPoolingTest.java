@@ -276,15 +276,14 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testExecuteQueryWithConnectionPoolingEnabledDefaultPoolSize() throws SQLException {
-    String connectionURL = ITBase.connectionUrl + "";
+    String connectionURL = ITBase.connectionUrl;
 
     assertConnectionPoolingResults(connectionURL, DEFAULT_CONN_POOL_SIZE);
   }
 
   @Test
   public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
-    String connectionURL = ITBase.connectionUrl + "ConnectionPoolSize=CUSTOM_CONN_POOL_SIZE";
-";
+    String connectionURL = ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
     assertConnectionPoolingResults(connectionURL, CUSTOM_CONN_POOL_SIZE);
   }
 
