@@ -191,7 +191,9 @@ public class ITAuthTests extends ITBase {
         getBaseConnectionUrl()
             + "PROJECTID="
             + PROJECT_ID
-            + ";OAuthType=1;OAuthClientId=client_id;OAuthClientSecret=client_secret;";
+            + ";OAuthType=1;"
+            + "OAuthClientId=client_id;"
+            + "OAuthClientSecret=client_secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
@@ -215,8 +217,10 @@ public class ITAuthTests extends ITBase {
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "BYOID_AudienceUri=//iam.googleapis.com/projects/<project>/locations/<location>/workloadIdentityPools/<pool>/providers/<provider>;"
-            + "BYOID_SubjectTokenType=<type>;BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
-            + "BYOID_SA_Impersonation_Uri=<sa>;BYOID_TokenUri=<uri>;";
+            + "BYOID_SubjectTokenType=<type>;"
+            + "BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
+            + "BYOID_SA_Impersonation_Uri=<sa>;"
+            + "BYOID_TokenUri=<uri>;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
@@ -261,7 +265,8 @@ public class ITAuthTests extends ITBase {
         getBaseConnectionUrl()
             + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=4;OAuthPvtKey={\n"
+            + ";OAUTHTYPE=4;"
+            + "OAuthPvtKey={\n"
             + "  \"universe_domain\": \"googleapis.com\",\n"
             + "  \"type\": \"external_account\",\n"
             + "  \"audience\":"
@@ -323,8 +328,10 @@ public class ITAuthTests extends ITBase {
         getBaseConnectionUrl()
             + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=2;OAuthRefreshToken=refresh_token;"
-            + ";OAuthClientId=client;OAuthClientSecret=secret;";
+            + ";OAUTHTYPE=2;"
+            + "OAuthRefreshToken=refresh_token;"
+            + ";OAuthClientId=client;"
+            + "OAuthClientSecret=secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);

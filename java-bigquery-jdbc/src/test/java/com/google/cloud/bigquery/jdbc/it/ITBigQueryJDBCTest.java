@@ -107,7 +107,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri
-            + "EnableHighThroughputAPI=1;HighThroughputActivationRatio=2;HighThroughputMinTableSize=1000;";
+            + "EnableHighThroughputAPI=1;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=1000;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -234,8 +236,10 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
-            + "MaxResults=300;HighThroughputActivationRatio=2;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+            + "MaxResults=300;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
@@ -251,7 +255,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
             + "HighThroughputActivationRatio=4;"
-            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1";
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
@@ -1261,7 +1266,12 @@ public class ITBigQueryJDBCTest extends ITBase {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri
-            + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;UnsupportedHTAPIFallback=1;JobCreationMode=1;";
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=1;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1;"
+            + "UnsupportedHTAPIFallback=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1281,7 +1291,11 @@ public class ITBigQueryJDBCTest extends ITBase {
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri
-            + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=0;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1302,7 +1316,11 @@ public class ITBigQueryJDBCTest extends ITBase {
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri
-            + "MaxResults=500;HighThroughputActivationRatio=1;HighThroughputMinTableSize=100;EnableHighThroughputAPI=0;JobCreationMode=1;";
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=1;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=0;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -1678,7 +1696,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;AllowLargeResults=0;";
+        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=0;";
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
@@ -1756,7 +1774,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       throws SQLException {
     // setup
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;AllowLargeResults=1;";
+        ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=1;";
     String selectLegacyQuery =
         "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
@@ -1908,7 +1926,11 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri
-            + "MaxResults=500;HighThroughputActivationRatio=0;HighThroughputMinTableSize=100;EnableHighThroughputAPI=1;JobCreationMode=1;";
+            + "MaxResults=500;"
+            + "HighThroughputActivationRatio=0;"
+            + "HighThroughputMinTableSize=100;"
+            + "EnableHighThroughputAPI=1;"
+            + "JobCreationMode=1;";
 
     // Read data via JDBC
     Connection connection = DriverManager.getConnection(connection_uri);
