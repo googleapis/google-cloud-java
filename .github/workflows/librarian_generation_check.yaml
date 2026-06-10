@@ -1,0 +1,68 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+name: Librarian - Generate diff check on pull requests
+on:
+  pull_request:
+
+jobs:
+  library_generation:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-go@v5
+      with:
+        go-version: 'stable'
+    - name: Install Librarian
+      run: |
+        V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
+        echo "Installing librarian version $V"
+        go install github.com/googleapis/librarian/cmd/librarian@$V
+    - name: Install protoc
+      run: |
+        set -e
+        VERSION="33.2"
+        curl -fsSL --retry 5 --retry-delay 15 -o /tmp/protoc.zip "https://github.com/protocolbuffers/protobuf/releases/download/v$VERSION/protoc-$VERSION-linux-x86_64.zip"
+        cd /usr/local
+        sudo unzip -o /tmp/protoc.zip
+        protoc --version
+    - uses: actions/setup-java@v4
+      with:
+        java-version: "17"
+        distribution: "temurin"
+        cache: "maven"
+    - name: Verify Java and Maven installation
+      run: |
+        java -version
+        if ! command -v mvn &> /dev/null; then
+          sudo apt-get update && sudo apt-get install -y maven
+        fi
+        mvn -version
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+    - name: Run librarian install
+      run: |
+        librarian install
+        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+    - name: Run librarian generate
+      env:
+        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
+      run: |
+        librarian generate --all
+    - name: Check for generated code changes
+      run: |
+        git diff --exit-code

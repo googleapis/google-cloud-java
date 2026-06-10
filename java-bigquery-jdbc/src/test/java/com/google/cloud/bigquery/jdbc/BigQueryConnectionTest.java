@@ -16,7 +16,13 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -490,6 +496,27 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertFalse(logMessage.contains("secretAccessToken"));
     } finally {
       rootLogger.setLevel(originalLevel);
+    }
+  }
+
+  @Test
+  public void testWrapperMethods() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertTrue(connection.isWrapperFor(java.sql.Connection.class));
+      assertTrue(connection.isWrapperFor(BigQueryConnection.class));
+      assertFalse(connection.isWrapperFor(java.sql.Statement.class));
+      assertFalse(connection.isWrapperFor(null));
+
+      Object unwrappedConn = connection.unwrap(java.sql.Connection.class);
+      assertSame(unwrappedConn, connection);
+
+      Object unwrappedImpl = connection.unwrap(BigQueryConnection.class);
+      assertSame(unwrappedImpl, connection);
+
+      BigQueryJdbcException e =
+          assertThrows(
+              BigQueryJdbcException.class, () -> connection.unwrap(java.sql.Statement.class));
+      assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
     }
   }
 }

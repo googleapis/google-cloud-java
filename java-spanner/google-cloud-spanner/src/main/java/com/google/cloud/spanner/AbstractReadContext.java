@@ -28,6 +28,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
 import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
@@ -56,10 +57,11 @@ import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
-import java.util.Collections;
-import java.util.EnumMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -209,19 +211,11 @@ abstract class AbstractReadContext
       // of a channel hint. GAX will automatically choose a hint when used
       // with a multiplexed session to perform a round-robin channel selection. We are
       // passing a hint here to prefer random channel selection instead of doing GAX round-robin.
-      // Also signal unbind so the grpc-gcp affinity map entry is cleaned up once the call
-      // completes. The unbind flag is preserved on retries via prepareRetryOnDifferentGrpcChannel.
       this.channelHint =
           getChannelHintOptions(
               session.getOptions(),
               ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
               session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
-      if (this.channelHint != null) {
-        Map<SpannerRpc.Option, Object> mutable = new EnumMap<>(SpannerRpc.Option.class);
-        mutable.putAll(this.channelHint);
-        mutable.put(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
-        this.channelHint = Collections.unmodifiableMap(mutable);
-      }
     }
 
     @Override
@@ -256,12 +250,10 @@ abstract class AbstractReadContext
 
     @Override
     boolean prepareRetryOnDifferentGrpcChannel() {
-      if (session.getIsMultiplexed() && channelHint.get(Option.CHANNEL_HINT) != null) {
-        long channelHintForTransaction = Option.CHANNEL_HINT.getLong(channelHint) + 1L;
-        channelHint =
-            optionMap(
-                SessionOption.channelHint(channelHintForTransaction),
-                SessionOption.unbindChannelHint());
+      ChannelAffinityRef channelAffinityRef =
+          Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(channelHint);
+      if (session.getIsMultiplexed() && channelAffinityRef != null) {
+        channelAffinityRef.useDifferentChannelOnNextCall();
         return true;
       }
       return super.prepareRetryOnDifferentGrpcChannel();
@@ -321,6 +313,8 @@ abstract class AbstractReadContext
       private TimestampBound bound;
       private Timestamp timestamp;
       private ByteString transactionId;
+      private Options.BeginTransactionOption beginTransactionOption =
+          Options.BeginTransactionOption.EXPLICIT;
 
       private Builder() {}
 
@@ -336,6 +330,11 @@ abstract class AbstractReadContext
 
       Builder setTransactionId(ByteString transactionId) {
         this.transactionId = transactionId;
+        return this;
+      }
+
+      Builder setBeginTransactionOption(Options.BeginTransactionOption beginTransactionOption) {
+        this.beginTransactionOption = beginTransactionOption;
         return this;
       }
 
@@ -359,9 +358,15 @@ abstract class AbstractReadContext
     @GuardedBy("txnLock")
     private ByteString transactionId;
 
+    @GuardedBy("txnLock")
+    private SettableApiFuture<ByteString> transactionIdFuture;
+
     private final AtomicInteger pendingStarts = new AtomicInteger(0);
 
+    private static final long WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS = 60_000L;
+
     private final Map<SpannerRpc.Option, ?> channelHint;
+    private final Options.BeginTransactionOption beginTransactionOption;
 
     MultiUseReadOnlyTransaction(Builder builder) {
       super(builder);
@@ -386,6 +391,7 @@ abstract class AbstractReadContext
               session.getOptions(),
               ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
               session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
+      this.beginTransactionOption = builder.beginTransactionOption;
     }
 
     @Override
@@ -398,21 +404,68 @@ abstract class AbstractReadContext
       return false;
     }
 
+    private boolean shouldUseInlinedBegin() {
+      return beginTransactionOption == Options.BeginTransactionOption.INLINE;
+    }
+
     @Override
     void beforeReadOrQuery() {
       super.beforeReadOrQuery();
-      initTransaction();
+      if (shouldUseInlinedBegin()) {
+        // Keep the same nested transaction guard as the explicit BeginTransaction path. This checks
+        // TransactionRunner's thread-local pending state, not the session's active transaction.
+        SessionImpl.throwIfTransactionsPending();
+      } else {
+        initTransaction();
+      }
     }
 
     @Override
     @Nullable
     TransactionSelector getTransactionSelector() {
-      // No need for synchronization: super.readInternal() is always preceded by a check of
-      // "transactionId" that provides a happens-before from initialization, and the value is never
-      // changed afterwards.
-      @SuppressWarnings("GuardedByChecker")
-      TransactionSelector selector = TransactionSelector.newBuilder().setId(transactionId).build();
-      return selector;
+      if (!shouldUseInlinedBegin()) {
+        // No need for synchronization: super.readInternal() is always preceded by a check of
+        // "transactionId" that provides a happens-before from initialization, and the value is
+        // never changed afterwards.
+        @SuppressWarnings("GuardedByChecker")
+        TransactionSelector selector =
+            TransactionSelector.newBuilder().setId(transactionId).build();
+        return selector;
+      }
+
+      ApiFuture<ByteString> futureToWaitFor = null;
+      txnLock.lock();
+      try {
+        if (transactionId != null) {
+          return TransactionSelector.newBuilder().setId(transactionId).build();
+        }
+        if (transactionIdFuture == null) {
+          transactionIdFuture = SettableApiFuture.create();
+          return TransactionSelector.newBuilder()
+              .setBegin(createReadOnlyTransactionOptions())
+              .build();
+        }
+        futureToWaitFor = transactionIdFuture;
+      } finally {
+        txnLock.unlock();
+      }
+
+      try {
+        return TransactionSelector.newBuilder()
+            .setId(futureToWaitFor.get(WAIT_FOR_INLINE_BEGIN_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS))
+            .build();
+      } catch (ExecutionException e) {
+        throw SpannerExceptionFactory.asSpannerException(e.getCause());
+      } catch (TimeoutException e) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.DEADLINE_EXCEEDED,
+            "Timeout while waiting for an inlined read-only transaction to be returned by another"
+                + " statement.",
+            e);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw SpannerExceptionFactory.newSpannerExceptionForCancellation(null, e);
+      }
     }
 
     private void decrementPendingStartsAndSignal() {
@@ -504,6 +557,80 @@ abstract class AbstractReadContext
     }
 
     @Override
+    public void onTransactionMetadata(Transaction transaction, boolean shouldIncludeId) {
+      Timestamp readTimestamp = null;
+      if (transaction.hasReadTimestamp()) {
+        try {
+          readTimestamp = Timestamp.fromProto(transaction.getReadTimestamp());
+        } catch (IllegalArgumentException e) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+        }
+      }
+      if (shouldIncludeId && transaction.getId().isEmpty()) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION, NO_TRANSACTION_RETURNED_MSG);
+      }
+      txnLock.lock();
+      try {
+        if (timestamp == null) {
+          if (readTimestamp == null) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
+          }
+          timestamp = readTimestamp;
+        }
+        if (shouldIncludeId && transactionId == null) {
+          transactionId = transaction.getId();
+          if (transactionIdFuture != null && !transactionIdFuture.isDone()) {
+            transactionIdFuture.set(transactionId);
+          }
+        }
+      } finally {
+        txnLock.unlock();
+      }
+    }
+
+    @Override
+    public SpannerException onError(
+        SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+      e = super.onError(e, withBeginTransaction, lastStatement);
+      if (withBeginTransaction) {
+        failTransactionIdFuture(e);
+      }
+      return e;
+    }
+
+    @Override
+    public void onDone(boolean withBeginTransaction) {
+      if (withBeginTransaction) {
+        failTransactionIdFuture(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.FAILED_PRECONDITION,
+                "ResultSet was closed before a read-only transaction id was returned"));
+      }
+      super.onDone(withBeginTransaction);
+    }
+
+    @Override
+    void onStartFailed(boolean withBeginTransaction, Throwable t) {
+      if (withBeginTransaction) {
+        failTransactionIdFuture(t);
+      }
+    }
+
+    private void failTransactionIdFuture(Throwable t) {
+      txnLock.lock();
+      try {
+        if (transactionIdFuture != null && !transactionIdFuture.isDone()) {
+          transactionIdFuture.setException(t);
+        }
+      } finally {
+        txnLock.unlock();
+      }
+    }
+
+    @Override
     public Timestamp getReadTimestamp() {
       txnLock.lock();
       try {
@@ -537,11 +664,20 @@ abstract class AbstractReadContext
       } finally {
         txnLock.unlock();
       }
-      ByteString id = getTransactionId();
-      if (id != null && !id.isEmpty()) {
-        rpc.clearTransactionAndChannelAffinity(id, Option.CHANNEL_HINT.getLong(channelHint));
-      }
       super.close();
+    }
+
+    private TransactionOptions createReadOnlyTransactionOptions() {
+      TransactionOptions.Builder options = TransactionOptions.newBuilder();
+      if (timestamp != null) {
+        options
+            .getReadOnlyBuilder()
+            .setReadTimestamp(timestamp.toProto())
+            .setReturnReadTimestamp(true);
+      } else {
+        bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
+      }
+      return options.build();
     }
 
     /**
@@ -553,19 +689,10 @@ abstract class AbstractReadContext
       txnLock.lock();
       try {
         span.addAnnotation("Creating Transaction");
-        TransactionOptions.Builder options = TransactionOptions.newBuilder();
-        if (timestamp != null) {
-          options
-              .getReadOnlyBuilder()
-              .setReadTimestamp(timestamp.toProto())
-              .setReturnReadTimestamp(true);
-        } else {
-          bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
-        }
         final BeginTransactionRequest request =
             BeginTransactionRequest.newBuilder()
                 .setSession(session.getName())
-                .setOptions(options)
+                .setOptions(createReadOnlyTransactionOptions())
                 .build();
         initTransactionInternal(request);
       } finally {
@@ -589,12 +716,10 @@ abstract class AbstractReadContext
           return;
         }
         span.addAnnotation("Creating Transaction");
-        TransactionOptions.Builder options = TransactionOptions.newBuilder();
-        bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
         final BeginTransactionRequest request =
             BeginTransactionRequest.newBuilder()
                 .setSession(session.getName())
-                .setOptions(options)
+                .setOptions(createReadOnlyTransactionOptions())
                 .build();
         initTransactionInternal(request);
       } finally {
@@ -992,15 +1117,22 @@ abstract class AbstractReadContext
             if (selector != null) {
               request.setTransaction(selector);
             }
-            SpannerRpc.StreamingCall call =
-                rpc.executeQuery(
-                    request.build(),
-                    stream.consumer(),
-                    getTransactionChannelHint(),
-                    requestId,
-                    isRouteToLeader());
+            boolean withBeginTransaction = request.getTransaction().hasBegin();
+            SpannerRpc.StreamingCall call;
+            try {
+              call =
+                  rpc.executeQuery(
+                      request.build(),
+                      stream.consumer(),
+                      getTransactionChannelHint(),
+                      requestId,
+                      isRouteToLeader());
+            } catch (RuntimeException | Error t) {
+              onStartFailed(withBeginTransaction, t);
+              throw t;
+            }
             session.markUsed(clock.instant());
-            stream.setCall(call, request.getTransaction().hasBegin());
+            stream.setCall(call, withBeginTransaction);
             return stream;
           }
 
@@ -1022,11 +1154,12 @@ abstract class AbstractReadContext
   static Map<SpannerRpc.Option, ?> getChannelHintOptions(
       Map<SpannerRpc.Option, ?> channelHintForSession,
       Long channelHintForTransaction,
-      boolean useTransactionHint) {
+      boolean grpcGcpEnabled) {
     // grpc-gcp uses a per-operation/per-transaction random hint instead of reusing the session
-    // hint so requests distribute independently from session affinity.
-    if (useTransactionHint && channelHintForTransaction != null) {
-      return optionMap(SessionOption.channelHint(channelHintForTransaction));
+    // hint so requests distribute independently from session affinity. Use direct channel-ref
+    // affinity so grpc-gcp does not need affinity-key map entries for Spanner operations.
+    if (grpcGcpEnabled && channelHintForTransaction != null) {
+      return optionMap(SessionOption.channelAffinityRef(new ChannelAffinityRef()));
     }
     if (channelHintForSession != null) {
       return channelHintForSession;
@@ -1115,6 +1248,8 @@ abstract class AbstractReadContext
   public void onDone(boolean withBeginTransaction) {
     this.session.onReadDone();
   }
+
+  void onStartFailed(boolean withBeginTransaction, Throwable t) {}
 
   /**
    * For transactions other than read-write, the MultiplexedSessionPrecommitToken will not be
@@ -1215,15 +1350,22 @@ abstract class AbstractReadContext
               builder.setTransaction(selector);
             }
             builder.setRequestOptions(buildRequestOptions(readOptions));
-            SpannerRpc.StreamingCall call =
-                rpc.read(
-                    builder.build(),
-                    stream.consumer(),
-                    getTransactionChannelHint(),
-                    requestId,
-                    isRouteToLeader());
+            boolean withBeginTransaction = builder.getTransaction().hasBegin();
+            SpannerRpc.StreamingCall call;
+            try {
+              call =
+                  rpc.read(
+                      builder.build(),
+                      stream.consumer(),
+                      getTransactionChannelHint(),
+                      requestId,
+                      isRouteToLeader());
+            } catch (RuntimeException | Error t) {
+              onStartFailed(withBeginTransaction, t);
+              throw t;
+            }
             session.markUsed(clock.instant());
-            stream.setCall(call, /* withBeginTransaction= */ builder.getTransaction().hasBegin());
+            stream.setCall(call, withBeginTransaction);
             return stream;
           }
 

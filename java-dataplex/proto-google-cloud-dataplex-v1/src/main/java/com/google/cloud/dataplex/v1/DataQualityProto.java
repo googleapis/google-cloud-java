@@ -149,9 +149,41 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityRule_SqlAssertion_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataQualityColumnResult_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -169,21 +201,25 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "+google/cloud/dataplex/v1/data_quality."
           + "proto\022\030google.cloud.dataplex.v1\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032/google/cloud/dataplex/v1/da"
-          + "tascans_common.proto\032)google/cloud/dataplex/v1/processing.proto\"\351\010\n"
+          + "ource.proto\0329google/cloud/dataplex/v1/data_quality_rule_template.proto\032/google/c"
+          + "loud/dataplex/v1/datascans_common.proto\032"
+          + ")google/cloud/dataplex/v1/processing.proto\"\247\t\n"
           + "\017DataQualitySpec\022=\n"
-          + "\005rules\030\001"
-          + " \003(\0132).google.cloud.dataplex.v1.DataQualityRuleB\003\340A\002\022\035\n"
+          + "\005rules\030\001 \003(\0132)."
+          + "google.cloud.dataplex.v1.DataQualityRuleB\003\340A\002\022\035\n"
           + "\020sampling_percent\030\004 \001(\002B\003\340A\001\022\027\n\n"
           + "row_filter\030\005 \001(\tB\003\340A\001\022Y\n"
-          + "\021post_scan_actions\030\006 \001(\01329.google.c"
-          + "loud.dataplex.v1.DataQualitySpec.PostScanActionsB\003\340A\001\022\'\n"
-          + "\032catalog_publishing_enabled\030\010 \001(\010B\003\340A\001\032\332\006\n"
+          + "\021post_scan_actions\030\006"
+          + " \001(\01329.google.cloud.dataplex.v1.DataQualitySpec.PostScanActionsB\003\340A\001\022\'\n"
+          + "\032catalog_publishing_enabled\030\010 \001(\010B\003\340A\001\022\'\n"
+          + "\032enable_catalog_based_rules\030\n"
+          + " \001(\010B\003\340A\001\022\023\n"
+          + "\006filter\030\013 \001(\tB\003\340A\001\032\332\006\n"
           + "\017PostScanActions\022f\n"
-          + "\017bigquery_export\030\001 \001(\0132H.google.cloud.datap"
-          + "lex.v1.DataQualitySpec.PostScanActions.BigQueryExportB\003\340A\001\022n\n"
-          + "\023notification_report\030\002 \001(\0132L.google.cloud.dataplex.v1.DataQ"
-          + "ualitySpec.PostScanActions.NotificationReportB\003\340A\001\032,\n"
+          + "\017bigquery_export\030\001 \001(\0132H.google.cloud.data"
+          + "plex.v1.DataQualitySpec.PostScanActions.BigQueryExportB\003\340A\001\022n\n"
+          + "\023notification_report\030\002 \001(\0132L.google.cloud.dataplex.v1.Data"
+          + "QualitySpec.PostScanActions.NotificationReportB\003\340A\001\032,\n"
           + "\016BigQueryExport\022\032\n\r"
           + "results_table\030\001 \001(\tB\003\340A\001\032!\n\n"
           + "Recipients\022\023\n"
@@ -193,38 +229,38 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "\021JobFailureTrigger\032\017\n\r"
           + "JobEndTrigger\032\300\003\n"
           + "\022NotificationReport\022]\n\n"
-          + "recipients\030\001 \001(\0132D.google.clo"
-          + "ud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsB\003\340A\002\022u\n"
-          + "\027score_threshold_trigger\030\002 \001(\0132O.google.cloud.dataplex."
-          + "v1.DataQualitySpec.PostScanActions.ScoreThresholdTriggerB\003\340A\001\022m\n"
-          + "\023job_failure_trigger\030\004 \001(\0132K.google.cloud.dataplex.v1.Da"
-          + "taQualitySpec.PostScanActions.JobFailureTriggerB\003\340A\001\022e\n"
-          + "\017job_end_trigger\030\005 \001(\0132G."
-          + "google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerB\003\340A\001\"\205\n\n"
+          + "recipients\030\001 \001(\0132D.google.cl"
+          + "oud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsB\003\340A\002\022u\n"
+          + "\027score_threshold_trigger\030\002 \001(\0132O.google.cloud.dataplex"
+          + ".v1.DataQualitySpec.PostScanActions.ScoreThresholdTriggerB\003\340A\001\022m\n"
+          + "\023job_failure_trigger\030\004 \001(\0132K.google.cloud.dataplex.v1.D"
+          + "ataQualitySpec.PostScanActions.JobFailureTriggerB\003\340A\001\022e\n"
+          + "\017job_end_trigger\030\005 \001(\0132G"
+          + ".google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerB\003\340A\001\"\205\n\n"
           + "\021DataQualityResult\022\023\n"
           + "\006passed\030\005 \001(\010B\003\340A\003\022\027\n"
           + "\005score\030\t \001(\002B\003\340A\003H\000\210\001\001\022M\n\n"
-          + "dimensions\030\002 "
-          + "\003(\01324.google.cloud.dataplex.v1.DataQualityDimensionResultB\003\340A\003\022G\n"
+          + "dimensions\030\002"
+          + " \003(\01324.google.cloud.dataplex.v1.DataQualityDimensionResultB\003\340A\003\022G\n"
           + "\007columns\030\n"
           + " \003(\01321.google.cloud.dataplex.v1.DataQualityColumnResultB\003\340A\003\022C\n"
-          + "\005rules\030\003 \003(\0132/.google."
-          + "cloud.dataplex.v1.DataQualityRuleResultB\003\340A\003\022\026\n"
+          + "\005rules\030\003 \003(\0132/.google"
+          + ".cloud.dataplex.v1.DataQualityRuleResultB\003\340A\003\022\026\n"
           + "\trow_count\030\004 \001(\003B\003\340A\003\022@\n"
           + "\014scanned_data\030\007"
           + " \001(\0132%.google.cloud.dataplex.v1.ScannedDataB\003\340A\003\022h\n"
-          + "\030post_scan_actions_result\030\010 \001(\0132A.google.cloud.dataplex.v1.Data"
-          + "QualityResult.PostScanActionsResultB\003\340A\003\022a\n"
-          + "\031catalog_publishing_status\030\013 \001(\01329.go"
-          + "ogle.cloud.dataplex.v1.DataScanCatalogPublishingStatusB\003\340A\003\022|\n"
-          + "\"anomaly_detection_generated_assets\030\014 \001(\0132K.google.cloud.d"
-          + "ataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssetsB\003\340A\003\032\375\002\n"
+          + "\030post_scan_actions_result\030\010 \001(\0132A.google.cloud.dataplex.v1.Dat"
+          + "aQualityResult.PostScanActionsResultB\003\340A\003\022a\n"
+          + "\031catalog_publishing_status\030\013 \001(\01329.g"
+          + "oogle.cloud.dataplex.v1.DataScanCatalogPublishingStatusB\003\340A\003\022|\n"
+          + "\"anomaly_detection_generated_assets\030\014 \001(\0132K.google.cloud."
+          + "dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssetsB\003\340A\003\032\375\002\n"
           + "\025PostScanActionsResult\022{\n"
-          + "\026bigquery_export_result\030\001 \001(\0132V.google.cloud.dataplex.v1.DataQuali"
-          + "tyResult.PostScanActionsResult.BigQueryExportResultB\003\340A\003\032\346\001\n"
+          + "\026bigquery_export_result\030\001 \001(\0132V.google.cloud.dataplex.v1.DataQual"
+          + "ityResult.PostScanActionsResult.BigQueryExportResultB\003\340A\003\032\346\001\n"
           + "\024BigQueryExportResult\022p\n"
-          + "\005state\030\001 \001(\0162\\.google.cloud.dataplex"
-          + ".v1.DataQualityResult.PostScanActionsResult.BigQueryExportResult.StateB\003\340A\003\022\024\n"
+          + "\005state\030\001 \001(\0162\\.google.cloud.dataple"
+          + "x.v1.DataQualityResult.PostScanActionsResult.BigQueryExportResult.StateB\003\340A\003\022\024\n"
           + "\007message\030\002 \001(\tB\003\340A\003\"F\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\r\n"
@@ -238,8 +274,8 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "\031volume_intermediate_table\030\004 \001(\tB\003\340A\003B\010\n"
           + "\006_score\"\263\004\n"
           + "\025DataQualityRuleResult\022<\n"
-          + "\004rule\030\001 "
-          + "\001(\0132).google.cloud.dataplex.v1.DataQualityRuleB\003\340A\003\022\023\n"
+          + "\004rule\030\001"
+          + " \001(\0132).google.cloud.dataplex.v1.DataQualityRuleB\003\340A\003\022\023\n"
           + "\006passed\030\007 \001(\010B\003\340A\003\022\034\n"
           + "\017evaluated_count\030\t \001(\003B\003\340A\003\022\031\n"
           + "\014passed_count\030\010 \001(\003B\003\340A\003\022\027\n\n"
@@ -249,15 +285,15 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + " \001(\tB\003\340A\003\022 \n"
           + "\023assertion_row_count\030\013 \001(\003B\003\340A\003\022k\n"
           + "\031debug_queries_result_sets\030\r"
-          + " \003("
-          + "\0132C.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSetB\003\340A\003\032=\n"
+          + " \003"
+          + "(\0132C.google.cloud.dataplex.v1.DataQualityRuleResult.DebugQueryResultSetB\003\340A\003\032=\n"
           + "\020DebugQueryResult\022\014\n"
           + "\004name\030\001 \001(\t\022\014\n"
           + "\004type\030\002 \001(\t\022\r\n"
           + "\005value\030\003 \001(\t\032m\n"
           + "\023DebugQueryResultSet\022V\n"
-          + "\007results\030\001 \003(\0132@.google.cloud.datapl"
-          + "ex.v1.DataQualityRuleResult.DebugQueryResultB\003\340A\003\"\234\001\n"
+          + "\007results\030\001 \003(\0132@.google.cloud.datap"
+          + "lex.v1.DataQualityRuleResult.DebugQueryResultB\003\340A\003\"\234\001\n"
           + "\032DataQualityDimensionResult\022F\n"
           + "\tdimension\030\001"
           + " \001(\0132..google.cloud.dataplex.v1.DataQualityDimensionB\003\340A\003\022\023\n"
@@ -265,35 +301,41 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "\005score\030\004 \001(\002B\003\340A\003H\000\210\001\001B\010\n"
           + "\006_score\")\n"
           + "\024DataQualityDimension\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\"\244\017\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\"\255\031\n"
           + "\017DataQualityRule\022W\n"
-          + "\021range_expectation\030\001 \001(\0132:.google.cloud.datapl"
-          + "ex.v1.DataQualityRule.RangeExpectationH\000\022\\\n"
-          + "\024non_null_expectation\030\002 \001(\0132<.google."
-          + "cloud.dataplex.v1.DataQualityRule.NonNullExpectationH\000\022S\n"
-          + "\017set_expectation\030\003 \001(\0132"
-          + "8.google.cloud.dataplex.v1.DataQualityRule.SetExpectationH\000\022W\n"
+          + "\021range_expectation\030\001 \001(\0132:.google.cloud.datap"
+          + "lex.v1.DataQualityRule.RangeExpectationH\000\022\\\n"
+          + "\024non_null_expectation\030\002 \001(\0132<.google"
+          + ".cloud.dataplex.v1.DataQualityRule.NonNullExpectationH\000\022S\n"
+          + "\017set_expectation\030\003 \001(\013"
+          + "28.google.cloud.dataplex.v1.DataQualityRule.SetExpectationH\000\022W\n"
           + "\021regex_expectation\030\004"
           + " \001(\0132:.google.cloud.dataplex.v1.DataQualityRule.RegexExpectationH\000\022a\n"
-          + "\026uniqueness_expectation\030d \001(\0132?.google.cloud.data"
-          + "plex.v1.DataQualityRule.UniquenessExpectationH\000\022j\n"
+          + "\026uniqueness_expectation\030d \001(\0132?.google.cloud.dat"
+          + "aplex.v1.DataQualityRule.UniquenessExpectationH\000\022j\n"
           + "\033statistic_range_expectation\030e"
           + " \001(\0132C.google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectationH\000\022g\n"
-          + "\031row_condition_expectation\030\310\001 \001(\0132A.google"
-          + ".cloud.dataplex.v1.DataQualityRule.RowConditionExpectationH\000\022k\n"
-          + "\033table_condition_expectation\030\311\001 \001(\0132C.google.cloud.datapl"
-          + "ex.v1.DataQualityRule.TableConditionExpectationH\000\022P\n\r"
-          + "sql_assertion\030\312\001 \001(\01326.goog"
-          + "le.cloud.dataplex.v1.DataQualityRule.SqlAssertionH\000\022\024\n"
+          + "\031row_condition_expectation\030\310\001 \001(\0132A.googl"
+          + "e.cloud.dataplex.v1.DataQualityRule.RowConditionExpectationH\000\022k\n"
+          + "\033table_condition_expectation\030\311\001 \001(\0132C.google.cloud.datap"
+          + "lex.v1.DataQualityRule.TableConditionExpectationH\000\022P\n\r"
+          + "sql_assertion\030\312\001 \001(\01326.goo"
+          + "gle.cloud.dataplex.v1.DataQualityRule.SqlAssertionH\000\022Y\n"
+          + "\022template_reference\030\005 \001(\013"
+          + "2;.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceH\000\022\024\n"
           + "\006column\030\364\003 \001(\tB\003\340A\001\022\031\n"
           + "\013ignore_null\030\365\003 \001(\010B\003\340A\001\022\027\n"
           + "\tdimension\030\366\003 \001(\tB\003\340A\001\022\027\n"
           + "\tthreshold\030\367\003 \001(\001B\003\340A\001\022\022\n"
           + "\004name\030\370\003 \001(\tB\003\340A\001\022\031\n"
           + "\013description\030\371\003 \001(\tB\003\340A\001\022\027\n"
-          + "\tsuspended\030\372\003 \001(\010B\003\340A\001\022Q\n\r"
-          + "debug_queries\030\376\003"
-          + " \003(\01324.google.cloud.dataplex.v1.DataQualityRule.DebugQueryB\003\340A\001\032\204\001\n"
+          + "\tsuspended\030\372\003 \001(\010B\003\340A\001\022S\n\n"
+          + "attributes\030\373\003 \003(\01329.google.cloud.dataplex."
+          + "v1.DataQualityRule.AttributesEntryB\003\340A\001\022O\n"
+          + "\013rule_source\030\374\003 \001(\01324.google.cloud.dat"
+          + "aplex.v1.DataQualityRule.RuleSourceB\003\340A\003\022Q\n\r"
+          + "debug_queries\030\376\003 \003(\01324.google.cloud."
+          + "dataplex.v1.DataQualityRule.DebugQueryB\003\340A\001\032\204\001\n"
           + "\020RangeExpectation\022\026\n"
           + "\tmin_value\030\001 \001(\tB\003\340A\001\022\026\n"
           + "\tmax_value\030\002 \001(\tB\003\340A\001\022\037\n"
@@ -306,8 +348,8 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "\005regex\030\001 \001(\tB\003\340A\001\032\027\n"
           + "\025UniquenessExpectation\032\302\002\n"
           + "\031StatisticRangeExpectation\022k\n"
-          + "\tstatistic\030\001 \001(\0162S.google.cloud.dataplex."
-          + "v1.DataQualityRule.StatisticRangeExpectation.ColumnStatisticB\003\340A\001\022\026\n"
+          + "\tstatistic\030\001 \001(\0162S.google.cloud.dataplex.v1.DataQualityRule.Sta"
+          + "tisticRangeExpectation.ColumnStatisticB\003\340A\001\022\026\n"
           + "\tmin_value\030\002 \001(\tB\003\340A\001\022\026\n"
           + "\tmax_value\030\003 \001(\tB\003\340A\001\022\037\n"
           + "\022strict_min_enabled\030\004 \001(\010B\003\340A\001\022\037\n"
@@ -322,10 +364,43 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "\031TableConditionExpectation\022\033\n"
           + "\016sql_expression\030\001 \001(\tB\003\340A\001\032*\n"
           + "\014SqlAssertion\022\032\n\r"
-          + "sql_statement\030\001 \001(\tB\003\340A\001\032B\n\n"
+          + "sql_statement\030\001 \001(\tB\003\340A\001\032\261\003\n"
+          + "\021TemplateReference\0223\n"
+          + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
+          + "\035dataplex.googleapis.com/Entry\022\\\n"
+          + "\006values\030\005 \003(\0132G"
+          + ".google.cloud.dataplex.v1.DataQualityRule.TemplateReference.ValuesEntryB\003\340A\001\022\031\n"
+          + "\014resolved_sql\030\003 \001(\tB\003\340A\003\022M\n\r"
+          + "rule_template\030\004"
+          + " \001(\01321.google.cloud.dataplex.v1.DataQualityRuleTemplateB\003\340A\003\032$\n"
+          + "\016ParameterValue\022\022\n"
+          + "\005value\030\001 \001(\tB\003\340A\002\032y\n"
+          + "\013ValuesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022Y\n"
+          + "\005value\030\002 \001(\0132J.google.cloud.d"
+          + "ataplex.v1.DataQualityRule.TemplateReference.ParameterValue:\0028\001\032\236\004\n\n"
+          + "RuleSource\022e\n"
+          + "\022rule_path_elements\030\001 \003(\0132D.google.clou"
+          + "d.dataplex.v1.DataQualityRule.RuleSource.RulePathElementB\003\340A\003\032\250\003\n"
+          + "\017RulePathElement\022m\n"
+          + "\014entry_source\030\001 \001(\0132P.google.cloud.d"
+          + "ataplex.v1.DataQualityRule.RuleSource.RulePathElement.EntrySourceB\003\340A\003H\000\022v\n"
+          + "\021entry_link_source\030\002 \001(\0132T.google.cloud.datap"
+          + "lex.v1.DataQualityRule.RuleSource.RulePathElement.EntryLinkSourceB\003\340A\003H\000\032U\n"
+          + "\013EntrySource\022\027\n\n"
+          + "entry_type\030\001 \001(\tB\003\340A\003\022\022\n"
+          + "\005entry\030\002 \001(\tB\003\340A\003\022\031\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\003\032H\n"
+          + "\017EntryLinkSource\022\034\n"
+          + "\017entry_link_type\030\001 \001(\tB\003\340A\003\022\027\n\n"
+          + "entry_link\030\002 \001(\tB\003\340A\003B\r\n"
+          + "\013source_type\032B\n\n"
           + "DebugQuery\022\030\n"
           + "\013description\030\001 \001(\tB\003\340A\001\022\032\n\r"
-          + "sql_statement\030\002 \001(\tB\003\340A\002B\013\n"
+          + "sql_statement\030\002 \001(\tB\003\340A\002\0321\n"
+          + "\017AttributesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\013\n"
           + "\trule_type\"\265\001\n"
           + "\027DataQualityColumnResult\022\023\n"
           + "\006column\030\001 \001(\tB\003\340A\003\022\027\n"
@@ -334,10 +409,10 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
           + "dimensions\030\004"
           + " \003(\01324.google.cloud.dataplex.v1.DataQualityDimensionResultB\003\340A\003B\010\n"
           + "\006_scoreB\304\001\n"
-          + "\034com.google.cloud.dataplex.v1B\020DataQuality"
-          + "ProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpb\352AU\n"
-          + "\035bigquery.googleapis.com/Table\0224projects/{project}/"
-          + "datasets/{dataset}/tables/{table}b\006proto3"
+          + "\034com.google.cloud.dataplex.v1B\020D"
+          + "ataQualityProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpb\352AU\n"
+          + "\035bigquery.googleapis.com/Table\0224projects/"
+          + "{project}/datasets/{dataset}/tables/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -345,6 +420,7 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dataplex.v1.DataQualityRuleTemplateProto.getDescriptor(),
               com.google.cloud.dataplex.v1.DataScansCommonProto.getDescriptor(),
               com.google.cloud.dataplex.v1.ProcessingProto.getDescriptor(),
             });
@@ -359,6 +435,8 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
               "RowFilter",
               "PostScanActions",
               "CatalogPublishingEnabled",
+              "EnableCatalogBasedRules",
+              "Filter",
             });
     internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor =
         internal_static_google_cloud_dataplex_v1_DataQualitySpec_descriptor.getNestedType(0);
@@ -526,6 +604,7 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
               "RowConditionExpectation",
               "TableConditionExpectation",
               "SqlAssertion",
+              "TemplateReference",
               "Column",
               "IgnoreNull",
               "Dimension",
@@ -533,6 +612,8 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
               "Name",
               "Description",
               "Suspended",
+              "Attributes",
+              "RuleSource",
               "DebugQueries",
               "RuleType",
             });
@@ -604,13 +685,82 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "SqlStatement",
             });
-    internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor =
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor =
         internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor.getNestedType(9);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor,
+            new java.lang.String[] {
+              "Name", "Values", "ResolvedSql", "RuleTemplate",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ParameterValue_descriptor,
+            new java.lang.String[] {
+              "Value",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_TemplateReference_ValuesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor.getNestedType(10);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor,
+            new java.lang.String[] {
+              "RulePathElements",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor,
+            new java.lang.String[] {
+              "EntrySource", "EntryLinkSource", "SourceType",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntrySource_descriptor,
+            new java.lang.String[] {
+              "EntryType", "Entry", "DisplayName",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_RuleSource_RulePathElement_EntryLinkSource_descriptor,
+            new java.lang.String[] {
+              "EntryLinkType", "EntryLink",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor.getNestedType(11);
     internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataQualityRule_DebugQuery_descriptor,
             new java.lang.String[] {
               "Description", "SqlStatement",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualityRule_descriptor.getNestedType(12);
+    internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualityRule_AttributesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_dataplex_v1_DataQualityColumnResult_descriptor =
         getDescriptor().getMessageType(6);
@@ -623,12 +773,14 @@ public final class DataQualityProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dataplex.v1.DataQualityRuleTemplateProto.getDescriptor();
     com.google.cloud.dataplex.v1.DataScansCommonProto.getDescriptor();
     com.google.cloud.dataplex.v1.ProcessingProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

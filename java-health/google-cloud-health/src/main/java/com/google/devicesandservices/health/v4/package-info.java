@@ -38,6 +38,31 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataSubscriptionServiceClient =======================
+ *
+ * <p>Service Description: Data Subscription Service that allows clients (e.g., Fitbit 3P
+ * applications, internal Fitbit Services) to manage their subscriber endpoints. This service
+ * provides CRUD APIs for subscribers, and also offers functionalities for subscriber verification
+ * and statistics.
+ *
+ * <p>Sample for DataSubscriptionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataSubscriptionServiceClient dataSubscriptionServiceClient =
+ *     DataSubscriptionServiceClient.create()) {
+ *   SubscriberName parent = SubscriberName.of("[PROJECT]", "[SUBSCRIBER]");
+ *   CreateSubscriptionPayload subscription = CreateSubscriptionPayload.newBuilder().build();
+ *   String subscriptionId = "subscriptionId1478790936";
+ *   Subscription response =
+ *       dataSubscriptionServiceClient.createSubscription(parent, subscription, subscriptionId);
+ * }
+ * }</pre>
+ *
  * <p>======================= HealthProfileServiceClient =======================
  *
  * <p>Service Description: Health Profile Service

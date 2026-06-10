@@ -56,6 +56,7 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     merchantFeedLabel_ = "";
     merchantFeedLanguageCode_ = "";
     items_ = java.util.Collections.emptyList();
+    couponCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -341,6 +342,90 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     return items_.get(index);
   }
 
+  public static final int COUPON_CODES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList couponCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of coupon codes that were applied to the cart.
+   * Cart-level and item-level coupon codes are independent.
+   *
+   * If the event is for a Google Analytics destination, only provide a single
+   * coupon code. Google Analytics ignores additional coupon codes.
+   * </pre>
+   *
+   * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the couponCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getCouponCodesList() {
+    return couponCodes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of coupon codes that were applied to the cart.
+   * Cart-level and item-level coupon codes are independent.
+   *
+   * If the event is for a Google Analytics destination, only provide a single
+   * coupon code. Google Analytics ignores additional coupon codes.
+   * </pre>
+   *
+   * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of couponCodes.
+   */
+  public int getCouponCodesCount() {
+    return couponCodes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of coupon codes that were applied to the cart.
+   * Cart-level and item-level coupon codes are independent.
+   *
+   * If the event is for a Google Analytics destination, only provide a single
+   * coupon code. Google Analytics ignores additional coupon codes.
+   * </pre>
+   *
+   * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The couponCodes at the given index.
+   */
+  public java.lang.String getCouponCodes(int index) {
+    return couponCodes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of coupon codes that were applied to the cart.
+   * Cart-level and item-level coupon codes are independent.
+   *
+   * If the event is for a Google Analytics destination, only provide a single
+   * coupon code. Google Analytics ignores additional coupon codes.
+   * </pre>
+   *
+   * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the couponCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getCouponCodesBytes(int index) {
+    return couponCodes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -370,6 +455,9 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < items_.size(); i++) {
       output.writeMessage(5, items_.get(i));
     }
+    for (int i = 0; i < couponCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, couponCodes_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -394,6 +482,14 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < items_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, items_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < couponCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(couponCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCouponCodesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -415,6 +511,7 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     if (java.lang.Double.doubleToLongBits(getTransactionDiscount())
         != java.lang.Double.doubleToLongBits(other.getTransactionDiscount())) return false;
     if (!getItemsList().equals(other.getItemsList())) return false;
+    if (!getCouponCodesList().equals(other.getCouponCodesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -440,6 +537,10 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
     if (getItemsCount() > 0) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItemsList().hashCode();
+    }
+    if (getCouponCodesCount() > 0) {
+      hash = (37 * hash) + COUPON_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getCouponCodesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -592,6 +693,7 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
         itemsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      couponCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -653,6 +755,10 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.transactionDiscount_ = transactionDiscount_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        couponCodes_.makeImmutable();
+        result.couponCodes_ = couponCodes_;
+      }
     }
 
     @java.lang.Override
@@ -711,6 +817,16 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
             itemsBuilder_.addAllMessages(other.items_);
           }
         }
+      }
+      if (!other.couponCodes_.isEmpty()) {
+        if (couponCodes_.isEmpty()) {
+          couponCodes_ = other.couponCodes_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureCouponCodesIsMutable();
+          couponCodes_.addAll(other.couponCodes_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -775,6 +891,13 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCouponCodesIsMutable();
+                couponCodes_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1595,6 +1718,225 @@ public final class CartData extends com.google.protobuf.GeneratedMessage
         items_ = null;
       }
       return itemsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList couponCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCouponCodesIsMutable() {
+      if (!couponCodes_.isModifiable()) {
+        couponCodes_ = new com.google.protobuf.LazyStringArrayList(couponCodes_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the couponCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getCouponCodesList() {
+      couponCodes_.makeImmutable();
+      return couponCodes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of couponCodes.
+     */
+    public int getCouponCodesCount() {
+      return couponCodes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The couponCodes at the given index.
+     */
+    public java.lang.String getCouponCodes(int index) {
+      return couponCodes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the couponCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getCouponCodesBytes(int index) {
+      return couponCodes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The couponCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCouponCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCouponCodesIsMutable();
+      couponCodes_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The couponCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCouponCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCouponCodesIsMutable();
+      couponCodes_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The couponCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCouponCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureCouponCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, couponCodes_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCouponCodes() {
+      couponCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of coupon codes that were applied to the cart.
+     * Cart-level and item-level coupon codes are independent.
+     *
+     * If the event is for a Google Analytics destination, only provide a single
+     * coupon code. Google Analytics ignores additional coupon codes.
+     * </pre>
+     *
+     * <code>repeated string coupon_codes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the couponCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCouponCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCouponCodesIsMutable();
+      couponCodes_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.CartData)

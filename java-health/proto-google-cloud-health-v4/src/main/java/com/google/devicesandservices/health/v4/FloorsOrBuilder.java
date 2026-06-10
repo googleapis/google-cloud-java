@@ -76,7 +76,20 @@ public interface FloorsOrBuilder
    * Required. Number of floors in the recorded interval
    * </pre>
    *
-   * <code>int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the count field is set.
+   */
+  boolean hasCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Number of floors in the recorded interval
+   * </pre>
+   *
+   * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The count.
    */

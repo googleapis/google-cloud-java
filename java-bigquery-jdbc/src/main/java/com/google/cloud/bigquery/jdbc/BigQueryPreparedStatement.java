@@ -219,7 +219,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setTimestamp(int parameterIndex, Timestamp x) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x.toString(), String.class);
+    if (x == null) {
+      this.parameterHandler.setParameter(parameterIndex, null, String.class);
+      return;
+    }
+    Timestamp copy = new Timestamp(x.getTime());
+    copy.setNanos((x.getNanos() / 1000) * 1000);
+    this.parameterHandler.setParameter(parameterIndex, copy.toString(), String.class);
   }
 
   @Override

@@ -1368,13 +1368,16 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   @Override
-  public <T> T unwrap(Class<T> iface) {
-    return null;
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
   }
 
   @Override
-  public boolean isWrapperFor(Class<?> iface) {
-    return false;
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 
   private static void validateNonNegative(long val, String propertyName) {

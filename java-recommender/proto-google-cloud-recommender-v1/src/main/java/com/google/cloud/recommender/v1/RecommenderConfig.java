@@ -95,12 +95,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of recommender config.
+   * Identifier. Name of recommender config.
    * Eg,
    * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -121,12 +121,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Name of recommender config.
+   * Identifier. Name of recommender config.
    * Eg,
    * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1094,12 +1094,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of recommender config.
+     * Identifier. Name of recommender config.
      * Eg,
      * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1119,12 +1119,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of recommender config.
+     * Identifier. Name of recommender config.
      * Eg,
      * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1144,12 +1144,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of recommender config.
+     * Identifier. Name of recommender config.
      * Eg,
      * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1168,12 +1168,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of recommender config.
+     * Identifier. Name of recommender config.
      * Eg,
      * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1188,12 +1188,12 @@ public final class RecommenderConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Name of recommender config.
+     * Identifier. Name of recommender config.
      * Eg,
      * projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

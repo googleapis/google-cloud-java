@@ -100,8 +100,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique identifier for this event. Required for conversions
-   * using multiple data sources.
+   * Optional. The unique identifier for this event. Required for events sent as
+   * an additional data source for tag conversions.
    * </pre>
    *
    * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -114,8 +114,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The unique identifier for this event. Required for conversions
-   * using multiple data sources.
+   * Optional. The unique identifier for this event. Required for events sent as
+   * an additional data source for tag conversions.
    * </pre>
    *
    * <code>string transaction_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -397,6 +397,34 @@ public interface EventOrBuilder
    * @return The conversionValue.
    */
   double getConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the conversionCount field is set.
+   */
+  boolean hasConversionCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The conversion quantity associated with the event, for
+   * counting-based conversions.
+   * </pre>
+   *
+   * <code>optional double conversion_count = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionCount.
+   */
+  double getConversionCount();
 
   /**
    *
@@ -870,4 +898,127 @@ public interface EventOrBuilder
    */
   com.google.ads.datamanager.v1.EventParameterOrBuilder getAdditionalEventParametersOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyUserData field is set.
+   */
+  boolean hasThirdPartyUserData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyUserData.
+   */
+  com.google.ads.datamanager.v1.UserData getThirdPartyUserData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The same type of data provided in user_data, but explicitly
+   * flagged as being provided as owned by a third-party and not first-party
+   * advertiser data.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.UserData third_party_user_data = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.UserDataOrBuilder getThirdPartyUserDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the eventLocation field is set.
+   */
+  boolean hasEventLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The eventLocation.
+   */
+  com.google.ads.datamanager.v1.EventLocation getEventLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the location of the user when this
+   * event occurred.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.EventLocation event_location = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.EventLocationOrBuilder getEventLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for the user instance of an app client for
+   * this GA4 app stream.
+   * </pre>
+   *
+   * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The appInstanceId.
+   */
+  java.lang.String getAppInstanceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for the user instance of an app client for
+   * this GA4 app stream.
+   * </pre>
+   *
+   * <code>string app_instance_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for appInstanceId.
+   */
+  com.google.protobuf.ByteString getAppInstanceIdBytes();
 }

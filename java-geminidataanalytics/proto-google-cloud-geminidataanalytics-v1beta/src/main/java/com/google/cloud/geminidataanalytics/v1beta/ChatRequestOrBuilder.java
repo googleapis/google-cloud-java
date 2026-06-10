@@ -227,7 +227,51 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud project to be used for quota and billing.
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the lookerSettings field is set.
+   */
+  boolean hasLookerSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The lookerSettings.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerSettings getLookerSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder getLookerSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deprecated: Use `parent` field instead.
+   * The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -235,7 +279,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
    * @return The project.
    */
   @java.lang.Deprecated
@@ -245,7 +289,8 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Google Cloud project to be used for quota and billing.
+   * Optional. Deprecated: Use `parent` field instead.
+   * The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -253,7 +298,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
    * @return The bytes for project.
    */
   @java.lang.Deprecated
@@ -357,6 +402,70 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the credentials field is set.
+   */
+  boolean hasCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The credentials.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder getCredentialsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The thinking mode to use for the agent loop.
    * Defaults to THINKING_MODE_UNSPECIFIED if not specified.
    * </pre>
@@ -385,6 +494,41 @@ public interface ChatRequestOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode getThinkingMode();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop when processing the request.
+   * This setting only has an effect when context.options.model is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for model.
+   */
+  int getModelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop when processing the request.
+   * This setting only has an effect when context.options.model is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The model.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model getModel();
+
   com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ContextProviderCase
       getContextProviderCase();
+
+  com.google.cloud.geminidataanalytics.v1beta.ChatRequest.DatasourceSettingsCase
+      getDatasourceSettingsCase();
 }

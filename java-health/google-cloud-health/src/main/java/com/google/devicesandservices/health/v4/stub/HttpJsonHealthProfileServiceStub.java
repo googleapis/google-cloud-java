@@ -16,6 +16,8 @@
 
 package com.google.devicesandservices.health.v4.stub;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -29,9 +31,15 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.GetIdentityRequest;
+import com.google.devicesandservices.health.v4.GetIrnProfileRequest;
+import com.google.devicesandservices.health.v4.GetPairedDeviceRequest;
 import com.google.devicesandservices.health.v4.GetProfileRequest;
 import com.google.devicesandservices.health.v4.GetSettingsRequest;
 import com.google.devicesandservices.health.v4.Identity;
+import com.google.devicesandservices.health.v4.IrnProfile;
+import com.google.devicesandservices.health.v4.ListPairedDevicesRequest;
+import com.google.devicesandservices.health.v4.ListPairedDevicesResponse;
+import com.google.devicesandservices.health.v4.PairedDevice;
 import com.google.devicesandservices.health.v4.Profile;
 import com.google.devicesandservices.health.v4.Settings;
 import com.google.devicesandservices.health.v4.UpdateProfileRequest;
@@ -238,11 +246,124 @@ public class HttpJsonHealthProfileServiceStub extends HealthProfileServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetIrnProfileRequest, IrnProfile>
+      getIrnProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetIrnProfileRequest, IrnProfile>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/GetIrnProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIrnProfileRequest>newBuilder()
+                      .setPath(
+                          "/v4/{name=users/*/irnProfile}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIrnProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIrnProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IrnProfile>newBuilder()
+                      .setDefaultInstance(IrnProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetPairedDeviceRequest, PairedDevice>
+      getPairedDeviceMethodDescriptor =
+          ApiMethodDescriptor.<GetPairedDeviceRequest, PairedDevice>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/GetPairedDevice")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetPairedDeviceRequest>newBuilder()
+                      .setPath(
+                          "/v4/{name=users/*/pairedDevices/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPairedDeviceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPairedDeviceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PairedDevice>newBuilder()
+                      .setDefaultInstance(PairedDevice.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesMethodDescriptor =
+          ApiMethodDescriptor.<ListPairedDevicesRequest, ListPairedDevicesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devicesandservices.health.v4.HealthProfileService/ListPairedDevices")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListPairedDevicesRequest>newBuilder()
+                      .setPath(
+                          "/v4/{parent=users/*}/pairedDevices",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPairedDevicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListPairedDevicesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListPairedDevicesResponse>newBuilder()
+                      .setDefaultInstance(ListPairedDevicesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetProfileRequest, Profile> getProfileCallable;
   private final UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
   private final UnaryCallable<GetIdentityRequest, Identity> getIdentityCallable;
+  private final UnaryCallable<GetIrnProfileRequest, IrnProfile> getIrnProfileCallable;
+  private final UnaryCallable<GetPairedDeviceRequest, PairedDevice> getPairedDeviceCallable;
+  private final UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesCallable;
+  private final UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesPagedResponse>
+      listPairedDevicesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -346,6 +467,43 @@ public class HttpJsonHealthProfileServiceStub extends HealthProfileServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GetIrnProfileRequest, IrnProfile> getIrnProfileTransportSettings =
+        HttpJsonCallSettings.<GetIrnProfileRequest, IrnProfile>newBuilder()
+            .setMethodDescriptor(getIrnProfileMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetPairedDeviceRequest, PairedDevice> getPairedDeviceTransportSettings =
+        HttpJsonCallSettings.<GetPairedDeviceRequest, PairedDevice>newBuilder()
+            .setMethodDescriptor(getPairedDeviceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListPairedDevicesRequest, ListPairedDevicesResponse>
+        listPairedDevicesTransportSettings =
+            HttpJsonCallSettings.<ListPairedDevicesRequest, ListPairedDevicesResponse>newBuilder()
+                .setMethodDescriptor(listPairedDevicesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getProfileCallable =
         callableFactory.createUnaryCallable(
@@ -362,6 +520,22 @@ public class HttpJsonHealthProfileServiceStub extends HealthProfileServiceStub {
     this.getIdentityCallable =
         callableFactory.createUnaryCallable(
             getIdentityTransportSettings, settings.getIdentitySettings(), clientContext);
+    this.getIrnProfileCallable =
+        callableFactory.createUnaryCallable(
+            getIrnProfileTransportSettings, settings.getIrnProfileSettings(), clientContext);
+    this.getPairedDeviceCallable =
+        callableFactory.createUnaryCallable(
+            getPairedDeviceTransportSettings, settings.getPairedDeviceSettings(), clientContext);
+    this.listPairedDevicesCallable =
+        callableFactory.createUnaryCallable(
+            listPairedDevicesTransportSettings,
+            settings.listPairedDevicesSettings(),
+            clientContext);
+    this.listPairedDevicesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPairedDevicesTransportSettings,
+            settings.listPairedDevicesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -375,6 +549,9 @@ public class HttpJsonHealthProfileServiceStub extends HealthProfileServiceStub {
     methodDescriptors.add(getSettingsMethodDescriptor);
     methodDescriptors.add(updateSettingsMethodDescriptor);
     methodDescriptors.add(getIdentityMethodDescriptor);
+    methodDescriptors.add(getIrnProfileMethodDescriptor);
+    methodDescriptors.add(getPairedDeviceMethodDescriptor);
+    methodDescriptors.add(listPairedDevicesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -401,6 +578,28 @@ public class HttpJsonHealthProfileServiceStub extends HealthProfileServiceStub {
   @Override
   public UnaryCallable<GetIdentityRequest, Identity> getIdentityCallable() {
     return getIdentityCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIrnProfileRequest, IrnProfile> getIrnProfileCallable() {
+    return getIrnProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPairedDeviceRequest, PairedDevice> getPairedDeviceCallable() {
+    return getPairedDeviceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesCallable() {
+    return listPairedDevicesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesPagedResponse>
+      listPairedDevicesPagedCallable() {
+    return listPairedDevicesPagedCallable;
   }
 
   @Override

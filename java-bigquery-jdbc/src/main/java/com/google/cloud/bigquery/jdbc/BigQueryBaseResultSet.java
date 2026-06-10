@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
@@ -245,6 +246,25 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   }
 
   public abstract Object getObject(int columnIndex) throws SQLException;
+
+  @Override
+  public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+    LOG.finestTrace("getObject");
+    try {
+      Object value = getObject(columnIndex);
+      if (value == null) {
+        return null;
+      }
+      return this.bigQueryTypeCoercer.coerceTo(type, value, this.LOG);
+    } catch (RuntimeException e) {
+      throw createCoercionException(columnIndex, type, e);
+    }
+  }
+
+  @Override
+  public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+    return getObject(getColumnIndex(columnLabel), type);
+  }
 
   protected int getColumnIndex(String columnLabel) throws SQLException {
     LOG.finestTrace("getColumnIndex");
@@ -654,5 +674,18 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Timestamp getTimestamp(String columnLabel, Calendar cal) throws SQLException {
     return getTimestamp(getColumnIndex(columnLabel), cal);
+  }
+
+  @Override
+  public <T> T unwrap(Class<T> iface) throws SQLException {
+    if (iface.isInstance(this)) {
+      return iface.cast(this);
+    }
+    throw new BigQueryJdbcException("Cannot unwrap to " + iface.getName());
+  }
+
+  @Override
+  public boolean isWrapperFor(Class<?> iface) throws SQLException {
+    return iface != null && iface.isInstance(this);
   }
 }

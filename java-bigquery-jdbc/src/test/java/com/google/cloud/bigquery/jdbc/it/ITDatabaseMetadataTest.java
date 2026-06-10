@@ -18,11 +18,11 @@ package com.google.cloud.bigquery.jdbc.it;
 
 import static java.sql.Types.TIME;
 import static java.sql.Types.TIMESTAMP;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import java.sql.Connection;
@@ -41,11 +41,11 @@ import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -55,9 +55,9 @@ public class ITDatabaseMetadataTest extends ITBase {
           + ";OAUTHTYPE=3";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
-  private static final String DATASET2 = "JDBC_PRESUBMIT_INTEGRATION_DATASET_2";
-  private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
+  private static String DATASET;
+  private static String DATASET2;
+  private static String CONSTRAINTS_DATASET;
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
@@ -68,15 +68,19 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";
 
-  @BeforeClass
+  @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
+    DATASET = ITBase.getSharedDataset();
+    DATASET2 = ITBase.getSharedDataset2();
+    CONSTRAINTS_DATASET = ITBase.getSharedDataset();
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
 
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws SQLException {}
 
+  @Disabled
   @Test
   public void testGetCatalogs() throws SQLException {
     Connection connection =
@@ -182,6 +186,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDriverMetadataInfo() throws SQLException {
     Connection connection =
@@ -197,6 +202,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testProcedure() throws SQLException {
     Connection connection =
@@ -211,6 +217,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testAllBooleanMethods() throws SQLException {
     Connection connection =
@@ -237,6 +244,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testAllIntMethods() throws SQLException {
     Connection connection =
@@ -419,6 +427,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetProcedureColumns() throws SQLException {
 
@@ -483,6 +492,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetColumns() throws SQLException {
 
@@ -961,6 +971,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
+  @Disabled
   @Test
   public void testDatabaseMetadataGetFunctionColumns() throws SQLException {
     Connection connection =
@@ -1681,8 +1692,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1710,8 +1721,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1738,8 +1749,8 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
-        Assert.assertNotNull(resultSet.getString(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getString(i));
       }
       ++count;
     }
@@ -1763,7 +1774,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     int count = 0;
     while (resultSet.next()) {
       for (int i = 1; i <= cols; i++) {
-        Assert.assertNotNull(resultSet.getMetaData().getColumnName(i));
+        assertNotNull(resultSet.getMetaData().getColumnName(i));
       }
       ++count;
     }

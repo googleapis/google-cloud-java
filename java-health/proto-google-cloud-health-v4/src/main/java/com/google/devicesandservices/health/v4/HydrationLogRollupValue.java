@@ -80,7 +80,20 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
      * Required. The sum of volume in milliliters.
      * </pre>
      *
-     * <code>double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the millilitersSum field is set.
+     */
+    boolean hasMillilitersSum();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The sum of volume in milliliters.
+     * </pre>
+     *
+     * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The millilitersSum.
      */
@@ -169,6 +182,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
                   .Builder.class);
     }
 
+    private int bitField0_;
     public static final int MILLILITERS_SUM_FIELD_NUMBER = 1;
     private double millilitersSum_ = 0D;
 
@@ -179,7 +193,23 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
      * Required. The sum of volume in milliliters.
      * </pre>
      *
-     * <code>double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the millilitersSum field is set.
+     */
+    @java.lang.Override
+    public boolean hasMillilitersSum() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The sum of volume in milliliters.
+     * </pre>
+     *
+     * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The millilitersSum.
      */
@@ -245,7 +275,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(millilitersSum_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeDouble(1, millilitersSum_);
       }
       if (userProvidedUnitLast_
@@ -262,7 +292,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Double.doubleToRawLongBits(millilitersSum_) != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, millilitersSum_);
       }
       if (userProvidedUnitLast_
@@ -289,8 +319,11 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
           (com.google.devicesandservices.health.v4.HydrationLogRollupValue.VolumeQuantityRollup)
               obj;
 
-      if (java.lang.Double.doubleToLongBits(getMillilitersSum())
-          != java.lang.Double.doubleToLongBits(other.getMillilitersSum())) return false;
+      if (hasMillilitersSum() != other.hasMillilitersSum()) return false;
+      if (hasMillilitersSum()) {
+        if (java.lang.Double.doubleToLongBits(getMillilitersSum())
+            != java.lang.Double.doubleToLongBits(other.getMillilitersSum())) return false;
+      }
       if (userProvidedUnitLast_ != other.userProvidedUnitLast_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -303,11 +336,13 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MILLILITERS_SUM_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getMillilitersSum()));
+      if (hasMillilitersSum()) {
+        hash = (37 * hash) + MILLILITERS_SUM_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getMillilitersSum()));
+      }
       hash = (37 * hash) + USER_PROVIDED_UNIT_LAST_FIELD_NUMBER;
       hash = (53 * hash) + userProvidedUnitLast_;
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -522,12 +557,15 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
           com.google.devicesandservices.health.v4.HydrationLogRollupValue.VolumeQuantityRollup
               result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.millilitersSum_ = millilitersSum_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.userProvidedUnitLast_ = userProvidedUnitLast_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -550,7 +588,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
         if (other
             == com.google.devicesandservices.health.v4.HydrationLogRollupValue.VolumeQuantityRollup
                 .getDefaultInstance()) return this;
-        if (java.lang.Double.doubleToRawLongBits(other.getMillilitersSum()) != 0) {
+        if (other.hasMillilitersSum()) {
           setMillilitersSum(other.getMillilitersSum());
         }
         if (other.userProvidedUnitLast_ != 0) {
@@ -622,7 +660,23 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
        * Required. The sum of volume in milliliters.
        * </pre>
        *
-       * <code>double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the millilitersSum field is set.
+       */
+      @java.lang.Override
+      public boolean hasMillilitersSum() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The sum of volume in milliliters.
+       * </pre>
+       *
+       * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The millilitersSum.
        */
@@ -638,7 +692,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
        * Required. The sum of volume in milliliters.
        * </pre>
        *
-       * <code>double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The millilitersSum to set.
        * @return This builder for chaining.
@@ -658,7 +712,7 @@ public final class HydrationLogRollupValue extends com.google.protobuf.Generated
        * Required. The sum of volume in milliliters.
        * </pre>
        *
-       * <code>double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>optional double milliliters_sum = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */

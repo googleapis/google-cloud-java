@@ -923,6 +923,40 @@ public interface UnitOrBuilder
    *
    *
    * <pre>
+   * Optional. Reference to the AppHub Application this unit belongs to.
+   * All resources deployed in this Unit will be associated with the specified
+   * Application.
+   * </pre>
+   *
+   * <code>
+   * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The application.
+   */
+  java.lang.String getApplication();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reference to the AppHub Application this unit belongs to.
+   * All resources deployed in this Unit will be associated with the specified
+   * Application.
+   * </pre>
+   *
+   * <code>
+   * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for application.
+   */
+  com.google.protobuf.ByteString getApplicationBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels on the resource, which can be used for categorization.
    * similar to Kubernetes resource labels.
    * </pre>
@@ -1244,4 +1278,31 @@ public interface UnitOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource location satisfies Zone
+   * Separation constraints. This is false by default.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 10306 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

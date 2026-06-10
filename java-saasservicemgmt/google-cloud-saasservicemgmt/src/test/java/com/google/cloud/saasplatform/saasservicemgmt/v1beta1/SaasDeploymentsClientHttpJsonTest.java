@@ -43,6 +43,7 @@ import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -198,6 +199,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -250,6 +255,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -302,6 +311,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -358,6 +371,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -414,6 +431,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -428,6 +449,10 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
             .addAllLocations(
                 new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+            .setApplicationTemplate(CompositeRef.newBuilder().build())
+            .setBlueprintRepo("blueprintRepo-1887635291")
+            .addAllConditions(new ArrayList<SaasCondition>())
+            .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -468,6 +493,10 @@ public class SaasDeploymentsClientHttpJsonTest {
               .setName(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
               .addAllLocations(
                   new ArrayList<com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Location>())
+              .setApplicationTemplate(CompositeRef.newBuilder().build())
+              .setBlueprintRepo("blueprintRepo-1887635291")
+              .addAllConditions(new ArrayList<SaasCondition>())
+              .setError(Status.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .putAllAnnotations(new HashMap<String, String>())
               .setUid("uid115792")
@@ -1145,6 +1174,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1200,6 +1231,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1255,6 +1288,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1314,6 +1349,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1373,6 +1410,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1390,6 +1429,8 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariableMappings(new ArrayList<VariableMapping>())
             .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
             .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+            .setAppParams(AppParams.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -1433,6 +1474,8 @@ public class SaasDeploymentsClientHttpJsonTest {
               .addAllInputVariableMappings(new ArrayList<VariableMapping>())
               .addAllOutputVariableMappings(new ArrayList<VariableMapping>())
               .setSaas(SaasName.of("[PROJECT]", "[LOCATION]", "[SAAS]").toString())
+              .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
+              .setAppParams(AppParams.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .putAllAnnotations(new HashMap<String, String>())
               .setUid("uid115792")
@@ -1646,12 +1689,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1709,12 +1755,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1772,12 +1821,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1839,12 +1891,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1906,12 +1961,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1931,12 +1989,15 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
             .addAllConditions(new ArrayList<UnitCondition>())
             .setSystemCleanupAt(Timestamp.newBuilder().build())
+            .setApplication("application1554253136")
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1982,12 +2043,15 @@ public class SaasDeploymentsClientHttpJsonTest {
               .setMaintenance(Unit.MaintenanceSettings.newBuilder().build())
               .addAllConditions(new ArrayList<UnitCondition>())
               .setSystemCleanupAt(Timestamp.newBuilder().build())
+              .setApplication("application1554253136")
               .putAllLabels(new HashMap<String, String>())
               .putAllAnnotations(new HashMap<String, String>())
               .setUid("uid115792")
               .setEtag("etag3123477")
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateUnit(unit, updateMask);
@@ -2197,6 +2261,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2256,6 +2321,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2316,6 +2382,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2380,6 +2447,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2444,6 +2512,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2465,6 +2534,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2513,6 +2583,7 @@ public class SaasDeploymentsClientHttpJsonTest {
               .setEtag("etag3123477")
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setDeleteTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateUnitOperation(unitOperation, updateMask);
@@ -2714,6 +2785,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -2770,6 +2842,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -2826,6 +2899,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -2886,6 +2960,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -2946,6 +3021,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -2964,6 +3040,7 @@ public class SaasDeploymentsClientHttpJsonTest {
             .addAllInputVariables(new ArrayList<UnitVariable>())
             .addAllOutputVariables(new ArrayList<UnitVariable>())
             .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+            .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
             .setUid("uid115792")
@@ -3008,6 +3085,7 @@ public class SaasDeploymentsClientHttpJsonTest {
               .addAllInputVariables(new ArrayList<UnitVariable>())
               .addAllOutputVariables(new ArrayList<UnitVariable>())
               .addAllInputVariableDefaults(new ArrayList<UnitVariable>())
+              .setApplicationTemplateComponent(ComponentRef.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .putAllAnnotations(new HashMap<String, String>())
               .setUid("uid115792")

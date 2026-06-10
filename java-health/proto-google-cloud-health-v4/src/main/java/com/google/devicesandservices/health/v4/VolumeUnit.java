@@ -306,7 +306,7 @@ public enum VolumeUnit implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.devicesandservices.health.v4.DataModelProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(6);
   }
 
   private static final VolumeUnit[] VALUES = values();

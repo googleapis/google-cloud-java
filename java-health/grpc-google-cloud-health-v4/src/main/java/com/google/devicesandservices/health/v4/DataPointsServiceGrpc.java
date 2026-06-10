@@ -654,7 +654,14 @@ public final class DataPointsServiceGrpc {
      *
      * <pre>
      * Exports exercise data in TCX format.
-     * Note: While the Authorization section below states that any one of the
+     * **IMPORTANT:** HTTP clients must append `?alt=media` to the
+     * request URL to download the raw TCX file.
+     * Example:
+     * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * Without `alt=media`, the server returns a JSON response
+     * (`ExportExerciseTcxResponse`)
+     * which is intended primarily for gRPC clients.
+     * **Note:** While the Authorization section below states that any one of the
      * listed scopes is accepted, this specific method requires the user to
      * provide both one of the `activity_and_fitness` scopes (`normal` or
      * `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in
@@ -850,7 +857,14 @@ public final class DataPointsServiceGrpc {
      *
      * <pre>
      * Exports exercise data in TCX format.
-     * Note: While the Authorization section below states that any one of the
+     * **IMPORTANT:** HTTP clients must append `?alt=media` to the
+     * request URL to download the raw TCX file.
+     * Example:
+     * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * Without `alt=media`, the server returns a JSON response
+     * (`ExportExerciseTcxResponse`)
+     * which is intended primarily for gRPC clients.
+     * **Note:** While the Authorization section below states that any one of the
      * listed scopes is accepted, this specific method requires the user to
      * provide both one of the `activity_and_fitness` scopes (`normal` or
      * `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in
@@ -1009,7 +1023,14 @@ public final class DataPointsServiceGrpc {
      *
      * <pre>
      * Exports exercise data in TCX format.
-     * Note: While the Authorization section below states that any one of the
+     * **IMPORTANT:** HTTP clients must append `?alt=media` to the
+     * request URL to download the raw TCX file.
+     * Example:
+     * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * Without `alt=media`, the server returns a JSON response
+     * (`ExportExerciseTcxResponse`)
+     * which is intended primarily for gRPC clients.
+     * **Note:** While the Authorization section below states that any one of the
      * listed scopes is accepted, this specific method requires the user to
      * provide both one of the `activity_and_fitness` scopes (`normal` or
      * `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in
@@ -1156,7 +1177,14 @@ public final class DataPointsServiceGrpc {
      *
      * <pre>
      * Exports exercise data in TCX format.
-     * Note: While the Authorization section below states that any one of the
+     * **IMPORTANT:** HTTP clients must append `?alt=media` to the
+     * request URL to download the raw TCX file.
+     * Example:
+     * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * Without `alt=media`, the server returns a JSON response
+     * (`ExportExerciseTcxResponse`)
+     * which is intended primarily for gRPC clients.
+     * **Note:** While the Authorization section below states that any one of the
      * listed scopes is accepted, this specific method requires the user to
      * provide both one of the `activity_and_fitness` scopes (`normal` or
      * `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in
@@ -1308,7 +1336,14 @@ public final class DataPointsServiceGrpc {
      *
      * <pre>
      * Exports exercise data in TCX format.
-     * Note: While the Authorization section below states that any one of the
+     * **IMPORTANT:** HTTP clients must append `?alt=media` to the
+     * request URL to download the raw TCX file.
+     * Example:
+     * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * Without `alt=media`, the server returns a JSON response
+     * (`ExportExerciseTcxResponse`)
+     * which is intended primarily for gRPC clients.
+     * **Note:** While the Authorization section below states that any one of the
      * listed scopes is accepted, this specific method requires the user to
      * provide both one of the `activity_and_fitness` scopes (`normal` or
      * `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in

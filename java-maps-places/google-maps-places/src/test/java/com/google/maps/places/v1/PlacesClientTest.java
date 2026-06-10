@@ -416,6 +416,7 @@ public class PlacesClientTest {
             .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
             .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -529,6 +530,7 @@ public class PlacesClientTest {
             .setConsumerAlert(Place.ConsumerAlert.newBuilder().build())
             .setMovedPlace(PlaceName.of("[PLACE_ID]").toString())
             .setMovedPlaceId("movedPlaceId-933251505")
+            .setTransitStation(TransitStation.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 

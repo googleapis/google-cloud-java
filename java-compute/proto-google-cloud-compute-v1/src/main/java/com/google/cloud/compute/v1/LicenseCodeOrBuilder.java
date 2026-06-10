@@ -30,6 +30,92 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @return A list containing the allowedReplacementLicenses.
+   */
+  java.util.List<java.lang.String> getAllowedReplacementLicensesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @return The count of allowedReplacementLicenses.
+   */
+  int getAllowedReplacementLicensesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedReplacementLicenses at the given index.
+   */
+  java.lang.String getAllowedReplacementLicenses(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
+   * </pre>
+   *
+   * <code>repeated string allowed_replacement_licenses = 195677718;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowedReplacementLicenses at the given index.
+   */
+  com.google.protobuf.ByteString getAllowedReplacementLicensesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
+   * </pre>
+   *
+   * <code>optional bool appendable_to_disk = 16959254;</code>
+   *
+   * @return Whether the appendableToDisk field is set.
+   */
+  boolean hasAppendableToDisk();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
+   * </pre>
+   *
+   * <code>optional bool appendable_to_disk = 16959254;</code>
+   *
+   * @return The appendableToDisk.
+   */
+  boolean getAppendableToDisk();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
@@ -134,6 +220,68 @@ public interface LicenseCodeOrBuilder
    * @return The id.
    */
   long getId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @return A list containing the incompatibleLicenses.
+   */
+  java.util.List<java.lang.String> getIncompatibleLicensesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @return The count of incompatibleLicenses.
+   */
+  int getIncompatibleLicensesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The incompatibleLicenses at the given index.
+   */
+  java.lang.String getIncompatibleLicenses(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
+   * </pre>
+   *
+   * <code>repeated string incompatible_licenses = 334239768;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the incompatibleLicenses at the given index.
+   */
+  com.google.protobuf.ByteString getIncompatibleLicensesBytes(int index);
 
   /**
    *
@@ -247,6 +395,72 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   *
+   * @return Whether the minimumRetention field is set.
+   */
+  boolean hasMinimumRetention();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   *
+   * @return The minimumRetention.
+   */
+  com.google.cloud.compute.v1.Duration getMinimumRetention();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getMinimumRetentionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on multi tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool multi_tenant_only = 274395163;</code>
+   *
+   * @return Whether the multiTenantOnly field is set.
+   */
+  boolean hasMultiTenantOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on multi tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool multi_tenant_only = 274395163;</code>
+   *
+   * @return The multiTenantOnly.
+   */
+  boolean getMultiTenantOnly();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
    * must be a valid 64 bit integer.
    * </pre>
@@ -289,6 +503,124 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
+   * </pre>
+   *
+   * <code>optional bool os_license = 487986406;</code>
+   *
+   * @return Whether the osLicense field is set.
+   */
+  boolean hasOsLicense();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
+   * </pre>
+   *
+   * <code>optional bool os_license = 487986406;</code>
+   *
+   * @return The osLicense.
+   */
+  boolean getOsLicense();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
+   * </pre>
+   *
+   * <code>optional bool removable_from_disk = 25854638;</code>
+   *
+   * @return Whether the removableFromDisk field is set.
+   */
+  boolean hasRemovableFromDisk();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
+   * </pre>
+   *
+   * <code>optional bool removable_from_disk = 25854638;</code>
+   *
+   * @return The removableFromDisk.
+   */
+  boolean getRemovableFromDisk();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @return A list containing the requiredCoattachedLicenses.
+   */
+  java.util.List<java.lang.String> getRequiredCoattachedLicensesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @return The count of requiredCoattachedLicenses.
+   */
+  int getRequiredCoattachedLicensesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The requiredCoattachedLicenses at the given index.
+   */
+  java.lang.String getRequiredCoattachedLicenses(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
+   * </pre>
+   *
+   * <code>repeated string required_coattached_licenses = 129195265;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredCoattachedLicenses at the given index.
+   */
+  com.google.protobuf.ByteString getRequiredCoattachedLicensesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
@@ -323,6 +655,32 @@ public interface LicenseCodeOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on sole tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool sole_tenant_only = 427525559;</code>
+   *
+   * @return Whether the soleTenantOnly field is set.
+   */
+  boolean hasSoleTenantOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, this license can only be used on VMs on sole tenant nodes.
+   * </pre>
+   *
+   * <code>optional bool sole_tenant_only = 427525559;</code>
+   *
+   * @return The soleTenantOnly.
+   */
+  boolean getSoleTenantOnly();
 
   /**
    *
@@ -393,4 +751,46 @@ public interface LicenseCodeOrBuilder
    * @return The transferable.
    */
   boolean getTransferable();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return Whether the updateTimestamp field is set.
+   */
+  boolean hasUpdateTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return The updateTimestamp.
+   */
+  java.lang.String getUpdateTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Last update timestamp inRFC3339
+   * text format.
+   * </pre>
+   *
+   * <code>optional string update_timestamp = 120894752;</code>
+   *
+   * @return The bytes for updateTimestamp.
+   */
+  com.google.protobuf.ByteString getUpdateTimestampBytes();
 }

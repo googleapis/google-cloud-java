@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeVecto
 import static com.google.common.truth.Truth.assertThat;
 import static org.apache.arrow.vector.types.Types.MinorType.INT;
 import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -28,18 +29,28 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Array;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Struct;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.DateMilliVector;
@@ -59,8 +70,19 @@ import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryArrowResultSetTest {
+
+  static {
+    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    TimeZoneCache.reset();
+  }
+
+  @RegisterExtension public static final TimeZoneRule timeZoneRule = new TimeZoneRule("UTC");
 
   private static final FieldList fieldList =
       FieldList.of(
@@ -110,7 +132,7 @@ public class BigQueryArrowResultSetTest {
     Float8Vector float64Field =
         new Float8Vector("float64Field", allocator); // Mapped with StandardSQLTypeName.FLOAT64
     float64Field.allocateNew(2);
-    float64Field.set(0, 1.1f);
+    float64Field.set(0, 1.1);
     float64Field.setValueCount(1);
     VarCharVector stringField =
         new VarCharVector("stringField", allocator); // Mapped with StandardSQLTypeName.STRING
@@ -344,6 +366,66 @@ public class BigQueryArrowResultSetTest {
     assertThat(cnt).isEqualTo(2);
     assertThat(bigQueryArrowResultSetNested.next()).isFalse();
     assertThat(bigQueryArrowResultSetNested.isAfterLast()).isTrue();
+  }
+
+  public static Stream<Arguments> successfulCoercionCases() {
+    return Stream.of(
+        Arguments.of("dateField", LocalDate.class, LocalDate.of(1970, 1, 1)),
+        Arguments.of(11, LocalDate.class, LocalDate.of(1970, 1, 1)),
+        Arguments.of("timeField", LocalTime.class, LocalTime.of(0, 0, 1, 234_000_000)),
+        Arguments.of(10, LocalTime.class, LocalTime.of(0, 0, 1, 234_000_000)),
+        Arguments.of(
+            "timeStampField",
+            LocalDateTime.class,
+            LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000)),
+        Arguments.of(5, LocalDateTime.class, LocalDateTime.of(1970, 1, 1, 0, 0, 0, 10_000_000)),
+        Arguments.of("boolField", Boolean.class, false),
+        Arguments.of(1, Boolean.class, false),
+        Arguments.of("int64Filed", Long.class, 1L),
+        Arguments.of(2, Integer.class, 1),
+        Arguments.of(2, String.class, "1"),
+        Arguments.of("float64Field", Double.class, 1.1),
+        Arguments.of("stringField", String.class, "text1"),
+        Arguments.of("numericField", BigDecimal.class, BigDecimal.ONE),
+        Arguments.of(9, Long.class, 1L),
+        Arguments.of("timeField", Time.class, new Time(1234L)),
+        Arguments.of(10, Time.class, new Time(1234L)),
+        Arguments.of("timeStampField", Timestamp.class, new Timestamp(10L)),
+        Arguments.of(5, Timestamp.class, new Timestamp(10L)),
+        Arguments.of("dateField", Date.class, new Date(0L)),
+        Arguments.of(11, Date.class, new Date(0L)));
+  }
+
+  public static Stream<Arguments> failingCoercionCases() {
+    return Stream.of(
+        Arguments.of("boolField", LocalDate.class),
+        Arguments.of("dateField", Boolean.class),
+        Arguments.of("stringField", BigDecimal.class));
+  }
+
+  @ParameterizedTest
+  @MethodSource("successfulCoercionCases")
+  public void testGetObjectWithType_success(Object column, Class<?> type, Object expectedValue)
+      throws SQLException {
+    assertThat(bigQueryArrowResultSet.next()).isTrue();
+    if (column instanceof String) {
+      assertThat(bigQueryArrowResultSet.getObject((String) column, type)).isEqualTo(expectedValue);
+    } else {
+      assertThat(bigQueryArrowResultSet.getObject((Integer) column, type)).isEqualTo(expectedValue);
+    }
+  }
+
+  @ParameterizedTest
+  @MethodSource("failingCoercionCases")
+  public void testGetObjectWithType_failure(Object column, Class<?> type) throws SQLException {
+    assertThat(bigQueryArrowResultSet.next()).isTrue();
+    if (column instanceof String) {
+      assertThrows(
+          SQLException.class, () -> bigQueryArrowResultSet.getObject((String) column, type));
+    } else {
+      assertThrows(
+          SQLException.class, () -> bigQueryArrowResultSet.getObject((Integer) column, type));
+    }
   }
 
   private int resultSetRowCount(BigQueryArrowResultSet resultSet) throws SQLException {

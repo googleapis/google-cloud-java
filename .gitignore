@@ -86,3 +86,6 @@ monorepo
 *.tfstate.lock.info
 
 .jqwik-database
+
+# Python build artifacts for library_generation tool
+sdk-platform-java/hermetic_build/library_generation/build/

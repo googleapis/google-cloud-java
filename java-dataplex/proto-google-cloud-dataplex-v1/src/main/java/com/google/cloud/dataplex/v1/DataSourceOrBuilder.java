@@ -87,8 +87,13 @@ public interface DataSourceOrBuilder
    * //storage.googleapis.com/projects/PROJECT_ID/buckets/BUCKET_ID
    * or
    * BigQuery table of type "TABLE" for
-   * DataProfileScan/DataQualityScan/DataDocumentationScan Format:
+   * DataProfileScan/DataQualityScan/DataDocumentationScan
+   * Format:
    * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * or
+   * BigQuery dataset for DataDocumentationScan only
+   * Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID
    * </pre>
    *
    * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -107,8 +112,13 @@ public interface DataSourceOrBuilder
    * //storage.googleapis.com/projects/PROJECT_ID/buckets/BUCKET_ID
    * or
    * BigQuery table of type "TABLE" for
-   * DataProfileScan/DataQualityScan/DataDocumentationScan Format:
+   * DataProfileScan/DataQualityScan/DataDocumentationScan
+   * Format:
    * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * or
+   * BigQuery dataset for DataDocumentationScan only
+   * Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID
    * </pre>
    *
    * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -127,8 +137,13 @@ public interface DataSourceOrBuilder
    * //storage.googleapis.com/projects/PROJECT_ID/buckets/BUCKET_ID
    * or
    * BigQuery table of type "TABLE" for
-   * DataProfileScan/DataQualityScan/DataDocumentationScan Format:
+   * DataProfileScan/DataQualityScan/DataDocumentationScan
+   * Format:
    * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * or
+   * BigQuery dataset for DataDocumentationScan only
+   * Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID
    * </pre>
    *
    * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>

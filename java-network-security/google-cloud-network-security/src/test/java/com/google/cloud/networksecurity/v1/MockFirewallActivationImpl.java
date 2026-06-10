@@ -83,6 +83,29 @@ public class MockFirewallActivationImpl extends FirewallActivationImplBase {
   }
 
   @Override
+  public void listProjectFirewallEndpoints(
+      ListFirewallEndpointsRequest request,
+      StreamObserver<ListFirewallEndpointsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFirewallEndpointsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFirewallEndpointsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProjectFirewallEndpoints, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFirewallEndpointsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getFirewallEndpoint(
       GetFirewallEndpointRequest request, StreamObserver<FirewallEndpoint> responseObserver) {
     Object response = responses.poll();
@@ -97,6 +120,28 @@ public class MockFirewallActivationImpl extends FirewallActivationImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method GetFirewallEndpoint, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FirewallEndpoint.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProjectFirewallEndpoint(
+      GetFirewallEndpointRequest request, StreamObserver<FirewallEndpoint> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FirewallEndpoint) {
+      requests.add(request);
+      responseObserver.onNext(((FirewallEndpoint) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProjectFirewallEndpoint, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FirewallEndpoint.class.getName(),
                   Exception.class.getName())));
@@ -126,6 +171,28 @@ public class MockFirewallActivationImpl extends FirewallActivationImplBase {
   }
 
   @Override
+  public void createProjectFirewallEndpoint(
+      CreateFirewallEndpointRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProjectFirewallEndpoint, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteFirewallEndpoint(
       DeleteFirewallEndpointRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -148,6 +215,28 @@ public class MockFirewallActivationImpl extends FirewallActivationImplBase {
   }
 
   @Override
+  public void deleteProjectFirewallEndpoint(
+      DeleteFirewallEndpointRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProjectFirewallEndpoint, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateFirewallEndpoint(
       UpdateFirewallEndpointRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -163,6 +252,28 @@ public class MockFirewallActivationImpl extends FirewallActivationImplBase {
               String.format(
                   "Unrecognized response type %s for method UpdateFirewallEndpoint, expected %s or"
                       + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateProjectFirewallEndpoint(
+      UpdateFirewallEndpointRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProjectFirewallEndpoint, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

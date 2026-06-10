@@ -18,6 +18,9 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.doReturn;
@@ -27,7 +30,9 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.lang.reflect.Field;
+import java.sql.SQLException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -100,5 +105,23 @@ public class BigQueryBaseResultSetTest {
   public void testGetQueryStatistics_no_job() {
     doReturn(job).when(bigQuery).getJob(any(JobId.class));
     assertThat(resultSet.getQueryStatistics()).isNull();
+  }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertTrue(resultSet.isWrapperFor(java.sql.ResultSet.class));
+    assertTrue(resultSet.isWrapperFor(BigQueryBaseResultSet.class));
+    assertFalse(resultSet.isWrapperFor(java.sql.Statement.class));
+    assertFalse(resultSet.isWrapperFor(null));
+
+    Object unwrappedRs = resultSet.unwrap(java.sql.ResultSet.class);
+    assertSame(unwrappedRs, resultSet);
+
+    Object unwrappedImpl = resultSet.unwrap(BigQueryBaseResultSet.class);
+    assertSame(unwrappedImpl, resultSet);
+
+    BigQueryJdbcException e =
+        assertThrows(BigQueryJdbcException.class, () -> resultSet.unwrap(java.sql.Statement.class));
+    assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Statement"));
   }
 }

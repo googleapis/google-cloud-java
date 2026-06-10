@@ -49,6 +49,12 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsResponse;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsResponse;
 import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
@@ -78,6 +84,9 @@ import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsOperationMetadata;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsResponse;
 import com.google.cloud.ces.v1beta.ScheduledEvaluationRun;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceRequest;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceResponse;
@@ -494,6 +503,41 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExportEvaluationRunsRequest, Operation>
+      exportEvaluationRunsMethodDescriptor =
+          MethodDescriptor.<ExportEvaluationRunsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.EvaluationService/ExportEvaluationRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportEvaluationRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsMethodDescriptor =
+          MethodDescriptor.<ExportEvaluationResultsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.EvaluationService/ExportEvaluationResults")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportEvaluationResultsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsMethodDescriptor =
+          MethodDescriptor.<RunEvaluationResultMetricsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.EvaluationService/RunEvaluationResultMetrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunEvaluationResultMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -598,6 +642,26 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
   private final OperationCallable<
           ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
       exportEvaluationsOperationCallable;
+  private final UnaryCallable<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsCallable;
+  private final OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable;
+  private final UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable;
+  private final OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable;
+  private final UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable;
+  private final OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1030,6 +1094,42 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsTransportSettings =
+        GrpcCallSettings.<ExportEvaluationRunsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportEvaluationRunsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ExportEvaluationResultsRequest, Operation>
+        exportEvaluationResultsTransportSettings =
+            GrpcCallSettings.<ExportEvaluationResultsRequest, Operation>newBuilder()
+                .setMethodDescriptor(exportEvaluationResultsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<RunEvaluationResultMetricsRequest, Operation>
+        runEvaluationResultMetricsTransportSettings =
+            GrpcCallSettings.<RunEvaluationResultMetricsRequest, Operation>newBuilder()
+                .setMethodDescriptor(runEvaluationResultMetricsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "evaluation_result_id", String.valueOf(request.getEvaluationResultId()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getEvaluationResultId())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1251,6 +1351,39 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
         callableFactory.createOperationCallable(
             exportEvaluationsTransportSettings,
             settings.exportEvaluationsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportEvaluationRunsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationRunsTransportSettings,
+            settings.exportEvaluationRunsSettings(),
+            clientContext);
+    this.exportEvaluationRunsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationRunsTransportSettings,
+            settings.exportEvaluationRunsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportEvaluationResultsCallable =
+        callableFactory.createUnaryCallable(
+            exportEvaluationResultsTransportSettings,
+            settings.exportEvaluationResultsSettings(),
+            clientContext);
+    this.exportEvaluationResultsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportEvaluationResultsTransportSettings,
+            settings.exportEvaluationResultsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.runEvaluationResultMetricsCallable =
+        callableFactory.createUnaryCallable(
+            runEvaluationResultMetricsTransportSettings,
+            settings.runEvaluationResultMetricsSettings(),
+            clientContext);
+    this.runEvaluationResultMetricsOperationCallable =
+        callableFactory.createOperationCallable(
+            runEvaluationResultMetricsTransportSettings,
+            settings.runEvaluationResultMetricsOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -1516,6 +1649,50 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
   public OperationCallable<ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
       exportEvaluationsOperationCallable() {
     return exportEvaluationsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsCallable() {
+    return exportEvaluationRunsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable() {
+    return exportEvaluationRunsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable() {
+    return exportEvaluationResultsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable() {
+    return exportEvaluationResultsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable() {
+    return runEvaluationResultMetricsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable() {
+    return runEvaluationResultMetricsOperationCallable;
   }
 
   @Override

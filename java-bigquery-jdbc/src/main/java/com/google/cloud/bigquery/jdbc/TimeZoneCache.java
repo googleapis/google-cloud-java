@@ -30,4 +30,8 @@ public class TimeZoneCache {
   public static long getLocalMillis(long millisOfDay) {
     return millisOfDay - defaultTimeZone.getOffset(millisOfDay);
   }
+
+  public static int getOffset(long millis) {
+    return defaultTimeZone.getOffset(millis);
+  }
 }

@@ -374,8 +374,8 @@ public interface RolloutOrBuilder
    * <pre>
    * Optional. The strategy used for executing this Rollout.
    * This strategy will override whatever strategy is specified in the
-   * RolloutType. If not specified on creation, the
-   * strategy from RolloutType will be used.
+   * RolloutKind. If not specified on creation, the
+   * strategy from RolloutKind will be used.
    *
    * There are two supported values strategies which are used to control
    * - "Google.Cloud.Simple.AllAtOnce"
@@ -398,8 +398,8 @@ public interface RolloutOrBuilder
    * <pre>
    * Optional. The strategy used for executing this Rollout.
    * This strategy will override whatever strategy is specified in the
-   * RolloutType. If not specified on creation, the
-   * strategy from RolloutType will be used.
+   * RolloutKind. If not specified on creation, the
+   * strategy from RolloutKind will be used.
    *
    * There are two supported values strategies which are used to control
    * - "Google.Cloud.Simple.AllAtOnce"
@@ -423,7 +423,7 @@ public interface RolloutOrBuilder
    * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
    * against Unit. The filter will be applied to determine the eligible unit
    * population. This filter can only reduce, but not expand the scope of the
-   * rollout. If not provided, the unit_filter from the RolloutType will be
+   * rollout. If not provided, the unit_filter from the RolloutKind will be
    * used.
    * </pre>
    *
@@ -440,7 +440,7 @@ public interface RolloutOrBuilder
    * Optional. CEL(https://github.com/google/cel-spec) formatted filter string
    * against Unit. The filter will be applied to determine the eligible unit
    * population. This filter can only reduce, but not expand the scope of the
-   * rollout. If not provided, the unit_filter from the RolloutType will be
+   * rollout. If not provided, the unit_filter from the RolloutKind will be
    * used.
    * </pre>
    *
@@ -454,12 +454,12 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+   * Required. Immutable. Name of the RolloutKind this rollout is stemming from
    * and adhering to.
    * </pre>
    *
    * <code>
-   * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The rolloutKind.
@@ -470,12 +470,12 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Immutable. Name of the RolloutKind this rollout is stemming from
+   * Required. Immutable. Name of the RolloutKind this rollout is stemming from
    * and adhering to.
    * </pre>
    *
    * <code>
-   * string rollout_kind = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * string rollout_kind = 22 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for rolloutKind.
@@ -583,6 +583,48 @@ public interface RolloutOrBuilder
    */
   com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutControlOrBuilder
       getControlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Output only snapshot of the effective unit filter at
+   * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+   * expression consisting of a conjunction of Rollout.unit_filter and
+   * RolloutKind.unit_filter. This field captures the filter applied by the
+   * Rollout to determine the Unit population. If the associated RolloutKind's
+   * unit_filter is modified after the rollout is started, it will not be
+   * updated here.
+   * </pre>
+   *
+   * <code>
+   * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveUnitFilter.
+   */
+  java.lang.String getEffectiveUnitFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Output only snapshot of the effective unit filter at
+   * Rollout start time. Contains a CEL(https://github.com/google/cel-spec)
+   * expression consisting of a conjunction of Rollout.unit_filter and
+   * RolloutKind.unit_filter. This field captures the filter applied by the
+   * Rollout to determine the Unit population. If the associated RolloutKind's
+   * unit_filter is modified after the rollout is started, it will not be
+   * updated here.
+   * </pre>
+   *
+   * <code>
+   * string effective_unit_filter = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveUnitFilter.
+   */
+  com.google.protobuf.ByteString getEffectiveUnitFilterBytes();
 
   /**
    *
@@ -909,4 +951,50 @@ public interface RolloutOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  boolean hasDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  com.google.protobuf.Timestamp getDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
 }

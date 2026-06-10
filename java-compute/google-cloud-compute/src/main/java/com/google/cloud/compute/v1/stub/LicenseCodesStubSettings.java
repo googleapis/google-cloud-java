@@ -32,8 +32,11 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.GetLicenseCodeRequest;
 import com.google.cloud.compute.v1.LicenseCode;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
@@ -101,18 +104,29 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/compute.readonly")
           .add("https://www.googleapis.com/auth/compute")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
   private final UnaryCallSettings<GetLicenseCodeRequest, LicenseCode> getSettings;
+  private final UnaryCallSettings<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetLicenseCodeRequest, LicenseCode> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyLicenseCodeRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyLicenseCodeRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissions. */
@@ -204,6 +218,8 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
     super(settingsBuilder);
 
     getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -220,6 +236,10 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
   public static class Builder extends StubSettings.Builder<LicenseCodesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetLicenseCodeRequest, LicenseCode> getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyLicenseCodeRequest, Policy>
+        getIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyLicenseCodeRequest, Policy>
+        setIamPolicySettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -274,11 +294,13 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, testIamPermissionsSettings);
+              getSettings, getIamPolicySettings, setIamPolicySettings, testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -286,11 +308,13 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
       super(settings);
 
       getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, testIamPermissionsSettings);
+              getSettings, getIamPolicySettings, setIamPolicySettings, testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -310,6 +334,16 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
           .getSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .testIamPermissionsSettings()
@@ -337,6 +371,18 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetLicenseCodeRequest, LicenseCode> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyLicenseCodeRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyLicenseCodeRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

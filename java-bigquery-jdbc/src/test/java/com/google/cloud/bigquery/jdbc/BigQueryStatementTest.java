@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchema;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -668,5 +669,24 @@ public class BigQueryStatementTest {
     // This should not throw ArithmeticException (/ by zero) and should evaluate safely
     boolean useReadApi = statement.useReadAPI(tableResult);
     assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
+  }
+
+  @Test
+  public void testWrapperMethods() throws SQLException {
+    assertTrue(bigQueryStatement.isWrapperFor(java.sql.Statement.class));
+    assertTrue(bigQueryStatement.isWrapperFor(BigQueryStatement.class));
+    assertFalse(bigQueryStatement.isWrapperFor(java.sql.Connection.class));
+    assertFalse(bigQueryStatement.isWrapperFor(null));
+
+    Object unwrappedStmt = bigQueryStatement.unwrap(java.sql.Statement.class);
+    org.junit.jupiter.api.Assertions.assertSame(unwrappedStmt, bigQueryStatement);
+
+    Object unwrappedImpl = bigQueryStatement.unwrap(BigQueryStatement.class);
+    org.junit.jupiter.api.Assertions.assertSame(unwrappedImpl, bigQueryStatement);
+
+    BigQueryJdbcException e =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
+    assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
   }
 }

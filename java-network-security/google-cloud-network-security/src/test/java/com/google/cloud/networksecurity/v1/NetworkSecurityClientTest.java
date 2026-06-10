@@ -3953,6 +3953,7 @@ public class NetworkSecurityClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setTarget(AuthzPolicy.Target.newBuilder().build())
             .addAllHttpRules(new ArrayList<AuthzPolicy.AuthzRule>())
+            .addAllNetworkRules(new ArrayList<AuthzPolicy.AuthzRule>())
             .setCustomProvider(AuthzPolicy.CustomProvider.newBuilder().build())
             .build();
     mockNetworkSecurity.addResponse(expectedResponse);
@@ -3998,6 +3999,7 @@ public class NetworkSecurityClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setTarget(AuthzPolicy.Target.newBuilder().build())
             .addAllHttpRules(new ArrayList<AuthzPolicy.AuthzRule>())
+            .addAllNetworkRules(new ArrayList<AuthzPolicy.AuthzRule>())
             .setCustomProvider(AuthzPolicy.CustomProvider.newBuilder().build())
             .build();
     mockNetworkSecurity.addResponse(expectedResponse);
@@ -4043,6 +4045,7 @@ public class NetworkSecurityClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setTarget(AuthzPolicy.Target.newBuilder().build())
             .addAllHttpRules(new ArrayList<AuthzPolicy.AuthzRule>())
+            .addAllNetworkRules(new ArrayList<AuthzPolicy.AuthzRule>())
             .setCustomProvider(AuthzPolicy.CustomProvider.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -4103,6 +4106,7 @@ public class NetworkSecurityClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setTarget(AuthzPolicy.Target.newBuilder().build())
             .addAllHttpRules(new ArrayList<AuthzPolicy.AuthzRule>())
+            .addAllNetworkRules(new ArrayList<AuthzPolicy.AuthzRule>())
             .setCustomProvider(AuthzPolicy.CustomProvider.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -4163,6 +4167,7 @@ public class NetworkSecurityClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setTarget(AuthzPolicy.Target.newBuilder().build())
             .addAllHttpRules(new ArrayList<AuthzPolicy.AuthzRule>())
+            .addAllNetworkRules(new ArrayList<AuthzPolicy.AuthzRule>())
             .setCustomProvider(AuthzPolicy.CustomProvider.newBuilder().build())
             .build();
     Operation resultOperation =
