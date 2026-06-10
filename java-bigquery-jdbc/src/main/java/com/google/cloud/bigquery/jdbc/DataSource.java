@@ -86,6 +86,7 @@ public class DataSource implements javax.sql.DataSource {
   private Boolean filterTablesOnDefaultDataset;
   private Integer requestGoogleDriveScope;
   private Integer metadataFetchThreadCount;
+  private Integer queryExecutionThreadCount;
   private String sslTrustStorePath;
   private String sslTrustStorePassword;
   private Map<String, String> labels;
@@ -248,6 +249,9 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
               (ds, val) -> ds.setMetadataFetchThreadCount(Integer.parseInt(val)))
+          .put(
+              BigQueryJdbcUrlUtility.QUERY_EXECUTION_THREAD_COUNT_PROPERTY_NAME,
+              (ds, val) -> ds.setQueryExecutionThreadCount(Integer.parseInt(val)))
           .put(
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               DataSource::setSSLTrustStorePath)
@@ -564,6 +568,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.METADATA_FETCH_THREAD_COUNT_PROPERTY_NAME,
           String.valueOf(this.metadataFetchThreadCount));
+    }
+    if (this.queryExecutionThreadCount != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.QUERY_EXECUTION_THREAD_COUNT_PROPERTY_NAME,
+          String.valueOf(this.queryExecutionThreadCount));
     }
     if (this.sslTrustStorePath != null) {
       connectionProperties.setProperty(
@@ -1084,6 +1093,22 @@ public class DataSource implements javax.sql.DataSource {
     this.metadataFetchThreadCount = metadataFetchThreadCount;
   }
 
+  public Integer getQueryExecutionThreadCount() {
+    return queryExecutionThreadCount != null
+        ? queryExecutionThreadCount
+        : BigQueryJdbcUrlUtility.DEFAULT_QUERY_EXECUTION_THREAD_COUNT_VALUE;
+  }
+
+  public void setQueryExecutionThreadCount(Integer queryExecutionThreadCount) {
+    if (queryExecutionThreadCount != null) {
+      validateMin(
+          queryExecutionThreadCount,
+          2,
+          BigQueryJdbcUrlUtility.QUERY_EXECUTION_THREAD_COUNT_PROPERTY_NAME);
+    }
+    this.queryExecutionThreadCount = queryExecutionThreadCount;
+  }
+
   public String getSSLTrustStorePath() {
     return sslTrustStorePath;
   }
@@ -1385,6 +1410,14 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcRuntimeException(
           String.format(
               "Invalid value for %s. It must be greater than or equal to 0.", propertyName));
+    }
+  }
+
+  private static void validateMin(long val, long min, String propertyName) {
+    if (val < min) {
+      throw new BigQueryJdbcRuntimeException(
+          String.format(
+              "Invalid value for %s. It must be greater than or equal to %d.", propertyName, min));
     }
   }
 }

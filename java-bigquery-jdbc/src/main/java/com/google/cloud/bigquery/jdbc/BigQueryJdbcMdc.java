@@ -26,9 +26,13 @@ import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcMdc.class.getName());
+
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
@@ -82,11 +86,16 @@ class BigQueryJdbcMdc {
 
     @Override
     public Thread newThread(Runnable r) {
-      return delegate.newThread(
-          () -> {
-            clear();
-            r.run();
-          });
+      Thread t =
+          delegate.newThread(
+              () -> {
+                clear();
+                r.run();
+              });
+      if (t != null) {
+        t.setDaemon(true);
+      }
+      return t;
     }
   }
 
@@ -102,11 +111,35 @@ class BigQueryJdbcMdc {
       super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
     }
 
+    private final AtomicBoolean warningLogged = new AtomicBoolean(false);
+
+    private void monitorQueueSaturation(int queueSize) {
+      int corePoolSize = getCorePoolSize();
+      // Warn when queue size is >= corePoolSize * 5, with a minimum of 10 tasks to avoid false
+      // alerts for tiny pools
+      int warnThreshold = Math.max(10, corePoolSize * 5);
+      // Recovery reset threshold is corePoolSize * 2, with a minimum of 4 tasks
+      int recoveryThreshold = Math.max(4, corePoolSize * 2);
+
+      if (queueSize >= warnThreshold) {
+        if (warningLogged.compareAndSet(false, true)) {
+          LOG.warning(
+              "Thread pool is saturating. Core pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
+              corePoolSize, getActiveCount(), queueSize);
+        }
+      } else if (queueSize <= recoveryThreshold) {
+        warningLogged.set(false);
+      }
+    }
+
     @Override
     public void execute(Runnable command) {
       if (command == null) {
         throw new NullPointerException();
       }
+
+      monitorQueueSaturation(getQueue().size());
+
       if (command instanceof MdcFutureTask) {
         super.execute(command);
       } else {

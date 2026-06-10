@@ -26,12 +26,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-public class BigQueryJdbcMdcTest {
+public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
 
   @AfterEach
   public void tearDown() {
@@ -247,6 +248,159 @@ public class BigQueryJdbcMdcTest {
 
       assertTrue(taskLatch.await(5, TimeUnit.SECONDS));
       assertNull(workerMdcVal.get());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testConnectionScopedExecutorLifecycle() throws Exception {
+    String url1 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=Proj1;"
+            + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
+            + "metadataFetchThreadCount=5;queryExecutionThreadCount=6;";
+    String url2 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=Proj2;"
+            + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
+            + "metadataFetchThreadCount=10;queryExecutionThreadCount=12;";
+
+    BigQueryConnection conn1 = new BigQueryConnection(url1);
+    BigQueryConnection conn2 = new BigQueryConnection(url2);
+
+    try {
+      ExecutorService exec1 = conn1.getExecutorService();
+      ExecutorService exec2 = conn2.getExecutorService();
+      ExecutorService metadataExec1 = conn1.getMetadataExecutor();
+      ExecutorService metadataExec2 = conn2.getMetadataExecutor();
+
+      assertTrue(exec1 != exec2);
+      assertTrue(exec1 instanceof ThreadPoolExecutor);
+      assertTrue(exec2 instanceof ThreadPoolExecutor);
+      assertTrue(metadataExec1 instanceof ThreadPoolExecutor);
+      assertTrue(metadataExec2 instanceof ThreadPoolExecutor);
+
+      assertEquals(6, ((ThreadPoolExecutor) exec1).getCorePoolSize());
+      assertEquals(12, ((ThreadPoolExecutor) exec2).getCorePoolSize());
+      assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getCorePoolSize());
+      assertEquals(10, ((ThreadPoolExecutor) metadataExec2).getCorePoolSize());
+
+      try (BigQueryJdbcMdc.MdcCloseable mdc =
+          BigQueryJdbcMdc.registerInstance(conn1.getConnectionId())) {
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference<String> workerMdc = new AtomicReference<>();
+        exec1.execute(
+            () -> {
+              workerMdc.set(BigQueryJdbcMdc.getConnectionId());
+              latch.countDown();
+            });
+        assertTrue(latch.await(5, TimeUnit.SECONDS));
+        assertEquals(conn1.getConnectionId(), workerMdc.get());
+      }
+    } finally {
+      conn1.close();
+      conn2.close();
+    }
+
+    assertTrue(conn1.getExecutorService().isShutdown());
+    assertTrue(conn1.getMetadataExecutor().isShutdown());
+    assertTrue(conn2.getExecutorService().isShutdown());
+    assertTrue(conn2.getMetadataExecutor().isShutdown());
+  }
+
+  @Test
+  public void testThreadPoolSaturatingWarning() throws Exception {
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    try {
+      CountDownLatch blockLatch = new CountDownLatch(1);
+
+      // 1. Submit a task to occupy the single thread
+      executor.execute(
+          () -> {
+            try {
+              blockLatch.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          });
+
+      // 2. Submit 11 tasks to fill the queue and trigger the warning threshold of 10 (Math.max(10,
+      // 1 * 5))
+      for (int i = 0; i < 11; i++) {
+        executor.execute(() -> {});
+      }
+
+      blockLatch.countDown();
+
+      // Verify that warning was logged
+      assertTrue(
+          assertLogContains("Thread pool is saturating"),
+          "Warning message about thread pool saturation was not logged");
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testThreadPoolHysteresisWarning() throws Exception {
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    try {
+      CountDownLatch blockLatch1 = new CountDownLatch(1);
+
+      // 1. Submit a task to occupy the single thread
+      executor.execute(
+          () -> {
+            try {
+              blockLatch1.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          });
+
+      // 2. Submit 11 tasks (queue size becomes 10 upon 11th task submission)
+      for (int i = 0; i < 11; i++) {
+        executor.execute(() -> {});
+      }
+
+      // Verify that warning was logged
+      assertTrue(
+          assertLogContains("Thread pool is saturating"),
+          "Warning message about thread pool saturation was not logged");
+
+      // Clear the captured logs
+      capturedLogs.clear();
+
+      // Release the latch and wait for all tasks to complete, draining the queue to 0 (which is <=
+      // recovery threshold)
+      blockLatch1.countDown();
+
+      // To ensure all tasks have finished, we submit a final task and wait for its completion
+      CountDownLatch syncLatch = new CountDownLatch(1);
+      executor.execute(syncLatch::countDown);
+      assertTrue(syncLatch.await(5, TimeUnit.SECONDS));
+
+      // Now the queue is empty. Let's block the thread again and submit 11 tasks.
+      CountDownLatch blockLatch2 = new CountDownLatch(1);
+      executor.execute(
+          () -> {
+            try {
+              blockLatch2.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          });
+
+      for (int i = 0; i < 11; i++) {
+        executor.execute(() -> {});
+      }
+
+      // Verify warning was logged a second time because the flag was reset
+      assertTrue(
+          assertLogContains("Thread pool is saturating"),
+          "Warning message about thread pool saturation was not logged after recovery");
+
+      blockLatch2.countDown();
     } finally {
       executor.shutdownNow();
     }

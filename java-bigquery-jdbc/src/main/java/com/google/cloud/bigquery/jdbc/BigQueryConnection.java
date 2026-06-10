@@ -62,6 +62,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -173,6 +174,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean useQueryCache;
   String queryDialect;
   int metadataFetchThreadCount;
+  int queryExecutionThreadCount;
   boolean allowLargeResults;
   String destinationTable;
   String destinationDataset;
@@ -209,6 +211,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
+  private final ExecutorService metadataExecutor;
+  private final ExecutorService queryExecutor;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -337,6 +341,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
+      this.queryExecutionThreadCount = ds.getQueryExecutionThreadCount();
       this.requestReason = ds.getRequestReason();
       this.connectionPoolSize = ds.getConnectionPoolSize();
       this.listenerPoolSize = ds.getListenerPoolSize();
@@ -344,6 +349,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+      this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(this.metadataFetchThreadCount);
+      this.queryExecutor = BigQueryJdbcMdc.newFixedThreadPool(this.queryExecutionThreadCount);
     }
   }
 
@@ -954,6 +961,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         statement.close();
       }
       this.openStatements.clear();
+
+      if (this.metadataExecutor != null) {
+        this.metadataExecutor.shutdown();
+        this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS);
+        this.metadataExecutor.shutdownNow();
+      }
+
+      if (this.queryExecutor != null) {
+        this.queryExecutor.shutdown();
+        this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS);
+        this.queryExecutor.shutdownNow();
+      }
     } catch (ConcurrentModificationException ex) {
       throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
@@ -963,6 +982,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
     this.isClosed = true;
+  }
+
+  ExecutorService getExecutorService() {
+    return this.queryExecutor;
+  }
+
+  ExecutorService getMetadataExecutor() {
+    return this.metadataExecutor;
   }
 
   @Override
