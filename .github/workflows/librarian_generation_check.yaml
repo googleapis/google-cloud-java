@@ -11,7 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+<<<<<<< HEAD
 name: Librarian generate diff check
+=======
+name: Librarian - Generate diff check on pull requests
+>>>>>>> main
 on:
   push:
     branches:
@@ -71,8 +75,11 @@ jobs:
         librarian generate --all
     - name: Check for generated code changes
       run: |
-        git diff --exit-code
-    - name: Create issue if previous step fails
+        if [ -n "$(git status --porcelain)" ]; then
+          git status
+          echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
+          exit 1
+        fi    - name: Create issue if previous step fails
       if: ${{ failure() }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

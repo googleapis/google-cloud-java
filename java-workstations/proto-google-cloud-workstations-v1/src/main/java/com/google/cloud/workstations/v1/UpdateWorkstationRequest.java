@@ -135,8 +135,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Mask specifying which fields in the workstation configuration
-   * should be updated.
+   * Required. Mask specifying which fields in the workstation should be
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -153,8 +153,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Mask specifying which fields in the workstation configuration
-   * should be updated.
+   * Required. Mask specifying which fields in the workstation should be
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -171,8 +171,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Mask specifying which fields in the workstation configuration
-   * should be updated.
+   * Required. Mask specifying which fields in the workstation should be
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -190,7 +190,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -210,9 +210,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If set and the workstation configuration is not found, a new
-   * workstation configuration is created. In this situation, update_mask
-   * is ignored.
+   * Optional. If set and the workstation is not found, a new workstation is
+   * created. In this situation, update_mask is ignored.
    * </pre>
    *
    * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -858,8 +857,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -875,8 +874,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -898,8 +897,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -923,8 +922,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -945,8 +944,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -975,8 +974,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -997,8 +996,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1014,8 +1013,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1035,8 +1034,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Mask specifying which fields in the workstation configuration
-     * should be updated.
+     * Required. Mask specifying which fields in the workstation should be
+     * updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1065,7 +1064,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1082,7 +1081,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1103,7 +1102,7 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1124,9 +1123,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set and the workstation configuration is not found, a new
-     * workstation configuration is created. In this situation, update_mask
-     * is ignored.
+     * Optional. If set and the workstation is not found, a new workstation is
+     * created. In this situation, update_mask is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1142,9 +1140,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set and the workstation configuration is not found, a new
-     * workstation configuration is created. In this situation, update_mask
-     * is ignored.
+     * Optional. If set and the workstation is not found, a new workstation is
+     * created. In this situation, update_mask is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1164,9 +1161,8 @@ public final class UpdateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set and the workstation configuration is not found, a new
-     * workstation configuration is created. In this situation, update_mask
-     * is ignored.
+     * Optional. If set and the workstation is not found, a new workstation is
+     * created. In this situation, update_mask is ignored.
      * </pre>
      *
      * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1400,10 +1400,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. SCAN listener port - TCP
+   * Optional. SCAN listener port - TCP
    * </pre>
    *
-   * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scanListenerPortTcp.
    */
@@ -1419,11 +1419,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. SCAN listener port - TLS
+   * Optional. SCAN listener port - TLS
    * </pre>
    *
-   * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scanListenerPortTcpSsl.
    */
@@ -5093,10 +5092,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TCP
+     * Optional. SCAN listener port - TCP
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The scanListenerPortTcp.
      */
@@ -5109,10 +5108,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TCP
+     * Optional. SCAN listener port - TCP
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The scanListenerPortTcp to set.
      * @return This builder for chaining.
@@ -5129,10 +5128,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TCP
+     * Optional. SCAN listener port - TCP
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5149,11 +5148,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TLS
+     * Optional. SCAN listener port - TLS
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The scanListenerPortTcpSsl.
      */
@@ -5166,11 +5164,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TLS
+     * Optional. SCAN listener port - TLS
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The scanListenerPortTcpSsl to set.
      * @return This builder for chaining.
@@ -5187,11 +5184,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. SCAN listener port - TLS
+     * Optional. SCAN listener port - TLS
      * </pre>
      *
-     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

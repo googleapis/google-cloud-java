@@ -1282,6 +1282,414 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void listGoldengateDeployments(
+      ListGoldengateDeploymentsRequest request,
+      StreamObserver<ListGoldengateDeploymentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateDeploymentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateDeploymentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateDeployments, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateDeploymentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateDeployment(
+      GetGoldengateDeploymentRequest request,
+      StreamObserver<GoldengateDeployment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateDeployment) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateDeployment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateDeployment, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateDeployment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createGoldengateDeployment(
+      CreateGoldengateDeploymentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGoldengateDeployment, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGoldengateDeployment(
+      DeleteGoldengateDeploymentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGoldengateDeployment, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void stopGoldengateDeployment(
+      StopGoldengateDeploymentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopGoldengateDeployment, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void startGoldengateDeployment(
+      StartGoldengateDeploymentRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartGoldengateDeployment, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateConnections(
+      ListGoldengateConnectionsRequest request,
+      StreamObserver<ListGoldengateConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateConnections, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateConnection(
+      GetGoldengateConnectionRequest request,
+      StreamObserver<GoldengateConnection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateConnection) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateConnection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateConnection, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateConnection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createGoldengateConnection(
+      CreateGoldengateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGoldengateConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGoldengateConnection(
+      DeleteGoldengateConnectionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGoldengateConnection, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateDeploymentVersion(
+      GetGoldengateDeploymentVersionRequest request,
+      StreamObserver<GoldengateDeploymentVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateDeploymentVersion) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateDeploymentVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateDeploymentVersion,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateDeploymentVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateDeploymentVersions(
+      ListGoldengateDeploymentVersionsRequest request,
+      StreamObserver<ListGoldengateDeploymentVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateDeploymentVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateDeploymentVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateDeploymentVersions,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateDeploymentVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateDeploymentType(
+      GetGoldengateDeploymentTypeRequest request,
+      StreamObserver<GoldengateDeploymentType> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateDeploymentType) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateDeploymentType) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateDeploymentType, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateDeploymentType.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateDeploymentTypes(
+      ListGoldengateDeploymentTypesRequest request,
+      StreamObserver<ListGoldengateDeploymentTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateDeploymentTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateDeploymentTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateDeploymentTypes, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateDeploymentTypesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateDeploymentEnvironment(
+      GetGoldengateDeploymentEnvironmentRequest request,
+      StreamObserver<GoldengateDeploymentEnvironment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateDeploymentEnvironment) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateDeploymentEnvironment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateDeploymentEnvironment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateDeploymentEnvironment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateDeploymentEnvironments(
+      ListGoldengateDeploymentEnvironmentsRequest request,
+      StreamObserver<ListGoldengateDeploymentEnvironmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateDeploymentEnvironmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateDeploymentEnvironmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateDeploymentEnvironments,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateDeploymentEnvironmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateConnectionType(
+      GetGoldengateConnectionTypeRequest request,
+      StreamObserver<GoldengateConnectionType> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateConnectionType) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateConnectionType) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateConnectionType, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateConnectionType.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateConnectionTypes(
+      ListGoldengateConnectionTypesRequest request,
+      StreamObserver<ListGoldengateConnectionTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateConnectionTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateConnectionTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateConnectionTypes, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateConnectionTypesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listDbVersions(
       ListDbVersionsRequest request, StreamObserver<ListDbVersionsResponse> responseObserver) {
     Object response = responses.poll();
@@ -1321,6 +1729,121 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDatabaseCharacterSetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listGoldengateConnectionAssignments(
+      ListGoldengateConnectionAssignmentsRequest request,
+      StreamObserver<ListGoldengateConnectionAssignmentsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListGoldengateConnectionAssignmentsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListGoldengateConnectionAssignmentsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoldengateConnectionAssignments,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListGoldengateConnectionAssignmentsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getGoldengateConnectionAssignment(
+      GetGoldengateConnectionAssignmentRequest request,
+      StreamObserver<GoldengateConnectionAssignment> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GoldengateConnectionAssignment) {
+      requests.add(request);
+      responseObserver.onNext(((GoldengateConnectionAssignment) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGoldengateConnectionAssignment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GoldengateConnectionAssignment.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createGoldengateConnectionAssignment(
+      CreateGoldengateConnectionAssignmentRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGoldengateConnectionAssignment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteGoldengateConnectionAssignment(
+      DeleteGoldengateConnectionAssignmentRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGoldengateConnectionAssignment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void testGoldengateConnectionAssignment(
+      TestGoldengateConnectionAssignmentRequest request,
+      StreamObserver<TestGoldengateConnectionAssignmentResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TestGoldengateConnectionAssignmentResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TestGoldengateConnectionAssignmentResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestGoldengateConnectionAssignment,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TestGoldengateConnectionAssignmentResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

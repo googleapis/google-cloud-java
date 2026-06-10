@@ -245,4 +245,12 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
       awaitOptimizeRestoredTableCallable() {
     return optimizeRestoredTableOperationBaseCallable;
   }
+
+  public BigtableTableAdminStubSettings getSettings() {
+    return settings;
+  }
+
+  public ClientContext getClientContext() {
+    return clientContext;
+  }
 }

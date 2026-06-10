@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryBaseStruct.isStruct;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -93,9 +94,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       int fromIndex,
       int toIndexExclusive,
       Thread ownedThread,
-      BigQuery bigQuery)
+      BigQuery bigQuery,
+      Job job)
       throws SQLException {
-    super(bigQuery, statement, schema, isNested);
+    super(bigQuery, statement, schema, isNested, job);
     LOG.finestTrace("<init>");
     this.totalRows = totalRows;
     this.buffer = buffer;
@@ -128,6 +130,19 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Thread ownedThread,
       BigQuery bigQuery)
       throws SQLException {
+    return of(schema, arrowSchema, totalRows, statement, buffer, ownedThread, bigQuery, null);
+  }
+
+  static BigQueryArrowResultSet of(
+      Schema schema,
+      ArrowSchema arrowSchema,
+      long totalRows,
+      BigQueryStatement statement,
+      BlockingQueue<BigQueryArrowBatchWrapper> buffer,
+      Thread ownedThread,
+      BigQuery bigQuery,
+      Job job)
+      throws SQLException {
     return new BigQueryArrowResultSet(
         schema,
         arrowSchema,
@@ -139,7 +154,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         -1,
         -1,
         ownedThread,
-        bigQuery);
+        bigQuery,
+        job);
   }
 
   BigQueryArrowResultSet() throws SQLException {
@@ -159,7 +175,18 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Schema schema, BigQueryArrowBatchWrapper nestedBatch, int fromIndex, int toIndexExclusive)
       throws SQLException {
     return new BigQueryArrowResultSet(
-        schema, null, -1, null, null, nestedBatch, true, fromIndex, toIndexExclusive, null, null);
+        schema,
+        null,
+        -1,
+        null,
+        null,
+        nestedBatch,
+        true,
+        fromIndex,
+        toIndexExclusive,
+        null,
+        null,
+        null);
   }
 
   private class ArrowDeserializer implements AutoCloseable {
