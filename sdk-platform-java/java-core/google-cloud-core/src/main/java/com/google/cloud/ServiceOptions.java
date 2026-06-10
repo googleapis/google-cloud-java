@@ -666,9 +666,10 @@ public abstract class ServiceOptions<
         && ((GoogleCredentials) credentials).createScopedRequired()) {
       credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
     }
-    if (getUseJwtAccessWithScope() && credentialsToReturn instanceof ServiceAccountCredentials) {
+    if (credentialsToReturn instanceof ServiceAccountCredentials) {
       credentialsToReturn =
-          ((ServiceAccountCredentials) credentialsToReturn).createWithUseJwtAccessWithScope(true);
+          ((ServiceAccountCredentials) credentialsToReturn)
+              .createWithUseJwtAccessWithScope(getUseJwtAccessWithScope());
     }
     return credentialsToReturn;
   }

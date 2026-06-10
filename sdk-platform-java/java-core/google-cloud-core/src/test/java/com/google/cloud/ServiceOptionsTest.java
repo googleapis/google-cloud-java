@@ -631,7 +631,7 @@ class ServiceOptionsTest {
   }
 
   @Test
-  void testGetScopedCredentials_enablesSelfSignedJwtForServiceAccount() {
+  void testGetScopedCredentials_useJwtAccessWithScope_enablesByDefault() {
     TestServiceOptions options =
         TestServiceOptions.newBuilder()
             .setProjectId("project-id")
@@ -643,11 +643,26 @@ class ServiceOptionsTest {
   }
 
   @Test
-  void testGetScopedCredentials_optsOutSelfSignedJwt() {
+  void testGetScopedCredentials_useJwtAccessWithScope_canBeDisabled() {
     TestServiceOptions options =
         new TestServiceOptions.Builder()
             .setProjectId("project-id")
             .setCredentials(credentials)
+            .setUseJwtAccessWithScope(false)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isFalse();
+  }
+
+  @Test
+  void testGetScopedCredentials_useJwtAccessWithScope_overridesCredentials() {
+    ServiceAccountCredentials trueCredentials =
+        ((ServiceAccountCredentials) credentials).createWithUseJwtAccessWithScope(true);
+    TestServiceOptions options =
+        new TestServiceOptions.Builder()
+            .setProjectId("project-id")
+            .setCredentials(trueCredentials)
             .setUseJwtAccessWithScope(false)
             .build();
     com.google.auth.Credentials scoped = options.getScopedCredentials();
