@@ -116,7 +116,7 @@ jobs:
       if: steps.detect_librarian.outputs.has_changes == 'true'
       run: |
         go run github.com/googleapis/librarian/cmd/librarian@latest install
-        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+        echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
     - name: Generate Libraries
