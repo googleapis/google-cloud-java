@@ -126,6 +126,17 @@ public final class TextMessage extends com.google.protobuf.GeneratedMessage
      * <code>PROGRESS = 3;</code>
      */
     PROGRESS(3),
+    /**
+     *
+     *
+     * <pre>
+     * The text is a list of follow-up questions suggested.
+     * Each item in parts is a follow-up question.
+     * </pre>
+     *
+     * <code>FOLLOWUP_QUESTIONS = 4;</code>
+     */
+    FOLLOWUP_QUESTIONS(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -187,6 +198,18 @@ public final class TextMessage extends com.google.protobuf.GeneratedMessage
      */
     public static final int PROGRESS_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The text is a list of follow-up questions suggested.
+     * Each item in parts is a follow-up question.
+     * </pre>
+     *
+     * <code>FOLLOWUP_QUESTIONS = 4;</code>
+     */
+    public static final int FOLLOWUP_QUESTIONS_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -219,6 +242,8 @@ public final class TextMessage extends com.google.protobuf.GeneratedMessage
           return THOUGHT;
         case 3:
           return PROGRESS;
+        case 4:
+          return FOLLOWUP_QUESTIONS;
         default:
           return null;
       }

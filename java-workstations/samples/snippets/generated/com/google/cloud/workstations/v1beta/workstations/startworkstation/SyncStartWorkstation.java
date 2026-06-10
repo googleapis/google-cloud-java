@@ -47,6 +47,7 @@ public class SyncStartWorkstation {
                       .toString())
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setBoostConfig("boostConfig1345260741")
               .build();
       Workstation response = workstationsClient.startWorkstationAsync(request).get();
     }

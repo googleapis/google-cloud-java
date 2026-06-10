@@ -299,6 +299,16 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Evaluation result execution is queued.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    QUEUED(5),
+    /**
+     *
+     *
+     * <pre>
      * Evaluation result execution is running.
      * </pre>
      *
@@ -325,6 +335,16 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * <code>ERROR = 3;</code>
      */
     ERROR(3),
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation result execution was cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 4;</code>
+     */
+    CANCELLED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -348,6 +368,17 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * <code>EXECUTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int EXECUTION_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation result execution is queued.
+     * </pre>
+     *
+     * <code>QUEUED = 5;</code>
+     */
+    public static final int QUEUED_VALUE = 5;
 
     /**
      *
@@ -382,6 +413,17 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      */
     public static final int ERROR_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Evaluation result execution was cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 4;</code>
+     */
+    public static final int CANCELLED_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -408,12 +450,16 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return EXECUTION_STATE_UNSPECIFIED;
+        case 5:
+          return QUEUED;
         case 1:
           return RUNNING;
         case 2:
           return COMPLETED;
         case 3:
           return ERROR;
+        case 4:
+          return CANCELLED;
         default:
           return null;
       }
@@ -648,6 +694,55 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the observedPayload field is set.
+     */
+    boolean hasObservedPayload();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The observedPayload.
+     */
+    com.google.protobuf.Struct getObservedPayload();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getObservedPayloadOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Output only. The expectation that was evaluated.
      * </pre>
      *
@@ -730,7 +825,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
      * @return Whether the semanticSimilarityResult field is set.
      */
     @java.lang.Deprecated
@@ -749,7 +844,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
      * @return The semanticSimilarityResult.
      */
     @java.lang.Deprecated
@@ -1992,6 +2087,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       OBSERVED_TOOL_RESPONSE(3),
       OBSERVED_AGENT_RESPONSE(4),
       OBSERVED_AGENT_TRANSFER(5),
+      OBSERVED_PAYLOAD(9),
       RESULT_NOT_SET(0);
       private final int value;
 
@@ -2019,6 +2115,8 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
             return OBSERVED_AGENT_RESPONSE;
           case 5:
             return OBSERVED_AGENT_TRANSFER;
+          case 9:
+            return OBSERVED_PAYLOAD;
           case 0:
             return RESULT_NOT_SET;
           default:
@@ -2275,6 +2373,72 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.ces.v1beta.AgentTransfer.getDefaultInstance();
     }
 
+    public static final int OBSERVED_PAYLOAD_FIELD_NUMBER = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the observedPayload field is set.
+     */
+    @java.lang.Override
+    public boolean hasObservedPayload() {
+      return resultCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The observedPayload.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getObservedPayload() {
+      if (resultCase_ == 9) {
+        return (com.google.protobuf.Struct) result_;
+      }
+      return com.google.protobuf.Struct.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An observed custom payload.
+     * There are no expectations for custom payloads. This is only used for
+     * metrics calculation. The outcome is always SKIPPED.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getObservedPayloadOrBuilder() {
+      if (resultCase_ == 9) {
+        return (com.google.protobuf.Struct) result_;
+      }
+      return com.google.protobuf.Struct.getDefaultInstance();
+    }
+
     public static final int EXPECTATION_FIELD_NUMBER = 1;
     private com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation expectation_;
 
@@ -2395,7 +2559,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
      * @return Whether the semanticSimilarityResult field is set.
      */
     @java.lang.Override
@@ -2417,7 +2581,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated
      *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+     *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
      * @return The semanticSimilarityResult.
      */
     @java.lang.Override
@@ -2557,6 +2721,9 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(8, getToolInvocationResult());
       }
+      if (resultCase_ == 9) {
+        output.writeMessage(9, (com.google.protobuf.Struct) result_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2602,6 +2769,11 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(8, getToolInvocationResult());
       }
+      if (resultCase_ == 9) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, (com.google.protobuf.Struct) result_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2645,6 +2817,9 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           break;
         case 5:
           if (!getObservedAgentTransfer().equals(other.getObservedAgentTransfer())) return false;
+          break;
+        case 9:
+          if (!getObservedPayload().equals(other.getObservedPayload())) return false;
           break;
         case 0:
         default:
@@ -2690,6 +2865,10 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         case 5:
           hash = (37 * hash) + OBSERVED_AGENT_TRANSFER_FIELD_NUMBER;
           hash = (53 * hash) + getObservedAgentTransfer().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + OBSERVED_PAYLOAD_FIELD_NUMBER;
+          hash = (53 * hash) + getObservedPayload().hashCode();
           break;
         case 0:
         default:
@@ -2861,6 +3040,9 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         if (observedAgentTransferBuilder_ != null) {
           observedAgentTransferBuilder_.clear();
         }
+        if (observedPayloadBuilder_ != null) {
+          observedPayloadBuilder_.clear();
+        }
         expectation_ = null;
         if (expectationBuilder_ != null) {
           expectationBuilder_.dispose();
@@ -2921,22 +3103,22 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           com.google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.expectation_ =
               expectationBuilder_ == null ? expectation_ : expectationBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.outcome_ = outcome_;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.semanticSimilarityResult_ =
               semanticSimilarityResultBuilder_ == null
                   ? semanticSimilarityResult_
                   : semanticSimilarityResultBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.toolInvocationResult_ =
               toolInvocationResultBuilder_ == null
                   ? toolInvocationResult_
@@ -2961,6 +3143,9 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         }
         if (resultCase_ == 5 && observedAgentTransferBuilder_ != null) {
           result.result_ = observedAgentTransferBuilder_.build();
+        }
+        if (resultCase_ == 9 && observedPayloadBuilder_ != null) {
+          result.result_ = observedPayloadBuilder_.build();
         }
       }
 
@@ -3014,6 +3199,11 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
               mergeObservedAgentTransfer(other.getObservedAgentTransfer());
               break;
             }
+          case OBSERVED_PAYLOAD:
+            {
+              mergeObservedPayload(other.getObservedPayload());
+              break;
+            }
           case RESULT_NOT_SET:
             {
               break;
@@ -3049,7 +3239,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetExpectationFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 10
               case 18:
@@ -3086,7 +3276,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
               case 48:
                 {
                   outcome_ = input.readEnum();
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 48
               case 58:
@@ -3094,7 +3284,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetSemanticSimilarityResultFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 58
               case 66:
@@ -3102,9 +3292,16 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetToolInvocationResultFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 66
+              case 74:
+                {
+                  input.readMessage(
+                      internalGetObservedPayloadFieldBuilder().getBuilder(), extensionRegistry);
+                  resultCase_ = 9;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4081,6 +4278,255 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         return observedAgentTransferBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          observedPayloadBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the observedPayload field is set.
+       */
+      @java.lang.Override
+      public boolean hasObservedPayload() {
+        return resultCase_ == 9;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The observedPayload.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Struct getObservedPayload() {
+        if (observedPayloadBuilder_ == null) {
+          if (resultCase_ == 9) {
+            return (com.google.protobuf.Struct) result_;
+          }
+          return com.google.protobuf.Struct.getDefaultInstance();
+        } else {
+          if (resultCase_ == 9) {
+            return observedPayloadBuilder_.getMessage();
+          }
+          return com.google.protobuf.Struct.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setObservedPayload(com.google.protobuf.Struct value) {
+        if (observedPayloadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          observedPayloadBuilder_.setMessage(value);
+        }
+        resultCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setObservedPayload(com.google.protobuf.Struct.Builder builderForValue) {
+        if (observedPayloadBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          observedPayloadBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeObservedPayload(com.google.protobuf.Struct value) {
+        if (observedPayloadBuilder_ == null) {
+          if (resultCase_ == 9 && result_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            result_ =
+                com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) result_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 9) {
+            observedPayloadBuilder_.mergeFrom(value);
+          } else {
+            observedPayloadBuilder_.setMessage(value);
+          }
+        }
+        resultCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearObservedPayload() {
+        if (observedPayloadBuilder_ == null) {
+          if (resultCase_ == 9) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 9) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          observedPayloadBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getObservedPayloadBuilder() {
+        return internalGetObservedPayloadFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.StructOrBuilder getObservedPayloadOrBuilder() {
+        if ((resultCase_ == 9) && (observedPayloadBuilder_ != null)) {
+          return observedPayloadBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 9) {
+            return (com.google.protobuf.Struct) result_;
+          }
+          return com.google.protobuf.Struct.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An observed custom payload.
+       * There are no expectations for custom payloads. This is only used for
+       * metrics calculation. The outcome is always SKIPPED.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct observed_payload = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          internalGetObservedPayloadFieldBuilder() {
+        if (observedPayloadBuilder_ == null) {
+          if (!(resultCase_ == 9)) {
+            result_ = com.google.protobuf.Struct.getDefaultInstance();
+          }
+          observedPayloadBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  (com.google.protobuf.Struct) result_, getParentForChildren(), isClean());
+          result_ = null;
+        }
+        resultCase_ = 9;
+        onChanged();
+        return observedPayloadBuilder_;
+      }
+
       private com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation expectation_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation,
@@ -4102,7 +4548,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * @return Whether the expectation field is set.
        */
       public boolean hasExpectation() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
 
       /**
@@ -4149,7 +4595,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           expectationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4172,7 +4618,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           expectationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4191,7 +4637,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       public Builder mergeExpectation(
           com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation value) {
         if (expectationBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && expectation_ != null
               && expectation_
                   != com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation
@@ -4204,7 +4650,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           expectationBuilder_.mergeFrom(value);
         }
         if (expectation_ != null) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         return this;
@@ -4222,7 +4668,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearExpectation() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         expectation_ = null;
         if (expectationBuilder_ != null) {
           expectationBuilder_.dispose();
@@ -4245,7 +4691,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        */
       public com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation.Builder
           getExpectationBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return internalGetExpectationFieldBuilder().getBuilder();
       }
@@ -4336,7 +4782,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        */
       public Builder setOutcomeValue(int value) {
         outcome_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -4381,7 +4827,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         outcome_ = value.getNumber();
         onChanged();
         return this;
@@ -4401,7 +4847,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearOutcome() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         outcome_ = 0;
         onChanged();
         return this;
@@ -4428,12 +4874,12 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
        * @return Whether the semanticSimilarityResult field is set.
        */
       @java.lang.Deprecated
       public boolean hasSemanticSimilarityResult() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
 
       /**
@@ -4449,7 +4895,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.semantic_similarity_result
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=542
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=600
        * @return The semanticSimilarityResult.
        */
       @java.lang.Deprecated
@@ -4487,7 +4933,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           semanticSimilarityResultBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4512,7 +4958,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           semanticSimilarityResultBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4532,7 +4978,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       public Builder mergeSemanticSimilarityResult(
           com.google.cloud.ces.v1beta.EvaluationResult.SemanticSimilarityResult value) {
         if (semanticSimilarityResultBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)
+          if (((bitField0_ & 0x00000080) != 0)
               && semanticSimilarityResult_ != null
               && semanticSimilarityResult_
                   != com.google.cloud.ces.v1beta.EvaluationResult.SemanticSimilarityResult
@@ -4545,7 +4991,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           semanticSimilarityResultBuilder_.mergeFrom(value);
         }
         if (semanticSimilarityResult_ != null) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
@@ -4564,7 +5010,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Deprecated
       public Builder clearSemanticSimilarityResult() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         semanticSimilarityResult_ = null;
         if (semanticSimilarityResultBuilder_ != null) {
           semanticSimilarityResultBuilder_.dispose();
@@ -4588,7 +5034,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       @java.lang.Deprecated
       public com.google.cloud.ces.v1beta.EvaluationResult.SemanticSimilarityResult.Builder
           getSemanticSimilarityResultBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return internalGetSemanticSimilarityResultFieldBuilder().getBuilder();
       }
@@ -4671,7 +5117,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * @return Whether the toolInvocationResult field is set.
        */
       public boolean hasToolInvocationResult() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
 
       /**
@@ -4722,7 +5168,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           toolInvocationResultBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4747,7 +5193,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         } else {
           toolInvocationResultBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4767,7 +5213,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           com.google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome.ToolInvocationResult
               value) {
         if (toolInvocationResultBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && toolInvocationResult_ != null
               && toolInvocationResult_
                   != com.google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome
@@ -4780,7 +5226,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
           toolInvocationResultBuilder_.mergeFrom(value);
         }
         if (toolInvocationResult_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -4798,7 +5244,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearToolInvocationResult() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         toolInvocationResult_ = null;
         if (toolInvocationResultBuilder_ != null) {
           toolInvocationResultBuilder_.dispose();
@@ -4822,7 +5268,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.ces.v1beta.EvaluationResult.GoldenExpectationOutcome
               .ToolInvocationResult.Builder
           getToolInvocationResultBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return internalGetToolInvocationResultFieldBuilder().getBuilder();
       }
@@ -6604,7 +7050,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.ces.v1beta.EvaluationResult.GoldenResult.TurnReplayResult.tool_invocation_score
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=593
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=651
        * @return The toolInvocationScore.
        */
       @java.lang.Deprecated
@@ -7241,7 +7687,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * @deprecated
        *     google.cloud.ces.v1beta.EvaluationResult.GoldenResult.TurnReplayResult.tool_invocation_score
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=593
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=651
        * @return The toolInvocationScore.
        */
       @java.lang.Override
@@ -9329,7 +9775,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.ces.v1beta.EvaluationResult.GoldenResult.TurnReplayResult.tool_invocation_score
-         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=593
+         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=651
          * @return The toolInvocationScore.
          */
         @java.lang.Override
@@ -9351,7 +9797,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.ces.v1beta.EvaluationResult.GoldenResult.TurnReplayResult.tool_invocation_score
-         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=593
+         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=651
          * @param value The toolInvocationScore to set.
          * @return This builder for chaining.
          */
@@ -9377,7 +9823,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
          *
          * @deprecated
          *     google.cloud.ces.v1beta.EvaluationResult.GoldenResult.TurnReplayResult.tool_invocation_score
-         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=593
+         *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=651
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -17227,7 +17673,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
      * @return Whether the taskCompletionResult field is set.
      */
     @java.lang.Deprecated
@@ -17245,7 +17691,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
      * @return The taskCompletionResult.
      */
     @java.lang.Deprecated
@@ -18136,7 +18582,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
      * @return Whether the taskCompletionResult field is set.
      */
     @java.lang.Override
@@ -18157,7 +18603,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
      * @return The taskCompletionResult.
      */
     @java.lang.Override
@@ -21601,7 +22047,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
        * @return Whether the taskCompletionResult field is set.
        */
       @java.lang.Deprecated
@@ -21621,7 +22067,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.EvaluationResult.ScenarioResult.task_completion_result
-       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=713
+       *     is deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=771
        * @return The taskCompletionResult.
        */
       @java.lang.Deprecated
@@ -34591,7 +35037,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=991
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
    * @return Whether the error field is set.
    */
   @java.lang.Override
@@ -34613,7 +35059,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=991
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
    * @return The error.
    */
   @java.lang.Override
@@ -37666,7 +38112,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=991
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1055
      * @return Whether the error field is set.
      */
     @java.lang.Deprecated
@@ -37687,7 +38133,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=991
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1055
      * @return The error.
      */
     @java.lang.Deprecated

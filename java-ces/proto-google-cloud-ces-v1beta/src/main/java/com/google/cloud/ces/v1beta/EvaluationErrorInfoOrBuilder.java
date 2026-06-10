@@ -107,4 +107,30 @@ public interface EvaluationErrorInfoOrBuilder
    * @return The bytes for sessionId.
    */
   com.google.protobuf.ByteString getSessionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user facing error message.
+   * </pre>
+   *
+   * <code>string user_facing_error_message = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The userFacingErrorMessage.
+   */
+  java.lang.String getUserFacingErrorMessage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user facing error message.
+   * </pre>
+   *
+   * <code>string user_facing_error_message = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for userFacingErrorMessage.
+   */
+  com.google.protobuf.ByteString getUserFacingErrorMessageBytes();
 }

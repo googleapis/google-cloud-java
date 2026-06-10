@@ -42,6 +42,7 @@ public class SyncListWorkstationConfigs {
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       for (WorkstationConfig element :
           workstationsClient.listWorkstationConfigs(request).iterateAll()) {

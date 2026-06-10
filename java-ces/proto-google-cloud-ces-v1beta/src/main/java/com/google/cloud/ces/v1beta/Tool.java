@@ -95,6 +95,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     SYSTEM_TOOL(18),
     AGENT_TOOL(23),
     WIDGET_TOOL(24),
+    REMOTE_AGENT_TOOL(25),
     TOOLTYPE_NOT_SET(0);
     private final int value;
 
@@ -136,6 +137,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           return AGENT_TOOL;
         case 24:
           return WIDGET_TOOL;
+        case 25:
+          return REMOTE_AGENT_TOOL;
         case 0:
           return TOOLTYPE_NOT_SET;
         default:
@@ -812,6 +815,66 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.ces.v1beta.WidgetTool.getDefaultInstance();
   }
 
+  public static final int REMOTE_AGENT_TOOL_FIELD_NUMBER = 25;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the remoteAgentTool field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoteAgentTool() {
+    return toolTypeCase_ == 25;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The remoteAgentTool.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.RemoteAgentTool getRemoteAgentTool() {
+    if (toolTypeCase_ == 25) {
+      return (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_;
+    }
+    return com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.RemoteAgentToolOrBuilder getRemoteAgentToolOrBuilder() {
+    if (toolTypeCase_ == 25) {
+      return (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_;
+    }
+    return com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -979,6 +1042,61 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.ces.v1beta.ExecutionType.UNRECOGNIZED : result;
   }
 
+  public static final int TIMEOUT_FIELD_NUMBER = 22;
+  private com.google.protobuf.Duration timeout_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeout() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTimeout() {
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -996,7 +1114,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -1048,7 +1166,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -1213,7 +1331,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasToolFakeConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -1280,10 +1398,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (toolTypeCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.ces.v1beta.GoogleSearchTool) toolType_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getUpdateTime());
     }
     if (toolTypeCase_ == 8) {
@@ -1317,14 +1435,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (toolTypeCase_ == 18) {
       output.writeMessage(18, (com.google.cloud.ces.v1beta.SystemTool) toolType_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(20, getToolFakeConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(22, getTimeout());
     }
     if (toolTypeCase_ == 23) {
       output.writeMessage(23, (com.google.cloud.ces.v1beta.AgentTool) toolType_);
     }
     if (toolTypeCase_ == 24) {
       output.writeMessage(24, (com.google.cloud.ces.v1beta.WidgetTool) toolType_);
+    }
+    if (toolTypeCase_ == 25) {
+      output.writeMessage(25, (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1353,10 +1477,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.ces.v1beta.GoogleSearchTool) toolType_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCreateTime());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
     }
     if (toolTypeCase_ == 8) {
@@ -1402,8 +1526,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, (com.google.cloud.ces.v1beta.SystemTool) toolType_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getToolFakeConfig());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getTimeout());
     }
     if (toolTypeCase_ == 23) {
       size +=
@@ -1414,6 +1541,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               24, (com.google.cloud.ces.v1beta.WidgetTool) toolType_);
+    }
+    if (toolTypeCase_ == 25) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1433,6 +1565,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (executionType_ != other.executionType_) return false;
+    if (hasTimeout() != other.hasTimeout()) return false;
+    if (hasTimeout()) {
+      if (!getTimeout().equals(other.getTimeout())) return false;
+    }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -1482,6 +1618,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       case 24:
         if (!getWidgetTool().equals(other.getWidgetTool())) return false;
         break;
+      case 25:
+        if (!getRemoteAgentTool().equals(other.getRemoteAgentTool())) return false;
+        break;
       case 0:
       default:
     }
@@ -1502,6 +1641,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + EXECUTION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + executionType_;
+    if (hasTimeout()) {
+      hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeout().hashCode();
+    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1562,6 +1705,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       case 24:
         hash = (37 * hash) + WIDGET_TOOL_FIELD_NUMBER;
         hash = (53 * hash) + getWidgetTool().hashCode();
+        break;
+      case 25:
+        hash = (37 * hash) + REMOTE_AGENT_TOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoteAgentTool().hashCode();
         break;
       case 0:
       default:
@@ -1707,6 +1854,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetTimeoutFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetToolFakeConfigFieldBuilder();
@@ -1750,9 +1898,17 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (widgetToolBuilder_ != null) {
         widgetToolBuilder_.clear();
       }
+      if (remoteAgentToolBuilder_ != null) {
+        remoteAgentToolBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       executionType_ = 0;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1808,34 +1964,38 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.Tool result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.executionType_ = executionType_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.etag_ = etag_;
-      }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.generatedSummary_ = generatedSummary_;
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.generatedSummary_ = generatedSummary_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.toolFakeConfig_ =
             toolFakeConfigBuilder_ == null ? toolFakeConfig_ : toolFakeConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1876,6 +2036,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (toolTypeCase_ == 24 && widgetToolBuilder_ != null) {
         result.toolType_ = widgetToolBuilder_.build();
       }
+      if (toolTypeCase_ == 25 && remoteAgentToolBuilder_ != null) {
+        result.toolType_ = remoteAgentToolBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1892,16 +2055,19 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.Tool.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.executionType_ != 0) {
         setExecutionTypeValue(other.getExecutionTypeValue());
+      }
+      if (other.hasTimeout()) {
+        mergeTimeout(other.getTimeout());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -1911,12 +2077,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getGeneratedSummary().isEmpty()) {
         generatedSummary_ = other.generatedSummary_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasToolFakeConfig()) {
@@ -1978,6 +2144,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             mergeWidgetTool(other.getWidgetTool());
             break;
           }
+        case REMOTE_AGENT_TOOL:
+          {
+            mergeRemoteAgentTool(other.getRemoteAgentTool());
+            break;
+          }
         case TOOLTYPE_NOT_SET:
           {
             break;
@@ -2012,7 +2183,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 10
             case 18:
@@ -2040,14 +2211,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 58
             case 66:
@@ -2074,25 +2245,25 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 executionType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 96
             case 106:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 114
             case 122:
               {
                 generatedSummary_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 122
             case 130:
@@ -2119,9 +2290,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetToolFakeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 162
+            case 178:
+              {
+                input.readMessage(internalGetTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 178
             case 186:
               {
                 input.readMessage(
@@ -2136,6 +2313,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
                 toolTypeCase_ = 24;
                 break;
               } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    internalGetRemoteAgentToolFieldBuilder().getBuilder(), extensionRegistry);
+                toolTypeCase_ = 25;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4767,6 +4951,242 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       return widgetToolBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.RemoteAgentTool,
+            com.google.cloud.ces.v1beta.RemoteAgentTool.Builder,
+            com.google.cloud.ces.v1beta.RemoteAgentToolOrBuilder>
+        remoteAgentToolBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the remoteAgentTool field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoteAgentTool() {
+      return toolTypeCase_ == 25;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The remoteAgentTool.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.RemoteAgentTool getRemoteAgentTool() {
+      if (remoteAgentToolBuilder_ == null) {
+        if (toolTypeCase_ == 25) {
+          return (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_;
+        }
+        return com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+      } else {
+        if (toolTypeCase_ == 25) {
+          return remoteAgentToolBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRemoteAgentTool(com.google.cloud.ces.v1beta.RemoteAgentTool value) {
+      if (remoteAgentToolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toolType_ = value;
+        onChanged();
+      } else {
+        remoteAgentToolBuilder_.setMessage(value);
+      }
+      toolTypeCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRemoteAgentTool(
+        com.google.cloud.ces.v1beta.RemoteAgentTool.Builder builderForValue) {
+      if (remoteAgentToolBuilder_ == null) {
+        toolType_ = builderForValue.build();
+        onChanged();
+      } else {
+        remoteAgentToolBuilder_.setMessage(builderForValue.build());
+      }
+      toolTypeCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRemoteAgentTool(com.google.cloud.ces.v1beta.RemoteAgentTool value) {
+      if (remoteAgentToolBuilder_ == null) {
+        if (toolTypeCase_ == 25
+            && toolType_ != com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance()) {
+          toolType_ =
+              com.google.cloud.ces.v1beta.RemoteAgentTool.newBuilder(
+                      (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          toolType_ = value;
+        }
+        onChanged();
+      } else {
+        if (toolTypeCase_ == 25) {
+          remoteAgentToolBuilder_.mergeFrom(value);
+        } else {
+          remoteAgentToolBuilder_.setMessage(value);
+        }
+      }
+      toolTypeCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRemoteAgentTool() {
+      if (remoteAgentToolBuilder_ == null) {
+        if (toolTypeCase_ == 25) {
+          toolTypeCase_ = 0;
+          toolType_ = null;
+          onChanged();
+        }
+      } else {
+        if (toolTypeCase_ == 25) {
+          toolTypeCase_ = 0;
+          toolType_ = null;
+        }
+        remoteAgentToolBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.RemoteAgentTool.Builder getRemoteAgentToolBuilder() {
+      return internalGetRemoteAgentToolFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.RemoteAgentToolOrBuilder getRemoteAgentToolOrBuilder() {
+      if ((toolTypeCase_ == 25) && (remoteAgentToolBuilder_ != null)) {
+        return remoteAgentToolBuilder_.getMessageOrBuilder();
+      } else {
+        if (toolTypeCase_ == 25) {
+          return (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_;
+        }
+        return com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote agent tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.RemoteAgentTool,
+            com.google.cloud.ces.v1beta.RemoteAgentTool.Builder,
+            com.google.cloud.ces.v1beta.RemoteAgentToolOrBuilder>
+        internalGetRemoteAgentToolFieldBuilder() {
+      if (remoteAgentToolBuilder_ == null) {
+        if (!(toolTypeCase_ == 25)) {
+          toolType_ = com.google.cloud.ces.v1beta.RemoteAgentTool.getDefaultInstance();
+        }
+        remoteAgentToolBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.RemoteAgentTool,
+                com.google.cloud.ces.v1beta.RemoteAgentTool.Builder,
+                com.google.cloud.ces.v1beta.RemoteAgentToolOrBuilder>(
+                (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_,
+                getParentForChildren(),
+                isClean());
+        toolType_ = null;
+      }
+      toolTypeCase_ = 25;
+      onChanged();
+      return remoteAgentToolBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -4856,7 +5276,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4882,7 +5302,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4913,7 +5333,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4989,7 +5409,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5009,7 +5429,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5034,7 +5454,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5075,7 +5495,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExecutionTypeValue(int value) {
       executionType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5118,7 +5538,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       executionType_ = value.getNumber();
       onChanged();
       return this;
@@ -5138,10 +5558,227 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExecutionType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       executionType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration timeout_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        timeoutBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timeout field is set.
+     */
+    public boolean hasTimeout() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timeout.
+     */
+    public com.google.protobuf.Duration getTimeout() {
+      if (timeoutBuilder_ == null) {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      } else {
+        return timeoutBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timeout_ = value;
+      } else {
+        timeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (timeoutBuilder_ == null) {
+        timeout_ = builderForValue.build();
+      } else {
+        timeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTimeout(com.google.protobuf.Duration value) {
+      if (timeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
+        } else {
+          timeout_ = value;
+        }
+      } else {
+        timeoutBuilder_.mergeFrom(value);
+      }
+      if (timeout_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTimeout() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
+        timeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetTimeoutFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
+      if (timeoutBuilder_ != null) {
+        return timeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timeout for the tool execution. If not set, the default
+     * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+     * `ASYNCHRONOUS` tools.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetTimeoutFieldBuilder() {
+      if (timeoutBuilder_ == null) {
+        timeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTimeout(), getParentForChildren(), isClean());
+        timeout_ = null;
+      }
+      return timeoutBuilder_;
     }
 
     private com.google.protobuf.Timestamp createTime_;
@@ -5165,7 +5802,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5211,7 +5848,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5233,7 +5870,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5251,7 +5888,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5262,7 +5899,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5280,7 +5917,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5302,7 +5939,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5377,7 +6014,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5423,7 +6060,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5445,7 +6082,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5463,7 +6100,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5474,7 +6111,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -5492,7 +6129,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5514,7 +6151,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -5639,7 +6276,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5659,7 +6296,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5684,7 +6321,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5757,7 +6394,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       generatedSummary_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5776,7 +6413,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGeneratedSummary() {
       generatedSummary_ = getDefaultInstance().getGeneratedSummary();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5800,7 +6437,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       generatedSummary_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5826,7 +6463,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the toolFakeConfig field is set.
      */
     public boolean hasToolFakeConfig() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5872,7 +6509,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5895,7 +6532,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         toolFakeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5913,7 +6550,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeToolFakeConfig(com.google.cloud.ces.v1beta.ToolFakeConfig value) {
       if (toolFakeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && toolFakeConfig_ != null
             && toolFakeConfig_ != com.google.cloud.ces.v1beta.ToolFakeConfig.getDefaultInstance()) {
           getToolFakeConfigBuilder().mergeFrom(value);
@@ -5924,7 +6561,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         toolFakeConfigBuilder_.mergeFrom(value);
       }
       if (toolFakeConfig_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -5942,7 +6579,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearToolFakeConfig() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       toolFakeConfig_ = null;
       if (toolFakeConfigBuilder_ != null) {
         toolFakeConfigBuilder_.dispose();
@@ -5964,7 +6601,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.ToolFakeConfig.Builder getToolFakeConfigBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetToolFakeConfigFieldBuilder().getBuilder();
     }

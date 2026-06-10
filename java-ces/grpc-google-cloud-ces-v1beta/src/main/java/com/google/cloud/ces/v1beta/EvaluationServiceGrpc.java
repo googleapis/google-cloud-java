@@ -1589,6 +1589,155 @@ public final class EvaluationServiceGrpc {
     return getExportEvaluationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest, com.google.longrunning.Operation>
+      getExportEvaluationRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportEvaluationRuns",
+      requestType = com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest, com.google.longrunning.Operation>
+      getExportEvaluationRunsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest,
+            com.google.longrunning.Operation>
+        getExportEvaluationRunsMethod;
+    if ((getExportEvaluationRunsMethod = EvaluationServiceGrpc.getExportEvaluationRunsMethod)
+        == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getExportEvaluationRunsMethod = EvaluationServiceGrpc.getExportEvaluationRunsMethod)
+            == null) {
+          EvaluationServiceGrpc.getExportEvaluationRunsMethod =
+              getExportEvaluationRunsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExportEvaluationRuns"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier("ExportEvaluationRuns"))
+                      .build();
+        }
+      }
+    }
+    return getExportEvaluationRunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest,
+          com.google.longrunning.Operation>
+      getExportEvaluationResultsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportEvaluationResults",
+      requestType = com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest,
+          com.google.longrunning.Operation>
+      getExportEvaluationResultsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest,
+            com.google.longrunning.Operation>
+        getExportEvaluationResultsMethod;
+    if ((getExportEvaluationResultsMethod = EvaluationServiceGrpc.getExportEvaluationResultsMethod)
+        == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getExportEvaluationResultsMethod =
+                EvaluationServiceGrpc.getExportEvaluationResultsMethod)
+            == null) {
+          EvaluationServiceGrpc.getExportEvaluationResultsMethod =
+              getExportEvaluationResultsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExportEvaluationResults"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier("ExportEvaluationResults"))
+                      .build();
+        }
+      }
+    }
+    return getExportEvaluationResultsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest,
+          com.google.longrunning.Operation>
+      getRunEvaluationResultMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunEvaluationResultMetrics",
+      requestType = com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest,
+          com.google.longrunning.Operation>
+      getRunEvaluationResultMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest,
+            com.google.longrunning.Operation>
+        getRunEvaluationResultMetricsMethod;
+    if ((getRunEvaluationResultMetricsMethod =
+            EvaluationServiceGrpc.getRunEvaluationResultMetricsMethod)
+        == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getRunEvaluationResultMetricsMethod =
+                EvaluationServiceGrpc.getRunEvaluationResultMetricsMethod)
+            == null) {
+          EvaluationServiceGrpc.getRunEvaluationResultMetricsMethod =
+              getRunEvaluationResultMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RunEvaluationResultMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier(
+                              "RunEvaluationResultMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getRunEvaluationResultMetricsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EvaluationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceStub> factory =
@@ -2119,6 +2268,48 @@ public final class EvaluationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportEvaluationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations runs.
+     * </pre>
+     */
+    default void exportEvaluationRuns(
+        com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportEvaluationRunsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations results.
+     * </pre>
+     */
+    default void exportEvaluationResults(
+        com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportEvaluationResultsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs metrics on an existing evaluation result.
+     * </pre>
+     */
+    default void runEvaluationResultMetrics(
+        com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRunEvaluationResultMetricsMethod(), responseObserver);
     }
   }
 
@@ -2689,6 +2880,54 @@ public final class EvaluationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations runs.
+     * </pre>
+     */
+    public void exportEvaluationRuns(
+        com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportEvaluationRunsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations results.
+     * </pre>
+     */
+    public void exportEvaluationResults(
+        com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportEvaluationResultsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs metrics on an existing evaluation result.
+     * </pre>
+     */
+    public void runEvaluationResultMetrics(
+        com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunEvaluationResultMetricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3160,6 +3399,48 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportEvaluationsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations runs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluationRuns(
+        com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportEvaluationRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations results.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluationResults(
+        com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportEvaluationResultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs metrics on an existing evaluation result.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runEvaluationResultMetrics(
+        com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRunEvaluationResultMetricsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3601,6 +3882,45 @@ public final class EvaluationServiceGrpc {
         com.google.cloud.ces.v1beta.ExportEvaluationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations runs.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluationRuns(
+        com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEvaluationRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations results.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluationResults(
+        com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEvaluationResultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs metrics on an existing evaluation result.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runEvaluationResultMetrics(
+        com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunEvaluationResultMetricsMethod(), getCallOptions(), request);
     }
   }
 
@@ -4076,6 +4396,47 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportEvaluationsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations runs.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportEvaluationRuns(com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportEvaluationRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations results.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportEvaluationResults(
+            com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportEvaluationResultsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs metrics on an existing evaluation result.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runEvaluationResultMetrics(
+            com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunEvaluationResultMetricsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_EVALUATION = 0;
@@ -4110,6 +4471,9 @@ public final class EvaluationServiceGrpc {
   private static final int METHODID_DELETE_SCHEDULED_EVALUATION_RUN = 29;
   private static final int METHODID_TEST_PERSONA_VOICE = 30;
   private static final int METHODID_EXPORT_EVALUATIONS = 31;
+  private static final int METHODID_EXPORT_EVALUATION_RUNS = 32;
+  private static final int METHODID_EXPORT_EVALUATION_RESULTS = 33;
+  private static final int METHODID_RUN_EVALUATION_RESULT_METRICS = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4313,6 +4677,21 @@ public final class EvaluationServiceGrpc {
         case METHODID_EXPORT_EVALUATIONS:
           serviceImpl.exportEvaluations(
               (com.google.cloud.ces.v1beta.ExportEvaluationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_EVALUATION_RUNS:
+          serviceImpl.exportEvaluationRuns(
+              (com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_EVALUATION_RESULTS:
+          serviceImpl.exportEvaluationResults(
+              (com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RUN_EVALUATION_RESULT_METRICS:
+          serviceImpl.runEvaluationResultMetrics(
+              (com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -4544,6 +4923,25 @@ public final class EvaluationServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.ces.v1beta.ExportEvaluationsRequest,
                     com.google.longrunning.Operation>(service, METHODID_EXPORT_EVALUATIONS)))
+        .addMethod(
+            getExportEvaluationRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_EVALUATION_RUNS)))
+        .addMethod(
+            getExportEvaluationResultsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_EVALUATION_RESULTS)))
+        .addMethod(
+            getRunEvaluationResultMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_RUN_EVALUATION_RESULT_METRICS)))
         .build();
   }
 
@@ -4627,6 +5025,9 @@ public final class EvaluationServiceGrpc {
                       .addMethod(getDeleteScheduledEvaluationRunMethod())
                       .addMethod(getTestPersonaVoiceMethod())
                       .addMethod(getExportEvaluationsMethod())
+                      .addMethod(getExportEvaluationRunsMethod())
+                      .addMethod(getExportEvaluationResultsMethod())
+                      .addMethod(getRunEvaluationResultMetricsMethod())
                       .build();
         }
       }

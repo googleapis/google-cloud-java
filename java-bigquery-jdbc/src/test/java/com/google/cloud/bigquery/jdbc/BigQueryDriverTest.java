@@ -112,7 +112,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
     Connection connection =
         bigQueryDriver.connect(
             "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;"
+                + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;LogPath=logs/;"
                 + "MyUnknownSetting=Value",
             new Properties());
     assertThat(connection.isClosed()).isFalse();
@@ -134,7 +134,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
         () ->
             bigQueryDriver.connect(
                 "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;"
+                    + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;LogLevel=3;LogPath=logs/;"
                     + "MalformedPropertyWithoutEquals",
                 new Properties()));
 
