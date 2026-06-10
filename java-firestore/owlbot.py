@@ -52,7 +52,7 @@ for version_dir in s.get_staging_dirs():
             s.move(library, excludes=["**/Version.java"])
             # Replace Version.VERSION with FirestoreAdminVersion.VERSION in stub files
             s.replace(
-                "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/**/*.java",
+                "google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminStubSettings.java",
                 "Version.VERSION",
                 "FirestoreAdminVersion.VERSION",
             )
