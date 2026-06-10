@@ -1730,7 +1730,7 @@ libraries:
       name_pretty_override: Financial Services API
       product_documentation_override: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
   - name: firestore
-    version: 3.43.0
+    version: 3.43.1
     apis:
       - path: google/firestore/v1
         java:
@@ -1771,7 +1771,7 @@ libraries:
         - google-cloud-firestore
         - google-cloud-firestore-bom
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5337669
-      released_version: 3.43.0
+      released_version: 3.43.1
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Firestore
       product_documentation_override: https://cloud.google.com/firestore
