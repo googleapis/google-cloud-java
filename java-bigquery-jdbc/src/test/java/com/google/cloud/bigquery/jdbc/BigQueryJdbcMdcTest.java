@@ -299,8 +299,11 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
         assertEquals(conn1.getConnectionId(), workerMdc.get());
       }
     } finally {
-      conn1.close();
-      conn2.close();
+      try {
+        conn1.close();
+      } finally {
+        conn2.close();
+      }
     }
 
     assertTrue(conn1.getExecutorService().isShutdown());

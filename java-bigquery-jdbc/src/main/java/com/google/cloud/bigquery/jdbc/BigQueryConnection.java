@@ -969,27 +969,29 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.queryExecutor.shutdown();
       }
 
-      boolean interrupted = false;
+      boolean interrupted = Thread.currentThread().isInterrupted();
 
       if (this.metadataExecutor != null) {
         try {
-          if (!this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+          if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
             this.metadataExecutor.shutdownNow();
           }
         } catch (InterruptedException e) {
           this.metadataExecutor.shutdownNow();
           interrupted = true;
+          Thread.currentThread().interrupt();
         }
       }
 
       if (this.queryExecutor != null) {
         try {
-          if (!this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+          if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
             this.queryExecutor.shutdownNow();
           }
         } catch (InterruptedException e) {
           this.queryExecutor.shutdownNow();
           interrupted = true;
+          Thread.currentThread().interrupt();
         }
       }
 

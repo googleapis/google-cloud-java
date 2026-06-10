@@ -128,7 +128,9 @@ class BigQueryJdbcMdc {
               corePoolSize, getActiveCount(), queueSize);
         }
       } else if (queueSize <= recoveryThreshold) {
-        warningLogged.set(false);
+        if (warningLogged.get()) {
+          warningLogged.set(false);
+        }
       }
     }
 
