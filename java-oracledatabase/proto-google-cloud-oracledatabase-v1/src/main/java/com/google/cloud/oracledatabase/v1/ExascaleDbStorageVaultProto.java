@@ -149,26 +149,28 @@ public final class ExascaleDbStorageVaultProto extends com.google.protobuf.Gener
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"\232\001\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\257\001\n"
           + "#ListExascaleDbStorageVaultsResponse\022Z\n"
           + "\032exascale_db_storage_vaults\030\001"
           + " \003(\01326.google.cloud.oracledatabase.v1.ExascaleDbStorageVault\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\237\002\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\237\002\n"
           + "#CreateExascaleDbStorageVaultRequest\022L\n"
-          + "\006parent\030\001 \001(\tB<\340A\002\372A6\022"
-          + "4oracledatabase.googleapis.com/ExascaleDbStorageVault\022)\n"
+          + "\006parent\030\001 \001("
+          + "\tB<\340A\002\372A6\0224oracledatabase.googleapis.com/ExascaleDbStorageVault\022)\n"
           + "\034exascale_db_storage_vault_id\030\002 \001(\tB\003\340A\002\022^\n"
-          + "\031exascale_db_storage_vault\030\003"
-          + " \001(\01326.google.cloud.oracledatabase.v1.ExascaleDbStorageVaultB\003\340A\002\022\037\n\n"
+          + "\031exascale_db_storage_vault\030\003 \001(\01326.googl"
+          + "e.cloud.oracledatabase.v1.ExascaleDbStorageVaultB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\222\001\n"
           + "#DeleteExascaleDbStorageVaultRequest\022J\n"
           + "\004name\030\001 \001(\tB<\340A\002\372A6\n"
           + "4oracledatabase.googleapis.com/ExascaleDbStorageVault\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001B\365\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\033ExascaleDbStorageVaultPro"
-          + "toP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatabasepb"
-          + "\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Goog"
-          + "le\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\033Exas"
+          + "caleDbStorageVaultProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledataba"
+          + "sepb;oracledatabasepb\252\002\036Google.Cloud.Ora"
+          + "cleDatabase.V1\312\002\036Google\\Cloud\\OracleData"
+          + "base\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -251,7 +253,7 @@ public final class ExascaleDbStorageVaultProto extends com.google.protobuf.Gener
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListExascaleDbStorageVaultsResponse_descriptor,
             new java.lang.String[] {
-              "ExascaleDbStorageVaults", "NextPageToken",
+              "ExascaleDbStorageVaults", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_oracledatabase_v1_CreateExascaleDbStorageVaultRequest_descriptor =
         getDescriptor().getMessageType(6);
