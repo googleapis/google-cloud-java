@@ -50,10 +50,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.junit.Ignore;
 import org.junit.Test;
 
-@Ignore
 public final class ITGapicUnbufferedReadableByteChannelTest {
   private final byte[] bytes = DataGenerator.base64Characters().genBytes(40);
   private final ByteString data1 = ByteString.copyFrom(bytes, 0, 10);

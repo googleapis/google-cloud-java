@@ -40,7 +40,6 @@ import java.nio.channels.ReadableByteChannel;
 import java.security.SecureRandom;
 import java.util.concurrent.ExecutionException;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -96,7 +95,6 @@ public class ITGzipReadableByteChannelTest {
           .setChecksummedData(getChecksummedData(contentCompressed2))
           .build();
 
-  @Ignore
   public static final class Uncompressed {
     private static final StorageGrpc.StorageImplBase fakeStorage =
         new StorageGrpc.StorageImplBase() {
@@ -173,7 +171,6 @@ public class ITGzipReadableByteChannelTest {
     }
   }
 
-  @Ignore
   public static final class Compressed {
 
     private static final StorageGrpc.StorageImplBase fakeStorage =
