@@ -70,6 +70,7 @@ import java.util.Base64;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -324,6 +325,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
   }
 
   @Test
+  @Disabled("Flaky test: https://github.com/googleapis/google-cloud-java/issues/12871")
   void refreshCredentialsIfRequired_asyncMultiThread() throws IOException, InterruptedException {
     final ClientSideCredentialAccessBoundaryFactory factory =
         getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC);
