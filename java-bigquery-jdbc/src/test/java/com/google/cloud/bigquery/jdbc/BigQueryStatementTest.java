@@ -200,7 +200,7 @@ public class BigQueryStatementTest {
     QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
 
     doReturn(result).when(bigquery).query(jobConfiguration);
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
     // verify the statement's state
@@ -270,7 +270,7 @@ public class BigQueryStatementTest {
     doReturn(mock(QueryStatistics.class)).when(job).getStatistics();
     doReturn(job).when(bigquery).getJob(jobId);
 
-    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result);
+    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result, null);
     assertThat(resultSet).isNotNull();
     assertThat(resultSet).isInstanceOf(BigQueryArrowResultSet.class);
     assertThat(resultSet.isLast()).isFalse(); // as we have 10 rows
@@ -380,7 +380,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(joblessStatementSpy)
-        .processJsonResultSet(tableResultMock);
+        .processJsonResultSet(eq(tableResultMock), any());
 
     Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
     ArgumentCaptor<JobInfo> dryRunCaptor = ArgumentCaptor.forClass(JobInfo.class);
@@ -468,7 +468,9 @@ public class BigQueryStatementTest {
     doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
 
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(resultSetMock).when(joblessStatementSpy).processJsonResultSet(tableResultMock);
+    doReturn(resultSetMock)
+        .when(joblessStatementSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
 
     joblessStatementSpy.executeQuery("SELECT 1");
 
@@ -517,16 +519,18 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
 
     // Force processArrowResultSet to throw the permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
     // Mock processJsonResultSet to return our mock JSON result set
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     statementSpy.processQueryResponse("SELECT 1", tableResultMock);
 
     // Verify that processJsonResultSet was indeed called as a fallback
-    verify(statementSpy).processJsonResultSet(tableResultMock);
+    verify(statementSpy).processJsonResultSet(eq(tableResultMock), any());
     // Verify that currentResultSet is set to the mocked JSON result set
     assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
   }
@@ -546,10 +550,12 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
 
     // Force processArrowResultSet to throw the non-permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     // Assert that the exception is propagated
     try {
@@ -560,7 +566,7 @@ public class BigQueryStatementTest {
     }
 
     // Verify that processJsonResultSet was NOT called
-    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+    verify(statementSpy, Mockito.never()).processJsonResultSet(eq(tableResultMock), any());
   }
 
   private TableResult mockTableResultWithJob(String jobId) {

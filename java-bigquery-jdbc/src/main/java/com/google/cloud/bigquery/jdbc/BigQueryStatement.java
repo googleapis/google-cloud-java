@@ -805,11 +805,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @InternalApi
-  ResultSet processArrowResultSet(TableResult results) throws SQLException {
-    return processArrowResultSet(results, null);
-  }
-
-  @InternalApi
   ResultSet processArrowResultSet(TableResult results, Job job) throws SQLException {
     LOG.finer("++enter++");
 
@@ -979,8 +974,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet =
-            (job != null) ? processArrowResultSet(results, job) : processArrowResultSet(results);
+        resultSet = processArrowResultSet(results, job);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -991,8 +985,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
-      resultSet =
-          (job != null) ? processJsonResultSet(results, job) : processJsonResultSet(results);
+      resultSet = processJsonResultSet(results, job);
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
@@ -1043,10 +1036,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
-  }
-
-  BigQueryJsonResultSet processJsonResultSet(TableResult results) {
-    return processJsonResultSet(results, null);
   }
 
   BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) {
@@ -1282,7 +1271,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * Helper method that determines the optimal number of caches pages to improve read performance
    */
   @VisibleForTesting
-  int getPageCacheSize(Integer numBufferedRows, Schema schema) {
+  int getPageCacheSize(int numBufferedRows, Schema schema) {
     LOG.finer("++enter++");
     // Min number of pages to cache
     final int MIN_CACHE_SIZE = 3;
@@ -1290,7 +1279,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     final int MAX_CACHE_SIZE = 20;
     int numColumns = schema.getFields().size();
     int numCachedPages;
-    long numCachedRows = numBufferedRows == null ? 0 : numBufferedRows.longValue();
+    long numCachedRows = numBufferedRows;
 
     // TODO: Further enhance this logic depending on customer feedback on memory consumption
     if (numCachedRows > 10000) {
@@ -1324,9 +1313,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   // getNumBufferedRows in querySettings is always the same withDefaultValues - 20000 buffer size
   // So, getBufferSize is also 20000.
   private int getBufferSize() {
-    return (this.querySettings == null
-            || this.querySettings.getNumBufferedRows() == null
-            || this.querySettings.getNumBufferedRows() < BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS
+    return (this.querySettings.getNumBufferedRows() < BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS
         ? DEFAULT_BUFFER_SIZE
         : Math.min(this.querySettings.getNumBufferedRows() * 2, 100000));
   }
