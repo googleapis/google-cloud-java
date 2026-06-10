@@ -77,10 +77,11 @@ jobs:
           exit 1
         fi 
     - name: Create issue if previous step fails
-      if: ${{ failure() }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        gh issue create \
-          --title "Librarian generate diff check failed on main branch" \
-          --body "The librarian generate diff check failed on main branch. Please check the logs: https://github.com/googleapis/google-cloud-java/actions/runs/${GITHUB_RUN_ID}"
+      if: ${{ failure() && github.ref == 'refs/heads/main' }}
+      uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
+      with:
+        title: "Librarian generate diff check failed on main branch"
+        body: |
+          The librarian generate diff check failed on main branch.
+
+          Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
