@@ -25,6 +25,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
+import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
@@ -64,6 +65,27 @@ import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
+
+  private static class ProjectPageFetcher implements NextPageFetcher<Project> {
+
+    private static final long serialVersionUID = 1L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
+
+    ProjectPageFetcher(
+        BigQueryOptions serviceOptions,
+        String cursor,
+        Map<BigQueryRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Project> getNextPage() {
+      return listProjects(serviceOptions, requestOptions);
+    }
+  }
 
   private static class DatasetPageFetcher implements NextPageFetcher<Dataset> {
 
@@ -305,6 +327,49 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         datasetCreate.end();
       }
     }
+  }
+
+  @Override
+  public Page<Project> listProjects(ProjectListOption... options) {
+    Span projectsList = null;
+    if (getOptions().isOpenTelemetryTracingEnabled()
+        && getOptions().getOpenTelemetryTracer() != null) {
+      projectsList =
+          getOptions()
+              .getOpenTelemetryTracer()
+              .spanBuilder("com.google.cloud.bigquery.BigQuery.listProjects")
+              .setAllAttributes(otelAttributesFromOptions(options))
+              .startSpan();
+    }
+    try (Scope projectsListScope = projectsList != null ? projectsList.makeCurrent() : null) {
+      return listProjects(getOptions(), optionMap(options));
+    } finally {
+      if (projectsList != null) {
+        projectsList.end();
+      }
+    }
+  }
+
+  private static Page<Project> listProjects(
+      final BigQueryOptions serviceOptions,
+      final Map<BigQueryRpc.Option, ?> optionsMap) {
+    Tuple<String, Iterable<ProjectList.Projects>> result =
+        serviceOptions.getBigQueryRpcV2().listProjects(optionsMap);
+    String nextPageToken = result.x();
+    Iterable<Project> projects = Iterables.transform(
+        result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
+        projectPb -> new Project(
+            projectPb.getId(),
+            projectPb.getNumericId() != null ? String.valueOf(projectPb.getNumericId()) : null,
+            projectPb.getProjectReference() != null ? projectPb.getProjectReference().getProjectId() : null,
+            projectPb.getFriendlyName()
+        )
+    );
+    return new PageImpl<>(
+        new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap),
+        nextPageToken,
+        projects
+    );
   }
 
   @Override

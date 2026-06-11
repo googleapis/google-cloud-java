@@ -38,6 +38,7 @@ import com.google.api.services.bigquery.model.JobReference;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
 import com.google.api.services.bigquery.model.Policy;
+import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.RoutineReference;
@@ -277,6 +278,29 @@ public class HttpBigQueryRpcTest {
           "ListDatasets",
           RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets",
           Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+    }
+
+    @Test
+    public void testListProjects() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#projectList\",\"projects\":[{\"id\":\"p1\",\"friendlyName\":\"Project 1\"}], \"nextPageToken\":\"token2\"}");
+
+      Map<BigQueryRpc.Option, Object> options = new java.util.HashMap<>();
+      options.put(BigQueryRpc.Option.MAX_RESULTS, 10L);
+      options.put(BigQueryRpc.Option.PAGE_TOKEN, "token1");
+
+      com.google.cloud.Tuple<String, Iterable<ProjectList.Projects>> result = rpc.listProjects(options);
+
+      verifyRequest("GET", "/projects?maxResults=10&pageToken=token1");
+      assertEquals("token2", result.x());
+      assertNotNull(result.y());
+      assertEquals("p1", result.y().iterator().next().getId());
+      verifySpan(
+          "com.google.cloud.bigquery.BigQueryRpc.listProjects",
+          "ProjectService",
+          "ListProjects",
+          RESOURCE_PROJECT_PREFIX + PROJECT_ID,
+          Collections.singletonMap("bq.rpc.next_page_token", "token2"));
     }
 
     @Test
