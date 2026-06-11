@@ -41,6 +41,8 @@ import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
@@ -76,6 +78,7 @@ import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -941,16 +944,9 @@ public class BigQueryImplTest {
 
   @Test
   void testGetTableFailureShouldRetryServerErrors() throws IOException {
-    GoogleJsonError error = new GoogleJsonError();
-    error.setMessage("Visibility check was unavailable. Please retry the request");
-    error.setCode(503);
-    GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
-    errorInfo.setReason("backendError");
-    error.setErrors(ImmutableList.of(errorInfo));
-
     when(bigqueryRpcMock.getTableSkipExceptionTranslation(
             PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
-        .thenThrow(new GoogleJsonResponseException(serverErrorResponse(), error))
+        .thenThrow(serviceUnavailableException())
         .thenReturn(TABLE_INFO_WITH_PROJECT.toPb());
 
     bigquery =
@@ -964,6 +960,62 @@ public class BigQueryImplTest {
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
     verify(bigqueryRpcMock, times(2))
         .getTableSkipExceptionTranslation(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  void testGetTableFailureUsesCustomRetryAlgorithm() throws IOException {
+    AtomicReference<Throwable> retryThrowable = new AtomicReference<>();
+    ResultRetryAlgorithm<Object> retryAlgorithm =
+        new ResultRetryAlgorithm<Object>() {
+          @Override
+          public TimedAttemptSettings createNextAttempt(
+              Throwable previousThrowable,
+              Object previousResponse,
+              TimedAttemptSettings previousSettings) {
+            if (previousThrowable != null) {
+              retryThrowable.set(previousThrowable);
+            }
+            return null;
+          }
+
+          @Override
+          public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+            if (previousThrowable != null) {
+              retryThrowable.set(previousThrowable);
+            }
+            return previousThrowable instanceof HttpResponseException;
+          }
+        };
+
+    when(bigqueryRpcMock.getTableSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .thenThrow(serviceUnavailableException())
+        .thenReturn(TABLE_INFO_WITH_PROJECT.toPb());
+
+    bigquery =
+        options.toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .setResultRetryAlgorithm(retryAlgorithm)
+            .build()
+            .getService();
+
+    assertSame(retryAlgorithm, bigquery.getOptions().getResultRetryAlgorithm());
+    Table table = bigquery.getTable(DATASET, TABLE);
+
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+    assertThat(retryThrowable.get()).isInstanceOf(HttpResponseException.class);
+    verify(bigqueryRpcMock, times(2))
+        .getTableSkipExceptionTranslation(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  private static GoogleJsonResponseException serviceUnavailableException() {
+    GoogleJsonError error = new GoogleJsonError();
+    error.setMessage("Visibility check was unavailable. Please retry the request");
+    error.setCode(503);
+    GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
+    errorInfo.setReason("backendError");
+    error.setErrors(ImmutableList.of(errorInfo));
+    return new GoogleJsonResponseException(serverErrorResponse(), error);
   }
 
   private static HttpResponseException.Builder serverErrorResponse() {

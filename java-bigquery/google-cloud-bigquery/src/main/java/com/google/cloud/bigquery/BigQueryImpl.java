@@ -18,12 +18,18 @@ package com.google.cloud.bigquery;
 import static com.google.cloud.bigquery.PolicyHelper.convertFromApiPolicy;
 import static com.google.cloud.bigquery.PolicyHelper.convertToApiPolicy;
 import static com.google.common.base.Preconditions.checkArgument;
+import static java.net.HttpURLConnection.HTTP_BAD_GATEWAY;
+import static java.net.HttpURLConnection.HTTP_GATEWAY_TIMEOUT;
+import static java.net.HttpURLConnection.HTTP_INTERNAL_ERROR;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static java.net.HttpURLConnection.HTTP_UNAVAILABLE;
 
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.QueryRequest;
@@ -65,6 +71,26 @@ import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
+
+  private static final ResultRetryAlgorithm<Object> DEFAULT_GET_TABLE_RETRY_ALGORITHM =
+      new ResultRetryAlgorithm<Object>() {
+        @Override
+        public TimedAttemptSettings createNextAttempt(
+            Throwable previousThrowable,
+            Object previousResponse,
+            TimedAttemptSettings previousSettings) {
+          return null;
+        }
+
+        @Override
+        public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+          if (isRetryableHttpResponseException(previousThrowable)) {
+            return true;
+          }
+          return BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER.shouldRetry(
+              previousThrowable, previousResponse);
+        }
+      };
 
   private static class DatasetPageFetcher implements NextPageFetcher<Dataset> {
 
@@ -1124,19 +1150,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               new Callable<com.google.api.services.bigquery.model.Table>() {
                 @Override
                 public com.google.api.services.bigquery.model.Table call() throws IOException {
-                  try {
-                    return bigQueryRpc.getTableSkipExceptionTranslation(
-                        completeTableId.getProject(),
-                        completeTableId.getDataset(),
-                        completeTableId.getTable(),
-                        optionsMap);
-                  } catch (HttpResponseException e) {
-                    throw new BigQueryException(e);
-                  }
+                  return bigQueryRpc.getTableSkipExceptionTranslation(
+                      completeTableId.getProject(),
+                      completeTableId.getDataset(),
+                      completeTableId.getTable(),
+                      optionsMap);
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              getTableRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1155,6 +1177,25 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         tableGet.end();
       }
     }
+  }
+
+  private ResultRetryAlgorithm<?> getTableRetryAlgorithm() {
+    ResultRetryAlgorithm<?> configuredAlgorithm = getOptions().getResultRetryAlgorithm();
+    if (configuredAlgorithm != BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
+      return configuredAlgorithm;
+    }
+    return DEFAULT_GET_TABLE_RETRY_ALGORITHM;
+  }
+
+  private static boolean isRetryableHttpResponseException(Throwable previousThrowable) {
+    if (!(previousThrowable instanceof HttpResponseException)) {
+      return false;
+    }
+    int statusCode = ((HttpResponseException) previousThrowable).getStatusCode();
+    return statusCode == HTTP_INTERNAL_ERROR
+        || statusCode == HTTP_BAD_GATEWAY
+        || statusCode == HTTP_UNAVAILABLE
+        || statusCode == HTTP_GATEWAY_TIMEOUT;
   }
 
   @Override
