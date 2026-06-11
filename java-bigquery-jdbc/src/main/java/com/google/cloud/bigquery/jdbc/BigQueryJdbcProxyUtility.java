@@ -144,8 +144,8 @@ final class BigQueryJdbcProxyUtility {
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
     } else {
-      httpTransportOptionsBuilder.setHttpTransportFactory(
-          () -> new NetHttpTransport.Builder().build());
+      final HttpTransport defaultTransport = new NetHttpTransport.Builder().build();
+      httpTransportOptionsBuilder.setHttpTransportFactory(() -> defaultTransport);
     }
 
     if (connectTimeout != null) {
@@ -177,9 +177,8 @@ final class BigQueryJdbcProxyUtility {
       HttpRoutePlanner httpRoutePlanner = new DefaultProxyRoutePlanner(proxyHostDetails);
       httpClientBuilder.setRoutePlanner(httpRoutePlanner);
       addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
-    } else {
-      httpClientBuilder.useSystemProperties();
     }
+    httpClientBuilder.useSystemProperties();
 
     if (sslTrustStorePath != null) {
       try (FileInputStream trustStoreStream = new FileInputStream(sslTrustStorePath)) {
