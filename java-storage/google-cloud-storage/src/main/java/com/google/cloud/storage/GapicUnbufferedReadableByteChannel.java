@@ -209,48 +209,49 @@ final class GapicUnbufferedReadableByteChannel
 
   @Override
   public void close() throws IOException {
-    long readLimit = req.getReadLimit();
-    long receivedBytes = fetchOffset.get() - req.getReadOffset();
-    if (readLimit > 0 && receivedBytes > readLimit) {
-      java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName())
-          .warning(
-              String.format(
-                  "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
-                  receivedBytes - readLimit,
-                  req.getBucket(),
-                  req.getObject()));
-    }
-    open = false;
     try {
-      if (leftovers != null) {
-        leftovers.close();
-      }
-      ReadObjectObserver obs = readObjectObserver;
-      if (obs != null && !obs.cancellation.isDone()) {
-        obs.cancel();
-        drainQueue();
-        try {
-          // make sure our waiting doesn't lockup permanently
-          obs.cancellation.get(1, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          InterruptedIOException ioe = new InterruptedIOException();
-          ioe.initCause(e);
-          ioe.addSuppressed(new AsyncStorageTaskException());
-          throw ioe;
-        } catch (ExecutionException e) {
-          Throwable cause = e;
-          if (e.getCause() != null) {
-            cause = e.getCause();
-          }
-          IOException ioException = new IOException(cause);
-          ioException.addSuppressed(new AsyncStorageTaskException());
-          throw ioException;
-        } catch (TimeoutException ignore) {
-        }
+      long readLimit = req.getReadLimit();
+      long receivedBytes = fetchOffset.get() - req.getReadOffset();
+      if (readLimit > 0 && receivedBytes > readLimit) {
+        java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName())
+            .warning(
+                String.format(
+                    "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                    receivedBytes - readLimit, req.getBucket(), req.getObject()));
       }
     } finally {
-      drainQueue();
+      open = false;
+      try {
+        if (leftovers != null) {
+          leftovers.close();
+        }
+        ReadObjectObserver obs = readObjectObserver;
+        if (obs != null && !obs.cancellation.isDone()) {
+          obs.cancel();
+          drainQueue();
+          try {
+            // make sure our waiting doesn't lockup permanently
+            obs.cancellation.get(1, TimeUnit.SECONDS);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            InterruptedIOException ioe = new InterruptedIOException();
+            ioe.initCause(e);
+            ioe.addSuppressed(new AsyncStorageTaskException());
+            throw ioe;
+          } catch (ExecutionException e) {
+            Throwable cause = e;
+            if (e.getCause() != null) {
+              cause = e.getCause();
+            }
+            IOException ioException = new IOException(cause);
+            ioException.addSuppressed(new AsyncStorageTaskException());
+            throw ioException;
+          } catch (TimeoutException ignore) {
+          }
+        }
+      } finally {
+        drainQueue();
+      }
     }
   }
 

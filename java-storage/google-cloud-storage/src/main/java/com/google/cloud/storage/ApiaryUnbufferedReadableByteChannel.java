@@ -184,21 +184,24 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
   @Override
   public void close() throws IOException {
-    long requestedLength = apiaryReadRequest.getByteRangeSpec().length();
-    if (requestedLength >= 0
-        && requestedLength < ByteRangeSpec.EFFECTIVE_INFINITY
-        && totalBytesReadFromNetwork > requestedLength) {
-      java.util.logging.Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName())
-          .warning(
-              String.format(
-                  "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
-                  totalBytesReadFromNetwork - requestedLength,
-                  apiaryReadRequest.getObject().getBucket(),
-                  apiaryReadRequest.getObject().getName()));
-    }
-    open = false;
-    if (sbc != null) {
-      sbc.close();
+    try {
+      long requestedLength = apiaryReadRequest.getByteRangeSpec().length();
+      if (requestedLength >= 0
+          && requestedLength < ByteRangeSpec.EFFECTIVE_INFINITY
+          && totalBytesReadFromNetwork > requestedLength) {
+        java.util.logging.Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName())
+            .warning(
+                String.format(
+                    "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                    totalBytesReadFromNetwork - requestedLength,
+                    apiaryReadRequest.getObject().getBucket(),
+                    apiaryReadRequest.getObject().getName()));
+      }
+    } finally {
+      open = false;
+      if (sbc != null) {
+        sbc.close();
+      }
     }
   }
 
