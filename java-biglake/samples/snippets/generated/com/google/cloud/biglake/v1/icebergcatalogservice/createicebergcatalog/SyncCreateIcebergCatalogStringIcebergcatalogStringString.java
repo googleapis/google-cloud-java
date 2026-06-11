@@ -16,20 +16,18 @@
 
 package com.google.cloud.biglake.v1.samples;
 
-// [START biglake_v1_generated_IcebergCatalogService_CreateIcebergCatalog_async]
-import com.google.api.core.ApiFuture;
-import com.google.cloud.biglake.v1.CreateIcebergCatalogRequest;
+// [START biglake_v1_generated_IcebergCatalogService_CreateIcebergCatalog_StringIcebergcatalogStringString_sync]
 import com.google.cloud.biglake.v1.IcebergCatalog;
 import com.google.cloud.biglake.v1.IcebergCatalogServiceClient;
 import com.google.cloud.biglake.v1.ProjectName;
 
-public class AsyncCreateIcebergCatalog {
+public class SyncCreateIcebergCatalogStringIcebergcatalogStringString {
 
   public static void main(String[] args) throws Exception {
-    asyncCreateIcebergCatalog();
+    syncCreateIcebergCatalogStringIcebergcatalogStringString();
   }
 
-  public static void asyncCreateIcebergCatalog() throws Exception {
+  public static void syncCreateIcebergCatalogStringIcebergcatalogStringString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -37,18 +35,14 @@ public class AsyncCreateIcebergCatalog {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (IcebergCatalogServiceClient icebergCatalogServiceClient =
         IcebergCatalogServiceClient.create()) {
-      CreateIcebergCatalogRequest request =
-          CreateIcebergCatalogRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setIcebergCatalogId("icebergCatalogId504062865")
-              .setIcebergCatalog(IcebergCatalog.newBuilder().build())
-              .setPrimaryLocation("primaryLocation-1140723753")
-              .build();
-      ApiFuture<IcebergCatalog> future =
-          icebergCatalogServiceClient.createIcebergCatalogCallable().futureCall(request);
-      // Do something.
-      IcebergCatalog response = future.get();
+      String parent = ProjectName.of("[PROJECT]").toString();
+      IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+      String icebergCatalogId = "icebergCatalogId504062865";
+      String primaryLocation = "primaryLocation-1140723753";
+      IcebergCatalog response =
+          icebergCatalogServiceClient.createIcebergCatalog(
+              parent, icebergCatalog, icebergCatalogId, primaryLocation);
     }
   }
 }
-// [END biglake_v1_generated_IcebergCatalogService_CreateIcebergCatalog_async]
+// [END biglake_v1_generated_IcebergCatalogService_CreateIcebergCatalog_StringIcebergcatalogStringString_sync]

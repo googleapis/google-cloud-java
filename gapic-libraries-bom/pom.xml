@@ -708,7 +708,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-firestore-bom</artifactId>
-        <version>3.43.0</version><!-- {x-version-update:google-cloud-firestore:current} -->
+        <version>3.43.1</version><!-- {x-version-update:google-cloud-firestore:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
