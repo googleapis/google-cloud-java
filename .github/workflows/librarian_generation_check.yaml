@@ -11,13 +11,19 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-name: Librarian - Generate diff check on pull requests
+name: Librarian - Generate diff check on main
 on:
-  pull_request:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
 
 jobs:
   library_generation:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      issues: write
     steps:
     - uses: actions/checkout@v4
       with:
@@ -70,3 +76,12 @@ jobs:
           echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
           exit 1
         fi
+    - name: Create issue if previous step fails
+      if: ${{ failure() && github.ref == 'refs/heads/main' }}
+      uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
+      with:
+        title: "Librarian generate diff check failed on main branch"
+        body: |
+          The librarian generate diff check failed on main branch.
+
+          Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

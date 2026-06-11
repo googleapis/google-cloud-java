@@ -21,19 +21,17 @@
 package com.google.cloud.biglake.v1;
 
 @com.google.protobuf.Generated
-public interface UpdateIcebergNamespaceRequestOrBuilder
+public interface ReportIcebergTableMetricsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.biglake.v1.UpdateIcebergNamespaceRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The namespace to update.
-   *
-   * The namespace's `name` field is used to identify the namespace to update.
-   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+   * Required. Table to report metrics for in the format:
+   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -48,10 +46,8 @@ public interface UpdateIcebergNamespaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The namespace to update.
-   *
-   * The namespace's `name` field is used to identify the namespace to update.
-   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+   * Required. Table to report metrics for in the format:
+   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -66,42 +62,36 @@ public interface UpdateIcebergNamespaceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The update to apply to the namespace.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.cloud.biglake.v1.IcebergNamespaceUpdate iceberg_namespace_update = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return Whether the icebergNamespaceUpdate field is set.
+   * @return Whether the httpBody field is set.
    */
-  boolean hasIcebergNamespaceUpdate();
+  boolean hasHttpBody();
 
   /**
    *
    *
    * <pre>
-   * Required. The update to apply to the namespace.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.cloud.biglake.v1.IcebergNamespaceUpdate iceberg_namespace_update = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The icebergNamespaceUpdate.
+   * @return The httpBody.
    */
-  com.google.cloud.biglake.v1.IcebergNamespaceUpdate getIcebergNamespaceUpdate();
+  com.google.api.HttpBody getHttpBody();
 
   /**
    *
    *
    * <pre>
-   * Required. The update to apply to the namespace.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.cloud.biglake.v1.IcebergNamespaceUpdate iceberg_namespace_update = 2 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
-  com.google.cloud.biglake.v1.IcebergNamespaceUpdateOrBuilder getIcebergNamespaceUpdateOrBuilder();
+  com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder();
 }
