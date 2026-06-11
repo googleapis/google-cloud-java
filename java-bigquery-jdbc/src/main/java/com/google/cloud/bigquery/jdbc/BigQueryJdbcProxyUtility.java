@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.cloud.bigquery.storage.v1.stub.BigQueryReadStubSettings.defaultGrpcTransportProviderBuilder;
 
-import com.google.api.client.googleapis.GoogleUtils;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.v5.Apache5HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -37,15 +36,11 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
 import org.apache.hc.client5.http.auth.AuthScope;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
 import org.apache.hc.client5.http.impl.DefaultAuthenticationStrategy;
@@ -149,20 +144,10 @@ final class BigQueryJdbcProxyUtility {
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
     } else {
-      // Default to NetHttpTransport configured with a MergedTrustManager that trusts
-      // both the JVM's default trust store and Google's bundled certificate store.
+      // Default to NetHttpTransport which automatically respects the JVM's default trust store
+      // (cacerts or javax.net.ssl.trustStore).
       httpTransportOptionsBuilder.setHttpTransportFactory(
-          () -> {
-            try {
-              SSLContext sslContext = createMergedSslContext();
-              return new NetHttpTransport.Builder()
-                  .setSslSocketFactory(sslContext.getSocketFactory())
-                  .build();
-            } catch (GeneralSecurityException | IOException e) {
-              throw new BigQueryJdbcRuntimeException(
-                  "Failed to configure SSL for HTTP transport", e);
-            }
-          });
+          () -> new NetHttpTransport.Builder().build());
     }
 
     if (connectTimeout != null) {
@@ -193,10 +178,8 @@ final class BigQueryJdbcProxyUtility {
                   proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME)));
       HttpRoutePlanner httpRoutePlanner = new DefaultProxyRoutePlanner(proxyHostDetails);
       httpClientBuilder.setRoutePlanner(httpRoutePlanner);
-      addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
-    } else {
-      httpClientBuilder.useSystemProperties();
     }
+    httpClientBuilder.useSystemProperties();
 
     if (sslTrustStorePath != null) {
       try (FileInputStream trustStoreStream = new FileInputStream(sslTrustStorePath)) {
@@ -212,18 +195,14 @@ final class BigQueryJdbcProxyUtility {
         SSLContext sslContext = SSLContext.getInstance("TLS");
         sslContext.init(null, trustManagerFactory.getTrustManagers(), null);
 
-        setSslSocketFactory(httpClientBuilder, sslContext);
+        SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        httpClientBuilder.setConnectionManager(
+            PoolingHttpClientConnectionManagerBuilder.create()
+                .setSSLSocketFactory(sslSocketFactory)
+                .build());
       } catch (IOException | GeneralSecurityException e) {
         throw new BigQueryJdbcRuntimeException(
             "Failed to configure SSL TrustStore for HTTP transport", e);
-      }
-    } else {
-      // Default to MergedTrustManager when no custom SSLTrustStore is specified, ensuring standard
-      // JVM properties (like javax.net.ssl.trustStore) and google.p12 fallback are respected.
-      try {
-        setSslSocketFactory(httpClientBuilder, createMergedSslContext());
-      } catch (IOException | GeneralSecurityException e) {
-        throw new BigQueryJdbcRuntimeException("Failed to configure SSL for HTTP transport", e);
       }
     }
     addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
@@ -337,92 +316,5 @@ final class BigQueryJdbcProxyUtility {
       builder.setPassword(proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PASSWORD_PROPERTY_NAME));
     }
     return builder.build();
-  }
-
-  private static SSLContext createMergedSslContext() throws GeneralSecurityException, IOException {
-    SSLContext sslContext = SSLContext.getInstance("TLS");
-    sslContext.init(null, new TrustManager[] {createMergedTrustManager()}, null);
-    return sslContext;
-  }
-
-  private static void setSslSocketFactory(
-      HttpClientBuilder httpClientBuilder, SSLContext sslContext) {
-    SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext);
-    httpClientBuilder.setConnectionManager(
-        PoolingHttpClientConnectionManagerBuilder.create()
-            .setSSLSocketFactory(sslSocketFactory)
-            .build());
-  }
-
-  private static X509TrustManager createMergedTrustManager()
-      throws GeneralSecurityException, IOException {
-    // 1. Get default JVM TrustManager
-    TrustManagerFactory defaultTmf =
-        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-    defaultTmf.init((KeyStore) null);
-    X509TrustManager defaultTm = findX509TrustManager(defaultTmf);
-
-    // 2. Get Google TrustManager
-    KeyStore googleKeystore = GoogleUtils.getCertificateTrustStore();
-    TrustManagerFactory googleTmf =
-        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-    googleTmf.init(googleKeystore);
-    X509TrustManager googleTm = findX509TrustManager(googleTmf);
-
-    if (defaultTm == null || googleTm == null) {
-      throw new IllegalStateException("Could not find X509TrustManager");
-    }
-
-    return new MergedTrustManager(defaultTm, googleTm);
-  }
-
-  private static X509TrustManager findX509TrustManager(TrustManagerFactory tmf) {
-    for (TrustManager tm : tmf.getTrustManagers()) {
-      if (tm instanceof X509TrustManager) {
-        return (X509TrustManager) tm;
-      }
-    }
-    return null;
-  }
-
-  private static class MergedTrustManager implements X509TrustManager {
-    private final X509TrustManager defaultTm;
-    private final X509TrustManager googleTm;
-
-    public MergedTrustManager(X509TrustManager defaultTm, X509TrustManager googleTm) {
-      this.defaultTm = defaultTm;
-      this.googleTm = googleTm;
-    }
-
-    @Override
-    public X509Certificate[] getAcceptedIssuers() {
-      X509Certificate[] defaultIssuers = defaultTm.getAcceptedIssuers();
-      X509Certificate[] googleIssuers = googleTm.getAcceptedIssuers();
-      X509Certificate[] result = new X509Certificate[defaultIssuers.length + googleIssuers.length];
-      System.arraycopy(defaultIssuers, 0, result, 0, defaultIssuers.length);
-      System.arraycopy(googleIssuers, 0, result, defaultIssuers.length, googleIssuers.length);
-      return result;
-    }
-
-    @Override
-    public void checkClientTrusted(X509Certificate[] chain, String authType)
-        throws CertificateException {
-      try {
-        defaultTm.checkClientTrusted(chain, authType);
-      } catch (CertificateException e) {
-        googleTm.checkClientTrusted(chain, authType);
-      }
-    }
-
-    @Override
-    public void checkServerTrusted(X509Certificate[] chain, String authType)
-        throws CertificateException {
-      try {
-        defaultTm.checkServerTrusted(chain, authType);
-      } catch (CertificateException e) {
-        // Fall back to Google's trusted certs
-        googleTm.checkServerTrusted(chain, authType);
-      }
-    }
   }
 }
