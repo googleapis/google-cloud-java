@@ -1631,7 +1631,7 @@ libraries:
       name_pretty_override: Financial Services API
       product_documentation_override: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
   - name: firestore
-    version: 3.43.0
+    version: 3.43.1
     apis:
       - path: google/firestore/v1
         java:
