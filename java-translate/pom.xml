@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-translate-v3beta1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-translate</artifactId>
         <version>2.93.0</version><!-- {x-version-update:google-cloud-translate:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-translate</module>
     <module>grpc-google-cloud-translate-v3beta1</module>
     <module>grpc-google-cloud-translate-v3</module>
     <module>proto-google-cloud-translate-v3beta1</module>
     <module>proto-google-cloud-translate-v3</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-translate-bom</module>
   </modules>
 

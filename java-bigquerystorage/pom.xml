@@ -74,6 +74,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerystorage-v1beta</artifactId>
@@ -129,7 +130,6 @@
         <artifactId>google-cloud-bigquerystorage</artifactId>
         <version>3.29.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
       </dependency>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquery</artifactId>
@@ -142,6 +142,8 @@
           </exclusion>
         </exclusions>
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
+
     </dependencies>
   </dependencyManagement>
 
@@ -188,6 +190,7 @@
   </build>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-bigquerystorage</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta1</module>
     <module>grpc-google-cloud-bigquerystorage-v1beta2</module>
@@ -199,6 +202,7 @@
     <module>proto-google-cloud-bigquerystorage-v1</module>
     <module>proto-google-cloud-bigquerystorage-v1alpha</module>
     <module>proto-google-cloud-bigquerystorage-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-bigquerystorage-bom</module>
   </modules>
 

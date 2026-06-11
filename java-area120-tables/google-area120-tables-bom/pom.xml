@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
@@ -39,6 +40,7 @@
         <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
         <version>0.97.0</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

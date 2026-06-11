@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-billing-v1</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>google-cloud-billing</artifactId>
         <version>2.93.0</version><!-- {x-version-update:google-cloud-billing:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-billing</module>
     <module>grpc-google-cloud-billing-v1</module>
     <module>proto-google-cloud-billing-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-billing-bom</module>
   </modules>
 

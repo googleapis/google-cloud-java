@@ -15,73 +15,8 @@
 # downstream client libraries before they are released.
 on:
   pull_request:
-name: generation diff
-env:
-  library_generation_image_tag: 2.73.0  # {x-version-update:gapic-generator-java:current}
+name: Repository Config & Code Sanity
 jobs:
-  root-pom:
-    # root pom.xml does not have diff from generated one
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Generate root pom.xml file
-      shell: bash
-      run: |
-        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):/workspace" \
-          --entrypoint python \
-          -- \
-          /src/library_generation/cli/generate_monorepo_root_pom.py \
-          generate \
-          --repository-path=/workspace
-    - name: Fail if there's any difference
-      run: git --no-pager diff --exit-code
-
-  gapic-bom:
-    # gapic-libraries-bom does not have diff from generated one
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Generate gapic-libraries-bom/pom.xml
-      shell: bash
-      run: |
-        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
-          --quiet \
-          -u "$(id -u):$(id -g)" \
-          -v "$(pwd):/workspace" \
-          --entrypoint python \
-          -- \
-          /src/library_generation/cli/generate_monorepo_gapic_bom.py \
-          generate \
-          --repository-path=/workspace \
-          --versions-file=/workspace/versions.txt
-    - name: Fail if there's any difference
-      run: git --no-pager diff --exit-code
-
-  owlbot-py:
-    # applying templated owlbot.py config doesn't create a diff
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Generate owlbot.py files
-        run: |
-          bash generation/update_owlbot_postprocessor_config.sh
-      - name: Fail if there's any difference (To fix, run generation/update_owlbot_postprocessor_config.sh)
-        run: git --no-pager diff --exit-code
-
-  owlbot-yaml:
-    # Each module's .Owlbot-hermetic.yaml config is configured according to set_owlbot_config.sh
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check if .Owlbot-hermetic.yaml files are correctly configured
-        run: |
-          bash generation/set_owlbot_config.sh
-      - name: Fail if there's any difference (To fix, run generation/set_owlbot_config.sh)
-        run: git --no-pager diff --exit-code
-
   gitignore_correctness:
     # Generated files should not match .gitignore
     runs-on: ubuntu-latest

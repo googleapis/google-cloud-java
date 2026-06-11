@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
         <version>0.97.0</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-area120-tables</module>
     <module>grpc-google-area120-tables-v1alpha1</module>
     <module>proto-google-area120-tables-v1alpha1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-area120-tables-bom</module>
   </modules>
 

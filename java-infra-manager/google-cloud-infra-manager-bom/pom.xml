@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-infra-manager</artifactId>
@@ -39,6 +40,7 @@
         <artifactId>proto-google-cloud-infra-manager-v1</artifactId>
         <version>0.70.0</version><!-- {x-version-update:proto-google-cloud-infra-manager-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

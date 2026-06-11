@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-alloydb</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>proto-google-cloud-alloydb-v1alpha</artifactId>
         <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-alloydb-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-alloydb</module>
     <module>grpc-google-cloud-alloydb-v1beta</module>
     <module>grpc-google-cloud-alloydb-v1</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-alloydb-v1</module>
     <module>proto-google-cloud-alloydb-v1beta</module>
     <module>proto-google-cloud-alloydb-v1alpha</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-alloydb-bom</module>
   </modules>
 

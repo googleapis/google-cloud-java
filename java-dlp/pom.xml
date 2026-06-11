@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>google-cloud-dlp</artifactId>
         <version>3.97.0</version><!-- {x-version-update:google-cloud-dlp:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-dlp</module>
     <module>grpc-google-cloud-dlp-v2</module>
     <module>proto-google-cloud-dlp-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-dlp-bom</module>
   </modules>
 

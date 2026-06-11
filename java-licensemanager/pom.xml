@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-licensemanager</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-google-cloud-licensemanager-v1</artifactId>
         <version>0.26.0</version><!-- {x-version-update:proto-google-cloud-licensemanager-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-licensemanager</module>
     <module>grpc-google-cloud-licensemanager-v1</module>
     <module>proto-google-cloud-licensemanager-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-licensemanager-bom</module>
   </modules>
 

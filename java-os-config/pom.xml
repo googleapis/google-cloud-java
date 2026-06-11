@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>grpc-google-cloud-os-config-v1</artifactId>
         <version>2.95.0</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-os-config</module>
     <module>grpc-google-cloud-os-config-v1</module>
     <module>grpc-google-cloud-os-config-v1beta</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-os-config-v1</module>
     <module>proto-google-cloud-os-config-v1alpha</module>
     <module>proto-google-cloud-os-config-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-os-config-bom</module>
   </modules>
 
