@@ -91,6 +91,10 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return executor;
   }
 
+  HttpTransport getHttpTransport() {
+    return httpTransport;
+  }
+
   @Override
   public synchronized void shutdown() {
     // Calling shutdown/ shutdownNow() twice should no-op

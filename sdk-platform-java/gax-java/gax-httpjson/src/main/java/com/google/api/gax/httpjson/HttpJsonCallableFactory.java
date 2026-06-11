@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
@@ -218,6 +219,19 @@ public class HttpJsonCallableFactory {
 
     callable = Callables.retrying(callable, streamingCallSettings, clientContext);
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  /**
+   * Create a resumable upload callable object. Designed for use by generated code.
+   *
+   * @param httpJsonCallSettings the http/json call settings
+   * @param clientContext {@link ClientContext} to use to connect to the service.
+   * @return {@link ResumableUploadCallable} callable object.
+   */
+  public static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+      ClientContext clientContext) {
+    return new HttpJsonResumableUploadCallable<>(httpJsonCallSettings, clientContext);
   }
 
   static ApiTracerContext getApiTracerContext(@Nonnull ApiMethodDescriptor<?, ?> methodDescriptor) {
