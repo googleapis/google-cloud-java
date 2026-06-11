@@ -87,8 +87,7 @@ final class QueryRequestInfo {
         && config.getTableDefinitions() == null
         && config.getTimePartitioning() == null
         && config.getUserDefinedFunctions() == null
-        && config.getWriteDisposition() == null
-        && config.getJobCreationMode() != JobCreationMode.JOB_CREATION_REQUIRED;
+        && config.getWriteDisposition() == null;
   }
 
   QueryRequest toPb() {
