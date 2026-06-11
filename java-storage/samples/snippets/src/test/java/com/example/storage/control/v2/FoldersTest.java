@@ -140,6 +140,20 @@ public final class FoldersTest {
   }
 
   @Test
+  public void deleteFolderRecursive() throws Exception {
+    FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
+    Folder gen1 =
+        storageControl.createFolder(
+            BucketName.of("_", bucket.getName()),
+            Folder.getDefaultInstance(),
+            folderName.getFolder());
+
+    DeleteFolderRecursive.deleteFolderRecursive(bucket.getName(), folderName.getFolder());
+    assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(folderName.toString());
+    assertThrows(NotFoundException.class, () -> storageControl.getFolder(folderName));
+  }
+
+  @Test
   public void listFolder() throws IOException {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
     Folder gen1 =
