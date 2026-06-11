@@ -450,6 +450,27 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
 
+  public static final int AUTO_COMMIT_TRANSACTION_FIELD_NUMBER = 9;
+  private boolean autoCommitTransaction_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automatically commits the transaction after the pipeline has been
+   * executed. Only permitted in combination with `transaction` or
+   * `new_transaction`.
+   * </pre>
+   *
+   * <code>bool auto_commit_transaction = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoCommitTransaction.
+   */
+  @java.lang.Override
+  public boolean getAutoCommitTransaction() {
+    return autoCommitTransaction_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -478,6 +499,9 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
     }
     if (consistencySelectorCase_ == 7) {
       output.writeMessage(7, (com.google.protobuf.Timestamp) consistencySelector_);
+    }
+    if (autoCommitTransaction_ != false) {
+      output.writeBool(9, autoCommitTransaction_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -511,6 +535,9 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.protobuf.Timestamp) consistencySelector_);
     }
+    if (autoCommitTransaction_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, autoCommitTransaction_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -528,6 +555,7 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
         (com.google.firestore.v1.ExecutePipelineRequest) obj;
 
     if (!getDatabase().equals(other.getDatabase())) return false;
+    if (getAutoCommitTransaction() != other.getAutoCommitTransaction()) return false;
     if (!getPipelineTypeCase().equals(other.getPipelineTypeCase())) return false;
     switch (pipelineTypeCase_) {
       case 2:
@@ -563,6 +591,8 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATABASE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabase().hashCode();
+    hash = (37 * hash) + AUTO_COMMIT_TRANSACTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCommitTransaction());
     switch (pipelineTypeCase_) {
       case 2:
         hash = (37 * hash) + STRUCTURED_PIPELINE_FIELD_NUMBER;
@@ -738,6 +768,7 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
       if (readTimeBuilder_ != null) {
         readTimeBuilder_.clear();
       }
+      autoCommitTransaction_ = false;
       pipelineTypeCase_ = 0;
       pipelineType_ = null;
       consistencySelectorCase_ = 0;
@@ -782,6 +813,9 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.database_ = database_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.autoCommitTransaction_ = autoCommitTransaction_;
+      }
     }
 
     private void buildPartialOneofs(com.google.firestore.v1.ExecutePipelineRequest result) {
@@ -816,6 +850,9 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
         database_ = other.database_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getAutoCommitTransaction() != false) {
+        setAutoCommitTransaction(other.getAutoCommitTransaction());
       }
       switch (other.getPipelineTypeCase()) {
         case STRUCTURED_PIPELINE:
@@ -908,6 +945,12 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
                 consistencySelectorCase_ = 7;
                 break;
               } // case 58
+            case 72:
+              {
+                autoCommitTransaction_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1869,6 +1912,68 @@ public final class ExecutePipelineRequest extends com.google.protobuf.GeneratedM
       consistencySelectorCase_ = 7;
       onChanged();
       return readTimeBuilder_;
+    }
+
+    private boolean autoCommitTransaction_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically commits the transaction after the pipeline has been
+     * executed. Only permitted in combination with `transaction` or
+     * `new_transaction`.
+     * </pre>
+     *
+     * <code>bool auto_commit_transaction = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The autoCommitTransaction.
+     */
+    @java.lang.Override
+    public boolean getAutoCommitTransaction() {
+      return autoCommitTransaction_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically commits the transaction after the pipeline has been
+     * executed. Only permitted in combination with `transaction` or
+     * `new_transaction`.
+     * </pre>
+     *
+     * <code>bool auto_commit_transaction = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The autoCommitTransaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoCommitTransaction(boolean value) {
+
+      autoCommitTransaction_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically commits the transaction after the pipeline has been
+     * executed. Only permitted in combination with `transaction` or
+     * `new_transaction`.
+     * </pre>
+     *
+     * <code>bool auto_commit_transaction = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoCommitTransaction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      autoCommitTransaction_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.firestore.v1.ExecutePipelineRequest)

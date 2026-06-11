@@ -57,7 +57,7 @@ jobs:
     - name: Run librarian install
       run: |
         librarian install
-        echo "$HOME/java_tools/bin" >> $GITHUB_PATH
+        echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
     - name: Run librarian generate
       env:
         PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
@@ -65,4 +65,8 @@ jobs:
         librarian generate --all
     - name: Check for generated code changes
       run: |
-        git diff --exit-code
+        if [ -n "$(git status --porcelain)" ]; then
+          git status
+          echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
+          exit 1
+        fi

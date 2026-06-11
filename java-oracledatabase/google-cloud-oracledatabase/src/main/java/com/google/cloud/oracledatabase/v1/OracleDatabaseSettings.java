@@ -34,6 +34,13 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitl
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentEnvironmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
@@ -677,6 +684,185 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteDbSystemOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to listGoldengateDeployments. */
+  public PagedCallSettings<
+          ListGoldengateDeploymentsRequest,
+          ListGoldengateDeploymentsResponse,
+          ListGoldengateDeploymentsPagedResponse>
+      listGoldengateDeploymentsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listGoldengateDeploymentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateDeployment. */
+  public UnaryCallSettings<GetGoldengateDeploymentRequest, GoldengateDeployment>
+      getGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoldengateDeployment. */
+  public UnaryCallSettings<CreateGoldengateDeploymentRequest, Operation>
+      createGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoldengateDeployment. */
+  public OperationCallSettings<
+          CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      createGoldengateDeploymentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createGoldengateDeploymentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoldengateDeployment. */
+  public UnaryCallSettings<DeleteGoldengateDeploymentRequest, Operation>
+      deleteGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoldengateDeployment. */
+  public OperationCallSettings<DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+      deleteGoldengateDeploymentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteGoldengateDeploymentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopGoldengateDeployment. */
+  public UnaryCallSettings<StopGoldengateDeploymentRequest, Operation>
+      stopGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).stopGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopGoldengateDeployment. */
+  public OperationCallSettings<
+          StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      stopGoldengateDeploymentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .stopGoldengateDeploymentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startGoldengateDeployment. */
+  public UnaryCallSettings<StartGoldengateDeploymentRequest, Operation>
+      startGoldengateDeploymentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).startGoldengateDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startGoldengateDeployment. */
+  public OperationCallSettings<
+          StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+      startGoldengateDeploymentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .startGoldengateDeploymentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoldengateConnections. */
+  public PagedCallSettings<
+          ListGoldengateConnectionsRequest,
+          ListGoldengateConnectionsResponse,
+          ListGoldengateConnectionsPagedResponse>
+      listGoldengateConnectionsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listGoldengateConnectionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateConnection. */
+  public UnaryCallSettings<GetGoldengateConnectionRequest, GoldengateConnection>
+      getGoldengateConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoldengateConnection. */
+  public UnaryCallSettings<CreateGoldengateConnectionRequest, Operation>
+      createGoldengateConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createGoldengateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoldengateConnection. */
+  public OperationCallSettings<
+          CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+      createGoldengateConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createGoldengateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoldengateConnection. */
+  public UnaryCallSettings<DeleteGoldengateConnectionRequest, Operation>
+      deleteGoldengateConnectionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteGoldengateConnectionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoldengateConnection. */
+  public OperationCallSettings<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteGoldengateConnectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateDeploymentVersion. */
+  public UnaryCallSettings<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
+      getGoldengateDeploymentVersionSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .getGoldengateDeploymentVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoldengateDeploymentVersions. */
+  public PagedCallSettings<
+          ListGoldengateDeploymentVersionsRequest,
+          ListGoldengateDeploymentVersionsResponse,
+          ListGoldengateDeploymentVersionsPagedResponse>
+      listGoldengateDeploymentVersionsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .listGoldengateDeploymentVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateDeploymentType. */
+  public UnaryCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
+      getGoldengateDeploymentTypeSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateDeploymentTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoldengateDeploymentTypes. */
+  public PagedCallSettings<
+          ListGoldengateDeploymentTypesRequest,
+          ListGoldengateDeploymentTypesResponse,
+          ListGoldengateDeploymentTypesPagedResponse>
+      listGoldengateDeploymentTypesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listGoldengateDeploymentTypesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateDeploymentEnvironment. */
+  public UnaryCallSettings<
+          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
+      getGoldengateDeploymentEnvironmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .getGoldengateDeploymentEnvironmentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listGoldengateDeploymentEnvironments.
+   */
+  public PagedCallSettings<
+          ListGoldengateDeploymentEnvironmentsRequest,
+          ListGoldengateDeploymentEnvironmentsResponse,
+          ListGoldengateDeploymentEnvironmentsPagedResponse>
+      listGoldengateDeploymentEnvironmentsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .listGoldengateDeploymentEnvironmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateConnectionType. */
+  public UnaryCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
+      getGoldengateConnectionTypeSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getGoldengateConnectionTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoldengateConnectionTypes. */
+  public PagedCallSettings<
+          ListGoldengateConnectionTypesRequest,
+          ListGoldengateConnectionTypesResponse,
+          ListGoldengateConnectionTypesPagedResponse>
+      listGoldengateConnectionTypesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listGoldengateConnectionTypesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listDbVersions. */
   public PagedCallSettings<
           ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
@@ -691,6 +877,71 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
           ListDatabaseCharacterSetsPagedResponse>
       listDatabaseCharacterSetsSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).listDatabaseCharacterSetsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoldengateConnectionAssignments. */
+  public PagedCallSettings<
+          ListGoldengateConnectionAssignmentsRequest,
+          ListGoldengateConnectionAssignmentsResponse,
+          ListGoldengateConnectionAssignmentsPagedResponse>
+      listGoldengateConnectionAssignmentsSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .listGoldengateConnectionAssignmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoldengateConnectionAssignment. */
+  public UnaryCallSettings<GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+      getGoldengateConnectionAssignmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .getGoldengateConnectionAssignmentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to createGoldengateConnectionAssignment.
+   */
+  public UnaryCallSettings<CreateGoldengateConnectionAssignmentRequest, Operation>
+      createGoldengateConnectionAssignmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createGoldengateConnectionAssignmentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to createGoldengateConnectionAssignment.
+   */
+  public OperationCallSettings<
+          CreateGoldengateConnectionAssignmentRequest,
+          GoldengateConnectionAssignment,
+          OperationMetadata>
+      createGoldengateConnectionAssignmentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .createGoldengateConnectionAssignmentOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteGoldengateConnectionAssignment.
+   */
+  public UnaryCallSettings<DeleteGoldengateConnectionAssignmentRequest, Operation>
+      deleteGoldengateConnectionAssignmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteGoldengateConnectionAssignmentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteGoldengateConnectionAssignment.
+   */
+  public OperationCallSettings<
+          DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+      deleteGoldengateConnectionAssignmentOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .deleteGoldengateConnectionAssignmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testGoldengateConnectionAssignment. */
+  public UnaryCallSettings<
+          TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+      testGoldengateConnectionAssignmentSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .testGoldengateConnectionAssignmentSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1358,6 +1609,180 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       return getStubSettingsBuilder().deleteDbSystemOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listGoldengateDeployments. */
+    public PagedCallSettings.Builder<
+            ListGoldengateDeploymentsRequest,
+            ListGoldengateDeploymentsResponse,
+            ListGoldengateDeploymentsPagedResponse>
+        listGoldengateDeploymentsSettings() {
+      return getStubSettingsBuilder().listGoldengateDeploymentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateDeployment. */
+    public UnaryCallSettings.Builder<GetGoldengateDeploymentRequest, GoldengateDeployment>
+        getGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().getGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoldengateDeployment. */
+    public UnaryCallSettings.Builder<CreateGoldengateDeploymentRequest, Operation>
+        createGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().createGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            CreateGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        createGoldengateDeploymentOperationSettings() {
+      return getStubSettingsBuilder().createGoldengateDeploymentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoldengateDeployment. */
+    public UnaryCallSettings.Builder<DeleteGoldengateDeploymentRequest, Operation>
+        deleteGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().deleteGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            DeleteGoldengateDeploymentRequest, Empty, OperationMetadata>
+        deleteGoldengateDeploymentOperationSettings() {
+      return getStubSettingsBuilder().deleteGoldengateDeploymentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopGoldengateDeployment. */
+    public UnaryCallSettings.Builder<StopGoldengateDeploymentRequest, Operation>
+        stopGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().stopGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            StopGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        stopGoldengateDeploymentOperationSettings() {
+      return getStubSettingsBuilder().stopGoldengateDeploymentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startGoldengateDeployment. */
+    public UnaryCallSettings.Builder<StartGoldengateDeploymentRequest, Operation>
+        startGoldengateDeploymentSettings() {
+      return getStubSettingsBuilder().startGoldengateDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startGoldengateDeployment. */
+    public OperationCallSettings.Builder<
+            StartGoldengateDeploymentRequest, GoldengateDeployment, OperationMetadata>
+        startGoldengateDeploymentOperationSettings() {
+      return getStubSettingsBuilder().startGoldengateDeploymentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGoldengateConnections. */
+    public PagedCallSettings.Builder<
+            ListGoldengateConnectionsRequest,
+            ListGoldengateConnectionsResponse,
+            ListGoldengateConnectionsPagedResponse>
+        listGoldengateConnectionsSettings() {
+      return getStubSettingsBuilder().listGoldengateConnectionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateConnection. */
+    public UnaryCallSettings.Builder<GetGoldengateConnectionRequest, GoldengateConnection>
+        getGoldengateConnectionSettings() {
+      return getStubSettingsBuilder().getGoldengateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoldengateConnection. */
+    public UnaryCallSettings.Builder<CreateGoldengateConnectionRequest, Operation>
+        createGoldengateConnectionSettings() {
+      return getStubSettingsBuilder().createGoldengateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoldengateConnection. */
+    public OperationCallSettings.Builder<
+            CreateGoldengateConnectionRequest, GoldengateConnection, OperationMetadata>
+        createGoldengateConnectionOperationSettings() {
+      return getStubSettingsBuilder().createGoldengateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoldengateConnection. */
+    public UnaryCallSettings.Builder<DeleteGoldengateConnectionRequest, Operation>
+        deleteGoldengateConnectionSettings() {
+      return getStubSettingsBuilder().deleteGoldengateConnectionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoldengateConnection. */
+    public OperationCallSettings.Builder<
+            DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
+        deleteGoldengateConnectionOperationSettings() {
+      return getStubSettingsBuilder().deleteGoldengateConnectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateDeploymentVersion. */
+    public UnaryCallSettings.Builder<
+            GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
+        getGoldengateDeploymentVersionSettings() {
+      return getStubSettingsBuilder().getGoldengateDeploymentVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGoldengateDeploymentVersions. */
+    public PagedCallSettings.Builder<
+            ListGoldengateDeploymentVersionsRequest,
+            ListGoldengateDeploymentVersionsResponse,
+            ListGoldengateDeploymentVersionsPagedResponse>
+        listGoldengateDeploymentVersionsSettings() {
+      return getStubSettingsBuilder().listGoldengateDeploymentVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateDeploymentType. */
+    public UnaryCallSettings.Builder<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
+        getGoldengateDeploymentTypeSettings() {
+      return getStubSettingsBuilder().getGoldengateDeploymentTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGoldengateDeploymentTypes. */
+    public PagedCallSettings.Builder<
+            ListGoldengateDeploymentTypesRequest,
+            ListGoldengateDeploymentTypesResponse,
+            ListGoldengateDeploymentTypesPagedResponse>
+        listGoldengateDeploymentTypesSettings() {
+      return getStubSettingsBuilder().listGoldengateDeploymentTypesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getGoldengateDeploymentEnvironment.
+     */
+    public UnaryCallSettings.Builder<
+            GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
+        getGoldengateDeploymentEnvironmentSettings() {
+      return getStubSettingsBuilder().getGoldengateDeploymentEnvironmentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listGoldengateDeploymentEnvironments.
+     */
+    public PagedCallSettings.Builder<
+            ListGoldengateDeploymentEnvironmentsRequest,
+            ListGoldengateDeploymentEnvironmentsResponse,
+            ListGoldengateDeploymentEnvironmentsPagedResponse>
+        listGoldengateDeploymentEnvironmentsSettings() {
+      return getStubSettingsBuilder().listGoldengateDeploymentEnvironmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateConnectionType. */
+    public UnaryCallSettings.Builder<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
+        getGoldengateConnectionTypeSettings() {
+      return getStubSettingsBuilder().getGoldengateConnectionTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGoldengateConnectionTypes. */
+    public PagedCallSettings.Builder<
+            ListGoldengateConnectionTypesRequest,
+            ListGoldengateConnectionTypesResponse,
+            ListGoldengateConnectionTypesPagedResponse>
+        listGoldengateConnectionTypesSettings() {
+      return getStubSettingsBuilder().listGoldengateConnectionTypesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listDbVersions. */
     public PagedCallSettings.Builder<
             ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
@@ -1372,6 +1797,69 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             ListDatabaseCharacterSetsPagedResponse>
         listDatabaseCharacterSetsSettings() {
       return getStubSettingsBuilder().listDatabaseCharacterSetsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listGoldengateConnectionAssignments.
+     */
+    public PagedCallSettings.Builder<
+            ListGoldengateConnectionAssignmentsRequest,
+            ListGoldengateConnectionAssignmentsResponse,
+            ListGoldengateConnectionAssignmentsPagedResponse>
+        listGoldengateConnectionAssignmentsSettings() {
+      return getStubSettingsBuilder().listGoldengateConnectionAssignmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoldengateConnectionAssignment. */
+    public UnaryCallSettings.Builder<
+            GetGoldengateConnectionAssignmentRequest, GoldengateConnectionAssignment>
+        getGoldengateConnectionAssignmentSettings() {
+      return getStubSettingsBuilder().getGoldengateConnectionAssignmentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createGoldengateConnectionAssignment.
+     */
+    public UnaryCallSettings.Builder<CreateGoldengateConnectionAssignmentRequest, Operation>
+        createGoldengateConnectionAssignmentSettings() {
+      return getStubSettingsBuilder().createGoldengateConnectionAssignmentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to createGoldengateConnectionAssignment.
+     */
+    public OperationCallSettings.Builder<
+            CreateGoldengateConnectionAssignmentRequest,
+            GoldengateConnectionAssignment,
+            OperationMetadata>
+        createGoldengateConnectionAssignmentOperationSettings() {
+      return getStubSettingsBuilder().createGoldengateConnectionAssignmentOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteGoldengateConnectionAssignment.
+     */
+    public UnaryCallSettings.Builder<DeleteGoldengateConnectionAssignmentRequest, Operation>
+        deleteGoldengateConnectionAssignmentSettings() {
+      return getStubSettingsBuilder().deleteGoldengateConnectionAssignmentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to deleteGoldengateConnectionAssignment.
+     */
+    public OperationCallSettings.Builder<
+            DeleteGoldengateConnectionAssignmentRequest, Empty, OperationMetadata>
+        deleteGoldengateConnectionAssignmentOperationSettings() {
+      return getStubSettingsBuilder().deleteGoldengateConnectionAssignmentOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to testGoldengateConnectionAssignment.
+     */
+    public UnaryCallSettings.Builder<
+            TestGoldengateConnectionAssignmentRequest, TestGoldengateConnectionAssignmentResponse>
+        testGoldengateConnectionAssignmentSettings() {
+      return getStubSettingsBuilder().testGoldengateConnectionAssignmentSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

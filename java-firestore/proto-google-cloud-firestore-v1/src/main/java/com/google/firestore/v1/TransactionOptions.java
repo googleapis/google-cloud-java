@@ -68,6 +68,177 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
             com.google.firestore.v1.TransactionOptions.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The type of concurrency control mode for transactions.
+   * </pre>
+   *
+   * Protobuf enum {@code google.firestore.v1.TransactionOptions.ConcurrencyMode}
+   */
+  public enum ConcurrencyMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Start the transaction with the database-level default concurrency mode.
+     * </pre>
+     *
+     * <code>CONCURRENCY_MODE_UNSPECIFIED = 0;</code>
+     */
+    CONCURRENCY_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use optimistic concurrency control for the new transaction.
+     * </pre>
+     *
+     * <code>OPTIMISTIC = 1;</code>
+     */
+    OPTIMISTIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * Use pessimistic concurrency control for the new transaction.
+     * </pre>
+     *
+     * <code>PESSIMISTIC = 2;</code>
+     */
+    PESSIMISTIC(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ConcurrencyMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start the transaction with the database-level default concurrency mode.
+     * </pre>
+     *
+     * <code>CONCURRENCY_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONCURRENCY_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use optimistic concurrency control for the new transaction.
+     * </pre>
+     *
+     * <code>OPTIMISTIC = 1;</code>
+     */
+    public static final int OPTIMISTIC_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use pessimistic concurrency control for the new transaction.
+     * </pre>
+     *
+     * <code>PESSIMISTIC = 2;</code>
+     */
+    public static final int PESSIMISTIC_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConcurrencyMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConcurrencyMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONCURRENCY_MODE_UNSPECIFIED;
+        case 1:
+          return OPTIMISTIC;
+        case 2:
+          return PESSIMISTIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConcurrencyMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConcurrencyMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConcurrencyMode>() {
+              public ConcurrencyMode findValueByNumber(int number) {
+                return ConcurrencyMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.firestore.v1.TransactionOptions.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ConcurrencyMode[] VALUES = values();
+
+    public static ConcurrencyMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConcurrencyMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.firestore.v1.TransactionOptions.ConcurrencyMode)
+  }
+
   public interface ReadWriteOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.firestore.v1.TransactionOptions.ReadWrite)
@@ -85,6 +256,50 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      * @return The retryTransaction.
      */
     com.google.protobuf.ByteString getRetryTransaction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The concurrency control mode to use for this transaction.
+     *
+     * A database is able to use different concurrency modes for different
+     * transactions simultaneously.
+     *
+     * 3rd party auth requests are only allowed to create optimistic
+     * read-write transactions and must specify that here even if the
+     * database-level setting is already configured to optimistic.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for concurrencyMode.
+     */
+    int getConcurrencyModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The concurrency control mode to use for this transaction.
+     *
+     * A database is able to use different concurrency modes for different
+     * transactions simultaneously.
+     *
+     * 3rd party auth requests are only allowed to create optimistic
+     * read-write transactions and must specify that here even if the
+     * database-level setting is already configured to optimistic.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The concurrencyMode.
+     */
+    com.google.firestore.v1.TransactionOptions.ConcurrencyMode getConcurrencyMode();
   }
 
   /**
@@ -92,9 +307,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Options for a transaction that can be used to read and write documents.
-   *
-   * Firestore does not allow 3rd party auth requests to create read-write.
-   * transactions.
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.TransactionOptions.ReadWrite}
@@ -122,6 +334,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
 
     private ReadWrite() {
       retryTransaction_ = com.google.protobuf.ByteString.EMPTY;
+      concurrencyMode_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -158,6 +371,63 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       return retryTransaction_;
     }
 
+    public static final int CONCURRENCY_MODE_FIELD_NUMBER = 2;
+    private int concurrencyMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The concurrency control mode to use for this transaction.
+     *
+     * A database is able to use different concurrency modes for different
+     * transactions simultaneously.
+     *
+     * 3rd party auth requests are only allowed to create optimistic
+     * read-write transactions and must specify that here even if the
+     * database-level setting is already configured to optimistic.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for concurrencyMode.
+     */
+    @java.lang.Override
+    public int getConcurrencyModeValue() {
+      return concurrencyMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The concurrency control mode to use for this transaction.
+     *
+     * A database is able to use different concurrency modes for different
+     * transactions simultaneously.
+     *
+     * 3rd party auth requests are only allowed to create optimistic
+     * read-write transactions and must specify that here even if the
+     * database-level setting is already configured to optimistic.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The concurrencyMode.
+     */
+    @java.lang.Override
+    public com.google.firestore.v1.TransactionOptions.ConcurrencyMode getConcurrencyMode() {
+      com.google.firestore.v1.TransactionOptions.ConcurrencyMode result =
+          com.google.firestore.v1.TransactionOptions.ConcurrencyMode.forNumber(concurrencyMode_);
+      return result == null
+          ? com.google.firestore.v1.TransactionOptions.ConcurrencyMode.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -175,6 +445,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       if (!retryTransaction_.isEmpty()) {
         output.writeBytes(1, retryTransaction_);
       }
+      if (concurrencyMode_
+          != com.google.firestore.v1.TransactionOptions.ConcurrencyMode.CONCURRENCY_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, concurrencyMode_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -186,6 +461,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       size = 0;
       if (!retryTransaction_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, retryTransaction_);
+      }
+      if (concurrencyMode_
+          != com.google.firestore.v1.TransactionOptions.ConcurrencyMode.CONCURRENCY_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, concurrencyMode_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -204,6 +484,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
           (com.google.firestore.v1.TransactionOptions.ReadWrite) obj;
 
       if (!getRetryTransaction().equals(other.getRetryTransaction())) return false;
+      if (concurrencyMode_ != other.concurrencyMode_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -217,6 +498,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RETRY_TRANSACTION_FIELD_NUMBER;
       hash = (53 * hash) + getRetryTransaction().hashCode();
+      hash = (37 * hash) + CONCURRENCY_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + concurrencyMode_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -324,9 +607,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Options for a transaction that can be used to read and write documents.
-     *
-     * Firestore does not allow 3rd party auth requests to create read-write.
-     * transactions.
      * </pre>
      *
      * Protobuf type {@code google.firestore.v1.TransactionOptions.ReadWrite}
@@ -362,6 +642,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         super.clear();
         bitField0_ = 0;
         retryTransaction_ = com.google.protobuf.ByteString.EMPTY;
+        concurrencyMode_ = 0;
         return this;
       }
 
@@ -401,6 +682,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.retryTransaction_ = retryTransaction_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.concurrencyMode_ = concurrencyMode_;
+        }
       }
 
       @java.lang.Override
@@ -418,6 +702,9 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
           return this;
         if (!other.getRetryTransaction().isEmpty()) {
           setRetryTransaction(other.getRetryTransaction());
+        }
+        if (other.concurrencyMode_ != 0) {
+          setConcurrencyModeValue(other.getConcurrencyModeValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -451,6 +738,12 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  concurrencyMode_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -525,6 +818,149 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public Builder clearRetryTransaction() {
         bitField0_ = (bitField0_ & ~0x00000001);
         retryTransaction_ = getDefaultInstance().getRetryTransaction();
+        onChanged();
+        return this;
+      }
+
+      private int concurrencyMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The concurrency control mode to use for this transaction.
+       *
+       * A database is able to use different concurrency modes for different
+       * transactions simultaneously.
+       *
+       * 3rd party auth requests are only allowed to create optimistic
+       * read-write transactions and must specify that here even if the
+       * database-level setting is already configured to optimistic.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for concurrencyMode.
+       */
+      @java.lang.Override
+      public int getConcurrencyModeValue() {
+        return concurrencyMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The concurrency control mode to use for this transaction.
+       *
+       * A database is able to use different concurrency modes for different
+       * transactions simultaneously.
+       *
+       * 3rd party auth requests are only allowed to create optimistic
+       * read-write transactions and must specify that here even if the
+       * database-level setting is already configured to optimistic.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for concurrencyMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConcurrencyModeValue(int value) {
+        concurrencyMode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The concurrency control mode to use for this transaction.
+       *
+       * A database is able to use different concurrency modes for different
+       * transactions simultaneously.
+       *
+       * 3rd party auth requests are only allowed to create optimistic
+       * read-write transactions and must specify that here even if the
+       * database-level setting is already configured to optimistic.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The concurrencyMode.
+       */
+      @java.lang.Override
+      public com.google.firestore.v1.TransactionOptions.ConcurrencyMode getConcurrencyMode() {
+        com.google.firestore.v1.TransactionOptions.ConcurrencyMode result =
+            com.google.firestore.v1.TransactionOptions.ConcurrencyMode.forNumber(concurrencyMode_);
+        return result == null
+            ? com.google.firestore.v1.TransactionOptions.ConcurrencyMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The concurrency control mode to use for this transaction.
+       *
+       * A database is able to use different concurrency modes for different
+       * transactions simultaneously.
+       *
+       * 3rd party auth requests are only allowed to create optimistic
+       * read-write transactions and must specify that here even if the
+       * database-level setting is already configured to optimistic.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The concurrencyMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConcurrencyMode(
+          com.google.firestore.v1.TransactionOptions.ConcurrencyMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        concurrencyMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The concurrency control mode to use for this transaction.
+       *
+       * A database is able to use different concurrency modes for different
+       * transactions simultaneously.
+       *
+       * 3rd party auth requests are only allowed to create optimistic
+       * read-write transactions and must specify that here even if the
+       * database-level setting is already configured to optimistic.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.v1.TransactionOptions.ConcurrencyMode concurrency_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConcurrencyMode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        concurrencyMode_ = 0;
         onChanged();
         return this;
       }
