@@ -119,28 +119,12 @@ public interface RegisterIcebergTableRequestOrBuilder
    *
    * <pre>
    * Optional. Whether to overwrite the table if it already exists. Default is
-   * false. Currently this field is ignored and an error is returned if the
-   * table already exists.
+   * false.
    * </pre>
    *
-   * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The overwrite.
    */
-  java.lang.String getOverwrite();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether to overwrite the table if it already exists. Default is
-   * false. Currently this field is ignored and an error is returned if the
-   * table already exists.
-   * </pre>
-   *
-   * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for overwrite.
-   */
-  com.google.protobuf.ByteString getOverwriteBytes();
+  boolean getOverwrite();
 }

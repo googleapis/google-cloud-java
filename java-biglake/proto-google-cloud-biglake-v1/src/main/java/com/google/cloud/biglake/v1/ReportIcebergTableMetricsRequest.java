@@ -24,16 +24,16 @@ package com.google.cloud.biglake.v1;
  *
  *
  * <pre>
- * The request message for the `CreateIcebergTable` API.
+ * The request message for the `ReportIcebergTableMetrics` API.
  * </pre>
  *
- * Protobuf type {@code google.cloud.biglake.v1.CreateIcebergTableRequest}
+ * Protobuf type {@code google.cloud.biglake.v1.ReportIcebergTableMetricsRequest}
  */
 @com.google.protobuf.Generated
-public final class CreateIcebergTableRequest extends com.google.protobuf.GeneratedMessage
+public final class ReportIcebergTableMetricsRequest extends com.google.protobuf.GeneratedMessage
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.biglake.v1.CreateIcebergTableRequest)
-    CreateIcebergTableRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)
+    ReportIcebergTableMetricsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
 
   static {
@@ -43,62 +43,63 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
         /* minor= */ 33,
         /* patch= */ 2,
         /* suffix= */ "",
-        "CreateIcebergTableRequest");
+        "ReportIcebergTableMetricsRequest");
   }
 
-  // Use CreateIcebergTableRequest.newBuilder() to construct.
-  private CreateIcebergTableRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use ReportIcebergTableMetricsRequest.newBuilder() to construct.
+  private ReportIcebergTableMetricsRequest(
+      com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
-  private CreateIcebergTableRequest() {
-    parent_ = "";
+  private ReportIcebergTableMetricsRequest() {
+    name_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.biglake.v1.IcebergRestCatalogProto
-        .internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor;
+        .internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.biglake.v1.IcebergRestCatalogProto
-        .internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_fieldAccessorTable
+        .internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.biglake.v1.CreateIcebergTableRequest.class,
-            com.google.cloud.biglake.v1.CreateIcebergTableRequest.Builder.class);
+            com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.class,
+            com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.Builder.class);
   }
 
   private int bitField0_;
-  public static final int PARENT_FIELD_NUMBER = 1;
+  public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object parent_ = "";
+  private volatile java.lang.Object name_ = "";
 
   /**
    *
    *
    * <pre>
-   * Required. The parent resource where this table will be created.
-   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+   * Required. Table to report metrics for in the format:
+   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The parent.
+   * @return The name.
    */
   @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
+      name_ = s;
       return s;
     }
   }
@@ -107,30 +108,30 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The parent resource where this table will be created.
-   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+   * Required. Table to report metrics for in the format:
+   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for parent.
+   * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int HTTP_BODY_FIELD_NUMBER = 3;
+  public static final int HTTP_BODY_FIELD_NUMBER = 2;
   private com.google.api.HttpBody httpBody_;
 
   /**
@@ -140,7 +141,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    * Required.
    * </pre>
    *
-   * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the httpBody field is set.
    */
@@ -156,7 +157,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    * Required.
    * </pre>
    *
-   * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The httpBody.
    */
@@ -172,7 +173,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    * Required.
    * </pre>
    *
-   * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder() {
@@ -193,11 +194,11 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, parent_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getHttpBody());
+      output.writeMessage(2, getHttpBody());
     }
     getUnknownFields().writeTo(output);
   }
@@ -208,11 +209,11 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, parent_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getHttpBody());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getHttpBody());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,13 +225,13 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.biglake.v1.CreateIcebergTableRequest)) {
+    if (!(obj instanceof com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.biglake.v1.CreateIcebergTableRequest other =
-        (com.google.cloud.biglake.v1.CreateIcebergTableRequest) obj;
+    com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest other =
+        (com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest) obj;
 
-    if (!getParent().equals(other.getParent())) return false;
+    if (!getName().equals(other.getName())) return false;
     if (hasHttpBody() != other.hasHttpBody()) return false;
     if (hasHttpBody()) {
       if (!getHttpBody().equals(other.getHttpBody())) return false;
@@ -246,8 +247,8 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasHttpBody()) {
       hash = (37 * hash) + HTTP_BODY_FIELD_NUMBER;
       hash = (53 * hash) + getHttpBody().hashCode();
@@ -257,71 +258,71 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     return hash;
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(byte[] data)
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseDelimitedFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseDelimitedFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest parseFrom(
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -339,7 +340,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
   }
 
   public static Builder newBuilder(
-      com.google.cloud.biglake.v1.CreateIcebergTableRequest prototype) {
+      com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -358,31 +359,31 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The request message for the `CreateIcebergTable` API.
+   * The request message for the `ReportIcebergTableMetrics` API.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.biglake.v1.CreateIcebergTableRequest}
+   * Protobuf type {@code google.cloud.biglake.v1.ReportIcebergTableMetricsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.biglake.v1.CreateIcebergTableRequest)
-      com.google.cloud.biglake.v1.CreateIcebergTableRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)
+      com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.biglake.v1.IcebergRestCatalogProto
-          .internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor;
+          .internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.biglake.v1.IcebergRestCatalogProto
-          .internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_fieldAccessorTable
+          .internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.biglake.v1.CreateIcebergTableRequest.class,
-              com.google.cloud.biglake.v1.CreateIcebergTableRequest.Builder.class);
+              com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.class,
+              com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.biglake.v1.CreateIcebergTableRequest.newBuilder()
+    // Construct using com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -402,7 +403,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      parent_ = "";
+      name_ = "";
       httpBody_ = null;
       if (httpBodyBuilder_ != null) {
         httpBodyBuilder_.dispose();
@@ -414,17 +415,18 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.biglake.v1.IcebergRestCatalogProto
-          .internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor;
+          .internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.biglake.v1.CreateIcebergTableRequest getDefaultInstanceForType() {
-      return com.google.cloud.biglake.v1.CreateIcebergTableRequest.getDefaultInstance();
+    public com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.biglake.v1.CreateIcebergTableRequest build() {
-      com.google.cloud.biglake.v1.CreateIcebergTableRequest result = buildPartial();
+    public com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest build() {
+      com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -432,9 +434,9 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
-    public com.google.cloud.biglake.v1.CreateIcebergTableRequest buildPartial() {
-      com.google.cloud.biglake.v1.CreateIcebergTableRequest result =
-          new com.google.cloud.biglake.v1.CreateIcebergTableRequest(this);
+    public com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest buildPartial() {
+      com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest result =
+          new com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -442,10 +444,11 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.biglake.v1.CreateIcebergTableRequest result) {
+    private void buildPartial0(
+        com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.parent_ = parent_;
+        result.name_ = name_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -457,19 +460,20 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.biglake.v1.CreateIcebergTableRequest) {
-        return mergeFrom((com.google.cloud.biglake.v1.CreateIcebergTableRequest) other);
+      if (other instanceof com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest) {
+        return mergeFrom((com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.biglake.v1.CreateIcebergTableRequest other) {
-      if (other == com.google.cloud.biglake.v1.CreateIcebergTableRequest.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest other) {
+      if (other
+          == com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.getDefaultInstance())
         return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -504,17 +508,17 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
               break;
             case 10:
               {
-                parent_ = input.readStringRequireUtf8();
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-            case 26:
+            case 18:
               {
                 input.readMessage(
                     internalGetHttpBodyFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 26
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -534,28 +538,28 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private java.lang.Object parent_ = "";
+    private java.lang.Object name_ = "";
 
     /**
      *
      *
      * <pre>
-     * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+     * Required. Table to report metrics for in the format:
+     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The parent.
+     * @return The name.
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -566,22 +570,22 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+     * Required. Table to report metrics for in the format:
+     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return The bytes for parent.
+     * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -592,22 +596,22 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+     * Required. Table to report metrics for in the format:
+     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The parent to set.
+     * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setParent(java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      parent_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -617,18 +621,18 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+     * Required. Table to report metrics for in the format:
+     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearParent() {
-      parent_ = getDefaultInstance().getParent();
+    public Builder clearName() {
+      name_ = getDefaultInstance().getName();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -638,23 +642,23 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent resource where this table will be created.
-     * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
+     * Required. Table to report metrics for in the format:
+     * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
      * </pre>
      *
      * <code>
-     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @param value The bytes for parent to set.
+     * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      parent_ = value;
+      name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -674,7 +678,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the httpBody field is set.
      */
@@ -689,7 +693,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The httpBody.
      */
@@ -708,7 +712,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setHttpBody(com.google.api.HttpBody value) {
       if (httpBodyBuilder_ == null) {
@@ -731,7 +735,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setHttpBody(com.google.api.HttpBody.Builder builderForValue) {
       if (httpBodyBuilder_ == null) {
@@ -751,7 +755,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeHttpBody(com.google.api.HttpBody value) {
       if (httpBodyBuilder_ == null) {
@@ -779,7 +783,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearHttpBody() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -799,7 +803,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.api.HttpBody.Builder getHttpBodyBuilder() {
       bitField0_ |= 0x00000002;
@@ -814,7 +818,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder() {
       if (httpBodyBuilder_ != null) {
@@ -831,7 +835,7 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
      * Required.
      * </pre>
      *
-     * <code>.google.api.HttpBody http_body = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.api.HttpBody,
@@ -849,24 +853,25 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
       return httpBodyBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.biglake.v1.CreateIcebergTableRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.biglake.v1.CreateIcebergTableRequest)
-  private static final com.google.cloud.biglake.v1.CreateIcebergTableRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.biglake.v1.ReportIcebergTableMetricsRequest)
+  private static final com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest
+      DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.biglake.v1.CreateIcebergTableRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest();
   }
 
-  public static com.google.cloud.biglake.v1.CreateIcebergTableRequest getDefaultInstance() {
+  public static com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateIcebergTableRequest> PARSER =
-      new com.google.protobuf.AbstractParser<CreateIcebergTableRequest>() {
+  private static final com.google.protobuf.Parser<ReportIcebergTableMetricsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReportIcebergTableMetricsRequest>() {
         @java.lang.Override
-        public CreateIcebergTableRequest parsePartialFrom(
+        public ReportIcebergTableMetricsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -885,17 +890,17 @@ public final class CreateIcebergTableRequest extends com.google.protobuf.Generat
         }
       };
 
-  public static com.google.protobuf.Parser<CreateIcebergTableRequest> parser() {
+  public static com.google.protobuf.Parser<ReportIcebergTableMetricsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateIcebergTableRequest> getParserForType() {
+  public com.google.protobuf.Parser<ReportIcebergTableMetricsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.biglake.v1.CreateIcebergTableRequest getDefaultInstanceForType() {
+  public com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
