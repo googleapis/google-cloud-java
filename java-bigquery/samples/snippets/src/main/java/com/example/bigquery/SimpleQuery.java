@@ -29,8 +29,12 @@ public class SimpleQuery {
   public static void main(String[] args) {
     // TODO(developer): Replace this query before running the sample.
     String query =
-        "SELECT corpus, count(*) as corpus_count "
-            + "FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+        "SELECT name, SUM(number) as total_people "
+            + "FROM `bigquery-public-data.usa_names.usa_1910_2013` "
+            + "WHERE state = 'TX' "
+            + "GROUP BY name, state "
+            + "ORDER BY total_people DESC "
+            + "LIMIT 100;";
     simpleQuery(query);
   }
 
@@ -51,8 +55,8 @@ public class SimpleQuery {
           .iterateAll()
           .forEach(
               row -> {
-                System.out.print("corpus:" + row.get("corpus").getStringValue());
-                System.out.print(", count:" + row.get("corpus_count").getLongValue());
+                System.out.print("name:" + row.get("name").getStringValue());
+                System.out.print(", count:" + row.get("total_people").getLongValue());
                 System.out.println();
               });
 
