@@ -259,12 +259,12 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=2;ProjectId=Proj1;"
             + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
-            + "metadataFetchThreadCount=5;queryExecutionThreadCount=6;";
+            + "metadataFetchThreadCount=5;";
     String url2 =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=2;ProjectId=Proj2;"
             + "OAuthAccessToken=redacted;OAuthClientId=redacted;OAuthClientSecret=redacted;"
-            + "metadataFetchThreadCount=10;queryExecutionThreadCount=12;";
+            + "metadataFetchThreadCount=10;";
 
     BigQueryConnection conn1 = new BigQueryConnection(url1);
     BigQueryConnection conn2 = new BigQueryConnection(url2);
