@@ -50,9 +50,9 @@ import com.google.api.services.bigquery.model.ListRoutinesResponse;
 import com.google.api.services.bigquery.model.Model;
 import com.google.api.services.bigquery.model.ModelReference;
 import com.google.api.services.bigquery.model.Policy;
+import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
-import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.Routine;
 import com.google.api.services.bigquery.model.RoutineReference;
 import com.google.api.services.bigquery.model.SetIamPolicyRequest;
@@ -275,7 +275,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       if (pageToken != null) {
         request.setPageToken(pageToken);
       }
-      request.getRequestHeaders().set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
+      request
+          .getRequestHeaders()
+          .set("x-goog-otel-enabled", this.options.isOpenTelemetryTracingEnabled());
 
       String gcpResourceDestinationId = RESOURCE_PROJECT_PREFIX + this.options.getProjectId();
 

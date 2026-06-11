@@ -73,9 +73,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private final BigQueryOptions serviceOptions;
 
     ProjectPageFetcher(
-        BigQueryOptions serviceOptions,
-        String cursor,
-        Map<BigQueryRpc.Option, ?> optionMap) {
+        BigQueryOptions serviceOptions, String cursor, Map<BigQueryRpc.Option, ?> optionMap) {
       this.requestOptions =
           PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
@@ -351,25 +349,25 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private static Page<Project> listProjects(
-      final BigQueryOptions serviceOptions,
-      final Map<BigQueryRpc.Option, ?> optionsMap) {
+      final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<ProjectList.Projects>> result =
         serviceOptions.getBigQueryRpcV2().listProjects(optionsMap);
     String nextPageToken = result.x();
-    Iterable<Project> projects = Iterables.transform(
-        result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
-        projectPb -> new Project(
-            projectPb.getId(),
-            projectPb.getNumericId() != null ? String.valueOf(projectPb.getNumericId()) : null,
-            projectPb.getProjectReference() != null ? projectPb.getProjectReference().getProjectId() : null,
-            projectPb.getFriendlyName()
-        )
-    );
+    Iterable<Project> projects =
+        Iterables.transform(
+            result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
+            projectPb ->
+                new Project(
+                    projectPb.getId(),
+                    projectPb.getNumericId() != null
+                        ? String.valueOf(projectPb.getNumericId())
+                        : null,
+                    projectPb.getProjectReference() != null
+                        ? projectPb.getProjectReference().getProjectId()
+                        : null,
+                    projectPb.getFriendlyName()));
     return new PageImpl<>(
-        new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap),
-        nextPageToken,
-        projects
-    );
+        new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap), nextPageToken, projects);
   }
 
   @Override

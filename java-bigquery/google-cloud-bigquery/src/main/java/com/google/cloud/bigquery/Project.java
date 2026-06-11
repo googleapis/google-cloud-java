@@ -57,10 +57,10 @@ public class Project implements Serializable {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Project project = (Project) o;
-    return Objects.equals(id, project.id) &&
-           Objects.equals(numericId, project.numericId) &&
-           Objects.equals(projectId, project.projectId) &&
-           Objects.equals(friendlyName, project.friendlyName);
+    return Objects.equals(id, project.id)
+        && Objects.equals(numericId, project.numericId)
+        && Objects.equals(projectId, project.projectId)
+        && Objects.equals(friendlyName, project.friendlyName);
   }
 
   @Override
@@ -70,11 +70,19 @@ public class Project implements Serializable {
 
   @Override
   public String toString() {
-    return "Project{" +
-        "id='" + id + '\'' +
-        ", numericId='" + numericId + '\'' +
-        ", projectId='" + projectId + '\'' +
-        ", friendlyName='" + friendlyName + '\'' +
-        '}';
+    return "Project{"
+        + "id='"
+        + id
+        + '\''
+        + ", numericId='"
+        + numericId
+        + '\''
+        + ", projectId='"
+        + projectId
+        + '\''
+        + ", friendlyName='"
+        + friendlyName
+        + '\''
+        + '}';
   }
 }

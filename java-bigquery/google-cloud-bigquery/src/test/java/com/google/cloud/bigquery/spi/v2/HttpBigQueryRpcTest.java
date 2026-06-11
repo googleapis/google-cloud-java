@@ -289,7 +289,8 @@ public class HttpBigQueryRpcTest {
       options.put(BigQueryRpc.Option.MAX_RESULTS, 10L);
       options.put(BigQueryRpc.Option.PAGE_TOKEN, "token1");
 
-      com.google.cloud.Tuple<String, Iterable<ProjectList.Projects>> result = rpc.listProjects(options);
+      com.google.cloud.Tuple<String, Iterable<ProjectList.Projects>> result =
+          rpc.listProjects(options);
 
       verifyRequest("GET", "/projects?maxResults=10&pageToken=token1");
       assertEquals("token2", result.x());
