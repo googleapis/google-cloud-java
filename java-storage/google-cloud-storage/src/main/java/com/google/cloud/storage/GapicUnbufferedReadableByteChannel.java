@@ -209,6 +209,17 @@ final class GapicUnbufferedReadableByteChannel
 
   @Override
   public void close() throws IOException {
+    long readLimit = req.getReadLimit();
+    long receivedBytes = fetchOffset.get() - req.getReadOffset();
+    if (readLimit > 0 && receivedBytes > readLimit) {
+      java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName())
+          .warning(
+              String.format(
+                  "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                  receivedBytes - readLimit,
+                  req.getBucket(),
+                  req.getObject()));
+    }
     open = false;
     try {
       if (leftovers != null) {

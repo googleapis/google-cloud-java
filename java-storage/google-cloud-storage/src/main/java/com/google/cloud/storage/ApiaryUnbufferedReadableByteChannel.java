@@ -77,6 +77,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   private ScatteringByteChannel sbc;
   private boolean open;
   private boolean returnEOF;
+  private long totalBytesReadFromNetwork;
 
   // returned X-Goog-Generation header value
   private Long xGoogGeneration;
@@ -147,6 +148,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
           }
         } else {
           totalRead += read;
+          totalBytesReadFromNetwork += read;
         }
         return totalRead;
       } catch (Exception t) {
@@ -182,6 +184,18 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
   @Override
   public void close() throws IOException {
+    long requestedLength = apiaryReadRequest.getByteRangeSpec().length();
+    if (requestedLength >= 0
+        && requestedLength < ByteRangeSpec.EFFECTIVE_INFINITY
+        && totalBytesReadFromNetwork > requestedLength) {
+      java.util.logging.Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName())
+          .warning(
+              String.format(
+                  "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                  totalBytesReadFromNetwork - requestedLength,
+                  apiaryReadRequest.getObject().getBucket(),
+                  apiaryReadRequest.getObject().getName()));
+    }
     open = false;
     if (sbc != null) {
       sbc.close();
