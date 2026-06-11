@@ -66,11 +66,9 @@
   </dependencyManagement>
 
   <modules>
-    <!-- {x-generated-modules-start} -->
     <module>gapic-showcase</module>
     <module>grpc-gapic-showcase-v1beta1</module>
     <module>proto-gapic-showcase-v1beta1</module>
-    <!-- {x-generated-modules-end} -->
   </modules>
 
   <profiles>
