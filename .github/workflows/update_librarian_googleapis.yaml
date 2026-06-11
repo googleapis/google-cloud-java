@@ -128,7 +128,10 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         PR_TITLE: "chore: update googleapis commitish to ${{ steps.commit.outputs.short_commit }}"
-        PR_BODY: "Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}"
+        PR_BODY: |
+          Updated googleapis commitish in librarian.yaml and generation_config.yaml to https://github.com/googleapis/googleapis/commit/${{ steps.commit.outputs.new_commit }}
+
+          💡 **Note:** Please merge or close this PR so that the daily update workflow can continue to run successfully. Alternatively, you can manually trigger the workflow once this PR is resolved.
       run: |
         set -x
         
