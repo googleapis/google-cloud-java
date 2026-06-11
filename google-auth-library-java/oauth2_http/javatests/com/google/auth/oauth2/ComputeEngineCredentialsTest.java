@@ -1312,18 +1312,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertNull(credentials.getRegionalAccessBoundaryUrl());
   }
 
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
-  }
-
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
 
     MockMetadataServerTransport transport =
