@@ -56,7 +56,7 @@ public class SimpleQuery {
           .forEach(
               row -> {
                 System.out.print("name:" + row.get("name").getStringValue());
-                System.out.print(", count:" + row.get("total_people").getLongValue());
+                System.out.print(", total_people:" + row.get("total_people").getLongValue());
                 System.out.println();
               });
 
