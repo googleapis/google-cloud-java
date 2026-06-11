@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanneradapter</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-cloud-spanneradapter-v1</artifactId>
         <version>0.29.0</version><!-- {x-version-update:proto-google-cloud-spanneradapter-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

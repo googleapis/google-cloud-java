@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-geocode</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-google-maps-geocode-v4</artifactId>
         <version>0.5.0</version><!-- {x-version-update:proto-google-maps-geocode-v4:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-maps-geocode</module>
     <module>grpc-google-maps-geocode-v4</module>
     <module>proto-google-maps-geocode-v4</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-maps-geocode-bom</module>
   </modules>
 

@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-backupdr</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-cloud-backupdr-v1</artifactId>
         <version>0.52.0</version><!-- {x-version-update:proto-google-cloud-backupdr-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

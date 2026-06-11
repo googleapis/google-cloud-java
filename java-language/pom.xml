@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-language-v1</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>google-cloud-language</artifactId>
         <version>2.94.0</version><!-- {x-version-update:google-cloud-language:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-language</module>
     <module>grpc-google-cloud-language-v1</module>
     <module>grpc-google-cloud-language-v1beta2</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-language-v1</module>
     <module>proto-google-cloud-language-v1beta2</module>
     <module>proto-google-cloud-language-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-language-bom</module>
   </modules>
 

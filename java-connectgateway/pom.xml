@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-connectgateway</artifactId>
@@ -36,13 +37,16 @@
         <artifactId>proto-google-cloud-connectgateway-v1</artifactId>
         <version>0.45.0</version><!-- {x-version-update:proto-google-cloud-connectgateway-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-connectgateway</module>
     <module>proto-google-cloud-connectgateway-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-connectgateway-bom</module>
   </modules>
 

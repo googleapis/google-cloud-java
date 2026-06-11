@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api-ads</groupId>
         <artifactId>data-manager</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-data-manager-v1</artifactId>
         <version>0.14.0</version><!-- {x-version-update:proto-data-manager-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>data-manager</module>
     <module>grpc-data-manager-v1</module>
     <module>proto-data-manager-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>data-manager-bom</module>
   </modules>
 

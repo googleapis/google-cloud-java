@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-advisorynotifications</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-cloud-advisorynotifications-v1</artifactId>
         <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-advisorynotifications-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-advisorynotifications</module>
     <module>grpc-google-cloud-advisorynotifications-v1</module>
     <module>proto-google-cloud-advisorynotifications-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-advisorynotifications-bom</module>
   </modules>
 

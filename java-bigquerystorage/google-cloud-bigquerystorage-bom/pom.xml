@@ -50,6 +50,7 @@
 
   <dependencyManagement>
      <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerystorage</artifactId>
@@ -105,6 +106,7 @@
         <artifactId>proto-google-cloud-bigquerystorage-v1beta</artifactId>
         <version>3.29.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 

@@ -23,6 +23,7 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-datastore-v1</artifactId>
@@ -31,6 +32,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-datastore-admin-v1</artifactId>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-http</artifactId>
@@ -39,6 +41,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core-grpc</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-datastore-v1</artifactId>
@@ -47,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1-proto-client</artifactId>

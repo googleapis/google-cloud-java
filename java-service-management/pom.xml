@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-management</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>grpc-google-cloud-service-management-v1</artifactId>
         <version>3.91.0</version><!-- {x-version-update:grpc-google-cloud-service-management-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-service-management</module>
     <module>grpc-google-cloud-service-management-v1</module>
     <module>proto-google-cloud-service-management-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-service-management-bom</module>
   </modules>
 

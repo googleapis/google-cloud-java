@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-data-fusion</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>proto-google-cloud-data-fusion-v1</artifactId>
         <version>1.93.0</version><!-- {x-version-update:proto-google-cloud-data-fusion-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-data-fusion</module>
     <module>grpc-google-cloud-data-fusion-v1beta1</module>
     <module>grpc-google-cloud-data-fusion-v1</module>
     <module>proto-google-cloud-data-fusion-v1beta1</module>
     <module>proto-google-cloud-data-fusion-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-data-fusion-bom</module>
   </modules>
 

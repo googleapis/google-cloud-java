@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-reviews</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-google-shopping-merchant-reviews-v1beta</artifactId>
         <version>0.39.0</version><!-- {x-version-update:proto-google-shopping-merchant-reviews-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-shopping-merchant-reviews</module>
     <module>grpc-google-shopping-merchant-reviews-v1beta</module>
     <module>proto-google-shopping-merchant-reviews-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-shopping-merchant-reviews-bom</module>
   </modules>
 

@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-asset-v1</artifactId>
@@ -81,6 +82,7 @@
         <artifactId>google-cloud-asset</artifactId>
         <version>3.97.0</version><!-- {x-version-update:google-cloud-asset:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-orgpolicy-v1</artifactId>
@@ -106,6 +108,7 @@
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-asset</module>
     <module>grpc-google-cloud-asset-v1</module>
     <module>grpc-google-cloud-asset-v1p1beta1</module>
@@ -117,6 +120,7 @@
     <module>proto-google-cloud-asset-v1p2beta1</module>
     <module>proto-google-cloud-asset-v1p5beta1</module>
     <module>proto-google-cloud-asset-v1p7beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-asset-bom</module>
   </modules>
 

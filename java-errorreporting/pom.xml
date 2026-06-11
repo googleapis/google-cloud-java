@@ -26,12 +26,12 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-errorreporting</artifactId>
         <version>0.214.0-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
       </dependency>
-
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
@@ -42,13 +42,17 @@
         <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
         <version>0.214.0-beta</version><!-- {x-version-update:grpc-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
+
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-errorreporting</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-errorreporting-bom</module>
   </modules>
 

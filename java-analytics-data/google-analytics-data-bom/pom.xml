@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-data</artifactId>
@@ -49,6 +50,7 @@
         <artifactId>proto-google-analytics-data-v1alpha</artifactId>
         <version>0.104.0</version><!-- {x-version-update:proto-google-analytics-data-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

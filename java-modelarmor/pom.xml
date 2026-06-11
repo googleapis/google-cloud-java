@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-modelarmor</artifactId>
@@ -51,16 +52,19 @@
         <artifactId>proto-google-cloud-modelarmor-v1</artifactId>
         <version>0.34.0</version><!-- {x-version-update:proto-google-cloud-modelarmor-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-modelarmor</module>
     <module>grpc-google-cloud-modelarmor-v1</module>
     <module>grpc-google-cloud-modelarmor-v1beta</module>
     <module>proto-google-cloud-modelarmor-v1</module>
     <module>proto-google-cloud-modelarmor-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-modelarmor-bom</module>
   </modules>
 
