@@ -144,8 +144,6 @@ final class BigQueryJdbcProxyUtility {
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
     } else {
-      // Default to NetHttpTransport which automatically respects the JVM's default trust store
-      // (cacerts or javax.net.ssl.trustStore).
       httpTransportOptionsBuilder.setHttpTransportFactory(
           () -> new NetHttpTransport.Builder().build());
     }
@@ -178,8 +176,10 @@ final class BigQueryJdbcProxyUtility {
                   proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME)));
       HttpRoutePlanner httpRoutePlanner = new DefaultProxyRoutePlanner(proxyHostDetails);
       httpClientBuilder.setRoutePlanner(httpRoutePlanner);
+      addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
+    } else {
+      httpClientBuilder.useSystemProperties();
     }
-    httpClientBuilder.useSystemProperties();
 
     if (sslTrustStorePath != null) {
       try (FileInputStream trustStoreStream = new FileInputStream(sslTrustStorePath)) {
