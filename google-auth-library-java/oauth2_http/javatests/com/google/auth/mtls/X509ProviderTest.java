@@ -209,55 +209,6 @@ class X509ProviderTest {
     assertThrows(Exception.class, testProvider::getKeyStore);
   }
 
-  // Success Path: SPIFFE Bundle loading
-  @Test
-  void x509Provider_loadSpiffeBundle_succeeds() throws Exception {
-    Path spiffeDir = Files.createTempDirectory("spiffe_bundle");
-    spiffeDir.toFile().deleteOnExit();
-    Path credentialBundle = spiffeDir.resolve("credentialbundle.pem");
-
-    // Create credentialbundle.pem by combining valid test cert and key
-    byte[] certBytes = Files.readAllBytes(new File(TEST_CERT_PATH).toPath());
-    byte[] keyBytes = Files.readAllBytes(new File("testresources/mtls/test_key.pem").toPath());
-    byte[] bundleBytes = new byte[certBytes.length + keyBytes.length];
-    System.arraycopy(certBytes, 0, bundleBytes, 0, certBytes.length);
-    System.arraycopy(keyBytes, 0, bundleBytes, certBytes.length, keyBytes.length);
-    Files.write(credentialBundle, bundleBytes);
-
-    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
-    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
-    try {
-      X509Provider provider = new X509Provider(name -> null, (name, def) -> def, null);
-      KeyStore keyStore = provider.getKeyStore();
-      assertNotNull(keyStore);
-      assertEquals(1, keyStore.size());
-    } finally {
-      MtlsUtils.spiffeDirectory = originalSpiffeDir;
-    }
-  }
-
-  // Success Path: SPIFFE Separate Files loading
-  @Test
-  void x509Provider_loadSpiffeSeparateFiles_succeeds() throws Exception {
-    Path spiffeDir = Files.createTempDirectory("spiffe_separate");
-    spiffeDir.toFile().deleteOnExit();
-
-    Files.copy(new File(TEST_CERT_PATH).toPath(), spiffeDir.resolve("certificates.pem"));
-    Files.copy(
-        new File("testresources/mtls/test_key.pem").toPath(), spiffeDir.resolve("private_key.pem"));
-
-    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
-    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
-    try {
-      X509Provider provider = new X509Provider(name -> null, (name, def) -> def, null);
-      KeyStore keyStore = provider.getKeyStore();
-      assertNotNull(keyStore);
-      assertEquals(1, keyStore.size());
-    } finally {
-      MtlsUtils.spiffeDirectory = originalSpiffeDir;
-    }
-  }
-
   // Failure Path: mTLS disabled (allowance = false) throws CertificateSourceUnavailableException
   @Test
   void x509Provider_allowanceDisabled_throws() throws Exception {

@@ -51,16 +51,18 @@ public class MtlsUtils {
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 
-  @com.google.common.annotations.VisibleForTesting
-  static String spiffeDirectory = "/var/run/secrets/workload-spiffe-credentials/";
-
-  static final String SPIFFE_CREDENTIAL_BUNDLE_FILE = "credentialbundle.pem";
-  static final String SPIFFE_CERTIFICATE_FILE = "certificates.pem";
-  static final String SPIFFE_PRIVATE_KEY_FILE = "private_key.pem";
-
+  /**
+   * The policy determining when to use mutual TLS (mTLS) endpoints.
+   *
+   * <p>See <a href="https://google.aip.dev/auth/4114">AIP-4114</a> for the specification on mTLS
+   * endpoint usage.
+   */
   public enum MtlsEndpointUsagePolicy {
+    /** Always use the mTLS endpoint, and fail if client certificates are not configured. */
     ALWAYS,
+    /** Never use the mTLS endpoint. */
     NEVER,
+    /** Use the mTLS endpoint if client certificates are configured (auto-discovery). */
     AUTO
   }
 
@@ -167,12 +169,20 @@ public class MtlsUtils {
 
     // Check if client certificate usage is allowed
     String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    MtlsEndpointUsagePolicy policy = getMtlsEndpointUsagePolicy(envProvider);
     if ("false".equalsIgnoreCase(useClientCertificate)) {
+      if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
+        throw new CertificateSourceUnavailableException(
+            "mTLS is configured to ALWAYS, but client certificate usage was explicitly disabled via GOOGLE_API_USE_CLIENT_CERTIFICATE=false.");
+      }
       return false;
     }
 
-    if (getMtlsEndpointUsagePolicy(envProvider) == MtlsEndpointUsagePolicy.NEVER) {
+    if (policy == MtlsEndpointUsagePolicy.NEVER) {
       return false;
+    }
+    if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
+      return true;
     }
 
     // Locate and process the certificate configuration file
@@ -185,44 +195,16 @@ public class MtlsUtils {
             "Certificate configuration file does not exist or is not a file: "
                 + certConfigFile.getAbsolutePath());
       }
-    }
-
-    WorkloadCertificateConfiguration workloadCertConfig = null;
-    try {
-      workloadCertConfig =
-          getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride);
-    } catch (CertificateSourceUnavailableException e) {
-      // Config file is simply not present. This is fine, fallback to SPIFFE.
-    } catch (IOException e) {
-      // Config file exists but is malformed or points to invalid paths -> throw hard error
-      throw e;
-    }
-
-    if (workloadCertConfig != null) {
-      // Validate referenced files exist
-      File certFile = new File(workloadCertConfig.getCertPath());
-      File keyFile = new File(workloadCertConfig.getPrivateKeyPath());
-      if (!certFile.isFile() || !keyFile.isFile()) {
-        throw new IOException(
-            String.format(
-                "Certificate configuration exists but referenced files are missing: cert_path=%s, key_path=%s",
-                workloadCertConfig.getCertPath(), workloadCertConfig.getPrivateKeyPath()));
-      }
       return true;
     }
 
-    // Fallback to SPIFFE discovery if the directory exists
-    File spiffeDir = new File(spiffeDirectory);
-    if (spiffeDir.isDirectory()) {
-      File credentialBundle = new File(spiffeDir, SPIFFE_CREDENTIAL_BUNDLE_FILE);
-      if (credentialBundle.isFile()) {
+    try {
+      File wellKnownConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
+      if (wellKnownConfig.isFile()) {
         return true;
       }
-      File certsFile = new File(spiffeDir, SPIFFE_CERTIFICATE_FILE);
-      File keyFile = new File(spiffeDir, SPIFFE_PRIVATE_KEY_FILE);
-      if (certsFile.isFile() && keyFile.isFile()) {
-        return true;
-      }
+    } catch (IOException e) {
+      // ignore if well-known directory resolution fails (e.g. APPDATA not set on Windows)
     }
 
     return false;

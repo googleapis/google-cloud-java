@@ -45,6 +45,7 @@ import com.google.api.client.util.Clock;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.Key;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsUtils;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
@@ -189,7 +190,10 @@ final class RegionalAccessBoundary implements Serializable {
       throw new IllegalArgumentException("The provided access token is expired.");
     }
 
-    if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory) {
+    MtlsUtils.MtlsEndpointUsagePolicy mtlsPolicy =
+        MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
+    if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory
+        || mtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
       url = url.replace("iamcredentials.googleapis.com", "iamcredentials.mtls.googleapis.com");
     }
 

@@ -36,7 +36,6 @@ import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.auth.oauth2.SystemEnvironmentProvider;
 import com.google.auth.oauth2.SystemPropertyProvider;
-import com.google.common.base.Strings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -105,9 +104,6 @@ public class X509Provider implements MtlsProvider {
    *   <li>The well known gcloud location for the certificate configuration file.
    * </ul>
    *
-   * <p>If none of the above are available, it will attempt to discover and load certificates from
-   * SPIFFE credentials located under "/var/run/secrets/workload-spiffe-credentials/".
-   *
    * @return a KeyStore containing the X.509 certificate specified by the certificate configuration.
    * @throws CertificateSourceUnavailableException if the certificate source is unavailable (ex.
    *     missing configuration file)
@@ -116,64 +112,19 @@ public class X509Provider implements MtlsProvider {
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
     // Attempt to load from resolved Config File
-    WorkloadCertificateConfiguration workloadCertConfig = null;
-    try {
-      workloadCertConfig =
-          MtlsUtils.getWorkloadCertificateConfiguration(
-              envProvider, propProvider, certConfigPathOverride);
-    } catch (CertificateSourceUnavailableException e) {
-      // Ignore config-not-found error to fall back to SPIFFE discovery ONLY if not explicitly
-      // configured.
-      boolean isExplicitlyConfigured =
-          certConfigPathOverride != null
-              || !Strings.isNullOrEmpty(
-                  envProvider.getEnv(MtlsUtils.CERTIFICATE_CONFIGURATION_ENV_VARIABLE));
-      if (isExplicitlyConfigured) {
-        throw e;
-      }
+    WorkloadCertificateConfiguration workloadCertConfig =
+        MtlsUtils.getWorkloadCertificateConfiguration(
+            envProvider, propProvider, certConfigPathOverride);
+
+    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
+        InputStream privateKeyStream =
+            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+        SequenceInputStream certAndPrivateKeyStream =
+            new SequenceInputStream(certStream, privateKeyStream)) {
+      return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+    } catch (Exception e) {
+      throw new IOException("X509Provider: Unexpected error loading from config file:", e);
     }
-
-    if (workloadCertConfig != null) {
-      try (InputStream certStream =
-              new FileInputStream(new File(workloadCertConfig.getCertPath()));
-          InputStream privateKeyStream =
-              new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
-          SequenceInputStream certAndPrivateKeyStream =
-              new SequenceInputStream(certStream, privateKeyStream)) {
-        return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
-      } catch (Exception e) {
-        throw new IOException("X509Provider: Unexpected error loading from config file:", e);
-      }
-    }
-
-    // Fallback: Load from SPIFFE Credentials
-    File spiffeDir = new File(MtlsUtils.spiffeDirectory);
-    if (spiffeDir.isDirectory()) {
-      File credentialBundle = new File(spiffeDir, MtlsUtils.SPIFFE_CREDENTIAL_BUNDLE_FILE);
-      if (credentialBundle.isFile()) {
-        try (InputStream bundleStream = new FileInputStream(credentialBundle)) {
-          return SecurityUtils.createMtlsKeyStore(bundleStream);
-        } catch (Exception e) {
-          throw new IOException("X509Provider: Unexpected error loading from SPIFFE bundle:", e);
-        }
-      }
-
-      File certsFile = new File(spiffeDir, MtlsUtils.SPIFFE_CERTIFICATE_FILE);
-      File keyFile = new File(spiffeDir, MtlsUtils.SPIFFE_PRIVATE_KEY_FILE);
-      if (certsFile.isFile() && keyFile.isFile()) {
-        try (InputStream certStream = new FileInputStream(certsFile);
-            InputStream privateKeyStream = new FileInputStream(keyFile);
-            SequenceInputStream certAndPrivateKeyStream =
-                new SequenceInputStream(certStream, privateKeyStream)) {
-          return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
-        } catch (Exception e) {
-          throw new IOException(
-              "X509Provider: Unexpected error loading from separate SPIFFE files:", e);
-        }
-      }
-    }
-
-    throw new CertificateSourceUnavailableException("No certificate source was resolved.");
   }
 
   @Override

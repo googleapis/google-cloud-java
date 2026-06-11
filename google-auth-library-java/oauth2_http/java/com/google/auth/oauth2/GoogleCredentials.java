@@ -401,17 +401,27 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return;
     }
 
+    MtlsUtils.MtlsEndpointUsagePolicy mtlsPolicy =
+        MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider());
     try {
-      if (!(transportFactory instanceof MtlsHttpTransportFactory)
-          && MtlsUtils.canMtlsBeEnabled(getEnvironmentProvider(), getPropertyProvider(), null)) {
+      boolean canMtls =
+          MtlsUtils.canMtlsBeEnabled(getEnvironmentProvider(), getPropertyProvider(), null);
+      // Initialize mTLS transport factory if mTLS can be enabled and the user hasn't already
+      // configured a custom MtlsHttpTransportFactory.
+      if (!(transportFactory instanceof MtlsHttpTransportFactory) && canMtls) {
         X509Provider x509Provider =
             new X509Provider(getEnvironmentProvider(), getPropertyProvider(), null);
         KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-        if (mtlsKeyStore != null) {
-          transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-        }
+        transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
       }
     } catch (Exception e) {
+      if (mtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
+        if (e instanceof IOException) {
+          throw (IOException) e;
+        }
+        throw new IOException(
+            "mTLS is configured to ALWAYS, but initialization failed: " + e.getMessage(), e);
+      }
       // Graceful fallback to standard transport if mTLS initialization fails
     }
 
@@ -463,6 +473,10 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       // Sets off an async refresh for request-metadata.
       refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
     } catch (IOException e) {
+      if (MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider())
+          == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
+        throw e;
+      }
       // Ignore failure in async refresh trigger.
     }
     return metadata;
@@ -493,6 +507,11 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
             try {
               refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
             } catch (IOException e) {
+              if (MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider())
+                  == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
+                callback.onFailure(e);
+                return;
+              }
               // Ignore failure in async refresh trigger.
             }
             callback.onSuccess(metadata);

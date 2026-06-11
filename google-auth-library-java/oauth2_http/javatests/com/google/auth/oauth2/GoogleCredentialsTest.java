@@ -1233,6 +1233,17 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  public void regionalAccessBoundary_alwaysPolicy_missingCertConfig_throwsException() {
+    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+    envProvider.setEnv("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
+
+    GoogleCredentials credentials =
+        new TestRegionalCredentials(new AccessToken("some-token", null), envProvider);
+
+    assertThrows(IOException.class, () -> credentials.getRequestMetadata());
+  }
+
+  @Test
   public void regionalAccessBoundary_deduplicationOfConcurrentRefreshes()
       throws IOException, InterruptedException {
 
@@ -1380,6 +1391,31 @@ class GoogleCredentialsTest extends BaseSerializationTest {
 
     public void advanceTime(long millis) {
       currentTime.addAndGet(millis);
+    }
+  }
+
+  private static class TestRegionalCredentials extends GoogleCredentials
+      implements RegionalAccessBoundaryProvider {
+    private final EnvironmentProvider envProvider;
+
+    TestRegionalCredentials(AccessToken token, EnvironmentProvider envProvider) {
+      super(GoogleCredentials.newBuilder().setAccessToken(token));
+      this.envProvider = envProvider;
+    }
+
+    @Override
+    EnvironmentProvider getEnvironmentProvider() {
+      return envProvider;
+    }
+
+    @Override
+    HttpTransportFactory getTransportFactory() {
+      return DUMMY_TRANSPORT_FACTORY;
+    }
+
+    @Override
+    public String getRegionalAccessBoundaryUrl() {
+      return "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/foo/allowedLocations";
     }
   }
 }

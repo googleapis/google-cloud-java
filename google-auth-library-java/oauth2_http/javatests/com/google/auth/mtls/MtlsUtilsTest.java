@@ -351,81 +351,23 @@ class MtlsUtilsTest {
     assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
   }
 
-  // If the configuration file exists but the certificate path it references does not exist,
-  // canMtlsBeEnabled should throw an IOException.
   @Test
-  void canMtlsBeEnabled_configMissingCertFile_throwsIOException() throws IOException {
-    Path configFile = tempDir.resolve("config.json");
-    Path nonExistentCert = tempDir.resolve("non_existent_cert.pem");
-    Path keyFile = tempDir.resolve("key.pem");
-    Files.createFile(keyFile);
-    Files.write(configFile, createJsonConfigString(nonExistentCert, keyFile).getBytes());
-
+  void canMtlsBeEnabled_alwaysPolicy_clientCertDisabled_throwsException() {
     EnvironmentProvider envProvider =
-        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+            return "false";
+          }
+          if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+            return "always";
+          }
+          return null;
+        };
     PropertyProvider propProvider = (name, def) -> def;
 
     assertThrows(
-        IOException.class, () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
-  }
-
-  // If the configuration file exists but the private key path it references does not exist,
-  // canMtlsBeEnabled should throw an IOException.
-  @Test
-  void canMtlsBeEnabled_configMissingKeyFile_throwsIOException() throws IOException {
-    Path configFile = tempDir.resolve("config.json");
-    Path certFile = tempDir.resolve("cert.pem");
-    Path nonExistentKey = tempDir.resolve("non_existent_key.pem");
-    Files.createFile(certFile);
-    Files.write(configFile, createJsonConfigString(certFile, nonExistentKey).getBytes());
-
-    EnvironmentProvider envProvider =
-        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
-    PropertyProvider propProvider = (name, def) -> def;
-
-    assertThrows(
-        IOException.class, () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
-  }
-
-  // If no configuration file exists but a SPIFFE credential bundle file is present,
-  // canMtlsBeEnabled should return true.
-  @Test
-  void canMtlsBeEnabled_unset_spiffeBundlePresent_returnsTrue() throws IOException {
-    Path spiffeDir = tempDir.resolve("spiffe_workload_bundle");
-    Files.createDirectory(spiffeDir);
-    Files.createFile(spiffeDir.resolve("credentialbundle.pem"));
-
-    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
-    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
-    try {
-      EnvironmentProvider envProvider = name -> null;
-      PropertyProvider propProvider = (name, def) -> def;
-
-      assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
-    } finally {
-      MtlsUtils.spiffeDirectory = originalSpiffeDir;
-    }
-  }
-
-  // If no configuration file exists but separate SPIFFE certificate and key files are present,
-  // canMtlsBeEnabled should return true.
-  @Test
-  void canMtlsBeEnabled_unset_spiffeCertsPresent_returnsTrue() throws IOException {
-    Path spiffeDir = tempDir.resolve("spiffe_workload_certs");
-    Files.createDirectory(spiffeDir);
-    Files.createFile(spiffeDir.resolve("certificates.pem"));
-    Files.createFile(spiffeDir.resolve("private_key.pem"));
-
-    String originalSpiffeDir = MtlsUtils.spiffeDirectory;
-    MtlsUtils.spiffeDirectory = spiffeDir.toString() + "/";
-    try {
-      EnvironmentProvider envProvider = name -> null;
-      PropertyProvider propProvider = (name, def) -> def;
-
-      assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
-    } finally {
-      MtlsUtils.spiffeDirectory = originalSpiffeDir;
-    }
+        CertificateSourceUnavailableException.class,
+        () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
   }
 
   @Test
