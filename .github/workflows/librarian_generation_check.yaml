@@ -84,4 +84,6 @@ jobs:
         body: |
           The librarian generate diff check failed on main branch.
 
+          To keep the `main` branch healthy, please consider **reverting the triggering change** first. Once the revert is merged, you can investigate the failure and submit a new PR with the fix.
+
           Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
