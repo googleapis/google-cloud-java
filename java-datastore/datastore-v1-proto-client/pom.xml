@@ -151,6 +151,7 @@
                 <arg>-XDcompilePolicy=simple</arg>
                 <arg>--should-stop=ifError=FLOW</arg>
                 <arg>-Xplugin:ErrorProne -XepExcludedPaths:.*/generated-sources/.*</arg>
+                <arg>${errorprone.javac.args}</arg>
 
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -168,7 +169,7 @@
                 <path>
                   <groupId>com.google.errorprone</groupId>
                   <artifactId>error_prone_core</artifactId>
-                  <version>${error-prone.version}</version>
+                  <version>${errorprone.version}</version>
                 </path>
               </annotationProcessorPaths>
             </configuration>

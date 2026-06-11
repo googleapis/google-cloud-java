@@ -218,7 +218,7 @@ public class MetricsTracerTest {
   }
 
   @Test
-  @SuppressWarnings("FutureReturnValueIgnored")
+  @SuppressWarnings({"FutureReturnValueIgnored", "NullArgumentForNonNullParameter"})
   public void testReadRowsFirstRow() throws InterruptedException {
     final long beforeSleep = 50;
     final long afterSleep = 50;

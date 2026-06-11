@@ -144,9 +144,8 @@
         <github.global.server>github</github.global.server>
         <site.installationModule>google-cloud-bigtable-parent</site.installationModule>
         <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-
-        <!-- Utility -->
-        <error-prone.version>2.38.0</error-prone.version>
+        <errorprone.version>2.48.0</errorprone.version>
+        <errorprone.javac.args>-g</errorprone.javac.args>
     </properties>
 
     <dependencyManagement>
@@ -345,6 +344,33 @@
       <id>bulkTests</id>
       <properties>
         <skipTests>true</skipTests>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk8</id>
+      <activation>
+        <jdk>[1.8,17)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.38.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk17</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.42.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk21</id>
+      <activation>
+        <jdk>21</jdk>
+      </activation>
+      <properties>
+        <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
       </properties>
     </profile>
     </profiles>
