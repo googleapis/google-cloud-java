@@ -21,12 +21,11 @@ package com.example.storage.control.v2;
 import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.FolderName;
 import com.google.storage.control.v2.StorageControlClient;
-import java.util.concurrent.ExecutionException;
 
 public final class DeleteFolderRecursive {
 
   public static void deleteFolderRecursive(String bucketName, String folderName)
-      throws ExecutionException, InterruptedException, Exception {
+      throws Exception {
     // The name of the bucket
     // String bucketName = "your-unique-bucket-name";
 

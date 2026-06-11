@@ -88,8 +88,7 @@ public final class FoldersTest {
   @Test
   public void getFolder() throws IOException {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
-    Folder gen1 =
-        storageControl.createFolder(
+    storageControl.createFolder(
             BucketName.of("_", bucket.getName()),
             Folder.getDefaultInstance(),
             folderName.getFolder());
@@ -106,8 +105,7 @@ public final class FoldersTest {
   public void renameFolder()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
     FolderName srcFolderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
-    Folder gen1 =
-        storageControl.createFolder(
+    storageControl.createFolder(
             BucketName.of("_", bucket.getName()),
             Folder.getDefaultInstance(),
             srcFolderName.getFolder());
@@ -128,8 +126,7 @@ public final class FoldersTest {
   @Test
   public void deleteFolder() throws IOException {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
-    Folder gen1 =
-        storageControl.createFolder(
+    storageControl.createFolder(
             BucketName.of("_", bucket.getName()),
             Folder.getDefaultInstance(),
             folderName.getFolder());
@@ -142,8 +139,7 @@ public final class FoldersTest {
   @Test
   public void deleteFolderRecursive() throws Exception {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
-    Folder gen1 =
-        storageControl.createFolder(
+    storageControl.createFolder(
             BucketName.of("_", bucket.getName()),
             Folder.getDefaultInstance(),
             folderName.getFolder());
@@ -156,8 +152,7 @@ public final class FoldersTest {
   @Test
   public void listFolder() throws IOException {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
-    Folder gen1 =
-        storageControl.createFolder(
+    storageControl.createFolder(
             BucketName.of("_", bucket.getName()),
             Folder.getDefaultInstance(),
             folderName.getFolder());
