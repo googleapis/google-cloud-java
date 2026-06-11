@@ -67,4 +67,4 @@ For more information on how to use Librarian, configure generation, or troublesh
 *   **[Librarian GitHub Repository](https://github.com/googleapis/librarian)**: The main repository for the Librarian tool.
 *   **[Librarian Command Reference](https://pkg.go.dev/github.com/googleapis/librarian/cmd/librarian)**: Detailed documentation of `librarian` CLI commands.
 *   **[Librarian Configuration Schema](https://github.com/googleapis/librarian/blob/main/doc/config-schema.md)**: Guide to the structure and options available in `librarian.yaml`.
-*   **[go/g3doc-sdk-librarian](https://go/g3doc-sdk-librarian)** (Internal): Internal documentation for code generation schedules and local development workflows.
+*   **[go/g3doc-sdk-librarian](http://go/g3doc-sdk-librarian)** (Internal): Internal documentation for code generation schedules and local development workflows.
