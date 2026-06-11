@@ -942,24 +942,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private void closeImpl() throws SQLException {
+    SQLException exceptionToThrow = null;
     try {
       if (this.bigQueryReadClient != null) {
         this.bigQueryReadClient.shutdown();
-        this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryReadClient.close();
       }
-
       if (this.bigQueryWriteClient != null) {
         this.bigQueryWriteClient.shutdown();
-        this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
-        this.bigQueryWriteClient.close();
       }
-
-      for (Statement statement : this.openStatements) {
-        statement.close();
-      }
-      this.openStatements.clear();
-
       if (this.metadataExecutor != null) {
         this.metadataExecutor.shutdown();
       }
@@ -967,29 +957,69 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.queryExecutor.shutdown();
       }
 
+      for (Statement statement : this.openStatements) {
+        try {
+          statement.close();
+        } catch (SQLException e) {
+          if (exceptionToThrow == null) {
+            exceptionToThrow = e;
+          } else {
+            exceptionToThrow.addSuppressed(e);
+          }
+        }
+      }
+      this.openStatements.clear();
+
       boolean interrupted = Thread.currentThread().isInterrupted();
 
-      if (this.metadataExecutor != null) {
-        try {
+      try {
+        if (this.bigQueryReadClient != null) {
+          if (interrupted) {
+            this.bigQueryReadClient.shutdownNow();
+          } else {
+            this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.bigQueryWriteClient != null) {
+          if (interrupted) {
+            this.bigQueryWriteClient.shutdownNow();
+          } else {
+            this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
+          }
+        }
+        if (this.metadataExecutor != null) {
           if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
             this.metadataExecutor.shutdownNow();
           }
-        } catch (InterruptedException e) {
-          this.metadataExecutor.shutdownNow();
-          interrupted = true;
-          Thread.currentThread().interrupt();
         }
-      }
-
-      if (this.queryExecutor != null) {
-        try {
+        if (this.queryExecutor != null) {
           if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
             this.queryExecutor.shutdownNow();
           }
-        } catch (InterruptedException e) {
+        }
+      } catch (InterruptedException e) {
+        interrupted = true;
+        if (this.bigQueryReadClient != null) {
+          this.bigQueryReadClient.shutdownNow();
+        }
+        if (this.bigQueryWriteClient != null) {
+          this.bigQueryWriteClient.shutdownNow();
+        }
+        if (this.metadataExecutor != null) {
+          this.metadataExecutor.shutdownNow();
+        }
+        if (this.queryExecutor != null) {
           this.queryExecutor.shutdownNow();
-          interrupted = true;
-          Thread.currentThread().interrupt();
+        }
+      } finally {
+        try {
+          if (this.bigQueryReadClient != null) {
+            this.bigQueryReadClient.close();
+          }
+        } finally {
+          if (this.bigQueryWriteClient != null) {
+            this.bigQueryWriteClient.close();
+          }
         }
       }
 
@@ -1004,6 +1034,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } finally {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+    }
+    if (exceptionToThrow != null) {
+      throw exceptionToThrow;
     }
     this.isClosed = true;
   }
