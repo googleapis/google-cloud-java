@@ -227,7 +227,7 @@ public class JdbcDriverTest {
   }
 
   @Test
-  public void testJdbcExternalHostFormat() {
+  public void testJdbcSpannerOmniFormat() {
     Matcher matcherWithoutInstance =
         SPANNER_OMNI_URL_PATTERN.matcher("jdbc:cloudspanner://localhost:15000/databases/test-db");
     assertTrue(matcherWithoutInstance.matches());
