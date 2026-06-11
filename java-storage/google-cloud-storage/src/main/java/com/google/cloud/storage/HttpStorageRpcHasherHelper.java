@@ -61,6 +61,9 @@ public final class HttpStorageRpcHasherHelper {
    * @throws IOException if the checksums do not match.
    */
   public void validate(HttpResponse response, byte[] content) throws IOException {
+    if (isTranscoded(response)) {
+      return;
+    }
     Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(response);
     String expectedCrc32cBase64 = hashes.get("crc32c");
     if (expectedCrc32cBase64 != null) {
@@ -76,6 +79,9 @@ public final class HttpStorageRpcHasherHelper {
    */
   @SuppressWarnings("UnstableApiUsage")
   public void validate(HttpResponse response, OutputStream activeStream) throws IOException {
+    if (isTranscoded(response)) {
+      return;
+    }
     if (activeStream instanceof HashingOutputStream) {
       HashingOutputStream targetStream = (HashingOutputStream) activeStream;
 
@@ -85,6 +91,24 @@ public final class HttpStorageRpcHasherHelper {
         validateCrc32c(expectedCrc32cBase64, targetStream.hash().asInt());
       }
     }
+  }
+
+  private boolean isTranscoded(HttpResponse response) {
+    com.google.api.client.http.HttpHeaders headers = response.getHeaders();
+    String storedEncoding =
+        HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-encoding");
+    String storedLength =
+        HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-length");
+    return storedEncoding != null || storedLength != null || isDecompressedByClient(response);
+  }
+
+  private boolean isDecompressedByClient(HttpResponse response) {
+    boolean returnRaw = response.getRequest().getResponseReturnRawInputStream();
+    if (!returnRaw) {
+      String encoding = response.getHeaders().getContentEncoding();
+      return encoding != null && encoding.contains("gzip");
+    }
+    return false;
   }
 
   /**
