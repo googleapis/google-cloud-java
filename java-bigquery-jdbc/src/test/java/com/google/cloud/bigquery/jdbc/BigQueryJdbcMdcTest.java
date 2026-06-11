@@ -285,10 +285,10 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) exec1).getMaximumPoolSize());
       assertEquals(0, ((ThreadPoolExecutor) exec2).getCorePoolSize());
       assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) exec2).getMaximumPoolSize());
-      assertEquals(0, ((ThreadPoolExecutor) metadataExec1).getCorePoolSize());
-      assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) metadataExec1).getMaximumPoolSize());
-      assertEquals(0, ((ThreadPoolExecutor) metadataExec2).getCorePoolSize());
-      assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) metadataExec2).getMaximumPoolSize());
+      assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getCorePoolSize());
+      assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getMaximumPoolSize());
+      assertEquals(10, ((ThreadPoolExecutor) metadataExec2).getCorePoolSize());
+      assertEquals(10, ((ThreadPoolExecutor) metadataExec2).getMaximumPoolSize());
 
       try (BigQueryJdbcMdc.MdcCloseable mdc =
           BigQueryJdbcMdc.registerInstance(conn1.getConnectionId())) {
