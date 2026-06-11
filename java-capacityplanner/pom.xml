@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-capacityplanner</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-google-cloud-capacityplanner-v1beta</artifactId>
         <version>0.16.0</version><!-- {x-version-update:proto-google-cloud-capacityplanner-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-capacityplanner</module>
     <module>grpc-google-cloud-capacityplanner-v1beta</module>
     <module>proto-google-cloud-capacityplanner-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-capacityplanner-bom</module>
   </modules>
 

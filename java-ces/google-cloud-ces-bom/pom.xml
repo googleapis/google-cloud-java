@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-ces</artifactId>
@@ -48,6 +49,7 @@
         <artifactId>proto-google-cloud-ces-v1beta</artifactId>
         <version>0.9.0</version><!-- {x-version-update:proto-google-cloud-ces-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

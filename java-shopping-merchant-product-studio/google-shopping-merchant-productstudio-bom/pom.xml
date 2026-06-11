@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-productstudio</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-shopping-merchant-productstudio-v1alpha</artifactId>
         <version>0.33.0</version><!-- {x-version-update:proto-google-shopping-merchant-productstudio-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

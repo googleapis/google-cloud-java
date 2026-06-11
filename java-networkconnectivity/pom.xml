@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-networkconnectivity</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>grpc-google-cloud-networkconnectivity-v1alpha1</artifactId>
         <version>1.92.0</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-networkconnectivity</module>
     <module>grpc-google-cloud-networkconnectivity-v1alpha1</module>
     <module>grpc-google-cloud-networkconnectivity-v1</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-networkconnectivity-v1alpha1</module>
     <module>proto-google-cloud-networkconnectivity-v1</module>
     <module>proto-google-cloud-networkconnectivity-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-networkconnectivity-bom</module>
   </modules>
 

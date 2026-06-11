@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-mapmanagement</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-maps-mapmanagement-v2beta</artifactId>
         <version>0.2.0</version><!-- {x-version-update:proto-google-maps-mapmanagement-v2beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-hypercomputecluster</artifactId>
@@ -51,16 +52,19 @@
         <artifactId>proto-google-cloud-hypercomputecluster-v1beta</artifactId>
         <version>0.13.0</version><!-- {x-version-update:proto-google-cloud-hypercomputecluster-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-hypercomputecluster</module>
     <module>grpc-google-cloud-hypercomputecluster-v1beta</module>
     <module>grpc-google-cloud-hypercomputecluster-v1</module>
     <module>proto-google-cloud-hypercomputecluster-v1beta</module>
     <module>proto-google-cloud-hypercomputecluster-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-hypercomputecluster-bom</module>
   </modules>
 

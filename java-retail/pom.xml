@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-retail</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>grpc-google-cloud-retail-v2</artifactId>
         <version>2.95.0</version><!-- {x-version-update:grpc-google-cloud-retail-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-retail</module>
     <module>grpc-google-cloud-retail-v2</module>
     <module>grpc-google-cloud-retail-v2alpha</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-retail-v2</module>
     <module>proto-google-cloud-retail-v2alpha</module>
     <module>proto-google-cloud-retail-v2beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-retail-bom</module>
   </modules>
 
