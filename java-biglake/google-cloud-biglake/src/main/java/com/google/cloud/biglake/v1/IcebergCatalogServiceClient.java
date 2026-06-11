@@ -35,23 +35,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Iceberg Catalog Service API: this implements the open-source Iceberg REST
- * Catalog API. See the API definition here:
- * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
- *
- * <p>The API is defined as OpenAPI 3.1.1 spec.
- *
- * <p>Currently we only support the following methods: - GetConfig/GetIcebergCatalogConfig -
- * ListIcebergNamespaces - CheckIcebergNamespaceExists - GetIcebergNamespace -
- * CreateIcebergNamespace (only supports single level) - DeleteIcebergNamespace -
- * UpdateIcebergNamespace properties - ListTableIdentifiers - CreateIcebergTable -
- * DeleteIcebergTable - GetIcebergTable - UpdateIcebergTable (CommitTable) -
- * LoadIcebergTableCredentials - RegisterTable
- *
- * <p>Users are required to provided the `X-Goog-User-Project` header with the project id or number
- * which can be different from the bucket project id. That project will be charged for the API calls
- * and the calling user must have access to that project. The caller must have
- * `serviceusage.services.use` permission on the project.
+ * Service Description: Lakehouse runtime catalog supports the following catalog management methods:
+ * - GetIcebergCatalog - ListIcebergCatalogs - DeleteIcebergCatalog - UpdateIcebergCatalog -
+ * CreateIcebergCatalog - FailoverIcebergCatalog
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -139,7 +125,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateIcebergCatalog</td>
- *      <td><p> Creates the Iceberg REST Catalog. Currently only supports Google Cloud Storage Bucket catalogs. Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
+ *      <td><p> Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
  * <p>  If the bucket does not exist, of the caller does not have bucket metadata permissions, the catalog will not be created.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -150,6 +136,8 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createIcebergCatalog(ProjectName parent, IcebergCatalog icebergCatalog, String icebergCatalogId)
  *           <li><p> createIcebergCatalog(String parent, IcebergCatalog icebergCatalog, String icebergCatalogId)
+ *           <li><p> createIcebergCatalog(ProjectName parent, IcebergCatalog icebergCatalog, String icebergCatalogId, String primaryLocation)
+ *           <li><p> createIcebergCatalog(String parent, IcebergCatalog icebergCatalog, String icebergCatalogId, String primaryLocation)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -672,9 +660,8 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates the Iceberg REST Catalog. Currently only supports Google Cloud Storage Bucket catalogs.
-   * Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g.
-   * `my-catalog` for `gs://my-catalog`).
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
    *
    * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
    * catalog will not be created.
@@ -719,9 +706,8 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates the Iceberg REST Catalog. Currently only supports Google Cloud Storage Bucket catalogs.
-   * Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g.
-   * `my-catalog` for `gs://my-catalog`).
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
    *
    * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
    * catalog will not be created.
@@ -766,9 +752,128 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates the Iceberg REST Catalog. Currently only supports Google Cloud Storage Bucket catalogs.
-   * Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g.
-   * `my-catalog` for `gs://my-catalog`).
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
+   *
+   * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
+   * catalog will not be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IcebergCatalogServiceClient icebergCatalogServiceClient =
+   *     IcebergCatalogServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+   *   String icebergCatalogId = "icebergCatalogId504062865";
+   *   String primaryLocation = "primaryLocation-1140723753";
+   *   IcebergCatalog response =
+   *       icebergCatalogServiceClient.createIcebergCatalog(
+   *           parent, icebergCatalog, icebergCatalogId, primaryLocation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this catalog will be created. Format:
+   *     projects/{project_id}
+   * @param icebergCatalog Required. The catalog to create. The required fields for creation are: -
+   *     catalog_type. Optionally: credential_mode can be provided, if Credential Vending is
+   *     desired.
+   * @param icebergCatalogId Required. The name of the catalog.
+   * @param primaryLocation Optional. The primary location where the catalog metadata will be
+   *     stored.
+   *     <p>For Google Cloud Storage bucket catalogs and BigLake catalogs, if this is not specified,
+   *     then the region is inferred from the bucket's region (`default_location` bucket for BigLake
+   *     catalogs). If specified, the region must be in jurisdiction (near the `default_location`
+   *     bucket's region and the `restricted_locations` buckets' regions for BigLake catalogs).
+   *     <p>For federated catalogs, this must be specified and be a Lakehouse-supported location
+   *     (https://docs.cloud.google.com/lakehouse/docs/locations). It should be close to the remote
+   *     catalog's location for the best performance and cost.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IcebergCatalog createIcebergCatalog(
+      ProjectName parent,
+      IcebergCatalog icebergCatalog,
+      String icebergCatalogId,
+      String primaryLocation) {
+    CreateIcebergCatalogRequest request =
+        CreateIcebergCatalogRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setIcebergCatalog(icebergCatalog)
+            .setIcebergCatalogId(icebergCatalogId)
+            .setPrimaryLocation(primaryLocation)
+            .build();
+    return createIcebergCatalog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
+   *
+   * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
+   * catalog will not be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IcebergCatalogServiceClient icebergCatalogServiceClient =
+   *     IcebergCatalogServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+   *   String icebergCatalogId = "icebergCatalogId504062865";
+   *   String primaryLocation = "primaryLocation-1140723753";
+   *   IcebergCatalog response =
+   *       icebergCatalogServiceClient.createIcebergCatalog(
+   *           parent, icebergCatalog, icebergCatalogId, primaryLocation);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this catalog will be created. Format:
+   *     projects/{project_id}
+   * @param icebergCatalog Required. The catalog to create. The required fields for creation are: -
+   *     catalog_type. Optionally: credential_mode can be provided, if Credential Vending is
+   *     desired.
+   * @param icebergCatalogId Required. The name of the catalog.
+   * @param primaryLocation Optional. The primary location where the catalog metadata will be
+   *     stored.
+   *     <p>For Google Cloud Storage bucket catalogs and BigLake catalogs, if this is not specified,
+   *     then the region is inferred from the bucket's region (`default_location` bucket for BigLake
+   *     catalogs). If specified, the region must be in jurisdiction (near the `default_location`
+   *     bucket's region and the `restricted_locations` buckets' regions for BigLake catalogs).
+   *     <p>For federated catalogs, this must be specified and be a Lakehouse-supported location
+   *     (https://docs.cloud.google.com/lakehouse/docs/locations). It should be close to the remote
+   *     catalog's location for the best performance and cost.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IcebergCatalog createIcebergCatalog(
+      String parent,
+      IcebergCatalog icebergCatalog,
+      String icebergCatalogId,
+      String primaryLocation) {
+    CreateIcebergCatalogRequest request =
+        CreateIcebergCatalogRequest.newBuilder()
+            .setParent(parent)
+            .setIcebergCatalog(icebergCatalog)
+            .setIcebergCatalogId(icebergCatalogId)
+            .setPrimaryLocation(primaryLocation)
+            .build();
+    return createIcebergCatalog(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
    *
    * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
    * catalog will not be created.
@@ -788,6 +893,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setIcebergCatalogId("icebergCatalogId504062865")
    *           .setIcebergCatalog(IcebergCatalog.newBuilder().build())
+   *           .setPrimaryLocation("primaryLocation-1140723753")
    *           .build();
    *   IcebergCatalog response = icebergCatalogServiceClient.createIcebergCatalog(request);
    * }
@@ -802,9 +908,8 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates the Iceberg REST Catalog. Currently only supports Google Cloud Storage Bucket catalogs.
-   * Google Cloud Storage Bucket catalog id is the bucket for which the catalog is created (e.g.
-   * `my-catalog` for `gs://my-catalog`).
+   * Creates the Iceberg REST Catalog. Google Cloud Storage Bucket catalog id is the bucket for
+   * which the catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
    *
    * <p>If the bucket does not exist, of the caller does not have bucket metadata permissions, the
    * catalog will not be created.
@@ -824,6 +929,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setIcebergCatalogId("icebergCatalogId504062865")
    *           .setIcebergCatalog(IcebergCatalog.newBuilder().build())
+   *           .setPrimaryLocation("primaryLocation-1140723753")
    *           .build();
    *   ApiFuture<IcebergCatalog> future =
    *       icebergCatalogServiceClient.createIcebergCatalogCallable().futureCall(request);
