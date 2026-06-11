@@ -2981,10 +2981,12 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
     assertFalse(response.hasErrors());
@@ -3040,10 +3042,12 @@ class ITBigQueryTest {
     builder2.put("FloatField", 1.2);
     builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
             .setTemplateSuffix("_suffix")
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -3114,11 +3118,13 @@ class ITBigQueryTest {
     builder3.put("IntegerArrayField", ImmutableList.of(0, 1));
     builder3.put("BooleanField", false);
     builder3.put("BytesField", BYTES_BASE64);
+    // Set insertId on all rows to enable automatic retries by the client library on transient
+    // errors.
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
-            .addRow(builder1.build())
-            .addRow(builder2.build())
-            .addRow(builder3.build())
+            .addRow(UUID.randomUUID().toString(), builder1.build())
+            .addRow(UUID.randomUUID().toString(), builder2.build())
+            .addRow(UUID.randomUUID().toString(), builder3.build())
             .setSkipInvalidRows(true)
             .build();
     InsertAllResponse response = bigquery.insertAll(request);
