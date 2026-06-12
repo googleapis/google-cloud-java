@@ -5279,7 +5279,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         private volatile boolean cancelled = false;
 
         @Override
-        public boolean cancel(boolean mayInterruptIfRunning) {
+        public synchronized boolean cancel(boolean mayInterruptIfRunning) {
           if (cancelled || thread.getState() == Thread.State.TERMINATED) {
             return false;
           }
@@ -5309,7 +5309,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (isCancelled()) {
               throw new CancellationException();
             }
-            thread.join(50);
+            if (thread.getState() == Thread.State.NEW) {
+              Thread.sleep(50);
+            } else {
+              thread.join(50);
+            }
           }
           return null;
         }
@@ -5333,7 +5337,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (remainingMillis <= 0) {
               remainingMillis = 1;
             }
-            thread.join(Math.min(remainingMillis, 50));
+            long delay = Math.min(remainingMillis, 50);
+            if (thread.getState() == Thread.State.NEW) {
+              Thread.sleep(delay);
+            } else {
+              thread.join(delay);
+            }
             remainingNanos = deadline - System.nanoTime();
           }
           return null;
