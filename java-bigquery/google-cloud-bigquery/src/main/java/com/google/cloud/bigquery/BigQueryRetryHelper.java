@@ -71,9 +71,6 @@ public class BigQueryRetryHelper extends RetryHelper {
       // implementation does not use response at all, so ignoring its type is ok.
       @SuppressWarnings("unchecked")
       ResultRetryAlgorithm<V> algorithm = (ResultRetryAlgorithm<V>) resultRetryAlgorithm;
-      if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
-        algorithm = wrapDefaultAlgorithm(algorithm);
-      }
       return run(
           callable,
           new ExponentialRetryAlgorithm(retrySettings, clock),
@@ -122,6 +119,13 @@ public class BigQueryRetryHelper extends RetryHelper {
     RetryingFuture<V> retryingFuture = executor.createFuture(callable);
     executor.submit(retryingFuture);
     return retryingFuture.get();
+  }
+
+  static <V> ResultRetryAlgorithm<V> getHttpRetryAlgorithm(ResultRetryAlgorithm<V> algorithm) {
+    if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
+      return wrapDefaultAlgorithm(algorithm);
+    }
+    return algorithm;
   }
 
   private static <V> ResultRetryAlgorithm<V> wrapDefaultAlgorithm(
