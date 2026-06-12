@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-css</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-shopping-css-v1</artifactId>
         <version>0.61.0</version><!-- {x-version-update:proto-google-shopping-css-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-shopping-css</module>
     <module>grpc-google-shopping-css-v1</module>
     <module>proto-google-shopping-css-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-shopping-css-bom</module>
   </modules>
 

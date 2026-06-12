@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-mapsplatformdatasets</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>grpc-google-maps-mapsplatformdatasets-v1</artifactId>
         <version>0.82.0</version><!-- {x-version-update:grpc-google-maps-mapsplatformdatasets-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-maps-mapsplatformdatasets</module>
     <module>grpc-google-maps-mapsplatformdatasets-v1</module>
     <module>proto-google-maps-mapsplatformdatasets-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-maps-mapsplatformdatasets-bom</module>
   </modules>
 

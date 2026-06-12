@@ -205,6 +205,27 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
     return toolIds_.getByteString(index);
   }
 
+  public static final int BYPASS_PERSISTENCE_CONFIG_FIELD_NUMBER = 4;
+  private boolean bypassPersistenceConfig_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the returned tools will contain raw descriptions and
+   * schemas directly from the server, bypassing any stored persistence
+   * configurations (overrides/snapshots).
+   * </pre>
+   *
+   * <code>bool bypass_persistence_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bypassPersistenceConfig.
+   */
+  @java.lang.Override
+  public boolean getBypassPersistenceConfig() {
+    return bypassPersistenceConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -224,6 +245,9 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < toolIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, toolIds_.getRaw(i));
+    }
+    if (bypassPersistenceConfig_ != false) {
+      output.writeBool(4, bypassPersistenceConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -245,6 +269,9 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 1 * getToolIdsList().size();
     }
+    if (bypassPersistenceConfig_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, bypassPersistenceConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -263,6 +290,7 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
 
     if (!getToolset().equals(other.getToolset())) return false;
     if (!getToolIdsList().equals(other.getToolIdsList())) return false;
+    if (getBypassPersistenceConfig() != other.getBypassPersistenceConfig()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +308,8 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + TOOL_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getToolIdsList().hashCode();
     }
+    hash = (37 * hash) + BYPASS_PERSISTENCE_CONFIG_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBypassPersistenceConfig());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -423,6 +453,7 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       toolset_ = "";
       toolIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bypassPersistenceConfig_ = false;
       return this;
     }
 
@@ -466,6 +497,9 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
         toolIds_.makeImmutable();
         result.toolIds_ = toolIds_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bypassPersistenceConfig_ = bypassPersistenceConfig_;
+      }
     }
 
     @java.lang.Override
@@ -495,6 +529,9 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
           toolIds_.addAll(other.toolIds_);
         }
         onChanged();
+      }
+      if (other.getBypassPersistenceConfig() != false) {
+        setBypassPersistenceConfig(other.getBypassPersistenceConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -535,6 +572,12 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
                 toolIds_.add(s);
                 break;
               } // case 26
+            case 32:
+              {
+                bypassPersistenceConfig_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -873,6 +916,68 @@ public final class RetrieveToolsRequest extends com.google.protobuf.GeneratedMes
       ensureToolIdsIsMutable();
       toolIds_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean bypassPersistenceConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the returned tools will contain raw descriptions and
+     * schemas directly from the server, bypassing any stored persistence
+     * configurations (overrides/snapshots).
+     * </pre>
+     *
+     * <code>bool bypass_persistence_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bypassPersistenceConfig.
+     */
+    @java.lang.Override
+    public boolean getBypassPersistenceConfig() {
+      return bypassPersistenceConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the returned tools will contain raw descriptions and
+     * schemas directly from the server, bypassing any stored persistence
+     * configurations (overrides/snapshots).
+     * </pre>
+     *
+     * <code>bool bypass_persistence_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bypassPersistenceConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBypassPersistenceConfig(boolean value) {
+
+      bypassPersistenceConfig_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the returned tools will contain raw descriptions and
+     * schemas directly from the server, bypassing any stored persistence
+     * configurations (overrides/snapshots).
+     * </pre>
+     *
+     * <code>bool bypass_persistence_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBypassPersistenceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bypassPersistenceConfig_ = false;
       onChanged();
       return this;
     }

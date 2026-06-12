@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-cloud-beyondcorp-clientconnectorservices-v1</artifactId>
         <version>0.91.0</version><!-- {x-version-update:proto-google-cloud-beyondcorp-clientconnectorservices-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-beyondcorp-clientconnectorservices</module>
     <module>grpc-google-cloud-beyondcorp-clientconnectorservices-v1</module>
     <module>proto-google-cloud-beyondcorp-clientconnectorservices-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-beyondcorp-clientconnectorservices-bom</module>
   </modules>
 

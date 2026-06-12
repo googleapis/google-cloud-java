@@ -34,6 +34,13 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitl
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionAssignmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateConnectionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentEnvironmentsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentTypesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
@@ -1672,6 +1679,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1731,6 +1739,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1788,6 +1797,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1862,6 +1872,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -1936,6 +1947,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2093,6 +2105,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2164,6 +2177,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2617,6 +2631,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2684,6 +2699,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2749,6 +2765,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2816,6 +2833,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2881,6 +2899,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -2948,6 +2967,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3013,6 +3033,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3087,6 +3108,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3158,6 +3180,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3230,6 +3253,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3299,6 +3323,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3373,6 +3398,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3444,6 +3470,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -3516,6 +3543,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setEntitlementId("entitlementId-1302274264")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setProperties(AutonomousDatabaseProperties.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
@@ -5545,7 +5573,9 @@ public class OracleDatabaseClientTest {
             .setDbName("dbName-1339126743")
             .setDbUniqueName("dbUniqueName-1793979110")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setTdeWalletPasswordSecretVersion("tdeWalletPasswordSecretVersion-1515290241")
             .setCharacterSet("characterSet-1443214215")
             .setNcharacterSet("ncharacterSet642193383")
             .setOciUrl("ociUrl-1022489574")
@@ -5554,6 +5584,8 @@ public class OracleDatabaseClientTest {
             .setDatabaseId("databaseId1688905718")
             .setDbHomeName("dbHomeName364867240")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setPluggableDatabaseId("pluggableDatabaseId1787516361")
+            .setPluggableDatabaseName("pluggableDatabaseName-183545927")
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -5595,7 +5627,9 @@ public class OracleDatabaseClientTest {
             .setDbName("dbName-1339126743")
             .setDbUniqueName("dbUniqueName-1793979110")
             .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
             .setTdeWalletPassword("tdeWalletPassword727082249")
+            .setTdeWalletPasswordSecretVersion("tdeWalletPasswordSecretVersion-1515290241")
             .setCharacterSet("characterSet-1443214215")
             .setNcharacterSet("ncharacterSet642193383")
             .setOciUrl("ociUrl-1022489574")
@@ -5604,6 +5638,8 @@ public class OracleDatabaseClientTest {
             .setDatabaseId("databaseId1688905718")
             .setDbHomeName("dbHomeName364867240")
             .setGcpOracleZone("gcpOracleZone217860222")
+            .setPluggableDatabaseId("pluggableDatabaseId1787516361")
+            .setPluggableDatabaseName("pluggableDatabaseName-183545927")
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -6214,6 +6250,1874 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void listGoldengateDeploymentsTest() throws Exception {
+    GoldengateDeployment responsesElement = GoldengateDeployment.newBuilder().build();
+    ListGoldengateDeploymentsResponse expectedResponse =
+        ListGoldengateDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentsPagedResponse pagedListResponse =
+        client.listGoldengateDeployments(parent);
+
+    List<GoldengateDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateDeploymentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentsRequest actualRequest =
+        ((ListGoldengateDeploymentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentsTest2() throws Exception {
+    GoldengateDeployment responsesElement = GoldengateDeployment.newBuilder().build();
+    ListGoldengateDeploymentsResponse expectedResponse =
+        ListGoldengateDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateDeploymentsPagedResponse pagedListResponse =
+        client.listGoldengateDeployments(parent);
+
+    List<GoldengateDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateDeploymentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentsRequest actualRequest =
+        ((ListGoldengateDeploymentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.getGoldengateDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentRequest actualRequest =
+        ((GetGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.getGoldengateDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateDeployment actualResponse = client.getGoldengateDeployment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentRequest actualRequest =
+        ((GetGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateDeployment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+    String goldengateDeploymentId = "goldengateDeploymentId489140788";
+
+    GoldengateDeployment actualResponse =
+        client
+            .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateDeploymentRequest actualRequest =
+        ((CreateGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(goldengateDeployment, actualRequest.getGoldengateDeployment());
+    Assert.assertEquals(goldengateDeploymentId, actualRequest.getGoldengateDeploymentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+      String goldengateDeploymentId = "goldengateDeploymentId489140788";
+      client
+          .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+    String goldengateDeploymentId = "goldengateDeploymentId489140788";
+
+    GoldengateDeployment actualResponse =
+        client
+            .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateDeploymentRequest actualRequest =
+        ((CreateGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(goldengateDeployment, actualRequest.getGoldengateDeployment());
+    Assert.assertEquals(goldengateDeploymentId, actualRequest.getGoldengateDeploymentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GoldengateDeployment goldengateDeployment = GoldengateDeployment.newBuilder().build();
+      String goldengateDeploymentId = "goldengateDeploymentId489140788";
+      client
+          .createGoldengateDeploymentAsync(parent, goldengateDeployment, goldengateDeploymentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    client.deleteGoldengateDeploymentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateDeploymentRequest actualRequest =
+        ((DeleteGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.deleteGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteGoldengateDeploymentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateDeploymentRequest actualRequest =
+        ((DeleteGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.stopGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopGoldengateDeploymentRequest actualRequest =
+        ((StopGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.stopGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    GoldengateDeployment actualResponse = client.stopGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopGoldengateDeploymentRequest actualRequest =
+        ((StopGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopGoldengateDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.stopGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startGoldengateDeploymentTest() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateDeploymentName name =
+        GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+
+    GoldengateDeployment actualResponse = client.startGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartGoldengateDeploymentRequest actualRequest =
+        ((StartGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startGoldengateDeploymentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentName name =
+          GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]");
+      client.startGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startGoldengateDeploymentTest2() throws Exception {
+    GoldengateDeployment expectedResponse =
+        GoldengateDeployment.newBuilder()
+            .setName(
+                GoldengateDeploymentName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT]")
+                    .toString())
+            .setProperties(GoldengateDeploymentProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startGoldengateDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    GoldengateDeployment actualResponse = client.startGoldengateDeploymentAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartGoldengateDeploymentRequest actualRequest =
+        ((StartGoldengateDeploymentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startGoldengateDeploymentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.startGoldengateDeploymentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionsTest() throws Exception {
+    GoldengateConnection responsesElement = GoldengateConnection.newBuilder().build();
+    ListGoldengateConnectionsResponse expectedResponse =
+        ListGoldengateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionsPagedResponse pagedListResponse =
+        client.listGoldengateConnections(parent);
+
+    List<GoldengateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionsRequest actualRequest =
+        ((ListGoldengateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionsTest2() throws Exception {
+    GoldengateConnection responsesElement = GoldengateConnection.newBuilder().build();
+    ListGoldengateConnectionsResponse expectedResponse =
+        ListGoldengateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateConnectionsPagedResponse pagedListResponse =
+        client.listGoldengateConnections(parent);
+
+    List<GoldengateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGoldengateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionsRequest actualRequest =
+        ((ListGoldengateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTest() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateConnectionName name =
+        GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+
+    GoldengateConnection actualResponse = client.getGoldengateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionRequest actualRequest =
+        ((GetGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionName name =
+          GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+      client.getGoldengateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTest2() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateConnection actualResponse = client.getGoldengateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionRequest actualRequest =
+        ((GetGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionTest() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+    String goldengateConnectionId = "goldengateConnectionId-1745824755";
+
+    GoldengateConnection actualResponse =
+        client
+            .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateConnectionRequest actualRequest =
+        ((CreateGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(goldengateConnection, actualRequest.getGoldengateConnection());
+    Assert.assertEquals(goldengateConnectionId, actualRequest.getGoldengateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+      String goldengateConnectionId = "goldengateConnectionId-1745824755";
+      client
+          .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionTest2() throws Exception {
+    GoldengateConnection expectedResponse =
+        GoldengateConnection.newBuilder()
+            .setName(
+                GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]")
+                    .toString())
+            .setProperties(GoldengateConnectionProperties.newBuilder().build())
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .putAllLabels(new HashMap<String, String>())
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setEntitlementId("entitlementId-1302274264")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setOciUrl("ociUrl-1022489574")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+    String goldengateConnectionId = "goldengateConnectionId-1745824755";
+
+    GoldengateConnection actualResponse =
+        client
+            .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateConnectionRequest actualRequest =
+        ((CreateGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(goldengateConnection, actualRequest.getGoldengateConnection());
+    Assert.assertEquals(goldengateConnectionId, actualRequest.getGoldengateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GoldengateConnection goldengateConnection = GoldengateConnection.newBuilder().build();
+      String goldengateConnectionId = "goldengateConnectionId-1745824755";
+      client
+          .createGoldengateConnectionAsync(parent, goldengateConnection, goldengateConnectionId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateConnectionName name =
+        GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+
+    client.deleteGoldengateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateConnectionRequest actualRequest =
+        ((DeleteGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionName name =
+          GoldengateConnectionName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION]");
+      client.deleteGoldengateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteGoldengateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateConnectionRequest actualRequest =
+        ((DeleteGoldengateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGoldengateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentVersionTest() throws Exception {
+    GoldengateDeploymentVersion expectedResponse =
+        GoldengateDeploymentVersion.newBuilder()
+            .setName(
+                GoldengateDeploymentVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
+                    .toString())
+            .setOcid("ocid3405295")
+            .setProperties(GoldengateDeploymentVersionProperties.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateDeploymentVersionName name =
+        GoldengateDeploymentVersionName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]");
+
+    GoldengateDeploymentVersion actualResponse = client.getGoldengateDeploymentVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentVersionRequest actualRequest =
+        ((GetGoldengateDeploymentVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentVersionName name =
+          GoldengateDeploymentVersionName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]");
+      client.getGoldengateDeploymentVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentVersionTest2() throws Exception {
+    GoldengateDeploymentVersion expectedResponse =
+        GoldengateDeploymentVersion.newBuilder()
+            .setName(
+                GoldengateDeploymentVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_VERSION]")
+                    .toString())
+            .setOcid("ocid3405295")
+            .setProperties(GoldengateDeploymentVersionProperties.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateDeploymentVersion actualResponse = client.getGoldengateDeploymentVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentVersionRequest actualRequest =
+        ((GetGoldengateDeploymentVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateDeploymentVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsTest() throws Exception {
+    GoldengateDeploymentVersion responsesElement = GoldengateDeploymentVersion.newBuilder().build();
+    ListGoldengateDeploymentVersionsResponse expectedResponse =
+        ListGoldengateDeploymentVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentVersions(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentVersionsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentVersions(parent);
+
+    List<GoldengateDeploymentVersion> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentVersionsRequest actualRequest =
+        ((ListGoldengateDeploymentVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsTest2() throws Exception {
+    GoldengateDeploymentVersion responsesElement = GoldengateDeploymentVersion.newBuilder().build();
+    ListGoldengateDeploymentVersionsResponse expectedResponse =
+        ListGoldengateDeploymentVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentVersions(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateDeploymentVersionsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentVersions(parent);
+
+    List<GoldengateDeploymentVersion> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentVersionsRequest actualRequest =
+        ((ListGoldengateDeploymentVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateDeploymentVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTypeTest() throws Exception {
+    GoldengateDeploymentType expectedResponse =
+        GoldengateDeploymentType.newBuilder()
+            .setName(
+                GoldengateDeploymentTypeName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
+                    .toString())
+            .addAllConnectionTypes(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .setOggVersion("oggVersion-685279159")
+            .addAllSourceTechnologies(new ArrayList<String>())
+            .addAllSupportedCapabilities(new ArrayList<String>())
+            .setSupportedTechnologiesUrl("supportedTechnologiesUrl-159890473")
+            .addAllTargetTechnologies(new ArrayList<String>())
+            .setDefaultUsername("defaultUsername1732375095")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateDeploymentTypeName name =
+        GoldengateDeploymentTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]");
+
+    GoldengateDeploymentType actualResponse = client.getGoldengateDeploymentType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentTypeRequest actualRequest =
+        ((GetGoldengateDeploymentTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentTypeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentTypeName name =
+          GoldengateDeploymentTypeName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]");
+      client.getGoldengateDeploymentType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentTypeTest2() throws Exception {
+    GoldengateDeploymentType expectedResponse =
+        GoldengateDeploymentType.newBuilder()
+            .setName(
+                GoldengateDeploymentTypeName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_TYPE]")
+                    .toString())
+            .addAllConnectionTypes(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .setOggVersion("oggVersion-685279159")
+            .addAllSourceTechnologies(new ArrayList<String>())
+            .addAllSupportedCapabilities(new ArrayList<String>())
+            .setSupportedTechnologiesUrl("supportedTechnologiesUrl-159890473")
+            .addAllTargetTechnologies(new ArrayList<String>())
+            .setDefaultUsername("defaultUsername1732375095")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateDeploymentType actualResponse = client.getGoldengateDeploymentType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentTypeRequest actualRequest =
+        ((GetGoldengateDeploymentTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateDeploymentType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesTest() throws Exception {
+    GoldengateDeploymentType responsesElement = GoldengateDeploymentType.newBuilder().build();
+    ListGoldengateDeploymentTypesResponse expectedResponse =
+        ListGoldengateDeploymentTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentTypes(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentTypesPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentTypes(parent);
+
+    List<GoldengateDeploymentType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentTypesRequest actualRequest =
+        ((ListGoldengateDeploymentTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesTest2() throws Exception {
+    GoldengateDeploymentType responsesElement = GoldengateDeploymentType.newBuilder().build();
+    ListGoldengateDeploymentTypesResponse expectedResponse =
+        ListGoldengateDeploymentTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentTypes(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateDeploymentTypesPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentTypes(parent);
+
+    List<GoldengateDeploymentType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentTypesRequest actualRequest =
+        ((ListGoldengateDeploymentTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentTypesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateDeploymentTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentEnvironmentTest() throws Exception {
+    GoldengateDeploymentEnvironment expectedResponse =
+        GoldengateDeploymentEnvironment.newBuilder()
+            .setName(
+                GoldengateDeploymentEnvironmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDefaultCpuCoreCount(731109668)
+            .setAutoScalingEnabled(true)
+            .setMaxCpuCoreCount(1499430817)
+            .setMemoryGbPerCpuCore(-1825740194)
+            .setMinCpuCoreCount(251380979)
+            .setNetworkBandwidthGbpsPerCpuCore(-1374535526)
+            .setStorageUsageLimitGbPerCpuCore(-1737003722)
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateDeploymentEnvironmentName name =
+        GoldengateDeploymentEnvironmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]");
+
+    GoldengateDeploymentEnvironment actualResponse =
+        client.getGoldengateDeploymentEnvironment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentEnvironmentRequest actualRequest =
+        ((GetGoldengateDeploymentEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentEnvironmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateDeploymentEnvironmentName name =
+          GoldengateDeploymentEnvironmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]");
+      client.getGoldengateDeploymentEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateDeploymentEnvironmentTest2() throws Exception {
+    GoldengateDeploymentEnvironment expectedResponse =
+        GoldengateDeploymentEnvironment.newBuilder()
+            .setName(
+                GoldengateDeploymentEnvironmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_DEPLOYMENT_ENVIRONMENT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDefaultCpuCoreCount(731109668)
+            .setAutoScalingEnabled(true)
+            .setMaxCpuCoreCount(1499430817)
+            .setMemoryGbPerCpuCore(-1825740194)
+            .setMinCpuCoreCount(251380979)
+            .setNetworkBandwidthGbpsPerCpuCore(-1374535526)
+            .setStorageUsageLimitGbPerCpuCore(-1737003722)
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateDeploymentEnvironment actualResponse =
+        client.getGoldengateDeploymentEnvironment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateDeploymentEnvironmentRequest actualRequest =
+        ((GetGoldengateDeploymentEnvironmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateDeploymentEnvironmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateDeploymentEnvironment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsTest() throws Exception {
+    GoldengateDeploymentEnvironment responsesElement =
+        GoldengateDeploymentEnvironment.newBuilder().build();
+    ListGoldengateDeploymentEnvironmentsResponse expectedResponse =
+        ListGoldengateDeploymentEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateDeploymentEnvironmentsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentEnvironments(parent);
+
+    List<GoldengateDeploymentEnvironment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentEnvironmentsRequest actualRequest =
+        ((ListGoldengateDeploymentEnvironmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateDeploymentEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsTest2() throws Exception {
+    GoldengateDeploymentEnvironment responsesElement =
+        GoldengateDeploymentEnvironment.newBuilder().build();
+    ListGoldengateDeploymentEnvironmentsResponse expectedResponse =
+        ListGoldengateDeploymentEnvironmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateDeploymentEnvironments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateDeploymentEnvironmentsPagedResponse pagedListResponse =
+        client.listGoldengateDeploymentEnvironments(parent);
+
+    List<GoldengateDeploymentEnvironment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateDeploymentEnvironmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateDeploymentEnvironmentsRequest actualRequest =
+        ((ListGoldengateDeploymentEnvironmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateDeploymentEnvironmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateDeploymentEnvironments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTypeTest() throws Exception {
+    GoldengateConnectionType expectedResponse =
+        GoldengateConnectionType.newBuilder()
+            .setName(
+                GoldengateConnectionTypeName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
+                    .toString())
+            .addAllTechnologyTypes(new ArrayList<String>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateConnectionTypeName name =
+        GoldengateConnectionTypeName.of("[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]");
+
+    GoldengateConnectionType actualResponse = client.getGoldengateConnectionType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionTypeRequest actualRequest =
+        ((GetGoldengateConnectionTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionTypeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionTypeName name =
+          GoldengateConnectionTypeName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]");
+      client.getGoldengateConnectionType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionTypeTest2() throws Exception {
+    GoldengateConnectionType expectedResponse =
+        GoldengateConnectionType.newBuilder()
+            .setName(
+                GoldengateConnectionTypeName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_TYPE]")
+                    .toString())
+            .addAllTechnologyTypes(new ArrayList<String>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateConnectionType actualResponse = client.getGoldengateConnectionType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionTypeRequest actualRequest =
+        ((GetGoldengateConnectionTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateConnectionType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesTest() throws Exception {
+    GoldengateConnectionType responsesElement = GoldengateConnectionType.newBuilder().build();
+    ListGoldengateConnectionTypesResponse expectedResponse =
+        ListGoldengateConnectionTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionTypes(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionTypesPagedResponse pagedListResponse =
+        client.listGoldengateConnectionTypes(parent);
+
+    List<GoldengateConnectionType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionTypesRequest actualRequest =
+        ((ListGoldengateConnectionTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnectionTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesTest2() throws Exception {
+    GoldengateConnectionType responsesElement = GoldengateConnectionType.newBuilder().build();
+    ListGoldengateConnectionTypesResponse expectedResponse =
+        ListGoldengateConnectionTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionTypes(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateConnectionTypesPagedResponse pagedListResponse =
+        client.listGoldengateConnectionTypes(parent);
+
+    List<GoldengateConnectionType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionTypesRequest actualRequest =
+        ((ListGoldengateConnectionTypesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionTypesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateConnectionTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listDbVersionsTest() throws Exception {
     DbVersion responsesElement = DbVersion.newBuilder().build();
     ListDbVersionsResponse expectedResponse =
@@ -6387,6 +8291,522 @@ public class OracleDatabaseClientTest {
     try {
       String parent = "parent-995424086";
       client.listDatabaseCharacterSets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsTest() throws Exception {
+    GoldengateConnectionAssignment responsesElement =
+        GoldengateConnectionAssignment.newBuilder().build();
+    ListGoldengateConnectionAssignmentsResponse expectedResponse =
+        ListGoldengateConnectionAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListGoldengateConnectionAssignmentsPagedResponse pagedListResponse =
+        client.listGoldengateConnectionAssignments(parent);
+
+    List<GoldengateConnectionAssignment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionAssignmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionAssignmentsRequest actualRequest =
+        ((ListGoldengateConnectionAssignmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listGoldengateConnectionAssignments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsTest2() throws Exception {
+    GoldengateConnectionAssignment responsesElement =
+        GoldengateConnectionAssignment.newBuilder().build();
+    ListGoldengateConnectionAssignmentsResponse expectedResponse =
+        ListGoldengateConnectionAssignmentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGoldengateConnectionAssignments(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGoldengateConnectionAssignmentsPagedResponse pagedListResponse =
+        client.listGoldengateConnectionAssignments(parent);
+
+    List<GoldengateConnectionAssignment> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getGoldengateConnectionAssignmentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGoldengateConnectionAssignmentsRequest actualRequest =
+        ((ListGoldengateConnectionAssignmentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGoldengateConnectionAssignmentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGoldengateConnectionAssignments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentTest() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    GoldengateConnectionAssignment actualResponse = client.getGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionAssignmentRequest actualRequest =
+        ((GetGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.getGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentTest2() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GoldengateConnectionAssignment actualResponse = client.getGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGoldengateConnectionAssignmentRequest actualRequest =
+        ((GetGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentTest() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    GoldengateConnectionAssignment goldengateConnectionAssignment =
+        GoldengateConnectionAssignment.newBuilder().build();
+    String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+
+    GoldengateConnectionAssignment actualResponse =
+        client
+            .createGoldengateConnectionAssignmentAsync(
+                parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateConnectionAssignmentRequest actualRequest =
+        ((CreateGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        goldengateConnectionAssignment, actualRequest.getGoldengateConnectionAssignment());
+    Assert.assertEquals(
+        goldengateConnectionAssignmentId, actualRequest.getGoldengateConnectionAssignmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      GoldengateConnectionAssignment goldengateConnectionAssignment =
+          GoldengateConnectionAssignment.newBuilder().build();
+      String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+      client
+          .createGoldengateConnectionAssignmentAsync(
+              parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentTest2() throws Exception {
+    GoldengateConnectionAssignment expectedResponse =
+        GoldengateConnectionAssignment.newBuilder()
+            .setName(
+                GoldengateConnectionAssignmentName.of(
+                        "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]")
+                    .toString())
+            .setProperties(GoldengateConnectionAssignmentProperties.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GoldengateConnectionAssignment goldengateConnectionAssignment =
+        GoldengateConnectionAssignment.newBuilder().build();
+    String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+
+    GoldengateConnectionAssignment actualResponse =
+        client
+            .createGoldengateConnectionAssignmentAsync(
+                parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGoldengateConnectionAssignmentRequest actualRequest =
+        ((CreateGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        goldengateConnectionAssignment, actualRequest.getGoldengateConnectionAssignment());
+    Assert.assertEquals(
+        goldengateConnectionAssignmentId, actualRequest.getGoldengateConnectionAssignmentId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GoldengateConnectionAssignment goldengateConnectionAssignment =
+          GoldengateConnectionAssignment.newBuilder().build();
+      String goldengateConnectionAssignmentId = "goldengateConnectionAssignmentId-1362669254";
+      client
+          .createGoldengateConnectionAssignmentAsync(
+              parent, goldengateConnectionAssignment, goldengateConnectionAssignmentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    client.deleteGoldengateConnectionAssignmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateConnectionAssignmentRequest actualRequest =
+        ((DeleteGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.deleteGoldengateConnectionAssignmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGoldengateConnectionAssignmentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteGoldengateConnectionAssignmentAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGoldengateConnectionAssignmentRequest actualRequest =
+        ((DeleteGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGoldengateConnectionAssignmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentTest() throws Exception {
+    TestGoldengateConnectionAssignmentResponse expectedResponse =
+        TestGoldengateConnectionAssignmentResponse.newBuilder()
+            .setError(TestConnectionAssignmentError.newBuilder().build())
+            .addAllErrors(new ArrayList<TestConnectionAssignmentError>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    GoldengateConnectionAssignmentName name =
+        GoldengateConnectionAssignmentName.of(
+            "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+
+    TestGoldengateConnectionAssignmentResponse actualResponse =
+        client.testGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestGoldengateConnectionAssignmentRequest actualRequest =
+        ((TestGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      GoldengateConnectionAssignmentName name =
+          GoldengateConnectionAssignmentName.of(
+              "[PROJECT]", "[LOCATION]", "[GOLDENGATE_CONNECTION_ASSIGNMENT]");
+      client.testGoldengateConnectionAssignment(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentTest2() throws Exception {
+    TestGoldengateConnectionAssignmentResponse expectedResponse =
+        TestGoldengateConnectionAssignmentResponse.newBuilder()
+            .setError(TestConnectionAssignmentError.newBuilder().build())
+            .addAllErrors(new ArrayList<TestConnectionAssignmentError>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TestGoldengateConnectionAssignmentResponse actualResponse =
+        client.testGoldengateConnectionAssignment(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestGoldengateConnectionAssignmentRequest actualRequest =
+        ((TestGoldengateConnectionAssignmentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testGoldengateConnectionAssignmentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.testGoldengateConnectionAssignment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

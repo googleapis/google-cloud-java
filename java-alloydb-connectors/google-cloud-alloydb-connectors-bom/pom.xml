@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-alloydb-connectors</artifactId>
@@ -44,6 +45,7 @@
         <artifactId>proto-google-cloud-alloydb-connectors-v1</artifactId>
         <version>0.71.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

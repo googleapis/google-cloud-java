@@ -50,6 +50,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
@@ -65,6 +66,7 @@
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
         <version>1.151.0</version><!-- {x-version-update:proto-google-cloud-pubsub-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 

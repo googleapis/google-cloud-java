@@ -55,8 +55,10 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
 
   private McpTool() {
     name_ = "";
+    nameOverride_ = "";
     description_ = "";
     serverAddress_ = "";
+    state_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,6 +86,202 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.ces.v1beta.McpTool.class,
             com.google.cloud.ces.v1beta.McpTool.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the dynamic availability state of the tool.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.McpTool.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default state.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The tool is available and actively offered by the server.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The tool is configured or pinned, but currently not offered by the
+     * server.
+     * </pre>
+     *
+     * <code>INACTIVE = 2;</code>
+     */
+    INACTIVE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The tool exists on the server, but does not match the version on the
+     * server.
+     * </pre>
+     *
+     * <code>STALE = 3;</code>
+     */
+    STALE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "State");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default state.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool is available and actively offered by the server.
+     * </pre>
+     *
+     * <code>ACTIVE = 1;</code>
+     */
+    public static final int ACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool is configured or pinned, but currently not offered by the
+     * server.
+     * </pre>
+     *
+     * <code>INACTIVE = 2;</code>
+     */
+    public static final int INACTIVE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tool exists on the server, but does not match the version on the
+     * server.
+     * </pre>
+     *
+     * <code>STALE = 3;</code>
+     */
+    public static final int STALE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return INACTIVE;
+        case 3:
+          return STALE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.McpTool.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.McpTool.State)
   }
 
   private int bitField0_;
@@ -134,6 +332,61 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_OVERRIDE_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nameOverride_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name override of the MCP tool.
+   * This is populated if the name was overridden by a Toolset override.
+   * </pre>
+   *
+   * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The nameOverride.
+   */
+  @java.lang.Override
+  public java.lang.String getNameOverride() {
+    java.lang.Object ref = nameOverride_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nameOverride_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name override of the MCP tool.
+   * This is populated if the name was overridden by a Toolset override.
+   * </pre>
+   *
+   * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for nameOverride.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameOverrideBytes() {
+    java.lang.Object ref = nameOverride_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nameOverride_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -698,6 +951,49 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int STATE_FIELD_NUMBER = 12;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dynamic availability state of the tool on the external
+   * server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dynamic availability state of the tool on the external
+   * server.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.McpTool.State getState() {
+    com.google.cloud.ces.v1beta.McpTool.State result =
+        com.google.cloud.ces.v1beta.McpTool.State.forNumber(state_);
+    return result == null ? com.google.cloud.ces.v1beta.McpTool.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -738,6 +1034,12 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetCustomHeaders(), CustomHeadersDefaultEntryHolder.defaultEntry, 9);
+    if (state_ != com.google.cloud.ces.v1beta.McpTool.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nameOverride_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, nameOverride_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -782,6 +1084,12 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, customHeaders__);
     }
+    if (state_ != com.google.cloud.ces.v1beta.McpTool.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nameOverride_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, nameOverride_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -798,6 +1106,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     com.google.cloud.ces.v1beta.McpTool other = (com.google.cloud.ces.v1beta.McpTool) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getNameOverride().equals(other.getNameOverride())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (hasInputSchema() != other.hasInputSchema()) return false;
     if (hasInputSchema()) {
@@ -821,6 +1130,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       if (!getServiceDirectoryConfig().equals(other.getServiceDirectoryConfig())) return false;
     }
     if (!internalGetCustomHeaders().equals(other.internalGetCustomHeaders())) return false;
+    if (state_ != other.state_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -834,6 +1144,8 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + NAME_OVERRIDE_FIELD_NUMBER;
+    hash = (53 * hash) + getNameOverride().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (hasInputSchema()) {
@@ -862,6 +1174,8 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CUSTOM_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCustomHeaders().hashCode();
     }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1039,6 +1353,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      nameOverride_ = "";
       description_ = "";
       inputSchema_ = null;
       if (inputSchemaBuilder_ != null) {
@@ -1067,6 +1382,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         serviceDirectoryConfigBuilder_ = null;
       }
       internalGetMutableCustomHeaders().clear();
+      state_ = 0;
       return this;
     }
 
@@ -1106,43 +1422,49 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nameOverride_ = nameOverride_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.inputSchema_ =
             inputSchemaBuilder_ == null ? inputSchema_ : inputSchemaBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.outputSchema_ =
             outputSchemaBuilder_ == null ? outputSchema_ : outputSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.serverAddress_ = serverAddress_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiAuthentication_ =
             apiAuthenticationBuilder_ == null
                 ? apiAuthentication_
                 : apiAuthenticationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.tlsConfig_ = tlsConfigBuilder_ == null ? tlsConfig_ : tlsConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.serviceDirectoryConfig_ =
             serviceDirectoryConfigBuilder_ == null
                 ? serviceDirectoryConfig_
                 : serviceDirectoryConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.customHeaders_ = internalGetCustomHeaders();
         result.customHeaders_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1164,9 +1486,14 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getNameOverride().isEmpty()) {
+        nameOverride_ = other.nameOverride_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasInputSchema()) {
@@ -1177,7 +1504,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getServerAddress().isEmpty()) {
         serverAddress_ = other.serverAddress_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasApiAuthentication()) {
@@ -1190,7 +1517,10 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         mergeServiceDirectoryConfig(other.getServiceDirectoryConfig());
       }
       internalGetMutableCustomHeaders().mergeFrom(other.internalGetCustomHeaders());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1226,41 +1556,41 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetInputSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetOutputSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 serverAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     internalGetApiAuthenticationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetTlsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -1268,7 +1598,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetServiceDirectoryConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -1280,9 +1610,21 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
                 internalGetMutableCustomHeaders()
                     .getMutableMap()
                     .put(customHeaders__.getKey(), customHeaders__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 96:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
+            case 106:
+              {
+                nameOverride_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1413,6 +1755,122 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object nameOverride_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name override of the MCP tool.
+     * This is populated if the name was overridden by a Toolset override.
+     * </pre>
+     *
+     * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The nameOverride.
+     */
+    public java.lang.String getNameOverride() {
+      java.lang.Object ref = nameOverride_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nameOverride_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name override of the MCP tool.
+     * This is populated if the name was overridden by a Toolset override.
+     * </pre>
+     *
+     * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for nameOverride.
+     */
+    public com.google.protobuf.ByteString getNameOverrideBytes() {
+      java.lang.Object ref = nameOverride_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nameOverride_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name override of the MCP tool.
+     * This is populated if the name was overridden by a Toolset override.
+     * </pre>
+     *
+     * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The nameOverride to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameOverride(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nameOverride_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name override of the MCP tool.
+     * This is populated if the name was overridden by a Toolset override.
+     * </pre>
+     *
+     * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNameOverride() {
+      nameOverride_ = getDefaultInstance().getNameOverride();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name override of the MCP tool.
+     * This is populated if the name was overridden by a Toolset override.
+     * </pre>
+     *
+     * <code>string name_override = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for nameOverride to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameOverrideBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nameOverride_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object description_ = "";
 
     /**
@@ -1478,7 +1936,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1496,7 +1954,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1519,7 +1977,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1545,7 +2003,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * @return Whether the inputSchema field is set.
      */
     public boolean hasInputSchema() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1591,7 +2049,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         inputSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1613,7 +2071,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         inputSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1631,7 +2089,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInputSchema(com.google.cloud.ces.v1beta.Schema value) {
       if (inputSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && inputSchema_ != null
             && inputSchema_ != com.google.cloud.ces.v1beta.Schema.getDefaultInstance()) {
           getInputSchemaBuilder().mergeFrom(value);
@@ -1642,7 +2100,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         inputSchemaBuilder_.mergeFrom(value);
       }
       if (inputSchema_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1660,7 +2118,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearInputSchema() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       inputSchema_ = null;
       if (inputSchemaBuilder_ != null) {
         inputSchemaBuilder_.dispose();
@@ -1682,7 +2140,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.Schema.Builder getInputSchemaBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetInputSchemaFieldBuilder().getBuilder();
     }
@@ -1757,7 +2215,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * @return Whether the outputSchema field is set.
      */
     public boolean hasOutputSchema() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1803,7 +2261,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         outputSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1825,7 +2283,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         outputSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1843,7 +2301,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeOutputSchema(com.google.cloud.ces.v1beta.Schema value) {
       if (outputSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && outputSchema_ != null
             && outputSchema_ != com.google.cloud.ces.v1beta.Schema.getDefaultInstance()) {
           getOutputSchemaBuilder().mergeFrom(value);
@@ -1854,7 +2312,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         outputSchemaBuilder_.mergeFrom(value);
       }
       if (outputSchema_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1872,7 +2330,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearOutputSchema() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       outputSchema_ = null;
       if (outputSchemaBuilder_ != null) {
         outputSchemaBuilder_.dispose();
@@ -1894,7 +2352,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.Schema.Builder getOutputSchemaBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetOutputSchemaFieldBuilder().getBuilder();
     }
@@ -2031,7 +2489,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serverAddress_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2055,7 +2513,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServerAddress() {
       serverAddress_ = getDefaultInstance().getServerAddress();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2084,7 +2542,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serverAddress_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2113,7 +2571,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * @return Whether the apiAuthentication field is set.
      */
     public boolean hasApiAuthentication() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2165,7 +2623,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         apiAuthenticationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2191,7 +2649,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         apiAuthenticationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2212,7 +2670,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeApiAuthentication(com.google.cloud.ces.v1beta.ApiAuthentication value) {
       if (apiAuthenticationBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && apiAuthentication_ != null
             && apiAuthentication_
                 != com.google.cloud.ces.v1beta.ApiAuthentication.getDefaultInstance()) {
@@ -2224,7 +2682,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         apiAuthenticationBuilder_.mergeFrom(value);
       }
       if (apiAuthentication_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2245,7 +2703,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearApiAuthentication() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       apiAuthentication_ = null;
       if (apiAuthenticationBuilder_ != null) {
         apiAuthenticationBuilder_.dispose();
@@ -2270,7 +2728,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.ApiAuthentication.Builder getApiAuthenticationBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetApiAuthenticationFieldBuilder().getBuilder();
     }
@@ -2352,7 +2810,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * @return Whether the tlsConfig field is set.
      */
     public boolean hasTlsConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2400,7 +2858,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         tlsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2423,7 +2881,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         tlsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2442,7 +2900,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTlsConfig(com.google.cloud.ces.v1beta.TlsConfig value) {
       if (tlsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && tlsConfig_ != null
             && tlsConfig_ != com.google.cloud.ces.v1beta.TlsConfig.getDefaultInstance()) {
           getTlsConfigBuilder().mergeFrom(value);
@@ -2453,7 +2911,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         tlsConfigBuilder_.mergeFrom(value);
       }
       if (tlsConfig_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2472,7 +2930,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTlsConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       tlsConfig_ = null;
       if (tlsConfigBuilder_ != null) {
         tlsConfigBuilder_.dispose();
@@ -2495,7 +2953,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.TlsConfig.Builder getTlsConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetTlsConfigFieldBuilder().getBuilder();
     }
@@ -2573,7 +3031,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceDirectoryConfig field is set.
      */
     public boolean hasServiceDirectoryConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2622,7 +3080,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         serviceDirectoryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2646,7 +3104,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       } else {
         serviceDirectoryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2666,7 +3124,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     public Builder mergeServiceDirectoryConfig(
         com.google.cloud.ces.v1beta.ServiceDirectoryConfig value) {
       if (serviceDirectoryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && serviceDirectoryConfig_ != null
             && serviceDirectoryConfig_
                 != com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()) {
@@ -2678,7 +3136,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         serviceDirectoryConfigBuilder_.mergeFrom(value);
       }
       if (serviceDirectoryConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2697,7 +3155,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearServiceDirectoryConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       serviceDirectoryConfig_ = null;
       if (serviceDirectoryConfigBuilder_ != null) {
         serviceDirectoryConfigBuilder_.dispose();
@@ -2721,7 +3179,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder
         getServiceDirectoryConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetServiceDirectoryConfigFieldBuilder().getBuilder();
     }
@@ -2798,7 +3256,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
       if (!customHeaders_.isMutable()) {
         customHeaders_ = customHeaders_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return customHeaders_;
     }
@@ -2908,7 +3366,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearCustomHeaders() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableCustomHeaders().getMutableMap().clear();
       return this;
     }
@@ -2938,7 +3396,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableCustomHeaders() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableCustomHeaders().getMutableMap();
     }
 
@@ -2964,7 +3422,7 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableCustomHeaders().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -2984,7 +3442,117 @@ public final class McpTool extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllCustomHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableCustomHeaders().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dynamic availability state of the tool on the external
+     * server.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dynamic availability state of the tool on the external
+     * server.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dynamic availability state of the tool on the external
+     * server.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.McpTool.State getState() {
+      com.google.cloud.ces.v1beta.McpTool.State result =
+          com.google.cloud.ces.v1beta.McpTool.State.forNumber(state_);
+      return result == null ? com.google.cloud.ces.v1beta.McpTool.State.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dynamic availability state of the tool on the external
+     * server.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.ces.v1beta.McpTool.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dynamic availability state of the tool on the external
+     * server.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.McpTool.State state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      state_ = 0;
+      onChanged();
       return this;
     }
 

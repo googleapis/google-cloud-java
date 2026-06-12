@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-fleetengine</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-maps-fleetengine-v1</artifactId>
         <version>0.40.0</version><!-- {x-version-update:proto-google-maps-fleetengine-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

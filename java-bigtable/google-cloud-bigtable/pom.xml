@@ -84,10 +84,18 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigtable-v2</artifactId>
@@ -96,6 +104,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
@@ -280,11 +289,6 @@
     </dependency>
 
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-emulator</artifactId>
       <scope>test</scope>
@@ -441,6 +445,7 @@
                   <arg>-XDcompilePolicy=simple</arg>
                   <arg>--should-stop=ifError=FLOW</arg>
                   <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Xep:MissingSummary:OFF -Xep:InlineMeSuggester:OFF -Xep:AutoValueImmutableFields:OFF -Xep:ObjectEqualsForPrimitives:OFF -Xep:JavaDurationGetSecondsToToSeconds:OFF</arg>
+                  <arg>${errorprone.javac.args}</arg>
 
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                   <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -457,7 +462,7 @@
                   <path>
                     <groupId>com.google.errorprone</groupId>
                     <artifactId>error_prone_core</artifactId>
-                    <version>${error-prone.version}</version>
+                    <version>${errorprone.version}</version>
                   </path>
                 </annotationProcessorPaths>
               </configuration>

@@ -140,11 +140,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
    *
    *
    * <pre>
-   * Required. The peer database name to switch over to.
+   * Optional. The peer database name to switch over to. Required for
+   * cross-region standby, and must be omitted for in-region Data Guard.
    * </pre>
    *
    * <code>
-   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The peerAutonomousDatabase.
@@ -166,11 +167,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
    *
    *
    * <pre>
-   * Required. The peer database name to switch over to.
+   * Optional. The peer database name to switch over to. Required for
+   * cross-region standby, and must be omitted for in-region Data Guard.
    * </pre>
    *
    * <code>
-   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for peerAutonomousDatabase.
@@ -664,11 +666,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
      *
      *
      * <pre>
-     * Required. The peer database name to switch over to.
+     * Optional. The peer database name to switch over to. Required for
+     * cross-region standby, and must be omitted for in-region Data Guard.
      * </pre>
      *
      * <code>
-     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The peerAutonomousDatabase.
@@ -689,11 +692,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
      *
      *
      * <pre>
-     * Required. The peer database name to switch over to.
+     * Optional. The peer database name to switch over to. Required for
+     * cross-region standby, and must be omitted for in-region Data Guard.
      * </pre>
      *
      * <code>
-     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for peerAutonomousDatabase.
@@ -714,11 +718,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
      *
      *
      * <pre>
-     * Required. The peer database name to switch over to.
+     * Optional. The peer database name to switch over to. Required for
+     * cross-region standby, and must be omitted for in-region Data Guard.
      * </pre>
      *
      * <code>
-     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The peerAutonomousDatabase to set.
@@ -738,11 +743,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
      *
      *
      * <pre>
-     * Required. The peer database name to switch over to.
+     * Optional. The peer database name to switch over to. Required for
+     * cross-region standby, and must be omitted for in-region Data Guard.
      * </pre>
      *
      * <code>
-     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -758,11 +764,12 @@ public final class SwitchoverAutonomousDatabaseRequest extends com.google.protob
      *
      *
      * <pre>
-     * Required. The peer database name to switch over to.
+     * Optional. The peer database name to switch over to. Required for
+     * cross-region standby, and must be omitted for in-region Data Guard.
      * </pre>
      *
      * <code>
-     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for peerAutonomousDatabase to set.

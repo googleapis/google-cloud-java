@@ -73,7 +73,9 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for how audio interactions should be recorded.
+   * Optional. Configuration for how audio interactions should be recorded. The
+   * audio is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>
@@ -88,7 +90,9 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for how audio interactions should be recorded.
+   * Optional. Configuration for how audio interactions should be recorded. The
+   * audio is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>
@@ -103,7 +107,9 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for how audio interactions should be recorded.
+   * Optional. Configuration for how audio interactions should be recorded. The
+   * audio is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>
@@ -116,8 +122,62 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings to describe the BigQuery export behaviors for the app.
-   * The conversation data will be exported to BigQuery tables if it is enabled.
+   * Optional. Configures an additional recording of unredacted audio. This can
+   * be used to maintain a raw audio copy when audio redaction is
+   * [enabled][google.cloud.ces.v1beta.RedactionConfig.enable_redaction],
+   * typically for auditing or monitoring purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AudioRecordingConfig unredacted_audio_recording_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the unredactedAudioRecordingConfig field is set.
+   */
+  boolean hasUnredactedAudioRecordingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures an additional recording of unredacted audio. This can
+   * be used to maintain a raw audio copy when audio redaction is
+   * [enabled][google.cloud.ces.v1beta.RedactionConfig.enable_redaction],
+   * typically for auditing or monitoring purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AudioRecordingConfig unredacted_audio_recording_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The unredactedAudioRecordingConfig.
+   */
+  com.google.cloud.ces.v1beta.AudioRecordingConfig getUnredactedAudioRecordingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures an additional recording of unredacted audio. This can
+   * be used to maintain a raw audio copy when audio redaction is
+   * [enabled][google.cloud.ces.v1beta.RedactionConfig.enable_redaction],
+   * typically for auditing or monitoring purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AudioRecordingConfig unredacted_audio_recording_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.AudioRecordingConfigOrBuilder
+      getUnredactedAudioRecordingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the BigQuery export behaviors for the app. The
+   * conversation data is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>
@@ -132,8 +192,9 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings to describe the BigQuery export behaviors for the app.
-   * The conversation data will be exported to BigQuery tables if it is enabled.
+   * Optional. Configures the BigQuery export behaviors for the app. The
+   * conversation data is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>
@@ -148,8 +209,9 @@ public interface LoggingSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings to describe the BigQuery export behaviors for the app.
-   * The conversation data will be exported to BigQuery tables if it is enabled.
+   * Optional. Configures the BigQuery export behaviors for the app. The
+   * conversation data is subject to redaction as configured in
+   * [RedactionConfig][google.cloud.ces.v1beta.LoggingSettings.redaction_config].
    * </pre>
    *
    * <code>

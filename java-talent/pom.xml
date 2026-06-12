@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-talent-v4beta1</artifactId>
@@ -56,15 +57,18 @@
         <artifactId>google-cloud-talent-bom</artifactId>
         <version>2.94.0</version> <!-- {x-version-update:google-cloud-talent:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-talent</module>
     <module>grpc-google-cloud-talent-v4</module>
     <module>grpc-google-cloud-talent-v4beta1</module>
     <module>proto-google-cloud-talent-v4</module>
     <module>proto-google-cloud-talent-v4beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-talent-bom</module>
   </modules>
 

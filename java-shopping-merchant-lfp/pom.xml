@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-lfp</artifactId>
@@ -51,16 +52,19 @@
         <artifactId>proto-google-shopping-merchant-lfp-v1beta</artifactId>
         <version>1.21.0</version><!-- {x-version-update:proto-google-shopping-merchant-lfp-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-shopping-merchant-lfp</module>
     <module>grpc-google-shopping-merchant-lfp-v1beta</module>
     <module>grpc-google-shopping-merchant-lfp-v1</module>
     <module>proto-google-shopping-merchant-lfp-v1beta</module>
     <module>proto-google-shopping-merchant-lfp-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-shopping-merchant-lfp-bom</module>
   </modules>
 

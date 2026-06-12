@@ -196,6 +196,8 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "iceberg-catalog-id", request.getIcebergCatalogId());
+                            serializer.putQueryParam(
+                                fields, "primary_location", request.getPrimaryLocation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

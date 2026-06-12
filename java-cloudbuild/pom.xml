@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-build-v1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>grpc-google-cloud-build-v1</artifactId>
         <version>3.95.0</version><!-- {x-version-update:grpc-google-cloud-build-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-build</module>
     <module>grpc-google-cloud-build-v1</module>
     <module>grpc-google-cloud-build-v2</module>
     <module>proto-google-cloud-build-v1</module>
     <module>proto-google-cloud-build-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-build-bom</module>
   </modules>
 

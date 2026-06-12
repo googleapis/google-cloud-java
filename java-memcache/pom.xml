@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-memcache-v1beta2</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-memcache</artifactId>
         <version>2.93.0</version><!-- {x-version-update:google-cloud-memcache:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-memcache</module>
     <module>grpc-google-cloud-memcache-v1beta2</module>
     <module>grpc-google-cloud-memcache-v1</module>
     <module>proto-google-cloud-memcache-v1beta2</module>
     <module>proto-google-cloud-memcache-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-memcache-bom</module>
   </modules>
 

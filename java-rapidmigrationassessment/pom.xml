@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-rapidmigrationassessment</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-cloud-rapidmigrationassessment-v1</artifactId>
         <version>0.76.0</version><!-- {x-version-update:proto-google-cloud-rapidmigrationassessment-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-rapidmigrationassessment</module>
     <module>grpc-google-cloud-rapidmigrationassessment-v1</module>
     <module>proto-google-cloud-rapidmigrationassessment-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-rapidmigrationassessment-bom</module>
   </modules>
 

@@ -140,6 +140,49 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      * @return The ignorePartialInvocationFailures.
      */
     boolean getIgnorePartialInvocationFailures();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the streamChunkProcessed field is set.
+     */
+    boolean hasStreamChunkProcessed();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The streamChunkProcessed.
+     */
+    com.google.cloud.modelarmor.v1.DataItem getStreamChunkProcessed();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.modelarmor.v1.DataItemOrBuilder getStreamChunkProcessedOrBuilder();
   }
 
   /**
@@ -191,6 +234,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
               com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ERROR_CODE_FIELD_NUMBER = 1;
     private long errorCode_ = 0L;
 
@@ -283,6 +327,65 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       return ignorePartialInvocationFailures_;
     }
 
+    public static final int STREAM_CHUNK_PROCESSED_FIELD_NUMBER = 4;
+    private com.google.cloud.modelarmor.v1.DataItem streamChunkProcessed_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the streamChunkProcessed field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamChunkProcessed() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The streamChunkProcessed.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.DataItem getStreamChunkProcessed() {
+      return streamChunkProcessed_ == null
+          ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()
+          : streamChunkProcessed_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The stream chunk processed by the Sanitization service.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.DataItemOrBuilder getStreamChunkProcessedOrBuilder() {
+      return streamChunkProcessed_ == null
+          ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()
+          : streamChunkProcessed_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -306,6 +409,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (ignorePartialInvocationFailures_ != false) {
         output.writeBool(3, ignorePartialInvocationFailures_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getStreamChunkProcessed());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -325,6 +431,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 3, ignorePartialInvocationFailures_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStreamChunkProcessed());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -347,6 +457,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (!getErrorMessage().equals(other.getErrorMessage())) return false;
       if (getIgnorePartialInvocationFailures() != other.getIgnorePartialInvocationFailures())
         return false;
+      if (hasStreamChunkProcessed() != other.hasStreamChunkProcessed()) return false;
+      if (hasStreamChunkProcessed()) {
+        if (!getStreamChunkProcessed().equals(other.getStreamChunkProcessed())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -366,6 +480,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getIgnorePartialInvocationFailures());
+      if (hasStreamChunkProcessed()) {
+        hash = (37 * hash) + STREAM_CHUNK_PROCESSED_FIELD_NUMBER;
+        hash = (53 * hash) + getStreamChunkProcessed().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -500,10 +618,19 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
 
       // Construct using
       // com.google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetStreamChunkProcessedFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -513,6 +640,11 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         errorCode_ = 0L;
         errorMessage_ = "";
         ignorePartialInvocationFailures_ = false;
+        streamChunkProcessed_ = null;
+        if (streamChunkProcessedBuilder_ != null) {
+          streamChunkProcessedBuilder_.dispose();
+          streamChunkProcessedBuilder_ = null;
+        }
         return this;
       }
 
@@ -562,6 +694,15 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.ignorePartialInvocationFailures_ = ignorePartialInvocationFailures_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.streamChunkProcessed_ =
+              streamChunkProcessedBuilder_ == null
+                  ? streamChunkProcessed_
+                  : streamChunkProcessedBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -591,6 +732,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         }
         if (other.getIgnorePartialInvocationFailures() != false) {
           setIgnorePartialInvocationFailures(other.getIgnorePartialInvocationFailures());
+        }
+        if (other.hasStreamChunkProcessed()) {
+          mergeStreamChunkProcessed(other.getStreamChunkProcessed());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -636,6 +780,14 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetStreamChunkProcessedFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -879,6 +1031,220 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         ignorePartialInvocationFailures_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.modelarmor.v1.DataItem streamChunkProcessed_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.DataItem,
+              com.google.cloud.modelarmor.v1.DataItem.Builder,
+              com.google.cloud.modelarmor.v1.DataItemOrBuilder>
+          streamChunkProcessedBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the streamChunkProcessed field is set.
+       */
+      public boolean hasStreamChunkProcessed() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The streamChunkProcessed.
+       */
+      public com.google.cloud.modelarmor.v1.DataItem getStreamChunkProcessed() {
+        if (streamChunkProcessedBuilder_ == null) {
+          return streamChunkProcessed_ == null
+              ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()
+              : streamChunkProcessed_;
+        } else {
+          return streamChunkProcessedBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setStreamChunkProcessed(com.google.cloud.modelarmor.v1.DataItem value) {
+        if (streamChunkProcessedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          streamChunkProcessed_ = value;
+        } else {
+          streamChunkProcessedBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setStreamChunkProcessed(
+          com.google.cloud.modelarmor.v1.DataItem.Builder builderForValue) {
+        if (streamChunkProcessedBuilder_ == null) {
+          streamChunkProcessed_ = builderForValue.build();
+        } else {
+          streamChunkProcessedBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeStreamChunkProcessed(com.google.cloud.modelarmor.v1.DataItem value) {
+        if (streamChunkProcessedBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && streamChunkProcessed_ != null
+              && streamChunkProcessed_
+                  != com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()) {
+            getStreamChunkProcessedBuilder().mergeFrom(value);
+          } else {
+            streamChunkProcessed_ = value;
+          }
+        } else {
+          streamChunkProcessedBuilder_.mergeFrom(value);
+        }
+        if (streamChunkProcessed_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearStreamChunkProcessed() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        streamChunkProcessed_ = null;
+        if (streamChunkProcessedBuilder_ != null) {
+          streamChunkProcessedBuilder_.dispose();
+          streamChunkProcessedBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.DataItem.Builder getStreamChunkProcessedBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetStreamChunkProcessedFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.DataItemOrBuilder getStreamChunkProcessedOrBuilder() {
+        if (streamChunkProcessedBuilder_ != null) {
+          return streamChunkProcessedBuilder_.getMessageOrBuilder();
+        } else {
+          return streamChunkProcessed_ == null
+              ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()
+              : streamChunkProcessed_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The stream chunk processed by the Sanitization service.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.DataItem stream_chunk_processed = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.DataItem,
+              com.google.cloud.modelarmor.v1.DataItem.Builder,
+              com.google.cloud.modelarmor.v1.DataItemOrBuilder>
+          internalGetStreamChunkProcessedFieldBuilder() {
+        if (streamChunkProcessedBuilder_ == null) {
+          streamChunkProcessedBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.modelarmor.v1.DataItem,
+                  com.google.cloud.modelarmor.v1.DataItem.Builder,
+                  com.google.cloud.modelarmor.v1.DataItemOrBuilder>(
+                  getStreamChunkProcessed(), getParentForChildren(), isClean());
+          streamChunkProcessed_ = null;
+        }
+        return streamChunkProcessedBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata)
