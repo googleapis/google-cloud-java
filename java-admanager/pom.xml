@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api-ads</groupId>
         <artifactId>ad-manager</artifactId>
@@ -36,13 +37,16 @@
         <artifactId>proto-ad-manager-v1</artifactId>
         <version>0.52.0</version><!-- {x-version-update:proto-ad-manager-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>ad-manager</module>
     <module>proto-ad-manager-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>ad-manager-bom</module>
   </modules>
 

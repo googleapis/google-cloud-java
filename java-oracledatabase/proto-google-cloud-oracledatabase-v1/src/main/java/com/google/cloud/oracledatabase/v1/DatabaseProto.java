@@ -83,13 +83,17 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\0327google/cloud/oracle"
           + "database/v1/pluggable_database.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\032\033google/type/dayofweek.proto\"\310\006\n"
+          + "ogle/protobuf/timestamp.proto\032\033google/type/dayofweek.proto\"\315\010\n"
           + "\010Database\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\024\n"
           + "\007db_name\030\002 \001(\tB\003\340A\001\022\033\n"
           + "\016db_unique_name\030\003 \001(\tB\003\340A\001\022\033\n"
-          + "\016admin_password\030\004 \001(\tB\003\340A\002\022 \n"
-          + "\023tde_wallet_password\030\005 \001(\tB\003\340A\001\022\032\n\r"
+          + "\016admin_password\030\004 \001(\tB\003\340A\001\022Y\n"
+          + "\035admin_password_secret_version\030\021 \001(\tB2\340A\001\372A,\n"
+          + "*secretmanager.googleapis.com/SecretVersion\022 \n"
+          + "\023tde_wallet_password\030\005 \001(\tB\003\340A\001\022^\n"
+          + "\"tde_wallet_password_secret_version\030\022 \001(\tB2\340A\001\372A,\n"
+          + "*secretmanager.googleapis.com/SecretVersion\022\032\n\r"
           + "character_set\030\006 \001(\tB\003\340A\001\022\033\n"
           + "\016ncharacter_set\030\007 \001(\tB\003\340A\001\022\024\n"
           + "\007oci_url\030\010 \001(\tB\003\340A\003\0224\n"
@@ -100,8 +104,10 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\014db_home_name\030\014 \001(\tB\003\340A\001\022\034\n"
           + "\017gcp_oracle_zone\030\r"
           + " \001(\tB\003\340A\003\022c\n"
-          + "\023ops_insights_status\030\016 \001(\0162A.google.cloud.oracledatabase.v1."
-          + "Database.OperationsInsightsStatusB\003\340A\003\"\254\001\n"
+          + "\023ops_insights_status\030\016 \001(\0162A.goog"
+          + "le.cloud.oracledatabase.v1.Database.OperationsInsightsStatusB\003\340A\003\022\"\n"
+          + "\025pluggable_database_id\030\017 \001(\tB\003\340A\001\022$\n"
+          + "\027pluggable_database_name\030\020 \001(\tB\003\340A\001\"\254\001\n"
           + "\030OperationsInsightsStatus\022*\n"
           + "&OPERATIONS_INSIGHTS_STATUS_UNSPECIFIED\020\000\022\014\n"
           + "\010ENABLING\020\001\022\013\n"
@@ -110,16 +116,17 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\013NOT_ENABLED\020\004\022\023\n"
           + "\017FAILED_ENABLING\020\005\022\024\n"
           + "\020FAILED_DISABLING\020\006:~\352A{\n"
-          + "&oracledatabase.googleapis.com/Database\022<projects/{project}/l"
-          + "ocations/{location}/databases/{database}*\tdatabases2\010database\"\252\004\n"
+          + "&oracledatabase.googleapis.com/Database\022"
+          + "<projects/{project}/locations/{location}/databases/{database}*"
+          + "\tdatabases2\010database\"\252\004\n"
           + "\022DatabaseProperties\022]\n"
-          + "\005state\030\001 \001(\0162I.google.cloud.oracl"
-          + "edatabase.v1.DatabaseProperties.DatabaseLifecycleStateB\003\340A\003\022\027\n\n"
+          + "\005state\030\001 \001(\0162I.google.cloud.oracledatabase.v1.Databa"
+          + "seProperties.DatabaseLifecycleStateB\003\340A\003\022\027\n\n"
           + "db_version\030\002 \001(\tB\003\340A\002\022M\n"
-          + "\020db_backup_config\030\003 \001(\0132..google."
-          + "cloud.oracledatabase.v1.DbBackupConfigB\003\340A\001\022a\n"
-          + "\032database_management_config\030\004 \001(\0132"
-          + "8.google.cloud.oracledatabase.v1.DatabaseManagementConfigB\003\340A\003\"\351\001\n"
+          + "\020db_backup_config\030\003"
+          + " \001(\0132..google.cloud.oracledatabase.v1.DbBackupConfigB\003\340A\001\022a\n"
+          + "\032database_management_config\030\004 \001(\01328.google.cloud.orac"
+          + "ledatabase.v1.DatabaseManagementConfigB\003\340A\003\"\351\001\n"
           + "\026DatabaseLifecycleState\022(\n"
           + "$DATABASE_LIFECYCLE_STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014PROVISIONING\020\001\022\r\n"
@@ -135,20 +142,20 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\"\234\t\n"
           + "\016DbBackupConfig\022 \n"
           + "\023auto_backup_enabled\030\001 \001(\010B\003\340A\001\022p\n"
-          + "\032backup_destination_details\030\002 \003(\0132G.google.clo"
-          + "ud.oracledatabase.v1.DbBackupConfig.BackupDestinationDetailsB\003\340A\001\022\"\n"
+          + "\032backup_destination_details\030\002 \003(\0132G.google.cloud.oracledatabase.v"
+          + "1.DbBackupConfig.BackupDestinationDetailsB\003\340A\001\022\"\n"
           + "\025retention_period_days\030\003 \001(\005B\003\340A\001\022h\n"
-          + "\026backup_deletion_policy\030\004 \001(\0162C.google.cloud.oracledatab"
-          + "ase.v1.DbBackupConfig.BackupDeletionPolicyB\003\340A\001\0229\n"
+          + "\026backup_deletion_policy\030\004 \001(\0162C.goo"
+          + "gle.cloud.oracledatabase.v1.DbBackupConfig.BackupDeletionPolicyB\003\340A\001\0229\n"
           + "\024auto_full_backup_day\030\005"
           + " \001(\0162\026.google.type.DayOfWeekB\003\340A\001\022a\n"
-          + "\027auto_full_backup_window\030\006 \001(\0162;.google.cloud.oracl"
-          + "edatabase.v1.DbBackupConfig.BackupWindowB\003\340A\001\022h\n"
-          + "\036auto_incremental_backup_window\030\007"
-          + " \001(\0162;.google.cloud.oracledatabase.v1.DbBackupConfig.BackupWindowB\003\340A\001\032s\n"
+          + "\027auto_full_backup_window\030\006 \001(\016"
+          + "2;.google.cloud.oracledatabase.v1.DbBackupConfig.BackupWindowB\003\340A\001\022h\n"
+          + "\036auto_incremental_backup_window\030\007 \001(\0162;.google.clou"
+          + "d.oracledatabase.v1.DbBackupConfig.BackupWindowB\003\340A\001\032s\n"
           + "\030BackupDestinationDetails\022W\n"
-          + "\004type\030\001 \001(\0162D.goog"
-          + "le.cloud.oracledatabase.v1.DbBackupConfig.BackupDestinationTypeB\003\340A\001\"\210\001\n"
+          + "\004type\030\001 \001(\0162D.google.cloud.oracledata"
+          + "base.v1.DbBackupConfig.BackupDestinationTypeB\003\340A\001\"\210\001\n"
           + "\025BackupDestinationType\022\'\n"
           + "#BACKUP_DESTINATION_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003NFS\020\001\022\026\n"
@@ -188,11 +195,10 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
           + "\tdatabases\030\001 \003(\0132(.google.cloud.oracledatabase.v1.Database\022\027\n"
           + "\017next_page_token\030\002 \001(\tB\347\001\n"
           + "\"com.google.cloud.oracledatabase.v1B\r"
-          + "DatabaseProtoP\001ZJcloud.google.com/go/oracled"
-          + "atabase/apiv1/oracledatabasepb;oracledat"
-          + "abasepb\252\002\036Google.Cloud.OracleDatabase.V1"
-          + "\312\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!Goog"
-          + "le::Cloud::OracleDatabase::V1b\006proto3"
+          + "DatabaseProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracl"
+          + "edatabasepb;oracledatabasepb\252\002\036Google.Cl"
+          + "oud.OracleDatabase.V1\312\002\036Google\\Cloud\\Ora"
+          + "cleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -214,7 +220,9 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
               "DbName",
               "DbUniqueName",
               "AdminPassword",
+              "AdminPasswordSecretVersion",
               "TdeWalletPassword",
+              "TdeWalletPasswordSecretVersion",
               "CharacterSet",
               "NcharacterSet",
               "OciUrl",
@@ -224,6 +232,8 @@ public final class DatabaseProto extends com.google.protobuf.GeneratedFile {
               "DbHomeName",
               "GcpOracleZone",
               "OpsInsightsStatus",
+              "PluggableDatabaseId",
+              "PluggableDatabaseName",
             });
     internal_static_google_cloud_oracledatabase_v1_DatabaseProperties_descriptor =
         getDescriptor().getMessageType(1);

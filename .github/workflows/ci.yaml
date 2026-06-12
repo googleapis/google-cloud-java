@@ -59,7 +59,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [11, 17, 21, 25]
+        java: [11, 17, 21, 25, 26]
     steps:
     - name: Get current week within the year
       id: date
@@ -226,7 +226,7 @@ jobs:
       fail-fast: false
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
-        java: [11, 17, 21, 25]
+        java: [11, 17, 21, 25, 26]
     steps:
     - name: Get current week within the year
       id: date

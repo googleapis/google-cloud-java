@@ -144,15 +144,14 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-datastore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-<!--    Error Prone Core version is not managed by shared-deps. Keep this version in sync with upstream shared-deps -->
-<!--    Related: https://github.com/googleapis/java-datastore/issues/1889 -->
-<!--    As of v2.42.0, the min JDK version needed is JDK 17+ -->
-    <error-prone.version>2.42.0</error-prone.version>
+    <errorprone.version>2.48.0</errorprone.version>
+    <errorprone.javac.args>-g</errorprone.javac.args>
   </properties>
 
   <dependencyManagement>
     <dependencies>
 
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
@@ -179,11 +178,6 @@
         <version>3.1.0</version><!-- {x-version-update:grpc-google-cloud-datastore-v1:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datastore-utils</artifactId>
-        <version>3.1.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud.datastore</groupId>
         <artifactId>datastore-v1-proto-client</artifactId>
         <version>3.1.0</version><!-- {x-version-update:datastore-v1-proto-client:current} -->
@@ -193,6 +187,12 @@
             <artifactId>proto-google-cloud-datastore-v1</artifactId>
           </exclusion>
         </exclusions>
+      </dependency>
+      <!-- {x-generated-dependencies-end} -->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datastore-utils</artifactId>
+        <version>3.1.0</version><!-- {x-version-update:google-cloud-datastore:current} -->
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
@@ -222,11 +222,13 @@
   </build>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-datastore</module>
     <module>grpc-google-cloud-datastore-admin-v1</module>
     <module>grpc-google-cloud-datastore-v1</module>
     <module>proto-google-cloud-datastore-v1</module>
     <module>proto-google-cloud-datastore-admin-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>datastore-v1-proto-client</module>
     <module>google-cloud-datastore-bom</module>
     <module>google-cloud-datastore-utils</module>
@@ -238,6 +240,33 @@
       <id>bulkTests</id>
       <properties>
         <skipTests>true</skipTests>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk8</id>
+      <activation>
+        <jdk>[1.8,17)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.38.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk17</id>
+      <activation>
+        <jdk>[17,21)</jdk>
+      </activation>
+      <properties>
+        <errorprone.version>2.42.0</errorprone.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>errorprone-jdk21</id>
+      <activation>
+        <jdk>21</jdk>
+      </activation>
+      <properties>
+        <errorprone.javac.args>-XDaddTypeAnnotationsToSymbol=true</errorprone.javac.args>
       </properties>
     </profile>
   </profiles>

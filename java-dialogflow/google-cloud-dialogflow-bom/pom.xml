@@ -20,6 +20,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dialogflow</artifactId>
@@ -45,6 +46,7 @@
         <artifactId>proto-google-cloud-dialogflow-v2beta1</artifactId>
         <version>4.99.0</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2beta1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

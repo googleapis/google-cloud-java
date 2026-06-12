@@ -59,6 +59,11 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
     if (logger != null && handler != null) {
       logger.removeHandler(handler);
     }
+    try {
+      BigQueryJdbcRootLogger.setLevel(java.util.logging.Level.OFF, null);
+    } catch (Exception e) {
+      // Ignore
+    }
   }
 
   protected boolean assertLogContains(String snippet) {

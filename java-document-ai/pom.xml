@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-document-ai-v1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>proto-google-cloud-document-ai-v1beta3</artifactId>
         <version>2.97.0</version><!-- {x-version-update:proto-google-cloud-document-ai-v1beta3:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-document-ai</module>
     <module>grpc-google-cloud-document-ai-v1beta3</module>
     <module>grpc-google-cloud-document-ai-v1</module>
     <module>proto-google-cloud-document-ai-v1beta3</module>
     <module>proto-google-cloud-document-ai-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-document-ai-bom</module>
   </modules>
 

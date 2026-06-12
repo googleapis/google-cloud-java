@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gdchardwaremanagement</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-cloud-gdchardwaremanagement-v1alpha</artifactId>
         <version>0.48.0</version><!-- {x-version-update:proto-google-cloud-gdchardwaremanagement-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -38,6 +38,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-gapic-showcase-v1beta1</artifactId>
@@ -53,6 +54,7 @@
         <artifactId>gapic-showcase</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>

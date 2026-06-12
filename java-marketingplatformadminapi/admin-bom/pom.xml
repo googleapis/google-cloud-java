@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.ads-marketingplatform</groupId>
         <artifactId>admin</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-admin-v1alpha</artifactId>
         <version>0.42.0</version><!-- {x-version-update:proto-admin-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

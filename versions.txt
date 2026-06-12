@@ -1,7 +1,7 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-java:1.87.0:1.87.0
+google-cloud-java:1.87.1:1.87.1
 google-cloud-accessapproval:2.94.0:2.94.0
 grpc-google-cloud-accessapproval-v1:2.94.0:2.94.0
 proto-google-cloud-accessapproval-v1:2.94.0:2.94.0
@@ -604,9 +604,9 @@ proto-google-cloud-alloydb-v1alpha:0.82.0:0.82.0
 grpc-google-cloud-alloydb-v1beta:0.82.0:0.82.0
 grpc-google-cloud-alloydb-v1:0.82.0:0.82.0
 grpc-google-cloud-alloydb-v1alpha:0.82.0:0.82.0
-google-cloud-biglake:0.81.0:0.81.0
-proto-google-cloud-biglake-v1alpha1:0.81.0:0.81.0
-grpc-google-cloud-biglake-v1alpha1:0.81.0:0.81.0
+google-cloud-biglake:0.81.1:0.81.1
+proto-google-cloud-biglake-v1alpha1:0.81.1:0.81.1
+grpc-google-cloud-biglake-v1alpha1:0.81.1:0.81.1
 google-cloud-workstations:0.81.0:0.81.0
 proto-google-cloud-workstations-v1beta:0.81.0:0.81.0
 grpc-google-cloud-workstations-v1beta:0.81.0:0.81.0
@@ -617,8 +617,8 @@ grpc-google-cloud-confidentialcomputing-v1:0.79.0:0.79.0
 grpc-google-cloud-confidentialcomputing-v1alpha1:0.79.0:0.79.0
 proto-google-cloud-workstations-v1:0.81.0:0.81.0
 grpc-google-cloud-workstations-v1:0.81.0:0.81.0
-proto-google-cloud-biglake-v1:0.81.0:0.81.0
-grpc-google-cloud-biglake-v1:0.81.0:0.81.0
+proto-google-cloud-biglake-v1:0.81.1:0.81.1
+grpc-google-cloud-biglake-v1:0.81.1:0.81.1
 google-cloud-storageinsights:0.78.0:0.78.0
 proto-google-cloud-storageinsights-v1:0.78.0:0.78.0
 grpc-google-cloud-storageinsights-v1:0.78.0:0.78.0
@@ -975,8 +975,8 @@ proto-google-cloud-networkconnectivity-v1beta:1.92.0:1.92.0
 grpc-google-cloud-networkconnectivity-v1beta:1.92.0:1.92.0
 proto-google-cloud-hypercomputecluster-v1:0.13.0:0.13.0
 grpc-google-cloud-hypercomputecluster-v1:0.13.0:0.13.0
-proto-google-cloud-biglake-v1beta:0.81.0:0.81.0
-grpc-google-cloud-biglake-v1beta:0.81.0:0.81.0
+proto-google-cloud-biglake-v1beta:0.81.1:0.81.1
+grpc-google-cloud-biglake-v1beta:0.81.1:0.81.1
 gapic-generator-java:2.73.0:2.73.0
 api-common:2.64.0:2.64.0
 gax:2.81.0:2.81.0
@@ -1045,14 +1045,14 @@ proto-google-cloud-bigtable-admin-v2:2.79.0:2.79.0
 proto-google-cloud-bigtable-v2:2.79.0:2.79.0
 google-cloud-bigtable-emulator:0.216.0:0.216.0
 google-cloud-bigtable-emulator-core:0.216.0:0.216.0
-google-cloud-firestore:3.43.0:3.43.0
-google-cloud-firestore-admin:3.43.0:3.43.0
-google-cloud-firestore-bom:3.43.0:3.43.0
-grpc-google-cloud-firestore-admin-v1:3.43.0:3.43.0
-grpc-google-cloud-firestore-v1:3.43.0:3.43.0
-proto-google-cloud-firestore-admin-v1:3.43.0:3.43.0
-proto-google-cloud-firestore-v1:3.43.0:3.43.0
-proto-google-cloud-firestore-bundle-v1:3.43.0:3.43.0
+google-cloud-firestore:3.43.1:3.43.1
+google-cloud-firestore-admin:3.43.1:3.43.1
+google-cloud-firestore-bom:3.43.1:3.43.1
+grpc-google-cloud-firestore-admin-v1:3.43.1:3.43.1
+grpc-google-cloud-firestore-v1:3.43.1:3.43.1
+proto-google-cloud-firestore-admin-v1:3.43.1:3.43.1
+proto-google-cloud-firestore-v1:3.43.1:3.43.1
+proto-google-cloud-firestore-bundle-v1:3.43.1:3.43.1
 proto-google-cloud-geminidataanalytics-v1:0.21.0:0.21.0
 grpc-google-cloud-geminidataanalytics-v1:0.21.0:0.21.0
 google-cloud-developer-knowledge:0.1.0:0.1.0

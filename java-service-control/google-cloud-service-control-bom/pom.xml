@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-control</artifactId>
@@ -49,6 +50,7 @@
         <artifactId>proto-google-cloud-service-control-v2</artifactId>
         <version>1.93.0</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

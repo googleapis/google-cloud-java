@@ -463,10 +463,10 @@ public interface CloudVmClusterPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. SCAN listener port - TCP
+   * Optional. SCAN listener port - TCP
    * </pre>
    *
-   * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int32 scan_listener_port_tcp = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scanListenerPortTcp.
    */
@@ -476,11 +476,10 @@ public interface CloudVmClusterPropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. SCAN listener port - TLS
+   * Optional. SCAN listener port - TLS
    * </pre>
    *
-   * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>int32 scan_listener_port_tcp_ssl = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The scanListenerPortTcpSsl.
    */

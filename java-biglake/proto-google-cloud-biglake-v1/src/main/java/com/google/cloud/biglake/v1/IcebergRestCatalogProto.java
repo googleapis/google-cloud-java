@@ -41,13 +41,45 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_biglake_v1_IcebergCatalog_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_Replica_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_Replica_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_RestrictedLocationsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_RestrictedLocationsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_UnityCatalogInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_UnityCatalogInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_GlueCatalogInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_GlueCatalogInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshSchedule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshSchedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshScope_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshScope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_biglake_v1_CreateIcebergCatalogRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -96,6 +128,14 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
       internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -194,51 +234,135 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "atalog.proto\022\027google.cloud.biglake.v1\032\034g"
           + "oogle/api/annotations.proto\032\027google/api/"
           + "client.proto\032\037google/api/field_behavior."
-          + "proto\032\031google/api/httpbody.proto\032\031google"
-          + "/api/resource.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.pro"
-          + "to\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\265\001\n"
-          + "\033RegisterIcebergTableRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " biglake.googleapis.com/Namespace\022\021\n"
-          + "\004name\030\002 \001(\tB\003\340A\002\0221\n"
-          + "\021metadata_location\030\003 \001(\tB\003\340A\002R\021metadata-location\022\026\n"
-          + "\toverwrite\030\004 \001(\tB\003\340A\001\"\257\006\n"
+          + "proto\032\033google/api/field_info.proto\032\031goog"
+          + "le/api/httpbody.proto\032\031google/api/resour"
+          + "ce.proto\032\036google/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\034google/protobuf"
+          + "/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\204\034\n"
           + "\016IcebergCatalog\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022e\n"
-          + "\017credential_mode\030\002 \001(\01626.googl"
-          + "e.cloud.biglake.v1.IcebergCatalog.CredentialModeB\003\340A\001R\017credential-mode\022=\n"
+          + "\017credential_mode\030\002 \001(\01626.google.cloud.biglake.v1"
+          + ".IcebergCatalog.CredentialModeB\003\340A\001R\017credential-mode\022=\n"
           + "\027biglake_service_account\030\003 \001("
-          + "\tB\003\340A\003R\027biglake-service-account\022\\\n"
-          + "\014catalog_type\030\004 \001(\01623.go"
-          + "ogle.cloud.biglake.v1.IcebergCatalog.CatalogTypeB\003\340A\002R\014catalog-type\022/\n"
+          + "\tB\003\340A\003R\027biglake-service-account\022J\n"
+          + "!biglake_service_account_unique_id\030\016 \001("
+          + "\tB\003\340A\003R\032biglake-service-account-id\022\\\n"
+          + "\014catalog_type\030\004 \001(\01623.google.cloud.biglake.v1."
+          + "IcebergCatalog.CatalogTypeB\003\340A\002R\014catalog-type\022/\n"
           + "\020default_location\030\005 \001(\tB\003\340A\001R\020default-location\022-\n"
-          + "\017catalog_regions\030\006 \003(\tB\003\340A\003R\017catalog-regions\022A\n"
-          + "\013create_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003R\013create-time\022A\n"
+          + "\017storage_regions\030\n"
+          + " \003(\tB\003\340A\003R\017storage-regions\022A\n"
+          + "\013create_time\030\007 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003R\013create-time\022A\n"
           + "\013update_time\030\010"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003R\013update-time\"H\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003R\013update-time\022F\n"
+          + "\010replicas\030\t"
+          + " \003(\0132/.google.cloud.biglake.v1.IcebergCatalog.ReplicaB\003\340A\003\022\030\n"
+          + "\013description\030\014 \001(\tB\003\340A\001\022\210\001\n"
+          + "\033restricted_locations_config\030\017 \001(\0132A.google.cloud.biglake.v1.Ic"
+          + "ebergCatalog.RestrictedLocationsConfigB\003\340A\001R\033restricted-locations-config\022\202\001\n"
+          + "\031federated_catalog_options\030\r"
+          + " \001(\0132?.google.cloud.biglake.v1.IcebergCatalog.FederatedC"
+          + "atalogOptionsB\003\340A\001R\031federated-catalog-options\032\314\001\n"
+          + "\007Replica\022\023\n"
+          + "\006region\030\001 \001(\tB\003\340A\003\022I\n"
+          + "\005state\030\002"
+          + " \001(\01625.google.cloud.biglake.v1.IcebergCatalog.Replica.StateB\003\340A\003\"a\n"
+          + "\005State\022\021\n\r"
+          + "STATE_UNKNOWN\020\000\022\021\n\r"
+          + "STATE_PRIMARY\020\001\022\035\n"
+          + "\031STATE_PRIMARY_IN_PROGRESS\020\002\022\023\n"
+          + "\017STATE_SECONDARY\020\003\032T\n"
+          + "\031RestrictedLocationsConfig\0227\n"
+          + "\024restricted_locations\030\001 \003("
+          + "\tB\003\340A\001R\024restricted-locations\032\271\017\n"
+          + "\027FederatedCatalogOptions\022\207\001\n"
+          + "\022unity_catalog_info\030\002 \001(\0132P.google.cloud.biglake.v1.IcebergCatalog.Fed"
+          + "eratedCatalogOptions.UnityCatalogInfoB\003\340A\001H\000R\022unity-catalog-info\022\204\001\n"
+          + "\021glue_catalog_info\030\004 \001(\0132O.google.cloud.biglake.v1.I"
+          + "cebergCatalog.FederatedCatalogOptions.Gl"
+          + "ueCatalogInfoB\003\340A\001H\000R\021glue-catalog-info\022R\n"
+          + "\013secret_name\030\001 \001(\tB+\340A\001\372A%\n"
+          + "#secretmanager.googleapis.com/SecretH\001R\013secret-name\210\001\001\022l\n"
+          + "\026service_directory_name\030\005 \001(\tB/\340A\001\372A)\n"
+          + "\'servicedirectory.googleapis.com/ServiceH\002R\026service-directory-name\210\001\001\022}\n"
+          + "\017refresh_options\030\003 \001(\0132N.google.cloud.biglak"
+          + "e.v1.IcebergCatalog.FederatedCatalogOpti"
+          + "ons.RefreshOptionsB\003\340A\001R\017refresh-options\022z\n"
+          + "\016refresh_status\030\006 \001(\0132M.google.cloud."
+          + "biglake.v1.IcebergCatalog.FederatedCatal"
+          + "ogOptions.RefreshStatusB\003\340A\003R\016refresh-status\032\226\002\n"
+          + "\020UnityCatalogInfo\022.\n\r"
+          + "instance_name\030\001 \001(\tB\003\340A\002H\000R\r"
+          + "instance-name\210\001\001\022,\n"
+          + "\014catalog_name\030\002 \001("
+          + "\tB\003\340A\002H\001R\014catalog-name\210\001\001\022\\\n"
+          + " service_principal_application_id\030\003 \001("
+          + "\tB\013\340A\001\342\214\317\327\010\002\010\001H\002R"
+          + " service-principal-application-id\210\001\001B\020\n"
+          + "\016_instance_nameB\017\n\r"
+          + "_catalog_nameB#\n"
+          + "!_service_principal_application_id\032\272\001\n"
+          + "\017GlueCatalogInfo\022\036\n"
+          + "\twarehouse\030\001 \001(\tB\006\340A\002\340A\005H\000\210\001\001\022+\n\n"
+          + "aws_region\030\002 \001(\tB\006\340A\002\340A\005H\001R\n"
+          + "aws-region\210\001\001\022,\n"
+          + "\014aws_role_arn\030\003 \001("
+          + "\tB\003\340A\002H\002R\014aws-role-arn\210\001\001B\014\n\n"
+          + "_warehouseB\r\n"
+          + "\013_aws_regionB\017\n\r"
+          + "_aws_role_arn\032w\n"
+          + "\017RefreshSchedule\022O\n"
+          + "\020refresh_interval\030\001 \001(\0132"
+          + "\031.google.protobuf.DurationB\003\340A\001H\000R\020refresh-interval\210\001\001B\023\n"
+          + "\021_refresh_interval\032A\n"
+          + "\014RefreshScope\0221\n"
+          + "\021namespace_filters\030\001 \003("
+          + "\tB\003\340A\001R\021namespace-filters\032\214\002\n"
+          + "\016RefreshOptions\022\200\001\n"
+          + "\020refresh_schedule\030\001 \001(\0132O.google.cl"
+          + "oud.biglake.v1.IcebergCatalog.FederatedC"
+          + "atalogOptions.RefreshScheduleB\003\340A\001R\020refresh-schedule\022w\n\r"
+          + "refresh_scope\030\002 \001(\0132L.go"
+          + "ogle.cloud.biglake.v1.IcebergCatalog.FederatedCatalogOptions.RefreshScopeB\003\340A\001R\r"
+          + "refresh-scope\032\354\001\n\r"
+          + "RefreshStatus\022D\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\000R\n"
+          + "start-time\210\001\001\022@\n"
+          + "\010end_time\030\002 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003H\001R\010end-time\210\001\001\022,\n"
+          + "\006status\030\003"
+          + " \001(\0132\022.google.rpc.StatusB\003\340A\003H\002\210\001\001B\r\n"
+          + "\013_start_timeB\013\n"
+          + "\t_end_timeB\t\n"
+          + "\007_statusB\025\n"
+          + "\023remote_catalog_infoB\016\n"
+          + "\014_secret_nameB\031\n"
+          + "\027_service_directory_name\"~\n"
           + "\013CatalogType\022\034\n"
           + "\030CATALOG_TYPE_UNSPECIFIED\020\000\022\033\n"
-          + "\027CATALOG_TYPE_GCS_BUCKET\020\001\"w\n"
+          + "\027CATALOG_TYPE_GCS_BUCKET\020\001\022\030\n"
+          + "\024CATALOG_TYPE_BIGLAKE\020\003\022\032\n"
+          + "\026CATALOG_TYPE_FEDERATED\020\004\"w\n"
           + "\016CredentialMode\022\037\n"
           + "\033CREDENTIAL_MODE_UNSPECIFIED\020\000\022\034\n"
           + "\030CREDENTIAL_MODE_END_USER\020\001\022&\n"
           + "\"CREDENTIAL_MODE_VENDED_CREDENTIALS\020\002:]\352AZ\n"
-          + "\036biglake.googleapis.co"
-          + "m/Catalog\022%projects/{project}/catalogs/{catalog}*\010catalogs2\007catalog\"\336\001\n"
+          + "\036biglake.googleapis.com/Cat"
+          + "alog\022%projects/{project}/catalogs/{catalog}*\010catalogs2\007catalog\"\217\002\n"
           + "\033CreateIcebergCatalogRequest\022C\n"
           + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
           + "+cloudresourcemanager.googleapis.com/Project\0223\n"
           + "\022iceberg_catalog_id\030\003 \001(\tB\003\340A\002R\022iceberg-catalog-id\022E\n"
-          + "\017iceberg_catalog\030\002"
-          + " \001(\0132\'.google.cloud.biglake.v1.IcebergCatalogB\003\340A\002\"S\n"
+          + "\017iceberg_catalog\030\002 \001("
+          + "\0132\'.google.cloud.biglake.v1.IcebergCatalogB\003\340A\002\022/\n"
+          + "\020primary_location\030\004 \001(\tB\003\340A\001R\020primary_location\"S\n"
           + "\033DeleteIcebergCatalogRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036biglake.googleapis.com/Catalog\"\232\001\n"
           + "\033UpdateIcebergCatalogRequest\022E\n"
-          + "\017iceberg_catalog\030\001 \001(\0132\'.goo"
-          + "gle.cloud.biglake.v1.IcebergCatalogB\003\340A\002\0224\n"
+          + "\017iceberg_catalog\030\001 \001(\0132\'"
+          + ".google.cloud.biglake.v1.IcebergCatalogB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"P\n"
           + "\030GetIcebergCatalogRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
@@ -246,8 +370,8 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "\032ListIcebergCatalogsRequest\022C\n"
           + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
           + "+cloudresourcemanager.googleapis.com/Project\022R\n"
-          + "\004view\030\002 \001(\0162?.google.cloud.biglake.v1.Lis"
-          + "tIcebergCatalogsRequest.CatalogViewB\003\340A\001\022!\n"
+          + "\004view\030\002 \001(\0162?.google.cloud.biglake.v1"
+          + ".ListIcebergCatalogsRequest.CatalogViewB\003\340A\001\022!\n"
           + "\tpage_size\030\003 \001(\005B\003\340A\001R\tpage-size\022#\n\n"
           + "page_token\030\004 \001(\tB\003\340A\001R\n"
           + "page-token\"Z\n"
@@ -256,8 +380,8 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "\022CATALOG_VIEW_BASIC\020\001\022\025\n"
           + "\021CATALOG_VIEW_FULL\020\002\"\300\001\n"
           + "\033ListIcebergCatalogsResponse\022X\n"
-          + "\020iceberg_catalogs\030\001 \003(\0132\'.google.cloud.bi"
-          + "glake.v1.IcebergCatalogB\003\340A\003R\020iceberg-catalogs\022-\n"
+          + "\020iceberg_catalogs\030\001 \003(\0132\'.google.clou"
+          + "d.biglake.v1.IcebergCatalogB\003\340A\003R\020iceberg-catalogs\022-\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003R\017next-page-token\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"\274\001\n"
           + "\035FailoverIcebergCatalogRequest\022\021\n"
@@ -268,11 +392,11 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"[\n"
           + "\036FailoverIcebergCatalogResponse\0229\n"
           + "\020replication_time\030\001"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\206\001\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"}\n"
           + "\031UpdateIcebergTableRequest\0222\n"
           + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034biglake.googleapis.com/Table\0225\n"
-          + "\thttp_body\030\002 \001(\0132\024.google.api.HttpBodyB\003\340A\002R\007updates\"d\n"
+          + "\034biglake.googleapis.com/Table\022,\n"
+          + "\thttp_body\030\002 \001(\0132\024.google.api.HttpBodyB\003\340A\002\"d\n"
           + "\026GetIcebergTableRequest\0222\n"
           + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
           + "\034biglake.googleapis.com/Table\022\026\n"
@@ -284,7 +408,17 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "\031CreateIcebergTableRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " biglake.googleapis.com/Namespace\022,\n"
-          + "\thttp_body\030\003 \001(\0132\024.google.api.HttpBodyB\003\340A\002\"\217\001\n"
+          + "\thttp_body\030\003 \001(\0132\024.google.api.HttpBodyB\003\340A\002\"\265\001\n"
+          + "\033RegisterIcebergTableRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " biglake.googleapis.com/Namespace\022\021\n"
+          + "\004name\030\002 \001(\tB\003\340A\002\0221\n"
+          + "\021metadata_location\030\003 \001(\tB\003\340A\002R\021metadata-location\022\026\n"
+          + "\toverwrite\030\004 \001(\010B\003\340A\001\"\204\001\n"
+          + " ReportIcebergTableMetricsRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034biglake.googleapis.com/Table\022,\n"
+          + "\thttp_body\030\002 \001(\0132\024.google.api.HttpBodyB\003\340A\002\"\217\001\n"
           + "\"ListIcebergTableIdentifiersRequest\022\027\n\n"
           + "page_token\030\001 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\0228\n"
@@ -300,16 +434,16 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "\017next_page_token\030\002 \001(\tB\003\340A\003R\017next-page-token\"\263\001\n"
           + "\026IcebergNamespaceUpdate\022\025\n"
           + "\010removals\030\002 \003(\tB\003\340A\001\022R\n"
-          + "\007updates\030\003 \003(\0132<.google.clou"
-          + "d.biglake.v1.IcebergNamespaceUpdate.UpdatesEntryB\003\340A\001\032.\n"
+          + "\007updates\030\003 \003(\0132<.google.cloud.bigla"
+          + "ke.v1.IcebergNamespaceUpdate.UpdatesEntryB\003\340A\001\032.\n"
           + "\014UpdatesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\257\001\n"
           + "\035UpdateIcebergNamespaceRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
           + " biglake.googleapis.com/Namespace\022V\n"
-          + "\030iceberg_namespace_update\030\002 \001(\0132/.google.cloud"
-          + ".biglake.v1.IcebergNamespaceUpdateB\003\340A\002\"i\n"
+          + "\030iceberg_namespace_update\030\002"
+          + " \001(\0132/.google.cloud.biglake.v1.IcebergNamespaceUpdateB\003\340A\002\"i\n"
           + "\036UpdateIcebergNamespaceResponse\022\024\n"
           + "\007removed\030\001 \003(\tB\003\340A\003\022\033\n"
           + "\007updated\030\002 \003(\tB\003\340A\003R\005added\022\024\n"
@@ -319,8 +453,8 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + " biglake.googleapis.com/Namespace\"\261\001\n"
           + "\020IcebergNamespace\022\026\n"
           + "\tnamespace\030\001 \003(\tB\003\340A\002\022R\n\n"
-          + "properties\030\002 \003(\01329.google.cloud.bigl"
-          + "ake.v1.IcebergNamespace.PropertiesEntryB\003\340A\001\0321\n"
+          + "properties\030\002"
+          + " \003(\01329.google.cloud.biglake.v1.IcebergNamespace.PropertiesEntryB\003\340A\001\0321\n"
           + "\017PropertiesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\255\001\n"
@@ -332,10 +466,10 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "\036GetIcebergCatalogConfigRequest\022\026\n"
           + "\twarehouse\030\001 \001(\tB\003\340A\002\"\273\002\n"
           + "\024IcebergCatalogConfig\022T\n"
-          + "\toverrides\030\001 \003(\0132<.google.cloud.biglake.v1."
-          + "IcebergCatalogConfig.OverridesEntryB\003\340A\003\022R\n"
-          + "\010defaults\030\002 \003(\0132;.google.cloud.biglak"
-          + "e.v1.IcebergCatalogConfig.DefaultsEntryB\003\340A\003\022\026\n"
+          + "\toverrides\030\001"
+          + " \003(\0132<.google.cloud.biglake.v1.IcebergCatalogConfig.OverridesEntryB\003\340A\003\022R\n"
+          + "\010defaults\030\002"
+          + " \003(\0132;.google.cloud.biglake.v1.IcebergCatalogConfig.DefaultsEntryB\003\340A\003\022\026\n"
           + "\tendpoints\030\003 \003(\tB\003\340A\003\0320\n"
           + "\016OverridesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -350,118 +484,129 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
           + "page_token\030\001 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "api_parent\030\003 \001(\tB\003\340A\002\022\023\n"
-          + "\006parent\030\004 \001(\tB\003\340A\001\"y\n"
+          + "\006parent\030\004 \001(\tB\003\340A\001\"\223\001\n"
           + "\035ListIcebergNamespacesResponse\022.\n\n"
           + "namespaces\030\001 \003(\0132\032.google.protobuf.ListValue\022(\n"
-          + "\017next_page_token\030\002 \001(\tR\017next-page-token\"\232\001\n"
+          + "\017next_page_token\030\002 \001(\tR\017next-page-token\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\003\"\232\001\n"
           + "\021StorageCredential\022\016\n"
           + "\006prefix\030\001 \001(\t\022F\n"
-          + "\006config\030\002 \003(\01326."
-          + "google.cloud.biglake.v1.StorageCredential.ConfigEntry\032-\n"
+          + "\006config\030\002"
+          + " \003(\01326.google.cloud.biglake.v1.StorageCredential.ConfigEntry\032-\n"
           + "\013ConfigEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\203\001\n"
           + "#LoadIcebergTableCredentialsResponse\022\\\n"
-          + "\023storage_credentials\030\001"
-          + " \003(\0132*.google.cloud.biglake.v1.StorageCredentialR\023storage-credentials2\202$\n"
+          + "\023storage_credentials\030\001 \003(\0132*.google.c"
+          + "loud.biglake.v1.StorageCredentialR\023storage-credentials2\217&\n"
           + "\025IcebergCatalogService\022\254\001\n"
-          + "\027GetIcebergCatalogConfig\0227.google.cloud.biglake.v1.GetIc"
-          + "ebergCatalogConfigRequest\032-.google.cloud"
-          + ".biglake.v1.IcebergCatalogConfig\")\202\323\344\223\002#\022!/iceberg/v1/restcatalog/v1/config\022\345\001\n"
-          + "\025ListIcebergNamespaces\0225.google.cloud.big"
-          + "lake.v1.ListIcebergNamespacesRequest\0326.g"
-          + "oogle.cloud.biglake.v1.ListIcebergNamespacesResponse\"]\332A\n"
-          + "api_parent\202\323\344\223\002J\022H/iceb"
-          + "erg/v1/restcatalog/v1/{api_parent=projects/*/catalogs/*}/namespaces\022s\n"
-          + "\033CheckIcebergNamespaceExists\0223.google.cloud.biglak"
-          + "e.v1.GetIcebergNamespaceRequest\032\026.google.protobuf.Empty\"\007\332A\004name\022\312\001\n"
-          + "\023GetIcebergNamespace\0223.google.cloud.biglake.v1.GetIc"
-          + "ebergNamespaceRequest\032).google.cloud.big"
-          + "lake.v1.IcebergNamespace\"S\332A\004name\202\323\344\223\002F\022"
-          + "D/iceberg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*}\022\367\001\n"
-          + "\026CreateIcebergNamespace\0226.google.cloud.biglake."
-          + "v1.CreateIcebergNamespaceRequest\032).googl"
-          + "e.cloud.biglake.v1.IcebergNamespace\"z\332A\030"
-          + "parent,iceberg_namespace\202\323\344\223\002Y\"D/iceberg"
-          + "/v1/restcatalog/v1/{parent=projects/*/ca"
-          + "talogs/*}/namespaces:\021iceberg_namespace\022\275\001\n"
-          + "\026DeleteIcebergNamespace\0226.google.cloud.biglake.v1.DeleteIcebergNamespaceReque"
-          + "st\032\026.google.protobuf.Empty\"S\332A\004name\202\323\344\223\002"
-          + "F*D/iceberg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*}\022\353\002\n"
-          + "\026UpdateIcebergNamespace\0226.google.cloud.biglak"
-          + "e.v1.UpdateIcebergNamespaceRequest\0327.google.cloud.biglake.v1.UpdateIcebergNamesp"
-          + "aceResponse\"\337\001\202\323\344\223\002\330\0012O/iceberg/v1/restc"
-          + "atalog/v1/{name=projects/*/catalogs/*/namespaces/*}/properties:\030iceberg_namespac"
-          + "e_updateZk\"O/iceberg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*}"
-          + "/properties:\030iceberg_namespace_update\022\370\001\n"
-          + "\033ListIcebergTableIdentifiers\022;.google.cloud.biglake.v1.ListIcebergTableIdentifi"
-          + "ersRequest\032<.google.cloud.biglake.v1.Lis"
-          + "tIcebergTableIdentifiersResponse\"^\332A\006par"
-          + "ent\202\323\344\223\002O\022M/iceberg/v1/restcatalog/v1/{p"
-          + "arent=projects/*/catalogs/*/namespaces/*}/tables\022\313\001\n"
-          + "\022CreateIcebergTable\0222.google.cloud.biglake.v1.CreateIcebergTableRequ"
-          + "est\032\024.google.api.HttpBody\"k\332A\020parent,htt"
-          + "p_body\202\323\344\223\002R\"M/iceberg/v1/restcatalog/v1"
-          + "/{parent=projects/*/catalogs/*/namespaces/*}/tables:\001*\022k\n"
-          + "\027CheckIcebergTableExists\022/.google.cloud.biglake.v1.GetIcebergTa"
-          + "bleRequest\032\026.google.protobuf.Empty\"\007\332A\004name\022\276\001\n"
-          + "\022DeleteIcebergTable\0222.google.cloud.biglake.v1.DeleteIcebergTableRequest\032\026"
-          + ".google.protobuf.Empty\"\\\332A\004name\202\323\344\223\002O*M/"
-          + "iceberg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*/tables/*}\022\300\001\n"
-          + "\017GetIcebergTable\022/.google.cloud.biglake."
-          + "v1.GetIcebergTableRequest\032\024.google.api.H"
-          + "ttpBody\"f\332A\016name,snapshots\202\323\344\223\002O\022M/icebe"
-          + "rg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*/tables/*}\022\366\001\n"
-          + "\033LoadIcebergTableCredentials\022/.google.cloud.b"
-          + "iglake.v1.GetIcebergTableRequest\032<.google.cloud.biglake.v1.LoadIcebergTableCrede"
-          + "ntialsResponse\"h\332A\004name\202\323\344\223\002[\022Y/iceberg/"
-          + "v1/restcatalog/v1/{name=projects/*/catal"
-          + "ogs/*/namespaces/*/tables/*}/credentials\022\270\001\n"
-          + "\022UpdateIcebergTable\0222.google.cloud.b"
-          + "iglake.v1.UpdateIcebergTableRequest\032\024.go"
-          + "ogle.api.HttpBody\"X\202\323\344\223\002R\"M/iceberg/v1/r"
-          + "estcatalog/v1/{name=projects/*/catalogs/*/namespaces/*/tables/*}:\001*\022\276\001\n"
-          + "\024RegisterIcebergTable\0224.google.cloud.biglake.v1.R"
-          + "egisterIcebergTableRequest\032\024.google.api."
-          + "HttpBody\"Z\202\323\344\223\002T\"O/iceberg/v1/restcatalo"
-          + "g/v1/{parent=projects/*/catalogs/*/namespaces/*}/register:\001*\022\277\001\n"
-          + "\021GetIcebergCatalog\0221.google.cloud.biglake.v1.GetIcebergC"
-          + "atalogRequest\032\'.google.cloud.biglake.v1."
-          + "IcebergCatalog\"N\332A\004name\202\323\344\223\002A\022?/iceberg/"
-          + "v1/restcatalog/extensions/{name=projects/*/catalogs/*}\022\322\001\n"
-          + "\023ListIcebergCatalogs\0223.google.cloud.biglake.v1.ListIcebergCata"
-          + "logsRequest\0324.google.cloud.biglake.v1.Li"
-          + "stIcebergCatalogsResponse\"P\332A\006parent\202\323\344\223"
-          + "\002A\022?/iceberg/v1/restcatalog/extensions/{parent=projects/*}/catalogs\022\264\001\n"
-          + "\024DeleteIcebergCatalog\0224.google.cloud.biglake.v1.D"
-          + "eleteIcebergCatalogRequest\032\026.google.prot"
-          + "obuf.Empty\"N\332A\004name\202\323\344\223\002A*?/iceberg/v1/r"
-          + "estcatalog/extensions/{name=projects/*/catalogs/*}\022\376\001\n"
-          + "\024UpdateIcebergCatalog\0224.google.cloud.biglake.v1.UpdateIcebergCatal"
-          + "ogRequest\032\'.google.cloud.biglake.v1.Iceb"
-          + "ergCatalog\"\206\001\332A\033iceberg_catalog,update_m"
-          + "ask\202\323\344\223\002b2O/iceberg/v1/restcatalog/exten"
-          + "sions/{iceberg_catalog.name=projects/*/catalogs/*}:\017iceberg_catalog\022\374\001\n"
-          + "\024CreateIcebergCatalog\0224.google.cloud.biglake.v1.C"
-          + "reateIcebergCatalogRequest\032\'.google.clou"
-          + "d.biglake.v1.IcebergCatalog\"\204\001\332A)parent,"
-          + "iceberg_catalog,iceberg_catalog_id\202\323\344\223\002R"
-          + "\"?/iceberg/v1/restcatalog/extensions/{pa"
-          + "rent=projects/*}/catalogs:\017iceberg_catalog\022\365\001\n"
-          + "\026FailoverIcebergCatalog\0226.google.cloud.biglake.v1.FailoverIcebergCatalogRe"
-          + "quest\0327.google.cloud.biglake.v1.Failover"
-          + "IcebergCatalogResponse\"j\332A\024name,primary_"
-          + "replica\202\323\344\223\002M\"H/iceberg/v1/restcatalog/e"
-          + "xtensions/{name=projects/*/catalogs/*}:f"
-          + "ailover:\001*\032s\312A\026biglake.googleapis.com\322AW"
-          + "https://www.googleapis.com/auth/bigquery"
-          + ",https://www.googleapis.com/auth/cloud-platformB\300\002\n"
-          + "\033com.google.cloud.biglake.v1B\027IcebergRestCatalogProtoP\001Z5cloud.google"
-          + ".com/go/biglake/apiv1/biglakepb;biglakepb\352Ak\n"
-          + "\034biglake.googleapis.com/Table\022Kproj"
-          + "ects/{project}/catalogs/{catalog}/namespaces/{namespace}/tables/{table}\352A`\n"
-          + " biglake.googleapis.com/Namespace\022<projects/{"
-          + "project}/catalogs/{catalog}/namespaces/{namespace}b\006proto3"
+          + "\027GetIcebergCatalogConfig\0227.google.cloud.biglake.v1.GetIcebergCatalogConfigRe"
+          + "quest\032-.google.cloud.biglake.v1.IcebergC"
+          + "atalogConfig\")\202\323\344\223\002#\022!/iceberg/v1/restcatalog/v1/config\022\345\001\n"
+          + "\025ListIcebergNamespaces\0225.google.cloud.biglake.v1.ListIcebergN"
+          + "amespacesRequest\0326.google.cloud.biglake.v1.ListIcebergNamespacesResponse\"]\332A\n"
+          + "api_parent\202\323\344\223\002J\022H/iceberg/v1/restcatalog/v"
+          + "1/{api_parent=projects/*/catalogs/*}/namespaces\022s\n"
+          + "\033CheckIcebergNamespaceExists\0223.google.cloud.biglake.v1.GetIcebergNames"
+          + "paceRequest\032\026.google.protobuf.Empty\"\007\332A\004name\022\312\001\n"
+          + "\023GetIcebergNamespace\0223.google.cloud.biglake.v1.GetIcebergNamespaceReques"
+          + "t\032).google.cloud.biglake.v1.IcebergNames"
+          + "pace\"S\332A\004name\202\323\344\223\002F\022D/iceberg/v1/restcat"
+          + "alog/v1/{name=projects/*/catalogs/*/namespaces/*}\022\367\001\n"
+          + "\026CreateIcebergNamespace\0226.google.cloud.biglake.v1.CreateIcebergName"
+          + "spaceRequest\032).google.cloud.biglake.v1.I"
+          + "cebergNamespace\"z\332A\030parent,iceberg_names"
+          + "pace\202\323\344\223\002Y\"D/iceberg/v1/restcatalog/v1/{"
+          + "parent=projects/*/catalogs/*}/namespaces:\021iceberg_namespace\022\275\001\n"
+          + "\026DeleteIcebergNamespace\0226.google.cloud.biglake.v1.DeleteI"
+          + "cebergNamespaceRequest\032\026.google.protobuf"
+          + ".Empty\"S\332A\004name\202\323\344\223\002F*D/iceberg/v1/restc"
+          + "atalog/v1/{name=projects/*/catalogs/*/namespaces/*}\022\353\002\n"
+          + "\026UpdateIcebergNamespace\0226.google.cloud.biglake.v1.UpdateIcebergNa"
+          + "mespaceRequest\0327.google.cloud.biglake.v1"
+          + ".UpdateIcebergNamespaceResponse\"\337\001\202\323\344\223\002\330"
+          + "\0012O/iceberg/v1/restcatalog/v1/{name=projects/*/catalogs/*/namespaces/*}/properti"
+          + "es:\030iceberg_namespace_updateZk\"O/iceberg/v1/restcatalog/v1/{name=projects/*/cata"
+          + "logs/*/namespaces/*}/properties:\030iceberg_namespace_update\022\370\001\n"
+          + "\033ListIcebergTableIdentifiers\022;.google.cloud.biglake.v1.List"
+          + "IcebergTableIdentifiersRequest\032<.google.cloud.biglake.v1.ListIcebergTableIdentif"
+          + "iersResponse\"^\332A\006parent\202\323\344\223\002O\022M/iceberg/"
+          + "v1/restcatalog/v1/{parent=projects/*/catalogs/*/namespaces/*}/tables\022\301\001\n"
+          + "\022CreateIcebergTable\0222.google.cloud.biglake.v1.Cr"
+          + "eateIcebergTableRequest\032\024.google.api.Htt"
+          + "pBody\"a\332A\006parent\202\323\344\223\002R\"M/iceberg/v1/rest"
+          + "catalog/v1/{parent=projects/*/catalogs/*/namespaces/*}/tables:\001*\022k\n"
+          + "\027CheckIcebergTableExists\022/.google.cloud.biglake.v1.Ge"
+          + "tIcebergTableRequest\032\026.google.protobuf.Empty\"\007\332A\004name\022\276\001\n"
+          + "\022DeleteIcebergTable\0222.google.cloud.biglake.v1.DeleteIcebergTabl"
+          + "eRequest\032\026.google.protobuf.Empty\"\\\332A\004nam"
+          + "e\202\323\344\223\002O*M/iceberg/v1/restcatalog/v1/{nam"
+          + "e=projects/*/catalogs/*/namespaces/*/tables/*}\022\300\001\n"
+          + "\017GetIcebergTable\022/.google.cloud.biglake.v1.GetIcebergTableRequest\032\024.go"
+          + "ogle.api.HttpBody\"f\332A\016name,snapshots\202\323\344\223"
+          + "\002O\022M/iceberg/v1/restcatalog/v1/{name=pro"
+          + "jects/*/catalogs/*/namespaces/*/tables/*}\022\366\001\n"
+          + "\033LoadIcebergTableCredentials\022/.google.cloud.biglake.v1.GetIcebergTableReque"
+          + "st\032<.google.cloud.biglake.v1.LoadIceberg"
+          + "TableCredentialsResponse\"h\332A\004name\202\323\344\223\002[\022"
+          + "Y/iceberg/v1/restcatalog/v1/{name=projec"
+          + "ts/*/catalogs/*/namespaces/*/tables/*}/credentials\022\270\001\n"
+          + "\022UpdateIcebergTable\0222.google.cloud.biglake.v1.UpdateIcebergTableRe"
+          + "quest\032\024.google.api.HttpBody\"X\202\323\344\223\002R\"M/ic"
+          + "eberg/v1/restcatalog/v1/{name=projects/*"
+          + "/catalogs/*/namespaces/*/tables/*}:\001*\022\276\001\n"
+          + "\024RegisterIcebergTable\0224.google.cloud.bi"
+          + "glake.v1.RegisterIcebergTableRequest\032\024.g"
+          + "oogle.api.HttpBody\"Z\202\323\344\223\002T\"O/iceberg/v1/"
+          + "restcatalog/v1/{parent=projects/*/catalogs/*/namespaces/*}/register:\001*\022\327\001\n"
+          + "\031ReportIcebergTableMetrics\0229.google.cloud.bigl"
+          + "ake.v1.ReportIcebergTableMetricsRequest\032"
+          + "\026.google.protobuf.Empty\"g\332A\004name\202\323\344\223\002Z\"U"
+          + "/iceberg/v1/restcatalog/v1/{name=project"
+          + "s/*/catalogs/*/namespaces/*/tables/*}/metrics:\001*\022\277\001\n"
+          + "\021GetIcebergCatalog\0221.google.cloud.biglake.v1.GetIcebergCatalogReques"
+          + "t\032\'.google.cloud.biglake.v1.IcebergCatal"
+          + "og\"N\332A\004name\202\323\344\223\002A\022?/iceberg/v1/restcatal"
+          + "og/extensions/{name=projects/*/catalogs/*}\022\322\001\n"
+          + "\023ListIcebergCatalogs\0223.google.cloud.biglake.v1.ListIcebergCatalogsRequest\032"
+          + "4.google.cloud.biglake.v1.ListIcebergCat"
+          + "alogsResponse\"P\332A\006parent\202\323\344\223\002A\022?/iceberg"
+          + "/v1/restcatalog/extensions/{parent=projects/*}/catalogs\022\264\001\n"
+          + "\024DeleteIcebergCatalog\0224.google.cloud.biglake.v1.DeleteIceberg"
+          + "CatalogRequest\032\026.google.protobuf.Empty\"N"
+          + "\332A\004name\202\323\344\223\002A*?/iceberg/v1/restcatalog/e"
+          + "xtensions/{name=projects/*/catalogs/*}\022\376\001\n"
+          + "\024UpdateIcebergCatalog\0224.google.cloud.b"
+          + "iglake.v1.UpdateIcebergCatalogRequest\032\'."
+          + "google.cloud.biglake.v1.IcebergCatalog\"\206"
+          + "\001\332A\033iceberg_catalog,update_mask\202\323\344\223\002b2O/"
+          + "iceberg/v1/restcatalog/extensions/{icebe"
+          + "rg_catalog.name=projects/*/catalogs/*}:\017iceberg_catalog\022\271\002\n"
+          + "\024CreateIcebergCatalog\0224.google.cloud.biglake.v1.CreateIceberg"
+          + "CatalogRequest\032\'.google.cloud.biglake.v1"
+          + ".IcebergCatalog\"\301\001\332A)parent,iceberg_cata"
+          + "log,iceberg_catalog_id\332A:parent,iceberg_catalog,iceberg_catalog_id,primary_locat"
+          + "ion\202\323\344\223\002R\"?/iceberg/v1/restcatalog/exten"
+          + "sions/{parent=projects/*}/catalogs:\017iceberg_catalog\022\365\001\n"
+          + "\026FailoverIcebergCatalog\0226.google.cloud.biglake.v1.FailoverIceberg"
+          + "CatalogRequest\0327.google.cloud.biglake.v1"
+          + ".FailoverIcebergCatalogResponse\"j\332A\024name"
+          + ",primary_replica\202\323\344\223\002M\"H/iceberg/v1/rest"
+          + "catalog/extensions/{name=projects/*/cata"
+          + "logs/*}:failover:\001*\032s\312A\026biglake.googleap"
+          + "is.com\322AWhttps://www.googleapis.com/auth"
+          + "/bigquery,https://www.googleapis.com/auth/cloud-platformB\330\004\n"
+          + "\033com.google.cloud.biglake.v1B\027IcebergRestCatalogProtoP\001Z5clo"
+          + "ud.google.com/go/biglake/apiv1/biglakepb;biglakepb\352Ak\n"
+          + "\034biglake.googleapis.com/Table\022Kprojects/{project}/catalogs/{catalo"
+          + "g}/namespaces/{namespace}/tables/{table}\352A`\n"
+          + " biglake.googleapis.com/Namespace\022<p"
+          + "rojects/{project}/catalogs/{catalog}/namespaces/{namespace}\352A\225\001\n"
+          + "#secretmanager.googleapis.com/Secret\022#projects/{project}"
+          + "/secrets/{secret}\0228projects/{project}/lo"
+          + "cations/{location}/secrets/{secret}*\007secrets2\006secret\352A|\n"
+          + "\'servicedirectory.googleapis.com/Service\022Qprojects/{project}/loc"
+          + "ations/{location}/namespaces/{namespace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -470,23 +615,18 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.HttpBodyProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-            });
-    internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor =
-        getDescriptor().getMessageType(0);
-    internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor,
-            new java.lang.String[] {
-              "Parent", "Name", "MetadataLocation", "Overwrite",
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(0);
     internal_static_google_cloud_biglake_v1_IcebergCatalog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor,
@@ -494,22 +634,111 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name",
               "CredentialMode",
               "BiglakeServiceAccount",
+              "BiglakeServiceAccountUniqueId",
               "CatalogType",
               "DefaultLocation",
-              "CatalogRegions",
+              "StorageRegions",
               "CreateTime",
               "UpdateTime",
+              "Replicas",
+              "Description",
+              "RestrictedLocationsConfig",
+              "FederatedCatalogOptions",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_Replica_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor.getNestedType(0);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_Replica_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_Replica_descriptor,
+            new java.lang.String[] {
+              "Region", "State",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_RestrictedLocationsConfig_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor.getNestedType(1);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_RestrictedLocationsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_RestrictedLocationsConfig_descriptor,
+            new java.lang.String[] {
+              "RestrictedLocations",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_descriptor.getNestedType(2);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor,
+            new java.lang.String[] {
+              "UnityCatalogInfo",
+              "GlueCatalogInfo",
+              "SecretName",
+              "ServiceDirectoryName",
+              "RefreshOptions",
+              "RefreshStatus",
+              "RemoteCatalogInfo",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_UnityCatalogInfo_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_UnityCatalogInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_UnityCatalogInfo_descriptor,
+            new java.lang.String[] {
+              "InstanceName", "CatalogName", "ServicePrincipalApplicationId",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_GlueCatalogInfo_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_GlueCatalogInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_GlueCatalogInfo_descriptor,
+            new java.lang.String[] {
+              "Warehouse", "AwsRegion", "AwsRoleArn",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshSchedule_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshSchedule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshSchedule_descriptor,
+            new java.lang.String[] {
+              "RefreshInterval",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshScope_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(3);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshScope_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshScope_descriptor,
+            new java.lang.String[] {
+              "NamespaceFilters",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshOptions_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(4);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshOptions_descriptor,
+            new java.lang.String[] {
+              "RefreshSchedule", "RefreshScope",
+            });
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshStatus_descriptor =
+        internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_descriptor
+            .getNestedType(5);
+    internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_IcebergCatalog_FederatedCatalogOptions_RefreshStatus_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime", "Status",
             });
     internal_static_google_cloud_biglake_v1_CreateIcebergCatalogRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_biglake_v1_CreateIcebergCatalogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_CreateIcebergCatalogRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "IcebergCatalogId", "IcebergCatalog",
+              "Parent", "IcebergCatalogId", "IcebergCatalog", "PrimaryLocation",
             });
     internal_static_google_cloud_biglake_v1_DeleteIcebergCatalogRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_biglake_v1_DeleteIcebergCatalogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_DeleteIcebergCatalogRequest_descriptor,
@@ -517,7 +746,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name",
             });
     internal_static_google_cloud_biglake_v1_UpdateIcebergCatalogRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_biglake_v1_UpdateIcebergCatalogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_UpdateIcebergCatalogRequest_descriptor,
@@ -525,7 +754,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "IcebergCatalog", "UpdateMask",
             });
     internal_static_google_cloud_biglake_v1_GetIcebergCatalogRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_biglake_v1_GetIcebergCatalogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_GetIcebergCatalogRequest_descriptor,
@@ -533,7 +762,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name",
             });
     internal_static_google_cloud_biglake_v1_ListIcebergCatalogsRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_biglake_v1_ListIcebergCatalogsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergCatalogsRequest_descriptor,
@@ -541,7 +770,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Parent", "View", "PageSize", "PageToken",
             });
     internal_static_google_cloud_biglake_v1_ListIcebergCatalogsResponse_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_biglake_v1_ListIcebergCatalogsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergCatalogsResponse_descriptor,
@@ -549,7 +778,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "IcebergCatalogs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogRequest_descriptor,
@@ -557,7 +786,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name", "PrimaryReplica", "ValidateOnly", "ConditionalFailoverReplicationTime",
             });
     internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_FailoverIcebergCatalogResponse_descriptor,
@@ -565,7 +794,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "ReplicationTime",
             });
     internal_static_google_cloud_biglake_v1_UpdateIcebergTableRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_biglake_v1_UpdateIcebergTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_UpdateIcebergTableRequest_descriptor,
@@ -573,7 +802,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name", "HttpBody",
             });
     internal_static_google_cloud_biglake_v1_GetIcebergTableRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_biglake_v1_GetIcebergTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_GetIcebergTableRequest_descriptor,
@@ -581,7 +810,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name", "Snapshots",
             });
     internal_static_google_cloud_biglake_v1_DeleteIcebergTableRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_biglake_v1_DeleteIcebergTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_DeleteIcebergTableRequest_descriptor,
@@ -589,15 +818,31 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name", "PurgeRequested",
             });
     internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_CreateIcebergTableRequest_descriptor,
             new java.lang.String[] {
               "Parent", "HttpBody",
             });
-    internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersRequest_descriptor =
+    internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_RegisterIcebergTableRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Name", "MetadataLocation", "Overwrite",
+            });
+    internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor =
         getDescriptor().getMessageType(14);
+    internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_biglake_v1_ReportIcebergTableMetricsRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "HttpBody",
+            });
+    internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersRequest_descriptor =
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersRequest_descriptor,
@@ -605,7 +850,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "PageToken", "PageSize", "Parent",
             });
     internal_static_google_cloud_biglake_v1_TableIdentifier_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_biglake_v1_TableIdentifier_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_TableIdentifier_descriptor,
@@ -613,7 +858,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Namespace", "Name",
             });
     internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersResponse_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergTableIdentifiersResponse_descriptor,
@@ -621,7 +866,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Identifiers", "NextPageToken",
             });
     internal_static_google_cloud_biglake_v1_IcebergNamespaceUpdate_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_biglake_v1_IcebergNamespaceUpdate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_IcebergNamespaceUpdate_descriptor,
@@ -637,7 +882,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Key", "Value",
             });
     internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceRequest_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceRequest_descriptor,
@@ -645,7 +890,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name", "IcebergNamespaceUpdate",
             });
     internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceResponse_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_UpdateIcebergNamespaceResponse_descriptor,
@@ -653,7 +898,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Removed", "Updated", "Missing",
             });
     internal_static_google_cloud_biglake_v1_DeleteIcebergNamespaceRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_biglake_v1_DeleteIcebergNamespaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_DeleteIcebergNamespaceRequest_descriptor,
@@ -661,7 +906,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name",
             });
     internal_static_google_cloud_biglake_v1_IcebergNamespace_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_biglake_v1_IcebergNamespace_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_IcebergNamespace_descriptor,
@@ -677,7 +922,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Key", "Value",
             });
     internal_static_google_cloud_biglake_v1_CreateIcebergNamespaceRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_biglake_v1_CreateIcebergNamespaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_CreateIcebergNamespaceRequest_descriptor,
@@ -685,7 +930,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Parent", "IcebergNamespace",
             });
     internal_static_google_cloud_biglake_v1_GetIcebergCatalogConfigRequest_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_biglake_v1_GetIcebergCatalogConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_GetIcebergCatalogConfigRequest_descriptor,
@@ -693,7 +938,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Warehouse",
             });
     internal_static_google_cloud_biglake_v1_IcebergCatalogConfig_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_biglake_v1_IcebergCatalogConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_IcebergCatalogConfig_descriptor,
@@ -717,7 +962,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Key", "Value",
             });
     internal_static_google_cloud_biglake_v1_GetIcebergNamespaceRequest_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_biglake_v1_GetIcebergNamespaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_GetIcebergNamespaceRequest_descriptor,
@@ -725,7 +970,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Name",
             });
     internal_static_google_cloud_biglake_v1_ListIcebergNamespacesRequest_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_biglake_v1_ListIcebergNamespacesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergNamespacesRequest_descriptor,
@@ -733,15 +978,15 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "PageToken", "PageSize", "ApiParent", "Parent",
             });
     internal_static_google_cloud_biglake_v1_ListIcebergNamespacesResponse_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_biglake_v1_ListIcebergNamespacesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_ListIcebergNamespacesResponse_descriptor,
             new java.lang.String[] {
-              "Namespaces", "NextPageToken",
+              "Namespaces", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_biglake_v1_StorageCredential_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_biglake_v1_StorageCredential_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_StorageCredential_descriptor,
@@ -757,7 +1002,7 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
               "Key", "Value",
             });
     internal_static_google_cloud_biglake_v1_LoadIcebergTableCredentialsResponse_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_biglake_v1_LoadIcebergTableCredentialsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_biglake_v1_LoadIcebergTableCredentialsResponse_descriptor,
@@ -768,16 +1013,20 @@ public final class IcebergRestCatalogProto extends com.google.protobuf.Generated
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);

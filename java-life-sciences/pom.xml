@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-life-sciences</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-cloud-life-sciences-v2beta</artifactId>
         <version>0.95.0</version><!-- {x-version-update:proto-google-cloud-life-sciences-v2beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-life-sciences</module>
     <module>grpc-google-cloud-life-sciences-v2beta</module>
     <module>proto-google-cloud-life-sciences-v2beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-life-sciences-bom</module>
   </modules>
 

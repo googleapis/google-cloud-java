@@ -50,6 +50,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-logging</artifactId>
@@ -65,6 +66,7 @@
         <artifactId>proto-google-cloud-logging-v2</artifactId>
         <version>3.34.0</version><!-- {x-version-update:proto-google-cloud-logging-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
