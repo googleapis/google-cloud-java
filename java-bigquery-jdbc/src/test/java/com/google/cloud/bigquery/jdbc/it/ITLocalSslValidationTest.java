@@ -30,6 +30,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.sql.Connection;
@@ -48,7 +49,7 @@ public class ITLocalSslValidationTest {
   private static final String HOST = "localhost";
   private static final String PASSWORD = "changeit";
   private static final String KEYSTORE_RESOURCE = "/localhost-keystore.jks";
-  private static final String TRUSTSTORE_PATH = "src/test/resources/localhost-truststore.jks";
+  private static final String TRUSTSTORE_RESOURCE = "/localhost-truststore.jks";
   private static final String SUCCESS_MARKER = "SUBPROCESS_RESULT: SUCCESS";
   private static final String FAILURE_MARKER_PREFIX = "SUBPROCESS_RESULT: FAILURE - ";
   private static final String PKIX_ERROR_MSG = "PKIX path building failed";
@@ -219,7 +220,12 @@ public class ITLocalSslValidationTest {
 
   @Test
   public void testCustomTrustStoreSucceeds() throws Exception {
-    String trustStorePath = new File(TRUSTSTORE_PATH).getAbsolutePath();
+    URL trustStoreUrl = getClass().getResource(TRUSTSTORE_RESOURCE);
+    if (trustStoreUrl == null) {
+      throw new IllegalStateException(
+          "Truststore resource " + TRUSTSTORE_RESOURCE + " not found on classpath!");
+    }
+    String trustStorePath = new File(trustStoreUrl.toURI()).getAbsolutePath();
     ProcessResult result = runSubprocess(trustStorePath, PASSWORD);
 
     assertEquals(0, result.exitCode, "Subprocess failed. Output:\n" + result.stdout);
