@@ -433,6 +433,25 @@ libraries:
       api_description_override: n/a
       name_pretty_override: Cloud Batch
       product_documentation_override: https://cloud.google.com/
+  - name: backstory
+    version: 0.0.1-SNAPSHOT
+    apis:
+      - path: backstory
+        java:
+          generate_gapic: false
+          generate_grpc: false
+          generate_resource_names: false
+          proto_artifact_id_override: proto-google-cloud-backstory
+    java:
+      artifact_id: google-cloud-backstory
+      group_id: com.google.cloud
+      api_id_override: backstory.googleapis.com
+      api_description_override: Common Universal Data Model (UDM) and Entity protos used by Chronicle.
+      client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview
+      released_version: 0.0.0
+      library_type_override: GAPIC_AUTO
+      name_pretty_override: Malachite Common Protos
+      product_documentation_override: https://cloud.google.com/chronicle/docs/secops/secops-overview
   - name: beyondcorp-appconnections
     version: 0.91.0
     apis:
