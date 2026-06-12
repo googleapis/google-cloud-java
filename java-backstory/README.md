@@ -103,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Malachite Common Protos uses gRPC for the transport layer.
+Malachite Common Protos uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 

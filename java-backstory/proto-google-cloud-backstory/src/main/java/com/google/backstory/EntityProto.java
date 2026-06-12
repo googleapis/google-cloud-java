@@ -285,11 +285,11 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
           + "\024TARGET_RESOURCE_TYPE\020$\022\030\n"
           + "\024TARGET_LOCATION_NAME\020%\022\014\n"
           + "\010LOG_TYPE\020&\022\023\n"
-          + "\017TARGET_HOSTNAME\020\'B\232\001\n"
-          + "\024com.google.backstoryB\013EntityProtoP\001Z9g"
-          + "oogle.golang.org/genproto/googleapis/bac"
-          + "kstory;backstory\252\002\020Google.Backstory\312\002\020Go"
-          + "ogle\\Backstory\352\002\021Google::Backstoryb\006proto3"
+          + "\017TARGET_HOSTNAME\020\'B\226\001\n"
+          + "\024com.google.backstoryB\013EntityProtoP\001Z5c"
+          + "loud.google.com/go/backstory/backstorypb"
+          + ";backstorypb\252\002\020Google.Backstory\312\002\020Google"
+          + "\\Backstory\352\002\021Google::Backstoryb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
