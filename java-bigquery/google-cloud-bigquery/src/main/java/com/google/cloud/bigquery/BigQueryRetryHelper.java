@@ -121,6 +121,14 @@ public class BigQueryRetryHelper extends RetryHelper {
     return retryingFuture.get();
   }
 
+  /**
+   * Conditionally wraps the provided retry algorithm with a wrapper that retries on transient HTTP
+   * 5xx errors (500, 502, 503, 504).
+   *
+   * <p>Wrapping only occurs if the provided algorithm is the default {@link
+   * BigQueryBaseService#DEFAULT_BIGQUERY_EXCEPTION_HANDLER}. Custom user-defined retry algorithms
+   * are returned unmodified to preserve custom retry policies.
+   */
   static <V> ResultRetryAlgorithm<V> maybeWrapForHttpRetry(ResultRetryAlgorithm<V> algorithm) {
     if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
       return wrapDefaultAlgorithm(algorithm);
