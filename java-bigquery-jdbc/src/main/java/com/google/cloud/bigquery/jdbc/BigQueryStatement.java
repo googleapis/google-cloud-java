@@ -810,6 +810,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
     Schema schema = results.getSchema();
+    Future<?> populateBufferWorker = null;
     try {
       String parent = String.format("projects/%s", destinationTable.getProject());
       String srcTable =
@@ -833,7 +834,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       ReadSession readSession = getReadSession(builder.build());
       this.arrowBatchWrapperBlockingQueue = new LinkedBlockingDeque<>(getBufferSize());
       // deserialize and populate the buffer async, so that the client isn't blocked
-      Future<?> populateBufferWorker =
+      populateBufferWorker =
           populateArrowBufferedQueue(
               readSession, this.arrowBatchWrapperBlockingQueue, getBigQueryReadClient());
 
@@ -855,6 +856,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       return arrowResultSet;
 
     } catch (Exception | OutOfMemoryError ex) {
+      if (populateBufferWorker != null) {
+        populateBufferWorker.cancel(true);
+      }
       if (ex instanceof OutOfMemoryError || ex instanceof RejectedExecutionException) {
         throw new BigQueryJdbcException(
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
@@ -1078,6 +1082,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
       taskList.add(populateBufferWorker);
     } catch (RejectedExecutionException | OutOfMemoryError e) {
+      for (Future<?> task : taskList) {
+        if (task != null) {
+          task.cancel(true);
+        }
+      }
       throw new BigQueryJdbcException(
           "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
           e);
