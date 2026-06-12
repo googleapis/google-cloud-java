@@ -5266,7 +5266,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  // TODO(developer): This is a temporary compatibility bridge to wrap raw Threads into Futures.
+  // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
   // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
   // directly.
   private static Future<?>[] wrapThread(final Thread thread) {
@@ -5275,8 +5275,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     return new Future<?>[] {
       new Future<Object>() {
+        private volatile boolean cancelled = false;
+
         @Override
         public boolean cancel(boolean mayInterruptIfRunning) {
+          if (cancelled || !thread.isAlive()) {
+            return false;
+          }
+          cancelled = true;
           if (mayInterruptIfRunning) {
             thread.interrupt();
           }
@@ -5285,12 +5291,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
         @Override
         public boolean isCancelled() {
-          return false;
+          return cancelled;
         }
 
         @Override
         public boolean isDone() {
-          return !thread.isAlive();
+          return cancelled || !thread.isAlive();
         }
 
         @Override
