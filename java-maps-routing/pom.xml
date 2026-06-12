@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-routing</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>proto-google-maps-routing-v2</artifactId>
         <version>1.78.0</version><!-- {x-version-update:proto-google-maps-routing-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-maps-routing</module>
     <module>grpc-google-maps-routing-v2</module>
     <module>proto-google-maps-routing-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-maps-routing-bom</module>
   </modules>
 

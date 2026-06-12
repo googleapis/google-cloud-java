@@ -142,4 +142,56 @@ public interface CreateIcebergCatalogRequestOrBuilder
    * </code>
    */
   com.google.cloud.biglake.v1.IcebergCatalogOrBuilder getIcebergCatalogOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary location where the catalog metadata will be stored.
+   *
+   * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+   * is not specified, then the region is inferred from the bucket's region
+   * (`default_location` bucket for BigLake catalogs). If specified, the region
+   * must be in jurisdiction (near the `default_location` bucket's region and
+   * the `restricted_locations` buckets' regions for BigLake catalogs).
+   *
+   * For federated catalogs, this must be specified and be a Lakehouse-supported
+   * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+   * should be close to the remote catalog's location for the best
+   * performance and cost.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The primaryLocation.
+   */
+  java.lang.String getPrimaryLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary location where the catalog metadata will be stored.
+   *
+   * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+   * is not specified, then the region is inferred from the bucket's region
+   * (`default_location` bucket for BigLake catalogs). If specified, the region
+   * must be in jurisdiction (near the `default_location` bucket's region and
+   * the `restricted_locations` buckets' regions for BigLake catalogs).
+   *
+   * For federated catalogs, this must be specified and be a Lakehouse-supported
+   * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+   * should be close to the remote catalog's location for the best
+   * performance and cost.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for primaryLocation.
+   */
+  com.google.protobuf.ByteString getPrimaryLocationBytes();
 }

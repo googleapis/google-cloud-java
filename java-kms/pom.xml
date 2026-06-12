@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-kms-v1</artifactId>
@@ -46,13 +47,16 @@
         <artifactId>google-cloud-kms-bom</artifactId>
         <version>2.96.0</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-kms</module>
     <module>grpc-google-cloud-kms-v1</module>
     <module>proto-google-cloud-kms-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-kms-bom</module>
   </modules>
 

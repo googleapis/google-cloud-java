@@ -201,6 +201,7 @@ public class ConfidentialComputingClientHttpJsonTest {
             .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
             .setTokenOptions(TokenOptions.newBuilder().build())
             .setAttester("attester542920370")
+            .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -237,6 +238,7 @@ public class ConfidentialComputingClientHttpJsonTest {
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
               .setAttester("attester542920370")
+              .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");

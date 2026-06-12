@@ -20,6 +20,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
@@ -35,6 +36,7 @@
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
         <version>3.97.0</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

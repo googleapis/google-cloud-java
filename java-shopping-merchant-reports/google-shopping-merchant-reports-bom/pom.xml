@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-reports</artifactId>
@@ -59,6 +60,7 @@
         <artifactId>proto-google-shopping-merchant-reports-v1</artifactId>
         <version>1.21.0</version><!-- {x-version-update:proto-google-shopping-merchant-reports-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

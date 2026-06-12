@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflow-executions</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>grpc-google-cloud-workflow-executions-v1beta</artifactId>
         <version>2.93.0</version><!-- {x-version-update:grpc-google-cloud-workflow-executions-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-workflow-executions</module>
     <module>grpc-google-cloud-workflow-executions-v1beta</module>
     <module>grpc-google-cloud-workflow-executions-v1</module>
     <module>proto-google-cloud-workflow-executions-v1beta</module>
     <module>proto-google-cloud-workflow-executions-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-workflow-executions-bom</module>
   </modules>
 

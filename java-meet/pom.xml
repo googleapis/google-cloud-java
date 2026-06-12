@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-meet</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>proto-google-cloud-meet-v2beta</artifactId>
         <version>0.60.0</version><!-- {x-version-update:proto-google-cloud-meet-v2beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-meet</module>
     <module>grpc-google-cloud-meet-v2beta</module>
     <module>grpc-google-cloud-meet-v2</module>
     <module>proto-google-cloud-meet-v2beta</module>
     <module>proto-google-cloud-meet-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-meet-bom</module>
   </modules>
 

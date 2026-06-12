@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api-ads</groupId>
         <artifactId>data-manager</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-data-manager-v1</artifactId>
         <version>0.14.0</version><!-- {x-version-update:proto-data-manager-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

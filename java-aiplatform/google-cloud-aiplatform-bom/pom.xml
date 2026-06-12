@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-aiplatform</artifactId>
@@ -49,6 +50,7 @@
         <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
         <version>3.94.0</version><!-- {x-version-update:proto-google-cloud-aiplatform-v1beta1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

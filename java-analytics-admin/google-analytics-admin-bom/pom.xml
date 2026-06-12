@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin</artifactId>
@@ -49,6 +50,7 @@
         <artifactId>proto-google-analytics-admin-v1beta</artifactId>
         <version>0.103.0</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

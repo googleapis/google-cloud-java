@@ -18,6 +18,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-document-ai</artifactId>
@@ -43,6 +44,7 @@
         <artifactId>proto-google-cloud-document-ai-v1</artifactId>
         <version>2.97.0</version><!-- {x-version-update:proto-google-cloud-document-ai-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

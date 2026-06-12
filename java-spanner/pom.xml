@@ -59,6 +59,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-admin-instance-v1</artifactId>
@@ -104,6 +105,7 @@
         <artifactId>google-cloud-spanner</artifactId>
         <version>6.118.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
 
       <dependency>
@@ -122,6 +124,7 @@
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-spanner</module>
     <module>grpc-google-cloud-spanner-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
@@ -131,6 +134,7 @@
     <module>proto-google-cloud-spanner-v1</module>
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-executor-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-spanner-executor</module>
     <module>google-cloud-spanner-bom</module>
   </modules>

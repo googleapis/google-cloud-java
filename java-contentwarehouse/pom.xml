@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contentwarehouse</artifactId>
@@ -41,6 +42,7 @@
         <artifactId>proto-google-cloud-contentwarehouse-v1</artifactId>
         <version>0.89.0</version><!-- {x-version-update:proto-google-cloud-contentwarehouse-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
@@ -53,9 +55,11 @@
   </dependencies>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-contentwarehouse</module>
     <module>grpc-google-cloud-contentwarehouse-v1</module>
     <module>proto-google-cloud-contentwarehouse-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-contentwarehouse-bom</module>
   </modules>
 

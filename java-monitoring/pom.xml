@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-v3</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>google-cloud-monitoring</artifactId>
         <version>3.94.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-monitoring</module>
     <module>grpc-google-cloud-monitoring-v3</module>
     <module>proto-google-cloud-monitoring-v3</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-monitoring-bom</module>
   </modules>
 

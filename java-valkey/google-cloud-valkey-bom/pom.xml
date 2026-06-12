@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-valkey</artifactId>
@@ -48,6 +49,7 @@
         <artifactId>proto-google-cloud-valkey-v1beta</artifactId>
         <version>0.39.0</version><!-- {x-version-update:proto-google-cloud-valkey-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>
