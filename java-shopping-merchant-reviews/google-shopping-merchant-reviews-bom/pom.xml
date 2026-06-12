@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.shopping</groupId>
         <artifactId>google-shopping-merchant-reviews</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-shopping-merchant-reviews-v1beta</artifactId>
         <version>0.39.0</version><!-- {x-version-update:proto-google-shopping-merchant-reviews-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

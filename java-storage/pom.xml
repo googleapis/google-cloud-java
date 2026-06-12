@@ -73,16 +73,11 @@
         <version>1.37.0-alpha</version>
       </dependency>
 
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
         <version>2.69.0</version><!-- {x-version-update:google-cloud-storage:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-pubsub</artifactId>
-        <version>1.150.0</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -96,11 +91,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>gapic-google-cloud-storage-v2</artifactId>
-        <version>2.69.0</version><!-- {x-version-update:grpc-google-cloud-storage-v2:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-storage-control-v2</artifactId>
         <version>2.69.0</version><!-- {x-version-update:grpc-google-cloud-storage-control-v2:current} -->
       </dependency>
@@ -108,6 +98,18 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-storage-control-v2</artifactId>
         <version>2.69.0</version><!-- {x-version-update:proto-google-cloud-storage-control-v2:current} -->
+      </dependency>
+      <!-- {x-generated-dependencies-end} -->
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-pubsub</artifactId>
+        <version>1.150.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>gapic-google-cloud-storage-v2</artifactId>
+        <version>2.69.0</version><!-- {x-version-update:grpc-google-cloud-storage-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -160,11 +162,13 @@
   </build>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-storage</module>
     <module>grpc-google-cloud-storage-v2</module>
     <module>grpc-google-cloud-storage-control-v2</module>
     <module>proto-google-cloud-storage-v2</module>
     <module>proto-google-cloud-storage-control-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-storage-control</module>
     <module>gapic-google-cloud-storage-v2</module>
     <module>google-cloud-storage-bom</module>

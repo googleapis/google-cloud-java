@@ -20,6 +20,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
@@ -30,6 +31,7 @@
         <artifactId>proto-google-cloud-compute-v1</artifactId>
         <version>1.103.0</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

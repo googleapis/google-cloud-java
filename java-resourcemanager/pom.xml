@@ -26,12 +26,12 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resourcemanager</artifactId>
         <version>1.95.0</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
-
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-resourcemanager-v3</artifactId>
@@ -42,13 +42,17 @@
         <artifactId>grpc-google-cloud-resourcemanager-v3</artifactId>
         <version>1.95.0</version><!-- {x-version-update:grpc-google-cloud-resourcemanager-v3:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
+
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-resourcemanager</module>
     <module>grpc-google-cloud-resourcemanager-v3</module>
     <module>proto-google-cloud-resourcemanager-v3</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-resourcemanager-bom</module>
   </modules>
 

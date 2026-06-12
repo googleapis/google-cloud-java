@@ -50,6 +50,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datastore</artifactId>
@@ -75,6 +76,7 @@
         <artifactId>proto-google-cloud-datastore-admin-v1</artifactId>
         <version>3.1.0</version><!-- {x-version-update:proto-google-cloud-datastore-admin-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 

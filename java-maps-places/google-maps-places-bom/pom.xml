@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-places</artifactId>
@@ -39,6 +40,7 @@
         <artifactId>proto-google-maps-places-v1</artifactId>
         <version>0.64.0</version><!-- {x-version-update:proto-google-maps-places-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

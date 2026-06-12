@@ -25,7 +25,9 @@
   </properties>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-iam-policy</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-iam-policy-bom</module>
   </modules>
 

@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-datacatalog</artifactId>
         <version>1.99.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-datacatalog</module>
     <module>grpc-google-cloud-datacatalog-v1</module>
     <module>grpc-google-cloud-datacatalog-v1beta1</module>
     <module>proto-google-cloud-datacatalog-v1</module>
     <module>proto-google-cloud-datacatalog-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-datacatalog-bom</module>
   </modules>
 

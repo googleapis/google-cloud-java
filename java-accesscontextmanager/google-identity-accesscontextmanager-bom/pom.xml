@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-identity-accesscontextmanager</artifactId>
@@ -44,6 +45,7 @@
         <artifactId>proto-google-identity-accesscontextmanager-type</artifactId>
         <version>1.94.0</version><!-- {x-version-update:proto-google-identity-accesscontextmanager-type:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

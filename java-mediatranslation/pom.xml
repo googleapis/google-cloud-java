@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-mediatranslation</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>grpc-google-cloud-mediatranslation-v1beta1</artifactId>
         <version>0.99.0</version><!-- {x-version-update:grpc-google-cloud-mediatranslation-v1beta1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-mediatranslation</module>
     <module>grpc-google-cloud-mediatranslation-v1beta1</module>
     <module>proto-google-cloud-mediatranslation-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-mediatranslation-bom</module>
   </modules>
 

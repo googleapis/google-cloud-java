@@ -502,7 +502,7 @@ libraries:
       name_pretty_override: BeyondCorp ClientGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: biglake
-    version: 0.81.0
+    version: 0.81.1
     apis:
       - path: google/cloud/biglake/v1
       - path: google/cloud/bigquery/biglake/v1
@@ -1818,7 +1818,7 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.87.0
+    version: 1.87.1
     skip_generate: true
   - name: grafeas
     version: 2.94.0

@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datalabeling-v1beta1</artifactId>
@@ -41,13 +42,16 @@
         <artifactId>google-cloud-datalabeling</artifactId>
         <version>0.213.0</version><!-- {x-version-update:google-cloud-datalabeling:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-datalabeling</module>
     <module>grpc-google-cloud-datalabeling-v1beta1</module>
     <module>proto-google-cloud-datalabeling-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-datalabeling-bom</module>
   </modules>
 

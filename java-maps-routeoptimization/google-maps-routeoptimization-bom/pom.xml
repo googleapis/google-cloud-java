@@ -23,6 +23,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-routeoptimization</artifactId>
@@ -38,6 +39,7 @@
         <artifactId>proto-google-maps-routeoptimization-v1</artifactId>
         <version>0.51.0</version><!-- {x-version-update:proto-google-maps-routeoptimization-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

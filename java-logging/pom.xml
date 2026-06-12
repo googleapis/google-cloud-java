@@ -59,6 +59,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-logging-v2</artifactId>
@@ -74,6 +75,7 @@
         <artifactId>google-cloud-logging</artifactId>
         <version>3.34.0</version><!-- {x-version-update:google-cloud-logging:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
@@ -95,9 +97,11 @@
   </build>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-logging</module>
     <module>grpc-google-cloud-logging-v2</module>
     <module>proto-google-cloud-logging-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-logging-bom</module>
   </modules>
 

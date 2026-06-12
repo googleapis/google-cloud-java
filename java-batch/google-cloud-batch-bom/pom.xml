@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-batch</artifactId>
@@ -49,6 +50,7 @@
         <artifactId>proto-google-cloud-batch-v1alpha</artifactId>
         <version>0.93.0</version><!-- {x-version-update:proto-google-cloud-batch-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

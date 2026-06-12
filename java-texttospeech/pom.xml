@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-texttospeech-v1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-texttospeech</artifactId>
         <version>2.94.0</version><!-- {x-version-update:google-cloud-texttospeech:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-texttospeech</module>
     <module>grpc-google-cloud-texttospeech-v1beta1</module>
     <module>grpc-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1</module>
     <module>proto-google-cloud-texttospeech-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-texttospeech-bom</module>
   </modules>
 

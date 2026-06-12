@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-data</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>grpc-google-analytics-data-v1beta</artifactId>
         <version>0.104.0</version><!-- {x-version-update:grpc-google-analytics-data-v1beta:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-analytics-data</module>
     <module>grpc-google-analytics-data-v1beta</module>
     <module>grpc-google-analytics-data-v1alpha</module>
     <module>proto-google-analytics-data-v1beta</module>
     <module>proto-google-analytics-data-v1alpha</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-analytics-data-bom</module>
   </modules>
 

@@ -20,6 +20,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-mediatranslation</artifactId>
@@ -35,6 +36,7 @@
         <artifactId>proto-google-cloud-mediatranslation-v1beta1</artifactId>
         <version>0.99.0</version><!-- {x-version-update:proto-google-cloud-mediatranslation-v1beta1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-dialogflow</artifactId>
         <version>4.99.0</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-dialogflow</module>
     <module>grpc-google-cloud-dialogflow-v2beta1</module>
     <module>grpc-google-cloud-dialogflow-v2</module>
     <module>proto-google-cloud-dialogflow-v2</module>
     <module>proto-google-cloud-dialogflow-v2beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-dialogflow-bom</module>
   </modules>
 
