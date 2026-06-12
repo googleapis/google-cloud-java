@@ -136,6 +136,11 @@ public class BigQueryRetryHelper extends RetryHelper {
     return algorithm;
   }
 
+  /**
+   * Wraps the default retry algorithm to additionally retry on transient HTTP status codes 500,
+   * 502, 503, and 504. Other retry decisions and timing logic are delegated back to the default
+   * algorithm.
+   */
   private static <V> ResultRetryAlgorithm<V> wrapDefaultAlgorithm(
       ResultRetryAlgorithm<V> defaultAlgorithm) {
     return new ResultRetryAlgorithm<V>() {
