@@ -73,6 +73,9 @@ jobs:
       run: |
         if [ -n "$(git status --porcelain)" ]; then
           git status
+          echo "==================== GIT DIFF ===================="
+          git diff
+          echo "=================================================="
           echo "Regeneration produced code changes! Please run 'librarian generate --all' to update the generated files."
           exit 1
         fi
