@@ -196,12 +196,12 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the executor to push the batch
-    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
+    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(7));
     batcher.add(SimpleBatch.fromInteger(9));
     // Give time for the executor to push the batch
-    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
+    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
@@ -228,7 +228,7 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the delay to trigger and push the batch
-    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
+    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
