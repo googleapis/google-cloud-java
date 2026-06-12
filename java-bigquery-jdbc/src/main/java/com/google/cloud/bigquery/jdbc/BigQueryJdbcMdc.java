@@ -60,13 +60,16 @@ class BigQueryJdbcMdc {
    * context from the submitting thread to the executing thread.
    */
   static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
-    return new MdcThreadPoolExecutor(
-        nThreads,
-        nThreads,
-        0L,
-        TimeUnit.MILLISECONDS,
-        new LinkedBlockingQueue<>(),
-        new MdcThreadFactory(threadFactory));
+    MdcThreadPoolExecutor executor =
+        new MdcThreadPoolExecutor(
+            nThreads,
+            nThreads,
+            60L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new MdcThreadFactory(threadFactory));
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
   }
 
   /**
@@ -136,18 +139,18 @@ class BigQueryJdbcMdc {
     private final AtomicBoolean warningLogged = new AtomicBoolean(false);
 
     private void monitorQueueSaturation(int queueSize) {
-      int corePoolSize = getCorePoolSize();
-      // Warn when queue size is >= corePoolSize * 5, with a minimum of 10 tasks to avoid false
+      int maxPoolSize = getMaximumPoolSize();
+      // Warn when queue size is >= maxPoolSize * 5, with a minimum of 10 tasks to avoid false
       // alerts for tiny pools
-      int warnThreshold = Math.max(10, corePoolSize * 5);
-      // Recovery reset threshold is corePoolSize * 2, with a minimum of 4 tasks
-      int recoveryThreshold = Math.max(4, corePoolSize * 2);
+      int warnThreshold = Math.max(10, maxPoolSize * 5);
+      // Recovery reset threshold is maxPoolSize * 2, with a minimum of 4 tasks
+      int recoveryThreshold = Math.max(4, maxPoolSize * 2);
 
       if (queueSize >= warnThreshold) {
         if (warningLogged.compareAndSet(false, true)) {
           LOG.warning(
-              "Thread pool is saturating. Core pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
-              corePoolSize, getActiveCount(), queueSize);
+              "Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
+              maxPoolSize, getActiveCount(), queueSize);
         }
       } else if (queueSize <= recoveryThreshold) {
         if (warningLogged.get()) {

@@ -254,6 +254,44 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testNewFixedThreadPoolTimeout() {
+    ExecutorService exec2 = BigQueryJdbcMdc.newFixedThreadPool(2);
+    ExecutorService exec3 = BigQueryJdbcMdc.newFixedThreadPool(3);
+    ExecutorService exec4 = BigQueryJdbcMdc.newFixedThreadPool(4);
+    ExecutorService exec5 = BigQueryJdbcMdc.newFixedThreadPool(5);
+    ExecutorService exec10 = BigQueryJdbcMdc.newFixedThreadPool(10);
+
+    try {
+      assertEquals(2, ((ThreadPoolExecutor) exec2).getCorePoolSize());
+      assertEquals(2, ((ThreadPoolExecutor) exec2).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) exec2).allowsCoreThreadTimeOut());
+      assertEquals(60L, ((ThreadPoolExecutor) exec2).getKeepAliveTime(TimeUnit.SECONDS));
+
+      assertEquals(3, ((ThreadPoolExecutor) exec3).getCorePoolSize());
+      assertEquals(3, ((ThreadPoolExecutor) exec3).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) exec3).allowsCoreThreadTimeOut());
+
+      assertEquals(4, ((ThreadPoolExecutor) exec4).getCorePoolSize());
+      assertEquals(4, ((ThreadPoolExecutor) exec4).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) exec4).allowsCoreThreadTimeOut());
+
+      assertEquals(5, ((ThreadPoolExecutor) exec5).getCorePoolSize());
+      assertEquals(5, ((ThreadPoolExecutor) exec5).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) exec5).allowsCoreThreadTimeOut());
+
+      assertEquals(10, ((ThreadPoolExecutor) exec10).getCorePoolSize());
+      assertEquals(10, ((ThreadPoolExecutor) exec10).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) exec10).allowsCoreThreadTimeOut());
+    } finally {
+      exec2.shutdownNow();
+      exec3.shutdownNow();
+      exec4.shutdownNow();
+      exec5.shutdownNow();
+      exec10.shutdownNow();
+    }
+  }
+
+  @Test
   public void testConnectionScopedExecutorLifecycle() throws Exception {
     String url1 =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -287,8 +325,10 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals(Integer.MAX_VALUE, ((ThreadPoolExecutor) exec2).getMaximumPoolSize());
       assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getCorePoolSize());
       assertEquals(5, ((ThreadPoolExecutor) metadataExec1).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) metadataExec1).allowsCoreThreadTimeOut());
       assertEquals(10, ((ThreadPoolExecutor) metadataExec2).getCorePoolSize());
       assertEquals(10, ((ThreadPoolExecutor) metadataExec2).getMaximumPoolSize());
+      assertTrue(((ThreadPoolExecutor) metadataExec2).allowsCoreThreadTimeOut());
 
       try (BigQueryJdbcMdc.MdcCloseable mdc =
           BigQueryJdbcMdc.registerInstance(conn1.getConnectionId())) {
