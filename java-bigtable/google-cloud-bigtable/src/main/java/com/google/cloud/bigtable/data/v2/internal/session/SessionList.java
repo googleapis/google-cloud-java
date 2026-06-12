@@ -16,15 +16,12 @@
 
 package com.google.cloud.bigtable.data.v2.internal.session;
 
-import static com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT;
-
 import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.cloud.bigtable.data.v2.internal.session.Session.SessionState;
 import com.google.common.annotations.VisibleForTesting;
-import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -41,7 +38,6 @@ import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.concurrent.NotThreadSafe;
 
@@ -68,12 +64,6 @@ class SessionList {
   // - closing sessions
   private final Set<SessionHandle> allSessions = new HashSet<>();
   private final Set<SessionHandle> inUseSessions = new HashSet<>();
-
-  private final CloseSessionRequest missedHeartbeatCloseRequest =
-      CloseSessionRequest.newBuilder()
-          .setReason(CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
-          .setDescription("missed heartbeat")
-          .build();
 
   // pool level statistics across all  the afes
   private final PoolStats poolStats = new PoolStats();
@@ -143,20 +133,6 @@ class SessionList {
         it.remove();
       }
     }
-  }
-
-  void checkHeartbeat(Clock clock) {
-    Instant now = clock.instant();
-    inUseSessions.forEach(
-        handle -> {
-          if (now.isAfter(handle.getSession().getNextHeartbeat())) {
-            LOG.log(
-                Level.WARNING,
-                "Missed heartbeat for {0}, forcing session close",
-                handle.getSession().getLogName());
-            handle.getSession().forceClose(missedHeartbeatCloseRequest);
-          }
-        });
   }
 
   @NotThreadSafe

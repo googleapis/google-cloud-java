@@ -29,6 +29,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.protobuf.Message;
 import io.grpc.Deadline;
@@ -50,6 +51,7 @@ public class TableBaseTest {
   private final Metrics noopMetrics = new NoopMetrics();
   private final ScheduledExecutorService mockExecutor =
       Mockito.mock(ScheduledExecutorService.class);
+  private final BigtableTimer mockTimer = Mockito.mock(BigtableTimer.class);
   private static final ClientInfo clientInfo =
       ClientInfo.builder()
           .setInstanceName(
@@ -70,7 +72,7 @@ public class TableBaseTest {
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
             noopMetrics,
-            mockExecutor);
+            mockTimer);
     deadline = Deadline.after(1, TimeUnit.MINUTES);
     f = new UnaryResponseFuture<>();
   }

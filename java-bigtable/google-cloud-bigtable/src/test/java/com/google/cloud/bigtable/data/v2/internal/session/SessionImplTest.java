@@ -85,6 +85,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class SessionImplTest {
   private ScheduledExecutorService executor;
+  private BigtableTimer timer;
 
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private Metrics metrics;
@@ -98,6 +99,7 @@ public class SessionImplTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
+    timer = new NettyWheelTimer("session-impl-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
@@ -128,12 +130,13 @@ public class SessionImplTest {
   void tearDown() {
     channelPool.close();
     server.shutdownNow();
+    timer.stop();
     executor.shutdownNow();
   }
 
   @Test
   void sessionSendAndCloseTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -163,7 +166,7 @@ public class SessionImplTest {
 
   @Test
   void sessionCloseBeforeInit() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -180,7 +183,7 @@ public class SessionImplTest {
 
   @Test
   void sessionGoAwayTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     Duration goAwayDelay = Duration.ofMillis(500);
     FakeSessionListener sessionListener = new FakeSessionListener();
@@ -268,7 +271,7 @@ public class SessionImplTest {
 
   @Test
   void streamErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     Status.Code actualCode = Status.Code.INTERNAL;
@@ -337,7 +340,7 @@ public class SessionImplTest {
 
   @Test
   void rpcErrorDuringRpcTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     com.google.rpc.Status expectedRpcStatus =
         com.google.rpc.Status.newBuilder()
@@ -404,7 +407,7 @@ public class SessionImplTest {
 
   @Test
   void localErrorTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     session.start(
@@ -451,7 +454,8 @@ public class SessionImplTest {
 
     Instant time = clock.instant();
 
-    SessionImpl session = new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session =
+        new SessionImpl(metrics, clock, poolInfo, 0, sessionFactory.createNew(), timer);
 
     int keepAliveDurationMs = 150;
 
@@ -507,7 +511,7 @@ public class SessionImplTest {
 
   @Test
   void testCancel() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     int responseDelayMs = 200;
     // Configure the fake service to delay the response, giving us time to cancel it
