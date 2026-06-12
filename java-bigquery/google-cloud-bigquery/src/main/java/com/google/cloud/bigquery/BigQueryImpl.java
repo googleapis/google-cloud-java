@@ -397,7 +397,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              getRetryAlgorithmWithHttpRetry(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -711,7 +711,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getRetryAlgorithmWithHttpRetry(),
+          getOptions().getResultRetryAlgorithm(),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -762,7 +762,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getRetryAlgorithmWithHttpRetry(),
+          getOptions().getResultRetryAlgorithm(),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -808,7 +808,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getRetryAlgorithmWithHttpRetry(),
+          getOptions().getResultRetryAlgorithm(),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -854,7 +854,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getRetryAlgorithmWithHttpRetry(),
+          getOptions().getResultRetryAlgorithm(),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -898,7 +898,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getRetryAlgorithmWithHttpRetry(),
+          getOptions().getResultRetryAlgorithm(),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -939,7 +939,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getRetryAlgorithmWithHttpRetry(),
+              getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -986,7 +986,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getRetryAlgorithmWithHttpRetry(),
+              getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1032,7 +1032,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getRetryAlgorithmWithHttpRetry(),
+              getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1078,7 +1078,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getRetryAlgorithmWithHttpRetry(),
+              getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1632,7 +1632,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     }
                   },
                   getOptions().getRetrySettings(),
-                  getRetryAlgorithmWithHttpRetry(),
+                  getOptions().getResultRetryAlgorithm(),
                   getOptions().getClock(),
                   EMPTY_RETRY_CONFIG,
                   getOptions().isOpenTelemetryTracingEnabled(),
