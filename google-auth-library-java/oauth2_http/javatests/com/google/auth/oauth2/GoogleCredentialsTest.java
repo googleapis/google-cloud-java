@@ -1244,6 +1244,18 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  public void regionalAccessBoundary_alwaysPolicy_userConfiguredNonMtlsFactory_throwsException() {
+    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+    envProvider.setEnv("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
+
+    GoogleCredentials credentials =
+        new TestRegionalCredentials(
+            new AccessToken("some-token", null), envProvider, DUMMY_TRANSPORT_FACTORY);
+
+    assertThrows(IOException.class, () -> credentials.getRequestMetadata());
+  }
+
+  @Test
   public void regionalAccessBoundary_deduplicationOfConcurrentRefreshes()
       throws IOException, InterruptedException {
 
@@ -1397,10 +1409,19 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   private static class TestRegionalCredentials extends GoogleCredentials
       implements RegionalAccessBoundaryProvider {
     private final EnvironmentProvider envProvider;
+    private final HttpTransportFactory transportFactory;
 
     TestRegionalCredentials(AccessToken token, EnvironmentProvider envProvider) {
+      this(token, envProvider, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+    }
+
+    TestRegionalCredentials(
+        AccessToken token,
+        EnvironmentProvider envProvider,
+        HttpTransportFactory transportFactory) {
       super(GoogleCredentials.newBuilder().setAccessToken(token));
       this.envProvider = envProvider;
+      this.transportFactory = transportFactory;
     }
 
     @Override
@@ -1410,7 +1431,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
 
     @Override
     HttpTransportFactory getTransportFactory() {
-      return DUMMY_TRANSPORT_FACTORY;
+      return transportFactory;
     }
 
     @Override

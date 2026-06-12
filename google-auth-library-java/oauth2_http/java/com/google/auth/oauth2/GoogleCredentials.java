@@ -39,9 +39,7 @@ import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.MtlsUtils;
-import com.google.auth.mtls.X509Provider;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -54,7 +52,6 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
-import java.security.KeyStore;
 import java.time.Duration;
 import java.util.Collection;
 import java.util.Collections;
@@ -401,29 +398,10 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return;
     }
 
-    MtlsUtils.MtlsEndpointUsagePolicy mtlsPolicy =
-        MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider());
-    try {
-      boolean canMtls =
-          MtlsUtils.canMtlsBeEnabled(getEnvironmentProvider(), getPropertyProvider(), null);
-      // Initialize mTLS transport factory if mTLS can be enabled and the user hasn't already
-      // configured a custom MtlsHttpTransportFactory.
-      if (!(transportFactory instanceof MtlsHttpTransportFactory) && canMtls) {
-        X509Provider x509Provider =
-            new X509Provider(getEnvironmentProvider(), getPropertyProvider(), null);
-        KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-        transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-      }
-    } catch (Exception e) {
-      if (mtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
-        if (e instanceof IOException) {
-          throw (IOException) e;
-        }
-        throw new IOException(
-            "mTLS is configured to ALWAYS, but initialization failed: " + e.getMessage(), e);
-      }
-      // Graceful fallback to standard transport if mTLS initialization fails
-    }
+    // Automatically discover certificates or enforce mTLS policy if applicable
+    transportFactory =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            transportFactory, getEnvironmentProvider(), getPropertyProvider(), null);
 
     regionalAccessBoundaryManager.triggerAsyncRefresh(
         transportFactory, (RegionalAccessBoundaryProvider) this, token);

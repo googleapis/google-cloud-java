@@ -31,14 +31,19 @@
 package com.google.auth.mtls;
 
 import com.google.api.core.InternalApi;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.EnvironmentProvider;
+import com.google.auth.oauth2.OAuth2Utils;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.common.base.Strings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.KeyStore;
 import java.util.Locale;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /**
  * Utility class for mTLS related operations.
@@ -47,6 +52,8 @@ import java.util.Locale;
  */
 @InternalApi
 public class MtlsUtils {
+  private static final Logger LOGGER = Logger.getLogger(MtlsUtils.class.getName());
+
   static final String CERTIFICATE_CONFIGURATION_ENV_VARIABLE = "GOOGLE_API_CERTIFICATE_CONFIG";
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
@@ -91,38 +98,27 @@ public class MtlsUtils {
   }
 
   /**
-   * Resolves and loads the workload certificate configuration.
+   * Resolves and parses the workload certificate configuration.
    *
-   * <p>The configuration file is resolved in the following order of precedence: 1. The provided
-   * certConfigPathOverride (if not null). 2. The path specified by the
-   * GOOGLE_API_CERTIFICATE_CONFIG environment variable. 3. The well-known certificate configuration
-   * file in the gcloud config directory.
+   * <p>This locates the certificate configuration file via {@link #resolveCertificateConfigFile}
+   * and parses its contents into a {@link WorkloadCertificateConfiguration}.
    *
    * @param envProvider the environment provider to use for resolving environment variables
    * @param propProvider the property provider to use for resolving system properties
    * @param certConfigPathOverride optional override path for the configuration file
    * @return the loaded WorkloadCertificateConfiguration
-   * @throws IOException if the configuration file cannot be found, read, or parsed
+   * @throws IOException if the configuration file cannot be resolved, read, or parsed
    */
   static WorkloadCertificateConfiguration getWorkloadCertificateConfiguration(
       EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
       throws IOException {
-    File certConfig;
-    if (certConfigPathOverride != null) {
-      certConfig = new File(certConfigPathOverride);
-    } else {
-      String envCredentialsPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
-      if (!Strings.isNullOrEmpty(envCredentialsPath)) {
-        certConfig = new File(envCredentialsPath);
-      } else {
-        certConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
-      }
-    }
-
-    if (!certConfig.isFile()) {
+    File certConfig =
+        resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
+    if (certConfig == null) {
+      File wellKnownConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
       throw new CertificateSourceUnavailableException(
           "Certificate configuration file does not exist or is not a file: "
-              + certConfig.getAbsolutePath());
+              + wellKnownConfig.getAbsolutePath());
     }
     try (InputStream certConfigStream = new FileInputStream(certConfig)) {
       return WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
@@ -181,33 +177,76 @@ public class MtlsUtils {
     if (policy == MtlsEndpointUsagePolicy.NEVER) {
       return false;
     }
+
     if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
       return true;
     }
 
-    // Locate and process the certificate configuration file
-    String envPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
-    if (certConfigPathOverride != null || !Strings.isNullOrEmpty(envPath)) {
-      File certConfigFile =
-          new File(certConfigPathOverride != null ? certConfigPathOverride : envPath);
+    File certConfigFile =
+        resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
+    return certConfigFile != null;
+  }
+
+  /**
+   * Resolves the mutual TLS (mTLS) certificate configuration file.
+   *
+   * <p>The configuration file is resolved in the following order of precedence:
+   * <ol>
+   *   <li>The developer-provided {@code certConfigPathOverride} (if not null).
+   *   <li>The path specified by the {@code GOOGLE_API_CERTIFICATE_CONFIG} environment variable.
+   *   <li>The well-known automatic gcloud workload identity provisioning location (via {@link
+   *       #getWellKnownCertificateConfigFile}).
+   * </ol>
+   *
+   * <p>If an explicit configuration file is specified (via override or environment variable) and it
+   * is missing or invalid, an exception is thrown. If no explicit file is specified and the default
+   * well-known file is missing, {@code null} is returned.
+   *
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @param propProvider the property provider to use for resolving system properties
+   * @param certConfigPathOverride optional override path for the configuration file
+   * @return the resolved File object, or null if no configuration was found
+   * @throws IOException if an explicit configuration file is missing or malformed
+   */
+  @Nullable
+  static File resolveCertificateConfigFile(
+      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      throws IOException {
+    // 1. Check explicit developer override
+    if (certConfigPathOverride != null) {
+      File certConfigFile = new File(certConfigPathOverride);
       if (!certConfigFile.isFile()) {
         throw new CertificateSourceUnavailableException(
             "Certificate configuration file does not exist or is not a file: "
                 + certConfigFile.getAbsolutePath());
       }
-      return true;
+      return certConfigFile;
     }
 
+    // 2. Check explicit environment variable
+    String envPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
+    if (!Strings.isNullOrEmpty(envPath)) {
+      File certConfigFile = new File(envPath);
+      if (!certConfigFile.isFile()) {
+        throw new CertificateSourceUnavailableException(
+            "Certificate configuration file does not exist or is not a file: "
+                + certConfigFile.getAbsolutePath());
+      }
+      return certConfigFile;
+    }
+
+    // 3. Check optional well-known automatic provisioning location
     try {
       File wellKnownConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
       if (wellKnownConfig.isFile()) {
-        return true;
+        return wellKnownConfig;
       }
     } catch (IOException e) {
-      // ignore if well-known directory resolution fails (e.g. APPDATA not set on Windows)
+      LOGGER.info(
+          "Could not get the mutual TLS (mTLS) client certificate configuration. The library will fall back to making standard non-mTLS requests.");
     }
 
-    return false;
+    return null;
   }
 
   /**
@@ -225,5 +264,56 @@ public class MtlsUtils {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
+  }
+
+  /**
+   * Prepares and upgrades the HTTP transport factory for mutual TLS (mTLS) if applicable.
+   *
+   * @param baseTransportFactory the base HTTP transport factory to upgrade
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @param propProvider the property provider to use for resolving system properties
+   * @param certConfigPathOverride optional override path for the configuration file
+   * @return the mTLS-configured HTTP transport factory, or the base factory if mTLS is not enabled
+   * @throws IOException if mTLS is required/enabled but certificate initialization fails or an
+   *     incompatible transport factory was provided
+   */
+  public static HttpTransportFactory prepareTransportFactoryIfMtlsEnabled(
+      HttpTransportFactory baseTransportFactory,
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      String certConfigPathOverride)
+      throws IOException {
+
+    MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
+    try {
+      boolean canMtls = canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
+      if (canMtls) {
+        if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
+          // A custom MtlsHttpTransportFactory was already pre-configured by the user.
+          // Keep using it as-is without re-initializing.
+          return baseTransportFactory;
+        } else if (baseTransportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
+          // This is the default HttpTransportFactory assigned by credentials.
+          // Automatically discover and load client certificates to construct an mTLS factory.
+          X509Provider x509Provider =
+              new X509Provider(envProvider, propProvider, certConfigPathOverride);
+          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
+          return new MtlsHttpTransportFactory(mtlsKeyStore);
+        } else {
+          // A user configured non-mTLS HttpTransportFactory was explicitly injected.
+          // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
+          throw new IOException(
+              "mTLS is enabled on the system, but a user configured non-mTLS HttpTransportFactory was provided: "
+                  + baseTransportFactory.getClass().getName());
+        }
+      }
+    } catch (Exception e) {
+      if (mtlsPolicy == MtlsEndpointUsagePolicy.ALWAYS) {
+        throw new IOException(
+            "mTLS is configured to ALWAYS, but initialization failed: " + e.getMessage(), e);
+      }
+      // Graceful fallback to standard transport if mTLS initialization fails under AUTO policy
+    }
+    return baseTransportFactory;
   }
 }
