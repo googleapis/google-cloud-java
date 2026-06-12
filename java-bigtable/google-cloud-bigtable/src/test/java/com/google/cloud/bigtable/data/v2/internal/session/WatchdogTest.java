@@ -30,9 +30,7 @@ import com.google.protobuf.Message;
 import io.grpc.Metadata;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import org.junit.jupiter.api.AfterEach;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,7 +39,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class WatchdogTest {
   private final Duration interval = Duration.ofMinutes(5);
-  private ScheduledExecutorService executor;
+  private BigtableTimer timer;
   private SessionPoolImpl.Watchdog watchdog;
   private SessionList sessions;
   private FakeSession fakeSession = new FakeSession();
@@ -51,7 +49,9 @@ public class WatchdogTest {
 
   @BeforeEach
   void setUp() {
-    executor = Executors.newScheduledThreadPool(4);
+    // run() is invoked synchronously in tests; the timer is wired in only so the constructor
+    // signature is satisfied. start() / close() are not exercised here.
+    timer = new NoOpBigtableTimer();
 
     now = Instant.now();
     fakeClock = new FakeClock(now);
@@ -59,16 +59,33 @@ public class WatchdogTest {
     watchdog =
         new Watchdog(
             new Object(),
-            executor,
+            timer,
             interval,
             sessions,
             NoopMetrics.NoopDebugTracer.INSTANCE,
             fakeClock);
   }
 
-  @AfterEach
-  void tearDown() {
-    executor.shutdownNow();
+  // A BigtableTimer that drops every newTimeout(). Used because awaitCloseTest drives the watchdog
+  // by calling run() directly; the scheduling layer is not under test.
+  private static final class NoOpBigtableTimer implements BigtableTimer {
+    @Override
+    public Timeout newTimeout(Runnable task, long delay, TimeUnit unit) {
+      return new Timeout() {
+        @Override
+        public boolean cancel() {
+          return false;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return true;
+        }
+      };
+    }
+
+    @Override
+    public void stop() {}
   }
 
   @Test

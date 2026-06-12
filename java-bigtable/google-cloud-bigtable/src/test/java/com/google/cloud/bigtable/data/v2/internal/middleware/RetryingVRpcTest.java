@@ -38,9 +38,11 @@ import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.session.FakeDescriptor;
+import com.google.cloud.bigtable.data.v2.internal.session.NettyWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionFactory;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionListener;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionService;
@@ -74,6 +76,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class RetryingVRpcTest {
   private ScheduledExecutorService executor;
+  private BigtableTimer timer;
 
   private Server server;
   private ChannelPool channelPool;
@@ -88,6 +91,7 @@ public class RetryingVRpcTest {
   @BeforeEach
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
+    timer = new NettyWheelTimer("retrying-vrpc-test", com.google.common.util.concurrent.MoreExecutors.directExecutor());
     server =
         FakeServiceBuilder.create(new FakeSessionService(executor))
             .intercept(new PeerInfoInterceptor())
@@ -117,11 +121,12 @@ public class RetryingVRpcTest {
     channelPool.close();
     server.shutdownNow();
     executor.shutdownNow();
+    timer.stop();
   }
 
   @Test
   void noRetryTest() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
     OpenSessionRequest openSessionRequest =
@@ -133,7 +138,7 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -152,7 +157,7 @@ public class RetryingVRpcTest {
   @Test
   public void retryServerError() throws Exception {
     int requestTag = 1;
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -199,7 +204,7 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -218,7 +223,7 @@ public class RetryingVRpcTest {
   @Test
   public void retryDeadlineRespectedTest() throws Exception {
     int requestTag = 1;
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -274,7 +279,7 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -295,7 +300,7 @@ public class RetryingVRpcTest {
   @Test
   public void vRpcFailureTest() throws Exception {
     // vrpc error on the session should not close the stream
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -333,7 +338,7 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -353,7 +358,7 @@ public class RetryingVRpcTest {
 
   @Test
   void cancelInScheduledState() throws Exception {
-    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew());
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
     FakeSessionListener sessionListener = new FakeSessionListener();
 
@@ -392,7 +397,7 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), executor);
+        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(1).build(),
