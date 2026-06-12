@@ -213,7 +213,7 @@ public class MockMetadataServerTransport extends MockHttpTransport {
           refreshContents.put(
               "access_token", scopesToAccessToken.get("[" + urlParsed.get(1) + "]"));
         }
-        refreshContents.put("expires_in", 3600000);
+        refreshContents.put("expires_in", 3600);
         refreshContents.put("token_type", "Bearer");
         String refreshText = refreshContents.toPrettyString();
 

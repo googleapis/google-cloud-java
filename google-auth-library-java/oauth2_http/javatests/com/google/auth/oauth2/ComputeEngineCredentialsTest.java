@@ -420,6 +420,34 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void getRequestMetadata_multipleCalls_usesCachedToken() throws IOException {
+    final int[] requestCount = new int[1];
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport =
+        new MockMetadataServerTransport(SCOPE_TO_ACCESS_TOKEN_MAP) {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+            if (url.startsWith(ComputeEngineCredentials.getTokenServerEncodedUrl())) {
+              requestCount[0]++;
+            }
+            return super.buildRequest(method, url);
+          }
+        };
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
+    TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
+    assertEquals(1, requestCount[0]);
+
+    Map<String, List<String>> metadata2 = credentials.getRequestMetadata(CALL_URI);
+    TestUtils.assertContainsBearerToken(metadata2, ACCESS_TOKEN);
+    assertEquals(1, requestCount[0]);
+  }
+
+  @Test
   void getRequestMetadata_missingServiceAccount_throws() {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
