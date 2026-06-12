@@ -144,7 +144,7 @@ final class BigQueryJdbcProxyUtility {
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
     } else {
-      final HttpTransport defaultTransport = new NetHttpTransport.Builder().build();
+      HttpTransport defaultTransport = new NetHttpTransport.Builder().build();
       httpTransportOptionsBuilder.setHttpTransportFactory(() -> defaultTransport);
     }
 
