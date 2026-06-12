@@ -348,7 +348,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
       this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
-      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
+      // Use a bounded cached thread pool to prevent unbounded thread creation (and OOMs)
+      // under heavy load, while ensuring a limit (e.g., 100) high enough to prevent deadlocks
+      // between interdependent producer/consumer tasks (like nextPageWorker and
+      // populateBufferWorker).
+      this.queryExecutor = BigQueryJdbcMdc.newBoundedCachedThreadPool(100);
     }
   }
 

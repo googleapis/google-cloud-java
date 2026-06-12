@@ -41,7 +41,7 @@ class BigQueryResultSetFinalizers {
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
       LOG.finestTrace("finalizeResources");
-      if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+      if (ownedTask != null) {
         ownedTask.cancel(true);
       }
     }
@@ -64,7 +64,7 @@ class BigQueryResultSetFinalizers {
       LOG.finestTrace("finalizeResources");
       if (ownedTasks != null) {
         for (Future<?> ownedTask : ownedTasks) {
-          if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+          if (ownedTask != null) {
             ownedTask.cancel(true);
           }
         }

@@ -294,7 +294,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     this.isClosed = true;
     if (ownedTasks != null) {
       for (Future<?> ownedTask : ownedTasks) {
-        if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+        if (ownedTask != null) {
           ownedTask.cancel(true);
         }
       }

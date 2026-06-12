@@ -72,6 +72,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -5269,7 +5270,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   // TODO(keshav): This is a temporary compatibility bridge to wrap raw Threads into Futures.
   // This should be removed when BigQueryDatabaseMetaData is refactored to use the ExecutorService
   // directly.
-  private static Future<?>[] wrapThread(final Thread thread) {
+  static Future<?>[] wrapThread(final Thread thread) {
     if (thread == null) {
       return null;
     }
@@ -5279,7 +5280,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
         @Override
         public boolean cancel(boolean mayInterruptIfRunning) {
-          if (cancelled || !thread.isAlive()) {
+          if (cancelled || thread.getState() == Thread.State.TERMINATED) {
             return false;
           }
           cancelled = true;
@@ -5296,25 +5297,33 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
         @Override
         public boolean isDone() {
-          return cancelled || !thread.isAlive();
+          return cancelled || thread.getState() == Thread.State.TERMINATED;
         }
 
         @Override
-        public Object get() {
-          try {
-            thread.join();
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+        public Object get() throws InterruptedException, CancellationException {
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          thread.join();
+          if (isCancelled()) {
+            throw new CancellationException();
           }
           return null;
         }
 
         @Override
-        public Object get(long timeout, TimeUnit unit) {
-          try {
-            unit.timedJoin(thread, timeout);
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+        public Object get(long timeout, TimeUnit unit)
+            throws InterruptedException, CancellationException, TimeoutException {
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          unit.timedJoin(thread, timeout);
+          if (isCancelled()) {
+            throw new CancellationException();
+          }
+          if (thread.isAlive()) {
+            throw new TimeoutException();
           }
           return null;
         }

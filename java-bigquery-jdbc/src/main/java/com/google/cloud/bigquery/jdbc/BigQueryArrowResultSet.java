@@ -485,7 +485,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   public void close() {
     LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+    if (ownedTask != null) {
       // cancel the producer task when result set is closed
       ownedTask.cancel(true);
     }

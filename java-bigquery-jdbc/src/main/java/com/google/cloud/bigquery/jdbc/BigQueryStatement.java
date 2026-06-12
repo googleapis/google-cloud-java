@@ -78,6 +78,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Level;
 
@@ -853,7 +854,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       arrowResultSet.setQueryId(results.getQueryId());
       return arrowResultSet;
 
-    } catch (Exception ex) {
+    } catch (Exception | OutOfMemoryError ex) {
+      if (ex instanceof OutOfMemoryError || ex instanceof RejectedExecutionException) {
+        throw new BigQueryJdbcException(
+            "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+            ex);
+      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
   }
@@ -1034,7 +1040,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
-  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) {
+  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) throws SQLException {
     List<Future<?>> taskList = new ArrayList<>();
 
     Schema schema = results.getSchema();
@@ -1044,32 +1050,38 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         new LinkedBlockingDeque<>(getPageCacheSize(getBufferSize(), schema));
 
     JobId jobId = results.getJobId();
-    if (jobId != null) {
-      // Task to make rpc calls to fetch data from the server
-      Future<?> nextPageWorker =
-          runNextPageTaskAsync(
-              results,
-              results.getNextPageToken(),
-              jobId,
-              rpcResponseQueue,
-              this.bigQueryFieldValueListWrapperBlockingQueue);
-      taskList.add(nextPageWorker);
-    } else {
-      try {
-        populateFirstPage(results, rpcResponseQueue);
-        rpcResponseQueue.put(Tuple.of(null, false));
-      } catch (InterruptedException e) {
-        LOG.warning(
-            "%s Interrupted @ processJsonQueryResponseResults: %s",
-            Thread.currentThread().getName(), e.getMessage());
+    try {
+      if (jobId != null) {
+        // Task to make rpc calls to fetch data from the server
+        Future<?> nextPageWorker =
+            runNextPageTaskAsync(
+                results,
+                results.getNextPageToken(),
+                jobId,
+                rpcResponseQueue,
+                this.bigQueryFieldValueListWrapperBlockingQueue);
+        taskList.add(nextPageWorker);
+      } else {
+        try {
+          populateFirstPage(results, rpcResponseQueue);
+          rpcResponseQueue.put(Tuple.of(null, false));
+        } catch (InterruptedException e) {
+          LOG.warning(
+              "%s Interrupted @ processJsonQueryResponseResults: %s",
+              Thread.currentThread().getName(), e.getMessage());
+        }
       }
-    }
 
-    // Task to parse data received from the server to client library objects
-    Future<?> populateBufferWorker =
-        parseAndPopulateRpcDataAsync(
-            schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
-    taskList.add(populateBufferWorker);
+      // Task to parse data received from the server to client library objects
+      Future<?> populateBufferWorker =
+          parseAndPopulateRpcDataAsync(
+              schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
+      taskList.add(populateBufferWorker);
+    } catch (RejectedExecutionException | OutOfMemoryError e) {
+      throw new BigQueryJdbcException(
+          "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+          e);
+    }
 
     Future<?>[] jsonWorkers = taskList.toArray(new Future<?>[0]);
 
