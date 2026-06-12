@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
@@ -51,6 +52,7 @@
         <artifactId>google-cloud-containeranalysis</artifactId>
         <version>2.94.0</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
       <!-- TODO: This should maybe eventually be moved into this repo -->
       <dependency>
         <groupId>io.grafeas</groupId>
@@ -62,11 +64,13 @@
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-containeranalysis</module>
     <module>grpc-google-cloud-containeranalysis-v1beta1</module>
     <module>grpc-google-cloud-containeranalysis-v1</module>
     <module>proto-google-cloud-containeranalysis-v1</module>
     <module>proto-google-cloud-containeranalysis-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-containeranalysis-bom</module>
   </modules>
 

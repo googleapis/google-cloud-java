@@ -88,6 +88,11 @@ public class BigtableTableAdminClientV2 extends BaseBigtableTableAdminClient {
           .setTotalTimeoutDuration(Duration.ofMillis(600000L))
           .build();
 
+  /** Constructs an instance of BigtableTableAdminClientV2 with default settings. */
+  public static final BigtableTableAdminClientV2 create() throws IOException {
+    return create(BaseBigtableTableAdminSettings.newBuilder().build());
+  }
+
   /** Constructs an instance of BigtableTableAdminClientV2 with the given settings. */
   public static final BigtableTableAdminClientV2 create(BaseBigtableTableAdminSettings settings)
       throws IOException {

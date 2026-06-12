@@ -24,6 +24,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-discoveryengine</artifactId>
@@ -59,6 +60,7 @@
         <artifactId>proto-google-cloud-discoveryengine-v1alpha</artifactId>
         <version>0.89.0</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

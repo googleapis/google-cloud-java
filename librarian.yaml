@@ -16,8 +16,8 @@ version: v0.20.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 00bb3db8a8cc88f0755e872856462b902d6dd8c4
-    sha256: 6dcc61715c6f52390d3cfbc75e513d181ff805c5ad7a61657797d5d6fa552445
+    commit: f7b17174725f43b5cb11b0b8c6bbad20a3dc5bd1
+    sha256: e21b1ea623f68161e9c0c464ca9e9df53da80d7133244531aa97d1cfeb411ccc
   showcase:
     commit: 328bec7ce4c1fb77c37fdf1868d0506bc02a70fc
     sha256: 8df187486e37edf5a78c1646c859c311bc452871b9ba4641d93149d3c53450a2
@@ -502,7 +502,7 @@ libraries:
       name_pretty_override: BeyondCorp ClientGateways
       product_documentation_override: https://cloud.google.com/beyondcorp-enterprise/
   - name: biglake
-    version: 0.81.0
+    version: 0.81.1
     apis:
       - path: google/cloud/biglake/v1
       - path: google/cloud/bigquery/biglake/v1
@@ -1631,7 +1631,7 @@ libraries:
       name_pretty_override: Financial Services API
       product_documentation_override: https://cloud.google.com/financial-services/anti-money-laundering/docs/concepts/overview
   - name: firestore
-    version: 3.43.0
+    version: 3.43.1
     apis:
       - path: google/firestore/v1
         java:
@@ -1818,7 +1818,7 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.87.0
+    version: 1.87.1
     skip_generate: true
   - name: grafeas
     version: 2.94.0

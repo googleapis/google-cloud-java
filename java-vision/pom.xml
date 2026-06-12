@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-vision-v1p4beta1</artifactId>
@@ -81,10 +82,12 @@
         <artifactId>google-cloud-vision</artifactId>
         <version>3.91.0</version><!-- {x-version-update:google-cloud-vision:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-vision</module>
     <module>grpc-google-cloud-vision-v1p3beta1</module>
     <module>grpc-google-cloud-vision-v1p1beta1</module>
@@ -96,6 +99,7 @@
     <module>proto-google-cloud-vision-v1p1beta1</module>
     <module>proto-google-cloud-vision-v1p3beta1</module>
     <module>proto-google-cloud-vision-v1p2beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-vision-bom</module>
   </modules>
 

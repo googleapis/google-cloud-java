@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-automl-v1beta1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-automl</artifactId>
         <version>2.93.0</version><!-- {x-version-update:google-cloud-automl:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-automl</module>
     <module>grpc-google-cloud-automl-v1beta1</module>
     <module>grpc-google-cloud-automl-v1</module>
     <module>proto-google-cloud-automl-v1beta1</module>
     <module>proto-google-cloud-automl-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-automl-bom</module>
   </modules>
 

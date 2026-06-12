@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerymigration</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>proto-google-cloud-bigquerymigration-v2alpha</artifactId>
         <version>0.96.0</version><!-- {x-version-update:proto-google-cloud-bigquerymigration-v2alpha:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-bigquerymigration</module>
     <module>grpc-google-cloud-bigquerymigration-v2alpha</module>
     <module>grpc-google-cloud-bigquerymigration-v2</module>
     <module>proto-google-cloud-bigquerymigration-v2alpha</module>
     <module>proto-google-cloud-bigquerymigration-v2</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-bigquerymigration-bom</module>
   </modules>
 

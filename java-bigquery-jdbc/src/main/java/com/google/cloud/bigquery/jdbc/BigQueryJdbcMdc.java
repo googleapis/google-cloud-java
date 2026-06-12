@@ -26,9 +26,13 @@ import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcMdc.class.getName());
+
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
@@ -56,13 +60,16 @@ class BigQueryJdbcMdc {
    * context from the submitting thread to the executing thread.
    */
   static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
-    return new MdcThreadPoolExecutor(
-        nThreads,
-        nThreads,
-        0L,
-        TimeUnit.MILLISECONDS,
-        new LinkedBlockingQueue<>(),
-        new MdcThreadFactory(threadFactory));
+    MdcThreadPoolExecutor executor =
+        new MdcThreadPoolExecutor(
+            nThreads,
+            nThreads,
+            60L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new MdcThreadFactory(threadFactory));
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
   }
 
   /**
@@ -71,6 +78,28 @@ class BigQueryJdbcMdc {
    */
   static ExecutorService newFixedThreadPool(int nThreads) {
     return newFixedThreadPool(nThreads, Executors.defaultThreadFactory());
+  }
+
+  /**
+   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
+   * context from the submitting thread to the executing thread.
+   */
+  static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+    return new MdcThreadPoolExecutor(
+        0,
+        Integer.MAX_VALUE,
+        60L,
+        TimeUnit.SECONDS,
+        new java.util.concurrent.SynchronousQueue<>(),
+        new MdcThreadFactory(threadFactory));
+  }
+
+  /**
+   * Creates a new cached thread pool ExecutorService that automatically propagates MDC connection
+   * context from the submitting thread to the executing thread.
+   */
+  static ExecutorService newCachedThreadPool() {
+    return newCachedThreadPool(Executors.defaultThreadFactory());
   }
 
   private static class MdcThreadFactory implements ThreadFactory {
@@ -82,11 +111,16 @@ class BigQueryJdbcMdc {
 
     @Override
     public Thread newThread(Runnable r) {
-      return delegate.newThread(
-          () -> {
-            clear();
-            r.run();
-          });
+      Thread t =
+          delegate.newThread(
+              () -> {
+                clear();
+                r.run();
+              });
+      if (t != null) {
+        t.setDaemon(true);
+      }
+      return t;
     }
   }
 
@@ -102,11 +136,37 @@ class BigQueryJdbcMdc {
       super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
     }
 
+    private final AtomicBoolean warningLogged = new AtomicBoolean(false);
+
+    private void monitorQueueSaturation(int queueSize) {
+      int maxPoolSize = getMaximumPoolSize();
+      // Warn when queue size is >= maxPoolSize * 5, with a minimum of 10 tasks to avoid false
+      // alerts for tiny pools
+      int warnThreshold = Math.max(10, maxPoolSize * 5);
+      // Recovery reset threshold is maxPoolSize * 2, with a minimum of 4 tasks
+      int recoveryThreshold = Math.max(4, maxPoolSize * 2);
+
+      if (queueSize >= warnThreshold) {
+        if (warningLogged.compareAndSet(false, true)) {
+          LOG.warning(
+              "Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
+              maxPoolSize, getActiveCount(), queueSize);
+        }
+      } else if (queueSize <= recoveryThreshold) {
+        if (warningLogged.get()) {
+          warningLogged.set(false);
+        }
+      }
+    }
+
     @Override
     public void execute(Runnable command) {
       if (command == null) {
         throw new NullPointerException();
       }
+
+      monitorQueueSaturation(getQueue().size());
+
       if (command instanceof MdcFutureTask) {
         super.execute(command);
       } else {

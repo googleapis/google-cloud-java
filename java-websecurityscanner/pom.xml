@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
@@ -61,10 +62,12 @@
         <artifactId>google-cloud-websecurityscanner</artifactId>
         <version>2.93.0</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-websecurityscanner</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
     <module>grpc-google-cloud-websecurityscanner-v1beta</module>
@@ -72,6 +75,7 @@
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
     <module>proto-google-cloud-websecurityscanner-v1beta</module>
     <module>proto-google-cloud-websecurityscanner-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-websecurityscanner-bom</module>
   </modules>
 

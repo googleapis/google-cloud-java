@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-cloudquotas</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>proto-google-cloud-cloudquotas-v1</artifactId>
         <version>0.61.0</version><!-- {x-version-update:proto-google-cloud-cloudquotas-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-cloudquotas</module>
     <module>grpc-google-cloud-cloudquotas-v1</module>
     <module>grpc-google-cloud-cloudquotas-v1beta</module>
     <module>proto-google-cloud-cloudquotas-v1</module>
     <module>proto-google-cloud-cloudquotas-v1beta</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-cloudquotas-bom</module>
   </modules>
 

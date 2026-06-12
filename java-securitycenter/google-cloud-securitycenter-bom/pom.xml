@@ -20,6 +20,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-securitycenter</artifactId>
@@ -65,6 +66,7 @@
         <artifactId>proto-google-cloud-securitycenter-v2</artifactId>
         <version>2.101.0</version><!-- {x-version-update:proto-google-cloud-securitycenter-v2:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 </project>

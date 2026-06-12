@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-container-v1</artifactId>
@@ -51,15 +52,18 @@
         <artifactId>google-cloud-container</artifactId>
         <version>2.96.0</version><!-- {x-version-update:google-cloud-container:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-cloud-container</module>
     <module>grpc-google-cloud-container-v1</module>
     <module>grpc-google-cloud-container-v1beta1</module>
     <module>proto-google-cloud-container-v1</module>
     <module>proto-google-cloud-container-v1beta1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-cloud-container-bom</module>
   </modules>
 

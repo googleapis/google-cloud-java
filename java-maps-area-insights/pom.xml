@@ -26,6 +26,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- {x-generated-dependencies-start} -->
       <dependency>
         <groupId>com.google.maps</groupId>
         <artifactId>google-maps-area-insights</artifactId>
@@ -41,14 +42,17 @@
         <artifactId>proto-google-maps-area-insights-v1</artifactId>
         <version>0.44.0</version><!-- {x-version-update:proto-google-maps-area-insights-v1:current} -->
       </dependency>
+      <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <!-- {x-generated-modules-start} -->
     <module>google-maps-area-insights</module>
     <module>grpc-google-maps-area-insights-v1</module>
     <module>proto-google-maps-area-insights-v1</module>
+    <!-- {x-generated-modules-end} -->
     <module>google-maps-area-insights-bom</module>
   </modules>
 
