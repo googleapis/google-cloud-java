@@ -24,7 +24,6 @@ import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Status;
-import io.grpc.SynchronizationContext;
 import java.util.Optional;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -47,13 +46,12 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private VRpcTracer tracer;
 
   private final BigtableTimer timer;
-  private final SynchronizationContext syncContext;
 
   // current state and all the flags don't need to be volatile because they're only updated within
-  // the sync context.
+  // the op executor.
   private State currentState;
   private boolean started;
-  // Breaks the loop if uncaught exception happens during sync context execution.
+  // Breaks the loop if uncaught exception happens during op-executor execution.
   private boolean isCancelling;
 
   public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, BigtableTimer timer) {
@@ -63,14 +61,6 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     otelContext = io.opentelemetry.context.Context.current();
 
     this.timer = timer;
-    this.syncContext =
-        new SynchronizationContext(
-            (t, e) -> {
-              this.cancel(
-                  "Unexpected error while notifying the caller of RetryingVRpc. Trying to cancel"
-                      + " vRpc to ensure consistent state",
-                  e);
-            });
 
     started = false;
     isCancelling = false;
@@ -79,51 +69,55 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
-    syncContext.execute(
-        () -> {
-          if (started) {
-            listener.onClose(
-                VRpcResult.createRejectedError(
-                    Status.FAILED_PRECONDITION.withDescription("operation is already started")));
-            return;
-          }
-          started = true;
+    ctx.getExecutor()
+        .execute(
+            () -> {
+              if (started) {
+                listener.onClose(
+                    VRpcResult.createRejectedError(
+                        Status.FAILED_PRECONDITION.withDescription(
+                            "operation is already started")));
+                return;
+              }
+              started = true;
 
-          this.request = req;
-          this.listener = listener;
-          this.context = ctx;
-          this.tracer = context.getTracer();
+              this.request = req;
+              this.listener = listener;
+              this.context = ctx;
+              this.tracer = context.getTracer();
 
-          tracer.onOperationStart();
-          currentState.onStart();
-        });
+              tracer.onOperationStart();
+              currentState.onStart();
+            });
   }
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    syncContext.execute(
-        () -> {
-          if (currentState.isDone() || isCancelling) {
-            LOG.fine("Ignoring cancel because the vRPC is already cancelled or done.");
-            return;
-          }
-          // Prevents infinite loop if there's any error thrown during this phase.
-          isCancelling = true;
-          Throwable finalCause = cause;
-          try {
-            currentState.onCancel(message, cause);
-          } catch (Throwable t) {
-            if (finalCause != null) {
-              finalCause.addSuppressed(t);
-            } else {
-              finalCause = t;
-            }
-          }
-          onStateChange(
-              new Done(
-                  VRpcResult.createRejectedError(
-                      Status.CANCELLED.withDescription(message).withCause(finalCause))));
-        });
+    context
+        .getExecutor()
+        .execute(
+            () -> {
+              if (currentState.isDone() || isCancelling) {
+                LOG.fine("Ignoring cancel because the vRPC is already cancelled or done.");
+                return;
+              }
+              // Prevents infinite loop if there's any error thrown during this phase.
+              isCancelling = true;
+              Throwable finalCause = cause;
+              try {
+                currentState.onCancel(message, cause);
+              } catch (Throwable t) {
+                if (finalCause != null) {
+                  finalCause.addSuppressed(t);
+                } else {
+                  finalCause = t;
+                }
+              }
+              onStateChange(
+                  new Done(
+                      VRpcResult.createRejectedError(
+                          Status.CANCELLED.withDescription(message).withCause(finalCause))));
+            });
   }
 
   @Override
@@ -132,7 +126,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   }
 
   void onStateChange(State state) {
-    syncContext.throwIfNotInThisSynchronizationContext();
+    context.getExecutor().throwIfNotInThisExecutor();
     if (currentState.isDone()) {
       return;
     }
@@ -177,7 +171,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
           new VRpcListener<RespT>() {
             @Override
             public void onMessage(RespT msg) {
-              syncContext.execute(
+              context.getExecutor().execute(
                   () -> {
                     if (currentState != Active.this) {
                       LOG.log(
@@ -198,7 +192,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
             @Override
             public void onClose(VRpcResult result) {
-              syncContext.execute(
+              context.getExecutor().execute(
                   () -> {
                     tracer.onAttemptFinish(result);
                     if (currentState != Active.this) {
@@ -282,12 +276,12 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       try {
         // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
         // the moment the body runs, not just while the dispatcher is invoking the outer task.
-        // syncContext.execute may queue the inner runnable for a later drain on a different
-        // thread; an outer wrap's scope would already be closed by then.
+        // The executor may queue the inner runnable for a later drain on a different thread; an
+        // outer wrap's scope would already be closed by then.
         future =
             timer.newTimeout(
                 () ->
-                    syncContext.execute(
+                    context.getExecutor().execute(
                         () ->
                             grpcContext.wrap(
                                     () ->

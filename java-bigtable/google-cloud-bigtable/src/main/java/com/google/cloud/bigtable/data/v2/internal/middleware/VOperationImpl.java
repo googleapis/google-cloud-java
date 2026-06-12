@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.Context;
 import io.grpc.Deadline;
+import io.grpc.SynchronizationContext;
 import java.util.Optional;
 import java.util.concurrent.TimeoutException;
 import javax.annotation.Nullable;
@@ -68,7 +69,13 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcListener<RespT> listener) {
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer);
+    // Per-call SynchronizationContext serializes all middleware below this layer. Uncaught task
+    // failures drive the chain to a terminal state so the caller's listener still gets onClose;
+    // RetryingVRpc.cancel is idempotent so the resulting cascade collapses safely.
+    SynchronizationContext syncContext =
+        new SynchronizationContext((t, e) -> chain.cancel("Uncaught exception in op executor", e));
+    OpExecutor exec = new OpExecutor(syncContext);
+    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, exec);
     grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
     chain.start(req, ctx, new CleanupListener<>(listener, grpcContext, cancellationListener));
   }
