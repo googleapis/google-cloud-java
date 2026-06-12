@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -66,6 +67,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AgentGateway;
+import com.google.cloud.networkservices.v1.CreateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
@@ -77,6 +80,7 @@ import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
+import com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -91,6 +95,7 @@ import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
+import com.google.cloud.networkservices.v1.GetAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
@@ -106,6 +111,8 @@ import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
 import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysRequest;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
@@ -139,6 +146,7 @@ import com.google.cloud.networkservices.v1.ServiceBinding;
 import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
+import com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
@@ -429,6 +437,19 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
   private final PagedCallSettings<
           ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsSettings;
+  private final PagedCallSettings<
+          ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysSettings;
+  private final UnaryCallSettings<GetAgentGatewayRequest, AgentGateway> getAgentGatewaySettings;
+  private final UnaryCallSettings<CreateAgentGatewayRequest, Operation> createAgentGatewaySettings;
+  private final OperationCallSettings<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationSettings;
+  private final UnaryCallSettings<UpdateAgentGatewayRequest, Operation> updateAgentGatewaySettings;
+  private final OperationCallSettings<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationSettings;
+  private final UnaryCallSettings<DeleteAgentGatewayRequest, Operation> deleteAgentGatewaySettings;
+  private final OperationCallSettings<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -914,6 +935,44 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>
+      LIST_AGENT_GATEWAYS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAgentGatewaysRequest injectToken(
+                ListAgentGatewaysRequest payload, String token) {
+              return ListAgentGatewaysRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAgentGatewaysRequest injectPageSize(
+                ListAgentGatewaysRequest payload, int pageSize) {
+              return ListAgentGatewaysRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAgentGatewaysRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAgentGatewaysResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AgentGateway> extractResources(ListAgentGatewaysResponse payload) {
+              return payload.getAgentGatewaysList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -1204,6 +1263,27 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
                       PageContext.create(
                           callable, LIST_MESH_ROUTE_VIEWS_PAGE_STR_DESC, request, context);
               return ListMeshRouteViewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+      LIST_AGENT_GATEWAYS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAgentGatewaysRequest,
+              ListAgentGatewaysResponse,
+              ListAgentGatewaysPagedResponse>() {
+            @Override
+            public ApiFuture<ListAgentGatewaysPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse> callable,
+                ListAgentGatewaysRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAgentGatewaysResponse> futureResponse) {
+              PageContext<ListAgentGatewaysRequest, ListAgentGatewaysResponse, AgentGateway>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AGENT_GATEWAYS_PAGE_STR_DESC, request, context);
+              return ListAgentGatewaysPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1744,6 +1824,51 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     return listMeshRouteViewsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listAgentGateways. */
+  public PagedCallSettings<
+          ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysSettings() {
+    return listAgentGatewaysSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAgentGateway. */
+  public UnaryCallSettings<GetAgentGatewayRequest, AgentGateway> getAgentGatewaySettings() {
+    return getAgentGatewaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAgentGateway. */
+  public UnaryCallSettings<CreateAgentGatewayRequest, Operation> createAgentGatewaySettings() {
+    return createAgentGatewaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAgentGateway. */
+  public OperationCallSettings<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationSettings() {
+    return createAgentGatewayOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentGateway. */
+  public UnaryCallSettings<UpdateAgentGatewayRequest, Operation> updateAgentGatewaySettings() {
+    return updateAgentGatewaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAgentGateway. */
+  public OperationCallSettings<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationSettings() {
+    return updateAgentGatewayOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentGateway. */
+  public UnaryCallSettings<DeleteAgentGatewayRequest, Operation> deleteAgentGatewaySettings() {
+    return deleteAgentGatewaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAgentGateway. */
+  public OperationCallSettings<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationSettings() {
+    return deleteAgentGatewayOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1983,6 +2108,17 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
     getMeshRouteViewSettings = settingsBuilder.getMeshRouteViewSettings().build();
     listGatewayRouteViewsSettings = settingsBuilder.listGatewayRouteViewsSettings().build();
     listMeshRouteViewsSettings = settingsBuilder.listMeshRouteViewsSettings().build();
+    listAgentGatewaysSettings = settingsBuilder.listAgentGatewaysSettings().build();
+    getAgentGatewaySettings = settingsBuilder.getAgentGatewaySettings().build();
+    createAgentGatewaySettings = settingsBuilder.createAgentGatewaySettings().build();
+    createAgentGatewayOperationSettings =
+        settingsBuilder.createAgentGatewayOperationSettings().build();
+    updateAgentGatewaySettings = settingsBuilder.updateAgentGatewaySettings().build();
+    updateAgentGatewayOperationSettings =
+        settingsBuilder.updateAgentGatewayOperationSettings().build();
+    deleteAgentGatewaySettings = settingsBuilder.deleteAgentGatewaySettings().build();
+    deleteAgentGatewayOperationSettings =
+        settingsBuilder.deleteAgentGatewayOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -2210,6 +2346,25 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
             ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
         listMeshRouteViewsSettings;
     private final PagedCallSettings.Builder<
+            ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+        listAgentGatewaysSettings;
+    private final UnaryCallSettings.Builder<GetAgentGatewayRequest, AgentGateway>
+        getAgentGatewaySettings;
+    private final UnaryCallSettings.Builder<CreateAgentGatewayRequest, Operation>
+        createAgentGatewaySettings;
+    private final OperationCallSettings.Builder<
+            CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        createAgentGatewayOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAgentGatewayRequest, Operation>
+        updateAgentGatewaySettings;
+    private final OperationCallSettings.Builder<
+            UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        updateAgentGatewayOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAgentGatewayRequest, Operation>
+        deleteAgentGatewaySettings;
+    private final OperationCallSettings.Builder<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+        deleteAgentGatewayOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -2347,6 +2502,14 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
           PagedCallSettings.newBuilder(LIST_GATEWAY_ROUTE_VIEWS_PAGE_STR_FACT);
       listMeshRouteViewsSettings =
           PagedCallSettings.newBuilder(LIST_MESH_ROUTE_VIEWS_PAGE_STR_FACT);
+      listAgentGatewaysSettings = PagedCallSettings.newBuilder(LIST_AGENT_GATEWAYS_PAGE_STR_FACT);
+      getAgentGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAgentGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAgentGatewayOperationSettings = OperationCallSettings.newBuilder();
+      updateAgentGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAgentGatewayOperationSettings = OperationCallSettings.newBuilder();
+      deleteAgentGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAgentGatewayOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2413,6 +2576,11 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               getMeshRouteViewSettings,
               listGatewayRouteViewsSettings,
               listMeshRouteViewsSettings,
+              listAgentGatewaysSettings,
+              getAgentGatewaySettings,
+              createAgentGatewaySettings,
+              updateAgentGatewaySettings,
+              deleteAgentGatewaySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -2525,6 +2693,17 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
       getMeshRouteViewSettings = settings.getMeshRouteViewSettings.toBuilder();
       listGatewayRouteViewsSettings = settings.listGatewayRouteViewsSettings.toBuilder();
       listMeshRouteViewsSettings = settings.listMeshRouteViewsSettings.toBuilder();
+      listAgentGatewaysSettings = settings.listAgentGatewaysSettings.toBuilder();
+      getAgentGatewaySettings = settings.getAgentGatewaySettings.toBuilder();
+      createAgentGatewaySettings = settings.createAgentGatewaySettings.toBuilder();
+      createAgentGatewayOperationSettings =
+          settings.createAgentGatewayOperationSettings.toBuilder();
+      updateAgentGatewaySettings = settings.updateAgentGatewaySettings.toBuilder();
+      updateAgentGatewayOperationSettings =
+          settings.updateAgentGatewayOperationSettings.toBuilder();
+      deleteAgentGatewaySettings = settings.deleteAgentGatewaySettings.toBuilder();
+      deleteAgentGatewayOperationSettings =
+          settings.deleteAgentGatewayOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -2591,6 +2770,11 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
               getMeshRouteViewSettings,
               listGatewayRouteViewsSettings,
               listMeshRouteViewsSettings,
+              listAgentGatewaysSettings,
+              getAgentGatewaySettings,
+              createAgentGatewaySettings,
+              updateAgentGatewaySettings,
+              deleteAgentGatewaySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -2910,6 +3094,31 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
 
       builder
           .listMeshRouteViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listAgentGatewaysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAgentGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAgentGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateAgentGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteAgentGatewaySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -3701,6 +3910,78 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createAgentGatewayOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAgentGatewayRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AgentGateway.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAgentGatewayOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAgentGatewayRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AgentGateway.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAgentGatewayOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAgentGatewayRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -4261,6 +4542,55 @@ public class NetworkServicesStubSettings extends StubSettings<NetworkServicesStu
             ListMeshRouteViewsRequest, ListMeshRouteViewsResponse, ListMeshRouteViewsPagedResponse>
         listMeshRouteViewsSettings() {
       return listMeshRouteViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAgentGateways. */
+    public PagedCallSettings.Builder<
+            ListAgentGatewaysRequest, ListAgentGatewaysResponse, ListAgentGatewaysPagedResponse>
+        listAgentGatewaysSettings() {
+      return listAgentGatewaysSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentGateway. */
+    public UnaryCallSettings.Builder<GetAgentGatewayRequest, AgentGateway>
+        getAgentGatewaySettings() {
+      return getAgentGatewaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentGateway. */
+    public UnaryCallSettings.Builder<CreateAgentGatewayRequest, Operation>
+        createAgentGatewaySettings() {
+      return createAgentGatewaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAgentGateway. */
+    public OperationCallSettings.Builder<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        createAgentGatewayOperationSettings() {
+      return createAgentGatewayOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentGateway. */
+    public UnaryCallSettings.Builder<UpdateAgentGatewayRequest, Operation>
+        updateAgentGatewaySettings() {
+      return updateAgentGatewaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAgentGateway. */
+    public OperationCallSettings.Builder<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+        updateAgentGatewayOperationSettings() {
+      return updateAgentGatewayOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentGateway. */
+    public UnaryCallSettings.Builder<DeleteAgentGatewayRequest, Operation>
+        deleteAgentGatewaySettings() {
+      return deleteAgentGatewaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAgentGateway. */
+    public OperationCallSettings.Builder<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+        deleteAgentGatewayOperationSettings() {
+      return deleteAgentGatewayOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -82,7 +82,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The parent resource of the Mesh. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The parent resource of the Mesh. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -621,7 +621,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The parent resource of the Mesh. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -647,7 +647,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The parent resource of the Mesh. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -673,7 +673,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The parent resource of the Mesh. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -698,7 +698,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The parent resource of the Mesh. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -719,7 +719,7 @@ public final class CreateMeshRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The parent resource of the Mesh. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
