@@ -38,6 +38,8 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLParameters;
@@ -132,10 +134,11 @@ public class ITLocalSslValidationTest {
                       + "  }\n"
                       + "}";
             }
+            byte[] responseBytes = response.getBytes(StandardCharsets.UTF_8);
             exchange.getResponseHeaders().set("Content-Type", "application/json");
-            exchange.sendResponseHeaders(200, response.length());
+            exchange.sendResponseHeaders(200, responseBytes.length);
             try (OutputStream os = exchange.getResponseBody()) {
-              os.write(response.getBytes());
+              os.write(responseBytes);
             }
           });
     }
@@ -201,14 +204,24 @@ public class ITLocalSslValidationTest {
     builder.redirectErrorStream(true);
     Process process = builder.start();
 
-    String output;
-    try (InputStreamReader reader =
-        new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8)) {
-      output = CharStreams.toString(reader);
+    String output = "";
+    boolean finished = false;
+    try {
+      try (InputStreamReader reader =
+          new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8)) {
+        output = CharStreams.toString(reader);
+      }
+      finished = process.waitFor(10, TimeUnit.SECONDS);
+      if (!finished) {
+        throw new TimeoutException("Subprocess timed out after 10 seconds");
+      }
+      int exitCode = process.exitValue();
+      return new ProcessResult(exitCode, output);
+    } finally {
+      if (!finished && process.isAlive()) {
+        process.destroyForcibly();
+      }
     }
-
-    int exitCode = process.waitFor();
-    return new ProcessResult(exitCode, output);
   }
 
   @Test
