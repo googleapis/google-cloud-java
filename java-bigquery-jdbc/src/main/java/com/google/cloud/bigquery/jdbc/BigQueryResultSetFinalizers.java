@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.core.InternalApi;
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
+import java.util.concurrent.Future;
 
 @InternalApi
 class BigQueryResultSetFinalizers {
@@ -27,44 +28,44 @@ class BigQueryResultSetFinalizers {
 
   @InternalApi
   static class ArrowResultSetFinalizer extends PhantomReference<BigQueryArrowResultSet> {
-    Thread ownedThread;
+    Future<?> ownedTask;
 
     public ArrowResultSetFinalizer(
         BigQueryArrowResultSet referent,
         ReferenceQueue<? super BigQueryArrowResultSet> q,
-        Thread ownedThread) {
+        Future<?> ownedTask) {
       super(referent, q);
-      this.ownedThread = ownedThread;
+      this.ownedTask = ownedTask;
     }
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
       LOG.finestTrace("finalizeResources");
-      if (ownedThread != null && !ownedThread.isInterrupted()) {
-        ownedThread.interrupt();
+      if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+        ownedTask.cancel(true);
       }
     }
   }
 
   @InternalApi
   static class JsonResultSetFinalizer extends PhantomReference<BigQueryJsonResultSet> {
-    Thread[] ownedThreads;
+    Future<?>[] ownedTasks;
 
     public JsonResultSetFinalizer(
         BigQueryJsonResultSet referent,
         ReferenceQueue<? super BigQueryJsonResultSet> q,
-        Thread[] ownedThreads) {
+        Future<?>[] ownedTasks) {
       super(referent, q);
-      this.ownedThreads = ownedThreads;
+      this.ownedTasks = ownedTasks;
     }
 
     // Free resources. Remove all the hard refs
     public void finalizeResources() {
       LOG.finestTrace("finalizeResources");
-      if (ownedThreads != null) {
-        for (Thread ownedThread : ownedThreads) {
-          if (!ownedThread.isInterrupted()) {
-            ownedThread.interrupt();
+      if (ownedTasks != null) {
+        for (Future<?> ownedTask : ownedTasks) {
+          if (ownedTask != null && !ownedTask.isCancelled() && !ownedTask.isDone()) {
+            ownedTask.cancel(true);
           }
         }
       }

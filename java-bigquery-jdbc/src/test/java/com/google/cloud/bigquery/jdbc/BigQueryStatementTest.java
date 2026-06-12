@@ -67,6 +67,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
@@ -150,6 +152,8 @@ public class BigQueryStatementTest {
         .when(bigQueryConnection)
         .getQueryDialect();
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
+    ExecutorService executorService = mock(ExecutorService.class);
+    doReturn(executorService).when(bigQueryConnection).getExecutorService();
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -252,7 +256,7 @@ public class BigQueryStatementTest {
     doReturn(readSession)
         .when(bigQueryStatementSpy)
         .getReadSession(any(CreateReadSessionRequest.class));
-    Thread mockWorker = new Thread();
+    Future<?> mockWorker = mock(Future.class);
     doReturn(mockWorker)
         .when(bigQueryStatementSpy)
         .populateArrowBufferedQueue(
