@@ -2414,7 +2414,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   /**
-   * Helper to retrieve the retry algorithm wrapped for safe HTTP 5xx error retries.
+   * Helper to retrieve the retry algorithm wrapped for HTTP error retries.
    *
    * <p>This delegates to {@link BigQueryRetryHelper#maybeWrapForHttpRetry} to ensure safe
    * conditional wrapping of the default algorithm while leaving custom user algorithms untouched.
