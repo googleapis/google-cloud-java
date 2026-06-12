@@ -59,6 +59,7 @@ final class BigQueryJdbcProxyUtility {
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
+  private static final HttpTransport DEFAULT_TRANSPORT = new NetHttpTransport.Builder().build();
 
   private BigQueryJdbcProxyUtility() {}
 
@@ -144,8 +145,7 @@ final class BigQueryJdbcProxyUtility {
           getHttpTransportFactory(
               proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
     } else {
-      HttpTransport defaultTransport = new NetHttpTransport.Builder().build();
-      httpTransportOptionsBuilder.setHttpTransportFactory(() -> defaultTransport);
+      httpTransportOptionsBuilder.setHttpTransportFactory(() -> DEFAULT_TRANSPORT);
     }
 
     if (connectTimeout != null) {
