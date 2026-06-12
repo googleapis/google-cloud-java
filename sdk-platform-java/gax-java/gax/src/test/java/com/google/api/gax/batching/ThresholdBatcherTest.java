@@ -30,6 +30,7 @@
 package com.google.api.gax.batching;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -37,7 +38,6 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
-import static org.awaitility.Awaitility.await;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -196,12 +196,16 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the executor to push the batch
-    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(7));
     batcher.add(SimpleBatch.fromInteger(9));
     // Give time for the executor to push the batch
-    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
@@ -228,7 +232,9 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the delay to trigger and push the batch
-    await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
