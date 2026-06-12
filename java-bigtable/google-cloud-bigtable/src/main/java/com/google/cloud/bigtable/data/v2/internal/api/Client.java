@@ -33,7 +33,9 @@ import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.NettyWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import io.grpc.CallOptions;
 import io.opencensus.stats.Stats;
@@ -71,6 +73,10 @@ public class Client implements AutoCloseable {
   private final FeatureFlags featureFlags;
   private final ClientInfo clientInfo;
   private final Resource<ScheduledExecutorService> backgroundExecutor;
+  // Hashed-wheel timer for heartbeat / deadline / watchdog / retry scheduling. Built over
+  // backgroundExecutor (the timer's tick thread dispatches bodies onto it). Single tick thread per
+  // Client, shared across every SessionPoolImpl.
+  private final BigtableTimer sessionTimer;
 
   private final CallOptions defaultCallOptions;
   private final ChannelPool channelPool;
@@ -166,6 +172,9 @@ public class Client implements AutoCloseable {
     this.metrics = metrics;
     this.configManager = configManager;
     this.backgroundExecutor = bgExecutor;
+    // Timer's tick thread dispatches bodies onto backgroundExecutor — tick-thread-blocking work
+    // (anything that takes a pool lock) gets handed off there instead of stalling the wheel.
+    this.sessionTimer = new NettyWheelTimer("bigtable-session-timer", bgExecutor.get());
 
     defaultCallOptions = CallOptions.DEFAULT;
 
@@ -202,6 +211,8 @@ public class Client implements AutoCloseable {
     metrics.close();
     channelPool.close();
     configManager.close();
+    // Stop the timer before tearing down backgroundExecutor (the timer's dispatcher).
+    sessionTimer.stop();
     backgroundExecutor.close();
   }
 
@@ -216,7 +227,7 @@ public class Client implements AutoCloseable {
             tableId,
             permission,
             metrics.get(),
-            backgroundExecutor.get());
+            sessionTimer);
     sessionPools.add(tableAsync.getSessionPool());
     return tableAsync;
   }
@@ -234,7 +245,7 @@ public class Client implements AutoCloseable {
             viewId,
             permission,
             metrics.get(),
-            backgroundExecutor.get());
+            sessionTimer);
     sessionPools.add(viewAsync.getSessionPool());
     return viewAsync;
   }
@@ -251,7 +262,7 @@ public class Client implements AutoCloseable {
             viewId,
             permission,
             metrics.get(),
-            backgroundExecutor.get());
+            sessionTimer);
     sessionPools.add(viewAsync.getSessionPool());
     return viewAsync;
   }

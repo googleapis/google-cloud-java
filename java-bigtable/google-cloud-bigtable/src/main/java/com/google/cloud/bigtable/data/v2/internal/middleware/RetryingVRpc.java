@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.data.v2.internal.middleware;
 
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
+import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
@@ -26,7 +27,6 @@ import io.grpc.Status;
 import io.grpc.SynchronizationContext;
 import java.util.Optional;
 import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -46,7 +46,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private VRpcCallContext context;
   private VRpcTracer tracer;
 
-  private final ScheduledExecutorService executor;
+  private final BigtableTimer timer;
   private final SynchronizationContext syncContext;
 
   // current state and all the flags don't need to be volatile because they're only updated within
@@ -56,13 +56,13 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   // Breaks the loop if uncaught exception happens during sync context execution.
   private boolean isCancelling;
 
-  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, ScheduledExecutorService executor) {
+  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, BigtableTimer timer) {
     this.attemptFactory = supplier;
 
     grpcContext = Context.current();
     otelContext = io.opentelemetry.context.Context.current();
 
-    this.executor = otelContext.wrap(executor);
+    this.timer = timer;
     this.syncContext =
         new SynchronizationContext(
             (t, e) -> {
@@ -271,7 +271,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   class Scheduled extends State {
     private final Duration retryDelay;
-    private SynchronizationContext.ScheduledHandle future;
+    private BigtableTimer.Timeout future;
 
     Scheduled(Duration retryDelay) {
       this.retryDelay = retryDelay;
@@ -280,12 +280,23 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     @Override
     public void onStart() {
       try {
+        // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
+        // the moment the body runs, not just while the dispatcher is invoking the outer task.
+        // syncContext.execute may queue the inner runnable for a later drain on a different
+        // thread; an outer wrap's scope would already be closed by then.
         future =
-            syncContext.schedule(
-                () -> grpcContext.wrap(() -> onStateChange(new Idle())).run(),
+            timer.newTimeout(
+                () ->
+                    syncContext.execute(
+                        () ->
+                            grpcContext.wrap(
+                                    () ->
+                                        otelContext
+                                            .wrap(() -> onStateChange(new Idle()))
+                                            .run())
+                                .run()),
                 Durations.toMillis(retryDelay),
-                TimeUnit.MILLISECONDS,
-                executor);
+                TimeUnit.MILLISECONDS);
       } catch (RejectedExecutionException e) {
         onStateChange(
             new Done(
@@ -299,11 +310,10 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     @Override
     public void onCancel(String reason, Throwable throwable) {
-      // future can be null if schedule throws an exception that's not RejectedExecutionException.
-      // In which case sync context uncaught exception handler will be called, which calls cancel on
-      // the current
-      // state before transition into done state.
-      if (future != null && future.isPending()) {
+      // future can be null if newTimeout throws an exception. In which case sync context uncaught
+      // exception handler will be called, which calls cancel on the current state before
+      // transition into done state.
+      if (future != null && !future.isCancelled()) {
         future.cancel();
       }
     }

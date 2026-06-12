@@ -49,6 +49,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -70,6 +71,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // A time in the future to skip heartbeat checks when there's no active vRPCs on the session
   static final Duration FUTURE_TIME = Duration.ofMinutes(30);
 
+  private static final CloseSessionRequest MISSED_HEARTBEAT_CLOSE_REQUEST =
+      CloseSessionRequest.newBuilder()
+          .setReason(CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+          .setDescription("missed heartbeat")
+          .build();
+
   /*
    * This lock should be mostly uncontended - all access should be naturally interleaved. Contention
    * can only really happen when an unsolicited gRPC control message (ie GOAWAY) arrives at the same
@@ -79,6 +86,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private final Object lock = new Object();
 
   private final Clock clock;
+  private final BigtableTimer timer;
 
   private final SessionTracer tracer;
   private final DebugTagTracer debugTagTracer;
@@ -135,12 +143,23 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   // volatile: written from multiple sites without holding the lock (startRpc, handleVRpc*,
   // handleHeartBeatResponse). Stale reads are acceptable — nextHeartbeat is used only as a
-  // scheduling hint by the pool's heartbeat monitor.
+  // scheduling hint by the per-session heartbeat tick.
   private volatile Instant nextHeartbeat;
 
+  // Handle for the in-flight heartbeat tick (one outstanding at a time). Set under lock when the
+  // session enters READY (handleOpenSessionResponse) and again from checkHeartbeat to chain the
+  // next tick. Cancelled under lock from updateState when the session transitions past READY.
+  @GuardedBy("lock")
+  @Nullable
+  private BigtableTimer.Timeout heartbeatTimeout;
+
   public SessionImpl(
-      Metrics metrics, SessionPoolInfo poolInfo, long sessionNum, SessionStream stream) {
-    this(metrics, Clock.systemUTC(), poolInfo, sessionNum, stream);
+      Metrics metrics,
+      SessionPoolInfo poolInfo,
+      long sessionNum,
+      SessionStream stream,
+      BigtableTimer timer) {
+    this(metrics, Clock.systemUTC(), poolInfo, sessionNum, stream, timer);
   }
 
   SessionImpl(
@@ -148,8 +167,10 @@ public class SessionImpl implements Session, VRpcSessionApi {
       Clock clock,
       SessionPoolInfo poolInfo,
       long sessionNum,
-      SessionStream stream) {
+      SessionStream stream,
+      BigtableTimer timer) {
     this.clock = clock;
+    this.timer = timer;
     this.info = SessionInfo.create(poolInfo, sessionNum);
     this.stream = stream;
     this.tracer = metrics.newSessionTracer(poolInfo);
@@ -383,6 +404,46 @@ public class SessionImpl implements Session, VRpcSessionApi {
     }
   }
 
+  @GuardedBy("lock")
+  private void scheduleHeartbeatCheck() {
+    heartbeatTimeout =
+        timer.newTimeout(
+            this::checkHeartbeat,
+            HEARTBEAT_CHECK_INTERVAL.toMillis(),
+            TimeUnit.MILLISECONDS);
+  }
+
+  @GuardedBy("lock")
+  private void cancelHeartbeatTimeout() {
+    if (heartbeatTimeout != null) {
+      heartbeatTimeout.cancel();
+      heartbeatTimeout = null;
+    }
+  }
+
+  // Runs on the wheel-timer tick thread. Takes the per-session lock to read state/nextHeartbeat
+  // and force-close on miss, then chains the next tick by re-scheduling. If the session is past
+  // WAIT_SERVER_CLOSE we drop the chain — no further checks are useful.
+  private void checkHeartbeat() {
+    CloseSessionRequest missed = null;
+    synchronized (lock) {
+      if (state.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
+        return;
+      }
+      if (clock.instant().isAfter(nextHeartbeat)) {
+        missed = MISSED_HEARTBEAT_CLOSE_REQUEST;
+      } else {
+        scheduleHeartbeatCheck();
+      }
+    }
+    if (missed != null) {
+      logger.warning(
+          String.format("Missed heartbeat for %s, forcing session close", info.getLogName()));
+      // forceClose acquires the lock again and performs its own state checks.
+      forceClose(missed);
+    }
+  }
+
   // region SessionStream event handlers
   private void dispatchResponseMessage(SessionResponse message) {
     switch (message.getPayloadCase()) {
@@ -434,6 +495,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
       }
       localPeerInfo = stream.getPeerInfo();
       updateState(SessionState.READY);
+      scheduleHeartbeatCheck();
     }
     tracer.onOpen(localPeerInfo);
     sessionListener.onReady(openSession);
@@ -703,6 +765,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private void updateState(SessionState newState) {
     this.state = newState;
     this.lastStateChangedAt = clock.instant();
+    // Once we're past READY, no further heartbeat checks are useful: checkHeartbeat short-circuits
+    // on state.phase >= WAIT_SERVER_CLOSE. Cancel any pending tick to keep the wheel clean during
+    // session churn.
+    if (newState.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
+      cancelHeartbeatTimeout();
+    }
   }
 
   private static String formatPeerInfo(PeerInfo peerInfo) {
