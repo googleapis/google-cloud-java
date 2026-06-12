@@ -864,6 +864,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
       }
+      if (ex instanceof RuntimeException) {
+        throw (ex instanceof BigQueryJdbcRuntimeException)
+            ? (BigQueryJdbcRuntimeException) ex
+            : new BigQueryJdbcRuntimeException(ex);
+      }
+      if (ex instanceof SQLException) {
+        throw (ex instanceof BigQueryJdbcException)
+            ? (BigQueryJdbcException) ex
+            : new BigQueryJdbcException(ex);
+      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
   }
@@ -1073,6 +1083,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           LOG.warning(
               "%s Interrupted @ processJsonQueryResponseResults: %s",
               Thread.currentThread().getName(), e.getMessage());
+          Thread.currentThread().interrupt();
+          throw new BigQueryJdbcException("Query execution was interrupted.", e);
         }
       }
 
@@ -1081,15 +1093,28 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           parseAndPopulateRpcDataAsync(
               schema, this.bigQueryFieldValueListWrapperBlockingQueue, rpcResponseQueue);
       taskList.add(populateBufferWorker);
-    } catch (RejectedExecutionException | OutOfMemoryError e) {
+    } catch (Exception | OutOfMemoryError e) {
       for (Future<?> task : taskList) {
         if (task != null) {
           task.cancel(true);
         }
       }
-      throw new BigQueryJdbcException(
-          "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
-          e);
+      if (e instanceof RejectedExecutionException || e instanceof OutOfMemoryError) {
+        throw new BigQueryJdbcException(
+            "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+            e);
+      }
+      if (e instanceof RuntimeException) {
+        throw (e instanceof BigQueryJdbcRuntimeException)
+            ? (BigQueryJdbcRuntimeException) e
+            : new BigQueryJdbcRuntimeException(e);
+      }
+      if (e instanceof SQLException) {
+        throw (e instanceof BigQueryJdbcException)
+            ? (BigQueryJdbcException) e
+            : new BigQueryJdbcException(e);
+      }
+      throw new BigQueryJdbcException(e.getMessage(), e);
     }
 
     Future<?>[] jsonWorkers = taskList.toArray(new Future<?>[0]);
