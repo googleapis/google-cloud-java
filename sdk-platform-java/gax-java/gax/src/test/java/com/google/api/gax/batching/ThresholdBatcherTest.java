@@ -37,6 +37,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
+import static org.awaitility.Awaitility.await;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -44,6 +45,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.common.collect.ImmutableList;
+import java.time.Duration;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -194,14 +196,12 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the executor to push the batch
-    Thread.sleep(100);
-    assertThat(receiver.getBatches()).hasSize(1);
+    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(7));
     batcher.add(SimpleBatch.fromInteger(9));
     // Give time for the executor to push the batch
-    Thread.sleep(100);
-    assertThat(receiver.getBatches()).hasSize(2);
+    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
@@ -228,8 +228,7 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the delay to trigger and push the batch
-    Thread.sleep(500);
-    assertThat(receiver.getBatches()).hasSize(1);
+    await().atMost(Duration.ofSeconds(1)).untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
