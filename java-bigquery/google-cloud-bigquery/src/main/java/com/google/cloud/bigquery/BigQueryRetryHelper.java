@@ -121,7 +121,7 @@ public class BigQueryRetryHelper extends RetryHelper {
     return retryingFuture.get();
   }
 
-  static <V> ResultRetryAlgorithm<V> getHttpRetryAlgorithm(ResultRetryAlgorithm<V> algorithm) {
+  static <V> ResultRetryAlgorithm<V> maybeWrapForHttpRetry(ResultRetryAlgorithm<V> algorithm) {
     if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
       return wrapDefaultAlgorithm(algorithm);
     }
