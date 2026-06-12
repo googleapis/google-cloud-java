@@ -5305,9 +5305,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           if (isCancelled()) {
             throw new CancellationException();
           }
-          thread.join();
-          if (isCancelled()) {
-            throw new CancellationException();
+          while (thread.getState() != Thread.State.TERMINATED) {
+            if (isCancelled()) {
+              throw new CancellationException();
+            }
+            thread.join(50);
           }
           return null;
         }
@@ -5318,12 +5320,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           if (isCancelled()) {
             throw new CancellationException();
           }
-          unit.timedJoin(thread, timeout);
-          if (isCancelled()) {
-            throw new CancellationException();
-          }
-          if (thread.isAlive()) {
-            throw new TimeoutException();
+          long remainingNanos = unit.toNanos(timeout);
+          long deadline = System.nanoTime() + remainingNanos;
+          while (thread.getState() != Thread.State.TERMINATED) {
+            if (isCancelled()) {
+              throw new CancellationException();
+            }
+            if (remainingNanos <= 0) {
+              throw new TimeoutException();
+            }
+            long remainingMillis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
+            if (remainingMillis <= 0) {
+              remainingMillis = 1;
+            }
+            thread.join(Math.min(remainingMillis, 50));
+            remainingNanos = deadline - System.nanoTime();
           }
           return null;
         }
