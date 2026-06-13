@@ -542,9 +542,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                           status, trailers)));
       for (PendingVRpc<?, ?> vrpc : toBeClosed) {
         try {
-          vrpc.getListener().onClose(result);
+          vrpc.ctx
+              .getExecutor()
+              .execute(
+                  () -> {
+                    try {
+                      vrpc.getListener().onClose(result);
+                    } catch (Throwable t) {
+                      logger.log(Level.WARNING, "Exception when closing request", t);
+                    }
+                  });
         } catch (Throwable t) {
-          logger.log(Level.WARNING, "Exception when closing request", t);
+          logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
         }
       }
     }
@@ -662,10 +671,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
       synchronized (SessionPoolImpl.this) {
         if (SessionPoolImpl.this.poolState != PoolState.STARTED) {
-          listener.onClose(
+          VRpcResult result =
               VRpcResult.createUncommitedError(
                   Status.UNAVAILABLE.withCause(
-                      new IllegalStateException("SessionPool is closed"))));
+                      new IllegalStateException("SessionPool is closed")));
+          ctx.getExecutor().execute(() -> listener.onClose(result));
           return;
         }
         pendingRpcs.add(this);
@@ -724,7 +734,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       if (delegateToRealCall) {
         realCall.cancel(status.getDescription(), status.getCause());
       } else {
-        listener.onClose(VRpcResult.createRejectedError(status));
+        VRpcResult result = VRpcResult.createRejectedError(status);
+        ctx.getExecutor().execute(() -> listener.onClose(result));
       }
     }
 
