@@ -320,8 +320,7 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertThrows(
-        IOException.class, () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertThrows(IOException.class, () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   // If the well-known gcloud certificate configuration file exists, canBeEnabled should return

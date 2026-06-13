@@ -191,6 +191,7 @@ public class MtlsUtils {
    * Resolves the mutual TLS (mTLS) certificate configuration file.
    *
    * <p>The configuration file is resolved in the following order of precedence:
+   *
    * <ol>
    *   <li>The developer-provided {@code certConfigPathOverride} (if not null).
    *   <li>The path specified by the {@code GOOGLE_API_CERTIFICATE_CONFIG} environment variable.
@@ -295,7 +296,7 @@ public class MtlsUtils {
         // Keep using it as-is without re-initializing.
         return baseTransportFactory;
       }
-      
+
       if (baseTransportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
         // This is the default HttpTransportFactory assigned by credentials.
         // Automatically discover and load client certificates to construct an mTLS factory.
@@ -304,7 +305,7 @@ public class MtlsUtils {
         KeyStore mtlsKeyStore = x509Provider.getKeyStore();
         return new MtlsHttpTransportFactory(mtlsKeyStore);
       }
-      
+
       // A user configured non-mTLS HttpTransportFactory was explicitly injected.
       // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
       throw new IOException(

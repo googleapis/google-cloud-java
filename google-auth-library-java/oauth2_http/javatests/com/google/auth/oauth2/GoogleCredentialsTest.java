@@ -1232,7 +1232,6 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
   }
 
-
   @Test
   public void regionalAccessBoundary_deduplicationOfConcurrentRefreshes()
       throws IOException, InterruptedException {
@@ -1394,9 +1393,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     }
 
     TestRegionalCredentials(
-        AccessToken token,
-        EnvironmentProvider envProvider,
-        HttpTransportFactory transportFactory) {
+        AccessToken token, EnvironmentProvider envProvider, HttpTransportFactory transportFactory) {
       super(GoogleCredentials.newBuilder().setAccessToken(token));
       this.envProvider = envProvider;
       this.transportFactory = transportFactory;
