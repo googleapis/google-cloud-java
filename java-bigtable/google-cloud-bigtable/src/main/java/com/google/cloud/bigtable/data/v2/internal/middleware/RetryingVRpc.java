@@ -169,57 +169,52 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
           request,
           context,
           new VRpcListener<RespT>() {
+            // VRpcImpl dispatches its callbacks via ctx.getExecutor() already, so these methods
+            // run inside the op-executor task — no need to re-dispatch here.
             @Override
             public void onMessage(RespT msg) {
-              context.getExecutor().execute(
-                  () -> {
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding response {0} because the attempt is no longer active.",
-                          msg);
-                      return;
-                    }
-                    tracer.onResponseReceived();
-                    Stopwatch appTimer = Stopwatch.createStarted();
-                    try {
-                      listener.onMessage(msg);
-                    } finally {
-                      tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
-                    }
-                  });
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding response {0} because the attempt is no longer active.",
+                    msg);
+                return;
+              }
+              tracer.onResponseReceived();
+              Stopwatch appTimer = Stopwatch.createStarted();
+              try {
+                listener.onMessage(msg);
+              } finally {
+                tracer.recordApplicationBlockingLatencies(appTimer.elapsed());
+              }
             }
 
             @Override
             public void onClose(VRpcResult result) {
-              context.getExecutor().execute(
-                  () -> {
-                    tracer.onAttemptFinish(result);
-                    if (currentState != Active.this) {
-                      LOG.log(
-                          Level.FINE,
-                          "Discarding server close with result {0} because the the attempt is no"
-                              + " longer active.",
-                          result);
-                      return;
-                    }
-                    if (shouldRetry(result)) {
-                      context = context.createForNextAttempt();
-                      Duration retryDelay =
-                          Optional.ofNullable(result.getRetryInfo())
-                              .map(RetryInfo::getRetryDelay)
-                              .orElse(Durations.ZERO);
-                      if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
-                        Scheduled scheduled = new Scheduled(retryDelay);
-                        onStateChange(scheduled);
-                      } else {
-                        onStateChange(new Idle());
-                      }
-                      return;
-                    }
-
-                    onStateChange(new Done(result));
-                  });
+              tracer.onAttemptFinish(result);
+              if (currentState != Active.this) {
+                LOG.log(
+                    Level.FINE,
+                    "Discarding server close with result {0} because the the attempt is no"
+                        + " longer active.",
+                    result);
+                return;
+              }
+              if (shouldRetry(result)) {
+                context = context.createForNextAttempt();
+                Duration retryDelay =
+                    Optional.ofNullable(result.getRetryInfo())
+                        .map(RetryInfo::getRetryDelay)
+                        .orElse(Durations.ZERO);
+                if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
+                  Scheduled scheduled = new Scheduled(retryDelay);
+                  onStateChange(scheduled);
+                } else {
+                  onStateChange(new Idle());
+                }
+                return;
+              }
+              onStateChange(new Done(result));
             }
           });
     }
