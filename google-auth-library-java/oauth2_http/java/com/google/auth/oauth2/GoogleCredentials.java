@@ -399,6 +399,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     }
 
     // Automatically discover certificates or enforce mTLS policy if applicable
+    // TODO: https://github.com/googleapis/google-cloud-java/issues/13461
     transportFactory =
         MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
             transportFactory, getEnvironmentProvider(), getPropertyProvider(), null);
@@ -451,10 +452,6 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       // Sets off an async refresh for request-metadata.
       refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
     } catch (IOException e) {
-      if (MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider())
-          == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
-        throw e;
-      }
       // Ignore failure in async refresh trigger.
     }
     return metadata;
@@ -485,11 +482,6 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
             try {
               refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
             } catch (IOException e) {
-              if (MtlsUtils.getMtlsEndpointUsagePolicy(getEnvironmentProvider())
-                  == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
-                callback.onFailure(e);
-                return;
-              }
               // Ignore failure in async refresh trigger.
             }
             callback.onSuccess(metadata);

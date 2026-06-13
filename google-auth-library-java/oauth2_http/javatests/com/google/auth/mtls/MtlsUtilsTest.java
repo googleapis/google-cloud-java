@@ -244,9 +244,9 @@ class MtlsUtilsTest {
     assertEquals("APPDATA environment variable is not set on Windows.", exception.getMessage());
   }
 
-  // If client certificate usage is explicitly disabled, canMtlsBeEnabled should return false.
+  // If client certificate usage is explicitly disabled, canBeEnabled should return false.
   @Test
-  void canMtlsBeEnabled_allowanceExplicitFalse_returnsFalse() throws IOException {
+  void canBeEnabled_allowanceExplicitFalse_returnsFalse() throws IOException {
     EnvironmentProvider envProvider =
         new EnvironmentProvider() {
           @Override
@@ -259,13 +259,13 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertFalse(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   // If client certificate usage is explicitly enabled and a valid configuration is present,
-  // canMtlsBeEnabled should return true.
+  // canBeEnabled should return true.
   @Test
-  void canMtlsBeEnabled_allowanceExplicitTrue_withConfig_returnsTrue() throws IOException {
+  void canBeEnabled_allowanceExplicitTrue_withConfig_returnsTrue() throws IOException {
     EnvironmentProvider envProvider =
         new EnvironmentProvider() {
           @Override
@@ -281,13 +281,13 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   // If client certificate usage is unset but a valid configuration is present, mTLS should be
   // enabled by default (returns true).
   @Test
-  void canMtlsBeEnabled_allowanceUnset_withConfig_returnsTrue() throws IOException {
+  void canBeEnabled_allowanceUnset_withConfig_returnsTrue() throws IOException {
     EnvironmentProvider envProvider =
         new EnvironmentProvider() {
           @Override
@@ -300,13 +300,13 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   // If the GOOGLE_API_CERTIFICATE_CONFIG environment variable points to a non-existent file,
-  // canMtlsBeEnabled should throw an IOException.
+  // canBeEnabled should throw an IOException.
   @Test
-  void canMtlsBeEnabled_envVarConfigMissingFile_throwsIOException() throws IOException {
+  void canBeEnabled_envVarConfigMissingFile_throwsIOException() throws IOException {
     Path nonExistentConfig = tempDir.resolve("non_existent.json");
     EnvironmentProvider envProvider =
         new EnvironmentProvider() {
@@ -321,13 +321,13 @@ class MtlsUtilsTest {
     PropertyProvider propProvider = (name, def) -> def;
 
     assertThrows(
-        IOException.class, () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+        IOException.class, () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
-  // If the well-known gcloud certificate configuration file exists, canMtlsBeEnabled should return
+  // If the well-known gcloud certificate configuration file exists, canBeEnabled should return
   // true.
   @Test
-  void canMtlsBeEnabled_wellKnownConfigExists_returnsTrue() throws IOException {
+  void canBeEnabled_wellKnownConfigExists_returnsTrue() throws IOException {
     Path gcloudDir = tempDir.resolve(".config/gcloud");
     Files.createDirectories(gcloudDir);
     Path configFile = gcloudDir.resolve("certificate_config.json");
@@ -348,11 +348,11 @@ class MtlsUtilsTest {
           }
         };
 
-    assertTrue(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   @Test
-  void canMtlsBeEnabled_alwaysPolicy_clientCertDisabled_throwsException() {
+  void canBeEnabled_alwaysPolicy_clientCertDisabled_throwsException() {
     EnvironmentProvider envProvider =
         name -> {
           if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
@@ -367,7 +367,7 @@ class MtlsUtilsTest {
 
     assertThrows(
         CertificateSourceUnavailableException.class,
-        () -> MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+        () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   @Test
@@ -395,7 +395,7 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void canMtlsBeEnabled_policyNever_returnsFalse() throws IOException {
+  void canBeEnabled_policyNever_returnsFalse() throws IOException {
     EnvironmentProvider envProvider =
         new EnvironmentProvider() {
           @Override
@@ -411,7 +411,7 @@ class MtlsUtilsTest {
         };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertFalse(MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
   }
 
   private String createJsonConfigString(Path certPath, Path keyPath) {

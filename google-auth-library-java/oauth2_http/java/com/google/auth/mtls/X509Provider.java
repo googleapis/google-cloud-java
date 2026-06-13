@@ -129,6 +129,6 @@ public class X509Provider implements MtlsProvider {
 
   @Override
   public boolean isAvailable() throws IOException {
-    return MtlsUtils.canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
+    return MtlsUtils.canBeEnabled(envProvider, propProvider, certConfigPathOverride);
   }
 }

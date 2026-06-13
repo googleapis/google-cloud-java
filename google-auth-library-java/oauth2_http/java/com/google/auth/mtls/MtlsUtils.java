@@ -159,7 +159,7 @@ public class MtlsUtils {
    * @throws IOException if the configuration file is present but contains missing or malformed
    *     files
    */
-  public static boolean canMtlsBeEnabled(
+  public static boolean canBeEnabled(
       EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
       throws IOException {
 
@@ -286,34 +286,38 @@ public class MtlsUtils {
 
     MtlsEndpointUsagePolicy mtlsPolicy = getMtlsEndpointUsagePolicy(envProvider);
     try {
-      boolean canMtls = canMtlsBeEnabled(envProvider, propProvider, certConfigPathOverride);
-      if (canMtls) {
-        if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
-          // A custom MtlsHttpTransportFactory was already pre-configured by the user.
-          // Keep using it as-is without re-initializing.
-          return baseTransportFactory;
-        } else if (baseTransportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
-          // This is the default HttpTransportFactory assigned by credentials.
-          // Automatically discover and load client certificates to construct an mTLS factory.
-          X509Provider x509Provider =
-              new X509Provider(envProvider, propProvider, certConfigPathOverride);
-          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-          return new MtlsHttpTransportFactory(mtlsKeyStore);
-        } else {
-          // A user configured non-mTLS HttpTransportFactory was explicitly injected.
-          // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
-          throw new IOException(
-              "mTLS is enabled on the system, but a user configured non-mTLS HttpTransportFactory was provided: "
-                  + baseTransportFactory.getClass().getName());
-        }
+      if (!canBeEnabled(envProvider, propProvider, certConfigPathOverride)) {
+        return baseTransportFactory;
       }
+
+      if (baseTransportFactory instanceof MtlsHttpTransportFactory) {
+        // A custom MtlsHttpTransportFactory was already pre-configured by the user.
+        // Keep using it as-is without re-initializing.
+        return baseTransportFactory;
+      }
+      
+      if (baseTransportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY) {
+        // This is the default HttpTransportFactory assigned by credentials.
+        // Automatically discover and load client certificates to construct an mTLS factory.
+        X509Provider x509Provider =
+            new X509Provider(envProvider, propProvider, certConfigPathOverride);
+        KeyStore mtlsKeyStore = x509Provider.getKeyStore();
+        return new MtlsHttpTransportFactory(mtlsKeyStore);
+      }
+      
+      // A user configured non-mTLS HttpTransportFactory was explicitly injected.
+      // Reject it to avoid bypassing mTLS enforcement or overriding the user's factory.
+      throw new IOException(
+          "mTLS is enabled on the system, but a user configured non-mTLS HttpTransportFactory was provided: "
+              + baseTransportFactory.getClass().getName());
+
     } catch (Exception e) {
       if (mtlsPolicy == MtlsEndpointUsagePolicy.ALWAYS) {
         throw new IOException(
             "mTLS is configured to ALWAYS, but initialization failed: " + e.getMessage(), e);
       }
       // Graceful fallback to standard transport if mTLS initialization fails under AUTO policy
+      return baseTransportFactory;
     }
-    return baseTransportFactory;
   }
 }

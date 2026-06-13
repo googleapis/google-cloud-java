@@ -69,6 +69,8 @@ final class RegionalAccessBoundary implements Serializable {
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
+  private static MtlsUtils.MtlsEndpointUsagePolicy userMtlsPolicy = null;
+
   private final String encodedLocations;
   private final List<String> locations;
   private final long refreshTime;
@@ -190,10 +192,12 @@ final class RegionalAccessBoundary implements Serializable {
       throw new IllegalArgumentException("The provided access token is expired.");
     }
 
-    MtlsUtils.MtlsEndpointUsagePolicy mtlsPolicy =
-        MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
+    if (userMtlsPolicy == null) {
+      userMtlsPolicy =
+          MtlsUtils.getMtlsEndpointUsagePolicy(SystemEnvironmentProvider.getInstance());
+    }
     if (transportFactory instanceof com.google.auth.mtls.MtlsHttpTransportFactory
-        || mtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
+        || userMtlsPolicy == MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS) {
       url = url.replace("iamcredentials.googleapis.com", "iamcredentials.mtls.googleapis.com");
     }
 

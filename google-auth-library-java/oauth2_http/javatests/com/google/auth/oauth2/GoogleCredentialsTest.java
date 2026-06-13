@@ -1232,28 +1232,6 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
   }
 
-  @Test
-  public void regionalAccessBoundary_alwaysPolicy_missingCertConfig_throwsException() {
-    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
-    envProvider.setEnv("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
-
-    GoogleCredentials credentials =
-        new TestRegionalCredentials(new AccessToken("some-token", null), envProvider);
-
-    assertThrows(IOException.class, () -> credentials.getRequestMetadata());
-  }
-
-  @Test
-  public void regionalAccessBoundary_alwaysPolicy_userConfiguredNonMtlsFactory_throwsException() {
-    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
-    envProvider.setEnv("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
-
-    GoogleCredentials credentials =
-        new TestRegionalCredentials(
-            new AccessToken("some-token", null), envProvider, DUMMY_TRANSPORT_FACTORY);
-
-    assertThrows(IOException.class, () -> credentials.getRequestMetadata());
-  }
 
   @Test
   public void regionalAccessBoundary_deduplicationOfConcurrentRefreshes()
