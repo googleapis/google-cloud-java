@@ -72,7 +72,8 @@ public class TableBaseTest {
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
             noopMetrics,
-            mockTimer);
+            mockTimer,
+            com.google.common.util.concurrent.MoreExecutors.directExecutor());
     deadline = Deadline.after(1, TimeUnit.MINUTES);
     f = new UnaryResponseFuture<>();
   }

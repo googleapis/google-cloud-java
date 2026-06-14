@@ -37,6 +37,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.NettyWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.CallOptions;
 import io.opencensus.stats.Stats;
 import io.opencensus.tags.Tags;
@@ -45,6 +46,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -73,6 +75,11 @@ public class Client implements AutoCloseable {
   private final FeatureFlags featureFlags;
   private final ClientInfo clientInfo;
   private final Resource<ScheduledExecutorService> backgroundExecutor;
+  // Drains the per-op SerializingExecutor. Cached pool so a blocked user callback does not starve
+  // heartbeats, retry delays, or other vRPCs (which all run on backgroundExecutor).
+  // TODO: source from the gax TransportChannelProvider so transport and user-callback dispatch
+  // share the same pool. Blocked on missing APIs to extract the configured executor from gax.
+  private final Resource<ExecutorService> userCallbackExecutor;
   // Hashed-wheel timer for heartbeat / deadline / watchdog / retry scheduling. Built over
   // backgroundExecutor (the timer's tick thread dispatches bodies onto it). Single tick thread per
   // Client, shared across every SessionPoolImpl.
@@ -96,6 +103,12 @@ public class Client implements AutoCloseable {
             .build();
 
     ScheduledExecutorService backgroundExecutor = Executors.newScheduledThreadPool(4);
+    ExecutorService userCallbackExecutor =
+        Executors.newCachedThreadPool(
+            new ThreadFactoryBuilder()
+                .setNameFormat("bigtable-callback-%d")
+                .setDaemon(true)
+                .build());
 
     // TODO: compat layer: get this from settings
     String universeDomain = "googleapis.com";
@@ -143,6 +156,7 @@ public class Client implements AutoCloseable {
       }
       metrics.close();
       backgroundExecutor.shutdown();
+      userCallbackExecutor.shutdown();
       throw new RuntimeException("Failed to fetch initial config", e);
     }
 
@@ -156,7 +170,8 @@ public class Client implements AutoCloseable {
         settings.getChannelProvider(),
         Resource.createOwned(metrics, metrics::close),
         Resource.createOwned(configManager, configManager::close),
-        Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown));
+        Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
+        Resource.createOwned(userCallbackExecutor, userCallbackExecutor::shutdown));
   }
 
   public Client(
@@ -165,13 +180,15 @@ public class Client implements AutoCloseable {
       ChannelProvider channelProvider,
       Resource<Metrics> metrics,
       Resource<ClientConfigurationManager> configManager,
-      Resource<ScheduledExecutorService> bgExecutor)
+      Resource<ScheduledExecutorService> bgExecutor,
+      Resource<ExecutorService> userCallbackExecutor)
       throws IOException {
     this.featureFlags = featureFlags;
     this.clientInfo = clientInfo;
     this.metrics = metrics;
     this.configManager = configManager;
     this.backgroundExecutor = bgExecutor;
+    this.userCallbackExecutor = userCallbackExecutor;
     // Timer's tick thread dispatches bodies onto backgroundExecutor — tick-thread-blocking work
     // (anything that takes a pool lock) gets handed off there instead of stalling the wheel.
     this.sessionTimer = new NettyWheelTimer("bigtable-session-timer", bgExecutor.get());
@@ -214,6 +231,7 @@ public class Client implements AutoCloseable {
     // Stop the timer before tearing down backgroundExecutor (the timer's dispatcher).
     sessionTimer.stop();
     backgroundExecutor.close();
+    userCallbackExecutor.close();
   }
 
   public TableAsync openTableAsync(String tableId, Permission permission) {
@@ -227,7 +245,8 @@ public class Client implements AutoCloseable {
             tableId,
             permission,
             metrics.get(),
-            sessionTimer);
+            sessionTimer,
+            userCallbackExecutor.get());
     sessionPools.add(tableAsync.getSessionPool());
     return tableAsync;
   }
@@ -245,7 +264,8 @@ public class Client implements AutoCloseable {
             viewId,
             permission,
             metrics.get(),
-            sessionTimer);
+            sessionTimer,
+            userCallbackExecutor.get());
     sessionPools.add(viewAsync.getSessionPool());
     return viewAsync;
   }
@@ -262,7 +282,8 @@ public class Client implements AutoCloseable {
             viewId,
             permission,
             metrics.get(),
-            sessionTimer);
+            sessionTimer,
+            userCallbackExecutor.get());
     sessionPools.add(viewAsync.getSessionPool());
     return viewAsync;
   }

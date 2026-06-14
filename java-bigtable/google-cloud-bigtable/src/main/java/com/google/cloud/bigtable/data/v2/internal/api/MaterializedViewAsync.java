@@ -44,7 +44,8 @@ public class MaterializedViewAsync implements AutoCloseable, Closeable {
       String viewId,
       OpenMaterializedViewRequest.Permission permission,
       Metrics metrics,
-      BigtableTimer timer) {
+      BigtableTimer timer,
+      java.util.concurrent.Executor userCallbackExecutor) {
 
     MaterializedViewName viewName =
         MaterializedViewName.builder()
@@ -73,7 +74,8 @@ public class MaterializedViewAsync implements AutoCloseable, Closeable {
             callOptions,
             viewId,
             metrics,
-            timer);
+            timer,
+            userCallbackExecutor);
 
     return new MaterializedViewAsync(base);
   }
