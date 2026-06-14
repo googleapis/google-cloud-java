@@ -382,41 +382,48 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   @Override
-  public Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
-    synchronized (lock) {
-      if (currentRpc != null) {
-        return Status.INTERNAL.withDescription(
-            "Session error: RPC multiplexing is not yet supported");
-      }
-      if (state != SessionState.READY) {
-        return Status.INTERNAL.withDescription(
-            "Session error: Session was not ready, state = " + state);
-      }
+  public void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload) {
+    sessionSyncContext.execute(
+        () -> {
+          synchronized (lock) {
+            if (currentRpc != null) {
+              rpc.handleError(
+                  VRpcResult.createUncommitedError(
+                      Status.INTERNAL.withDescription(
+                          "Session error: RPC multiplexing is not yet supported")));
+              return;
+            }
+            if (state != SessionState.READY) {
+              rpc.handleError(
+                  VRpcResult.createUncommitedError(
+                      Status.INTERNAL.withDescription(
+                          "Session error: Session was not ready, state = " + state)));
+              return;
+            }
 
-      this.currentRpc = rpc;
-      stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
-      // Start monitoring for heartbeat when the vRPC is started. heartbeatInterval is read
-      // inside the lock to avoid a race with handleSessionParamsResponse(). nextHeartbeat is
-      // volatile and written here without an atomicity guarantee — that is intentional; it is
-      // only a scheduling hint (see field comment).
-      this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
-      // Arm the heartbeat check only while a vRPC is in flight. handleVRpcResponse /
-      // handleVRpcErrorResponse cancel it on completion; updateState cancels on shutdown.
-      scheduleHeartbeatCheck();
-      return Status.OK;
-    }
+            this.currentRpc = rpc;
+            stream.sendMessage(SessionRequest.newBuilder().setVirtualRpc(payload).build());
+            this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+            // Arm the heartbeat check only while a vRPC is in flight. handleVRpcResponse /
+            // handleVRpcErrorResponse cancel it on completion; updateState cancels on shutdown.
+            scheduleHeartbeatCheck();
+          }
+        });
   }
 
   @Override
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
-    synchronized (lock) {
-      if (currentRpc != null && rpcId == currentRpc.rpcId) {
-        currentCancel =
-            VRpcResult.createRejectedError(
-                Status.CANCELLED.withDescription(message).withCause(cause));
-      }
-      // do nothing if the rpc is already finished
-    }
+    sessionSyncContext.execute(
+        () -> {
+          synchronized (lock) {
+            if (currentRpc != null && rpcId == currentRpc.rpcId) {
+              currentCancel =
+                  VRpcResult.createRejectedError(
+                      Status.CANCELLED.withDescription(message).withCause(cause));
+            }
+            // do nothing if the rpc is already finished
+          }
+        });
   }
 
   @GuardedBy("lock")
@@ -542,9 +549,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
     // TODO: when stream is supported this should be updated to the next expected time instead of
     // session life time
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
-    VRpcImpl<?, ?, ?> localRpc;
-    VRpcResult localCancel;
-
+    VRpcImpl<?, ?, ?> rpc;
+    VRpcResult cancel;
     boolean needsClose;
 
     synchronized (lock) {
@@ -574,22 +580,22 @@ public class SessionImpl implements Session, VRpcSessionApi {
           vrpc.getRpcId());
 
       // reset state of the current rpc
-      localCancel = currentCancel;
-      currentCancel = null;
-      localRpc = currentRpc;
+      rpc = currentRpc;
+      cancel = currentCancel;
       // TODO: handle multiplexing
       currentRpc = null;
+      currentCancel = null;
       needsClose = (state == SessionState.CLOSING);
       // No active vRPC means no useful heartbeat deadline; drop the in-flight tick.
       cancelHeartbeatTimeout();
     }
 
-    if (localCancel != null) {
-      tracer.onVRpcClose(localCancel.getStatus().getCode());
-      localRpc.handleError(localCancel);
+    if (cancel != null) {
+      tracer.onVRpcClose(cancel.getStatus().getCode());
+      rpc.handleError(cancel);
     } else {
       tracer.onVRpcClose(Status.OK.getCode());
-      localRpc.handleResponse(vrpc);
+      rpc.handleResponse(vrpc);
     }
     if (needsClose) {
       synchronized (lock) {
@@ -626,9 +632,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
     // Skips the heartbeat check when there's no active vrpc on the session
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
 
-    VRpcImpl<?, ?, ?> localRpc;
+    VRpcImpl<?, ?, ?> rpc;
+    VRpcResult cancel;
     boolean needsClose;
-    VRpcResult localCancel;
 
     synchronized (lock) {
       if (state.phase > SessionState.CLOSING.phase) {
@@ -658,21 +664,21 @@ public class SessionImpl implements Session, VRpcSessionApi {
           error.getRpcId());
 
       // reset the state of the current rpc
-      localCancel = currentCancel;
-      currentCancel = null;
-      localRpc = currentRpc;
+      rpc = currentRpc;
+      cancel = currentCancel;
       currentRpc = null;
+      currentCancel = null;
       needsClose = (state == SessionState.CLOSING);
       // No active vRPC means no useful heartbeat deadline; drop the in-flight tick.
       cancelHeartbeatTimeout();
     }
 
-    if (localCancel != null) {
-      tracer.onVRpcClose(localCancel.getStatus().getCode());
-      localRpc.handleError(localCancel);
+    if (cancel != null) {
+      tracer.onVRpcClose(cancel.getStatus().getCode());
+      rpc.handleError(cancel);
     } else {
       tracer.onVRpcClose(Status.fromCodeValue(error.getStatus().getCode()).getCode());
-      localRpc.handleError(VRpcResult.createServerError(error));
+      rpc.handleError(VRpcResult.createServerError(error));
     }
     if (needsClose) {
       synchronized (lock) {

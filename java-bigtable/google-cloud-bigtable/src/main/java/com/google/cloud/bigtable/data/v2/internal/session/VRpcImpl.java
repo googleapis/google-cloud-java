@@ -54,7 +54,11 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   // Narrow view of SessionImpl
   interface VRpcSessionApi {
-    Status startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
+    /**
+     * Submit the vRPC for sending. Async: errors are delivered via {@link
+     * VRpcImpl#handleError(VRpcResult)}, which dispatches onto {@code ctx.getExecutor()}.
+     */
+    void startRpc(VRpcImpl<?, ?, ?> rpc, VirtualRpcRequest payload);
 
     void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause);
   }
@@ -122,26 +126,17 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
             .setTraceparent(ctx.getTraceParent())
             .build();
     ctx.getTracer().onRequestSent(peerInfo);
-    Status status =
-        session.startRpc(
-            this,
-            VirtualRpcRequest.newBuilder()
-                .setRpcId(rpcId)
-                .setMetadata(vRpcMetadata)
-                .setDeadline(
-                    Durations.fromNanos(
-                        ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
-                .setPayload(desc.encode(req))
-                .build());
-    if (!status.isOk()) {
-      debugTagTracer.checkPrecondition(
-          state.compareAndSet(State.STARTED, State.CLOSED),
-          "vrpc_incorrect_start_state",
-          "VRpc has incorrect state. Expected to be started but was %s",
-          state);
-      VRpcResult result = VRpcResult.createUncommitedError(status);
-      ctx.getExecutor().execute(() -> listener.onClose(result));
-    }
+    session.startRpc(
+        this,
+        VirtualRpcRequest.newBuilder()
+            .setRpcId(rpcId)
+            .setMetadata(vRpcMetadata)
+            .setDeadline(
+                Durations.fromNanos(
+                    ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.NANOSECONDS)))
+            .setPayload(desc.encode(req))
+            .build());
+    // Session delivers startRpc errors asynchronously via handleError() on ctx.getExecutor().
   }
 
   void handleSessionClose(VRpcResult result) {
