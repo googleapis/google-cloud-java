@@ -39,10 +39,12 @@ import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
+import java.util.concurrent.Executor;
 
 class TableBase implements AutoCloseable {
   private final SessionPool<?> sessionPool;
   private final BigtableTimer timer;
+  private final Executor userCallbackExecutor;
   private final Metrics metrics;
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
@@ -60,7 +62,8 @@ class TableBase implements AutoCloseable {
       CallOptions callOptions,
       String sessionPoolName,
       Metrics metrics,
-      BigtableTimer timer) {
+      BigtableTimer timer,
+      Executor userCallbackExecutor) {
 
     SessionPool<ReqT> sessionPool =
         new SessionPoolImpl<>(
@@ -76,7 +79,8 @@ class TableBase implements AutoCloseable {
 
     sessionPool.start(openReq, new Metadata());
 
-    return new TableBase(sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer);
+    return new TableBase(
+        sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer, userCallbackExecutor);
   }
 
   @VisibleForTesting
@@ -85,12 +89,14 @@ class TableBase implements AutoCloseable {
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
       Metrics metrics,
-      BigtableTimer timer) {
+      BigtableTimer timer,
+      Executor userCallbackExecutor) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
     this.metrics = metrics;
     this.timer = timer;
+    this.userCallbackExecutor = userCallbackExecutor;
   }
 
   @Override

@@ -47,7 +47,8 @@ public class TableAsync implements AutoCloseable, Closeable {
       String tableId,
       Permission permission,
       Metrics metrics,
-      BigtableTimer timer) {
+      BigtableTimer timer,
+      java.util.concurrent.Executor userCallbackExecutor) {
 
     TableName tableName =
         TableName.builder()
@@ -76,7 +77,8 @@ public class TableAsync implements AutoCloseable, Closeable {
             callOptions,
             tableId,
             metrics,
-            timer);
+            timer,
+            userCallbackExecutor);
 
     return new TableAsync(base);
   }
