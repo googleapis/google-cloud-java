@@ -78,6 +78,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.LongPredicate;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -426,9 +427,9 @@ public class SessionPoolImplTest {
       // retry-create-session site computes its delay against the real wall clock and the fake
       // budget clock, so it can land anywhere from sub-second to a couple of penalty intervals.
       // Match anything that isn't one of the two fixed cadences.
-      long watchdogMs = java.time.Duration.ofMinutes(5).toMillis();
+      long watchdogMs = Duration.ofMinutes(5).toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
-      java.util.function.LongPredicate isRetrySchedule =
+      LongPredicate isRetrySchedule =
           d -> d > 0 && d != watchdogMs && d != afePruneMs;
 
       // start the pool

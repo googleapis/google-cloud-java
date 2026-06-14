@@ -171,7 +171,7 @@ public class Client implements AutoCloseable {
         Resource.createOwned(metrics, metrics::close),
         Resource.createOwned(configManager, configManager::close),
         Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
-        Resource.createOwned(userCallbackExecutor, userCallbackExecutor::shutdown));
+        Resource.createOwned(userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)));
   }
 
   public Client(
@@ -225,13 +225,17 @@ public class Client implements AutoCloseable {
                     .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
                     .setDescription("Client closing")
                     .build()));
+    // Drain user-callback first so pool.close's cancelWithResult listener notifications complete
+    // before we tear down the surrounding executors and timer. Without this, the late onClose
+    // submissions race the shutdown and get RejectedExecutionException, silently dropping the
+    // user's terminal onClose.
+    userCallbackExecutor.close();
     metrics.close();
     channelPool.close();
     configManager.close();
     // Stop the timer before tearing down backgroundExecutor (the timer's dispatcher).
     sessionTimer.stop();
     backgroundExecutor.close();
-    userCallbackExecutor.close();
   }
 
   public TableAsync openTableAsync(String tableId, Permission permission) {
@@ -289,8 +293,10 @@ public class Client implements AutoCloseable {
   }
 
   public static class Resource<T> {
-    private T value;
-    private Runnable closer;
+    private final T value;
+    private final Runnable closer;
+    private final java.util.concurrent.atomic.AtomicBoolean closed =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
 
     public static <T> Resource<T> createOwned(T value, Runnable closer) {
       return new Resource<>(value, closer);
@@ -305,12 +311,29 @@ public class Client implements AutoCloseable {
       this.closer = closer;
     }
 
+    /** Idempotent. Repeat calls are no-ops. */
     public void close() {
-      this.closer.run();
+      if (closed.compareAndSet(false, true)) {
+        this.closer.run();
+      }
     }
 
     public T get() {
       return value;
+    }
+  }
+
+  // Drain in-flight listener.onClose tasks before the executor is shut down; bound the wait at 5s
+  // so close() doesn't hang the caller on a pathological listener.
+  private static void shutdownAndAwait(ExecutorService exec) {
+    exec.shutdown();
+    try {
+      if (!exec.awaitTermination(5, TimeUnit.SECONDS)) {
+        exec.shutdownNow();
+      }
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      exec.shutdownNow();
     }
   }
 }
