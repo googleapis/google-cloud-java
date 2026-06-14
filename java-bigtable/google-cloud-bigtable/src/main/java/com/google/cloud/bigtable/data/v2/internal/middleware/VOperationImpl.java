@@ -24,8 +24,8 @@ import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.Context;
 import io.grpc.Deadline;
-import io.grpc.SynchronizationContext;
 import java.util.Optional;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeoutException;
 import javax.annotation.Nullable;
 
@@ -39,6 +39,7 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
 
   private final VRpc<ReqT, RespT> chain;
   private final Context grpcContext;
+  private final Executor userCallbackExecutor;
   private final VRpcTracer tracer;
   private final Deadline deadline;
   private final boolean idempotent;
@@ -47,11 +48,13 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
   public VOperationImpl(
       VRpc<ReqT, RespT> chain,
       Context grpcContext,
+      Executor userCallbackExecutor,
       VRpcTracer tracer,
       Deadline deadline,
       boolean idempotent) {
     this.chain = chain;
     this.grpcContext = grpcContext;
+    this.userCallbackExecutor = userCallbackExecutor;
     this.tracer = tracer;
     this.deadline = deadline;
     this.idempotent = idempotent;
@@ -69,12 +72,14 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
 
   @Override
   public void start(ReqT req, VRpcListener<RespT> listener) {
-    // Per-call SynchronizationContext serializes all middleware below this layer. Uncaught task
-    // failures drive the chain to a terminal state so the caller's listener still gets onClose;
-    // RetryingVRpc.cancel is idempotent so the resulting cascade collapses safely.
-    SynchronizationContext syncContext =
-        new SynchronizationContext((t, e) -> chain.cancel("Uncaught exception in op executor", e));
-    OpExecutor exec = new OpExecutor(syncContext);
+    // Per-call SerializingExecutor over the shared user-callback pool. The handler is the
+    // last-resort recovery: if any op-executor task throws (typically a user-installed tracer or
+    // a listener callback escape), drive the chain to a terminal state so the caller's listener
+    // still receives an onClose. RetryingVRpc.cancel is idempotent so cascades collapse safely.
+    OpExecutor exec =
+        new OpExecutor(
+            MoreExecutors.newSequentialExecutor(userCallbackExecutor),
+            t -> chain.cancel("Uncaught exception in op executor task", t));
     VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, exec);
     grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
     chain.start(req, ctx, new CleanupListener<>(listener, grpcContext, cancellationListener));
