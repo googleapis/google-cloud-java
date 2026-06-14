@@ -44,6 +44,7 @@ import com.google.protobuf.TextFormat;
 import com.google.protobuf.util.Durations;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import io.grpc.SynchronizationContext;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
@@ -87,6 +88,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private final Clock clock;
   private final BigtableTimer timer;
+  // Serializes all session-stream callbacks. Coexists with `lock` for now; `lock` will be removed
+  // in a follow-up commit once every handler is on the syncContext.
+  private final SynchronizationContext sessionSyncContext;
 
   private final SessionTracer tracer;
   private final DebugTagTracer debugTagTracer;
@@ -177,6 +181,14 @@ public class SessionImpl implements Session, VRpcSessionApi {
     this.debugTagTracer = metrics.getDebugTagTracer();
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
     this.openParamsUpdated = false;
+    this.sessionSyncContext =
+        new SynchronizationContext(
+            (thread, e) ->
+                logger.log(
+                    Level.WARNING,
+                    String.format(
+                        "Uncaught exception in session SyncContext for %s", info.getLogName()),
+                    e));
   }
 
   @Override
@@ -271,12 +283,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
             @Override
             public void onMessage(SessionResponse message) {
-              dispatchResponseMessage(message);
+              sessionSyncContext.execute(() -> dispatchResponseMessage(message));
             }
 
             @Override
             public void onClose(Status status, Metadata trailers) {
-              dispatchStreamClosed(status, trailers);
+              sessionSyncContext.execute(() -> dispatchStreamClosed(status, trailers));
             }
           },
           headers);
@@ -411,7 +423,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private void scheduleHeartbeatCheck() {
     heartbeatTimeout =
         timer.newTimeout(
-            this::checkHeartbeat, HEARTBEAT_CHECK_INTERVAL.toMillis(), TimeUnit.MILLISECONDS);
+            () -> sessionSyncContext.execute(this::checkHeartbeat),
+            HEARTBEAT_CHECK_INTERVAL.toMillis(),
+            TimeUnit.MILLISECONDS);
   }
 
   @GuardedBy("lock")
@@ -422,31 +436,28 @@ public class SessionImpl implements Session, VRpcSessionApi {
     }
   }
 
-  // Runs on the wheel-timer tick thread. Takes the per-session lock to read state/nextHeartbeat
-  // and force-close on miss, then chains the next tick by re-scheduling. If the session is past
-  // WAIT_SERVER_CLOSE we drop the chain — no further checks are useful.
+  // Runs on sessionSyncContext (dispatched from the wheel-timer tick body). Checks if the
+  // heartbeat deadline has passed and force-closes on miss; otherwise re-schedules.
   private void checkHeartbeat() {
-    CloseSessionRequest missed = null;
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     synchronized (lock) {
       if (state.phase >= SessionState.WAIT_SERVER_CLOSE.phase) {
         return;
       }
       if (clock.instant().isAfter(nextHeartbeat)) {
-        missed = MISSED_HEARTBEAT_CLOSE_REQUEST;
-      } else {
-        scheduleHeartbeatCheck();
+        logger.warning(
+            String.format("Missed heartbeat for %s, forcing session close", info.getLogName()));
+        // forceClose acquires the lock again; safe because Java monitors are re-entrant.
+        forceClose(MISSED_HEARTBEAT_CLOSE_REQUEST);
+        return;
       }
-    }
-    if (missed != null) {
-      logger.warning(
-          String.format("Missed heartbeat for %s, forcing session close", info.getLogName()));
-      // forceClose acquires the lock again and performs its own state checks.
-      forceClose(missed);
+      scheduleHeartbeatCheck();
     }
   }
 
   // region SessionStream event handlers
   private void dispatchResponseMessage(SessionResponse message) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     switch (message.getPayloadCase()) {
       case OPEN_SESSION:
         handleOpenSessionResponse(message.getOpenSession());
@@ -476,6 +487,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleOpenSessionResponse(OpenSessionResponse openSession) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     logger.fine(String.format("%s Session is ready", info.getLogName()));
 
     PeerInfo localPeerInfo;
@@ -502,6 +514,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleSessionParamsResponse(SessionParametersResponse resp) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     synchronized (lock) {
       if (state.phase >= SessionState.CLOSING.phase) {
         logger.fine(
@@ -525,6 +538,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleVRpcResponse(VirtualRpcResponse vrpc) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     // TODO: when stream is supported this should be updated to the next expected time instead of
     // session life time
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
@@ -587,10 +601,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleHeartBeatResponse(HeartbeatResponse ignored) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
   }
 
   private void handleSessionRefreshConfigResponse(SessionRefreshConfig config) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     synchronized (lock) {
       Metadata grpcMetadata = new Metadata();
       config
@@ -606,6 +622,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleVRpcErrorResponse(ErrorResponse error) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     // Skips the heartbeat check when there's no active vrpc on the session
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
 
@@ -667,6 +684,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void handleGoAwayResponse(GoAwayResponse goAwayResponse) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     synchronized (lock) {
       if (state.phase >= SessionState.CLOSING.phase) {
         debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_go_away_ignored");
@@ -703,6 +721,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
   }
 
   private void dispatchStreamClosed(Status status, Metadata trailers) {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
     SessionState prevState;
     VRpcImpl<?, ?, ?> localVRpc;
 
