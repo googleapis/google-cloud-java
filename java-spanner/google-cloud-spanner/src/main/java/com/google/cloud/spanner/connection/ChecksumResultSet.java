@@ -212,6 +212,7 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
     private final MessageDigest digest;
     private ByteBuffer buffer;
     private ByteBuffer float64Buffer;
+    private CharsetEncoder encoder;
 
     ChecksumCalculator() {
       try {
@@ -338,7 +339,11 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
       // creating a new copy of (a part of) the string. E.g. using something like substring(..)
       // would create a copy of that part of the string, using CharBuffer.wrap(..) does not.
       CharBuffer source = CharBuffer.wrap(stringValue);
-      CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
+      if (encoder == null) {
+        encoder = StandardCharsets.UTF_8.newEncoder();
+      } else {
+        encoder.reset();
+      }
       // source.hasRemaining() returns false when all the characters in the string have been
       // processed.
       while (source.hasRemaining()) {
