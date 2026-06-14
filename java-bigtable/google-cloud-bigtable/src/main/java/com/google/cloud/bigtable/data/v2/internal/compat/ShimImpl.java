@@ -160,6 +160,13 @@ public class ShimImpl implements Shim {
       featureFlags = featureFlags.toBuilder().setSessionsRequired(true).build();
     }
 
+    java.util.concurrent.ExecutorService userCallbackExecutor =
+        java.util.concurrent.Executors.newCachedThreadPool(
+            new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                .setNameFormat("bigtable-callback-shim-%d")
+                .setDaemon(true)
+                .build());
+
     Client client =
         new Client(
             clientChannelProvider.updateFeatureFlags(featureFlags),
@@ -167,7 +174,8 @@ public class ShimImpl implements Shim {
             clientChannelProvider,
             Resource.createShared(metrics),
             Resource.createShared(configManager),
-            Resource.createShared(bgExecutor));
+            Resource.createShared(bgExecutor),
+            Resource.createOwned(userCallbackExecutor, userCallbackExecutor::shutdown));
 
     return new ShimImpl(configManager, client);
   }
