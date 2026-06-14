@@ -118,7 +118,8 @@ class TableBase implements AutoCloseable {
         new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), timer);
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
 
-    new VOperationImpl<>(retry, Context.current(), tracer, deadline, true).start(req, listener);
+    new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, true)
+        .start(req, listener);
   }
 
   public void mutateRow(
@@ -131,7 +132,8 @@ class TableBase implements AutoCloseable {
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
 
-    new VOperationImpl<>(retry, Context.current(), tracer, deadline, idempotent)
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
         .start(req, listener);
   }
 }
