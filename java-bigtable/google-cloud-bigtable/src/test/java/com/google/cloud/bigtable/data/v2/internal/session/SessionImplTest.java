@@ -70,11 +70,13 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -680,9 +682,9 @@ public class SessionImplTest {
   void abortFiresWhenListenerOnReadyThrows() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
-    java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
-    java.util.concurrent.atomic.AtomicReference<Status> capturedStatus =
-        new java.util.concurrent.atomic.AtomicReference<>();
+    CountDownLatch onCloseLatch = new CountDownLatch(1);
+    AtomicReference<Status> capturedStatus =
+        new AtomicReference<>();
 
     Session.Listener throwingListener =
         new Session.Listener() {
@@ -721,8 +723,8 @@ public class SessionImplTest {
   void abortDoesNotHangWhenListenerOnCloseThrows() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
-    java.util.concurrent.CountDownLatch onReadyLatch = new java.util.concurrent.CountDownLatch(1);
-    java.util.concurrent.CountDownLatch onCloseLatch = new java.util.concurrent.CountDownLatch(1);
+    CountDownLatch onReadyLatch = new CountDownLatch(1);
+    CountDownLatch onCloseLatch = new CountDownLatch(1);
 
     Session.Listener throwingListener =
         new Session.Listener() {
@@ -774,7 +776,7 @@ public class SessionImplTest {
   void abortDoesNotInfiniteLoopWhenRecoveryListenerAlsoThrows() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
-    java.util.concurrent.CountDownLatch onCloseInvoked = new java.util.concurrent.CountDownLatch(1);
+    CountDownLatch onCloseInvoked = new CountDownLatch(1);
 
     Session.Listener doublyThrowingListener =
         new Session.Listener() {

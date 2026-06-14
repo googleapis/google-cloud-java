@@ -16,17 +16,26 @@
 
 package com.google.cloud.bigtable.data.v2.internal.middleware;
 
+import com.google.common.util.concurrent.MoreExecutors;
+import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
 
 /**
- * Per-op serializing executor. Wraps a delegate {@link Executor} (typically a per-call {@code
- * SerializingExecutor} over the user-callback pool) and tracks which thread is currently running a
- * task, so callers can assert they are on the executor (analogous to {@code
+ * Per-op serializing executor that tracks which thread is currently draining it, so callers can
+ * assert they are running inside the executor (analogous to {@code
  * SynchronizationContext#throwIfNotInThisSynchronizationContext}).
  *
- * <p>If a task throws, the registered {@link UncaughtExceptionHandler} is invoked — this is the
- * last-resort recovery point for the chain. Without it, a throw from a user-installed tracer or a
- * listener callback would silently drop and the caller's future would never complete.
+ * <p>{@link #runInline} executes synchronously on the caller thread when the executor is idle, or
+ * falls back to a queued submission when busy. Use it to avoid the queue+drain round-trip for the
+ * first task of a fresh op executor (e.g. the start() dispatch).
+ *
+ * <p>If a task throws, the registered {@link UncaughtExceptionHandler} is invoked on the same task
+ * thread (still inside the drain wrapper, so {@link #throwIfNotInThisExecutor} still passes). This
+ * is the last-resort recovery point for the op chain — without it, an exception inside a callback
+ * is silently dropped and the caller's listener never sees a terminal close. The handler's own
+ * throws propagate (caught by the backing executor in production; surfaced to the calling thread
+ * when the backing is {@link MoreExecutors#directExecutor()}, which is what makes fail-fast test
+ * handlers like {@code t -> throw new AssertionError(t)} work).
  */
 public final class OpExecutor implements Executor {
 
@@ -36,6 +45,11 @@ public final class OpExecutor implements Executor {
 
   private final Executor backing;
   private final UncaughtExceptionHandler handler;
+
+  // Guards queue and drainScheduled. runningThread is volatile so throwIfNotInThisExecutor() can
+  // read it lock-free; writes happen inside the lock to piggy-back the memory barrier.
+  private final ArrayDeque<Runnable> queue = new ArrayDeque<>();
+  private boolean drainScheduled = false;
   private volatile Thread runningThread;
 
   public OpExecutor(Executor backing, UncaughtExceptionHandler handler) {
@@ -45,18 +59,82 @@ public final class OpExecutor implements Executor {
 
   @Override
   public void execute(Runnable r) {
-    backing.execute(
-        () -> {
-          Thread prev = runningThread;
-          runningThread = Thread.currentThread();
-          try {
-            r.run();
-          } catch (Throwable t) {
-            handler.uncaught(t);
-          } finally {
-            runningThread = prev;
-          }
-        });
+    synchronized (queue) {
+      queue.add(r);
+      if (!drainScheduled && runningThread == null) {
+        scheduleDrainLocked();
+      }
+    }
+  }
+
+  /**
+   * Runs {@code r} synchronously on the caller thread if this executor is idle, otherwise queues
+   * it for later drain on the backing executor. Either way, FIFO ordering with other tasks is
+   * preserved.
+   */
+  public void runInline(Runnable r) {
+    synchronized (queue) {
+      if (drainScheduled || runningThread != null || !queue.isEmpty()) {
+        queue.add(r);
+        if (!drainScheduled) {
+          scheduleDrainLocked();
+        }
+        return;
+      }
+      runningThread = Thread.currentThread();
+    }
+    try {
+      try {
+        r.run();
+      } catch (Throwable t) {
+        handler.uncaught(t);
+      }
+    } finally {
+      synchronized (queue) {
+        runningThread = null;
+        if (!queue.isEmpty() && !drainScheduled) {
+          scheduleDrainLocked();
+        }
+      }
+    }
+  }
+
+  // Schedule a drain on the backing executor. If the backing throws (e.g. RejectedExecutionException
+  // during shutdown), reset drainScheduled before propagating so the next execute() can retry
+  // instead of wedging the executor with no drainer.
+  private void scheduleDrainLocked() {
+    drainScheduled = true;
+    try {
+      backing.execute(this::drain);
+    } catch (Throwable t) {
+      drainScheduled = false;
+      throw t;
+    }
+  }
+
+  private void drain() {
+    while (true) {
+      Runnable r;
+      synchronized (queue) {
+        r = queue.poll();
+        if (r == null) {
+          drainScheduled = false;
+          return;
+        }
+        runningThread = Thread.currentThread();
+      }
+      try {
+        try {
+          r.run();
+        } catch (Throwable t) {
+          handler.uncaught(t);
+        }
+      } finally {
+        synchronized (queue) {
+          runningThread = null;
+        }
+      }
+    }
   }
 
   public void throwIfNotInThisExecutor() {
