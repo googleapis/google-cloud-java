@@ -330,7 +330,8 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
       if (buffer == null || (buffer.capacity() < MAX_BUFFER_SIZE && buffer.capacity() < length)) {
         // Create a ByteBuffer with a maximum buffer size.
         // This buffer is re-used for all string values in the result set.
-        buffer = ByteBuffer.allocate(Math.min(MAX_BUFFER_SIZE, length));
+        // UTF-8 can require 4 bytes to represent, so we need at least that size buffer.
+        buffer = ByteBuffer.allocate(Math.max(4, Math.min(MAX_BUFFER_SIZE, length)));
       } else {
         buffer.clear();
       }
@@ -354,8 +355,8 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
         buffer.flip();
         // Put the bytes from the buffer into the digest.
         digest.update(buffer);
-        // Flip the buffer again, so we can repeat and write to the start of the buffer again.
-        buffer.flip();
+        // Clear the buffer, so we can repeat and write to the start of the buffer again.
+        buffer.clear();
       }
     }
   }
