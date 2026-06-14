@@ -573,7 +573,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
     @Override
     public int hashCode() {
-      return com.google.common.base.Objects.hashCode(id);
+      return Long.hashCode(id);
     }
 
     @Override

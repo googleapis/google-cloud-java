@@ -86,18 +86,24 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
     // single Done.
     OpExecutor exec =
         new OpExecutor(
-            MoreExecutors.newSequentialExecutor(userCallbackExecutor),
-            t -> chain.cancel("Uncaught exception in op executor task", t));
+            userCallbackExecutor, t -> chain.cancel("Uncaught exception in op executor task", t));
     this.opExecutor = exec;
     VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, exec);
     CleanupListener<RespT> wrapped =
         new CleanupListener<>(listener, grpcContext, cancellationListener);
-    // Register the gRPC context listener BEFORE submitting chain.start. The submit queues the
-    // task on the op executor; chain.cancel from this listener also queues. SequentialExecutor
-    // preserves submission order, so a context-cancel fired during/before chain.start will be
-    // processed after it.
-    grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
-    exec.execute(() -> chain.start(req, ctx, wrapped));
+    exec.runInline(() -> chain.start(req, ctx, wrapped));
+    // Register AFTER chain.start so a context-cancel that fires immediately is sequenced behind
+    // start. runInline runs chain.start synchronously, so it has fully completed by the time the
+    // listener is registered. Matches ClientCallImpl's ordering (grpc-java issue #1343).
+    //
+    // If the chain reached a terminal onClose synchronously inside runInline (uncaught-handler
+    // recovery, immediate failure), CleanupListener already tried to remove a listener that was
+    // never registered (no-op). Skip the addListener in that case — otherwise we'd register a
+    // listener on grpcContext that nothing will ever remove, pinning the entire chain for the
+    // lifetime of the (potentially long-lived) gRPC Context.
+    if (!wrapped.closed) {
+      grpcContext.addListener(cancellationListener, MoreExecutors.directExecutor());
+    }
   }
 
   @Override
