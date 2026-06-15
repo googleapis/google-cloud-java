@@ -434,7 +434,7 @@ libraries:
       name_pretty_override: Cloud Batch
       product_documentation_override: https://cloud.google.com/
   - name: backstory
-    version: 0.0.1-SNAPSHOT
+    version: 0.2.0-SNAPSHOT
     apis:
       - path: backstory
         java:
