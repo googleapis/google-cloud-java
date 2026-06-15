@@ -192,7 +192,8 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         java.util.logging.Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName())
             .warning(
                 String.format(
-                    "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                    "storage: received %d more bytes than requested from GCS for bucket '%s',"
+                        + " object '%s'",
                     totalBytesReadFromNetwork - requestedLength,
                     apiaryReadRequest.getObject().getBucket(),
                     apiaryReadRequest.getObject().getName()));

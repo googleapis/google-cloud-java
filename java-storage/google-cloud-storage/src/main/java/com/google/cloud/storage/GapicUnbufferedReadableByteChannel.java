@@ -216,7 +216,8 @@ final class GapicUnbufferedReadableByteChannel
         java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName())
             .warning(
                 String.format(
-                    "storage: received %d more bytes than requested from GCS for bucket '%s', object '%s'",
+                    "storage: received %d more bytes than requested from GCS for bucket '%s',"
+                        + " object '%s'",
                     receivedBytes - readLimit, req.getBucket(), req.getObject()));
       }
     } finally {
