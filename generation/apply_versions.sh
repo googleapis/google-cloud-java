@@ -31,7 +31,7 @@ elif [[ "$column_name" != "current" ]]; then
 fi
 
 
-SED_SCRIPT_FILE=$(mktemp)
+SED_SCRIPT_FILE=$(mktemp) || exit 1
 trap 'rm -f "$SED_SCRIPT_FILE"' EXIT
 
 # The second column is 

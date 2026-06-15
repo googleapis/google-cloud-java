@@ -28,8 +28,7 @@
   </organization>
   <scm>
     <connection>scm:git:git@github.com:googleapis/java-shared-config.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-shared-config.git
-    </developerConnection>
+    <developerConnection>scm:git:git@github.com:googleapis/java-shared-config.git</developerConnection>
     <url>https://github.com/googleapis/java-shared-config</url>
     <tag>HEAD</tag>
   </scm>
