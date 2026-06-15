@@ -839,8 +839,8 @@ class BatcherImplTest {
       // Run GC a few times to give the batchers a chance to be collected
       await()
           .pollInterval(Duration.ofMillis(10))
-          .during(Duration.ofMillis(200))
-          .atMost(Duration.ofSeconds(2))
+          .during(Duration.ofSeconds(1))
+          .atMost(Duration.ofSeconds(5))
           .until(
               () -> {
                 System.gc();
