@@ -83,4 +83,47 @@ public class DataSourceTest {
             .contains(
                 "Invalid value for MetaDataFetchThreadCount. It must be greater than or equal to 1"));
   }
+
+  @Test
+  public void testQueryProcessThreadCountValidation() {
+    DataSource dataSource = new DataSource();
+
+    // Setting values >= 4 should succeed
+    dataSource.setQueryProcessThreadCount(4);
+    assertEquals(4, dataSource.getQueryProcessThreadCount());
+
+    dataSource.setQueryProcessThreadCount(10);
+    assertEquals(10, dataSource.getQueryProcessThreadCount());
+
+    dataSource.setQueryProcessThreadCount(null); // Should fallback to default
+    assertEquals(
+        BigQueryJdbcUrlUtility.DEFAULT_QUERY_PROCESS_THREAD_COUNT_VALUE,
+        dataSource.getQueryProcessThreadCount());
+
+    // Setting value < 4 (e.g., 3, 0, -5) should throw BigQueryJdbcRuntimeException
+    BigQueryJdbcRuntimeException ex3 =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class, () -> dataSource.setQueryProcessThreadCount(3));
+    assertTrue(
+        ex3.getMessage()
+            .contains(
+                "Invalid value for QueryProcessThreadCount. It must be greater than or equal to 4"));
+
+    BigQueryJdbcRuntimeException ex0 =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class, () -> dataSource.setQueryProcessThreadCount(0));
+    assertTrue(
+        ex0.getMessage()
+            .contains(
+                "Invalid value for QueryProcessThreadCount. It must be greater than or equal to 4"));
+
+    BigQueryJdbcRuntimeException exNeg =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class, () -> dataSource.setQueryProcessThreadCount(-5));
+    assertTrue(
+        exNeg
+            .getMessage()
+            .contains(
+                "Invalid value for QueryProcessThreadCount. It must be greater than or equal to 4"));
+  }
 }

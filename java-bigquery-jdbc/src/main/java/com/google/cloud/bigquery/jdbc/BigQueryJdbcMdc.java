@@ -62,6 +62,7 @@ class BigQueryJdbcMdc {
   static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
     MdcThreadPoolExecutor executor =
         new MdcThreadPoolExecutor(
+            "Metadata Fetch Pool",
             nThreads,
             nThreads,
             60L,
@@ -86,6 +87,7 @@ class BigQueryJdbcMdc {
    */
   static ExecutorService newBoundedCachedThreadPool(int maxThreads, ThreadFactory threadFactory) {
     return new MdcThreadPoolExecutor(
+        "Query Executor Pool",
         0,
         maxThreads,
         60L,
@@ -125,8 +127,10 @@ class BigQueryJdbcMdc {
   }
 
   private static class MdcThreadPoolExecutor extends ThreadPoolExecutor {
+    private final String poolName;
 
     public MdcThreadPoolExecutor(
+        String poolName,
         int corePoolSize,
         int maximumPoolSize,
         long keepAliveTime,
@@ -134,6 +138,7 @@ class BigQueryJdbcMdc {
         BlockingQueue<Runnable> workQueue,
         ThreadFactory threadFactory) {
       super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory);
+      this.poolName = poolName;
     }
 
     private final AtomicBoolean warningLogged = new AtomicBoolean(false);
@@ -149,8 +154,8 @@ class BigQueryJdbcMdc {
       if (queueSize >= warnThreshold) {
         if (warningLogged.compareAndSet(false, true)) {
           LOG.warning(
-              "Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the thread count property.",
-              maxPoolSize, getActiveCount(), queueSize);
+              "[%s] Thread pool is saturating. Max pool size: %d, Active threads: %d, Queued tasks: %d. Consider increasing the metadataFetchThreadCount property.",
+              poolName, maxPoolSize, getActiveCount(), queueSize);
         }
       } else if (queueSize <= recoveryThreshold) {
         if (warningLogged.get()) {

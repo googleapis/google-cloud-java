@@ -174,6 +174,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean useQueryCache;
   String queryDialect;
   int metadataFetchThreadCount;
+  int queryProcessThreadCount;
   boolean allowLargeResults;
   String destinationTable;
   String destinationDataset;
@@ -340,6 +341,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
+      this.queryProcessThreadCount = ds.getQueryProcessThreadCount();
       this.requestReason = ds.getRequestReason();
       this.connectionPoolSize = ds.getConnectionPoolSize();
       this.listenerPoolSize = ds.getListenerPoolSize();
@@ -347,12 +349,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.headerProvider = createHeaderProvider();
       this.bigQuery = getBigQueryConnection();
+      // Fixed thread pool limits concurrent calls to prevent BigQuery metadata API throttling
+      // (independent tasks).
       this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
-      // Use a bounded cached thread pool to prevent unbounded thread creation (and OOMs)
-      // under heavy load, while ensuring a limit (e.g., 100) high enough to prevent deadlocks
-      // between interdependent producer/consumer tasks (like nextPageWorker and
-      // populateBufferWorker).
-      this.queryExecutor = BigQueryJdbcMdc.newBoundedCachedThreadPool(100);
+      // Cached thread pool prevents deadlocks between interdependent producer/consumer query
+      // execution tasks.
+      this.queryExecutor = BigQueryJdbcMdc.newBoundedCachedThreadPool(queryProcessThreadCount);
     }
   }
 
@@ -706,6 +708,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   int getMetadataFetchThreadCount() {
     return this.metadataFetchThreadCount;
+  }
+
+  int getQueryProcessThreadCount() {
+    return this.queryProcessThreadCount;
   }
 
   boolean isEnableWriteAPI() {
