@@ -273,17 +273,22 @@ public class Client implements AutoCloseable {
       }
     }
 
-    // Phase 3: tear down infrastructure. By this point all listener.onClose tasks for in-flight
-    // RPCs are queued on their op executors (which run on userCallbackExecutor), and no new
-    // session responses are coming since every session is CLOSED. The 5s await inside
-    // userCallbackExecutor.close() is therefore just a guard for tasks in flight — it should
-    // return immediately in the typical case.
+    // Phase 3: tear down infrastructure.
+    //
+    // sessionTimer.stop() runs FIRST so its onStop hooks can drive any pending Scheduled retries
+    // to a terminal Done — that delivery hops through op executor → userCallbackExecutor, both
+    // of which must still be alive at this moment.
+    //
+    // userCallbackExecutor.close() next, with a 5s drain to catch the listener.onClose tasks
+    // queued by both the session drain (Phase 2) and the just-fired retry shutdowns.
+    //
+    // backgroundExecutor must close last because it's the timer's dispatcher and the op
+    // executor's chain ultimately runs ScheduledExecutorService tasks here.
+    sessionTimer.stop();
     userCallbackExecutor.close();
     metrics.close();
     channelPool.close();
     configManager.close();
-    // Stop the timer before tearing down backgroundExecutor (the timer's dispatcher).
-    sessionTimer.stop();
     backgroundExecutor.close();
   }
 
