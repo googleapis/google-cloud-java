@@ -25,7 +25,6 @@ import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Status;
 import java.util.Optional;
-import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -281,6 +280,11 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   class Scheduled extends State {
     private final Duration retryDelay;
     private BigtableTimer.Timeout future;
+    // Registered with the timer on entry so a Client.close that stops the timer drives this
+    // Scheduled to a CANCELLED Done instead of silently discarding the pending timeout. Cleared
+    // on every exit path (normal fire, cancel, hook fire) to avoid accumulating dead entries on
+    // a long-lived Client.
+    private BigtableTimer.Registration stopHook;
 
     Scheduled(Duration retryDelay) {
       this.retryDelay = retryDelay;
@@ -289,6 +293,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     @Override
     public void onStart() {
       try {
+        stopHook = timer.onStop(this::onTimerStopping);
         // Wraps go innermost so the captured gRPC + OpenTelemetry contexts are re-established at
         // the moment the body runs, not just while the dispatcher is invoking the outer task.
         future =
@@ -299,13 +304,15 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                         .execute(
                             () ->
                                 grpcContext
-                                    .wrap(
-                                        () ->
-                                            otelContext.wrap(() -> onStateChange(new Idle())).run())
+                                    .wrap(() -> otelContext.wrap(this::onTimerFired).run())
                                     .run()),
                 Durations.toMillis(retryDelay),
                 TimeUnit.MILLISECONDS);
-      } catch (RejectedExecutionException e) {
+      } catch (IllegalStateException e) {
+        // Timer was stopped between Active.onClose deciding to retry and this task running on the
+        // op executor. Race window is narrow (post-drain shutdown), but cover it cleanly so the
+        // op-executor uncaught handler does not have to.
+        unregisterStopHook();
         onStateChange(
             new Done(
                 VRpcResult.createRejectedError(
@@ -316,11 +323,38 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       }
     }
 
+    private void onTimerFired() {
+      unregisterStopHook();
+      onStateChange(new Idle());
+    }
+
+    // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so
+    // currentState reads and onStateChange are still single-threaded with the rest of the chain.
+    private void onTimerStopping() {
+      context.getExecutor().execute(() -> {
+        if (currentState != Scheduled.this) {
+          return; // already transitioned out via normal fire or cancel
+        }
+        onStateChange(
+            new Done(
+                VRpcResult.createRejectedError(
+                    Status.CANCELLED.withDescription(
+                        "Client closing while retry pending"))));
+      });
+    }
+
+    private void unregisterStopHook() {
+      if (stopHook != null) {
+        stopHook.unregister();
+        stopHook = null;
+      }
+    }
+
     @Override
     public void onCancel(String reason, Throwable throwable) {
-      // future can be null if schedule throws an exception that's not RejectedExecutionException.
-      // In which case sync context uncaught exception handler will be called, which calls cancel on
-      // the current state before transition into done state.
+      unregisterStopHook();
+      // future can be null if schedule throws and we end up here via the op-executor uncaught
+      // path.
       if (future != null && !future.isCancelled()) {
         future.cancel();
       }

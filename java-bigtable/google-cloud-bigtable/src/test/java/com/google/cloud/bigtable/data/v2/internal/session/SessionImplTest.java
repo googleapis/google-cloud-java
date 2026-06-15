@@ -844,6 +844,11 @@ public class SessionImplTest {
     }
 
     @Override
+    public Registration onStop(Runnable hook) {
+      return delegate.onStop(hook);
+    }
+
+    @Override
     public void stop() {
       delegate.stop();
     }
