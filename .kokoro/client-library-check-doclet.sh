@@ -93,7 +93,7 @@ docletPath=$(realpath "java-docfx-doclet/third_party/docfx-doclet-143274/target/
 echo "This is the doclet path: ${docletPath}"
 
 # Read the current version of this BOM in the POM. Example version: '0.116.1-alpha-SNAPSHOT'
-VERSION_POM=java-shared-config/pom.xml
+VERSION_POM=java-shared-config/java-shared-config/pom.xml
 # Namespace (xmlns) prevents xmllint from specifying tag names in XPath
 JAVA_SHARED_CONFIG_VERSION=`sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -`
 
