@@ -514,6 +514,19 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     assertEquals(ACCESS_TOKEN, targetCredentials.refreshAccessToken().getTokenValue());
     assertEquals(
         DEFAULT_IMPERSONATION_URL, mockTransportFactory.getTransport().getRequest().getUrl());
+
+    String authHeader = mockTransportFactory.getTransport().getRequest().getHeaders().getAuthorization();
+    assertNotNull(authHeader);
+    assertTrue(authHeader.startsWith("Bearer "));
+    String assertion = authHeader.substring("Bearer ".length());
+    // Parse the JWT to verify it is indeed a self-signed JWT (has 3 parts)
+    String[] parts = assertion.split("\\.");
+    assertEquals(3, parts.length, "Authorization header must be a self-signed JWT");
+
+    // Verify the payload to ensure it is the locally generated self-signed JWT
+    String payload = new String(java.util.Base64.getUrlDecoder().decode(parts[1]), java.nio.charset.StandardCharsets.UTF_8);
+    assertTrue(payload.contains("\"iss\":\"" + SA_CLIENT_EMAIL + "\""), "JWT must be issued by the source service account");
+    assertTrue(payload.contains("\"aud\":\"" + DEFAULT_IMPERSONATION_URL + "\""), "JWT audience must be the impersonation endpoint");
   }
 
   @Test()
