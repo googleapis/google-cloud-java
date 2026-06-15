@@ -49,6 +49,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -101,7 +102,7 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
       future.setAttemptFuture(executor.submit(future));
 
-      final int[] failedAttempts = {0};
+      final AtomicInteger failedAttempts = new AtomicInteger(0);
       await()
           .pollInterval(Duration.ofMillis(2))
           .atMost(Duration.ofSeconds(5))
@@ -115,7 +116,7 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
                     attemptResult.get();
                   } catch (ExecutionException e) {
                     if (e.getCause() instanceof CustomException) {
-                      failedAttempts[0]++;
+                      failedAttempts.incrementAndGet();
                     }
                   }
                 }
@@ -124,7 +125,7 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
       assertFutureSuccess(future);
       assertEquals(15, future.getAttemptSettings().getAttemptCount());
-      assertTrue(failedAttempts[0] > 0);
+      assertTrue(failedAttempts.get() > 0);
     }
   }
 
