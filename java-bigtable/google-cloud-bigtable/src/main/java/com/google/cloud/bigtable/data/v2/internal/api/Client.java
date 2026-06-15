@@ -104,10 +104,10 @@ public class Client implements AutoCloseable {
   private final Resource<ClientConfigurationManager> configManager;
 
   private final Set<SessionPool<?>> sessionPools = Collections.newSetFromMap(new WeakHashMap<>());
-  // Set true at the start of close(); guards openTableAsync / openAuthorizedViewAsync /
-  // openMaterializedViewAsync so concurrent opens during shutdown don't create pools the close
-  // path won't see.
-  private final AtomicBoolean closed = new AtomicBoolean(false);
+  // Guarded by sessionPools' monitor: close() sets it before snapshotting the pool set, and the
+  // open* methods check it before adding a new pool, so a racing open cannot insert a pool that
+  // close() has already missed in its snapshot.
+  private boolean closed = false;
 
   public static Client create(ClientSettings settings) throws IOException {
     FeatureFlags featureFlags =
@@ -235,12 +235,12 @@ public class Client implements AutoCloseable {
 
   @Override
   public void close() {
-    if (!closed.compareAndSet(false, true)) {
-      return; // idempotent
-    }
-
     List<SessionPool<?>> toClose;
     synchronized (sessionPools) {
+      if (closed) {
+        return; // idempotent
+      }
+      closed = true;
       toClose = new ArrayList<>(sessionPools);
     }
 
@@ -292,67 +292,77 @@ public class Client implements AutoCloseable {
     backgroundExecutor.close();
   }
 
-  private void checkNotClosed() {
-    if (closed.get()) {
-      throw new IllegalStateException("Client is closed");
-    }
-  }
-
+  // The closed check and pool insertion run under sessionPools' monitor so close() (which flips
+  // closed under the same monitor) cannot snapshot the pool set between our check and our insert.
+  // Opens are infrequent (typically once per table at app startup), so holding the monitor across
+  // createAndStart is acceptable.
   public TableAsync openTableAsync(String tableId, Permission permission) {
-    checkNotClosed();
-    TableAsync tableAsync =
-        TableAsync.createAndStart(
-            featureFlags,
-            clientInfo,
-            configManager.get(),
-            channelPool,
-            defaultCallOptions,
-            tableId,
-            permission,
-            metrics.get(),
-            sessionTimer,
-            userCallbackExecutor.get());
-    sessionPools.add(tableAsync.getSessionPool());
-    return tableAsync;
+    synchronized (sessionPools) {
+      if (closed) {
+        throw new IllegalStateException("Client is closed");
+      }
+      TableAsync tableAsync =
+          TableAsync.createAndStart(
+              featureFlags,
+              clientInfo,
+              configManager.get(),
+              channelPool,
+              defaultCallOptions,
+              tableId,
+              permission,
+              metrics.get(),
+              sessionTimer,
+              userCallbackExecutor.get());
+      sessionPools.add(tableAsync.getSessionPool());
+      return tableAsync;
+    }
   }
 
   public AuthorizedViewAsync openAuthorizedViewAsync(
       String tableId, String viewId, OpenAuthorizedViewRequest.Permission permission) {
-    checkNotClosed();
-    AuthorizedViewAsync viewAsync =
-        AuthorizedViewAsync.createAndStart(
-            featureFlags,
-            clientInfo,
-            configManager.get(),
-            channelPool,
-            defaultCallOptions,
-            tableId,
-            viewId,
-            permission,
-            metrics.get(),
-            sessionTimer,
-            userCallbackExecutor.get());
-    sessionPools.add(viewAsync.getSessionPool());
-    return viewAsync;
+    synchronized (sessionPools) {
+      if (closed) {
+        throw new IllegalStateException("Client is closed");
+      }
+      AuthorizedViewAsync viewAsync =
+          AuthorizedViewAsync.createAndStart(
+              featureFlags,
+              clientInfo,
+              configManager.get(),
+              channelPool,
+              defaultCallOptions,
+              tableId,
+              viewId,
+              permission,
+              metrics.get(),
+              sessionTimer,
+              userCallbackExecutor.get());
+      sessionPools.add(viewAsync.getSessionPool());
+      return viewAsync;
+    }
   }
 
   public MaterializedViewAsync openMaterializedViewAsync(
       String viewId, OpenMaterializedViewRequest.Permission permission) {
-    checkNotClosed();
-    MaterializedViewAsync viewAsync =
-        MaterializedViewAsync.createAndStart(
-            featureFlags,
-            clientInfo,
-            configManager.get(),
-            channelPool,
-            defaultCallOptions,
-            viewId,
-            permission,
-            metrics.get(),
-            sessionTimer,
-            userCallbackExecutor.get());
-    sessionPools.add(viewAsync.getSessionPool());
-    return viewAsync;
+    synchronized (sessionPools) {
+      if (closed) {
+        throw new IllegalStateException("Client is closed");
+      }
+      MaterializedViewAsync viewAsync =
+          MaterializedViewAsync.createAndStart(
+              featureFlags,
+              clientInfo,
+              configManager.get(),
+              channelPool,
+              defaultCallOptions,
+              viewId,
+              permission,
+              metrics.get(),
+              sessionTimer,
+              userCallbackExecutor.get());
+      sessionPools.add(viewAsync.getSessionPool());
+      return viewAsync;
+    }
   }
 
   public static class Resource<T> {
