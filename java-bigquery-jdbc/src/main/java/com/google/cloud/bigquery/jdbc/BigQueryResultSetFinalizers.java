@@ -64,9 +64,7 @@ class BigQueryResultSetFinalizers {
       LOG.finestTrace("finalizeResources");
       if (ownedTasks != null) {
         for (Future<?> ownedTask : ownedTasks) {
-          if (ownedTask != null) {
-            ownedTask.cancel(true);
-          }
+          ownedTask.cancel(true);
         }
       }
     }
