@@ -397,8 +397,10 @@ public class Client implements AutoCloseable {
   }
 
   // Drain in-flight listener.onClose tasks before the executor is shut down; bound the wait at 5s
-  // so close() doesn't hang the caller on a pathological listener.
-  private static void shutdownAndAwait(ExecutorService exec) {
+  // so close() doesn't hang the caller on a pathological listener. Public so the compat
+  // ShimImpl (different package) can reuse the same shutdown semantics for the user-callback
+  // executor it owns.
+  public static void shutdownAndAwait(ExecutorService exec) {
     exec.shutdown();
     try {
       if (!exec.awaitTermination(5, TimeUnit.SECONDS)) {

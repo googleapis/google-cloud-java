@@ -178,7 +178,8 @@ public class ShimImpl implements Shim {
             Resource.createShared(metrics),
             Resource.createShared(configManager),
             Resource.createShared(bgExecutor),
-            Resource.createOwned(userCallbackExecutor, userCallbackExecutor::shutdown));
+            Resource.createOwned(
+                userCallbackExecutor, () -> Client.shutdownAndAwait(userCallbackExecutor)));
 
     return new ShimImpl(configManager, client);
   }
