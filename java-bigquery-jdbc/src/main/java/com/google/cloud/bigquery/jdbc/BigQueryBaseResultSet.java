@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryError;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.Job;
@@ -44,10 +46,12 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.List;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
@@ -62,17 +66,30 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   protected final boolean isNested;
   protected boolean isClosed = false;
   protected boolean wasNull = false;
+  private int fetchSize = -1;
+  private Job job;
+  private SQLWarning warnings;
+  private boolean warningsLoaded = false;
   protected final BigQueryTypeCoercer bigQueryTypeCoercer = BigQueryTypeCoercionUtility.INSTANCE;
   protected final SpanContext originalSpanContext;
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested) {
+    this(bigQuery, statement, schema, isNested, null);
+  }
+
+  protected BigQueryBaseResultSet(
+      BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested, Job job) {
     this.bigQuery = bigQuery;
     this.statement = statement;
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
     this.originalSpanContext = Span.current().getSpanContext();
+    this.job = job;
+    if (job != null) {
+      this.jobId = job.getJobId();
+    }
     this.LOG =
         BigQueryJdbcResultSetLogger.getLogger(
             this.getClass(), statement != null ? statement.connectionId : null);
@@ -86,11 +103,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     if (queryStatistics != null) {
       return queryStatistics;
     }
-    if (jobId == null || bigQuery == null) {
-      return null;
+    Job activeJob = this.job;
+    if (activeJob == null && jobId != null && bigQuery != null) {
+      this.job = bigQuery.getJob(jobId);
+      activeJob = this.job;
     }
-    Job job = bigQuery.getJob(jobId);
-    queryStatistics = job != null ? job.getStatistics() : null;
+    queryStatistics = activeJob != null ? activeJob.getStatistics() : null;
     return queryStatistics;
   }
 
@@ -100,6 +118,20 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public JobId getJobId() {
     return jobId;
+  }
+
+  public void setJob(Job job) {
+    this.job = job;
+    if (job != null) {
+      this.jobId = job.getJobId();
+    }
+    this.queryStatistics = null;
+    this.warnings = null;
+    this.warningsLoaded = false;
+  }
+
+  public Job getJob() {
+    return job;
   }
 
   public void setQueryId(String queryId) {
@@ -697,5 +729,98 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public boolean isWrapperFor(Class<?> iface) throws SQLException {
     return iface != null && iface.isInstance(this);
+  }
+
+  @Override
+  public int getFetchDirection() throws SQLException {
+    checkClosed();
+    // Fetch direction is restricted to forward-only.
+    return ResultSet.FETCH_FORWARD;
+  }
+
+  @Override
+  public void setFetchDirection(int direction) throws SQLException {
+    checkClosed();
+    // Restricts the fetch direction to FETCH_FORWARD. Other directions are not supported.
+    if (direction != ResultSet.FETCH_FORWARD) {
+      throw new SQLException("Only FETCH_FORWARD is supported");
+    }
+  }
+
+  @Override
+  public void setFetchSize(int rows) throws SQLException {
+    checkClosed();
+    if (rows < 0) {
+      throw new SQLException("Fetch size must be >= 0");
+    }
+    // This is a no-op placeholder for JDBC API compliance to prevent crashes in
+    // third-party client tools that call this automatically.
+    // The driver manages pagination internally under the hood.
+    this.fetchSize = rows;
+  }
+
+  @Override
+  public int getFetchSize() throws SQLException {
+    checkClosed();
+    // Returns the fetch size set on this ResultSet, or falls back to the statement's
+    // fetch size, defaulting to the internal row buffer size of
+    // BigQueryStatement.DEFAULT_BUFFER_SIZE.
+    if (this.fetchSize > 0) {
+      return this.fetchSize;
+    }
+    if (statement != null) {
+      int statementFetchSize = statement.getFetchSize();
+      if (statementFetchSize > 0) {
+        return statementFetchSize;
+      }
+    }
+    return BigQueryStatement.DEFAULT_BUFFER_SIZE;
+  }
+
+  @Override
+  public SQLWarning getWarnings() throws SQLException {
+    checkClosed();
+    // Dynamically fetches and chains non-fatal execution errors from the BigQuery Job
+    // as SQLWarning objects, using lazy-loading and local caching for performance.
+    if (warningsLoaded) {
+      return warnings;
+    }
+    Job activeJob = this.job;
+    if (activeJob == null && jobId != null && bigQuery != null) {
+      try {
+        this.job = bigQuery.getJob(jobId);
+        activeJob = this.job;
+      } catch (BigQueryException e) {
+        throw new BigQueryJdbcException("Failed to retrieve job for warnings", e);
+      }
+    }
+    if (activeJob != null
+        && activeJob.getStatus() != null
+        && activeJob.getStatus().getExecutionErrors() != null) {
+      List<BigQueryError> errors = activeJob.getStatus().getExecutionErrors();
+      SQLWarning head = null;
+      SQLWarning tail = null;
+      for (BigQueryError error : errors) {
+        SQLWarning warning = new SQLWarning(error.getMessage(), error.getReason());
+        if (head == null) {
+          head = warning;
+          tail = warning;
+        } else {
+          tail.setNextWarning(warning);
+          tail = warning;
+        }
+      }
+      this.warnings = head;
+    }
+    this.warningsLoaded = true;
+    return warnings;
+  }
+
+  @Override
+  public void clearWarnings() throws SQLException {
+    checkClosed();
+    // Clears the cached warnings chain.
+    this.warnings = null;
+    this.warningsLoaded = true;
   }
 }

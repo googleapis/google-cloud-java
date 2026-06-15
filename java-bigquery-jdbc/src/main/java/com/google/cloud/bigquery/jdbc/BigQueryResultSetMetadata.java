@@ -134,12 +134,32 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int getPrecision(int column) {
-    return (int) (getField(column).getPrecision() != null ? getField(column).getPrecision() : 0);
+    Long precision = getField(column).getPrecision();
+    if (precision != null) {
+      return precision.intValue();
+    }
+    StandardSQLTypeName type = getStandardSQLTypeName(column);
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    if (typeInfo != null && typeInfo.columnSize != null) {
+      return typeInfo.columnSize;
+    }
+    return 0;
   }
 
   @Override
   public int getScale(int column) {
-    return (int) (getField(column).getScale() != null ? getField(column).getScale() : 0);
+    Long scale = getField(column).getScale();
+    if (scale != null) {
+      return scale.intValue();
+    }
+    StandardSQLTypeName type = getStandardSQLTypeName(column);
+    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
+        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    if (typeInfo != null && typeInfo.decimalDigits != null) {
+      return typeInfo.decimalDigits;
+    }
+    return 0;
   }
 
   @Override

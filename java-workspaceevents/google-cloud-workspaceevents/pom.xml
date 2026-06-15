@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-workspaceevents</artifactId>
-  <version>0.57.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
+  <version>0.58.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
   <packaging>jar</packaging>
   <name>Google Google Workspace Events API</name>
   <description>Google Workspace Events API The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-workspaceevents-parent</artifactId>
-    <version>0.57.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
+    <version>0.58.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-workspaceevents</site.installationModule>
@@ -41,6 +41,7 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-workspaceevents-v1beta</artifactId>
@@ -49,6 +50,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-workspaceevents-v1</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -70,11 +72,18 @@
       <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-workspaceevents-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-workspaceevents-v1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
@@ -96,11 +105,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-workspaceevents-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

@@ -56,6 +56,7 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     goldenRunMethod_ = 0;
     goldenEvaluationToolCallBehaviour_ = 0;
     scenarioEvaluationToolCallBehaviour_ = 0;
+    scenarioExecutionMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -245,6 +246,179 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.EvaluationSettings.ScenarioConversationInitiator)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The execution mode for scenario evaluations.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode}
+   */
+  public enum ScenarioExecutionMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified execution mode. Defaults to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>SCENARIO_EXECUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    SCENARIO_EXECUTION_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Quality optimized mode.
+     * </pre>
+     *
+     * <code>QUALITY_OPTIMIZED = 1;</code>
+     */
+    QUALITY_OPTIMIZED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Speed optimized mode.
+     * </pre>
+     *
+     * <code>SPEED_OPTIMIZED = 2;</code>
+     */
+    SPEED_OPTIMIZED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ScenarioExecutionMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified execution mode. Defaults to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>SCENARIO_EXECUTION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SCENARIO_EXECUTION_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Quality optimized mode.
+     * </pre>
+     *
+     * <code>QUALITY_OPTIMIZED = 1;</code>
+     */
+    public static final int QUALITY_OPTIMIZED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Speed optimized mode.
+     * </pre>
+     *
+     * <code>SPEED_OPTIMIZED = 2;</code>
+     */
+    public static final int SPEED_OPTIMIZED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ScenarioExecutionMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ScenarioExecutionMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SCENARIO_EXECUTION_MODE_UNSPECIFIED;
+        case 1:
+          return QUALITY_OPTIMIZED;
+        case 2:
+          return SPEED_OPTIMIZED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ScenarioExecutionMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ScenarioExecutionMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ScenarioExecutionMode>() {
+              public ScenarioExecutionMode findValueByNumber(int number) {
+                return ScenarioExecutionMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.EvaluationSettings.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ScenarioExecutionMode[] VALUES = values();
+
+    public static ScenarioExecutionMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ScenarioExecutionMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode)
+  }
+
+  private int bitField0_;
   public static final int SCENARIO_CONVERSATION_INITIATOR_FIELD_NUMBER = 1;
   private int scenarioConversationInitiator_ = 0;
 
@@ -427,6 +601,112 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int METRICS_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.ces.v1beta.EvaluationMetricsConfig metricsConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metricsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetricsConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metricsConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsConfig getMetricsConfig() {
+    return metricsConfig_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+        : metricsConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures the default metrics for evaluations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder getMetricsConfigOrBuilder() {
+    return metricsConfig_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+        : metricsConfig_;
+  }
+
+  public static final int SCENARIO_EXECUTION_MODE_FIELD_NUMBER = 6;
+  private int scenarioExecutionMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for scenario evaluations. If not provided,
+   * will default to QUALITY_OPTIMIZED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scenarioExecutionMode.
+   */
+  @java.lang.Override
+  public int getScenarioExecutionModeValue() {
+    return scenarioExecutionMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for scenario evaluations. If not provided,
+   * will default to QUALITY_OPTIMIZED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scenarioExecutionMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+      getScenarioExecutionMode() {
+    com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode result =
+        com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.forNumber(
+            scenarioExecutionMode_);
+    return result == null
+        ? com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -462,6 +742,15 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     if (goldenRunMethod_
         != com.google.cloud.ces.v1beta.GoldenRunMethod.GOLDEN_RUN_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, goldenRunMethod_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getMetricsConfig());
+    }
+    if (scenarioExecutionMode_
+        != com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+            .SCENARIO_EXECUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, scenarioExecutionMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -499,6 +788,15 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
         != com.google.cloud.ces.v1beta.GoldenRunMethod.GOLDEN_RUN_METHOD_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, goldenRunMethod_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMetricsConfig());
+    }
+    if (scenarioExecutionMode_
+        != com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+            .SCENARIO_EXECUTION_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scenarioExecutionMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -521,6 +819,11 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       return false;
     if (scenarioEvaluationToolCallBehaviour_ != other.scenarioEvaluationToolCallBehaviour_)
       return false;
+    if (hasMetricsConfig() != other.hasMetricsConfig()) return false;
+    if (hasMetricsConfig()) {
+      if (!getMetricsConfig().equals(other.getMetricsConfig())) return false;
+    }
+    if (scenarioExecutionMode_ != other.scenarioExecutionMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -540,6 +843,12 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + goldenEvaluationToolCallBehaviour_;
     hash = (37 * hash) + SCENARIO_EVALUATION_TOOL_CALL_BEHAVIOUR_FIELD_NUMBER;
     hash = (53 * hash) + scenarioEvaluationToolCallBehaviour_;
+    if (hasMetricsConfig()) {
+      hash = (37 * hash) + METRICS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricsConfig().hashCode();
+    }
+    hash = (37 * hash) + SCENARIO_EXECUTION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + scenarioExecutionMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -670,10 +979,19 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.ces.v1beta.EvaluationSettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMetricsConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -684,6 +1002,12 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       goldenRunMethod_ = 0;
       goldenEvaluationToolCallBehaviour_ = 0;
       scenarioEvaluationToolCallBehaviour_ = 0;
+      metricsConfig_ = null;
+      if (metricsConfigBuilder_ != null) {
+        metricsConfigBuilder_.dispose();
+        metricsConfigBuilder_ = null;
+      }
+      scenarioExecutionMode_ = 0;
       return this;
     }
 
@@ -732,6 +1056,16 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.scenarioEvaluationToolCallBehaviour_ = scenarioEvaluationToolCallBehaviour_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metricsConfig_ =
+            metricsConfigBuilder_ == null ? metricsConfig_ : metricsConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.scenarioExecutionMode_ = scenarioExecutionMode_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -759,6 +1093,12 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
       if (other.scenarioEvaluationToolCallBehaviour_ != 0) {
         setScenarioEvaluationToolCallBehaviourValue(
             other.getScenarioEvaluationToolCallBehaviourValue());
+      }
+      if (other.hasMetricsConfig()) {
+        mergeMetricsConfig(other.getMetricsConfig());
+      }
+      if (other.scenarioExecutionMode_ != 0) {
+        setScenarioExecutionModeValue(other.getScenarioExecutionModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -810,6 +1150,19 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    internalGetMetricsConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 48:
+              {
+                scenarioExecutionMode_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1277,6 +1630,336 @@ public final class EvaluationSettings extends com.google.protobuf.GeneratedMessa
     public Builder clearScenarioEvaluationToolCallBehaviour() {
       bitField0_ = (bitField0_ & ~0x00000008);
       scenarioEvaluationToolCallBehaviour_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.ces.v1beta.EvaluationMetricsConfig metricsConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>
+        metricsConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the metricsConfig field is set.
+     */
+    public boolean hasMetricsConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The metricsConfig.
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig getMetricsConfig() {
+      if (metricsConfigBuilder_ == null) {
+        return metricsConfig_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+            : metricsConfig_;
+      } else {
+        return metricsConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetricsConfig(com.google.cloud.ces.v1beta.EvaluationMetricsConfig value) {
+      if (metricsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricsConfig_ = value;
+      } else {
+        metricsConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetricsConfig(
+        com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder builderForValue) {
+      if (metricsConfigBuilder_ == null) {
+        metricsConfig_ = builderForValue.build();
+      } else {
+        metricsConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMetricsConfig(com.google.cloud.ces.v1beta.EvaluationMetricsConfig value) {
+      if (metricsConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && metricsConfig_ != null
+            && metricsConfig_
+                != com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()) {
+          getMetricsConfigBuilder().mergeFrom(value);
+        } else {
+          metricsConfig_ = value;
+        }
+      } else {
+        metricsConfigBuilder_.mergeFrom(value);
+      }
+      if (metricsConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMetricsConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metricsConfig_ = null;
+      if (metricsConfigBuilder_ != null) {
+        metricsConfigBuilder_.dispose();
+        metricsConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder getMetricsConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetMetricsConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder
+        getMetricsConfigOrBuilder() {
+      if (metricsConfigBuilder_ != null) {
+        return metricsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return metricsConfig_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+            : metricsConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the default metrics for evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig metrics_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>
+        internalGetMetricsConfigFieldBuilder() {
+      if (metricsConfigBuilder_ == null) {
+        metricsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>(
+                getMetricsConfig(), getParentForChildren(), isClean());
+        metricsConfig_ = null;
+      }
+      return metricsConfigBuilder_;
+    }
+
+    private int scenarioExecutionMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations. If not provided,
+     * will default to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scenarioExecutionMode.
+     */
+    @java.lang.Override
+    public int getScenarioExecutionModeValue() {
+      return scenarioExecutionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations. If not provided,
+     * will default to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for scenarioExecutionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScenarioExecutionModeValue(int value) {
+      scenarioExecutionMode_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations. If not provided,
+     * will default to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scenarioExecutionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+        getScenarioExecutionMode() {
+      com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode result =
+          com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.forNumber(
+              scenarioExecutionMode_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations. If not provided,
+     * will default to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The scenarioExecutionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScenarioExecutionMode(
+        com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      scenarioExecutionMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations. If not provided,
+     * will default to QUALITY_OPTIMIZED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScenarioExecutionMode() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      scenarioExecutionMode_ = 0;
       onChanged();
       return this;
     }

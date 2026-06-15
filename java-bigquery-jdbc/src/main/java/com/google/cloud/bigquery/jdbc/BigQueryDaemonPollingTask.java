@@ -45,6 +45,7 @@ class BigQueryDaemonPollingTask extends Thread {
   private BigQueryDaemonPollingTask(
       List<BigQueryResultSetFinalizers.ArrowResultSetFinalizer> arrowRsFinalizers,
       ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs) {
+    super("BigQuery-GC-Daemon-Arrow");
     BigQueryDaemonPollingTask.referenceQueueArrowRs = referenceQueueArrowRs;
     BigQueryDaemonPollingTask.arrowRsFinalizers = arrowRsFinalizers;
     setDaemon(true);
@@ -53,6 +54,7 @@ class BigQueryDaemonPollingTask extends Thread {
   private BigQueryDaemonPollingTask(
       ReferenceQueue<BigQueryJsonResultSet> referenceQueueJsonRs,
       List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonRsFinalizers) {
+    super("BigQuery-GC-Daemon-Json");
     BigQueryDaemonPollingTask.referenceQueueJsonRs = referenceQueueJsonRs;
     BigQueryDaemonPollingTask.jsonRsFinalizers = jsonRsFinalizers;
     setDaemon(true);

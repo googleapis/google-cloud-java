@@ -86,32 +86,6 @@ public interface SpannerDatabaseReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The region of the instance.
-   * </pre>
-   *
-   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The region.
-   */
-  java.lang.String getRegion();
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. The region of the instance.
-   * </pre>
-   *
-   * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
-   * @return The bytes for region.
-   */
-  com.google.protobuf.ByteString getRegionBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Required. The instance id.
    * </pre>
    *
@@ -213,4 +187,146 @@ public interface SpannerDatabaseReferenceOrBuilder
    * @return The bytes of the tableIds at the given index.
    */
   com.google.protobuf.ByteString getTableIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      getDatabaseTableReferencesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference getDatabaseTableReferences(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDatabaseTableReferencesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+      getDatabaseTableReferencesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+      getDatabaseTableReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Priority for the queries to Spanner. Should be a value supported
+   * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+   * ignored. See
+   * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+   * for complete list.
+   * </pre>
+   *
+   * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priority.
+   */
+  java.lang.String getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Priority for the queries to Spanner. Should be a value supported
+   * by Cloud Spanner e.g.: LOW, MEDIUM, HIGH. Unsupported values will be
+   * ignored. See
+   * https://docs.cloud.google.com/spanner/docs/reference/rest/v1/RequestOptions#Priority
+   * for complete list.
+   * </pre>
+   *
+   * <code>string priority = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for priority.
+   */
+  com.google.protobuf.ByteString getPriorityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tag to be attached to all queries to Spanner. Allows to identify and
+   * monitor queries sent to Spanner by the GDA service.
+   * </pre>
+   *
+   * <code>string request_tag = 9;</code>
+   *
+   * @return The requestTag.
+   */
+  java.lang.String getRequestTag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tag to be attached to all queries to Spanner. Allows to identify and
+   * monitor queries sent to Spanner by the GDA service.
+   * </pre>
+   *
+   * <code>string request_tag = 9;</code>
+   *
+   * @return The bytes for requestTag.
+   */
+  com.google.protobuf.ByteString getRequestTagBytes();
 }

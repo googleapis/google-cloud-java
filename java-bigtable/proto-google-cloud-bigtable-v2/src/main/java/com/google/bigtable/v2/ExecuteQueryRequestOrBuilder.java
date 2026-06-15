@@ -101,7 +101,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1132
+   *     google/bigtable/v2/bigtable.proto;l=1145
    * @return The query.
    */
   @java.lang.Deprecated
@@ -120,7 +120,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>string query = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.query is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1132
+   *     google/bigtable/v2/bigtable.proto;l=1145
    * @return The bytes for query.
    */
   @java.lang.Deprecated
@@ -158,7 +158,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1153
+   *     google/bigtable/v2/bigtable.proto;l=1166
    * @return Whether the protoFormat field is set.
    */
   @java.lang.Deprecated
@@ -175,7 +175,7 @@ public interface ExecuteQueryRequestOrBuilder
    * <code>.google.bigtable.v2.ProtoFormat proto_format = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ExecuteQueryRequest.proto_format is deprecated. See
-   *     google/bigtable/v2/bigtable.proto;l=1153
+   *     google/bigtable/v2/bigtable.proto;l=1166
    * @return The protoFormat.
    */
   @java.lang.Deprecated
@@ -395,6 +395,104 @@ public interface ExecuteQueryRequestOrBuilder
    * </code>
    */
   com.google.bigtable.v2.Value getParamsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getViewParametersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsViewParameters(java.lang.String key);
+
+  /** Use {@link #getViewParametersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getViewParametersMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.bigtable.v2.Value getViewParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.bigtable.v2.Value defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This map provides the runtime values returned by the
+   * VIEW_PARAMETERS() function calls, typically used for user-level scoping of
+   * data based on identity.
+   *
+   * The key is the name of the view parameter e.g. `user_id`, and
+   * the value is the parameter value e.g. `alice&#64;example.com`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.bigtable.v2.Value&gt; view_parameters = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.bigtable.v2.Value getViewParametersOrThrow(java.lang.String key);
 
   com.google.bigtable.v2.ExecuteQueryRequest.DataFormatCase getDataFormatCase();
 }

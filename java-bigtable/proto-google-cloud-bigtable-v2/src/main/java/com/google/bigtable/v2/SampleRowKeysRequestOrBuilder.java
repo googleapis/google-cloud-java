@@ -163,4 +163,53 @@ public interface SampleRowKeysRequestOrBuilder
    * @return The bytes for appProfileId.
    */
   com.google.protobuf.ByteString getAppProfileIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rowRange field is set.
+   */
+  boolean hasRowRange();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rowRange.
+   */
+  com.google.bigtable.v2.RowRange getRowRange();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The row range to sample. If not specified, samples
+   * from all rows.
+   * The output will always return the end key in the range as the last sample
+   * returned.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.RowRange row_range = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.bigtable.v2.RowRangeOrBuilder getRowRangeOrBuilder();
 }

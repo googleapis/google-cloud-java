@@ -40,6 +40,7 @@
     <module>java-assured-workloads</module>
     <module>java-auditmanager</module>
     <module>java-automl</module>
+    <module>java-backstory</module>
     <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
     <module>java-batch</module>

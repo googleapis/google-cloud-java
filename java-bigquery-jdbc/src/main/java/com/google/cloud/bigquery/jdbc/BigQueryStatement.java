@@ -102,6 +102,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected static ExecutorService queryTaskExecutor =
       Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  public static final int DEFAULT_BUFFER_SIZE = BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS * 2;
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
   private static final String JDBC_JOB_PREFIX = "google-jdbc-";
@@ -627,7 +628,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               ? getStatementType(jobConfiguration)
               : ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
       SqlType queryType = getQueryType(jobConfiguration, statementType);
-      handleQueryResult(query, executeResult.tableResult, queryType);
+      handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
@@ -691,14 +692,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   void handleQueryResult(String query, TableResult results, SqlType queryType)
       throws SQLException, InterruptedException {
+    handleQueryResult(query, results, queryType, null);
+  }
+
+  void handleQueryResult(String query, TableResult results, SqlType queryType, Job job)
+      throws SQLException, InterruptedException {
     LOG.finer("++enter++");
     switch (queryType) {
       case SELECT:
-        processQueryResponse(query, results);
+        processQueryResponse(query, results, job);
         break;
       case DML:
       case DML_EXTRA:
-        QueryStatistics dmlStats = getQueryStatisticsFromJob(results);
+        QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
         Long dmlRowCount =
             (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
                 ? dmlStats.getNumDmlAffectedRows()
@@ -730,13 +736,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           StatementType statementType =
               ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
           SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-          handleQueryResult(query, currentJob.getQueryResults(), sqlType);
+          handleQueryResult(query, currentJob.getQueryResults(), sqlType, currentJob);
         } catch (NullPointerException ex) {
           throw new BigQueryJdbcException(ex);
         }
         break;
       case EXPORT:
-        QueryStatistics exportStats = getQueryStatisticsFromJob(results);
+        QueryStatistics exportStats = getQueryStatisticsFromJob(results, job);
         Long exportRowCount = 0L;
         if (exportStats != null) {
           QueryStatistics.ExportDataStats dataStats = exportStats.getExportDataStats();
@@ -758,10 +764,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private QueryStatistics getQueryStatisticsFromJob(TableResult results) throws SQLException {
+  private QueryStatistics getQueryStatisticsFromJob(TableResult results, Job job)
+      throws SQLException {
     try {
-      Job job = this.bigQuery.getJob(results.getJobId());
-      Job completedJob = (job != null) ? job.waitFor() : null;
+      Job activeJob = job;
+      if (activeJob == null) {
+        activeJob = this.bigQuery.getJob(results.getJobId());
+      }
+      Job completedJob = (activeJob != null) ? activeJob.waitFor() : null;
       JobStatistics stats = (completedJob != null) ? completedJob.getStatistics() : null;
       if (stats instanceof QueryStatistics) {
         return (QueryStatistics) stats;
@@ -807,9 +817,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return readSession.getArrowSchema();
   }
 
-  /** Uses Bigquery Storage Read API and returns the stream as ResultSet */
   @InternalApi
-  ResultSet processArrowResultSet(TableResult results) throws SQLException {
+  ResultSet processArrowResultSet(TableResult results, Job job) throws SQLException {
     LOG.finer("++enter++");
 
     // set the resultset
@@ -852,11 +861,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               this,
               this.arrowBatchWrapperBlockingQueue,
               populateBufferWorker,
-              this.bigQuery);
+              this.bigQuery,
+              job);
       arrowResultSetFinalizers.add(
           new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
       arrowResultSet.setJobId(currentJobId);
+      arrowResultSet.setQueryId(results.getQueryId());
       return arrowResultSet;
 
     } catch (Exception ex) {
@@ -956,6 +967,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
+    processQueryResponse(query, results, null);
+  }
+
+  void processQueryResponse(String query, TableResult results, Job job) throws SQLException {
     JobId jobId = results.getJobId();
     String queryId = results.getQueryId();
     LOG.info(
@@ -967,7 +982,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet = processArrowResultSet(results);
+        resultSet = processArrowResultSet(results, job);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -978,7 +993,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
-      resultSet = processJsonResultSet(results);
+      resultSet = processJsonResultSet(results, job);
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
@@ -1031,7 +1046,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return totalRows / pageSize > querySettings.getHighThroughputActivationRatio();
   }
 
-  BigQueryJsonResultSet processJsonResultSet(TableResult results) {
+  BigQueryJsonResultSet processJsonResultSet(TableResult results, Job job) {
     List<Thread> threadList = new ArrayList<Thread>();
 
     Schema schema = results.getSchema();
@@ -1077,7 +1092,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             this.bigQueryFieldValueListWrapperBlockingQueue,
             this,
             jsonWorkers,
-            this.bigQuery);
+            this.bigQuery,
+            job);
     jsonResultSet.setJobId(jobId);
     jsonResultSet.setQueryId(results.getQueryId());
     jsonResultSetFinalizers.add(
@@ -1164,7 +1180,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * Helper method that determines the optimal number of caches pages to improve read performance
    */
   @VisibleForTesting
-  int getPageCacheSize(Integer numBufferedRows, Schema schema) {
+  int getPageCacheSize(int numBufferedRows, Schema schema) {
     LOG.finer("++enter++");
     // Min number of pages to cache
     final int MIN_CACHE_SIZE = 3;
@@ -1172,7 +1188,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     final int MAX_CACHE_SIZE = 20;
     int numColumns = schema.getFields().size();
     int numCachedPages;
-    long numCachedRows = numBufferedRows == null ? 0 : numBufferedRows.longValue();
+    long numCachedRows = numBufferedRows;
 
     // TODO: Further enhance this logic depending on customer feedback on memory consumption
     if (numCachedRows > 10000) {
@@ -1206,10 +1222,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   // getNumBufferedRows in querySettings is always the same withDefaultValues - 20000 buffer size
   // So, getBufferSize is also 20000.
   private int getBufferSize() {
-    return (this.querySettings == null
-            || this.querySettings.getNumBufferedRows() == null
-            || this.querySettings.getNumBufferedRows() < 10000
-        ? 20000
+    return (this.querySettings.getNumBufferedRows() < BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS
+        ? DEFAULT_BUFFER_SIZE
         : Math.min(this.querySettings.getNumBufferedRows() * 2, 100000));
   }
 
@@ -1298,7 +1312,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @Override
-  public void setFetchSize(int rows) {
+  public void setFetchSize(int rows) throws SQLException {
+    if (rows < 0) {
+      throw new SQLException("Fetch size must be >= 0");
+    }
     this.fetchSize = rows;
   }
 
@@ -1489,7 +1506,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         StatementType statementType =
             ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
         SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
-        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType);
+        handleQueryResult(this.scriptQuery, currentJob.getQueryResults(), sqlType, currentJob);
 
         return sqlType == SqlType.SELECT;
       } else {

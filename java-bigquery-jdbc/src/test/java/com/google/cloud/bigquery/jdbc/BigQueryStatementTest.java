@@ -254,7 +254,7 @@ public class BigQueryStatementTest {
     QueryJobConfiguration jobConfiguration = QueryJobConfiguration.newBuilder(query).build();
 
     doReturn(result).when(bigquery).query(jobConfiguration);
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
     // verify the statement's state
@@ -287,7 +287,7 @@ public class BigQueryStatementTest {
 
     doReturn(bigQueryJsonResultSet)
         .when(bigQueryStatementSpy)
-        .processJsonResultSet(any(TableResult.class));
+        .processJsonResultSet(any(TableResult.class), any());
 
     bigQueryStatementSpy.runQuery(query, queryJobConfiguration);
     // verify the statement's state
@@ -324,7 +324,7 @@ public class BigQueryStatementTest {
     doReturn(mock(QueryStatistics.class)).when(job).getStatistics();
     doReturn(job).when(bigquery).getJob(jobId);
 
-    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result);
+    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result, null);
     assertThat(resultSet).isNotNull();
     assertThat(resultSet).isInstanceOf(BigQueryArrowResultSet.class);
     assertThat(resultSet.isLast()).isFalse(); // as we have 10 rows
@@ -362,7 +362,7 @@ public class BigQueryStatementTest {
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
-    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
+    doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(eq(result), any());
     ArgumentCaptor<QueryJobConfiguration> captor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
@@ -434,7 +434,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(joblessStatementSpy)
-        .processJsonResultSet(tableResultMock);
+        .processJsonResultSet(eq(tableResultMock), any());
 
     Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
     ArgumentCaptor<JobInfo> dryRunCaptor = ArgumentCaptor.forClass(JobInfo.class);
@@ -462,7 +462,7 @@ public class BigQueryStatementTest {
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
-        .processJsonResultSet(tableResultJobfulMock);
+        .processJsonResultSet(eq(tableResultJobfulMock), any());
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
@@ -512,7 +512,9 @@ public class BigQueryStatementTest {
     BigQueryStatement joblessStatementSpy = Mockito.spy(joblessStatement);
 
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(resultSetMock).when(joblessStatementSpy).processJsonResultSet(tableResultMock);
+    doReturn(resultSetMock)
+        .when(joblessStatementSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
 
     joblessStatementSpy.executeQuery("SELECT 1");
 
@@ -681,16 +683,18 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated permission denied", apiExceptionMock);
 
     // Force processArrowResultSet to throw the permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
     // Mock processJsonResultSet to return our mock JSON result set
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     statementSpy.processQueryResponse("SELECT 1", tableResultMock);
 
     // Verify that processJsonResultSet was indeed called as a fallback
-    verify(statementSpy).processJsonResultSet(tableResultMock);
+    verify(statementSpy).processJsonResultSet(eq(tableResultMock), any());
     // Verify that currentResultSet is set to the mocked JSON result set
     assertThat(statementSpy.currentResultSet).isEqualTo(jsonResultSetMock);
   }
@@ -710,10 +714,12 @@ public class BigQueryStatementTest {
         new BigQueryJdbcException("Simulated internal error", apiExceptionMock);
 
     // Force processArrowResultSet to throw the non-permission exception
-    Mockito.doThrow(exceptionToThrow).when(statementSpy).processArrowResultSet(tableResultMock);
+    Mockito.doThrow(exceptionToThrow)
+        .when(statementSpy)
+        .processArrowResultSet(eq(tableResultMock), any());
 
     BigQueryJsonResultSet jsonResultSetMock = mock(BigQueryJsonResultSet.class);
-    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(tableResultMock);
+    doReturn(jsonResultSetMock).when(statementSpy).processJsonResultSet(eq(tableResultMock), any());
 
     // Assert that the exception is propagated
     try {
@@ -724,7 +730,7 @@ public class BigQueryStatementTest {
     }
 
     // Verify that processJsonResultSet was NOT called
-    verify(statementSpy, Mockito.never()).processJsonResultSet(tableResultMock);
+    verify(statementSpy, Mockito.never()).processJsonResultSet(eq(tableResultMock), any());
   }
 
   private TableResult mockTableResultWithJob(String jobId) {
@@ -918,5 +924,17 @@ public class BigQueryStatementTest {
         org.junit.jupiter.api.Assertions.assertThrows(
             BigQueryJdbcException.class, () -> bigQueryStatement.unwrap(java.sql.Connection.class));
     assertTrue(e.getMessage().contains("Cannot unwrap to java.sql.Connection"));
+  }
+
+  @Test
+  public void testSetFetchSizeNegativeThrows() {
+    org.junit.jupiter.api.Assertions.assertThrows(
+        SQLException.class, () -> bigQueryStatement.setFetchSize(-1));
+  }
+
+  @Test
+  public void testSetAndGetFetchSize() throws SQLException {
+    bigQueryStatement.setFetchSize(100);
+    assertEquals(100, bigQueryStatement.getFetchSize());
   }
 }

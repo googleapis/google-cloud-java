@@ -42,8 +42,8 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
@@ -65,7 +65,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.Set;
@@ -2544,27 +2543,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return values;
   }
 
-  static class ColumnTypeInfo {
-    final int jdbcType;
-    final String typeName;
-    final Integer columnSize;
-    final Integer decimalDigits;
-    final Integer numPrecRadix;
-
-    ColumnTypeInfo(
-        int jdbcType,
-        String typeName,
-        Integer columnSize,
-        Integer decimalDigits,
-        Integer numPrecRadix) {
-      this.jdbcType = jdbcType;
-      this.typeName = typeName;
-      this.columnSize = columnSize;
-      this.decimalDigits = decimalDigits;
-      this.numPrecRadix = numPrecRadix;
-    }
-  }
-
   ColumnTypeInfo mapBigQueryTypeToJdbc(Field field) {
     Mode mode = (field.getMode() == null) ? Mode.NULLABLE : field.getMode();
     if (mode == Mode.REPEATED) {
@@ -4974,53 +4952,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Tuple.of(effectiveCatalog, effectiveSchemaPattern);
   }
 
-  // BigQuery STRING represents Unicode character strings (UTF-8).
-  // Standard JDBC maps UTF-8/Unicode data to Types.NVARCHAR rather than Types.VARCHAR.
-  private static final Map<StandardSQLTypeName, ColumnTypeInfo> STANDARD_TYPE_INFO =
-      ImmutableMap.<StandardSQLTypeName, ColumnTypeInfo>builder()
-          .put(StandardSQLTypeName.INT64, new ColumnTypeInfo(Types.BIGINT, "INT64", 19, 0, 10))
-          .put(StandardSQLTypeName.BOOL, new ColumnTypeInfo(Types.BOOLEAN, "BOOL", 1, null, null))
-          .put(
-              StandardSQLTypeName.FLOAT64,
-              new ColumnTypeInfo(Types.DOUBLE, "FLOAT64", 15, null, 10))
-          .put(StandardSQLTypeName.NUMERIC, new ColumnTypeInfo(Types.NUMERIC, "NUMERIC", 38, 9, 10))
-          .put(
-              StandardSQLTypeName.BIGNUMERIC,
-              new ColumnTypeInfo(Types.NUMERIC, "BIGNUMERIC", 77, 38, 10))
-          .put(
-              StandardSQLTypeName.STRING,
-              new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null))
-          .put(
-              StandardSQLTypeName.TIMESTAMP,
-              new ColumnTypeInfo(Types.TIMESTAMP, "TIMESTAMP", 29, null, null))
-          .put(
-              StandardSQLTypeName.DATETIME,
-              new ColumnTypeInfo(Types.TIMESTAMP, "DATETIME", 29, null, null))
-          .put(StandardSQLTypeName.DATE, new ColumnTypeInfo(Types.DATE, "DATE", 10, null, null))
-          .put(StandardSQLTypeName.TIME, new ColumnTypeInfo(Types.TIME, "TIME", 15, null, null))
-          .put(
-              StandardSQLTypeName.GEOGRAPHY,
-              new ColumnTypeInfo(Types.OTHER, "GEOGRAPHY", null, null, null))
-          .put(StandardSQLTypeName.JSON, new ColumnTypeInfo(Types.OTHER, "JSON", null, null, null))
-          .put(
-              StandardSQLTypeName.INTERVAL,
-              new ColumnTypeInfo(Types.OTHER, "INTERVAL", null, null, null))
-          .put(
-              StandardSQLTypeName.RANGE, new ColumnTypeInfo(Types.OTHER, "RANGE", null, null, null))
-          .put(
-              StandardSQLTypeName.BYTES,
-              new ColumnTypeInfo(Types.VARBINARY, "BYTES", null, null, null))
-          .put(
-              StandardSQLTypeName.STRUCT,
-              new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
-          .build();
-
   private ColumnTypeInfo getColumnTypeInfoForSqlType(StandardSQLTypeName bqType) {
     if (bqType == null) {
       LOG.warning("Null BigQuery type encountered. Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     }
-    ColumnTypeInfo info = STANDARD_TYPE_INFO.get(bqType);
+    ColumnTypeInfo info = BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(bqType);
     if (info == null) {
       LOG.warning("Unknown BigQuery type encountered: " + bqType.name() + ". Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);

@@ -96,9 +96,6 @@ owl-bot copy-code \
   --source-repo="${owlbot_cli_source_folder}" \
   --config-file="${owlbot_yaml_relative_path}"
 
-restore_version_java "${PWD}" "${backup_dir}"
-rm -rf "${backup_dir}"
-
 
 # clean the custom owlbot yaml
 if [[ "${is_monorepo}" == "true" ]]; then
@@ -115,4 +112,8 @@ bash "${scripts_root}/owlbot/bin/entrypoint.sh" \
   "${libraries_bom_version}" \
   "${library_version}"
 
+restore_version_java "${PWD}" "${backup_dir}"
+rm -rf "${backup_dir}"
+
 popd # postprocessing_target
+

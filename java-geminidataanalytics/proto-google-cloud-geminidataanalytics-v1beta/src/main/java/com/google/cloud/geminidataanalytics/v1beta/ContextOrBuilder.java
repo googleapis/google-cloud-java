@@ -155,7 +155,8 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -170,7 +171,8 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -185,7 +187,8 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -200,7 +203,8 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -216,7 +220,8 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -232,7 +237,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -248,7 +253,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -263,7 +268,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -278,7 +283,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -294,7 +299,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -309,6 +314,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -322,6 +328,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -335,6 +342,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -348,6 +356,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -362,6 +371,7 @@ public interface ContextOrBuilder
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -445,4 +455,47 @@ public interface ContextOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder
       getSchemaRelationshipsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userFunctions field is set.
+   */
+  boolean hasUserFunctions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userFunctions.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.UserFunctions getUserFunctions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder getUserFunctionsOrBuilder();
 }

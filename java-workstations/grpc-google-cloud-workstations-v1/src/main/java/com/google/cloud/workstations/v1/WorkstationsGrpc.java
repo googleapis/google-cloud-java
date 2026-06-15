@@ -1344,6 +1344,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     default void generateAccessToken(
@@ -1711,6 +1713,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public void generateAccessToken(
@@ -2018,6 +2022,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.cloud.workstations.v1.GenerateAccessTokenResponse generateAccessToken(
@@ -2303,6 +2309,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.cloud.workstations.v1.GenerateAccessTokenResponse generateAccessToken(
@@ -2605,6 +2613,8 @@ public final class WorkstationsGrpc {
      * <pre>
      * Returns a short-lived credential that can be used to send authenticated and
      * authorized traffic to a workstation.
+     * Once generated this token cannot be revoked and is good for the lifetime
+     * of the token.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

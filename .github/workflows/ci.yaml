@@ -56,62 +56,71 @@ jobs:
   units:
     runs-on: ubuntu-latest
     needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     strategy:
       fail-fast: false
       matrix:
-        java: [11, 17, 21, 25]
+        java: [11, 17, 21, 25, 26]
     steps:
     - name: Get current week within the year
       id: date
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
     - run: java -version
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/cache@v4
       id: mvn-cache
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
     needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     name: "units (8)"
     steps:
     - name: Get current week within the year
       id: date
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         java-version: 8
         distribution: temurin
     - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
       # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
       # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
       shell: bash    
     - uses: actions/setup-java@v4
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         java-version: 11
         distribution: temurin
         cache: maven
     - uses: actions/cache@v4
       id: mvn-cache
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       shell: bash      
       env:
         JOB_TYPE: test
@@ -217,7 +226,7 @@ jobs:
       fail-fast: false
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
-        java: [11, 17, 21, 25]
+        java: [11, 17, 21, 25, 26]
     steps:
     - name: Get current week within the year
       id: date

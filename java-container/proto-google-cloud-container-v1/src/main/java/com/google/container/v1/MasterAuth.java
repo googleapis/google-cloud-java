@@ -99,7 +99,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2169
+   *     google/container/v1/cluster_service.proto;l=2187
    * @return The username.
    */
   @java.lang.Override
@@ -133,7 +133,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2169
+   *     google/container/v1/cluster_service.proto;l=2187
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -173,7 +173,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2180
+   *     google/container/v1/cluster_service.proto;l=2198
    * @return The password.
    */
   @java.lang.Override
@@ -208,7 +208,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2180
+   *     google/container/v1/cluster_service.proto;l=2198
    * @return The bytes for password.
    */
   @java.lang.Override
@@ -924,7 +924,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2169
+     *     google/container/v1/cluster_service.proto;l=2187
      * @return The username.
      */
     @java.lang.Deprecated
@@ -957,7 +957,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2169
+     *     google/container/v1/cluster_service.proto;l=2187
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -990,7 +990,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2169
+     *     google/container/v1/cluster_service.proto;l=2187
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -1022,7 +1022,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2169
+     *     google/container/v1/cluster_service.proto;l=2187
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1050,7 +1050,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string username = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2169
+     *     google/container/v1/cluster_service.proto;l=2187
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */
@@ -1086,7 +1086,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2180
+     *     google/container/v1/cluster_service.proto;l=2198
      * @return The password.
      */
     @java.lang.Deprecated
@@ -1120,7 +1120,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2180
+     *     google/container/v1/cluster_service.proto;l=2198
      * @return The bytes for password.
      */
     @java.lang.Deprecated
@@ -1154,7 +1154,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2180
+     *     google/container/v1/cluster_service.proto;l=2198
      * @param value The password to set.
      * @return This builder for chaining.
      */
@@ -1187,7 +1187,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2180
+     *     google/container/v1/cluster_service.proto;l=2198
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1216,7 +1216,7 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessage
      * <code>string password = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2180
+     *     google/container/v1/cluster_service.proto;l=2198
      * @param value The bytes for password to set.
      * @return This builder for chaining.
      */
