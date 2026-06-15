@@ -30,6 +30,7 @@
 package com.google.api.gax.retrying;
 
 import static com.google.api.gax.retrying.FailingCallable.FAST_RETRY_SETTINGS;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -41,6 +42,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.FailingCallable.CustomException;
 import com.google.api.gax.rpc.testing.FakeCallContext;
+import java.time.Duration;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -99,26 +101,30 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
       future.setAttemptFuture(executor.submit(future));
 
-      int failedAttempts = 0;
-      while (!future.isDone()) {
-        ApiFuture<String> attemptResult = future.peekAttemptResult();
-        if (attemptResult != null) {
-          assertTrue(attemptResult.isDone());
-          assertFalse(attemptResult.isCancelled());
-          try {
-            attemptResult.get();
-          } catch (ExecutionException e) {
-            if (e.getCause() instanceof CustomException) {
-              failedAttempts++;
-            }
-          }
-        }
-        Thread.sleep(0L, 100);
-      }
+      final int[] failedAttempts = {0};
+      await()
+          .pollInterval(Duration.ofMillis(2))
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () -> {
+                ApiFuture<String> attemptResult = future.peekAttemptResult();
+                if (attemptResult != null) {
+                  assertTrue(attemptResult.isDone());
+                  assertFalse(attemptResult.isCancelled());
+                  try {
+                    attemptResult.get();
+                  } catch (ExecutionException e) {
+                    if (e.getCause() instanceof CustomException) {
+                      failedAttempts[0]++;
+                    }
+                  }
+                }
+                return future.isDone();
+              });
 
       assertFutureSuccess(future);
       assertEquals(15, future.getAttemptSettings().getAttemptCount());
-      assertTrue(failedAttempts > 0);
+      assertTrue(failedAttempts[0] > 0);
     }
   }
 
@@ -260,9 +266,12 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       callable.setExternalFuture(future);
       future.setAttemptFuture(executor.submit(future));
 
-      // The test sleeps a duration long enough to ensure that the future has been submitted for
-      // execution
-      Thread.sleep(150L);
+      await()
+          .atMost(Duration.ofSeconds(5))
+          .until(
+              () ->
+                  future.getAttemptSettings() != null
+                      && future.getAttemptSettings().getAttemptCount() > 0);
 
       boolean res = future.cancel(false);
       assertTrue(res);
@@ -302,7 +311,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       callable.setExternalFuture(future);
       future.setAttemptFuture(executor.submit(future));
 
-      Thread.sleep(50L);
+      await()
+          .atMost(Duration.ofSeconds(5))
+          .until(() -> callable.getFirstAttemptFinishedLatch().getCount() == 0);
 
       // Note that shutdownNow() will not cancel internal FutureTasks automatically, which
       // may potentially cause another thread handing on RetryingFuture#get() call forever.
