@@ -89,12 +89,14 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
@@ -154,6 +156,8 @@ public class ConnectionOptions {
   static final boolean DEFAULT_USE_PLAIN_TEXT = false;
   static final boolean DEFAULT_IS_EXPERIMENTAL_HOST = false;
   static final SpannerOptions.InstanceType DEFAULT_TYPE = SpannerOptions.InstanceType.CLOUD;
+  static final String DEFAULT_USERNAME = "";
+  static final String DEFAULT_PASSWORD = "";
   static final boolean DEFAULT_AUTOCOMMIT = true;
   static final boolean DEFAULT_READONLY = false;
   static final boolean DEFAULT_RETRY_ABORTS_INTERNALLY = true;
@@ -223,6 +227,12 @@ public class ConnectionOptions {
 
   /** The type of Spanner instance to connect to (cloud, omni, or emulator). */
   public static final String TYPE_PROPERTY_NAME = "type";
+
+  /** Username for OPAQUE login */
+  public static final String USERNAME_PROPERTY_NAME = "username";
+
+  /** Password for OPAQUE login */
+  public static final String PASSWORD_PROPERTY_NAME = "password";
 
   /** Client certificate path to establish mTLS */
   static final String CLIENT_CERTIFICATE_PROPERTY_NAME = "clientCertificate";
@@ -775,6 +785,8 @@ public class ConnectionOptions {
             System.getenv());
     GoogleCredentials defaultSpannerOmniCredentials =
         SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
+    String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
+    String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
@@ -783,12 +795,18 @@ public class ConnectionOptions {
         && getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) == null
         && getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
         && getInitialConnectionPropertyValue(OAUTH_TOKEN) == null
+        && Strings.isNullOrEmpty(getInitialConnectionPropertyValue(ConnectionProperties.USERNAME))
         && usePlainText) {
       this.credentials = NoCredentials.getInstance();
     } else if (getInitialConnectionPropertyValue(OAUTH_TOKEN) != null) {
       this.credentials =
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
+    } else if ((isSpannerOmniPattern || isSpannerOmni())
+        && !Strings.isNullOrEmpty(username)
+        && !Strings.isNullOrEmpty(password)) {
+      SecretBytes secretBytes = SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
+      this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
     } else if ((isSpannerOmniPattern || isSpannerOmni()) && defaultSpannerOmniCredentials != null) {
       this.credentials = defaultSpannerOmniCredentials;
     } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {

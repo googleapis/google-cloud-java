@@ -279,6 +279,20 @@ public class ConnectionProperties {
           },
           InstanceTypeConverter.INSTANCE,
           Context.STARTUP);
+  static final ConnectionProperty<String> USERNAME =
+      create(
+          ConnectionOptions.USERNAME_PROPERTY_NAME,
+          "The username to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_USERNAME,
+          StringValueConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> PASSWORD =
+      create(
+          ConnectionOptions.PASSWORD_PROPERTY_NAME,
+          "The password to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_PASSWORD,
+          StringValueConverter.INSTANCE,
+          Context.STARTUP);
   static final ConnectionProperty<String> CLIENT_CERTIFICATE =
       create(
           CLIENT_CERTIFICATE_PROPERTY_NAME,
