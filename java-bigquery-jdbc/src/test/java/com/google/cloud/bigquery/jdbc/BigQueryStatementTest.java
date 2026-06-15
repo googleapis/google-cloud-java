@@ -897,7 +897,7 @@ public class BigQueryStatementTest {
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
     doReturn(resultSetMock)
         .when(spiedStatement)
-        .processJsonResultSet(Mockito.any(TableResult.class));
+        .processJsonResultSet(Mockito.any(TableResult.class), Mockito.any());
 
     // Execute query
     spiedStatement.executeQuery("SELECT 1");
